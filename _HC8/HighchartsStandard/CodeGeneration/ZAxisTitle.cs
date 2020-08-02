@@ -31,6 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -63,7 +64,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Defines how the title is repositioned according to the 3D chartorientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from the  tick marks, despite the chart orientation. This is the backwards  compatible behavior, and causes skewing of X and Z axes.- `'chart'`: Preserve 3D position relative to the chart.  This looks nice, but hard to read if the text isn't  forward-facing.- `'flap'`: Rotated text along the axis to compensate for the chart  orientation. This tries to maintain text as legible as possible on  all orientations.- `'ortho'`: Rotated text along the axis direction so that the labels  are orthogonal to the axis. This is very similar to `'flap'`, but  prevents skewing the labels (X and Y scaling are still present).- `undefined`: Will use the config from `labels.position3d`
+		/// Defines how the title is repositioned according to the 3D chartorientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from  the tick marks, despite the chart orientation. This is the  backwards compatible behavior, and causes skewing of X and Z  axes.- `'chart'`: Preserve 3D position relative to the chart. This  looks nice, but hard to read if the text isn't forward-facing.- `'flap'`: Rotated text along the axis to compensate for the  chart orientation. This tries to maintain text as legible as  possible on all orientations.- `'ortho'`: Rotated text along the axis direction so that the  labels are orthogonal to the axis. This is very similar to  `'flap'`, but prevents skewing the labels (X and Y scaling are  still present).- `undefined`: Will use the config from `labels.position3d`
 		/// </summary>
 		public string Position3d { get; set; }
 		private string Position3d_DefaultValue { get; set; }
@@ -84,7 +85,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If enabled, the axis title will skewed to follow the perspective.This will fix overlapping labels and titles, but texts become lesslegible due to the distortion.The final appearance depends heavily on `title.position3d`.A `null` value will use the config from `labels.skew3d`.
+		/// If enabled, the axis title will skewed to follow the perspective.This will fix overlapping labels and titles, but texts becomeless legible due to the distortion.The final appearance depends heavily on `title.position3d`.A `null` value will use the config from `labels.skew3d`.
 		/// </summary>
 		public bool? Skew3d { get; set; }
 		private bool? Skew3d_DefaultValue { get; set; }
@@ -130,7 +131,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -151,7 +154,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -19,8 +19,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			AfterChartFormat = AfterChartFormat_DefaultValue = "{endOfChartMarker}";
 			AfterChartFormatter = AfterChartFormatter_DefaultValue = "";
 			AxisRangeDateFormat = AxisRangeDateFormat_DefaultValue = "%Y-%m-%d %H:%M:%S";
-			BeforeChartFormat = BeforeChartFormat_DefaultValue = "<h5>{chartTitle}</h5><div>{typeDescription}</div><div>{chartSubtitle}</div><div>{chartLongdesc}</div><div>{xAxisDescription}</div><div>{yAxisDescription}</div><div>{viewTableButton}</div>";
+			BeforeChartFormat = BeforeChartFormat_DefaultValue = "<h5>{chartTitle}</h5><div>{typeDescription}</div><div>{chartSubtitle}</div><div>{chartLongdesc}</div><div>{playAsSoundButton}</div><div>{viewTableButton}</div><div>{xAxisDescription}</div><div>{yAxisDescription}</div><div>{annotationsTitle}{annotationsList}</div>";
 			BeforeChartFormatter = BeforeChartFormatter_DefaultValue = "";
+			OnPlayAsSoundClick = OnPlayAsSoundClick_DefaultValue = "";
 			OnViewDataTableClick = OnViewDataTableClick_DefaultValue = "";
 			
 		}	
@@ -48,7 +49,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Format for the screen reader information region before the chart.Supported HTML tags are `<h1-7>`, `<p>`, `<div>`, `<a>`, and`<button>`. Attributes are not supported, except for id on`<div>`, `<a>`, and `<button>`. Id is required on `<a>` and`<button>` in the format `<tag id="abcd">`. Numbers, lower- anduppercase letters, "-" and "#" are valid characters in IDs.
+		/// Format for the screen reader information region before the chart.Supported HTML tags are `<h1-7>`, `<p>`, `<div>`, `<a>`, `<ul>`,`<ol>`, `<li>`, and `<button>`. Attributes are not supported,except for id on `<div>`, `<a>`, and `<button>`. Id is requiredon `<a>` and `<button>` in the format `<tag id="abcd">`. Numbers,lower- and uppercase letters, "-" and "#" are valid characters inIDs.
 		/// </summary>
 		public string BeforeChartFormat { get; set; }
 		private string BeforeChartFormat_DefaultValue { get; set; }
@@ -59,6 +60,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string BeforeChartFormatter { get; set; }
 		private string BeforeChartFormatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Function to run upon clicking the "Play as sound" button inthe screen reader region.By default Highcharts will call the `chart.sonify` function.
+		/// </summary>
+		public string OnPlayAsSoundClick { get; set; }
+		private string OnPlayAsSoundClick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -78,6 +86,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AxisRangeDateFormat != AxisRangeDateFormat_DefaultValue) h.Add("axisRangeDateFormat",AxisRangeDateFormat);
 			if (BeforeChartFormat != BeforeChartFormat_DefaultValue) h.Add("beforeChartFormat",BeforeChartFormat);
 			if (BeforeChartFormatter != BeforeChartFormatter_DefaultValue) { h.Add("beforeChartFormatter",BeforeChartFormatter); Highstock.AddFunction("AccessibilityScreenReaderSectionBeforeChartFormatter.beforeChartFormatter", BeforeChartFormatter); }  
+			if (OnPlayAsSoundClick != OnPlayAsSoundClick_DefaultValue) { h.Add("onPlayAsSoundClick",OnPlayAsSoundClick); Highstock.AddFunction("AccessibilityScreenReaderSectionOnPlayAsSoundClick.onPlayAsSoundClick", OnPlayAsSoundClick); }  
 			if (OnViewDataTableClick != OnViewDataTableClick_DefaultValue) { h.Add("onViewDataTableClick",OnViewDataTableClick); Highstock.AddFunction("AccessibilityScreenReaderSectionOnViewDataTableClick.onViewDataTableClick", OnViewDataTableClick); }  
 			
 

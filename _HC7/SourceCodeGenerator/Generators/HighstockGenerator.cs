@@ -359,9 +359,9 @@ public class HighstockGenerator
             || item.FullName.Equals("drilldown.activeDataLabelStyle") || item.FullName.Equals("legend.itemCheckboxStyle"))
             return;
 
-        
 
-            foreach (ApiItem child in children)
+
+        foreach (ApiItem child in children.GroupBy(p => p.FullName + p.Suffix).Select(group => group.FirstOrDefault()).OrderBy(q => q.FullName))
         {
             string propertyName = GetPropertyName(child);
 
@@ -523,78 +523,185 @@ public class HighstockGenerator
 
         if ((apiItem.FullName.Contains("series") && apiItem.FullName.Contains("type")) || apiItem.FullName == "chart.type" || (apiItem.FullName.StartsWith("series<") && apiItem.FullName.EndsWith(">.type")))
         {
+            //apiItem.Values.Add("bar");
+            //apiItem.Values.Add("heatmap");
+            //apiItem.Values.Add("pyramid");
+            //apiItem.Values.Add("polygon");
+            //apiItem.Values.Add("treemap");
+            //apiItem.Values.Add("solidgauge");
+
+            //apiItem.Values.Add("Bellcurve");
+            //apiItem.Values.Add("Bullet");
+            //apiItem.Values.Add("Histogram");
+            //apiItem.Values.Add("Pareto");
+            //apiItem.Values.Add("Sankey");
+            //apiItem.Values.Add("Scatter3d");
+            //apiItem.Values.Add("Streamgraph");
+            //apiItem.Values.Add("Sunburst");
+            //apiItem.Values.Add("Tilemap");
+            //apiItem.Values.Add("Variablepie");
+            //apiItem.Values.Add("Variwide");
+            //apiItem.Values.Add("Vector");
+            //apiItem.Values.Add("Windbarb");
+            //apiItem.Values.Add("Wordcloud");
+            //apiItem.Values.Add("Xrange");
+
+            //apiItem.Values.Add("Candlestick");
+            //apiItem.Values.Add("Flags");
+            //apiItem.Values.Add("Ohlc");
+            //apiItem.Values.Add("Ad");
+            //apiItem.Values.Add("Atr");
+            //apiItem.Values.Add("Bb");
+            //apiItem.Values.Add("Cci");
+            //apiItem.Values.Add("Cmf");
+            //apiItem.Values.Add("Ema");
+            //apiItem.Values.Add("Macd");
+            //apiItem.Values.Add("Mfi");
+            //apiItem.Values.Add("Momentum");
+            //apiItem.Values.Add("Pivotpoints");
+            //apiItem.Values.Add("Priceenvelopes");
+            //apiItem.Values.Add("Psar");
+            //apiItem.Values.Add("Roc");
+            //apiItem.Values.Add("Rsi");
+            //apiItem.Values.Add("Sma");
+            //apiItem.Values.Add("Stochastic");
+            //apiItem.Values.Add("Vbp");
+            //apiItem.Values.Add("Vwap");
+            //apiItem.Values.Add("Wma");
+            //apiItem.Values.Add("Zigzag");
+
+            ////since v7
+            //apiItem.Values.Add("Networkgraph");
+            //apiItem.Values.Add("Packedbubble");
+            //apiItem.Values.Add("Cylinder");
+            //apiItem.Values.Add("Venn");
+            //apiItem.Values.Add("Columnpyramid");
+
+            //apiItem.Values.Add("Abands");
+            //apiItem.Values.Add("Ao");
+            //apiItem.Values.Add("Apo");
+            //apiItem.Values.Add("Aroonoscillator");
+            //apiItem.Values.Add("Aroon");
+            //apiItem.Values.Add("Chaikin");
+            //apiItem.Values.Add("Dema");
+            //apiItem.Values.Add("Dpo");
+            //apiItem.Values.Add("Keltnerchannels");
+            //apiItem.Values.Add("Linearregressionangle");
+            //apiItem.Values.Add("Natr");
+            //apiItem.Values.Add("Packedbubble");
+            //apiItem.Values.Add("Pc");
+            //apiItem.Values.Add("Ppo");
+            //apiItem.Values.Add("Supertrend");
+            //apiItem.Values.Add("Tema");
+            //apiItem.Values.Add("Trix");
+            //apiItem.Values.Add("Williamsr");
+
+            apiItem.Values.Add("abands");
+            apiItem.Values.Add("ad");
+            apiItem.Values.Add("ao");
+            apiItem.Values.Add("apo");
+            apiItem.Values.Add("area");
+            apiItem.Values.Add("arearange");
+            apiItem.Values.Add("areaspline");
+            apiItem.Values.Add("areasplinerange");
+            apiItem.Values.Add("aroon");
+            apiItem.Values.Add("aroonoscillator");
+            apiItem.Values.Add("atr");
             apiItem.Values.Add("bar");
+            apiItem.Values.Add("bb");
+            apiItem.Values.Add("belicurve");
+            apiItem.Values.Add("boxplot");
+            apiItem.Values.Add("bubble");
+            apiItem.Values.Add("bullet");
+            apiItem.Values.Add("candlestick");
+            apiItem.Values.Add("cci");
+            apiItem.Values.Add("chaikin");
+            apiItem.Values.Add("cmf");
+            apiItem.Values.Add("column");
+            apiItem.Values.Add("columnpyramid");
+            apiItem.Values.Add("columnrange");
+            apiItem.Values.Add("cylinder");
+            apiItem.Values.Add("dema");
+            apiItem.Values.Add("dependencywheel");
+            apiItem.Values.Add("dpo");
+            apiItem.Values.Add("dumbbell");
+            apiItem.Values.Add("ema");
+            apiItem.Values.Add("errorbar");
+            apiItem.Values.Add("flags");
+            apiItem.Values.Add("funnel");
+            apiItem.Values.Add("funnel3d");
+            apiItem.Values.Add("gantt");
+            apiItem.Values.Add("gauge");
             apiItem.Values.Add("heatmap");
-            apiItem.Values.Add("pyramid");
+            apiItem.Values.Add("histogram");
+            apiItem.Values.Add("id");
+            apiItem.Values.Add("ikh");
+            apiItem.Values.Add("index");
+            apiItem.Values.Add("item");
+            apiItem.Values.Add("keltnerchannels");
+            apiItem.Values.Add("legendindex");
+            apiItem.Values.Add("line");
+            apiItem.Values.Add("linearregression");
+            apiItem.Values.Add("linearregressiongle");
+            apiItem.Values.Add("linearregressionintercept");
+            apiItem.Values.Add("linearregressionslope");
+            apiItem.Values.Add("lollipop");
+            apiItem.Values.Add("macd");
+            apiItem.Values.Add("map");
+            apiItem.Values.Add("mapData");
+            apiItem.Values.Add("mapbubble");
+            apiItem.Values.Add("mapline");
+            apiItem.Values.Add("mappoint");
+            apiItem.Values.Add("mfi");
+            apiItem.Values.Add("momentum");
+            apiItem.Values.Add("name");
+            apiItem.Values.Add("natr");
+            apiItem.Values.Add("networkgraph");
+            apiItem.Values.Add("ohlc");
+            apiItem.Values.Add("organization");
+            apiItem.Values.Add("packedbubble");
+            apiItem.Values.Add("pareto");
+            apiItem.Values.Add("pc");
+            apiItem.Values.Add("pie");
+            apiItem.Values.Add("pivotpoints");
             apiItem.Values.Add("polygon");
-            apiItem.Values.Add("treemap");
+            apiItem.Values.Add("ppo");
+            apiItem.Values.Add("priceenvelopes");
+            apiItem.Values.Add("psar");
+            apiItem.Values.Add("pyramid");
+            apiItem.Values.Add("roc");
+            apiItem.Values.Add("rsi");
+            apiItem.Values.Add("sankey");
+            apiItem.Values.Add("scatter");
+            apiItem.Values.Add("scatter3d");
+            apiItem.Values.Add("slowstochastic");
+            apiItem.Values.Add("sma");
             apiItem.Values.Add("solidgauge");
-
-            apiItem.Values.Add("Bellcurve");
-            apiItem.Values.Add("Bullet");
-            apiItem.Values.Add("Histogram");
-            apiItem.Values.Add("Pareto");
-            apiItem.Values.Add("Sankey");
-            apiItem.Values.Add("Scatter3d");
-            apiItem.Values.Add("Streamgraph");
-            apiItem.Values.Add("Sunburst");
-            apiItem.Values.Add("Tilemap");
-            apiItem.Values.Add("Variablepie");
-            apiItem.Values.Add("Variwide");
-            apiItem.Values.Add("Vector");
-            apiItem.Values.Add("Windbarb");
-            apiItem.Values.Add("Wordcloud");
-            apiItem.Values.Add("Xrange");
-
-            apiItem.Values.Add("Candlestick");
-            apiItem.Values.Add("Flags");
-            apiItem.Values.Add("Ohlc");
-            apiItem.Values.Add("Ad");
-            apiItem.Values.Add("Atr");
-            apiItem.Values.Add("Bb");
-            apiItem.Values.Add("Cci");
-            apiItem.Values.Add("Cmf");
-            apiItem.Values.Add("Ema");
-            apiItem.Values.Add("Macd");
-            apiItem.Values.Add("Mfi");
-            apiItem.Values.Add("Momentum");
-            apiItem.Values.Add("Pivotpoints");
-            apiItem.Values.Add("Priceenvelopes");
-            apiItem.Values.Add("Psar");
-            apiItem.Values.Add("Roc");
-            apiItem.Values.Add("Rsi");
-            apiItem.Values.Add("Sma");
-            apiItem.Values.Add("Stochastic");
-            apiItem.Values.Add("Vbp");
-            apiItem.Values.Add("Vwap");
-            apiItem.Values.Add("Wma");
-            apiItem.Values.Add("Zigzag");
-
-            //since v7
-            apiItem.Values.Add("Networkgraph");
-            apiItem.Values.Add("Packedbubble");
-            apiItem.Values.Add("Cylinder");
-            apiItem.Values.Add("Venn");
-            apiItem.Values.Add("Columnpyramid");
-
-            apiItem.Values.Add("Abands");
-            apiItem.Values.Add("Ao");
-            apiItem.Values.Add("Apo");
-            apiItem.Values.Add("Aroonoscillator");
-            apiItem.Values.Add("Aroon");
-            apiItem.Values.Add("Chaikin");
-            apiItem.Values.Add("Dema");
-            apiItem.Values.Add("Dpo");
-            apiItem.Values.Add("Keltnerchannels");
-            apiItem.Values.Add("Linearregressionangle");
-            apiItem.Values.Add("Natr");
-            apiItem.Values.Add("Packedbubble");
-            apiItem.Values.Add("Pc");
-            apiItem.Values.Add("Ppo");
-            apiItem.Values.Add("Supertrend");
-            apiItem.Values.Add("Tema");
-            apiItem.Values.Add("Trix");
-            apiItem.Values.Add("Williamsr");
+            apiItem.Values.Add("spline");
+            apiItem.Values.Add("stack");
+            apiItem.Values.Add("stochastic");
+            apiItem.Values.Add("streamgraph");
+            apiItem.Values.Add("sunburst");
+            apiItem.Values.Add("supertrend");
+            apiItem.Values.Add("tema");
+            apiItem.Values.Add("tilemap");
+            apiItem.Values.Add("timeline");
+            apiItem.Values.Add("treemap");
+            apiItem.Values.Add("trendline");
+            apiItem.Values.Add("trix");
+            apiItem.Values.Add("variablepie");
+            apiItem.Values.Add("variwide");
+            apiItem.Values.Add("vbp");
+            apiItem.Values.Add("vector");
+            apiItem.Values.Add("venn");
+            apiItem.Values.Add("vwap");
+            apiItem.Values.Add("waterfall");
+            apiItem.Values.Add("williamsr");
+            apiItem.Values.Add("windbarb");
+            apiItem.Values.Add("wma");
+            apiItem.Values.Add("wordcloud");
+            apiItem.Values.Add("xrange");
+            apiItem.Values.Add("zigzag");
         }
     }
 
@@ -661,6 +768,8 @@ public class HighstockGenerator
             }
         }
 
+        result = result.Replace('-', '_');
+
         return result.ToString();
     }
 
@@ -684,6 +793,8 @@ public class HighstockGenerator
             result += FirstCharToUpper(part);
 
         result = result + item.Suffix;
+        result = result.Replace('-', '_');
+
         return result;
     }
 
@@ -841,7 +952,7 @@ public class HighstockGenerator
             if (child.ReturnType == "Array.<*>" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
-            if (child.Children.Any() || child.Extends.Any() || child.ReturnType == "Object")
+            if (child.Children.Any() || child.Extends.Any() || child.ReturnType.ToLower() == "object")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             // Event (javascript function)
@@ -983,6 +1094,8 @@ public class HighstockGenerator
         _typeMappings.Add("Array.<object>", "List<object>");
         _typeMappings.Add("Mixed", "double?");
         _typeMappings.Add("Array.<Highcharts.ColorString>", "List<string>");
+        _typeMappings.Add("Array.<Array.<Highcharts.DataValueType>>", "List<List<string>>");
+        _typeMappings.Add("Array.<Highcharts.DefsOptions>", "List<object>");
     }
     private void InitPropertyTypeMappings()
     {
@@ -1076,7 +1189,8 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("labels.items.style", "Hashtable");
         _propertyTypeMappings.Add("boxesToAvoid", "List<object>");
         _propertyTypeMappings.Add("colors", "List<string>");
-        _propertyTypeMappings.Add("data.columns", "List<List<Object>>");
+        _propertyTypeMappings.Add("data.columns", "List<List<string>>");
+        _propertyTypeMappings.Add("data.rows", "List<List<string>>");
         _propertyTypeMappings.Add("chart.options3d.axisLabelPosition", "string");
         _propertyTypeMappings.Add("initialPositions", "double?");
         _propertyTypeMappings.Add("position3d", "string");
@@ -1099,7 +1213,6 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("plotOptions.item.dataLabels", "Hashtable");
         _propertyTypeMappings.Add("plotOptions.pyramid.dataLabels", "Hashtable");
         _propertyTypeMappings.Add("plotOptions.variablepie.dataLabels", "Hashtable");
-        _propertyTypeMappings.Add("data.rows", "List<List<object>>");
         _propertyTypeMappings.Add("stockTools.gui.buttons", "List<string>");
 
         _propertyTypeMappings.Add("stockTools.gui.definitions.advanced.items", "List<string>");
@@ -1115,6 +1228,8 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("annotations.measure.typeOptions.label.style", "Hashtable");
         _propertyTypeMappings.Add("drilldown.activeDataLabelStyle", "Hashtable");
         _propertyTypeMappings.Add("legend.itemCheckboxStyle", "Hashtable");
+        _propertyTypeMappings.Add("defs.arrow.children", "List<object>");
+
     }
     private void InitPropertyInitMappings()
     {
@@ -1134,8 +1249,8 @@ public class HighstockGenerator
         ////_propertyInitMappings.Add("style", "new Hashtable()");
         _propertyInitMappings.Add("inputStyle", "new Hashtable()");
         _propertyInitMappings.Add("labelStyle", "new Hashtable()");
-        _propertyInitMappings.Add("columns", "new List<List<Object>>()");
-        _propertyInitMappings.Add("rows", "new List<List<object>>()");
+        _propertyInitMappings.Add("columns", "new List<List<string>>()");
+        _propertyInitMappings.Add("rows", "new List<List<string>>()");
         _propertyInitMappings.Add("seriesMapping", "new List<object>()");
         _propertyInitMappings.Add("keys", "new List<string>()");
         _propertyInitMappings.Add("lang.accessibility.series", "new LangAccessibilitySeries()");
@@ -1277,6 +1392,50 @@ public class HighstockGenerator
         _propertyInitMappings.Add("annotations.measure.typeOptions.label.style", "new Hashtable()");
         _propertyInitMappings.Add("drilldown.activeDataLabelStyle", "new Hashtable()");
         _propertyInitMappings.Add("legend.itemCheckboxStyle", "new Hashtable()");
+        _propertyInitMappings.Add("defs.arrow.children", "new List<object>()");
+        _propertyInitMappings.Add("accessibility.keyboardNavigation.order", "new List<string>()");
+        _propertyInitMappings.Add("zoomEnabled", "null");
+        _propertyInitMappings.Add("accessibility.highContrastTheme", "new Object()");
+
+        _propertyInitMappings.Add("navigation.bindings.arrowInfinityLine", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.arrowRay", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.arrowSegment", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.circleAnnotation", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.crooked3", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.crooked5", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.currentPriceIndicator", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.elliott3", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.elliott5", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.fibonacci", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.flagCirclepin", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.flagDiamondpin", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.flagSimplepin", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.flagSquarepin", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.fullScreen", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.horizontalLine", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.indicators", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.infinityLine", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.labelAnnotation", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.measureX", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.measureXY", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.measureY", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.parallelChannel", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.pitchfork", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.ray", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.rectangleAnnotation", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.saveChart", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.segment", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.seriesTypeCandlestick", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.seriesTypeLine", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.seriesTypeOhlc", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.toggleAnnotations", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.verticalArrow", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.verticalCounter", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.verticalLabel", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.verticalLine", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.zoomX", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.zoomXY", "new Object()");
+        _propertyInitMappings.Add("navigation.bindings.zoomY", "new Object()");
     }
     private void InitLists()
     {
@@ -1472,6 +1631,9 @@ public class HighstockGenerator
         if (item.ReturnType == "Object")
             return "null";
 
+        if (item.ReturnType.Contains(TypeService.CSSType))
+            item.Defaults = "css";
+
         if (!String.IsNullOrEmpty(item.Defaults))
         {
             if (item.ReturnType == "String" ||
@@ -1502,10 +1664,10 @@ public class HighstockGenerator
                 (_typeMappings[(item.ReturnType)] != null &&
                 _typeMappings[(item.ReturnType)].ToString() == "Hashtable"))
             {
-                string result = "new Hashtable" + "{" + item.Defaults
-                                                    .Replace(",", "},{")
-                                                    .Replace(";", "},{")
-                                                    .Replace(":", ",") + "}";
+                string result = "new Hashtable()";// + "{" + item.Defaults
+                                                    //.Replace(",", "},{")
+                                                    //.Replace(";", "},{")
+                                                    //.Replace(":", ",") + "}";
                 if (nameAndSuffix == "position")
                     result = result.Replace("0", "\"0\"");
 

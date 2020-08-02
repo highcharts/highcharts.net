@@ -17,8 +17,10 @@ namespace Highsoft.Web.Mvc.Charts
 		public TreemapSeriesStatesInactive()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Opacity = Opacity_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = new Hashtable();
+			Opacity = Opacity_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -30,11 +32,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Opacity of series elements (dataLabels, line, area). Set to 1to disable inactive state.
+		/// Enable or disable the inactive state for a series
 		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
-		  
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Opacity of series elements (dataLabels, line, area).
+		/// </summary>
+		public Hashtable Opacity { get; set; }
+		private Hashtable Opacity_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -42,8 +53,16 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

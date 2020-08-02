@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum ZigzagSeriesDashStyle
     {
-        Solid, 
+        Null, 
+		Solid, 
 		ShortDash, 
 		ShortDot, 
 		ShortDashDot, 

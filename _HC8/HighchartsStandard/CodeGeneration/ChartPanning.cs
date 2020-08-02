@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = null;
 			Type = Type_DefaultValue = ChartPanningType.X;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ChartPanningType Type { get; set; }
 		private ChartPanningType Type_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

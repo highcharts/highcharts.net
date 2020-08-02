@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = "5";
 			Stroke = Stroke_DefaultValue = "none";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Stroke { get; set; }
 		private string Stroke_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

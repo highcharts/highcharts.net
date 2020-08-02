@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new HeatmapSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new HeatmapSeriesDataDragDrop();
@@ -27,6 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new HeatmapSeriesDataEvents();
 			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
+			Marker = Marker_DefaultValue = new HeatmapSeriesDataMarker();
 			Name = Name_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
@@ -64,6 +66,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customized functionality.Here you can add additional data for your own event callbacks and formattercallbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -113,6 +122,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Labelrank { get; set; }
 		private double? Labelrank_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HeatmapSeriesDataMarker Marker { get; set; }
+		private HeatmapSeriesDataMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -168,13 +184,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);

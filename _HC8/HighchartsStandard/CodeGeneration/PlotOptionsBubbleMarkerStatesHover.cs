@@ -16,17 +16,20 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsBubbleMarkerStatesHover()
 		{
-			RadiusPlus = RadiusPlus_DefaultValue = 0;
+			RadiusPlus = RadiusPlus_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? RadiusPlus { get; set; }
-		private double? RadiusPlus_DefaultValue { get; set; }
-		  
+		public Hashtable RadiusPlus { get; set; }
+		private Hashtable RadiusPlus_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (RadiusPlus != RadiusPlus_DefaultValue) h.Add("radiusPlus",RadiusPlus);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

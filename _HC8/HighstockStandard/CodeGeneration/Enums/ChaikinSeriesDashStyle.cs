@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum ChaikinSeriesDashStyle
     {
-        Solid, 
+        Null, 
+		Solid, 
 		ShortDash, 
 		ShortDot, 
 		ShortDashDot, 

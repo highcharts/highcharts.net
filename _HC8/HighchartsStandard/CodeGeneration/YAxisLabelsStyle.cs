@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Cursor = Cursor_DefaultValue = "default";
 			FontSize = FontSize_DefaultValue = "11px";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string FontSize { get; set; }
 		private string FontSize_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

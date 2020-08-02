@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AcrossPanes = AcrossPanes_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#999999";
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			Events = Events_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Label = Label_DefaultValue = new ZAxisPlotLinesLabel();
@@ -27,6 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Width = Width_DefaultValue = 2;
 			ZIndex = ZIndex_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -54,8 +55,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The dashing or dot style for the plot line. For possible values see[this overview](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -98,7 +99,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -115,7 +118,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

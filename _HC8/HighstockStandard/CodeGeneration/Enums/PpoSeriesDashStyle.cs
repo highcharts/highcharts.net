@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PpoSeriesDashStyle
     {
-        Solid, 
+        Null, 
+		Solid, 
 		ShortDash, 
 		ShortDot, 
 		ShortDashDot, 

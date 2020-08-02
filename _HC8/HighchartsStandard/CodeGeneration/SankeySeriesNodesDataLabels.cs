@@ -20,11 +20,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Crop = Crop_DefaultValue = false;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = new SankeySeriesNodesDataLabelsFormat();
+			FormatString = FormatString_DefaultValue = "null";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = true;
 			NodeFormat = NodeFormat_DefaultValue = "undefined";
 			NodeFormatter = NodeFormatter_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -59,6 +61,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public string FormatString { get; set; }
+		private string FormatString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
 		 
@@ -82,7 +91,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string NodeFormatter { get; set; }
 		private string NodeFormatter_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -93,11 +104,19 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format.IsDirty()) h.Add("format",Format.ToHashtable());
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("7ba12d94-41a9-463d-9b24-b4f0c4e33c49.formatter", Formatter); }  
+			if (FormatString != FormatString_DefaultValue) h.Add("format",FormatString);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("1e46313f-4729-4975-a78b-b65d68106bde.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
-			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); Highcharts.AddFunction("75ab45f7-0fdb-49c7-87a7-48b51862e4d8.nodeFormatter", NodeFormatter); }  
-			
+			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); Highcharts.AddFunction("85677c86-4985-44bc-b411-35591433f2a5.nodeFormatter", NodeFormatter); }  
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -1,4 +1,4 @@
-﻿<script src="http://code.highcharts.com/highcharts.js"></script>
+﻿<script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
@@ -21,7 +21,8 @@
       {
           Chart = new Highsoft.Web.Mvc.Charts.Chart
           {
-              Inverted = true
+              Inverted = true,
+              Type = ChartType.Spline
           },
           Title = new Title
           {

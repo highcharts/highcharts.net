@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ExportRegionLabel = ExportRegionLabel_DefaultValue = "Chart menu";
 			MenuButtonLabel = MenuButtonLabel_DefaultValue = "View chart menu";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string MenuButtonLabel { get; set; }
 		private string MenuButtonLabel_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ChartMenuLabel != ChartMenuLabel_DefaultValue) h.Add("chartMenuLabel",ChartMenuLabel);
 			if (ExportRegionLabel != ExportRegionLabel_DefaultValue) h.Add("exportRegionLabel",ExportRegionLabel);
 			if (MenuButtonLabel != MenuButtonLabel_DefaultValue) h.Add("menuButtonLabel",MenuButtonLabel);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -17,10 +17,11 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsColumnStatesSelect()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderColor = BorderColor_DefaultValue = "#000000";
-			Color = Color_DefaultValue = "#cccccc";
-			Enabled = Enabled_DefaultValue = true;
+			BorderColor = BorderColor_DefaultValue = "";
+			Color = Color_DefaultValue = "";
+			Enabled = Enabled_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -48,9 +49,11 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		  
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

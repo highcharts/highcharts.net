@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = new YAxisEvents();
 			Floor = Floor_DefaultValue = null;
 			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
-			GridLineDashStyle = GridLineDashStyle_DefaultValue = "Solid";
+			GridLineDashStyle = GridLineDashStyle_DefaultValue = new Hashtable();
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Height = Height_DefaultValue = "";
@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinLength = MinLength_DefaultValue = "";
 			MinLengthNumber = MinLengthNumber_DefaultValue = null;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
-			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = "Solid";
+			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = new Hashtable();
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
 			MinorTickInterval = MinorTickInterval_DefaultValue = "";
@@ -180,7 +180,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to force the axis to end on a tick. Use this option withthe `maxPadding` option to control the axis end.This option is always disabled, when panning type iseither `y` or `xy`.
 		/// </summary>
 		public bool? EndOnTick { get; set; }
 		private bool? EndOnTick_DefaultValue { get; set; }
@@ -210,8 +210,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The dash or dot style of the grid lines. For possible values, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public string GridLineDashStyle { get; set; }
-		private string GridLineDashStyle_DefaultValue { get; set; }
+		public Hashtable GridLineDashStyle { get; set; }
+		private Hashtable GridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -371,8 +371,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The dash or dot style of the minor grid lines. For possible values,see [this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public string MinorGridLineDashStyle { get; set; }
-		private string MinorGridLineDashStyle_DefaultValue { get; set; }
+		public Hashtable MinorGridLineDashStyle { get; set; }
+		private Hashtable MinorGridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -439,7 +439,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The minimum range to display on this axis. The entire axis will notbe allowed to span over a smaller interval than this. For example,for a datetime axis the main unit is milliseconds. If minRange isset to 3600000, you can't zoom in more than to one hour.The default minRange for the x axis is five times the smallestinterval between any of the data points.On a logarithmic axis, the unit for the minimum range is the power.So a minRange of 1 means that the axis can be zoomed to 10-100,100-1000, 1000-10000 etc.Note that the `minPadding`, `maxPadding`, `startOnTick` and`endOnTick` settings also affect how the extremes of the axisare computed.
+		/// The minimum range to display on this axis. The entire axis will notbe allowed to span over a smaller interval than this. For example,for a datetime axis the main unit is milliseconds. If minRange isset to 3600000, you can't zoom in more than to one hour.The default minRange for the x axis is five times the smallestinterval between any of the data points.On a logarithmic axis, the unit for the minimum range is the power.So a minRange of 1 means that the axis can be zoomed to 10-100,100-1000, 1000-10000 etc.**Note**: The `minPadding`, `maxPadding`, `startOnTick` and`endOnTick` settings also affect how the extremes of the axisare computed.
 		/// </summary>
 		public double? MinRange { get; set; }
 		private double? MinRange_DefaultValue { get; set; }
@@ -467,14 +467,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of objects defining plot bands on the Y axis.
+		/// 
 		/// </summary>
 		public List<YAxisPlotBands> PlotBands { get; set; }
 		private List<YAxisPlotBands> PlotBands_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of objects representing plot lines on the X axis
+		/// 
 		/// </summary>
 		public List<YAxisPlotLines> PlotLines { get; set; }
 		private List<YAxisPlotLines> PlotLines_DefaultValue { get; set; }
@@ -558,7 +558,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
+		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.This option is always disabled, when panning type iseither `y` or `xy`.
 		/// </summary>
 		public bool? StartOnTick { get; set; }
 		private bool? StartOnTick_DefaultValue { get; set; }

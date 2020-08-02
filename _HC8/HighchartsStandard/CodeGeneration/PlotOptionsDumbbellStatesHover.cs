@@ -16,17 +16,20 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsDumbbellStatesHover()
 		{
-			ConnectorWidthPlus = ConnectorWidthPlus_DefaultValue = 1;
+			ConnectorWidthPlus = ConnectorWidthPlus_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// The additional connector line width for a hovered point.
 		/// </summary>
-		public double? ConnectorWidthPlus { get; set; }
-		private double? ConnectorWidthPlus_DefaultValue { get; set; }
-		  
+		public Hashtable ConnectorWidthPlus { get; set; }
+		private Hashtable ConnectorWidthPlus_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (ConnectorWidthPlus != ConnectorWidthPlus_DefaultValue) h.Add("connectorWidthPlus",ConnectorWidthPlus);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

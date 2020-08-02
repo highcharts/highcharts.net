@@ -19,7 +19,9 @@ namespace Highsoft.Web.Mvc.Charts
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
 			DescriptionFormatter = DescriptionFormatter_DefaultValue = "";
 			PointDescriptionEnabledThreshold = PointDescriptionEnabledThreshold_DefaultValue = 200;
+			PointDescriptionEnabledThresholdBool = PointDescriptionEnabledThresholdBool_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +44,16 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? PointDescriptionEnabledThreshold { get; set; }
 		private double? PointDescriptionEnabledThreshold_DefaultValue { get; set; }
-		  
+		 
+
+		/// <summary>
+		/// When a series contains more points than this, we no longer exposeinformation about individual points to screen readers.Set to `false` to disable.
+		/// </summary>
+		public bool? PointDescriptionEnabledThresholdBool { get; set; }
+		private bool? PointDescriptionEnabledThresholdBool_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -50,9 +61,17 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
-			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); Highcharts.AddFunction("25ade2ae-b1e6-49e7-8377-e6f223025df1.descriptionFormatter", DescriptionFormatter); }  
+			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); Highcharts.AddFunction("1f122fa3-5814-41a7-987c-692d569e4548.descriptionFormatter", DescriptionFormatter); }  
 			if (PointDescriptionEnabledThreshold != PointDescriptionEnabledThreshold_DefaultValue) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThreshold);
-			
+			if (PointDescriptionEnabledThresholdBool != PointDescriptionEnabledThresholdBool_DefaultValue) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThresholdBool);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -35,9 +35,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareBase = CompareBase_DefaultValue = LineSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
+			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = LineSeriesCursor.Null;
-			DashStyle = DashStyle_DefaultValue = LineSeriesDashStyle.Solid;
+			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = LineSeriesDashStyle.Null;
 			Data = Data_DefaultValue = new List<LineSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new LineSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new LineSeriesDataLabels();
@@ -89,7 +91,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new LineSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Type = Type_DefaultValue = LineSeriesType.Line;
+			Type = Type_DefaultValue = LineSeriesType.Null;
 			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
@@ -111,7 +113,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -237,6 +239,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points(including markers and columns), is that animation is performed onupdates. On the other hand, when the series contains more points thanthe crop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping awayinvisible points is to increase performance on large series.
 		/// </summary>
 		public double? CropThreshold { get; set; }
@@ -251,14 +260,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A name for the dash style to use for the graph, or for some seriestypes the outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
 		/// </summary>
 		public LineSeriesDashStyle DashStyle { get; set; }
 		private LineSeriesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `line` series type,points can be given in the following ways:1. An array of numerical values. In this case, the numerical values will be   interpreted as `y` options. The `x` values will be automatically   calculated, either starting at 0 and incremented by 1, or from   `pointStart` and `pointInterval` given in the series options. If the axis   has categories, these will be used. Example:   ```js   data: [0, 5, 3, 5]   ```2. An array of arrays with 2 values. In this case, the values correspond to   `x,y`. If the first value is a string, it is applied as the name of the   point, and the `x` value is inferred.   ```js   data: [       [0, 1],       [1, 2],       [2, 8]   ]   ```3. An array of objects with named values. The following snippet shows only a   few settings, see the complete options set below. If the total number of   data points exceeds the series'   [turboThreshold](#series.line.turboThreshold),   this option is not available.   ```js   data: [{       x: 1,       y: 9,       name: "Point2",       color: "#00FF00"   }, {       x: 1,       y: 6,       name: "Point1",       color: "#FF00FF"   }]   ```**Note:** In TypeScript you have to extend `PointOptionsObject` with anadditional declaration to allow custom data options:```tsdeclare module `highcharts` {  interface PointOptionsObject {    customProperty: string;  }}```
+		/// An array of data points for the series. For the `line` series type,points can be given in the following ways:1. An array of numerical values. In this case, the numerical values will be   interpreted as `y` options. The `x` values will be automatically   calculated, either starting at 0 and incremented by 1, or from   `pointStart` and `pointInterval` given in the series options. If the axis   has categories, these will be used. Example:   ```js   data: [0, 5, 3, 5]   ```2. An array of arrays with 2 values. In this case, the values correspond to   `x,y`. If the first value is a string, it is applied as the name of the   point, and the `x` value is inferred.   ```js   data: [       [0, 1],       [1, 2],       [2, 8]   ]   ```3. An array of objects with named values. The following snippet shows only a   few settings, see the complete options set below. If the total number of   data points exceeds the series'   [turboThreshold](#series.line.turboThreshold),   this option is not available.   ```js   data: [{       x: 1,       y: 9,       name: "Point2",       color: "#00FF00"   }, {       x: 1,       y: 6,       name: "Point1",       color: "#FF00FF"   }]   ```**Note:** In TypeScript you have to extend `PointOptionsObject` with anadditional declaration to allow custom data types:```tsdeclare module `highcharts` {  interface PointOptionsObject {    custom: Record<string, (boolean|number|string)>;  }}```
 		/// </summary>
 		public List<LineSeriesData> Data { get; set; }
 		private List<LineSeriesData> Data_DefaultValue { get; set; }
@@ -321,14 +337,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be grouped into alarger time span. This can make the grouped points to have a greaterdistance than the absolute value of `gapSize` property, which will resultin disappearing graph completely. To prevent this situation the mentioneddistance between grouped points is used instead of previously defined`gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available for daytimehours, while gaps will appear in nights and weekends.
+		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be groupedinto a larger time span. This can make the grouped points to havea greater distance than the absolute value of `gapSize` property,which will result in disappearing graph completely. To preventthis situation the mentioned distance between grouped points isused instead of previously defined `gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available fordaytime hours, while gaps will appear in nights and weekends.
 		/// </summary>
 		public double? GapSize { get; set; }
 		private double? GapSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Together with [gapSize](plotOptions.series.gapSize), this option defineswhere to draw gaps in the graph.When the `gapUnit` is `relative` (default), a gap size of 5 meansthat if the distance between two points is greater than five timesthat of the two closest points, the graph will be broken.When the `gapUnit` is `value`, the gap is based on absolute axis values,which on a datetime axis is milliseconds. This also applies to thenavigator series that inherits gap options from the base series.
+		/// Together with [gapSize](plotOptions.series.gapSize), this optiondefines where to draw gaps in the graph.When the `gapUnit` is `"relative"` (default), a gap size of 5means that if the distance between two points is greater than5 times that of the two closest points, the graph will be broken.When the `gapUnit` is `"value"`, the gap is based on absoluteaxis values, which on a datetime axis is milliseconds. This alsoapplies to the navigator series that inherits gap options fromthe base series.
 		/// </summary>
 		public LineSeriesGapUnit GapUnit { get; set; }
 		private LineSeriesGapUnit GapUnit_DefaultValue { get; set; }
@@ -566,7 +582,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`. When stacking is enabled, data must be sortedin ascending X order. A special stacking option is with thestreamgraph series type, where the stacking option is set to`"stream"`. The second one is `"overlap"`, which only applies towaterfall series.
+		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`.When stacking is enabled, data must be sortedin ascending X order.Some stacking options are related to specific series types. In thestreamgraph series type, the stacking option is set to `"stream"`.The second one is `"overlap"`, which only applies to waterfallseries.
 		/// </summary>
 		public LineSeriesStacking Stacking { get; set; }
 		private LineSeriesStacking Stacking_DefaultValue { get; set; }
@@ -708,8 +724,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
@@ -766,7 +784,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);

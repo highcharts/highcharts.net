@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorValue = ColorValue_DefaultValue = null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new SunburstSeriesDataDragDrop();
@@ -28,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new SunburstSeriesDataEvents();
 			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
+			Marker = Marker_DefaultValue = new SunburstSeriesDataMarker();
 			Name = Name_DefaultValue = "";
 			Parent = Parent_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = null;
@@ -73,6 +75,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ColorValue { get; set; }
 		private double? ColorValue_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customized functionality.Here you can add additional data for your own event callbacks and formattercallbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -122,6 +131,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Labelrank { get; set; }
 		private double? Labelrank_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the point markers of line-like series.
+		/// </summary>
+		public SunburstSeriesDataMarker Marker { get; set; }
+		private SunburstSeriesDataMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -185,6 +201,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
@@ -192,6 +209,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);

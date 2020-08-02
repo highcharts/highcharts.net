@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsVectorClusterStatesHover Hover { get; set; }
-		private PlotOptionsVectorClusterStatesHover Hover_DefaultValue { get; set; }
+		public Hashtable Hover { get; set; }
+		private Hashtable Hover_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

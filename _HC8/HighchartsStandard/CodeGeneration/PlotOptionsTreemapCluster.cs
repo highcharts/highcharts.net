@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AllowOverlap = AllowOverlap_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreemapClusterDataLabels();
 			DrillToCluster = DrillToCluster_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
@@ -28,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			States = States_DefaultValue = new PlotOptionsTreemapClusterStates();
 			Zones = Zones_DefaultValue = new List<PlotOptionsTreemapClusterZone>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -43,6 +45,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the cluster marker animation.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -106,7 +115,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<PlotOptionsTreemapClusterZone> Zones { get; set; }
 		private List<PlotOptionsTreemapClusterZone> Zones_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -115,16 +126,24 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
+			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (DrillToCluster != DrillToCluster_DefaultValue) h.Add("drillToCluster",DrillToCluster);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (LayoutAlgorithm.IsDirty()) h.Add("layoutAlgorithm",LayoutAlgorithm.ToHashtable());
-			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (MinimumClusterSize != MinimumClusterSize_DefaultValue) h.Add("minimumClusterSize",MinimumClusterSize);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

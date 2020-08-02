@@ -16,323 +16,323 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigationBindings()
 		{
-			ArrowInfinityLine = ArrowInfinityLine_DefaultValue = new NavigationBindingsArrowInfinityLine();
-			ArrowRay = ArrowRay_DefaultValue = new NavigationBindingsArrowRay();
-			ArrowSegment = ArrowSegment_DefaultValue = new NavigationBindingsArrowSegment();
-			CircleAnnotation = CircleAnnotation_DefaultValue = "";
-			Crooked3 = Crooked3_DefaultValue = new NavigationBindingsCrooked3();
-			Crooked5 = Crooked5_DefaultValue = new NavigationBindingsCrooked5();
-			CurrentPriceIndicator = CurrentPriceIndicator_DefaultValue = new NavigationBindingsCurrentPriceIndicator();
-			Elliott3 = Elliott3_DefaultValue = new NavigationBindingsElliott3();
-			Elliott5 = Elliott5_DefaultValue = new NavigationBindingsElliott5();
-			Fibonacci = Fibonacci_DefaultValue = new NavigationBindingsFibonacci();
-			FlagCirclepin = FlagCirclepin_DefaultValue = "";
-			FlagDiamondpin = FlagDiamondpin_DefaultValue = "";
-			FlagSimplepin = FlagSimplepin_DefaultValue = "";
-			FlagSquarepin = FlagSquarepin_DefaultValue = "";
-			FullScreen = FullScreen_DefaultValue = new NavigationBindingsFullScreen();
-			HorizontalLine = HorizontalLine_DefaultValue = new NavigationBindingsHorizontalLine();
-			Indicators = Indicators_DefaultValue = new NavigationBindingsIndicators();
-			InfinityLine = InfinityLine_DefaultValue = new NavigationBindingsInfinityLine();
-			LabelAnnotation = LabelAnnotation_DefaultValue = "";
-			MeasureX = MeasureX_DefaultValue = new NavigationBindingsMeasureX();
-			MeasureXY = MeasureXY_DefaultValue = new NavigationBindingsMeasureXY();
-			MeasureY = MeasureY_DefaultValue = new NavigationBindingsMeasureY();
-			ParallelChannel = ParallelChannel_DefaultValue = new NavigationBindingsParallelChannel();
-			Pitchfork = Pitchfork_DefaultValue = new NavigationBindingsPitchfork();
-			Ray = Ray_DefaultValue = new NavigationBindingsRay();
-			RectangleAnnotation = RectangleAnnotation_DefaultValue = "";
-			SaveChart = SaveChart_DefaultValue = new NavigationBindingsSaveChart();
-			Segment = Segment_DefaultValue = new NavigationBindingsSegment();
-			SeriesTypeCandlestick = SeriesTypeCandlestick_DefaultValue = new NavigationBindingsSeriesTypeCandlestick();
-			SeriesTypeLine = SeriesTypeLine_DefaultValue = new NavigationBindingsSeriesTypeLine();
-			SeriesTypeOhlc = SeriesTypeOhlc_DefaultValue = new NavigationBindingsSeriesTypeOhlc();
-			ToggleAnnotations = ToggleAnnotations_DefaultValue = new NavigationBindingsToggleAnnotations();
-			VerticalArrow = VerticalArrow_DefaultValue = new NavigationBindingsVerticalArrow();
-			VerticalCounter = VerticalCounter_DefaultValue = new NavigationBindingsVerticalCounter();
-			VerticalLabel = VerticalLabel_DefaultValue = new NavigationBindingsVerticalLabel();
-			VerticalLine = VerticalLine_DefaultValue = new NavigationBindingsVerticalLine();
-			ZoomX = ZoomX_DefaultValue = new NavigationBindingsZoomX();
-			ZoomXY = ZoomXY_DefaultValue = new NavigationBindingsZoomXY();
-			ZoomY = ZoomY_DefaultValue = new NavigationBindingsZoomY();
+			ArrowInfinityLine = ArrowInfinityLine_DefaultValue = new Object();
+			ArrowRay = ArrowRay_DefaultValue = new Object();
+			ArrowSegment = ArrowSegment_DefaultValue = new Object();
+			CircleAnnotation = CircleAnnotation_DefaultValue = new Object();
+			Crooked3 = Crooked3_DefaultValue = new Object();
+			Crooked5 = Crooked5_DefaultValue = new Object();
+			CurrentPriceIndicator = CurrentPriceIndicator_DefaultValue = new Object();
+			Elliott3 = Elliott3_DefaultValue = new Object();
+			Elliott5 = Elliott5_DefaultValue = new Object();
+			Fibonacci = Fibonacci_DefaultValue = new Object();
+			FlagCirclepin = FlagCirclepin_DefaultValue = new Object();
+			FlagDiamondpin = FlagDiamondpin_DefaultValue = new Object();
+			FlagSimplepin = FlagSimplepin_DefaultValue = new Object();
+			FlagSquarepin = FlagSquarepin_DefaultValue = new Object();
+			FullScreen = FullScreen_DefaultValue = new Object();
+			HorizontalLine = HorizontalLine_DefaultValue = new Object();
+			Indicators = Indicators_DefaultValue = new Object();
+			InfinityLine = InfinityLine_DefaultValue = new Object();
+			LabelAnnotation = LabelAnnotation_DefaultValue = new Object();
+			MeasureX = MeasureX_DefaultValue = new Object();
+			MeasureXY = MeasureXY_DefaultValue = new Object();
+			MeasureY = MeasureY_DefaultValue = new Object();
+			ParallelChannel = ParallelChannel_DefaultValue = new Object();
+			Pitchfork = Pitchfork_DefaultValue = new Object();
+			Ray = Ray_DefaultValue = new Object();
+			RectangleAnnotation = RectangleAnnotation_DefaultValue = new Object();
+			SaveChart = SaveChart_DefaultValue = new Object();
+			Segment = Segment_DefaultValue = new Object();
+			SeriesTypeCandlestick = SeriesTypeCandlestick_DefaultValue = new Object();
+			SeriesTypeLine = SeriesTypeLine_DefaultValue = new Object();
+			SeriesTypeOhlc = SeriesTypeOhlc_DefaultValue = new Object();
+			ToggleAnnotations = ToggleAnnotations_DefaultValue = new Object();
+			VerticalArrow = VerticalArrow_DefaultValue = new Object();
+			VerticalCounter = VerticalCounter_DefaultValue = new Object();
+			VerticalLabel = VerticalLabel_DefaultValue = new Object();
+			VerticalLine = VerticalLine_DefaultValue = new Object();
+			ZoomX = ZoomX_DefaultValue = new Object();
+			ZoomXY = ZoomXY_DefaultValue = new Object();
+			ZoomY = ZoomY_DefaultValue = new Object();
 			
-		}
-
-
-        /// <summary>
-        /// A line with arrow annotation. Includes `start` and one event in `steps`array.
-        /// </summary>
-        public NavigationBindingsArrowInfinityLine ArrowInfinityLine { get; set; }
-        private NavigationBindingsArrowInfinityLine ArrowInfinityLine_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A ray with an arrow annotation bindings. Includes `start` and one eventin `steps` array.
-        /// </summary>
-        public NavigationBindingsArrowRay ArrowRay { get; set; }
-        private NavigationBindingsArrowRay ArrowRay_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A segment with an arrow annotation bindings. Includes `start` and oneevent in `steps` array.
-        /// </summary>
-        public NavigationBindingsArrowSegment ArrowSegment { get; set; }
-        private NavigationBindingsArrowSegment ArrowSegment_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A circle annotation bindings. Includes `start` and one event in`steps` array.
-        /// </summary>
-        public string CircleAnnotation { get; set; }
-        private string CircleAnnotation_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Crooked line (three points) annotation bindings. Includes `start` and twoevents in `steps` (for second and third points in crooked line) array.
-        /// </summary>
-        public NavigationBindingsCrooked3 Crooked3 { get; set; }
-        private NavigationBindingsCrooked3 Crooked3_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Crooked line (five points) annotation bindings. Includes `start` and fourevents in `steps` (for all consequent points in crooked line) array.
-        /// </summary>
-        public NavigationBindingsCrooked5 Crooked5 { get; set; }
-        private NavigationBindingsCrooked5 Crooked5_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Hides/shows two price indicators:- last price in the dataset- last price in the selected range
-        /// </summary>
-        public NavigationBindingsCurrentPriceIndicator CurrentPriceIndicator { get; set; }
-        private NavigationBindingsCurrentPriceIndicator CurrentPriceIndicator_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Elliott wave (three points) annotation bindings. Includes `start` and twoevents in `steps` (for second and third points) array.
-        /// </summary>
-        public NavigationBindingsElliott3 Elliott3 { get; set; }
-        private NavigationBindingsElliott3 Elliott3_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Elliott wave (five points) annotation bindings. Includes `start` and fourevent in `steps` (for all consequent points in Elliott wave) array.
-        /// </summary>
-        public NavigationBindingsElliott5 Elliott5 { get; set; }
-        private NavigationBindingsElliott5 Elliott5_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A fibonacci annotation bindings. Includes `start` and two events in`steps` array (updates second point, then height).
-        /// </summary>
-        public NavigationBindingsFibonacci Fibonacci { get; set; }
-        private NavigationBindingsFibonacci Fibonacci_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A flag series bindings. Includes `start` event. On click, finds theclosest point and marks it with a flag with `'circlepin'` shape.
-        /// </summary>
-        public string FlagCirclepin { get; set; }
-        private string FlagCirclepin_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A flag series bindings. Includes `start` event. On click, finds theclosest point and marks it with a flag with `'diamondpin'` shape.
-        /// </summary>
-        public string FlagDiamondpin { get; set; }
-        private string FlagDiamondpin_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A flag series bindings. Includes `start` event.On click, finds the closest point and marks it with a flag without pinshape.
-        /// </summary>
-        public string FlagSimplepin { get; set; }
-        private string FlagSimplepin_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A flag series bindings. Includes `start` event.On click, finds the closest point and marks it with a flag with`'squarepin'` shape.
-        /// </summary>
-        public string FlagSquarepin { get; set; }
-        private string FlagSquarepin_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Displays chart in fullscreen.
-        /// </summary>
-        public NavigationBindingsFullScreen FullScreen { get; set; }
-        private NavigationBindingsFullScreen FullScreen_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A horizontal line annotation. Includes `start` event.
-        /// </summary>
-        public NavigationBindingsHorizontalLine HorizontalLine { get; set; }
-        private NavigationBindingsHorizontalLine HorizontalLine_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Indicators bindings. Includes `init` event to show a popup.Note: In order to show base series from the chart in the popup'sdropdown each series requires[series.id](https://api.highcharts.com/highstock/series.line.id) to bedefined.
-        /// </summary>
-        public NavigationBindingsIndicators Indicators { get; set; }
-        private NavigationBindingsIndicators Indicators_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A line annotation. Includes `start` and one event in `steps` array.
-        /// </summary>
-        public NavigationBindingsInfinityLine InfinityLine { get; set; }
-        private NavigationBindingsInfinityLine InfinityLine_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A label annotation bindings. Includes `start` event only.
-        /// </summary>
-        public string LabelAnnotation { get; set; }
-        private string LabelAnnotation_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A measure (x-dimension) annotation bindings. Includes `start` and oneevent in `steps` array.
-        /// </summary>
-        public NavigationBindingsMeasureX MeasureX { get; set; }
-        private NavigationBindingsMeasureX MeasureX_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A measure (xy-dimension) annotation bindings. Includes `start` and oneevent in `steps` array.
-        /// </summary>
-        public NavigationBindingsMeasureXY MeasureXY { get; set; }
-        private NavigationBindingsMeasureXY MeasureXY_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A measure (y-dimension) annotation bindings. Includes `start` and oneevent in `steps` array.
-        /// </summary>
-        public NavigationBindingsMeasureY MeasureY { get; set; }
-        private NavigationBindingsMeasureY MeasureY_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A parallel channel (tunnel) annotation bindings. Includes `start` andtwo events in `steps` array (updates second point, then height).
-        /// </summary>
-        public NavigationBindingsParallelChannel ParallelChannel { get; set; }
-        private NavigationBindingsParallelChannel ParallelChannel_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// An Andrew's pitchfork annotation bindings. Includes `start` and twoevents in `steps` array (sets second and third control points).
-        /// </summary>
-        public NavigationBindingsPitchfork Pitchfork { get; set; }
-        private NavigationBindingsPitchfork Pitchfork_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A ray annotation bindings. Includes `start` and one event in `steps`array.
-        /// </summary>
-        public NavigationBindingsRay Ray { get; set; }
-        private NavigationBindingsRay Ray_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A rectangle annotation bindings. Includes `start` and one eventin `steps` array.
-        /// </summary>
-        public string RectangleAnnotation { get; set; }
-        private string RectangleAnnotation_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Save a chart in localStorage under `highcharts-chart` key.Stored items:- annotations- indicators (with yAxes)- flags
-        /// </summary>
-        public NavigationBindingsSaveChart SaveChart { get; set; }
-        private NavigationBindingsSaveChart SaveChart_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A segment annotation bindings. Includes `start` and one event in `steps`array.
-        /// </summary>
-        public NavigationBindingsSegment Segment { get; set; }
-        private NavigationBindingsSegment Segment_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Changes main series to `'candlestick'` type.
-        /// </summary>
-        public NavigationBindingsSeriesTypeCandlestick SeriesTypeCandlestick { get; set; }
-        private NavigationBindingsSeriesTypeCandlestick SeriesTypeCandlestick_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Changes main series to `'line'` type.
-        /// </summary>
-        public NavigationBindingsSeriesTypeLine SeriesTypeLine { get; set; }
-        private NavigationBindingsSeriesTypeLine SeriesTypeLine_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Changes main series to `'ohlc'` type.
-        /// </summary>
-        public NavigationBindingsSeriesTypeOhlc SeriesTypeOhlc { get; set; }
-        private NavigationBindingsSeriesTypeOhlc SeriesTypeOhlc_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Hides/shows all annotations on a chart.
-        /// </summary>
-        public NavigationBindingsToggleAnnotations ToggleAnnotations { get; set; }
-        private NavigationBindingsToggleAnnotations ToggleAnnotations_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow. Green arrow whenpointing from above, red when pointing from below the point.
-        /// </summary>
-        public NavigationBindingsVerticalArrow VerticalArrow { get; set; }
-        private NavigationBindingsVerticalArrow VerticalArrow_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A vertical counter annotation bindings. Includes `start` event. On click,finds the closest point and marks it with a numeric annotation -incrementing counter on each add.
-        /// </summary>
-        public NavigationBindingsVerticalCounter VerticalCounter { get; set; }
-        private NavigationBindingsVerticalCounter VerticalCounter_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow and a label withvalue.
-        /// </summary>
-        public NavigationBindingsVerticalLabel VerticalLabel { get; set; }
-        private NavigationBindingsVerticalLabel VerticalLabel_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// A vertical line annotation. Includes `start` event.
-        /// </summary>
-        public NavigationBindingsVerticalLine VerticalLine { get; set; }
-        private NavigationBindingsVerticalLine VerticalLine_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Enables zooming in xAxis on a chart. Includes `start` event whichchanges [chart.zoomType](#chart.zoomType).
-        /// </summary>
-        public NavigationBindingsZoomX ZoomX { get; set; }
-        private NavigationBindingsZoomX ZoomX_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Enables zooming in xAxis and yAxis on a chart. Includes `start` eventwhich changes [chart.zoomType](#chart.zoomType).
-        /// </summary>
-        public NavigationBindingsZoomXY ZoomXY { get; set; }
-        private NavigationBindingsZoomXY ZoomXY_DefaultValue { get; set; }
-
-
-        /// <summary>
-        /// Enables zooming in yAxis on a chart. Includes `start` event whichchanges [chart.zoomType](#chart.zoomType).
-        /// </summary>
-        public NavigationBindingsZoomY ZoomY { get; set; }
-        private NavigationBindingsZoomY ZoomY_DefaultValue { get; set; }
-
-
-        internal override Hashtable ToHashtable()
+		}	
+		
+
+		/// <summary>
+		/// A line with arrow annotation. Includes `start` and one event in `steps`array.
+		/// </summary>
+		public Object ArrowInfinityLine { get; set; }
+		private Object ArrowInfinityLine_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A ray with an arrow annotation bindings. Includes `start` and one eventin `steps` array.
+		/// </summary>
+		public Object ArrowRay { get; set; }
+		private Object ArrowRay_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A segment with an arrow annotation bindings. Includes `start` and oneevent in `steps` array.
+		/// </summary>
+		public Object ArrowSegment { get; set; }
+		private Object ArrowSegment_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A circle annotation bindings. Includes `start` and one event in`steps` array.
+		/// </summary>
+		public Object CircleAnnotation { get; set; }
+		private Object CircleAnnotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Crooked line (three points) annotation bindings. Includes `start` and twoevents in `steps` (for second and third points in crooked line) array.
+		/// </summary>
+		public Object Crooked3 { get; set; }
+		private Object Crooked3_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Crooked line (five points) annotation bindings. Includes `start` and fourevents in `steps` (for all consequent points in crooked line) array.
+		/// </summary>
+		public Object Crooked5 { get; set; }
+		private Object Crooked5_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Hides/shows two price indicators:- last price in the dataset- last price in the selected range
+		/// </summary>
+		public Object CurrentPriceIndicator { get; set; }
+		private Object CurrentPriceIndicator_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Elliott wave (three points) annotation bindings. Includes `start` and twoevents in `steps` (for second and third points) array.
+		/// </summary>
+		public Object Elliott3 { get; set; }
+		private Object Elliott3_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Elliott wave (five points) annotation bindings. Includes `start` and fourevent in `steps` (for all consequent points in Elliott wave) array.
+		/// </summary>
+		public Object Elliott5 { get; set; }
+		private Object Elliott5_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A fibonacci annotation bindings. Includes `start` and two events in`steps` array (updates second point, then height).
+		/// </summary>
+		public Object Fibonacci { get; set; }
+		private Object Fibonacci_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A flag series bindings. Includes `start` event. On click, finds theclosest point and marks it with a flag with `'circlepin'` shape.
+		/// </summary>
+		public Object FlagCirclepin { get; set; }
+		private Object FlagCirclepin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A flag series bindings. Includes `start` event. On click, finds theclosest point and marks it with a flag with `'diamondpin'` shape.
+		/// </summary>
+		public Object FlagDiamondpin { get; set; }
+		private Object FlagDiamondpin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A flag series bindings. Includes `start` event.On click, finds the closest point and marks it with a flag without pinshape.
+		/// </summary>
+		public Object FlagSimplepin { get; set; }
+		private Object FlagSimplepin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A flag series bindings. Includes `start` event.On click, finds the closest point and marks it with a flag with`'squarepin'` shape.
+		/// </summary>
+		public Object FlagSquarepin { get; set; }
+		private Object FlagSquarepin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Displays chart in fullscreen.
+		/// </summary>
+		public Object FullScreen { get; set; }
+		private Object FullScreen_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A horizontal line annotation. Includes `start` event.
+		/// </summary>
+		public Object HorizontalLine { get; set; }
+		private Object HorizontalLine_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Indicators bindings. Includes `init` event to show a popup.Note: In order to show base series from the chart in the popup'sdropdown each series requires[series.id](https://api.highcharts.com/highstock/series.line.id) to bedefined.
+		/// </summary>
+		public Object Indicators { get; set; }
+		private Object Indicators_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A line annotation. Includes `start` and one event in `steps` array.
+		/// </summary>
+		public Object InfinityLine { get; set; }
+		private Object InfinityLine_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A label annotation bindings. Includes `start` event only.
+		/// </summary>
+		public Object LabelAnnotation { get; set; }
+		private Object LabelAnnotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A measure (x-dimension) annotation bindings. Includes `start` and oneevent in `steps` array.
+		/// </summary>
+		public Object MeasureX { get; set; }
+		private Object MeasureX_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A measure (xy-dimension) annotation bindings. Includes `start` and oneevent in `steps` array.
+		/// </summary>
+		public Object MeasureXY { get; set; }
+		private Object MeasureXY_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A measure (y-dimension) annotation bindings. Includes `start` and oneevent in `steps` array.
+		/// </summary>
+		public Object MeasureY { get; set; }
+		private Object MeasureY_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A parallel channel (tunnel) annotation bindings. Includes `start` andtwo events in `steps` array (updates second point, then height).
+		/// </summary>
+		public Object ParallelChannel { get; set; }
+		private Object ParallelChannel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An Andrew's pitchfork annotation bindings. Includes `start` and twoevents in `steps` array (sets second and third control points).
+		/// </summary>
+		public Object Pitchfork { get; set; }
+		private Object Pitchfork_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A ray annotation bindings. Includes `start` and one event in `steps`array.
+		/// </summary>
+		public Object Ray { get; set; }
+		private Object Ray_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A rectangle annotation bindings. Includes `start` and one eventin `steps` array.
+		/// </summary>
+		public Object RectangleAnnotation { get; set; }
+		private Object RectangleAnnotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Save a chart in localStorage under `highcharts-chart` key.Stored items:- annotations- indicators (with yAxes)- flags
+		/// </summary>
+		public Object SaveChart { get; set; }
+		private Object SaveChart_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A segment annotation bindings. Includes `start` and one event in `steps`array.
+		/// </summary>
+		public Object Segment { get; set; }
+		private Object Segment_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Changes main series to `'candlestick'` type.
+		/// </summary>
+		public Object SeriesTypeCandlestick { get; set; }
+		private Object SeriesTypeCandlestick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Changes main series to `'line'` type.
+		/// </summary>
+		public Object SeriesTypeLine { get; set; }
+		private Object SeriesTypeLine_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Changes main series to `'ohlc'` type.
+		/// </summary>
+		public Object SeriesTypeOhlc { get; set; }
+		private Object SeriesTypeOhlc_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Hides/shows all annotations on a chart.
+		/// </summary>
+		public Object ToggleAnnotations { get; set; }
+		private Object ToggleAnnotations_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow. Green arrow whenpointing from above, red when pointing from below the point.
+		/// </summary>
+		public Object VerticalArrow { get; set; }
+		private Object VerticalArrow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A vertical counter annotation bindings. Includes `start` event. On click,finds the closest point and marks it with a numeric annotation -incrementing counter on each add.
+		/// </summary>
+		public Object VerticalCounter { get; set; }
+		private Object VerticalCounter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow and a label withvalue.
+		/// </summary>
+		public Object VerticalLabel { get; set; }
+		private Object VerticalLabel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A vertical line annotation. Includes `start` event.
+		/// </summary>
+		public Object VerticalLine { get; set; }
+		private Object VerticalLine_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enables zooming in xAxis on a chart. Includes `start` event whichchanges [chart.zoomType](#chart.zoomType).
+		/// </summary>
+		public Object ZoomX { get; set; }
+		private Object ZoomX_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enables zooming in xAxis and yAxis on a chart. Includes `start` eventwhich changes [chart.zoomType](#chart.zoomType).
+		/// </summary>
+		public Object ZoomXY { get; set; }
+		private Object ZoomXY_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enables zooming in yAxis on a chart. Includes `start` event whichchanges [chart.zoomType](#chart.zoomType).
+		/// </summary>
+		public Object ZoomY { get; set; }
+		private Object ZoomY_DefaultValue { get; set; }
+		  
+
+		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
@@ -340,29 +340,29 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ArrowInfinityLine.IsDirty()) h.Add("arrowInfinityLine",ArrowInfinityLine.ToHashtable());
 			if (ArrowRay.IsDirty()) h.Add("arrowRay",ArrowRay.ToHashtable());
 			if (ArrowSegment.IsDirty()) h.Add("arrowSegment",ArrowSegment.ToHashtable());
-			if (CircleAnnotation != CircleAnnotation_DefaultValue) h.Add("circleAnnotation",CircleAnnotation);
+			if (CircleAnnotation.IsDirty()) h.Add("circleAnnotation",CircleAnnotation.ToHashtable());
 			if (Crooked3.IsDirty()) h.Add("crooked3",Crooked3.ToHashtable());
 			if (Crooked5.IsDirty()) h.Add("crooked5",Crooked5.ToHashtable());
 			if (CurrentPriceIndicator.IsDirty()) h.Add("currentPriceIndicator",CurrentPriceIndicator.ToHashtable());
 			if (Elliott3.IsDirty()) h.Add("elliott3",Elliott3.ToHashtable());
 			if (Elliott5.IsDirty()) h.Add("elliott5",Elliott5.ToHashtable());
 			if (Fibonacci.IsDirty()) h.Add("fibonacci",Fibonacci.ToHashtable());
-			if (FlagCirclepin != FlagCirclepin_DefaultValue) h.Add("flagCirclepin",FlagCirclepin);
-			if (FlagDiamondpin != FlagDiamondpin_DefaultValue) h.Add("flagDiamondpin",FlagDiamondpin);
-			if (FlagSimplepin != FlagSimplepin_DefaultValue) h.Add("flagSimplepin",FlagSimplepin);
-			if (FlagSquarepin != FlagSquarepin_DefaultValue) h.Add("flagSquarepin",FlagSquarepin);
+			if (FlagCirclepin.IsDirty()) h.Add("flagCirclepin",FlagCirclepin.ToHashtable());
+			if (FlagDiamondpin.IsDirty()) h.Add("flagDiamondpin",FlagDiamondpin.ToHashtable());
+			if (FlagSimplepin.IsDirty()) h.Add("flagSimplepin",FlagSimplepin.ToHashtable());
+			if (FlagSquarepin.IsDirty()) h.Add("flagSquarepin",FlagSquarepin.ToHashtable());
 			if (FullScreen.IsDirty()) h.Add("fullScreen",FullScreen.ToHashtable());
 			if (HorizontalLine.IsDirty()) h.Add("horizontalLine",HorizontalLine.ToHashtable());
 			if (Indicators.IsDirty()) h.Add("indicators",Indicators.ToHashtable());
 			if (InfinityLine.IsDirty()) h.Add("infinityLine",InfinityLine.ToHashtable());
-			if (LabelAnnotation != LabelAnnotation_DefaultValue) h.Add("labelAnnotation",LabelAnnotation);
+			if (LabelAnnotation.IsDirty()) h.Add("labelAnnotation",LabelAnnotation.ToHashtable());
 			if (MeasureX.IsDirty()) h.Add("measureX",MeasureX.ToHashtable());
 			if (MeasureXY.IsDirty()) h.Add("measureXY",MeasureXY.ToHashtable());
 			if (MeasureY.IsDirty()) h.Add("measureY",MeasureY.ToHashtable());
 			if (ParallelChannel.IsDirty()) h.Add("parallelChannel",ParallelChannel.ToHashtable());
 			if (Pitchfork.IsDirty()) h.Add("pitchfork",Pitchfork.ToHashtable());
 			if (Ray.IsDirty()) h.Add("ray",Ray.ToHashtable());
-			if (RectangleAnnotation != RectangleAnnotation_DefaultValue) h.Add("rectangleAnnotation",RectangleAnnotation);
+			if (RectangleAnnotation.IsDirty()) h.Add("rectangleAnnotation",RectangleAnnotation.ToHashtable());
 			if (SaveChart.IsDirty()) h.Add("saveChart",SaveChart.ToHashtable());
 			if (Segment.IsDirty()) h.Add("segment",Segment.ToHashtable());
 			if (SeriesTypeCandlestick.IsDirty()) h.Add("seriesTypeCandlestick",SeriesTypeCandlestick.ToHashtable());

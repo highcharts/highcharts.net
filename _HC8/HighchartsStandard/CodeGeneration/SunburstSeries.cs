@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			AllowTraversingTree = AllowTraversingTree_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = SunburstSeriesBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -30,10 +31,11 @@ namespace Highsoft.Web.Mvc.Charts
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
+			Crisp = Crisp_DefaultValue = true;
 			Cursor = Cursor_DefaultValue = SunburstSeriesCursor.Null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			Data = Data_DefaultValue = new List<SunburstSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
-			DataSorting = DataSorting_DefaultValue = new SunburstSeriesDataSorting();
 			Description = Description_DefaultValue = "";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new SunburstSeriesEvents();
@@ -42,7 +44,6 @@ namespace Highsoft.Web.Mvc.Charts
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			Label = Label_DefaultValue = new SunburstSeriesLabel();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
 			Levels = Levels_DefaultValue = new List<SunburstSeriesLevels>();
@@ -55,9 +56,11 @@ namespace Highsoft.Web.Mvc.Charts
 			RootId = RootId_DefaultValue = "undefined";
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			Size = Size_DefaultValue = "";
+			SizeNumber = SizeNumber_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			StartAngle = StartAngle_DefaultValue = 0;
@@ -65,13 +68,15 @@ namespace Highsoft.Web.Mvc.Charts
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new SunburstSeriesTooltip();
 			TraverseUpButton = TraverseUpButton_DefaultValue = new SunburstSeriesTraverseUpButton();
-			Type = Type_DefaultValue = SunburstSeriesType.Sunburst;
 			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
+			XAxisNumber = XAxisNumber_DefaultValue = null;
 			YAxis = YAxis_DefaultValue = "";
+			YAxisNumber = YAxisNumber_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -90,7 +95,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -108,6 +113,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -174,10 +186,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public SunburstSeriesCursor Cursor { get; set; }
 		private SunburstSeriesCursor Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -192,13 +218,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public SunburstSeriesDataLabels DataLabels { get; set; }
 		private SunburstSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public SunburstSeriesDataSorting DataSorting { get; set; }
-		private SunburstSeriesDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -225,8 +244,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// If the total sum of the pie's values is 0, the series is representedas an empty circle . The `fillColor` option defines the color of thatcircle. Use [pie.borderWidth](#plotOptions.pie.borderWidth) to setthe border thickness.
 		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -255,13 +274,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.
-		/// </summary>
-		public SunburstSeriesLabel Label { get; set; }
-		private SunburstSeriesLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -349,6 +361,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
 		/// </summary>
 		public bool? ShowCheckbox { get; set; }
@@ -367,6 +386,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Size { get; set; }
 		private string Size_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The diameter of the pie relative to the plot area. Can be apercentage or pixel value. Pixel values are given as integers. Thedefault behaviour (as of 3.0) is to scale to the plot area and giveroom for data labels within the plot area.[slicedOffset](#plotOptions.pie.slicedOffset) is also included in thedefault size calculation. As a consequence, the size of the pie mayvary when points are updated and data labels more around. In thatcase it is best to set a fixed value, for example `"75%"`.
+		/// </summary>
+		public double? SizeNumber { get; set; }
+		private double? SizeNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -419,13 +445,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public SunburstSeriesType Type { get; set; }
-		private SunburstSeriesType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The parameter allows setting line series type and use OHLC indicators. Datain OHLC format is required.
 		/// </summary>
 		public bool? UseOhlcData { get; set; }
@@ -447,6 +466,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
+		/// </summary>
+		public double? XAxisNumber { get; set; }
+		private double? XAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
 		/// </summary>
 		public string YAxis { get; set; }
@@ -454,11 +480,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
+		/// </summary>
+		public double? YAxisNumber { get; set; }
+		private double? YAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Define the visual z index of the series.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -470,6 +505,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (AllowTraversingTree != AllowTraversingTree_DefaultValue) h.Add("allowTraversingTree",AllowTraversingTree);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -479,10 +515,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (DataSorting != DataSorting_DefaultValue) h.Add("dataSorting",DataSorting);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
@@ -491,7 +528,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
 			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(Levels));
@@ -500,13 +536,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("f602cade-6904-40a6-be5b-d5c59e7f5b12.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("81495fe2-655f-442f-9dcf-4f6e8c5771d1.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (RootId != RootId_DefaultValue) h.Add("rootId",RootId);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (SizeNumber != SizeNumber_DefaultValue) h.Add("size",SizeNumber);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
@@ -514,13 +552,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TraverseUpButton.IsDirty()) h.Add("traverseUpButton",TraverseUpButton.ToHashtable());
-			h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			h.Add("type","sunburst");
 			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (YAxisNumber != YAxisNumber_DefaultValue) h.Add("yAxis",YAxisNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

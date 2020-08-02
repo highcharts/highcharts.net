@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Visible = Visible_DefaultValue = false;
 			Width = Width_DefaultValue = 10;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -74,12 +77,19 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Positioner != Positioner_DefaultValue) h.Add("positioner",Positioner);
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("f4f6648c-72aa-4967-ae93-dfbbc5173578.positioner", Positioner); }  
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

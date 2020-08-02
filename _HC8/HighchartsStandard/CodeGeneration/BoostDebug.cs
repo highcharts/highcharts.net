@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TimeSeriesProcessing = TimeSeriesProcessing_DefaultValue = false;
 			TimeSetup = TimeSetup_DefaultValue = false;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? TimeSetup { get; set; }
 		private bool? TimeSetup_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -79,7 +82,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TimeRendering != TimeRendering_DefaultValue) h.Add("timeRendering",TimeRendering);
 			if (TimeSeriesProcessing != TimeSeriesProcessing_DefaultValue) h.Add("timeSeriesProcessing",TimeSeriesProcessing);
 			if (TimeSetup != TimeSetup_DefaultValue) h.Add("timeSetup",TimeSetup);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

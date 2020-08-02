@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Events = Events_DefaultValue = new PyramidSeriesPointEvents();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,7 +27,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PyramidSeriesPointEvents Events { get; set; }
 		private PyramidSeriesPointEvents Events_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

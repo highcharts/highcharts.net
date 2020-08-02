@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			UseGPUTranslations = UseGPUTranslations_DefaultValue = false;
 			UsePreallocated = UsePreallocated_DefaultValue = false;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? UsePreallocated { get; set; }
 		private bool? UsePreallocated_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -79,7 +82,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SeriesThreshold != SeriesThreshold_DefaultValue) h.Add("seriesThreshold",SeriesThreshold);
 			if (UseGPUTranslations != UseGPUTranslations_DefaultValue) h.Add("useGPUTranslations",UseGPUTranslations);
 			if (UsePreallocated != UsePreallocated_DefaultValue) h.Add("usePreallocated",UsePreallocated);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

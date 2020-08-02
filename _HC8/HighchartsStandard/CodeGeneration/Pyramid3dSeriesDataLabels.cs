@@ -32,12 +32,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
 			NullFormat = NullFormat_DefaultValue = "";
+			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = "justify";
 			Padding = Padding_DefaultValue = "5";
 			Position = Position_DefaultValue = new Hashtable();
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "square";
 			Style = Style_DefaultValue = new Pyramid3dSeriesDataLabelsStyle();
 			TextPath = TextPath_DefaultValue = new Pyramid3dSeriesDataLabelsTextPath();
@@ -47,6 +49,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Y = Y_DefaultValue = 0;
 			Z = Z_DefaultValue = 6;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -163,6 +166,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null points.
+		/// </summary>
+		public bool? NullFormatBool { get; set; }
+		private bool? NullFormatBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Callback JavaScript function that defines formatting for pointswith the value of null. Works analogously to[formatter](#plotOptions.series.dataLabels.formatter).`nullPointFormatter` can be applied only to series which supportdisplaying null points.
 		/// </summary>
 		public string NullFormatter { get; set; }
@@ -202,6 +212,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The shadow of the box. Works best with `borderWidth` or`backgroundColor`. Since 2.3 the shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity`and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -258,7 +275,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Z { get; set; }
 		private double? Z_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -278,15 +297,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("d3aa0d4e-0526-45cb-b83d-b3e7e09d1404.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("dbc9d737-5f2b-4bf7-b812-f77db6fd012f.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("18d7a861-06cc-4cb1-b7a8-d74c55904df4.nullFormatter", NullFormatter); }  
+			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("5a2c99c4-a0ae-46fe-8d05-414f2b0d4731.nullFormatter", NullFormatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (TextPath.IsDirty()) h.Add("textPath",TextPath.ToHashtable());
@@ -295,7 +316,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (Z != Z_DefaultValue) h.Add("z",Z);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -47,11 +47,12 @@ namespace Highsoft.Web.Mvc.Charts
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			ZAxis = ZAxis_DefaultValue = new ZAxis();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
-		/// Options for configuring accessibility for the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and informationon its features, see[Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
+		/// Options for configuring accessibility for the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and informationon its features, see[Highcharts Accessibility](https://www.highcharts.com/docs/chart-concepts/accessibility).
 		/// </summary>
 		public Accessibility Accessibility { get; set; }
 		private Accessibility Accessibility_DefaultValue { get; set; }
@@ -258,7 +259,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ZAxis ZAxis { get; set; }
 		private ZAxis ZAxis_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -295,7 +298,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
 			if (ZAxis.IsDirty()) h.Add("zAxis",ZAxis.ToHashtable());
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -18,15 +18,18 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			FillColor = FillColor_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// The fill color of the cluster marker in hover state. When`undefined`, the series' or point's fillColor for normalstate is used.
 		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
-		  
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

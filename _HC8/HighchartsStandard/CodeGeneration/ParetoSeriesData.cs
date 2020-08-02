@@ -22,7 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			DashStyle = DashStyle_DefaultValue = "";
+			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new ParetoSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new ParetoSeriesDataDragDrop();
@@ -83,10 +84,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A reserved subspace to store options and values for customized functionality.Here you can add additional data for your own event callbacks and formattercallbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A name for the dash style to use for the column or bar. OverridesdashStyle on the series.In styled mode, the stroke dash-array can be set with the same classes aslisted under [data.color](#series.column.data.color).
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -186,8 +194,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);

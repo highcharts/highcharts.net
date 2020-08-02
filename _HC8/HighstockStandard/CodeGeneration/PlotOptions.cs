@@ -55,7 +55,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Momentum = Momentum_DefaultValue = new PlotOptionsMomentum();
 			Natr = Natr_DefaultValue = new PlotOptionsNatr();
 			Ohlc = Ohlc_DefaultValue = new PlotOptionsOhlc();
-			PackedBubble = PackedBubble_DefaultValue = new PlotOptionsPackedBubble();
 			Pc = Pc_DefaultValue = new PlotOptionsPc();
 			Pivotpoints = Pivotpoints_DefaultValue = new PlotOptionsPivotpoints();
 			Polygon = Polygon_DefaultValue = new PlotOptionsPolygon();
@@ -361,13 +360,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsPackedBubble PackedBubble { get; set; }
-		private PlotOptionsPackedBubble PackedBubble_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Price channel (PC). This series requires the `linkedTo` option to beset and should be loaded after the `stock/indicators/indicators.js`.In TypeScript the [type](series.pc.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `pc` series are defined in   [plotOptions.pc](plotOptions.pc).3. Options for one single series are given in   [the series instance array](series.pc).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        pc: {            // shared options for all pc series        }    },    series: [{        // specific options for this series instance        type: 'pc'    }]});```            
 		/// </summary>
 		public PlotOptionsPc Pc { get; set; }
@@ -600,7 +592,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Momentum.IsDirty()) h.Add("momentum",Momentum.ToHashtable());
 			if (Natr.IsDirty()) h.Add("natr",Natr.ToHashtable());
 			if (Ohlc.IsDirty()) h.Add("ohlc",Ohlc.ToHashtable());
-			if (PackedBubble.IsDirty()) h.Add("packedBubble",PackedBubble.ToHashtable());
 			if (Pc.IsDirty()) h.Add("pc",Pc.ToHashtable());
 			if (Pivotpoints.IsDirty()) h.Add("pivotpoints",Pivotpoints.ToHashtable());
 			if (Polygon.IsDirty()) h.Add("polygon",Polygon.ToHashtable());

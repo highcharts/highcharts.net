@@ -19,21 +19,26 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new WindbarbSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = WindbarbSeriesBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = null;
+			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorAxis = ColorAxis_DefaultValue = "0";
+			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
+			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
 			Crisp = Crisp_DefaultValue = true;
 			Cursor = Cursor_DefaultValue = WindbarbSeriesCursor.Null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			Data = Data_DefaultValue = new List<WindbarbSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new WindbarbSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new WindbarbSeriesDataLabels();
@@ -78,22 +83,25 @@ namespace Highsoft.Web.Mvc.Charts
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			Stack = Stack_DefaultValue = "";
+			StackNumber = StackNumber_DefaultValue = null;
 			States = States_DefaultValue = new WindbarbSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new WindbarbSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Type = Type_DefaultValue = WindbarbSeriesType.Windbarb;
 			VectorLength = VectorLength_DefaultValue = 20;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
+			XAxisNumber = XAxisNumber_DefaultValue = null;
 			XOffset = XOffset_DefaultValue = 0;
 			YAxis = YAxis_DefaultValue = "";
+			YAxisNumber = YAxisNumber_DefaultValue = null;
 			YOffset = YOffset_DefaultValue = -20;
 			ZIndex = ZIndex_DefaultValue = null;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<WindbarbSeriesZone>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -105,7 +113,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -116,6 +124,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -154,6 +169,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When `true`, the columns will center in the category, ignoring nullor missing points. When `false`, space will be reserved for null ormissing points.
+		/// </summary>
+		public bool? CenterInCategory { get; set; }
+		private bool? CenterInCategory_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement.
 		/// </summary>
 		public string ClassName { get; set; }
@@ -179,6 +201,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ColorAxis { get; set; }
 		private string ColorAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public double? ColorAxisNumber { get; set; }
+		private double? ColorAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public bool? ColorAxisBool { get; set; }
+		private bool? ColorAxisBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -210,7 +246,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When true, each column edge is rounded to its nearest pixel in orderto render sharp on screen. In some cases, when there are a lot ofdensely packed columns, this leads to visible difference in columnwidths or distance between columns. In these cases, setting `crisp`to `false` may look better, even though each column is renderedblurry.
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
 		/// </summary>
 		public bool? Crisp { get; set; }
 		private bool? Crisp_DefaultValue { get; set; }
@@ -221,6 +257,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public WindbarbSeriesCursor Cursor { get; set; }
 		private WindbarbSeriesCursor Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -532,6 +575,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
+		/// </summary>
+		public double? StackNumber { get; set; }
+		private double? StackNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public WindbarbSeriesStates States { get; set; }
@@ -567,13 +617,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public WindbarbSeriesType Type { get; set; }
-		private WindbarbSeriesType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Pixel length of the stems.
 		/// </summary>
 		public double? VectorLength { get; set; }
@@ -595,6 +638,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
+		/// </summary>
+		public double? XAxisNumber { get; set; }
+		private double? XAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Horizontal offset from the cartesian position, in pixels. When thechart is inverted, this option allows translation like[yOffset](#plotOptions.windbarb.yOffset) in non inverted charts.
 		/// </summary>
 		public double? XOffset { get; set; }
@@ -606,6 +656,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
+		/// </summary>
+		public double? YAxisNumber { get; set; }
+		private double? YAxisNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -634,7 +691,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<WindbarbSeriesZone> Zones { get; set; }
 		private List<WindbarbSeriesZone> Zones_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -644,21 +703,26 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
+			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
+			if (ColorAxisBool != ColorAxisBool_DefaultValue) h.Add("colorAxis",ColorAxisBool);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
@@ -689,7 +753,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (OnSeries != OnSeries_DefaultValue) h.Add("onSeries",OnSeries);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("dc2bd4c8-a998-4db3-be18-832607e75cf3.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("cb7353e3-98f8-49cf-93df-f5c0b05cd0dc.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
@@ -707,22 +771,32 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
+			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			h.Add("type","windbarb");
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);
 			if (XOffset != XOffset_DefaultValue) h.Add("xOffset",XOffset);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (YAxisNumber != YAxisNumber_DefaultValue) h.Add("yAxis",YAxisNumber);
 			if (YOffset != YOffset_DefaultValue) h.Add("yOffset",YOffset);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

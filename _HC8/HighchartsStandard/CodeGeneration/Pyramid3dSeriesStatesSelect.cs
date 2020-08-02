@@ -17,12 +17,13 @@ namespace Highsoft.Web.Mvc.Charts
 		public Pyramid3dSeriesStatesSelect()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Enabled = Enabled_DefaultValue = true;
-			Halo = Halo_DefaultValue = new Pyramid3dSeriesStatesSelectHalo();
-			LineWidth = LineWidth_DefaultValue = null;
-			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
+			Enabled = Enabled_DefaultValue = new Hashtable();
+			Halo = Halo_DefaultValue = new Hashtable();
+			LineWidth = LineWidth_DefaultValue = new Hashtable();
+			LineWidthPlus = LineWidthPlus_DefaultValue = new Hashtable();
 			Marker = Marker_DefaultValue = new Pyramid3dSeriesStatesSelectMarker();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -36,29 +37,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the halo appearing around the hovered point inline-type series as well as outside the hovered slice in piecharts. By default the halo is filled by the current point orseries color with an opacity of 0.25\. The halo can bedisabled by setting the `halo` option to `null`.In styled mode, the halo is styled with the`.highcharts-halo` class, with colors inherited from`.highcharts-color-{n}`.
 		/// </summary>
-		public Pyramid3dSeriesStatesSelectHalo Halo { get; set; }
-		private Pyramid3dSeriesStatesSelectHalo Halo_DefaultValue { get; set; }
+		public Hashtable Halo { get; set; }
+		private Hashtable Halo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Pixel width of the graph line. By default this property isundefined, and the `lineWidthPlus` property dictates how muchto increase the linewidth from normal state.
 		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
+		public Hashtable LineWidth { get; set; }
+		private Hashtable LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The additional line width for the graph of a hovered series.
 		/// </summary>
-		public double? LineWidthPlus { get; set; }
-		private double? LineWidthPlus_DefaultValue { get; set; }
+		public Hashtable LineWidthPlus { get; set; }
+		private Hashtable LineWidthPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Pyramid3dSeriesStatesSelectMarker Marker { get; set; }
 		private Pyramid3dSeriesStatesSelectMarker Marker_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -75,11 +78,18 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
+			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

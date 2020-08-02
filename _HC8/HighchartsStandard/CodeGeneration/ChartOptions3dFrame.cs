@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Top = Top_DefaultValue = new ChartOptions3dFrameTop();
 			Visible = Visible_DefaultValue = "default";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -90,7 +91,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Visible { get; set; }
 		private string Visible_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -106,7 +109,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (Top.IsDirty()) h.Add("top",Top.ToHashtable());
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

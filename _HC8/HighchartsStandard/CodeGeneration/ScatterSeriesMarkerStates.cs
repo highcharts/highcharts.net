@@ -16,43 +16,53 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ScatterSeriesMarkerStates()
 		{
-			Hover = Hover_DefaultValue = new ScatterSeriesMarkerStatesHover();
-			Normal = Normal_DefaultValue = new ScatterSeriesMarkerStatesNormal();
-			Select = Select_DefaultValue = new ScatterSeriesMarkerStatesSelect();
+			Hover = Hover_DefaultValue = new Hashtable();
+			Normal = Normal_DefaultValue = new Hashtable();
+			Select = Select_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
-		public ScatterSeriesMarkerStatesHover Hover { get; set; }
-		private ScatterSeriesMarkerStatesHover Hover_DefaultValue { get; set; }
+		public Hashtable Hover { get; set; }
+		private Hashtable Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
-		public ScatterSeriesMarkerStatesNormal Normal { get; set; }
-		private ScatterSeriesMarkerStatesNormal Normal_DefaultValue { get; set; }
+		public Hashtable Normal { get; set; }
+		private Hashtable Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
-		public ScatterSeriesMarkerStatesSelect Select { get; set; }
-		private ScatterSeriesMarkerStatesSelect Select_DefaultValue { get; set; }
-		  
+		public Hashtable Select { get; set; }
+		private Hashtable Select_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
-			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
-			
+			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
+			if (Normal != Normal_DefaultValue) h.Add("normal",Normal);
+			if (Select != Select_DefaultValue) h.Add("select",Select);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			RelativeTo = RelativeTo_DefaultValue = "plotBox";
 			Theme = Theme_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Object Theme { get; set; }
 		private Object Theme_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
 			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

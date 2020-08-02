@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Margin = Margin_DefaultValue = null;
 			Style = Style_DefaultValue = new AccessibilityKeyboardNavigationFocusBorderStyle();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public AccessibilityKeyboardNavigationFocusBorderStyle Style { get; set; }
 		private AccessibilityKeyboardNavigationFocusBorderStyle Style_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (HideBrowserFocusOutline != HideBrowserFocusOutline_DefaultValue) h.Add("hideBrowserFocusOutline",HideBrowserFocusOutline);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

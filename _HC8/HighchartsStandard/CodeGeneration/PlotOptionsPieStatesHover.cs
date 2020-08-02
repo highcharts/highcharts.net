@@ -17,10 +17,11 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsPieStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Brightness = Brightness_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
-			Halo = Halo_DefaultValue = new PlotOptionsPieStatesHoverHalo();
+			Brightness = Brightness_DefaultValue = new Hashtable();
+			Enabled = Enabled_DefaultValue = new Hashtable();
+			Halo = Halo_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,23 +35,25 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How much to brighten the point on interaction. Requires themain color to be defined in hex or rgb(a) format.In styled mode, the hover brightness is by default replacedby a fill-opacity given in the `.highcharts-point-hover`class.
 		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
+		public Hashtable Brightness { get; set; }
+		private Hashtable Brightness_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the halo appearing around the hovered point inline-type series as well as outside the hovered slice in piecharts. By default the halo is filled by the current point orseries color with an opacity of 0.25\. The halo can bedisabled by setting the `halo` option to `null`.In styled mode, the halo is styled with the`.highcharts-halo` class, with colors inherited from`.highcharts-color-{n}`.
 		/// </summary>
-		public PlotOptionsPieStatesHoverHalo Halo { get; set; }
-		private PlotOptionsPieStatesHoverHalo Halo_DefaultValue { get; set; }
-		  
+		public Hashtable Halo { get; set; }
+		private Hashtable Halo_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -60,8 +63,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
-			
+			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

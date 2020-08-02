@@ -16,13 +16,22 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsPitchforkTypeOptionsInnerBackground()
 		{
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			Fill = Fill_DefaultValue = "rgba(130, 170, 255, 0.4)";
 			Snap = Snap_DefaultValue = 2;
+			Src = Src_DefaultValue = "";
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 0;
 			
 		}	
 		
+
+		/// <summary>
+		/// Name of the dash style to use for the shape's stroke.
+		/// </summary>
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -36,6 +45,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Snap { get; set; }
 		private double? Snap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The URL for an image to use as the annotation shape.Note, type has to be set to `'image'`.
+		/// </summary>
+		public string Src { get; set; }
+		private string Src_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -57,8 +73,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
+			if (Src != Src_DefaultValue) h.Add("src",Src);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			

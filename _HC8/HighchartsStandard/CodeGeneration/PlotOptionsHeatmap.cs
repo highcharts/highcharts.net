@@ -24,14 +24,17 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
-			Cluster = Cluster_DefaultValue = new PlotOptionsHeatmapCluster();
 			Color = Color_DefaultValue = "";
 			ColorAxis = ColorAxis_DefaultValue = "0";
+			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
+			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "value";
 			Colsize = Colsize_DefaultValue = 1;
+			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsHeatmapCursor.Null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsHeatmapDataLabels();
 			DataSorting = DataSorting_DefaultValue = new PlotOptionsHeatmapDataSorting();
 			Description = Description_DefaultValue = "";
@@ -39,10 +42,10 @@ namespace Highsoft.Web.Mvc.Charts
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsHeatmapEvents();
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
-			Jitter = Jitter_DefaultValue = new PlotOptionsHeatmapJitter();
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsHeatmapLabel();
 			LinkedTo = LinkedTo_DefaultValue = "";
+			Marker = Marker_DefaultValue = new PlotOptionsHeatmapMarker();
 			NegativeColor = NegativeColor_DefaultValue = "";
 			NullColor = NullColor_DefaultValue = "#f7f7f7";
 			Opacity = Opacity_DefaultValue = 1;
@@ -62,6 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsHeatmapZone>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -73,7 +77,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -115,17 +119,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Disable this option to allow series rendering in the whole plottingarea.**Note:** Clipping should be always enabled when[chart.zoomType](#chart.zoomType) is set
+		/// 
 		/// </summary>
 		public bool? Clip { get; set; }
 		private bool? Clip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for marker clusters, the concept of sampling the datavalues into larger blocks in order to ease readability andincrease performance of the JavaScript charts.Note: marker clusters module is not working with `boost`and `draggable-points` modules.The marker clusters feature requires the marker-clusters.jsfile to be loaded, found in the modules directory of the downloadpackage, or online at [code.highcharts.com/modules/marker-clusters.js](code.highcharts.com/modules/marker-clusters.js).
-		/// </summary>
-		public PlotOptionsHeatmapCluster Cluster { get; set; }
-		private PlotOptionsHeatmapCluster Cluster_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -140,6 +137,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ColorAxis { get; set; }
 		private string ColorAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public double? ColorAxisNumber { get; set; }
+		private double? ColorAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public bool? ColorAxisBool { get; set; }
+		private bool? ColorAxisBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -164,6 +175,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points(including markers and columns), is that animation is performed onupdates. On the other hand, when the series contains more points thanthe crop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping awayinvisible points is to increase performance on large series.
 		/// </summary>
 		public double? CropThreshold { get; set; }
@@ -175,6 +193,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsHeatmapCursor Cursor { get; set; }
 		private PlotOptionsHeatmapCursor Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -227,13 +252,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Apply a jitter effect for the rendered markers. When plottingdiscrete values, a little random noise may help telling the pointsapart. The jitter setting applies a random displacement of up to `n`axis units in either direction. So for example on a horizontal Xaxis, setting the `jitter.x` to 0.24 will render the point in arandom position between 0.24 units to the left and 0.24 units to theright of the true axis position. On a category axis, setting it to0.5 will fill up the bin and make the data appear continuous.When rendered on top of a box plot or a column series, a jitter valueof 0.24 will correspond to the underlying series' default[groupPadding](https://api.highcharts.com/highcharts/plotOptions.column.groupPadding)and [pointPadding](https://api.highcharts.com/highcharts/plotOptions.column.pointPadding)settings.
-		/// </summary>
-		public PlotOptionsHeatmapJitter Jitter { get; set; }
-		private PlotOptionsHeatmapJitter Jitter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
@@ -252,6 +270,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string LinkedTo { get; set; }
 		private string LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsHeatmapMarker Marker { get; set; }
+		private PlotOptionsHeatmapMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -378,7 +403,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<PlotOptionsHeatmapZone> Zones { get; set; }
 		private List<PlotOptionsHeatmapZone> Zones_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -393,14 +420,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (Cluster.IsDirty()) h.Add("cluster",Cluster.ToHashtable());
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
+			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
+			if (ColorAxisBool != ColorAxisBool_DefaultValue) h.Add("colorAxis",ColorAxisBool);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (DataSorting != DataSorting_DefaultValue) h.Add("dataSorting",DataSorting);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -408,15 +438,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
-			if (Jitter.IsDirty()) h.Add("jitter",Jitter.ToHashtable());
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (NullColor != NullColor_DefaultValue) h.Add("nullColor",NullColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("f550d6d4-e30a-4b31-a6fa-b64479dfb99e.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("589409e3-5d87-4064-b10b-9dfa81ea9d21.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
@@ -430,7 +460,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

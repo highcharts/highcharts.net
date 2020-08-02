@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SelectButton = SelectButton_DefaultValue = "";
 			ShowPopup = ShowPopup_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,18 +51,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ShowPopup { get; set; }
 		private string ShowPopup_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (ClosePopup != ClosePopup_DefaultValue) { h.Add("closePopup",ClosePopup); Highcharts.AddFunction("9334849c-b256-4099-b3a4-b12373eed306.closePopup", ClosePopup); }  
-			if (DeselectButton != DeselectButton_DefaultValue) { h.Add("deselectButton",DeselectButton); Highcharts.AddFunction("2874c84c-89e7-44ba-ac8d-e00b83b3fd8d.deselectButton", DeselectButton); }  
-			if (SelectButton != SelectButton_DefaultValue) { h.Add("selectButton",SelectButton); Highcharts.AddFunction("13f99166-b51c-460e-92f2-ed962c731918.selectButton", SelectButton); }  
-			if (ShowPopup != ShowPopup_DefaultValue) { h.Add("showPopup",ShowPopup); Highcharts.AddFunction("0db6d062-ea82-4a57-bc7f-3f200b9ef8a1.showPopup", ShowPopup); }  
-			
+			if (ClosePopup != ClosePopup_DefaultValue) { h.Add("closePopup",ClosePopup); Highcharts.AddFunction("46a35d6c-bf61-4687-a92e-3d1cfe74ac61.closePopup", ClosePopup); }  
+			if (DeselectButton != DeselectButton_DefaultValue) { h.Add("deselectButton",DeselectButton); Highcharts.AddFunction("db94a9e4-d1ae-48a1-84d9-7154d04abd81.deselectButton", DeselectButton); }  
+			if (SelectButton != SelectButton_DefaultValue) { h.Add("selectButton",SelectButton); Highcharts.AddFunction("fb73fce9-89ec-4264-9106-d8b8fe7ec33c.selectButton", SelectButton); }  
+			if (ShowPopup != ShowPopup_DefaultValue) { h.Add("showPopup",ShowPopup); Highcharts.AddFunction("01510752-a250-447b-9af0-26ff24de9c3f.showPopup", ShowPopup); }  
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

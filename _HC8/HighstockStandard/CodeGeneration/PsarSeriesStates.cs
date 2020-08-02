@@ -27,22 +27,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Options for the hovered series. These settings override thenormal state options when a series is moused over or touched.
 		/// </summary>
-		public PsarSeriesStatesHover Hover { get; set; }
-		private PsarSeriesStatesHover Hover_DefaultValue { get; set; }
+		public Hashtable Hover { get; set; }
+		private Hashtable Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The opposite state of a hover for series.
 		/// </summary>
-		public PsarSeriesStatesInactive Inactive { get; set; }
-		private PsarSeriesStatesInactive Inactive_DefaultValue { get; set; }
+		public Hashtable Inactive { get; set; }
+		private Hashtable Inactive_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
 		/// </summary>
-		public PsarSeriesStatesNormal Normal { get; set; }
-		private PsarSeriesStatesNormal Normal_DefaultValue { get; set; }
+		public Hashtable Normal { get; set; }
+		private Hashtable Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>

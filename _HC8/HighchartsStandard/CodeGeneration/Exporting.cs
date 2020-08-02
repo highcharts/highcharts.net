@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Accessibility = Accessibility_DefaultValue = new ExportingAccessibility();
 			AllowHTML = AllowHTML_DefaultValue = false;
-			Buttons = Buttons_DefaultValue = new ExportingButtons();
+			Buttons = Buttons_DefaultValue = new Hashtable();
 			ChartOptions = ChartOptions_DefaultValue = null;
 			Csv = Csv_DefaultValue = new ExportingCsv();
 			Enabled = Enabled_DefaultValue = true;
@@ -34,12 +34,14 @@ namespace Highsoft.Web.Mvc.Charts
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
 			TableCaption = TableCaption_DefaultValue = "";
+			TableCaptionBool = TableCaptionBool_DefaultValue = null;
 			Type = Type_DefaultValue = "image/png";
 			Url = Url_DefaultValue = "https://export.highcharts.com/";
 			UseMultiLevelHeaders = UseMultiLevelHeaders_DefaultValue = true;
 			UseRowspanHeaders = UseRowspanHeaders_DefaultValue = true;
 			Width = Width_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -60,8 +62,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for the export related buttons, print and export. In additionto the default buttons listed here, custom buttons can be added.See [navigation.buttonOptions](#navigation.buttonOptions) for generaloptions.
 		/// </summary>
-		public ExportingButtons Buttons { get; set; }
-		private ExportingButtons Buttons_DefaultValue { get; set; }
+		public Hashtable Buttons { get; set; }
+		private Hashtable Buttons_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -121,7 +123,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:- **onclick:** The click handler for the menu item- **text:** The text for the menu item- **textKey:** If internationalization is required, the key to a language  string
+		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:- **onclick:** The click handler for the menu item- **text:** The text for the menu item- **textKey:** If internationalization is required, the key to a language  stringCustom text for the "exitFullScreen" can be set only in lang options(it is not a separate button).
 		/// </summary>
 		public Object MenuItemDefinitions { get; set; }
 		private Object MenuItemDefinitions_DefaultValue { get; set; }
@@ -170,6 +172,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Caption for the data table. Same as chart title by default. Set to`false` to disable.
+		/// </summary>
+		public bool? TableCaptionBool { get; set; }
+		private bool? TableCaptionBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Default MIME type for exporting if `chart.exportChart()` is calledwithout specifying a `type` option. Possible values are `image/png`, `image/jpeg`, `application/pdf` and `image/svg+xml`.
 		/// </summary>
 		public string Type { get; set; }
@@ -202,7 +211,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -215,7 +226,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
 			if (Csv.IsDirty()) h.Add("csv",Csv.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Error != Error_DefaultValue) { h.Add("error",Error); Highcharts.AddFunction("92788f5c-a28a-4f97-808d-23ca60c1efd3.error", Error); }  
+			if (Error != Error_DefaultValue) { h.Add("error",Error); Highcharts.AddFunction("531de4bd-51fb-4f44-8bbf-b7041a24d96b.error", Error); }  
 			if (FallbackToExportServer != FallbackToExportServer_DefaultValue) h.Add("fallbackToExportServer",FallbackToExportServer);
 			if (Filename != Filename_DefaultValue) h.Add("filename",Filename);
 			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);
@@ -227,12 +238,20 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SourceHeight != SourceHeight_DefaultValue) h.Add("sourceHeight",SourceHeight);
 			if (SourceWidth != SourceWidth_DefaultValue) h.Add("sourceWidth",SourceWidth);
 			if (TableCaption != TableCaption_DefaultValue) h.Add("tableCaption",TableCaption);
+			if (TableCaptionBool != TableCaptionBool_DefaultValue) h.Add("tableCaption",TableCaptionBool);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (Url != Url_DefaultValue) h.Add("url",Url);
 			if (UseMultiLevelHeaders != UseMultiLevelHeaders_DefaultValue) h.Add("useMultiLevelHeaders",UseMultiLevelHeaders);
 			if (UseRowspanHeaders != UseRowspanHeaders_DefaultValue) h.Add("useRowspanHeaders",UseRowspanHeaders);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

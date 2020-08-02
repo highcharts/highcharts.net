@@ -27,6 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Symbol = Symbol_DefaultValue = "";
 			Width = Width_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -47,8 +48,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The fill color of the point marker. When `undefined`, the series'or point's color is used.
 		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -98,7 +99,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -115,7 +118,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -34,14 +34,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// This number defines which xAxis the point is connected to. Itrefers to either the axis id or the index of the axis in thexAxis array. If the option is not configured or the axis is notfound the point's x coordinate refers to the chart pixels.
+		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axis inthe xAxis array. If the option is not configured or the axisis not found the point's x coordinate refers to the chartpixels.
 		/// </summary>
 		public string XAxis { get; set; }
 		private string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// This number defines which xAxis the point is connected to. Itrefers to either the axis id or the index of the axis in thexAxis array. If the option is not configured or the axis is notfound the point's x coordinate refers to the chart pixels.
+		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axis inthe xAxis array. If the option is not configured or the axisis not found the point's x coordinate refers to the chartpixels.
 		/// </summary>
 		public double? XAxisNumber { get; set; }
 		private double? XAxisNumber_DefaultValue { get; set; }
@@ -55,14 +55,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// This number defines which yAxis the point is connected to. Itrefers to either the axis id or the index of the axis in theyAxis array. If the option is not configured or the axis is notfound the point's y coordinate refers to the chart pixels.
+		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axis inthe yAxis array. If the option is not configured or the axisis not found the point's y coordinate refers to the chartpixels.
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// This number defines which yAxis the point is connected to. Itrefers to either the axis id or the index of the axis in theyAxis array. If the option is not configured or the axis is notfound the point's y coordinate refers to the chart pixels.
+		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axis inthe yAxis array. If the option is not configured or the axisis not found the point's y coordinate refers to the chartpixels.
 		/// </summary>
 		public double? YAxisNumber { get; set; }
 		private double? YAxisNumber_DefaultValue { get; set; }

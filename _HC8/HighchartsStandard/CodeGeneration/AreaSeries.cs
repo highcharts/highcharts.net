@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new AreaSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = AreaSeriesBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
@@ -26,13 +27,17 @@ namespace Highsoft.Web.Mvc.Charts
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorAxis = ColorAxis_DefaultValue = "0";
+			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
+			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
 			ConnectEnds = ConnectEnds_DefaultValue = null;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
+			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = AreaSeriesCursor.Null;
-			DashStyle = DashStyle_DefaultValue = AreaSeriesDashStyle.Solid;
+			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			Data = Data_DefaultValue = new List<AreaSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new AreaSeriesDataLabels();
 			DataSorting = DataSorting_DefaultValue = new AreaSeriesDataSorting();
@@ -67,11 +72,13 @@ namespace Highsoft.Web.Mvc.Charts
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			Stack = Stack_DefaultValue = "";
+			StackNumber = StackNumber_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = AreaSeriesStacking.Null;
 			States = States_DefaultValue = new AreaSeriesStates();
 			Step = Step_DefaultValue = AreaSeriesStep.Null;
@@ -80,14 +87,16 @@ namespace Highsoft.Web.Mvc.Charts
 			Tooltip = Tooltip_DefaultValue = new AreaSeriesTooltip();
 			TrackByArea = TrackByArea_DefaultValue = false;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Type = Type_DefaultValue = AreaSeriesType.Area;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
+			XAxisNumber = XAxisNumber_DefaultValue = null;
 			YAxis = YAxis_DefaultValue = "";
+			YAxisNumber = YAxisNumber_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<AreaSeriesZone>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -99,7 +108,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -110,6 +119,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -162,6 +178,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public double? ColorAxisNumber { get; set; }
+		private double? ColorAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public bool? ColorAxisBool { get; set; }
+		private bool? ColorAxisBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Styled mode only. A specific color index to use for the series, soits graphic representations are given the class name`highcharts-color-{n}`.
 		/// </summary>
 		public double? ColorIndex { get; set; }
@@ -190,6 +220,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points(including markers and columns), is that animation is performed onupdates. On the other hand, when the series contains more points thanthe crop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping awayinvisible points is to increase performance on large series.
 		/// </summary>
 		public double? CropThreshold { get; set; }
@@ -204,10 +241,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A name for the dash style to use for the graph, or for some seriestypes the outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
 		/// </summary>
-		public AreaSeriesDashStyle DashStyle { get; set; }
-		private AreaSeriesDashStyle DashStyle_DefaultValue { get; set; }
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// </summary>
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -262,8 +306,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
 		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -449,6 +493,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
 		/// </summary>
 		public bool? ShowCheckbox { get; set; }
@@ -484,7 +535,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`. When stacking is enabled, data must be sortedin ascending X order. A special stacking option is with thestreamgraph series type, where the stacking option is set to`"stream"`. The second one is `"overlap"`, which only applies towaterfall series.
+		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
+		/// </summary>
+		public double? StackNumber { get; set; }
+		private double? StackNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`.When stacking is enabled, data must be sortedin ascending X order.Some stacking options are related to specific series types. In thestreamgraph series type, the stacking option is set to `"stream"`.The second one is `"overlap"`, which only applies to waterfallseries.
 		/// </summary>
 		public AreaSeriesStacking Stacking { get; set; }
 		private AreaSeriesStacking Stacking_DefaultValue { get; set; }
@@ -540,13 +598,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public AreaSeriesType Type { get; set; }
-		private AreaSeriesType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -561,10 +612,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
+		/// </summary>
+		public double? XAxisNumber { get; set; }
+		private double? XAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
+		/// </summary>
+		public double? YAxisNumber { get; set; }
+		private double? YAxisNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -586,7 +651,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<AreaSeriesZone> Zones { get; set; }
 		private List<AreaSeriesZone> Zones_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -596,6 +663,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
@@ -603,13 +671,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
+			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
+			if (ColorAxisBool != ColorAxisBool_DefaultValue) h.Add("colorAxis",ColorAxisBool);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (DataSorting != DataSorting_DefaultValue) h.Add("dataSorting",DataSorting);
@@ -637,7 +709,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("19152a2a-a9b0-4be7-a832-d5cdc8f63fb2.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("5b0f932c-635e-4f27-a7c8-d0129c80a869.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPlacement.IsDirty())
@@ -647,12 +719,14 @@ namespace Highsoft.Web.Mvc.Charts
 					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
+			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
@@ -661,14 +735,23 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			h.Add("type","area");
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (YAxisNumber != YAxisNumber_DefaultValue) h.Add("yAxis",YAxisNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

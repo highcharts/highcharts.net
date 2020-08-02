@@ -19,7 +19,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Align = Align_DefaultValue = YAxisLabelsAlign.Null;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
-			Distance = Distance_DefaultValue = -25;
+			Distance = Distance_DefaultValue = "-25";
+			DistanceNumber = DistanceNumber_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{value}";
 			Formatter = Formatter_DefaultValue = "";
@@ -38,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -65,8 +67,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Angular gauges and solid gauges only.The label's pixel distance from the perimeter of the plot area.Since v7.1.2: If it's a percentage string, it is interpreted thesame as [series.radius](#plotOptions.gauge.radius), so label can bealigned under the gauge's shape.
 		/// </summary>
-		public int Distance { get; set; }
-		private int Distance_DefaultValue { get; set; }
+		public string Distance { get; set; }
+		private string Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Angular gauges and solid gauges only.The label's pixel distance from the perimeter of the plot area.Since v7.1.2: If it's a percentage string, it is interpreted thesame as [series.radius](#plotOptions.gauge.radius), so label can bealigned under the gauge's shape.
+		/// </summary>
+		public double? DistanceNumber { get; set; }
+		private double? DistanceNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -112,7 +121,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Defines how the labels are be repositioned according to the 3D chartorientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from the  tick marks, despite the chart orientation. This is the backwards  compatible behavior, and causes skewing of X and Z axes.- `'chart'`: Preserve 3D position relative to the chart.  This looks nice, but hard to read if the text isn't  forward-facing.- `'flap'`: Rotated text along the axis to compensate for the chart  orientation. This tries to maintain text as legible as possible  on all orientations.- `'ortho'`: Rotated text along the axis direction so that the labels  are orthogonal to the axis. This is very similar to `'flap'`,  but prevents skewing the labels (X and Y scaling are still  present).
+		/// Defines how the labels are be repositioned according to the 3Dchart orientation.- `'offset'`: Maintain a fixed horizontal/vertical distance from  the tick marks, despite the chart orientation. This is the  backwards compatible behavior, and causes skewing of X and Z  axes.- `'chart'`: Preserve 3D position relative to the chart. This  looks nice, but hard to read if the text isn't forward-facing.- `'flap'`: Rotated text along the axis to compensate for the  chart orientation. This tries to maintain text as legible as  possible on all orientations.- `'ortho'`: Rotated text along the axis direction so that the  labels are orthogonal to the axis. This is very similar to  `'flap'`, but prevents skewing the labels (X and Y scaling are  still present).
 		/// </summary>
 		public YAxisLabelsPosition3d Position3d { get; set; }
 		private YAxisLabelsPosition3d Position3d_DefaultValue { get; set; }
@@ -133,7 +142,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If enabled, the axis labels will skewed to follow the perspective.This will fix overlapping labels and titles, but texts become lesslegible due to the distortion.The final appearance depends heavily on `labels.position3d`.
+		/// If enabled, the axis labels will skewed to follow theperspective.This will fix overlapping labels and titles, but texts becomeless legible due to the distortion.The final appearance depends heavily on `labels.position3d`.
 		/// </summary>
 		public bool? Skew3d { get; set; }
 		private bool? Skew3d_DefaultValue { get; set; }
@@ -186,7 +195,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -197,9 +208,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (AutoRotationLimit != AutoRotationLimit_DefaultValue) h.Add("autoRotationLimit",AutoRotationLimit);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (DistanceNumber != DistanceNumber_DefaultValue) h.Add("distance",DistanceNumber);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("39fa67e4-e737-4f3a-872a-1958e5864f99.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("b8958f4c-33d3-4270-ba1f-f374865a023f.formatter", Formatter); }  
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
@@ -214,7 +226,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

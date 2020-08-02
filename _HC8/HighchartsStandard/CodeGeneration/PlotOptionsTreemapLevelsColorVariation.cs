@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Key = Key_DefaultValue = PlotOptionsTreemapLevelsColorVariationKey.Null;
 			To = To_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? To { get; set; }
 		private double? To_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Key != Key_DefaultValue) h.Add("key", Highcharts.FirstCharacterToLower(Key.ToString()));
 			if (To != To_DefaultValue) h.Add("to",To);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

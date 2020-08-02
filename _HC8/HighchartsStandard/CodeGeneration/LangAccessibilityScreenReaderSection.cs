@@ -17,9 +17,11 @@ namespace Highsoft.Web.Mvc.Charts
 		public LangAccessibilityScreenReaderSection()
 		{
 			AfterRegionLabel = AfterRegionLabel_DefaultValue = "";
+			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			BeforeRegionLabel = BeforeRegionLabel_DefaultValue = "Chart screen reader information.";
 			EndOfChartMarker = EndOfChartMarker_DefaultValue = "End of interactive chart.";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,6 +30,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string AfterRegionLabel { get; set; }
 		private string AfterRegionLabel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Language options for annotation descriptions.
+		/// </summary>
+		public List<Annotations> Annotations { get; set; }
+		private List<Annotations> Annotations_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -42,7 +51,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string EndOfChartMarker { get; set; }
 		private string EndOfChartMarker_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -50,9 +61,17 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (AfterRegionLabel != AfterRegionLabel_DefaultValue) h.Add("afterRegionLabel",AfterRegionLabel);
+			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (BeforeRegionLabel != BeforeRegionLabel_DefaultValue) h.Add("beforeRegionLabel",BeforeRegionLabel);
 			if (EndOfChartMarker != EndOfChartMarker_DefaultValue) h.Add("endOfChartMarker",EndOfChartMarker);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

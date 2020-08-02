@@ -16,17 +16,18 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LegendTitle()
 		{
-			Style = Style_DefaultValue = new LegendTitleStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "null";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// Generic CSS styles for the legend title.
 		/// </summary>
-		public LegendTitleStyle Style { get; set; }
-		private LegendTitleStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

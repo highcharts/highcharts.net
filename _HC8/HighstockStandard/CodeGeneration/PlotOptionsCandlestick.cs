@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsCandlestickBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
+			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
@@ -38,6 +39,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareStart = CompareStart_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsCandlestickCursor.Null;
+			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = PlotOptionsCandlestickDashStyle.Null;
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsCandlestickDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsCandlestickDataLabels();
 			DataSorting = DataSorting_DefaultValue = new PlotOptionsCandlestickDataSorting();
@@ -105,7 +108,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -144,6 +147,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When `true`, the columns will center in the category, ignoring nullor missing points. When `false`, space will be reserved for null ormissing points.
+		/// </summary>
+		public bool? CenterInCategory { get; set; }
+		private bool? CenterInCategory_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -249,6 +259,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsCandlestickCursor Cursor { get; set; }
 		private PlotOptionsCandlestickCursor Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// </summary>
+		public PlotOptionsCandlestickDashStyle DashStyle { get; set; }
+		private PlotOptionsCandlestickDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -648,6 +672,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highstock.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
+			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -663,6 +688,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());

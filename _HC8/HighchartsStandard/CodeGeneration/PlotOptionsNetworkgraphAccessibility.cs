@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new PlotOptionsNetworkgraphAccessibilityKeyboardNavigation();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
 		private string PointDescriptionFormatter_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -69,8 +72,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (ExposeAsGroupOnly != ExposeAsGroupOnly_DefaultValue) h.Add("exposeAsGroupOnly",ExposeAsGroupOnly);
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("5690486d-3894-442e-9e86-d50bf03674b7.pointDescriptionFormatter", PointDescriptionFormatter); }  
-			
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("ec7c5bc2-36fe-492b-804e-20a1cd2812c0.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsMeasureTypeOptionsCrosshairX()
 		{
-			DashStyle = DashStyle_DefaultValue = "Dash";
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
 			MarkerEnd = MarkerEnd_DefaultValue = "arrow";
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -27,8 +27,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The dash or dot style of the crosshair's line. For possiblevalues, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

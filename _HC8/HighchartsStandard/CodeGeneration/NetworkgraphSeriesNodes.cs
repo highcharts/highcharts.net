@@ -18,11 +18,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = new object();
+			DataLabels = DataLabels_DefaultValue = new NetworkgraphSeriesNodesDataLabels();
 			Id = Id_DefaultValue = "";
 			Mass = Mass_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -43,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Individual data label for each node. The options are the same asthe ones for [series.networkgraph.dataLabels](#series.networkgraph.dataLabels).
 		/// </summary>
-		public Object DataLabels { get; set; }
-		private Object DataLabels_DefaultValue { get; set; }
+		public NetworkgraphSeriesNodesDataLabels DataLabels { get; set; }
+		private NetworkgraphSeriesNodesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -75,11 +78,18 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Mass != Mass_DefaultValue) h.Add("mass",Mass);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

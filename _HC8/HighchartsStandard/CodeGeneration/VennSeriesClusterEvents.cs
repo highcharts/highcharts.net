@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			DrillToCluster = DrillToCluster_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,15 +27,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string DrillToCluster { get; set; }
 		private string DrillToCluster_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (DrillToCluster != DrillToCluster_DefaultValue) { h.Add("drillToCluster",DrillToCluster); Highcharts.AddFunction("467f78aa-e273-483e-b4b4-a4abf59d1784.drillToCluster", DrillToCluster); }  
-			
+			if (DrillToCluster != DrillToCluster_DefaultValue) { h.Add("drillToCluster",DrillToCluster); Highcharts.AddFunction("526d32ed-56d8-4fbe-bce8-20116f2e7d85.drillToCluster", DrillToCluster); }  
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

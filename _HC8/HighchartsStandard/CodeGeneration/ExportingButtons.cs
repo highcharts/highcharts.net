@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ContextButton = ContextButton_DefaultValue = new ExportingButtonsContextButton();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,15 +27,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ExportingButtonsContextButton ContextButton { get; set; }
 		private ExportingButtonsContextButton ContextButton_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (ContextButton != ContextButton_DefaultValue) h.Add("contextButton",ContextButton);
-			
+			if (ContextButton.IsDirty()) h.Add("contextButton",ContextButton.ToHashtable());
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

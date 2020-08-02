@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#cccccc";
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			Label = Label_DefaultValue = new YAxisCrosshairLabel();
 			Snap = Snap_DefaultValue = true;
 			Width = Width_DefaultValue = 1;
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The dash style for the crosshair. See[plotOptions.series.dashStyle](#plotOptions.series.dashStyle)for possible values.
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Render = Render_DefaultValue = "";
 			Selection = Selection_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -61,7 +62,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Fires when a drilldown point is clicked, before the new series is added. Thisevent is also utilized for async drilldown, where the seriesOptions are notadded by option, but rather loaded async. Note that when clicking a categorylabel to trigger multiple series drilldown, one `drilldown` event istriggered per point in the category.Event arguments:- `category`: If a category label was clicked, which index.- `originalEvent`: The original browser event (usually click) that triggered  the drilldown.- `point`: The originating point.- `points`: If a category label was clicked, this array holds all points  corresponing to the category.- `seriesOptions`: Options for the new series.
+		/// Fires when a drilldown point is clicked, before the new series is added. Thisevent is also utilized for async drilldown, where the seriesOptions are notadded by option, but rather loaded async. Note that when clicking a categorylabel to trigger multiple series drilldown, one `drilldown` event istriggered per point in the category.Event arguments:- `category`: If a category label was clicked, which index.- `originalEvent`: The original browser event (usually click) that triggered  the drilldown.- `point`: The originating point.- `points`: If a category label was clicked, this array holds all points  corresponding to the category.- `seriesOptions`: Options for the new series.
 		/// </summary>
 		public string Drilldown { get; set; }
 		private string Drilldown_DefaultValue { get; set; }
@@ -114,26 +115,35 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Selection { get; set; }
 		private string Selection_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("6a8c83a6-017d-4246-9cde-584495e4a337.addSeries", AddSeries); }  
-			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("71036898-4d3c-4229-a65d-7df0af9337bc.afterPrint", AfterPrint); }  
-			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("2eb47f1f-fca5-45eb-904a-0cc9f5bb8e2a.beforePrint", BeforePrint); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("a49a6614-8f69-4e8c-a256-41439daadc9f.click", Click); }  
-			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("6b9199bb-a747-4b74-8871-d29ae87c7bb0.drilldown", Drilldown); }  
-			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("3ad55394-85f8-4d3e-8cb6-2129e662c6b1.drillup", Drillup); }  
-			if (Drillupall != Drillupall_DefaultValue) { h.Add("drillupall",Drillupall); Highcharts.AddFunction("728f6e40-0277-4f0d-85ef-67548848aa5a.drillupall", Drillupall); }  
-			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); Highcharts.AddFunction("a750a797-0477-429b-b0af-64140be6548a.exportData", ExportData); }  
-			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("a0afcb90-6451-4d02-9598-2c01533630fb.load", Load); }  
-			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("bd304daa-470b-4885-b895-489cff15aafd.redraw", Redraw); }  
-			if (Render != Render_DefaultValue) { h.Add("render",Render); Highcharts.AddFunction("ea1470a8-7c5a-4694-9a2d-0310f78d2d9e.render", Render); }  
-			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("a0aa367a-43e3-4653-8625-2286a7c27497.selection", Selection); }  
-			
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("22e1d60e-43dd-4c25-aa75-3025619d06bc.addSeries", AddSeries); }  
+			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("f51c99a4-1686-4f5b-a13c-a272d9c24d69.afterPrint", AfterPrint); }  
+			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("f669cb48-89d6-4cd8-92b7-9e4650bcfd33.beforePrint", BeforePrint); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("adfbc637-0936-4aca-9ba2-f75449256d2a.click", Click); }  
+			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("e778dd48-cd2a-4b6e-8c9d-e172de3925a1.drilldown", Drilldown); }  
+			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("6a9a5d5a-e1ab-4ae4-8bf4-5dbbb7cfb7e5.drillup", Drillup); }  
+			if (Drillupall != Drillupall_DefaultValue) { h.Add("drillupall",Drillupall); Highcharts.AddFunction("a0d4d039-56ee-43de-abc3-c0e1d5ab20d9.drillupall", Drillupall); }  
+			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); Highcharts.AddFunction("bc35a8f5-cb07-4688-9869-dec316fb92c6.exportData", ExportData); }  
+			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("cd7036ad-6203-42e0-929d-8c38dbf1c065.load", Load); }  
+			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("2df3cbb8-b59d-4322-8233-31f4faaa3e3a.redraw", Redraw); }  
+			if (Render != Render_DefaultValue) { h.Add("render",Render); Highcharts.AddFunction("a092c0fb-bafd-4bf0-87a4-aeec1d38e542.render", Render); }  
+			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("c0358c14-0537-4bb5-9ec1-b8d43da01c67.selection", Selection); }  
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

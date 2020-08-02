@@ -18,11 +18,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ActiveColor = ActiveColor_DefaultValue = "#003399";
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			Enabled = Enabled_DefaultValue = true;
 			InactiveColor = InactiveColor_DefaultValue = "#cccccc";
 			Style = Style_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -38,6 +40,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// How to animate the pages when navigating up or down. A value of`true` applies the default navigation given in the`chart.animation` option. Additional options can be given as anobject containing values for easing and duration.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -66,7 +75,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -75,11 +86,19 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (ActiveColor != ActiveColor_DefaultValue) h.Add("activeColor",ActiveColor);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (ArrowSize != ArrowSize_DefaultValue) h.Add("arrowSize",ArrowSize);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

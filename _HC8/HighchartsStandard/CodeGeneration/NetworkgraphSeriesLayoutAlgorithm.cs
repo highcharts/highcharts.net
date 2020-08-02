@@ -29,8 +29,8 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxSpeed = MaxSpeed_DefaultValue = 10;
 			RepulsiveForce = RepulsiveForce_DefaultValue = "";
 			Theta = Theta_DefaultValue = null;
-			Type = Type_DefaultValue = NetworkgraphSeriesLayoutAlgorithmType.ReingoldFruchterman;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -125,12 +125,7 @@ namespace Highsoft.Web.Mvc.Charts
 		private double? Theta_DefaultValue { get; set; }
 		 
 
-		/// <summary>
-		/// Type of the algorithm used when positioning nodes.
-		/// </summary>
-		public NetworkgraphSeriesLayoutAlgorithmType Type { get; set; }
-		private NetworkgraphSeriesLayoutAlgorithmType Type_DefaultValue { get; set; }
-		  
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -138,7 +133,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Approximation != Approximation_DefaultValue) h.Add("approximation", Highcharts.FirstCharacterToLower(Approximation.ToString()));
-			if (AttractiveForce != AttractiveForce_DefaultValue) { h.Add("attractiveForce",AttractiveForce); Highcharts.AddFunction("64f7ccbb-1e75-4c2c-a132-2afa9e296487.attractiveForce", AttractiveForce); }  
+			if (AttractiveForce != AttractiveForce_DefaultValue) { h.Add("attractiveForce",AttractiveForce); Highcharts.AddFunction("9bc6016f-9fb5-402a-a80f-3c3b7d60b63b.attractiveForce", AttractiveForce); }  
 			if (EnableSimulation != EnableSimulation_DefaultValue) h.Add("enableSimulation",EnableSimulation);
 			if (Friction != Friction_DefaultValue) h.Add("friction",Friction);
 			if (GravitationalConstant != GravitationalConstant_DefaultValue) h.Add("gravitationalConstant",GravitationalConstant);
@@ -148,10 +143,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkLength != LinkLength_DefaultValue) h.Add("linkLength",LinkLength);
 			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
-			if (RepulsiveForce != RepulsiveForce_DefaultValue) { h.Add("repulsiveForce",RepulsiveForce); Highcharts.AddFunction("205fa1fc-1d26-49d4-9778-92a91d070678.repulsiveForce", RepulsiveForce); }  
+			if (RepulsiveForce != RepulsiveForce_DefaultValue) { h.Add("repulsiveForce",RepulsiveForce); Highcharts.AddFunction("8bf9c47d-5e01-4c68-ad16-6c20456049d0.repulsiveForce", RepulsiveForce); }  
 			if (Theta != Theta_DefaultValue) h.Add("theta",Theta);
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			
+			h.Add("type","networkgraphlayoutalgorithm");
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

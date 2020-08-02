@@ -16,52 +16,62 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVennStates()
 		{
-			Hover = Hover_DefaultValue = new PlotOptionsVennStatesHover();
-			Inactive = Inactive_DefaultValue = new PlotOptionsVennStatesInactive();
-			Normal = Normal_DefaultValue = new PlotOptionsVennStatesNormal();
-			Select = Select_DefaultValue = new PlotOptionsVennStatesSelect();
+			Hover = Hover_DefaultValue = new Hashtable();
+			Inactive = Inactive_DefaultValue = new Hashtable();
+			Normal = Normal_DefaultValue = new Hashtable();
+			Select = Select_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsVennStatesHover Hover { get; set; }
-		private PlotOptionsVennStatesHover Hover_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The opposite state of a hover for series.
-		/// </summary>
-		public PlotOptionsVennStatesInactive Inactive { get; set; }
-		private PlotOptionsVennStatesInactive Inactive_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
-		/// </summary>
-		public PlotOptionsVennStatesNormal Normal { get; set; }
-		private PlotOptionsVennStatesNormal Normal_DefaultValue { get; set; }
+		public Hashtable Hover { get; set; }
+		private Hashtable Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsVennStatesSelect Select { get; set; }
-		private PlotOptionsVennStatesSelect Select_DefaultValue { get; set; }
-		  
+		public Hashtable Inactive { get; set; }
+		private Hashtable Inactive_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
+		/// </summary>
+		public Hashtable Normal { get; set; }
+		private Hashtable Normal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public Hashtable Select { get; set; }
+		private Hashtable Select_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
-			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
-			
+			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
+			if (Inactive != Inactive_DefaultValue) h.Add("inactive",Inactive);
+			if (Normal != Normal_DefaultValue) h.Add("normal",Normal);
+			if (Select != Select_DefaultValue) h.Add("select",Select);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -31,6 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GuideBox = GuideBox_DefaultValue = new PlotOptionsBulletDragDropGuideBox();
 			LiveRedraw = LiveRedraw_DefaultValue = true;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -130,7 +131,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? LiveRedraw { get; set; }
 		private bool? LiveRedraw_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -151,7 +154,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GroupBy != GroupBy_DefaultValue) h.Add("groupBy",GroupBy);
 			if (GuideBox != GuideBox_DefaultValue) h.Add("guideBox",GuideBox);
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

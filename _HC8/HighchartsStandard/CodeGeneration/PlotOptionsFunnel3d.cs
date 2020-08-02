@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = null;
+			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
@@ -34,8 +35,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsFunnel3dCursor.Null;
+			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsFunnel3dDataLabels();
-			DataSorting = DataSorting_DefaultValue = new PlotOptionsFunnel3dDataSorting();
 			Depth = Depth_DefaultValue = 25;
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new PlotOptionsFunnel3dDragDrop();
@@ -50,6 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GroupPadding = GroupPadding_DefaultValue = null;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Height = Height_DefaultValue = "100%";
+			HeightNumber = HeightNumber_DefaultValue = null;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsFunnel3dLabel();
@@ -57,7 +60,9 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			NeckHeight = NeckHeight_DefaultValue = "25%";
+			NeckHeightNumber = NeckHeightNumber_DefaultValue = null;
 			NeckWidth = NeckWidth_DefaultValue = "30%";
+			NeckWidthNumber = NeckWidthNumber_DefaultValue = null;
 			NegativeColor = NegativeColor_DefaultValue = "";
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsFunnel3dPoint();
@@ -72,6 +77,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Reversed = Reversed_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
@@ -84,9 +90,11 @@ namespace Highsoft.Web.Mvc.Charts
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = "90%";
+			WidthNumber = WidthNumber_DefaultValue = null;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsFunnel3dZone>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -98,7 +106,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -144,6 +152,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When `true`, the columns will center in the category, ignoring nullor missing points. When `false`, space will be reserved for null ormissing points.
+		/// </summary>
+		public bool? CenterInCategory { get; set; }
+		private bool? CenterInCategory_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -196,7 +211,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When true, each column edge is rounded to its nearest pixel in orderto render sharp on screen. In some cases, when there are a lot ofdensely packed columns, this leads to visible difference in columnwidths or distance between columns. In these cases, setting `crisp`to `false` may look better, even though each column is renderedblurry.
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
 		/// </summary>
 		public bool? Crisp { get; set; }
 		private bool? Crisp_DefaultValue { get; set; }
@@ -217,17 +232,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// </summary>
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsFunnel3dDataLabels DataLabels { get; set; }
 		private PlotOptionsFunnel3dDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public PlotOptionsFunnel3dDataSorting DataSorting { get; set; }
-		private PlotOptionsFunnel3dDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -329,6 +351,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The height of the series. If it is a number it definesthe pixel height, if it is a percentage string it is the percentageof the plot area height.
+		/// </summary>
+		public double? HeightNumber { get; set; }
+		private double? HeightNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
@@ -378,10 +407,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The height of the neck, the lower part of the funnel. A numberdefines pixel width, a percentage string defines a percentageof the plot area height.
+		/// </summary>
+		public double? NeckHeightNumber { get; set; }
+		private double? NeckHeightNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The width of the neck, the lower part of the funnel. A number definespixel width, a percentage string defines a percentage of the plotarea width.
 		/// </summary>
 		public string NeckWidth { get; set; }
 		private string NeckWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the neck, the lower part of the funnel. A number definespixel width, a percentage string defines a percentage of the plotarea width.
+		/// </summary>
+		public double? NeckWidthNumber { get; set; }
+		private double? NeckWidthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -483,6 +526,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
 		/// </summary>
 		public bool? ShowCheckbox { get; set; }
@@ -511,7 +561,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`. When stacking is enabled, data must be sortedin ascending X order. A special stacking option is with thestreamgraph series type, where the stacking option is set to`"stream"`. The second one is `"overlap"`, which only applies towaterfall series.
+		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`.When stacking is enabled, data must be sortedin ascending X order.Some stacking options are related to specific series types. In thestreamgraph series type, the stacking option is set to `"stream"`.The second one is `"overlap"`, which only applies to waterfallseries.
 		/// </summary>
 		public PlotOptionsFunnel3dStacking Stacking { get; set; }
 		private PlotOptionsFunnel3dStacking Stacking_DefaultValue { get; set; }
@@ -567,6 +617,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The max width of the series compared to the width of the plot area,or the pixel width if it is a number.
+		/// </summary>
+		public double? WidthNumber { get; set; }
+		private double? WidthNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Defines the Axis on which the zones are applied.
 		/// </summary>
 		public string ZoneAxis { get; set; }
@@ -578,7 +635,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<PlotOptionsFunnel3dZone> Zones { get; set; }
 		private List<PlotOptionsFunnel3dZone> Zones_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -593,6 +652,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -603,8 +663,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (DataSorting != DataSorting_DefaultValue) h.Add("dataSorting",DataSorting);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
@@ -619,6 +680,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
@@ -626,11 +688,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
+			if (NeckHeightNumber != NeckHeightNumber_DefaultValue) h.Add("neckHeight",NeckHeightNumber);
 			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
+			if (NeckWidthNumber != NeckWidthNumber_DefaultValue) h.Add("neckWidth",NeckWidthNumber);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("83a23c8d-4976-408f-91aa-9f0f596a7883.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("4da8c7cc-d5ad-412a-8dfa-a5d7f70a0a92.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
@@ -644,7 +708,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
@@ -657,9 +722,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

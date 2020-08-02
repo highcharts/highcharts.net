@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsDpoStatesHoverHalo()
 		{
 			Attributes = Attributes_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = null;
-			Size = Size_DefaultValue = 10;
+			Opacity = Opacity_DefaultValue = new Hashtable();
+			Size = Size_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -33,15 +33,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Opacity for the halo unless a specific fill is overriddenusing the `attributes` setting. Note that Highcharts isonly able to apply opacity to colors of hex or rgb(a)formats.
 		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
+		public Hashtable Opacity { get; set; }
+		private Hashtable Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel size of the halo. For point markers this is theradius of the halo. For pie slices it is the width of thehalo outside the slice. For bubbles it defaults to 5 andis the width of the halo outside the bubble.
 		/// </summary>
-		public double? Size { get; set; }
-		private double? Size_DefaultValue { get; set; }
+		public Hashtable Size { get; set; }
+		private Hashtable Size_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

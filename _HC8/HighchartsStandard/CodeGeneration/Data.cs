@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public Data()
 		{
 			BeforeParse = BeforeParse_DefaultValue = "";
-			Columns = Columns_DefaultValue = new List<List<Object>>();
+			Columns = Columns_DefaultValue = new List<List<string>>();
 			ColumnsURL = ColumnsURL_DefaultValue = "";
 			Complete = Complete_DefaultValue = "";
 			Csv = Csv_DefaultValue = "";
@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LineDelimiter = LineDelimiter_DefaultValue = " n";
 			Parsed = Parsed_DefaultValue = "";
 			ParseDate = ParseDate_DefaultValue = "";
-			Rows = Rows_DefaultValue = new List<List<object>>();
+			Rows = Rows_DefaultValue = new List<List<string>>();
 			RowsURL = RowsURL_DefaultValue = "";
 			SeriesMapping = SeriesMapping_DefaultValue = new List<List<double?>>();
 			StartColumn = StartColumn_DefaultValue = 0;
@@ -43,6 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SwitchRowsAndColumns = SwitchRowsAndColumns_DefaultValue = false;
 			Table = Table_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -56,8 +57,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A two-dimensional array representing the input data on tabular form.This input can be used when the data is already parsed, for examplefrom a grid view component. Each cell can be a string or number.If not switchRowsAndColumns is set, the columns are interpreted asseries.
 		/// </summary>
-		public List<List<Object>> Columns { get; set; }
-		private List<List<Object>> Columns_DefaultValue { get; set; }
+		public List<List<string>> Columns { get; set; }
+		private List<List<string>> Columns_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -182,8 +183,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The same as the columns input option, but defining rows intead ofcolumns.
 		/// </summary>
-		public List<List<object>> Rows { get; set; }
-		private List<List<object>> Rows_DefaultValue { get; set; }
+		public List<List<string>> Rows { get; set; }
+		private List<List<string>> Rows_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -226,17 +227,19 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Table { get; set; }
 		private string Table_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); Highcharts.AddFunction("a1c87560-3fe4-4486-bacd-04deaa4b50ab.beforeParse", BeforeParse); }  
+			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); Highcharts.AddFunction("4ca5228d-c739-4a78-ac75-397a22e849d5.beforeParse", BeforeParse); }  
 			if (Columns != Columns_DefaultValue) h.Add("columns",Columns);
 			if (ColumnsURL != ColumnsURL_DefaultValue) h.Add("columnsURL",ColumnsURL);
-			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); Highcharts.AddFunction("4f1afaf2-8925-40b4-b8b7-b53753d870e5.complete", Complete); }  
+			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); Highcharts.AddFunction("80742a3c-5915-47b8-bf80-b091cf2816e3.complete", Complete); }  
 			if (Csv != Csv_DefaultValue) h.Add("csv",Csv);
 			if (CsvURL != CsvURL_DefaultValue) h.Add("csvURL",CsvURL);
 			if (DataRefreshRate != DataRefreshRate_DefaultValue) h.Add("dataRefreshRate",DataRefreshRate);
@@ -250,8 +253,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GoogleSpreadsheetWorksheet != GoogleSpreadsheetWorksheet_DefaultValue) h.Add("googleSpreadsheetWorksheet",GoogleSpreadsheetWorksheet);
 			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
 			if (LineDelimiter != LineDelimiter_DefaultValue) h.Add("lineDelimiter",LineDelimiter);
-			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); Highcharts.AddFunction("fde89919-1e55-4c5f-a063-b728dd127658.parsed", Parsed); }  
-			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); Highcharts.AddFunction("1010a243-f093-4cb9-b658-3a11f781cf4e.parseDate", ParseDate); }  
+			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); Highcharts.AddFunction("c71b4e05-a275-4af0-b3fe-38a1b643c8d4.parsed", Parsed); }  
+			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); Highcharts.AddFunction("6cfdb3ee-3966-4d82-84e8-8cda790e722e.parseDate", ParseDate); }  
 			if (Rows != Rows_DefaultValue) h.Add("rows",Rows);
 			if (RowsURL != RowsURL_DefaultValue) h.Add("rowsURL",RowsURL);
 			if (SeriesMapping != SeriesMapping_DefaultValue) h.Add("seriesMapping",SeriesMapping);
@@ -259,7 +262,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StartRow != StartRow_DefaultValue) h.Add("startRow",StartRow);
 			if (SwitchRowsAndColumns != SwitchRowsAndColumns_DefaultValue) h.Add("switchRowsAndColumns",SwitchRowsAndColumns);
 			if (Table != Table_DefaultValue) h.Add("table",Table);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

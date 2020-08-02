@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AlignTicks = AlignTicks_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			BorderColor = BorderColor_DefaultValue = "#335cad";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -28,8 +29,8 @@ namespace Highsoft.Web.Mvc.Charts
 			DisplayErrors = DisplayErrors_DefaultValue = true;
 			Events = Events_DefaultValue = new ChartEvents();
 			Height = Height_DefaultValue = null;
-            HeightString = HeightString_DefaultValue = "";
-            IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
+			HeightNumber = HeightNumber_DefaultValue = null;
+			IgnoreHiddenSeries = IgnoreHiddenSeries_DefaultValue = true;
 			Inverted = Inverted_DefaultValue = false;
 			Margin = Margin_DefaultValue = new double[]{};
 			MarginBottom = MarginBottom_DefaultValue = null;
@@ -61,14 +62,15 @@ namespace Highsoft.Web.Mvc.Charts
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
 			SpacingRight = SpacingRight_DefaultValue = 10;
 			SpacingTop = SpacingTop_DefaultValue = 10;
-			Style = Style_DefaultValue = new ChartStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			StyledMode = StyledMode_DefaultValue = false;
-			Type = Type_DefaultValue = ChartType.Bar;
-			Width = Width_DefaultValue = null;
-            WidthString = WidthString_DefaultValue = "";
+			Type = Type_DefaultValue = ChartType.Abands;
+			Width = Width_DefaultValue = "";
+			WidthNumber = WidthNumber_DefaultValue = null;
 			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -80,10 +82,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).
+		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -154,17 +163,19 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
+		 
 
-        /// <summary>
+		/// <summary>
 		/// An explicit height for the chart. If a _number_, the height isgiven in pixels. If given a _percentage string_ (for example`'56%'`), the height is given as the percentage of the actual chartwidth. This allows for preserving the aspect ratio across responsivesizes.By default (when `null`) the height is calculated from the offsetheight of the containing element, or 400 pixels if the containingelement's height is 0.
 		/// </summary>
-        public string HeightString { get; set; }
-        private string HeightString_DefaultValue { get; set; }
+		public double? HeightNumber { get; set; }
+		private double? HeightNumber_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// If true, the axes will scale to the remaining visible series onceone series is hidden. If false, hiding and showing a series willnot affect the axes or the other series. For stacks, once one serieswithin the stack is hidden, the rest of the stack will close inaround it even if the axis is not affected.
-        /// </summary>
-        public bool? IgnoreHiddenSeries { get; set; }
+		/// <summary>
+		/// If true, the axes will scale to the remaining visible series onceone series is hidden. If false, hiding and showing a series willnot affect the axes or the other series. For stacks, once one serieswithin the stack is hidden, the rest of the stack will close inaround it even if the axis is not affected.
+		/// </summary>
+		public bool? IgnoreHiddenSeries { get; set; }
 		private bool? IgnoreHiddenSeries_DefaultValue { get; set; }
 		 
 
@@ -218,7 +229,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options to render charts in 3 dimensions. This feature requires`highcharts-3d.js`, found in the download package or online at[code.highcharts.com/highcharts-3d.js](http://code.highcharts.com/highcharts-3d.js).
+		/// Options to render charts in 3 dimensions. This feature requires`highcharts-3d.js`, found in the download package or online at[code.highcharts.com/highcharts-3d.js](https://code.highcharts.com/highcharts-3d.js).
 		/// </summary>
 		public ChartOptions3d Options3d { get; set; }
 		private ChartOptions3d Options3d_DefaultValue { get; set; }
@@ -388,8 +399,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Additional CSS styles to apply inline to the container `div`. Notethat since the default font styles are applied in the renderer, itis ignorant of the individual chart options and must be set globally.
 		/// </summary>
-		public ChartStyle Style { get; set; }
-		private ChartStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -409,20 +420,21 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An explicit width for the chart. By default (when `null`) the widthis calculated from the offset width of the containing element.
 		/// </summary>
-		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
+		public string Width { get; set; }
+		private string Width_DefaultValue { get; set; }
+		 
 
-        /// <summary>
-        /// An explicit width for the chart. By default (when `null`) the widthis calculated from the offset width of the containing element.
-        /// </summary>
-        public string WidthString { get; set; }
-        private string WidthString_DefaultValue { get; set; }
+		/// <summary>
+		/// An explicit width for the chart. By default (when `null`) the widthis calculated from the offset width of the containing element.
+		/// </summary>
+		public double? WidthNumber { get; set; }
+		private double? WidthNumber_DefaultValue { get; set; }
+		 
 
-
-        /// <summary>
-        /// Set a key to hold when dragging to zoom the chart. This is useful to avoidzooming while moving points. Should be set different than[chart.panKey](#chart.panKey).
-        /// </summary>
-        public ChartZoomKey ZoomKey { get; set; }
+		/// <summary>
+		/// Set a key to hold when dragging to zoom the chart. This is useful to avoidzooming while moving points. Should be set different than[chart.panKey](#chart.panKey).
+		/// </summary>
+		public ChartZoomKey ZoomKey { get; set; }
 		private ChartZoomKey ZoomKey_DefaultValue { get; set; }
 		 
 
@@ -431,7 +443,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ChartZoomType ZoomType { get; set; }
 		private ChartZoomType ZoomType_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -440,6 +454,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -450,19 +465,19 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DisplayErrors != DisplayErrors_DefaultValue) h.Add("displayErrors",DisplayErrors);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-            if (HeightString != HeightString_DefaultValue) h.Add("height", HeightString);
-            if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
+			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
+			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
 			if (Inverted != Inverted_DefaultValue) h.Add("inverted",Inverted);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MarginBottom != MarginBottom_DefaultValue) h.Add("marginBottom",MarginBottom);
 			if (MarginLeft != MarginLeft_DefaultValue) h.Add("marginLeft",MarginLeft);
 			if (MarginRight != MarginRight_DefaultValue) h.Add("marginRight",MarginRight);
 			if (MarginTop != MarginTop_DefaultValue) h.Add("marginTop",MarginTop);
-			if (NumberFormatter != NumberFormatter_DefaultValue) { h.Add("numberFormatter",NumberFormatter); Highcharts.AddFunction("d79ac38b-fc17-4607-984a-b62293ea47de.numberFormatter", NumberFormatter); }  
+			if (NumberFormatter != NumberFormatter_DefaultValue) { h.Add("numberFormatter",NumberFormatter); Highcharts.AddFunction("2a38e0f3-0e58-4007-a025-2e30bf7fba8e.numberFormatter", NumberFormatter); }  
 			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
 			if (PanKey != PanKey_DefaultValue) h.Add("panKey", Highcharts.FirstCharacterToLower(PanKey.ToString()));
 			if (Panning.IsDirty()) h.Add("panning",Panning.ToHashtable());
-			if (ParallelAxes != ParallelAxes_DefaultValue) h.Add("parallelAxes",ParallelAxes);
+			if (ParallelAxes.IsDirty()) h.Add("parallelAxes",ParallelAxes.ToHashtable());
 			if (ParallelCoordinates != ParallelCoordinates_DefaultValue) h.Add("parallelCoordinates",ParallelCoordinates);
 			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", Highcharts.FirstCharacterToLower(PinchType.ToString()));
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
@@ -476,7 +491,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ResetZoomButton.IsDirty()) h.Add("resetZoomButton",ResetZoomButton.ToHashtable());
 			if (ScrollablePlotArea.IsDirty()) h.Add("scrollablePlotArea",ScrollablePlotArea.ToHashtable());
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowAxes != ShowAxes_DefaultValue) h.Add("showAxes",ShowAxes);
 			if (Spacing != Spacing_DefaultValue) h.Add("spacing",Spacing);
 			if (SpacingBottom != SpacingBottom_DefaultValue) h.Add("spacingBottom",SpacingBottom);
@@ -487,10 +502,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StyledMode != StyledMode_DefaultValue) h.Add("styledMode",StyledMode);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-            if (WidthString != WidthString_DefaultValue) h.Add("width", WidthString);
-            if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", Highcharts.FirstCharacterToLower(ZoomKey.ToString()));
+			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
+			if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", Highcharts.FirstCharacterToLower(ZoomKey.ToString()));
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", Highcharts.FirstCharacterToLower(ZoomType.ToString()));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

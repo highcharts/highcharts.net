@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = null;
+			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
@@ -40,6 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareStart = CompareStart_DefaultValue = false;
 			Crisp = Crisp_DefaultValue = true;
 			Cursor = Cursor_DefaultValue = WindbarbSeriesCursor.Null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			Data = Data_DefaultValue = new List<WindbarbSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new WindbarbSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new WindbarbSeriesDataLabels();
@@ -93,7 +95,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new WindbarbSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Type = Type_DefaultValue = WindbarbSeriesType.Windbarb;
+			Type = Type_DefaultValue = WindbarbSeriesType.Null;
 			VectorLength = VectorLength_DefaultValue = 20;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
@@ -117,7 +119,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -170,6 +172,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When `true`, the columns will center in the category, ignoring nullor missing points. When `false`, space will be reserved for null ormissing points.
+		/// </summary>
+		public bool? CenterInCategory { get; set; }
+		private bool? CenterInCategory_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -264,7 +273,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// When true, each column edge is rounded to its nearest pixel in orderto render sharp on screen. In some cases, when there are a lot ofdensely packed columns, this leads to visible difference in columnwidths or distance between columns. In these cases, setting `crisp`to `false` may look better, even though each column is renderedblurry.
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
 		/// </summary>
 		public bool? Crisp { get; set; }
 		private bool? Crisp_DefaultValue { get; set; }
@@ -275,6 +284,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public WindbarbSeriesCursor Cursor { get; set; }
 		private WindbarbSeriesCursor Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -746,6 +762,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -761,6 +778,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
@@ -818,7 +836,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);

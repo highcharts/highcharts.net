@@ -27,22 +27,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPsarStatesHover Hover { get; set; }
-		private PlotOptionsPsarStatesHover Hover_DefaultValue { get; set; }
+		public Hashtable Hover { get; set; }
+		private Hashtable Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The opposite state of a hover for series.
 		/// </summary>
-		public PlotOptionsPsarStatesInactive Inactive { get; set; }
-		private PlotOptionsPsarStatesInactive Inactive_DefaultValue { get; set; }
+		public Hashtable Inactive { get; set; }
+		private Hashtable Inactive_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
 		/// </summary>
-		public PlotOptionsPsarStatesNormal Normal { get; set; }
-		private PlotOptionsPsarStatesNormal Normal_DefaultValue { get; set; }
+		public Hashtable Normal { get; set; }
+		private Hashtable Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>

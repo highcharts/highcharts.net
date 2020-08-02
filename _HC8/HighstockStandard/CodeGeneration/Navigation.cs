@@ -22,9 +22,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			ButtonOptions = ButtonOptions_DefaultValue = new NavigationButtonOptions();
 			Events = Events_DefaultValue = new NavigationEvents();
 			IconsURL = IconsURL_DefaultValue = "";
-			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new NavigationMenuItemHoverStyle();
-			MenuItemStyle = MenuItemStyle_DefaultValue = new NavigationMenuItemStyle();
-			MenuStyle = MenuStyle_DefaultValue = new NavigationMenuStyle();
+			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new Hashtable();
+			MenuItemStyle = MenuItemStyle_DefaultValue = new Hashtable();
+			MenuStyle = MenuStyle_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -74,22 +74,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for the hover state of the individual items within thepopup menu appearing by default when the export icon is clicked. Themenu items are rendered in HTML.
 		/// </summary>
-		public NavigationMenuItemHoverStyle MenuItemHoverStyle { get; set; }
-		private NavigationMenuItemHoverStyle MenuItemHoverStyle_DefaultValue { get; set; }
+		public Hashtable MenuItemHoverStyle { get; set; }
+		private Hashtable MenuItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the individual items within the popup menu appearingby default when the export icon is clicked. The menu items arerendered in HTML. Font size defaults to `11px` on desktop and `14px`on touch devices.
 		/// </summary>
-		public NavigationMenuItemStyle MenuItemStyle { get; set; }
-		private NavigationMenuItemStyle MenuItemStyle_DefaultValue { get; set; }
+		public Hashtable MenuItemStyle { get; set; }
+		private Hashtable MenuItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the popup menu appearing by default when the exporticon is clicked. This menu is rendered in HTML.
 		/// </summary>
-		public NavigationMenuStyle MenuStyle { get; set; }
-		private NavigationMenuStyle MenuStyle_DefaultValue { get; set; }
+		public Hashtable MenuStyle { get; set; }
+		private Hashtable MenuStyle_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -103,9 +103,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ButtonOptions.IsDirty()) h.Add("buttonOptions",ButtonOptions.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (IconsURL != IconsURL_DefaultValue) h.Add("iconsURL",IconsURL);
-			if (MenuItemHoverStyle.IsDirty()) h.Add("menuItemHoverStyle",MenuItemHoverStyle.ToHashtable());
-			if (MenuItemStyle.IsDirty()) h.Add("menuItemStyle",MenuItemStyle.ToHashtable());
-			if (MenuStyle.IsDirty()) h.Add("menuStyle",MenuStyle.ToHashtable());
+			if (MenuItemHoverStyle != MenuItemHoverStyle_DefaultValue) h.Add("menuItemHoverStyle",MenuItemHoverStyle);
+			if (MenuItemStyle != MenuItemStyle_DefaultValue) h.Add("menuItemStyle",MenuItemStyle);
+			if (MenuStyle != MenuStyle_DefaultValue) h.Add("menuStyle",MenuStyle);
 			
 
 			return h;

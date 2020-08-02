@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			RotationMode = RotationMode_DefaultValue = SunburstSeriesDataLabelsRotationMode.Auto;
 			Style = Style_DefaultValue = new SunburstSeriesDataLabelsStyle();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,7 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Decides how the data label will be rotated relative to the perimeterof the sunburst. Valid values are `auto`, `parallel` and`perpendicular`. When `auto`, the best fit will be computed for thepoint.The `series.rotation` option takes precedence over `rotationMode`.
+		/// Decides how the data label will be rotated relative to the perimeterof the sunburst. Valid values are `auto`, `circular`, `parallel` and`perpendicular`. When `auto`, the best fit will becomputed for the point. The `circular` option works similiarto `auto`, but uses the `textPath` feature - labels are curved,resulting in a better layout, however multiple lines and`textOutline` are not supported.The `series.rotation` option takes precedence over `rotationMode`.
 		/// </summary>
 		public SunburstSeriesDataLabelsRotationMode RotationMode { get; set; }
 		private SunburstSeriesDataLabelsRotationMode RotationMode_DefaultValue { get; set; }
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public SunburstSeriesDataLabelsStyle Style { get; set; }
 		private SunburstSeriesDataLabelsStyle Style_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode", Highcharts.FirstCharacterToLower(RotationMode.ToString()));
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

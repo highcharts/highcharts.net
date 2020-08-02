@@ -80,6 +80,7 @@ namespace Highsoft.Web.Mvc.Charts
 			VerticalLine = VerticalLine_DefaultValue = "Vertical line";
 			Volume = Volume_DefaultValue = "Volume";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -522,7 +523,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Volume { get; set; }
 		private string Volume_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -592,7 +595,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalLabel != VerticalLabel_DefaultValue) h.Add("verticalLabel",VerticalLabel);
 			if (VerticalLine != VerticalLine_DefaultValue) h.Add("verticalLine",VerticalLine);
 			if (Volume != Volume_DefaultValue) h.Add("volume",Volume);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

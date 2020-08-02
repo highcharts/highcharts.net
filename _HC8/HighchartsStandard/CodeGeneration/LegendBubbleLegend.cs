@@ -35,6 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ZIndex = ZIndex_DefaultValue = 1;
 			ZThreshold = ZThreshold_DefaultValue = 0;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -162,7 +163,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ZThreshold { get; set; }
 		private double? ZThreshold_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -187,7 +190,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SizeByAbsoluteValue != SizeByAbsoluteValue_DefaultValue) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZThreshold != ZThreshold_DefaultValue) h.Add("zThreshold",ZThreshold);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

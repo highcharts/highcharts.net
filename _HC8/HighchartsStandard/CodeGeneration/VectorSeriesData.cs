@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new VectorSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			Direction = Direction_DefaultValue = null;
@@ -65,6 +66,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customized functionality.Here you can add additional data for your own event callbacks and formattercallbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -176,7 +184,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Direction != Direction_DefaultValue) h.Add("direction",Direction);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());

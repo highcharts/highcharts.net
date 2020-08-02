@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSunburstLevels()
 		{
 			BorderColor = BorderColor_DefaultValue = "";
-			BorderDashStyle = BorderDashStyle_DefaultValue = "";
+			BorderDashStyle = BorderDashStyle_DefaultValue = new Hashtable();
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsSunburstLevelsColorVariation();
@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Rotation = Rotation_DefaultValue = null;
 			RotationMode = RotationMode_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,8 +40,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Can set a `borderDashStyle` on all points which lies on the same level.
 		/// </summary>
-		public string BorderDashStyle { get; set; }
-		private string BorderDashStyle_DefaultValue { get; set; }
+		public Hashtable BorderDashStyle { get; set; }
+		private Hashtable BorderDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -90,7 +91,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string RotationMode { get; set; }
 		private string RotationMode_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -106,7 +109,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LevelSize.IsDirty()) h.Add("levelSize",LevelSize.ToHashtable());
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode",RotationMode);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

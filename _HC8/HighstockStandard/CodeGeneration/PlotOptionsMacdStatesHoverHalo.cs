@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsMacdStatesHoverHalo()
 		{
-			Size = Size_DefaultValue = 0;
+			Size = Size_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Size { get; set; }
-		private double? Size_DefaultValue { get; set; }
+		public Hashtable Size { get; set; }
+		private Hashtable Size_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

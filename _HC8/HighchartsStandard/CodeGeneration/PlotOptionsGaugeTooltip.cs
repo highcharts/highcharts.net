@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			HeaderFormat = HeaderFormat_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,7 +27,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string HeaderFormat { get; set; }
 		private string HeaderFormat_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

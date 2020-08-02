@@ -20,11 +20,14 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectorAllowed = ConnectorAllowed_DefaultValue = false;
 			ConnectorNeighbourDistance = ConnectorNeighbourDistance_DefaultValue = 24;
 			Enabled = Enabled_DefaultValue = true;
+			Format = Format_DefaultValue = "undefined";
+			Formatter = Formatter_DefaultValue = "";
 			MaxFontSize = MaxFontSize_DefaultValue = null;
 			MinFontSize = MinFontSize_DefaultValue = null;
 			OnArea = OnArea_DefaultValue = null;
 			Style = Style_DefaultValue = new WordcloudSeriesLabelStyle();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -57,6 +60,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A format string for the label, with support for a subset ofHTML. Variables are enclosed by curly brackets. Availablevariables are `name`, `options.xxx`, `color` and othermembers from the `series` object. Use this option also to seta static text for the label.
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback function to format each of the series' labels. The`this` keyword refers to the series object. By default the`formatter` is undefined and the `series.name` is rendered.
+		/// </summary>
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// For area-like series, allow the font size to vary so thatsmall areas get a smaller font size. The default applies thiseffect to area-like series but not line-like series.
 		/// </summary>
 		public double? MaxFontSize { get; set; }
@@ -82,7 +99,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public WordcloudSeriesLabelStyle Style { get; set; }
 		private WordcloudSeriesLabelStyle Style_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -93,11 +112,20 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectorAllowed != ConnectorAllowed_DefaultValue) h.Add("connectorAllowed",ConnectorAllowed);
 			if (ConnectorNeighbourDistance != ConnectorNeighbourDistance_DefaultValue) h.Add("connectorNeighbourDistance",ConnectorNeighbourDistance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("c6f81072-7b37-4734-a9f1-3bee6d3a251b.formatter", Formatter); }  
 			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
 			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
 			if (OnArea != OnArea_DefaultValue) h.Add("onArea",OnArea);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

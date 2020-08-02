@@ -18,10 +18,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			BorderColor = BorderColor_DefaultValue = "";
-			Brightness = Brightness_DefaultValue = null;
+			Brightness = Brightness_DefaultValue = new Hashtable();
 			Color = Color_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,8 +43,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How much to brighten the point on interaction. Requires themain color to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover`rule.
 		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
+		public Hashtable Brightness { get; set; }
+		private Hashtable Brightness_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -56,9 +57,11 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		  
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsPolygonMarkerStatesHover()
 		{
-			Enabled = Enabled_DefaultValue = false;
+			Enabled = Enabled_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

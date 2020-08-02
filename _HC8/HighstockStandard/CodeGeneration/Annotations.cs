@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			ControlPointOptions = ControlPointOptions_DefaultValue = new AnnotationsControlPointOptions();
 			CrookedLine = CrookedLine_DefaultValue = new AnnotationsCrookedLine();
-			Draggable = Draggable_DefaultValue = AnnotationsDraggable.Xy;
+			Draggable = Draggable_DefaultValue = "xy";
 			ElliottWave = ElliottWave_DefaultValue = new AnnotationsElliottWave();
 			Events = Events_DefaultValue = new AnnotationsEvents();
 			Fibonacci = Fibonacci_DefaultValue = new AnnotationsFibonacci();
@@ -54,10 +54,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Allow an annotation to be draggable by a user. Possiblevalues are `"x"`, `"xy"`, `"y"` and `""` (disabled).
+		/// Allow an annotation to be draggable by a user. Possiblevalues are `'x'`, `'xy'`, `'y'` and `''` (disabled).
 		/// </summary>
-		public AnnotationsDraggable Draggable { get; set; }
-		private AnnotationsDraggable Draggable_DefaultValue { get; set; }
+		public string Draggable { get; set; }
+		private string Draggable_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -82,14 +82,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Sets an ID for an annotation. Can be user later when removing anannotation in [Chart#removeAnnotation(id)](/class-reference/Highcharts.Chart#removeAnnotation) method.
+		/// Sets an ID for an annotation. Can be user later whenremoving an annotation in [Chart#removeAnnotation(id)](/class-reference/Highcharts.Chart#removeAnnotation) method.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Sets an ID for an annotation. Can be user later when removing anannotation in [Chart#removeAnnotation(id)](/class-reference/Highcharts.Chart#removeAnnotation) method.
+		/// Sets an ID for an annotation. Can be user later whenremoving an annotation in [Chart#removeAnnotation(id)](/class-reference/Highcharts.Chart#removeAnnotation) method.
 		/// </summary>
 		public double? IdNumber { get; set; }
 		private double? IdNumber_DefaultValue { get; set; }
@@ -110,7 +110,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of labels for the annotation. For options that apply tomultiple labels, they can be added to the[labelOptions](annotations.labelOptions.html).
+		/// An array of labels for the annotation. For options that applyto multiple labels, they can be added to the[labelOptions](annotations.labelOptions.html).
 		/// </summary>
 		public List<AnnotationsLabels> Labels { get; set; }
 		private List<AnnotationsLabels> Labels_DefaultValue { get; set; }
@@ -131,14 +131,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for annotation's shapes. Each shape inherits options fromthe shapeOptions object. An option from the shapeOptions can beoverwritten by config for a specific shape.
+		/// Options for annotation's shapes. Each shape inherits optionsfrom the shapeOptions object. An option from the shapeOptionscan be overwritten by config for a specific shape.
 		/// </summary>
 		public AnnotationsShapeOptions ShapeOptions { get; set; }
 		private AnnotationsShapeOptions ShapeOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of shapes for the annotation. For options that apply tomultiple shapes, then can be added to the[shapeOptions](annotations.shapeOptions.html).
+		/// An array of shapes for the annotation. For options that applyto multiple shapes, then can be added to the[shapeOptions](annotations.shapeOptions.html).
 		/// </summary>
 		public List<AnnotationsShapes> Shapes { get; set; }
 		private List<AnnotationsShapes> Shapes_DefaultValue { get; set; }
@@ -179,7 +179,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (ControlPointOptions.IsDirty()) h.Add("controlPointOptions",ControlPointOptions.ToHashtable());
 			if (CrookedLine.IsDirty()) h.Add("crookedLine",CrookedLine.ToHashtable());
-			if (Draggable != Draggable_DefaultValue) h.Add("draggable", Highstock.FirstCharacterToLower(Draggable.ToString()));
+			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
 			if (ElliottWave.IsDirty()) h.Add("elliottWave",ElliottWave.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Fibonacci.IsDirty()) h.Add("fibonacci",Fibonacci.ToHashtable());

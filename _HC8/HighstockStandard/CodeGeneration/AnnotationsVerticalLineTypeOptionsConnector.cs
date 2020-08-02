@@ -16,14 +16,23 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsVerticalLineTypeOptionsConnector()
 		{
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			MarkerEnd = MarkerEnd_DefaultValue = "arrow";
 			Snap = Snap_DefaultValue = 2;
+			Src = Src_DefaultValue = "";
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
 			
 		}	
 		
+
+		/// <summary>
+		/// Name of the dash style to use for the shape's stroke.
+		/// </summary>
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The color of the shape's fill.
@@ -47,6 +56,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The URL for an image to use as the annotation shape.Note, type has to be set to `'image'`.
+		/// </summary>
+		public string Src { get; set; }
+		private string Src_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the shape's stroke.
 		/// </summary>
 		public string Stroke { get; set; }
@@ -65,9 +81,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
+			if (Src != Src_DefaultValue) h.Add("src",Src);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			

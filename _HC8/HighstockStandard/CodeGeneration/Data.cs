@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LineDelimiter = LineDelimiter_DefaultValue = " n";
 			Parsed = Parsed_DefaultValue = "";
 			ParseDate = ParseDate_DefaultValue = "";
-			Rows = Rows_DefaultValue = new List<List<object>>();
+			Rows = Rows_DefaultValue = new List<List<string>>();
 			RowsURL = RowsURL_DefaultValue = "";
 			SeriesMapping = SeriesMapping_DefaultValue = new List<List<double?>>();
 			StartColumn = StartColumn_DefaultValue = 0;
@@ -56,8 +56,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A two-dimensional array representing the input data on tabular form.This input can be used when the data is already parsed, for examplefrom a grid view component. Each cell can be a string or number.If not switchRowsAndColumns is set, the columns are interpreted asseries.
 		/// </summary>
-		public List<List<Object>> Columns { get; set; }
-		private List<List<Object>> Columns_DefaultValue { get; set; }
+		public List<List<string>> Columns { get; set; }
+		private List<List<string>> Columns_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -182,8 +182,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The same as the columns input option, but defining rows intead ofcolumns.
 		/// </summary>
-		public List<List<object>> Rows { get; set; }
-		private List<List<object>> Rows_DefaultValue { get; set; }
+		public List<List<string>> Rows { get; set; }
+		private List<List<string>> Rows_DefaultValue { get; set; }
 		 
 
 		/// <summary>

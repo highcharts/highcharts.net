@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Colors = Colors_DefaultValue = new List<string>();
 			Credits = Credits_DefaultValue = new Credits();
 			Data = Data_DefaultValue = new Data();
-			Defs = Defs_DefaultValue = null;
+			Defs = Defs_DefaultValue = new Defs();
 			Exporting = Exporting_DefaultValue = new Exporting();
 			Global = Global_DefaultValue = new Global();
 			Labels = Labels_DefaultValue = new Labels();
@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Options for configuring accessibility for the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and informationon its features, see[Highcharts Accessibility](http://www.highcharts.com/docs/chart-concepts/accessibility).
+		/// Options for configuring accessibility for the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and informationon its features, see[Highcharts Accessibility](https://www.highcharts.com/docs/chart-concepts/accessibility).
 		/// </summary>
 		public Accessibility Accessibility { get; set; }
 		private Accessibility Accessibility_DefaultValue { get; set; }
@@ -117,8 +117,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Styled mode only. Configuration object for adding SVG definitions forreusable elements. See [gradients, shadows andpatterns](https://www.highcharts.com/docs/chart-design-and-style/gradients-shadows-and-patterns)for more information and code examples.
 		/// </summary>
-		public Object Defs { get; set; }
-		private Object Defs_DefaultValue { get; set; }
+		public Defs Defs { get; set; }
+		private Defs Defs_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -282,7 +282,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Credits.IsDirty()) h.Add("credits",Credits.ToHashtable());
 			if (Data.IsDirty()) h.Add("data",Data.ToHashtable());
-			if (Defs != Defs_DefaultValue) h.Add("defs",Defs);
+			if (Defs.IsDirty()) h.Add("defs",Defs.ToHashtable());
 			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
 			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());

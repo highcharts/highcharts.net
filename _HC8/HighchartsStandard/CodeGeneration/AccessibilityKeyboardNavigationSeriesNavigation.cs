@@ -18,8 +18,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Mode = Mode_DefaultValue = AccessibilityKeyboardNavigationSeriesNavigationMode.Normal;
 			PointNavigationEnabledThreshold = PointNavigationEnabledThreshold_DefaultValue = null;
+			PointNavigationEnabledThresholdBool = PointNavigationEnabledThresholdBool_DefaultValue = null;
 			SkipNullPoints = SkipNullPoints_DefaultValue = true;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -38,11 +40,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When a series contains more points than this, we no longerallow keyboard navigation for it.Set to `false` to disable.
+		/// </summary>
+		public bool? PointNavigationEnabledThresholdBool { get; set; }
+		private bool? PointNavigationEnabledThresholdBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Skip null points when navigating through points with thekeyboard.
 		/// </summary>
 		public bool? SkipNullPoints { get; set; }
 		private bool? SkipNullPoints_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -51,8 +62,16 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Mode != Mode_DefaultValue) h.Add("mode", Highcharts.FirstCharacterToLower(Mode.ToString()));
 			if (PointNavigationEnabledThreshold != PointNavigationEnabledThreshold_DefaultValue) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThreshold);
+			if (PointNavigationEnabledThresholdBool != PointNavigationEnabledThresholdBool_DefaultValue) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThresholdBool);
 			if (SkipNullPoints != SkipNullPoints_DefaultValue) h.Add("skipNullPoints",SkipNullPoints);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

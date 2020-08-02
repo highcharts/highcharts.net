@@ -9,6 +9,7 @@ namespace Highsoft.Web.Mvc.Charts
     {
         Auto, 
 		Perpendicular, 
-		Parallel
+		Parallel, 
+		Circular
     }
 }

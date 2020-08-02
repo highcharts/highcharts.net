@@ -21,11 +21,11 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = null;
 			Stack = Stack_DefaultValue = null;
-			Type = Type_DefaultValue = TypeSeries.Null;
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -65,13 +65,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public TypeSeries Type { get; set; }
-		private TypeSeries Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
 		/// </summary>
 		public string XAxis { get; set; }
@@ -90,7 +83,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -102,11 +97,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			h.Add("type","");
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

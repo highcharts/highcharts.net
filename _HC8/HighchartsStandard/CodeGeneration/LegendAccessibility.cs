@@ -16,9 +16,10 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LegendAccessibility()
 		{
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new LegendAccessibilityKeyboardNavigation();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public LegendAccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
 		private LegendAccessibilityKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

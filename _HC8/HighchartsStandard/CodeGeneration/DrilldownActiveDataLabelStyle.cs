@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FontWeight = FontWeight_DefaultValue = "bold";
 			TextDecoration = TextDecoration_DefaultValue = "underline";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string TextDecoration { get; set; }
 		private string TextDecoration_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			if (TextDecoration != TextDecoration_DefaultValue) h.Add("textDecoration",TextDecoration);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

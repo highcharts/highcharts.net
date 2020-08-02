@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsTreemapDashStyle
     {
-        Solid, 
+        Null, 
+		Solid, 
 		ShortDash, 
 		ShortDot, 
 		ShortDashDot, 

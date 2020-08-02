@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendItem = LegendItem_DefaultValue = "Toggle visibility of {itemName}";
 			LegendLabel = LegendLabel_DefaultValue = "Toggle series visibility";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string LegendLabel { get; set; }
 		private string LegendLabel_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (LegendItem != LegendItem_DefaultValue) h.Add("legendItem",LegendItem);
 			if (LegendLabel != LegendLabel_DefaultValue) h.Add("legendLabel",LegendLabel);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -72,22 +72,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		Supertrend, 
 		Tema, 
 		Trix, 
-		Williamsr,
-        Arearange,
-        Area,
-        Areaspline,
-        Areasplinerange,
-        Bubble,
-        Columnrange,
-        Column,
-        Ikh,
-        Linearregressionintercept,
-        Linearregression,
-        Linearregressionslope,
-        Line, 
-        Scatter,
-        Slowstochastic,
-        Spline,
-        Trendline
+		Williamsr
     }
 }

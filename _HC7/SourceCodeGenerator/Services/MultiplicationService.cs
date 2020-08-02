@@ -88,14 +88,22 @@ namespace SourceCodeGenerator.Services
             }
 
             
+
+
             //place for arrrays
 
             return clonedObjects;
         }
 
+        //private bool IsCss(ApiItem item)
+        //{
+        //    if (item.Types.Contains(TypeService.CSSRawType))
+        //        return true;
+        //}
+
         private bool IsObject(ApiItem item)
         {
-            if (item.Types.Contains("Object") || item.Types.Contains("Highcharts.CSSObject") || item.Types.Contains("*"))
+            if (item.Types.Contains("Object") || item.Types.Contains("*"))
                 return true;
 
             foreach (var type in item.Types)

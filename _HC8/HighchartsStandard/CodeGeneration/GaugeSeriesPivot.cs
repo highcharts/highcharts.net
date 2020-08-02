@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 5;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Radius { get; set; }
 		private double? Radius_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

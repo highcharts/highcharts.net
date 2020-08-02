@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ScrollPositionX = ScrollPositionX_DefaultValue = null;
 			ScrollPositionY = ScrollPositionY_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ScrollPositionY { get; set; }
 		private double? ScrollPositionY_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (ScrollPositionX != ScrollPositionX_DefaultValue) h.Add("scrollPositionX",ScrollPositionX);
 			if (ScrollPositionY != ScrollPositionY_DefaultValue) h.Add("scrollPositionY",ScrollPositionY);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

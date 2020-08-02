@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			CustomComponents = CustomComponents_DefaultValue = new object();
 			Description = Description_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = true;
-			HighContrastTheme = HighContrastTheme_DefaultValue = null;
+			HighContrastTheme = HighContrastTheme_DefaultValue = new Object();
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
 			LandmarkVerbosity = LandmarkVerbosity_DefaultValue = AccessibilityLandmarkVerbosity.All;
 			LinkedDescription = LinkedDescription_DefaultValue = "*[data-highcharts-chart='{index}'] + .highcharts-description";
@@ -122,10 +122,10 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (AnnounceNewData.IsDirty()) h.Add("announceNewData",AnnounceNewData.ToHashtable());
-			if (CustomComponents != CustomComponents_DefaultValue) h.Add("customComponents",CustomComponents);
+			if (CustomComponents.IsDirty()) h.Add("customComponents",CustomComponents.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (HighContrastTheme != HighContrastTheme_DefaultValue) h.Add("highContrastTheme",HighContrastTheme);
+			if (HighContrastTheme.IsDirty()) h.Add("highContrastTheme",HighContrastTheme.ToHashtable());
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", Highstock.FirstCharacterToLower(LandmarkVerbosity.ToString()));
 			if (LinkedDescription != LinkedDescription_DefaultValue) h.Add("linkedDescription",LinkedDescription);

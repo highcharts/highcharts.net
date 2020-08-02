@@ -17,11 +17,12 @@ namespace Highsoft.Web.Mvc.Charts
 		public Time()
 		{
 			Date = Date_DefaultValue = new DateTime();
-			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "undefined";
+			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "undefined";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
 			UseUTC = UseUTC_DefaultValue = true;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -40,7 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Requires [moment.js](http://momentjs.com/). If the timezone optionis specified, it creates a default[getTimezoneOffset](#time.getTimezoneOffset) function that looksup the specified timezone in moment.js. If moment.js is not included,this throws a Highcharts error in the console, but does not crash thechart.
+		/// Requires [moment.js](https://momentjs.com/). If the timezone optionis specified, it creates a default[getTimezoneOffset](#time.getTimezoneOffset) function that looksup the specified timezone in moment.js. If moment.js is not included,this throws a Highcharts error in the console, but does not crash thechart.
 		/// </summary>
 		public string Timezone { get; set; }
 		private string Timezone_DefaultValue { get; set; }
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? UseUTC { get; set; }
 		private bool? UseUTC_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -66,11 +69,18 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Date != Date_DefaultValue) h.Add("date",Date);
-			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) h.Add("getTimezoneOffset",GetTimezoneOffset);
+			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highcharts.AddFunction("b83e5c6d-b5b8-4d9d-80c0-095ae3f272a4.getTimezoneOffset", GetTimezoneOffset); }  
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

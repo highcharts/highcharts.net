@@ -28,6 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			To = To_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -106,7 +107,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -124,7 +127,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "transparent";
 			Size = Size_DefaultValue = 1;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Size { get; set; }
 		private double? Size_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

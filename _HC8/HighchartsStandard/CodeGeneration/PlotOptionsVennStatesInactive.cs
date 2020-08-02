@@ -16,34 +16,35 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVennStatesInactive()
 		{
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Opacity = Opacity_DefaultValue = null;
+			Opacity = Opacity_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
-		/// The animation for entering the inactive state.
+		/// 
 		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
+		public Hashtable Opacity { get; set; }
+		private Hashtable Opacity_DefaultValue { get; set; }
 		 
 
-		/// <summary>
-		/// Opacity of series elements (dataLabels, line, area). Set to 1to disable inactive state.
-		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
-		  
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

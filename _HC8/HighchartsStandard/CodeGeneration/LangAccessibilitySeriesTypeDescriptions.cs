@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Pyramid = Pyramid_DefaultValue = "Pyramid charts consist of a single pyramid with item heights corresponding to each point value.";
 			Waterfall = Waterfall_DefaultValue = "A waterfall chart is a column chart where each column contributes towards a total end value.";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -90,7 +91,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Waterfall { get; set; }
 		private string Waterfall_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -106,7 +109,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Funnel != Funnel_DefaultValue) h.Add("funnel",Funnel);
 			if (Pyramid != Pyramid_DefaultValue) h.Add("pyramid",Pyramid);
 			if (Waterfall != Waterfall_DefaultValue) h.Add("waterfall",Waterfall);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

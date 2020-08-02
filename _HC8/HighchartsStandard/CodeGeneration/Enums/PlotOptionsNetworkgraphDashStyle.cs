@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsNetworkgraphDashStyle
     {
-        Solid, 
+        Null, 
+		Solid, 
 		ShortDash, 
 		ShortDot, 
 		ShortDashDot, 

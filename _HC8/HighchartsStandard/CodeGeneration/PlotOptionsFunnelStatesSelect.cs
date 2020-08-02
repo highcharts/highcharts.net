@@ -16,9 +16,10 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsFunnelStatesSelect()
 		{
-			BorderColor = BorderColor_DefaultValue = "#000000";
-			Color = Color_DefaultValue = "#cccccc";
+			BorderColor = BorderColor_DefaultValue = "";
+			Color = Color_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

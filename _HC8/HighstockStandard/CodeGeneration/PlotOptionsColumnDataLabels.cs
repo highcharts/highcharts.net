@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsColumnDataLabels()
 		{
-			Align = Align_DefaultValue = PlotOptionsColumnDataLabelsAlign.Null;
+			Align = Align_DefaultValue = PlotOptionsColumnDataLabelsAlign.Undefined;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "";
@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new PlotOptionsColumnDataLabelsTextPath();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Null;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Undefined;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			Z = Z_DefaultValue = 6;
@@ -263,7 +263,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// The y position offset of the label relative to the point inpixels.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

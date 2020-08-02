@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Description = Description_DefaultValue = "{description}";
 			NullPointValue = NullPointValue_DefaultValue = "No value";
+			PointAnnotationsDescription = PointAnnotationsDescription_DefaultValue = "{Annotation: #each(annotations). }";
 			Summary = Summary_DefaultValue = new LangAccessibilitySeriesSummary();
 			XAxisDescription = XAxisDescription_DefaultValue = "X axis, {name}";
 			YAxisDescription = YAxisDescription_DefaultValue = "Y axis, {name}";
@@ -26,7 +27,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// User supplied description text. This is added after the mainsummary if present.
+		/// User supplied description text. This is added in the pointcomment description by default if present.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
@@ -37,6 +38,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string NullPointValue { get; set; }
 		private string NullPointValue_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Description for annotations on a point, as it is made availableto assistive technology.
+		/// </summary>
+		public string PointAnnotationsDescription { get; set; }
+		private string PointAnnotationsDescription_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -67,6 +75,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (NullPointValue != NullPointValue_DefaultValue) h.Add("nullPointValue",NullPointValue);
+			if (PointAnnotationsDescription != PointAnnotationsDescription_DefaultValue) h.Add("pointAnnotationsDescription",PointAnnotationsDescription);
 			if (Summary.IsDirty()) h.Add("summary",Summary.ToHashtable());
 			if (XAxisDescription != XAxisDescription_DefaultValue) h.Add("xAxisDescription",XAxisDescription);
 			if (YAxisDescription != YAxisDescription_DefaultValue) h.Add("yAxisDescription",YAxisDescription);

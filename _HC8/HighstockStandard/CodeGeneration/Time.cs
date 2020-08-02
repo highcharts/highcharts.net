@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Time()
 		{
 			Date = Date_DefaultValue = null;
-			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "undefined";
+			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "undefined";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
 			UseUTC = UseUTC_DefaultValue = true;
@@ -40,7 +40,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Requires [moment.js](http://momentjs.com/). If the timezone optionis specified, it creates a default[getTimezoneOffset](#time.getTimezoneOffset) function that looksup the specified timezone in moment.js. If moment.js is not included,this throws a Highcharts error in the console, but does not crash thechart.
+		/// Requires [moment.js](https://momentjs.com/). If the timezone optionis specified, it creates a default[getTimezoneOffset](#time.getTimezoneOffset) function that looksup the specified timezone in moment.js. If moment.js is not included,this throws a Highcharts error in the console, but does not crash thechart.
 		/// </summary>
 		public string Timezone { get; set; }
 		private string Timezone_DefaultValue { get; set; }
@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Date != Date_DefaultValue) h.Add("date",Date);
-			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) h.Add("getTimezoneOffset",GetTimezoneOffset);
+			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highstock.AddFunction("TimeGetTimezoneOffset.getTimezoneOffset", GetTimezoneOffset); }  
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);

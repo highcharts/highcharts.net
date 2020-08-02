@@ -28,11 +28,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			Floating = Floating_DefaultValue = false;
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new Hashtable();
 			ItemDistance = ItemDistance_DefaultValue = null;
-			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new LegendItemHiddenStyle();
-			ItemHoverStyle = ItemHoverStyle_DefaultValue = new LegendItemHoverStyle();
+			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable();
+			ItemHoverStyle = ItemHoverStyle_DefaultValue = new Hashtable();
 			ItemMarginBottom = ItemMarginBottom_DefaultValue = 0;
 			ItemMarginTop = ItemMarginTop_DefaultValue = 0;
-			ItemStyle = ItemStyle_DefaultValue = new LegendItemStyle();
+			ItemStyle = ItemStyle_DefaultValue = new Hashtable();
 			ItemWidth = ItemWidth_DefaultValue = null;
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
 			LabelFormatter = LabelFormatter_DefaultValue = null;
@@ -44,7 +44,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Reversed = Reversed_DefaultValue = false;
 			Rtl = Rtl_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
 			SquareSymbol = SquareSymbol_DefaultValue = true;
 			Style = Style_DefaultValue = new Hashtable();
 			SymbolHeight = SymbolHeight_DefaultValue = null;
@@ -149,15 +148,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for each legend item when the corresponding series orpoint is hidden. Only a subset of CSS is supported, notably thoseoptions related to text. Properties are inherited from `style`unless overridden here.
 		/// </summary>
-		public LegendItemHiddenStyle ItemHiddenStyle { get; set; }
-		private LegendItemHiddenStyle ItemHiddenStyle_DefaultValue { get; set; }
+		public Hashtable ItemHiddenStyle { get; set; }
+		private Hashtable ItemHiddenStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for each legend item in hover mode. Only a subset ofCSS is supported, notably those options related to text. Propertiesare inherited from `style` unless overridden here.
 		/// </summary>
-		public LegendItemHoverStyle ItemHoverStyle { get; set; }
-		private LegendItemHoverStyle ItemHoverStyle_DefaultValue { get; set; }
+		public Hashtable ItemHoverStyle { get; set; }
+		private Hashtable ItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -177,8 +176,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS styles for each legend item. Only a subset of CSS is supported,notably those options related to text. The default `textOverflow`property makes long texts truncate. Set it to `undefined` to wraptext instead. A `width` property can be added to control the textwidth.
 		/// </summary>
-		public LegendItemStyle ItemStyle { get; set; }
-		private LegendItemStyle ItemStyle_DefaultValue { get; set; }
+		public Hashtable ItemStyle { get; set; }
+		private Hashtable ItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -256,13 +255,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the legend. A `backgroundColor`also needs to be applied for this to take effect. The shadow can bean object configuration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
-		/// </summary>
-		public bool? ShadowBool { get; set; }
-		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -373,11 +365,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (ItemCheckboxStyle != ItemCheckboxStyle_DefaultValue) h.Add("itemCheckboxStyle",ItemCheckboxStyle);
 			if (ItemDistance != ItemDistance_DefaultValue) h.Add("itemDistance",ItemDistance);
-			if (ItemHiddenStyle.IsDirty()) h.Add("itemHiddenStyle",ItemHiddenStyle.ToHashtable());
-			if (ItemHoverStyle.IsDirty()) h.Add("itemHoverStyle",ItemHoverStyle.ToHashtable());
+			if (ItemHiddenStyle != ItemHiddenStyle_DefaultValue) h.Add("itemHiddenStyle",ItemHiddenStyle);
+			if (ItemHoverStyle != ItemHoverStyle_DefaultValue) h.Add("itemHoverStyle",ItemHoverStyle);
 			if (ItemMarginBottom != ItemMarginBottom_DefaultValue) h.Add("itemMarginBottom",ItemMarginBottom);
 			if (ItemMarginTop != ItemMarginTop_DefaultValue) h.Add("itemMarginTop",ItemMarginTop);
-			if (ItemStyle.IsDirty()) h.Add("itemStyle",ItemStyle.ToHashtable());
+			if (ItemStyle != ItemStyle_DefaultValue) h.Add("itemStyle",ItemStyle);
 			if (ItemWidth != ItemWidth_DefaultValue) h.Add("itemWidth",ItemWidth);
 			if (LabelFormat != LabelFormat_DefaultValue) h.Add("labelFormat",LabelFormat);
 			if (LabelFormatter != LabelFormatter_DefaultValue) h.Add("labelFormatter",LabelFormatter);
@@ -389,7 +381,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (SquareSymbol != SquareSymbol_DefaultValue) h.Add("squareSymbol",SquareSymbol);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (SymbolHeight != SymbolHeight_DefaultValue) h.Add("symbolHeight",SymbolHeight);

@@ -17,8 +17,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public Labels()
 		{
 			Items = Items_DefaultValue = new List<LabelsItems>();
-			Style = Style_DefaultValue = new LabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -32,9 +33,11 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Shared CSS styles for all labels.
 		/// </summary>
-		public LabelsStyle Style { get; set; }
-		private LabelsStyle Style_DefaultValue { get; set; }
-		  
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Items != Items_DefaultValue) h.Add("items", HashifyList(Items));
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

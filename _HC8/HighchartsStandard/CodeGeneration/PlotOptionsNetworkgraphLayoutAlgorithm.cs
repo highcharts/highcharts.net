@@ -31,6 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Theta = Theta_DefaultValue = null;
 			Type = Type_DefaultValue = PlotOptionsNetworkgraphLayoutAlgorithmType.ReingoldFruchterman;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -130,7 +131,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsNetworkgraphLayoutAlgorithmType Type { get; set; }
 		private PlotOptionsNetworkgraphLayoutAlgorithmType Type_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -138,7 +141,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Approximation != Approximation_DefaultValue) h.Add("approximation", Highcharts.FirstCharacterToLower(Approximation.ToString()));
-			if (AttractiveForce != AttractiveForce_DefaultValue) { h.Add("attractiveForce",AttractiveForce); Highcharts.AddFunction("6936f414-0c7b-48cd-a11d-2ef41d3ac3b1.attractiveForce", AttractiveForce); }  
+			if (AttractiveForce != AttractiveForce_DefaultValue) { h.Add("attractiveForce",AttractiveForce); Highcharts.AddFunction("3dce9551-1e13-472c-99d2-7043dbe34012.attractiveForce", AttractiveForce); }  
 			if (EnableSimulation != EnableSimulation_DefaultValue) h.Add("enableSimulation",EnableSimulation);
 			if (Friction != Friction_DefaultValue) h.Add("friction",Friction);
 			if (GravitationalConstant != GravitationalConstant_DefaultValue) h.Add("gravitationalConstant",GravitationalConstant);
@@ -148,10 +151,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkLength != LinkLength_DefaultValue) h.Add("linkLength",LinkLength);
 			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
-			if (RepulsiveForce != RepulsiveForce_DefaultValue) { h.Add("repulsiveForce",RepulsiveForce); Highcharts.AddFunction("0e00c703-a339-40ae-8fbb-a978b06d4729.repulsiveForce", RepulsiveForce); }  
+			if (RepulsiveForce != RepulsiveForce_DefaultValue) { h.Add("repulsiveForce",RepulsiveForce); Highcharts.AddFunction("837d3c85-f208-4028-baad-ea3ca56a219f.repulsiveForce", RepulsiveForce); }  
 			if (Theta != Theta_DefaultValue) h.Add("theta",Theta);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

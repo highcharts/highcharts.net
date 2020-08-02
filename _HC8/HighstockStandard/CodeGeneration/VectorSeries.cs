@@ -34,7 +34,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Compare = Compare_DefaultValue = "";
 			CompareBase = CompareBase_DefaultValue = VectorSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
+			Crisp = Crisp_DefaultValue = true;
 			Cursor = Cursor_DefaultValue = VectorSeriesCursor.Null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			Data = Data_DefaultValue = new List<VectorSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new VectorSeriesDataLabels();
 			DataSorting = DataSorting_DefaultValue = new VectorSeriesDataSorting();
@@ -76,7 +78,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new VectorSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Type = Type_DefaultValue = VectorSeriesType.Vector;
+			Type = Type_DefaultValue = VectorSeriesType.Null;
 			VectorLength = VectorLength_DefaultValue = 20;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
@@ -98,7 +100,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -217,10 +219,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public VectorSeriesCursor Cursor { get; set; }
 		private VectorSeriesCursor Cursor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -603,7 +619,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
@@ -645,7 +663,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);

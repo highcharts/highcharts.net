@@ -20,6 +20,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			ConnectorAllowed = ConnectorAllowed_DefaultValue = false;
 			ConnectorNeighbourDistance = ConnectorNeighbourDistance_DefaultValue = 24;
 			Enabled = Enabled_DefaultValue = true;
+			Format = Format_DefaultValue = "undefined";
+			Formatter = Formatter_DefaultValue = "";
 			MaxFontSize = MaxFontSize_DefaultValue = null;
 			MinFontSize = MinFontSize_DefaultValue = null;
 			OnArea = OnArea_DefaultValue = null;
@@ -54,6 +56,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A format string for the label, with support for a subset ofHTML. Variables are enclosed by curly brackets. Availablevariables are `name`, `options.xxx`, `color` and othermembers from the `series` object. Use this option also to seta static text for the label.
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback function to format each of the series' labels. The`this` keyword refers to the series object. By default the`formatter` is undefined and the `series.name` is rendered.
+		/// </summary>
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -93,6 +109,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ConnectorAllowed != ConnectorAllowed_DefaultValue) h.Add("connectorAllowed",ConnectorAllowed);
 			if (ConnectorNeighbourDistance != ConnectorNeighbourDistance_DefaultValue) h.Add("connectorNeighbourDistance",ConnectorNeighbourDistance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("CandleStickSeriesLabelFormatter.formatter", Formatter); }  
 			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
 			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
 			if (OnArea != OnArea_DefaultValue) h.Add("onArea",OnArea);

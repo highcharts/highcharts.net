@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			CrosshairY = CrosshairY_DefaultValue = new AnnotationsMeasureTypeOptionsCrosshairY();
 			Label = Label_DefaultValue = new AnnotationsMeasureTypeOptionsLabel();
 			Line = Line_DefaultValue = new AnnotationsMeasureTypeOptionsLine();
-			Points = Points_DefaultValue = new List<AnnotationsMeasureTypeOptionsPoints>();
+			Points = Points_DefaultValue = new AnnotationsMeasureTypeOptionsPoints();
 			SelectType = SelectType_DefaultValue = "xy";
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsMeasureTypeOptionsBackground Background { get; set; }
-		private AnnotationsMeasureTypeOptionsBackground Background_DefaultValue { get; set; }
+		public string Background { get; set; }
+		private string Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -67,8 +67,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<AnnotationsMeasureTypeOptionsPoints> Points { get; set; }
-		private List<AnnotationsMeasureTypeOptionsPoints> Points_DefaultValue { get; set; }
+		public AnnotationsMeasureTypeOptionsPoints Points { get; set; }
+		private AnnotationsMeasureTypeOptionsPoints Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -16,17 +16,20 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsHeatmapStatesHover()
 		{
-			Brightness = Brightness_DefaultValue = null;
+			Brightness = Brightness_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// How much to brighten the point on interaction. Requires themain color to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover`rule.
 		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
-		  
+		public Hashtable Brightness { get; set; }
+		private Hashtable Brightness_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

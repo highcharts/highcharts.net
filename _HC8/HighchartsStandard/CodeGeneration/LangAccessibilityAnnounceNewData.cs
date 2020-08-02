@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NewSeriesAnnounceMultiple = NewSeriesAnnounceMultiple_DefaultValue = "New data series in chart {chartTitle}: {seriesDesc}";
 			NewSeriesAnnounceSingle = NewSeriesAnnounceSingle_DefaultValue = "New data series: {seriesDesc}";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string NewSeriesAnnounceSingle { get; set; }
 		private string NewSeriesAnnounceSingle_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NewPointAnnounceSingle != NewPointAnnounceSingle_DefaultValue) h.Add("newPointAnnounceSingle",NewPointAnnounceSingle);
 			if (NewSeriesAnnounceMultiple != NewSeriesAnnounceMultiple_DefaultValue) h.Add("newSeriesAnnounceMultiple",NewSeriesAnnounceMultiple);
 			if (NewSeriesAnnounceSingle != NewSeriesAnnounceSingle_DefaultValue) h.Add("newSeriesAnnounceSingle",NewSeriesAnnounceSingle);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

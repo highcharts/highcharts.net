@@ -23,14 +23,17 @@ namespace Highsoft.Web.Mvc.Charts
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new ChartParallelAxesCrosshair();
+			CrosshairBool = CrosshairBool_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = true;
 			Events = Events_DefaultValue = new ChartParallelAxesEvents();
 			Floor = Floor_DefaultValue = null;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Height = Height_DefaultValue = "";
+			HeightNumber = HeightNumber_DefaultValue = null;
 			Labels = Labels_DefaultValue = new ChartParallelAxesLabels();
 			Left = Left_DefaultValue = "";
+			LeftNumber = LeftNumber_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ccd6eb";
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = null;
@@ -40,6 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Min = Min_DefaultValue = null;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
 			MinorTickInterval = MinorTickInterval_DefaultValue = "";
+			MinorTickIntervalNumber = MinorTickIntervalNumber_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ChartParallelAxesMinorTickPosition.Outside;
 			MinorTicks = MinorTicks_DefaultValue = false;
@@ -72,12 +76,15 @@ namespace Highsoft.Web.Mvc.Charts
 			Title = Title_DefaultValue = new ChartParallelAxesTitle();
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			Top = Top_DefaultValue = "";
+			TopNumber = TopNumber_DefaultValue = null;
 			Type = Type_DefaultValue = "linear";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = "";
+			WidthNumber = WidthNumber_DefaultValue = null;
 			ZoomEnabled = ZoomEnabled_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -131,6 +138,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Configure a crosshair that follows either the mouse pointer or thehovered point.In styled mode, the crosshairs are styled in the`.highcharts-crosshair`, `.highcharts-crosshair-thin` or`.highcharts-xaxis-category` classes.
+		/// </summary>
+		public bool? CrosshairBool { get; set; }
+		private bool? CrosshairBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).Defaults to:```js{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}```
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
@@ -138,7 +152,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to force the axis to end on a tick. Use this option withthe `maxPadding` option to control the axis end.This option is always disabled, when panning type iseither `y` or `xy`.
 		/// </summary>
 		public bool? EndOnTick { get; set; }
 		private bool? EndOnTick_DefaultValue { get; set; }
@@ -173,6 +187,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The height as the vertical axis. If it's a number, it isinterpreted as pixels.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the total plot height.
+		/// </summary>
+		public double? HeightNumber { get; set; }
+		private double? HeightNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public ChartParallelAxesLabels Labels { get; set; }
@@ -184,6 +205,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Left { get; set; }
 		private string Left_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The left position as the horizontal axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts v5.0.13: If it's a percentage string, it isinterpreted as percentages of the plot width, offset from plot arealeft.
+		/// </summary>
+		public double? LeftNumber { get; set; }
+		private double? LeftNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -250,6 +278,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `null` or `undefined`, minor ticks are notshown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
+		/// </summary>
+		public double? MinorTickIntervalNumber { get; set; }
+		private double? MinorTickIntervalNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The pixel length of the minor tick marks.
 		/// </summary>
 		public double? MinorTickLength { get; set; }
@@ -285,7 +320,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The minimum range to display on this axis. The entire axis will notbe allowed to span over a smaller interval than this. For example,for a datetime axis the main unit is milliseconds. If minRange isset to 3600000, you can't zoom in more than to one hour.The default minRange for the x axis is five times the smallestinterval between any of the data points.On a logarithmic axis, the unit for the minimum range is the power.So a minRange of 1 means that the axis can be zoomed to 10-100,100-1000, 1000-10000 etc.Note that the `minPadding`, `maxPadding`, `startOnTick` and`endOnTick` settings also affect how the extremes of the axisare computed.
+		/// The minimum range to display on this axis. The entire axis will notbe allowed to span over a smaller interval than this. For example,for a datetime axis the main unit is milliseconds. If minRange isset to 3600000, you can't zoom in more than to one hour.The default minRange for the x axis is five times the smallestinterval between any of the data points.On a logarithmic axis, the unit for the minimum range is the power.So a minRange of 1 means that the axis can be zoomed to 10-100,100-1000, 1000-10000 etc.**Note**: The `minPadding`, `maxPadding`, `startOnTick` and`endOnTick` settings also affect how the extremes of the axisare computed.
 		/// </summary>
 		public double? MinRange { get; set; }
 		private double? MinRange_DefaultValue { get; set; }
@@ -376,7 +411,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.
+		/// Whether to force the axis to start on a tick. Use this option withthe `maxPadding` option to control the axis start.This option is always disabled, when panning type iseither `y` or `xy`.
 		/// </summary>
 		public bool? StartOnTick { get; set; }
 		private bool? StartOnTick_DefaultValue { get; set; }
@@ -474,6 +509,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The top position as the vertical axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the plot height, offset from plot area top.
+		/// </summary>
+		public double? TopNumber { get; set; }
+		private double? TopNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The type of axis. Can be one of `linear`, `logarithmic`, `datetime`or `category`. In a datetime axis, the numbers are given inmilliseconds, and tick marks are placed on appropriate values likefull hours or days. In a category axis, the[point names](#series.line.data.name) of the chart's series are usedfor categories, if not a [categories](#xAxis.categories) array isdefined.
 		/// </summary>
 		public string Type { get; set; }
@@ -502,11 +544,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The width as the horizontal axis. If it's a number, it is interpretedas pixels.Since Highcharts v5.0.13: If it's a percentage string, it isinterpreted as percentages of the total plot width.
+		/// </summary>
+		public double? WidthNumber { get; set; }
+		private double? WidthNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to zoom axis. If `chart.zoomType` is set, the option allowsto disable zooming on an individual axis.
 		/// </summary>
 		public bool? ZoomEnabled { get; set; }
 		private bool? ZoomEnabled_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -520,14 +571,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
+			if (CrosshairBool != CrosshairBool_DefaultValue) h.Add("crosshair",CrosshairBool);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (Left != Left_DefaultValue) h.Add("left",Left);
+			if (LeftNumber != LeftNumber_DefaultValue) h.Add("left",LeftNumber);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
@@ -537,6 +591,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
+			if (MinorTickIntervalNumber != MinorTickIntervalNumber_DefaultValue) h.Add("minorTickInterval",MinorTickIntervalNumber);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
@@ -563,18 +618,27 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
 			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
-			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("9abfccdf-8bb8-468c-81e4-5186a401a17f.tickPositioner", TickPositioner); }  
+			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("38030a13-9e57-4d7e-9a1d-5ea3cdb9dea0.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
 			if (TooltipValueFormat != TooltipValueFormat_DefaultValue) h.Add("tooltipValueFormat",TooltipValueFormat);
 			if (Top != Top_DefaultValue) h.Add("top",Top);
+			if (TopNumber != TopNumber_DefaultValue) h.Add("top",TopNumber);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

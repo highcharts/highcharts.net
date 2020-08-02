@@ -41,6 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Spline = Spline_DefaultValue = "{name}, line {ix} of {numSeries} with {numPoints} data {#plural(numPoints, points, point)}.";
 			SplineCombination = SplineCombination_DefaultValue = "{name}, series {ix} of {numSeries}. Line with {numPoints} data {#plural(numPoints, points, point)}.";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -210,7 +211,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string SplineCombination { get; set; }
 		private string SplineCombination_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -241,7 +244,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ScatterCombination != ScatterCombination_DefaultValue) h.Add("scatterCombination",ScatterCombination);
 			if (Spline != Spline_DefaultValue) h.Add("spline",Spline);
 			if (SplineCombination != SplineCombination_DefaultValue) h.Add("splineCombination",SplineCombination);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

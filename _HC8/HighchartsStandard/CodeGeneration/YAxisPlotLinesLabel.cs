@@ -27,6 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -98,7 +99,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -106,7 +109,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("5a2d188b-fab4-4fc3-8a5c-e1679aa2c05d.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("f3e0f4ff-4d40-494f-bfd0-24f5edee5ce9.formatter", Formatter); }  
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
@@ -115,7 +118,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

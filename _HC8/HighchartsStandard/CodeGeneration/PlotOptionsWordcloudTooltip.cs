@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FollowPointer = FollowPointer_DefaultValue = true;
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.weight}</b><br/>";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string PointFormat { get; set; }
 		private string PointFormat_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

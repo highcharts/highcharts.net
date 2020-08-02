@@ -39,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SplineSingle = SplineSingle_DefaultValue = "Line chart with {numPoints} data {#plural(numPoints, points, point)}.";
 			UnknownMap = UnknownMap_DefaultValue = "Map of unspecified region with {numSeries} data series.";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -194,7 +195,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string UnknownMap { get; set; }
 		private string UnknownMap_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -223,7 +226,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SplineMultiple != SplineMultiple_DefaultValue) h.Add("splineMultiple",SplineMultiple);
 			if (SplineSingle != SplineSingle_DefaultValue) h.Add("splineSingle",SplineSingle);
 			if (UnknownMap != UnknownMap_DefaultValue) h.Add("unknownMap",UnknownMap);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

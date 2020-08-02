@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new CreditsStyle();
 			Text = Text_DefaultValue = "Highcharts.com";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

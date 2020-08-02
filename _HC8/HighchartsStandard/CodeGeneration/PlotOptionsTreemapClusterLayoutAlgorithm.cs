@@ -17,11 +17,14 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsTreemapClusterLayoutAlgorithm()
 		{
 			Distance = Distance_DefaultValue = "40";
+			DistanceNumber = DistanceNumber_DefaultValue = null;
 			GridSize = GridSize_DefaultValue = "50";
+			GridSizeNumber = GridSizeNumber_DefaultValue = null;
 			Iterations = Iterations_DefaultValue = null;
 			KmeansThreshold = KmeansThreshold_DefaultValue = 100;
 			Type = Type_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -33,10 +36,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When `type` is set to `kmeans`,`distance` is a maximum distance between point and cluster centerso that this point will be inside the cluster. The distanceis either a number defining pixels or a percentagedefining a percentage of the plot area width.
+		/// </summary>
+		public double? DistanceNumber { get; set; }
+		private double? DistanceNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When `type` is set to the `grid`,`gridSize` is a size of a grid square element either as a numberdefining pixels, or a percentage defining a percentageof the plot area width.
 		/// </summary>
 		public string GridSize { get; set; }
 		private string GridSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When `type` is set to the `grid`,`gridSize` is a size of a grid square element either as a numberdefining pixels, or a percentage defining a percentageof the plot area width.
+		/// </summary>
+		public double? GridSizeNumber { get; set; }
+		private double? GridSizeNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -58,7 +75,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Type { get; set; }
 		private string Type_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -66,11 +85,20 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (DistanceNumber != DistanceNumber_DefaultValue) h.Add("distance",DistanceNumber);
 			if (GridSize != GridSize_DefaultValue) h.Add("gridSize",GridSize);
+			if (GridSizeNumber != GridSizeNumber_DefaultValue) h.Add("gridSize",GridSizeNumber);
 			if (Iterations != Iterations_DefaultValue) h.Add("iterations",Iterations);
 			if (KmeansThreshold != KmeansThreshold_DefaultValue) h.Add("kmeansThreshold",KmeansThreshold);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

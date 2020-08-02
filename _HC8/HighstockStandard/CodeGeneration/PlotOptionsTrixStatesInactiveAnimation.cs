@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsTrixStatesInactiveAnimation()
 		{
-			Duration = Duration_DefaultValue = 50;
+			Duration = Duration_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Duration { get; set; }
-		private double? Duration_DefaultValue { get; set; }
+		public Hashtable Duration { get; set; }
+		private Hashtable Duration_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

@@ -26,6 +26,8 @@ namespace Highsoft.Web.Mvc.Charts
 			DownloadSVG = DownloadSVG_DefaultValue = "Download SVG vector image";
 			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
 			DrillUpText = DrillUpText_DefaultValue = "◁ Back to {series.name}";
+			ExitFullscreen = ExitFullscreen_DefaultValue = "Exit from full screen";
+			ExportData = ExportData_DefaultValue = new LangExportData();
 			InvalidDate = InvalidDate_DefaultValue = "";
 			Loading = Loading_DefaultValue = "Loading...";
 			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
@@ -33,7 +35,6 @@ namespace Highsoft.Web.Mvc.Charts
 			NoData = NoData_DefaultValue = "No data to display";
 			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> {"k", "M", "G", "T", "P", "E"};
-			OpenInCloud = OpenInCloud_DefaultValue = "Open in Highcharts Cloud";
 			PrintChart = PrintChart_DefaultValue = "Print chart";
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
@@ -45,6 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
          "Friday", "Saturday"};
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -119,6 +121,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Exporting module only. The text for the menu item to exit the chartfrom full screen.
+		/// </summary>
+		public string ExitFullscreen { get; set; }
+		private string ExitFullscreen_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The text for exported table.
+		/// </summary>
+		public LangExportData ExportData { get; set; }
+		private LangExportData ExportData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// What to show in a date field for invalid dates. Defaults to an emptystring.
 		/// </summary>
 		public string InvalidDate { get; set; }
@@ -161,17 +177,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// [Metric prefixes](http://en.wikipedia.org/wiki/Metric_prefix) usedto shorten high numbers in axis labels. Replacing any of thepositions with `null` causes the full number to be written. Setting`numericSymbols` to `null` disables shortening altogether.
+		/// [Metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix) usedto shorten high numbers in axis labels. Replacing any of thepositions with `null` causes the full number to be written. Setting`numericSymbols` to `null` disables shortening altogether.
 		/// </summary>
 		public List<string> NumericSymbols { get; set; }
 		private List<string> NumericSymbols_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The text for the menu item.
-		/// </summary>
-		public string OpenInCloud { get; set; }
-		private string OpenInCloud_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -224,7 +233,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Exporting module only. View the chart in full screen.
+		/// Exporting module only. The text for the menu item to view the chartin full screen.
 		/// </summary>
 		public string ViewFullscreen { get; set; }
 		private string ViewFullscreen_DefaultValue { get; set; }
@@ -235,7 +244,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<string> Weekdays { get; set; }
 		private List<string> Weekdays_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -252,6 +263,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DownloadSVG != DownloadSVG_DefaultValue) h.Add("downloadSVG",DownloadSVG);
 			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);
 			if (DrillUpText != DrillUpText_DefaultValue) h.Add("drillUpText",DrillUpText);
+			if (ExitFullscreen != ExitFullscreen_DefaultValue) h.Add("exitFullscreen",ExitFullscreen);
+			if (ExportData.IsDirty()) h.Add("exportData",ExportData.ToHashtable());
 			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
@@ -259,7 +272,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);
-			if (OpenInCloud != OpenInCloud_DefaultValue) h.Add("openInCloud",OpenInCloud);
 			if (PrintChart != PrintChart_DefaultValue) h.Add("printChart",PrintChart);
 			if (ResetZoom != ResetZoom_DefaultValue) h.Add("resetZoom",ResetZoom);
 			if (ResetZoomTitle != ResetZoomTitle_DefaultValue) h.Add("resetZoomTitle",ResetZoomTitle);
@@ -269,7 +281,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ViewData != ViewData_DefaultValue) h.Add("viewData",ViewData);
 			if (ViewFullscreen != ViewFullscreen_DefaultValue) h.Add("viewFullscreen",ViewFullscreen);
 			if (Weekdays != Weekdays_DefaultValue) h.Add("weekdays",Weekdays);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

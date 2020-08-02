@@ -18,9 +18,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			X = X_DefaultValue = null;
 			XAxis = XAxis_DefaultValue = "";
+			XAxisNumber = XAxisNumber_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			YAxis = YAxis_DefaultValue = "";
+			YAxisNumber = YAxisNumber_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -32,10 +35,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This number defines which xAxis the point is connected to. Itrefers to either the axis id or the index of the axis in thexAxis array. If the option is not configured or the axis is notfound the point's x coordinate refers to the chart pixels.
+		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axis inthe xAxis array. If the option is not configured or the axisis not found the point's x coordinate refers to the chartpixels.
 		/// </summary>
 		public string XAxis { get; set; }
 		private string XAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axis inthe xAxis array. If the option is not configured or the axisis not found the point's x coordinate refers to the chartpixels.
+		/// </summary>
+		public double? XAxisNumber { get; set; }
+		private double? XAxisNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -46,11 +56,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This number defines which yAxis the point is connected to. Itrefers to either the axis id or the index of the axis in theyAxis array. If the option is not configured or the axis is notfound the point's y coordinate refers to the chart pixels.
+		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axis inthe yAxis array. If the option is not configured or the axisis not found the point's y coordinate refers to the chartpixels.
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }
-		  
+		 
+
+		/// <summary>
+		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axis inthe yAxis array. If the option is not configured or the axisis not found the point's y coordinate refers to the chartpixels.
+		/// </summary>
+		public double? YAxisNumber { get; set; }
+		private double? YAxisNumber_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -59,9 +78,18 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			
+			if (YAxisNumber != YAxisNumber_DefaultValue) h.Add("yAxis",YAxisNumber);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

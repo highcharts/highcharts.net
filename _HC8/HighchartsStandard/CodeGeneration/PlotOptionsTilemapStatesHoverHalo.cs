@@ -17,10 +17,11 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsTilemapStatesHoverHalo()
 		{
 			Attributes = Attributes_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
-			Opacity = Opacity_DefaultValue = null;
-			Size = Size_DefaultValue = 2;
+			Enabled = Enabled_DefaultValue = new Hashtable();
+			Opacity = Opacity_DefaultValue = new Hashtable();
+			Size = Size_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,23 +35,25 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
+		public Hashtable Opacity { get; set; }
+		private Hashtable Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Size { get; set; }
-		private double? Size_DefaultValue { get; set; }
-		  
+		public Hashtable Size { get; set; }
+		private Hashtable Size_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -27,6 +27,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			NullFormatter = NullFormatter_DefaultValue = "";
 			PointFormat = PointFormat_DefaultValue = "{point.text}<br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
+			StickOnContact = StickOnContact_DefaultValue = null;
 			XDateFormat = XDateFormat_DefaultValue = "";
 			
 		}	
@@ -35,8 +36,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The HTML of the cluster point's in the tooltip. Works only withmarker-clusters module and analogously to[pointFormat](#tooltip.pointFormat).The cluster tooltip can be also formatted using`tooltip.formatter` callback function and `point.isCluster` flag.
 		/// </summary>
-		public string ClusterFormat { get; set; }
-		private string ClusterFormat_DefaultValue { get; set; }
+		public object ClusterFormat { get; set; }
+		private object ClusterFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -110,6 +111,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Prevents the tooltip from switching or closing, when touched orpointed.
+		/// </summary>
+		public bool? StickOnContact { get; set; }
+		private bool? StickOnContact_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The format for the date in the tooltip header if the X axis is adatetime axis. The default is a best guess based on the smallestdistance between points in the chart.
 		/// </summary>
 		public string XDateFormat { get; set; }
@@ -121,7 +129,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (ClusterFormat != ClusterFormat_DefaultValue) h.Add("clusterFormat",ClusterFormat);
+			if (ClusterFormat.IsDirty()) h.Add("clusterFormat",ClusterFormat.ToHashtable());
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
@@ -132,6 +140,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highstock.AddFunction("PlotOptionsFlagsTooltipNullFormatter.nullFormatter", NullFormatter); }  
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highstock.AddFunction("PlotOptionsFlagsTooltipPointFormatter.pointFormatter", PointFormatter); }  
+			if (StickOnContact != StickOnContact_DefaultValue) h.Add("stickOnContact",StickOnContact);
 			if (XDateFormat != XDateFormat_DefaultValue) h.Add("xDateFormat",XDateFormat);
 			
 

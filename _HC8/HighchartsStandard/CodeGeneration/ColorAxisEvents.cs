@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointInBreak = PointInBreak_DefaultValue = "";
 			SetExtremes = SetExtremes_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -66,20 +67,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string SetExtremes { get; set; }
 		private string SetExtremes_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (AfterBreaks != AfterBreaks_DefaultValue) { h.Add("afterBreaks",AfterBreaks); Highcharts.AddFunction("5e583dca-ca71-4bff-9210-bd57f1433bdd.afterBreaks", AfterBreaks); }  
-			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highcharts.AddFunction("58f79be5-a784-4164-9a8e-78873780f903.afterSetExtremes", AfterSetExtremes); }  
-			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("7f5ebcb7-448f-4a8c-9804-7bf6da1115d1.legendItemClick", LegendItemClick); }  
-			if (PointBreak != PointBreak_DefaultValue) { h.Add("pointBreak",PointBreak); Highcharts.AddFunction("2230b540-a5a3-47de-bd92-783598d794fb.pointBreak", PointBreak); }  
-			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); Highcharts.AddFunction("068a1023-e18c-4ea5-a431-1e010d96fd5b.pointInBreak", PointInBreak); }  
-			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highcharts.AddFunction("e70b6732-b40a-47e9-bd4c-b849b9ce45ff.setExtremes", SetExtremes); }  
-			
+			if (AfterBreaks != AfterBreaks_DefaultValue) { h.Add("afterBreaks",AfterBreaks); Highcharts.AddFunction("a2f2f18f-fcef-4a7a-9b0a-05ee474397a5.afterBreaks", AfterBreaks); }  
+			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highcharts.AddFunction("25921a93-5afc-4929-9e67-910ea7cc1843.afterSetExtremes", AfterSetExtremes); }  
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("7993128b-86f4-4e16-aed4-3526728f1033.legendItemClick", LegendItemClick); }  
+			if (PointBreak != PointBreak_DefaultValue) { h.Add("pointBreak",PointBreak); Highcharts.AddFunction("bd1fc1df-8269-4447-a067-b1071b23aeff.pointBreak", PointBreak); }  
+			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); Highcharts.AddFunction("9a980679-1e09-4688-937e-880f9b7346fb.pointInBreak", PointInBreak); }  
+			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highcharts.AddFunction("4ae4fc67-380a-4da3-b316-125b16ffc174.setExtremes", SetExtremes); }  
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsVectorStatesHover()
 		{
-			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
+			LineWidthPlus = LineWidthPlus_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Additonal line width for the vector errors when they arehovered.
 		/// </summary>
-		public double? LineWidthPlus { get; set; }
-		private double? LineWidthPlus_DefaultValue { get; set; }
+		public Hashtable LineWidthPlus { get; set; }
+		private Hashtable LineWidthPlus_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

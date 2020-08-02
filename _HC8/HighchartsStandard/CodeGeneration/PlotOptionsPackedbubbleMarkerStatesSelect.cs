@@ -16,27 +16,28 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPackedbubbleMarkerStatesSelect()
 		{
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = new Hashtable();
 			FillColor = FillColor_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "#000000";
-			LineWidth = LineWidth_DefaultValue = 2;
-			Radius = Radius_DefaultValue = null;
+			LineColor = LineColor_DefaultValue = "";
+			LineWidth = LineWidth_DefaultValue = new Hashtable();
+			Radius = Radius_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// Enable or disable visible feedback for selection.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The fill color of the point marker.
 		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -49,16 +50,18 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The width of the point marker's outline.
 		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
+		public Hashtable LineWidth { get; set; }
+		private Hashtable LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The radius of the point marker. In hover state, itdefaults to the normal state's radius + 2.
 		/// </summary>
-		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
-		  
+		public Hashtable Radius { get; set; }
+		private Hashtable Radius_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

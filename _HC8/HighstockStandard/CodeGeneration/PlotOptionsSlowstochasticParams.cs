@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Index = Index_DefaultValue = 0;
 			Period = Period_DefaultValue = 14;
-			Periods = Periods_DefaultValue = new List<double?> { 14, 3, 3 };
+			Periods = Periods_DefaultValue = new List<string>();
 			
 		}	
 		
@@ -40,8 +40,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Periods for Slow Stochastic oscillator: [%K, %D, SMA(%D)].
 		/// </summary>
-		public List<double?> Periods { get; set; }
-		private List<double?> Periods_DefaultValue { get; set; }
+		public List<string> Periods { get; set; }
+		private List<string> Periods_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

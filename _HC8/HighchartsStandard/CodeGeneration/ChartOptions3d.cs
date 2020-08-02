@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Frame = Frame_DefaultValue = new ChartOptions3dFrame();
 			ViewDistance = ViewDistance_DefaultValue = 25;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -36,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set it to `"auto"` to automatically move the labels to the bestedge.
+		/// Set it to `"auto"` to automatically move the labels to thebest edge.
 		/// </summary>
 		public string AxisLabelPosition { get; set; }
 		private string AxisLabelPosition_DefaultValue { get; set; }
@@ -64,25 +65,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether the 3d box should automatically adjust to the chart plotarea.
+		/// Whether the 3d box should automatically adjust to the chartplot area.
 		/// </summary>
 		public bool? FitToPlot { get; set; }
 		private bool? FitToPlot_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Provides the option to draw a frame around the charts by defininga bottom, front and back panel.
+		/// Provides the option to draw a frame around the charts bydefining a bottom, front and back panel.
 		/// </summary>
 		public ChartOptions3dFrame Frame { get; set; }
 		private ChartOptions3dFrame Frame_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Defines the distance the viewer is standing in front of thechart, this setting is important to calculate the perspectiveeffect in column and scatter charts. It is not used for 3D piecharts.
+		/// Defines the distance the viewer is standing in front of thechart, this setting is important to calculate the perspectiveeffect in column and scatter charts. It is not used for 3Dpie charts.
 		/// </summary>
 		public double? ViewDistance { get; set; }
 		private double? ViewDistance_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -97,7 +100,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FitToPlot != FitToPlot_DefaultValue) h.Add("fitToPlot",FitToPlot);
 			if (Frame.IsDirty()) h.Add("frame",Frame.ToHashtable());
 			if (ViewDistance != ViewDistance_DefaultValue) h.Add("viewDistance",ViewDistance);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

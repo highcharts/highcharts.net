@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsColumnDataLabelsAlign
     {
-        Null, 
+        Undefined, 
 		Left, 
 		Center, 
 		Right

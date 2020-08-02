@@ -16,34 +16,44 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public DependencywheelSeriesLevelsStates()
 		{
-			Hover = Hover_DefaultValue = new DependencywheelSeriesLevelsStatesHover();
-			Inactive = Inactive_DefaultValue = new DependencywheelSeriesLevelsStatesInactive();
+			Hover = Hover_DefaultValue = new Hashtable();
+			Inactive = Inactive_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public DependencywheelSeriesLevelsStatesHover Hover { get; set; }
-		private DependencywheelSeriesLevelsStatesHover Hover_DefaultValue { get; set; }
+		public Hashtable Hover { get; set; }
+		private Hashtable Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The opposite state of a hover for a single point node/link.
 		/// </summary>
-		public DependencywheelSeriesLevelsStatesInactive Inactive { get; set; }
-		private DependencywheelSeriesLevelsStatesInactive Inactive_DefaultValue { get; set; }
-		  
+		public Hashtable Inactive { get; set; }
+		private Hashtable Inactive_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
-			
+			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
+			if (Inactive != Inactive_DefaultValue) h.Add("inactive",Inactive);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -24,11 +24,12 @@ namespace Highsoft.Web.Mvc.Charts
 			UseUTC = UseUTC_DefaultValue = null;
 			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
-		/// _Canvg rendering for Android 2.x is removed as of Highcharts 5.0\.Use the [libURL](#exporting.libURL) option to configure exporting._The URL to the additional file to lazy load for Android 2.x devices.These devices don't support SVG, so we download a helper file thatcontains [canvg](http://code.google.com/p/canvg/), its dependencyrbcolor, and our own CanVG Renderer class. To avoid hotlinking toour site, you can install canvas-tools.js on your own server andchange this option accordingly.
+		/// _Canvg rendering for Android 2.x is removed as of Highcharts 5.0\.Use the [libURL](#exporting.libURL) option to configure exporting._The URL to the additional file to lazy load for Android 2.x devices.These devices don't support SVG, so we download a helper file thatcontains [canvg](https://github.com/canvg/canvg), its dependencyrbcolor, and our own CanVG Renderer class. To avoid hotlinking toour site, you can install canvas-tools.js on your own server andchange this option accordingly.
 		/// </summary>
 		public string CanvasToolsURL { get; set; }
 		private string CanvasToolsURL_DefaultValue { get; set; }
@@ -74,7 +75,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string VMLRadialGradientURL { get; set; }
 		private string VMLRadialGradientURL_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -88,7 +91,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
 			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

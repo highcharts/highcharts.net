@@ -17,9 +17,10 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsNetworkgraphLink()
 		{
 			Color = Color_DefaultValue = "rgba(100, 100, 100, 0.5)";
-			DashStyle = DashStyle_DefaultValue = "";
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			Width = Width_DefaultValue = 1;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -33,8 +34,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A name for the dash style to use for links.
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

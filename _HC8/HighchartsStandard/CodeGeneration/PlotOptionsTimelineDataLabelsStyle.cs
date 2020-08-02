@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FontWeight = FontWeight_DefaultValue = "normal";
 			TextOutline = TextOutline_DefaultValue = "none";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string TextOutline { get; set; }
 		private string TextOutline_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			if (TextOutline != TextOutline_DefaultValue) h.Add("textOutline",TextOutline);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

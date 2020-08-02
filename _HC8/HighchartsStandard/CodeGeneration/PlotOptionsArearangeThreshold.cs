@@ -17,15 +17,25 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsArearangeThreshold()
 		{
 			
+			CustomFields = new Hashtable();
 		}	
-		 
+		
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

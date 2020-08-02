@@ -42,10 +42,12 @@ namespace Highsoft.Web.Mvc.Charts
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "callout";
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
 			Split = Split_DefaultValue = null;
+			StickOnContact = StickOnContact_DefaultValue = null;
 			Style = Style_DefaultValue = new TooltipStyle();
 			UseHTML = UseHTML_DefaultValue = false;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
@@ -53,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ValueSuffix = ValueSuffix_DefaultValue = "";
 			XDateFormat = XDateFormat_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -101,8 +104,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The HTML of the cluster point's in the tooltip. Works only withmarker-clusters module and analogously to[pointFormat](#tooltip.pointFormat).The cluster tooltip can be also formatted using`tooltip.formatter` callback function and `point.isCluster` flag.
 		/// </summary>
-		public string ClusterFormat { get; set; }
-		private string ClusterFormat_DefaultValue { get; set; }
+		public object ClusterFormat { get; set; }
+		private object ClusterFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -239,6 +242,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the tooltip.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The name of a symbol to use for the border around the tooltip. Canbe one of: `"callout"`, `"circle"`, or `"square"`. When[tooltip.split](#tooltip.split)option is enabled, shape is applied to all boxes except header, whichis controlled by[tooltip.headerShape](#tooltip.headerShape).Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
 		/// </summary>
 		public string Shape { get; set; }
@@ -264,6 +274,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Split { get; set; }
 		private bool? Split_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Prevents the tooltip from switching or closing, when touched orpointed.
+		/// </summary>
+		public bool? StickOnContact { get; set; }
+		private bool? StickOnContact_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -306,7 +323,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string XDateFormat { get; set; }
 		private string XDateFormat_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -327,29 +346,38 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("e7af306f-023e-4e2b-9e5c-5ef5b5c86492.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("4f7c3cbf-d4aa-4531-9449-629a28b6c404.formatter", Formatter); }  
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", Highcharts.FirstCharacterToLower(HeaderShape.ToString()));
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("a963aae6-d1be-482a-8d0f-2ba9883ff992.nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("b3995ddc-2438-4041-9ca2-946461995c83.nullFormatter", NullFormatter); }  
 			if (Outside != Outside_DefaultValue) h.Add("outside",Outside);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("bd45a9ff-671f-44e6-88c4-5520b1408717.pointFormatter", PointFormatter); }  
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("b018c0c9-da04-440d-b5e3-bc96be7a43d4.positioner", Positioner); }  
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("51295a76-e447-469a-a606-74ce0c57d8ff.pointFormatter", PointFormatter); }  
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("b9b41f3b-43ef-4ec8-9d87-14dd725e8817.positioner", Positioner); }  
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Split != Split_DefaultValue) h.Add("split",Split);
+			if (StickOnContact != StickOnContact_DefaultValue) h.Add("stickOnContact",StickOnContact);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
 			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);
 			if (XDateFormat != XDateFormat_DefaultValue) h.Add("xDateFormat",XDateFormat);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigationAnnotationsOptionsShapes()
 		{
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			Height = Height_DefaultValue = null;
 			MarkerEnd = MarkerEnd_DefaultValue = "";
@@ -25,6 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Points = Points_DefaultValue = new NavigationAnnotationsOptionsShapesPoints();
 			R = R_DefaultValue = 0;
 			Snap = Snap_DefaultValue = 2;
+			Src = Src_DefaultValue = "";
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
 			Type = Type_DefaultValue = " rect ";
@@ -32,6 +34,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// Name of the dash style to use for the shape's stroke.
+		/// </summary>
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The color of the shape's fill.
@@ -48,35 +57,35 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Id of the marker which will be drawn at the final vertex of thepath. Custom markers can be defined in defs property.
+		/// Id of the marker which will be drawn at the final vertex ofthe path. Custom markers can be defined in defs property.
 		/// </summary>
 		public string MarkerEnd { get; set; }
 		private string MarkerEnd_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Id of the marker which will be drawn at the first vertex of thepath. Custom markers can be defined in defs property.
+		/// Id of the marker which will be drawn at the first vertex ofthe path. Custom markers can be defined in defs property.
 		/// </summary>
 		public string MarkerStart { get; set; }
 		private string MarkerStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// This option defines the point to which the shape will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new point withdefined x, y properties and optionally axes.
+		/// This option defines the point to which the shape will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new pointwith defined x, y properties and optionally axes.
 		/// </summary>
 		public NavigationAnnotationsOptionsShapesPoint Point { get; set; }
 		private NavigationAnnotationsOptionsShapesPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// This option defines the point to which the shape will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new point withdefined x, y properties and optionally axes.
+		/// This option defines the point to which the shape will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new pointwith defined x, y properties and optionally axes.
 		/// </summary>
 		public string PointString { get; set; }
 		private string PointString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// An array of points for the shape. This option is available forshapes which can use multiple points such as path. A point can beeither a point object or a point's id.
+		/// An array of points for the shape. This option is availablefor shapes which can use multiple points such as path. Apoint can be either a point object or a point's id.
 		/// </summary>
 		public NavigationAnnotationsOptionsShapesPoints Points { get; set; }
 		private NavigationAnnotationsOptionsShapesPoints Points_DefaultValue { get; set; }
@@ -94,6 +103,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Snap { get; set; }
 		private double? Snap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The URL for an image to use as the annotation shape. Note,type has to be set to `'image'`.
+		/// </summary>
+		public string Src { get; set; }
+		private string Src_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -129,6 +145,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
@@ -138,6 +155,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Points.IsDirty()) h.Add("points",Points.ToHashtable());
 			if (R != R_DefaultValue) h.Add("r",R);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
+			if (Src != Src_DefaultValue) h.Add("src",Src);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			if (Type != Type_DefaultValue) h.Add("type",Type);

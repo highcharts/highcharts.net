@@ -20,15 +20,18 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new SolidgaugeSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new SolidgaugeSeriesDataDragDrop();
 			Events = Events_DefaultValue = new SolidgaugeSeriesDataEvents();
 			Id = Id_DefaultValue = "";
 			InnerRadius = InnerRadius_DefaultValue = "";
+			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Radius = Radius_DefaultValue = "";
+			RadiusNumber = RadiusNumber_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Y = Y_DefaultValue = double.MinValue;
 			
@@ -62,6 +65,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customized functionality.Here you can add additional data for your own event callbacks and formattercallbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -107,6 +117,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The inner radius of an individual point in a solid gauge. Can be given as anumber (pixels) or percentage string.
+		/// </summary>
+		public double? InnerRadiusNumber { get; set; }
+		private double? InnerRadiusNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The rank for this point's data label in case of collision. If twodata labels are about to overlap, only the one with the highest `labelrank`will be drawn.
 		/// </summary>
 		public double? Labelrank { get; set; }
@@ -125,6 +142,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Radius { get; set; }
 		private string Radius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The outer radius of an individual point in a solid gauge. Can begiven as a number (pixels) or percentage string.
+		/// </summary>
+		public double? RadiusNumber { get; set; }
+		private double? RadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -152,15 +176,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
+			if (InnerRadiusNumber != InnerRadiusNumber_DefaultValue) h.Add("innerRadius",InnerRadiusNumber);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (RadiusNumber != RadiusNumber_DefaultValue) h.Add("radius",RadiusNumber);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (CustomFields.Count > 0)

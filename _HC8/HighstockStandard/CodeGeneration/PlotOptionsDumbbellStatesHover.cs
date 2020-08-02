@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsDumbbellStatesHover()
 		{
-			ConnectorWidthPlus = ConnectorWidthPlus_DefaultValue = 1;
+			ConnectorWidthPlus = ConnectorWidthPlus_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The additional connector line width for a hovered point.
 		/// </summary>
-		public double? ConnectorWidthPlus { get; set; }
-		private double? ConnectorWidthPlus_DefaultValue { get; set; }
+		public Hashtable ConnectorWidthPlus { get; set; }
+		private Hashtable ConnectorWidthPlus_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

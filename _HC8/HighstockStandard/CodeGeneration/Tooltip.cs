@@ -48,6 +48,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
 			Split = Split_DefaultValue = null;
+			StickOnContact = StickOnContact_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
@@ -110,8 +111,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The HTML of the cluster point's in the tooltip. Works only withmarker-clusters module and analogously to[pointFormat](#tooltip.pointFormat).The cluster tooltip can be also formatted using`tooltip.formatter` callback function and `point.isCluster` flag.
 		/// </summary>
-		public string ClusterFormat { get; set; }
-		private string ClusterFormat_DefaultValue { get; set; }
+		public object ClusterFormat { get; set; }
+		private object ClusterFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -283,6 +284,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Prevents the tooltip from switching or closing, when touched orpointed.
+		/// </summary>
+		public bool? StickOnContact { get; set; }
+		private bool? StickOnContact_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// CSS styles for the tooltip. The tooltip can also be styled throughthe CSS class `.highcharts-tooltip`.Note that the default `pointerEvents` style makes the tooltip ignoremouse events, so in order to use clickable tooltips, this value mustbe set to `auto`.
 		/// </summary>
 		public Hashtable Style { get; set; }
@@ -336,7 +344,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ChangeDecimals != ChangeDecimals_DefaultValue) h.Add("changeDecimals",ChangeDecimals);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (ClusterFormat != ClusterFormat_DefaultValue) h.Add("clusterFormat",ClusterFormat);
+			if (ClusterFormat.IsDirty()) h.Add("clusterFormat",ClusterFormat.ToHashtable());
 			if (Crosshairs != Crosshairs_DefaultValue) h.Add("crosshairs",Crosshairs);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
@@ -361,6 +369,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Split != Split_DefaultValue) h.Add("split",Split);
+			if (StickOnContact != StickOnContact_DefaultValue) h.Add("stickOnContact",StickOnContact);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);

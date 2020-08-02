@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinHeight = MinHeight_DefaultValue = 0;
 			MinWidth = MinWidth_DefaultValue = 0;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,19 +59,28 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? MinWidth { get; set; }
 		private double? MinWidth_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Callback != Callback_DefaultValue) { h.Add("callback",Callback); Highcharts.AddFunction("66d3da06-5624-458d-80d4-250d239cf6ab.callback", Callback); }  
+			if (Callback != Callback_DefaultValue) { h.Add("callback",Callback); Highcharts.AddFunction("bb0c16ce-4bda-4bfc-9b07-c7a7e766f33e.callback", Callback); }  
 			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
 			if (MaxWidth != MaxWidth_DefaultValue) h.Add("maxWidth",MaxWidth);
 			if (MinHeight != MinHeight_DefaultValue) h.Add("minHeight",MinHeight);
 			if (MinWidth != MinWidth_DefaultValue) h.Add("minWidth",MinWidth);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

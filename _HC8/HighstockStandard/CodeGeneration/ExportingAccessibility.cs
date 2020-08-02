@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ExportingAccessibility()
 		{
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			
 		}	
 		

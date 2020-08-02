@@ -16,11 +16,12 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTreemapStatesHover()
 		{
-			BorderColor = BorderColor_DefaultValue = "#999999";
-			Brightness = Brightness_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = null;
+			BorderColor = BorderColor_DefaultValue = "";
+			Brightness = Brightness_DefaultValue = new Hashtable();
+			Opacity = Opacity_DefaultValue = new Hashtable();
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,15 +35,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Brightness for the hovered point. Defaults to 0 if theheatmap series is loaded first, otherwise 0.1.
 		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
+		public Hashtable Brightness { get; set; }
+		private Hashtable Brightness_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The opacity of a point in treemap. When a point has children,the visibility of the children is determined by the opacity.
 		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
+		public Hashtable Opacity { get; set; }
+		private Hashtable Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -60,8 +63,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
-			
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

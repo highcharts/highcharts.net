@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Week = Week_DefaultValue = "Week from %A, %b %e, %Y";
 			Year = Year_DefaultValue = "%Y";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -82,7 +83,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Year { get; set; }
 		private string Year_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -97,7 +100,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Second != Second_DefaultValue) h.Add("second",Second);
 			if (Week != Week_DefaultValue) h.Add("week",Week);
 			if (Year != Year_DefaultValue) h.Add("year",Year);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

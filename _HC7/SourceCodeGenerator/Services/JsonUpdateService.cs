@@ -2,6 +2,7 @@
 using System.Linq;
 using SourceCodeGenerator.Services.Objects;
 using SourceCodeGenerator.Enums;
+using System;
 
 namespace SourceCodeGenerator.Services
 {
@@ -55,17 +56,28 @@ namespace SourceCodeGenerator.Services
 
         public void UpdateCSSObject(ApiItem item)
         {
-            if (item.ReturnType != TypeService.CSSObject)
+            if (item.FullName.ToLower().EndsWith("style") || (item.ReturnType.Contains("Highcharts.Dictionary.<*>") || item.Types.Contains("Highcharts.Dictionary.<*>"))
+                || item.FullName.Contains("states.inactive") || item.FullName.Contains("states.normal") || item.FullName.Contains("states.hover") || item.FullName.Contains("states.select"))
+            {
+                item.Types.Clear();
+                item.Defaults = string.Empty;
+                item.Types.Add(TypeService.CSSRawType);
+                item.ReturnType = TypeService.CSSRawType;
+            }
+
+            if (item.ReturnType != TypeService.CSSRawType)
                 return;
 
-            item.ReturnType = TypeService.ObjectType;
-            if(!item.Types.Contains(TypeService.ObjectType))
-                item.Types.Add(TypeService.ObjectType);
 
-            item.Types.Remove(TypeService.CSSObject);
 
-            if (!string.IsNullOrEmpty(item.Defaults))
-                item.Children = GetItemsFromDefaultValue(item);
+            //item.ReturnType = TypeService.ObjectType;
+            //if(!item.Types.Contains(TypeService.ObjectType))
+            //    item.Types.Add(TypeService.ObjectType);
+
+            //item.Types.Remove(TypeService.CSSType);
+
+            //if (!string.IsNullOrEmpty(item.Defaults))
+            //    item.Children = GetItemsFromDefaultValue(item);
         }
 
         private void UpdateProperty(ApiItem item, UpdateInfo info)
@@ -300,7 +312,10 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdateProducts.Add("xAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("yAxis.categories", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
 
+            ItemsToUpdate.Add("series.networkgraph.nodes.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "series.networkgraph.dataLabels" } });
+            ItemsToUpdate.Add("series.organization.nodes.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "series.organization.dataLabels" } });
 
+            ItemsToUpdate.Add("plotOptions.packedbubble.layoutAlgorithm.initialPositionRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
         }
 
         public void Delete(ApiItem item)
@@ -316,6 +331,9 @@ namespace SourceCodeGenerator.Services
 
             if (item.FullName == "series.stack")
                 item.Types.Remove("*");
+
+            if (item.FullName == "plotOptions.packedbubble.layoutAlgorithm.initialPositionRadius")
+                item.Extends.Clear();
         }
 
         private IList<ApiItem> GetItemsFromDefaultValue(ApiItem item)

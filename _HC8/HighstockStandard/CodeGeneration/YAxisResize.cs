@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Cursor = Cursor_DefaultValue = "ns-resize";
 			Enabled = Enabled_DefaultValue = false;
 			LineColor = LineColor_DefaultValue = "#cccccc";
-			LineDashStyle = LineDashStyle_DefaultValue = "Solid";
+			LineDashStyle = LineDashStyle_DefaultValue = new Hashtable();
 			LineWidth = LineWidth_DefaultValue = 4;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
@@ -59,8 +59,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Dash style of the control line.In styled mode use class `highcharts-axis-resizer` instead.
 		/// </summary>
-		public string LineDashStyle { get; set; }
-		private string LineDashStyle_DefaultValue { get; set; }
+		public Hashtable LineDashStyle { get; set; }
+		private Hashtable LineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

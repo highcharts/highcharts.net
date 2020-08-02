@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A [format string](http://docs.highcharts.com/#formatting)for the bubble legend labels. Available variables are thesame as for `formatter`.
+		/// A format string for the bubble legend labels. Availablevariables are the same as for `formatter`.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
@@ -82,7 +83,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -93,11 +96,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("9975952b-a88d-4cfa-aa8b-ece21ac63581.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("20d8ec4e-ac26-4e3f-9215-128de25dec01.formatter", Formatter); }  
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

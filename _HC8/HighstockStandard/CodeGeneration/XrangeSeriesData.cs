@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Connect = Connect_DefaultValue = new XrangeSeriesDataConnect();
 			ConnectString = ConnectString_DefaultValue = "null";
+			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new XrangeSeriesDataDragDrop();
@@ -81,6 +82,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ConnectString { get; set; }
 		private string ConnectString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customized functionality.Here you can add additional data for your own event callbacks and formattercallbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -194,6 +202,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Connect.IsDirty()) h.Add("connect",Connect.ToHashtable());
 			if (ConnectString != ConnectString_DefaultValue) h.Add("connect",ConnectString);
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());

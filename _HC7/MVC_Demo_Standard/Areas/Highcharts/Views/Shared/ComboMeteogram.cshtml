@@ -1,4 +1,4 @@
-﻿<script src="http://code.highcharts.com/highcharts.js"></script>
+﻿<script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
@@ -54,7 +54,7 @@
         this.parseYrData();
     }
     /**
-     * Return weather symbol sprites as laid out at http://om.yr.no/forklaring/symbol/
+     * Return weather symbol sprites as laid out at https://om.yr.no/forklaring/symbol/
      */
     Meteogram.prototype.getSymbolSprites = function (symbolSize) {
         return {
@@ -283,7 +283,7 @@
 
                     // Position the image inside it at the sprite position
                     chart.renderer.image(
-                        'http://www.highcharts.com/samples/graphics/meteogram-symbols-30px.png',
+                        'https://www.highcharts.com/samples/graphics/meteogram-symbols-30px.png',
                         -sprite.x,
                         -sprite.y,
                         90,
@@ -450,7 +450,7 @@
             },
 
             credits: {
-                text: 'Forecast from <a href="http://yr.no">yr.no</a>',
+                text: 'Forecast from <a href="https://yr.no">yr.no</a>',
                 href: this.xml.credit.link['@@attributes'].url,
                 position: {
                     x: -40
@@ -748,7 +748,7 @@
             //place = 'Norway/Sogn_og_Fjordane/Vik/Målset';
             //place = 'United_States/California/San_Francisco';
             //place = 'United_States/Minnesota/Minneapolis';
-            location.hash = 'http://www.yr.no/place/' + place + '/forecast_hour_by_hour.xml';
+            location.hash = 'https://www.yr.no/place/' + place + '/forecast_hour_by_hour.xml';
 
         }
 
@@ -756,7 +756,7 @@
         // https://github.com/highslide-software/highcharts.com/blob/master/samples/data/jsonp.php
         // for source code.
         $.getJSON(
-            'http://www.highcharts.com/samples/data/jsonp.php?url=' + location.hash.substr(1) + '&callback=?',
+            'https://www.highcharts.com/samples/data/jsonp.php?url=' + location.hash.substr(1) + '&callback=?',
             function (xml) {
                 var meteogram = new Meteogram(xml, 'container');
             }

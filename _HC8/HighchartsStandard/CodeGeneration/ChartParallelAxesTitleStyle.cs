@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = "#666666";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,7 +27,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

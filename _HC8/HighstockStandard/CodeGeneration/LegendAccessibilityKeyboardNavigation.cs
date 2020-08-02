@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LegendAccessibilityKeyboardNavigation()
 		{
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			
 		}	
 		

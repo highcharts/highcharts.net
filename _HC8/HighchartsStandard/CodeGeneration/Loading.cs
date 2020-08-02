@@ -17,10 +17,11 @@ namespace Highsoft.Web.Mvc.Charts
 		public Loading()
 		{
 			HideDuration = HideDuration_DefaultValue = 100;
-			LabelStyle = LabelStyle_DefaultValue = new LoadingLabelStyle();
+			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
 			ShowDuration = ShowDuration_DefaultValue = 100;
-			Style = Style_DefaultValue = new LoadingStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,8 +35,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the loading label `span`.
 		/// </summary>
-		public LoadingLabelStyle LabelStyle { get; set; }
-		private LoadingLabelStyle LabelStyle_DefaultValue { get; set; }
+		public Hashtable LabelStyle { get; set; }
+		private Hashtable LabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -48,9 +49,11 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the loading screen that covers the plot area.In styled mode, the loading label is styled with the`.highcharts-loading` class.
 		/// </summary>
-		public LoadingStyle Style { get; set; }
-		private LoadingStyle Style_DefaultValue { get; set; }
-		  
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
 			if (ShowDuration != ShowDuration_DefaultValue) h.Add("showDuration",ShowDuration);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

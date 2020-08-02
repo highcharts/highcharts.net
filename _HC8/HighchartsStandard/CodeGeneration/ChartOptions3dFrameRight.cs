@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Size = Size_DefaultValue = 1;
 			Visible = Visible_DefaultValue = default;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -38,11 +39,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to display the frame. Possible values are `true`,`false`, `"auto"` to display only the frames behind the data,and `"default"` to display faces behind the data based on theaxis layout, ignoring the point of view.
+		/// Whether to display the frame. Possible values are `true`,`false`, `"auto"` to display only the frames behind thedata, and `"default"` to display faces behind the databased on the axis layout, ignoring the point of view.
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -26,13 +26,13 @@ namespace Highsoft.Web.Mvc.Charts
 			BubbleLegend = BubbleLegend_DefaultValue = new LegendBubbleLegend();
 			Enabled = Enabled_DefaultValue = true;
 			Floating = Floating_DefaultValue = false;
-			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new LegendItemCheckboxStyle();
+			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new Hashtable();
 			ItemDistance = ItemDistance_DefaultValue = null;
-			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new LegendItemHiddenStyle();
-			ItemHoverStyle = ItemHoverStyle_DefaultValue = new LegendItemHoverStyle();
+			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable();
+			ItemHoverStyle = ItemHoverStyle_DefaultValue = new Hashtable();
 			ItemMarginBottom = ItemMarginBottom_DefaultValue = 0;
 			ItemMarginTop = ItemMarginTop_DefaultValue = 0;
-			ItemStyle = ItemStyle_DefaultValue = new LegendItemStyle();
+			ItemStyle = ItemStyle_DefaultValue = new Hashtable();
 			ItemWidth = ItemWidth_DefaultValue = null;
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
 			LabelFormatter = LabelFormatter_DefaultValue = null;
@@ -55,9 +55,11 @@ namespace Highsoft.Web.Mvc.Charts
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
 			Width = Width_DefaultValue = "";
+			WidthNumber = WidthNumber_DefaultValue = null;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -134,8 +136,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Default styling for the checkbox next to a legend item when`showCheckbox` is true.
 		/// </summary>
-		public LegendItemCheckboxStyle ItemCheckboxStyle { get; set; }
-		private LegendItemCheckboxStyle ItemCheckboxStyle_DefaultValue { get; set; }
+		public Hashtable ItemCheckboxStyle { get; set; }
+		private Hashtable ItemCheckboxStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -148,15 +150,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for each legend item when the corresponding series orpoint is hidden. Only a subset of CSS is supported, notably thoseoptions related to text. Properties are inherited from `style`unless overridden here.
 		/// </summary>
-		public LegendItemHiddenStyle ItemHiddenStyle { get; set; }
-		private LegendItemHiddenStyle ItemHiddenStyle_DefaultValue { get; set; }
+		public Hashtable ItemHiddenStyle { get; set; }
+		private Hashtable ItemHiddenStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for each legend item in hover mode. Only a subset ofCSS is supported, notably those options related to text. Propertiesare inherited from `style` unless overridden here.
 		/// </summary>
-		public LegendItemHoverStyle ItemHoverStyle { get; set; }
-		private LegendItemHoverStyle ItemHoverStyle_DefaultValue { get; set; }
+		public Hashtable ItemHoverStyle { get; set; }
+		private Hashtable ItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -176,8 +178,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for each legend item. Only a subset of CSS is supported,notably those options related to text. The default `textOverflow`property makes long texts truncate. Set it to `undefined` to wraptext instead. A `width` property can be added to control the textwidth.
 		/// </summary>
-		public LegendItemStyle ItemStyle { get; set; }
-		private LegendItemStyle ItemStyle_DefaultValue { get; set; }
+		public Hashtable ItemStyle { get; set; }
+		private Hashtable ItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -335,6 +337,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width from legends below or above thechart, half the chart width for legends to the left and right.
+		/// </summary>
+		public double? WidthNumber { get; set; }
+		private double? WidthNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The x offset of the legend relative to its horizontal alignment`align` within chart.spacingLeft and chart.spacingRight. Negativex moves it to the left, positive x moves it to the right.
 		/// </summary>
 		public double? X { get; set; }
@@ -346,7 +355,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -363,13 +374,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BubbleLegend.IsDirty()) h.Add("bubbleLegend",BubbleLegend.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
-			if (ItemCheckboxStyle.IsDirty()) h.Add("itemCheckboxStyle",ItemCheckboxStyle.ToHashtable());
+			if (ItemCheckboxStyle != ItemCheckboxStyle_DefaultValue) h.Add("itemCheckboxStyle",ItemCheckboxStyle);
 			if (ItemDistance != ItemDistance_DefaultValue) h.Add("itemDistance",ItemDistance);
-			if (ItemHiddenStyle.IsDirty()) h.Add("itemHiddenStyle",ItemHiddenStyle.ToHashtable());
-			if (ItemHoverStyle.IsDirty()) h.Add("itemHoverStyle",ItemHoverStyle.ToHashtable());
+			if (ItemHiddenStyle != ItemHiddenStyle_DefaultValue) h.Add("itemHiddenStyle",ItemHiddenStyle);
+			if (ItemHoverStyle != ItemHoverStyle_DefaultValue) h.Add("itemHoverStyle",ItemHoverStyle);
 			if (ItemMarginBottom != ItemMarginBottom_DefaultValue) h.Add("itemMarginBottom",ItemMarginBottom);
 			if (ItemMarginTop != ItemMarginTop_DefaultValue) h.Add("itemMarginTop",ItemMarginTop);
-			if (ItemStyle.IsDirty()) h.Add("itemStyle",ItemStyle.ToHashtable());
+			if (ItemStyle != ItemStyle_DefaultValue) h.Add("itemStyle",ItemStyle);
 			if (ItemWidth != ItemWidth_DefaultValue) h.Add("itemWidth",ItemWidth);
 			if (LabelFormat != LabelFormat_DefaultValue) h.Add("labelFormat",LabelFormat);
 			if (LabelFormatter != LabelFormatter_DefaultValue) h.Add("labelFormatter",LabelFormatter);
@@ -381,7 +392,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (SquareSymbol != SquareSymbol_DefaultValue) h.Add("squareSymbol",SquareSymbol);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (SymbolHeight != SymbolHeight_DefaultValue) h.Add("symbolHeight",SymbolHeight);
@@ -392,9 +403,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

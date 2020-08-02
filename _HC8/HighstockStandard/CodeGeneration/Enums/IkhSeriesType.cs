@@ -89,7 +89,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		Supertrend, 
 		Tema, 
 		Trix, 
-		Williamsr,
-        Ikh
+		Williamsr
     }
 }

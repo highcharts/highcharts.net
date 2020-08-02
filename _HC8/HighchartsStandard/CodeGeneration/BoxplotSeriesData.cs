@@ -17,9 +17,11 @@ namespace Highsoft.Web.Mvc.Charts
 		public BoxplotSeriesData()
 		{
 			Accessibility = Accessibility_DefaultValue = new BoxplotSeriesDataAccessibility();
+			BoxDashStyle = BoxDashStyle_DefaultValue = new Hashtable();
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new BoxplotSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new BoxplotSeriesDataDragDrop();
@@ -30,10 +32,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Labelrank = Labelrank_DefaultValue = null;
 			Low = Low_DefaultValue = null;
 			Median = Median_DefaultValue = null;
+			MedianDashStyle = MedianDashStyle_DefaultValue = new Hashtable();
 			Name = Name_DefaultValue = "";
 			Q1 = Q1_DefaultValue = null;
 			Q3 = Q3_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
+			StemDashStyle = StemDashStyle_DefaultValue = new Hashtable();
+			WhiskerDashStyle = WhiskerDashStyle_DefaultValue = new Hashtable();
 			X = X_DefaultValue = double.MinValue;
 			Y = Y_DefaultValue = double.MinValue;
 			
@@ -46,6 +51,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public BoxplotSeriesDataAccessibility Accessibility { get; set; }
 		private BoxplotSeriesDataAccessibility Accessibility_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The dash style of the box.
+		/// </summary>
+		public Hashtable BoxDashStyle { get; set; }
+		private Hashtable BoxDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -67,6 +79,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A reserved subspace to store options and values for customized functionality.Here you can add additional data for your own event callbacks and formattercallbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -140,6 +159,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The dash style of the median.
+		/// </summary>
+		public Hashtable MedianDashStyle { get; set; }
+		private Hashtable MedianDashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The name of the point as shown in the legend, tooltip, dataLabels, etc.
 		/// </summary>
 		public string Name { get; set; }
@@ -168,6 +194,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The dash style of the stem.
+		/// </summary>
+		public Hashtable StemDashStyle { get; set; }
+		private Hashtable StemDashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The dash style of the whiskers.
+		/// </summary>
+		public Hashtable WhiskerDashStyle { get; set; }
+		private Hashtable WhiskerDashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
 		/// </summary>
 		public double? X { get; set; }
@@ -189,10 +229,12 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (BoxDashStyle != BoxDashStyle_DefaultValue) h.Add("boxDashStyle",BoxDashStyle);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
@@ -202,10 +244,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Low != Low_DefaultValue) h.Add("low",Low);
 			if (Median != Median_DefaultValue) h.Add("median",Median);
+			if (MedianDashStyle != MedianDashStyle_DefaultValue) h.Add("medianDashStyle",MedianDashStyle);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Q1 != Q1_DefaultValue) h.Add("q1",Q1);
 			if (Q3 != Q3_DefaultValue) h.Add("q3",Q3);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (StemDashStyle != StemDashStyle_DefaultValue) h.Add("stemDashStyle",StemDashStyle);
+			if (WhiskerDashStyle != WhiskerDashStyle_DefaultValue) h.Add("whiskerDashStyle",WhiskerDashStyle);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (CustomFields.Count > 0)

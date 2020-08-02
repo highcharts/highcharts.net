@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsSupertrendChangeTrendLineStyles()
 		{
-			DashStyle = DashStyle_DefaultValue = "LongDash";
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			LineColor = LineColor_DefaultValue = "#333333";
 			LineWidth = LineWidth_DefaultValue = 1;
 			
@@ -26,8 +26,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The dash or dot style of the grid lines. For possiblevalues, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

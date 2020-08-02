@@ -33,10 +33,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-            if (Events != Events_DefaultValue) h.Add("events", Events);
+			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			
 
-
-            return h;
+			return h;
 		}
 
 		internal override string ToJSON()

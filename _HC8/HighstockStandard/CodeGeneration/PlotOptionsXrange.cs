@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = null;
+			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
@@ -39,9 +40,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareBase = CompareBase_DefaultValue = PlotOptionsXrangeCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsXrangeCursor.Null;
+			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = PlotOptionsXrangeDashStyle.Null;
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsXrangeDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsXrangeDataLabels();
-			DataSorting = DataSorting_DefaultValue = new PlotOptionsXrangeDataSorting();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new PlotOptionsXrangeDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -90,7 +92,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -143,6 +145,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When `true`, the columns will center in the category, ignoring nullor missing points. When `false`, space will be reserved for null ormissing points.
+		/// </summary>
+		public bool? CenterInCategory { get; set; }
+		private bool? CenterInCategory_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -244,6 +253,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// </summary>
+		public PlotOptionsXrangeDashStyle DashStyle { get; set; }
+		private PlotOptionsXrangeDashStyle DashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highstock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
 		/// </summary>
 		public PlotOptionsXrangeDataGrouping DataGrouping { get; set; }
@@ -255,13 +278,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsXrangeDataLabels DataLabels { get; set; }
 		private PlotOptionsXrangeDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public PlotOptionsXrangeDataSorting DataSorting { get; set; }
-		private PlotOptionsXrangeDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -530,6 +546,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -544,9 +561,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);

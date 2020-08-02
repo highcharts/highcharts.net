@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = new NavigatorYAxisEvents();
 			Floor = Floor_DefaultValue = null;
 			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
-			GridLineDashStyle = GridLineDashStyle_DefaultValue = "Solid";
+			GridLineDashStyle = GridLineDashStyle_DefaultValue = new Hashtable();
 			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = "";
@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MaxPadding = MaxPadding_DefaultValue = null;
 			Min = Min_DefaultValue = null;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
-			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = "Solid";
+			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = new Hashtable();
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
 			MinorTickInterval = MinorTickInterval_DefaultValue = "";
@@ -185,8 +185,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The dash or dot style of the grid lines. For possible values, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public string GridLineDashStyle { get; set; }
-		private string GridLineDashStyle_DefaultValue { get; set; }
+		public Hashtable GridLineDashStyle { get; set; }
+		private Hashtable GridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -283,8 +283,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The dash or dot style of the minor grid lines. For possible values,see [this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public string MinorGridLineDashStyle { get; set; }
-		private string MinorGridLineDashStyle_DefaultValue { get; set; }
+		public Hashtable MinorGridLineDashStyle { get; set; }
+		private Hashtable MinorGridLineDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

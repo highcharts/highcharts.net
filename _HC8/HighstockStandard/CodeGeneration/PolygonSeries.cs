@@ -25,7 +25,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
-			Cluster = Cluster_DefaultValue = new PolygonSeriesCluster();
 			Color = Color_DefaultValue = "";
 			ColorAxis = ColorAxis_DefaultValue = "0";
 			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
@@ -36,9 +35,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareBase = CompareBase_DefaultValue = PolygonSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
+			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PolygonSeriesCursor.Null;
-			DashStyle = DashStyle_DefaultValue = PolygonSeriesDashStyle.Solid;
+			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = PolygonSeriesDashStyle.Null;
 			Data = Data_DefaultValue = new List<PolygonSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new PolygonSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new PolygonSeriesDataLabels();
@@ -54,7 +55,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Id = Id_DefaultValue = "";
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
-			Jitter = Jitter_DefaultValue = new PolygonSeriesJitter();
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PolygonSeriesLabel();
 			LastPrice = LastPrice_DefaultValue = new PolygonSeriesLastPrice();
@@ -85,7 +85,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Tooltip = Tooltip_DefaultValue = new PolygonSeriesTooltip();
 			TrackByArea = TrackByArea_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Type = Type_DefaultValue = PolygonSeriesType.Polygon;
+			Type = Type_DefaultValue = PolygonSeriesType.Null;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
 			XAxisNumber = XAxisNumber_DefaultValue = null;
@@ -106,7 +106,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -159,13 +159,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Clip { get; set; }
 		private bool? Clip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for marker clusters, the concept of sampling the datavalues into larger blocks in order to ease readability andincrease performance of the JavaScript charts.Note: marker clusters module is not working with `boost`and `draggable-points` modules.The marker clusters feature requires the marker-clusters.jsfile to be loaded, found in the modules directory of the downloadpackage, or online at [code.highcharts.com/modules/marker-clusters.js](code.highcharts.com/modules/marker-clusters.js).
-		/// </summary>
-		public PolygonSeriesCluster Cluster { get; set; }
-		private PolygonSeriesCluster Cluster_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -239,6 +232,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points(including markers and columns), is that animation is performed onupdates. On the other hand, when the series contains more points thanthe crop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping awayinvisible points is to increase performance on large series.
 		/// </summary>
 		public double? CropThreshold { get; set; }
@@ -253,7 +253,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A name for the dash style to use for the graph, or for some seriestypes the outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
 		/// </summary>
 		public PolygonSeriesDashStyle DashStyle { get; set; }
 		private PolygonSeriesDashStyle DashStyle_DefaultValue { get; set; }
@@ -323,14 +330,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be grouped into alarger time span. This can make the grouped points to have a greaterdistance than the absolute value of `gapSize` property, which will resultin disappearing graph completely. To prevent this situation the mentioneddistance between grouped points is used instead of previously defined`gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available for daytimehours, while gaps will appear in nights and weekends.
+		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be groupedinto a larger time span. This can make the grouped points to havea greater distance than the absolute value of `gapSize` property,which will result in disappearing graph completely. To preventthis situation the mentioned distance between grouped points isused instead of previously defined `gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available fordaytime hours, while gaps will appear in nights and weekends.
 		/// </summary>
 		public double? GapSize { get; set; }
 		private double? GapSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Together with [gapSize](plotOptions.series.gapSize), this option defineswhere to draw gaps in the graph.When the `gapUnit` is `relative` (default), a gap size of 5 meansthat if the distance between two points is greater than five timesthat of the two closest points, the graph will be broken.When the `gapUnit` is `value`, the gap is based on absolute axis values,which on a datetime axis is milliseconds. This also applies to thenavigator series that inherits gap options from the base series.
+		/// Together with [gapSize](plotOptions.series.gapSize), this optiondefines where to draw gaps in the graph.When the `gapUnit` is `"relative"` (default), a gap size of 5means that if the distance between two points is greater than5 times that of the two closest points, the graph will be broken.When the `gapUnit` is `"value"`, the gap is based on absoluteaxis values, which on a datetime axis is milliseconds. This alsoapplies to the navigator series that inherits gap options fromthe base series.
 		/// </summary>
 		public PolygonSeriesGapUnit GapUnit { get; set; }
 		private PolygonSeriesGapUnit GapUnit_DefaultValue { get; set; }
@@ -362,13 +369,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Apply a jitter effect for the rendered markers. When plottingdiscrete values, a little random noise may help telling the pointsapart. The jitter setting applies a random displacement of up to `n`axis units in either direction. So for example on a horizontal Xaxis, setting the `jitter.x` to 0.24 will render the point in arandom position between 0.24 units to the left and 0.24 units to theright of the true axis position. On a category axis, setting it to0.5 will fill up the bin and make the data appear continuous.When rendered on top of a box plot or a column series, a jitter valueof 0.24 will correspond to the underlying series' default[groupPadding](https://api.highcharts.com/highcharts/plotOptions.column.groupPadding)and [pointPadding](https://api.highcharts.com/highcharts/plotOptions.column.pointPadding)settings.
-		/// </summary>
-		public PolygonSeriesJitter Jitter { get; set; }
-		private PolygonSeriesJitter Jitter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -533,7 +533,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`. When stacking is enabled, data must be sortedin ascending X order. A special stacking option is with thestreamgraph series type, where the stacking option is set to`"stream"`. The second one is `"overlap"`, which only applies towaterfall series.
+		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`.When stacking is enabled, data must be sortedin ascending X order.Some stacking options are related to specific series types. In thestreamgraph series type, the stacking option is set to `"stream"`.The second one is `"overlap"`, which only applies to waterfallseries.
 		/// </summary>
 		public PolygonSeriesStacking Stacking { get; set; }
 		private PolygonSeriesStacking Stacking_DefaultValue { get; set; }
@@ -658,7 +658,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (Cluster.IsDirty()) h.Add("cluster",Cluster.ToHashtable());
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
 			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
@@ -669,8 +668,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
@@ -687,7 +688,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (Jitter.IsDirty()) h.Add("jitter",Jitter.ToHashtable());
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
@@ -718,7 +718,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);

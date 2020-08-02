@@ -17,14 +17,15 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsLollipopMarkerStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = new Hashtable();
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "";
-			LineWidth = LineWidth_DefaultValue = null;
-			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
-			Radius = Radius_DefaultValue = null;
-			RadiusPlus = RadiusPlus_DefaultValue = 2;
+			LineWidth = LineWidth_DefaultValue = new Hashtable();
+			LineWidthPlus = LineWidthPlus_DefaultValue = new Hashtable();
+			Radius = Radius_DefaultValue = new Hashtable();
+			RadiusPlus = RadiusPlus_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -38,15 +39,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable or disable the point marker.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The fill color of the marker in hover state. When`undefined`, the series' or point's fillColor for normalstate is used.
 		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -59,30 +60,32 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The width of the point marker's outline. When`undefined`, the series' or point's lineWidth for normalstate is used.
 		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
+		public Hashtable LineWidth { get; set; }
+		private Hashtable LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The additional line width for a hovered point.
 		/// </summary>
-		public double? LineWidthPlus { get; set; }
-		private double? LineWidthPlus_DefaultValue { get; set; }
+		public Hashtable LineWidthPlus { get; set; }
+		private Hashtable LineWidthPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The radius of the point marker. In hover state, itdefaults to the normal state's radius + 2 as per the[radiusPlus](#plotOptions.series.marker.states.hover.radiusPlus)option.
 		/// </summary>
-		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
+		public Hashtable Radius { get; set; }
+		private Hashtable Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of pixels to increase the radius of thehovered point.
 		/// </summary>
-		public double? RadiusPlus { get; set; }
-		private double? RadiusPlus_DefaultValue { get; set; }
-		  
+		public Hashtable RadiusPlus { get; set; }
+		private Hashtable RadiusPlus_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -97,7 +100,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (RadiusPlus != RadiusPlus_DefaultValue) h.Add("radiusPlus",RadiusPlus);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

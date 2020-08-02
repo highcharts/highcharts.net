@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Default = Default_DefaultValue = new PolygonSeriesDragDropGuideBoxDefault();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,7 +27,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PolygonSeriesDragDropGuideBoxDefault Default { get; set; }
 		private PolygonSeriesDragDropGuideBoxDefault Default_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Default.IsDirty()) h.Add("default",Default.ToHashtable());
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

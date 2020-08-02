@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsLabels()
 		{
+			Accessibility = Accessibility_DefaultValue = new AnnotationsLabelsAccessibility();
 			Align = Align_DefaultValue = AnnotationsLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
@@ -45,6 +46,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
+		/// Accessibility options for an annotation label.
+		/// </summary>
+		public AnnotationsLabelsAccessibility Accessibility { get; set; }
+		private AnnotationsLabelsAccessibility Accessibility_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The alignment of the annotation's label. If right,the right side of the label should be touching the point.
 		/// </summary>
 		public AnnotationsLabelsAlign Align { get; set; }
@@ -59,7 +67,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The background color or gradient for the annotation's label.
+		/// The background color or gradient for the annotation'slabel.
 		/// </summary>
 		public string BackgroundColor { get; set; }
 		private string BackgroundColor_DefaultValue { get; set; }
@@ -115,35 +123,35 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the annotation'slabel. Note that if a `format` or `text` are defined, theformat or text take precedence and the formatter is ignored.`This` refers to a point object.
+		/// Callback JavaScript function to format the annotation'slabel. Note that if a `format` or `text` are defined,the format or text take precedence and the formatter isignored. `This` refers to a point object.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// How to handle the annotation's label that flow outside theplot area. The justify option aligns the label inside theplot area.
+		/// How to handle the annotation's label that flow outsidethe plot area. The justify option aligns the label insidethe plot area.
 		/// </summary>
 		public AnnotationsLabelsOverflow Overflow { get; set; }
 		private AnnotationsLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When either the borderWidth or the backgroundColor is set,this    is the padding within the box.
+		/// When either the borderWidth or the backgroundColor isset, this is the padding within the box.
 		/// </summary>
 		public string Padding { get; set; }
 		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// This option defines the point to which the label will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new point withdefined x, y properties and optionally axes.
+		/// This option defines the point to which the label will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new pointwith defined x, y properties and optionally axes.
 		/// </summary>
 		public AnnotationsLabelsPoint Point { get; set; }
 		private AnnotationsLabelsPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// This option defines the point to which the label will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new point withdefined x, y properties and optionally axes.
+		/// This option defines the point to which the label will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new pointwith defined x, y properties and optionally axes.
 		/// </summary>
 		public string PointString { get; set; }
 		private string PointString_DefaultValue { get; set; }
@@ -164,7 +172,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The name of a symbol to use for the border around the label.Symbols are predefined functions on the Renderer object.
+		/// The name of a symbol to use for the border around thelabel. Symbols are predefined functions on the Rendererobject.
 		/// </summary>
 		public string Shape { get; set; }
 		private string Shape_DefaultValue { get; set; }
@@ -217,6 +225,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);

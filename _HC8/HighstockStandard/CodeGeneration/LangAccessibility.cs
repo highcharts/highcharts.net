@@ -30,6 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ScreenReaderSection = ScreenReaderSection_DefaultValue = new LangAccessibilityScreenReaderSection();
 			Series = Series_DefaultValue = new LangAccessibilitySeries();
 			SeriesTypeDescriptions = SeriesTypeDescriptions_DefaultValue = new LangAccessibilitySeriesTypeDescriptions();
+			Sonification = Sonification_DefaultValue = new LangAccessibilitySonification();
 			SvgContainerLabel = SvgContainerLabel_DefaultValue = "Interactive chart";
 			SvgContainerTitle = SvgContainerTitle_DefaultValue = "";
 			Table = Table_DefaultValue = new LangAccessibilityTable();
@@ -138,6 +139,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Language options for sonification.
+		/// </summary>
+		public LangAccessibilitySonification Sonification { get; set; }
+		private LangAccessibilitySonification Sonification_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public string SvgContainerLabel { get; set; }
@@ -191,6 +199,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ScreenReaderSection.IsDirty()) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable());
 			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
 			if (SeriesTypeDescriptions.IsDirty()) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable());
+			if (Sonification.IsDirty()) h.Add("sonification",Sonification.ToHashtable());
 			if (SvgContainerLabel != SvgContainerLabel_DefaultValue) h.Add("svgContainerLabel",SvgContainerLabel);
 			if (SvgContainerTitle != SvgContainerTitle_DefaultValue) h.Add("svgContainerTitle",SvgContainerTitle);
 			if (Table.IsDirty()) h.Add("table",Table.ToHashtable());

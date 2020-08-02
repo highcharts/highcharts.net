@@ -27,19 +27,21 @@ namespace Highsoft.Web.Mvc.Charts
 			NullFormatter = NullFormatter_DefaultValue = "";
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
+			StickOnContact = StickOnContact_DefaultValue = null;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = "";
 			ValueSuffix = ValueSuffix_DefaultValue = "";
 			XDateFormat = XDateFormat_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// The HTML of the cluster point's in the tooltip. Works only withmarker-clusters module and analogously to[pointFormat](#tooltip.pointFormat).The cluster tooltip can be also formatted using`tooltip.formatter` callback function and `point.isCluster` flag.
 		/// </summary>
-		public string ClusterFormat { get; set; }
-		private string ClusterFormat_DefaultValue { get; set; }
+		public object ClusterFormat { get; set; }
+		private object ClusterFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -113,6 +115,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Prevents the tooltip from switching or closing, when touched orpointed.
+		/// </summary>
+		public bool? StickOnContact { get; set; }
+		private bool? StickOnContact_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// How many decimals to show in each series' y value. This isoverridable in each series' tooltip options object. The default is topreserve all decimals.
 		/// </summary>
 		public double? ValueDecimals { get; set; }
@@ -138,7 +147,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string XDateFormat { get; set; }
 		private string XDateFormat_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -153,14 +164,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("5117ab24-615f-46e1-8b0d-689ef441b61a.nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("ae90276e-110b-4558-8b8c-246cf3f1b297.nullFormatter", NullFormatter); }  
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("7fec087b-c3c9-4fda-ad2b-dce04d21b442.pointFormatter", PointFormatter); }  
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("8d7e3aba-3589-4062-8973-5ca7a4c461fa.pointFormatter", PointFormatter); }  
+			if (StickOnContact != StickOnContact_DefaultValue) h.Add("stickOnContact",StickOnContact);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
 			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);
 			if (XDateFormat != XDateFormat_DefaultValue) h.Add("xDateFormat",XDateFormat);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

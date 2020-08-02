@@ -17,14 +17,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		public StreamgraphSeriesDataMarkerStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = new Hashtable();
 			FillColor = FillColor_DefaultValue = "";
 			LineColor = LineColor_DefaultValue = "";
-			LineWidth = LineWidth_DefaultValue = null;
-			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
-			Radius = Radius_DefaultValue = null;
-			RadiusPlus = RadiusPlus_DefaultValue = 2;
+			LineWidth = LineWidth_DefaultValue = new Hashtable();
+			LineWidthPlus = LineWidthPlus_DefaultValue = new Hashtable();
+			Radius = Radius_DefaultValue = new Hashtable();
+			RadiusPlus = RadiusPlus_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -37,17 +36,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Animation when hovering over the marker.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Enable or disable the point marker.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -67,29 +59,29 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The width of the point marker's outline. When`undefined`, the series' or point's lineWidth for normalstate is used.
 		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
+		public Hashtable LineWidth { get; set; }
+		private Hashtable LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The additional line width for a hovered point.
 		/// </summary>
-		public double? LineWidthPlus { get; set; }
-		private double? LineWidthPlus_DefaultValue { get; set; }
+		public Hashtable LineWidthPlus { get; set; }
+		private Hashtable LineWidthPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The radius of the point marker. In hover state, itdefaults to the normal state's radius + 2 as per the[radiusPlus](#plotOptions.series.marker.states.hover.radiusPlus)option.
 		/// </summary>
-		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
+		public Hashtable Radius { get; set; }
+		private Hashtable Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of pixels to increase the radius of thehovered point.
 		/// </summary>
-		public double? RadiusPlus { get; set; }
-		private double? RadiusPlus_DefaultValue { get; set; }
+		public Hashtable RadiusPlus { get; set; }
+		private Hashtable RadiusPlus_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -98,7 +90,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);

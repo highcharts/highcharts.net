@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public LangAccessibilityTable()
 		{
 			TableSummary = TableSummary_DefaultValue = "Table representation of chart.";
-			ViewAsDataTableButtonText = ViewAsDataTableButtonText_DefaultValue = "View as data table. {chartTitle}";
+			ViewAsDataTableButtonText = ViewAsDataTableButtonText_DefaultValue = "View as data table, {chartTitle}";
 			
 		}	
 		

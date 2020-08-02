@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsMacdStatesHoverHalo Halo { get; set; }
-		private PlotOptionsMacdStatesHoverHalo Halo_DefaultValue { get; set; }
+		public Hashtable Halo { get; set; }
+		private Hashtable Halo_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

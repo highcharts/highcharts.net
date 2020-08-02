@@ -17,9 +17,10 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsOrganizationLevelsStatesInactive()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			LinkOpacity = LinkOpacity_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = null;
+			LinkOpacity = LinkOpacity_DefaultValue = new Hashtable();
+			Opacity = Opacity_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -33,16 +34,18 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Opacity for the links between nodes in the sankey diagram ininactive mode.
 		/// </summary>
-		public double? LinkOpacity { get; set; }
-		private double? LinkOpacity_DefaultValue { get; set; }
+		public Hashtable LinkOpacity { get; set; }
+		private Hashtable LinkOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
-		  
+		public Hashtable Opacity { get; set; }
+		private Hashtable Opacity_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

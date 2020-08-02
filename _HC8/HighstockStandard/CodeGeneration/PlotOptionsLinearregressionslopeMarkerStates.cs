@@ -26,22 +26,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
-		public PlotOptionsLinearregressionslopeMarkerStatesHover Hover { get; set; }
-		private PlotOptionsLinearregressionslopeMarkerStatesHover Hover_DefaultValue { get; set; }
+		public Hashtable Hover { get; set; }
+		private Hashtable Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
-		public PlotOptionsLinearregressionslopeMarkerStatesNormal Normal { get; set; }
-		private PlotOptionsLinearregressionslopeMarkerStatesNormal Normal_DefaultValue { get; set; }
+		public Hashtable Normal { get; set; }
+		private Hashtable Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
-		public PlotOptionsLinearregressionslopeMarkerStatesSelect Select { get; set; }
-		private PlotOptionsLinearregressionslopeMarkerStatesSelect Select_DefaultValue { get; set; }
+		public Hashtable Select { get; set; }
+		private Hashtable Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

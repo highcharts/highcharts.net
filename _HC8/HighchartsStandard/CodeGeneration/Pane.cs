@@ -19,9 +19,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Background = Background_DefaultValue = new List<PaneBackground>();
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			EndAngle = EndAngle_DefaultValue = null;
+			InnerSize = InnerSize_DefaultValue = "0%";
+			InnerSizeNumber = InnerSizeNumber_DefaultValue = null;
 			Size = Size_DefaultValue = "85%";
+			SizeNumber = SizeNumber_DefaultValue = null;
 			StartAngle = StartAngle_DefaultValue = 0;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -47,10 +51,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The size of the pane, either as a number defining pixels, or apercentage defining a percentage of the plot are.
+		/// The inner size of the pane, either as a number defining pixels, or apercentage defining a percentage of the pane's size.
+		/// </summary>
+		public string InnerSize { get; set; }
+		private string InnerSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The inner size of the pane, either as a number defining pixels, or apercentage defining a percentage of the pane's size.
+		/// </summary>
+		public double? InnerSizeNumber { get; set; }
+		private double? InnerSizeNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The size of the pane, either as a number defining pixels, or apercentage defining a percentage of the available plot area (thesmallest of the plot height or plot width).
 		/// </summary>
 		public string Size { get; set; }
 		private string Size_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The size of the pane, either as a number defining pixels, or apercentage defining a percentage of the available plot area (thesmallest of the plot height or plot width).
+		/// </summary>
+		public double? SizeNumber { get; set; }
+		private double? SizeNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -58,7 +83,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? StartAngle { get; set; }
 		private double? StartAngle_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -68,9 +95,19 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Background != Background_DefaultValue) h.Add("background", HashifyList(Background));
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
+			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
+			if (InnerSizeNumber != InnerSizeNumber_DefaultValue) h.Add("innerSize",InnerSizeNumber);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (SizeNumber != SizeNumber_DefaultValue) h.Add("size",SizeNumber);
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

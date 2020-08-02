@@ -33,6 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SplitSeries = SplitSeries_DefaultValue = "false";
 			Type = Type_DefaultValue = PlotOptionsPackedbubbleLayoutAlgorithmType.ReingoldFruchterman;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -146,7 +147,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsPackedbubbleLayoutAlgorithmType Type { get; set; }
 		private PlotOptionsPackedbubbleLayoutAlgorithmType Type_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -165,11 +168,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
 			if (ParentNodeLimit != ParentNodeLimit_DefaultValue) h.Add("parentNodeLimit",ParentNodeLimit);
-			if (ParentNodeOptions != ParentNodeOptions_DefaultValue) h.Add("parentNodeOptions",ParentNodeOptions);
+			if (ParentNodeOptions.IsDirty()) h.Add("parentNodeOptions",ParentNodeOptions.ToHashtable());
 			if (SeriesInteraction != SeriesInteraction_DefaultValue) h.Add("seriesInteraction",SeriesInteraction);
 			if (SplitSeries != SplitSeries_DefaultValue) h.Add("splitSeries",SplitSeries);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

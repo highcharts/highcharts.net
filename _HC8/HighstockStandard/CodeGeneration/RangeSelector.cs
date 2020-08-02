@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ButtonPosition = ButtonPosition_DefaultValue = new RangeSelectorButtonPosition();
 			Buttons = Buttons_DefaultValue = new List<RangeSelectorButton>();
 			ButtonSpacing = ButtonSpacing_DefaultValue = 0;
-			ButtonTheme = ButtonTheme_DefaultValue = "";
+			ButtonTheme = ButtonTheme_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Floating = Floating_DefaultValue = false;
 			Height = Height_DefaultValue = null;
@@ -74,8 +74,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A collection of attributes for the buttons. The object takes SVGattributes like `fill`, `stroke`, `stroke-width`, as well as `style`,a collection of CSS properties for the text.The object can also be extended with states, so you can setpresentational options for `hover`, `select` or `disabled` buttonstates.CSS styles for the text label.In styled mode, the buttons are styled by the`.highcharts-range-selector-buttons .highcharts-button` rule with itsdifferent states.
 		/// </summary>
-		public string ButtonTheme { get; set; }
-		private string ButtonTheme_DefaultValue { get; set; }
+		public Object ButtonTheme { get; set; }
+		private Object ButtonTheme_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -116,8 +116,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// CSS for the container DIV holding the input boxes. Deprecated asof 1.2.5\. Use [inputPosition](#rangeSelector.inputPosition) instead.
 		/// </summary>
-		public Object InputBoxStyle { get; set; }
-		private Object InputBoxStyle_DefaultValue { get; set; }
+		public Hashtable InputBoxStyle { get; set; }
+		private Hashtable InputBoxStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -213,7 +213,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ButtonPosition.IsDirty()) h.Add("buttonPosition",ButtonPosition.ToHashtable());
 			if (Buttons != Buttons_DefaultValue) h.Add("buttons", HashifyList(Buttons));
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
-			if (ButtonTheme != ButtonTheme_DefaultValue) h.Add("buttonTheme",ButtonTheme);
+			if (ButtonTheme.IsDirty()) h.Add("buttonTheme",ButtonTheme.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (Height != Height_DefaultValue) h.Add("height",Height);

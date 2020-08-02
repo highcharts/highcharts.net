@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsTreemapLevels()
 		{
 			BorderColor = BorderColor_DefaultValue = "";
-			BorderDashStyle = BorderDashStyle_DefaultValue = "";
+			BorderDashStyle = BorderDashStyle_DefaultValue = new Hashtable();
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsTreemapLevelsColorVariation();
@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLevelsLayoutStartingDirection.Null;
 			Level = Level_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,8 +40,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Set the dash style of the border of all the point which lies on thelevel. See[plotOptions.scatter.dashStyle](#plotoptions.scatter.dashstyle)for possible options.
 		/// </summary>
-		public string BorderDashStyle { get; set; }
-		private string BorderDashStyle_DefaultValue { get; set; }
+		public Hashtable BorderDashStyle { get; set; }
+		private Hashtable BorderDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -90,7 +91,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Level { get; set; }
 		private double? Level_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -102,11 +105,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorVariation.IsDirty()) h.Add("colorVariation",ColorVariation.ToHashtable());
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
 			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (Level != Level_DefaultValue) h.Add("level",Level);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

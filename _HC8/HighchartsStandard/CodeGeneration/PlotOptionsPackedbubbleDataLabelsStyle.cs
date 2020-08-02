@@ -16,52 +16,35 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPackedbubbleDataLabelsStyle()
 		{
-			Color = Color_DefaultValue = "contrast";
-			FontSize = FontSize_DefaultValue = "11px";
-			FontWeight = FontWeight_DefaultValue = "bold";
-			TextOutline = TextOutline_DefaultValue = "1px contrast";
+			Transition = Transition_DefaultValue = "opacity 2000ms";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
+		public string Transition { get; set; }
+		private string Transition_DefaultValue { get; set; }
 		 
 
-		/// <summary>
-		/// 
-		/// </summary>
-		public string FontSize { get; set; }
-		private string FontSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string FontWeight { get; set; }
-		private string FontWeight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string TextOutline { get; set; }
-		private string TextOutline_DefaultValue { get; set; }
-		  
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
-			if (TextOutline != TextOutline_DefaultValue) h.Add("textOutline",TextOutline);
-			
+			if (Transition != Transition_DefaultValue) h.Add("transition",Transition);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

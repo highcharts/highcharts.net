@@ -17,8 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public ColumnSeriesStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -31,17 +30,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Animation setting for hovering the graph in line-type series.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -50,7 +42,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			
 

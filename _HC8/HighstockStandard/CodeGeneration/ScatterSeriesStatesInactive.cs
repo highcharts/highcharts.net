@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		public ScatterSeriesStatesInactive()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = new Hashtable();
+			Opacity = Opacity_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -31,17 +31,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The animation for entering the inactive state.
+		/// Enable or disable the inactive state for a series
 		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Opacity of series elements (dataLabels, line, area). Set to 1to disable inactive state.
+		/// Opacity of series elements (dataLabels, line, area).
 		/// </summary>
-		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
+		public Hashtable Opacity { get; set; }
+		private Hashtable Opacity_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -50,7 +50,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			
 

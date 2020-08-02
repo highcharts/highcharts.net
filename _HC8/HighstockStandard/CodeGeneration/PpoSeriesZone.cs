@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			DashStyle = DashStyle_DefaultValue = "";
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			FillColor = FillColor_DefaultValue = "";
 			Value = Value_DefaultValue = null;
 			
@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A name for the dash style to use for the graph.
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

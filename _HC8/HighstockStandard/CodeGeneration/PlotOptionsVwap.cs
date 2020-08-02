@@ -33,9 +33,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareStart = CompareStart_DefaultValue = false;
 			CompareToMain = CompareToMain_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
+			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsVwapCursor.Null;
-			DashStyle = DashStyle_DefaultValue = PlotOptionsVwapDashStyle.Solid;
+			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = PlotOptionsVwapDashStyle.Null;
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsVwapDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsVwapDataLabels();
 			DataSorting = DataSorting_DefaultValue = new PlotOptionsVwapDataSorting();
@@ -87,7 +89,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -199,6 +201,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points(including markers and columns), is that animation is performed onupdates. On the other hand, when the series contains more points thanthe crop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping awayinvisible points is to increase performance on large series.
 		/// </summary>
 		public double? CropThreshold { get; set; }
@@ -213,7 +222,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A name for the dash style to use for the graph, or for some seriestypes the outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
 		/// </summary>
 		public PlotOptionsVwapDashStyle DashStyle { get; set; }
 		private PlotOptionsVwapDashStyle DashStyle_DefaultValue { get; set; }
@@ -269,14 +285,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be grouped into alarger time span. This can make the grouped points to have a greaterdistance than the absolute value of `gapSize` property, which will resultin disappearing graph completely. To prevent this situation the mentioneddistance between grouped points is used instead of previously defined`gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available for daytimehours, while gaps will appear in nights and weekends.
+		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be groupedinto a larger time span. This can make the grouped points to havea greater distance than the absolute value of `gapSize` property,which will result in disappearing graph completely. To preventthis situation the mentioned distance between grouped points isused instead of previously defined `gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available fordaytime hours, while gaps will appear in nights and weekends.
 		/// </summary>
 		public double? GapSize { get; set; }
 		private double? GapSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Together with [gapSize](plotOptions.series.gapSize), this option defineswhere to draw gaps in the graph.When the `gapUnit` is `relative` (default), a gap size of 5 meansthat if the distance between two points is greater than five timesthat of the two closest points, the graph will be broken.When the `gapUnit` is `value`, the gap is based on absolute axis values,which on a datetime axis is milliseconds. This also applies to thenavigator series that inherits gap options from the base series.
+		/// Together with [gapSize](plotOptions.series.gapSize), this optiondefines where to draw gaps in the graph.When the `gapUnit` is `"relative"` (default), a gap size of 5means that if the distance between two points is greater than5 times that of the two closest points, the graph will be broken.When the `gapUnit` is `"value"`, the gap is based on absoluteaxis values, which on a datetime axis is milliseconds. This alsoapplies to the navigator series that inherits gap options fromthe base series.
 		/// </summary>
 		public PlotOptionsVwapGapUnit GapUnit { get; set; }
 		private PlotOptionsVwapGapUnit GapUnit_DefaultValue { get; set; }
@@ -514,8 +530,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CompareToMain != CompareToMain_DefaultValue) h.Add("compareToMain",CompareToMain);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());

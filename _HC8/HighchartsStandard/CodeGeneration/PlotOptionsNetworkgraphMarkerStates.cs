@@ -16,25 +16,35 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsNetworkgraphMarkerStates()
 		{
-			Inactive = Inactive_DefaultValue = new PlotOptionsNetworkgraphMarkerStatesInactive();
+			Inactive = Inactive_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// The opposite state of a hover for a single point node.Applied to all not connected nodes to the hovered one.
 		/// </summary>
-		public PlotOptionsNetworkgraphMarkerStatesInactive Inactive { get; set; }
-		private PlotOptionsNetworkgraphMarkerStatesInactive Inactive_DefaultValue { get; set; }
-		  
+		public Hashtable Inactive { get; set; }
+		private Hashtable Inactive_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
-			
+			if (Inactive != Inactive_DefaultValue) h.Add("inactive",Inactive);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

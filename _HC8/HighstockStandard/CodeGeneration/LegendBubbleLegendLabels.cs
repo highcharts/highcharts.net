@@ -50,7 +50,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A [format string](http://docs.highcharts.com/#formatting)for the bubble legend labels. Available variables are thesame as for `formatter`.
+		/// A format string for the bubble legend labels. Availablevariables are the same as for `formatter`.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }

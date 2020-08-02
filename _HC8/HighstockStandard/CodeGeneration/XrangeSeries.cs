@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = null;
+			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
@@ -39,10 +40,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareBase = CompareBase_DefaultValue = XrangeSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = XrangeSeriesCursor.Null;
+			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = XrangeSeriesDashStyle.Null;
 			Data = Data_DefaultValue = new List<XrangeSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new XrangeSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();
-			DataSorting = DataSorting_DefaultValue = new XrangeSeriesDataSorting();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new XrangeSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -81,7 +83,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new XrangeSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Type = Type_DefaultValue = XrangeSeriesType.Xrange;
+			Type = Type_DefaultValue = XrangeSeriesType.Null;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
 			XAxisNumber = XAxisNumber_DefaultValue = null;
@@ -102,7 +104,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -155,6 +157,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When `true`, the columns will center in the category, ignoring nullor missing points. When `false`, space will be reserved for null ormissing points.
+		/// </summary>
+		public bool? CenterInCategory { get; set; }
+		private bool? CenterInCategory_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -256,6 +265,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// </summary>
+		public XrangeSeriesDashStyle DashStyle { get; set; }
+		private XrangeSeriesDashStyle DashStyle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array of data points for the series. For the `xrange` series type,points can be given in the following ways:1. An array of objects with named values. The objects are point configuration   objects as seen below.   ```js   data: [{       x: Date.UTC(2017, 0, 1),       x2: Date.UTC(2017, 0, 3),       name: "Test",       y: 0,       color: "#00FF00"   }, {       x: Date.UTC(2017, 0, 4),       x2: Date.UTC(2017, 0, 5),       name: "Deploy",       y: 1,       color: "#FF0000"   }]   ```
 		/// </summary>
 		public List<XrangeSeriesData> Data { get; set; }
@@ -274,13 +297,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public XrangeSeriesDataLabels DataLabels { get; set; }
 		private XrangeSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public XrangeSeriesDataSorting DataSorting { get; set; }
-		private XrangeSeriesDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -626,6 +642,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -640,10 +657,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
@@ -682,7 +700,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);

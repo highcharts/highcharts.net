@@ -18,11 +18,12 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#cccccc";
-			DashStyle = DashStyle_DefaultValue = "Solid";
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			Snap = Snap_DefaultValue = true;
 			Width = Width_DefaultValue = 1;
 			ZIndex = ZIndex_DefaultValue = 2;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -43,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The dash style for the crosshair. See[plotOptions.series.dashStyle](#plotOptions.series.dashStyle)for possible values.
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -79,7 +82,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

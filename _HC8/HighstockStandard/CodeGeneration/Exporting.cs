@@ -61,8 +61,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Options for the export related buttons, print and export. In additionto the default buttons listed here, custom buttons can be added.See [navigation.buttonOptions](#navigation.buttonOptions) for generaloptions.
 		/// </summary>
-		public ExportingButtons Buttons { get; set; }
-		private ExportingButtons Buttons_DefaultValue { get; set; }
+		public Hashtable Buttons { get; set; }
+		private Hashtable Buttons_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -122,7 +122,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:- **onclick:** The click handler for the menu item- **text:** The text for the menu item- **textKey:** If internationalization is required, the key to a language  string
+		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:- **onclick:** The click handler for the menu item- **text:** The text for the menu item- **textKey:** If internationalization is required, the key to a language  stringCustom text for the "exitFullScreen" can be set only in lang options(it is not a separate button).
 		/// </summary>
 		public Object MenuItemDefinitions { get; set; }
 		private Object MenuItemDefinitions_DefaultValue { get; set; }

@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			NodeFormat = NodeFormat_DefaultValue = "{point.name}<br>{point.title}<br>{point.description}";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,7 +27,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string NodeFormat { get; set; }
 		private string NodeFormat_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

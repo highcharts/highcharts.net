@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (AnnouncementFormatter != AnnouncementFormatter_DefaultValue) h.Add("announcementFormatter",AnnouncementFormatter);
+			if (AnnouncementFormatter != AnnouncementFormatter_DefaultValue) { h.Add("announcementFormatter",AnnouncementFormatter); Highstock.AddFunction("AccessibilityAnnounceNewDataAnnouncementFormatter.announcementFormatter", AnnouncementFormatter); }  
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (InterruptUser != InterruptUser_DefaultValue) h.Add("interruptUser",InterruptUser);
 			if (MinAnnounceInterval != MinAnnounceInterval_DefaultValue) h.Add("minAnnounceInterval",MinAnnounceInterval);

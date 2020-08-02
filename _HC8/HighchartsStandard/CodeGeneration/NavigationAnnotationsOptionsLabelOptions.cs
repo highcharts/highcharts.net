@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationAnnotationsOptionsLabelOptions()
 		{
+			Accessibility = Accessibility_DefaultValue = new NavigationAnnotationsOptionsLabelOptionsAccessibility();
 			Align = Align_DefaultValue = NavigationAnnotationsOptionsLabelOptionsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
@@ -30,6 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Overflow = Overflow_DefaultValue = NavigationAnnotationsOptionsLabelOptionsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
@@ -38,8 +40,16 @@ namespace Highsoft.Web.Mvc.Charts
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = -16;
 			
+			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// Accessibility options for an annotation label.
+		/// </summary>
+		public NavigationAnnotationsOptionsLabelOptionsAccessibility Accessibility { get; set; }
+		private NavigationAnnotationsOptionsLabelOptionsAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The alignment of the annotation's label. If right,the right side of the label should be touching the point.
@@ -56,7 +66,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The background color or gradient for the annotation's label.
+		/// The background color or gradient for the annotation'slabel.
 		/// </summary>
 		public string BackgroundColor { get; set; }
 		private string BackgroundColor_DefaultValue { get; set; }
@@ -112,21 +122,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the annotation'slabel. Note that if a `format` or `text` are defined, theformat or text take precedence and the formatter is ignored.`This` refers to a point object.
+		/// Callback JavaScript function to format the annotation'slabel. Note that if a `format` or `text` are defined,the format or text take precedence and the formatter isignored. `This` refers to a point object.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// How to handle the annotation's label that flow outside theplot area. The justify option aligns the label inside theplot area.
+		/// How to handle the annotation's label that flow outsidethe plot area. The justify option aligns the label insidethe plot area.
 		/// </summary>
 		public NavigationAnnotationsOptionsLabelOptionsOverflow Overflow { get; set; }
 		private NavigationAnnotationsOptionsLabelOptionsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// When either the borderWidth or the backgroundColor is set,this    is the padding within the box.
+		/// When either the borderWidth or the backgroundColor isset, this is the padding within the box.
 		/// </summary>
 		public string Padding { get; set; }
 		private string Padding_DefaultValue { get; set; }
@@ -140,7 +150,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of a symbol to use for the border around the label.Symbols are predefined functions on the Renderer object.
+		/// The shadow of the box. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The name of a symbol to use for the border around thelabel. Symbols are predefined functions on the Rendererobject.
 		/// </summary>
 		public string Shape { get; set; }
 		private string Shape_DefaultValue { get; set; }
@@ -186,13 +203,16 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
+			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
@@ -203,10 +223,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("a0123ecd-c37a-44be-92ec-56f2cdbc19b4.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("71df61ec-d55d-45c0-b48a-2c02f8afd2fe.formatter", Formatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
@@ -214,7 +235,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

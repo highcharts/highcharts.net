@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public VbpSeriesZoneLines()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Styles = Styles_DefaultValue = new VbpSeriesZoneLinesStyles();
+			Styles = Styles_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Specify the style of zone lines.
 		/// </summary>
-		public VbpSeriesZoneLinesStyles Styles { get; set; }
-		private VbpSeriesZoneLinesStyles Styles_DefaultValue { get; set; }
+		public Hashtable Styles { get; set; }
+		private Hashtable Styles_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Styles.IsDirty()) h.Add("styles",Styles.ToHashtable());
+			if (Styles != Styles_DefaultValue) h.Add("styles",Styles);
 			
 
 			return h;

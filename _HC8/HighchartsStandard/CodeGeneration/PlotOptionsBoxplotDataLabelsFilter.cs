@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Property = Property_DefaultValue = "";
 			Value = Value_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Value { get; set; }
 		private double? Value_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Operator != Operator_DefaultValue) h.Add("operator",Operator);
 			if (Property != Property_DefaultValue) h.Add("property",Property);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

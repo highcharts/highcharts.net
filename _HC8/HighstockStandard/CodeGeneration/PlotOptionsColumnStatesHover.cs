@@ -17,11 +17,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsColumnStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "";
-			Brightness = Brightness_DefaultValue = null;
+			Brightness = Brightness_DefaultValue = new Hashtable();
 			Color = Color_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = new Hashtable();
 			
 		}	
 		
@@ -34,13 +33,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Animation setting for hovering the graph in line-type series.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A specific border color for the hovered point. Defaults toinherit the normal state border color.
 		/// </summary>
 		public string BorderColor { get; set; }
@@ -50,8 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// How much to brighten the point on interaction. Requires themain color to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover`rule.
 		/// </summary>
-		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
+		public Hashtable Brightness { get; set; }
+		private Hashtable Brightness_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -64,8 +56,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
+		public Hashtable Enabled { get; set; }
+		private Hashtable Enabled_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -74,7 +66,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Color != Color_DefaultValue) h.Add("color",Color);

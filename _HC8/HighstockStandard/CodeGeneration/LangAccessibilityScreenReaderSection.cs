@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public LangAccessibilityScreenReaderSection()
 		{
 			AfterRegionLabel = AfterRegionLabel_DefaultValue = "";
+			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			BeforeRegionLabel = BeforeRegionLabel_DefaultValue = "Chart screen reader information.";
 			EndOfChartMarker = EndOfChartMarker_DefaultValue = "End of interactive chart.";
 			
@@ -28,6 +29,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string AfterRegionLabel { get; set; }
 		private string AfterRegionLabel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Language options for annotation descriptions.
+		/// </summary>
+		public List<Annotations> Annotations { get; set; }
+		private List<Annotations> Annotations_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -50,6 +58,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (AfterRegionLabel != AfterRegionLabel_DefaultValue) h.Add("afterRegionLabel",AfterRegionLabel);
+			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (BeforeRegionLabel != BeforeRegionLabel_DefaultValue) h.Add("beforeRegionLabel",BeforeRegionLabel);
 			if (EndOfChartMarker != EndOfChartMarker_DefaultValue) h.Add("endOfChartMarker",EndOfChartMarker);
 			

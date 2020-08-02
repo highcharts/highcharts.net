@@ -16,17 +16,20 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsOrganizationLevelsStatesHover()
 		{
-			LinkOpacity = LinkOpacity_DefaultValue = 1;
+			LinkOpacity = LinkOpacity_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
 		/// Opacity for the links between nodes in the sankey diagram inhover mode.
 		/// </summary>
-		public double? LinkOpacity { get; set; }
-		private double? LinkOpacity_DefaultValue { get; set; }
-		  
+		public Hashtable LinkOpacity { get; set; }
+		private Hashtable LinkOpacity_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -18,10 +18,11 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			DashStyle = DashStyle_DefaultValue = "";
+			DashStyle = DashStyle_DefaultValue = new Hashtable();
 			FillColor = FillColor_DefaultValue = null;
 			Value = Value_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,15 +43,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A name for the dash style to use for the graph.
 		/// </summary>
-		public string DashStyle { get; set; }
-		private string DashStyle_DefaultValue { get; set; }
+		public Hashtable DashStyle { get; set; }
+		private Hashtable DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Defines the fill color for the series (in area type series)
 		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Value { get; set; }
 		private double? Value_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

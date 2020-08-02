@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Marker = Marker_DefaultValue = new TreemapSeriesClusterZonesMarker();
 			To = To_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? To { get; set; }
 		private double? To_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -59,9 +62,16 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (From != From_DefaultValue) h.Add("from",From);
-			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			if (To != To_DefaultValue) h.Add("to",To);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

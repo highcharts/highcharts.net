@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Unit = Unit_DefaultValue = PlotOptionsSunburstLevelsLevelSizeUnit.Weight;
 			Value = Value_DefaultValue = 1;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Value { get; set; }
 		private double? Value_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Unit != Unit_DefaultValue) h.Add("unit", Highcharts.FirstCharacterToLower(Unit.ToString()));
 			if (Value != Value_DefaultValue) h.Add("value",Value);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

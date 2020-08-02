@@ -19,10 +19,12 @@ namespace Highsoft.Web.Mvc.Charts
 			AfterChartFormat = AfterChartFormat_DefaultValue = "{endOfChartMarker}";
 			AfterChartFormatter = AfterChartFormatter_DefaultValue = "";
 			AxisRangeDateFormat = AxisRangeDateFormat_DefaultValue = "%Y-%m-%d %H:%M:%S";
-			BeforeChartFormat = BeforeChartFormat_DefaultValue = "<h5>{chartTitle}</h5><div>{typeDescription}</div><div>{chartSubtitle}</div><div>{chartLongdesc}</div><div>{xAxisDescription}</div><div>{yAxisDescription}</div><div>{viewTableButton}</div>";
+			BeforeChartFormat = BeforeChartFormat_DefaultValue = "<h5>{chartTitle}</h5><div>{typeDescription}</div><div>{chartSubtitle}</div><div>{chartLongdesc}</div><div>{playAsSoundButton}</div><div>{viewTableButton}</div><div>{xAxisDescription}</div><div>{yAxisDescription}</div><div>{annotationsTitle}{annotationsList}</div>";
 			BeforeChartFormatter = BeforeChartFormatter_DefaultValue = "";
+			OnPlayAsSoundClick = OnPlayAsSoundClick_DefaultValue = "";
 			OnViewDataTableClick = OnViewDataTableClick_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -48,7 +50,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Format for the screen reader information region before the chart.Supported HTML tags are `<h1-7>`, `<p>`, `<div>`, `<a>`, and`<button>`. Attributes are not supported, except for id on`<div>`, `<a>`, and `<button>`. Id is required on `<a>` and`<button>` in the format `<tag id="abcd">`. Numbers, lower- anduppercase letters, "-" and "#" are valid characters in IDs.
+		/// Format for the screen reader information region before the chart.Supported HTML tags are `<h1-7>`, `<p>`, `<div>`, `<a>`, `<ul>`,`<ol>`, `<li>`, and `<button>`. Attributes are not supported,except for id on `<div>`, `<a>`, and `<button>`. Id is requiredon `<a>` and `<button>` in the format `<tag id="abcd">`. Numbers,lower- and uppercase letters, "-" and "#" are valid characters inIDs.
 		/// </summary>
 		public string BeforeChartFormat { get; set; }
 		private string BeforeChartFormat_DefaultValue { get; set; }
@@ -62,11 +64,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Function to run upon clicking the "Play as sound" button inthe screen reader region.By default Highcharts will call the `chart.sonify` function.
+		/// </summary>
+		public string OnPlayAsSoundClick { get; set; }
+		private string OnPlayAsSoundClick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Function to run upon clicking the "View as Data Table" link inthe screen reader region.By default Highcharts will insert and set focus to a data tablerepresentation of the chart.
 		/// </summary>
 		public string OnViewDataTableClick { get; set; }
 		private string OnViewDataTableClick_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -74,12 +85,20 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (AfterChartFormat != AfterChartFormat_DefaultValue) h.Add("afterChartFormat",AfterChartFormat);
-			if (AfterChartFormatter != AfterChartFormatter_DefaultValue) { h.Add("afterChartFormatter",AfterChartFormatter); Highcharts.AddFunction("4d0f0947-74b9-4396-a5a8-0671c37bec4b.afterChartFormatter", AfterChartFormatter); }  
+			if (AfterChartFormatter != AfterChartFormatter_DefaultValue) { h.Add("afterChartFormatter",AfterChartFormatter); Highcharts.AddFunction("04ce8e9a-0579-497e-acb4-a0be8a4ab697.afterChartFormatter", AfterChartFormatter); }  
 			if (AxisRangeDateFormat != AxisRangeDateFormat_DefaultValue) h.Add("axisRangeDateFormat",AxisRangeDateFormat);
 			if (BeforeChartFormat != BeforeChartFormat_DefaultValue) h.Add("beforeChartFormat",BeforeChartFormat);
-			if (BeforeChartFormatter != BeforeChartFormatter_DefaultValue) { h.Add("beforeChartFormatter",BeforeChartFormatter); Highcharts.AddFunction("3505cbb3-7841-4028-a830-884d8f248c9d.beforeChartFormatter", BeforeChartFormatter); }  
-			if (OnViewDataTableClick != OnViewDataTableClick_DefaultValue) { h.Add("onViewDataTableClick",OnViewDataTableClick); Highcharts.AddFunction("06fee549-7f00-4039-859d-208ade575494.onViewDataTableClick", OnViewDataTableClick); }  
-			
+			if (BeforeChartFormatter != BeforeChartFormatter_DefaultValue) { h.Add("beforeChartFormatter",BeforeChartFormatter); Highcharts.AddFunction("302a50b8-19c2-440a-9a06-b8fe5bfff8e8.beforeChartFormatter", BeforeChartFormatter); }  
+			if (OnPlayAsSoundClick != OnPlayAsSoundClick_DefaultValue) { h.Add("onPlayAsSoundClick",OnPlayAsSoundClick); Highcharts.AddFunction("6a2d1112-452e-45af-98c6-bd8b0ee11f84.onPlayAsSoundClick", OnPlayAsSoundClick); }  
+			if (OnViewDataTableClick != OnViewDataTableClick_DefaultValue) { h.Add("onViewDataTableClick",OnViewDataTableClick); Highcharts.AddFunction("8dfff195-09fb-4458-a061-b6b778e33493.onViewDataTableClick", OnViewDataTableClick); }  
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

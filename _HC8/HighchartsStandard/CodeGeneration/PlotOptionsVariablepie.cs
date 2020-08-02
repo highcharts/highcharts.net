@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new PlotOptionsVariablepieAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsVariablepieBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -27,11 +28,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorAxis = ColorAxis_DefaultValue = "0";
+			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
+			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
+			Crisp = Crisp_DefaultValue = true;
 			Cursor = Cursor_DefaultValue = PlotOptionsVariablepieCursor.Null;
-			DataSorting = DataSorting_DefaultValue = new PlotOptionsVariablepieDataSorting();
+			Custom = Custom_DefaultValue = new Hashtable();
 			Depth = Depth_DefaultValue = 0;
 			Description = Description_DefaultValue = "";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -41,21 +45,26 @@ namespace Highsoft.Web.Mvc.Charts
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
+			InnerSizeNumber = InnerSizeNumber_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			Label = Label_DefaultValue = new PlotOptionsVariablepieLabel();
 			Linecap = Linecap_DefaultValue = PlotOptionsVariablepieLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointSize = MaxPointSize_DefaultValue = "100%";
+			MaxPointSizeNumber = MaxPointSizeNumber_DefaultValue = null;
 			MinPointSize = MinPointSize_DefaultValue = "10%";
+			MinPointSizeNumber = MinPointSizeNumber_DefaultValue = null;
 			MinSize = MinSize_DefaultValue = "80";
+			MinSizeNumber = MinSizeNumber_DefaultValue = null;
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsVariablepiePoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			Size = Size_DefaultValue = "";
+			SizeNumber = SizeNumber_DefaultValue = null;
 			SizeBy = SizeBy_DefaultValue = "area";
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
@@ -68,6 +77,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ZMax = ZMax_DefaultValue = null;
 			ZMin = ZMin_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -79,7 +89,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -90,6 +100,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -149,6 +166,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public double? ColorAxisNumber { get; set; }
+		private double? ColorAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public bool? ColorAxisBool { get; set; }
+		private bool? ColorAxisBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Styled mode only. A specific color index to use for the series, soits graphic representations are given the class name`highcharts-color-{n}`.
 		/// </summary>
 		public double? ColorIndex { get; set; }
@@ -170,6 +201,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public PlotOptionsVariablepieCursor Cursor { get; set; }
@@ -177,10 +215,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data sorting.
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
 		/// </summary>
-		public PlotOptionsVariablepieDataSorting DataSorting { get; set; }
-		private PlotOptionsVariablepieDataSorting DataSorting_DefaultValue { get; set; }
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -221,8 +259,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// If the total sum of the pie's values is 0, the series is representedas an empty circle . The `fillColor` option defines the color of thatcircle. Use [pie.borderWidth](#plotOptions.pie.borderWidth) to setthe border thickness.
 		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -247,17 +285,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The size of the inner diameter for the pie. A size greater than 0renders a donut chart. Can be a percentage or pixel value.Percentages are relative to the pie size. Pixel values are given asintegers.Note: in Highcharts < 4.1.2, the percentage was relative to the plotarea, not the pie size.
+		/// </summary>
+		public double? InnerSizeNumber { get; set; }
+		private double? InnerSizeNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.
-		/// </summary>
-		public PlotOptionsVariablepieLabel Label { get; set; }
-		private PlotOptionsVariablepieLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -282,6 +320,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The maximum size of the points' radius related to chart's `plotArea`.If a number is set, it applies in pixels.
+		/// </summary>
+		public double? MaxPointSizeNumber { get; set; }
+		private double? MaxPointSizeNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The minimum size of the points' radius related to chart's `plotArea`.If a number is set, it applies in pixels.
 		/// </summary>
 		public string MinPointSize { get; set; }
@@ -289,10 +334,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The minimum size of the points' radius related to chart's `plotArea`.If a number is set, it applies in pixels.
+		/// </summary>
+		public double? MinPointSizeNumber { get; set; }
+		private double? MinPointSizeNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The minimum size for a pie in response to auto margins. The pie willtry to shrink to make room for data labels in side the plot area, but only to this size.
 		/// </summary>
 		public string MinSize { get; set; }
 		private string MinSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The minimum size for a pie in response to auto margins. The pie willtry to shrink to make room for data labels in side the plot area, but only to this size.
+		/// </summary>
+		public double? MinSizeNumber { get; set; }
+		private double? MinSizeNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -331,6 +390,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
 		/// </summary>
 		public bool? ShowCheckbox { get; set; }
@@ -349,6 +415,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Size { get; set; }
 		private string Size_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The diameter of the pie relative to the plot area. Can be apercentage or pixel value. Pixel values are given as integers. Thedefault behaviour (as of 3.0) is to scale to the plot area and giveroom for data labels within the plot area.[slicedOffset](#plotOptions.pie.slicedOffset) is also included in thedefault size calculation. As a consequence, the size of the pie mayvary when points are updated and data labels more around. In thatcase it is best to set a fixed value, for example `"75%"`.
+		/// </summary>
+		public double? SizeNumber { get; set; }
+		private double? SizeNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -426,7 +499,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ZMin { get; set; }
 		private double? ZMin_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -436,6 +511,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -444,11 +520,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
+			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
+			if (ColorAxisBool != ColorAxisBool_DefaultValue) h.Add("colorAxis",ColorAxisBool);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
-			if (DataSorting != DataSorting_DefaultValue) h.Add("dataSorting",DataSorting);
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
@@ -458,21 +537,26 @@ namespace Highsoft.Web.Mvc.Charts
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
+			if (InnerSizeNumber != InnerSizeNumber_DefaultValue) h.Add("innerSize",InnerSizeNumber);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointSize != MaxPointSize_DefaultValue) h.Add("maxPointSize",MaxPointSize);
+			if (MaxPointSizeNumber != MaxPointSizeNumber_DefaultValue) h.Add("maxPointSize",MaxPointSizeNumber);
 			if (MinPointSize != MinPointSize_DefaultValue) h.Add("minPointSize",MinPointSize);
+			if (MinPointSizeNumber != MinPointSizeNumber_DefaultValue) h.Add("minPointSize",MinPointSizeNumber);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
+			if (MinSizeNumber != MinSizeNumber_DefaultValue) h.Add("minSize",MinSizeNumber);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("5ec4c1d8-d7a6-416b-966d-bb7e2c6ca9fc.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("e960fe26-80a6-4e64-9c21-507d23b422c9.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (SizeNumber != SizeNumber_DefaultValue) h.Add("size",SizeNumber);
 			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy",SizeBy);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
@@ -484,7 +568,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZMax != ZMax_DefaultValue) h.Add("zMax",ZMax);
 			if (ZMin != ZMin_DefaultValue) h.Add("zMin",ZMin);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

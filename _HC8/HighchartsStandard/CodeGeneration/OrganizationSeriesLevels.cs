@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			States = States_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -82,7 +83,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable States { get; set; }
 		private Hashtable States_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -93,11 +96,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Level != Level_DefaultValue) h.Add("level",Level);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (States != States_DefaultValue) h.Add("states",States);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

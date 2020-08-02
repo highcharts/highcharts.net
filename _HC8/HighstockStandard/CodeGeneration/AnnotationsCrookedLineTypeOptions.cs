@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AnnotationsCrookedLineTypeOptions()
 		{
 			Line = Line_DefaultValue = new AnnotationsCrookedLineTypeOptionsLine();
-			Points = Points_DefaultValue = new List<AnnotationsCrookedLineTypeOptionsPoints>();
+			Points = Points_DefaultValue = new AnnotationsCrookedLineTypeOptionsPoints();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -34,8 +34,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<AnnotationsCrookedLineTypeOptionsPoints> Points { get; set; }
-		private List<AnnotationsCrookedLineTypeOptionsPoints> Points_DefaultValue { get; set; }
+		public AnnotationsCrookedLineTypeOptionsPoints Points { get; set; }
+		private AnnotationsCrookedLineTypeOptionsPoints Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>

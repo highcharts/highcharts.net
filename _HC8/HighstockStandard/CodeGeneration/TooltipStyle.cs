@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "#333333";
 			Cursor = Cursor_DefaultValue = "default";
 			FontSize = FontSize_DefaultValue = "12px";
-			PointerEvents = PointerEvents_DefaultValue = "none";
 			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
 			
 		}	
@@ -49,13 +48,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string PointerEvents { get; set; }
-		private string PointerEvents_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public string WhiteSpace { get; set; }
 		private string WhiteSpace_DefaultValue { get; set; }
 		  
@@ -68,7 +60,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			if (PointerEvents != PointerEvents_DefaultValue) h.Add("pointerEvents",PointerEvents);
 			if (WhiteSpace != WhiteSpace_DefaultValue) h.Add("whiteSpace",WhiteSpace);
 			
 

@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			LegendItemClick = LegendItemClick_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,15 +27,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string LegendItemClick { get; set; }
 		private string LegendItemClick_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("df9e4094-e928-4a8c-a0a6-b2aada897fc8.legendItemClick", LegendItemClick); }  
-			
+			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); Highcharts.AddFunction("4c42240f-d4ae-439c-8ba9-cd0b89e5b969.legendItemClick", LegendItemClick); }  
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

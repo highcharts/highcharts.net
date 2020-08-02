@@ -40,6 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = 0;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -202,7 +203,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -217,7 +220,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MenuClassName != MenuClassName_DefaultValue) h.Add("menuClassName",MenuClassName);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems", HashifyList(MenuItems));
-			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("1107dae9-556f-4573-a3f1-d4c24fce8f9a.onclick", Onclick); }  
+			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("99584b74-2f08-4f7f-96cf-b83edeb7a686.onclick", Onclick); }  
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
@@ -232,7 +235,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

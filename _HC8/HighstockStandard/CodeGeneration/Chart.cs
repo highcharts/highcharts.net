@@ -44,13 +44,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
 			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
-			PlotShadowBool = PlotShadowBool_DefaultValue = null;
 			Reflow = Reflow_DefaultValue = true;
 			RenderTo = RenderTo_DefaultValue = "";
 			ResetZoomButton = ResetZoomButton_DefaultValue = new ChartResetZoomButton();
 			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(51,92,173,0.25)";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
 			Spacing = Spacing_DefaultValue = new List<double>();
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
@@ -75,14 +73,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).
+		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).
+		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
 		/// </summary>
 		public bool? AnimationBool { get; set; }
 		private bool? AnimationBool_DefaultValue { get; set; }
@@ -264,13 +262,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the plot area. Requires thatplotBackgroundColor be set. The shadow can be an object configurationcontaining `color`, `offsetX`, `offsetY`, `opacity` and `width`.
-		/// </summary>
-		public bool? PlotShadowBool { get; set; }
-		private bool? PlotShadowBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to reflow the chart to fit the width of the container divon resizing the window.
 		/// </summary>
 		public bool? Reflow { get; set; }
@@ -303,13 +294,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the outer chart area. Requiresthat backgroundColor be set. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
-		/// </summary>
-		public bool? ShadowBool { get; set; }
-		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -429,13 +413,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
 			if (PlotShadow != PlotShadow_DefaultValue) h.Add("plotShadow",PlotShadow);
-			if (PlotShadowBool != PlotShadowBool_DefaultValue) h.Add("plotShadow",PlotShadowBool);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
 			if (ResetZoomButton.IsDirty()) h.Add("resetZoomButton",ResetZoomButton.ToHashtable());
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Spacing != Spacing_DefaultValue) h.Add("spacing",Spacing);
 			if (SpacingBottom != SpacingBottom_DefaultValue) h.Add("spacingBottom",SpacingBottom);
 			if (SpacingLeft != SpacingLeft_DefaultValue) h.Add("spacingLeft",SpacingLeft);

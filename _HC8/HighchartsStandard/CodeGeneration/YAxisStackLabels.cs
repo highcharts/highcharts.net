@@ -18,6 +18,10 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Align = Align_DefaultValue = YAxisStackLabelsAlign.Null;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
+			BackgroundColor = BackgroundColor_DefaultValue = "";
+			BorderColor = BorderColor_DefaultValue = "";
+			BorderRadius = BorderRadius_DefaultValue = 0;
+			BorderWidth = BorderWidth_DefaultValue = 0;
 			Crop = Crop_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "{total}";
@@ -31,6 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -49,6 +54,34 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The background color or gradient for the stack label.
+		/// </summary>
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border color for the stack label. Defaults to `undefined`.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border radius in pixels for the stack label.
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border width in pixels for the stack label.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to hide stack labels that are outside the plot area.By default, the stack label is movedinside the plot area according to the[overflow](/highcharts/#yAxis/stackLabels/overflow)option.
 		/// </summary>
 		public bool? Crop { get; set; }
@@ -63,7 +96,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A [format string](http://docs.highcharts.com/#formatting) for thedata label. Available variables are the same as for `formatter`.
+		/// A format string for the data label. Available variables are the sameas for `formatter`.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
@@ -130,7 +163,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -139,10 +174,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("1e6d45d1-f3c9-44a1-b212-890d5182c397.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("5035e741-5fa5-4409-b0a9-a3141833184b.formatter", Formatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
@@ -151,7 +190,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

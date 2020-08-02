@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AfterUpdate = AfterUpdate_DefaultValue = "";
 			Remove = Remove_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,17 +43,26 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Remove { get; set; }
 		private string Remove_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Add != Add_DefaultValue) { h.Add("add",Add); Highcharts.AddFunction("21597e2d-eace-4bf8-a16f-710ab1c0e560.add", Add); }  
-			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); Highcharts.AddFunction("b8b7c783-4b40-4aa3-921b-e9eac416b148.afterUpdate", AfterUpdate); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("00a671f8-86b9-4751-a472-f183db6fe4e3.remove", Remove); }  
-			
+			if (Add != Add_DefaultValue) { h.Add("add",Add); Highcharts.AddFunction("c8ba36e1-0bec-4b4d-b3c0-602cebc42b11.add", Add); }  
+			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); Highcharts.AddFunction("ad960489-0f89-4ffd-953f-9b6978806a67.afterUpdate", AfterUpdate); }  
+			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("ccff53ac-89cc-4f88-aaf3-4384ec315a45.remove", Remove); }  
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Align = Align_DefaultValue = SubtitleAlign.Center;
 			Floating = Floating_DefaultValue = false;
-			Style = Style_DefaultValue = new SubtitleStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = SubtitleVerticalAlign.Null;
@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,8 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the title.In styled mode, the subtitle style is given in the`.highcharts-subtitle` class.
 		/// </summary>
-		public SubtitleStyle Style { get; set; }
-		private SubtitleStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -90,7 +91,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -106,7 +109,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (WidthAdjust != WidthAdjust_DefaultValue) h.Add("widthAdjust",WidthAdjust);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

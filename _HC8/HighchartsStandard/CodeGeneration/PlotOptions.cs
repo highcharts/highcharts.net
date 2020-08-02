@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Lollipop = Lollipop_DefaultValue = new PlotOptionsLollipop();
 			Networkgraph = Networkgraph_DefaultValue = new PlotOptionsNetworkgraph();
 			Organization = Organization_DefaultValue = new PlotOptionsOrganization();
-			PackedBubble = PackedBubble_DefaultValue = new PlotOptionsPackedBubble();
+			Packedbubble = Packedbubble_DefaultValue = new PlotOptionsPackedbubble();
 			Pareto = Pareto_DefaultValue = new PlotOptionsPareto();
 			Pie = Pie_DefaultValue = new PlotOptionsPie();
 			Polygon = Polygon_DefaultValue = new PlotOptionsPolygon();
@@ -68,6 +68,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Wordcloud = Wordcloud_DefaultValue = new PlotOptionsWordcloud();
 			Xrange = Xrange_DefaultValue = new PlotOptionsXrange();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -256,8 +257,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A packed bubble series is a two dimensional series type, where each pointrenders a value in X, Y position. Each point is drawn as a bubblewhere the bubbles don't overlap with each other and the radiusof the bubble relates to the value.In TypeScript the [type](series.packedbubble.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `packedbubble` series are defined in   [plotOptions.packedbubble](plotOptions.packedbubble).3. Options for one single series are given in   [the series instance array](series.packedbubble).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        packedbubble: {            // shared options for all packedbubble series        }    },    series: [{        // specific options for this series instance        type: 'packedbubble'    }]});```            
 		/// </summary>
-		public PlotOptionsPackedBubble PackedBubble { get; set; }
-		private PlotOptionsPackedBubble PackedBubble_DefaultValue { get; set; }
+		public PlotOptionsPackedbubble Packedbubble { get; set; }
+		private PlotOptionsPackedbubble Packedbubble_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -426,7 +427,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsXrange Xrange { get; set; }
 		private PlotOptionsXrange Xrange_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -459,7 +462,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Lollipop.IsDirty()) h.Add("lollipop",Lollipop.ToHashtable());
 			if (Networkgraph.IsDirty()) h.Add("networkgraph",Networkgraph.ToHashtable());
 			if (Organization.IsDirty()) h.Add("organization",Organization.ToHashtable());
-			if (PackedBubble.IsDirty()) h.Add("packedBubble",PackedBubble.ToHashtable());
+			if (Packedbubble.IsDirty()) h.Add("packedbubble",Packedbubble.ToHashtable());
 			if (Pareto.IsDirty()) h.Add("pareto",Pareto.ToHashtable());
 			if (Pie.IsDirty()) h.Add("pie",Pie.ToHashtable());
 			if (Polygon.IsDirty()) h.Add("polygon",Polygon.ToHashtable());
@@ -484,7 +487,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Windbarb.IsDirty()) h.Add("windbarb",Windbarb.ToHashtable());
 			if (Wordcloud.IsDirty()) h.Add("wordcloud",Wordcloud.ToHashtable());
 			if (Xrange.IsDirty()) h.Add("xrange",Xrange.ToHashtable());
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

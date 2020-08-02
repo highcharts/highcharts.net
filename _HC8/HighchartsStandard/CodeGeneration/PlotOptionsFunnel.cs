@@ -27,35 +27,41 @@ namespace Highsoft.Web.Mvc.Charts
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
 			ColorAxis = ColorAxis_DefaultValue = "0";
+			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
+			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
+			Crisp = Crisp_DefaultValue = true;
 			Cursor = Cursor_DefaultValue = PlotOptionsFunnelCursor.Null;
+			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsFunnelDataLabels();
-			DataSorting = DataSorting_DefaultValue = new PlotOptionsFunnelDataSorting();
 			Depth = Depth_DefaultValue = 0;
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new PlotOptionsFunnelDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EndAngle = EndAngle_DefaultValue = null;
 			Events = Events_DefaultValue = new PlotOptionsFunnelEvents();
 			FillColor = FillColor_DefaultValue = null;
 			Height = Height_DefaultValue = "100%";
+			HeightNumber = HeightNumber_DefaultValue = null;
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			Label = Label_DefaultValue = new PlotOptionsFunnelLabel();
 			Linecap = Linecap_DefaultValue = PlotOptionsFunnelLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinSize = MinSize_DefaultValue = "80";
+			MinSizeNumber = MinSizeNumber_DefaultValue = null;
 			NeckHeight = NeckHeight_DefaultValue = "25%";
+			NeckHeightNumber = NeckHeightNumber_DefaultValue = null;
 			NeckWidth = NeckWidth_DefaultValue = "30%";
+			NeckWidthNumber = NeckWidthNumber_DefaultValue = null;
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsFunnelPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Reversed = Reversed_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
@@ -67,7 +73,9 @@ namespace Highsoft.Web.Mvc.Charts
 			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = "90%";
+			WidthNumber = WidthNumber_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -79,7 +87,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
+		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
@@ -149,6 +157,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public double? ColorAxisNumber { get; set; }
+		private double? ColorAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public bool? ColorAxisBool { get; set; }
+		private bool? ColorAxisBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Styled mode only. A specific color index to use for the series, soits graphic representations are given the class name`highcharts-color-{n}`.
 		/// </summary>
 		public double? ColorIndex { get; set; }
@@ -170,6 +192,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public PlotOptionsFunnelCursor Cursor { get; set; }
@@ -177,17 +206,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
+		/// </summary>
+		public Hashtable Custom { get; set; }
+		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsFunnelDataLabels DataLabels { get; set; }
 		private PlotOptionsFunnelDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public PlotOptionsFunnelDataSorting DataSorting { get; set; }
-		private PlotOptionsFunnelDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -202,13 +231,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
-		/// </summary>
-		public PlotOptionsFunnelDragDrop DragDrop { get; set; }
-		private PlotOptionsFunnelDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -235,8 +257,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// If the total sum of the pie's values is 0, the series is representedas an empty circle . The `fillColor` option defines the color of thatcircle. Use [pie.borderWidth](#plotOptions.pie.borderWidth) to setthe border thickness.
 		/// </summary>
-		public object FillColor { get; set; }
-		private object FillColor_DefaultValue { get; set; }
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -244,6 +266,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Height { get; set; }
 		private string Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The height of the funnel or pyramid. If it is a number it definesthe pixel height, if it is a percentage string it is the percentageof the plot area height.
+		/// </summary>
+		public double? HeightNumber { get; set; }
+		private double? HeightNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -268,13 +297,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.
-		/// </summary>
-		public PlotOptionsFunnelLabel Label { get; set; }
-		private PlotOptionsFunnelLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The line cap used for line ends and line joins on the graph.
 		/// </summary>
 		public PlotOptionsFunnelLinecap Linecap { get; set; }
@@ -296,6 +318,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The minimum size for a pie in response to auto margins. The pie willtry to shrink to make room for data labels in side the plot area, but only to this size.
+		/// </summary>
+		public double? MinSizeNumber { get; set; }
+		private double? MinSizeNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The height of the neck, the lower part of the funnel. A numberdefines pixel width, a percentage string defines a percentage of theplot area height.
 		/// </summary>
 		public string NeckHeight { get; set; }
@@ -303,10 +332,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The height of the neck, the lower part of the funnel. A numberdefines pixel width, a percentage string defines a percentage of theplot area height.
+		/// </summary>
+		public double? NeckHeightNumber { get; set; }
+		private double? NeckHeightNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The width of the neck, the lower part of the funnel. A number definespixel width, a percentage string defines a percentage of the plotarea width.
 		/// </summary>
 		public string NeckWidth { get; set; }
 		private string NeckWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the neck, the lower part of the funnel. A number definespixel width, a percentage string defines a percentage of the plotarea width.
+		/// </summary>
+		public double? NeckWidthNumber { get; set; }
+		private double? NeckWidthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -349,6 +392,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -426,7 +476,16 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Width { get; set; }
 		private string Width_DefaultValue { get; set; }
-		  
+		 
+
+		/// <summary>
+		/// The width of the funnel compared to the width of the plot area,or the pixel width if it is a number.
+		/// </summary>
+		public double? WidthNumber { get; set; }
+		private double? WidthNumber_DefaultValue { get; set; }
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -444,35 +503,41 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
+			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
+			if (ColorAxisBool != ColorAxisBool_DefaultValue) h.Add("colorAxis",ColorAxisBool);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (DataSorting != DataSorting_DefaultValue) h.Add("dataSorting",DataSorting);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
+			if (MinSizeNumber != MinSizeNumber_DefaultValue) h.Add("minSize",MinSizeNumber);
 			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
+			if (NeckHeightNumber != NeckHeightNumber_DefaultValue) h.Add("neckHeight",NeckHeightNumber);
 			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
+			if (NeckWidthNumber != NeckWidthNumber_DefaultValue) h.Add("neckWidth",NeckWidthNumber);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("98bf8eb3-def1-41cb-9610-cbd2488b4b24.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("0aeef7cf-e7af-4d73-9c9f-66488bd9e517.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow.IsDirty()) h.Add("shadow",Shadow.ToHashtable());
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
@@ -484,7 +549,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			
+			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

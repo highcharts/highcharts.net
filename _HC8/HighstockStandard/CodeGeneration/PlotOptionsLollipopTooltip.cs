@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsLollipopTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{series.color}'>●</span> {series.name}: <b>{point.low}</b><br/>";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{series.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
 			
 		}	
 		

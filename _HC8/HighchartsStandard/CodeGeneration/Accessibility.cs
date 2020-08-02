@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomComponents = CustomComponents_DefaultValue = new object();
 			Description = Description_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = true;
-			HighContrastTheme = HighContrastTheme_DefaultValue = new object();
+			HighContrastTheme = HighContrastTheme_DefaultValue = new Object();
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
 			LandmarkVerbosity = LandmarkVerbosity_DefaultValue = AccessibilityLandmarkVerbosity.All;
 			LinkedDescription = LinkedDescription_DefaultValue = "*[data-highcharts-chart='{index}'] + .highcharts-description";
@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Series = Series_DefaultValue = new List<Series>();
 			TypeDescription = TypeDescription_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -114,7 +115,9 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string TypeDescription { get; set; }
 		private string TypeDescription_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
@@ -133,7 +136,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ScreenReaderSection.IsDirty()) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable());
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

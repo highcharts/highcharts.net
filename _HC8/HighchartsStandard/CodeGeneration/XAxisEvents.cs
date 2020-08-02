@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointInBreak = PointInBreak_DefaultValue = "";
 			SetExtremes = SetExtremes_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,19 +59,28 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string SetExtremes { get; set; }
 		private string SetExtremes_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (AfterBreaks != AfterBreaks_DefaultValue) { h.Add("afterBreaks",AfterBreaks); Highcharts.AddFunction("6ddedc89-7470-421e-ad1b-df4f573029fe.afterBreaks", AfterBreaks); }  
-			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highcharts.AddFunction("e6cd878a-384c-4c7d-8c66-c9c4243a4278.afterSetExtremes", AfterSetExtremes); }  
-			if (PointBreak != PointBreak_DefaultValue) { h.Add("pointBreak",PointBreak); Highcharts.AddFunction("c09a31e4-8be9-481a-9f21-c3285c5e6fee.pointBreak", PointBreak); }  
-			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); Highcharts.AddFunction("c3b4b193-ed33-404b-a1c2-2c203a0d0395.pointInBreak", PointInBreak); }  
-			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highcharts.AddFunction("7fb72254-b1cb-4c22-8d81-93cff4916fa7.setExtremes", SetExtremes); }  
-			
+			if (AfterBreaks != AfterBreaks_DefaultValue) { h.Add("afterBreaks",AfterBreaks); Highcharts.AddFunction("60a27d55-182a-4da6-917b-e154946d534b.afterBreaks", AfterBreaks); }  
+			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); Highcharts.AddFunction("e06d15df-9165-46bd-9b7c-224d7d637fd5.afterSetExtremes", AfterSetExtremes); }  
+			if (PointBreak != PointBreak_DefaultValue) { h.Add("pointBreak",PointBreak); Highcharts.AddFunction("e65c5576-ae37-4a23-83eb-ccb45e96cce4.pointBreak", PointBreak); }  
+			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); Highcharts.AddFunction("ee01ead4-37ae-4112-a3f9-3faaea4a1952.pointInBreak", PointInBreak); }  
+			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); Highcharts.AddFunction("c8a76cbf-ac38-4eff-b9f4-4ec3e5a8a575.setExtremes", SetExtremes); }  
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}
