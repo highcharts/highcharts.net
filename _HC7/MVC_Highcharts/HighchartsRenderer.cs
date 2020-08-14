@@ -219,7 +219,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 string value = (string)functions[key];
                 string realKey = key.Split('.')[1];
                 string matchedString = String.Format("\"{0}\":\"{1}\"", realKey, value);
-                matchedString = matchedString.Replace("'", "\\u0027");
+                matchedString = matchedString.Replace("'", "\\u0027").Replace("&","\\u0026");
                 string replacementstring = String.Format("\"{0}\":{1}", realKey, value);
                 json = json.Replace(matchedString, replacementstring);
             }

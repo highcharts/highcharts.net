@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Highcharts")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Customization for e-i.com")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Highsoft")]
 [assembly: AssemblyProduct("Highcharts")]
