@@ -907,7 +907,8 @@ public class HighchartsGenerator
     {
         foreach (ApiItem item in items)
         {
-            
+            if (item.FullName.EndsWith("plotOptions.pie"))
+                item.Exclude.Remove("dataLabels");
 
             if (item.Children.Any() || item.Extends.Any())
             {

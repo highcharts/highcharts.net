@@ -473,7 +473,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MarginLeft != MarginLeft_DefaultValue) h.Add("marginLeft",MarginLeft);
 			if (MarginRight != MarginRight_DefaultValue) h.Add("marginRight",MarginRight);
 			if (MarginTop != MarginTop_DefaultValue) h.Add("marginTop",MarginTop);
-			if (NumberFormatter != NumberFormatter_DefaultValue) { h.Add("numberFormatter",NumberFormatter); Highcharts.AddFunction("754405e9-e923-4869-9f83-570d2473852f.numberFormatter", NumberFormatter); }  
+			if (NumberFormatter != NumberFormatter_DefaultValue) { h.Add("numberFormatter",NumberFormatter); Highcharts.AddFunction("4c801af7-d0e9-4322-9833-8d42a0964f65.numberFormatter", NumberFormatter); }  
 			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
 			if (PanKey != PanKey_DefaultValue) h.Add("panKey", Highcharts.FirstCharacterToLower(PanKey.ToString()));
 			if (Panning.IsDirty()) h.Add("panning",Panning.ToHashtable());

@@ -85,12 +85,12 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (AfterChartFormat != AfterChartFormat_DefaultValue) h.Add("afterChartFormat",AfterChartFormat);
-			if (AfterChartFormatter != AfterChartFormatter_DefaultValue) { h.Add("afterChartFormatter",AfterChartFormatter); Highcharts.AddFunction("d4109047-ae35-4c78-911c-82d641a846f3.afterChartFormatter", AfterChartFormatter); }  
+			if (AfterChartFormatter != AfterChartFormatter_DefaultValue) { h.Add("afterChartFormatter",AfterChartFormatter); Highcharts.AddFunction("f5c5dd44-01c5-4713-9d51-bde57c1abde8.afterChartFormatter", AfterChartFormatter); }  
 			if (AxisRangeDateFormat != AxisRangeDateFormat_DefaultValue) h.Add("axisRangeDateFormat",AxisRangeDateFormat);
 			if (BeforeChartFormat != BeforeChartFormat_DefaultValue) h.Add("beforeChartFormat",BeforeChartFormat);
-			if (BeforeChartFormatter != BeforeChartFormatter_DefaultValue) { h.Add("beforeChartFormatter",BeforeChartFormatter); Highcharts.AddFunction("a77b4796-e9c6-417d-8a33-adb8bc2dfe24.beforeChartFormatter", BeforeChartFormatter); }  
-			if (OnPlayAsSoundClick != OnPlayAsSoundClick_DefaultValue) { h.Add("onPlayAsSoundClick",OnPlayAsSoundClick); Highcharts.AddFunction("e34f5016-0cd1-422a-b799-793c384bba56.onPlayAsSoundClick", OnPlayAsSoundClick); }  
-			if (OnViewDataTableClick != OnViewDataTableClick_DefaultValue) { h.Add("onViewDataTableClick",OnViewDataTableClick); Highcharts.AddFunction("cff35cf2-6a62-4af9-8c20-cb41369d3f2e.onViewDataTableClick", OnViewDataTableClick); }  
+			if (BeforeChartFormatter != BeforeChartFormatter_DefaultValue) { h.Add("beforeChartFormatter",BeforeChartFormatter); Highcharts.AddFunction("f775a75c-78ab-42b5-9672-8b2b7052564a.beforeChartFormatter", BeforeChartFormatter); }  
+			if (OnPlayAsSoundClick != OnPlayAsSoundClick_DefaultValue) { h.Add("onPlayAsSoundClick",OnPlayAsSoundClick); Highcharts.AddFunction("f8861473-24ae-481d-8b63-d8265e18cac1.onPlayAsSoundClick", OnPlayAsSoundClick); }  
+			if (OnViewDataTableClick != OnViewDataTableClick_DefaultValue) { h.Add("onViewDataTableClick",OnViewDataTableClick); Highcharts.AddFunction("0284a8f9-6058-4a2b-9c6c-426f5d438c69.onViewDataTableClick", OnViewDataTableClick); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -330,15 +330,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("98108e90-124d-46af-a5e3-af004b98a946.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("0c35cbcf-18c9-4935-8a9f-c28e7742547e.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("67954c69-ab8c-49f2-8a98-a0f37c257157.nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("d5e7b944-1f22-4db7-9815-26b3b360e80c.nullFormatter", NullFormatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (ParentNodeFormat != ParentNodeFormat_DefaultValue) h.Add("parentNodeFormat",ParentNodeFormat);
-			if (ParentNodeFormatter != ParentNodeFormatter_DefaultValue) { h.Add("parentNodeFormatter",ParentNodeFormatter); Highcharts.AddFunction("f3f041d3-8a5b-4580-acd7-e4c63bbae3e7.parentNodeFormatter", ParentNodeFormatter); }  
+			if (ParentNodeFormatter != ParentNodeFormatter_DefaultValue) { h.Add("parentNodeFormatter",ParentNodeFormatter); Highcharts.AddFunction("51a27abb-9868-4932-ac96-7e63e23d6012.parentNodeFormatter", ParentNodeFormatter); }  
 			if (ParentNodeTextPath.IsDirty()) h.Add("parentNodeTextPath",ParentNodeTextPath.ToHashtable());
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
