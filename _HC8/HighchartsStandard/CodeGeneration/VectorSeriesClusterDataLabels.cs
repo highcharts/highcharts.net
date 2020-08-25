@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{point.clusterPointsAmount}";
 			Inside = Inside_DefaultValue = true;
-			Style = Style_DefaultValue = new VectorSeriesClusterDataLabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			VerticalAlign = VerticalAlign_DefaultValue = VectorSeriesClusterDataLabelsVerticalAlign.Middle;
 			
 			CustomFields = new Hashtable();
@@ -58,8 +58,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public VectorSeriesClusterDataLabelsStyle Style { get; set; }
-		private VectorSeriesClusterDataLabelsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

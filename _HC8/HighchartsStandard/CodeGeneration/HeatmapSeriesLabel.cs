@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxFontSize = MaxFontSize_DefaultValue = null;
 			MinFontSize = MinFontSize_DefaultValue = null;
 			OnArea = OnArea_DefaultValue = null;
-			Style = Style_DefaultValue = new HeatmapSeriesLabelStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -97,8 +97,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Styles for the series label. The color defaults to the seriescolor, or a contrast color if `onArea`.
 		/// </summary>
-		public HeatmapSeriesLabelStyle Style { get; set; }
-		private HeatmapSeriesLabelStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -113,7 +113,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectorNeighbourDistance != ConnectorNeighbourDistance_DefaultValue) h.Add("connectorNeighbourDistance",ConnectorNeighbourDistance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("2a46d5e8-68eb-4037-ae77-1d8ea15f580a.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("a0757ed7-be31-48f2-ae36-de6b14375dab.formatter", Formatter); }  
 			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
 			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
 			if (OnArea != OnArea_DefaultValue) h.Add("onArea",OnArea);

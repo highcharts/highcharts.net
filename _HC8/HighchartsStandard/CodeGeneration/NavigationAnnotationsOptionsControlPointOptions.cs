@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Height = Height_DefaultValue = 10;
 			Positioner = Positioner_DefaultValue = "";
-			Style = Style_DefaultValue = new NavigationAnnotationsOptionsControlPointOptionsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Symbol = Symbol_DefaultValue = "circle";
 			Visible = Visible_DefaultValue = false;
 			Width = Width_DefaultValue = 10;
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public NavigationAnnotationsOptionsControlPointOptionsStyle Style { get; set; }
-		private NavigationAnnotationsOptionsControlPointOptionsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -77,7 +77,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("91fa25fd-7115-47ea-9b63-ac6643e820ea.positioner", Positioner); }  
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("b651113a-f139-4937-965a-c27b92b7aad5.positioner", Positioner); }  
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);

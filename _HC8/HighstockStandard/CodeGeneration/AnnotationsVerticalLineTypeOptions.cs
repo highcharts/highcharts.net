@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Connector = Connector_DefaultValue = new AnnotationsVerticalLineTypeOptionsConnector();
 			Label = Label_DefaultValue = new AnnotationsVerticalLineTypeOptionsLabel();
 			Line = Line_DefaultValue = new AnnotationsVerticalLineTypeOptionsLine();
-			Points = Points_DefaultValue = new AnnotationsVerticalLineTypeOptionsPoints();
+			Points = Points_DefaultValue = new List<AnnotationsVerticalLineTypeOptionsPoints>();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -50,8 +50,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsVerticalLineTypeOptionsPoints Points { get; set; }
-		private AnnotationsVerticalLineTypeOptionsPoints Points_DefaultValue { get; set; }
+		public List<AnnotationsVerticalLineTypeOptionsPoints> Points { get; set; }
+		private List<AnnotationsVerticalLineTypeOptionsPoints> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>

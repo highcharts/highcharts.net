@@ -16,9 +16,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsAreasplinerangeStates()
 		{
-			Hover = Hover_DefaultValue = new Hashtable();
-			Inactive = Inactive_DefaultValue = new Hashtable();
-			Normal = Normal_DefaultValue = new Hashtable();
+			Hover = Hover_DefaultValue = new PlotOptionsAreasplinerangeStatesHover();
+			Inactive = Inactive_DefaultValue = new PlotOptionsAreasplinerangeStatesInactive();
+			Normal = Normal_DefaultValue = new PlotOptionsAreasplinerangeStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsAreasplinerangeStatesSelect();
 			
 			CustomFields = new Hashtable();
@@ -28,22 +28,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for the hovered series. These settings override thenormal state options when a series is moused over or touched.
 		/// </summary>
-		public Hashtable Hover { get; set; }
-		private Hashtable Hover_DefaultValue { get; set; }
+		public PlotOptionsAreasplinerangeStatesHover Hover { get; set; }
+		private PlotOptionsAreasplinerangeStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The opposite state of a hover for series.
 		/// </summary>
-		public Hashtable Inactive { get; set; }
-		private Hashtable Inactive_DefaultValue { get; set; }
+		public PlotOptionsAreasplinerangeStatesInactive Inactive { get; set; }
+		private PlotOptionsAreasplinerangeStatesInactive Inactive_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
 		/// </summary>
-		public Hashtable Normal { get; set; }
-		private Hashtable Normal_DefaultValue { get; set; }
+		public PlotOptionsAreasplinerangeStatesNormal Normal { get; set; }
+		private PlotOptionsAreasplinerangeStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -60,9 +60,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
-			if (Inactive != Inactive_DefaultValue) h.Add("inactive",Inactive);
-			if (Normal != Normal_DefaultValue) h.Add("normal",Normal);
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

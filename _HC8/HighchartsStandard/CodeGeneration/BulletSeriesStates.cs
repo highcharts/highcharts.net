@@ -17,8 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public BulletSeriesStates()
 		{
 			Hover = Hover_DefaultValue = new BulletSeriesStatesHover();
-			Inactive = Inactive_DefaultValue = new Hashtable();
-			Normal = Normal_DefaultValue = new Hashtable();
+			Inactive = Inactive_DefaultValue = new BulletSeriesStatesInactive();
+			Normal = Normal_DefaultValue = new BulletSeriesStatesNormal();
 			Select = Select_DefaultValue = new BulletSeriesStatesSelect();
 			
 			CustomFields = new Hashtable();
@@ -35,15 +35,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The opposite state of a hover for series.
 		/// </summary>
-		public Hashtable Inactive { get; set; }
-		private Hashtable Inactive_DefaultValue { get; set; }
+		public BulletSeriesStatesInactive Inactive { get; set; }
+		private BulletSeriesStatesInactive Inactive_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
 		/// </summary>
-		public Hashtable Normal { get; set; }
-		private Hashtable Normal_DefaultValue { get; set; }
+		public BulletSeriesStatesNormal Normal { get; set; }
+		private BulletSeriesStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -61,8 +61,8 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Inactive != Inactive_DefaultValue) h.Add("inactive",Inactive);
-			if (Normal != Normal_DefaultValue) h.Add("normal",Normal);
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
+			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
 			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

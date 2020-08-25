@@ -69,7 +69,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Date != Date_DefaultValue) h.Add("date",Date);
-			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highcharts.AddFunction("b83e5c6d-b5b8-4d9d-80c0-095ae3f272a4.getTimezoneOffset", GetTimezoneOffset); }  
+			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highcharts.AddFunction("f4441d19-c06d-44db-8741-d93d61b34687.getTimezoneOffset", GetTimezoneOffset); }  
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);

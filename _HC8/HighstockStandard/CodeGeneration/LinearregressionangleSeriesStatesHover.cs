@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Options for the halo appearing around the hovered point inline-type series as well as outside the hovered slice in piecharts. By default the halo is filled by the current point orseries color with an opacity of 0.25\. The halo can bedisabled by setting the `halo` option to `null`.In styled mode, the halo is styled with the`.highcharts-halo` class, with colors inherited from`.highcharts-color-{n}`.
 		/// </summary>
-		public Hashtable Halo { get; set; }
-		private Hashtable Halo_DefaultValue { get; set; }
+		public LinearregressionangleSeriesStatesHoverHalo Halo { get; set; }
+		private LinearregressionangleSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
 		 
 
 		/// <summary>

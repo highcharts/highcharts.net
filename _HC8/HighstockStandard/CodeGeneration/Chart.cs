@@ -56,7 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new Hashtable();
 			StyledMode = StyledMode_DefaultValue = false;
-			Type = Type_DefaultValue = ChartType.Bar;
+			Type = Type_DefaultValue = ChartType.Abands;
 			Width = Width_DefaultValue = "";
 			WidthNumber = WidthNumber_DefaultValue = null;
 			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;

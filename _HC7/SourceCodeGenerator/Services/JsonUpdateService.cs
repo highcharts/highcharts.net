@@ -316,6 +316,8 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("series.organization.nodes.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "series.organization.dataLabels" } });
 
             ItemsToUpdate.Add("plotOptions.packedbubble.layoutAlgorithm.initialPositionRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("clusterFormat", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("stockTools.gui.iconsURL", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
         }
 
         public void Delete(ApiItem item)
@@ -334,6 +336,9 @@ namespace SourceCodeGenerator.Services
 
             if (item.FullName == "plotOptions.packedbubble.layoutAlgorithm.initialPositionRadius")
                 item.Extends.Clear();
+
+            
+
         }
 
         private IList<ApiItem> GetItemsFromDefaultValue(ApiItem item)

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsBubbleStatesHover()
 		{
-			Halo = Halo_DefaultValue = new Hashtable();
+			Halo = Halo_DefaultValue = new PlotOptionsBubbleStatesHoverHalo();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Halo { get; set; }
-		private Hashtable Halo_DefaultValue { get; set; }
+		public PlotOptionsBubbleStatesHoverHalo Halo { get; set; }
+		private PlotOptionsBubbleStatesHoverHalo Halo_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
+			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

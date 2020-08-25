@@ -213,7 +213,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ButtonPosition.IsDirty()) h.Add("buttonPosition",ButtonPosition.ToHashtable());
 			if (Buttons != Buttons_DefaultValue) h.Add("buttons", HashifyList(Buttons));
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
-			if (ButtonTheme.IsDirty()) h.Add("buttonTheme",ButtonTheme.ToHashtable());
+			if (ButtonTheme != ButtonTheme_DefaultValue) h.Add("buttonTheme",ButtonTheme);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (Height != Height_DefaultValue) h.Add("height",Height);

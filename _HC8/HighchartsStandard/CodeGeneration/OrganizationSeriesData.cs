@@ -21,7 +21,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Custom = Custom_DefaultValue = new Hashtable();
-			DataLabels = DataLabels_DefaultValue = new OrganizationSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			Events = Events_DefaultValue = new OrganizationSeriesDataEvents();
 			From = From_DefaultValue = "";
@@ -70,13 +69,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Custom { get; set; }
 		private Hashtable Custom_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public Object DataLabels { get; set; }
-		private Object DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -161,7 +153,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (From != From_DefaultValue) h.Add("from",From);

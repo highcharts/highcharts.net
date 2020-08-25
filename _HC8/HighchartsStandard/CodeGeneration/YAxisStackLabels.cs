@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Formatter = Formatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = "justify";
 			Rotation = Rotation_DefaultValue = 0;
-			Style = Style_DefaultValue = new YAxisStackLabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
@@ -126,8 +126,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the label.In styled mode, the styles are set in the`.highcharts-stack-label` class.
 		/// </summary>
-		public YAxisStackLabelsStyle Style { get; set; }
-		private YAxisStackLabelsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -181,7 +181,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("5035e741-5fa5-4409-b0a9-a3141833184b.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("5def8694-9747-4b33-ae4f-661f705c6fad.formatter", Formatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);

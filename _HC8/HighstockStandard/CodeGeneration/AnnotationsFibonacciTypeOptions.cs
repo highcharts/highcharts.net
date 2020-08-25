@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			BackgroundColors = BackgroundColors_DefaultValue = new List<string>();
 			Height = Height_DefaultValue = 2;
-			Labels = Labels_DefaultValue = new Hashtable();
+			Labels = Labels_DefaultValue = new AnnotationsFibonacciTypeOptionsLabels();
 			Line = Line_DefaultValue = new AnnotationsFibonacciTypeOptionsLine();
 			LineColor = LineColor_DefaultValue = "grey";
 			LineColors = LineColors_DefaultValue = new List<string>();
@@ -46,8 +46,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array with options for the labels.
 		/// </summary>
-		public Hashtable Labels { get; set; }
-		private Hashtable Labels_DefaultValue { get; set; }
+		public AnnotationsFibonacciTypeOptionsLabels Labels { get; set; }
+		private AnnotationsFibonacciTypeOptionsLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -99,7 +99,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (BackgroundColors != BackgroundColors_DefaultValue) h.Add("backgroundColors",BackgroundColors);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Labels != Labels_DefaultValue) h.Add("labels",Labels);
+			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineColors != LineColors_DefaultValue) h.Add("lineColors",LineColors);

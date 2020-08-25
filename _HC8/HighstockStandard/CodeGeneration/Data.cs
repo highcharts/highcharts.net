@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public Data()
 		{
 			BeforeParse = BeforeParse_DefaultValue = "";
-			Columns = Columns_DefaultValue = new List<List<Object>>();
+			Columns = Columns_DefaultValue = new List<List<string>>();
 			ColumnsURL = ColumnsURL_DefaultValue = "";
 			Complete = Complete_DefaultValue = "";
 			Csv = Csv_DefaultValue = "";

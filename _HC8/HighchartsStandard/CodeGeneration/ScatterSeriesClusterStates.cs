@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ScatterSeriesClusterStates()
 		{
-			Hover = Hover_DefaultValue = new Hashtable();
+			Hover = Hover_DefaultValue = new ScatterSeriesClusterStatesHover();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Hover { get; set; }
-		private Hashtable Hover_DefaultValue { get; set; }
+		public ScatterSeriesClusterStatesHover Hover { get; set; }
+		private ScatterSeriesClusterStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

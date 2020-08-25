@@ -236,10 +236,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); Highcharts.AddFunction("4ca5228d-c739-4a78-ac75-397a22e849d5.beforeParse", BeforeParse); }  
+			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); Highcharts.AddFunction("587beec6-8dd9-4a00-82c1-7f455ea9bb18.beforeParse", BeforeParse); }  
 			if (Columns != Columns_DefaultValue) h.Add("columns",Columns);
 			if (ColumnsURL != ColumnsURL_DefaultValue) h.Add("columnsURL",ColumnsURL);
-			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); Highcharts.AddFunction("80742a3c-5915-47b8-bf80-b091cf2816e3.complete", Complete); }  
+			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); Highcharts.AddFunction("f8092655-c0b1-4849-8586-138d058611d3.complete", Complete); }  
 			if (Csv != Csv_DefaultValue) h.Add("csv",Csv);
 			if (CsvURL != CsvURL_DefaultValue) h.Add("csvURL",CsvURL);
 			if (DataRefreshRate != DataRefreshRate_DefaultValue) h.Add("dataRefreshRate",DataRefreshRate);
@@ -253,8 +253,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GoogleSpreadsheetWorksheet != GoogleSpreadsheetWorksheet_DefaultValue) h.Add("googleSpreadsheetWorksheet",GoogleSpreadsheetWorksheet);
 			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
 			if (LineDelimiter != LineDelimiter_DefaultValue) h.Add("lineDelimiter",LineDelimiter);
-			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); Highcharts.AddFunction("c71b4e05-a275-4af0-b3fe-38a1b643c8d4.parsed", Parsed); }  
-			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); Highcharts.AddFunction("6cfdb3ee-3966-4d82-84e8-8cda790e722e.parseDate", ParseDate); }  
+			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); Highcharts.AddFunction("af2a8d57-339c-44d4-b1a6-006eedbb19e8.parsed", Parsed); }  
+			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); Highcharts.AddFunction("d3d44f75-4949-416b-b379-8b2784fe0cdd.parseDate", ParseDate); }  
 			if (Rows != Rows_DefaultValue) h.Add("rows",Rows);
 			if (RowsURL != RowsURL_DefaultValue) h.Add("rowsURL",RowsURL);
 			if (SeriesMapping != SeriesMapping_DefaultValue) h.Add("seriesMapping",SeriesMapping);

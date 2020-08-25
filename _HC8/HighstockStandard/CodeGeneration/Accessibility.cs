@@ -122,10 +122,10 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (AnnounceNewData.IsDirty()) h.Add("announceNewData",AnnounceNewData.ToHashtable());
-			if (CustomComponents.IsDirty()) h.Add("customComponents",CustomComponents.ToHashtable());
+			if (CustomComponents != CustomComponents_DefaultValue) h.Add("customComponents",CustomComponents);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (HighContrastTheme.IsDirty()) h.Add("highContrastTheme",HighContrastTheme.ToHashtable());
+			if (HighContrastTheme != HighContrastTheme_DefaultValue) h.Add("highContrastTheme",HighContrastTheme);
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
 			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", Highstock.FirstCharacterToLower(LandmarkVerbosity.ToString()));
 			if (LinkedDescription != LinkedDescription_DefaultValue) h.Add("linkedDescription",LinkedDescription);

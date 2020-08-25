@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowOverlap = AllowOverlap_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
 			RotationMode = RotationMode_DefaultValue = PlotOptionsSunburstDataLabelsRotationMode.Auto;
-			Style = Style_DefaultValue = new PlotOptionsSunburstDataLabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -49,8 +49,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsSunburstDataLabelsStyle Style { get; set; }
-		private PlotOptionsSunburstDataLabelsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

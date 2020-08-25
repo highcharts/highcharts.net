@@ -185,7 +185,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (MaxSize != MaxSize_DefaultValue) h.Add("maxSize",MaxSize);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
-			if (Ranges != Ranges_DefaultValue) h.Add("ranges",Ranges);
+			if (Ranges.IsDirty()) h.Add("ranges",Ranges.ToHashtable());
 			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy",SizeBy);
 			if (SizeByAbsoluteValue != SizeByAbsoluteValue_DefaultValue) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

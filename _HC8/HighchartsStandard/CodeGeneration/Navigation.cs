@@ -101,7 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (AnnotationsOptions.IsDirty()) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable());
-			if (Bindings != Bindings_DefaultValue) h.Add("bindings",Bindings);
+			if (Bindings.IsDirty()) h.Add("bindings",Bindings.ToHashtable());
 			if (BindingsClassName != BindingsClassName_DefaultValue) h.Add("bindingsClassName",BindingsClassName);
 			if (ButtonOptions.IsDirty()) h.Add("buttonOptions",ButtonOptions.ToHashtable());
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());

@@ -220,7 +220,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MenuClassName != MenuClassName_DefaultValue) h.Add("menuClassName",MenuClassName);
 			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems", HashifyList(MenuItems));
-			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("99584b74-2f08-4f7f-96cf-b83edeb7a686.onclick", Onclick); }  
+			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("cdeb13c8-d037-44d3-b65c-427c0f5ce6be.onclick", Onclick); }  
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);

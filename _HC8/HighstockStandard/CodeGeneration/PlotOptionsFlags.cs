@@ -80,7 +80,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShadowBool = ShadowBool_DefaultValue = null;
-			Shape = Shape_DefaultValue = string.Empty;
+			Shape = Shape_DefaultValue = "flag";
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;

@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Enabled = Enabled_DefaultValue = new Hashtable();
-			Halo = Halo_DefaultValue = new Hashtable();
+			Halo = Halo_DefaultValue = new TilemapSeriesStatesHoverHalo();
 			LineWidth = LineWidth_DefaultValue = new Hashtable();
 			LineWidthPlus = LineWidthPlus_DefaultValue = new Hashtable();
 			Marker = Marker_DefaultValue = new TilemapSeriesStatesHoverMarker();
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for the halo appearing around the hovered point inline-type series as well as outside the hovered slice in piecharts. By default the halo is filled by the current point orseries color with an opacity of 0.25\. The halo can bedisabled by setting the `halo` option to `null`.In styled mode, the halo is styled with the`.highcharts-halo` class, with colors inherited from`.highcharts-color-{n}`.
 		/// </summary>
-		public Hashtable Halo { get; set; }
-		private Hashtable Halo_DefaultValue { get; set; }
+		public TilemapSeriesStatesHoverHalo Halo { get; set; }
+		private TilemapSeriesStatesHoverHalo Halo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -78,7 +78,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
+			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());

@@ -61,8 +61,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Options for the export related buttons, print and export. In additionto the default buttons listed here, custom buttons can be added.See [navigation.buttonOptions](#navigation.buttonOptions) for generaloptions.
 		/// </summary>
-		public Hashtable Buttons { get; set; }
-		private Hashtable Buttons_DefaultValue { get; set; }
+		public ExportingButtons Buttons { get; set; }
+		private ExportingButtons Buttons_DefaultValue { get; set; }
 		 
 
 		/// <summary>

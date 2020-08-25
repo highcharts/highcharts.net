@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public HeatmapSeriesDataMarkerStates()
 		{
-			Hover = Hover_DefaultValue = new Hashtable();
-			Select = Select_DefaultValue = new Hashtable();
+			Hover = Hover_DefaultValue = new HeatmapSeriesDataMarkerStatesHover();
+			Select = Select_DefaultValue = new HeatmapSeriesDataMarkerStatesSelect();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -26,15 +26,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Hover { get; set; }
-		private Hashtable Hover_DefaultValue { get; set; }
+		public HeatmapSeriesDataMarkerStatesHover Hover { get; set; }
+		private HeatmapSeriesDataMarkerStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Select { get; set; }
-		private Hashtable Select_DefaultValue { get; set; }
+		public HeatmapSeriesDataMarkerStatesSelect Select { get; set; }
+		private HeatmapSeriesDataMarkerStatesSelect Select_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
-			if (Select != Select_DefaultValue) h.Add("select",Select);
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -162,6 +162,9 @@ public class HighchartsGenerator
 
             if (apiItem.Children.Any())
                 ProcessApiItems(apiItem.Children);
+
+            if (apiItem.FullName == "series.venn.states" || apiItem.FullName == "series.columnpyramid.states")
+                apiItem.Children.Clear();
         }
     }
 
@@ -307,15 +310,12 @@ public class HighchartsGenerator
 
     private void GenerateClass(ApiItem item, List<ApiItem> children)
     {
-        //Console.WriteLine(item.FullName);
-
         string codeTemplate = FileService.GetClassTemplate(IsNETStandard);
         string propertyTemplate = FileService.GetPropertyTemplate();
 
         string properties = "";
         string defaultValues = "";
         string hashtableComparers = "";
-
 
         if (item.FullName.ToLower().EndsWith("zones"))
             item.FullName = item.FullName.Remove(item.FullName.Length - 5) + "Zone";
@@ -758,7 +758,17 @@ public class HighchartsGenerator
         if (child.ParentFullName != ROOT_CLASS && (nameAndSuffix.ToLower() == "xaxis" || nameAndSuffix.ToLower() == "yaxis"))
             return "string";
 
-        if (nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any())
+        if (
+            //(nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any()) ||
+            child.FullName.EndsWith("states.hover") ||
+            child.FullName.EndsWith("states.inactive") ||
+            child.FullName.EndsWith("states.normal") ||
+            child.FullName.EndsWith("states.select") ||
+            child.FullName.EndsWith("states.hover.halo") ||
+            child.FullName.EndsWith("states.inactive.halo") ||
+            child.FullName.EndsWith("states.normal.halo") ||
+            child.FullName.EndsWith("states.select.halo") ||
+            child.FullName.EndsWith("exporting.buttons"))
             return GetClassNameFromItem(child);
 
 
@@ -868,7 +878,7 @@ public class HighchartsGenerator
             if (child.ReturnType == "Array.<*>" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
-            if ((child.Children.Any() || child.Extends.Any()) && child.ReturnType.ToLower() == "object")
+            if ((child.Children.Any() || child.Extends.Any()) && !child.FullName.EndsWith("drilldown.activeDataLabelStyle"))// && child.ReturnType.ToLower() == "object")
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             // Event (javascript function)
@@ -880,7 +890,8 @@ public class HighchartsGenerator
                 if (propertyName == "PointDescriptionThreshold")
                     return "if (PointDescriptionThreshold != PointDescriptionThreshold_DefaultValue)\n\t\t\t{\n\t\t\t\tif (PointDescriptionThreshold != null)\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", PointDescriptionThreshold);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointDescriptionThreshold\", false);\n\t\t\t}\n\t\t\t";
 
-                if (propertyName == "Shadow")
+                if (propertyName == "Shadow" ||
+                    (child.FullName.EndsWith("states.hover") || child.FullName.EndsWith("states.inactive") || child.FullName.EndsWith("states.normal") || child.FullName.EndsWith("states.select")))
                     return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
                 return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
@@ -896,6 +907,8 @@ public class HighchartsGenerator
     {
         foreach (ApiItem item in items)
         {
+            
+
             if (item.Children.Any() || item.Extends.Any())
             {
                 var children = GetChildren(item);
@@ -1113,6 +1126,7 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("plotOptions.pyramid.dataLabels", "Hashtable");
         _propertyTypeMappings.Add("plotOptions.variablepie.dataLabels", "Hashtable");
         _propertyTypeMappings.Add("defs.arrow.children", "List<object>");
+        
     }
     private void InitPropertyInitMappings()
     {
@@ -1282,6 +1296,8 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("navigation.bindings.zoomXY", "new Object()");
         _propertyInitMappings.Add("navigation.bindings.zoomY", "new Object()");
 
+        _propertyInitMappings.Add("drilldown.activeDataLabelStyle", "new Hashtable()");
+
     }
     private void InitLists()
     {
@@ -1443,7 +1459,9 @@ public class HighchartsGenerator
         if ((nameAndSuffix == "xAxis" || nameAndSuffix == "yAxis") && item.ParentFullName != ROOT_CLASS)
             return "\"\"";
 
-        if (nameAndSuffix.ToLower().EndsWith("style") && item.Children.Any())
+        if (
+            //(nameAndSuffix.ToLower().EndsWith("style") && item.Children.Any()) ||
+            (item.FullName.EndsWith("states.hover") || item.FullName.EndsWith("states.inactive") || item.FullName.EndsWith("states.normal") || item.FullName.EndsWith("states.select")))
             return "new " + GetClassNameFromItem(item) + "()";
 
 
@@ -1487,12 +1505,12 @@ public class HighchartsGenerator
         if (item.FullName.ToLower().Contains("levels.datalabels"))
             item.FullName = item.FullName.Replace("levels.", "");
 
-        if (item.ReturnType.Contains(TypeService.CSSType))
-            item.Defaults = "css";
-        else
-        if (item.Children.Any() || item.Extends.Any() || item.ReturnType == "Object")
+        if (item.Children.Any() || item.Extends.Any())// || item.ReturnType == "Object")
             return String.Format("new {0}()", GetClassNameFromItem(item));
 
+        if (item.ReturnType.Contains(TypeService.CSSType))
+            item.Defaults = "css";
+        
         if (!String.IsNullOrEmpty(item.Defaults))
         {
             if (item.ReturnType == "String" ||
@@ -1518,6 +1536,7 @@ public class HighchartsGenerator
                                     .Replace("[", "{")
                                     .Replace("]", "}");
             }
+
             if ((_propertyTypeMappings[nameAndSuffix] != null &&
                 _propertyTypeMappings[nameAndSuffix].ToString() == "Hashtable") ||
                 (_typeMappings[(item.ReturnType)] != null &&

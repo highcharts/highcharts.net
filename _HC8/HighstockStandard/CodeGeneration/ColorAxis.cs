@@ -553,7 +553,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
-			if (Stops.Any()) h.Add("stops", GetLists(Stops));
+			if (Stops != Stops_DefaultValue) h.Add("stops", HashifyList(Stops));
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickColor != TickColor_DefaultValue) h.Add("tickColor",TickColor);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);

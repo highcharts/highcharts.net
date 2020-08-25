@@ -45,7 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShadowBool = ShadowBool_DefaultValue = null;
 			Shape = Shape_DefaultValue = "square";
-			Style = Style_DefaultValue = new PlotOptionsPackedbubbleDataLabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new PlotOptionsPackedbubbleDataLabelsTextPath();
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsPackedbubbleDataLabelsVerticalAlign.Bottom;
@@ -263,8 +263,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsPackedbubbleDataLabelsStyle Style { get; set; }
-		private PlotOptionsPackedbubbleDataLabelsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -330,15 +330,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("d1833ecb-f213-4959-b330-bb66336f0e3e.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("df01e592-d559-4a11-ba78-6073d555d3ea.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("bc54be2c-dce6-4c68-bb22-f15a7787f6fe.nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("d541aad1-d3f1-4ed3-9555-4f7836c83029.nullFormatter", NullFormatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (ParentNodeFormat != ParentNodeFormat_DefaultValue) h.Add("parentNodeFormat",ParentNodeFormat);
-			if (ParentNodeFormatter != ParentNodeFormatter_DefaultValue) { h.Add("parentNodeFormatter",ParentNodeFormatter); Highcharts.AddFunction("a9287cfa-6e1e-44e7-bccf-22b86f3eb9de.parentNodeFormatter", ParentNodeFormatter); }  
+			if (ParentNodeFormatter != ParentNodeFormatter_DefaultValue) { h.Add("parentNodeFormatter",ParentNodeFormatter); Highcharts.AddFunction("d6411788-565e-48a2-92e4-12df6af0ea11.parentNodeFormatter", ParentNodeFormatter); }  
 			if (ParentNodeTextPath.IsDirty()) h.Add("parentNodeTextPath",ParentNodeTextPath.ToHashtable());
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);

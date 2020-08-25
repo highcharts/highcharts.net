@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Brightness = Brightness_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = new Hashtable();
-			Halo = Halo_DefaultValue = new Hashtable();
+			Halo = Halo_DefaultValue = new PlotOptionsPieStatesHoverHalo();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -49,8 +49,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for the halo appearing around the hovered point inline-type series as well as outside the hovered slice in piecharts. By default the halo is filled by the current point orseries color with an opacity of 0.25\. The halo can bedisabled by setting the `halo` option to `null`.In styled mode, the halo is styled with the`.highcharts-halo` class, with colors inherited from`.highcharts-color-{n}`.
 		/// </summary>
-		public Hashtable Halo { get; set; }
-		private Hashtable Halo_DefaultValue { get; set; }
+		public PlotOptionsPieStatesHoverHalo Halo { get; set; }
+		private PlotOptionsPieStatesHoverHalo Halo_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo != Halo_DefaultValue) h.Add("halo",Halo);
+			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

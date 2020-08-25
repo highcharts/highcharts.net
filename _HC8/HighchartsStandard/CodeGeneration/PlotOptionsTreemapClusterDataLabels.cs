@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "{point.clusterPointsAmount}";
 			Inside = Inside_DefaultValue = true;
-			Style = Style_DefaultValue = new PlotOptionsTreemapClusterDataLabelsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsTreemapClusterDataLabelsVerticalAlign.Middle;
 			
 			CustomFields = new Hashtable();
@@ -58,8 +58,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsTreemapClusterDataLabelsStyle Style { get; set; }
-		private PlotOptionsTreemapClusterDataLabelsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

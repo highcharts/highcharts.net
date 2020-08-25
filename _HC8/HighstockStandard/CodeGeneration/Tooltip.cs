@@ -111,8 +111,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The HTML of the cluster point's in the tooltip. Works only withmarker-clusters module and analogously to[pointFormat](#tooltip.pointFormat).The cluster tooltip can be also formatted using`tooltip.formatter` callback function and `point.isCluster` flag.
 		/// </summary>
-		public object ClusterFormat { get; set; }
-		private object ClusterFormat_DefaultValue { get; set; }
+		public string ClusterFormat { get; set; }
+		private string ClusterFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -344,7 +344,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ChangeDecimals != ChangeDecimals_DefaultValue) h.Add("changeDecimals",ChangeDecimals);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (ClusterFormat.IsDirty()) h.Add("clusterFormat",ClusterFormat.ToHashtable());
+			if (ClusterFormat != ClusterFormat_DefaultValue) h.Add("clusterFormat",ClusterFormat);
 			if (Crosshairs != Crosshairs_DefaultValue) h.Add("crosshairs",Crosshairs);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);

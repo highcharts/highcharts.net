@@ -127,7 +127,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (DrillToCluster != DrillToCluster_DefaultValue) h.Add("drillToCluster",DrillToCluster);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());

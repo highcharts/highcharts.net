@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Hover { get; set; }
-		private Hashtable Hover_DefaultValue { get; set; }
+		public ScatterSeriesClusterStatesHover Hover { get; set; }
+		private ScatterSeriesClusterStatesHover Hover_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

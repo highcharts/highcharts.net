@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			Href = Href_DefaultValue = "https://www.highcharts.com?credits";
 			Position = Position_DefaultValue = new Hashtable();
-			Style = Style_DefaultValue = new CreditsStyle();
+			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "Highcharts.com";
 			
 			CustomFields = new Hashtable();
@@ -50,8 +50,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// CSS styles for the credits label.
 		/// </summary>
-		public CreditsStyle Style { get; set; }
-		private CreditsStyle Style_DefaultValue { get; set; }
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>

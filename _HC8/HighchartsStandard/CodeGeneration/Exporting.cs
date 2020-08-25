@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Accessibility = Accessibility_DefaultValue = new ExportingAccessibility();
 			AllowHTML = AllowHTML_DefaultValue = false;
-			Buttons = Buttons_DefaultValue = new Hashtable();
+			Buttons = Buttons_DefaultValue = new ExportingButtons();
 			ChartOptions = ChartOptions_DefaultValue = null;
 			Csv = Csv_DefaultValue = new ExportingCsv();
 			Enabled = Enabled_DefaultValue = true;
@@ -62,8 +62,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for the export related buttons, print and export. In additionto the default buttons listed here, custom buttons can be added.See [navigation.buttonOptions](#navigation.buttonOptions) for generaloptions.
 		/// </summary>
-		public Hashtable Buttons { get; set; }
-		private Hashtable Buttons_DefaultValue { get; set; }
+		public ExportingButtons Buttons { get; set; }
+		private ExportingButtons Buttons_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -222,11 +222,11 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
-			if (Buttons != Buttons_DefaultValue) h.Add("buttons",Buttons);
+			if (Buttons.IsDirty()) h.Add("buttons",Buttons.ToHashtable());
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
 			if (Csv.IsDirty()) h.Add("csv",Csv.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Error != Error_DefaultValue) { h.Add("error",Error); Highcharts.AddFunction("531de4bd-51fb-4f44-8bbf-b7041a24d96b.error", Error); }  
+			if (Error != Error_DefaultValue) { h.Add("error",Error); Highcharts.AddFunction("a68a4747-1f57-42cb-a042-8fee36cfe902.error", Error); }  
 			if (FallbackToExportServer != FallbackToExportServer_DefaultValue) h.Add("fallbackToExportServer",FallbackToExportServer);
 			if (Filename != Filename_DefaultValue) h.Add("filename",Filename);
 			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);

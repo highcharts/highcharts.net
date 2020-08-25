@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AnnotationsInfinityLineTypeOptions()
 		{
 			Line = Line_DefaultValue = new AnnotationsInfinityLineTypeOptionsLine();
-			Points = Points_DefaultValue = new AnnotationsInfinityLineTypeOptionsPoints();
+			Points = Points_DefaultValue = new List<AnnotationsInfinityLineTypeOptionsPoints>();
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -34,8 +34,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsInfinityLineTypeOptionsPoints Points { get; set; }
-		private AnnotationsInfinityLineTypeOptionsPoints Points_DefaultValue { get; set; }
+		public List<AnnotationsInfinityLineTypeOptionsPoints> Points { get; set; }
+		private List<AnnotationsInfinityLineTypeOptionsPoints> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsOrganizationLevelsStates()
 		{
-			Hover = Hover_DefaultValue = new Hashtable();
-			Inactive = Inactive_DefaultValue = new Hashtable();
+			Hover = Hover_DefaultValue = new PlotOptionsOrganizationLevelsStatesHover();
+			Inactive = Inactive_DefaultValue = new PlotOptionsOrganizationLevelsStatesInactive();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -26,15 +26,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Hover { get; set; }
-		private Hashtable Hover_DefaultValue { get; set; }
+		public PlotOptionsOrganizationLevelsStatesHover Hover { get; set; }
+		private PlotOptionsOrganizationLevelsStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The opposite state of a hover for a single point node/link.
 		/// </summary>
-		public Hashtable Inactive { get; set; }
-		private Hashtable Inactive_DefaultValue { get; set; }
+		public PlotOptionsOrganizationLevelsStatesInactive Inactive { get; set; }
+		private PlotOptionsOrganizationLevelsStatesInactive Inactive_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Hover != Hover_DefaultValue) h.Add("hover",Hover);
-			if (Inactive != Inactive_DefaultValue) h.Add("inactive",Inactive);
+			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
+			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

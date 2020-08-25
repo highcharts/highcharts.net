@@ -322,12 +322,12 @@ public class HighstockGenerator
         string defaultValues = "";
         string hashtableComparers = "";
 
-        
+
 
         if (item.FullName.ToLower().EndsWith("zones"))
             item.FullName = item.FullName.Remove(item.FullName.Length - 5) + "Zone";
 
-        if(item.FullName.Equals("annotations.crookedLine") || item.FullName.Equals("annotations.elliottWave") || item.FullName.Equals("annotations.fibonacci") || item.FullName.Equals("annotations.infinityLine") || item.FullName.Equals("annotations.pitchfork") || item.FullName.Equals("annotations.lineShapes") || item.FullName.Equals("annotations.tunnel") || item.FullName.Equals("annotations.measure") || item.FullName.Equals("annotations.verticalLine"))
+        if (item.FullName.Equals("annotations.crookedLine") || item.FullName.Equals("annotations.elliottWave") || item.FullName.Equals("annotations.fibonacci") || item.FullName.Equals("annotations.infinityLine") || item.FullName.Equals("annotations.pitchfork") || item.FullName.Equals("annotations.lineShapes") || item.FullName.Equals("annotations.tunnel") || item.FullName.Equals("annotations.measure") || item.FullName.Equals("annotations.verticalLine"))
             children = item.Children.Where(p => p.FullName.Contains("controlPointOptions") || p.FullName.Contains("labelOptions") || p.FullName.Contains("shapeOptions") || p.FullName.Contains("typeOptions")).ToList();
 
         if (item.FullName.Contains("annotations.crookedLine") || item.FullName.Contains("annotations.elliottWave") || item.FullName.Contains("annotations.fibonacci") || item.FullName.Contains("annotations.infinityLine") || item.FullName.Contains("annotations.pitchfork") || item.FullName.Contains("annotations.lineShapes") || item.FullName.Contains("annotations.tunnel") || item.FullName.Contains("annotations.measure") || item.FullName.Contains("annotations.verticalLine"))
@@ -340,7 +340,9 @@ public class HighstockGenerator
                 !item.FullName.Equals("annotations.pitchfork.controlPointOptions.events") &&
                 !item.FullName.Equals("annotations.tunnel.controlPointOptions.events") &&
                 !item.FullName.Equals("annotations.tunnel.typeOptions.heightControlPoint.events") &&
-                (item.FullName.EndsWith("draggable") || item.FullName.EndsWith("events") || item.FullName.EndsWith("labels") || item.FullName.EndsWith("shapes") || item.FullName.EndsWith("visible") || item.FullName.EndsWith("zIndex")))
+                (item.FullName.EndsWith("draggable") || item.FullName.EndsWith("events") ||
+                //item.FullName.EndsWith("labels") ||
+                item.FullName.EndsWith("shapes") || item.FullName.EndsWith("visible") || item.FullName.EndsWith("zIndex")))
                 return;
 
         if (item.FullName.Equals("annotations.crookedLine.typeOptions") || item.FullName.Equals("annotations.elliottWave.typeOptions"))
@@ -372,7 +374,7 @@ public class HighstockGenerator
                 continue;
             if (_excludedProperties.Contains(child.FullName))
                 continue;
-                
+
             if (child == item)
                 continue;
 
@@ -806,6 +808,9 @@ public class HighstockGenerator
         if (child.Values != null && child.Values.Any())
             returnType = GetClassNameFromItem(child);
 
+        if ((child.Children.Any() || child.Extends.Any()) && _lists.Contains(child.FullName))
+            returnType = "List<" + GetClassNameFromItem(child) + ">";
+
         if (propertyName == "PointDescriptionThreshold")
         {
             returnType = "long?";
@@ -847,8 +852,22 @@ public class HighstockGenerator
         if (child.ParentFullName != ROOT_CLASS && (nameAndSuffix.ToLower() == "xaxis" || nameAndSuffix.ToLower() == "yaxis"))
             return "string";
 
-        //if (nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any())
-        //    return GetClassNameFromItem(child);
+        if (
+            //(nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any()) || 
+            child.FullName.EndsWith("states.hover") ||
+            child.FullName.EndsWith("states.inactive") ||
+            child.FullName.EndsWith("states.normal") ||
+            child.FullName.EndsWith("states.select") ||
+            child.FullName.EndsWith("states.hover.halo") ||
+            child.FullName.EndsWith("states.inactive.halo") ||
+            child.FullName.EndsWith("states.normal.halo") ||
+            child.FullName.EndsWith("states.select.halo") ||
+            child.FullName.EndsWith("exporting.buttons") ||
+            (child.FullName.StartsWith("annotations") && child.FullName.EndsWith("background")))
+            return GetClassNameFromItem(child);
+
+        if (child.ParentFullName.EndsWith("navigation.bindings"))
+            return "Hashtable";
 
         if (_propertyTypeMappings[child.FullName] != null)
             return _propertyTypeMappings[child.FullName].ToString();
@@ -865,7 +884,7 @@ public class HighstockGenerator
             returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
         else
             if (child.Children.Any() || child.Extends.Any())
-                returnType = GetClassNameFromItem(child);
+            returnType = GetClassNameFromItem(child);
 
         if (returnType.EndsWith("DataDataLabels"))
             returnType = returnType.Replace("DataData", "Data");
@@ -912,8 +931,8 @@ public class HighstockGenerator
             if (propertyName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
 
-            if (propertyName == "Stops")
-                return "if (Stops.Any()) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
+            //if (propertyName == "Stops")
+            //    return "if (Stops.Any()) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
 
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
@@ -952,7 +971,7 @@ public class HighstockGenerator
             if (child.ReturnType == "Array.<*>" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
-            if (child.Children.Any() || child.Extends.Any() || child.ReturnType.ToLower() == "object")
+            if (child.Children.Any() || child.Extends.Any())// && child.ReturnType.ToLower() == "object")
                 return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
             // Event (javascript function)
@@ -978,7 +997,7 @@ public class HighstockGenerator
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
 
-            
+
     }
 
     private void GenerateClassesForLevel(IList<ApiItem> items, int level = 0)
@@ -1141,7 +1160,7 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("annotations.labels", "List<AnnotationsLabels>");
         _propertyTypeMappings.Add("annotations.shapes", "List<AnnotationsShapes>");
         _propertyTypeMappings.Add("colorAxis.dataClasses", "List<ColorAxisDataClasses>");
-        _propertyTypeMappings.Add("annotations.shapes.points", "List<AnnotationsShapesPoint>");
+        _propertyTypeMappings.Add("annotations.shapes.points", "List<AnnotationsShapesPoints>");
         _propertyTypeMappings.Add("attributes", "Object");
         _propertyTypeMappings.Add("defs.markers", "Object");
         _propertyTypeMappings.Add("drilldown.drillUpButton.theme", "Object");
@@ -1229,6 +1248,7 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("drilldown.activeDataLabelStyle", "Hashtable");
         _propertyTypeMappings.Add("legend.itemCheckboxStyle", "Hashtable");
         _propertyTypeMappings.Add("defs.arrow.children", "List<object>");
+        _propertyTypeMappings.Add("plotOptions.slowstochastic.params.periods", "List<double?>");
 
     }
     private void InitPropertyInitMappings()
@@ -1273,7 +1293,7 @@ public class HighstockGenerator
         _propertyInitMappings.Add("annotations.labels", "new List<AnnotationsLabels>()");
         _propertyInitMappings.Add("annotations.shapes", "new List<AnnotationsShapes>()");
         _propertyInitMappings.Add("colorAxis.dataClasses", "new List<ColorAxisDataClasses>()");
-        _propertyInitMappings.Add("annotations.shapes.points", "new List<AnnotationsShapesPoint>()");
+        _propertyInitMappings.Add("annotations.shapes.points", "new List<AnnotationsShapesPoints>()");
         _propertyInitMappings.Add("attributes", "null");
         _propertyInitMappings.Add("defs.markers", "null");
         _propertyInitMappings.Add("drilldown.drillUpButton.theme", "null");
@@ -1345,7 +1365,7 @@ public class HighstockGenerator
         _propertyInitMappings.Add("autoRotation", "new List<double> {-45}");
         _propertyInitMappings.Add("categories", "new List<string>()");
         _propertyInitMappings.Add("spacing", "new List<double>()");
-        _propertyInitMappings.Add("data.columns", "new List<List<Object>>()");
+        _propertyInitMappings.Add("data.columns", "new List<List<string>>()");
         _propertyInitMappings.Add("chart.options3d.axisLabelPosition", "null");
         _propertyInitMappings.Add("initialPositions", "null");
         _propertyInitMappings.Add("initialPositionsRadius", "null");
@@ -1436,6 +1456,9 @@ public class HighstockGenerator
         _propertyInitMappings.Add("navigation.bindings.zoomX", "new Object()");
         _propertyInitMappings.Add("navigation.bindings.zoomXY", "new Object()");
         _propertyInitMappings.Add("navigation.bindings.zoomY", "new Object()");
+        _propertyInitMappings.Add("plotOptions.slowstochastic.params.periods", "new List<double?>{14,3,3}");
+        _propertyInitMappings.Add("annotations.fibonacci.typeOptions.backgroundColors", "new List<string>()");
+        _propertyInitMappings.Add("annotations.fibonacci.typeOptions.lineColors", "new List<string>()");
     }
     private void InitLists()
     {
@@ -1542,6 +1565,9 @@ public class HighstockGenerator
 
         var nameAndSuffix = FirstCharToLower(GetPropertyName(item));
 
+        if (item.ParentFullName.EndsWith("navigation.bindings"))
+            return "new Hashtable()";
+
         if (item.Defaults == "\n")
             return "null";
 
@@ -1619,8 +1645,11 @@ public class HighstockGenerator
         if (item.ReturnType == "Array.<*>" && item.Title == "zones")
             return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
 
+        if ((item.Children.Any() || item.Extends.Any()) && _lists.Contains(item.FullName))
+            return string.Format("new List<{0}>()", GetClassNameFromItem(item));
+
         if (item.FullName.ToLower().Contains("data.datalabels"))
-            item.FullName = item.FullName.Replace("data.", "");
+                item.FullName = item.FullName.Replace("data.", "");
 
         if (item.FullName.ToLower().Contains("levels.datalabels"))
             item.FullName = item.FullName.Replace("levels.", "");
@@ -1665,9 +1694,9 @@ public class HighstockGenerator
                 _typeMappings[(item.ReturnType)].ToString() == "Hashtable"))
             {
                 string result = "new Hashtable()";// + "{" + item.Defaults
-                                                    //.Replace(",", "},{")
-                                                    //.Replace(";", "},{")
-                                                    //.Replace(":", ",") + "}";
+                                                  //.Replace(",", "},{")
+                                                  //.Replace(";", "},{")
+                                                  //.Replace(":", ",") + "}";
                 if (nameAndSuffix == "position")
                     result = result.Replace("0", "\"0\"");
 

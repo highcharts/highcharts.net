@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			Line = Line_DefaultValue = new AnnotationsElliottWaveTypeOptionsLine();
-			Points = Points_DefaultValue = new AnnotationsElliottWaveTypeOptionsPoints();
+			Points = Points_DefaultValue = new List<AnnotationsElliottWaveTypeOptionsPoints>();
 			
 		}	
 		
@@ -48,8 +48,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public AnnotationsElliottWaveTypeOptionsPoints Points { get; set; }
-		private AnnotationsElliottWaveTypeOptionsPoints Points_DefaultValue { get; set; }
+		public List<AnnotationsElliottWaveTypeOptionsPoints> Points { get; set; }
+		private List<AnnotationsElliottWaveTypeOptionsPoints> Points_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

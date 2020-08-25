@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MarkerStart = MarkerStart_DefaultValue = "";
 			Point = Point_DefaultValue = new AnnotationsShapesPoint();
 			PointString = PointString_DefaultValue = "null";
-			Points = Points_DefaultValue = new List<AnnotationsShapesPoint>();
+			Points = Points_DefaultValue = new List<AnnotationsShapesPoints>();
 			R = R_DefaultValue = 0;
 			Snap = Snap_DefaultValue = 2;
 			Src = Src_DefaultValue = "";
@@ -87,8 +87,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array of points for the shape. This option is availablefor shapes which can use multiple points such as path. Apoint can be either a point object or a point's id.
 		/// </summary>
-		public List<AnnotationsShapesPoint> Points { get; set; }
-		private List<AnnotationsShapesPoint> Points_DefaultValue { get; set; }
+		public List<AnnotationsShapesPoints> Points { get; set; }
+		private List<AnnotationsShapesPoints> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>

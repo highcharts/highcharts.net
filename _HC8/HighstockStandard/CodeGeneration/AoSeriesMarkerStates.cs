@@ -26,22 +26,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The hover state for a single point marker.
 		/// </summary>
-		public Hashtable Hover { get; set; }
-		private Hashtable Hover_DefaultValue { get; set; }
+		public AoSeriesMarkerStatesHover Hover { get; set; }
+		private AoSeriesMarkerStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
-		public Hashtable Normal { get; set; }
-		private Hashtable Normal_DefaultValue { get; set; }
+		public AoSeriesMarkerStatesNormal Normal { get; set; }
+		private AoSeriesMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
-		public Hashtable Select { get; set; }
-		private Hashtable Select_DefaultValue { get; set; }
+		public AoSeriesMarkerStatesSelect Select { get; set; }
+		private AoSeriesMarkerStatesSelect Select_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

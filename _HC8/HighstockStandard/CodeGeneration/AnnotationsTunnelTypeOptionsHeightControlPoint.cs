@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			
 
 			return h;

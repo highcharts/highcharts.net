@@ -179,7 +179,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DragPrecisionY != DragPrecisionY_DefaultValue) h.Add("dragPrecisionY",DragPrecisionY);
 			if (DragSensitivity != DragSensitivity_DefaultValue) h.Add("dragSensitivity",DragSensitivity);
 			if (GroupBy != GroupBy_DefaultValue) h.Add("groupBy",GroupBy);
-			if (GuideBox != GuideBox_DefaultValue) h.Add("guideBox",GuideBox);
+			if (GuideBox.IsDirty()) h.Add("guideBox",GuideBox.ToHashtable());
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
