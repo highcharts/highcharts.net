@@ -55,8 +55,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The dashing or dot style for the plot line. For possible values see[this overview](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public CSSObject DashStyle { get; set; }
+		private CSSObject DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -77,7 +77,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("0c406810-6163-4476-b397-dbb9af6a3282.positioner", Positioner); }  
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("42041c4c-00c8-458c-98fd-610076f5b6b7.positioner", Positioner); }  
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);

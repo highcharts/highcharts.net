@@ -68,7 +68,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ColumnHeaderFormatter != ColumnHeaderFormatter_DefaultValue) { h.Add("columnHeaderFormatter",ColumnHeaderFormatter); Highcharts.AddFunction("9f911035-bacc-479a-bcd1-21c4117e7c6d.columnHeaderFormatter", ColumnHeaderFormatter); }  
+			if (ColumnHeaderFormatter != ColumnHeaderFormatter_DefaultValue) { h.Add("columnHeaderFormatter",ColumnHeaderFormatter); Highcharts.AddFunction("853a192f-d274-4535-b324-c9930468ed10.columnHeaderFormatter", ColumnHeaderFormatter); }  
 			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
 			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
 			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);

@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
-			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); Highcharts.AddFunction("078a4170-cea3-40b0-ab58-70c17990d9ad.descriptionFormatter", DescriptionFormatter); }  
+			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); Highcharts.AddFunction("20cc2821-98b2-4646-a743-24526c003802.descriptionFormatter", DescriptionFormatter); }  
 			if (PointDescriptionEnabledThreshold != PointDescriptionEnabledThreshold_DefaultValue) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThreshold);
 			if (PointDescriptionEnabledThresholdBool != PointDescriptionEnabledThresholdBool_DefaultValue) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThresholdBool);
 			if (CustomFields.Count > 0)

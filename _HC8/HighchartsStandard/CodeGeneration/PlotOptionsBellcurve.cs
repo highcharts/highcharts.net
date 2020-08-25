@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsBellcurveCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = PlotOptionsBellcurveDashStyle.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsBellcurveDataLabels();
 			DataSorting = DataSorting_DefaultValue = new PlotOptionsBellcurveDataSorting();
 			Description = Description_DefaultValue = "";
@@ -219,8 +219,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public PlotOptionsBellcurveDashStyle DashStyle { get; set; }
+		private PlotOptionsBellcurveDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -543,7 +543,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
@@ -566,7 +566,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("c6bffc23-5a5b-4af3-a2f2-e1575935005e.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("ad25bcc4-0389-48fb-ae82-ef6ecba4ebc4.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointPlacement.IsDirty())
 				if (PointPlacement.Value.HasValue)
 					h.Add("pointPlacement", PointPlacement.Value);

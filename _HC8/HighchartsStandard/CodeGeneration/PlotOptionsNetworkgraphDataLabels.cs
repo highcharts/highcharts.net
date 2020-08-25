@@ -321,14 +321,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("e83d4d3b-ebbf-4790-bad5-75d49afa9194.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("8921bcb6-2267-4109-81fd-0e2644761a23.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (LinkFormat != LinkFormat_DefaultValue) h.Add("linkFormat",LinkFormat);
-			if (LinkFormatter != LinkFormatter_DefaultValue) { h.Add("linkFormatter",LinkFormatter); Highcharts.AddFunction("49253336-ea73-4e83-96db-811ac4291244.linkFormatter", LinkFormatter); }  
+			if (LinkFormatter != LinkFormatter_DefaultValue) { h.Add("linkFormatter",LinkFormatter); Highcharts.AddFunction("69cda606-bd07-4800-9863-cae6e6929e04.linkFormatter", LinkFormatter); }  
 			if (LinkTextPath.IsDirty()) h.Add("linkTextPath",LinkTextPath.ToHashtable());
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("c2426f85-3369-4f6b-99f3-bcb302e92658.nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("ba9266c4-55d9-4d47-9689-e73507ae51a0.nullFormatter", NullFormatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Position != Position_DefaultValue) h.Add("position",Position);

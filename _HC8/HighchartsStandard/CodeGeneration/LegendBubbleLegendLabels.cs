@@ -96,7 +96,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("7bbdbb70-cc39-4aac-ba3d-48a679d96643.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("393ba54a-25a1-465d-9602-fd5c3a908e60.formatter", Formatter); }  
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

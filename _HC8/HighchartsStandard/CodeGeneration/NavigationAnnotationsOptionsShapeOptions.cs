@@ -34,8 +34,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Name of the dash style to use for the shape's stroke.
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public CSSObject DashStyle { get; set; }
+		private CSSObject DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

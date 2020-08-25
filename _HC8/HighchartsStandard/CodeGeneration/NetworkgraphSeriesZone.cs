@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A name for the dash style to use for the graph.
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public CSSObject DashStyle { get; set; }
+		private CSSObject DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

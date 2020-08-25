@@ -275,8 +275,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A name for the dash style to use for the line connecting the columnsof the waterfall series. Possible values: Dash, DashDot, Dot, LongDash,LongDashDot, LongDashDotDot, ShortDash, ShortDashDot, ShortDashDotDot,ShortDot, SolidIn styled mode, the stroke dash-array can be set with the`.highcharts-graph` class.
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public CSSObject DashStyle { get; set; }
+		private CSSObject DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -687,7 +687,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("82d9b243-683e-4b4a-ac73-3ca0b5a7ea2c.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("2c086a97-69db-43e7-b6dc-e7741562098f.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);

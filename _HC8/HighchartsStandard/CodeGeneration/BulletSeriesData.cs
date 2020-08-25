@@ -95,8 +95,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A name for the dash style to use for the column or bar. OverridesdashStyle on the series.In styled mode, the stroke dash-array can be set with the same classes aslisted under [data.color](#series.column.data.color).
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public CSSObject DashStyle { get; set; }
+		private CSSObject DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -226,7 +226,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
 			if (Csv.IsDirty()) h.Add("csv",Csv.ToHashtable());
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Error != Error_DefaultValue) { h.Add("error",Error); Highcharts.AddFunction("a68a4747-1f57-42cb-a042-8fee36cfe902.error", Error); }  
+			if (Error != Error_DefaultValue) { h.Add("error",Error); Highcharts.AddFunction("28f282fa-2015-468e-baf1-a3e8af830e61.error", Error); }  
 			if (FallbackToExportServer != FallbackToExportServer_DefaultValue) h.Add("fallbackToExportServer",FallbackToExportServer);
 			if (Filename != Filename_DefaultValue) h.Add("filename",Filename);
 			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);

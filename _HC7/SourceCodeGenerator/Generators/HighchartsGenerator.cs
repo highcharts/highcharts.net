@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Collections;
 using System.Text;
-
+using System.Runtime.Remoting;
 
 /// <summary>
 /// Summary description for AspNetMvc
@@ -780,13 +780,13 @@ public class HighchartsGenerator
             return _propertyTypeMappings[propertyName].ToString();
 
         if (!string.IsNullOrEmpty(returnType))
-            if (_typeMappings[returnType] != null)
+            if (_typeMappings[returnType] != null && !child.FullName.Contains("dashStyle"))
                 return _typeMappings[returnType].ToString();
 
         if (child.ReturnType == "Array.<*>" && child.Title == "zones")
             returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
         else
-            if (child.Children.Any() || child.Extends.Any())
+            if (child.Children.Any() || child.Extends.Any() || child.Values.Any())
             returnType = GetClassNameFromItem(child);
 
 
@@ -867,7 +867,7 @@ public class HighchartsGenerator
             return String.Format(customPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
         }
         // Enum
-        if ((child.ReturnType == "string" || child.ReturnType == "String") && child.Values != null && child.Values.Count > 0)
+        if ((child.ReturnType == "string" || child.ReturnType == "String" || child.ReturnType == TypeService.CSSType) && child.Values != null && child.Values.Count > 0)
             return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
         // Complex object with nested objects / properties
         if (child.IsParent)
@@ -1474,7 +1474,7 @@ public class HighchartsGenerator
             return _propertyInitMappings[nameAndSuffix].ToString();
         }
 
-        if ((item.ReturnType == "string" || item.ReturnType == "String") && item.Values != null && item.Values.Any())
+        if ((item.ReturnType == "string" || item.ReturnType == "String" || item.ReturnType.Equals(TypeService.CSSType)) && item.Values != null && item.Values.Any())
         {
             return GetDefaultValueForEnum(item);
         }
