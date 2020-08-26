@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#cccccc";
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = ChartParallelAxesCrosshairDashStyle.Null;
 			Snap = Snap_DefaultValue = true;
 			Width = Width_DefaultValue = 1;
 			ZIndex = ZIndex_DefaultValue = 2;
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The dash style for the crosshair. See[plotOptions.series.dashStyle](#plotOptions.series.dashStyle)for possible values.
 		/// </summary>
-		public CSSObject DashStyle { get; set; }
-		private CSSObject DashStyle_DefaultValue { get; set; }
+		public ChartParallelAxesCrosshairDashStyle DashStyle { get; set; }
+		private ChartParallelAxesCrosshairDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -78,7 +78,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

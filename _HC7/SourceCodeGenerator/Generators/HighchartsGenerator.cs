@@ -714,7 +714,7 @@ public class HighchartsGenerator
         string propertyName = GetPropertyName(child);
         string returnType = GetPropertyReturnType(child, propertyName);
 
-        if ((child.ReturnType == "string" || child.ReturnType == "String") && child.Values != null && child.Values.Any())
+        if ((child.ReturnType == "string" || child.ReturnType == "String" || child.ReturnType == TypeService.CSSType) && child.Values != null && child.Values.Any())
             returnType = GetClassNameFromItem(child);
 
         if (propertyName == "PointDescriptionThreshold")

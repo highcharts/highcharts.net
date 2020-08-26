@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = BoxplotSeriesZonesDashStyle.Null;
 			FillColor = FillColor_DefaultValue = null;
 			Value = Value_DefaultValue = null;
 			
@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A name for the dash style to use for the graph.
 		/// </summary>
-		public CSSObject DashStyle { get; set; }
-		private CSSObject DashStyle_DefaultValue { get; set; }
+		public BoxplotSeriesZonesDashStyle DashStyle { get; set; }
+		private BoxplotSeriesZonesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,7 +70,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (CustomFields.Count > 0)

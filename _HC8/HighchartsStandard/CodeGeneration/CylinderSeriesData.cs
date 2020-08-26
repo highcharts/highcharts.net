@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Custom = Custom_DefaultValue = new Hashtable();
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = CylinderSeriesDataDashStyle.Null;
 			DataLabels = DataLabels_DefaultValue = new CylinderSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new CylinderSeriesDataDragDrop();
@@ -93,8 +93,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A name for the dash style to use for the column or bar. OverridesdashStyle on the series.In styled mode, the stroke dash-array can be set with the same classes aslisted under [data.color](#series.column.data.color).
 		/// </summary>
-		public CSSObject DashStyle { get; set; }
-		private CSSObject DashStyle_DefaultValue { get; set; }
+		public CylinderSeriesDataDashStyle DashStyle { get; set; }
+		private CylinderSeriesDataDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -195,7 +195,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());

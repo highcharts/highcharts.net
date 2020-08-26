@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public NetworkgraphSeriesLink()
 		{
 			Color = Color_DefaultValue = "rgba(100, 100, 100, 0.5)";
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = NetworkgraphSeriesLinkDashStyle.Null;
 			Width = Width_DefaultValue = 1;
 			
 			CustomFields = new Hashtable();
@@ -34,8 +34,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A name for the dash style to use for links.
 		/// </summary>
-		public CSSObject DashStyle { get; set; }
-		private CSSObject DashStyle_DefaultValue { get; set; }
+		public NetworkgraphSeriesLinkDashStyle DashStyle { get; set; }
+		private NetworkgraphSeriesLinkDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -53,7 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

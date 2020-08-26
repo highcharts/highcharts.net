@@ -61,4 +61,8 @@ Please note that upgrading the wrapper to version 7.1.1.1 may require some chang
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CodeGeneration\Enums\" />
+  </ItemGroup>
+
 </Project>
