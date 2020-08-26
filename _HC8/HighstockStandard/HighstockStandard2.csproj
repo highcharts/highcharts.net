@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Highstock</AssemblyName>
-    <Version>8.1.2.1</Version>
+    <Version>8.1.2.2</Version>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>highcharts.snk</AssemblyOriginatorKeyFile>
@@ -38,8 +38,8 @@ Move to .NET Standard. Please note that upgrading the wrapper to version 7.1.1.1
     <PackageIconUrl>http://dotnet.highcharts.com/Content/images/logo_png.png</PackageIconUrl>
     <PackageTags>chart charts charting graph graphs plot plots diagram diagrams highcharts highstock visualisation visualization data-visualisation data-visualization diagram line-chart 3d-chart finance web-forms mvc</PackageTags>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <AssemblyVersion>8.1.2.1</AssemblyVersion>
-    <FileVersion>8.1.2.1</FileVersion>
+    <AssemblyVersion>8.1.2.2</AssemblyVersion>
+    <FileVersion>8.1.2.2</FileVersion>
     <PackageLicenseUrl></PackageLicenseUrl>
   </PropertyGroup>
 
