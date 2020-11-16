@@ -18,6 +18,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Align = Align_DefaultValue = PlotOptionsDependencywheelDataLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -65,6 +67,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? AllowOverlap { get; set; }
 		private bool? AllowOverlap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series isdisplayed for the `dataLabels`. The animation can also be set asa configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series isdisplayed for the `dataLabels`. The animation can also be set asa configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -117,7 +133,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to defer displaying the data labels until the initialseries animation has finished.
+		/// Whether to defer displaying the data labels until the initialseries animation has finished. Setting to `false` renders thedata label immediately. If set to `true` inherits the defertime set in [plotOptions.series.animation](#plotOptions.series.animation).
 		/// </summary>
 		public bool? Defer { get; set; }
 		private bool? Defer_DefaultValue { get; set; }
@@ -286,6 +302,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -297,11 +315,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("47f28043-177a-4ae3-82d3-9a1393d36641.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("dedba4ab-6731-4d15-952c-ab7a9ad09f1a.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("fe1761cd-a5aa-41c0-8f68-241dcf673e08.nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("1733c888-2e70-4347-95fb-77b694a2f6eb.nullFormatter", NullFormatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Position != Position_DefaultValue) h.Add("position",Position);

@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (ExposeAsGroupOnly != ExposeAsGroupOnly_DefaultValue) h.Add("exposeAsGroupOnly",ExposeAsGroupOnly);
 			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("efc7c806-809b-40be-8155-1ed0b355e884.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("50061b92-e9cd-4d2c-815f-8a1cb35548ae.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

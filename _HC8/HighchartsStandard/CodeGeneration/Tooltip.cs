@@ -31,14 +31,14 @@ namespace Highsoft.Web.Mvc.Charts
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
 			FooterFormat = FooterFormat_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
+			HeaderFormat = HeaderFormat_DefaultValue = "";
 			HeaderShape = HeaderShape_DefaultValue = TooltipHeaderShape.Callout;
 			HideDelay = HideDelay_DefaultValue = 500;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Outside = Outside_DefaultValue = null;
 			Padding = Padding_DefaultValue = "8";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
+			PointFormat = PointFormat_DefaultValue = "";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -214,7 +214,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The HTML of the point's line in the tooltip. Variables are enclosedby curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form.Furthermore, `point.y` can be extended by the `tooltip.valuePrefix`and `tooltip.valueSuffix` variables. This can also be overridden foreach series, which makes it a good hook for displaying units.In styled mode, the dot is colored by a class name ratherthan the point color.
+		/// The HTML of the point's line in the tooltip. Variables are enclosedby curly brackets. Available variables are `point.x`, `point.y`,`series.name` and `series.color` and other properties on the sameform. Furthermore, `point.y` can be extended by the`tooltip.valuePrefix` and `tooltip.valueSuffix` variables. This canalso be overridden for each series, which makes it a good hook fordisplaying units.In styled mode, the dot is colored by a class name ratherthan the point color.
 		/// </summary>
 		public string PointFormat { get; set; }
 		private string PointFormat_DefaultValue { get; set; }
@@ -346,17 +346,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("7aa120cb-ca63-4925-85a6-5a586c4ee630.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("8953a442-dc1b-4003-afd1-3752670e22d9.formatter", Formatter); }  
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", Highcharts.FirstCharacterToLower(HeaderShape.ToString()));
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("74f9afb0-de46-4ef9-abb6-73e7b5c25fad.nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("b2ba3669-e7e9-41f2-be77-4bdea92ceda2.nullFormatter", NullFormatter); }  
 			if (Outside != Outside_DefaultValue) h.Add("outside",Outside);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("f9bf7ff3-dd83-43d9-99d8-938b5d928f82.pointFormatter", PointFormatter); }  
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("9599c61e-4336-4390-9b93-40b205afd996.positioner", Positioner); }  
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("720fb908-ce90-4eea-9e79-aa5083b07c52.pointFormatter", PointFormatter); }  
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("58cb89ac-ed46-4e6a-95ee-c1221a2ad3b1.positioner", Positioner); }  
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);

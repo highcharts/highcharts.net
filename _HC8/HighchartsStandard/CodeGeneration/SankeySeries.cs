@@ -19,13 +19,16 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new SankeySeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
+			ColorAxis = ColorAxis_DefaultValue = "0";
+			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
+			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
+			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = SankeySeriesCursor.Null;
 			CurveFactor = CurveFactor_DefaultValue = null;
@@ -45,6 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkedTo = LinkedTo_DefaultValue = "";
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
+			MinPointLength = MinPointLength_DefaultValue = 0;
 			Name = Name_DefaultValue = "";
 			NodePadding = NodePadding_DefaultValue = 10;
 			Nodes = Nodes_DefaultValue = new List<SankeySeriesNodes>();
@@ -88,17 +92,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -130,6 +127,27 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public string ColorAxis { get; set; }
+		private string ColorAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public double? ColorAxisNumber { get; set; }
+		private double? ColorAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public bool? ColorAxisBool { get; set; }
+		private bool? ColorAxisBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When using automatic point colors pulled from the global[colors](colors) or series-specific[plotOptions.column.colors](series.colors) collections, this optiondetermines whether the chart should receive one color per series orone color per point.In styled mode, the `colors` or `series.colors` arrays are notsupported, and instead this option gives the points individual colorclass names on the form `highcharts-color-{n}`.
 		/// </summary>
 		public bool? ColorByPoint { get; set; }
@@ -141,6 +159,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines what data value should be used to calculate point colorif `colorAxis` is used. Requires to set `min` and `max` if somecustom point property is used or if approximation for data groupingis set to `'sum'`.
+		/// </summary>
+		public string ColorKey { get; set; }
+		private string ColorKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -274,6 +299,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? MinLinkWidth { get; set; }
 		private double? MinLinkWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The minimal height for a column or width for a bar. By default,0 values are not shown. To visualize a 0 (or close to zero) point,set the minimal point length to a pixel value like 3\. In stackedcolumn charts, minPointLength might not be respected for tightlypacked values.
+		/// </summary>
+		public double? MinPointLength { get; set; }
+		private double? MinPointLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -447,13 +479,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
+			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
+			if (ColorAxisBool != ColorAxisBool_DefaultValue) h.Add("colorAxis",ColorAxisBool);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (CurveFactor != CurveFactor_DefaultValue) h.Add("curveFactor",CurveFactor);
@@ -473,13 +508,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
+			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
 			if (Nodes != Nodes_DefaultValue) h.Add("nodes", HashifyList(Nodes));
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("87684f90-b91c-4a7e-a21c-a800bbd8547e.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("b75fede6-00fe-47f3-b345-6247b4aa2c12.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

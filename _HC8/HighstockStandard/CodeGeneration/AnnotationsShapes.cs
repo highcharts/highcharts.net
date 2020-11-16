@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsShapes()
 		{
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = AnnotationsShapesDashStyle.Null;
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			Height = Height_DefaultValue = null;
 			MarkerEnd = MarkerEnd_DefaultValue = "";
@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Src = Src_DefaultValue = "";
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
-			Type = Type_DefaultValue = " rect ";
+			Type = Type_DefaultValue = "rect";
 			Width = Width_DefaultValue = null;
 			
 		}	
@@ -38,8 +38,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Name of the dash style to use for the shape's stroke.
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public AnnotationsShapesDashStyle DashStyle { get; set; }
+		private AnnotationsShapesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -145,7 +145,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);

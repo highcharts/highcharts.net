@@ -7,11 +7,11 @@
 @{ 
     var chartOptions = new Highcharts
     {
-        Chart = new Chart
-        {
-            HeightString = "100%",
-            WidthString = "100%"
-        },
+        //Chart = new Chart
+        //{
+        //    Height = "100%",
+        //    Width = "100%"
+        //},
 
         Title = new Title
         {
@@ -86,7 +86,7 @@
     };
 
     chartOptions.ID = "chart1";
-    var renderer = new HighchartsRenderer(chartOptions, "MDcwMjAxOTEwMjYxMDAwMDAwMDE=");
+    var renderer = new HighchartsRenderer(chartOptions);
 }
 
 @Html.Raw(renderer.RenderHtml(true))

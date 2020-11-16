@@ -18,6 +18,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Align = Align_DefaultValue = PlotOptionsColumnrangeDataLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -71,6 +73,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Enable or disable the initial animation when a series isdisplayed for the `dataLabels`. The animation can also be set asa configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series isdisplayed for the `dataLabels`. The animation can also be set asa configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The background color or gradient for the data label.
 		/// </summary>
 		public string BackgroundColor { get; set; }
@@ -120,7 +136,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to defer displaying the data labels until the initialseries animation has finished.
+		/// Whether to defer displaying the data labels until the initialseries animation has finished. Setting to `false` renders thedata label immediately. If set to `true` inherits the defertime set in [plotOptions.series.animation](#plotOptions.series.animation).
 		/// </summary>
 		public bool? Defer { get; set; }
 		private bool? Defer_DefaultValue { get; set; }
@@ -315,6 +331,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);

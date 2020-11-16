@@ -16,10 +16,18 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsTemaAnimation()
 		{
+			Defer = Defer_DefaultValue = 0;
 			Duration = Duration_DefaultValue = 1000;
 			
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Defer { get; set; }
+		private double? Defer_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -33,6 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			
 

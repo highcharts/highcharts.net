@@ -60,10 +60,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ClosePopup != ClosePopup_DefaultValue) { h.Add("closePopup",ClosePopup); Highcharts.AddFunction("b9ffb2ae-d5ca-4b5e-8f30-75b10fbcfb21.closePopup", ClosePopup); }  
-			if (DeselectButton != DeselectButton_DefaultValue) { h.Add("deselectButton",DeselectButton); Highcharts.AddFunction("766a0403-37c6-454c-a6cc-e3b3af724433.deselectButton", DeselectButton); }  
-			if (SelectButton != SelectButton_DefaultValue) { h.Add("selectButton",SelectButton); Highcharts.AddFunction("4b1732dd-cf90-42ee-8cd1-90fd70dd21cf.selectButton", SelectButton); }  
-			if (ShowPopup != ShowPopup_DefaultValue) { h.Add("showPopup",ShowPopup); Highcharts.AddFunction("b2bed0d7-3ee1-49fd-89ec-d21b83cc3e82.showPopup", ShowPopup); }  
+			if (ClosePopup != ClosePopup_DefaultValue) { h.Add("closePopup",ClosePopup); Highcharts.AddFunction("e085b133-3ec8-401d-b6be-808710d9688e.closePopup", ClosePopup); }  
+			if (DeselectButton != DeselectButton_DefaultValue) { h.Add("deselectButton",DeselectButton); Highcharts.AddFunction("8a68a135-3c5e-4b09-ab64-bad7827e10ec.deselectButton", DeselectButton); }  
+			if (SelectButton != SelectButton_DefaultValue) { h.Add("selectButton",SelectButton); Highcharts.AddFunction("7daeb09e-6d04-4bd9-beda-5f91a98fbe93.selectButton", SelectButton); }  
+			if (ShowPopup != ShowPopup_DefaultValue) { h.Add("showPopup",ShowPopup); Highcharts.AddFunction("4cfc3099-d490-43f8-9eb8-260ac4d06d6d.showPopup", ShowPopup); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

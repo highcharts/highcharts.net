@@ -89,7 +89,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (PathFormatter != PathFormatter_DefaultValue) { h.Add("pathFormatter",PathFormatter); Highcharts.AddFunction("d393cb4e-4493-4e7a-ba32-2b6dca7c34d2.pathFormatter", PathFormatter); }  
+			if (PathFormatter != PathFormatter_DefaultValue) { h.Add("pathFormatter",PathFormatter); Highcharts.AddFunction("e4aa07da-1ac8-46d9-9221-73171ab4a4ed.pathFormatter", PathFormatter); }  
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

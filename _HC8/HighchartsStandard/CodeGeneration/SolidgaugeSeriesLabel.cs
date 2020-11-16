@@ -113,7 +113,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectorNeighbourDistance != ConnectorNeighbourDistance_DefaultValue) h.Add("connectorNeighbourDistance",ConnectorNeighbourDistance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("99e50a0a-c7b6-49d3-a2be-4cb00a258cda.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("4885451a-4211-445c-820c-9e5bf31d5940.formatter", Formatter); }  
 			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
 			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
 			if (OnArea != OnArea_DefaultValue) h.Add("onArea",OnArea);

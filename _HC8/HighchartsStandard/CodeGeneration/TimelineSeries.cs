@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new TimelineSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = TimelineSeriesBoostBlending.Undefined;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
@@ -35,6 +34,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Custom = Custom_DefaultValue = new Hashtable();
 			Data = Data_DefaultValue = new List<TimelineSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new TimelineSeriesDataLabels();
+			DataSorting = DataSorting_DefaultValue = new TimelineSeriesDataSorting();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new TimelineSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -89,17 +89,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -205,6 +198,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public TimelineSeriesDataLabels DataLabels { get; set; }
 		private TimelineSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data sorting.
+		/// </summary>
+		public TimelineSeriesDataSorting DataSorting { get; set; }
+		private TimelineSeriesDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -455,7 +455,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
@@ -471,6 +470,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
@@ -489,7 +489,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("e4cbe865-dca2-4012-abba-3ac37d132637.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("54e5e957-edf5-4a02-8c62-cd6423c88584.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);

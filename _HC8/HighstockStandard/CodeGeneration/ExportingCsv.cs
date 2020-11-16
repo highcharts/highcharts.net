@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ExportingCsv()
 		{
+			Annotations = Annotations_DefaultValue = new List<Annotations>();
 			ColumnHeaderFormatter = ColumnHeaderFormatter_DefaultValue = "";
 			DateFormat = DateFormat_DefaultValue = "%Y-%m-%d %H:%M:%S";
 			DecimalPoint = DecimalPoint_DefaultValue = "";
@@ -24,6 +25,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// Options for annotations in the export-data table.
+		/// </summary>
+		public List<Annotations> Annotations { get; set; }
+		private List<Annotations> Annotations_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Formatter callback for the column headers. Parameters are:- `item` - The series or axis object)- `key` -  The point key, for example y or z- `keyLength` - The amount of value keys for this item, for  example a range series has the keys `low` and `high` so the  key length is 2.If [useMultiLevelHeaders](#exporting.useMultiLevelHeaders) istrue, columnHeaderFormatter by default returns an object withcolumnTitle and topLevelColumnTitle for each key. Columns withthe same topLevelColumnTitle have their titles merged into asingle cell with colspan for table/Excel export.If `useMultiLevelHeaders` is false, or for CSV export, it returnsthe series name, followed by the key if there is more than onekey.For the axis it returns the axis title or "Category" or"DateTime" by default.Return `false` to use Highcharts' proposed header.
@@ -65,6 +73,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
 			if (ColumnHeaderFormatter != ColumnHeaderFormatter_DefaultValue) { h.Add("columnHeaderFormatter",ColumnHeaderFormatter); Highstock.AddFunction("ExportingCsvColumnHeaderFormatter.columnHeaderFormatter", ColumnHeaderFormatter); }  
 			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
 			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);

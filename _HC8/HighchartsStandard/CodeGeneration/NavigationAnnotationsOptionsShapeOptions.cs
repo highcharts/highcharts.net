@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Src = Src_DefaultValue = "";
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
-			Type = Type_DefaultValue = " rect ";
+			Type = Type_DefaultValue = "rect";
 			Width = Width_DefaultValue = null;
 			
 			CustomFields = new Hashtable();

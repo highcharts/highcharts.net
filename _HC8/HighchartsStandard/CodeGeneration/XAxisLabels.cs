@@ -169,14 +169,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The x position offset of the label relative to the tick positionon the axis.
+		/// The x position offset of all labels relative to the tickpositions on the axis.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y position offset of the label relative to the tick positionon the axis. The default makes it adapt to the font size onbottom axis.
+		/// The y position offset of all labels relative to the tickpositions on the axis. The default makes it adapt to the fontsize of the bottom axis.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -202,7 +202,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("b16d9820-f3ee-4b5d-bda9-12d7378ef783.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("572d0761-55c2-496f-8336-cc19687eeae1.formatter", Formatter); }  
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);

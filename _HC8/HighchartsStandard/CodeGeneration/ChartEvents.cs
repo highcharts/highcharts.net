@@ -124,18 +124,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("a0caf9b1-c4a9-46b4-8564-b19c9cd2e07b.addSeries", AddSeries); }  
-			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("c6437da1-3757-4909-88ae-a52897f12e5f.afterPrint", AfterPrint); }  
-			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("018d800b-015b-4598-91af-0c67a03d3857.beforePrint", BeforePrint); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("2ad4eceb-3502-49ad-bf81-c4960914d45b.click", Click); }  
-			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("00e071df-f7df-4b25-a01e-1b45d88f2630.drilldown", Drilldown); }  
-			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("ed36815c-c953-45fd-a66a-ab0417c20c51.drillup", Drillup); }  
-			if (Drillupall != Drillupall_DefaultValue) { h.Add("drillupall",Drillupall); Highcharts.AddFunction("ed991839-ef2b-440f-96f1-b42643843197.drillupall", Drillupall); }  
-			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); Highcharts.AddFunction("f87585d8-e047-48f7-9410-80299c35e514.exportData", ExportData); }  
-			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("07aa2b4e-5497-4a6d-a705-19f4c5627e6b.load", Load); }  
-			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("f8df44c2-0d8d-4e31-9d7e-66d8f45e5cbc.redraw", Redraw); }  
-			if (Render != Render_DefaultValue) { h.Add("render",Render); Highcharts.AddFunction("42f49c0c-b0c5-42a4-8070-fedf9c891830.render", Render); }  
-			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("3e45ccdc-92b2-4e20-bc6d-ff49ddfc5111.selection", Selection); }  
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("5b179bb2-e624-4b84-bc6c-d413890f4cae.addSeries", AddSeries); }  
+			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("641d573c-dcf9-4611-bed1-0f62b021347a.afterPrint", AfterPrint); }  
+			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("1032d22f-cd96-4568-927b-c249a5b8269c.beforePrint", BeforePrint); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("05da85dd-0e8d-445f-af14-a5d73d0ec497.click", Click); }  
+			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("42da190c-c40e-46c1-8977-dcd05cd1ef40.drilldown", Drilldown); }  
+			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("32d1a207-3cfc-48bc-9afc-4e9d9f426ba7.drillup", Drillup); }  
+			if (Drillupall != Drillupall_DefaultValue) { h.Add("drillupall",Drillupall); Highcharts.AddFunction("85144d78-a786-46b1-83c6-b7ab2563b0b9.drillupall", Drillupall); }  
+			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); Highcharts.AddFunction("29635444-7379-43fb-a1b7-056e1f2629e2.exportData", ExportData); }  
+			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("76088bdc-89af-457c-81ec-4f50b2c390f6.load", Load); }  
+			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("df72d08d-a032-42fe-80da-d60d8a58b6d5.redraw", Redraw); }  
+			if (Render != Render_DefaultValue) { h.Add("render",Render); Highcharts.AddFunction("81d29763-c2e3-45b8-9f5f-7d5f457c6aa6.render", Render); }  
+			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("0ed756f5-1946-4d8b-9b82-74c49d99aeee.selection", Selection); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

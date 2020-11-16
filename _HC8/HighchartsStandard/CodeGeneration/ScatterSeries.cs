@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new ScatterSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = ScatterSeriesBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
@@ -66,8 +65,11 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = ScatterSeriesPointIntervalUnit.Null;
+			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
+			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
@@ -81,6 +83,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new ScatterSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
+			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
 			XAxisNumber = XAxisNumber_DefaultValue = null;
@@ -109,17 +112,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -445,6 +441,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Possible values: `"on"`, `"between"`, `number`.In a column chart, when pointPlacement is `"on"`, the point will notcreate any padding of the X axis. In a polar column chart this meansthat the first column points directly north. If the pointPlacement is`"between"`, the columns will be laid out between ticks. This isuseful for example for visualising an amount between two points intime or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this iscomputed, but for line-type series it needs to be set.For the `xrange` series type and gantt charts, if the Y axis is acategory axis, the `pointPlacement` applies to the Y axis rather thanthe (typically datetime) X axis.Defaults to `undefined` in cartesian charts, `"between"` in polarcharts.
+		/// </summary>
+		public PointPlacement PointPlacement { get; set; }
+		private PointPlacement PointPlacement_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If no x values are given for the points in a series, pointStartdefines on what value to start. For example, if a series contains oneyearly value starting from 1945, set pointStart to 1945.
 		/// </summary>
 		public double? PointStart { get; set; }
@@ -456,6 +459,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -550,6 +567,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The parameter allows setting line series type and use OHLC indicators. Datain OHLC format is required.
+		/// </summary>
+		public bool? UseOhlcData { get; set; }
+		private bool? UseOhlcData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -615,7 +639,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
@@ -659,11 +682,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("8e578234-835d-446e-9b5d-170499178546.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("9295b7b2-4871-4f7a-a44d-1be989042b22.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointPlacement.IsDirty())
+				if (PointPlacement.Value.HasValue)
+					h.Add("pointPlacement", PointPlacement.Value);
+				else
+					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
@@ -678,6 +708,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			h.Add("type","scatter");
+			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);

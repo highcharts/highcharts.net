@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Accessibility = Accessibility_DefaultValue = new PlotOptionsXrangeAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsXrangeBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
@@ -44,6 +43,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			DashStyle = DashStyle_DefaultValue = PlotOptionsXrangeDashStyle.Null;
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsXrangeDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsXrangeDataLabels();
+			DataSorting = DataSorting_DefaultValue = new PlotOptionsXrangeDataSorting();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new PlotOptionsXrangeDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -99,17 +99,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -281,6 +274,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Options for the series data sorting.
+		/// </summary>
+		public PlotOptionsXrangeDataSorting DataSorting { get; set; }
+		private PlotOptionsXrangeDataSorting DataSorting_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
@@ -428,7 +428,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A pixel value specifying a fixed width for each column or bar. When`null`, the width is calculated from the `pointPadding` and`groupPadding`.
+		/// A pixel value specifying a fixed width for each column or bar point.When `null`, the width is calculated from the `pointPadding` and`groupPadding`. The width effects the dimension that is not based onthe point value. For column series it is the hoizontal length and forbar series it is the vertical length.
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
@@ -540,7 +540,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highstock.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -565,6 +564,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataGrouping.IsDirty()) h.Add("dataGrouping",DataGrouping.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);

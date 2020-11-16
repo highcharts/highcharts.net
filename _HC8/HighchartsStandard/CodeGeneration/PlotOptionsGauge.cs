@@ -19,18 +19,23 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new PlotOptionsGaugeAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsGaugeBoostBlending.Undefined;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
+			ColorAxis = ColorAxis_DefaultValue = "0";
+			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
+			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
+			ColorKey = ColorKey_DefaultValue = "y";
 			Crisp = Crisp_DefaultValue = true;
 			Cursor = Cursor_DefaultValue = PlotOptionsGaugeCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsGaugeDataLabels();
+			DataSorting = DataSorting_DefaultValue = new PlotOptionsGaugeDataSorting();
 			Description = Description_DefaultValue = "";
 			Dial = Dial_DefaultValue = new PlotOptionsGaugeDial();
+			DragDrop = DragDrop_DefaultValue = new PlotOptionsGaugeDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsGaugeEvents();
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
@@ -76,17 +81,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,10 +116,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public string ColorAxis { get; set; }
+		private string ColorAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public double? ColorAxisNumber { get; set; }
+		private double? ColorAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public bool? ColorAxisBool { get; set; }
+		private bool? ColorAxisBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Styled mode only. A specific color index to use for the series, soits graphic representations are given the class name`highcharts-color-{n}`.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines what data value should be used to calculate point colorif `colorAxis` is used. Requires to set `min` and `max` if somecustom point property is used or if approximation for data groupingis set to `'sum'`.
+		/// </summary>
+		public string ColorKey { get; set; }
+		private string ColorKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -153,6 +179,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the series data sorting.
+		/// </summary>
+		public PlotOptionsGaugeDataSorting DataSorting { get; set; }
+		private PlotOptionsGaugeDataSorting DataSorting_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
@@ -164,6 +197,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsGaugeDial Dial { get; set; }
 		private PlotOptionsGaugeDial Dial_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
+		/// </summary>
+		public PlotOptionsGaugeDragDrop DragDrop { get; set; }
+		private PlotOptionsGaugeDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -314,7 +354,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from [tooltip](#tooltip), but onlythe following properties can be defined on a series level.
 		/// </summary>
 		public PlotOptionsGaugeTooltip Tooltip { get; set; }
 		private PlotOptionsGaugeTooltip Tooltip_DefaultValue { get; set; }
@@ -351,18 +391,23 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
+			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
+			if (ColorAxisBool != ColorAxisBool_DefaultValue) h.Add("colorAxis",ColorAxisBool);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Dial.IsDirty()) h.Add("dial",Dial.ToHashtable());
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
@@ -375,7 +420,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
 			if (Pivot.IsDirty()) h.Add("pivot",Pivot.ToHashtable());
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("ffc7cece-8a10-4b12-beb0-0ac19299f3c2.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("990feed8-d4bf-4e28-b853-df7ad2e6d7be.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);

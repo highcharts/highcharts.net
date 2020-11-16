@@ -38,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsFunnelDataLabels();
 			Depth = Depth_DefaultValue = 0;
 			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new PlotOptionsFunnelDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EndAngle = EndAngle_DefaultValue = null;
 			Events = Events_DefaultValue = new PlotOptionsFunnelEvents();
@@ -47,6 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new PlotOptionsFunnelLabel();
 			Linecap = Linecap_DefaultValue = PlotOptionsFunnelLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinSize = MinSize_DefaultValue = "80";
@@ -234,6 +236,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
+		/// </summary>
+		public PlotOptionsFunnelDragDrop DragDrop { get; set; }
+		private PlotOptionsFunnelDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
@@ -294,6 +303,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.
+		/// </summary>
+		public PlotOptionsFunnelLabel Label { get; set; }
+		private PlotOptionsFunnelLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -514,6 +530,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
@@ -523,6 +540,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
@@ -533,7 +551,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NeckWidthNumber != NeckWidthNumber_DefaultValue) h.Add("neckWidth",NeckWidthNumber);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("4b4f4be7-5797-4c12-8175-772963995213.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("ce5b2ead-de67-44a9-87f9-c5d8a79103a0.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);

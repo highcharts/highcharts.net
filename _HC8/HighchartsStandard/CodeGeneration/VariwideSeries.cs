@@ -19,9 +19,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new VariwideSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = VariwideSeriesBoostBlending.Undefined;
+			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = null;
@@ -36,6 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
+			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = VariwideSeriesCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
@@ -43,14 +44,18 @@ namespace Highsoft.Web.Mvc.Charts
 			Data = Data_DefaultValue = new List<VariwideSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new VariwideSeriesDataLabels();
 			DataSorting = DataSorting_DefaultValue = new VariwideSeriesDataSorting();
+			Depth = Depth_DefaultValue = 25;
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new VariwideSeriesDragDrop();
+			EdgeColor = EdgeColor_DefaultValue = "";
+			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new VariwideSeriesEvents();
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = VariwideSeriesFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Grouping = Grouping_DefaultValue = true;
 			GroupPadding = GroupPadding_DefaultValue = null;
+			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Id = Id_DefaultValue = "";
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
@@ -115,17 +120,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -140,6 +138,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public VariwideSeriesBoostBlending BoostBlending { get; set; }
 		private VariwideSeriesBoostBlending BoostBlending_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.
+		/// </summary>
+		public double? BoostThreshold { get; set; }
+		private double? BoostThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -241,6 +246,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// </summary>
+		public bool? Crisp { get; set; }
+		private bool? Crisp_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points(including markers and columns), is that animation is performed onupdates. On the other hand, when the series contains more points thanthe crop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping awayinvisible points is to increase performance on large series.
 		/// </summary>
 		public double? CropThreshold { get; set; }
@@ -290,6 +302,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Depth of the columns in a 3D column chart.
+		/// </summary>
+		public double? Depth { get; set; }
+		private double? Depth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
@@ -301,6 +320,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public VariwideSeriesDragDrop DragDrop { get; set; }
 		private VariwideSeriesDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 3D columns only. The color of the edges. Similar to `borderColor`, except itdefaults to the same color as the column.
+		/// </summary>
+		public string EdgeColor { get; set; }
+		private string EdgeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 3D columns only. The width of the colored edges.
+		/// </summary>
+		public double? EdgeWidth { get; set; }
+		private double? EdgeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -343,6 +376,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? GroupPadding { get; set; }
 		private double? GroupPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The spacing between columns on the Z Axis in a 3D chart.
+		/// </summary>
+		public double? GroupZPadding { get; set; }
+		private double? GroupZPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -486,7 +526,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A pixel value specifying a fixed width for each column or bar. When`null`, the width is calculated from the `pointPadding` and`groupPadding`.
+		/// A pixel value specifying a fixed width for each column or bar point.When `null`, the width is calculated from the `pointPadding` and`groupPadding`. The width effects the dimension that is not based onthe point value. For column series it is the hoizontal length and forbar series it is the vertical length.
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
@@ -663,9 +703,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
+			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -680,6 +720,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
+			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
@@ -687,14 +728,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
+			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
+			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
+			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
+			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
@@ -708,7 +753,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("be01c5ba-5f19-4eaf-8582-883790fb2434.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("fc8eb063-0add-4fb0-890c-e5f7dd15656b.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);

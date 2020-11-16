@@ -32,14 +32,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
 			FooterFormat = FooterFormat_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{point.key}</span><br/>";
+			HeaderFormat = HeaderFormat_DefaultValue = "";
 			HeaderShape = HeaderShape_DefaultValue = TooltipHeaderShape.Callout;
 			HideDelay = HideDelay_DefaultValue = 500;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Outside = Outside_DefaultValue = null;
 			Padding = Padding_DefaultValue = "8";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
+			PointFormat = PointFormat_DefaultValue = "";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -221,7 +221,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The HTML of the point's line in the tooltip. Variables are enclosedby curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form.Furthermore, `point.y` can be extended by the `tooltip.valuePrefix`and `tooltip.valueSuffix` variables. This can also be overridden foreach series, which makes it a good hook for displaying units.In styled mode, the dot is colored by a class name ratherthan the point color.
+		/// The HTML of the point's line in the tooltip. Variables are enclosedby curly brackets. Available variables are `point.x`, `point.y`,`series.name` and `series.color` and other properties on the sameform. Furthermore, `point.y` can be extended by the`tooltip.valuePrefix` and `tooltip.valueSuffix` variables. This canalso be overridden for each series, which makes it a good hook fordisplaying units.In styled mode, the dot is colored by a class name ratherthan the point color.
 		/// </summary>
 		public string PointFormat { get; set; }
 		private string PointFormat_DefaultValue { get; set; }

@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new PlotOptionsItemAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsItemBoostBlending.Undefined;
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			ClassName = ClassName_DefaultValue = "";
@@ -34,7 +33,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Crisp = Crisp_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsItemCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
+			DataSorting = DataSorting_DefaultValue = new PlotOptionsItemDataSorting();
 			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new PlotOptionsItemDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EndAngle = EndAngle_DefaultValue = null;
 			Events = Events_DefaultValue = new PlotOptionsItemEvents();
@@ -45,6 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 			InnerSizeNumber = InnerSizeNumber_DefaultValue = null;
 			ItemPadding = ItemPadding_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new PlotOptionsItemLabel();
 			Layout = Layout_DefaultValue = "vertical";
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsItemMarker();
@@ -86,17 +88,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -198,10 +193,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the series data sorting.
+		/// </summary>
+		public PlotOptionsItemDataSorting DataSorting { get; set; }
+		private PlotOptionsItemDataSorting DataSorting_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
+		/// </summary>
+		public PlotOptionsItemDragDrop DragDrop { get; set; }
+		private PlotOptionsItemDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -272,6 +281,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.
+		/// </summary>
+		public PlotOptionsItemLabel Label { get; set; }
+		private PlotOptionsItemLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -431,7 +447,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -446,7 +461,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
@@ -457,6 +474,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (InnerSizeNumber != InnerSizeNumber_DefaultValue) h.Add("innerSize",InnerSizeNumber);
 			if (ItemPadding != ItemPadding_DefaultValue) h.Add("itemPadding",ItemPadding);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Layout != Layout_DefaultValue) h.Add("layout",Layout);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
@@ -464,7 +482,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinSizeNumber != MinSizeNumber_DefaultValue) h.Add("minSize",MinSizeNumber);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("e9389a2a-ca95-4dfe-92d1-85b949deb8f7.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("1a46bcc8-709a-4771-9074-ea7cd220bbe3.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Rows != Rows_DefaultValue) h.Add("rows",Rows);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

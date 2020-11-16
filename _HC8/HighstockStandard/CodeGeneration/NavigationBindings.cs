@@ -158,7 +158,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Displays chart in fullscreen.
+		/// Displays chart in fullscreen.**Note**: Fullscreen is not supported on iPhone due to iOS limitations.
 		/// </summary>
 		public Hashtable FullScreen { get; set; }
 		private Hashtable FullScreen_DefaultValue { get; set; }

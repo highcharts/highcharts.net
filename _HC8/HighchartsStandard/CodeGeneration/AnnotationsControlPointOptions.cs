@@ -16,12 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AnnotationsControlPointOptions()
 		{
-			Height = Height_DefaultValue = 10;
 			Positioner = Positioner_DefaultValue = "";
-			Style = Style_DefaultValue = new Hashtable();
-			Symbol = Symbol_DefaultValue = "circle";
-			Visible = Visible_DefaultValue = false;
-			Width = Width_DefaultValue = 10;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -30,43 +25,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
 		public string Positioner { get; set; }
 		private string Positioner_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Symbol { get; set; }
-		private string Symbol_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -76,12 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("13d85827-e398-481e-abf4-efedd282c810.positioner", Positioner); }  
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("f50ef1d5-5fe6-4d08-9a33-f218a8653dcd.positioner", Positioner); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

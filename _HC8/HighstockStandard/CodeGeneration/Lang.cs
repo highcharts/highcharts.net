@@ -27,6 +27,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
 			ExitFullscreen = ExitFullscreen_DefaultValue = "Exit from full screen";
 			ExportData = ExportData_DefaultValue = new LangExportData();
+			HideData = HideData_DefaultValue = "Hide data table";
 			InvalidDate = InvalidDate_DefaultValue = "";
 			Loading = Loading_DefaultValue = "Loading...";
 			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
@@ -127,6 +128,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public LangExportData ExportData { get; set; }
 		private LangExportData ExportData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The text for the menu item.
+		/// </summary>
+		public string HideData { get; set; }
+		private string HideData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -285,6 +293,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);
 			if (ExitFullscreen != ExitFullscreen_DefaultValue) h.Add("exitFullscreen",ExitFullscreen);
 			if (ExportData.IsDirty()) h.Add("exportData",ExportData.ToHashtable());
+			if (HideData != HideData_DefaultValue) h.Add("hideData",HideData);
 			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);

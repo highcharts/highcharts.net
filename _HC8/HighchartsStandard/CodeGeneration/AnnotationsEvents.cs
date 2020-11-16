@@ -52,9 +52,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Add != Add_DefaultValue) { h.Add("add",Add); Highcharts.AddFunction("7651c639-3c3d-418c-960c-ce3718b34907.add", Add); }  
-			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); Highcharts.AddFunction("70928a0d-0528-47c0-8a64-fc996e557e50.afterUpdate", AfterUpdate); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("a8049746-beb3-46c9-a6d6-c292c5cc6482.remove", Remove); }  
+			if (Add != Add_DefaultValue) { h.Add("add",Add); Highcharts.AddFunction("4b277395-1e46-4409-b45a-f153bd46eba1.add", Add); }  
+			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); Highcharts.AddFunction("652e6f23-0e18-4fe7-96d7-d921c6794139.afterUpdate", AfterUpdate); }  
+			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("f967363d-c469-4fd6-836b-e37c49b260ff.remove", Remove); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

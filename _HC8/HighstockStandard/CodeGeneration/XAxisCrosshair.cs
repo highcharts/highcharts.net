@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#cccccc";
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = XAxisCrosshairDashStyle.Null;
 			Label = Label_DefaultValue = new XAxisCrosshairLabel();
 			Snap = Snap_DefaultValue = true;
 			Width = Width_DefaultValue = 1;
@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The dash style for the crosshair. See[plotOptions.series.dashStyle](#plotOptions.series.dashStyle)for possible values.
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public XAxisCrosshairDashStyle DashStyle { get; set; }
+		private XAxisCrosshairDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -83,7 +83,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Width != Width_DefaultValue) h.Add("width",Width);

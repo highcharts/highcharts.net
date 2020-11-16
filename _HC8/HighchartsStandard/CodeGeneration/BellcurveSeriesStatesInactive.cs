@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public BellcurveSeriesStatesInactive()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Enabled = Enabled_DefaultValue = new Hashtable();
+			Enabled = Enabled_DefaultValue = null;
 			Opacity = Opacity_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The animation for entering the inactive state.
+		/// Animation when not hovering over the marker.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
@@ -34,12 +34,12 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable or disable the inactive state for a series
 		/// </summary>
-		public Hashtable Enabled { get; set; }
-		private Hashtable Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Opacity of series elements (dataLabels, line, area).
+		/// Opacity of inactive markers.
 		/// </summary>
 		public Hashtable Opacity { get; set; }
 		private Hashtable Opacity_DefaultValue { get; set; }

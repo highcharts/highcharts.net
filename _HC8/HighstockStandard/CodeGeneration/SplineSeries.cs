@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Accessibility = Accessibility_DefaultValue = new SplineSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = SplineSeriesBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
@@ -86,6 +85,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			StackNumber = StackNumber_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = SplineSeriesStacking.Null;
 			States = States_DefaultValue = new SplineSeriesStates();
+			Step = Step_DefaultValue = SplineSeriesStep.Null;
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new SplineSeriesTooltip();
@@ -118,17 +118,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -594,6 +587,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to apply steps to the line. Possible values are `left`,`center` and `right`.
+		/// </summary>
+		public SplineSeriesStep Step { get; set; }
+		private SplineSeriesStep Step_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Sticky tracking of mouse events. When true, the `mouseOut` event on aseries isn't triggered until the mouse moves over another series, orout of the plot area. When false, the `mouseOut` event on a series istriggered when the mouse leaves the area around the series' graph ormarkers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltipwill be hidden when moving the mouse between series. Defaults to truefor line and area type series, but to false for columns, pies etc.**Note:** The boost module will force this option because oftechnical limitations.
 		/// </summary>
 		public bool? StickyTracking { get; set; }
@@ -692,7 +692,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highstock.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
@@ -763,6 +762,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (Step != Step_DefaultValue) h.Add("step", Highstock.FirstCharacterToLower(Step.ToString()));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());

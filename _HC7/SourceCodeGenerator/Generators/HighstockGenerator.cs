@@ -245,7 +245,7 @@ public class HighstockGenerator
                 baseClass = baseClassParentChildren.Where(p => p.Title == baseClassTitle).FirstOrDefault();
 
                 if (baseClass == null)
-                    return new List<ApiItem>();
+                    return addedChildren;
             }
 
             if (baseClass.Extends.Any())

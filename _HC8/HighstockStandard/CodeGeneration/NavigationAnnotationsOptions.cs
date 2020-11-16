@@ -16,6 +16,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigationAnnotationsOptions()
 		{
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			ControlPointOptions = ControlPointOptions_DefaultValue = new NavigationAnnotationsOptionsControlPointOptions();
 			Draggable = Draggable_DefaultValue = "xy";
 			Events = Events_DefaultValue = new NavigationAnnotationsOptionsEvents();
@@ -30,6 +32,20 @@ namespace Highsoft.Web.Mvc.Stocks
 			
 		}	
 		
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series isdisplayed for the `annotation`. The animation can also be setas a configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series isdisplayed for the `annotation`. The animation can also be setas a configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Options for annotation's control points. Each control pointinherits options from controlPointOptions object.Options from the controlPointOptions can be overwrittenby options in a specific control point.
@@ -113,6 +129,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (ControlPointOptions.IsDirty()) h.Add("controlPointOptions",ControlPointOptions.ToHashtable());
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());

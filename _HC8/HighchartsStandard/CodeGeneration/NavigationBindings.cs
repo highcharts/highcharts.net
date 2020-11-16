@@ -159,7 +159,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Displays chart in fullscreen.
+		/// Displays chart in fullscreen.**Note**: Fullscreen is not supported on iPhone due to iOS limitations.
 		/// </summary>
 		public Object FullScreen { get; set; }
 		private Object FullScreen_DefaultValue { get; set; }

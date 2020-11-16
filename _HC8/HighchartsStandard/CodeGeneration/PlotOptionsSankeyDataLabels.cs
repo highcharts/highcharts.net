@@ -18,6 +18,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Align = Align_DefaultValue = PlotOptionsSankeyDataLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
+			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "none";
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -71,6 +73,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Enable or disable the initial animation when a series isdisplayed for the `dataLabels`. The animation can also be set asa configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
+		/// </summary>
+		public Animation Animation { get; set; }
+		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the initial animation when a series isdisplayed for the `dataLabels`. The animation can also be set asa configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public string BackgroundColor { get; set; }
@@ -120,7 +136,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to defer displaying the data labels until the initialseries animation has finished.
+		/// Whether to defer displaying the data labels until the initialseries animation has finished. Setting to `false` renders thedata label immediately. If set to `true` inherits the defertime set in [plotOptions.series.animation](#plotOptions.series.animation).
 		/// </summary>
 		public bool? Defer { get; set; }
 		private bool? Defer_DefaultValue { get; set; }
@@ -310,6 +326,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
+			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -322,13 +340,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
 			if (Format.IsDirty()) h.Add("format",Format.ToHashtable());
 			if (FormatString != FormatString_DefaultValue) h.Add("format",FormatString);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("e1320440-a2b3-4e3c-929c-5d80313a05f0.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("a2996614-48aa-4f06-904e-dbd3bc8a83da.formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
-			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); Highcharts.AddFunction("b00c6884-9fbe-4a0d-9ce9-327504e760d2.nodeFormatter", NodeFormatter); }  
+			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); Highcharts.AddFunction("3a2c7100-cc85-48a1-9b0f-37907c398c19.nodeFormatter", NodeFormatter); }  
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("d7396482-6cbe-4555-9a61-68941d0fccca.nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("bc250634-f37c-472e-8223-e2134ab4b5d7.nullFormatter", NullFormatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Position != Position_DefaultValue) h.Add("position",Position);

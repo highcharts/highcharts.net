@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsPitchforkTypeOptionsOuterBackground()
 		{
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = AnnotationsPitchforkTypeOptionsOuterBackgroundDashStyle.Null;
 			Fill = Fill_DefaultValue = "rgba(156, 229, 161, 0.4)";
 			Snap = Snap_DefaultValue = 2;
 			Src = Src_DefaultValue = "";
@@ -29,8 +29,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Name of the dash style to use for the shape's stroke.
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public AnnotationsPitchforkTypeOptionsOuterBackgroundDashStyle DashStyle { get; set; }
+		private AnnotationsPitchforkTypeOptionsOuterBackgroundDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -73,7 +73,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Src != Src_DefaultValue) h.Add("src",Src);

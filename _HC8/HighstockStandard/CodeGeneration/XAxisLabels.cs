@@ -120,14 +120,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The x position offset of the label relative to the tick positionon the axis.
+		/// The x position offset of all labels relative to the tickpositions on the axis.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y position offset of the label relative to the tick positionon the axis. The default makes it adapt to the font size onbottom axis.
+		/// The y position offset of all labels relative to the tickpositions on the axis. The default makes it adapt to the fontsize of the bottom axis.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

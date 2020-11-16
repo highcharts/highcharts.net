@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>8.1.2.3</AssemblyVersion>
-    <FileVersion>8.1.2.3</FileVersion>
+    <AssemblyVersion>8.2.2.1</AssemblyVersion>
+    <FileVersion>8.2.2.1</FileVersion>
     <Company>Highsoft</Company>
     <Product>Highcharts .NET</Product>
-    <Version>8.1.2.3</Version>
+    <Version>8.2.2.1</Version>
     <Authors>Highsoft</Authors>
     <Copyright>Copyright ©  2020</Copyright>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
@@ -18,6 +18,9 @@
     <RootNamespace>Highcharts</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+
+#Version 8.1.2.4
+Fix States objects
 
 #Version 8.0.0.3
 Product key is no required.
@@ -62,7 +65,7 @@ Please note that upgrading the wrapper to version 7.1.1.1 may require some chang
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CodeGeneration\Enums\" />
+    <Folder Include="CodeGeneration\" />
   </ItemGroup>
 
 </Project>

@@ -17,11 +17,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsCandlestickStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			BorderColor = BorderColor_DefaultValue = "";
-			Brightness = Brightness_DefaultValue = new Hashtable();
-			Color = Color_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = new Hashtable();
-			LineWidth = LineWidth_DefaultValue = new Hashtable();
+			Enabled = Enabled_DefaultValue = null;
+			Halo = Halo_DefaultValue = new PlotOptionsCandlestickStatesHoverHalo();
+			LineWidth = LineWidth_DefaultValue = null;
+			LineWidthPlus = LineWidthPlus_DefaultValue = null;
+			Marker = Marker_DefaultValue = new PlotOptionsCandlestickStatesHoverMarker();
 			
 		}	
 		
@@ -34,38 +34,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A specific border color for the hovered point. Defaults toinherit the normal state border color.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// How much to brighten the point on interaction. Requires themain color to be defined in hex or rgb(a) format.In styled mode, the hover brightening is by default replacedwith a fill-opacity set in the `.highcharts-point:hover`rule.
-		/// </summary>
-		public Hashtable Brightness { get; set; }
-		private Hashtable Brightness_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A specific color for the hovered point.
-		/// </summary>
-		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
-		public Hashtable Enabled { get; set; }
-		private Hashtable Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The pixel width of the line/border around the candlestick.
+		/// Options for the halo appearing around the hovered point inline-type series as well as outside the hovered slice in piecharts. By default the halo is filled by the current point orseries color with an opacity of 0.25\. The halo can bedisabled by setting the `halo` option to `null`.In styled mode, the halo is styled with the`.highcharts-halo` class, with colors inherited from`.highcharts-color-{n}`.
 		/// </summary>
-		public Hashtable LineWidth { get; set; }
-		private Hashtable LineWidth_DefaultValue { get; set; }
+		public PlotOptionsCandlestickStatesHoverHalo Halo { get; set; }
+		private PlotOptionsCandlestickStatesHoverHalo Halo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Pixel width of the graph line. By default this property isundefined, and the `lineWidthPlus` property dictates how muchto increase the linewidth from normal state.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The additional line width for the graph of a hovered series.
+		/// </summary>
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In Highcharts 1.0, the appearance of all markers belongingto the hovered series. For settings on the hover state of theindividual point, see[marker.states.hover](#plotOptions.series.marker.states.hover).
+		/// </summary>
+		public PlotOptionsCandlestickStatesHoverMarker Marker { get; set; }
+		private PlotOptionsCandlestickStatesHoverMarker Marker_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -74,11 +74,11 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Halo.IsDirty()) h.Add("halo",Halo.ToHashtable());
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
+			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
 			
 
 			return h;

@@ -18,7 +18,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			AlignTicks = AlignTicks_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			BorderColor = BorderColor_DefaultValue = "#335cad";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -73,17 +72,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
+		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -387,7 +379,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);

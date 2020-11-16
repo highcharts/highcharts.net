@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LangAccessibilityLegend()
 		{
-			LegendItem = LegendItem_DefaultValue = "Toggle visibility of {itemName}";
+			LegendItem = LegendItem_DefaultValue = "Hide {itemName}";
 			LegendLabel = LegendLabel_DefaultValue = "Toggle series visibility";
 			
 		}	

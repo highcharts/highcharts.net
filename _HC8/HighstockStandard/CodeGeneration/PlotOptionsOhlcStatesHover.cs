@@ -20,8 +20,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderColor = BorderColor_DefaultValue = "";
 			Brightness = Brightness_DefaultValue = new Hashtable();
 			Color = Color_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = new Hashtable();
-			LineWidth = LineWidth_DefaultValue = new Hashtable();
+			Enabled = Enabled_DefaultValue = null;
+			LineWidth = LineWidth_DefaultValue = null;
 			
 		}	
 		
@@ -57,15 +57,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
-		public Hashtable Enabled { get; set; }
-		private Hashtable Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel width of the line representing the OHLC point.
 		/// </summary>
-		public Hashtable LineWidth { get; set; }
-		private Hashtable LineWidth_DefaultValue { get; set; }
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

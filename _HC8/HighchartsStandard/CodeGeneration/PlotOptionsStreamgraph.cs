@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new PlotOptionsStreamgraphAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsStreamgraphBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
@@ -45,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsStreamgraphEvents();
 			FillColor = FillColor_DefaultValue = null;
-			FillOpacity = FillOpacity_DefaultValue = 1;
+			FillOpacity = FillOpacity_DefaultValue = null;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsStreamgraphFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
@@ -74,6 +73,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			Stacking = Stacking_DefaultValue = "stream";
 			States = States_DefaultValue = new PlotOptionsStreamgraphStates();
+			Step = Step_DefaultValue = PlotOptionsStreamgraphStep.Null;
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsStreamgraphTooltip();
@@ -102,17 +102,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -151,7 +144,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the `options.colors` array.In styled mode, the color can be defined by the[colorIndex](#plotOptions.series.colorIndex) option. Also, the seriescolor can be set with the `.highcharts-series`,`.highcharts-color-{n}`, `.highcharts-{type}-series` or`.highcharts-series-{n}` class, or individual classes given by the`className` option.
+		/// 
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
@@ -284,7 +277,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
+		/// 
 		/// </summary>
 		public Object FillColor { get; set; }
 		private Object FillColor_DefaultValue { get; set; }
@@ -494,6 +487,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to apply steps to the line. Possible values are `left`,`center` and `right`.
+		/// </summary>
+		public PlotOptionsStreamgraphStep Step { get; set; }
+		private PlotOptionsStreamgraphStep Step_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Sticky tracking of mouse events. When true, the `mouseOut` event on aseries isn't triggered until the mouse moves over another series, orout of the plot area. When false, the `mouseOut` event on a series istriggered when the mouse leaves the area around the series' graph ormarkers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltipwill be hidden when moving the mouse between series. Defaults to truefor line and area type series, but to false for columns, pies etc.**Note:** The boost module will force this option because oftechnical limitations.
 		/// </summary>
 		public bool? StickyTracking { get; set; }
@@ -559,7 +559,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
@@ -600,7 +599,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("0d179dc3-913d-4c16-b395-661c16c1265b.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("5d12ac87-5c05-466c-940d-d83535d7c4a4.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPlacement.IsDirty())
@@ -618,6 +617,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking",Stacking);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());

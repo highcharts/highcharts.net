@@ -18,7 +18,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AlignTicks = AlignTicks_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			BorderColor = BorderColor_DefaultValue = "#335cad";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -82,17 +81,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
+		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- **duration**: The duration of the animation in milliseconds.- **easing**: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -454,7 +446,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -473,7 +464,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MarginLeft != MarginLeft_DefaultValue) h.Add("marginLeft",MarginLeft);
 			if (MarginRight != MarginRight_DefaultValue) h.Add("marginRight",MarginRight);
 			if (MarginTop != MarginTop_DefaultValue) h.Add("marginTop",MarginTop);
-			if (NumberFormatter != NumberFormatter_DefaultValue) { h.Add("numberFormatter",NumberFormatter); Highcharts.AddFunction("e588c5f8-5093-4f30-8a5d-4a4e4cd3cc94.numberFormatter", NumberFormatter); }  
+			if (NumberFormatter != NumberFormatter_DefaultValue) { h.Add("numberFormatter",NumberFormatter); Highcharts.AddFunction("ded97ba3-6e2a-45ae-b0ee-24def2eb2e75.numberFormatter", NumberFormatter); }  
 			if (Options3d.IsDirty()) h.Add("options3d",Options3d.ToHashtable());
 			if (PanKey != PanKey_DefaultValue) h.Add("panKey", Highcharts.FirstCharacterToLower(PanKey.ToString()));
 			if (Panning.IsDirty()) h.Add("panning",Panning.ToHashtable());
@@ -484,7 +475,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
-			if (PlotShadow.IsDirty()) h.Add("plotShadow",PlotShadow.ToHashtable());
+			if (PlotShadow != PlotShadow_DefaultValue) h.Add("plotShadow",PlotShadow);
 			if (Polar != Polar_DefaultValue) h.Add("polar",Polar);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);

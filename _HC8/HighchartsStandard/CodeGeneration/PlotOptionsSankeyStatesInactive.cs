@@ -16,33 +16,17 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsSankeyStatesInactive()
 		{
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			LinkOpacity = LinkOpacity_DefaultValue = new Hashtable();
-			Opacity = Opacity_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Opacity for the links between nodes in the sankey diagram ininactive mode.
 		/// </summary>
 		public Hashtable LinkOpacity { get; set; }
 		private Hashtable LinkOpacity_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public Hashtable Opacity { get; set; }
-		private Hashtable Opacity_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -52,9 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

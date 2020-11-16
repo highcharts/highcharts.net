@@ -177,14 +177,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The x position offset of the label relative to the tick positionon the axis. Defaults to -15 for left axis, 15 for right axis.
+		/// The x position offset of all labels relative to the tickpositions on the axis. Defaults to -15 for left axis, 15 forright axis.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y position offset of the label relative to the tick positionon the axis.
+		/// The y position offset of all labels relative to the tickpositions on the axis. For polar and radial axis consider the useof the [distance](#yAxis.labels.distance) option.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -211,7 +211,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DistanceNumber != DistanceNumber_DefaultValue) h.Add("distance",DistanceNumber);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("9c23dbdc-0558-4973-9ebb-faffb41388d8.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("749428f0-22eb-42b8-a864-4e74f8c63ab7.formatter", Formatter); }  
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);

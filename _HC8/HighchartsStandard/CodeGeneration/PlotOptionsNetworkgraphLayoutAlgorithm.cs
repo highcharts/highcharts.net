@@ -141,7 +141,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Approximation != Approximation_DefaultValue) h.Add("approximation", Highcharts.FirstCharacterToLower(Approximation.ToString()));
-			if (AttractiveForce != AttractiveForce_DefaultValue) { h.Add("attractiveForce",AttractiveForce); Highcharts.AddFunction("4e133a03-5526-4b84-8571-d12ec48af344.attractiveForce", AttractiveForce); }  
+			if (AttractiveForce != AttractiveForce_DefaultValue) { h.Add("attractiveForce",AttractiveForce); Highcharts.AddFunction("97bdc6c6-6b38-401f-82f7-8c1cd55767e9.attractiveForce", AttractiveForce); }  
 			if (EnableSimulation != EnableSimulation_DefaultValue) h.Add("enableSimulation",EnableSimulation);
 			if (Friction != Friction_DefaultValue) h.Add("friction",Friction);
 			if (GravitationalConstant != GravitationalConstant_DefaultValue) h.Add("gravitationalConstant",GravitationalConstant);
@@ -151,7 +151,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkLength != LinkLength_DefaultValue) h.Add("linkLength",LinkLength);
 			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
-			if (RepulsiveForce != RepulsiveForce_DefaultValue) { h.Add("repulsiveForce",RepulsiveForce); Highcharts.AddFunction("0241f58a-41e1-4387-b1e7-c411dd4859b7.repulsiveForce", RepulsiveForce); }  
+			if (RepulsiveForce != RepulsiveForce_DefaultValue) { h.Add("repulsiveForce",RepulsiveForce); Highcharts.AddFunction("6dfc7b18-e9d2-4d70-931a-42108bd6ceeb.repulsiveForce", RepulsiveForce); }  
 			if (Theta != Theta_DefaultValue) h.Add("theta",Theta);
 			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)

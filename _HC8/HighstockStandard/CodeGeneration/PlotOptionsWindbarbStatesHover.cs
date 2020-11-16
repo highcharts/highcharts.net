@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsWindbarbStatesHover()
 		{
-			LineWidthPlus = LineWidthPlus_DefaultValue = new Hashtable();
+			LineWidthPlus = LineWidthPlus_DefaultValue = null;
 			
 		}	
 		
@@ -24,8 +24,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable LineWidthPlus { get; set; }
-		private Hashtable LineWidthPlus_DefaultValue { get; set; }
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

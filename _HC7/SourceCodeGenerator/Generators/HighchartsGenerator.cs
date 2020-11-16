@@ -227,7 +227,11 @@ public class HighchartsGenerator
     private List<ApiItem> GetChildrenFromBaseClasses(ApiItem item)
     {
         var addedChildren = new List<ApiItem>();
-        foreach (var baseClassFullName in item.Extends)
+
+        if (item == null)
+            return addedChildren;
+
+        foreach (var baseClassFullName in item?.Extends)
         {
             var baseClass = FindApiItem(baseClassFullName, item);
 
@@ -244,7 +248,7 @@ public class HighchartsGenerator
                 baseClass = baseClassParentChildren.Where(p => p.Title == baseClassTitle).FirstOrDefault();
 
                 if (baseClass == null)
-                    return new List<ApiItem>();
+                    return addedChildren;
             }
 
             if (baseClass.Extends.Any())

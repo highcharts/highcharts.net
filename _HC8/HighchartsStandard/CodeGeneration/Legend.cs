@@ -330,14 +330,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width from legends below or above thechart, half the chart width for legends to the left and right.
+		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width for legends below or above thechart, half the chart width for legends to the left and right.
 		/// </summary>
 		public string Width { get; set; }
 		private string Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width from legends below or above thechart, half the chart width for legends to the left and right.
+		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width for legends below or above thechart, half the chart width for legends to the left and right.
 		/// </summary>
 		public double? WidthNumber { get; set; }
 		private double? WidthNumber_DefaultValue { get; set; }

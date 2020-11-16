@@ -38,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = PlotOptionsFunnel3dDashStyle.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsFunnel3dDataLabels();
+			DataSorting = DataSorting_DefaultValue = new PlotOptionsFunnel3dDataSorting();
 			Depth = Depth_DefaultValue = 25;
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new PlotOptionsFunnel3dDragDrop();
@@ -250,6 +251,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsFunnel3dDataLabels DataLabels { get; set; }
 		private PlotOptionsFunnel3dDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data sorting.
+		/// </summary>
+		public PlotOptionsFunnel3dDataSorting DataSorting { get; set; }
+		private PlotOptionsFunnel3dDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -498,7 +506,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A pixel value specifying a fixed width for each column or bar. When`null`, the width is calculated from the `pointPadding` and`groupPadding`.
+		/// A pixel value specifying a fixed width for each column or bar point.When `null`, the width is calculated from the `pointPadding` and`groupPadding`. The width effects the dimension that is not based onthe point value. For column series it is the hoizontal length and forbar series it is the vertical length.
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
@@ -666,6 +674,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
@@ -694,7 +703,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("71097f65-bc2e-4db4-9c3b-09ceea9dc45f.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("36799734-781b-4e5b-8930-b2172799c5c5.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);

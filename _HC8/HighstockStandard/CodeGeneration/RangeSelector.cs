@@ -135,7 +135,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A custom callback function to parse values entered in the input boxesand return a valid JavaScript time as milliseconds since 1970.
+		/// A custom callback function to parse values entered in the input boxesand return a valid JavaScript time as milliseconds since 1970.The first argument passed is a value to parse,second is a boolean indicating use of the UTC time.
 		/// </summary>
 		public string InputDateParser { get; set; }
 		private string InputDateParser_DefaultValue { get; set; }

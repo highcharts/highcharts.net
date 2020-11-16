@@ -22,7 +22,11 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
+			ColorAxis = ColorAxis_DefaultValue = "0";
+			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
+			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
+			ColorKey = ColorKey_DefaultValue = "y";
 			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = NetworkgraphSeriesCursor.Null;
@@ -30,6 +34,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DashStyle = DashStyle_DefaultValue = NetworkgraphSeriesDashStyle.Null;
 			Data = Data_DefaultValue = new List<NetworkgraphSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new NetworkgraphSeriesDataLabels();
+			DataSorting = DataSorting_DefaultValue = new NetworkgraphSeriesDataSorting();
 			Description = Description_DefaultValue = "";
 			Draggable = Draggable_DefaultValue = true;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -112,10 +117,38 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public string ColorAxis { get; set; }
+		private string ColorAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public double? ColorAxisNumber { get; set; }
+		private double? ColorAxisNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
+		/// </summary>
+		public bool? ColorAxisBool { get; set; }
+		private bool? ColorAxisBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Styled mode only. A specific color index to use for the series, soits graphic representations are given the class name`highcharts-color-{n}`.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines what data value should be used to calculate point colorif `colorAxis` is used. Requires to set `min` and `max` if somecustom point property is used or if approximation for data groupingis set to `'sum'`.
+		/// </summary>
+		public string ColorKey { get; set; }
+		private string ColorKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -165,6 +198,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public NetworkgraphSeriesDataLabels DataLabels { get; set; }
 		private NetworkgraphSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data sorting.
+		/// </summary>
+		public NetworkgraphSeriesDataSorting DataSorting { get; set; }
+		private NetworkgraphSeriesDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -418,7 +458,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
+			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
+			if (ColorAxisBool != ColorAxisBool_DefaultValue) h.Add("colorAxis",ColorAxisBool);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
@@ -426,6 +470,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
@@ -445,7 +490,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Nodes.IsDirty()) h.Add("nodes",Nodes.ToHashtable());
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("24622e2b-18af-42d6-86ae-11a06c9c5f31.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("2a3f9ff7-c882-422a-8402-2c837d410574.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);

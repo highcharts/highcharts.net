@@ -17,10 +17,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsLinearregressionangleStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Enabled = Enabled_DefaultValue = new Hashtable();
+			Enabled = Enabled_DefaultValue = null;
 			Halo = Halo_DefaultValue = new PlotOptionsLinearregressionangleStatesHoverHalo();
-			LineWidth = LineWidth_DefaultValue = new Hashtable();
-			LineWidthPlus = LineWidthPlus_DefaultValue = new Hashtable();
+			LineWidth = LineWidth_DefaultValue = null;
+			LineWidthPlus = LineWidthPlus_DefaultValue = null;
 			Marker = Marker_DefaultValue = new PlotOptionsLinearregressionangleStatesHoverMarker();
 			
 		}	
@@ -36,8 +36,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
-		public Hashtable Enabled { get; set; }
-		private Hashtable Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -50,15 +50,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Pixel width of the graph line. By default this property isundefined, and the `lineWidthPlus` property dictates how muchto increase the linewidth from normal state.
 		/// </summary>
-		public Hashtable LineWidth { get; set; }
-		private Hashtable LineWidth_DefaultValue { get; set; }
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The additional line width for the graph of a hovered series.
 		/// </summary>
-		public Hashtable LineWidthPlus { get; set; }
-		private Hashtable LineWidthPlus_DefaultValue { get; set; }
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>

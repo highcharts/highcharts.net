@@ -17,12 +17,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsWindbarbDataGrouping()
 		{
 			Approximation = Approximation_DefaultValue = "windbarb";
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
-			Forced = Forced_DefaultValue = false;
-			GroupAll = GroupAll_DefaultValue = false;
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 30;
-			Smoothed = Smoothed_DefaultValue = false;
 			
 		}	
 		
@@ -35,13 +31,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Datetime formats for the header of the tooltip in a stock chart.The format can vary within a chart depending on the currently selectedtime range and the current data grouping.The default formats are:```js{    millisecond: [        '%A, %b %e, %H:%M:%S.%L', '%A, %b %e, %H:%M:%S.%L', '-%H:%M:%S.%L'    ],    second: ['%A, %b %e, %H:%M:%S', '%A, %b %e, %H:%M:%S', '-%H:%M:%S'],    minute: ['%A, %b %e, %H:%M', '%A, %b %e, %H:%M', '-%H:%M'],    hour: ['%A, %b %e, %H:%M', '%A, %b %e, %H:%M', '-%H:%M'],    day: ['%A, %b %e, %Y', '%A, %b %e', '-%A, %b %e, %Y'],    week: ['Week from %A, %b %e, %Y', '%A, %b %e', '-%A, %b %e, %Y'],    month: ['%B %Y', '%B', '-%B %Y'],    year: ['%Y', '%Y', '-%Y']}```For each of these array definitions, the first item is the formatused when the active time span is one unit. For instance, if thecurrent data applies to one week, the first item of the week arrayis used. The second and third items are used when the active timespan is more than two units. For instance, if the current data appliesto two weeks, the second and third item of the week array are used, and applied to the start and end date of the time span.
-		/// </summary>
-		public Hashtable DateTimeLabelFormats { get; set; }
-		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to enable data grouping.
 		/// </summary>
 		public bool? Enabled { get; set; }
@@ -49,31 +38,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// When data grouping is forced, it runs no matter how small the intervalsare. This can be handy for example when the sum should be calculatedfor values appearing at random times within each hour.
-		/// </summary>
-		public bool? Forced { get; set; }
-		private bool? Forced_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// By default only points within the visible range are grouped. Enabling thisoption will force data grouping to calculate all grouped points for a givendataset. That option prevents for example a column series from calculatinga grouped point partially. The effect is similar to[Series.getExtremesFromAll](#plotOptions.series.getExtremesFromAll) but doesnot affect yAxis extremes.
-		/// </summary>
-		public bool? GroupAll { get; set; }
-		private bool? GroupAll_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The approximate data group width.
 		/// </summary>
 		public double? GroupPixelWidth { get; set; }
 		private double? GroupPixelWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Normally, a group is indexed by the start of that group, so for examplewhen 30 daily values are grouped into one month, that month's x valuewill be the 1st of the month. This apparently shifts the data tothe left. When the smoothed option is true, this is compensated for.The data is shifted to the middle of the group, and min and maxvalues are preserved. Internally, this is used in the Navigator series.
-		/// </summary>
-		public bool? Smoothed { get; set; }
-		private bool? Smoothed_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -82,12 +50,8 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Approximation != Approximation_DefaultValue) h.Add("approximation",Approximation);
-			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Forced != Forced_DefaultValue) h.Add("forced",Forced);
-			if (GroupAll != GroupAll_DefaultValue) h.Add("groupAll",GroupAll);
 			if (GroupPixelWidth != GroupPixelWidth_DefaultValue) h.Add("groupPixelWidth",GroupPixelWidth);
-			if (Smoothed != Smoothed_DefaultValue) h.Add("smoothed",Smoothed);
 			
 
 			return h;

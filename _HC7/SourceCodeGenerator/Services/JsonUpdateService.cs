@@ -318,6 +318,16 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.packedbubble.layoutAlgorithm.initialPositionRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("clusterFormat", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("stockTools.gui.iconsURL", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+
+            ItemsToUpdate.Add("enabled", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
+            ItemsToUpdate.Add("lineWidth", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            ItemsToUpdate.Add("lineWidthPlus", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+
+            ItemsToUpdate.Add("series.funnel3d", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "series" } });
+            ItemsToUpdate.Add("series.pyramid3d", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "series" } });
+
+            ItemsToUpdate.Add("fillOpacity", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            
         }
 
         public void Delete(ApiItem item)

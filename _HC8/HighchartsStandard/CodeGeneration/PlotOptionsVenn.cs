@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new PlotOptionsVennAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsVennBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
@@ -42,16 +41,21 @@ namespace Highsoft.Web.Mvc.Charts
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = PlotOptionsVennDashStyle.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsVennDataLabels();
+			DataSorting = DataSorting_DefaultValue = new PlotOptionsVennDataSorting();
 			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new PlotOptionsVennDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsVennEvents();
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
+			Jitter = Jitter_DefaultValue = new PlotOptionsVennJitter();
 			Keys = Keys_DefaultValue = new List<string>();
 			Marker = Marker_DefaultValue = false;
 			Opacity = Opacity_DefaultValue = null;
 			Point = Point_DefaultValue = new PlotOptionsVennPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
+			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = false;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
@@ -60,6 +64,7 @@ namespace Highsoft.Web.Mvc.Charts
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsVennTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
+			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
@@ -81,17 +86,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -249,10 +247,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the series data sorting.
+		/// </summary>
+		public PlotOptionsVennDataSorting DataSorting { get; set; }
+		private PlotOptionsVennDataSorting DataSorting_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
+		/// </summary>
+		public PlotOptionsVennDragDrop DragDrop { get; set; }
+		private PlotOptionsVennDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -274,6 +286,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
 		private bool? IncludeInDataExport_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Apply a jitter effect for the rendered markers. When plottingdiscrete values, a little random noise may help telling the pointsapart. The jitter setting applies a random displacement of up to `n`axis units in either direction. So for example on a horizontal Xaxis, setting the `jitter.x` to 0.24 will render the point in arandom position between 0.24 units to the left and 0.24 units to theright of the true axis position. On a category axis, setting it to0.5 will fill up the bin and make the data appear continuous.When rendered on top of a box plot or a column series, a jitter valueof 0.24 will correspond to the underlying series' default[groupPadding](https://api.highcharts.com/highcharts/plotOptions.column.groupPadding)and [pointPadding](https://api.highcharts.com/highcharts/plotOptions.column.pointPadding)settings.
+		/// </summary>
+		public PlotOptionsVennJitter Jitter { get; set; }
+		private PlotOptionsVennJitter Jitter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -316,6 +335,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -375,6 +408,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The parameter allows setting line series type and use OHLC indicators. Datain OHLC format is required.
+		/// </summary>
+		public bool? UseOhlcData { get; set; }
+		private bool? UseOhlcData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -391,7 +431,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
@@ -414,16 +453,21 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
+			if (Jitter.IsDirty()) h.Add("jitter",Jitter.ToHashtable());
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Marker != Marker_DefaultValue) h.Add("marker",Marker);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("097d13f3-0d51-4f2c-9872-ae2d28cb9ba5.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("f8d0d143-573b-441c-87e0-287bf3f307aa.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
@@ -432,6 +476,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
+			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

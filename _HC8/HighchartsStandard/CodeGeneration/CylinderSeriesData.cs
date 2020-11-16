@@ -154,7 +154,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A pixel value specifying a fixed width for the column or bar. OverridespointWidth on the series.
+		/// A pixel value specifying a fixed width for the column or bar. OverridespointWidth on the series. The width effects the dimension that is not basedon the point value.
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }

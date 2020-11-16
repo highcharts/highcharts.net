@@ -109,7 +109,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("80ec6ab3-8a24-4870-b5b4-5f639d307e69.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("b6fe8957-c01a-4c2a-9718-0b07b604c0a8.formatter", Formatter); }  
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);

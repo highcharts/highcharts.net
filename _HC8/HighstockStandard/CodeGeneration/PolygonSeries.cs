@@ -19,12 +19,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			Accessibility = Accessibility_DefaultValue = new PolygonSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PolygonSeriesBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
+			Cluster = Cluster_DefaultValue = new PolygonSeriesCluster();
 			Color = Color_DefaultValue = "";
 			ColorAxis = ColorAxis_DefaultValue = "0";
 			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
@@ -55,6 +55,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Id = Id_DefaultValue = "";
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
+			Jitter = Jitter_DefaultValue = new PolygonSeriesJitter();
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PolygonSeriesLabel();
 			LastPrice = LastPrice_DefaultValue = new PolygonSeriesLastPrice();
@@ -71,13 +72,18 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PolygonSeriesPointIntervalUnit.Null;
+			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointRange = PointRange_DefaultValue = 0;
 			PointStart = PointStart_DefaultValue = 0;
 			Selected = Selected_DefaultValue = false;
+			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			ShadowBool = ShadowBool_DefaultValue = null;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			Stack = Stack_DefaultValue = "";
+			StackNumber = StackNumber_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = PolygonSeriesStacking.Null;
 			States = States_DefaultValue = new PolygonSeriesStates();
 			Step = Step_DefaultValue = PolygonSeriesStep.Null;
@@ -86,6 +92,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			TrackByArea = TrackByArea_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Type = Type_DefaultValue = PolygonSeriesType.Null;
+			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
 			XAxisNumber = XAxisNumber_DefaultValue = null;
@@ -113,17 +120,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -159,6 +159,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Clip { get; set; }
 		private bool? Clip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for marker clusters, the concept of sampling the datavalues into larger blocks in order to ease readability andincrease performance of the JavaScript charts.Note: marker clusters module is not working with `boost`and `draggable-points` modules.The marker clusters feature requires the marker-clusters.jsfile to be loaded, found in the modules directory of the downloadpackage, or online at [code.highcharts.com/modules/marker-clusters.js](code.highcharts.com/modules/marker-clusters.js).
+		/// </summary>
+		public PolygonSeriesCluster Cluster { get; set; }
+		private PolygonSeriesCluster Cluster_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -372,6 +379,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Apply a jitter effect for the rendered markers. When plottingdiscrete values, a little random noise may help telling the pointsapart. The jitter setting applies a random displacement of up to `n`axis units in either direction. So for example on a horizontal Xaxis, setting the `jitter.x` to 0.24 will render the point in arandom position between 0.24 units to the left and 0.24 units to theright of the true axis position. On a category axis, setting it to0.5 will fill up the bin and make the data appear continuous.When rendered on top of a box plot or a column series, a jitter valueof 0.24 will correspond to the underlying series' default[groupPadding](https://api.highcharts.com/highcharts/plotOptions.column.groupPadding)and [pointPadding](https://api.highcharts.com/highcharts/plotOptions.column.pointPadding)settings.
+		/// </summary>
+		public PolygonSeriesJitter Jitter { get; set; }
+		private PolygonSeriesJitter Jitter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
@@ -484,6 +498,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Possible values: `"on"`, `"between"`, `number`.In a column chart, when pointPlacement is `"on"`, the point will notcreate any padding of the X axis. In a polar column chart this meansthat the first column points directly north. If the pointPlacement is`"between"`, the columns will be laid out between ticks. This isuseful for example for visualising an amount between two points intime or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this iscomputed, but for line-type series it needs to be set.For the `xrange` series type and gantt charts, if the Y axis is acategory axis, the `pointPlacement` applies to the Y axis rather thanthe (typically datetime) X axis.Defaults to `undefined` in cartesian charts, `"between"` in polarcharts.
+		/// </summary>
+		public PointPlacement PointPlacement { get; set; }
+		private PointPlacement PointPlacement_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The width of each point on the x axis. For example in a column chartwith one value each day, the pointRange would be 1 day (= 24 * 3600* 1000 milliseconds). This is normally computed automatically, butthis option can be used to override the automatic value.
 		/// </summary>
 		public double? PointRange { get; set; }
@@ -502,6 +523,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public Shadow Shadow { get; set; }
+		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -530,6 +565,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
+		/// </summary>
+		public string Stack { get; set; }
+		private string Stack_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
+		/// </summary>
+		public double? StackNumber { get; set; }
+		private double? StackNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -586,6 +635,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PolygonSeriesType Type { get; set; }
 		private PolygonSeriesType Type_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The parameter allows setting line series type and use OHLC indicators. Datain OHLC format is required.
+		/// </summary>
+		public bool? UseOhlcData { get; set; }
+		private bool? UseOhlcData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -652,12 +708,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highstock.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
+			if (Cluster.IsDirty()) h.Add("cluster",Cluster.ToHashtable());
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
 			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
@@ -688,6 +744,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (Jitter.IsDirty()) h.Add("jitter",Jitter.ToHashtable());
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
@@ -704,13 +761,22 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("PolygonSeriesPointDescriptionFormatter.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointPlacement.IsDirty())
+				if (PointPlacement.Value.HasValue)
+					h.Add("pointPlacement", PointPlacement.Value);
+				else
+					h.Add("pointPlacement", PointPlacement.ToJSON());
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
+			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Step != Step_DefaultValue) h.Add("step", Highstock.FirstCharacterToLower(Step.ToString()));
@@ -719,6 +785,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);

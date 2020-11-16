@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderColor = BorderColor_DefaultValue = "#999999";
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 15;
-			LineWidth = LineWidth_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = null;
 			Symbols = Symbols_DefaultValue = new List<string>();
 			Width = Width_DefaultValue = 7;
 			

@@ -19,10 +19,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new ErrorbarSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = ErrorbarSeriesBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
+			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderRadius = BorderRadius_DefaultValue = 0;
+			BorderWidth = BorderWidth_DefaultValue = null;
 			BoxDashStyle = BoxDashStyle_DefaultValue = new Hashtable();
 			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
@@ -55,6 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Grouping = Grouping_DefaultValue = true;
 			GroupPadding = GroupPadding_DefaultValue = null;
+			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Id = Id_DefaultValue = "";
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
@@ -87,6 +90,10 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
+			Stack = Stack_DefaultValue = "";
+			StackNumber = StackNumber_DefaultValue = null;
+			Stacking = Stacking_DefaultValue = ErrorbarSeriesStacking.Null;
+			States = States_DefaultValue = new ErrorbarSeriesStates();
 			StemDashStyle = StemDashStyle_DefaultValue = new Hashtable();
 			StemWidth = StemWidth_DefaultValue = null;
 			StickyTracking = StickyTracking_DefaultValue = true;
@@ -126,17 +133,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -158,6 +158,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? BoostThreshold { get; set; }
 		private double? BoostThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the`.highcharts-point` rule.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each column or bar.
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the border surrounding each column or bar. Defaults to`1` when there is room for a border, but to `0` when the columns areso dense that a border would cover the next column.In styled mode, the stroke width can be set with the`.highcharts-point` rule.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -385,6 +406,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The spacing between columns on the Z Axis in a 3D chart.
+		/// </summary>
+		public double? GroupZPadding { get; set; }
+		private double? GroupZPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the series. This can be used after render time to get a pointerto the series object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -448,7 +476,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The color of the median line. If `undefined`, the general series colorapplies.In styled mode, the median stroke width can be set with the`.highcharts-boxplot-median` class.
+		/// The color of the median line. If `undefined`, the general seriescolor applies.In styled mode, the median stroke width can be set with the`.highcharts-boxplot-median` class.
 		/// </summary>
 		public string MedianColor { get; set; }
 		private string MedianColor_DefaultValue { get; set; }
@@ -553,7 +581,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A pixel value specifying a fixed width for each column or bar. When`null`, the width is calculated from the `pointPadding` and`groupPadding`.
+		/// A pixel value specifying a fixed width for each column or bar point.When `null`, the width is calculated from the `pointPadding` and`groupPadding`. The width effects the dimension that is not based onthe point value. For column series it is the hoizontal length and forbar series it is the vertical length.
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
@@ -606,6 +634,34 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
+		/// </summary>
+		public string Stack { get; set; }
+		private string Stack_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
+		/// </summary>
+		public double? StackNumber { get; set; }
+		private double? StackNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`.When stacking is enabled, data must be sortedin ascending X order.Some stacking options are related to specific series types. In thestreamgraph series type, the stacking option is set to `"stream"`.The second one is `"overlap"`, which only applies to waterfallseries.
+		/// </summary>
+		public ErrorbarSeriesStacking Stacking { get; set; }
+		private ErrorbarSeriesStacking Stacking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ErrorbarSeriesStates States { get; set; }
+		private ErrorbarSeriesStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -751,10 +807,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BoxDashStyle != BoxDashStyle_DefaultValue) h.Add("boxDashStyle",BoxDashStyle);
 			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -787,6 +845,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
+			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
@@ -804,7 +863,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("9e34d18a-69c3-4fd2-b777-1a65da4de204.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("c6a55779-dc60-4c99-8a6a-5bb531421286.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
@@ -823,6 +882,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
+			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
+			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
+			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StemDashStyle != StemDashStyle_DefaultValue) h.Add("stemDashStyle",StemDashStyle);
 			if (StemWidth != StemWidth_DefaultValue) h.Add("stemWidth",StemWidth);
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);

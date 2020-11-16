@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Brightness = Brightness_DefaultValue = new Hashtable();
-			Enabled = Enabled_DefaultValue = new Hashtable();
+			Enabled = Enabled_DefaultValue = null;
 			Halo = Halo_DefaultValue = new PlotOptionsPieStatesHoverHalo();
 			
 			CustomFields = new Hashtable();
@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable separate styles for the hovered series to visualizethat the user hovers either the series itself or the legend.
 		/// </summary>
-		public Hashtable Enabled { get; set; }
-		private Hashtable Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>

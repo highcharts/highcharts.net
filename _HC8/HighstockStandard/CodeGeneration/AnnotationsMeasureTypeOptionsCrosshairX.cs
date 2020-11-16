@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsMeasureTypeOptionsCrosshairX()
 		{
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = AnnotationsMeasureTypeOptionsCrosshairXDashStyle.Null;
 			Enabled = Enabled_DefaultValue = true;
 			MarkerEnd = MarkerEnd_DefaultValue = "arrow";
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -27,8 +27,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The dash or dot style of the crosshair's line. For possiblevalues, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public AnnotationsMeasureTypeOptionsCrosshairXDashStyle DashStyle { get; set; }
+		private AnnotationsMeasureTypeOptionsCrosshairXDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

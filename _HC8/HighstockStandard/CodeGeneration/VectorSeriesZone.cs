@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = VectorSeriesZonesDashStyle.Null;
 			FillColor = FillColor_DefaultValue = "";
 			Value = Value_DefaultValue = null;
 			
@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A name for the dash style to use for the graph.
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public VectorSeriesZonesDashStyle DashStyle { get; set; }
+		private VectorSeriesZonesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -67,7 +67,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			

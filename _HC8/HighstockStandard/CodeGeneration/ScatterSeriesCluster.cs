@@ -18,7 +18,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			AllowOverlap = AllowOverlap_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			DataLabels = DataLabels_DefaultValue = new ScatterSeriesClusterDataLabels();
 			DrillToCluster = DrillToCluster_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
@@ -44,13 +43,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the cluster marker animation.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -123,7 +115,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (DrillToCluster != DrillToCluster_DefaultValue) h.Add("drillToCluster",DrillToCluster);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);

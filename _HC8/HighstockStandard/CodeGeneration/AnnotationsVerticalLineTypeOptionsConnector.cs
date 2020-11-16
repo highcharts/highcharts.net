@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsVerticalLineTypeOptionsConnector()
 		{
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = AnnotationsVerticalLineTypeOptionsConnectorDashStyle.Null;
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			MarkerEnd = MarkerEnd_DefaultValue = "arrow";
 			Snap = Snap_DefaultValue = 2;
@@ -30,8 +30,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Name of the dash style to use for the shape's stroke.
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public AnnotationsVerticalLineTypeOptionsConnectorDashStyle DashStyle { get; set; }
+		private AnnotationsVerticalLineTypeOptionsConnectorDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -81,7 +81,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);

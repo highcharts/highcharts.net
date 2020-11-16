@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new PlotOptionsPyramidAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsPyramidBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -39,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new Hashtable();
 			Depth = Depth_DefaultValue = 0;
 			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new PlotOptionsPyramidDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EndAngle = EndAngle_DefaultValue = null;
 			Events = Events_DefaultValue = new PlotOptionsPyramidEvents();
@@ -48,6 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
+			Label = Label_DefaultValue = new PlotOptionsPyramidLabel();
 			Linecap = Linecap_DefaultValue = PlotOptionsPyramidLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MinSize = MinSize_DefaultValue = "80";
@@ -93,17 +94,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -240,6 +234,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
+		/// </summary>
+		public PlotOptionsPyramidDragDrop DragDrop { get; set; }
+		private PlotOptionsPyramidDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
@@ -300,6 +301,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<string> Keys { get; set; }
 		private List<string> Keys_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.
+		/// </summary>
+		public PlotOptionsPyramidLabel Label { get; set; }
+		private PlotOptionsPyramidLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -487,7 +495,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -507,6 +514,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
@@ -516,6 +524,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
@@ -524,7 +533,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("cf20b34c-64e6-4b84-b828-d3bd0501a569.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("3ef627d8-a971-4d37-bb5f-c0aafea3d1f0.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);

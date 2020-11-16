@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPolygonMarkerStatesHover()
 		{
-			Enabled = Enabled_DefaultValue = new Hashtable();
+			Enabled = Enabled_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Enabled { get; set; }
-		private Hashtable Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

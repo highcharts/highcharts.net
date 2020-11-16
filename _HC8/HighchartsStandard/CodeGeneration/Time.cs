@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Date = Date_DefaultValue = new DateTime();
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
+			Moment = Moment_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "undefined";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
 			UseUTC = UseUTC_DefaultValue = true;
@@ -38,6 +39,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string GetTimezoneOffset { get; set; }
 		private string GetTimezoneOffset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Allows to manually load the `moment.js` library from Highcharts optionsinstead of the `window`.In case of loading the library from a `script` tag,this option is not needed, it will be loaded from there by default.
+		/// </summary>
+		public string Moment { get; set; }
+		private string Moment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -69,7 +77,8 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Date != Date_DefaultValue) h.Add("date",Date);
-			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highcharts.AddFunction("ba988158-6e10-47b5-b79f-752590ee8a33.getTimezoneOffset", GetTimezoneOffset); }  
+			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highcharts.AddFunction("4c98054b-48fa-40aa-b399-d28e534847ee.getTimezoneOffset", GetTimezoneOffset); }  
+			if (Moment != Moment_DefaultValue) { h.Add("moment",Moment); Highcharts.AddFunction("8bd38bff-d5f7-4136-b518-6fe7d91d8ab3.moment", Moment); }  
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);

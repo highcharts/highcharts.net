@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Date = Date_DefaultValue = null;
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
+			Moment = Moment_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "undefined";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
 			UseUTC = UseUTC_DefaultValue = true;
@@ -37,6 +38,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string GetTimezoneOffset { get; set; }
 		private string GetTimezoneOffset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Allows to manually load the `moment.js` library from Highcharts optionsinstead of the `window`.In case of loading the library from a `script` tag,this option is not needed, it will be loaded from there by default.
+		/// </summary>
+		public string Moment { get; set; }
+		private string Moment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -67,6 +75,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Date != Date_DefaultValue) h.Add("date",Date);
 			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highstock.AddFunction("TimeGetTimezoneOffset.getTimezoneOffset", GetTimezoneOffset); }  
+			if (Moment != Moment_DefaultValue) { h.Add("moment",Moment); Highstock.AddFunction("TimeMoment.moment", Moment); }  
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);

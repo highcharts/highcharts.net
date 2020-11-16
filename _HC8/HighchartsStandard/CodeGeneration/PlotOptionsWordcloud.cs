@@ -37,7 +37,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Cursor = Cursor_DefaultValue = PlotOptionsWordcloudCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = PlotOptionsWordcloudDashStyle.Null;
+			DataSorting = DataSorting_DefaultValue = new PlotOptionsWordcloudDataSorting();
 			Description = Description_DefaultValue = "";
+			DragDrop = DragDrop_DefaultValue = new PlotOptionsWordcloudDragDrop();
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsWordcloudEvents();
@@ -215,10 +217,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the series data sorting.
+		/// </summary>
+		public PlotOptionsWordcloudDataSorting DataSorting { get; set; }
+		private PlotOptionsWordcloudDataSorting DataSorting_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
+		/// </summary>
+		public PlotOptionsWordcloudDragDrop DragDrop { get; set; }
+		private PlotOptionsWordcloudDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -417,7 +433,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
@@ -430,7 +448,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("57903413-5216-4d45-ad66-251314c29e9f.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("9e48f02f-7b1b-4ca0-9f1c-587b0145b959.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Rotation.IsDirty()) h.Add("rotation",Rotation.ToHashtable());
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

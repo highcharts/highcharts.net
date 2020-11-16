@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Options for configuring accessibility for the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and informationon its features, see[Highcharts Accessibility](https://www.highcharts.com/docs/chart-concepts/accessibility).
+		/// Options for configuring accessibility for the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and informationon its features, see[Highcharts Accessibility](https://www.highcharts.com/docs/accessibility/accessibility-module).
 		/// </summary>
 		public Accessibility Accessibility { get; set; }
 		private Accessibility Accessibility_DefaultValue { get; set; }
@@ -115,7 +115,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styled mode only. Configuration object for adding SVG definitions forreusable elements. See [gradients, shadows andpatterns](https://www.highcharts.com/docs/chart-design-and-style/gradients-shadows-and-patterns)for more information and code examples.
+		/// Options for configuring markers for annotations.An example of the arrow marker:<pre>{  arrow: {    id: 'arrow',    tagName: 'marker',    refY: 5,    refX: 5,    markerWidth: 10,    markerHeight: 10,    children: [{      tagName: 'path',      attrs: {        d: 'M 0 0 L 10 5 L 0 10 Z',        strokeWidth: 0      }    }]  }}</pre>
 		/// </summary>
 		public Object Defs { get; set; }
 		private Object Defs_DefaultValue { get; set; }

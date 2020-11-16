@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// 
+		/// Options for the hovered series. These settings override thenormal state options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsCandlestickStatesHover Hover { get; set; }
 		private PlotOptionsCandlestickStatesHover Hover_DefaultValue { get; set; }

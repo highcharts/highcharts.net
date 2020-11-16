@@ -519,7 +519,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// The width of each point on the x axis. For example in a column chartwith one value each day, the pointRange would be 1 day (= 24 * 3600* 1000 milliseconds). This is normally computed automatically, butthis option can be used to override the automatic value.
 		/// </summary>
 		public double? PointRange { get; set; }
 		private double? PointRange_DefaultValue { get; set; }

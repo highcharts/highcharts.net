@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (DrillToCluster != DrillToCluster_DefaultValue) { h.Add("drillToCluster",DrillToCluster); Highcharts.AddFunction("13c37fdc-b338-4791-8bb4-a48fb92b0a64.drillToCluster", DrillToCluster); }  
+			if (DrillToCluster != DrillToCluster_DefaultValue) { h.Add("drillToCluster",DrillToCluster); Highcharts.AddFunction("0886a1d4-415e-4642-970e-f7405961ae3e.drillToCluster", DrillToCluster); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

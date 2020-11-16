@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// A collection of strings pointing to config options for thetoolbar items. Each name refers to unique key from definitionsobject.
+		/// A collection of strings pointing to config options for thetoolbar items. Each name refers to a unique key from thedefinitions object.
 		/// </summary>
 		public List<string> Buttons { get; set; }
 		private List<string> Buttons_DefaultValue { get; set; }

@@ -28,6 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Distance = Distance_DefaultValue = null;
 			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
+			IncludeInDataExport = IncludeInDataExport_DefaultValue = true;
 			Overflow = Overflow_DefaultValue = NavigationAnnotationsOptionsLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
 			Point = Point_DefaultValue = new NavigationAnnotationsOptionsLabelsPoint();
@@ -128,6 +129,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether the annotation is visible in the exported datatable.
+		/// </summary>
+		public bool? IncludeInDataExport { get; set; }
+		private bool? IncludeInDataExport_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -239,7 +247,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("a64f7250-5e2a-4ce8-b729-1ac50e219d64.formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("714ea1f2-cc64-4ae7-bfb3-35d903354b9e.formatter", Formatter); }  
+			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());

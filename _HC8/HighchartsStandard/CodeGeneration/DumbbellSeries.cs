@@ -19,7 +19,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new DumbbellSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = DumbbellSeriesBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
@@ -47,6 +46,8 @@ namespace Highsoft.Web.Mvc.Charts
 			DragDrop = DragDrop_DefaultValue = new DumbbellSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new DumbbellSeriesEvents();
+			FillColor = FillColor_DefaultValue = null;
+			FillOpacity = FillOpacity_DefaultValue = null;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = DumbbellSeriesFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			GroupPadding = GroupPadding_DefaultValue = null;
@@ -58,6 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Linecap = Linecap_DefaultValue = DumbbellSeriesLinecap.Round;
 			LineColor = LineColor_DefaultValue = "";
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			LowColor = LowColor_DefaultValue = "#333333";
 			Marker = Marker_DefaultValue = new DumbbellSeriesMarker();
@@ -84,8 +86,10 @@ namespace Highsoft.Web.Mvc.Charts
 			StackNumber = StackNumber_DefaultValue = null;
 			States = States_DefaultValue = new DumbbellSeriesStates();
 			Step = Step_DefaultValue = DumbbellSeriesStep.Null;
+			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new DumbbellSeriesTooltip();
+			TrackByArea = TrackByArea_DefaultValue = false;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
@@ -115,17 +119,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -318,6 +315,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
+		/// </summary>
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fill opacity for the area. When you set an explicit `fillColor`,the `fillOpacity` is not applied. Instead, you should define theopacity in the `fillColor` with an rgba color definition. The`fillOpacity` setting, also the default setting, overrides the alphacomponent of the `color` setting.In styled mode, the fill opacity can be set with the`.highcharts-area` class name.
+		/// </summary>
+		public double? FillOpacity { get; set; }
+		private double? FillOpacity_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Determines whether the series should look for the nearest pointin both dimensions or just the x-dimension when hovering the series.Defaults to `'xy'` for scatter series and `'x'` for most otherseries. If the data has duplicate x-values, it is recommended toset this to `'xy'` to allow hovering over all points.Applies only to series types using nearest neighbor search (notdirect hover) for tooltip.
 		/// </summary>
 		public DumbbellSeriesFindNearestPointBy FindNearestPointBy { get; set; }
@@ -392,6 +403,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Pixel width of the graph line.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -577,6 +595,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Sticky tracking of mouse events. When true, the `mouseOut` event on aseries isn't triggered until the mouse moves over another series, orout of the plot area. When false, the `mouseOut` event on a series istriggered when the mouse leaves the area around the series' graph ormarkers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltipwill be hidden when moving the mouse between series. Defaults to truefor line and area type series, but to false for columns, pies etc.**Note:** The boost module will force this option because oftechnical limitations.
+		/// </summary>
+		public bool? StickyTracking { get; set; }
+		private bool? StickyTracking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
 		/// </summary>
 		public double? Threshold { get; set; }
@@ -588,6 +613,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public DumbbellSeriesTooltip Tooltip { get; set; }
 		private DumbbellSeriesTooltip Tooltip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether the whole area or just the line should respond to mouseovertooltips and other mouse or touch events.
+		/// </summary>
+		public bool? TrackByArea { get; set; }
+		private bool? TrackByArea_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -663,7 +695,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != Animation_DefaultValue) h.Add("animation",Animation);
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
@@ -691,6 +722,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
@@ -702,6 +735,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (LowColor != LowColor_DefaultValue) h.Add("lowColor",LowColor);
 			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
@@ -710,7 +744,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("f3c6dc69-d47a-4ece-888d-16ff93eaeb7c.pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("089e19ce-f07c-43ed-aae5-3fa193c1adda.pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
@@ -732,8 +766,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
+			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			h.Add("type","dumbbell");
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);

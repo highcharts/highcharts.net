@@ -18,7 +18,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Color = Color_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "";
-			Styles = Styles_DefaultValue = new PlotOptionsIkhSenkouSpanStyles();
 			
 		}	
 		
@@ -35,13 +34,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string NegativeColor { get; set; }
 		private string NegativeColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public PlotOptionsIkhSenkouSpanStyles Styles { get; set; }
-		private PlotOptionsIkhSenkouSpanStyles Styles_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -51,7 +43,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
-			if (Styles.IsDirty()) h.Add("styles",Styles.ToHashtable());
 			
 
 			return h;

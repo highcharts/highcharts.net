@@ -120,14 +120,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The x position offset of the label relative to the tick positionon the axis. Defaults to -15 for left axis, 15 for right axis.
+		/// The x position offset of all labels relative to the tickpositions on the axis. Defaults to -15 for left axis, 15 forright axis.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y position offset of the label relative to the tick positionon the axis.
+		/// The y position offset of all labels relative to the tickpositions on the axis. For polar and radial axis consider the useof the [distance](#yAxis.labels.distance) option.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

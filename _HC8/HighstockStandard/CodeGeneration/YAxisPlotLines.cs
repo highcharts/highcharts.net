@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			AcrossPanes = AcrossPanes_DefaultValue = true;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#999999";
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = YAxisPlotLinesDashStyle.Null;
 			Events = Events_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Label = Label_DefaultValue = new YAxisPlotLinesLabel();
@@ -54,8 +54,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The dashing or dot style for the plot line. For possible values see[this overview](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public YAxisPlotLinesDashStyle DashStyle { get; set; }
+		private YAxisPlotLinesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -108,7 +108,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AcrossPanes != AcrossPanes_DefaultValue) h.Add("acrossPanes",AcrossPanes);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());

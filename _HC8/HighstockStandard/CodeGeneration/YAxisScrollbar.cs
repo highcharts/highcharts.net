@@ -32,7 +32,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			RifleColor = RifleColor_DefaultValue = "#333333";
 			ShowFull = ShowFull_DefaultValue = true;
 			Size = Size_DefaultValue = 14;
-			Step = Step_DefaultValue = null;
 			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "#f2f2f2";
 			TrackBorderColor = TrackBorderColor_DefaultValue = "#f2f2f2";
 			TrackBorderRadius = TrackBorderRadius_DefaultValue = 0;
@@ -155,13 +154,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public double? Step { get; set; }
-		private double? Step_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the track background.
 		/// </summary>
 		public string TrackBackgroundColor { get; set; }
@@ -217,7 +209,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (RifleColor != RifleColor_DefaultValue) h.Add("rifleColor",RifleColor);
 			if (ShowFull != ShowFull_DefaultValue) h.Add("showFull",ShowFull);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (Step != Step_DefaultValue) h.Add("step",Step);
 			if (TrackBackgroundColor != TrackBackgroundColor_DefaultValue) h.Add("trackBackgroundColor",TrackBackgroundColor);
 			if (TrackBorderColor != TrackBorderColor_DefaultValue) h.Add("trackBorderColor",TrackBorderColor);
 			if (TrackBorderRadius != TrackBorderRadius_DefaultValue) h.Add("trackBorderRadius",TrackBorderRadius);

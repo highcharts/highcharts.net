@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Height = Height_DefaultValue = new Hashtable();
 			HeightPlus = HeightPlus_DefaultValue = new Hashtable();
-			LineWidthPlus = LineWidthPlus_DefaultValue = new Hashtable();
+			LineWidthPlus = LineWidthPlus_DefaultValue = null;
 			Width = Width_DefaultValue = new Hashtable();
 			WidthPlus = WidthPlus_DefaultValue = new Hashtable();
 			
@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The additional line width for a hovered point.
 		/// </summary>
-		public Hashtable LineWidthPlus { get; set; }
-		private Hashtable LineWidthPlus_DefaultValue { get; set; }
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>

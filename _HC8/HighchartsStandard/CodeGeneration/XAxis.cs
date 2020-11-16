@@ -64,7 +64,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
 			Offset = Offset_DefaultValue = 0;
-			Opposite = Opposite_DefaultValue = false;
+			Opposite = Opposite_DefaultValue = null;
 			Pane = Pane_DefaultValue = null;
 			PlotBands = PlotBands_DefaultValue = new List<XAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<XAxisPlotLines>();
@@ -179,7 +179,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).Defaults to:```js{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}```
+		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).Defaults to:```js{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}```
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
@@ -736,7 +736,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickmarkPlacement != TickmarkPlacement_DefaultValue) h.Add("tickmarkPlacement", Highcharts.FirstCharacterToLower(TickmarkPlacement.ToString()));
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
 			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highcharts.FirstCharacterToLower(TickPosition.ToString()));
-			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("d2061c26-fcd0-422a-9883-d9aeea618289.tickPositioner", TickPositioner); }  
+			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highcharts.AddFunction("2db48a1f-cb28-4f35-82e0-d64d031c4ead.tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());

@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Custom = Custom_DefaultValue = new Hashtable();
-			DashStyle = DashStyle_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = ColumnSeriesDataDashStyle.Null;
 			DataLabels = DataLabels_DefaultValue = new ColumnSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new ColumnSeriesDataDragDrop();
@@ -93,8 +93,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A name for the dash style to use for the column or bar. OverridesdashStyle on the series.In styled mode, the stroke dash-array can be set with the same classes aslisted under [data.color](#series.column.data.color).
 		/// </summary>
-		public Hashtable DashStyle { get; set; }
-		private Hashtable DashStyle_DefaultValue { get; set; }
+		public ColumnSeriesDataDashStyle DashStyle { get; set; }
+		private ColumnSeriesDataDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -154,7 +154,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A pixel value specifying a fixed width for the column or bar. OverridespointWidth on the series.
+		/// A pixel value specifying a fixed width for the column or bar. OverridespointWidth on the series. The width effects the dimension that is not basedon the point value.
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
@@ -195,7 +195,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle",DashStyle);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());

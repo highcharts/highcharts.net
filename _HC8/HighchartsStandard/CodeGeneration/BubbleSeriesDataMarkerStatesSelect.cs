@@ -16,10 +16,10 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public BubbleSeriesDataMarkerStatesSelect()
 		{
-			Enabled = Enabled_DefaultValue = new Hashtable();
+			Enabled = Enabled_DefaultValue = null;
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "";
-			LineWidth = LineWidth_DefaultValue = new Hashtable();
+			LineWidth = LineWidth_DefaultValue = null;
 			Radius = Radius_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
@@ -29,8 +29,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable or disable visible feedback for selection.
 		/// </summary>
-		public Hashtable Enabled { get; set; }
-		private Hashtable Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -50,8 +50,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The width of the point marker's outline.
 		/// </summary>
-		public Hashtable LineWidth { get; set; }
-		private Hashtable LineWidth_DefaultValue { get; set; }
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVectorStatesHover()
 		{
-			LineWidthPlus = LineWidthPlus_DefaultValue = new Hashtable();
+			LineWidthPlus = LineWidthPlus_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Additonal line width for the vector errors when they arehovered.
 		/// </summary>
-		public Hashtable LineWidthPlus { get; set; }
-		private Hashtable LineWidthPlus_DefaultValue { get; set; }
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

@@ -17,11 +17,11 @@ namespace Highsoft.Web.Mvc.Charts
 		public PackedbubbleSeriesMarkerStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Enabled = Enabled_DefaultValue = new Hashtable();
+			Enabled = Enabled_DefaultValue = null;
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "";
-			LineWidth = LineWidth_DefaultValue = new Hashtable();
-			LineWidthPlus = LineWidthPlus_DefaultValue = new Hashtable();
+			LineWidth = LineWidth_DefaultValue = null;
+			LineWidthPlus = LineWidthPlus_DefaultValue = null;
 			Radius = Radius_DefaultValue = new Hashtable();
 			RadiusPlus = RadiusPlus_DefaultValue = new Hashtable();
 			
@@ -39,8 +39,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Enable or disable the point marker.
 		/// </summary>
-		public Hashtable Enabled { get; set; }
-		private Hashtable Enabled_DefaultValue { get; set; }
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -60,15 +60,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The width of the point marker's outline. When`undefined`, the series' or point's lineWidth for normalstate is used.
 		/// </summary>
-		public Hashtable LineWidth { get; set; }
-		private Hashtable LineWidth_DefaultValue { get; set; }
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The additional line width for a hovered point.
 		/// </summary>
-		public Hashtable LineWidthPlus { get; set; }
-		private Hashtable LineWidthPlus_DefaultValue { get; set; }
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
