@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("RangeSelectorButtonEventsClick.click", Click); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("click", Click); }  
 			
 
 			return h;

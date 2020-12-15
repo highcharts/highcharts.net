@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (DrillToCluster != DrillToCluster_DefaultValue) { h.Add("drillToCluster",DrillToCluster); Highstock.AddFunction("PlotOptionsScatterClusterEventsDrillToCluster.drillToCluster", DrillToCluster); }  
+			if (DrillToCluster != DrillToCluster_DefaultValue) { h.Add("drillToCluster",DrillToCluster); Highstock.AddFunction("drillToCluster", DrillToCluster); }  
 			
 
 			return h;

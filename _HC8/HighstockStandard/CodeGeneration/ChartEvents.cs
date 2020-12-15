@@ -97,15 +97,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highstock.AddFunction("ChartEventsAddSeries.addSeries", AddSeries); }  
-			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highstock.AddFunction("ChartEventsAfterPrint.afterPrint", AfterPrint); }  
-			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highstock.AddFunction("ChartEventsBeforePrint.beforePrint", BeforePrint); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("ChartEventsClick.click", Click); }  
-			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); Highstock.AddFunction("ChartEventsExportData.exportData", ExportData); }  
-			if (Load != Load_DefaultValue) { h.Add("load",Load); Highstock.AddFunction("ChartEventsLoad.load", Load); }  
-			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highstock.AddFunction("ChartEventsRedraw.redraw", Redraw); }  
-			if (Render != Render_DefaultValue) { h.Add("render",Render); Highstock.AddFunction("ChartEventsRender.render", Render); }  
-			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highstock.AddFunction("ChartEventsSelection.selection", Selection); }  
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highstock.AddFunction("addSeries", AddSeries); }  
+			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highstock.AddFunction("afterPrint", AfterPrint); }  
+			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highstock.AddFunction("beforePrint", BeforePrint); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("click", Click); }  
+			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); Highstock.AddFunction("exportData", ExportData); }  
+			if (Load != Load_DefaultValue) { h.Add("load",Load); Highstock.AddFunction("load", Load); }  
+			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highstock.AddFunction("redraw", Redraw); }  
+			if (Render != Render_DefaultValue) { h.Add("render",Render); Highstock.AddFunction("render", Render); }  
+			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highstock.AddFunction("selection", Selection); }  
 			
 
 			return h;

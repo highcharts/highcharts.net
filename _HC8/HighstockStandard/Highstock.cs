@@ -15,8 +15,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal static void AddFunction(string eventName, string functionName)
         {
-            //if (functions[eventName] == null)
-            functions[eventName] = functionName;
+            functions[Guid.NewGuid()+"."+eventName] = functionName;
         }
 
         public static string FirstCharacterToLower(string str)

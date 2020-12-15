@@ -153,6 +153,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
             string json = JsonConvert.SerializeObject(options);
             var functions = Highstock.functions;
+            List<string> keysToRemove = new List<string>();
 
             foreach (string key in functions.Keys)
             {
@@ -160,9 +161,19 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 string realKey = key.Split('.')[1];
                 string matchedString = String.Format("\"{0}\":\"{1}\"", realKey, value);
                 //matchedString = matchedString.Replace("'", "\\u0027");
-                string replacementstring = String.Format("\"{0}\":{1}", realKey, value);
-                json = json.Replace(matchedString, replacementstring);
+
+                if (json.Contains(matchedString))
+                {
+                    string replacementstring = String.Format("\"{0}\":{1}", realKey, value);
+                    json = json.Replace(matchedString, replacementstring);
+                    keysToRemove.Add(key);
+                }
             }
+
+            foreach (var key in keysToRemove)
+                Highstock.functions.Remove(key);
+
+            keysToRemove.Clear();
 
             s.Append(json);
         }

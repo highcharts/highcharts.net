@@ -60,7 +60,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AnnouncementFormatter != AnnouncementFormatter_DefaultValue) { h.Add("announcementFormatter",AnnouncementFormatter); Highcharts.AddFunction("16595335-31fe-4bb9-ad94-5e68ae4d71db.announcementFormatter", AnnouncementFormatter); }  
+			if (AnnouncementFormatter != AnnouncementFormatter_DefaultValue) { h.Add("announcementFormatter",AnnouncementFormatter); Highcharts.AddFunction("announcementFormatter", AnnouncementFormatter); }  
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (InterruptUser != InterruptUser_DefaultValue) h.Add("interruptUser",InterruptUser);
 			if (MinAnnounceInterval != MinAnnounceInterval_DefaultValue) h.Add("minAnnounceInterval",MinAnnounceInterval);

@@ -68,7 +68,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Callback != Callback_DefaultValue) { h.Add("callback",Callback); Highcharts.AddFunction("ce707011-dd93-4bae-86fa-8a35ee11a047.callback", Callback); }  
+			if (Callback != Callback_DefaultValue) { h.Add("callback",Callback); Highcharts.AddFunction("callback", Callback); }  
 			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
 			if (MaxWidth != MaxWidth_DefaultValue) h.Add("maxWidth",MaxWidth);
 			if (MinHeight != MinHeight_DefaultValue) h.Add("minHeight",MinHeight);

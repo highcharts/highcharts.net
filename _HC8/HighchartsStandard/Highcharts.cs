@@ -9,8 +9,7 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal static void AddFunction(string eventName, string functionName)
         {
-            
-            functions[eventName] = functionName;
+            functions[Guid.NewGuid() + "." + eventName] = functionName;
         }
 
         public static string FirstCharacterToLower(string str)

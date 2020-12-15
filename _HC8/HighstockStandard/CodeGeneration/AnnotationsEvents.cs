@@ -49,9 +49,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Add != Add_DefaultValue) { h.Add("add",Add); Highstock.AddFunction("AnnotationsEventsAdd.add", Add); }  
-			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); Highstock.AddFunction("AnnotationsEventsAfterUpdate.afterUpdate", AfterUpdate); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highstock.AddFunction("AnnotationsEventsRemove.remove", Remove); }  
+			if (Add != Add_DefaultValue) { h.Add("add",Add); Highstock.AddFunction("add", Add); }  
+			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); Highstock.AddFunction("afterUpdate", AfterUpdate); }  
+			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highstock.AddFunction("remove", Remove); }  
 			
 
 			return h;

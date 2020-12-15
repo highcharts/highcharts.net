@@ -82,12 +82,12 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (AfterChartFormat != AfterChartFormat_DefaultValue) h.Add("afterChartFormat",AfterChartFormat);
-			if (AfterChartFormatter != AfterChartFormatter_DefaultValue) { h.Add("afterChartFormatter",AfterChartFormatter); Highstock.AddFunction("AccessibilityScreenReaderSectionAfterChartFormatter.afterChartFormatter", AfterChartFormatter); }  
+			if (AfterChartFormatter != AfterChartFormatter_DefaultValue) { h.Add("afterChartFormatter",AfterChartFormatter); Highstock.AddFunction("afterChartFormatter", AfterChartFormatter); }  
 			if (AxisRangeDateFormat != AxisRangeDateFormat_DefaultValue) h.Add("axisRangeDateFormat",AxisRangeDateFormat);
 			if (BeforeChartFormat != BeforeChartFormat_DefaultValue) h.Add("beforeChartFormat",BeforeChartFormat);
-			if (BeforeChartFormatter != BeforeChartFormatter_DefaultValue) { h.Add("beforeChartFormatter",BeforeChartFormatter); Highstock.AddFunction("AccessibilityScreenReaderSectionBeforeChartFormatter.beforeChartFormatter", BeforeChartFormatter); }  
-			if (OnPlayAsSoundClick != OnPlayAsSoundClick_DefaultValue) { h.Add("onPlayAsSoundClick",OnPlayAsSoundClick); Highstock.AddFunction("AccessibilityScreenReaderSectionOnPlayAsSoundClick.onPlayAsSoundClick", OnPlayAsSoundClick); }  
-			if (OnViewDataTableClick != OnViewDataTableClick_DefaultValue) { h.Add("onViewDataTableClick",OnViewDataTableClick); Highstock.AddFunction("AccessibilityScreenReaderSectionOnViewDataTableClick.onViewDataTableClick", OnViewDataTableClick); }  
+			if (BeforeChartFormatter != BeforeChartFormatter_DefaultValue) { h.Add("beforeChartFormatter",BeforeChartFormatter); Highstock.AddFunction("beforeChartFormatter", BeforeChartFormatter); }  
+			if (OnPlayAsSoundClick != OnPlayAsSoundClick_DefaultValue) { h.Add("onPlayAsSoundClick",OnPlayAsSoundClick); Highstock.AddFunction("onPlayAsSoundClick", OnPlayAsSoundClick); }  
+			if (OnViewDataTableClick != OnViewDataTableClick_DefaultValue) { h.Add("onViewDataTableClick",OnViewDataTableClick); Highstock.AddFunction("onViewDataTableClick", OnViewDataTableClick); }  
 			
 
 			return h;
