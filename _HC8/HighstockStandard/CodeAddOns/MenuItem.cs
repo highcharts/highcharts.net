@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Stocks
             Hashtable h = new Hashtable();
 
             if (!String.IsNullOrEmpty(Text)) h.Add("text", Text);
-            if (!String.IsNullOrEmpty(OnClick)) { h.Add("onclick", OnClick); Highstock.AddFunction("MenuItemOnClick.onclick", OnClick); }
+            if (!String.IsNullOrEmpty(OnClick)) { h.Add("onclick", OnClick); Highstock.AddFunction("onclick", OnClick); }
 
             return h;
         }
