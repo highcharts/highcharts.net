@@ -157,14 +157,13 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
             foreach (string key in functions.Keys)
             {
-                string value = (string)functions[key];
+                string value = JsonConvert.SerializeObject(functions[key]);
                 string realKey = key.Split('.')[1];
-                string matchedString = String.Format("\"{0}\":\"{1}\"", realKey, value);
-                //matchedString = matchedString.Replace("'", "\\u0027");
+                string matchedString = String.Format("\"{0}\":{1}", realKey, value);
 
                 if (json.Contains(matchedString))
                 {
-                    string replacementstring = String.Format("\"{0}\":{1}", realKey, value);
+                    string replacementstring = String.Format("\"{0}\":{1}", realKey, value.Remove(value.Length - 1, 1).Remove(0, 1));
                     json = json.Replace(matchedString, replacementstring);
                     keysToRemove.Add(key);
                 }
