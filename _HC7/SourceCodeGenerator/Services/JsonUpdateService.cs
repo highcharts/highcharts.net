@@ -327,7 +327,8 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("series.pyramid3d", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "series" } });
 
             ItemsToUpdate.Add("fillOpacity", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
-            
+            ItemsToUpdate.Add("opacity", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+
         }
 
         public void Delete(ApiItem item)
