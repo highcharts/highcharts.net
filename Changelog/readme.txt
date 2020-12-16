@@ -1,7 +1,13 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
+#Version 8.2.2.2
+Fix Opacity, YAxisLabels, MenuItem, functions
+
+#Version 8.1.2.4
+Fix States objects
+
 #Version 8.0.0.3
-Serial key is not required.
+Serial key is no required.
 
 #Version 8.0.0.2
 Fix events

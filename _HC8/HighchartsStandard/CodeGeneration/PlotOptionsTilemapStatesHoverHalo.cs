@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Attributes = Attributes_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = new Hashtable();
+			Opacity = Opacity_DefaultValue = null;
 			Size = Size_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Opacity { get; set; }
-		private Hashtable Opacity_DefaultValue { get; set; }
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>

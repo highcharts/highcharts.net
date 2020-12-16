@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsBulletStatesHoverHalo()
 		{
 			Attributes = Attributes_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = new Hashtable();
+			Opacity = Opacity_DefaultValue = null;
 			Size = Size_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
@@ -34,8 +34,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Opacity for the halo unless a specific fill is overriddenusing the `attributes` setting. Note that Highcharts isonly able to apply opacity to colors of hex or rgb(a)formats.
 		/// </summary>
-		public Hashtable Opacity { get; set; }
-		private Hashtable Opacity_DefaultValue { get; set; }
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>

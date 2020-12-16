@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			Enabled = Enabled_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = new Hashtable();
+			Opacity = Opacity_DefaultValue = null;
 			
 		}	
 		
@@ -40,8 +40,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Opacity of inactive markers.
 		/// </summary>
-		public Hashtable Opacity { get; set; }
-		private Hashtable Opacity_DefaultValue { get; set; }
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

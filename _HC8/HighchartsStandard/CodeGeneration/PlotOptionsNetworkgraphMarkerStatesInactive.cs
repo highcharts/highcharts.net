@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsNetworkgraphMarkerStatesInactive()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Opacity = Opacity_DefaultValue = new Hashtable();
+			Opacity = Opacity_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Opacity of inactive markers.
 		/// </summary>
-		public Hashtable Opacity { get; set; }
-		private Hashtable Opacity_DefaultValue { get; set; }
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
