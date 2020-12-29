@@ -9,8 +9,9 @@ using System.IO;
 namespace Highsoft.Web.Mvc.Charts
 {
 	public partial class Animation : BaseObject
-	{        
-		
+	{
+        Hashtable h = new Hashtable();
+
         public Animation() {
             Enabled = true;
             Duration = 0;
@@ -35,8 +36,10 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override Hashtable ToHashtable()
         {
-            Hashtable h = new Hashtable();
+            if (h.Count > 0)
+                return h;
 
+            if (!Enabled) h.Add("enabled", Enabled);
             if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
             if (Duration > 0) h.Add("duration", Duration);
 
@@ -45,7 +48,6 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            Hashtable h = ToHashtable();
             if (h.Count > 0)
                 return JsonConvert.SerializeObject(ToHashtable());
             else
@@ -56,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
         // and therefore needs to be serialized
         internal override bool IsDirty()
         {
-            return (Enabled != true || ToHashtable().Count > 0);
+            return ToHashtable().Count > 0;
         }
 	}
 }

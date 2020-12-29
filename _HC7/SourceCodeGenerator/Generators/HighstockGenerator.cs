@@ -936,6 +936,13 @@ public class HighstockGenerator
 
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
+
+        // property that needs custom serialization (Animation, Shadow, etc)
+        if (_customProperties.Contains(propertyName))
+        {
+            return String.Format(customPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
+        }
+
         if (_propertyTypeMappings.Contains(child.Title) || _propertyTypeMappings.Contains(child.FullName))
         {
             if (child.FullName == "lang.accessibility.series")
@@ -952,13 +959,7 @@ public class HighstockGenerator
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
-        // property that needs custom serialization (Animation, Shadow, etc)
-        if (_customProperties.Contains(propertyName))
-        {
-
-
-            return String.Format(customPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
-        }
+        
         // Enum
         if (child.Values != null && child.Values.Count > 0)
             return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
