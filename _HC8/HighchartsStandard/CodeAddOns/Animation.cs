@@ -14,14 +14,22 @@ namespace Highsoft.Web.Mvc.Charts
 
         public Animation() {
             Enabled = true;
+            Defer = 0;
             Duration = 0;
             Easing = "";            
 		}
+
+        
 
         /// <summary>
         /// If a shadow with default values should be enabled
         /// </summary>
         public bool Enabled { get; set; }
+
+        /// <summary>
+        /// The animation delay time in milliseconds.
+        /// </summary>
+        public int Defer { get; set; }
 
         /// <summary>
         /// The duration of the animation in milliseconds
@@ -36,29 +44,39 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override Hashtable ToHashtable()
         {
+            if (!Enabled) return h;
+
             if (h.Count > 0)
                 return h;
 
-            if (!Enabled) h.Add("enabled", Enabled);
-            if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
+            if (Defer > 0) h.Add("defer", Defer);
             if (Duration > 0) h.Add("duration", Duration);
+            if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
 
             return h;
         }
 
         internal override string ToJSON()
         {
-            if (h.Count > 0)
-                return JsonConvert.SerializeObject(ToHashtable());
+            if (Enabled && h.Count > 0)
+            {
+                var objText = JsonConvert.SerializeObject(h).ToString();
+                Highcharts.AddFunction("animation", objText);
+                return objText;
+            }
             else
-                return Enabled.ToString().ToLower();
+            {
+                var enabled = Enabled.ToString().ToLower();
+                Highcharts.AddFunction("animation", enabled);
+                return enabled;
+            }
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
         internal override bool IsDirty()
         {
-            return ToHashtable().Count > 0;
+            return !Enabled || ToHashtable().Count > 0;
         }
 	}
 }

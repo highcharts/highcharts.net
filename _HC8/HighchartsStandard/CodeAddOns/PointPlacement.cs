@@ -1,4 +1,7 @@
+using Newtonsoft.Json;
+using System;
 using System.Collections;
+using System.Globalization;
 
 namespace Highsoft.Web.Mvc.Charts
 {
@@ -15,6 +18,8 @@ namespace Highsoft.Web.Mvc.Charts
 
     public partial class PointPlacement : BaseObject
     {
+        
+
         public PointPlacement()
         {
             _Value = null;
@@ -63,12 +68,24 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON()
         {
-            if (PointPlacementEnum != PointPlacementEnum.Null)
-            {
-                return PointPlacementEnum.ToString().ToLower();
-            }
+            //if (PointPlacementEnum != PointPlacementEnum.Null)
+            //{
+            //    return PointPlacementEnum.ToString().ToLower();
+            //}
+            //Highcharts.AddFunction("pointPlacement", objText);
 
-            return null;
+
+            if (Value.HasValue)
+            {
+                string objText = Convert.ToString(Value, new CultureInfo("en-us"));
+                Highcharts.AddFunction("pointPlacement", objText);
+                return objText;
+            }
+            else if (PointPlacementEnum != PointPlacementEnum.Null)
+                return PointPlacementEnum.ToString().ToLower();
+
+            
+            return string.Empty;
         }
 
         // checks if the state of the object is different from the default

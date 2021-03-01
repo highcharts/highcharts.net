@@ -168,6 +168,10 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 if (json.Contains(matchedString))
                 {
                     string replacementstring = String.Format("\"{0}\":{1}", realKey, value.Remove(value.Length-1,1).Remove(0,1));
+
+                    if (matchedString.Contains("animation") || matchedString.Contains("pointPlacement"))
+                        replacementstring = replacementstring.Replace("\\", "");
+
                     json = json.Replace(matchedString, replacementstring);
                     keysToRemove.Add(key);
                 }
