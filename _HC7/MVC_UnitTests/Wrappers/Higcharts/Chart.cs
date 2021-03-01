@@ -83,10 +83,10 @@ namespace Highsoft.Web.Mvc.UnitTests
         [TestMethod]
         public void TestWidth()
         {
-            _chart.Chart.Width = 225;
+            _chart.Chart.Width = "225";
             string json = _renderer.RenderHtml();
 
-            Assert.IsTrue(json.Contains("\"width\":225"));
+            Assert.IsTrue(json.Contains("\"width\":\"225\""));
         }
 
         [TestMethod]

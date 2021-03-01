@@ -45,13 +45,13 @@ namespace Highsoft.Web.Mvc.UnitTests
             Assert.IsFalse(json.Contains("\"type\":\"line\""));
         }
 
-        [TestMethod]
-        public void TestEnumMappings() // should be line
-        {
-            _chart.Exporting.Type = ExportingType.Applicationpdf;
-            string json = _renderer.RenderHtml();
+        //[TestMethod]
+        //public void TestEnumMappings() // should be line
+        //{
+        //    _chart.Exporting.Type = "application/pdf";
+        //    string json = _renderer.RenderHtml();
 
-            Assert.IsFalse(json.Contains("\"type\":\"application/pdf\""));
-        }        
+        //    Assert.IsFalse(json.Contains("\"type\":\"application/pdf\""));
+        //}        
     }
 }
