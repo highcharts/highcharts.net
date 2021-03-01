@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			AlignTicks = AlignTicks_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			BorderColor = BorderColor_DefaultValue = "#335cad";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -58,6 +59,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Type = Type_DefaultValue = ChartType.Abands;
 			Width = Width_DefaultValue = "";
 			WidthNumber = WidthNumber_DefaultValue = null;
+			ZoomBySingleTouch = ZoomBySingleTouch_DefaultValue = false;
 			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
 			
@@ -76,6 +78,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Set the overall animation for all chart updating. Animation can bedisabled throughout the chart by setting it to false here. It canbe overridden for each individual API method as a function parameter.The only animation not affected by this option is the initial seriesanimation, see [plotOptions.series.animation](#plotOptions.series.animation).The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and aduration of 500 ms. If used as a configuration object, the followingproperties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: A string reference to an easing function set on the  `Math` object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).When zooming on a series with less than 100 points, the chart redrawwill be done with animation, but in case of more data points, it isnecessary to set this option to ensure animation on zoom.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -359,6 +368,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Enables zooming by a single touch, in combination with[chart.zoomType](#chart.zoomType). When enabled, two-finger pinchwill still work as set up by [chart.pinchType](#chart.pinchType).However, `zoomBySingleTouch` will interfere with touch-dragging thechart to read the tooltip. And especially when vertical zooming isenabled, it will make it hard to scroll vertically on the page.
+		/// </summary>
+		public bool? ZoomBySingleTouch { get; set; }
+		private bool? ZoomBySingleTouch_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set a key to hold when dragging to zoom the chart. This is useful to avoidzooming while moving points. Should be set different than[chart.panKey](#chart.panKey).
 		/// </summary>
 		public ChartZoomKey ZoomKey { get; set; }
@@ -379,6 +395,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -419,6 +436,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
+			if (ZoomBySingleTouch != ZoomBySingleTouch_DefaultValue) h.Add("zoomBySingleTouch",ZoomBySingleTouch);
 			if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", Highstock.FirstCharacterToLower(ZoomKey.ToString()));
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", Highstock.FirstCharacterToLower(ZoomType.ToString()));
 			

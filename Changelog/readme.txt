@@ -1,4 +1,6 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+# 8.2.2.3
+Fix Animation and PointPlacement
 
 #Version 8.2.2.2
 Fix Opacity, YAxisLabels, MenuItem, functions

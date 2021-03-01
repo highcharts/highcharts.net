@@ -3,13 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>8.2.2.2</AssemblyVersion>
-    <FileVersion>8.2.2.2</FileVersion>
+    <AssemblyVersion>9.0.1.1</AssemblyVersion>
+    <FileVersion>9.0.1.1</FileVersion>
     <Company>Highsoft</Company>
     <Product>Highcharts .NET</Product>
-    <Version>8.2.2.2</Version>
+    <Version>9.0.1.1</Version>
     <Authors>Highsoft</Authors>
-    <Copyright>Copyright ©  2020</Copyright>
+    <Copyright>Copyright ©  2021</Copyright>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>highcharts.snk</AssemblyOriginatorKeyFile>
@@ -19,6 +19,9 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>
       Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+      # 8.2.2.3
+      Fix Animation and PointPlacement
+
       #Version 8.2.2.2
       Fix Opacity, YAxisLabels, MenuItem, functions
       

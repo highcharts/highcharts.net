@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ColumnrangeSeriesDataAccessibility()
 		{
 			Description = Description_DefaultValue = "";
+			Enabled = Enabled_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Charts
 		private string Description_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Set to false to disable accessibility functionality for a specific point.The point will not be included in keyboard navigation, and will not beexposed to assistive technology.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		private bool? Enabled_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
@@ -37,6 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
