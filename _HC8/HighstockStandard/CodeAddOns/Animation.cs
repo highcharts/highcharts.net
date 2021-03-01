@@ -1,9 +1,7 @@
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Collections;
 using System;
+
 using System.Collections.Specialized;
 using System.Web;
 using System.IO;
@@ -11,18 +9,27 @@ using System.IO;
 namespace Highsoft.Web.Mvc.Stocks
 {
 	public partial class Animation : BaseObject
-	{        
-		
+	{
+        Hashtable h = new Hashtable();
+
         public Animation() {
             Enabled = true;
+            Defer = 0;
             Duration = 0;
             Easing = "";            
 		}
+
+        
 
         /// <summary>
         /// If a shadow with default values should be enabled
         /// </summary>
         public bool Enabled { get; set; }
+
+        /// <summary>
+        /// The animation delay time in milliseconds.
+        /// </summary>
+        public int Defer { get; set; }
 
         /// <summary>
         /// The duration of the animation in milliseconds
@@ -37,29 +44,39 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override Hashtable ToHashtable()
         {
-            Hashtable h = new Hashtable();
+            if (!Enabled) return h;
 
-            if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
+            if (h.Count > 0)
+                return h;
+
+            if (Defer > 0) h.Add("defer", Defer);
             if (Duration > 0) h.Add("duration", Duration);
+            if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
 
             return h;
         }
 
         internal override string ToJSON()
         {
-            Hashtable h = ToHashtable();
-
-            if (h.Count > 0)
-                return JsonConvert.SerializeObject(ToHashtable());
+            if (Enabled && h.Count > 0)
+            {
+                var objText = JsonConvert.SerializeObject(h).ToString();
+                Highstock.AddFunction("animation", objText);
+                return objText;
+            }
             else
-                return "";
+            {
+                var enabled = Enabled.ToString().ToLower();
+                Highstock.AddFunction("animation", enabled);
+                return enabled;
+            }
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
         internal override bool IsDirty()
         {
-            return (Enabled != true || ToHashtable().Count > 0);
+            return !Enabled || ToHashtable().Count > 0;
         }
 	}
 }

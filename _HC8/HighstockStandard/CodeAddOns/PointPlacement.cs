@@ -1,12 +1,7 @@
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Collections;
 using System;
-using System.Collections.Specialized;
-using System.Web;
-using System.IO;
+using System.Collections;
+using System.Globalization;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
@@ -23,6 +18,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
     public partial class PointPlacement : BaseObject
     {
+        
+
         public PointPlacement()
         {
             _Value = null;
@@ -71,12 +68,24 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON()
         {
-            Hashtable h = ToHashtable();
+            //if (PointPlacementEnum != PointPlacementEnum.Null)
+            //{
+            //    return PointPlacementEnum.ToString().ToLower();
+            //}
+            //Highcharts.AddFunction("pointPlacement", objText);
 
-            if (h.Count > 0)
-                return JsonConvert.SerializeObject(ToHashtable());
-            else
-                return "";
+
+            if (Value.HasValue)
+            {
+                string objText = Convert.ToString(Value, new CultureInfo("en-us"));
+                Highstock.AddFunction("pointPlacement", objText);
+                return objText;
+            }
+            else if (PointPlacementEnum != PointPlacementEnum.Null)
+                return PointPlacementEnum.ToString().ToLower();
+
+            
+            return string.Empty;
         }
 
         // checks if the state of the object is different from the default
