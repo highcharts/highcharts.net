@@ -22,6 +22,9 @@ namespace MVC_Demo.Models
         private static readonly string MicrosoftFile = "Microsoft.json";
         private static readonly string RangeFile = "Range.json";
         private static readonly string UsdEurFile = "usdeur.json";
+        private static readonly string SunburstFile = "sunburst_data.json";
+
+        private static readonly CultureInfo _cultureInfo = new CultureInfo("en-US");
 
         #region private methods
 
@@ -329,6 +332,31 @@ namespace MVC_Demo.Models
                     {
                         var pair = line.Split(',');
                         results.Add(new AnnotationsData { X = Convert.ToDouble(pair[0], new CultureInfo("en-US")), Y = Convert.ToDouble(pair[1], new CultureInfo("en-US")) });
+                    }
+                }
+
+                return results;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static List<SunburstSeriesData> GetDataForSunburstChart()
+        {
+            var results = new List<SunburstSeriesData>();
+            HttpServerUtility server = HttpContext.Current.Server;
+            try
+            {
+                using (StreamReader sr = new StreamReader(server.MapPath("~/App_Data/sunburst_data.csv")))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        var pair = line.Split(',');
+                        //results.Add(new AnnotationsData { X = Convert.ToDouble(pair[0], new CultureInfo("en-US")), Y = Convert.ToDouble(pair[1], new CultureInfo("en-US")) });
+                        results.Add(new SunburstSeriesData { Id = pair[0], Parent = pair[1], Name = pair[2], Value = Convert.ToDouble(pair[3], _cultureInfo) });
                     }
                 }
 

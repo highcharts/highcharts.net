@@ -232,6 +232,7 @@
     <Compile Include="Areas\Highcharts\Controllers\Shared\Scatter3dController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\ScatterBoostController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\SparklineController.cs" />
+    <Compile Include="Areas\Highcharts\Controllers\Shared\SunburstController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\StreamgraphController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapLargeDatasetController.cs" />
     <Compile Include="Areas\Highcharts\Controllers\Shared\TreemapWithLevelsController.cs" />
@@ -301,6 +302,7 @@
     <Compile Include="Areas\Highstock\Controllers\Shared\SplineController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\StepLineController.cs" />
     <Compile Include="Areas\Highstock\HighstockAreaRegistration.cs" />
+    <None Include="App_Data\sunburst_data.json" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\HeatMapController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\MapLineController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\DistributionMapController.cs.txt" />
