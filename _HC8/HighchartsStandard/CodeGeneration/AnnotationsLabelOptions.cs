@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Align = Align_DefaultValue = AnnotationsLabelOptionsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
-			BorderColor = BorderColor_DefaultValue = "black";
+			BorderColor = BorderColor_DefaultValue = "#000000";
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ClassName = ClassName_DefaultValue = "";
