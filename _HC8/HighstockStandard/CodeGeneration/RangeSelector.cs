@@ -19,20 +19,21 @@ namespace Highsoft.Web.Mvc.Stocks
 			AllButtonsEnabled = AllButtonsEnabled_DefaultValue = false;
 			ButtonPosition = ButtonPosition_DefaultValue = new RangeSelectorButtonPosition();
 			Buttons = Buttons_DefaultValue = new List<RangeSelectorButton>();
-			ButtonSpacing = ButtonSpacing_DefaultValue = 0;
+			ButtonSpacing = ButtonSpacing_DefaultValue = 5;
 			ButtonTheme = ButtonTheme_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
+			Dropdown = Dropdown_DefaultValue = RangeSelectorDropdown.Responsive;
+			Enabled = Enabled_DefaultValue = null;
 			Floating = Floating_DefaultValue = false;
 			Height = Height_DefaultValue = null;
-			InputBoxBorderColor = InputBoxBorderColor_DefaultValue = "#cccccc";
+			InputBoxBorderColor = InputBoxBorderColor_DefaultValue = "none";
 			InputBoxHeight = InputBoxHeight_DefaultValue = 17;
-			InputBoxStyle = InputBoxStyle_DefaultValue = new Hashtable();
-			InputBoxWidth = InputBoxWidth_DefaultValue = 90;
+			InputBoxWidth = InputBoxWidth_DefaultValue = null;
 			InputDateFormat = InputDateFormat_DefaultValue = "%b %e, %Y";
 			InputDateParser = InputDateParser_DefaultValue = "";
 			InputEditDateFormat = InputEditDateFormat_DefaultValue = "%Y-%m-%d";
 			InputEnabled = InputEnabled_DefaultValue = true;
 			InputPosition = InputPosition_DefaultValue = new Hashtable();
+			InputSpacing = InputSpacing_DefaultValue = 5;
 			InputStyle = InputStyle_DefaultValue = new Hashtable();
 			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
 			Selected = Selected_DefaultValue = null;
@@ -58,7 +59,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of configuration objects for the buttons.Defaults to:```jsbuttons: [{    type: 'month',    count: 1,    text: '1m'}, {    type: 'month',    count: 3,    text: '3m'}, {    type: 'month',    count: 6,    text: '6m'}, {    type: 'ytd',    text: 'YTD'}, {    type: 'year',    count: 1,    text: '1y'}, {    type: 'all',    text: 'All'}]```
+		/// An array of configuration objects for the buttons.Defaults to:```jsbuttons: [{    type: 'month',    count: 1,    text: '1m',    title: 'View 1 month'}, {    type: 'month',    count: 3,    text: '3m',    title: 'View 3 months'}, {    type: 'month',    count: 6,    text: '6m',    title: 'View 6 months'}, {    type: 'ytd',    text: 'YTD',    title: 'View year to date'}, {    type: 'year',    count: 1,    text: '1y',    title: 'View 1 year'}, {    type: 'all',    text: 'All',    title: 'View all'}]```
 		/// </summary>
 		public List<RangeSelectorButton> Buttons { get; set; }
 		private List<RangeSelectorButton> Buttons_DefaultValue { get; set; }
@@ -79,7 +80,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable the range selector.
+		/// Whether to collapse the range selector buttons into a dropdown whenthere is not enough room to show everything in a single row, insteadof dividing the range selector into multiple rows.Can be one of the following: - `always`: Always collapse - `responsive`: Only collapse when there is not enough room - `never`: Never collapse
+		/// </summary>
+		public RangeSelectorDropdown Dropdown { get; set; }
+		private RangeSelectorDropdown Dropdown_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the range selector. Default to `true` for stockcharts, using the `stockChart` factory.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -114,42 +122,35 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// CSS for the container DIV holding the input boxes. Deprecated asof 1.2.5\. Use [inputPosition](#rangeSelector.inputPosition) instead.
-		/// </summary>
-		public Hashtable InputBoxStyle { get; set; }
-		private Hashtable InputBoxStyle_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The pixel width of the date input boxes.
+		/// The pixel width of the date input boxes. When `undefined`, the widthis fitted to the rendered content.
 		/// </summary>
 		public double? InputBoxWidth { get; set; }
 		private double? InputBoxWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The date format in the input boxes when not selected for editing.Defaults to `%b %e, %Y`.
+		/// The date format in the input boxes when not selected for editing.Defaults to `%b %e, %Y`.This is used to determine which type of input to show,`datetime-local`, `date` or `time` and falling back to `text` whenthe browser does not support the input type or the format containsmilliseconds.
 		/// </summary>
 		public string InputDateFormat { get; set; }
 		private string InputDateFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A custom callback function to parse values entered in the input boxesand return a valid JavaScript time as milliseconds since 1970.The first argument passed is a value to parse,second is a boolean indicating use of the UTC time.
+		/// A custom callback function to parse values entered in the input boxesand return a valid JavaScript time as milliseconds since 1970.The first argument passed is a value to parse,second is a boolean indicating use of the UTC time.This will only get called for inputs of type `text`. Since v8.2.3,the input type is dynamically determined based on the granularityof the `inputDateFormat` and the browser support.
 		/// </summary>
 		public string InputDateParser { get; set; }
 		private string InputDateParser_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The date format in the input boxes when they are selected forediting. This must be a format that is recognized by JavaScriptDate.parse.
+		/// The date format in the input boxes when they are selected forediting. This must be a format that is recognized by JavaScriptDate.parse.This will only be used for inputs of type `text`. Since v8.2.3,the input type is dynamically determined based on the granularityof the `inputDateFormat` and the browser support.
 		/// </summary>
 		public string InputEditDateFormat { get; set; }
 		private string InputEditDateFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Enable or disable the date input boxes. Defaults to enabled whenthere is enough space, disabled if not (typically mobile).
+		/// Enable or disable the date input boxes.
 		/// </summary>
 		public bool? InputEnabled { get; set; }
 		private bool? InputEnabled_DefaultValue { get; set; }
@@ -160,6 +161,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Hashtable InputPosition { get; set; }
 		private Hashtable InputPosition_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The space in pixels between the labels and the date input boxes inthe range selector.
+		/// </summary>
+		public double? InputSpacing { get; set; }
+		private double? InputSpacing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -214,18 +222,19 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Buttons != Buttons_DefaultValue) h.Add("buttons", HashifyList(Buttons));
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (ButtonTheme != ButtonTheme_DefaultValue) h.Add("buttonTheme",ButtonTheme);
+			if (Dropdown != Dropdown_DefaultValue) h.Add("dropdown", Highstock.FirstCharacterToLower(Dropdown.ToString()));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (InputBoxBorderColor != InputBoxBorderColor_DefaultValue) h.Add("inputBoxBorderColor",InputBoxBorderColor);
 			if (InputBoxHeight != InputBoxHeight_DefaultValue) h.Add("inputBoxHeight",InputBoxHeight);
-			if (InputBoxStyle != InputBoxStyle_DefaultValue) h.Add("inputBoxStyle",InputBoxStyle);
 			if (InputBoxWidth != InputBoxWidth_DefaultValue) h.Add("inputBoxWidth",InputBoxWidth);
 			if (InputDateFormat != InputDateFormat_DefaultValue) h.Add("inputDateFormat",InputDateFormat);
 			if (InputDateParser != InputDateParser_DefaultValue) { h.Add("inputDateParser",InputDateParser); Highstock.AddFunction("inputDateParser", InputDateParser); }  
 			if (InputEditDateFormat != InputEditDateFormat_DefaultValue) h.Add("inputEditDateFormat",InputEditDateFormat);
 			if (InputEnabled != InputEnabled_DefaultValue) h.Add("inputEnabled",InputEnabled);
 			if (InputPosition != InputPosition_DefaultValue) h.Add("inputPosition",InputPosition);
+			if (InputSpacing != InputSpacing_DefaultValue) h.Add("inputSpacing",InputSpacing);
 			if (InputStyle != InputStyle_DefaultValue) h.Add("inputStyle",InputStyle);
 			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);

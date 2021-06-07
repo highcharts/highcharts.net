@@ -16,17 +16,17 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsWilliamsrParams()
 		{
-			Index = Index_DefaultValue = 0;
+			Index = Index_DefaultValue = "undefined";
 			Period = Period_DefaultValue = 14;
 			
 		}	
 		
 
 		/// <summary>
-		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
+		/// 
 		/// </summary>
-		public double? Index { get; set; }
-		private double? Index_DefaultValue { get; set; }
+		public string Index { get; set; }
+		private string Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>

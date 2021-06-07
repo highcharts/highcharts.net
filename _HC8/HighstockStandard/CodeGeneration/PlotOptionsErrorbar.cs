@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The line width of the whiskers, the horizontal lines marking lowand high values. When `null`, the general[lineWidth](#plotOptions.errorbar.lineWidth) applies.
+		/// The line width of the whiskers, the horizontal lines markinglow and high values. When `null`, the general[lineWidth](#plotOptions.errorbar.lineWidth) applies.
 		/// </summary>
 		public double? WhiskerWidth { get; set; }
 		private double? WhiskerWidth_DefaultValue { get; set; }

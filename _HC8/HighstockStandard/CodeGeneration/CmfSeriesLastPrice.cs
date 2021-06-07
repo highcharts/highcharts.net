@@ -16,14 +16,15 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public CmfSeriesLastPrice()
 		{
-			Color = Color_DefaultValue = "red";
-			Enabled = Enabled_DefaultValue = true;
+			Color = Color_DefaultValue = "";
+			Enabled = Enabled_DefaultValue = false;
+			Label = Label_DefaultValue = new CmfSeriesLastPriceLabel();
 			
 		}	
 		
 
 		/// <summary>
-		/// The color of the line of last price.
+		/// The color of the line of last price.By default, the line has the same color as the series.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
@@ -34,6 +35,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public CmfSeriesLastPriceLabel Label { get; set; }
+		private CmfSeriesLastPriceLabel Label_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -43,6 +51,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			
 
 			return h;

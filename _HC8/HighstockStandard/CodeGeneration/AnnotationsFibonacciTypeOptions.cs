@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Height = Height_DefaultValue = 2;
 			Labels = Labels_DefaultValue = new AnnotationsFibonacciTypeOptionsLabels();
 			Line = Line_DefaultValue = new AnnotationsFibonacciTypeOptionsLine();
-			LineColor = LineColor_DefaultValue = "grey";
+			LineColor = LineColor_DefaultValue = "#999999";
 			LineColors = LineColors_DefaultValue = new List<string>();
 			Points = Points_DefaultValue = new List<AnnotationsFibonacciTypeOptionsPoints>();
 			XAxis = XAxis_DefaultValue = "";

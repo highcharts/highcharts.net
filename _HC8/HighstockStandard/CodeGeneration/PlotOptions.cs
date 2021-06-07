@@ -33,10 +33,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			Cci = Cci_DefaultValue = new PlotOptionsCci();
 			Chaikin = Chaikin_DefaultValue = new PlotOptionsChaikin();
 			Cmf = Cmf_DefaultValue = new PlotOptionsCmf();
+			Cmo = Cmo_DefaultValue = new PlotOptionsCmo();
 			Column = Column_DefaultValue = new PlotOptionsColumn();
 			Columnpyramid = Columnpyramid_DefaultValue = new PlotOptionsColumnpyramid();
 			Columnrange = Columnrange_DefaultValue = new PlotOptionsColumnrange();
 			Dema = Dema_DefaultValue = new PlotOptionsDema();
+			Disparityindex = Disparityindex_DefaultValue = new PlotOptionsDisparityindex();
+			Dmi = Dmi_DefaultValue = new PlotOptionsDmi();
 			Dpo = Dpo_DefaultValue = new PlotOptionsDpo();
 			Dumbbell = Dumbbell_DefaultValue = new PlotOptionsDumbbell();
 			Ema = Ema_DefaultValue = new PlotOptionsEma();
@@ -44,6 +47,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Flags = Flags_DefaultValue = new PlotOptionsFlags();
 			Ikh = Ikh_DefaultValue = new PlotOptionsIkh();
 			Keltnerchannels = Keltnerchannels_DefaultValue = new PlotOptionsKeltnerchannels();
+			Klinger = Klinger_DefaultValue = new PlotOptionsKlinger();
 			Line = Line_DefaultValue = new PlotOptionsLine();
 			Linearregression = Linearregression_DefaultValue = new PlotOptionsLinearregression();
 			Linearregressionangle = Linearregressionangle_DefaultValue = new PlotOptionsLinearregressionangle();
@@ -54,6 +58,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Mfi = Mfi_DefaultValue = new PlotOptionsMfi();
 			Momentum = Momentum_DefaultValue = new PlotOptionsMomentum();
 			Natr = Natr_DefaultValue = new PlotOptionsNatr();
+			Obv = Obv_DefaultValue = new PlotOptionsObv();
 			Ohlc = Ohlc_DefaultValue = new PlotOptionsOhlc();
 			Pc = Pc_DefaultValue = new PlotOptionsPc();
 			Pivotpoints = Pivotpoints_DefaultValue = new PlotOptionsPivotpoints();
@@ -122,7 +127,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The area range series is a carteseian series with higher and lower values foreach point along an X axis, where the area between the values is shaded.In TypeScript the [type](series.arearange.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `arearange` series are defined in   [plotOptions.arearange](plotOptions.arearange).3. Options for one single series are given in   [the series instance array](series.arearange).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        arearange: {            // shared options for all arearange series        }    },    series: [{        // specific options for this series instance        type: 'arearange'    }]});```            
+		/// The area range series is a carteseian series with higher and lowervalues for each point along an X axis, where the area between thevalues is shaded.In TypeScript the [type](series.arearange.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `arearange` series are defined in   [plotOptions.arearange](plotOptions.arearange).3. Options for one single series are given in   [the series instance array](series.arearange).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        arearange: {            // shared options for all arearange series        }    },    series: [{        // specific options for this series instance        type: 'arearange'    }]});```            
 		/// </summary>
 		public PlotOptionsArearange Arearange { get; set; }
 		private PlotOptionsArearange Arearange_DefaultValue { get; set; }
@@ -171,7 +176,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A bubble series is a three dimensional series type where each point rendersan X, Y and Z value. Each points is drawn as a bubble where the positionalong the X and Y axes mark the X and Y values, and the size of the bubblerelates to the Z value.In TypeScript the [type](series.bubble.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `bubble` series are defined in   [plotOptions.bubble](plotOptions.bubble).3. Options for one single series are given in   [the series instance array](series.bubble).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        bubble: {            // shared options for all bubble series        }    },    series: [{        // specific options for this series instance        type: 'bubble'    }]});```            
+		/// A bubble series is a three dimensional series type where each pointrenders an X, Y and Z value. Each points is drawn as a bubble where theposition along the X and Y axes mark the X and Y values, and the size ofthe bubble relates to the Z value.In TypeScript the [type](series.bubble.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `bubble` series are defined in   [plotOptions.bubble](plotOptions.bubble).3. Options for one single series are given in   [the series instance array](series.bubble).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        bubble: {            // shared options for all bubble series        }    },    series: [{        // specific options for this series instance        type: 'bubble'    }]});```            
 		/// </summary>
 		public PlotOptionsBubble Bubble { get; set; }
 		private PlotOptionsBubble Bubble_DefaultValue { get; set; }
@@ -206,6 +211,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Chande Momentum Oscilator (CMO) technical indicator. This seriesrequires the `linkedTo` option to be set and should be loaded afterthe `stock/indicators/indicators.js` file.In TypeScript the [type](series.cmo.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `cmo` series are defined in   [plotOptions.cmo](plotOptions.cmo).3. Options for one single series are given in   [the series instance array](series.cmo).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        cmo: {            // shared options for all cmo series        }    },    series: [{        // specific options for this series instance        type: 'cmo'    }]});```            
+		/// </summary>
+		public PlotOptionsCmo Cmo { get; set; }
+		private PlotOptionsCmo Cmo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Column series display one column per value along an X axis.In TypeScript the [type](series.column.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `column` series are defined in   [plotOptions.column](plotOptions.column).3. Options for one single series are given in   [the series instance array](series.column).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        column: {            // shared options for all column series        }    },    series: [{        // specific options for this series instance        type: 'column'    }]});```            
 		/// </summary>
 		public PlotOptionsColumn Column { get; set; }
@@ -234,6 +246,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Disparity Index.This series requires the `linkedTo` option to be set and shouldbe loaded after the `stock/indicators/indicators.js` file.In TypeScript the [type](series.disparityindex.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `disparityindex` series are defined in   [plotOptions.disparityindex](plotOptions.disparityindex).3. Options for one single series are given in   [the series instance array](series.disparityindex).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        disparityindex: {            // shared options for all disparityindex series        }    },    series: [{        // specific options for this series instance        type: 'disparityindex'    }]});```            
+		/// </summary>
+		public PlotOptionsDisparityindex Disparityindex { get; set; }
+		private PlotOptionsDisparityindex Disparityindex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Directional Movement Index (DMI).This series requires the `linkedTo` option to be set and shouldbe loaded after the `stock/indicators/indicators.js` file.In TypeScript the [type](series.dmi.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `dmi` series are defined in   [plotOptions.dmi](plotOptions.dmi).3. Options for one single series are given in   [the series instance array](series.dmi).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        dmi: {            // shared options for all dmi series        }    },    series: [{        // specific options for this series instance        type: 'dmi'    }]});```            
+		/// </summary>
+		public PlotOptionsDmi Dmi { get; set; }
+		private PlotOptionsDmi Dmi_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Detrended Price Oscillator. This series requires the `linkedTo` option tobe set and should be loaded after the `stock/indicators/indicators.js`.In TypeScript the [type](series.dpo.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `dpo` series are defined in   [plotOptions.dpo](plotOptions.dpo).3. Options for one single series are given in   [the series instance array](series.dpo).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        dpo: {            // shared options for all dpo series        }    },    series: [{        // specific options for this series instance        type: 'dpo'    }]});```            
 		/// </summary>
 		public PlotOptionsDpo Dpo { get; set; }
@@ -241,7 +267,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The dumbbell series is a cartesian series with higher and lower values foreach point along an X axis, connected with a line between the values.Requires `highcharts-more.js` and `modules/dumbbell.js`.In TypeScript the [type](series.dumbbell.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `dumbbell` series are defined in   [plotOptions.dumbbell](plotOptions.dumbbell).3. Options for one single series are given in   [the series instance array](series.dumbbell).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        dumbbell: {            // shared options for all dumbbell series        }    },    series: [{        // specific options for this series instance        type: 'dumbbell'    }]});```            
+		/// The dumbbell series is a cartesian series with higher and lower valuesfor each point along an X axis, connected with a line between thevalues.Requires `highcharts-more.js` and `modules/dumbbell.js`.In TypeScript the [type](series.dumbbell.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `dumbbell` series are defined in   [plotOptions.dumbbell](plotOptions.dumbbell).3. Options for one single series are given in   [the series instance array](series.dumbbell).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        dumbbell: {            // shared options for all dumbbell series        }    },    series: [{        // specific options for this series instance        type: 'dumbbell'    }]});```            
 		/// </summary>
 		public PlotOptionsDumbbell Dumbbell { get; set; }
 		private PlotOptionsDumbbell Dumbbell_DefaultValue { get; set; }
@@ -255,7 +281,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Error bars are a graphical representation of the variability of data and areused on graphs to indicate the error, or uncertainty in a reportedmeasurement.In TypeScript the [type](series.errorbar.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `errorbar` series are defined in   [plotOptions.errorbar](plotOptions.errorbar).3. Options for one single series are given in   [the series instance array](series.errorbar).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        errorbar: {            // shared options for all errorbar series        }    },    series: [{        // specific options for this series instance        type: 'errorbar'    }]});```            
+		/// Error bars are a graphical representation of the variability of data andare used on graphs to indicate the error, or uncertainty in a reportedmeasurement.In TypeScript the [type](series.errorbar.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `errorbar` series are defined in   [plotOptions.errorbar](plotOptions.errorbar).3. Options for one single series are given in   [the series instance array](series.errorbar).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        errorbar: {            // shared options for all errorbar series        }    },    series: [{        // specific options for this series instance        type: 'errorbar'    }]});```            
 		/// </summary>
 		public PlotOptionsErrorbar Errorbar { get; set; }
 		private PlotOptionsErrorbar Errorbar_DefaultValue { get; set; }
@@ -280,6 +306,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsKeltnerchannels Keltnerchannels { get; set; }
 		private PlotOptionsKeltnerchannels Keltnerchannels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Klinger oscillator. This series requires the `linkedTo` option to be setand should be loaded after the `stock/indicators/indicators.js` file.In TypeScript the [type](series.klinger.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `klinger` series are defined in   [plotOptions.klinger](plotOptions.klinger).3. Options for one single series are given in   [the series instance array](series.klinger).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        klinger: {            // shared options for all klinger series        }    },    series: [{        // specific options for this series instance        type: 'klinger'    }]});```            
+		/// </summary>
+		public PlotOptionsKlinger Klinger { get; set; }
+		private PlotOptionsKlinger Klinger_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -350,6 +383,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsNatr Natr { get; set; }
 		private PlotOptionsNatr Natr_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// On-Balance Volume (OBV) technical indicator. This seriesrequires the `linkedTo` option to be set and should be loaded afterthe `stock/indicators/indicators.js` file. Through the `volumeSeriesID`there also should be linked the volume series.In TypeScript the [type](series.obv.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `obv` series are defined in   [plotOptions.obv](plotOptions.obv).3. Options for one single series are given in   [the series instance array](series.obv).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        obv: {            // shared options for all obv series        }    },    series: [{        // specific options for this series instance        type: 'obv'    }]});```            
+		/// </summary>
+		public PlotOptionsObv Obv { get; set; }
+		private PlotOptionsObv Obv_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -570,10 +610,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Cci.IsDirty()) h.Add("cci",Cci.ToHashtable());
 			if (Chaikin.IsDirty()) h.Add("chaikin",Chaikin.ToHashtable());
 			if (Cmf.IsDirty()) h.Add("cmf",Cmf.ToHashtable());
+			if (Cmo.IsDirty()) h.Add("cmo",Cmo.ToHashtable());
 			if (Column.IsDirty()) h.Add("column",Column.ToHashtable());
 			if (Columnpyramid.IsDirty()) h.Add("columnpyramid",Columnpyramid.ToHashtable());
 			if (Columnrange.IsDirty()) h.Add("columnrange",Columnrange.ToHashtable());
 			if (Dema.IsDirty()) h.Add("dema",Dema.ToHashtable());
+			if (Disparityindex.IsDirty()) h.Add("disparityindex",Disparityindex.ToHashtable());
+			if (Dmi.IsDirty()) h.Add("dmi",Dmi.ToHashtable());
 			if (Dpo.IsDirty()) h.Add("dpo",Dpo.ToHashtable());
 			if (Dumbbell.IsDirty()) h.Add("dumbbell",Dumbbell.ToHashtable());
 			if (Ema.IsDirty()) h.Add("ema",Ema.ToHashtable());
@@ -581,6 +624,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Flags.IsDirty()) h.Add("flags",Flags.ToHashtable());
 			if (Ikh.IsDirty()) h.Add("ikh",Ikh.ToHashtable());
 			if (Keltnerchannels.IsDirty()) h.Add("keltnerchannels",Keltnerchannels.ToHashtable());
+			if (Klinger.IsDirty()) h.Add("klinger",Klinger.ToHashtable());
 			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
 			if (Linearregression.IsDirty()) h.Add("linearregression",Linearregression.ToHashtable());
 			if (Linearregressionangle.IsDirty()) h.Add("linearregressionangle",Linearregressionangle.ToHashtable());
@@ -591,6 +635,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Mfi.IsDirty()) h.Add("mfi",Mfi.ToHashtable());
 			if (Momentum.IsDirty()) h.Add("momentum",Momentum.ToHashtable());
 			if (Natr.IsDirty()) h.Add("natr",Natr.ToHashtable());
+			if (Obv.IsDirty()) h.Add("obv",Obv.ToHashtable());
 			if (Ohlc.IsDirty()) h.Add("ohlc",Ohlc.ToHashtable());
 			if (Pc.IsDirty()) h.Add("pc",Pc.ToHashtable());
 			if (Pivotpoints.IsDirty()) h.Add("pivotpoints",Pivotpoints.ToHashtable());

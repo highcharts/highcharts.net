@@ -28,14 +28,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Date format to use for points on datetime axes when describingthem to screen reader users.Defaults to the same format as in tooltip.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).
+		/// Date format to use for points on datetime axes when describingthem to screen reader users.Defaults to the same format as in tooltip.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#.dateFormat).
 		/// </summary>
 		public string DateFormat { get; set; }
 		private string DateFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Formatter function to determine the date/time format used withpoints on datetime axes when describing them to screen readerusers. Receives one argument, `point`, referring to the pointto describe. Should return a date format string compatible with[dateFormat](/class-reference/Highcharts#dateFormat).
+		/// Formatter function to determine the date/time format used withpoints on datetime axes when describing them to screen readerusers. Receives one argument, `point`, referring to the pointto describe. Should return a date format string compatible with[dateFormat](/class-reference/Highcharts#.dateFormat).
 		/// </summary>
 		public string DateFormatter { get; set; }
 		private string DateFormatter_DefaultValue { get; set; }

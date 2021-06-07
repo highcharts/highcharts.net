@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Accessibility = Accessibility_DefaultValue = new YAxisAccessibility();
 			AlignTicks = AlignTicks_DefaultValue = true;
-			AllowDecimals = AllowDecimals_DefaultValue = true;
+			AllowDecimals = AllowDecimals_DefaultValue = null;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "";
 			Breaks = Breaks_DefaultValue = new YAxisBreaks();
 			Categories = Categories_DefaultValue = new List<string>();
@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinPadding = MinPadding_DefaultValue = null;
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
-			Offset = Offset_DefaultValue = 0;
+			Offset = Offset_DefaultValue = "undefined";
 			Opposite = Opposite_DefaultValue = false;
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
@@ -97,6 +97,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = "";
 			WidthNumber = WidthNumber_DefaultValue = null;
+			ZIndex = ZIndex_DefaultValue = 2;
 			ZoomEnabled = ZoomEnabled_DefaultValue = null;
 			
 		}	
@@ -117,7 +118,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to allow decimals in this axis' ticks. When countingintegers, like persons or hits on a web page, decimals shouldbe avoided in the labels.
+		/// Whether to allow decimals in this axis' ticks. When countingintegers, like persons or hits on a web page, decimals shouldbe avoided in the labels. By default, decimals are allowed on smallscale axes.
 		/// </summary>
 		public bool? AllowDecimals { get; set; }
 		private bool? AllowDecimals_DefaultValue { get; set; }
@@ -173,7 +174,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).Defaults to:```js{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}```
+		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#.dateFormat).Defaults to:```js{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}```
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
@@ -455,8 +456,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The distance in pixels from the plot area to the axis line.A positive offset moves the axis with it's line, labels and ticksaway from the plot area. This is typically used when two or moreaxes are displayed on the same side of the plot. With multipleaxes the offset is dynamically adjusted to avoid collision, thiscan be overridden by setting offset explicitly.
 		/// </summary>
-		public double? Offset { get; set; }
-		private double? Offset_DefaultValue { get; set; }
+		public string Offset { get; set; }
+		private string Offset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -670,6 +671,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The Z index for the axis group.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to zoom axis. If `chart.zoomType` is set, the option allowsto disable zooming on an individual axis.
 		/// </summary>
 		public bool? ZoomEnabled { get; set; }
@@ -762,6 +770,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
 			
 

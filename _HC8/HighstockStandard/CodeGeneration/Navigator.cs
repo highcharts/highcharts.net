@@ -92,7 +92,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether the mask should be inside the range marking the zoomedrange, or outside. In Highstock 1.x it was always `false`.
+		/// Whether the mask should be inside the range marking the zoomedrange, or outside. In Highcharts Stock 1.x it was always `false`.
 		/// </summary>
 		public bool? MaskInside { get; set; }
 		private bool? MaskInside_DefaultValue { get; set; }

@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Index = Index_DefaultValue = "3";
 			IndexNumber = IndexNumber_DefaultValue = null;
-			Period = Period_DefaultValue = 14;
+			Period = Period_DefaultValue = "undefined";
 			
 		}	
 		
@@ -38,10 +38,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The base period for indicator calculations. This is the number ofdata points which are taken into account for the indicatorcalculations.
+		/// 
 		/// </summary>
-		public double? Period { get; set; }
-		private double? Period_DefaultValue { get; set; }
+		public string Period { get; set; }
+		private string Period_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()

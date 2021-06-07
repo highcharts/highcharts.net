@@ -76,6 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickWidth = TickWidth_DefaultValue = null;
 			Type = Type_DefaultValue = "linear";
 			Visible = Visible_DefaultValue = true;
+			ZIndex = ZIndex_DefaultValue = 2;
 			
 		}	
 		
@@ -498,6 +499,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Z index for the axis group.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -565,6 +573,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 
 			return h;

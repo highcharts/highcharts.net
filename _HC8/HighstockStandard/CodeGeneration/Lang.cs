@@ -36,8 +36,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> {"k", "M", "G", "T", "P", "E"};
 			PrintChart = PrintChart_DefaultValue = "Print chart";
-			RangeSelectorFrom = RangeSelectorFrom_DefaultValue = "From";
-			RangeSelectorTo = RangeSelectorTo_DefaultValue = "To";
+			RangeSelectorFrom = RangeSelectorFrom_DefaultValue = "";
+			RangeSelectorTo = RangeSelectorTo_DefaultValue = "→";
 			RangeSelectorZoom = RangeSelectorZoom_DefaultValue = "Zoom";
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
@@ -194,7 +194,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The text for the label for the "from" input box in the rangeselector.
+		/// The text for the label for the "from" input box in the rangeselector. Since v9.0, this string is empty as the label is notrendered by default.
 		/// </summary>
 		public string RangeSelectorFrom { get; set; }
 		private string RangeSelectorFrom_DefaultValue { get; set; }

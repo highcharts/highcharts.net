@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.By default index value used to be set to 0. Since Highstock 7by default index is set to 3 which means that the emaindicator will be calculated using Close values.
+		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.By default index value used to be set to 0. SinceHighcharts Stock 7 by default index is set to 3which means that the ema indicator will becalculated using Close values.
 		/// </summary>
 		public double? Index { get; set; }
 		private double? Index_DefaultValue { get; set; }

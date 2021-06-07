@@ -244,7 +244,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to show the symbol on the right side of the text rather thanthe left side. This is common in Arabic and Hebraic.
+		/// Whether to show the symbol on the right side of the text rather thanthe left side. This is common in Arabic and Hebrew.
 		/// </summary>
 		public bool? Rtl { get; set; }
 		private bool? Rtl_DefaultValue { get; set; }

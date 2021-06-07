@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsAreaLastVisiblePrice()
 		{
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = false;
 			Label = Label_DefaultValue = new PlotOptionsAreaLastVisiblePriceLabel();
 			
 		}	

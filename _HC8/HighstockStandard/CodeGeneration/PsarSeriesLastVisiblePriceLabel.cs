@@ -16,16 +16,96 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PsarSeriesLastVisiblePriceLabel()
 		{
-			Enabled = Enabled_DefaultValue = true;
+			Align = Align_DefaultValue = PsarSeriesLastVisiblePriceLabelAlign.Null;
+			BackgroundColor = BackgroundColor_DefaultValue = "";
+			BorderColor = BorderColor_DefaultValue = "";
+			BorderRadius = BorderRadius_DefaultValue = 3;
+			BorderWidth = BorderWidth_DefaultValue = 0;
+			Enabled = Enabled_DefaultValue = false;
+			Format = Format_DefaultValue = "";
+			Formatter = Formatter_DefaultValue = "";
+			Padding = Padding_DefaultValue = "8";
+			Shape = Shape_DefaultValue = "";
+			Style = Style_DefaultValue = new Hashtable();
 			
 		}	
 		
 
 		/// <summary>
-		/// Enable or disable the label.
+		/// 
+		/// </summary>
+		public PsarSeriesLastVisiblePriceLabelAlign Align { get; set; }
+		private PsarSeriesLastVisiblePriceLabelAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string BackgroundColor { get; set; }
+		private string BackgroundColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border color for the `lastVisiblePrice` label.
+		/// </summary>
+		public string BorderColor { get; set; }
+		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border corner radius of the `lastVisiblePrice` label.
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border width for the `lastVisiblePrice` label.
+		/// </summary>
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Flag to enable `lastVisiblePrice` label.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A format string for the `lastVisiblePrice` label. Defaults to `{value}` fornumeric axes and `{value:%b %d, %Y}` for datetime axes.
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Formatter { get; set; }
+		private string Formatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Padding inside the `lastVisiblePrice` label.
+		/// </summary>
+		public string Padding { get; set; }
+		private string Padding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Shape { get; set; }
+		private string Shape_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Text styles for the `lastVisiblePrice` label.
+		/// </summary>
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -33,7 +113,17 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
+			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("formatter", Formatter); }  
+			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
+			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 
 			return h;

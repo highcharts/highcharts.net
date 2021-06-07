@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ChartPanning()
 		{
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = false;
 			Type = Type_DefaultValue = ChartPanningType.X;
 			
 		}	

@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsPpoParams()
 		{
 			Index = Index_DefaultValue = 0;
-			Period = Period_DefaultValue = 14;
+			Period = Period_DefaultValue = "undefined";
 			Periods = Periods_DefaultValue = new List<double>();
 			
 		}	
@@ -31,10 +31,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The base period for indicator calculations. This is the number ofdata points which are taken into account for the indicatorcalculations.
+		/// 
 		/// </summary>
-		public double? Period { get; set; }
-		private double? Period_DefaultValue { get; set; }
+		public string Period { get; set; }
+		private string Period_DefaultValue { get; set; }
 		 
 
 		/// <summary>

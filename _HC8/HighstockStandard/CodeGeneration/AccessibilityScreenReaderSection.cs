@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			AfterChartFormat = AfterChartFormat_DefaultValue = "{endOfChartMarker}";
 			AfterChartFormatter = AfterChartFormatter_DefaultValue = "";
 			AxisRangeDateFormat = AxisRangeDateFormat_DefaultValue = "%Y-%m-%d %H:%M:%S";
-			BeforeChartFormat = BeforeChartFormat_DefaultValue = "<h5>{chartTitle}</h5><div>{typeDescription}</div><div>{chartSubtitle}</div><div>{chartLongdesc}</div><div>{playAsSoundButton}</div><div>{viewTableButton}</div><div>{xAxisDescription}</div><div>{yAxisDescription}</div><div>{annotationsTitle}{annotationsList}</div>";
+			BeforeChartFormat = BeforeChartFormat_DefaultValue = "<{headingTagName}>{chartTitle}</{headingTagName}><div>{typeDescription}</div><div>{chartSubtitle}</div><div>{chartLongdesc}</div><div>{playAsSoundButton}</div><div>{viewTableButton}</div><div>{xAxisDescription}</div><div>{yAxisDescription}</div><div>{annotationsTitle}{annotationsList}</div>";
 			BeforeChartFormatter = BeforeChartFormatter_DefaultValue = "";
 			OnPlayAsSoundClick = OnPlayAsSoundClick_DefaultValue = "";
 			OnViewDataTableClick = OnViewDataTableClick_DefaultValue = "";
@@ -42,14 +42,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Date format to use to describe range of datetime axes.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).
+		/// Date format to use to describe range of datetime axes.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#.dateFormat).
 		/// </summary>
 		public string AxisRangeDateFormat { get; set; }
 		private string AxisRangeDateFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Format for the screen reader information region before the chart.Supported HTML tags are `<h1-7>`, `<p>`, `<div>`, `<a>`, `<ul>`,`<ol>`, `<li>`, and `<button>`. Attributes are not supported,except for id on `<div>`, `<a>`, and `<button>`. Id is requiredon `<a>` and `<button>` in the format `<tag id="abcd">`. Numbers,lower- and uppercase letters, "-" and "#" are valid characters inIDs.
+		/// Format for the screen reader information region before the chart.Supported HTML tags are `<h1-6>`, `<p>`, `<div>`, `<a>`, `<ul>`,`<ol>`, `<li>`, and `<button>`. Attributes are not supported,except for id on `<div>`, `<a>`, and `<button>`. Id is requiredon `<a>` and `<button>` in the format `<tag id="abcd">`. Numbers,lower- and uppercase letters, "-" and "#" are valid characters inIDs.The headingTagName is an auto-detected heading (h1-h6) thatcorresponds to the heading level below the previous heading inthe DOM.
 		/// </summary>
 		public string BeforeChartFormat { get; set; }
 		private string BeforeChartFormat_DefaultValue { get; set; }

@@ -16,16 +16,26 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsPivotpointsDataGrouping()
 		{
+			Anchor = Anchor_DefaultValue = "start";
 			Approximation = Approximation_DefaultValue = "averages";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = true;
+			FirstAnchor = FirstAnchor_DefaultValue = "start";
 			Forced = Forced_DefaultValue = false;
 			GroupAll = GroupAll_DefaultValue = false;
 			GroupPixelWidth = GroupPixelWidth_DefaultValue = 2;
+			LastAnchor = LastAnchor_DefaultValue = "start";
 			Smoothed = Smoothed_DefaultValue = false;
 			
 		}	
 		
+
+		/// <summary>
+		/// Specifies how the points should be located on the X axis inside the group.Points that are extremes can be set separately. Available options:- `start` places the point at the beginning of the group(e.g. range 00:00:00 - 23:59:59 -> 00:00:00)- `middle` places the point in the middle of the group(e.g. range 00:00:00 - 23:59:59 -> 12:00:00)- `end` places the point at the end of the group(e.g. range 00:00:00 - 23:59:59 -> 23:59:59)
+		/// </summary>
+		public string Anchor { get; set; }
+		private string Anchor_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -46,6 +56,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Specifies how the first grouped point is positioned on the xAxis.If firstAnchor and/or lastAnchor are defined, then those options takeprecedence over anchor for the first and/or last grouped points.Available options:-`start` places the point at the beginning of the group(e.g. range 00:00:00 - 23:59:59 -> 00:00:00)-`middle` places the point in the middle of the group(e.g. range 00:00:00 - 23:59:59 -> 12:00:00)-`end` places the point at the end of the group(e.g. range 00:00:00 - 23:59:59 -> 23:59:59)-`firstPoint` the first point in the group(e.g. points at 00:13, 00:35, 00:59 -> 00:13)-`lastPoint` the last point in the group(e.g. points at 00:13, 00:35, 00:59 -> 00:59)
+		/// </summary>
+		public string FirstAnchor { get; set; }
+		private string FirstAnchor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,6 +87,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Specifies how the last grouped point is positioned on the xAxis.If firstAnchor and/or lastAnchor are defined, then those options takeprecedence over anchor for the first and/or last grouped points.Available options:-`start` places the point at the beginning of the group(e.g. range 00:00:00 - 23:59:59 -> 00:00:00)-`middle` places the point in the middle of the group(e.g. range 00:00:00 - 23:59:59 -> 12:00:00)-`end` places the point at the end of the group(e.g. range 00:00:00 - 23:59:59 -> 23:59:59)-`firstPoint` the first point in the group(e.g. points at 00:13, 00:35, 00:59 -> 00:13)-`lastPoint` the last point in the group(e.g. points at 00:13, 00:35, 00:59 -> 00:59)
+		/// </summary>
+		public string LastAnchor { get; set; }
+		private string LastAnchor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Normally, a group is indexed by the start of that group, so for examplewhen 30 daily values are grouped into one month, that month's x valuewill be the 1st of the month. This apparently shifts the data tothe left. When the smoothed option is true, this is compensated for.The data is shifted to the middle of the group, and min and maxvalues are preserved. Internally, this is used in the Navigator series.
 		/// </summary>
 		public bool? Smoothed { get; set; }
@@ -81,12 +105,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (Anchor != Anchor_DefaultValue) h.Add("anchor",Anchor);
 			if (Approximation != Approximation_DefaultValue) h.Add("approximation",Approximation);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (FirstAnchor != FirstAnchor_DefaultValue) h.Add("firstAnchor",FirstAnchor);
 			if (Forced != Forced_DefaultValue) h.Add("forced",Forced);
 			if (GroupAll != GroupAll_DefaultValue) h.Add("groupAll",GroupAll);
 			if (GroupPixelWidth != GroupPixelWidth_DefaultValue) h.Add("groupPixelWidth",GroupPixelWidth);
+			if (LastAnchor != LastAnchor_DefaultValue) h.Add("lastAnchor",LastAnchor);
 			if (Smoothed != Smoothed_DefaultValue) h.Add("smoothed",Smoothed);
 			
 

@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			OffsetMin = OffsetMin_DefaultValue = 0;
 			PreserveDataGrouping = PreserveDataGrouping_DefaultValue = false;
 			Text = Text_DefaultValue = "";
+			Title = Title_DefaultValue = "";
 			Type = Type_DefaultValue = "";
 			
 		}	
@@ -78,6 +79,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Explanation for the button, shown as a tooltip on hover, and used byassistive technology.
+		/// </summary>
+		public string Title { get; set; }
+		private string Title_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Defined the time span for the button. Can be one of `millisecond`,`second`, `minute`, `hour`, `day`, `week`, `month`, `year`, `ytd`,and `all`.
 		/// </summary>
 		public string Type { get; set; }
@@ -96,6 +104,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (OffsetMin != OffsetMin_DefaultValue) h.Add("offsetMin",OffsetMin);
 			if (PreserveDataGrouping != PreserveDataGrouping_DefaultValue) h.Add("preserveDataGrouping",PreserveDataGrouping);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
+			if (Title != Title_DefaultValue) h.Add("title",Title);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			
 

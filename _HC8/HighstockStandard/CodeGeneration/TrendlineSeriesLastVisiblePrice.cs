@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public TrendlineSeriesLastVisiblePrice()
 		{
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = false;
 			Label = Label_DefaultValue = new TrendlineSeriesLastVisiblePriceLabel();
 			
 		}	

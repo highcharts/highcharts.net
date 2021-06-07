@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public MfiSeriesLastVisiblePrice()
 		{
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = false;
 			Label = Label_DefaultValue = new MfiSeriesLastVisiblePriceLabel();
 			
 		}	

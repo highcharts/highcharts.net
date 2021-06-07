@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = null;
+			Y = Y_DefaultValue = 0;
 			
 		}	
 		

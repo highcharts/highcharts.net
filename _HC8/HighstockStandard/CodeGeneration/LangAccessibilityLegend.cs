@@ -16,8 +16,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LangAccessibilityLegend()
 		{
-			LegendItem = LegendItem_DefaultValue = "Hide {itemName}";
-			LegendLabel = LegendLabel_DefaultValue = "Toggle series visibility";
+			LegendItem = LegendItem_DefaultValue = "Show {itemName}";
+			LegendLabel = LegendLabel_DefaultValue = "Chart legend: {legendTitle}";
+			LegendLabelNoTitle = LegendLabelNoTitle_DefaultValue = "Toggle series visibility";
 			
 		}	
 		
@@ -34,6 +35,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string LegendLabel { get; set; }
 		private string LegendLabel_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string LegendLabelNoTitle { get; set; }
+		private string LegendLabelNoTitle_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable()
@@ -43,6 +51,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (LegendItem != LegendItem_DefaultValue) h.Add("legendItem",LegendItem);
 			if (LegendLabel != LegendLabel_DefaultValue) h.Add("legendLabel",LegendLabel);
+			if (LegendLabelNoTitle != LegendLabelNoTitle_DefaultValue) h.Add("legendLabelNoTitle",LegendLabelNoTitle);
 			
 
 			return h;

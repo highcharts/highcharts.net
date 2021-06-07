@@ -284,7 +284,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow. Green arrow whenpointing from above, red when pointing from below the point.
+		/// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow.`#06b535` is the color of the arrow whenpointing from above and `#f21313`when pointing from below the point.
 		/// </summary>
 		public Hashtable VerticalArrow { get; set; }
 		private Hashtable VerticalArrow_DefaultValue { get; set; }
