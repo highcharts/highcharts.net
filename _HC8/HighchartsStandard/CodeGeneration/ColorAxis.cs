@@ -75,6 +75,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Type = Type_DefaultValue = "linear";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
+			ZIndex = ZIndex_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -493,6 +494,13 @@ namespace Highsoft.Web.Mvc.Charts
 		private bool? Visible_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// The Z index for the axis group.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
@@ -559,6 +567,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

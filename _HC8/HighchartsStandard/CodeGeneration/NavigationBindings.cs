@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FlagDiamondpin = FlagDiamondpin_DefaultValue = new Object();
 			FlagSimplepin = FlagSimplepin_DefaultValue = new Object();
 			FlagSquarepin = FlagSquarepin_DefaultValue = new Object();
-			FullScreen = FullScreen_DefaultValue = new Object();
+			FullScreen = FullScreen_DefaultValue = new NavigationBindingsFullScreen();
 			HorizontalLine = HorizontalLine_DefaultValue = new Object();
 			Indicators = Indicators_DefaultValue = new Object();
 			InfinityLine = InfinityLine_DefaultValue = new Object();
@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Pitchfork = Pitchfork_DefaultValue = new Object();
 			Ray = Ray_DefaultValue = new Object();
 			RectangleAnnotation = RectangleAnnotation_DefaultValue = new Object();
-			SaveChart = SaveChart_DefaultValue = new Object();
+			SaveChart = SaveChart_DefaultValue = new NavigationBindingsSaveChart();
 			Segment = Segment_DefaultValue = new Object();
 			SeriesTypeCandlestick = SeriesTypeCandlestick_DefaultValue = new Object();
 			SeriesTypeLine = SeriesTypeLine_DefaultValue = new Object();
@@ -161,8 +161,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Displays chart in fullscreen.**Note**: Fullscreen is not supported on iPhone due to iOS limitations.
 		/// </summary>
-		public Object FullScreen { get; set; }
-		private Object FullScreen_DefaultValue { get; set; }
+		public NavigationBindingsFullScreen FullScreen { get; set; }
+		private NavigationBindingsFullScreen FullScreen_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -245,8 +245,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Save a chart in localStorage under `highcharts-chart` key.Stored items:- annotations- indicators (with yAxes)- flags
 		/// </summary>
-		public Object SaveChart { get; set; }
-		private Object SaveChart_DefaultValue { get; set; }
+		public NavigationBindingsSaveChart SaveChart { get; set; }
+		private NavigationBindingsSaveChart SaveChart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -285,7 +285,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow. Green arrow whenpointing from above, red when pointing from below the point.
+		/// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow.`#06b535` is the color of the arrow whenpointing from above and `#f21313`when pointing from below the point.
 		/// </summary>
 		public Object VerticalArrow { get; set; }
 		private Object VerticalArrow_DefaultValue { get; set; }
@@ -354,7 +354,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FlagDiamondpin != FlagDiamondpin_DefaultValue) h.Add("flagDiamondpin",FlagDiamondpin);
 			if (FlagSimplepin != FlagSimplepin_DefaultValue) h.Add("flagSimplepin",FlagSimplepin);
 			if (FlagSquarepin != FlagSquarepin_DefaultValue) h.Add("flagSquarepin",FlagSquarepin);
-			if (FullScreen != FullScreen_DefaultValue) h.Add("fullScreen",FullScreen);
+			if (FullScreen.IsDirty()) h.Add("fullScreen",FullScreen.ToHashtable());
 			if (HorizontalLine != HorizontalLine_DefaultValue) h.Add("horizontalLine",HorizontalLine);
 			if (Indicators != Indicators_DefaultValue) h.Add("indicators",Indicators);
 			if (InfinityLine != InfinityLine_DefaultValue) h.Add("infinityLine",InfinityLine);
@@ -366,7 +366,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Pitchfork != Pitchfork_DefaultValue) h.Add("pitchfork",Pitchfork);
 			if (Ray != Ray_DefaultValue) h.Add("ray",Ray);
 			if (RectangleAnnotation != RectangleAnnotation_DefaultValue) h.Add("rectangleAnnotation",RectangleAnnotation);
-			if (SaveChart != SaveChart_DefaultValue) h.Add("saveChart",SaveChart);
+			if (SaveChart.IsDirty()) h.Add("saveChart",SaveChart.ToHashtable());
 			if (Segment != Segment_DefaultValue) h.Add("segment",Segment);
 			if (SeriesTypeCandlestick != SeriesTypeCandlestick_DefaultValue) h.Add("seriesTypeCandlestick",SeriesTypeCandlestick);
 			if (SeriesTypeLine != SeriesTypeLine_DefaultValue) h.Add("seriesTypeLine",SeriesTypeLine);

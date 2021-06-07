@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TextAlign = TextAlign_DefaultValue = "";
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = null;
+			Y = Y_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -43,7 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Deprecated. Set the `text` to `null` to disable the title.
+		/// Deprecated. Set the `text` to `undefined` to disable the title.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }

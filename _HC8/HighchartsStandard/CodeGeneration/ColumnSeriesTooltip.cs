@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ColumnSeriesTooltip()
 		{
-			ClassName = ClassName_DefaultValue = "";
 			ClusterFormat = ClusterFormat_DefaultValue = "";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Distance = Distance_DefaultValue = 16;
@@ -24,16 +23,10 @@ namespace Highsoft.Web.Mvc.Charts
 			FollowTouchMove = FollowTouchMove_DefaultValue = null;
 			FooterFormat = FooterFormat_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
-			HeaderShape = HeaderShape_DefaultValue = ColumnSeriesTooltipHeaderShape.Callout;
-			HideDelay = HideDelay_DefaultValue = 500;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatter = NullFormatter_DefaultValue = "";
-			Outside = Outside_DefaultValue = null;
-			Padding = Padding_DefaultValue = "8";
 			PointFormat = PointFormat_DefaultValue = "";
 			PointFormatter = PointFormatter_DefaultValue = "";
-			Split = Split_DefaultValue = null;
-			StickOnContact = StickOnContact_DefaultValue = null;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = "";
 			ValueSuffix = ValueSuffix_DefaultValue = "";
@@ -44,13 +37,6 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// A CSS class name to apply to the tooltip's container div,allowing unique CSS styling for each chart.
-		/// </summary>
-		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The HTML of the cluster point's in the tooltip. Works only withmarker-clusters module and analogously to[pointFormat](#tooltip.pointFormat).The cluster tooltip can be also formatted using`tooltip.formatter` callback function and `point.isCluster` flag.
 		/// </summary>
 		public string ClusterFormat { get; set; }
@@ -58,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For series on a datetime axes, the date format in the tooltip'sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).
+		/// For series on datetime axes, the date format in the tooltip'sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#.dateFormat).
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
@@ -72,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether the tooltip should follow the mouse as it moves acrosscolumns, pie slices and other point types with an extent.By default it behaves this way for pie, polygon, map, sankeyand wordcloud series by override in the `plotOptions`for those series types.For touch moves to behave the same way, [followTouchMove](#tooltip.followTouchMove) must be `true` also.
+		/// Whether the tooltip should follow the mouse as it moves acrosscolumns, pie slices and other point types with an extent.By default it behaves this way for pie, polygon, map, sankeyand wordcloud series by override in the `plotOptions`for those series types.Does not apply if [split](#tooltip.split) is `true`.For touch moves to behave the same way, [followTouchMove](#tooltip.followTouchMove) must be `true` also.
 		/// </summary>
 		public bool? FollowPointer { get; set; }
 		private bool? FollowPointer_DefaultValue { get; set; }
@@ -100,20 +86,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of a symbol to use for the border around the tooltipheader. Applies only when [tooltip.split](#tooltip.split) isenabled.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
-		/// </summary>
-		public ColumnSeriesTooltipHeaderShape HeaderShape { get; set; }
-		private ColumnSeriesTooltipHeaderShape HeaderShape_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The number of milliseconds to wait until the tooltip is hidden whenmouse out from a point or chart.
-		/// </summary>
-		public double? HideDelay { get; set; }
-		private double? HideDelay_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The HTML of the null point's line in the tooltip. Works analogouslyto [pointFormat](#tooltip.pointFormat).
 		/// </summary>
 		public string NullFormat { get; set; }
@@ -128,20 +100,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to allow the tooltip to render outside the chart's SVGelement box. By default (`false`), the tooltip is rendered within thechart's SVG element, which results in the tooltip being alignedinside the chart area. For small charts, this may result in clippingor overlapping. When `true`, a separate SVG element is created andoverlaid on the page, allowing the tooltip to be aligned inside thepage itself.Defaults to `true` if `chart.scrollablePlotArea` is activated,otherwise `false`.
-		/// </summary>
-		public bool? Outside { get; set; }
-		private bool? Outside_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding inside the tooltip, in pixels.
-		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The HTML of the point's line in the tooltip. Variables are enclosedby curly brackets. Available variables are `point.x`, `point.y`,`series.name` and `series.color` and other properties on the sameform. Furthermore, `point.y` can be extended by the`tooltip.valuePrefix` and `tooltip.valueSuffix` variables. This canalso be overridden for each series, which makes it a good hook fordisplaying units.In styled mode, the dot is colored by a class name ratherthan the point color.
 		/// </summary>
 		public string PointFormat { get; set; }
@@ -153,20 +111,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string PointFormatter { get; set; }
 		private string PointFormatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Split the tooltip into one label per series, with the header closeto the axis. This is recommended over [shared](#tooltip.shared)tooltips for charts with multiple line series, generally making themeasier to read. This option takes precedence over `tooltip.shared`.
-		/// </summary>
-		public bool? Split { get; set; }
-		private bool? Split_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Prevents the tooltip from switching or closing, when touched orpointed.
-		/// </summary>
-		public bool? StickOnContact { get; set; }
-		private bool? StickOnContact_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -204,7 +148,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (ClusterFormat != ClusterFormat_DefaultValue) h.Add("clusterFormat",ClusterFormat);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
@@ -212,16 +155,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", Highcharts.FirstCharacterToLower(HeaderShape.ToString()));
-			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("nullFormatter", NullFormatter); }  
-			if (Outside != Outside_DefaultValue) h.Add("outside",Outside);
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("pointFormatter", PointFormatter); }  
-			if (Split != Split_DefaultValue) h.Add("split",Split);
-			if (StickOnContact != StickOnContact_DefaultValue) h.Add("stickOnContact",StickOnContact);
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
 			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);

@@ -21,7 +21,6 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BoostBlending = BoostBlending_DefaultValue = PlotOptionsWordcloudBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
@@ -37,9 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Cursor = Cursor_DefaultValue = PlotOptionsWordcloudCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = PlotOptionsWordcloudDashStyle.Null;
-			DataSorting = DataSorting_DefaultValue = new PlotOptionsWordcloudDataSorting();
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new PlotOptionsWordcloudDragDrop();
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsWordcloudEvents();
@@ -77,7 +74,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// If there is no space for a word on the playing field, then this optionwill allow the playing field to be extended to fit the word. If falsethen the word will be dropped from the visualization.NB! This option is currently not decided to be published in the API, andis therefore marked as private.
+		/// If there is no space for a word on the playing field, then thisoption will allow the playing field to be extended to fit the word.If false then the word will be dropped from the visualization.NB! This option is currently not decided to be published in the API,and is therefore marked as private.
 		/// </summary>
 		public bool? AllowExtendPlayingField { get; set; }
 		private bool? AllowExtendPlayingField_DefaultValue { get; set; }
@@ -102,13 +99,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? AnimationLimit { get; set; }
 		private double? AnimationLimit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sets the color blending in the boost module.
-		/// </summary>
-		public PlotOptionsWordcloudBoostBlending BoostBlending { get; set; }
-		private PlotOptionsWordcloudBoostBlending BoostBlending_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -217,24 +207,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public PlotOptionsWordcloudDataSorting DataSorting { get; set; }
-		private PlotOptionsWordcloudDataSorting DataSorting_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
-		/// </summary>
-		public PlotOptionsWordcloudDragDrop DragDrop { get; set; }
-		private PlotOptionsWordcloudDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -287,14 +263,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The word with the largest weight will have a font size equal to thisvalue. The font size of a word is the ratio between its weight and thelargest occuring weight, multiplied with the value of maxFontSize.
+		/// The word with the largest weight will have a font size equal to thisvalue. The font size of a word is the ratio between its weight andthe largest occuring weight, multiplied with the value ofmaxFontSize.
 		/// </summary>
 		public double? MaxFontSize { get; set; }
 		private double? MaxFontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A threshold determining the minimum font size that can be applied to aword.
+		/// A threshold determining the minimum font size that can be applied toa word.
 		/// </summary>
 		public double? MinFontSize { get; set; }
 		private double? MinFontSize_DefaultValue { get; set; }
@@ -308,7 +284,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This option decides which algorithm is used for placement, and rotationof a word. The choice of algorith is therefore a crucial part of theresulting layout of the wordcloud. It is possible for users to add theirown custom placement strategies for use in word cloud. Read more about itin our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-placement-strategies)
+		/// This option decides which algorithm is used for placement, androtation of a word. The choice of algorith is therefore a crucialpart of the resulting layout of the wordcloud. It is possible forusers to add their own custom placement strategies for use in wordcloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-placement-strategies)
 		/// </summary>
 		public string PlacementStrategy { get; set; }
 		private string PlacementStrategy_DefaultValue { get; set; }
@@ -357,7 +333,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Spiral used for placing a word after the initial position experienced acollision with either another word or the borders.It is possible for users to add their own custom spiralling algorithmsfor use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
+		/// Spiral used for placing a word after the initial positionexperienced a collision with either another word or the borders.It is possible for users to add their own custom spirallingalgorithms for use in word cloud. Read more about it in our[documentation](https://www.highcharts.com/docs/chart-and-series-types/word-cloud-series#custom-spiralling-algorithm)
 		/// </summary>
 		public string Spiral { get; set; }
 		private string Spiral_DefaultValue { get; set; }
@@ -417,7 +393,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -433,9 +408,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());

@@ -19,11 +19,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Accessibility = Accessibility_DefaultValue = new Funnel3dSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BoostBlending = BoostBlending_DefaultValue = Funnel3dSeriesBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
-			BorderWidth = BorderWidth_DefaultValue = null;
+			BorderWidth = BorderWidth_DefaultValue = 1;
+			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
@@ -39,14 +40,15 @@ namespace Highsoft.Web.Mvc.Charts
 			DashStyle = DashStyle_DefaultValue = Funnel3dSeriesDashStyle.Null;
 			Data = Data_DefaultValue = new List<Funnel3dSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new Funnel3dSeriesDataLabels();
-			DataSorting = DataSorting_DefaultValue = new Funnel3dSeriesDataSorting();
-			Depth = Depth_DefaultValue = 25;
+			Depth = Depth_DefaultValue = 0;
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new Funnel3dSeriesDragDrop();
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
+			EndAngle = EndAngle_DefaultValue = null;
 			Events = Events_DefaultValue = new Funnel3dSeriesEvents();
+			FillColor = FillColor_DefaultValue = null;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = Funnel3dSeriesFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			GradientForSides = GradientForSides_DefaultValue = true;
@@ -56,14 +58,18 @@ namespace Highsoft.Web.Mvc.Charts
 			Height = Height_DefaultValue = "100%";
 			HeightNumber = HeightNumber_DefaultValue = null;
 			Id = Id_DefaultValue = "";
+			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new Funnel3dSeriesLabel();
 			LegendIndex = LegendIndex_DefaultValue = null;
+			Linecap = Linecap_DefaultValue = Funnel3dSeriesLinecap.Round;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
+			MinSize = MinSize_DefaultValue = "80";
+			MinSizeNumber = MinSizeNumber_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			NeckHeight = NeckHeight_DefaultValue = "25%";
 			NeckHeightNumber = NeckHeightNumber_DefaultValue = null;
@@ -87,15 +93,18 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			SlicedOffset = SlicedOffset_DefaultValue = 10;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			Stack = Stack_DefaultValue = "";
 			StackNumber = StackNumber_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = Funnel3dSeriesStacking.Null;
+			StartAngle = StartAngle_DefaultValue = 0;
 			States = States_DefaultValue = new Funnel3dSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new Funnel3dSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
+			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = "90%";
 			WidthNumber = WidthNumber_DefaultValue = null;
@@ -133,6 +142,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds.- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below.Due to poor performance, animation is disabled in old IE browsersfor several chart types.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// For some series, there is a limit that shuts down initial animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesnot run if there is more than 250 points totally. To disable thiscap, set `animationLimit` to `Infinity`.
 		/// </summary>
 		public double? AnimationLimit { get; set; }
@@ -140,14 +156,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Sets the color blending in the boost module.
-		/// </summary>
-		public Funnel3dSeriesBoostBlending BoostBlending { get; set; }
-		private Funnel3dSeriesBoostBlending BoostBlending_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the`.highcharts-point` rule.
+		/// The color of the border surrounding each slice. When `null`, theborder takes the same color as the slice fill. This can be usedtogether with a `borderWidth` to fill drawing gaps created byantialiazing artefacts in borderless pies.In styled mode, the border stroke is given in the `.highcharts-point`class.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
@@ -161,10 +170,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the border surrounding each column or bar. Defaults to`1` when there is room for a border, but to `0` when the columns areso dense that a border would cover the next column.In styled mode, the stroke width can be set with the`.highcharts-point` rule.
+		/// The width of the border surrounding each slice.When setting the border width to 0, there may be small gaps betweenthe slices due to SVG antialiasing artefacts. To work around this,keep the border width at 0.5 or 1, but set the `borderColor` to`null` instead.In styled mode, the border stroke width is given in the`.highcharts-point` class.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The center of the pie chart relative to the plot area. Can bepercentages or pixel values. The default behaviour (as of 3.0) is tocenter the pie so that all slices and data labels are within the plotarea. As a consequence, the pie may actually jump around in a chartwith dynamic values, as the data labels move. In that case, thecenter should be explicitly set, for example to `["50%", "50%"]`.
+		/// </summary>
+		public string[] Center { get; set; }
+		private string[] Center_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -217,7 +233,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A series specific or series type specific color set to apply insteadof the global [colors](#colors) when [colorByPoint](#plotOptions.column.colorByPoint) is true.
+		/// A series specific or series type specific color set to use insteadof the global [colors](#colors).
 		/// </summary>
 		public List<string> Colors { get; set; }
 		private List<string> Colors_DefaultValue { get; set; }
@@ -266,21 +282,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.Since v6.2.0, multiple data labels can be applied to each singlepoint by defining them as an array of configs.In styled mode, the data labels can be styled with the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](https://www.highcharts.com/samples/highcharts/css/series-datalabels)).
+		/// 
 		/// </summary>
 		public Funnel3dSeriesDataLabels DataLabels { get; set; }
 		private Funnel3dSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public Funnel3dSeriesDataSorting DataSorting { get; set; }
-		private Funnel3dSeriesDataSorting DataSorting_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Depth of the columns in a 3D column chart.
+		/// The thickness of a 3D pie.
 		/// </summary>
 		public double? Depth { get; set; }
 		private double? Depth_DefaultValue { get; set; }
@@ -322,10 +331,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The end angle of the pie in degrees where 0 is top and 90 is right.Defaults to `startAngle` plus 360.
+		/// </summary>
+		public double? EndAngle { get; set; }
+		private double? EndAngle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// General event handlers for the series items. These event hooks canalso be attached to the series at run time using the`Highcharts.addEvent` function.
 		/// </summary>
 		public Funnel3dSeriesEvents Events { get; set; }
 		private Funnel3dSeriesEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// If the total sum of the pie's values is 0, the series is representedas an empty circle . The `fillColor` option defines the color of thatcircle. Use [pie.borderWidth](#plotOptions.pie.borderWidth) to setthe border thickness.
+		/// </summary>
+		public Object FillColor { get; set; }
+		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -371,14 +394,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The height of the series. If it is a number it definesthe pixel height, if it is a percentage string it is the percentageof the plot area height.
+		/// The height of the funnel or pyramid. If it is a number it definesthe pixel height, if it is a percentage string it is the percentageof the plot area height.
 		/// </summary>
 		public string Height { get; set; }
 		private string Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The height of the series. If it is a number it definesthe pixel height, if it is a percentage string it is the percentageof the plot area height.
+		/// The height of the funnel or pyramid. If it is a number it definesthe pixel height, if it is a percentage string it is the percentageof the plot area height.
 		/// </summary>
 		public double? HeightNumber { get; set; }
 		private double? HeightNumber_DefaultValue { get; set; }
@@ -389,6 +412,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Equivalent to [chart.ignoreHiddenSeries](#chart.ignoreHiddenSeries),this option tells whether the series shall be redrawn as if thehidden point were `null`.The default value changed from `false` to `true` with Highcharts3.0.
+		/// </summary>
+		public bool? IgnoreHiddenPoint { get; set; }
+		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -427,6 +457,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The line cap used for line ends and line joins on the graph.
+		/// </summary>
+		public Funnel3dSeriesLinecap Linecap { get; set; }
+		private Funnel3dSeriesLinecap Linecap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.If master series uses data sorting and linked series does not haveits own sorting definition, the linked series will be sorted in thesame order as the master one.
 		/// </summary>
 		public string LinkedTo { get; set; }
@@ -448,6 +485,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The minimum size for a pie in response to auto margins. The pie willtry to shrink to make room for data labels in side the plot area, but only to this size.
+		/// </summary>
+		public string MinSize { get; set; }
+		private string MinSize_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The minimum size for a pie in response to auto margins. The pie willtry to shrink to make room for data labels in side the plot area, but only to this size.
+		/// </summary>
+		public double? MinSizeNumber { get; set; }
+		private double? MinSizeNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The name of the series as shown in the legend, tooltip etc.
 		/// </summary>
 		public string Name { get; set; }
@@ -455,14 +506,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The height of the neck, the lower part of the funnel. A numberdefines pixel width, a percentage string defines a percentageof the plot area height.
+		/// The height of the neck, the lower part of the funnel. A numberdefines pixel width, a percentage string defines a percentage of theplot area height.
 		/// </summary>
 		public string NeckHeight { get; set; }
 		private string NeckHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The height of the neck, the lower part of the funnel. A numberdefines pixel width, a percentage string defines a percentageof the plot area height.
+		/// The height of the neck, the lower part of the funnel. A numberdefines pixel width, a percentage string defines a percentage of theplot area height.
 		/// </summary>
 		public double? NeckHeightNumber { get; set; }
 		private double? NeckHeightNumber_DefaultValue { get; set; }
@@ -553,7 +604,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A pixel value specifying a fixed width for each column or bar point.When `null`, the width is calculated from the `pointPadding` and`groupPadding`. The width effects the dimension that is not based onthe point value. For column series it is the hoizontal length and forbar series it is the vertical length.
+		/// A pixel value specifying a fixed width for each column or bar point.When set to `undefined`, the width is calculated from the`pointPadding` and `groupPadding`. The width effects the dimensionthat is not based on the point value. For column series it is thehoizontal length and for bar series it is the vertical length.
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
@@ -609,6 +660,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// If a point is sliced, moved out from the center, how many pixelsshould it be moved?.
+		/// </summary>
+		public double? SlicedOffset { get; set; }
+		private double? SlicedOffset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When this is true, the series will not cause the Y axis to crossthe zero plane (or [threshold](#plotOptions.series.threshold) option)unless the data actually crosses the plane.For example, if `softThreshold` is `false`, a series of 0, 1, 2,3 will make the Y axis show negative values according to the`minPadding` option. If `softThreshold` is `true`, the Y axis startsat 0.
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
@@ -634,6 +692,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Funnel3dSeriesStacking Stacking { get; set; }
 		private Funnel3dSeriesStacking Stacking_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The start angle of the pie slices in degrees where 0 is top and 90right.
+		/// </summary>
+		public double? StartAngle { get; set; }
+		private double? StartAngle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -672,6 +737,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The parameter allows setting line series type and use OHLC indicators.Data in OHLC format is required.
+		/// </summary>
+		public bool? UseOhlcData { get; set; }
+		private bool? UseOhlcData_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -679,14 +751,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The max width of the series compared to the width of the plot area,or the pixel width if it is a number.
+		/// The width of the funnel compared to the width of the plot area,or the pixel width if it is a number.
 		/// </summary>
 		public string Width { get; set; }
 		private string Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The max width of the series compared to the width of the plot area,or the pixel width if it is a number.
+		/// The width of the funnel compared to the width of the plot area,or the pixel width if it is a number.
 		/// </summary>
 		public double? WidthNumber { get; set; }
 		private double? WidthNumber_DefaultValue { get; set; }
@@ -751,11 +823,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
@@ -771,14 +844,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(Data));
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (GradientForSides != GradientForSides_DefaultValue) h.Add("gradientForSides",GradientForSides);
@@ -788,14 +862,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
+			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
+			if (MinSizeNumber != MinSizeNumber_DefaultValue) h.Add("minSize",MinSizeNumber);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
 			if (NeckHeightNumber != NeckHeightNumber_DefaultValue) h.Add("neckHeight",NeckHeightNumber);
@@ -819,16 +897,19 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
 			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
+			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
 			if (States.IsDirty()) h.Add("states",States.ToHashtable());
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			h.Add("type","funnel3d");
+			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);

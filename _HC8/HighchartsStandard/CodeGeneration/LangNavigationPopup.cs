@@ -17,15 +17,18 @@ namespace Highsoft.Web.Mvc.Charts
 		public LangNavigationPopup()
 		{
 			AddButton = AddButton_DefaultValue = "add";
+			Algorithm = Algorithm_DefaultValue = "Algorithm";
 			ArrowLine = ArrowLine_DefaultValue = "Arrow line";
 			ArrowRay = ArrowRay_DefaultValue = "Arrow ray";
 			ArrowSegment = ArrowSegment_DefaultValue = "Arrow segment";
+			Average = Average_DefaultValue = "Average";
 			Background = Background_DefaultValue = "Background";
 			BackgroundColor = BackgroundColor_DefaultValue = "Background color";
 			BackgroundColors = BackgroundColors_DefaultValue = "Background colors";
 			BorderColor = BorderColor_DefaultValue = "Border color";
 			BorderRadius = BorderRadius_DefaultValue = "Border radius";
 			BorderWidth = BorderWidth_DefaultValue = "Border width";
+			BottomBand = BottomBand_DefaultValue = "Bottom band";
 			Circle = Circle_DefaultValue = "Circle";
 			Color = Color_DefaultValue = "Color";
 			Connector = Connector_DefaultValue = "Connector";
@@ -33,32 +36,50 @@ namespace Highsoft.Web.Mvc.Charts
 			Crooked5 = Crooked5_DefaultValue = "Crooked 5 line";
 			CrosshairX = CrosshairX_DefaultValue = "Crosshair X";
 			CrosshairY = CrosshairY_DefaultValue = "Crosshair Y";
+			Decimals = Decimals_DefaultValue = "Decimals";
+			Deviation = Deviation_DefaultValue = "Deviation";
 			EditButton = EditButton_DefaultValue = "edit";
 			Elliott3 = Elliott3_DefaultValue = "Elliott 3 line";
 			Elliott5 = Elliott5_DefaultValue = "Elliott 5 line";
+			Factor = Factor_DefaultValue = "Factor";
+			FastAvgPeriod = FastAvgPeriod_DefaultValue = "Fast average period";
 			Fibonacci = Fibonacci_DefaultValue = "Fibonacci";
 			Fill = Fill_DefaultValue = "Fill";
 			Flags = Flags_DefaultValue = "Flags";
 			FontSize = FontSize_DefaultValue = "Font size";
 			Format = Format_DefaultValue = "Text";
 			Height = Height_DefaultValue = "Height";
+			HighIndex = HighIndex_DefaultValue = "High index";
 			HorizontalLine = HorizontalLine_DefaultValue = "Horizontal line";
+			Increment = Increment_DefaultValue = "Increment";
+			Index = Index_DefaultValue = "Index";
 			InfinityLine = InfinityLine_DefaultValue = "Infinity line";
+			InitialAccelerationFactor = InitialAccelerationFactor_DefaultValue = "Initial acceleration factor";
 			InnerBackground = InnerBackground_DefaultValue = "Inner background";
 			Label = Label_DefaultValue = "Label";
 			LabelOptions = LabelOptions_DefaultValue = "Label options";
 			Labels = Labels_DefaultValue = "Labels";
 			Line = Line_DefaultValue = "Line";
 			Lines = Lines_DefaultValue = "Lines";
+			LongPeriod = LongPeriod_DefaultValue = "Long period";
+			LowIndex = LowIndex_DefaultValue = "Low index";
+			MaxAccelerationFactor = MaxAccelerationFactor_DefaultValue = "Max acceleration factor";
 			Measure = Measure_DefaultValue = "Measure";
 			MeasureX = MeasureX_DefaultValue = "Measure X";
 			MeasureXY = MeasureXY_DefaultValue = "Measure XY";
 			MeasureY = MeasureY_DefaultValue = "Measure Y";
+			Multiplier = Multiplier_DefaultValue = "Multiplier";
+			MultiplierATR = MultiplierATR_DefaultValue = "ATR multiplier";
 			Name = Name_DefaultValue = "Name";
 			OuterBackground = OuterBackground_DefaultValue = "Outer background";
 			Padding = Padding_DefaultValue = "Padding";
 			ParallelChannel = ParallelChannel_DefaultValue = "Parallel channel";
+			Period = Period_DefaultValue = "Period";
+			PeriodATR = PeriodATR_DefaultValue = "ATR period";
+			PeriodSenkouSpanB = PeriodSenkouSpanB_DefaultValue = "Senkou Span B period";
+			PeriodTenkan = PeriodTenkan_DefaultValue = "Tenkan period";
 			Pitchfork = Pitchfork_DefaultValue = "Pitchfork";
+			Ranges = Ranges_DefaultValue = "Ranges";
 			Ray = Ray_DefaultValue = "Ray";
 			Rectangle = Rectangle_DefaultValue = "Rectangle";
 			RemoveButton = RemoveButton_DefaultValue = "remove";
@@ -67,11 +88,16 @@ namespace Highsoft.Web.Mvc.Charts
 			Series = Series_DefaultValue = new List<Series>();
 			ShapeOptions = ShapeOptions_DefaultValue = "Shape options";
 			Shapes = Shapes_DefaultValue = "Shape options";
+			ShortPeriod = ShortPeriod_DefaultValue = "Short period";
+			SignalPeriod = SignalPeriod_DefaultValue = "Signal period";
 			SimpleShapes = SimpleShapes_DefaultValue = "Simple shapes";
+			SlowAvgPeriod = SlowAvgPeriod_DefaultValue = "Slow average period";
+			StandardDeviation = StandardDeviation_DefaultValue = "Standard deviation";
 			Stroke = Stroke_DefaultValue = "Line color";
 			StrokeWidth = StrokeWidth_DefaultValue = "Line width";
 			Style = Style_DefaultValue = new Hashtable();
 			Title = Title_DefaultValue = "Title";
+			TopBand = TopBand_DefaultValue = "Top band";
 			Tunnel = Tunnel_DefaultValue = "Tunnel";
 			TypeOptions = TypeOptions_DefaultValue = "Details";
 			VerticalArrow = VerticalArrow_DefaultValue = "Vertical arrow";
@@ -79,6 +105,7 @@ namespace Highsoft.Web.Mvc.Charts
 			VerticalLabel = VerticalLabel_DefaultValue = "Vertical label";
 			VerticalLine = VerticalLine_DefaultValue = "Vertical line";
 			Volume = Volume_DefaultValue = "Volume";
+			XAxisUnit = XAxisUnit_DefaultValue = "x-axis unit";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -89,6 +116,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string AddButton { get; set; }
 		private string AddButton_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Algorithm { get; set; }
+		private string Algorithm_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -110,6 +144,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ArrowSegment { get; set; }
 		private string ArrowSegment_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Average { get; set; }
+		private string Average_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -152,6 +193,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string BorderWidth { get; set; }
 		private string BorderWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string BottomBand { get; set; }
+		private string BottomBand_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -206,6 +254,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public string Decimals { get; set; }
+		private string Decimals_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Deviation { get; set; }
+		private string Deviation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string EditButton { get; set; }
 		private string EditButton_DefaultValue { get; set; }
 		 
@@ -222,6 +284,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Elliott5 { get; set; }
 		private string Elliott5_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Factor { get; set; }
+		private string Factor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string FastAvgPeriod { get; set; }
+		private string FastAvgPeriod_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -269,6 +345,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public string HighIndex { get; set; }
+		private string HighIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string HorizontalLine { get; set; }
 		private string HorizontalLine_DefaultValue { get; set; }
 		 
@@ -276,8 +359,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public string Increment { get; set; }
+		private string Increment_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Index { get; set; }
+		private string Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string InfinityLine { get; set; }
 		private string InfinityLine_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string InitialAccelerationFactor { get; set; }
+		private string InitialAccelerationFactor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -325,6 +429,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public string LongPeriod { get; set; }
+		private string LongPeriod_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string LowIndex { get; set; }
+		private string LowIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string MaxAccelerationFactor { get; set; }
+		private string MaxAccelerationFactor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Measure { get; set; }
 		private string Measure_DefaultValue { get; set; }
 		 
@@ -348,6 +473,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string MeasureY { get; set; }
 		private string MeasureY_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Multiplier { get; set; }
+		private string Multiplier_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string MultiplierATR { get; set; }
+		private string MultiplierATR_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -381,8 +520,43 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public string Period { get; set; }
+		private string Period_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string PeriodATR { get; set; }
+		private string PeriodATR_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string PeriodSenkouSpanB { get; set; }
+		private string PeriodSenkouSpanB_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string PeriodTenkan { get; set; }
+		private string PeriodTenkan_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Pitchfork { get; set; }
 		private string Pitchfork_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Ranges { get; set; }
+		private string Ranges_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -444,8 +618,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public string ShortPeriod { get; set; }
+		private string ShortPeriod_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string SignalPeriod { get; set; }
+		private string SignalPeriod_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string SimpleShapes { get; set; }
 		private string SimpleShapes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string SlowAvgPeriod { get; set; }
+		private string SlowAvgPeriod_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string StandardDeviation { get; set; }
+		private string StandardDeviation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -474,6 +676,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Title { get; set; }
 		private string Title_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string TopBand { get; set; }
+		private string TopBand_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -525,6 +734,13 @@ namespace Highsoft.Web.Mvc.Charts
 		private string Volume_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public string XAxisUnit { get; set; }
+		private string XAxisUnit_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable()
@@ -533,15 +749,18 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (AddButton != AddButton_DefaultValue) h.Add("addButton",AddButton);
+			if (Algorithm != Algorithm_DefaultValue) h.Add("algorithm",Algorithm);
 			if (ArrowLine != ArrowLine_DefaultValue) h.Add("arrowLine",ArrowLine);
 			if (ArrowRay != ArrowRay_DefaultValue) h.Add("arrowRay",ArrowRay);
 			if (ArrowSegment != ArrowSegment_DefaultValue) h.Add("arrowSegment",ArrowSegment);
+			if (Average != Average_DefaultValue) h.Add("average",Average);
 			if (Background != Background_DefaultValue) h.Add("background",Background);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BackgroundColors != BackgroundColors_DefaultValue) h.Add("backgroundColors",BackgroundColors);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
+			if (BottomBand != BottomBand_DefaultValue) h.Add("bottomBand",BottomBand);
 			if (Circle != Circle_DefaultValue) h.Add("circle",Circle);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Connector != Connector_DefaultValue) h.Add("connector",Connector);
@@ -549,32 +768,50 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crooked5 != Crooked5_DefaultValue) h.Add("crooked5",Crooked5);
 			if (CrosshairX != CrosshairX_DefaultValue) h.Add("crosshairX",CrosshairX);
 			if (CrosshairY != CrosshairY_DefaultValue) h.Add("crosshairY",CrosshairY);
+			if (Decimals != Decimals_DefaultValue) h.Add("decimals",Decimals);
+			if (Deviation != Deviation_DefaultValue) h.Add("deviation",Deviation);
 			if (EditButton != EditButton_DefaultValue) h.Add("editButton",EditButton);
 			if (Elliott3 != Elliott3_DefaultValue) h.Add("elliott3",Elliott3);
 			if (Elliott5 != Elliott5_DefaultValue) h.Add("elliott5",Elliott5);
+			if (Factor != Factor_DefaultValue) h.Add("factor",Factor);
+			if (FastAvgPeriod != FastAvgPeriod_DefaultValue) h.Add("fastAvgPeriod",FastAvgPeriod);
 			if (Fibonacci != Fibonacci_DefaultValue) h.Add("fibonacci",Fibonacci);
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (Flags != Flags_DefaultValue) h.Add("flags",Flags);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (HighIndex != HighIndex_DefaultValue) h.Add("highIndex",HighIndex);
 			if (HorizontalLine != HorizontalLine_DefaultValue) h.Add("horizontalLine",HorizontalLine);
+			if (Increment != Increment_DefaultValue) h.Add("increment",Increment);
+			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (InfinityLine != InfinityLine_DefaultValue) h.Add("infinityLine",InfinityLine);
+			if (InitialAccelerationFactor != InitialAccelerationFactor_DefaultValue) h.Add("initialAccelerationFactor",InitialAccelerationFactor);
 			if (InnerBackground != InnerBackground_DefaultValue) h.Add("innerBackground",InnerBackground);
 			if (Label != Label_DefaultValue) h.Add("label",Label);
 			if (LabelOptions != LabelOptions_DefaultValue) h.Add("labelOptions",LabelOptions);
 			if (Labels != Labels_DefaultValue) h.Add("labels",Labels);
 			if (Line != Line_DefaultValue) h.Add("line",Line);
 			if (Lines != Lines_DefaultValue) h.Add("lines",Lines);
+			if (LongPeriod != LongPeriod_DefaultValue) h.Add("longPeriod",LongPeriod);
+			if (LowIndex != LowIndex_DefaultValue) h.Add("lowIndex",LowIndex);
+			if (MaxAccelerationFactor != MaxAccelerationFactor_DefaultValue) h.Add("maxAccelerationFactor",MaxAccelerationFactor);
 			if (Measure != Measure_DefaultValue) h.Add("measure",Measure);
 			if (MeasureX != MeasureX_DefaultValue) h.Add("measureX",MeasureX);
 			if (MeasureXY != MeasureXY_DefaultValue) h.Add("measureXY",MeasureXY);
 			if (MeasureY != MeasureY_DefaultValue) h.Add("measureY",MeasureY);
+			if (Multiplier != Multiplier_DefaultValue) h.Add("multiplier",Multiplier);
+			if (MultiplierATR != MultiplierATR_DefaultValue) h.Add("multiplierATR",MultiplierATR);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (OuterBackground != OuterBackground_DefaultValue) h.Add("outerBackground",OuterBackground);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (ParallelChannel != ParallelChannel_DefaultValue) h.Add("parallelChannel",ParallelChannel);
+			if (Period != Period_DefaultValue) h.Add("period",Period);
+			if (PeriodATR != PeriodATR_DefaultValue) h.Add("periodATR",PeriodATR);
+			if (PeriodSenkouSpanB != PeriodSenkouSpanB_DefaultValue) h.Add("periodSenkouSpanB",PeriodSenkouSpanB);
+			if (PeriodTenkan != PeriodTenkan_DefaultValue) h.Add("periodTenkan",PeriodTenkan);
 			if (Pitchfork != Pitchfork_DefaultValue) h.Add("pitchfork",Pitchfork);
+			if (Ranges != Ranges_DefaultValue) h.Add("ranges",Ranges);
 			if (Ray != Ray_DefaultValue) h.Add("ray",Ray);
 			if (Rectangle != Rectangle_DefaultValue) h.Add("rectangle",Rectangle);
 			if (RemoveButton != RemoveButton_DefaultValue) h.Add("removeButton",RemoveButton);
@@ -583,11 +820,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (ShapeOptions != ShapeOptions_DefaultValue) h.Add("shapeOptions",ShapeOptions);
 			if (Shapes != Shapes_DefaultValue) h.Add("shapes",Shapes);
+			if (ShortPeriod != ShortPeriod_DefaultValue) h.Add("shortPeriod",ShortPeriod);
+			if (SignalPeriod != SignalPeriod_DefaultValue) h.Add("signalPeriod",SignalPeriod);
 			if (SimpleShapes != SimpleShapes_DefaultValue) h.Add("simpleShapes",SimpleShapes);
+			if (SlowAvgPeriod != SlowAvgPeriod_DefaultValue) h.Add("slowAvgPeriod",SlowAvgPeriod);
+			if (StandardDeviation != StandardDeviation_DefaultValue) h.Add("standardDeviation",StandardDeviation);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Title != Title_DefaultValue) h.Add("title",Title);
+			if (TopBand != TopBand_DefaultValue) h.Add("topBand",TopBand);
 			if (Tunnel != Tunnel_DefaultValue) h.Add("tunnel",Tunnel);
 			if (TypeOptions != TypeOptions_DefaultValue) h.Add("typeOptions",TypeOptions);
 			if (VerticalArrow != VerticalArrow_DefaultValue) h.Add("verticalArrow",VerticalArrow);
@@ -595,6 +837,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalLabel != VerticalLabel_DefaultValue) h.Add("verticalLabel",VerticalLabel);
 			if (VerticalLine != VerticalLine_DefaultValue) h.Add("verticalLine",VerticalLine);
 			if (Volume != Volume_DefaultValue) h.Add("volume",Volume);
+			if (XAxisUnit != XAxisUnit_DefaultValue) h.Add("xAxisUnit",XAxisUnit);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -116,7 +116,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For series on a datetime axes, the date format in the tooltip'sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).
+		/// For series on datetime axes, the date format in the tooltip'sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#.dateFormat).
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
@@ -137,7 +137,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether the tooltip should follow the mouse as it moves acrosscolumns, pie slices and other point types with an extent.By default it behaves this way for pie, polygon, map, sankeyand wordcloud series by override in the `plotOptions`for those series types.For touch moves to behave the same way, [followTouchMove](#tooltip.followTouchMove) must be `true` also.
+		/// Whether the tooltip should follow the mouse as it moves acrosscolumns, pie slices and other point types with an extent.By default it behaves this way for pie, polygon, map, sankeyand wordcloud series by override in the `plotOptions`for those series types.Does not apply if [split](#tooltip.split) is `true`.For touch moves to behave the same way, [followTouchMove](#tooltip.followTouchMove) must be `true` also.
 		/// </summary>
 		public bool? FollowPointer { get; set; }
 		private bool? FollowPointer_DefaultValue { get; set; }
@@ -249,7 +249,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of a symbol to use for the border around the tooltip. Canbe one of: `"callout"`, `"circle"`, or `"square"`. When[tooltip.split](#tooltip.split)option is enabled, shape is applied to all boxes except header, whichis controlled by[tooltip.headerShape](#tooltip.headerShape).Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
+		/// The name of a symbol to use for the border around the tooltip. Canbe one of: `"callout"`, `"circle"` or `"rect"`. When[tooltip.split](#tooltip.split)option is enabled, shape is applied to all boxes except header, whichis controlled by[tooltip.headerShape](#tooltip.headerShape).Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
 		/// </summary>
 		public string Shape { get; set; }
 		private string Shape_DefaultValue { get; set; }

@@ -17,11 +17,12 @@ namespace Highsoft.Web.Mvc.Charts
 		public ChartParallelAxesLabels()
 		{
 			Align = Align_DefaultValue = ChartParallelAxesLabelsAlign.Center;
+			AllowOverlap = AllowOverlap_DefaultValue = false;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
-			Distance = Distance_DefaultValue = 15;
+			Distance = Distance_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
-			Format = Format_DefaultValue = "{value}";
+			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = ChartParallelAxesLabelsOverflow.Justify;
@@ -30,8 +31,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ReserveSpace = ReserveSpace_DefaultValue = false;
 			Rotation = Rotation_DefaultValue = 0;
 			Skew3d = Skew3d_DefaultValue = false;
-			StaggerLines = StaggerLines_DefaultValue = null;
-			Step = Step_DefaultValue = null;
+			StaggerLines = StaggerLines_DefaultValue = "";
+			Step = Step_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = 0;
@@ -50,7 +51,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For horizontal axes, the allowed degrees of label rotationto prevent overlapping labels. If there is enough space,labels are not rotated. As the chart gets narrower, itwill start rotating the labels -45 degrees, then removeevery second label and try again with rotations 0 and -45 etc.Set it to `false` to disable rotation, which willcause the labels to word-wrap if possible.
+		/// Whether to allow the axis labels to overlap.When false, overlapping labels are hidden.
+		/// </summary>
+		public bool? AllowOverlap { get; set; }
+		private bool? AllowOverlap_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For horizontal axes, the allowed degrees of label rotationto prevent overlapping labels. If there is enough space,labels are not rotated. As the chart gets narrower, itwill start rotating the labels -45 degrees, then removeevery second label and try again with rotations 0 and -45 etc.Set it to `undefined` to disable rotation, which willcause the labels to word-wrap if possible. Defaults to `[-45]``on bottom and top axes, `undefined` on left and right axes.
 		/// </summary>
 		public List<double> AutoRotation { get; set; }
 		private List<double> AutoRotation_DefaultValue { get; set; }
@@ -78,14 +86,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the axis label.
+		/// A format string for the axis label. The context is available asformat string variables. For example, you can use `{text}` toinsert the default formatted text. The recommended way of addingunits for the label is using `text`, for example `{text} km`.To add custom numeric or datetime formatting, use `{value}` withformatting, for example `{value:.1f}` or `{value:%Y-%m-%d}`.See[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for more examples of formatting.The default value is not specified due to the dynamicnature of the default implementation.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the label. The valueis given by `this.value`. Additional properties for `this` are`axis`, `chart`, `isFirst` and `isLast`. The value of the defaultlabel formatter can be retrieved by calling`this.axis.defaultLabelFormatter.call(this)` within the function.Defaults to:```jsfunction() {    return this.value;}```
+		/// Callback JavaScript function to format the label. The valueis given by `this.value`. Additional properties for `this` are`axis`, `chart`, `isFirst`, `isLast` and `text` which holds thevalue of the default formatter.Defaults to a built in function returning a formatted stringdepending on whether the axis is `category`, `datetime`,`numeric` or other.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
@@ -127,7 +135,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Rotation of the labels in degrees.
+		/// Rotation of the labels in degrees. When `undefined`, the`autoRotation` option takes precedence.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }
@@ -141,14 +149,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Horizontal axes only. The number of lines to spread the labelsover to make room or tighter labels.
+		/// Horizontal axes only. The number of lines to spread the labelsover to make room or tighter labels. 0 disables staggering.
 		/// </summary>
-		public double? StaggerLines { get; set; }
-		private double? StaggerLines_DefaultValue { get; set; }
+		public string StaggerLines { get; set; }
+		private string StaggerLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// To show only every _n_'th label on the axis, set the step to _n_.Setting the step to 2 shows every other label.By default, the step is calculated automatically to avoidoverlap. To prevent this, set it to 1\. This usually onlyhappens on a category axis, and is often a sign that you havechosen the wrong axis type.Read more at[Axis docs](https://www.highcharts.com/docs/chart-concepts/axes)=> What axis should I use?
+		/// To show only every _n_'th label on the axis, set the step to _n_.Setting the step to 2 shows every other label.By default, when 0, the step is calculated automatically to avoidoverlap. To prevent this, set it to 1\. This usually onlyhappens on a category axis, and is often a sign that you havechosen the wrong axis type.Read more at[Axis docs](https://www.highcharts.com/docs/chart-concepts/axes)=> What axis should I use?
 		/// </summary>
 		public double? Step { get; set; }
 		private double? Step_DefaultValue { get; set; }
@@ -197,6 +205,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (AutoRotationLimit != AutoRotationLimit_DefaultValue) h.Add("autoRotationLimit",AutoRotationLimit);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);

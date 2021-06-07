@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public ColorAxisMarker()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = null;
 			Color = Color_DefaultValue = "#999999";
 			Width = Width_DefaultValue = null;
 			
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Animation for the marker as it moves between values. Set to`false` to disable animation. Defaults to `{ duration: 50 }`.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -53,6 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (CustomFields.Count > 0)

@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border or stroke color of the pivot. In able to change this,the borderWidth must also be set to something other than the default0.
+		/// The border or stroke color of the pivot. In able to change this,the borderWidth must also be set to something other than thedefault 0.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }

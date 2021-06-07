@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Accessibility = Accessibility_DefaultValue = new ZAxisAccessibility();
 			AlignTicks = AlignTicks_DefaultValue = true;
-			AllowDecimals = AllowDecimals_DefaultValue = true;
+			AllowDecimals = AllowDecimals_DefaultValue = null;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "";
 			Angle = Angle_DefaultValue = 0;
 			Categories = Categories_DefaultValue = new List<string>();
@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = new Hashtable();
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = ZAxisGridLineInterpolation.Null;
-			GridLineWidth = GridLineWidth_DefaultValue = 0;
+			GridLineWidth = GridLineWidth_DefaultValue = null;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = "";
 			Labels = Labels_DefaultValue = new ZAxisLabels();
@@ -54,12 +54,12 @@ namespace Highsoft.Web.Mvc.Charts
 			MinPadding = MinPadding_DefaultValue = null;
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
-			Offset = Offset_DefaultValue = 0;
-			Opposite = Opposite_DefaultValue = null;
+			Offset = Offset_DefaultValue = "undefined";
+			Opposite = Opposite_DefaultValue = false;
 			Pane = Pane_DefaultValue = null;
 			PlotBands = PlotBands_DefaultValue = new List<ZAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<ZAxisPlotLines>();
-			Reversed = Reversed_DefaultValue = false;
+			Reversed = Reversed_DefaultValue = null;
 			ReversedStacks = ReversedStacks_DefaultValue = false;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			ShowLastLabel = ShowLastLabel_DefaultValue = true;
@@ -81,6 +81,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Type = Type_DefaultValue = "linear";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
+			ZIndex = ZIndex_DefaultValue = 2;
 			ZoomEnabled = ZoomEnabled_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
@@ -102,7 +103,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to allow decimals in this axis' ticks. When countingintegers, like persons or hits on a web page, decimals shouldbe avoided in the labels.
+		/// Whether to allow decimals in this axis' ticks. When countingintegers, like persons or hits on a web page, decimals shouldbe avoided in the labels. By default, decimals are allowed on smallscale axes.
 		/// </summary>
 		public bool? AllowDecimals { get; set; }
 		private bool? AllowDecimals_DefaultValue { get; set; }
@@ -144,7 +145,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#dateFormat).Defaults to:```js{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}```
+		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#.dateFormat).Defaults to:```js{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}```
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
@@ -193,7 +194,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width of the grid lines extending the ticks across the plot area.In styled mode, the stroke width is given in the`.highcharts-grid-line` class.
+		/// The width of the grid lines extending the ticks across the plot area.Defaults to 1 on the Y axis and 0 on the X axis, except for 3dcharts.In styled mode, the stroke width is given in the`.highcharts-grid-line` class.
 		/// </summary>
 		public double? GridLineWidth { get; set; }
 		private double? GridLineWidth_DefaultValue { get; set; }
@@ -356,8 +357,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The distance in pixels from the plot area to the axis line.A positive offset moves the axis with it's line, labels and ticksaway from the plot area. This is typically used when two or moreaxes are displayed on the same side of the plot. With multipleaxes the offset is dynamically adjusted to avoid collision, thiscan be overridden by setting offset explicitly.
 		/// </summary>
-		public double? Offset { get; set; }
-		private double? Offset_DefaultValue { get; set; }
+		public string Offset { get; set; }
+		private string Offset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -543,6 +544,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The Z index for the axis group.
+		/// </summary>
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to zoom axis. If `chart.zoomType` is set, the option allowsto disable zooming on an individual axis.
 		/// </summary>
 		public bool? ZoomEnabled { get; set; }
@@ -621,6 +629,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

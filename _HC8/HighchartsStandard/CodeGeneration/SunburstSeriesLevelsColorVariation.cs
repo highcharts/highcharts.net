@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The ending value of a color variation. The last sibling will receive thisvalue.
+		/// The ending value of a color variation. The last sibling will receivethis value.
 		/// </summary>
 		public double? To { get; set; }
 		private double? To_DefaultValue { get; set; }

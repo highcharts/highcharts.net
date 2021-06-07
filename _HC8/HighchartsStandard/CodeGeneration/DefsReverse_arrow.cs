@@ -16,12 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public DefsReverse_arrow()
 		{
-			Id = Id_DefaultValue = "reverse-arrow";
-			MarkerHeight = MarkerHeight_DefaultValue = 10;
-			MarkerWidth = MarkerWidth_DefaultValue = 10;
-			RefX = RefX_DefaultValue = 1;
-			RefY = RefY_DefaultValue = 5;
-			Render = Render_DefaultValue = false;
+			Attributes = Attributes_DefaultValue = null;
 			TagName = TagName_DefaultValue = "marker";
 			
 			CustomFields = new Hashtable();
@@ -31,43 +26,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? MarkerHeight { get; set; }
-		private double? MarkerHeight_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? MarkerWidth { get; set; }
-		private double? MarkerWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? RefX { get; set; }
-		private double? RefX_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? RefY { get; set; }
-		private double? RefY_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public bool? Render { get; set; }
-		private bool? Render_DefaultValue { get; set; }
+		public Object Attributes { get; set; }
+		private Object Attributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -84,12 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (MarkerHeight != MarkerHeight_DefaultValue) h.Add("markerHeight",MarkerHeight);
-			if (MarkerWidth != MarkerWidth_DefaultValue) h.Add("markerWidth",MarkerWidth);
-			if (RefX != RefX_DefaultValue) h.Add("refX",RefX);
-			if (RefY != RefY_DefaultValue) h.Add("refY",RefY);
-			if (Render != Render_DefaultValue) h.Add("render",Render);
+			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
 			if (TagName != TagName_DefaultValue) h.Add("tagName",TagName);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

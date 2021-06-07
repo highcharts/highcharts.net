@@ -16,7 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityRangeSelector()
 		{
-			ButtonText = ButtonText_DefaultValue = "Select range {buttonText}";
+			ClickButtonAnnouncement = ClickButtonAnnouncement_DefaultValue = "Viewing {axisRangeDescription}";
+			DropdownLabel = DropdownLabel_DefaultValue = "{rangeTitle}";
 			MaxInputLabel = MaxInputLabel_DefaultValue = "Select end date.";
 			MinInputLabel = MinInputLabel_DefaultValue = "Select start date.";
 			
@@ -27,8 +28,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string ButtonText { get; set; }
-		private string ButtonText_DefaultValue { get; set; }
+		public string ClickButtonAnnouncement { get; set; }
+		private string ClickButtonAnnouncement_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string DropdownLabel { get; set; }
+		private string DropdownLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -52,7 +60,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ButtonText != ButtonText_DefaultValue) h.Add("buttonText",ButtonText);
+			if (ClickButtonAnnouncement != ClickButtonAnnouncement_DefaultValue) h.Add("clickButtonAnnouncement",ClickButtonAnnouncement);
+			if (DropdownLabel != DropdownLabel_DefaultValue) h.Add("dropdownLabel",DropdownLabel);
 			if (MaxInputLabel != MaxInputLabel_DefaultValue) h.Add("maxInputLabel",MaxInputLabel);
 			if (MinInputLabel != MinInputLabel_DefaultValue) h.Add("minInputLabel",MinInputLabel);
 			if (CustomFields.Count > 0)

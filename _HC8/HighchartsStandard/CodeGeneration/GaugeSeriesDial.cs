@@ -44,14 +44,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pixel width of the base of the gauge dial. The base is the partclosest to the pivot, defined by baseLength.
+		/// The pixel width of the base of the gauge dial. The base is thepart closest to the pivot, defined by baseLength.
 		/// </summary>
 		public double? BaseWidth { get; set; }
 		private double? BaseWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border color or stroke of the gauge's dial. By default, theborderWidth is 0, so this must be set in addition to a custom bordercolor.
+		/// The border color or stroke of the gauge's dial. By default, theborderWidth is 0, so this must be set in addition to a customborder color.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
@@ -72,14 +72,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The length of the dial's rear end, the part that extends out on theother side of the pivot. Relative to the dial's length.
+		/// The length of the dial's rear end, the part that extends out onthe other side of the pivot. Relative to the dial's length.
 		/// </summary>
 		public string RearLength { get; set; }
 		private string RearLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The width of the top of the dial, closest to the perimeter. The pivotnarrows in from the base to the top.
+		/// The width of the top of the dial, closest to the perimeter. Thepivot narrows in from the base to the top.
 		/// </summary>
 		public double? TopWidth { get; set; }
 		private double? TopWidth_DefaultValue { get; set; }

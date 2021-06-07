@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new SunburstSeriesLevelsColorVariation();
 			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
+			Level = Level_DefaultValue = null;
 			LevelSize = LevelSize_DefaultValue = new SunburstSeriesLevelsLevelSize();
 			Rotation = Rotation_DefaultValue = null;
 			RotationMode = RotationMode_DefaultValue = "";
@@ -38,7 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Can set a `borderDashStyle` on all points which lies on the same level.
+		/// Can set a `borderDashStyle` on all points which lies on the samelevel.
 		/// </summary>
 		public Hashtable BorderDashStyle { get; set; }
 		private Hashtable BorderDashStyle_DefaultValue { get; set; }
@@ -59,7 +60,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Can set a `colorVariation` on all points which lies on the same level.
+		/// Can set a `colorVariation` on all points which lies on the samelevel.
 		/// </summary>
 		public SunburstSeriesLevelsColorVariation ColorVariation { get; set; }
 		private SunburstSeriesLevelsColorVariation ColorVariation_DefaultValue { get; set; }
@@ -70,6 +71,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public SunburstSeriesDataLabels DataLabels { get; set; }
 		private SunburstSeriesDataLabels DataLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Decides which level takes effect from the options set in the levelsobject.
+		/// </summary>
+		public double? Level { get; set; }
+		private double? Level_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -106,6 +114,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorVariation.IsDirty()) h.Add("colorVariation",ColorVariation.ToHashtable());
 			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (Level != Level_DefaultValue) h.Add("level",Level);
 			if (LevelSize.IsDirty()) h.Add("levelSize",LevelSize.ToHashtable());
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode",RotationMode);
