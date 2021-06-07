@@ -15,44 +15,39 @@
 @using System.Collections
 
 @{ var chartOptions =
-     new Highcharts
-     {
-         Chart = new Highsoft.Web.Mvc.Charts.Chart
-         {
-             ZoomType = ChartZoomType.Xy
-         },
-         Title = new Title
-         {
-             Text = "Temperature vs Rainfall"
-         },
-         XAxis = new List<XAxis>
-         {
+                 new Highcharts
+                 {
+                     Chart = new Highsoft.Web.Mvc.Charts.Chart
+                     {
+                         ZoomType = ChartZoomType.Xy
+                     },
+                     Title = new Title
+                     {
+                         Text = "Temperature vs Rainfall"
+                     },
+                     XAxis = new List<XAxis>
+                     {
 
                 new XAxis
                     {
                         Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
                 }
-                     },
+                                         },
 
-         YAxis = new List<YAxis>
-                 {
+                     YAxis = new List<YAxis>
+                             {
                     new YAxis
                 {
                     Title = new YAxisTitle
                     {
                         Text = "Temperature",
-                        Style = new YAxisTitleStyle()
-                        {
-                            Color = "#434348"
-                        }
+                        Style = new Hashtable(){{"color","#434348" } }
+
                     },
                     Labels = new YAxisLabels
                     {
                         Format = "{value} °C",
-                        Style = new YAxisLabelsStyle
-                        {
-                            Color = "#434348"
-                    }
+                        Style = new Hashtable(){{"color","#434348" } }
                 }
                     },
                 new YAxis
@@ -62,28 +57,22 @@
                     Title = new YAxisTitle
                     {
                         Text = "Rainfall",
-                    Style = new YAxisTitleStyle()
-                    {
-                            Color = "#7cb5ec"
-                    }
+                    Style = new Hashtable() {{ "color", "#7cb5ec" } }
                     },
                     Labels = new YAxisLabels
                     {
                         Format = "{value} mm",
-                        Style = new YAxisLabelsStyle()
-                        {
-                            Color = "#7cb5ec"
-                        }
+                        Style = new Hashtable() {{ "color", "#7cb5ec" } }
                     }
 
                 }
+                                         },
+                     Tooltip = new Tooltip
+                     {
+                         Shared = true
                      },
-         Tooltip = new Tooltip
-         {
-             Shared = true
-         },
-         Series = new List<Series>
-         {
+                     Series = new List<Series>
+                     {
             new ColumnSeries
             {
                 Name = "Rainfall",
@@ -118,8 +107,8 @@
                     },
                     Data = ViewData["temperatureErrorData"] as List<ErrorbarSeriesData>
             }
-                 }
-     };
+                                     }
+                 };
 
 
     chartOptions.ID = "chart";

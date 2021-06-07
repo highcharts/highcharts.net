@@ -10,14 +10,14 @@
 @using System.Collections
 
 @{ var chartOptions =
-      new Highcharts
-      {
-          Title = new Title
-          {
-              Text = "Fruit Consumption"
-          },
-          Series = new List<Series>
-              {
+       new Highcharts
+       {
+           Title = new Title
+           {
+               Text = "Fruit Consumption"
+           },
+           Series = new List<Series>
+               {
                 new TreemapSeries
                 {
                     LayoutAlgorithm = TreemapSeriesLayoutAlgorithm.Stripes,
@@ -33,11 +33,7 @@
                                 Enabled = true,
                                 Align = TreemapSeriesDataLabelsAlign.Left,
                                 VerticalAlign = TreemapSeriesDataLabelsVerticalAlign.Top,
-                                Style = new TreemapSeriesDataLabelsStyle()
-                                {
-                                    FontSize = "15px",
-                                    FontWeight = "bold"
-                                }
+                                Style = new Hashtable() {{"fontSize", "15px"},{"fontWeight", "bold" }}
                             }
                         }
                     },
@@ -60,8 +56,8 @@
                     }
 
                 }
-                              }
-      };
+                               }
+       };
 
     chartOptions.ID = "chart";
     var renderer = new HighchartsRenderer(chartOptions);

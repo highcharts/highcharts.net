@@ -2,6 +2,8 @@
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
 
+@using System.Collections
+
 <script type="text/javascript">
     function getPosition(labelWidth) {
         return {
@@ -16,39 +18,39 @@
 @using Highsoft.Web.Mvc.Charts.Rendering
 
 @{ var chartOptions = new Highcharts
-{
-    Chart = new Highsoft.Web.Mvc.Charts.Chart
-    {
-        Type = ChartType.Solidgauge,
-        MarginTop = 50
-    },
-    Title = new Title
-    {
-        Text = "Activity"
-    },
-    Tooltip = new Tooltip
-    {
-        BorderWidth = 0,
-        BackgroundColor = "none",
-        Shadow = new Shadow { Enabled = false },
-        Style = new TooltipStyle { FontSize = "16px" },
-        PointFormat = "{series.name}<br><span style=\"font - size:2em; color: { point.color}; font - weight: bold\">{point.y}%</span>",
-        Positioner = "getPosition"
-    },
-    Pane = new Pane
-    {
-        StartAngle = 0,
-        EndAngle = 360,
-        Background = new List<PaneBackground>
         {
+            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            {
+                Type = ChartType.Solidgauge,
+                MarginTop = 50
+            },
+            Title = new Title
+            {
+                Text = "Activity"
+            },
+            Tooltip = new Tooltip
+            {
+                BorderWidth = 0,
+                BackgroundColor = "none",
+                Shadow = new Shadow { Enabled = false },
+                Style = new Hashtable { { "fontSize", "16px" } },
+                PointFormat = "{series.name}<br><span style=\"font - size:2em; color: { point.color}; font - weight: bold\">{point.y}%</span>",
+                Positioner = "getPosition"
+            },
+            Pane = new Pane
+            {
+                StartAngle = 0,
+                EndAngle = 360,
+                Background = new List<PaneBackground>
+{
             new PaneBackground
             {
                 OuterRadius = "112%",
                 InnerRadius = "88%",
-                BackgroundColor = new 
+                BackgroundColor = new
                 {
                     Stops = new List<Stop>
-                    {
+            {
                         new Stop
                         {
                             Position = 0,
@@ -62,10 +64,10 @@
             {
                 OuterRadius = "87%",
                 InnerRadius = "63%",
-                BackgroundColor = new 
+                BackgroundColor = new
                 {
                     Stops = new List<Stop>
-                    {
+            {
                         new Stop
                         {
                             Position = 0,
@@ -79,10 +81,10 @@
             {
                 OuterRadius = "62%",
                 InnerRadius = "38%",
-                BackgroundColor = new 
+                BackgroundColor = new
                 {
                     Stops = new List<Stop>
-                    {
+            {
                         new Stop
                         {
                             Position = 0,
@@ -93,9 +95,9 @@
                 BorderWidth = 0
             }
         }
-    },
-    YAxis = new List<YAxis>
-    {
+            },
+            YAxis = new List<YAxis>
+{
         new YAxis
         {
             Min = 0,
@@ -104,26 +106,26 @@
             TickPosition = YAxisTickPosition.Outside
         }
     },
-    PlotOptions = new PlotOptions
-    {
-        Solidgauge = new PlotOptionsSolidgauge
-        {
-            DataLabels = new PlotOptionsSolidgaugeDataLabels
+            PlotOptions = new PlotOptions
             {
-                Enabled = false
+                Solidgauge = new PlotOptionsSolidgauge
+                {
+                    DataLabels = new PlotOptionsSolidgaugeDataLabels
+                    {
+                        Enabled = false
+                    },
+                    Linecap = PlotOptionsSolidgaugeLinecap.Round,
+                    StickyTracking = false,
+                    Rounded = true
+                }
             },
-            Linecap = PlotOptionsSolidgaugeLinecap.Round,
-            StickyTracking = false,
-            Rounded = true
-        }
-    },
-    Series = new List<Series>
-    {
+            Series = new List<Series>
+{
         new GaugeSeries
         {
             Name = "Move",
             Data = new List<GaugeSeriesData>
-            {
+    {
                 new GaugeSeriesData
                 {
                     Color = "#2f7ed8",
@@ -135,7 +137,7 @@
         {
             Name = "Exercise",
             Data = new List<GaugeSeriesData>
-            {
+    {
                 new GaugeSeriesData
                 {
                     Color = "#0d233a",
@@ -147,7 +149,7 @@
         {
             Name = "Stand",
             Data = new List<GaugeSeriesData>
-            {
+    {
                 new GaugeSeriesData
                 {
                     Color = "#8bbc21",
@@ -156,10 +158,10 @@
             }
         }
     }
-};
+        };
 
-    chartOptions.ID = "chart";
-    var renderer = new HighchartsRenderer(chartOptions);
-}
+        chartOptions.ID = "chart";
+        var renderer = new HighchartsRenderer(chartOptions);
+    }
 
-@Html.Raw(renderer.RenderHtml())
+    @Html.Raw(renderer.RenderHtml())

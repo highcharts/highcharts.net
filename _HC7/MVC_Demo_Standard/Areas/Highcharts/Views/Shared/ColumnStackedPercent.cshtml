@@ -7,19 +7,19 @@
 
 
 @{ var chartOptions = new Highcharts
-    {
-        Title = new Title
         {
-            Text = "Stacked column chart"
-        },
-        XAxis = new List<XAxis>
+            Title = new Title
+            {
+                Text = "Stacked column chart"
+            },
+            XAxis = new List<XAxis>
     {
                 new XAxis
                 {
                     Categories = new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
                 }
             },
-        YAxis = new List<YAxis>
+            YAxis = new List<YAxis>
     {
                 new YAxis
                 {
@@ -31,23 +31,23 @@
                     StackLabels = new YAxisStackLabels
                     {
                         Enabled = true,
-                        Style = new YAxisStackLabelsStyle() { FontWeight = "bold" }
+                        Style = new Hashtable() {{ "fontWeight", "bold" } }
                     }
                 }
             },
-        Tooltip = new Tooltip
-        {
-            PointFormat = "<span style=\"color:{series.color}\">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>",
-            Shared = true
-        },
-        PlotOptions = new PlotOptions
-        {
-            Column = new PlotOptionsColumn
+            Tooltip = new Tooltip
             {
-                Stacking = PlotOptionsColumnStacking.Percent
-            }
-        },
-        Series = new List<Series>
+                PointFormat = "<span style=\"color:{series.color}\">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>",
+                Shared = true
+            },
+            PlotOptions = new PlotOptions
+            {
+                Column = new PlotOptionsColumn
+                {
+                    Stacking = PlotOptionsColumnStacking.Percent
+                }
+            },
+            Series = new List<Series>
     {
                 new ColumnSeries
                 {
@@ -65,10 +65,10 @@
                     Data = @ViewData["joeData"] as List<ColumnSeriesData>
                 }
             }
-    };
+        };
 
-    chartOptions.ID = "chart";
-    var renderer = new HighchartsRenderer(chartOptions);
-}
+        chartOptions.ID = "chart";
+        var renderer = new HighchartsRenderer(chartOptions);
+    }
 
-@Html.Raw(renderer.RenderHtml())
+    @Html.Raw(renderer.RenderHtml())

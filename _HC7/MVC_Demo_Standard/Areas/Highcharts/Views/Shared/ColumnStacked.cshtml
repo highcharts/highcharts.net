@@ -17,19 +17,19 @@
 </script>
 
 @{ var chartOptions = new Highcharts
-    {
-        Title = new Title
-        {
-            Text = "Stacked bar chart"
-        },
-        XAxis = new List<XAxis>
+                {
+                    Title = new Title
+                    {
+                        Text = "Stacked bar chart"
+                    },
+                    XAxis = new List<XAxis>
     {
                 new XAxis
                 {
                     Categories = new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" }
                 }
             },
-        YAxis = new List<YAxis>
+                    YAxis = new List<YAxis>
     {
                 new YAxis
                 {
@@ -41,8 +41,8 @@
                     StackLabels = new YAxisStackLabels
                     {
                         Enabled = true,
-                        Style = new YAxisStackLabelsStyle() { FontWeight = "bold" }
-                    }
+                        Style = new Hashtable() {{ "fontWeight", "bold" }}
+    }
                 }
             },
         Legend = new Legend
@@ -66,7 +66,7 @@
             Column = new PlotOptionsColumn
             {
                 Stacking = PlotOptionsColumnStacking.Normal,
-                DataLabels = new PlotOptionsColumnDataLabels 
+                DataLabels = new PlotOptionsColumnDataLabels
                 {
                     Enabled = true,
                     Color = "#FFFFFF",

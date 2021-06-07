@@ -3,6 +3,7 @@
 <script src="https://code.highcharts.com/modules/tilemap.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+@using System.Collections
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
 
@@ -11,7 +12,7 @@
         Chart = new Highsoft.Web.Mvc.Charts.Chart
         {
             Inverted = true,
-            Width = 650
+            WidthNumber = 650
         },
         Title = new Title
         {
@@ -82,10 +83,7 @@
                     Enabled = true,
                     Format = "{point.id}",
                     Color = "#000000",
-                    Style = new PlotOptionsSeriesDataLabelsStyle
-                    {
-                        TextOutline = "0px"
-                    }
+                    Style = new Hashtable() { { "textOutline", "0px" } }
                 }
             }
         },
@@ -96,7 +94,7 @@
             Name = "",
             Data = ViewData["Data"] as List<TilemapSeriesData>
         }
-    }
+         }
     };
 
     chartOptions.ID = "chart";
