@@ -17,8 +17,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="@Url.Content("~/Scripts/highslide-full.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/highslide.config.js")" type="text/javascript"></script>
+    @*<script src="@Url.Content("~/Scripts/highslide-full.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/highslide.config.js")" type="text/javascript"></script>*@
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/modernizr.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/script.js")" type="text/javascript"></script>
@@ -408,26 +408,61 @@
                            href=""><i class="fa fa-angle-right"></i></a>
                     </div>
                     <div id="demo-buttons">
-                        <a class="button" href="javascript:"
-                           onclick="hs.htmlExpand(this, { width: 800,
-					                headingText: 'Demo Controller Code',
-					                wrapperClassName: 'draggable-header' })">Controller Code&nbsp;<i class="fa fa-chevron-right"></i></a>
-                        <div class="highslide-maincontent" style="display:none">
-                            <pre>@ViewBag.ControllerCode</pre>
-                        </div>
-                        <a class="button" href="javascript:"
-                           onclick="hs.htmlExpand(this, { width: 800,
-					                headingText: 'Dempo View Code',
-					                wrapperClassName: 'draggable-header' })">View Code&nbsp;<i class="fa fa-chevron-right"></i></a>
-                        <div class="highslide-maincontent" style="display:none">
-                            <pre>@ViewBag.ViewCode</pre>
-                        </div>
+                        <button type="button" class="button" data-toggle="modal" data-target="#controllerCode">
+                            Controller Code <i class="fa fa-chevron-right"></i>
+                        </button>
+                        <button type="button" class="button" data-toggle="modal" data-target="#viewCode">
+                            View Code <i class="fa fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq-fill"></div>
                 <div class="clearfix"></div>
             </div>
-
+            <div id="controllerCode" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="jsCode-label" aria-hidden="true" style="display: none; z-index: 1050;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                            </button>
+                            <p id="jsCode-label" class="h4 modal-title">
+                                Controller Code
+                            </p>
+                        </div>
+                        <div class="modal-body">
+                            <pre><code class="javascript"></code>@ViewBag.ControllerCode</pre>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="viewCode" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="jsCode-label" aria-hidden="true" style="display: none; z-index: 1050;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                            </button>
+                            <p id="jsCode-label" class="h4 modal-title">
+                                Controller Code
+                            </p>
+                        </div>
+                        <div class="modal-body">
+                            <pre><code class="javascript"></code>@ViewBag.ViewCode</pre>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="hs-below">

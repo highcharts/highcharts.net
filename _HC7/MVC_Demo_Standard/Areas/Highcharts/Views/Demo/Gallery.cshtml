@@ -4,7 +4,7 @@
     <meta name="keywords" content="highcharts, charts, javascript charts, ajax charts, plots, line charts, bar charts, pie charts, javascript plots, ajax plots" />
     <meta name="description" content="Highcharts - Interactive charts." />
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="@Url.Content("~/Content/highslide.css")" type="text/css" />
+    @*<link rel="stylesheet" href="@Url.Content("~/Content/highslide.css")" type="text/css" />*@
     <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/bootstrap.min.css")" type="text/css" />
     @*<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,400italic" type="text/css" />*@
     <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" type="text/css">
@@ -17,8 +17,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="@Url.Content("~/Scripts/highslide-full.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/highslide.config.js")" type="text/javascript"></script>
+    @*<script src="@Url.Content("~/Scripts/highslide-full.min.js")" type="text/javascript"></script>*@
+    @*<script src="@Url.Content("~/Scripts/highslide.config.js")" type="text/javascript"></script>*@
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/modernizr.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/script.js")" type="text/javascript"></script>
@@ -401,8 +401,8 @@
                                     <a aria-label="https://www.highcharts.com/demo/pie-legend" href="@Url.Action("Gallery", "Demo", new { demo = "PieLegend", theme = ViewBag.Theme } )">Pie with legend						</a>
                                 </li>
                                 @*<li class="">
-                                    <a aria-label="https://www.highcharts.com/demo/pie-donut" href="@Url.Action("Gallery", "Demo", new { demo = "PieDonut", theme = ViewBag.Theme } )">Donut chart						</a>
-                                </li>*@
+                                <a aria-label="https://www.highcharts.com/demo/pie-donut" href="@Url.Action("Gallery", "Demo", new { demo = "PieDonut", theme = ViewBag.Theme } )">Donut chart						</a>
+                            </li>*@
                                 <li class="">
                                     <a aria-label="https://www.highcharts.com/demo/pie-semi-circle" href="@Url.Action("Gallery", "Demo", new { demo = "PieSemiCircle", theme = ViewBag.Theme } )">Semi circle donut						</a>
                                 </li>
@@ -424,13 +424,13 @@
                                     <a aria-label="https://www.highcharts.com/demo/scatter" href="@Url.Action("Gallery", "Demo", new { demo = "Scatter", theme = ViewBag.Theme } )">Scatter plot						</a>
                                 </li>
                                 @*<li class="">
-                                    <a aria-label="https://www.highcharts.com/demo/scatter-boost" href="@Url.Action("Gallery", "Demo", new { demo = "ScatterBoost", theme = ViewBag.Theme } )">Scatter plot with 1 million points						</a>
-                                </li>*@
+                                <a aria-label="https://www.highcharts.com/demo/scatter-boost" href="@Url.Action("Gallery", "Demo", new { demo = "ScatterBoost", theme = ViewBag.Theme } )">Scatter plot with 1 million points						</a>
+                            </li>*@
                                 <li class="">
                                     <a aria-label="https://www.highcharts.com/demo/bubble" href="@Url.Action("Gallery", "Demo", new { demo = "Bubble", theme = ViewBag.Theme } )">Bubble chart						</a>
                                 </li>
                                 <li class="">
-                                        <a aria-label="https://www.highcharts.com/demo/bubble-3d" href="@Url.Action("Gallery", "Demo", new { demo = "Bubble3d", theme = ViewBag.Theme } )">3D bubbles						</a>
+                                    <a aria-label="https://www.highcharts.com/demo/bubble-3d" href="@Url.Action("Gallery", "Demo", new { demo = "Bubble3d", theme = ViewBag.Theme } )">3D bubbles						</a>
                                 </li>
                             </ul>
                         </li>
@@ -452,8 +452,8 @@
                             <div class=""><span>Combinations</span><icon class="toggle"></icon></div>
                             <ul style="display: none;">
                                 @*<li class="">
-                                    <a aria-label="https://www.highcharts.com/demo/combo" href="@Url.Action("Gallery", "Demo", new { demo = "Combo", theme = ViewBag.Theme } )">Column, line and pie						</a>
-                                </li>*@
+                                <a aria-label="https://www.highcharts.com/demo/combo" href="@Url.Action("Gallery", "Demo", new { demo = "Combo", theme = ViewBag.Theme } )">Column, line and pie						</a>
+                            </li>*@
                                 <li class="">
                                     <a aria-label="https://www.highcharts.com/demo/combo-dual-axes" href="@Url.Action("Gallery", "Demo", new { demo = "ComboDualAxes", theme = ViewBag.Theme } )">Dual axes, line and column						</a>
                                 </li>
@@ -490,8 +490,8 @@
                                     <a aria-label="https://www.highcharts.com/demo/pie-3-d-donut" href="@Url.Action("Gallery", "Demo", new { demo = "Pie3DDonut", theme = ViewBag.Theme } )">3D donut						</a>
                                 </li>
                                 <li class="">
-                                        <a aria-label="https://www.highcharts.com/demo/scatter-3d" href="@Url.Action("Gallery", "Demo", new { demo = "Scatter3d", theme = ViewBag.Theme } )">3D scatter chart						</a>
-                                    </li>
+                                    <a aria-label="https://www.highcharts.com/demo/scatter-3d" href="@Url.Action("Gallery", "Demo", new { demo = "Scatter3d", theme = ViewBag.Theme } )">3D scatter chart						</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="">
@@ -501,8 +501,8 @@
                                     <a aria-label="https://www.highcharts.com/demo/gauge-speedometer" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeSpeedometer", theme = ViewBag.Theme } )">Angular gauge						</a>
                                 </li>
                                 @*<li class="">
-                                    <a aria-label="https://www.highcharts.com/demo/gauge-solid" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeSolid", theme = ViewBag.Theme } )">Solid gauge						</a>
-                                </li>*@
+                                <a aria-label="https://www.highcharts.com/demo/gauge-solid" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeSolid", theme = ViewBag.Theme } )">Solid gauge						</a>
+                            </li>*@
                                 <li class="">
                                     <a aria-label="https://www.highcharts.com/demo/gauge-activity" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeActivity", theme = ViewBag.Theme } )">Activity gauge						</a>
                                 </li>
@@ -510,11 +510,11 @@
                                     <a aria-label="https://www.highcharts.com/demo/gauge-clock" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeClock", theme = ViewBag.Theme } )">Clock						</a>
                                 </li>
                                 <li class="">
-                                        <a aria-label="https://www.highcharts.com/demo/gauge-dual" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeDual", theme = ViewBag.Theme } )">Gauge with dual axes						</a>
-                                    </li>
-                                    <li class="">
-                                        <a aria-label="https://www.highcharts.com/demo/gauge-vu-meter" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeVuMeter", theme = ViewBag.Theme } )">VU meter						</a>
-                                    </li>
+                                    <a aria-label="https://www.highcharts.com/demo/gauge-dual" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeDual", theme = ViewBag.Theme } )">Gauge with dual axes						</a>
+                                </li>
+                                <li class="">
+                                    <a aria-label="https://www.highcharts.com/demo/gauge-vu-meter" href="@Url.Action("Gallery", "Demo", new { demo = "GaugeVuMeter", theme = ViewBag.Theme } )">VU meter						</a>
+                                </li>
                                 <li class="">
                                     <a aria-label="https://www.highcharts.com/demo/bullet-graph" href="@Url.Action("Gallery", "Demo", new { demo = "BulletGraph", theme = ViewBag.Theme } )">Bullet graph						</a>
                                 </li>
@@ -592,60 +592,118 @@
                            href="https://www.highcharts.com/demo/line-ajax"><i class="fa fa-angle-right"></i></a>
                     </div>
                     @*<div id="small-switcher" class="visible-xs">
-                        <a class="button" id="view-menu" onclick="">Menu &raquo;</a>
-                        <select id="switcher-selector">
-                            <option value="https://www.highcharts.com/demo/line-basic" selected>Default theme</option>
-                            <option value="https://www.highcharts.com/demo/line-basic/dark-unica">Dark Unica</option>
-                            <option value="https://www.highcharts.com/demo/line-basic/sand-signika">Sand Signika</option>
-                            <option value="https://www.highcharts.com/demo/line-basic/grid-light">Grid Light</option>
-                        </select>
-                        <div class="clearfix"></div>
-                    </div>*@
+                    <a class="button" id="view-menu" onclick="">Menu &raquo;</a>
+                    <select id="switcher-selector">
+                        <option value="https://www.highcharts.com/demo/line-basic" selected>Default theme</option>
+                        <option value="https://www.highcharts.com/demo/line-basic/dark-unica">Dark Unica</option>
+                        <option value="https://www.highcharts.com/demo/line-basic/sand-signika">Sand Signika</option>
+                        <option value="https://www.highcharts.com/demo/line-basic/grid-light">Grid Light</option>
+                    </select>
+                    <div class="clearfix"></div>
+                </div>*@
                     <div class="chart-container" style="padding:unset;">
                         <a id="previous-example" class="hidden-xs"><i class="fa fa-angle-left"></i></a>
 
                         @*
-                            <script src="https://code.highcharts.com/highcharts.js"></script>
-                            <script src="https://code.highcharts.com/modules/data.js"></script>
-                            <script src="https://code.highcharts.com/highcharts-3d.js"></script>
-                            <script src="https://code.highcharts.com/modules/heatmap.js"></script>
-                            <script src="https://code.highcharts.com/highcharts-more.js"></script>
-                            <script src="https://code.highcharts.com/modules/funnel.js"></script>
-                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
-                            <script src="https://code.highcharts.com/modules/heatmap.js"></script>
-                            <script src="https://code.highcharts.com/modules/treemap.js"></script>
-                            <script src="https://code.highcharts.com/modules/drilldown.js"></script>
-                            <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+                    <script src="https://code.highcharts.com/highcharts.js"></script>
+                    <script src="https://code.highcharts.com/modules/data.js"></script>
+                    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+                    <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+                    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+                    <script src="https://code.highcharts.com/modules/funnel.js"></script>
+                    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                    <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+                    <script src="https://code.highcharts.com/modules/treemap.js"></script>
+                    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+                    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
                         *@
 
                         <div id="container" style="width: 100%; height: auto; margin: 0 auto">
 
                             @Html.Action((string)ViewBag.Demo, "Shared")
 
+
+
                         </div>
                         <a id="next-example" class="hidden-xs" title="Next (arrow right)"
                            href=""><i class="fa fa-angle-right"></i></a>
                     </div>
                     <div id="demo-buttons">
-                        <a class="button" href="javascript:"
-                           onclick="hs.htmlExpand(this, { width: 800,
-					                headingText: 'Demo Controller Code',
-					                wrapperClassName: 'draggable-header' })">Controller Code&nbsp;<i class="fa fa-chevron-right"></i></a>
-                        <div class="highslide-maincontent" style="display:none">
-                            <pre>@ViewBag.ControllerCode</pre>
-                        </div>
-                        <a class="button" href="javascript:"
-                           onclick="hs.htmlExpand(this, { width: 800,
-					                headingText: 'Demo View Code',
-					                wrapperClassName: 'draggable-header' })">View Code&nbsp;<i class="fa fa-chevron-right"></i></a>
-                        <div class="highslide-maincontent" style="display:none">
-                            <pre>@ViewBag.ViewCode</pre>
-                        </div>
+                        @*<a class="button" href="javascript:"
+                       onclick="hs.htmlExpand(this, { width: 800,
+                                headingText: 'Demo Controller Code',
+                                wrapperClassName: 'draggable-header' })">Controller Code&nbsp;<i class="fa fa-chevron-right"></i></a>
+                    <div class="highslide-maincontent" style="display:none">
+                        <pre>@ViewBag.ControllerCode</pre>
+                    </div>*@
+
+
+
+                        <button type="button" class="button" data-toggle="modal" data-target="#controllerCode">
+                            Controller Code <i class="fa fa-chevron-right"></i>
+                        </button>
+                        <button type="button" class="button" data-toggle="modal" data-target="#viewCode">
+                            View Code <i class="fa fa-chevron-right"></i>
+                        </button>
+
+                        @*<a class="button" href="javascript:"
+                       onclick="hs.htmlExpand(this, { width: 800,
+                                headingText: 'Demo View Code',
+                                wrapperClassName: 'draggable-header' })">View Code&nbsp;<i class="fa fa-chevron-right"></i></a>
+                    <div class="highslide-maincontent" style="display:none">
+                        <pre>@ViewBag.ViewCode</pre>
+                    </div>*@
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq-fill"></div>
                 <div class="clearfix"></div>
             </div>
+
+            <div id="controllerCode" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="jsCode-label" aria-hidden="true" style="display: none; z-index: 1050;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                            </button>
+                            <p id="jsCode-label" class="h4 modal-title">
+                                Controller Code
+                            </p>
+                        </div>
+                        <div class="modal-body">
+                            <pre><code class="javascript"></code>@ViewBag.ControllerCode</pre>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="viewCode" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="jsCode-label" aria-hidden="true" style="display: none; z-index: 1050;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                            </button>
+                            <p id="jsCode-label" class="h4 modal-title">
+                                Controller Code
+                            </p>
+                        </div>
+                        <div class="modal-body">
+                            <pre><code class="javascript"></code>@ViewBag.ViewCode</pre>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>
@@ -670,7 +728,7 @@
                         <a href="https://www.facebook.com/Highcharts" title="Facebook" class="social-icon"><i class="fa fa-facebook"></i></a>
                         <a href="https://twitter.com/Highcharts" title="Twitter" class="social-icon"><i class="fa fa-twitter"></i></a>
                         <a href="https://www.linkedin.com/company/highsoft-solutions-as" title="LinkedIn" class="social-icon"><i class="fa fa-linkedin"></i></a>
-                        <a href="https://github.com/highslide-software/highcharts.com" title="Github" class="social-icon"><i class="fa fa-github"></i></a>
+                        @*<a href="https://github.com/highslide-software/highcharts.com" title="Github" class="social-icon"><i class="fa fa-github"></i></a>*@
                         <a href="https://www.youtube.com/channel/UCzxXofPTQ0DoT7uIy3Fxw7A"><i class="fa fa-youtube"></i></a>
                     </div>
                 </div>

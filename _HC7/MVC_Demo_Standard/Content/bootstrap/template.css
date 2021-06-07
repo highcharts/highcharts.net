@@ -94,7 +94,7 @@ button,
 	font-weight: bolder;
 	padding: 13px 18px;
 	letter-spacing: 1px;
-	background-color: #90ef7f;
+	background-color: #ddd;
 	color: #313131;
 	border: 0;
 	border-radius: 2px;
@@ -105,11 +105,11 @@ button,
 	-ms-transition: background-color 0.2s, color 0.2s;
 	-moz-transition: background-color 0.2s, color 0.2s;
 }
-button:hover,
-.button:hover {
-	background-color: #71DB5F;
-	color: #fff;
-}
+	button:hover,
+	.button:hover {
+		background-color: #8085e8;
+		color: #fff;
+	}
 button.second,
 .button.second {
 	background-color: #C9CCFF;
@@ -1524,8 +1524,9 @@ table.category .cat-list-row1 {
 }
 .sidebar-wrapper {
 	position: relative;
-	z-index: 0;
+	z-index:0;
 }
+
 .sidebar {
 	z-index: 2;
 	background-color: #3A3A4F;

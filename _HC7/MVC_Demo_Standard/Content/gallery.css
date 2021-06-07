@@ -193,3 +193,7 @@ a.btn.btn-theme {
         margin-left: 0px !important;
     }
 }
+
+.modal {
+    z-index: 1050;
+}
