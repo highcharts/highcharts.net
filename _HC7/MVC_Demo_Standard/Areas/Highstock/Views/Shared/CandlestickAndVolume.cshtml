@@ -53,26 +53,26 @@
 </script>
 
 @{ var chartOptions =
-          new Highstock
-          {
-              Chart = new Highsoft.Web.Mvc.Stocks.Chart
-              {
-         //Events = new ChartEvents
-         //{
-         //     Load = "loadData"
-         //}
+           new Highstock
+           {
+               Chart = new Highsoft.Web.Mvc.Stocks.Chart
+               {
+                  //Events = new ChartEvents
+                  //{
+                  //     Load = "loadData"
+                  //}
 
-     },
-              RangeSelector = new RangeSelector
-              {
-                  Selected = 1
               },
-              Title = new Title
-              {
-                  Text = "AAPL Stock Price"
-              },
-              YAxis = new List<YAxis>
-              {
+               RangeSelector = new RangeSelector
+               {
+                   Selected = 1
+               },
+               Title = new Title
+               {
+                   Text = "AAPL Stock Price"
+               },
+               YAxis = new List<YAxis>
+               {
                 new YAxis
                 {
                     Labels = new YAxisLabels
@@ -100,14 +100,14 @@
                     },
                     Top = "65%",
                     Height = "35%",
-                    Offset = -1,
+                    //Offset = -1,
                     LineWidth = 2,
                     Id = "VolumeAxis"
 
                 }
-                              },
-              Series = new List<Series>
-              {
+                               },
+               Series = new List<Series>
+               {
                 new CandleStickSeries
                 {
                     Data = ViewBag.AppleData as List<CandleStickSeriesData>,
@@ -123,8 +123,8 @@
                     TurboThreshold = 10000,
                     ShowInNavigator = true
                 }
-                              }
-          };
+                               }
+           };
 
     chartOptions.ID = "chart";
     var renderer = new HighstockRenderer(chartOptions);
