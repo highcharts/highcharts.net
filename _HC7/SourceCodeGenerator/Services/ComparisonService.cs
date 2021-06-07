@@ -181,6 +181,15 @@ namespace SourceCodeGenerator.Services
                     _previousValues.Add(item.FullName + "." + changedItem, string.Join(",", prevItem.Types));
                 }
 
+
+                //remove after fix
+                if (item.FullName.Equals("plotOptions.boxplot"))
+                    changedItem = ChangedItem.Exclude;
+
+
+
+
+
                 if (changedItem == ChangedItem.Exclude)
                 {
                     if (_makeAutoUpdate)
