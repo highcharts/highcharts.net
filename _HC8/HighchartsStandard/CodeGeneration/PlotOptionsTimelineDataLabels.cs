@@ -30,7 +30,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectorColor = ConnectorColor_DefaultValue = "";
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			Crop = Crop_DefaultValue = true;
-			Defer = Defer_DefaultValue = true;
+			Defer = Defer_DefaultValue = null;
+			DeferBool = DeferBool_DefaultValue = null;
 			Distance = Distance_DefaultValue = 100;
 			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsTimelineDataLabelsFilter();
@@ -160,8 +161,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether to defer displaying the data labels until the initialseries animation has finished. Setting to `false` renders thedata label immediately. If set to `true` inherits the defertime set in [plotOptions.series.animation](#plotOptions.series.animation).If set to a number, a defer time is specified in milliseconds.
 		/// </summary>
-		public bool? Defer { get; set; }
-		private bool? Defer_DefaultValue { get; set; }
+		public double? Defer { get; set; }
+		private double? Defer_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to defer displaying the data labels until the initialseries animation has finished. Setting to `false` renders thedata label immediately. If set to `true` inherits the defertime set in [plotOptions.series.animation](#plotOptions.series.animation).If set to a number, a defer time is specified in milliseconds.
+		/// </summary>
+		public bool? DeferBool { get; set; }
+		private bool? DeferBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -347,6 +355,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
+			if (DeferBool != DeferBool_DefaultValue) h.Add("defer",DeferBool);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());

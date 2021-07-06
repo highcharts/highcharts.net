@@ -108,7 +108,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The symbol for the button. Points to a definition function inthe `Highcharts.Renderer.symbols` collection. The default`exportIcon` function is part of the exporting module. Possiblevalues are "circle", "square", "diamond", "triangle","triangle-down", "menu", "menuball" or custom shape.
+		/// The symbol for the button. Points to a definition function inthe `Highcharts.Renderer.symbols` collection. The default`menu` function is part of the exporting module. Possiblevalues are "circle", "square", "diamond", "triangle","triangle-down", "menu", "menuball" or custom shape.
 		/// </summary>
 		public string Symbol { get; set; }
 		private string Symbol_DefaultValue { get; set; }

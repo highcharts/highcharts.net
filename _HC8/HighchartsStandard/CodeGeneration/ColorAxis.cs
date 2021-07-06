@@ -53,6 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinorTicks = MinorTicks_DefaultValue = false;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			MinPadding = MinPadding_DefaultValue = 0;
+			PanningEnabled = PanningEnabled_DefaultValue = true;
 			Reversed = Reversed_DefaultValue = null;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
@@ -341,6 +342,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to pan axis. If `chart.panning` is enabled, the optionallows to disable panning on an individual axis.
+		/// </summary>
+		public bool? PanningEnabled { get; set; }
+		private bool? PanningEnabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to reverse the axis so that the highest number is closestto the origin. Defaults to `false` in a horizontal legend and`true` in a vertical legend, where the smallest value starts ontop.
 		/// </summary>
 		public bool? Reversed { get; set; }
@@ -545,6 +553,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
+			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

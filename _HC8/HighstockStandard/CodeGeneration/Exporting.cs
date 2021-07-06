@@ -115,7 +115,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Path where Highcharts will look for export module dependencies toload on demand if they don't already exist on `window`. Should currentlypoint to location of [CanVG](https://github.com/canvg/canvg) library,[RGBColor.js](https://github.com/canvg/canvg),[jsPDF](https://github.com/yWorks/jsPDF) and[svg2pdf.js](https://github.com/yWorks/svg2pdf.js), required for clientside export in certain browsers.
+		/// Path where Highcharts will look for export module dependencies toload on demand if they don't already exist on `window`. Should currentlypoint to location of [CanVG](https://github.com/canvg/canvg) library,[jsPDF](https://github.com/yWorks/jsPDF) and[svg2pdf.js](https://github.com/yWorks/svg2pdf.js), required for clientside export in certain browsers.
 		/// </summary>
 		public string LibURL { get; set; }
 		private string LibURL_DefaultValue { get; set; }

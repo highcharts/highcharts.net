@@ -336,7 +336,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Same as[accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter),but for an individual series. Overrides the chart wide configuration.
+		/// Same as[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),but for an individual series. Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
 		private string PointDescriptionFormatter_DefaultValue { get; set; }

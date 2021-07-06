@@ -54,6 +54,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinPadding = MinPadding_DefaultValue = 0;
 			Ordinal = Ordinal_DefaultValue = true;
 			Overscroll = Overscroll_DefaultValue = 0;
+			PanningEnabled = PanningEnabled_DefaultValue = true;
 			Range = Range_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = null;
 			Scrollbar = Scrollbar_DefaultValue = new ColorAxisScrollbar();
@@ -334,7 +335,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// In an ordinal axis, the points are equally spaced in the chartregardless of the actual time or x distance between them. This meansthat missing data periods (e.g. nights or weekends for a stock chart)will not take up space in the chart.Having `ordinal: false` will show any gaps created by the `gapSize`setting proportionate to their duration.In stock charts the X axis is ordinal by default, unlessthe boost module is used and at least one of the series' data lengthexceeds the [boostThreshold](#series.line.boostThreshold).
+		/// In an ordinal axis, the points are equally spaced in the chartregardless of the actual time or x distance between them. This meansthat missing data periods (e.g. nights or weekends for a stock chart)will not take up space in the chart.Having `ordinal: false` will show any gaps created by the `gapSize`setting proportionate to their duration.In stock charts the X axis is ordinal by default, unlessthe boost module is used and at least one of the series' data lengthexceeds the [boostThreshold](#series.line.boostThreshold).For an ordinal axis, `minPadding` and `maxPadding` are ignored. Use[overscroll](#xAxis.overscroll) instead.
 		/// </summary>
 		public bool? Ordinal { get; set; }
 		private bool? Ordinal_DefaultValue { get; set; }
@@ -345,6 +346,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Overscroll { get; set; }
 		private double? Overscroll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to pan axis. If `chart.panning` is enabled, the optionallows to disable panning on an individual axis.
+		/// </summary>
+		public bool? PanningEnabled { get; set; }
+		private bool? PanningEnabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -551,6 +559,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (Ordinal != Ordinal_DefaultValue) h.Add("ordinal",Ordinal);
 			if (Overscroll != Overscroll_DefaultValue) h.Add("overscroll",Overscroll);
+			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
 			if (Range != Range_DefaultValue) h.Add("range",Range);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());

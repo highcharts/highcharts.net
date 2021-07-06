@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderColor = BorderColor_DefaultValue = "#000000";
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			ClassName = ClassName_DefaultValue = "";
+			ClassName = ClassName_DefaultValue = "highcharts-no-tooltip";
 			Crop = Crop_DefaultValue = false;
 			Distance = Distance_DefaultValue = null;
 			Format = Format_DefaultValue = "";

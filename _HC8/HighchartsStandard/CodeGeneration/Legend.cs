@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			BubbleLegend = BubbleLegend_DefaultValue = new LegendBubbleLegend();
+			ClassName = ClassName_DefaultValue = "highcharts-no-tooltip";
 			Enabled = Enabled_DefaultValue = true;
 			Floating = Floating_DefaultValue = false;
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new Hashtable();
@@ -117,6 +118,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public LegendBubbleLegend BubbleLegend { get; set; }
 		private LegendBubbleLegend BubbleLegend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A CSS class name to apply to the legend group.
+		/// </summary>
+		public string ClassName { get; set; }
+		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -372,6 +380,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BubbleLegend.IsDirty()) h.Add("bubbleLegend",BubbleLegend.ToHashtable());
+			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (ItemCheckboxStyle != ItemCheckboxStyle_DefaultValue) h.Add("itemCheckboxStyle",ItemCheckboxStyle);

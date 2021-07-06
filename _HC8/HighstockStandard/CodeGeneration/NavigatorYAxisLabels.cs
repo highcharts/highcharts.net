@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = NavigatorYAxisLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
-			StaggerLines = StaggerLines_DefaultValue = null;
+			StaggerLines = StaggerLines_DefaultValue = 0;
 			Step = Step_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;

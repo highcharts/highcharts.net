@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public YAxisTitleStyle()
 		{
-			Color = Color_DefaultValue = "#666666";
+			Color = Color_DefaultValue = "";
 			
 		}	
 		

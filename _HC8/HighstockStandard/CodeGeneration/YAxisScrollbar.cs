@@ -16,24 +16,24 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public YAxisScrollbar()
 		{
-			BarBackgroundColor = BarBackgroundColor_DefaultValue = "#cccccc";
-			BarBorderColor = BarBorderColor_DefaultValue = "#cccccc";
+			BarBackgroundColor = BarBackgroundColor_DefaultValue = "";
+			BarBorderColor = BarBorderColor_DefaultValue = "";
 			BarBorderRadius = BarBorderRadius_DefaultValue = 0;
 			BarBorderWidth = BarBorderWidth_DefaultValue = 1;
-			ButtonArrowColor = ButtonArrowColor_DefaultValue = "#333333";
-			ButtonBackgroundColor = ButtonBackgroundColor_DefaultValue = "#e6e6e6";
-			ButtonBorderColor = ButtonBorderColor_DefaultValue = "#cccccc";
+			ButtonArrowColor = ButtonArrowColor_DefaultValue = "";
+			ButtonBackgroundColor = ButtonBackgroundColor_DefaultValue = "";
+			ButtonBorderColor = ButtonBorderColor_DefaultValue = "";
 			ButtonBorderRadius = ButtonBorderRadius_DefaultValue = 0;
 			ButtonBorderWidth = ButtonBorderWidth_DefaultValue = 1;
 			Enabled = Enabled_DefaultValue = false;
 			LiveRedraw = LiveRedraw_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			MinWidth = MinWidth_DefaultValue = 6;
-			RifleColor = RifleColor_DefaultValue = "#333333";
+			RifleColor = RifleColor_DefaultValue = "";
 			ShowFull = ShowFull_DefaultValue = true;
 			Size = Size_DefaultValue = 14;
-			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "#f2f2f2";
-			TrackBorderColor = TrackBorderColor_DefaultValue = "#f2f2f2";
+			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "";
+			TrackBorderColor = TrackBorderColor_DefaultValue = "";
 			TrackBorderRadius = TrackBorderRadius_DefaultValue = 0;
 			TrackBorderWidth = TrackBorderWidth_DefaultValue = 1;
 			ZIndex = ZIndex_DefaultValue = 3;

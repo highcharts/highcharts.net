@@ -297,14 +297,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be groupedinto a larger time span. This can make the grouped points to havea greater distance than the absolute value of `gapSize` property,which will result in disappearing graph completely. To preventthis situation the mentioned distance between grouped points isused instead of previously defined `gapSize`.In practice, this option is most often used to visualize gaps intime series. In a stock chart, intraday data is available fordaytime hours, while gaps will appear in nights and weekends.
+		/// Defines when to display a gap in the graph, together with the[gapUnit](plotOptions.series.gapUnit) option.In case when `dataGrouping` is enabled, points can be groupedinto a larger time span. This can make the grouped points tohave a greater distance than the absolute value of `gapSize`property, which will result in disappearing graph completely.To prevent this situation the mentioned distance betweengrouped points is used instead of previously defined`gapSize`.In practice, this option is most often used to visualize gapsin time series. In a stock chart, intraday data is availablefor daytime hours, while gaps will appear in nights andweekends.
 		/// </summary>
 		public double? GapSize { get; set; }
 		private double? GapSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Together with [gapSize](plotOptions.series.gapSize), this optiondefines where to draw gaps in the graph.When the `gapUnit` is `"relative"` (default), a gap size of 5means that if the distance between two points is greater than5 times that of the two closest points, the graph will be broken.When the `gapUnit` is `"value"`, the gap is based on absoluteaxis values, which on a datetime axis is milliseconds. This alsoapplies to the navigator series that inherits gap options fromthe base series.
+		/// Together with [gapSize](plotOptions.series.gapSize), thisoption defines where to draw gaps in the graph.When the `gapUnit` is `"relative"` (default), a gap size of 5means that if the distance between two points is greater than5 times that of the two closest points, the graph will bebroken.When the `gapUnit` is `"value"`, the gap is based on absoluteaxis values, which on a datetime axis is milliseconds. Thisalso applies to the navigator series that inherits gapoptions from the base series.
 		/// </summary>
 		public ObvSeriesGapUnit GapUnit { get; set; }
 		private ObvSeriesGapUnit GapUnit_DefaultValue { get; set; }
@@ -430,7 +430,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Same as[accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter),but for an individual series. Overrides the chart wide configuration.
+		/// Same as[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),but for an individual series. Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
 		private string PointDescriptionFormatter_DefaultValue { get; set; }

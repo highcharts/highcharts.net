@@ -66,8 +66,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinPadding = MinPadding_DefaultValue = null;
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
-			Offset = Offset_DefaultValue = "undefined";
+			Offset = Offset_DefaultValue = null;
 			Opposite = Opposite_DefaultValue = false;
+			PanningEnabled = PanningEnabled_DefaultValue = true;
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
 			Range = Range_DefaultValue = null;
@@ -456,8 +457,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The distance in pixels from the plot area to the axis line.A positive offset moves the axis with it's line, labels and ticksaway from the plot area. This is typically used when two or moreaxes are displayed on the same side of the plot. With multipleaxes the offset is dynamically adjusted to avoid collision, thiscan be overridden by setting offset explicitly.
 		/// </summary>
-		public string Offset { get; set; }
-		private string Offset_DefaultValue { get; set; }
+		public double? Offset { get; set; }
+		private double? Offset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -465,6 +466,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Opposite { get; set; }
 		private bool? Opposite_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to pan axis. If `chart.panning` is enabled, the optionallows to disable panning on an individual axis.
+		/// </summary>
+		public bool? PanningEnabled { get; set; }
+		private bool? PanningEnabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -741,6 +749,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
+			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
 			if (Range != Range_DefaultValue) h.Add("range",Range);

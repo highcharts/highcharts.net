@@ -54,6 +54,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Offset = Offset_DefaultValue = 0;
 			Opposite = Opposite_DefaultValue = false;
 			Pane = Pane_DefaultValue = null;
+			PanningEnabled = PanningEnabled_DefaultValue = true;
 			Reversed = Reversed_DefaultValue = null;
 			ReversedStacks = ReversedStacks_DefaultValue = false;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
@@ -356,6 +357,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to pan axis. If `chart.panning` is enabled, the optionallows to disable panning on an individual axis.
+		/// </summary>
+		public bool? PanningEnabled { get; set; }
+		private bool? PanningEnabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to reverse the axis so that the highest number is closestto the origin. If the chart is inverted, the x axis is reversed bydefault.
 		/// </summary>
 		public bool? Reversed { get; set; }
@@ -610,6 +618,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (Pane != Pane_DefaultValue) h.Add("pane",Pane);
+			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public YAxisLabelsStyle()
 		{
-			Color = Color_DefaultValue = "#666666";
+			Color = Color_DefaultValue = "";
 			Cursor = Cursor_DefaultValue = "default";
 			FontSize = FontSize_DefaultValue = "11px";
 			

@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsHeatmapBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
+			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
@@ -104,7 +105,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border width for each heat map item.
+		/// The border radius for each heatmap item.
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border width for each heatmap item.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -300,7 +308,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Same as[accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter),but for an individual series. Overrides the chart wide configuration.
+		/// Same as[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),but for an individual series. Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
 		private string PointDescriptionFormatter_DefaultValue { get; set; }
@@ -409,6 +417,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);

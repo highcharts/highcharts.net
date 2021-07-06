@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public YAxisStackLabelsStyle()
 		{
-			Color = Color_DefaultValue = "#000000";
+			Color = Color_DefaultValue = "";
 			FontSize = FontSize_DefaultValue = "11px";
 			FontWeight = FontWeight_DefaultValue = "bold";
 			TextOutline = TextOutline_DefaultValue = "1px contrast";

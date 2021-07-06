@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public BulletSeriesDataTargetOptions()
 		{
 			BorderColor = BorderColor_DefaultValue = "";
+			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Color = Color_DefaultValue = "";
 			Height = Height_DefaultValue = 3;
@@ -32,6 +33,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border radius of the rectangle representing the target.
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -77,6 +85,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Height != Height_DefaultValue) h.Add("height",Height);

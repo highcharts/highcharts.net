@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BackgroundColor = BackgroundColor_DefaultValue = "Background color";
 			BackgroundColors = BackgroundColors_DefaultValue = "Background colors";
 			BorderColor = BorderColor_DefaultValue = "Border color";
-			BorderRadius = BorderRadius_DefaultValue = "Border radius";
+			BorderRadius = BorderRadius_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = "Border width";
 			BottomBand = BottomBand_DefaultValue = "Bottom band";
 			Circle = Circle_DefaultValue = "Circle";
@@ -105,7 +105,7 @@ namespace Highsoft.Web.Mvc.Charts
 			VerticalLabel = VerticalLabel_DefaultValue = "Vertical label";
 			VerticalLine = VerticalLine_DefaultValue = "Vertical line";
 			Volume = Volume_DefaultValue = "Volume";
-			XAxisUnit = XAxisUnit_DefaultValue = "x-axis unit";
+			XAxisUnit = XAxisUnit_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -184,8 +184,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string BorderRadius { get; set; }
-		private string BorderRadius_DefaultValue { get; set; }
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -737,8 +737,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string XAxisUnit { get; set; }
-		private string XAxisUnit_DefaultValue { get; set; }
+		public double? XAxisUnit { get; set; }
+		private double? XAxisUnit_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

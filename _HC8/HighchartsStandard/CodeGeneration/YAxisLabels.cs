@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ReserveSpace = ReserveSpace_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
 			Skew3d = Skew3d_DefaultValue = false;
-			StaggerLines = StaggerLines_DefaultValue = "";
+			StaggerLines = StaggerLines_DefaultValue = 0;
 			Step = Step_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
@@ -159,8 +159,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Horizontal axes only. The number of lines to spread the labelsover to make room or tighter labels. 0 disables staggering.
 		/// </summary>
-		public string StaggerLines { get; set; }
-		private string StaggerLines_DefaultValue { get; set; }
+		public double? StaggerLines { get; set; }
+		private double? StaggerLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>

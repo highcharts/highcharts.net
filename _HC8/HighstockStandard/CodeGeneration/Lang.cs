@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Configure the accessibility strings in the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and information on itsfeatures, see[Highcharts Accessibility](https://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.pointDescriptionFormatter](#accessibility.pointDescriptionFormatter),[accessibility.seriesDescriptionFormatter](#accessibility.seriesDescriptionFormatter),and[accessibility.screenReaderSectionFormatter](#accessibility.screenReaderSectionFormatter).
+		/// Configure the accessibility strings in the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and information on itsfeatures, see[Highcharts Accessibility](https://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.point.descriptionFormatter](#accessibility.point.descriptionFormatter),[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),and[accessibility.screenReaderSection.beforeChartFormatter](#accessibility.screenReaderSection.beforeChartFormatter).
 		/// </summary>
 		public LangAccessibility Accessibility { get; set; }
 		private LangAccessibility Accessibility_DefaultValue { get; set; }
