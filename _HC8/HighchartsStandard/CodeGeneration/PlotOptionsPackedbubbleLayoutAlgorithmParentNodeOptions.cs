@@ -111,7 +111,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
@@ -120,13 +120,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GravitationalConstant != GravitationalConstant_DefaultValue) h.Add("gravitationalConstant",GravitationalConstant);
 			if (InitialPositionRadius != InitialPositionRadius_DefaultValue) h.Add("initialPositionRadius",InitialPositionRadius);
 			if (InitialPositions != InitialPositions_DefaultValue) h.Add("initialPositions",InitialPositions);
-			if (Integration != Integration_DefaultValue) h.Add("integration", Highcharts.FirstCharacterToLower(Integration.ToString()));
+			if (Integration != Integration_DefaultValue) h.Add("integration", highcharts.FirstCharacterToLower(Integration.ToString()));
 			if (LinkLength != LinkLength_DefaultValue) h.Add("linkLength",LinkLength);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (Marker.IsDirty(ref highcharts)) h.Add("marker",Marker.ToHashtable(ref highcharts));
 			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
 			if (SeriesInteraction != SeriesInteraction_DefaultValue) h.Add("seriesInteraction",SeriesInteraction);
-			if (Type != Type_DefaultValue) h.Add("type", Highcharts.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
@@ -139,7 +139,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -149,9 +149,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

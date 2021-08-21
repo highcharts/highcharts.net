@@ -95,16 +95,16 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (AnnotationsOptions.IsDirty()) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable());
-			if (Bindings.IsDirty()) h.Add("bindings",Bindings.ToHashtable());
+			if (AnnotationsOptions.IsDirty(ref highcharts)) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable(ref highcharts));
+			if (Bindings.IsDirty(ref highcharts)) h.Add("bindings",Bindings.ToHashtable(ref highcharts));
 			if (BindingsClassName != BindingsClassName_DefaultValue) h.Add("bindingsClassName",BindingsClassName);
-			if (ButtonOptions.IsDirty()) h.Add("buttonOptions",ButtonOptions.ToHashtable());
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (ButtonOptions.IsDirty(ref highcharts)) h.Add("buttonOptions",ButtonOptions.ToHashtable(ref highcharts));
+			if (Events.IsDirty(ref highcharts)) h.Add("events",Events.ToHashtable(ref highcharts));
 			if (IconsURL != IconsURL_DefaultValue) h.Add("iconsURL",IconsURL);
 			if (MenuItemHoverStyle != MenuItemHoverStyle_DefaultValue) h.Add("menuItemHoverStyle",MenuItemHoverStyle);
 			if (MenuItemStyle != MenuItemStyle_DefaultValue) h.Add("menuItemStyle",MenuItemStyle);
@@ -121,7 +121,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -131,9 +131,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

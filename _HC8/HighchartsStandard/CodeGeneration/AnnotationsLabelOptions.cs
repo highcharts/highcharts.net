@@ -215,13 +215,13 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Accessibility.IsDirty(ref highcharts)) h.Add("accessibility",Accessibility.ToHashtable(ref highcharts));
+			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -231,9 +231,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highcharts.FirstCharacterToLower(Overflow.ToString()));
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
@@ -241,7 +241,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (CustomFields.Count > 0)
@@ -256,7 +256,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -266,9 +266,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

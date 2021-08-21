@@ -103,21 +103,21 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("click", Click); }  
-			if (Drag != Drag_DefaultValue) { h.Add("drag",Drag); Highcharts.AddFunction("drag", Drag); }  
-			if (DragStart != DragStart_DefaultValue) { h.Add("dragStart",DragStart); Highcharts.AddFunction("dragStart", DragStart); }  
-			if (Drop != Drop_DefaultValue) { h.Add("drop",Drop); Highcharts.AddFunction("drop", Drop); }  
-			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); Highcharts.AddFunction("mouseOut", MouseOut); }  
-			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); Highcharts.AddFunction("mouseOver", MouseOver); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highcharts.AddFunction("remove", Remove); }  
-			if (Select != Select_DefaultValue) { h.Add("select",Select); Highcharts.AddFunction("select", Select); }  
-			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); Highcharts.AddFunction("unselect", Unselect); }  
-			if (Update != Update_DefaultValue) { h.Add("update",Update); Highcharts.AddFunction("update", Update); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
+			if (Drag != Drag_DefaultValue) { h.Add("drag",Drag); highcharts.AddFunction("drag", Drag); }  
+			if (DragStart != DragStart_DefaultValue) { h.Add("dragStart",DragStart); highcharts.AddFunction("dragStart", DragStart); }  
+			if (Drop != Drop_DefaultValue) { h.Add("drop",Drop); highcharts.AddFunction("drop", Drop); }  
+			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); highcharts.AddFunction("mouseOut", MouseOut); }  
+			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); highcharts.AddFunction("mouseOver", MouseOver); }  
+			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); highcharts.AddFunction("remove", Remove); }  
+			if (Select != Select_DefaultValue) { h.Add("select",Select); highcharts.AddFunction("select", Select); }  
+			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); highcharts.AddFunction("unselect", Unselect); }  
+			if (Update != Update_DefaultValue) { h.Add("update",Update); highcharts.AddFunction("update", Update); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
@@ -130,7 +130,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -140,9 +140,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

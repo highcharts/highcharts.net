@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>9.1.2</AssemblyVersion>
-    <FileVersion>9.1.2</FileVersion>
+    <AssemblyVersion>9.1.2.2</AssemblyVersion>
+    <FileVersion>9.1.2.2</FileVersion>
     <Company>Highsoft</Company>
     <Product>Highcharts .NET</Product>
-    <Version>9.1.2</Version>
+    <Version>9.1.2.2</Version>
     <Authors>Highsoft</Authors>
     <Copyright>Copyright ©  2021</Copyright>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
@@ -17,8 +17,13 @@
     <AssemblyName>Highcharts</AssemblyName>
     <RootNamespace>Highcharts</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>
-      Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+    <PackageReleaseNotes>Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+      #9.1.2.2
+      MenuItem fix.
+
+      #9.1.2.1
+      Add support for multithreading
+
       # 8.2.2.3
       Fix Animation and PointPlacement
 
@@ -59,6 +64,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="CodeAddOns\MenuItem.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Update="HighchartsRenderer.cs" />
     <Compile Update="HtmlHelperExtensions.cs" />
   </ItemGroup>

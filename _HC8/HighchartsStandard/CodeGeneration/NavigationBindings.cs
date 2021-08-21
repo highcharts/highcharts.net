@@ -335,7 +335,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
@@ -354,7 +354,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FlagDiamondpin != FlagDiamondpin_DefaultValue) h.Add("flagDiamondpin",FlagDiamondpin);
 			if (FlagSimplepin != FlagSimplepin_DefaultValue) h.Add("flagSimplepin",FlagSimplepin);
 			if (FlagSquarepin != FlagSquarepin_DefaultValue) h.Add("flagSquarepin",FlagSquarepin);
-			if (FullScreen.IsDirty()) h.Add("fullScreen",FullScreen.ToHashtable());
+			if (FullScreen.IsDirty(ref highcharts)) h.Add("fullScreen",FullScreen.ToHashtable(ref highcharts));
 			if (HorizontalLine != HorizontalLine_DefaultValue) h.Add("horizontalLine",HorizontalLine);
 			if (Indicators != Indicators_DefaultValue) h.Add("indicators",Indicators);
 			if (InfinityLine != InfinityLine_DefaultValue) h.Add("infinityLine",InfinityLine);
@@ -366,7 +366,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Pitchfork != Pitchfork_DefaultValue) h.Add("pitchfork",Pitchfork);
 			if (Ray != Ray_DefaultValue) h.Add("ray",Ray);
 			if (RectangleAnnotation != RectangleAnnotation_DefaultValue) h.Add("rectangleAnnotation",RectangleAnnotation);
-			if (SaveChart.IsDirty()) h.Add("saveChart",SaveChart.ToHashtable());
+			if (SaveChart.IsDirty(ref highcharts)) h.Add("saveChart",SaveChart.ToHashtable(ref highcharts));
 			if (Segment != Segment_DefaultValue) h.Add("segment",Segment);
 			if (SeriesTypeCandlestick != SeriesTypeCandlestick_DefaultValue) h.Add("seriesTypeCandlestick",SeriesTypeCandlestick);
 			if (SeriesTypeLine != SeriesTypeLine_DefaultValue) h.Add("seriesTypeLine",SeriesTypeLine);
@@ -391,7 +391,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -401,9 +401,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

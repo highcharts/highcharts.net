@@ -20,6 +20,7 @@ namespace {HighTemplate.Namespace}
 
 		internal Hashtable ToHashtable()
 		{
+			var highcharts = this;
 			Hashtable h = new Hashtable();
 
 			{HighTemplate.HashtableInit}

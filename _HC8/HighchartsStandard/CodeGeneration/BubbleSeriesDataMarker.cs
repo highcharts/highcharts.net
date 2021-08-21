@@ -71,7 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
@@ -80,7 +80,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (States.IsDirty(ref highcharts)) h.Add("states",States.ToHashtable(ref highcharts));
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
@@ -94,7 +94,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -104,9 +104,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

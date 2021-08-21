@@ -79,14 +79,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
 			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
-			if (DateFormatter != DateFormatter_DefaultValue) { h.Add("dateFormatter",DateFormatter); Highcharts.AddFunction("dateFormatter", DateFormatter); }  
-			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); Highcharts.AddFunction("descriptionFormatter", DescriptionFormatter); }  
+			if (DateFormatter != DateFormatter_DefaultValue) { h.Add("dateFormatter",DateFormatter); highcharts.AddFunction("dateFormatter", DateFormatter); }  
+			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); highcharts.AddFunction("descriptionFormatter", DescriptionFormatter); }  
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValueDescriptionFormat != ValueDescriptionFormat_DefaultValue) h.Add("valueDescriptionFormat",ValueDescriptionFormat);
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
@@ -103,7 +103,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -113,9 +113,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

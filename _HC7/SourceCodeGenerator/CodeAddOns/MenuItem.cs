@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Web.Script.Serialization;
 using System.Collections;
 using System;
 using System.Collections.Specialized;
 using System.Web;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
@@ -20,33 +20,33 @@ namespace Highsoft.Web.Mvc.Charts
         /// <summary>
         /// The text of the menu item
         /// </summary>
-        string Text { get; set; }
+        public string Text { get; set; }
 
         /// <summary>
         /// OnClick javascript event to fire
         /// </summary>
         public string OnClick { get; set; }
 
-        internal override Hashtable ToHashtable()
+        internal override Hashtable ToHashtable(ref Highcharts highcharts)
         {
             Hashtable h = new Hashtable();
 
             if (!String.IsNullOrEmpty(Text)) h.Add("text", Text);
-            if (!String.IsNullOrEmpty(OnClick)) h.Add("borderColor", OnClick);
+            if (!String.IsNullOrEmpty(OnClick)) { h.Add("onclick", OnClick); highcharts.AddFunction("onclick", OnClick); }
 
             return h;
         }
 
-        internal override string ToJSON()
+        internal override string ToJSON(ref Highcharts highcharts)
         {
-            return new JavaScriptSerializer().Serialize(ToHashtable());
+            return JsonConvert.SerializeObject(ToHashtable(ref highcharts));
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
-        internal override bool IsDirty()
+        internal override bool IsDirty(ref Highcharts highcharts)
         {
-            return ToHashtable().Count > 0;
+            return ToHashtable(ref highcharts).Count > 0;
         }   
 	}
 }

@@ -495,16 +495,16 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (Accessibility.IsDirty(ref highcharts)) h.Add("accessibility",Accessibility.ToHashtable(ref highcharts));
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation.IsDirty(ref highcharts)) h.Add("animation",Animation.ToJSON(ref highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
+			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -518,38 +518,38 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Colsize != Colsize_DefaultValue) h.Add("colsize",Colsize);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (Data.Any()) h.Add("data",HashifyList(Data));
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
+			if (Data.Any()) h.Add("data",HashifyList(ref highcharts,Data));
+			if (DataLabels.IsDirty(ref highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(ref highcharts));
+			if (DataSorting.IsDirty(ref highcharts)) h.Add("dataSorting",DataSorting.ToHashtable(ref highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
+			if (DragDrop.IsDirty(ref highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(ref highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events.IsDirty(ref highcharts)) h.Add("events",Events.ToHashtable(ref highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (Label.IsDirty(ref highcharts)) h.Add("label",Label.ToHashtable(ref highcharts));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (Marker.IsDirty(ref highcharts)) h.Add("marker",Marker.ToHashtable(ref highcharts));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (NullColor != NullColor_DefaultValue) h.Add("nullColor",NullColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (Rowsize != Rowsize_DefaultValue) h.Add("rowsize",Rowsize);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (States.IsDirty(ref highcharts)) h.Add("states",States.ToHashtable(ref highcharts));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (Tooltip.IsDirty(ref highcharts)) h.Add("tooltip",Tooltip.ToHashtable(ref highcharts));
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			h.Add("type","heatmap");
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
@@ -559,7 +559,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (YAxisNumber != YAxisNumber_DefaultValue) h.Add("yAxis",YAxisNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(ref highcharts,Zones));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
@@ -572,7 +572,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -582,9 +582,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

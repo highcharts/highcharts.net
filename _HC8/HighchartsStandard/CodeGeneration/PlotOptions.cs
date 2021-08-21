@@ -431,62 +431,62 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Area.IsDirty()) h.Add("area",Area.ToHashtable());
-			if (Arearange.IsDirty()) h.Add("arearange",Arearange.ToHashtable());
-			if (Areaspline.IsDirty()) h.Add("areaspline",Areaspline.ToHashtable());
-			if (Areasplinerange.IsDirty()) h.Add("areasplinerange",Areasplinerange.ToHashtable());
-			if (Bar.IsDirty()) h.Add("bar",Bar.ToHashtable());
-			if (Bellcurve.IsDirty()) h.Add("bellcurve",Bellcurve.ToHashtable());
-			if (Boxplot.IsDirty()) h.Add("boxplot",Boxplot.ToHashtable());
-			if (Bubble.IsDirty()) h.Add("bubble",Bubble.ToHashtable());
-			if (Bullet.IsDirty()) h.Add("bullet",Bullet.ToHashtable());
-			if (Column.IsDirty()) h.Add("column",Column.ToHashtable());
-			if (Columnpyramid.IsDirty()) h.Add("columnpyramid",Columnpyramid.ToHashtable());
-			if (Columnrange.IsDirty()) h.Add("columnrange",Columnrange.ToHashtable());
-			if (Cylinder.IsDirty()) h.Add("cylinder",Cylinder.ToHashtable());
-			if (Dependencywheel.IsDirty()) h.Add("dependencywheel",Dependencywheel.ToHashtable());
-			if (Dumbbell.IsDirty()) h.Add("dumbbell",Dumbbell.ToHashtable());
-			if (Errorbar.IsDirty()) h.Add("errorbar",Errorbar.ToHashtable());
-			if (Funnel.IsDirty()) h.Add("funnel",Funnel.ToHashtable());
-			if (Funnel3d.IsDirty()) h.Add("funnel3d",Funnel3d.ToHashtable());
-			if (Gauge.IsDirty()) h.Add("gauge",Gauge.ToHashtable());
-			if (Heatmap.IsDirty()) h.Add("heatmap",Heatmap.ToHashtable());
-			if (Histogram.IsDirty()) h.Add("histogram",Histogram.ToHashtable());
-			if (Item.IsDirty()) h.Add("item",Item.ToHashtable());
-			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
-			if (Lollipop.IsDirty()) h.Add("lollipop",Lollipop.ToHashtable());
-			if (Networkgraph.IsDirty()) h.Add("networkgraph",Networkgraph.ToHashtable());
-			if (Organization.IsDirty()) h.Add("organization",Organization.ToHashtable());
-			if (Packedbubble.IsDirty()) h.Add("packedbubble",Packedbubble.ToHashtable());
-			if (Pareto.IsDirty()) h.Add("pareto",Pareto.ToHashtable());
-			if (Pie.IsDirty()) h.Add("pie",Pie.ToHashtable());
-			if (Polygon.IsDirty()) h.Add("polygon",Polygon.ToHashtable());
-			if (Pyramid.IsDirty()) h.Add("pyramid",Pyramid.ToHashtable());
-			if (Pyramid3d.IsDirty()) h.Add("pyramid3d",Pyramid3d.ToHashtable());
-			if (Sankey.IsDirty()) h.Add("sankey",Sankey.ToHashtable());
-			if (Scatter.IsDirty()) h.Add("scatter",Scatter.ToHashtable());
-			if (Scatter3d.IsDirty()) h.Add("scatter3d",Scatter3d.ToHashtable());
-			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
-			if (Solidgauge.IsDirty()) h.Add("solidgauge",Solidgauge.ToHashtable());
-			if (Spline.IsDirty()) h.Add("spline",Spline.ToHashtable());
-			if (Streamgraph.IsDirty()) h.Add("streamgraph",Streamgraph.ToHashtable());
-			if (Sunburst.IsDirty()) h.Add("sunburst",Sunburst.ToHashtable());
-			if (Tilemap.IsDirty()) h.Add("tilemap",Tilemap.ToHashtable());
-			if (Timeline.IsDirty()) h.Add("timeline",Timeline.ToHashtable());
-			if (Treemap.IsDirty()) h.Add("treemap",Treemap.ToHashtable());
-			if (Variablepie.IsDirty()) h.Add("variablepie",Variablepie.ToHashtable());
-			if (Variwide.IsDirty()) h.Add("variwide",Variwide.ToHashtable());
-			if (Vector.IsDirty()) h.Add("vector",Vector.ToHashtable());
-			if (Venn.IsDirty()) h.Add("venn",Venn.ToHashtable());
-			if (Waterfall.IsDirty()) h.Add("waterfall",Waterfall.ToHashtable());
-			if (Windbarb.IsDirty()) h.Add("windbarb",Windbarb.ToHashtable());
-			if (Wordcloud.IsDirty()) h.Add("wordcloud",Wordcloud.ToHashtable());
-			if (Xrange.IsDirty()) h.Add("xrange",Xrange.ToHashtable());
+			if (Area.IsDirty(ref highcharts)) h.Add("area",Area.ToHashtable(ref highcharts));
+			if (Arearange.IsDirty(ref highcharts)) h.Add("arearange",Arearange.ToHashtable(ref highcharts));
+			if (Areaspline.IsDirty(ref highcharts)) h.Add("areaspline",Areaspline.ToHashtable(ref highcharts));
+			if (Areasplinerange.IsDirty(ref highcharts)) h.Add("areasplinerange",Areasplinerange.ToHashtable(ref highcharts));
+			if (Bar.IsDirty(ref highcharts)) h.Add("bar",Bar.ToHashtable(ref highcharts));
+			if (Bellcurve.IsDirty(ref highcharts)) h.Add("bellcurve",Bellcurve.ToHashtable(ref highcharts));
+			if (Boxplot.IsDirty(ref highcharts)) h.Add("boxplot",Boxplot.ToHashtable(ref highcharts));
+			if (Bubble.IsDirty(ref highcharts)) h.Add("bubble",Bubble.ToHashtable(ref highcharts));
+			if (Bullet.IsDirty(ref highcharts)) h.Add("bullet",Bullet.ToHashtable(ref highcharts));
+			if (Column.IsDirty(ref highcharts)) h.Add("column",Column.ToHashtable(ref highcharts));
+			if (Columnpyramid.IsDirty(ref highcharts)) h.Add("columnpyramid",Columnpyramid.ToHashtable(ref highcharts));
+			if (Columnrange.IsDirty(ref highcharts)) h.Add("columnrange",Columnrange.ToHashtable(ref highcharts));
+			if (Cylinder.IsDirty(ref highcharts)) h.Add("cylinder",Cylinder.ToHashtable(ref highcharts));
+			if (Dependencywheel.IsDirty(ref highcharts)) h.Add("dependencywheel",Dependencywheel.ToHashtable(ref highcharts));
+			if (Dumbbell.IsDirty(ref highcharts)) h.Add("dumbbell",Dumbbell.ToHashtable(ref highcharts));
+			if (Errorbar.IsDirty(ref highcharts)) h.Add("errorbar",Errorbar.ToHashtable(ref highcharts));
+			if (Funnel.IsDirty(ref highcharts)) h.Add("funnel",Funnel.ToHashtable(ref highcharts));
+			if (Funnel3d.IsDirty(ref highcharts)) h.Add("funnel3d",Funnel3d.ToHashtable(ref highcharts));
+			if (Gauge.IsDirty(ref highcharts)) h.Add("gauge",Gauge.ToHashtable(ref highcharts));
+			if (Heatmap.IsDirty(ref highcharts)) h.Add("heatmap",Heatmap.ToHashtable(ref highcharts));
+			if (Histogram.IsDirty(ref highcharts)) h.Add("histogram",Histogram.ToHashtable(ref highcharts));
+			if (Item.IsDirty(ref highcharts)) h.Add("item",Item.ToHashtable(ref highcharts));
+			if (Line.IsDirty(ref highcharts)) h.Add("line",Line.ToHashtable(ref highcharts));
+			if (Lollipop.IsDirty(ref highcharts)) h.Add("lollipop",Lollipop.ToHashtable(ref highcharts));
+			if (Networkgraph.IsDirty(ref highcharts)) h.Add("networkgraph",Networkgraph.ToHashtable(ref highcharts));
+			if (Organization.IsDirty(ref highcharts)) h.Add("organization",Organization.ToHashtable(ref highcharts));
+			if (Packedbubble.IsDirty(ref highcharts)) h.Add("packedbubble",Packedbubble.ToHashtable(ref highcharts));
+			if (Pareto.IsDirty(ref highcharts)) h.Add("pareto",Pareto.ToHashtable(ref highcharts));
+			if (Pie.IsDirty(ref highcharts)) h.Add("pie",Pie.ToHashtable(ref highcharts));
+			if (Polygon.IsDirty(ref highcharts)) h.Add("polygon",Polygon.ToHashtable(ref highcharts));
+			if (Pyramid.IsDirty(ref highcharts)) h.Add("pyramid",Pyramid.ToHashtable(ref highcharts));
+			if (Pyramid3d.IsDirty(ref highcharts)) h.Add("pyramid3d",Pyramid3d.ToHashtable(ref highcharts));
+			if (Sankey.IsDirty(ref highcharts)) h.Add("sankey",Sankey.ToHashtable(ref highcharts));
+			if (Scatter.IsDirty(ref highcharts)) h.Add("scatter",Scatter.ToHashtable(ref highcharts));
+			if (Scatter3d.IsDirty(ref highcharts)) h.Add("scatter3d",Scatter3d.ToHashtable(ref highcharts));
+			if (Series.IsDirty(ref highcharts)) h.Add("series",Series.ToHashtable(ref highcharts));
+			if (Solidgauge.IsDirty(ref highcharts)) h.Add("solidgauge",Solidgauge.ToHashtable(ref highcharts));
+			if (Spline.IsDirty(ref highcharts)) h.Add("spline",Spline.ToHashtable(ref highcharts));
+			if (Streamgraph.IsDirty(ref highcharts)) h.Add("streamgraph",Streamgraph.ToHashtable(ref highcharts));
+			if (Sunburst.IsDirty(ref highcharts)) h.Add("sunburst",Sunburst.ToHashtable(ref highcharts));
+			if (Tilemap.IsDirty(ref highcharts)) h.Add("tilemap",Tilemap.ToHashtable(ref highcharts));
+			if (Timeline.IsDirty(ref highcharts)) h.Add("timeline",Timeline.ToHashtable(ref highcharts));
+			if (Treemap.IsDirty(ref highcharts)) h.Add("treemap",Treemap.ToHashtable(ref highcharts));
+			if (Variablepie.IsDirty(ref highcharts)) h.Add("variablepie",Variablepie.ToHashtable(ref highcharts));
+			if (Variwide.IsDirty(ref highcharts)) h.Add("variwide",Variwide.ToHashtable(ref highcharts));
+			if (Vector.IsDirty(ref highcharts)) h.Add("vector",Vector.ToHashtable(ref highcharts));
+			if (Venn.IsDirty(ref highcharts)) h.Add("venn",Venn.ToHashtable(ref highcharts));
+			if (Waterfall.IsDirty(ref highcharts)) h.Add("waterfall",Waterfall.ToHashtable(ref highcharts));
+			if (Windbarb.IsDirty(ref highcharts)) h.Add("windbarb",Windbarb.ToHashtable(ref highcharts));
+			if (Wordcloud.IsDirty(ref highcharts)) h.Add("wordcloud",Wordcloud.ToHashtable(ref highcharts));
+			if (Xrange.IsDirty(ref highcharts)) h.Add("xrange",Xrange.ToHashtable(ref highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
@@ -499,7 +499,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -509,9 +509,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

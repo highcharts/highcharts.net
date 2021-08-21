@@ -151,26 +151,26 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Day.IsDirty()) h.Add("day",Day.ToHashtable());
+			if (Day.IsDirty(ref highcharts)) h.Add("day",Day.ToHashtable(ref highcharts));
 			if (DayString != DayString_DefaultValue) h.Add("day",DayString);
-			if (Hour.IsDirty()) h.Add("hour",Hour.ToHashtable());
+			if (Hour.IsDirty(ref highcharts)) h.Add("hour",Hour.ToHashtable(ref highcharts));
 			if (HourString != HourString_DefaultValue) h.Add("hour",HourString);
-			if (Millisecond.IsDirty()) h.Add("millisecond",Millisecond.ToHashtable());
+			if (Millisecond.IsDirty(ref highcharts)) h.Add("millisecond",Millisecond.ToHashtable(ref highcharts));
 			if (MillisecondString != MillisecondString_DefaultValue) h.Add("millisecond",MillisecondString);
-			if (Minute.IsDirty()) h.Add("minute",Minute.ToHashtable());
+			if (Minute.IsDirty(ref highcharts)) h.Add("minute",Minute.ToHashtable(ref highcharts));
 			if (MinuteString != MinuteString_DefaultValue) h.Add("minute",MinuteString);
-			if (Month.IsDirty()) h.Add("month",Month.ToHashtable());
+			if (Month.IsDirty(ref highcharts)) h.Add("month",Month.ToHashtable(ref highcharts));
 			if (MonthString != MonthString_DefaultValue) h.Add("month",MonthString);
-			if (Second.IsDirty()) h.Add("second",Second.ToHashtable());
+			if (Second.IsDirty(ref highcharts)) h.Add("second",Second.ToHashtable(ref highcharts));
 			if (SecondString != SecondString_DefaultValue) h.Add("second",SecondString);
-			if (Week.IsDirty()) h.Add("week",Week.ToHashtable());
+			if (Week.IsDirty(ref highcharts)) h.Add("week",Week.ToHashtable(ref highcharts));
 			if (WeekString != WeekString_DefaultValue) h.Add("week",WeekString);
-			if (Year.IsDirty()) h.Add("year",Year.ToHashtable());
+			if (Year.IsDirty(ref highcharts)) h.Add("year",Year.ToHashtable(ref highcharts));
 			if (YearString != YearString_DefaultValue) h.Add("year",YearString);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
@@ -184,7 +184,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -194,9 +194,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

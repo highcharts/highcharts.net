@@ -615,27 +615,27 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (Accessibility.IsDirty(ref highcharts)) h.Add("accessibility",Accessibility.ToHashtable(ref highcharts));
 			if (AllowDrillToNode != AllowDrillToNode_DefaultValue) h.Add("allowDrillToNode",AllowDrillToNode);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (AllowTraversingTree != AllowTraversingTree_DefaultValue) h.Add("allowTraversingTree",AllowTraversingTree);
 			if (AlternateStartingDirection != AlternateStartingDirection_DefaultValue) h.Add("alternateStartingDirection",AlternateStartingDirection);
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation.IsDirty(ref highcharts)) h.Add("animation",Animation.ToJSON(ref highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", Highcharts.FirstCharacterToLower(BoostBlending.ToString()));
+			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (Cluster.IsDirty()) h.Add("cluster",Cluster.ToHashtable());
+			if (Cluster.IsDirty(ref highcharts)) h.Add("cluster",Cluster.ToHashtable(ref highcharts));
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
 			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
@@ -648,34 +648,34 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (DataLabels.IsDirty(ref highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(ref highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DrillUpButton.IsDirty()) h.Add("drillUpButton",DrillUpButton.ToHashtable());
+			if (DrillUpButton.IsDirty(ref highcharts)) h.Add("drillUpButton",DrillUpButton.ToHashtable(ref highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
+			if (Events.IsDirty(ref highcharts)) h.Add("events",Events.ToHashtable(ref highcharts));
+			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (InteractByLeaf != InteractByLeaf_DefaultValue) h.Add("interactByLeaf",InteractByLeaf);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", Highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
-			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", Highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
+			if (Label.IsDirty(ref highcharts)) h.Add("label",Label.ToHashtable(ref highcharts));
+			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
+			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
-			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(Levels));
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", Highcharts.FirstCharacterToLower(Linecap.ToString()));
+			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(ref highcharts,Levels));
+			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
+			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
-			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
@@ -683,17 +683,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (SortIndex != SortIndex_DefaultValue) h.Add("sortIndex",SortIndex);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highcharts.FirstCharacterToLower(Stacking.ToString()));
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
-			if (Step != Step_DefaultValue) h.Add("step", Highcharts.FirstCharacterToLower(Step.ToString()));
+			if (Stacking != Stacking_DefaultValue) h.Add("stacking", highcharts.FirstCharacterToLower(Stacking.ToString()));
+			if (States.IsDirty(ref highcharts)) h.Add("states",States.ToHashtable(ref highcharts));
+			if (Step != Step_DefaultValue) h.Add("step", highcharts.FirstCharacterToLower(Step.ToString()));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (TraverseUpButton.IsDirty()) h.Add("traverseUpButton",TraverseUpButton.ToHashtable());
+			if (Tooltip.IsDirty(ref highcharts)) h.Add("tooltip",Tooltip.ToHashtable(ref highcharts));
+			if (TraverseUpButton.IsDirty(ref highcharts)) h.Add("traverseUpButton",TraverseUpButton.ToHashtable(ref highcharts));
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(ref highcharts,Zones));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
@@ -706,7 +706,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -716,9 +716,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

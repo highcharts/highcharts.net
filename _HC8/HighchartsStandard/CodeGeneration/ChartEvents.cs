@@ -119,23 +119,23 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highcharts.AddFunction("addSeries", AddSeries); }  
-			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highcharts.AddFunction("afterPrint", AfterPrint); }  
-			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highcharts.AddFunction("beforePrint", BeforePrint); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highcharts.AddFunction("click", Click); }  
-			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); Highcharts.AddFunction("drilldown", Drilldown); }  
-			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); Highcharts.AddFunction("drillup", Drillup); }  
-			if (Drillupall != Drillupall_DefaultValue) { h.Add("drillupall",Drillupall); Highcharts.AddFunction("drillupall", Drillupall); }  
-			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); Highcharts.AddFunction("exportData", ExportData); }  
-			if (Load != Load_DefaultValue) { h.Add("load",Load); Highcharts.AddFunction("load", Load); }  
-			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highcharts.AddFunction("redraw", Redraw); }  
-			if (Render != Render_DefaultValue) { h.Add("render",Render); Highcharts.AddFunction("render", Render); }  
-			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highcharts.AddFunction("selection", Selection); }  
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); highcharts.AddFunction("addSeries", AddSeries); }  
+			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); highcharts.AddFunction("afterPrint", AfterPrint); }  
+			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); highcharts.AddFunction("beforePrint", BeforePrint); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
+			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); highcharts.AddFunction("drilldown", Drilldown); }  
+			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); highcharts.AddFunction("drillup", Drillup); }  
+			if (Drillupall != Drillupall_DefaultValue) { h.Add("drillupall",Drillupall); highcharts.AddFunction("drillupall", Drillupall); }  
+			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); highcharts.AddFunction("exportData", ExportData); }  
+			if (Load != Load_DefaultValue) { h.Add("load",Load); highcharts.AddFunction("load", Load); }  
+			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); highcharts.AddFunction("redraw", Redraw); }  
+			if (Render != Render_DefaultValue) { h.Add("render",Render); highcharts.AddFunction("render", Render); }  
+			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); highcharts.AddFunction("selection", Selection); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
@@ -148,7 +148,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -158,9 +158,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

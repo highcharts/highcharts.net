@@ -135,7 +135,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
@@ -143,7 +143,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DraggableTarget != DraggableTarget_DefaultValue) h.Add("draggableTarget",DraggableTarget);
 			if (DraggableX != DraggableX_DefaultValue) h.Add("draggableX",DraggableX);
 			if (DraggableY != DraggableY_DefaultValue) h.Add("draggableY",DraggableY);
-			if (DragHandle.IsDirty()) h.Add("dragHandle",DragHandle.ToHashtable());
+			if (DragHandle.IsDirty(ref highcharts)) h.Add("dragHandle",DragHandle.ToHashtable(ref highcharts));
 			if (DragMaxX != DragMaxX_DefaultValue) h.Add("dragMaxX",DragMaxX);
 			if (DragMaxY != DragMaxY_DefaultValue) h.Add("dragMaxY",DragMaxY);
 			if (DragMinX != DragMinX_DefaultValue) h.Add("dragMinX",DragMinX);
@@ -152,7 +152,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DragPrecisionY != DragPrecisionY_DefaultValue) h.Add("dragPrecisionY",DragPrecisionY);
 			if (DragSensitivity != DragSensitivity_DefaultValue) h.Add("dragSensitivity",DragSensitivity);
 			if (GroupBy != GroupBy_DefaultValue) h.Add("groupBy",GroupBy);
-			if (GuideBox.IsDirty()) h.Add("guideBox",GuideBox.ToHashtable());
+			if (GuideBox.IsDirty(ref highcharts)) h.Add("guideBox",GuideBox.ToHashtable(ref highcharts));
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
@@ -166,7 +166,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -176,9 +176,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

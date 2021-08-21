@@ -327,12 +327,12 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation.IsDirty(ref highcharts)) h.Add("animation",Animation.ToJSON(ref highcharts));
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
@@ -346,17 +346,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highcharts.AddFunction("formatter", Formatter); }  
+			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", Highcharts.FirstCharacterToLower(HeaderShape.ToString()));
+			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", highcharts.FirstCharacterToLower(HeaderShape.ToString()));
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highcharts.AddFunction("nullFormatter", NullFormatter); }  
+			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
 			if (Outside != Outside_DefaultValue) h.Add("outside",Outside);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highcharts.AddFunction("pointFormatter", PointFormatter); }  
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highcharts.AddFunction("positioner", Positioner); }  
+			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); highcharts.AddFunction("pointFormatter", PointFormatter); }  
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); highcharts.AddFunction("positioner", Positioner); }  
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
@@ -382,7 +382,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -392,9 +392,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

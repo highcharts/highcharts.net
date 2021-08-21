@@ -21,6 +21,7 @@ public class HighchartsGenerator
 {
     const int PROPERTY_NESTED_LEVELS = 10; // currently max levels of nested properties is five
     const string ROOT_CLASS = "Highcharts"; // the name of the root class
+    const string MAIN_FIELD_NAME = "highcharts";
     const string ROOT_NAMESPACE = "Charts"; // the name of the root class
 
     List<ApiItem> _apiItems; // json api mappings will be stored here
@@ -814,17 +815,17 @@ public class HighchartsGenerator
     private string FormatPropertyComparer(string propertyName, ApiItem child)
     {
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
-        string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList({0}));\n\t\t\t";
+        string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList(ref " + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
         string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", {3}.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
         string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); {4}.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
-        string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
-        string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";
+        string complexPropertyFormat = "if ({0}.IsDirty(ref " + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToHashtable(ref " + MAIN_FIELD_NAME+"));\n\t\t\t";
+        string customPropertyFormat = "if ({0}.IsDirty(ref " + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToJSON(ref " + MAIN_FIELD_NAME + "));\n\t\t\t";
 
         // fully qualified names that are collections
         if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
         {
             if (child.FullName == "Data")
-                return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
+                return "if (Data.Any()) h.Add(\"data\",HashifyList(ref " + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
 
             if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.ParentFullName != "Highcharts")
                 return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
@@ -840,7 +841,7 @@ public class HighchartsGenerator
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             if (propertyName == "Data")
-                return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
+                return "if (Data.Any()) h.Add(\"data\",HashifyList(ref " + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
 
             if (propertyName == "Stops")
                 return "if (Stops.Any()) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
@@ -873,7 +874,7 @@ public class HighchartsGenerator
         
         // Enum
         if ((child.ReturnType == "string" || child.ReturnType == "String" || child.ReturnType == TypeService.CSSType) && child.Values != null && child.Values.Count > 0)
-            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
+            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), MAIN_FIELD_NAME);
         // Complex object with nested objects / properties
         if (child.IsParent)
         {
@@ -888,7 +889,7 @@ public class HighchartsGenerator
 
             // Event (javascript function)
             if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
-                return String.Format(functionPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix), propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
+                return String.Format(functionPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix), propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), MAIN_FIELD_NAME);
             // Just a property
             else
             {

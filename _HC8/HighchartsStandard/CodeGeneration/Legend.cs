@@ -367,19 +367,19 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Accessibility.IsDirty(ref highcharts)) h.Add("accessibility",Accessibility.ToHashtable(ref highcharts));
+			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AlignColumns != AlignColumns_DefaultValue) h.Add("alignColumns",AlignColumns);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (BubbleLegend.IsDirty()) h.Add("bubbleLegend",BubbleLegend.ToHashtable());
+			if (BubbleLegend.IsDirty(ref highcharts)) h.Add("bubbleLegend",BubbleLegend.ToHashtable(ref highcharts));
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
@@ -393,11 +393,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ItemWidth != ItemWidth_DefaultValue) h.Add("itemWidth",ItemWidth);
 			if (LabelFormat != LabelFormat_DefaultValue) h.Add("labelFormat",LabelFormat);
 			if (LabelFormatter != LabelFormatter_DefaultValue) h.Add("labelFormatter",LabelFormatter);
-			if (Layout != Layout_DefaultValue) h.Add("layout", Highcharts.FirstCharacterToLower(Layout.ToString()));
+			if (Layout != Layout_DefaultValue) h.Add("layout", highcharts.FirstCharacterToLower(Layout.ToString()));
 			if (LineHeight != LineHeight_DefaultValue) h.Add("lineHeight",LineHeight);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
-			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
+			if (Navigation.IsDirty(ref highcharts)) h.Add("navigation",Navigation.ToHashtable(ref highcharts));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
@@ -408,9 +408,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SymbolPadding != SymbolPadding_DefaultValue) h.Add("symbolPadding",SymbolPadding);
 			if (SymbolRadius != SymbolRadius_DefaultValue) h.Add("symbolRadius",SymbolRadius);
 			if (SymbolWidth != SymbolWidth_DefaultValue) h.Add("symbolWidth",SymbolWidth);
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
+			if (Title.IsDirty(ref highcharts)) h.Add("title",Title.ToHashtable(ref highcharts));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (X != X_DefaultValue) h.Add("x",X);
@@ -427,7 +427,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -437,9 +437,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

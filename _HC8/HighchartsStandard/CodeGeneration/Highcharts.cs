@@ -263,41 +263,41 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
-			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
-			if (Boost.IsDirty()) h.Add("boost",Boost.ToHashtable());
-			if (Caption.IsDirty()) h.Add("caption",Caption.ToHashtable());
-			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
-			if (ColorAxis.IsDirty()) h.Add("colorAxis",ColorAxis.ToHashtable());
+			if (Accessibility.IsDirty(ref highcharts)) h.Add("accessibility",Accessibility.ToHashtable(ref highcharts));
+			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(ref highcharts,Annotations));
+			if (Boost.IsDirty(ref highcharts)) h.Add("boost",Boost.ToHashtable(ref highcharts));
+			if (Caption.IsDirty(ref highcharts)) h.Add("caption",Caption.ToHashtable(ref highcharts));
+			if (Chart.IsDirty(ref highcharts)) h.Add("chart",Chart.ToHashtable(ref highcharts));
+			if (ColorAxis.IsDirty(ref highcharts)) h.Add("colorAxis",ColorAxis.ToHashtable(ref highcharts));
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Credits.IsDirty()) h.Add("credits",Credits.ToHashtable());
-			if (Data.IsDirty()) h.Add("data",Data.ToHashtable());
+			if (Credits.IsDirty(ref highcharts)) h.Add("credits",Credits.ToHashtable(ref highcharts));
+			if (Data.IsDirty(ref highcharts)) h.Add("data",Data.ToHashtable(ref highcharts));
 			if (Defs != Defs_DefaultValue) h.Add("defs",Defs);
-			if (Drilldown.IsDirty()) h.Add("drilldown",Drilldown.ToHashtable());
-			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
-			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
-			if (Lang.IsDirty()) h.Add("lang",Lang.ToHashtable());
-			if (Legend.IsDirty()) h.Add("legend",Legend.ToHashtable());
-			if (Loading.IsDirty()) h.Add("loading",Loading.ToHashtable());
-			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
-			if (NoData.IsDirty()) h.Add("noData",NoData.ToHashtable());
-			if (Pane.IsDirty()) h.Add("pane",Pane.ToHashtable());
-			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
-			if (Responsive.IsDirty()) h.Add("responsive",Responsive.ToHashtable());
-			if (Series != Series_DefaultValue) h.Add("series", HashifyList(Series));
-			if (Subtitle.IsDirty()) h.Add("subtitle",Subtitle.ToHashtable());
-			if (Time.IsDirty()) h.Add("time",Time.ToHashtable());
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
-			if (ZAxis.IsDirty()) h.Add("zAxis",ZAxis.ToHashtable());
+			if (Drilldown.IsDirty(ref highcharts)) h.Add("drilldown",Drilldown.ToHashtable(ref highcharts));
+			if (Exporting.IsDirty(ref highcharts)) h.Add("exporting",Exporting.ToHashtable(ref highcharts));
+			if (Global.IsDirty(ref highcharts)) h.Add("global",Global.ToHashtable(ref highcharts));
+			if (Labels.IsDirty(ref highcharts)) h.Add("labels",Labels.ToHashtable(ref highcharts));
+			if (Lang.IsDirty(ref highcharts)) h.Add("lang",Lang.ToHashtable(ref highcharts));
+			if (Legend.IsDirty(ref highcharts)) h.Add("legend",Legend.ToHashtable(ref highcharts));
+			if (Loading.IsDirty(ref highcharts)) h.Add("loading",Loading.ToHashtable(ref highcharts));
+			if (Navigation.IsDirty(ref highcharts)) h.Add("navigation",Navigation.ToHashtable(ref highcharts));
+			if (NoData.IsDirty(ref highcharts)) h.Add("noData",NoData.ToHashtable(ref highcharts));
+			if (Pane.IsDirty(ref highcharts)) h.Add("pane",Pane.ToHashtable(ref highcharts));
+			if (PlotOptions.IsDirty(ref highcharts)) h.Add("plotOptions",PlotOptions.ToHashtable(ref highcharts));
+			if (Responsive.IsDirty(ref highcharts)) h.Add("responsive",Responsive.ToHashtable(ref highcharts));
+			if (Series != Series_DefaultValue) h.Add("series", HashifyList(ref highcharts,Series));
+			if (Subtitle.IsDirty(ref highcharts)) h.Add("subtitle",Subtitle.ToHashtable(ref highcharts));
+			if (Time.IsDirty(ref highcharts)) h.Add("time",Time.ToHashtable(ref highcharts));
+			if (Title.IsDirty(ref highcharts)) h.Add("title",Title.ToHashtable(ref highcharts));
+			if (Tooltip.IsDirty(ref highcharts)) h.Add("tooltip",Tooltip.ToHashtable(ref highcharts));
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(ref highcharts,XAxis));
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(ref highcharts,YAxis));
+			if (ZAxis.IsDirty(ref highcharts)) h.Add("zAxis",ZAxis.ToHashtable(ref highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
@@ -310,7 +310,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -320,9 +320,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

@@ -231,15 +231,15 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); Highcharts.AddFunction("beforeParse", BeforeParse); }  
+			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); highcharts.AddFunction("beforeParse", BeforeParse); }  
 			if (Columns != Columns_DefaultValue) h.Add("columns",Columns);
 			if (ColumnsURL != ColumnsURL_DefaultValue) h.Add("columnsURL",ColumnsURL);
-			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); Highcharts.AddFunction("complete", Complete); }  
+			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); highcharts.AddFunction("complete", Complete); }  
 			if (Csv != Csv_DefaultValue) h.Add("csv",Csv);
 			if (CsvURL != CsvURL_DefaultValue) h.Add("csvURL",CsvURL);
 			if (DataRefreshRate != DataRefreshRate_DefaultValue) h.Add("dataRefreshRate",DataRefreshRate);
@@ -253,8 +253,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GoogleSpreadsheetWorksheet != GoogleSpreadsheetWorksheet_DefaultValue) h.Add("googleSpreadsheetWorksheet",GoogleSpreadsheetWorksheet);
 			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
 			if (LineDelimiter != LineDelimiter_DefaultValue) h.Add("lineDelimiter",LineDelimiter);
-			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); Highcharts.AddFunction("parsed", Parsed); }  
-			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); Highcharts.AddFunction("parseDate", ParseDate); }  
+			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); highcharts.AddFunction("parsed", Parsed); }  
+			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); highcharts.AddFunction("parseDate", ParseDate); }  
 			if (Rows != Rows_DefaultValue) h.Add("rows",Rows);
 			if (RowsURL != RowsURL_DefaultValue) h.Add("rowsURL",RowsURL);
 			if (SeriesMapping != SeriesMapping_DefaultValue) h.Add("seriesMapping",SeriesMapping);
@@ -274,7 +274,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -284,9 +284,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

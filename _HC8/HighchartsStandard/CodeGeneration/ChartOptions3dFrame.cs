@@ -95,19 +95,19 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Back.IsDirty()) h.Add("back",Back.ToHashtable());
-			if (Bottom.IsDirty()) h.Add("bottom",Bottom.ToHashtable());
-			if (Front.IsDirty()) h.Add("front",Front.ToHashtable());
-			if (Left.IsDirty()) h.Add("left",Left.ToHashtable());
-			if (Right.IsDirty()) h.Add("right",Right.ToHashtable());
-			if (Side.IsDirty()) h.Add("side",Side.ToHashtable());
+			if (Back.IsDirty(ref highcharts)) h.Add("back",Back.ToHashtable(ref highcharts));
+			if (Bottom.IsDirty(ref highcharts)) h.Add("bottom",Bottom.ToHashtable(ref highcharts));
+			if (Front.IsDirty(ref highcharts)) h.Add("front",Front.ToHashtable(ref highcharts));
+			if (Left.IsDirty(ref highcharts)) h.Add("left",Left.ToHashtable(ref highcharts));
+			if (Right.IsDirty(ref highcharts)) h.Add("right",Right.ToHashtable(ref highcharts));
+			if (Side.IsDirty(ref highcharts)) h.Add("side",Side.ToHashtable(ref highcharts));
 			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (Top.IsDirty()) h.Add("top",Top.ToHashtable());
+			if (Top.IsDirty(ref highcharts)) h.Add("top",Top.ToHashtable(ref highcharts));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
@@ -121,7 +121,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -131,9 +131,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

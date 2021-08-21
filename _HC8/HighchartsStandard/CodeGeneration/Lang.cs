@@ -256,12 +256,12 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (Accessibility.IsDirty(ref highcharts)) h.Add("accessibility",Accessibility.ToHashtable(ref highcharts));
 			if (ContextButtonTitle != ContextButtonTitle_DefaultValue) h.Add("contextButtonTitle",ContextButtonTitle);
 			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
 			if (DownloadCSV != DownloadCSV_DefaultValue) h.Add("downloadCSV",DownloadCSV);
@@ -272,12 +272,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);
 			if (DrillUpText != DrillUpText_DefaultValue) h.Add("drillUpText",DrillUpText);
 			if (ExitFullscreen != ExitFullscreen_DefaultValue) h.Add("exitFullscreen",ExitFullscreen);
-			if (ExportData.IsDirty()) h.Add("exportData",ExportData.ToHashtable());
+			if (ExportData.IsDirty(ref highcharts)) h.Add("exportData",ExportData.ToHashtable(ref highcharts));
 			if (HideData != HideData_DefaultValue) h.Add("hideData",HideData);
 			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
-			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
+			if (Navigation.IsDirty(ref highcharts)) h.Add("navigation",Navigation.ToHashtable(ref highcharts));
 			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);
@@ -302,7 +302,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -312,9 +312,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

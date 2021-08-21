@@ -167,7 +167,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
@@ -181,11 +181,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectorDistance != ConnectorDistance_DefaultValue) h.Add("connectorDistance",ConnectorDistance);
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (Labels.IsDirty(ref highcharts)) h.Add("labels",Labels.ToHashtable(ref highcharts));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (MaxSize != MaxSize_DefaultValue) h.Add("maxSize",MaxSize);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
-			if (Ranges.IsDirty()) h.Add("ranges",Ranges.ToHashtable());
+			if (Ranges.IsDirty(ref highcharts)) h.Add("ranges",Ranges.ToHashtable(ref highcharts));
 			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy",SizeBy);
 			if (SizeByAbsoluteValue != SizeByAbsoluteValue_DefaultValue) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
@@ -202,7 +202,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -212,9 +212,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

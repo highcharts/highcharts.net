@@ -207,20 +207,20 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
 			if (_titleKey != _titleKey_DefaultValue) h.Add("_titleKey",_titleKey);
-			if (Align != Align_DefaultValue) h.Add("align", Highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MenuClassName != MenuClassName_DefaultValue) h.Add("menuClassName",MenuClassName);
-			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems", HashifyList(MenuItems));
-			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); Highcharts.AddFunction("onclick", Onclick); }  
+			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems", HashifyList(ref highcharts,MenuItems));
+			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); highcharts.AddFunction("onclick", Onclick); }  
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
@@ -229,9 +229,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SymbolX != SymbolX_DefaultValue) h.Add("symbolX",SymbolX);
 			if (SymbolY != SymbolY_DefaultValue) h.Add("symbolY",SymbolY);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());
+			if (Theme.IsDirty(ref highcharts)) h.Add("theme",Theme.ToHashtable(ref highcharts));
 			if (TitleKey != TitleKey_DefaultValue) h.Add("titleKey",TitleKey);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
@@ -247,7 +247,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -257,9 +257,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

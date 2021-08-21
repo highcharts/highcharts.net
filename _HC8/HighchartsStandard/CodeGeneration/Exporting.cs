@@ -215,18 +215,18 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (Accessibility.IsDirty(ref highcharts)) h.Add("accessibility",Accessibility.ToHashtable(ref highcharts));
 			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
-			if (Buttons.IsDirty()) h.Add("buttons",Buttons.ToHashtable());
+			if (Buttons.IsDirty(ref highcharts)) h.Add("buttons",Buttons.ToHashtable(ref highcharts));
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
-			if (Csv.IsDirty()) h.Add("csv",Csv.ToHashtable());
+			if (Csv.IsDirty(ref highcharts)) h.Add("csv",Csv.ToHashtable(ref highcharts));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Error != Error_DefaultValue) { h.Add("error",Error); Highcharts.AddFunction("error", Error); }  
+			if (Error != Error_DefaultValue) { h.Add("error",Error); highcharts.AddFunction("error", Error); }  
 			if (FallbackToExportServer != FallbackToExportServer_DefaultValue) h.Add("fallbackToExportServer",FallbackToExportServer);
 			if (Filename != Filename_DefaultValue) h.Add("filename",Filename);
 			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);
@@ -256,7 +256,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -266,9 +266,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

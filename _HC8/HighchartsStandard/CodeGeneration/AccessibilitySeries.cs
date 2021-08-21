@@ -55,13 +55,13 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
 
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
-			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); Highcharts.AddFunction("descriptionFormatter", DescriptionFormatter); }  
+			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); highcharts.AddFunction("descriptionFormatter", DescriptionFormatter); }  
 			if (PointDescriptionEnabledThreshold != PointDescriptionEnabledThreshold_DefaultValue) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThreshold);
 			if (PointDescriptionEnabledThresholdBool != PointDescriptionEnabledThresholdBool_DefaultValue) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThresholdBool);
 			if (CustomFields.Count > 0)
@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -86,9 +86,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highcharts highcharts)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highcharts).Count > 0;
 		}
 	}
 }

@@ -1,7 +1,12 @@
-using Newtonsoft.Json;
-using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Collections;
-using System.Globalization;
+using System;
+using System.Collections.Specialized;
+using System.Web;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Charts
 {
@@ -18,8 +23,6 @@ namespace Highsoft.Web.Mvc.Charts
 
     public partial class PointPlacement : BaseObject
     {
-        
-
         public PointPlacement()
         {
             _Value = null;
@@ -54,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
             }
         }
 
-        internal override Hashtable ToHashtable()
+        internal override Hashtable ToHashtable(ref Highcharts highcharts)
         {
             Hashtable h = new Hashtable();
 
@@ -66,33 +69,21 @@ namespace Highsoft.Web.Mvc.Charts
             return h;
         }
 
-        internal override string ToJSON()
+        internal override string ToJSON(ref Highcharts highcharts)
         {
-            //if (PointPlacementEnum != PointPlacementEnum.Null)
-            //{
-            //    return PointPlacementEnum.ToString().ToLower();
-            //}
-            //Highcharts.AddFunction("pointPlacement", objText);
-
-
-            if (Value.HasValue)
+            if (PointPlacementEnum != PointPlacementEnum.Null)
             {
-                string objText = Convert.ToString(Value, new CultureInfo("en-us"));
-                Highcharts.AddFunction("pointPlacement", objText);
-                return objText;
-            }
-            else if (PointPlacementEnum != PointPlacementEnum.Null)
                 return PointPlacementEnum.ToString().ToLower();
+            }
 
-            
-            return string.Empty;
+            return null;
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
-        internal override bool IsDirty()
+        internal override bool IsDirty(ref Highcharts highcharts)
         {
-            return ToHashtable().Count > 0;
+            return ToHashtable(ref highcharts).Count > 0;
         }
     }
 
