@@ -108,7 +108,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private double? ZIndex_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -121,7 +121,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
+			if (Label.IsDirty(ref highstock)) h.Add("label",Label.ToHashtable(ref highstock));
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
@@ -129,7 +129,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -139,9 +139,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

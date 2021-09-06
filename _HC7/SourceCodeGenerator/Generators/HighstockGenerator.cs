@@ -1,4 +1,5 @@
-﻿using SourceCodeGenerator.Parser;
+﻿using SourceCodeGenerator.Enums;
+using SourceCodeGenerator.Parser;
 using SourceCodeGenerator.Services;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ public class HighstockGenerator
     const int PROPERTY_NESTED_LEVELS = 10; // currently max levels of nested properties is five
     const string ROOT_CLASS = "Highstock"; // the name of the root class
     const string ROOT_NAMESPACE = "Stocks"; // the name of the root class
+    const string MAIN_FIELD_NAME = "highstock";
 
     List<ApiItem> _apiItems; // json api mappings will be stored here
     List<ApiItem> _previousVersionApiItems;
@@ -315,7 +317,7 @@ public class HighstockGenerator
         if (item.FullName.Contains("navigator.series"))
             return;
 
-        string codeTemplate = FileService.GetClassTemplate(IsNETStandard);
+        string codeTemplate = FileService.GetClassTemplate(Product.Highstock);
         string propertyTemplate = FileService.GetPropertyTemplate();
 
         string properties = "";
@@ -903,17 +905,17 @@ public class HighstockGenerator
     private string FormatPropertyComparer(string propertyName, ApiItem child)
     {
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
-        string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList({0}));\n\t\t\t";
+        string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList(ref " + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
         string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", {3}.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
         string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); {4}.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
-        string complexPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToHashtable());\n\t\t\t";
-        string customPropertyFormat = "if ({0}.IsDirty()) h.Add(\"{1}\",{0}.ToJSON());\n\t\t\t";
+        string complexPropertyFormat = "if ({0}.IsDirty(ref " + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToHashtable(ref " + MAIN_FIELD_NAME + "));\n\t\t\t";
+        string customPropertyFormat = "if ({0}.IsDirty(ref " + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToJSON(ref " + MAIN_FIELD_NAME + "));\n\t\t\t";
 
         // fully qualified names that are collections
         if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
         {
             if (child.FullName == "Data")
-                return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
+                return "if (Data.Any()) h.Add(\"data\",HashifyList(ref " + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
 
             if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.ParentFullName != "Highstock")
                 return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
@@ -929,7 +931,7 @@ public class HighstockGenerator
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             if (propertyName == "Data")
-                return "if (Data.Any()) h.Add(\"data\",HashifyList(Data));\n\t\t\t";
+                return "if (Data.Any()) h.Add(\"data\",HashifyList(ref " + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
 
             //if (propertyName == "Stops")
             //    return "if (Stops.Any()) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
@@ -977,7 +979,7 @@ public class HighstockGenerator
 
             // Event (javascript function)
             if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
-                return String.Format(functionPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix), propertyName + "_DefaultValue", FirstCharToLower(propertyName), ROOT_CLASS);
+                return String.Format(functionPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix), propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
             // Just a property
             else
             {

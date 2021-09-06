@@ -700,12 +700,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		private List<PlotOptionsFlagsZone> Zones_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
 			if (AllowOverlapX != AllowOverlapX_DefaultValue) h.Add("allowOverlapX",AllowOverlapX);
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
@@ -729,15 +729,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
-			if (DataLabels.IsDirty()) h.Add("dataLabels",DataLabels.ToHashtable());
-			if (DataSorting.IsDirty()) h.Add("dataSorting",DataSorting.ToHashtable());
+			if (DataLabels.IsDirty(ref highstock)) h.Add("dataLabels",DataLabels.ToHashtable(ref highstock));
+			if (DataSorting.IsDirty(ref highstock)) h.Add("dataSorting",DataSorting.ToHashtable(ref highstock));
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty()) h.Add("dragDrop",DragDrop.ToHashtable());
+			if (DragDrop.IsDirty(ref highstock)) h.Add("dragDrop",DragDrop.ToHashtable(ref highstock));
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
@@ -747,9 +747,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (LastPrice.IsDirty()) h.Add("lastPrice",LastPrice.ToHashtable());
-			if (LastVisiblePrice.IsDirty()) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable());
+			if (Label.IsDirty(ref highstock)) h.Add("label",Label.ToHashtable(ref highstock));
+			if (LastPrice.IsDirty(ref highstock)) h.Add("lastPrice",LastPrice.ToHashtable(ref highstock));
+			if (LastVisiblePrice.IsDirty(ref highstock)) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable(ref highstock));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
@@ -759,11 +759,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (OnKey != OnKey_DefaultValue) h.Add("onKey", Highstock.FirstCharacterToLower(OnKey.ToString()));
 			if (OnSeries != OnSeries_DefaultValue) h.Add("onSeries",OnSeries);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
+			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPlacement.IsDirty()) h.Add("pointPlacement",PointPlacement.ToJSON());
+			if (PointPlacement.IsDirty(ref highstock)) h.Add("pointPlacement",PointPlacement.ToJSON(ref highstock));
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
@@ -777,25 +777,25 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
 			if (StackDistance != StackDistance_DefaultValue) h.Add("stackDistance",StackDistance);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", Highstock.FirstCharacterToLower(Stacking.ToString()));
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (States.IsDirty(ref highstock)) h.Add("states",States.ToHashtable(ref highstock));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", Highstock.FirstCharacterToLower(TextAlign.ToString()));
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Title != Title_DefaultValue) h.Add("title",Title);
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
+			if (Tooltip.IsDirty(ref highstock)) h.Add("tooltip",Tooltip.ToHashtable(ref highstock));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(Zones));
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(ref highstock,Zones));
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -805,9 +805,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

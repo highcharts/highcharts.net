@@ -588,88 +588,88 @@ namespace Highsoft.Web.Mvc.Stocks
 		private PlotOptionsZigzag Zigzag_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Abands.IsDirty()) h.Add("abands",Abands.ToHashtable());
-			if (Ad.IsDirty()) h.Add("ad",Ad.ToHashtable());
-			if (Ao.IsDirty()) h.Add("ao",Ao.ToHashtable());
-			if (Apo.IsDirty()) h.Add("apo",Apo.ToHashtable());
-			if (Area.IsDirty()) h.Add("area",Area.ToHashtable());
-			if (Arearange.IsDirty()) h.Add("arearange",Arearange.ToHashtable());
-			if (Areaspline.IsDirty()) h.Add("areaspline",Areaspline.ToHashtable());
-			if (Areasplinerange.IsDirty()) h.Add("areasplinerange",Areasplinerange.ToHashtable());
-			if (Aroon.IsDirty()) h.Add("aroon",Aroon.ToHashtable());
-			if (Aroonoscillator.IsDirty()) h.Add("aroonoscillator",Aroonoscillator.ToHashtable());
-			if (Atr.IsDirty()) h.Add("atr",Atr.ToHashtable());
-			if (Bb.IsDirty()) h.Add("bb",Bb.ToHashtable());
-			if (Bubble.IsDirty()) h.Add("bubble",Bubble.ToHashtable());
-			if (Candlestick.IsDirty()) h.Add("candlestick",Candlestick.ToHashtable());
-			if (Cci.IsDirty()) h.Add("cci",Cci.ToHashtable());
-			if (Chaikin.IsDirty()) h.Add("chaikin",Chaikin.ToHashtable());
-			if (Cmf.IsDirty()) h.Add("cmf",Cmf.ToHashtable());
-			if (Cmo.IsDirty()) h.Add("cmo",Cmo.ToHashtable());
-			if (Column.IsDirty()) h.Add("column",Column.ToHashtable());
-			if (Columnpyramid.IsDirty()) h.Add("columnpyramid",Columnpyramid.ToHashtable());
-			if (Columnrange.IsDirty()) h.Add("columnrange",Columnrange.ToHashtable());
-			if (Dema.IsDirty()) h.Add("dema",Dema.ToHashtable());
-			if (Disparityindex.IsDirty()) h.Add("disparityindex",Disparityindex.ToHashtable());
-			if (Dmi.IsDirty()) h.Add("dmi",Dmi.ToHashtable());
-			if (Dpo.IsDirty()) h.Add("dpo",Dpo.ToHashtable());
-			if (Dumbbell.IsDirty()) h.Add("dumbbell",Dumbbell.ToHashtable());
-			if (Ema.IsDirty()) h.Add("ema",Ema.ToHashtable());
-			if (Errorbar.IsDirty()) h.Add("errorbar",Errorbar.ToHashtable());
-			if (Flags.IsDirty()) h.Add("flags",Flags.ToHashtable());
-			if (Ikh.IsDirty()) h.Add("ikh",Ikh.ToHashtable());
-			if (Keltnerchannels.IsDirty()) h.Add("keltnerchannels",Keltnerchannels.ToHashtable());
-			if (Klinger.IsDirty()) h.Add("klinger",Klinger.ToHashtable());
-			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
-			if (Linearregression.IsDirty()) h.Add("linearregression",Linearregression.ToHashtable());
-			if (Linearregressionangle.IsDirty()) h.Add("linearregressionangle",Linearregressionangle.ToHashtable());
-			if (Linearregressionintercept.IsDirty()) h.Add("linearregressionintercept",Linearregressionintercept.ToHashtable());
-			if (Linearregressionslope.IsDirty()) h.Add("linearregressionslope",Linearregressionslope.ToHashtable());
-			if (Lollipop.IsDirty()) h.Add("lollipop",Lollipop.ToHashtable());
-			if (Macd.IsDirty()) h.Add("macd",Macd.ToHashtable());
-			if (Mfi.IsDirty()) h.Add("mfi",Mfi.ToHashtable());
-			if (Momentum.IsDirty()) h.Add("momentum",Momentum.ToHashtable());
-			if (Natr.IsDirty()) h.Add("natr",Natr.ToHashtable());
-			if (Obv.IsDirty()) h.Add("obv",Obv.ToHashtable());
-			if (Ohlc.IsDirty()) h.Add("ohlc",Ohlc.ToHashtable());
-			if (Pc.IsDirty()) h.Add("pc",Pc.ToHashtable());
-			if (Pivotpoints.IsDirty()) h.Add("pivotpoints",Pivotpoints.ToHashtable());
-			if (Polygon.IsDirty()) h.Add("polygon",Polygon.ToHashtable());
-			if (Ppo.IsDirty()) h.Add("ppo",Ppo.ToHashtable());
-			if (Priceenvelopes.IsDirty()) h.Add("priceenvelopes",Priceenvelopes.ToHashtable());
-			if (Psar.IsDirty()) h.Add("psar",Psar.ToHashtable());
-			if (Roc.IsDirty()) h.Add("roc",Roc.ToHashtable());
-			if (Rsi.IsDirty()) h.Add("rsi",Rsi.ToHashtable());
-			if (Scatter.IsDirty()) h.Add("scatter",Scatter.ToHashtable());
-			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
-			if (Slowstochastic.IsDirty()) h.Add("slowstochastic",Slowstochastic.ToHashtable());
-			if (Sma.IsDirty()) h.Add("sma",Sma.ToHashtable());
-			if (Spline.IsDirty()) h.Add("spline",Spline.ToHashtable());
-			if (Stochastic.IsDirty()) h.Add("stochastic",Stochastic.ToHashtable());
-			if (Streamgraph.IsDirty()) h.Add("streamgraph",Streamgraph.ToHashtable());
-			if (Supertrend.IsDirty()) h.Add("supertrend",Supertrend.ToHashtable());
-			if (Tema.IsDirty()) h.Add("tema",Tema.ToHashtable());
-			if (Trendline.IsDirty()) h.Add("trendline",Trendline.ToHashtable());
-			if (Trix.IsDirty()) h.Add("trix",Trix.ToHashtable());
-			if (Vbp.IsDirty()) h.Add("vbp",Vbp.ToHashtable());
-			if (Vector.IsDirty()) h.Add("vector",Vector.ToHashtable());
-			if (Vwap.IsDirty()) h.Add("vwap",Vwap.ToHashtable());
-			if (Williamsr.IsDirty()) h.Add("williamsr",Williamsr.ToHashtable());
-			if (Windbarb.IsDirty()) h.Add("windbarb",Windbarb.ToHashtable());
-			if (Wma.IsDirty()) h.Add("wma",Wma.ToHashtable());
-			if (Xrange.IsDirty()) h.Add("xrange",Xrange.ToHashtable());
-			if (Zigzag.IsDirty()) h.Add("zigzag",Zigzag.ToHashtable());
+			if (Abands.IsDirty(ref highstock)) h.Add("abands",Abands.ToHashtable(ref highstock));
+			if (Ad.IsDirty(ref highstock)) h.Add("ad",Ad.ToHashtable(ref highstock));
+			if (Ao.IsDirty(ref highstock)) h.Add("ao",Ao.ToHashtable(ref highstock));
+			if (Apo.IsDirty(ref highstock)) h.Add("apo",Apo.ToHashtable(ref highstock));
+			if (Area.IsDirty(ref highstock)) h.Add("area",Area.ToHashtable(ref highstock));
+			if (Arearange.IsDirty(ref highstock)) h.Add("arearange",Arearange.ToHashtable(ref highstock));
+			if (Areaspline.IsDirty(ref highstock)) h.Add("areaspline",Areaspline.ToHashtable(ref highstock));
+			if (Areasplinerange.IsDirty(ref highstock)) h.Add("areasplinerange",Areasplinerange.ToHashtable(ref highstock));
+			if (Aroon.IsDirty(ref highstock)) h.Add("aroon",Aroon.ToHashtable(ref highstock));
+			if (Aroonoscillator.IsDirty(ref highstock)) h.Add("aroonoscillator",Aroonoscillator.ToHashtable(ref highstock));
+			if (Atr.IsDirty(ref highstock)) h.Add("atr",Atr.ToHashtable(ref highstock));
+			if (Bb.IsDirty(ref highstock)) h.Add("bb",Bb.ToHashtable(ref highstock));
+			if (Bubble.IsDirty(ref highstock)) h.Add("bubble",Bubble.ToHashtable(ref highstock));
+			if (Candlestick.IsDirty(ref highstock)) h.Add("candlestick",Candlestick.ToHashtable(ref highstock));
+			if (Cci.IsDirty(ref highstock)) h.Add("cci",Cci.ToHashtable(ref highstock));
+			if (Chaikin.IsDirty(ref highstock)) h.Add("chaikin",Chaikin.ToHashtable(ref highstock));
+			if (Cmf.IsDirty(ref highstock)) h.Add("cmf",Cmf.ToHashtable(ref highstock));
+			if (Cmo.IsDirty(ref highstock)) h.Add("cmo",Cmo.ToHashtable(ref highstock));
+			if (Column.IsDirty(ref highstock)) h.Add("column",Column.ToHashtable(ref highstock));
+			if (Columnpyramid.IsDirty(ref highstock)) h.Add("columnpyramid",Columnpyramid.ToHashtable(ref highstock));
+			if (Columnrange.IsDirty(ref highstock)) h.Add("columnrange",Columnrange.ToHashtable(ref highstock));
+			if (Dema.IsDirty(ref highstock)) h.Add("dema",Dema.ToHashtable(ref highstock));
+			if (Disparityindex.IsDirty(ref highstock)) h.Add("disparityindex",Disparityindex.ToHashtable(ref highstock));
+			if (Dmi.IsDirty(ref highstock)) h.Add("dmi",Dmi.ToHashtable(ref highstock));
+			if (Dpo.IsDirty(ref highstock)) h.Add("dpo",Dpo.ToHashtable(ref highstock));
+			if (Dumbbell.IsDirty(ref highstock)) h.Add("dumbbell",Dumbbell.ToHashtable(ref highstock));
+			if (Ema.IsDirty(ref highstock)) h.Add("ema",Ema.ToHashtable(ref highstock));
+			if (Errorbar.IsDirty(ref highstock)) h.Add("errorbar",Errorbar.ToHashtable(ref highstock));
+			if (Flags.IsDirty(ref highstock)) h.Add("flags",Flags.ToHashtable(ref highstock));
+			if (Ikh.IsDirty(ref highstock)) h.Add("ikh",Ikh.ToHashtable(ref highstock));
+			if (Keltnerchannels.IsDirty(ref highstock)) h.Add("keltnerchannels",Keltnerchannels.ToHashtable(ref highstock));
+			if (Klinger.IsDirty(ref highstock)) h.Add("klinger",Klinger.ToHashtable(ref highstock));
+			if (Line.IsDirty(ref highstock)) h.Add("line",Line.ToHashtable(ref highstock));
+			if (Linearregression.IsDirty(ref highstock)) h.Add("linearregression",Linearregression.ToHashtable(ref highstock));
+			if (Linearregressionangle.IsDirty(ref highstock)) h.Add("linearregressionangle",Linearregressionangle.ToHashtable(ref highstock));
+			if (Linearregressionintercept.IsDirty(ref highstock)) h.Add("linearregressionintercept",Linearregressionintercept.ToHashtable(ref highstock));
+			if (Linearregressionslope.IsDirty(ref highstock)) h.Add("linearregressionslope",Linearregressionslope.ToHashtable(ref highstock));
+			if (Lollipop.IsDirty(ref highstock)) h.Add("lollipop",Lollipop.ToHashtable(ref highstock));
+			if (Macd.IsDirty(ref highstock)) h.Add("macd",Macd.ToHashtable(ref highstock));
+			if (Mfi.IsDirty(ref highstock)) h.Add("mfi",Mfi.ToHashtable(ref highstock));
+			if (Momentum.IsDirty(ref highstock)) h.Add("momentum",Momentum.ToHashtable(ref highstock));
+			if (Natr.IsDirty(ref highstock)) h.Add("natr",Natr.ToHashtable(ref highstock));
+			if (Obv.IsDirty(ref highstock)) h.Add("obv",Obv.ToHashtable(ref highstock));
+			if (Ohlc.IsDirty(ref highstock)) h.Add("ohlc",Ohlc.ToHashtable(ref highstock));
+			if (Pc.IsDirty(ref highstock)) h.Add("pc",Pc.ToHashtable(ref highstock));
+			if (Pivotpoints.IsDirty(ref highstock)) h.Add("pivotpoints",Pivotpoints.ToHashtable(ref highstock));
+			if (Polygon.IsDirty(ref highstock)) h.Add("polygon",Polygon.ToHashtable(ref highstock));
+			if (Ppo.IsDirty(ref highstock)) h.Add("ppo",Ppo.ToHashtable(ref highstock));
+			if (Priceenvelopes.IsDirty(ref highstock)) h.Add("priceenvelopes",Priceenvelopes.ToHashtable(ref highstock));
+			if (Psar.IsDirty(ref highstock)) h.Add("psar",Psar.ToHashtable(ref highstock));
+			if (Roc.IsDirty(ref highstock)) h.Add("roc",Roc.ToHashtable(ref highstock));
+			if (Rsi.IsDirty(ref highstock)) h.Add("rsi",Rsi.ToHashtable(ref highstock));
+			if (Scatter.IsDirty(ref highstock)) h.Add("scatter",Scatter.ToHashtable(ref highstock));
+			if (Series.IsDirty(ref highstock)) h.Add("series",Series.ToHashtable(ref highstock));
+			if (Slowstochastic.IsDirty(ref highstock)) h.Add("slowstochastic",Slowstochastic.ToHashtable(ref highstock));
+			if (Sma.IsDirty(ref highstock)) h.Add("sma",Sma.ToHashtable(ref highstock));
+			if (Spline.IsDirty(ref highstock)) h.Add("spline",Spline.ToHashtable(ref highstock));
+			if (Stochastic.IsDirty(ref highstock)) h.Add("stochastic",Stochastic.ToHashtable(ref highstock));
+			if (Streamgraph.IsDirty(ref highstock)) h.Add("streamgraph",Streamgraph.ToHashtable(ref highstock));
+			if (Supertrend.IsDirty(ref highstock)) h.Add("supertrend",Supertrend.ToHashtable(ref highstock));
+			if (Tema.IsDirty(ref highstock)) h.Add("tema",Tema.ToHashtable(ref highstock));
+			if (Trendline.IsDirty(ref highstock)) h.Add("trendline",Trendline.ToHashtable(ref highstock));
+			if (Trix.IsDirty(ref highstock)) h.Add("trix",Trix.ToHashtable(ref highstock));
+			if (Vbp.IsDirty(ref highstock)) h.Add("vbp",Vbp.ToHashtable(ref highstock));
+			if (Vector.IsDirty(ref highstock)) h.Add("vector",Vector.ToHashtable(ref highstock));
+			if (Vwap.IsDirty(ref highstock)) h.Add("vwap",Vwap.ToHashtable(ref highstock));
+			if (Williamsr.IsDirty(ref highstock)) h.Add("williamsr",Williamsr.ToHashtable(ref highstock));
+			if (Windbarb.IsDirty(ref highstock)) h.Add("windbarb",Windbarb.ToHashtable(ref highstock));
+			if (Wma.IsDirty(ref highstock)) h.Add("wma",Wma.ToHashtable(ref highstock));
+			if (Xrange.IsDirty(ref highstock)) h.Add("xrange",Xrange.ToHashtable(ref highstock));
+			if (Zigzag.IsDirty(ref highstock)) h.Add("zigzag",Zigzag.ToHashtable(ref highstock));
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -679,9 +679,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

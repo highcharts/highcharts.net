@@ -60,7 +60,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string PointDescriptionFormatter_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -68,14 +68,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (ExposeAsGroupOnly != ExposeAsGroupOnly_DefaultValue) h.Add("exposeAsGroupOnly",ExposeAsGroupOnly);
-			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
+			if (KeyboardNavigation.IsDirty(ref highstock)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(ref highstock));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -85,9 +85,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

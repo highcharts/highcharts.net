@@ -188,30 +188,30 @@ namespace Highsoft.Web.Mvc.Stocks
 		private double? ZIndex_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation.IsDirty(ref highstock)) h.Add("animation",Animation.ToJSON(ref highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (ControlPointOptions.IsDirty()) h.Add("controlPointOptions",ControlPointOptions.ToHashtable());
-			if (CrookedLine.IsDirty()) h.Add("crookedLine",CrookedLine.ToHashtable());
+			if (ControlPointOptions.IsDirty(ref highstock)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(ref highstock));
+			if (CrookedLine.IsDirty(ref highstock)) h.Add("crookedLine",CrookedLine.ToHashtable(ref highstock));
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
-			if (ElliottWave.IsDirty()) h.Add("elliottWave",ElliottWave.ToHashtable());
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
-			if (Fibonacci.IsDirty()) h.Add("fibonacci",Fibonacci.ToHashtable());
+			if (ElliottWave.IsDirty(ref highstock)) h.Add("elliottWave",ElliottWave.ToHashtable(ref highstock));
+			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
+			if (Fibonacci.IsDirty(ref highstock)) h.Add("fibonacci",Fibonacci.ToHashtable(ref highstock));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
-			if (InfinityLine.IsDirty()) h.Add("infinityLine",InfinityLine.ToHashtable());
-			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
-			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(Labels));
-			if (Measure.IsDirty()) h.Add("measure",Measure.ToHashtable());
-			if (Pitchfork.IsDirty()) h.Add("pitchfork",Pitchfork.ToHashtable());
-			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
-			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(Shapes));
-			if (Tunnel.IsDirty()) h.Add("tunnel",Tunnel.ToHashtable());
-			if (VerticalLine.IsDirty()) h.Add("verticalLine",VerticalLine.ToHashtable());
+			if (InfinityLine.IsDirty(ref highstock)) h.Add("infinityLine",InfinityLine.ToHashtable(ref highstock));
+			if (LabelOptions.IsDirty(ref highstock)) h.Add("labelOptions",LabelOptions.ToHashtable(ref highstock));
+			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(ref highstock,Labels));
+			if (Measure.IsDirty(ref highstock)) h.Add("measure",Measure.ToHashtable(ref highstock));
+			if (Pitchfork.IsDirty(ref highstock)) h.Add("pitchfork",Pitchfork.ToHashtable(ref highstock));
+			if (ShapeOptions.IsDirty(ref highstock)) h.Add("shapeOptions",ShapeOptions.ToHashtable(ref highstock));
+			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(ref highstock,Shapes));
+			if (Tunnel.IsDirty(ref highstock)) h.Add("tunnel",Tunnel.ToHashtable(ref highstock));
+			if (VerticalLine.IsDirty(ref highstock)) h.Add("verticalLine",VerticalLine.ToHashtable(ref highstock));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
@@ -219,7 +219,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -229,9 +229,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

@@ -164,7 +164,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private double? ZThreshold_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -178,11 +178,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ConnectorDistance != ConnectorDistance_DefaultValue) h.Add("connectorDistance",ConnectorDistance);
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (Labels.IsDirty(ref highstock)) h.Add("labels",Labels.ToHashtable(ref highstock));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (MaxSize != MaxSize_DefaultValue) h.Add("maxSize",MaxSize);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
-			if (Ranges.IsDirty()) h.Add("ranges",Ranges.ToHashtable());
+			if (Ranges.IsDirty(ref highstock)) h.Add("ranges",Ranges.ToHashtable(ref highstock));
 			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy",SizeBy);
 			if (SizeByAbsoluteValue != SizeByAbsoluteValue_DefaultValue) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
@@ -192,7 +192,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -202,9 +202,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

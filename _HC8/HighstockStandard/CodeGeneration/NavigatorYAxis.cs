@@ -548,30 +548,30 @@ namespace Highsoft.Web.Mvc.Stocks
 		private bool? ZoomEnabled_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
-			if (Breaks.IsDirty()) h.Add("breaks",Breaks.ToHashtable());
+			if (Breaks.IsDirty(ref highstock)) h.Add("breaks",Breaks.ToHashtable(ref highstock));
 			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Crosshair.IsDirty()) h.Add("crosshair",Crosshair.ToHashtable());
+			if (Crosshair.IsDirty(ref highstock)) h.Add("crosshair",Crosshair.ToHashtable(ref highstock));
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
 			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle);
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (Labels.IsDirty(ref highstock)) h.Add("labels",Labels.ToHashtable(ref highstock));
 			if (Left != Left_DefaultValue) h.Add("left",Left);
 			if (LeftNumber != LeftNumber_DefaultValue) h.Add("left",LeftNumber);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
@@ -595,7 +595,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
-			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(PlotLines));
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(ref highstock,PlotLines));
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
@@ -613,7 +613,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highstock.AddFunction("tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
+			if (Title.IsDirty(ref highstock)) h.Add("title",Title.ToHashtable(ref highstock));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
@@ -624,7 +624,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -634,9 +634,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

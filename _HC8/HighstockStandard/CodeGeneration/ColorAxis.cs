@@ -516,30 +516,30 @@ namespace Highsoft.Web.Mvc.Stocks
 		private double? ZIndex_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (DataClassColor != DataClassColor_DefaultValue) h.Add("dataClassColor", Highstock.FirstCharacterToLower(DataClassColor.ToString()));
-			if (DataClasses != DataClasses_DefaultValue) h.Add("dataClasses", HashifyList(DataClasses));
+			if (DataClasses != DataClasses_DefaultValue) h.Add("dataClasses", HashifyList(ref highstock,DataClasses));
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
 			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle);
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
+			if (Labels.IsDirty(ref highstock)) h.Add("labels",Labels.ToHashtable(ref highstock));
 			if (Layout != Layout_DefaultValue) h.Add("layout",Layout);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (Marker.IsDirty()) h.Add("marker",Marker.ToHashtable());
+			if (Marker.IsDirty(ref highstock)) h.Add("marker",Marker.ToHashtable(ref highstock));
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
@@ -562,7 +562,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
 			if (Range != Range_DefaultValue) h.Add("range",Range);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
-			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
+			if (Scrollbar.IsDirty(ref highstock)) h.Add("scrollbar",Scrollbar.ToHashtable(ref highstock));
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
@@ -570,7 +570,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
-			if (Stops != Stops_DefaultValue) h.Add("stops", HashifyList(Stops));
+			if (Stops != Stops_DefaultValue) h.Add("stops", HashifyList(ref highstock,Stops));
 			if (TickAmount != TickAmount_DefaultValue) h.Add("tickAmount",TickAmount);
 			if (TickColor != TickColor_DefaultValue) h.Add("tickColor",TickColor);
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
@@ -588,7 +588,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -598,9 +598,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

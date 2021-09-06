@@ -140,7 +140,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string YAxis_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -149,7 +149,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
 			if (BaseSeriesNumber != BaseSeriesNumber_DefaultValue) h.Add("baseSeries",BaseSeriesNumber);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Handles.IsDirty()) h.Add("handles",Handles.ToHashtable());
+			if (Handles.IsDirty(ref highstock)) h.Add("handles",Handles.ToHashtable(ref highstock));
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MaskFill != MaskFill_DefaultValue) h.Add("maskFill",MaskFill);
@@ -157,7 +157,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (OutlineColor != OutlineColor_DefaultValue) h.Add("outlineColor",OutlineColor);
 			if (OutlineWidth != OutlineWidth_DefaultValue) h.Add("outlineWidth",OutlineWidth);
-			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
+			if (Series.IsDirty(ref highstock)) h.Add("series",Series.ToHashtable(ref highstock));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			
@@ -165,7 +165,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -175,9 +175,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

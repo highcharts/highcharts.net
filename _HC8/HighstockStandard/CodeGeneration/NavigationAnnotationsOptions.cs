@@ -124,22 +124,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		private double? ZIndex_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation.IsDirty(ref highstock)) h.Add("animation",Animation.ToJSON(ref highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (ControlPointOptions.IsDirty()) h.Add("controlPointOptions",ControlPointOptions.ToHashtable());
+			if (ControlPointOptions.IsDirty(ref highstock)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(ref highstock));
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
-			if (LabelOptions.IsDirty()) h.Add("labelOptions",LabelOptions.ToHashtable());
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
-			if (ShapeOptions.IsDirty()) h.Add("shapeOptions",ShapeOptions.ToHashtable());
-			if (Shapes.IsDirty()) h.Add("shapes",Shapes.ToHashtable());
+			if (LabelOptions.IsDirty(ref highstock)) h.Add("labelOptions",LabelOptions.ToHashtable(ref highstock));
+			if (Labels.IsDirty(ref highstock)) h.Add("labels",Labels.ToHashtable(ref highstock));
+			if (ShapeOptions.IsDirty(ref highstock)) h.Add("shapeOptions",ShapeOptions.ToHashtable(ref highstock));
+			if (Shapes.IsDirty(ref highstock)) h.Add("shapes",Shapes.ToHashtable(ref highstock));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
@@ -147,7 +147,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -157,9 +157,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

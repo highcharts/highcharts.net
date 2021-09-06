@@ -60,22 +60,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		private bool? WrapAround_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (FocusBorder.IsDirty()) h.Add("focusBorder",FocusBorder.ToHashtable());
+			if (FocusBorder.IsDirty(ref highstock)) h.Add("focusBorder",FocusBorder.ToHashtable(ref highstock));
 			if (Order != Order_DefaultValue) h.Add("order",Order);
-			if (SeriesNavigation.IsDirty()) h.Add("seriesNavigation",SeriesNavigation.ToHashtable());
+			if (SeriesNavigation.IsDirty(ref highstock)) h.Add("seriesNavigation",SeriesNavigation.ToHashtable(ref highstock));
 			if (WrapAround != WrapAround_DefaultValue) h.Add("wrapAround",WrapAround);
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -85,9 +85,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

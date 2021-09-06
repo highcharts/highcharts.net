@@ -148,33 +148,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string YearString_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Day.IsDirty()) h.Add("day",Day.ToHashtable());
+			if (Day.IsDirty(ref highstock)) h.Add("day",Day.ToHashtable(ref highstock));
 			if (DayString != DayString_DefaultValue) h.Add("day",DayString);
-			if (Hour.IsDirty()) h.Add("hour",Hour.ToHashtable());
+			if (Hour.IsDirty(ref highstock)) h.Add("hour",Hour.ToHashtable(ref highstock));
 			if (HourString != HourString_DefaultValue) h.Add("hour",HourString);
-			if (Millisecond.IsDirty()) h.Add("millisecond",Millisecond.ToHashtable());
+			if (Millisecond.IsDirty(ref highstock)) h.Add("millisecond",Millisecond.ToHashtable(ref highstock));
 			if (MillisecondString != MillisecondString_DefaultValue) h.Add("millisecond",MillisecondString);
-			if (Minute.IsDirty()) h.Add("minute",Minute.ToHashtable());
+			if (Minute.IsDirty(ref highstock)) h.Add("minute",Minute.ToHashtable(ref highstock));
 			if (MinuteString != MinuteString_DefaultValue) h.Add("minute",MinuteString);
-			if (Month.IsDirty()) h.Add("month",Month.ToHashtable());
+			if (Month.IsDirty(ref highstock)) h.Add("month",Month.ToHashtable(ref highstock));
 			if (MonthString != MonthString_DefaultValue) h.Add("month",MonthString);
-			if (Second.IsDirty()) h.Add("second",Second.ToHashtable());
+			if (Second.IsDirty(ref highstock)) h.Add("second",Second.ToHashtable(ref highstock));
 			if (SecondString != SecondString_DefaultValue) h.Add("second",SecondString);
-			if (Week.IsDirty()) h.Add("week",Week.ToHashtable());
+			if (Week.IsDirty(ref highstock)) h.Add("week",Week.ToHashtable(ref highstock));
 			if (WeekString != WeekString_DefaultValue) h.Add("week",WeekString);
-			if (Year.IsDirty()) h.Add("year",Year.ToHashtable());
+			if (Year.IsDirty(ref highstock)) h.Add("year",Year.ToHashtable(ref highstock));
 			if (YearString != YearString_DefaultValue) h.Add("year",YearString);
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -184,9 +184,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

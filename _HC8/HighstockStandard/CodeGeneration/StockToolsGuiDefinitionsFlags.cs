@@ -60,22 +60,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		private List<string> Items_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (FlagCirclepin.IsDirty()) h.Add("flagCirclepin",FlagCirclepin.ToHashtable());
-			if (FlagDiamondpin.IsDirty()) h.Add("flagDiamondpin",FlagDiamondpin.ToHashtable());
-			if (FlagSimplepin.IsDirty()) h.Add("flagSimplepin",FlagSimplepin.ToHashtable());
-			if (FlagSquarepin.IsDirty()) h.Add("flagSquarepin",FlagSquarepin.ToHashtable());
+			if (FlagCirclepin.IsDirty(ref highstock)) h.Add("flagCirclepin",FlagCirclepin.ToHashtable(ref highstock));
+			if (FlagDiamondpin.IsDirty(ref highstock)) h.Add("flagDiamondpin",FlagDiamondpin.ToHashtable(ref highstock));
+			if (FlagSimplepin.IsDirty(ref highstock)) h.Add("flagSimplepin",FlagSimplepin.ToHashtable(ref highstock));
+			if (FlagSquarepin.IsDirty(ref highstock)) h.Add("flagSquarepin",FlagSquarepin.ToHashtable(ref highstock));
 			if (Items != Items_DefaultValue) h.Add("items",Items);
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -85,9 +85,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

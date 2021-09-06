@@ -277,12 +277,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		private List<string> Weekdays_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
 			if (ContextButtonTitle != ContextButtonTitle_DefaultValue) h.Add("contextButtonTitle",ContextButtonTitle);
 			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
 			if (DownloadCSV != DownloadCSV_DefaultValue) h.Add("downloadCSV",DownloadCSV);
@@ -292,12 +292,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DownloadSVG != DownloadSVG_DefaultValue) h.Add("downloadSVG",DownloadSVG);
 			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);
 			if (ExitFullscreen != ExitFullscreen_DefaultValue) h.Add("exitFullscreen",ExitFullscreen);
-			if (ExportData.IsDirty()) h.Add("exportData",ExportData.ToHashtable());
+			if (ExportData.IsDirty(ref highstock)) h.Add("exportData",ExportData.ToHashtable(ref highstock));
 			if (HideData != HideData_DefaultValue) h.Add("hideData",HideData);
 			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
-			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
+			if (Navigation.IsDirty(ref highstock)) h.Add("navigation",Navigation.ToHashtable(ref highstock));
 			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);
@@ -309,7 +309,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ResetZoomTitle != ResetZoomTitle_DefaultValue) h.Add("resetZoomTitle",ResetZoomTitle);
 			if (ShortMonths != ShortMonths_DefaultValue) h.Add("shortMonths",ShortMonths);
 			if (ShortWeekdays != ShortWeekdays_DefaultValue) h.Add("shortWeekdays",ShortWeekdays);
-			if (StockTools.IsDirty()) h.Add("stockTools",StockTools.ToHashtable());
+			if (StockTools.IsDirty(ref highstock)) h.Add("stockTools",StockTools.ToHashtable(ref highstock));
 			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
 			if (ViewData != ViewData_DefaultValue) h.Add("viewData",ViewData);
 			if (ViewFullscreen != ViewFullscreen_DefaultValue) h.Add("viewFullscreen",ViewFullscreen);
@@ -319,7 +319,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -329,9 +329,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

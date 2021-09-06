@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using SourceCodeGenerator.Enums;
 
 namespace SourceCodeGenerator.Services
 {
@@ -42,6 +43,13 @@ namespace SourceCodeGenerator.Services
             get
             {
                 return TemplatesFolderPath + "\\Class_NETStandard_new1.tpl";
+            }
+        }
+        private string ClassTemplatePathNETStandard_HS
+        {
+            get
+            {
+                return TemplatesFolderPath + "\\Class_NETStandard_new1_HS.tpl";
             }
         }
         private string EnumTemplatePath
@@ -95,19 +103,17 @@ namespace SourceCodeGenerator.Services
             _jsonFileName = jsonFileName;
         }
 
-        public string GetRootClassTemplate(bool isNETStandard = false)
+        public string GetRootClassTemplate()
         {
-            if (isNETStandard)
-                return GetFileContent(RootClassTemplatePathNETStandard);
-            else
-                return GetFileContent(RootClassTemplatePath);
+            return GetFileContent(RootClassTemplatePathNETStandard);
         }
-        public string GetClassTemplate(bool isNETStandard = false)
+        public string GetClassTemplate(Product product)
         {
-            if (isNETStandard)
+            if (product == Product.Highcharts)
                 return GetFileContent(ClassTemplatePathNETStandard);
-            else
-                return GetFileContent(ClassTemplatePath);
+
+            return GetFileContent(ClassTemplatePathNETStandard_HS);
+            
         }
         public string GetPropertyTemplate()
         {
@@ -164,8 +170,8 @@ namespace SourceCodeGenerator.Services
 
     public interface IFileService
     {
-        string GetRootClassTemplate(bool isNETStandard = false);
-        string GetClassTemplate(bool isNETStandard = false);
+        string GetRootClassTemplate();
+        string GetClassTemplate(Product product);
         string GetPropertyTemplate();
         string GetEnumTemplate();
         string GetJsonContent();

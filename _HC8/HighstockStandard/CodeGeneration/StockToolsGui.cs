@@ -68,14 +68,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string ToolbarClassName_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
 			if (Buttons != Buttons_DefaultValue) h.Add("buttons",Buttons);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Definitions.IsDirty()) h.Add("definitions",Definitions.ToHashtable());
+			if (Definitions.IsDirty(ref highstock)) h.Add("definitions",Definitions.ToHashtable(ref highstock));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (IconsURL != IconsURL_DefaultValue) h.Add("iconsURL",IconsURL);
 			if (ToolbarClassName != ToolbarClassName_DefaultValue) h.Add("toolbarClassName",ToolbarClassName);
@@ -84,7 +84,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -94,9 +94,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

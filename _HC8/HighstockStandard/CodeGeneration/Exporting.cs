@@ -212,16 +212,16 @@ namespace Highsoft.Web.Mvc.Stocks
 		private double? Width_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
+			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
 			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
-			if (Buttons.IsDirty()) h.Add("buttons",Buttons.ToHashtable());
+			if (Buttons.IsDirty(ref highstock)) h.Add("buttons",Buttons.ToHashtable(ref highstock));
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
-			if (Csv.IsDirty()) h.Add("csv",Csv.ToHashtable());
+			if (Csv.IsDirty(ref highstock)) h.Add("csv",Csv.ToHashtable(ref highstock));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Error != Error_DefaultValue) { h.Add("error",Error); Highstock.AddFunction("error", Error); }  
 			if (FallbackToExportServer != FallbackToExportServer_DefaultValue) h.Add("fallbackToExportServer",FallbackToExportServer);
@@ -246,7 +246,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -256,9 +256,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

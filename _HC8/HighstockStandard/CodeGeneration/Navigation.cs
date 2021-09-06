@@ -92,16 +92,16 @@ namespace Highsoft.Web.Mvc.Stocks
 		private Hashtable MenuStyle_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (AnnotationsOptions.IsDirty()) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable());
-			if (Bindings.IsDirty()) h.Add("bindings",Bindings.ToHashtable());
+			if (AnnotationsOptions.IsDirty(ref highstock)) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable(ref highstock));
+			if (Bindings.IsDirty(ref highstock)) h.Add("bindings",Bindings.ToHashtable(ref highstock));
 			if (BindingsClassName != BindingsClassName_DefaultValue) h.Add("bindingsClassName",BindingsClassName);
-			if (ButtonOptions.IsDirty()) h.Add("buttonOptions",ButtonOptions.ToHashtable());
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (ButtonOptions.IsDirty(ref highstock)) h.Add("buttonOptions",ButtonOptions.ToHashtable(ref highstock));
+			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
 			if (IconsURL != IconsURL_DefaultValue) h.Add("iconsURL",IconsURL);
 			if (MenuItemHoverStyle != MenuItemHoverStyle_DefaultValue) h.Add("menuItemHoverStyle",MenuItemHoverStyle);
 			if (MenuItemStyle != MenuItemStyle_DefaultValue) h.Add("menuItemStyle",MenuItemStyle);
@@ -111,7 +111,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -121,9 +121,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

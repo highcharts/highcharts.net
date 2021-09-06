@@ -140,7 +140,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private double? Y_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -156,7 +156,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SymbolX != SymbolX_DefaultValue) h.Add("symbolX",SymbolX);
 			if (SymbolY != SymbolY_DefaultValue) h.Add("symbolY",SymbolY);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Theme.IsDirty()) h.Add("theme",Theme.ToHashtable());
+			if (Theme.IsDirty(ref highstock)) h.Add("theme",Theme.ToHashtable(ref highstock));
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
@@ -165,7 +165,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -175,9 +175,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

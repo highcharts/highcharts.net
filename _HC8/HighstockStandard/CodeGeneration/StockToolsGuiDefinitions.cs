@@ -140,32 +140,32 @@ namespace Highsoft.Web.Mvc.Stocks
 		private StockToolsGuiDefinitionsZoomChange ZoomChange_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Advanced.IsDirty()) h.Add("advanced",Advanced.ToHashtable());
-			if (CrookedLines.IsDirty()) h.Add("crookedLines",CrookedLines.ToHashtable());
-			if (CurrentPriceIndicator.IsDirty()) h.Add("currentPriceIndicator",CurrentPriceIndicator.ToHashtable());
-			if (Flags.IsDirty()) h.Add("flags",Flags.ToHashtable());
-			if (FullScreen.IsDirty()) h.Add("fullScreen",FullScreen.ToHashtable());
-			if (Indicators.IsDirty()) h.Add("indicators",Indicators.ToHashtable());
-			if (Lines.IsDirty()) h.Add("lines",Lines.ToHashtable());
-			if (Measure.IsDirty()) h.Add("measure",Measure.ToHashtable());
-			if (SaveChart.IsDirty()) h.Add("saveChart",SaveChart.ToHashtable());
-			if (Separator.IsDirty()) h.Add("separator",Separator.ToHashtable());
-			if (SimpleShapes.IsDirty()) h.Add("simpleShapes",SimpleShapes.ToHashtable());
-			if (ToggleAnnotations.IsDirty()) h.Add("toggleAnnotations",ToggleAnnotations.ToHashtable());
-			if (TypeChange.IsDirty()) h.Add("typeChange",TypeChange.ToHashtable());
-			if (VerticalLabels.IsDirty()) h.Add("verticalLabels",VerticalLabels.ToHashtable());
-			if (ZoomChange.IsDirty()) h.Add("zoomChange",ZoomChange.ToHashtable());
+			if (Advanced.IsDirty(ref highstock)) h.Add("advanced",Advanced.ToHashtable(ref highstock));
+			if (CrookedLines.IsDirty(ref highstock)) h.Add("crookedLines",CrookedLines.ToHashtable(ref highstock));
+			if (CurrentPriceIndicator.IsDirty(ref highstock)) h.Add("currentPriceIndicator",CurrentPriceIndicator.ToHashtable(ref highstock));
+			if (Flags.IsDirty(ref highstock)) h.Add("flags",Flags.ToHashtable(ref highstock));
+			if (FullScreen.IsDirty(ref highstock)) h.Add("fullScreen",FullScreen.ToHashtable(ref highstock));
+			if (Indicators.IsDirty(ref highstock)) h.Add("indicators",Indicators.ToHashtable(ref highstock));
+			if (Lines.IsDirty(ref highstock)) h.Add("lines",Lines.ToHashtable(ref highstock));
+			if (Measure.IsDirty(ref highstock)) h.Add("measure",Measure.ToHashtable(ref highstock));
+			if (SaveChart.IsDirty(ref highstock)) h.Add("saveChart",SaveChart.ToHashtable(ref highstock));
+			if (Separator.IsDirty(ref highstock)) h.Add("separator",Separator.ToHashtable(ref highstock));
+			if (SimpleShapes.IsDirty(ref highstock)) h.Add("simpleShapes",SimpleShapes.ToHashtable(ref highstock));
+			if (ToggleAnnotations.IsDirty(ref highstock)) h.Add("toggleAnnotations",ToggleAnnotations.ToHashtable(ref highstock));
+			if (TypeChange.IsDirty(ref highstock)) h.Add("typeChange",TypeChange.ToHashtable(ref highstock));
+			if (VerticalLabels.IsDirty(ref highstock)) h.Add("verticalLabels",VerticalLabels.ToHashtable(ref highstock));
+			if (ZoomChange.IsDirty(ref highstock)) h.Add("zoomChange",ZoomChange.ToHashtable(ref highstock));
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -175,9 +175,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

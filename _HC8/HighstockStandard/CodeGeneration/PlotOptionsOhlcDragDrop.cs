@@ -156,7 +156,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private bool? LiveRedraw_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -167,7 +167,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DraggableOpen != DraggableOpen_DefaultValue) h.Add("draggableOpen",DraggableOpen);
 			if (DraggableX != DraggableX_DefaultValue) h.Add("draggableX",DraggableX);
 			if (DraggableY != DraggableY_DefaultValue) h.Add("draggableY",DraggableY);
-			if (DragHandle.IsDirty()) h.Add("dragHandle",DragHandle.ToHashtable());
+			if (DragHandle.IsDirty(ref highstock)) h.Add("dragHandle",DragHandle.ToHashtable(ref highstock));
 			if (DragMaxX != DragMaxX_DefaultValue) h.Add("dragMaxX",DragMaxX);
 			if (DragMaxY != DragMaxY_DefaultValue) h.Add("dragMaxY",DragMaxY);
 			if (DragMinX != DragMinX_DefaultValue) h.Add("dragMinX",DragMinX);
@@ -176,14 +176,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DragPrecisionY != DragPrecisionY_DefaultValue) h.Add("dragPrecisionY",DragPrecisionY);
 			if (DragSensitivity != DragSensitivity_DefaultValue) h.Add("dragSensitivity",DragSensitivity);
 			if (GroupBy != GroupBy_DefaultValue) h.Add("groupBy",GroupBy);
-			if (GuideBox.IsDirty()) h.Add("guideBox",GuideBox.ToHashtable());
+			if (GuideBox.IsDirty(ref highstock)) h.Add("guideBox",GuideBox.ToHashtable(ref highstock));
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -193,9 +193,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

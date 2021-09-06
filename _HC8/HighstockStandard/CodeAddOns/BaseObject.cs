@@ -12,20 +12,32 @@ namespace Highsoft.Web.Mvc.Stocks
 {
 	public abstract class BaseObject
 	{
-        abstract internal Hashtable ToHashtable();
-        abstract internal string ToJSON();
-        abstract internal bool IsDirty();
+        abstract internal Hashtable ToHashtable(ref Highstock highcharts);
+        abstract internal string ToJSON(ref Highstock highcharts);
+        abstract internal bool IsDirty(ref Highstock highcharts);
 
-        internal List<Hashtable> HashifyList(IEnumerable list)
+        internal List<Hashtable> HashifyList(ref Highstock highcharts, IEnumerable list)
         {
             List<Hashtable> result = new List<Hashtable>();
 
             foreach (BaseObject baseObject in list)
             {
-                result.Add(baseObject.ToHashtable());
+                result.Add(baseObject.ToHashtable(ref highcharts));
             }
 
             return result;
         }
-	}
+
+        internal List<List<object>> GetLists(IEnumerable list)
+        {
+            List<List<object>> result = new List<List<object>>();
+
+            foreach (IObjectList baseObject in list)
+            {
+                result.Add(baseObject.ToList());
+            }
+
+            return result;
+        }
+    }
 }

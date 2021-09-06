@@ -268,48 +268,48 @@ namespace Highsoft.Web.Mvc.Stocks
 		private List<YAxis> YAxis_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty()) h.Add("accessibility",Accessibility.ToHashtable());
-			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(Annotations));
-			if (Boost.IsDirty()) h.Add("boost",Boost.ToHashtable());
-			if (Caption.IsDirty()) h.Add("caption",Caption.ToHashtable());
-			if (Chart.IsDirty()) h.Add("chart",Chart.ToHashtable());
-			if (ColorAxis.IsDirty()) h.Add("colorAxis",ColorAxis.ToHashtable());
+			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
+			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(ref highstock,Annotations));
+			if (Boost.IsDirty(ref highstock)) h.Add("boost",Boost.ToHashtable(ref highstock));
+			if (Caption.IsDirty(ref highstock)) h.Add("caption",Caption.ToHashtable(ref highstock));
+			if (Chart.IsDirty(ref highstock)) h.Add("chart",Chart.ToHashtable(ref highstock));
+			if (ColorAxis.IsDirty(ref highstock)) h.Add("colorAxis",ColorAxis.ToHashtable(ref highstock));
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Credits.IsDirty()) h.Add("credits",Credits.ToHashtable());
-			if (Data.IsDirty()) h.Add("data",Data.ToHashtable());
-			if (Defs.IsDirty()) h.Add("defs",Defs.ToHashtable());
-			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
-			if (Global.IsDirty()) h.Add("global",Global.ToHashtable());
-			if (Labels.IsDirty()) h.Add("labels",Labels.ToHashtable());
-			if (Lang.IsDirty()) h.Add("lang",Lang.ToHashtable());
-			if (Legend.IsDirty()) h.Add("legend",Legend.ToHashtable());
-			if (Loading.IsDirty()) h.Add("loading",Loading.ToHashtable());
-			if (Navigation.IsDirty()) h.Add("navigation",Navigation.ToHashtable());
-			if (Navigator.IsDirty()) h.Add("navigator",Navigator.ToHashtable());
-			if (NoData.IsDirty()) h.Add("noData",NoData.ToHashtable());
-			if (PlotOptions.IsDirty()) h.Add("plotOptions",PlotOptions.ToHashtable());
-			if (RangeSelector.IsDirty()) h.Add("rangeSelector",RangeSelector.ToHashtable());
-			if (Responsive.IsDirty()) h.Add("responsive",Responsive.ToHashtable());
-			if (Scrollbar.IsDirty()) h.Add("scrollbar",Scrollbar.ToHashtable());
-			if (Series != Series_DefaultValue) h.Add("series", HashifyList(Series));
-			if (StockTools.IsDirty()) h.Add("stockTools",StockTools.ToHashtable());
-			if (Subtitle.IsDirty()) h.Add("subtitle",Subtitle.ToHashtable());
-			if (Time.IsDirty()) h.Add("time",Time.ToHashtable());
-			if (Title.IsDirty()) h.Add("title",Title.ToHashtable());
-			if (Tooltip.IsDirty()) h.Add("tooltip",Tooltip.ToHashtable());
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(XAxis));
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(YAxis));
+			if (Credits.IsDirty(ref highstock)) h.Add("credits",Credits.ToHashtable(ref highstock));
+			if (Data.IsDirty(ref highstock)) h.Add("data",Data.ToHashtable(ref highstock));
+			if (Defs.IsDirty(ref highstock)) h.Add("defs",Defs.ToHashtable(ref highstock));
+			if (Exporting.IsDirty(ref highstock)) h.Add("exporting",Exporting.ToHashtable(ref highstock));
+			if (Global.IsDirty(ref highstock)) h.Add("global",Global.ToHashtable(ref highstock));
+			if (Labels.IsDirty(ref highstock)) h.Add("labels",Labels.ToHashtable(ref highstock));
+			if (Lang.IsDirty(ref highstock)) h.Add("lang",Lang.ToHashtable(ref highstock));
+			if (Legend.IsDirty(ref highstock)) h.Add("legend",Legend.ToHashtable(ref highstock));
+			if (Loading.IsDirty(ref highstock)) h.Add("loading",Loading.ToHashtable(ref highstock));
+			if (Navigation.IsDirty(ref highstock)) h.Add("navigation",Navigation.ToHashtable(ref highstock));
+			if (Navigator.IsDirty(ref highstock)) h.Add("navigator",Navigator.ToHashtable(ref highstock));
+			if (NoData.IsDirty(ref highstock)) h.Add("noData",NoData.ToHashtable(ref highstock));
+			if (PlotOptions.IsDirty(ref highstock)) h.Add("plotOptions",PlotOptions.ToHashtable(ref highstock));
+			if (RangeSelector.IsDirty(ref highstock)) h.Add("rangeSelector",RangeSelector.ToHashtable(ref highstock));
+			if (Responsive.IsDirty(ref highstock)) h.Add("responsive",Responsive.ToHashtable(ref highstock));
+			if (Scrollbar.IsDirty(ref highstock)) h.Add("scrollbar",Scrollbar.ToHashtable(ref highstock));
+			if (Series != Series_DefaultValue) h.Add("series", HashifyList(ref highstock,Series));
+			if (StockTools.IsDirty(ref highstock)) h.Add("stockTools",StockTools.ToHashtable(ref highstock));
+			if (Subtitle.IsDirty(ref highstock)) h.Add("subtitle",Subtitle.ToHashtable(ref highstock));
+			if (Time.IsDirty(ref highstock)) h.Add("time",Time.ToHashtable(ref highstock));
+			if (Title.IsDirty(ref highstock)) h.Add("title",Title.ToHashtable(ref highstock));
+			if (Tooltip.IsDirty(ref highstock)) h.Add("tooltip",Tooltip.ToHashtable(ref highstock));
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(ref highstock,XAxis));
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(ref highstock,YAxis));
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -319,9 +319,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

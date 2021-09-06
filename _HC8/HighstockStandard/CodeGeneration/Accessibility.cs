@@ -116,21 +116,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string TypeDescription_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (AnnounceNewData.IsDirty()) h.Add("announceNewData",AnnounceNewData.ToHashtable());
+			if (AnnounceNewData.IsDirty(ref highstock)) h.Add("announceNewData",AnnounceNewData.ToHashtable(ref highstock));
 			if (CustomComponents != CustomComponents_DefaultValue) h.Add("customComponents",CustomComponents);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (HighContrastTheme != HighContrastTheme_DefaultValue) h.Add("highContrastTheme",HighContrastTheme);
-			if (KeyboardNavigation.IsDirty()) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable());
+			if (KeyboardNavigation.IsDirty(ref highstock)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(ref highstock));
 			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", Highstock.FirstCharacterToLower(LandmarkVerbosity.ToString()));
 			if (LinkedDescription != LinkedDescription_DefaultValue) h.Add("linkedDescription",LinkedDescription);
-			if (Point.IsDirty()) h.Add("point",Point.ToHashtable());
-			if (ScreenReaderSection.IsDirty()) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable());
+			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));
+			if (ScreenReaderSection.IsDirty(ref highstock)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(ref highstock));
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
 			
@@ -138,7 +138,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -148,9 +148,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

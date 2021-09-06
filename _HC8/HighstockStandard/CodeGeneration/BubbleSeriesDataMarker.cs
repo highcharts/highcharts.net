@@ -68,7 +68,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string Symbol_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -77,14 +77,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (States.IsDirty()) h.Add("states",States.ToHashtable());
+			if (States.IsDirty(ref highstock)) h.Add("states",States.ToHashtable(ref highstock));
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -94,9 +94,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

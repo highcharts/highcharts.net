@@ -1,4 +1,4 @@
-﻿
+﻿using SourceCodeGenerator.Enums;
 using SourceCodeGenerator.Parser;
 using SourceCodeGenerator.Services;
 using System;
@@ -13,6 +13,8 @@ using System.IO;
 using System.Collections;
 using System.Text;
 using System.Runtime.Remoting;
+
+
 
 /// <summary>
 /// Summary description for AspNetMvc
@@ -315,7 +317,7 @@ public class HighchartsGenerator
 
     private void GenerateClass(ApiItem item, List<ApiItem> children)
     {
-        string codeTemplate = FileService.GetClassTemplate(IsNETStandard);
+        string codeTemplate = FileService.GetClassTemplate(Product.Highcharts);
         string propertyTemplate = FileService.GetPropertyTemplate();
 
         string properties = "";

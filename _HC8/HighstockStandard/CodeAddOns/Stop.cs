@@ -1,4 +1,3 @@
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,10 +6,11 @@ using System;
 using System.Collections.Specialized;
 using System.Web;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class Stop : BaseObject
+	public partial class Stop : BaseObject, IObjectList
 	{
 		public Stop() {
             Position = 0;
@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Stocks
         /// </summary>
         public string Color { get; set; }
 
-        internal override Hashtable ToHashtable()
+        internal override Hashtable ToHashtable(ref Highstock highcharts)
         {
             Hashtable h = new Hashtable();
 
@@ -37,21 +37,24 @@ namespace Highsoft.Web.Mvc.Stocks
             return h;
         }
 
-        internal override string ToJSON()
+        internal override string ToJSON(ref Highstock highcharts)
         {
-            Hashtable h = ToHashtable();
+            return JsonConvert.SerializeObject(ToHashtable(ref highcharts));
+        }
 
-            if (h.Count > 0)
-                return JsonConvert.SerializeObject(ToHashtable());
-            else
-                return "";
+        public List<object> ToList()
+        {
+            if (!string.IsNullOrWhiteSpace(Color))
+                return new List<object> { Position, Color };
+
+            return new List<object>();
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
-        internal override bool IsDirty()
+        internal override bool IsDirty(ref Highstock highcharts)
         {
-            return ToHashtable().Count > 0;
+            return ToHashtable(ref highcharts).Count > 0;
         }   
 	}
 }

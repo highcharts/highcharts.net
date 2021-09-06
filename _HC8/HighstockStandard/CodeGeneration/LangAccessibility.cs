@@ -180,37 +180,37 @@ namespace Highsoft.Web.Mvc.Stocks
 		private LangAccessibilityZoom Zoom_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (AnnounceNewData.IsDirty()) h.Add("announceNewData",AnnounceNewData.ToHashtable());
-			if (Axis.IsDirty()) h.Add("axis",Axis.ToHashtable());
+			if (AnnounceNewData.IsDirty(ref highstock)) h.Add("announceNewData",AnnounceNewData.ToHashtable(ref highstock));
+			if (Axis.IsDirty(ref highstock)) h.Add("axis",Axis.ToHashtable(ref highstock));
 			if (ChartContainerLabel != ChartContainerLabel_DefaultValue) h.Add("chartContainerLabel",ChartContainerLabel);
-			if (ChartTypes.IsDirty()) h.Add("chartTypes",ChartTypes.ToHashtable());
+			if (ChartTypes.IsDirty(ref highstock)) h.Add("chartTypes",ChartTypes.ToHashtable(ref highstock));
 			if (Credits != Credits_DefaultValue) h.Add("credits",Credits);
 			if (DefaultChartTitle != DefaultChartTitle_DefaultValue) h.Add("defaultChartTitle",DefaultChartTitle);
 			if (DrillUpButton != DrillUpButton_DefaultValue) h.Add("drillUpButton",DrillUpButton);
-			if (Exporting.IsDirty()) h.Add("exporting",Exporting.ToHashtable());
+			if (Exporting.IsDirty(ref highstock)) h.Add("exporting",Exporting.ToHashtable(ref highstock));
 			if (GraphicContainerLabel != GraphicContainerLabel_DefaultValue) h.Add("graphicContainerLabel",GraphicContainerLabel);
-			if (Legend.IsDirty()) h.Add("legend",Legend.ToHashtable());
-			if (RangeSelector.IsDirty()) h.Add("rangeSelector",RangeSelector.ToHashtable());
-			if (ScreenReaderSection.IsDirty()) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable());
-			if (Series.IsDirty()) h.Add("series",Series.ToHashtable());
-			if (SeriesTypeDescriptions.IsDirty()) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable());
-			if (Sonification.IsDirty()) h.Add("sonification",Sonification.ToHashtable());
+			if (Legend.IsDirty(ref highstock)) h.Add("legend",Legend.ToHashtable(ref highstock));
+			if (RangeSelector.IsDirty(ref highstock)) h.Add("rangeSelector",RangeSelector.ToHashtable(ref highstock));
+			if (ScreenReaderSection.IsDirty(ref highstock)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(ref highstock));
+			if (Series.IsDirty(ref highstock)) h.Add("series",Series.ToHashtable(ref highstock));
+			if (SeriesTypeDescriptions.IsDirty(ref highstock)) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable(ref highstock));
+			if (Sonification.IsDirty(ref highstock)) h.Add("sonification",Sonification.ToHashtable(ref highstock));
 			if (SvgContainerLabel != SvgContainerLabel_DefaultValue) h.Add("svgContainerLabel",SvgContainerLabel);
 			if (SvgContainerTitle != SvgContainerTitle_DefaultValue) h.Add("svgContainerTitle",SvgContainerTitle);
-			if (Table.IsDirty()) h.Add("table",Table.ToHashtable());
+			if (Table.IsDirty(ref highstock)) h.Add("table",Table.ToHashtable(ref highstock));
 			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
-			if (Zoom.IsDirty()) h.Add("zoom",Zoom.ToHashtable());
+			if (Zoom.IsDirty(ref highstock)) h.Add("zoom",Zoom.ToHashtable(ref highstock));
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -220,9 +220,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

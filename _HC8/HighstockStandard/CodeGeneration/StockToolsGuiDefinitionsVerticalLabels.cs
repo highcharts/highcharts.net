@@ -52,21 +52,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		private StockToolsGuiDefinitionsVerticalLabelsVerticalLabel VerticalLabel_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
 			if (Items != Items_DefaultValue) h.Add("items",Items);
-			if (VerticalArrow.IsDirty()) h.Add("verticalArrow",VerticalArrow.ToHashtable());
-			if (VerticalCounter.IsDirty()) h.Add("verticalCounter",VerticalCounter.ToHashtable());
-			if (VerticalLabel.IsDirty()) h.Add("verticalLabel",VerticalLabel.ToHashtable());
+			if (VerticalArrow.IsDirty(ref highstock)) h.Add("verticalArrow",VerticalArrow.ToHashtable(ref highstock));
+			if (VerticalCounter.IsDirty(ref highstock)) h.Add("verticalCounter",VerticalCounter.ToHashtable(ref highstock));
+			if (VerticalLabel.IsDirty(ref highstock)) h.Add("verticalLabel",VerticalLabel.ToHashtable(ref highstock));
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -76,9 +76,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

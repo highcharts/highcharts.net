@@ -68,7 +68,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string YAxisDescription_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (NullPointValue != NullPointValue_DefaultValue) h.Add("nullPointValue",NullPointValue);
 			if (PointAnnotationsDescription != PointAnnotationsDescription_DefaultValue) h.Add("pointAnnotationsDescription",PointAnnotationsDescription);
-			if (Summary.IsDirty()) h.Add("summary",Summary.ToHashtable());
+			if (Summary.IsDirty(ref highstock)) h.Add("summary",Summary.ToHashtable(ref highstock));
 			if (XAxisDescription != XAxisDescription_DefaultValue) h.Add("xAxisDescription",XAxisDescription);
 			if (YAxisDescription != YAxisDescription_DefaultValue) h.Add("yAxisDescription",YAxisDescription);
 			
@@ -84,7 +84,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -94,9 +94,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

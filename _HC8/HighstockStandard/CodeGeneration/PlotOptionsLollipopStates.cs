@@ -52,21 +52,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		private PlotOptionsLollipopStatesSelect Select_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Hover.IsDirty()) h.Add("hover",Hover.ToHashtable());
-			if (Inactive.IsDirty()) h.Add("inactive",Inactive.ToHashtable());
-			if (Normal.IsDirty()) h.Add("normal",Normal.ToHashtable());
-			if (Select.IsDirty()) h.Add("select",Select.ToHashtable());
+			if (Hover.IsDirty(ref highstock)) h.Add("hover",Hover.ToHashtable(ref highstock));
+			if (Inactive.IsDirty(ref highstock)) h.Add("inactive",Inactive.ToHashtable(ref highstock));
+			if (Normal.IsDirty(ref highstock)) h.Add("normal",Normal.ToHashtable(ref highstock));
+			if (Select.IsDirty(ref highstock)) h.Add("select",Select.ToHashtable(ref highstock));
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -76,9 +76,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

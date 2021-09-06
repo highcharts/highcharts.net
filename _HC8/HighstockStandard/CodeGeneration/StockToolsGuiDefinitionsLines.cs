@@ -92,26 +92,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		private StockToolsGuiDefinitionsLinesVerticalLine VerticalLine_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (ArrowLine.IsDirty()) h.Add("arrowLine",ArrowLine.ToHashtable());
-			if (ArrowRay.IsDirty()) h.Add("arrowRay",ArrowRay.ToHashtable());
-			if (ArrowSegment.IsDirty()) h.Add("arrowSegment",ArrowSegment.ToHashtable());
-			if (HorizontalLine.IsDirty()) h.Add("horizontalLine",HorizontalLine.ToHashtable());
+			if (ArrowLine.IsDirty(ref highstock)) h.Add("arrowLine",ArrowLine.ToHashtable(ref highstock));
+			if (ArrowRay.IsDirty(ref highstock)) h.Add("arrowRay",ArrowRay.ToHashtable(ref highstock));
+			if (ArrowSegment.IsDirty(ref highstock)) h.Add("arrowSegment",ArrowSegment.ToHashtable(ref highstock));
+			if (HorizontalLine.IsDirty(ref highstock)) h.Add("horizontalLine",HorizontalLine.ToHashtable(ref highstock));
 			if (Items != Items_DefaultValue) h.Add("items",Items);
-			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
-			if (Ray.IsDirty()) h.Add("ray",Ray.ToHashtable());
-			if (Segment.IsDirty()) h.Add("segment",Segment.ToHashtable());
-			if (VerticalLine.IsDirty()) h.Add("verticalLine",VerticalLine.ToHashtable());
+			if (Line.IsDirty(ref highstock)) h.Add("line",Line.ToHashtable(ref highstock));
+			if (Ray.IsDirty(ref highstock)) h.Add("ray",Ray.ToHashtable(ref highstock));
+			if (Segment.IsDirty(ref highstock)) h.Add("segment",Segment.ToHashtable(ref highstock));
+			if (VerticalLine.IsDirty(ref highstock)) h.Add("verticalLine",VerticalLine.ToHashtable(ref highstock));
 			
 
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -121,9 +121,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

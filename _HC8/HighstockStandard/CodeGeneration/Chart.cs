@@ -388,13 +388,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		private ChartZoomType ZoomType_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation.IsDirty(ref highstock)) h.Add("animation",Animation.ToJSON(ref highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -403,7 +403,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (ColorCount != ColorCount_DefaultValue) h.Add("colorCount",ColorCount);
 			if (DisplayErrors != DisplayErrors_DefaultValue) h.Add("displayErrors",DisplayErrors);
-			if (Events.IsDirty()) h.Add("events",Events.ToHashtable());
+			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
@@ -414,16 +414,16 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MarginRight != MarginRight_DefaultValue) h.Add("marginRight",MarginRight);
 			if (MarginTop != MarginTop_DefaultValue) h.Add("marginTop",MarginTop);
 			if (NumberFormatter != NumberFormatter_DefaultValue) { h.Add("numberFormatter",NumberFormatter); Highstock.AddFunction("numberFormatter", NumberFormatter); }  
-			if (Panning.IsDirty()) h.Add("panning",Panning.ToHashtable());
+			if (Panning.IsDirty(ref highstock)) h.Add("panning",Panning.ToHashtable(ref highstock));
 			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", Highstock.FirstCharacterToLower(PinchType.ToString()));
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
-			if (PlotShadow.IsDirty()) h.Add("plotShadow",PlotShadow.ToJSON());
+			if (PlotShadow.IsDirty(ref highstock)) h.Add("plotShadow",PlotShadow.ToJSON(ref highstock));
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
-			if (ResetZoomButton.IsDirty()) h.Add("resetZoomButton",ResetZoomButton.ToHashtable());
+			if (ResetZoomButton.IsDirty(ref highstock)) h.Add("resetZoomButton",ResetZoomButton.ToHashtable(ref highstock));
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Spacing != Spacing_DefaultValue) h.Add("spacing",Spacing);
@@ -444,7 +444,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -454,9 +454,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

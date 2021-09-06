@@ -300,14 +300,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		private double? Z_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
 			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
-			if (Animation.IsDirty()) h.Add("animation",Animation.ToJSON());
+			if (Animation.IsDirty(ref highstock)) h.Add("animation",Animation.ToJSON(ref highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -319,7 +319,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (DeferBool != DeferBool_DefaultValue) h.Add("defer",DeferBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Filter.IsDirty()) h.Add("filter",Filter.ToHashtable());
+			if (Filter.IsDirty(ref highstock)) h.Add("filter",Filter.ToHashtable(ref highstock));
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); Highstock.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
@@ -334,7 +334,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (TextPath.IsDirty()) h.Add("textPath",TextPath.ToHashtable());
+			if (TextPath.IsDirty(ref highstock)) h.Add("textPath",TextPath.ToHashtable(ref highstock));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
@@ -345,7 +345,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -355,9 +355,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

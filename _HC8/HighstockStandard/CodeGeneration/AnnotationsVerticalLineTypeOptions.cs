@@ -68,15 +68,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string YAxis_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable()
+		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (Connector.IsDirty()) h.Add("connector",Connector.ToHashtable());
-			if (Label.IsDirty()) h.Add("label",Label.ToHashtable());
-			if (Line.IsDirty()) h.Add("line",Line.ToHashtable());
-			if (Points != Points_DefaultValue) h.Add("points", HashifyList(Points));
+			if (Connector.IsDirty(ref highstock)) h.Add("connector",Connector.ToHashtable(ref highstock));
+			if (Label.IsDirty(ref highstock)) h.Add("label",Label.ToHashtable(ref highstock));
+			if (Line.IsDirty(ref highstock)) h.Add("line",Line.ToHashtable(ref highstock));
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(ref highstock,Points));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			
@@ -84,7 +84,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON()
+		internal override string ToJSON(ref Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -94,9 +94,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty()
+		internal override bool IsDirty(ref Highstock highstock)
 		{
-			return ToHashtable().Count > 0;
+			return ToHashtable(ref highstock).Count > 0;
 		}
 	}
 }

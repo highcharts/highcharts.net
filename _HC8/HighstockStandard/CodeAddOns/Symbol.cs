@@ -1,4 +1,3 @@
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +6,7 @@ using System;
 using System.Collections.Specialized;
 using System.Web;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
@@ -41,7 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
         /// </summary>
         public SymbolEnum SymbolEnum { get; set; }
 
-        internal override Hashtable ToHashtable()
+        internal override Hashtable ToHashtable(ref Highstock highcharts)
         {
             Hashtable h = new Hashtable();
 
@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Stocks
             return h;
         }
 
-        internal override string ToJSON()
+        internal override string ToJSON(ref Highstock highcharts)
         {
             if (Url != null)
             {
@@ -73,9 +73,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
-        internal override bool IsDirty()
+        internal override bool IsDirty(ref Highstock highcharts)
         {
-            return ToHashtable().Count > 0;
+            return ToHashtable(ref highcharts).Count > 0;
         }
     }
 

@@ -1,35 +1,28 @@
-using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Collections;
 using System;
-
 using System.Collections.Specialized;
 using System.Web;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
 	public partial class Animation : BaseObject
-	{
-        Hashtable h = new Hashtable();
-
+	{        
+		
         public Animation() {
             Enabled = true;
-            Defer = 0;
             Duration = 0;
             Easing = "";            
 		}
-
-        
 
         /// <summary>
         /// If a shadow with default values should be enabled
         /// </summary>
         public bool Enabled { get; set; }
-
-        /// <summary>
-        /// The animation delay time in milliseconds.
-        /// </summary>
-        public int Defer { get; set; }
 
         /// <summary>
         /// The duration of the animation in milliseconds
@@ -42,41 +35,30 @@ namespace Highsoft.Web.Mvc.Stocks
         /// </summary>
         public string Easing { get; set; }
 
-        internal override Hashtable ToHashtable()
+        internal override Hashtable ToHashtable(ref Highstock highcharts)
         {
-            if (!Enabled) return h;
+            Hashtable h = new Hashtable();
 
-            if (h.Count > 0)
-                return h;
-
-            if (Defer > 0) h.Add("defer", Defer);
-            if (Duration > 0) h.Add("duration", Duration);
             if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
+            if (Duration > 0) h.Add("duration", Duration);
 
             return h;
         }
 
-        internal override string ToJSON()
+        internal override string ToJSON(ref Highstock highcharts)
         {
-            if (Enabled && h.Count > 0)
-            {
-                var objText = JsonConvert.SerializeObject(h).ToString();
-                Highstock.AddFunction("animation", objText);
-                return objText;
-            }
+            Hashtable h = ToHashtable(ref highcharts);
+            if (h.Count > 0)
+                return JsonConvert.SerializeObject(h);
             else
-            {
-                var enabled = Enabled.ToString().ToLower();
-                Highstock.AddFunction("animation", enabled);
-                return enabled;
-            }
+                return Enabled.ToString().ToLower();
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
-        internal override bool IsDirty()
+        internal override bool IsDirty(ref Highstock highcharts)
         {
-            return !Enabled || ToHashtable().Count > 0;
+            return (Enabled != true || ToHashtable(ref highcharts).Count > 0);
         }
 	}
 }

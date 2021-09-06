@@ -49,6 +49,7 @@
     <Compile Include="ApiItem.cs" />
     <Compile Include="Enums\ApiPropertyName.cs" />
     <Compile Include="Enums\ChangedItem.cs" />
+    <Compile Include="Enums\Product.cs" />
     <Compile Include="Generators\HighstockGenerator.cs" />
     <Compile Include="Services\ApiItemComparer.cs" />
     <Compile Include="Services\ComparisonService.cs" />
@@ -120,6 +121,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="CodeTemplates\Class_NETStandard_new1.tpl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CodeTemplates\Class_NETStandard_new1_HS.tpl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="JsonFiles\highcharts.json">
