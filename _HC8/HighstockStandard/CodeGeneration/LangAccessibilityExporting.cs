@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public LangAccessibilityExporting()
 		{
 			ChartMenuLabel = ChartMenuLabel_DefaultValue = "Chart menu";
-			ExportRegionLabel = ExportRegionLabel_DefaultValue = "Chart menu";
+			ExportRegionLabel = ExportRegionLabel_DefaultValue = "Chart menu, {chartTitle}";
 			MenuButtonLabel = MenuButtonLabel_DefaultValue = "View chart menu";
 			
 		}	

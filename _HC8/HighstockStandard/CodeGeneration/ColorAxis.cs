@@ -36,11 +36,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			Margin = Margin_DefaultValue = null;
 			Marker = Marker_DefaultValue = new ColorAxisMarker();
 			Max = Max_DefaultValue = null;
-			MaxColor = MaxColor_DefaultValue = "#003399";
+			MaxColor = MaxColor_DefaultValue = "";
 			MaxPadding = MaxPadding_DefaultValue = 0;
 			MaxRange = MaxRange_DefaultValue = null;
 			Min = Min_DefaultValue = null;
-			MinColor = MinColor_DefaultValue = "#e6ebf5";
+			MinColor = MinColor_DefaultValue = "";
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = new Hashtable();
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;

@@ -76,6 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ParallelChannel = ParallelChannel_DefaultValue = "Parallel channel";
 			Period = Period_DefaultValue = "Period";
 			PeriodATR = PeriodATR_DefaultValue = "ATR period";
+			Periods = Periods_DefaultValue = "Periods";
 			PeriodSenkouSpanB = PeriodSenkouSpanB_DefaultValue = "Senkou Span B period";
 			PeriodTenkan = PeriodTenkan_DefaultValue = "Tenkan period";
 			Pitchfork = Pitchfork_DefaultValue = "Pitchfork";
@@ -533,6 +534,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public string Periods { get; set; }
+		private string Periods_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string PeriodSenkouSpanB { get; set; }
 		private string PeriodSenkouSpanB_DefaultValue { get; set; }
 		 
@@ -805,6 +813,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ParallelChannel != ParallelChannel_DefaultValue) h.Add("parallelChannel",ParallelChannel);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
 			if (PeriodATR != PeriodATR_DefaultValue) h.Add("periodATR",PeriodATR);
+			if (Periods != Periods_DefaultValue) h.Add("periods",Periods);
 			if (PeriodSenkouSpanB != PeriodSenkouSpanB_DefaultValue) h.Add("periodSenkouSpanB",PeriodSenkouSpanB);
 			if (PeriodTenkan != PeriodTenkan_DefaultValue) h.Add("periodTenkan",PeriodTenkan);
 			if (Pitchfork != Pitchfork_DefaultValue) h.Add("pitchfork",Pitchfork);

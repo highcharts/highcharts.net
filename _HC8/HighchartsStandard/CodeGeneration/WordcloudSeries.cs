@@ -56,6 +56,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PlacementStrategy = PlacementStrategy_DefaultValue = "center";
 			Point = Point_DefaultValue = new WordcloudSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
+			RelativeXValue = RelativeXValue_DefaultValue = false;
 			Rotation = Rotation_DefaultValue = new WordcloudSeriesRotation();
 			Selected = Selected_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
@@ -360,6 +361,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// When true, X values in the data set are relative to the current`pointStart`, `pointInterval` and `pointIntervalUnit` settings. Thisallows compression of the data for datasets with irregular X values.The real X values are computed on the formula `f(x) = ax + b`, where`a` is the `pointInterval` (optionally with a time unit given by`pointIntervalUnit`), and `b` is the `pointStart`.
+		/// </summary>
+		public bool? RelativeXValue { get; set; }
+		private bool? RelativeXValue_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Rotation options for the words in the wordcloud.
 		/// </summary>
 		public WordcloudSeriesRotation Rotation { get; set; }
@@ -532,6 +540,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy",PlacementStrategy);
 			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
 			if (Rotation.IsDirty(ref highcharts)) h.Add("rotation",Rotation.ToHashtable(ref highcharts));
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

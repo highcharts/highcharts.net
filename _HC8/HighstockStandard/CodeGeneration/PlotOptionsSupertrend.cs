@@ -61,6 +61,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Params = Params_DefaultValue = new PlotOptionsSupertrendParams();
 			Point = Point_DefaultValue = new PlotOptionsSupertrendPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
+			RelativeXValue = RelativeXValue_DefaultValue = false;
 			RisingTrendColor = RisingTrendColor_DefaultValue = "#06b535";
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
@@ -397,6 +398,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When true, X values in the data set are relative to the current`pointStart`, `pointInterval` and `pointIntervalUnit` settings. Thisallows compression of the data for datasets with irregular X values.The real X values are computed on the formula `f(x) = ax + b`, where`a` is the `pointInterval` (optionally with a time unit given by`pointIntervalUnit`), and `b` is the `pointStart`.
+		/// </summary>
+		public bool? RelativeXValue { get; set; }
+		private bool? RelativeXValue_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Color of the Supertrend series line that is beneath the main series.
 		/// </summary>
 		public string RisingTrendColor { get; set; }
@@ -558,6 +566,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Params.IsDirty(ref highstock)) h.Add("params",Params.ToHashtable(ref highstock));
 			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
 			if (RisingTrendColor != RisingTrendColor_DefaultValue) h.Add("risingTrendColor",RisingTrendColor);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);

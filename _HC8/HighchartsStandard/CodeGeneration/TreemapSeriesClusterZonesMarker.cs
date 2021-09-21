@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = null;
 			FillColor = FillColor_DefaultValue = null;
 			Height = Height_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "#ffffff";
+			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 4;
 			Symbol = Symbol_DefaultValue = "";

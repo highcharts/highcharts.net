@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			LegendItem = LegendItem_DefaultValue = "Show {itemName}";
 			LegendLabel = LegendLabel_DefaultValue = "Chart legend: {legendTitle}";
-			LegendLabelNoTitle = LegendLabelNoTitle_DefaultValue = "Toggle series visibility";
+			LegendLabelNoTitle = LegendLabelNoTitle_DefaultValue = "Toggle series visibility, {chartTitle}";
 			
 		}	
 		

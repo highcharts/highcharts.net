@@ -24,8 +24,6 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
 			Level = Level_DefaultValue = null;
 			LevelSize = LevelSize_DefaultValue = new SunburstSeriesLevelsLevelSize();
-			Rotation = Rotation_DefaultValue = null;
-			RotationMode = RotationMode_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -87,20 +85,6 @@ namespace Highsoft.Web.Mvc.Charts
 		private SunburstSeriesLevelsLevelSize LevelSize_DefaultValue { get; set; }
 		 
 
-		/// <summary>
-		/// Can set a `rotation` on all points which lies on the same level.
-		/// </summary>
-		public double? Rotation { get; set; }
-		private double? Rotation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Can set a `rotationMode` on all points which lies on the same level.
-		/// </summary>
-		public string RotationMode { get; set; }
-		private string RotationMode_DefaultValue { get; set; }
-		 
-
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(ref Highcharts highcharts)
@@ -116,8 +100,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty(ref highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(ref highcharts));
 			if (Level != Level_DefaultValue) h.Add("level",Level);
 			if (LevelSize.IsDirty(ref highcharts)) h.Add("levelSize",LevelSize.ToHashtable(ref highcharts));
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (RotationMode != RotationMode_DefaultValue) h.Add("rotationMode",RotationMode);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

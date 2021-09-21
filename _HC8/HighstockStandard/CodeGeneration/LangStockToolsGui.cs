@@ -54,6 +54,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			ToggleAnnotations = ToggleAnnotations_DefaultValue = "Toggle annotations";
 			TypeCandlestick = TypeCandlestick_DefaultValue = "Candlestick";
 			TypeChange = TypeChange_DefaultValue = "Type change";
+			TypeHeikinAshi = TypeHeikinAshi_DefaultValue = "Heikin Ashi";
+			TypeHollowCandlestick = TypeHollowCandlestick_DefaultValue = "Hollow Candlestick";
 			TypeLine = TypeLine_DefaultValue = "Line";
 			TypeOHLC = TypeOHLC_DefaultValue = "OHLC";
 			VerticalArrow = VerticalArrow_DefaultValue = "Vertical arrow";
@@ -338,6 +340,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public string TypeHeikinAshi { get; set; }
+		private string TypeHeikinAshi_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string TypeHollowCandlestick { get; set; }
+		private string TypeHollowCandlestick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string TypeLine { get; set; }
 		private string TypeLine_DefaultValue { get; set; }
 		 
@@ -455,6 +471,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ToggleAnnotations != ToggleAnnotations_DefaultValue) h.Add("toggleAnnotations",ToggleAnnotations);
 			if (TypeCandlestick != TypeCandlestick_DefaultValue) h.Add("typeCandlestick",TypeCandlestick);
 			if (TypeChange != TypeChange_DefaultValue) h.Add("typeChange",TypeChange);
+			if (TypeHeikinAshi != TypeHeikinAshi_DefaultValue) h.Add("typeHeikinAshi",TypeHeikinAshi);
+			if (TypeHollowCandlestick != TypeHollowCandlestick_DefaultValue) h.Add("typeHollowCandlestick",TypeHollowCandlestick);
 			if (TypeLine != TypeLine_DefaultValue) h.Add("typeLine",TypeLine);
 			if (TypeOHLC != TypeOHLC_DefaultValue) h.Add("typeOHLC",TypeOHLC);
 			if (VerticalArrow != VerticalArrow_DefaultValue) h.Add("verticalArrow",VerticalArrow);

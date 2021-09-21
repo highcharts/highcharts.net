@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			AfterRegionLabel = AfterRegionLabel_DefaultValue = "";
 			Annotations = Annotations_DefaultValue = new List<Annotations>();
-			BeforeRegionLabel = BeforeRegionLabel_DefaultValue = "Chart screen reader information.";
+			BeforeRegionLabel = BeforeRegionLabel_DefaultValue = "Chart screen reader information, {chartTitle}.";
 			EndOfChartMarker = EndOfChartMarker_DefaultValue = "End of interactive chart.";
 			
 			CustomFields = new Hashtable();

@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			EnabledThreshold = EnabledThreshold_DefaultValue = 0;
 			FillColor = FillColor_DefaultValue = null;
 			Height = Height_DefaultValue = 15;
-			LineColor = LineColor_DefaultValue = "#ffffff";
+			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
 			Radius = Radius_DefaultValue = 6;
 			States = States_DefaultValue = new PlotOptionsTimelineMarkerStates();

@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Symbol = Symbol_DefaultValue = "menu";
 			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolSize = SymbolSize_DefaultValue = 14;
-			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
+			SymbolStroke = SymbolStroke_DefaultValue = "";
 			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 3;
 			SymbolX = SymbolX_DefaultValue = null;
 			SymbolY = SymbolY_DefaultValue = null;

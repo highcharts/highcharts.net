@@ -45,6 +45,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Ema = Ema_DefaultValue = new PlotOptionsEma();
 			Errorbar = Errorbar_DefaultValue = new PlotOptionsErrorbar();
 			Flags = Flags_DefaultValue = new PlotOptionsFlags();
+			Heikinashi = Heikinashi_DefaultValue = new PlotOptionsHeikinashi();
+			Hollowcandlestick = Hollowcandlestick_DefaultValue = new PlotOptionsHollowcandlestick();
 			Ikh = Ikh_DefaultValue = new PlotOptionsIkh();
 			Keltnerchannels = Keltnerchannels_DefaultValue = new PlotOptionsKeltnerchannels();
 			Klinger = Klinger_DefaultValue = new PlotOptionsKlinger();
@@ -292,6 +294,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsFlags Flags { get; set; }
 		private PlotOptionsFlags Flags_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An HeikinAshi series is a style of financial chart used to describe pricemovements over time. It displays open, high, low and close values perdata point.In TypeScript the [type](series.heikinashi.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `heikinashi` series are defined in   [plotOptions.heikinashi](plotOptions.heikinashi).3. Options for one single series are given in   [the series instance array](series.heikinashi).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        heikinashi: {            // shared options for all heikinashi series        }    },    series: [{        // specific options for this series instance        type: 'heikinashi'    }]});```            
+		/// </summary>
+		public PlotOptionsHeikinashi Heikinashi { get; set; }
+		private PlotOptionsHeikinashi Heikinashi_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A hollow candlestick chart is a style of financial chart used todescribe price movements over time.In TypeScript the [type](series.hollowcandlestick.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `hollowcandlestick` series are defined in   [plotOptions.hollowcandlestick](plotOptions.hollowcandlestick).3. Options for one single series are given in   [the series instance array](series.hollowcandlestick).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        hollowcandlestick: {            // shared options for all hollowcandlestick series        }    },    series: [{        // specific options for this series instance        type: 'hollowcandlestick'    }]});```            
+		/// </summary>
+		public PlotOptionsHollowcandlestick Hollowcandlestick { get; set; }
+		private PlotOptionsHollowcandlestick Hollowcandlestick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -622,6 +638,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Ema.IsDirty(ref highstock)) h.Add("ema",Ema.ToHashtable(ref highstock));
 			if (Errorbar.IsDirty(ref highstock)) h.Add("errorbar",Errorbar.ToHashtable(ref highstock));
 			if (Flags.IsDirty(ref highstock)) h.Add("flags",Flags.ToHashtable(ref highstock));
+			if (Heikinashi.IsDirty(ref highstock)) h.Add("heikinashi",Heikinashi.ToHashtable(ref highstock));
+			if (Hollowcandlestick.IsDirty(ref highstock)) h.Add("hollowcandlestick",Hollowcandlestick.ToHashtable(ref highstock));
 			if (Ikh.IsDirty(ref highstock)) h.Add("ikh",Ikh.ToHashtable(ref highstock));
 			if (Keltnerchannels.IsDirty(ref highstock)) h.Add("keltnerchannels",Keltnerchannels.ToHashtable(ref highstock));
 			if (Klinger.IsDirty(ref highstock)) h.Add("klinger",Klinger.ToHashtable(ref highstock));

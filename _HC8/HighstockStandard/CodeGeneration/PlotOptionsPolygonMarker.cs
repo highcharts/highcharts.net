@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			FillColor = FillColor_DefaultValue = "";
 			Height = Height_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "#ffffff";
+			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 4;
 			States = States_DefaultValue = new PlotOptionsPolygonMarkerStates();

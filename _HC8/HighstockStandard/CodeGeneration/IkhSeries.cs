@@ -65,6 +65,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Params = Params_DefaultValue = new IkhSeriesParams();
 			Point = Point_DefaultValue = new IkhSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
+			RelativeXValue = RelativeXValue_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			SenkouSpan = SenkouSpan_DefaultValue = new IkhSeriesSenkouSpan();
 			SenkouSpanA = SenkouSpanA_DefaultValue = new IkhSeriesSenkouSpanA();
@@ -441,6 +442,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// When true, X values in the data set are relative to the current`pointStart`, `pointInterval` and `pointIntervalUnit` settings. Thisallows compression of the data for datasets with irregular X values.The real X values are computed on the formula `f(x) = ax + b`, where`a` is the `pointInterval` (optionally with a time unit given by`pointIntervalUnit`), and `b` is the `pointStart`.
+		/// </summary>
+		public bool? RelativeXValue { get; set; }
+		private bool? RelativeXValue_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to select the series initially. If `showCheckbox` is true,the checkbox next to the series name in the legend will be checkedfor a selected series.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -690,6 +698,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Params.IsDirty(ref highstock)) h.Add("params",Params.ToHashtable(ref highstock));
 			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (SenkouSpan.IsDirty(ref highstock)) h.Add("senkouSpan",SenkouSpan.ToHashtable(ref highstock));
 			if (SenkouSpanA.IsDirty(ref highstock)) h.Add("senkouSpanA",SenkouSpanA.ToHashtable(ref highstock));

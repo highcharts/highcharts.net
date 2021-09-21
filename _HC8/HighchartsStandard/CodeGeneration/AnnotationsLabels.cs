@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = true;
 			Overflow = Overflow_DefaultValue = AnnotationsLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
-			Point = Point_DefaultValue = new AnnotationsLabelsPoint();
+			Point = Point_DefaultValue = null;
 			PointString = PointString_DefaultValue = "null";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
 			ShadowBool = ShadowBool_DefaultValue = null;
@@ -155,8 +155,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// This option defines the point to which the label will beconnected. It can be either the point which exists in theseries - it is referenced by the point's id - or a new pointwith defined x, y properties and optionally axes.
 		/// </summary>
-		public AnnotationsLabelsPoint Point { get; set; }
-		private AnnotationsLabelsPoint Point_DefaultValue { get; set; }
+		public Object Point { get; set; }
+		private Object Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -251,7 +251,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
+			if (Point != Point_DefaultValue) h.Add("point",Point);
 			if (PointString != PointString_DefaultValue) h.Add("point",PointString);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);

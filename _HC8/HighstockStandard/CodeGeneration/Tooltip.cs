@@ -48,7 +48,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
 			Split = Split_DefaultValue = null;
-			StickOnContact = StickOnContact_DefaultValue = null;
+			StickOnContact = StickOnContact_DefaultValue = false;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
@@ -284,7 +284,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Prevents the tooltip from switching or closing, when touched orpointed.
+		/// Prevents the tooltip from switching or closing when touched orpointed.
 		/// </summary>
 		public bool? StickOnContact { get; set; }
 		private bool? StickOnContact_DefaultValue { get; set; }

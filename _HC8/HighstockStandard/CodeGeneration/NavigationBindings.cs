@@ -45,6 +45,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			SaveChart = SaveChart_DefaultValue = new Hashtable();
 			Segment = Segment_DefaultValue = new Hashtable();
 			SeriesTypeCandlestick = SeriesTypeCandlestick_DefaultValue = new Hashtable();
+			SeriesTypeHeikinAshi = SeriesTypeHeikinAshi_DefaultValue = new Hashtable();
+			SeriesTypeHollowCandlestick = SeriesTypeHollowCandlestick_DefaultValue = new Hashtable();
 			SeriesTypeLine = SeriesTypeLine_DefaultValue = new Hashtable();
 			SeriesTypeOhlc = SeriesTypeOhlc_DefaultValue = new Hashtable();
 			ToggleAnnotations = ToggleAnnotations_DefaultValue = new Hashtable();
@@ -263,6 +265,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Changes main series to `'heikinashi'` type.
+		/// </summary>
+		public Hashtable SeriesTypeHeikinAshi { get; set; }
+		private Hashtable SeriesTypeHeikinAshi_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Changes main series to `'hollowcandlestick'` type.
+		/// </summary>
+		public Hashtable SeriesTypeHollowCandlestick { get; set; }
+		private Hashtable SeriesTypeHollowCandlestick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Changes main series to `'line'` type.
 		/// </summary>
 		public Hashtable SeriesTypeLine { get; set; }
@@ -366,6 +382,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SaveChart != SaveChart_DefaultValue) h.Add("saveChart",SaveChart);
 			if (Segment != Segment_DefaultValue) h.Add("segment",Segment);
 			if (SeriesTypeCandlestick != SeriesTypeCandlestick_DefaultValue) h.Add("seriesTypeCandlestick",SeriesTypeCandlestick);
+			if (SeriesTypeHeikinAshi != SeriesTypeHeikinAshi_DefaultValue) h.Add("seriesTypeHeikinAshi",SeriesTypeHeikinAshi);
+			if (SeriesTypeHollowCandlestick != SeriesTypeHollowCandlestick_DefaultValue) h.Add("seriesTypeHollowCandlestick",SeriesTypeHollowCandlestick);
 			if (SeriesTypeLine != SeriesTypeLine_DefaultValue) h.Add("seriesTypeLine",SeriesTypeLine);
 			if (SeriesTypeOhlc != SeriesTypeOhlc_DefaultValue) h.Add("seriesTypeOhlc",SeriesTypeOhlc);
 			if (ToggleAnnotations != ToggleAnnotations_DefaultValue) h.Add("toggleAnnotations",ToggleAnnotations);

@@ -85,7 +85,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array of points for the shape. This option is availablefor shapes which can use multiple points such as path. Apoint can be either a point object or a point's id.
+		/// An array of points for the shapeor a callback function that returns that shape point.This option is availablefor shapes which can use multiple points such as path. Apoint can be either a point object or a point's id.
 		/// </summary>
 		public NavigationAnnotationsOptionsShapesPoints Points { get; set; }
 		private NavigationAnnotationsOptionsShapesPoints Points_DefaultValue { get; set; }

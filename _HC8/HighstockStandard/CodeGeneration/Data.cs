@@ -29,7 +29,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			EndColumn = EndColumn_DefaultValue = null;
 			EndRow = EndRow_DefaultValue = null;
 			FirstRowAsNames = FirstRowAsNames_DefaultValue = true;
+			GoogleAPIKey = GoogleAPIKey_DefaultValue = "";
 			GoogleSpreadsheetKey = GoogleSpreadsheetKey_DefaultValue = "";
+			GoogleSpreadsheetRange = GoogleSpreadsheetRange_DefaultValue = "";
 			GoogleSpreadsheetWorksheet = GoogleSpreadsheetWorksheet_DefaultValue = "";
 			ItemDelimiter = ItemDelimiter_DefaultValue = "";
 			LineDelimiter = LineDelimiter_DefaultValue = " n";
@@ -138,14 +140,28 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The key for a Google Spreadsheet to load. See [general informationon GS](https://developers.google.com/gdata/samples/spreadsheet_sample).
+		/// The Google Spreadsheet API key required for access generated at [API Services/ Credentials](https://console.cloud.google.com/apis/credentials). See acomprehensive tutorial for setting up the key at the[Hands-On Data Visualization](https://handsondataviz.org/google-sheets-api-key.html)book website.
+		/// </summary>
+		public string GoogleAPIKey { get; set; }
+		private string GoogleAPIKey_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The key or `spreadsheetId` value for a Google Spreadsheet to load. See[developers.google.com](https://developers.google.com/sheets/api/guides/concepts)for how to find the `spreadsheetId`.In order for Google Sheets to load, a valid [googleAPIKey](#data.googleAPIKey)must also be given.
 		/// </summary>
 		public string GoogleSpreadsheetKey { get; set; }
 		private string GoogleSpreadsheetKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The Google Spreadsheet worksheet to use in combination with[googleSpreadsheetKey](#data.googleSpreadsheetKey). The available id's fromyour sheet can be read from `https://spreadsheets.google.com/feeds/worksheets/{key}/public/basic`.
+		/// The Google Spreadsheet `range` to use in combination with[googleSpreadsheetKey](#data.googleSpreadsheetKey). See[developers.google.com](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get)for details.If given, it takes precedence over `startColumn`, `endColumn`, `startRow` and`endRow`.
+		/// </summary>
+		public string GoogleSpreadsheetRange { get; set; }
+		private string GoogleSpreadsheetRange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// No longer works since v9.2.2, that uses Google Sheets API v4. Instead, usethe [googleSpreadsheetRange](#data.googleSpreadsheetRange) option to load aspecific sheet.
 		/// </summary>
 		public string GoogleSpreadsheetWorksheet { get; set; }
 		private string GoogleSpreadsheetWorksheet_DefaultValue { get; set; }
@@ -246,7 +262,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (EndColumn != EndColumn_DefaultValue) h.Add("endColumn",EndColumn);
 			if (EndRow != EndRow_DefaultValue) h.Add("endRow",EndRow);
 			if (FirstRowAsNames != FirstRowAsNames_DefaultValue) h.Add("firstRowAsNames",FirstRowAsNames);
+			if (GoogleAPIKey != GoogleAPIKey_DefaultValue) h.Add("googleAPIKey",GoogleAPIKey);
 			if (GoogleSpreadsheetKey != GoogleSpreadsheetKey_DefaultValue) h.Add("googleSpreadsheetKey",GoogleSpreadsheetKey);
+			if (GoogleSpreadsheetRange != GoogleSpreadsheetRange_DefaultValue) h.Add("googleSpreadsheetRange",GoogleSpreadsheetRange);
 			if (GoogleSpreadsheetWorksheet != GoogleSpreadsheetWorksheet_DefaultValue) h.Add("googleSpreadsheetWorksheet",GoogleSpreadsheetWorksheet);
 			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
 			if (LineDelimiter != LineDelimiter_DefaultValue) h.Add("lineDelimiter",LineDelimiter);

@@ -16,69 +16,15 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigationAnnotationsOptionsShapesPoint()
 		{
-			X = X_DefaultValue = null;
-			XAxis = XAxis_DefaultValue = "";
-			XAxisNumber = XAxisNumber_DefaultValue = null;
-			Y = Y_DefaultValue = null;
-			YAxis = YAxis_DefaultValue = "";
-			YAxisNumber = YAxisNumber_DefaultValue = null;
 			
 		}	
-		
-
-		/// <summary>
-		/// The x position of the point. Units can be either in axisor chart pixel coordinates.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
-
-		/// <summary>
-		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axis inthe xAxis array. If the option is not configured or the axisis not found the point's x coordinate refers to the chartpixels.
-		/// </summary>
-		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axis inthe xAxis array. If the option is not configured or the axisis not found the point's x coordinate refers to the chartpixels.
-		/// </summary>
-		public double? XAxisNumber { get; set; }
-		private double? XAxisNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y position of the point. Units can be either in axisor chart pixel coordinates.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axis inthe yAxis array. If the option is not configured or the axisis not found the point's y coordinate refers to the chartpixels.
-		/// </summary>
-		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axis inthe yAxis array. If the option is not configured or the axisis not found the point's y coordinate refers to the chartpixels.
-		/// </summary>
-		public double? YAxisNumber { get; set; }
-		private double? YAxisNumber_DefaultValue { get; set; }
-		  
 
 		internal override Hashtable ToHashtable(ref Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (YAxisNumber != YAxisNumber_DefaultValue) h.Add("yAxis",YAxisNumber);
 			
 
 			return h;

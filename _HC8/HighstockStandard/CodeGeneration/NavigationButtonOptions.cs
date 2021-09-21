@@ -20,9 +20,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			ButtonSpacing = ButtonSpacing_DefaultValue = 3;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 22;
-			SymbolFill = SymbolFill_DefaultValue = "#666666";
+			SymbolFill = SymbolFill_DefaultValue = "";
 			SymbolSize = SymbolSize_DefaultValue = 14;
-			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
+			SymbolStroke = SymbolStroke_DefaultValue = "";
 			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 3;
 			SymbolX = SymbolX_DefaultValue = null;
 			SymbolY = SymbolY_DefaultValue = null;
