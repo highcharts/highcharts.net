@@ -743,13 +743,7 @@
 
         // Set the hash to the yr.no URL we want to parse
         if (!location.hash) {
-            var place = 'United_Kingdom/England/London';
-            //place = 'France/Rhône-Alpes/Val_d\'Isère~2971074';
-            //place = 'Norway/Sogn_og_Fjordane/Vik/Målset';
-            //place = 'United_States/California/San_Francisco';
-            //place = 'United_States/Minnesota/Minneapolis';
-            location.hash = 'https://www.yr.no/place/' + place + '/forecast_hour_by_hour.xml';
-
+            location.hash = 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=51.50853&lon=-0.12574&altitude=25';
         }
 
         // Then get the XML file through Highcharts' jsonp provider, see

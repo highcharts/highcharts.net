@@ -14,6 +14,10 @@
 @{ var chartOptions =
       new Highstock
       {
+          Chart = new Highsoft.Web.Mvc.Stocks.Chart
+          {
+              Type = ChartType.Columnrange
+          },
           RangeSelector = new RangeSelector
           {
               Selected = 2

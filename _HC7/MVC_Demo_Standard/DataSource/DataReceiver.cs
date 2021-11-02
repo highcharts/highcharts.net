@@ -23,6 +23,7 @@ namespace MVC_Demo.Models
         private static readonly string RangeFile = "Range.json";
         private static readonly string UsdEurFile = "usdeur.json";
         private static readonly string SunburstFile = "sunburst_data.json";
+        private static readonly string GroupingFile = "large-dataset.json";
 
         private static readonly CultureInfo _cultureInfo = new CultureInfo("en-US");
 
@@ -129,195 +130,27 @@ namespace MVC_Demo.Models
             return GetStockData(IntradayFile);
         }
 
+        public static IEnumerable<Highsoft.Web.Mvc.Stocks.LineSeriesData> GetGroupingData()
+        {
+            JArray json;
+
+            try
+            {
+                json = GetDataFromJson(GroupingFile);
+            }
+            catch (Exception)
+            {
+                return new List<Highsoft.Web.Mvc.Stocks.LineSeriesData>();
+            }
+
+            return json.Select(p => new Highsoft.Web.Mvc.Stocks.LineSeriesData { Y = (double?)p });
+        }
+
         #endregion
 
 
 
 
-        //public static List<CompanyData> GetJSON(string company)
-        //{
-        //    string url = "";
-
-        //    switch (company)
-        //    {
-        //        case "Apple":
-        //            url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-v.json&callback=?";
-        //            //url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=";
-        //            break;
-        //        case "Microsoft":
-        //            url = "https://www.highcharts.com/samples/data/jsonp.php?filename=msft-c.json&callback=";
-        //            break;
-        //        case "Google":
-        //            url = "https://www.highcharts.com/samples/data/jsonp.php?filename=goog-c.json&callback=";
-        //            break;
-        //        default:
-        //            url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=";
-        //            break;
-        //    }
-
-        //    string json;
-
-        //    using (WebClient wc = new WebClient())
-        //    {
-        //        json = wc.DownloadString(url);
-        //    }
-
-        //    json = json.Substring(json.IndexOf('[') + 1);
-        //    json = json.Substring(json.IndexOf('[') + 1);
-
-        //    List<CompanyData> companyDatas = new List<CompanyData>();
-
-        //    while (true)
-        //    {
-        //        if (json.IndexOf('[') == -1)
-        //            break;
-
-        //        string entity = json.Substring(0, json.IndexOf(']'));
-        //        string[] values = entity.Split(',');
-
-        //        companyDatas.Add(
-        //            new CompanyData
-        //            {
-        //                Date = Convert.ToDouble(values[0], CultureInfo.InvariantCulture),
-        //                Value = Convert.ToDouble(values[1], CultureInfo.InvariantCulture)
-        //            }
-        //        );
-
-        //        json = json.Substring(json.IndexOf('[') + 1);
-        //    }
-
-        //    return companyDatas;
-        //}
-
-        //public static List<RangeData> GetJSONRange()
-        //{
-        //    string url = "https://www.highcharts.com/samples/data/jsonp.php?filename=range.json&callback=?";
-        //    string json;
-
-        //    using (WebClient wc = new WebClient())
-        //    {
-        //        json = wc.DownloadString(url);
-        //    }
-
-        //    json = json.Substring(json.IndexOf('[') + 1);
-        //    json = json.Substring(json.IndexOf('[') + 1);
-
-        //    List<RangeData> companyDatas = new List<RangeData>();
-
-        //    while (true)
-        //    {
-        //        if (json.IndexOf('[') == -1)
-        //            break;
-
-        //        string entity = json.Substring(0, json.IndexOf(']'));
-        //        string[] values = entity.Split(',');
-
-        //        //double? tmp_X;
-        //        //double? tmp_Low;
-        //        //double? tmp_High;
-
-        //        //double.TryParse(values[0], out tmp_X);
-
-        //        companyDatas.Add(
-        //            new RangeData
-        //            {
-        //                X = values[0].Trim() == "null" ? (double?)null : Convert.ToDouble(values[0].Trim(),CultureInfo.InvariantCulture),
-        //                Low = values[1].Trim() == "null" ? (double?)null: Convert.ToDouble(values[1].Trim(), CultureInfo.InvariantCulture),
-        //                High = values[2].Trim() == "null" ? (double?)null: Convert.ToDouble(values[2].Trim(), CultureInfo.InvariantCulture)
-        //            }
-        //        );
-
-        //        json = json.Substring(json.IndexOf('[') + 1);
-        //    }
-
-        //    return companyDatas;
-        //}
-
-
-        //public static List<CandlestickVolume> GetJSONCandlestickVolumes()
-        //{
-        //    string json;
-
-        //    using (WebClient wc = new WebClient())
-        //    {
-        //        json = wc.DownloadString("https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-ohlcv.json");
-        //    }
-
-        //    json = json.Substring(json.IndexOf('[') + 1);
-        //    json = json.Substring(json.IndexOf('[') + 1);
-
-        //    List<CandlestickVolume> CandlestickVolumes = new List<CandlestickVolume>();
-
-        //    while (true)
-        //    {
-        //        if (json.IndexOf('[') == -1)
-        //            break;
-
-        //        string entity = json.Substring(0, json.IndexOf(']'));
-        //        string[] values = entity.Split(',');
-
-        //        CandlestickVolumes.Add(
-        //            new CandlestickVolume
-        //            {
-        //                Date = values[0].Trim() == "null" ? (double?)null : Convert.ToDouble(values[0].Trim(), CultureInfo.InvariantCulture),
-        //                Open = values[1].Trim() == "null" ? (double?)null : Convert.ToDouble(values[1].Trim(), CultureInfo.InvariantCulture),
-        //                High = values[2].Trim() == "null" ? (double?)null : Convert.ToDouble(values[2].Trim(), CultureInfo.InvariantCulture),
-        //                Low = values[3].Trim() == "null" ? (double?)null : Convert.ToDouble(values[3].Trim(), CultureInfo.InvariantCulture),
-        //                Close = values[4].Trim() == "null" ? (double?)null : Convert.ToDouble(values[4].Trim(), CultureInfo.InvariantCulture),
-        //                Volume = values[5].Trim() == "null" ? (double?)null : Convert.ToDouble(values[5].Trim(), CultureInfo.InvariantCulture),
-        //            }
-        //        );
-
-        //        json = json.Substring(json.IndexOf('[') + 1);
-        //    }
-
-        //    return CandlestickVolumes;
-        //}
-
-
-        //public static List<FlagData> GetJSONFlags()
-        //{
-        //    string json;
-
-        //    using (WebClient wc = new WebClient())
-        //    {
-        //        json = wc.DownloadString("https://cdn.rawgit.com/highcharts/highcharts/v6.0.5/samples/data/usdeur.json");
-        //    }
-
-        //    json = json.Substring(json.IndexOf('[') + 1);
-        //    json = json.Substring(json.IndexOf('[') + 1);
-
-        //    List<FlagData> flags = new List<FlagData>();
-        //    while (true)
-        //    {
-        //        if (json.IndexOf('[') == -1)
-        //            break;
-
-        //        string entity = json.Substring(0, json.IndexOf(']'));
-        //        string[] values = entity.Split(',');
-
-        //        string date = values[0];
-        //        string value = values[1];
-
-        //        try
-        //        {
-        //            flags.Add(
-        //                    new FlagData
-        //                    {
-        //                        Date = Convert.ToDouble(date, CultureInfo.InvariantCulture),
-        //                        Value = Convert.ToDouble(value, CultureInfo.InvariantCulture)
-        //                    }
-        //                );
-        //        }
-        //        catch (Exception)
-        //        {
-        //        }
-
-        //        json = json.Substring(json.IndexOf('[') + 1);
-        //    }
-
-        //    return flags;
-        //}
 
         public static List<AnnotationsData> GetDataForAnnotationsChart()
         {

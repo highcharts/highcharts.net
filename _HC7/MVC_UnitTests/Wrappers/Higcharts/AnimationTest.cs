@@ -46,14 +46,14 @@ namespace Highsoft.Web.Mvc.UnitTests
             Assert.IsTrue(json.Contains("\"animation\":{\"duration\":200}"));
         }
 
-        [TestMethod]
-        public void Test_IfAnimationDeferWorks_Correct()
-        {
-            _chart.Chart.Animation = new Animation { Defer = 200 };
-            var json = _renderer.RenderHtml();
+        //[TestMethod]
+        //public void Test_IfAnimationDeferWorks_Correct()
+        //{
+        //    _chart.Chart.Animation = new Animation { Defer = 200 };
+        //    var json = _renderer.RenderHtml();
 
-            Assert.IsTrue(json.Contains("\"animation\":{\"defer\":200}"));
-        }
+        //    Assert.IsTrue(json.Contains("\"animation\":{\"defer\":200}"));
+        //}
 
         [TestMethod]
         public void Test_IfAnimationEasingWorks_Correct()

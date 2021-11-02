@@ -15,6 +15,10 @@
 @{ var chartOptions =
       new Highstock
       {
+          Chart = new Highsoft.Web.Mvc.Stocks.Chart
+          {
+              Type = ChartType.Ohlc
+          },
           RangeSelector = new RangeSelector
           {
               Selected = 1

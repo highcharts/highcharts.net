@@ -33,7 +33,7 @@ namespace MVC_Demo.Areas.Highstock.Controllers.Shared
 
         private List<PointData> SplineGetList()
         {
-            string url = "https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=";
+            string url = "https://demo-live-data.highcharts.com/aapl-c.json";
             string json;
 
             using (WebClient wc = new WebClient())

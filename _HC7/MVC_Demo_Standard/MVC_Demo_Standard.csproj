@@ -302,6 +302,8 @@
     <Compile Include="Areas\Highstock\Controllers\Shared\SplineController.cs" />
     <Compile Include="Areas\Highstock\Controllers\Shared\StepLineController.cs" />
     <Compile Include="Areas\Highstock\HighstockAreaRegistration.cs" />
+    <Content Include="App_Data\large-dataset.json" />
+    <Content Include="App_Data\aapl-historical.json" />
     <None Include="App_Data\sunburst_data.json" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\HeatMapController.cs.txt" />
     <Content Include="Content\Areas\Highmaps\Controllers\Shared\MapLineController.cs.txt" />
@@ -339,6 +341,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GroupingData.cs" />
     <Compile Include="Models\PointData.cs" />
     <Compile Include="Models\AnnotationsData.cs" />
     <Compile Include="DataSource\DataReceiver.cs" />

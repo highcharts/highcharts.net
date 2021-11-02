@@ -6,21 +6,22 @@
 @using Highsoft.Web.Mvc.Charts.Rendering
 
 @{ var chartOptions = new Highcharts
-    {
-        Chart = new Highsoft.Web.Mvc.Charts.Chart { ZoomType = ChartZoomType.X },
-        Boost = new Boost { UseGPUTranslations = true },
-        Title = new Title { Text = "Highcharts drawing 500000 points" },
-        Subtitle = new Subtitle { Text = "Using the Boost module" },
-        Tooltip = new Tooltip { ValueDecimals = 2 },
-        Series = new List<Series>
+                {
+                    Chart = new Highsoft.Web.Mvc.Charts.Chart { ZoomType = ChartZoomType.X },
+                    Boost = new Boost { UseGPUTranslations = true },
+                    Title = new Title { Text = "Highcharts drawing 500000 points" },
+                    Subtitle = new Subtitle { Text = "Using the Boost module" },
+                    Tooltip = new Tooltip { ValueDecimals = 2 },
+                    Series = new List<Series>
 {
         new LineSeries
         {
             Data = ViewData["data"] as List<LineSeriesData>,
             LineWidth = 0.5,
-            TurboThreshold = 500000
+            Name = "Hourly data points",
+            TurboThreshold = 600000
+            }
         }
-    }
     };
 
     chartOptions.ID = "chart";

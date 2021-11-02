@@ -1,5 +1,6 @@
 ﻿<script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
 @using Highsoft.Web.Mvc.Charts.Rendering
@@ -7,7 +8,7 @@
 <script type="text/javascript">
 
     function loadAjaxData() {
-        $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=analytics.csv&callback=?', function (csv) {
+        $.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/analytics.csv', function (csv) {
             var visitorData = new Array();
             var uniquesData = new Array();
             var index = csv.indexOf("Sessions") + 9;
@@ -59,26 +60,31 @@
 </script>
 
 @{ var chartOptions =
-      new Highcharts
-      {
-          Chart = new Highsoft.Web.Mvc.Charts.Chart
-          {
-              Events = new ChartEvents
-              {
-                  Load = "loadAjaxData"
-              },
+       new Highcharts
+       {
+           Chart = new Highsoft.Web.Mvc.Charts.Chart
+           {
+              //Events = new ChartEvents
+              //{
+              //    Load = "loadAjaxData"
+              //},
               Type = ChartType.Line
-          },
-          Title = new Title
-          {
-              Text = "Daily visits at www.highcharts.com"
-          },
-          Subtitle = new Subtitle
-          {
-              Text = "Source: Google Analytics"
-          },
-          XAxis = new List<XAxis>
-                 {
+           },
+           Data = new Data
+           {
+               CsvURL = "https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/analytics.csv",
+               BeforeParse = "function beforeParse(csv) { return csv.replace(/\n\n/g, '\n' ); }"
+           },
+           Title = new Title
+           {
+               Text = "Daily visits at www.highcharts.com"
+           },
+           Subtitle = new Subtitle
+           {
+               Text = "Source: Google Analytics"
+           },
+           XAxis = new List<XAxis>
+                  {
                    new XAxis
                    {
                        Type = "datetime",
@@ -96,9 +102,9 @@
                            Width = 1
                        }
                    }
-                                 },
-          YAxis = new List<YAxis>
-                 {
+                                  },
+           YAxis = new List<YAxis>
+                  {
                    new YAxis
                    {
 
@@ -126,36 +132,36 @@
                        },
                        ShowFirstLabel = false
                    }
-                                 },
-          Legend = new Legend
-          {
-              Align = LegendAlign.Left,
-              VerticalAlign = LegendVerticalAlign.Top,
-              Y = 20,
-              Floating = true,
-              BorderWidth = 0
-          },
-          Tooltip = new Tooltip
-          {
-              Shared = true
-          },
-          PlotOptions = new PlotOptions
-          {
-              Series = new PlotOptionsSeries
-              {
-                  Cursor = PlotOptionsSeriesCursor.Pointer,
-                  Events = new PlotOptionsSeriesEvents
+                                  },
+           Legend = new Legend
+           {
+               Align = LegendAlign.Left,
+               VerticalAlign = LegendVerticalAlign.Top,
+               Y = 20,
+               Floating = true,
+               BorderWidth = 0
+           },
+           Tooltip = new Tooltip
+           {
+               Shared = true
+           },
+           PlotOptions = new PlotOptions
+           {
+               Series = new PlotOptionsSeries
+               {
+                   Cursor = PlotOptionsSeriesCursor.Pointer,
+                   Events = new PlotOptionsSeriesEvents
+                   {
+                       Click = "handleClick"
+                   },
+                   Marker = new PlotOptionsSeriesMarker
+                   {
+                       LineWidth = 1
+                   }
+               }
+           },
+           Series = new List<Series>
                   {
-                      Click = "handleClick"
-                  },
-                  Marker = new PlotOptionsSeriesMarker
-                  {
-                      LineWidth = 1
-                  }
-              }
-          },
-          Series = new List<Series>
-                 {
                    new LineSeries
                    {
                        Color = "black",
@@ -170,8 +176,8 @@
                    {
                        Name = "New Visitors"
                    }
-                                 }
-      };
+                                  }
+       };
 
     chartOptions.ID = "chart";
     var renderer = new HighchartsRenderer(chartOptions);
