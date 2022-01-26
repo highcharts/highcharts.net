@@ -23,6 +23,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Id = Id_DefaultValue = "";
 			Level = Level_DefaultValue = null;
 			Name = Name_DefaultValue = "";
+			OffsetHorizontal = OffsetHorizontal_DefaultValue = "";
+			OffsetHorizontalNumber = OffsetHorizontalNumber_DefaultValue = null;
+			OffsetVertical = OffsetVertical_DefaultValue = "";
+			OffsetVerticalNumber = OffsetVerticalNumber_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -77,6 +81,34 @@ namespace Highsoft.Web.Mvc.Charts
 		private string Name_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// </summary>
+		public string OffsetHorizontal { get; set; }
+		private string OffsetHorizontal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// </summary>
+		public double? OffsetHorizontalNumber { get; set; }
+		private double? OffsetHorizontalNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// </summary>
+		public string OffsetVertical { get; set; }
+		private string OffsetVertical_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// </summary>
+		public double? OffsetVerticalNumber { get; set; }
+		private double? OffsetVerticalNumber_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(ref Highcharts highcharts)
@@ -91,6 +123,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Level != Level_DefaultValue) h.Add("level",Level);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (OffsetHorizontal != OffsetHorizontal_DefaultValue) h.Add("offsetHorizontal",OffsetHorizontal);
+			if (OffsetHorizontalNumber != OffsetHorizontalNumber_DefaultValue) h.Add("offsetHorizontal",OffsetHorizontalNumber);
+			if (OffsetVertical != OffsetVertical_DefaultValue) h.Add("offsetVertical",OffsetVertical);
+			if (OffsetVerticalNumber != OffsetVerticalNumber_DefaultValue) h.Add("offsetVertical",OffsetVerticalNumber);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

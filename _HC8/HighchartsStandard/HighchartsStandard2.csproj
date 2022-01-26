@@ -3,13 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>9.2.2.2</AssemblyVersion>
-    <FileVersion>9.2.2.2</FileVersion>
+    <AssemblyVersion>9.3.2.1</AssemblyVersion>
+    <FileVersion>9.3.2.1</FileVersion>
     <Company>Highsoft</Company>
     <Product>Highcharts .NET</Product>
-    <Version>9.2.2.2</Version>
+    <Version>9.3.2.1</Version>
     <Authors>Highsoft</Authors>
-    <Copyright>Copyright ©  2021</Copyright>
+    <Copyright>Copyright ©  2022</Copyright>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>highcharts.snk</AssemblyOriginatorKeyFile>

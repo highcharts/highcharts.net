@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Enabled = Enabled_DefaultValue = null;
 			FillColor = FillColor_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "";
+			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
 			States = States_DefaultValue = new BubbleSeriesDataMarkerStates();
 			Symbol = Symbol_DefaultValue = "";

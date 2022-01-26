@@ -25,7 +25,9 @@ namespace Highsoft.Web.Mvc.Charts
 			CurrentPriceIndicator = CurrentPriceIndicator_DefaultValue = new Object();
 			Elliott3 = Elliott3_DefaultValue = new Object();
 			Elliott5 = Elliott5_DefaultValue = new Object();
+			EllipseAnnotation = EllipseAnnotation_DefaultValue = new NavigationBindingsEllipseAnnotation();
 			Fibonacci = Fibonacci_DefaultValue = new Object();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = null;
 			FlagCirclepin = FlagCirclepin_DefaultValue = new Object();
 			FlagDiamondpin = FlagDiamondpin_DefaultValue = new Object();
 			FlagSimplepin = FlagSimplepin_DefaultValue = new Object();
@@ -46,13 +48,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Segment = Segment_DefaultValue = new Object();
 			SeriesTypeCandlestick = SeriesTypeCandlestick_DefaultValue = new Object();
 			SeriesTypeHeikinAshi = SeriesTypeHeikinAshi_DefaultValue = null;
+			SeriesTypeHLC = SeriesTypeHLC_DefaultValue = new NavigationBindingsSeriesTypeHLC();
 			SeriesTypeHollowCandlestick = SeriesTypeHollowCandlestick_DefaultValue = null;
 			SeriesTypeLine = SeriesTypeLine_DefaultValue = new Object();
 			SeriesTypeOhlc = SeriesTypeOhlc_DefaultValue = new Object();
+			TimeCycles = TimeCycles_DefaultValue = new NavigationBindingsTimeCycles();
 			ToggleAnnotations = ToggleAnnotations_DefaultValue = new Object();
 			VerticalArrow = VerticalArrow_DefaultValue = new Object();
 			VerticalCounter = VerticalCounter_DefaultValue = new Object();
-			VerticalLabel = VerticalLabel_DefaultValue = new Object();
 			VerticalLine = VerticalLine_DefaultValue = new Object();
 			ZoomX = ZoomX_DefaultValue = new Object();
 			ZoomXY = ZoomXY_DefaultValue = new Object();
@@ -126,10 +129,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public NavigationBindingsEllipseAnnotation EllipseAnnotation { get; set; }
+		private NavigationBindingsEllipseAnnotation EllipseAnnotation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A fibonacci annotation bindings. Includes `start` and two events in`steps` array (updates second point, then height).
 		/// </summary>
 		public Object Fibonacci { get; set; }
 		private Object Fibonacci_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Fibonacci Time Zones annotation bindings. Includes `start` and oneevent in `steps` array.
+		/// </summary>
+		public Object FibonacciTimeZones { get; set; }
+		private Object FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -273,6 +290,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Change main series to `'hlc'` type.
+		/// </summary>
+		public NavigationBindingsSeriesTypeHLC SeriesTypeHLC { get; set; }
+		private NavigationBindingsSeriesTypeHLC SeriesTypeHLC_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Changes main series to `'hollowcandlestick'` type.
 		/// </summary>
 		public Object SeriesTypeHollowCandlestick { get; set; }
@@ -294,6 +318,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow and a label withvalue.
+		/// </summary>
+		public NavigationBindingsTimeCycles TimeCycles { get; set; }
+		private NavigationBindingsTimeCycles TimeCycles_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Hides/shows all annotations on a chart.
 		/// </summary>
 		public Object ToggleAnnotations { get; set; }
@@ -312,13 +343,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Object VerticalCounter { get; set; }
 		private Object VerticalCounter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow and a label withvalue.
-		/// </summary>
-		public Object VerticalLabel { get; set; }
-		private Object VerticalLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -365,7 +389,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (CurrentPriceIndicator != CurrentPriceIndicator_DefaultValue) h.Add("currentPriceIndicator",CurrentPriceIndicator);
 			if (Elliott3 != Elliott3_DefaultValue) h.Add("elliott3",Elliott3);
 			if (Elliott5 != Elliott5_DefaultValue) h.Add("elliott5",Elliott5);
+			if (EllipseAnnotation.IsDirty(ref highcharts)) h.Add("ellipseAnnotation",EllipseAnnotation.ToHashtable(ref highcharts));
 			if (Fibonacci != Fibonacci_DefaultValue) h.Add("fibonacci",Fibonacci);
+			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (FlagCirclepin != FlagCirclepin_DefaultValue) h.Add("flagCirclepin",FlagCirclepin);
 			if (FlagDiamondpin != FlagDiamondpin_DefaultValue) h.Add("flagDiamondpin",FlagDiamondpin);
 			if (FlagSimplepin != FlagSimplepin_DefaultValue) h.Add("flagSimplepin",FlagSimplepin);
@@ -386,13 +412,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Segment != Segment_DefaultValue) h.Add("segment",Segment);
 			if (SeriesTypeCandlestick != SeriesTypeCandlestick_DefaultValue) h.Add("seriesTypeCandlestick",SeriesTypeCandlestick);
 			if (SeriesTypeHeikinAshi != SeriesTypeHeikinAshi_DefaultValue) h.Add("seriesTypeHeikinAshi",SeriesTypeHeikinAshi);
+			if (SeriesTypeHLC.IsDirty(ref highcharts)) h.Add("seriesTypeHLC",SeriesTypeHLC.ToHashtable(ref highcharts));
 			if (SeriesTypeHollowCandlestick != SeriesTypeHollowCandlestick_DefaultValue) h.Add("seriesTypeHollowCandlestick",SeriesTypeHollowCandlestick);
 			if (SeriesTypeLine != SeriesTypeLine_DefaultValue) h.Add("seriesTypeLine",SeriesTypeLine);
 			if (SeriesTypeOhlc != SeriesTypeOhlc_DefaultValue) h.Add("seriesTypeOhlc",SeriesTypeOhlc);
+			if (TimeCycles.IsDirty(ref highcharts)) h.Add("timeCycles",TimeCycles.ToHashtable(ref highcharts));
 			if (ToggleAnnotations != ToggleAnnotations_DefaultValue) h.Add("toggleAnnotations",ToggleAnnotations);
 			if (VerticalArrow != VerticalArrow_DefaultValue) h.Add("verticalArrow",VerticalArrow);
 			if (VerticalCounter != VerticalCounter_DefaultValue) h.Add("verticalCounter",VerticalCounter);
-			if (VerticalLabel != VerticalLabel_DefaultValue) h.Add("verticalLabel",VerticalLabel);
 			if (VerticalLine != VerticalLine_DefaultValue) h.Add("verticalLine",VerticalLine);
 			if (ZoomX != ZoomX_DefaultValue) h.Add("zoomX",ZoomX);
 			if (ZoomXY != ZoomXY_DefaultValue) h.Add("zoomXY",ZoomXY);

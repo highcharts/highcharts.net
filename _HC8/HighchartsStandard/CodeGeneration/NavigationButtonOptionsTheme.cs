@@ -17,7 +17,6 @@ namespace Highsoft.Web.Mvc.Charts
 		public NavigationButtonOptionsTheme()
 		{
 			Fill = Fill_DefaultValue = "#ffffff";
-			Padding = Padding_DefaultValue = "5";
 			Stroke = Stroke_DefaultValue = "none";
 			
 			CustomFields = new Hashtable();
@@ -29,13 +28,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Fill { get; set; }
 		private string Fill_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Padding for the button.
-		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -53,7 +45,6 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

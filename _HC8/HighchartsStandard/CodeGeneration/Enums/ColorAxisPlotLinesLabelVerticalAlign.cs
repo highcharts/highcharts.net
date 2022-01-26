@@ -5,10 +5,11 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum ExportingButtonsContextButtonAlign
+    public enum ColorAxisPlotLinesLabelVerticalAlign
     {
-        Left, 
-		Center, 
-		Right
+        Null, 
+		Top, 
+		Middle, 
+		Bottom
     }
 }

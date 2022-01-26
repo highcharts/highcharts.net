@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
 			ControlPointOptions = ControlPointOptions_DefaultValue = new NavigationAnnotationsOptionsControlPointOptions();
+			Crop = Crop_DefaultValue = true;
 			Draggable = Draggable_DefaultValue = "xy";
 			Events = Events_DefaultValue = new NavigationAnnotationsOptionsEvents();
 			Id = Id_DefaultValue = "";
@@ -53,6 +54,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public NavigationAnnotationsOptionsControlPointOptions ControlPointOptions { get; set; }
 		private NavigationAnnotationsOptionsControlPointOptions ControlPointOptions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to hide the part of the annotationthat is outside the plot area.
+		/// </summary>
+		public bool? Crop { get; set; }
+		private bool? Crop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -135,6 +143,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation.IsDirty(ref highcharts)) h.Add("animation",Animation.ToJSON(ref highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (ControlPointOptions.IsDirty(ref highcharts)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(ref highcharts));
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
 			if (Events.IsDirty(ref highcharts)) h.Add("events",Events.ToHashtable(ref highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);

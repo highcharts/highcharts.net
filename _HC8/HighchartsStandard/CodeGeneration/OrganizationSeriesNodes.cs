@@ -28,6 +28,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Name = Name_DefaultValue = "";
 			Offset = Offset_DefaultValue = "0";
 			OffsetNumber = OffsetNumber_DefaultValue = null;
+			OffsetHorizontal = OffsetHorizontal_DefaultValue = "";
+			OffsetHorizontalNumber = OffsetHorizontalNumber_DefaultValue = null;
+			OffsetVertical = OffsetVertical_DefaultValue = "";
+			OffsetVerticalNumber = OffsetVerticalNumber_DefaultValue = null;
 			Title = Title_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
@@ -105,17 +109,45 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
+		/// This option is deprecated, use[offsetHorizontal](#series.sankey.nodes.offsetHorizontal) and[offsetVertical](#series.sankey.nodes.offsetVertical) instead.In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
 		/// </summary>
 		public string Offset { get; set; }
 		private string Offset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
+		/// This option is deprecated, use[offsetHorizontal](#series.sankey.nodes.offsetHorizontal) and[offsetVertical](#series.sankey.nodes.offsetVertical) instead.In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
 		/// </summary>
 		public double? OffsetNumber { get; set; }
 		private double? OffsetNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// </summary>
+		public string OffsetHorizontal { get; set; }
+		private string OffsetHorizontal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// </summary>
+		public double? OffsetHorizontalNumber { get; set; }
+		private double? OffsetHorizontalNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// </summary>
+		public string OffsetVertical { get; set; }
+		private string OffsetVertical_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// </summary>
+		public double? OffsetVerticalNumber { get; set; }
+		private double? OffsetVerticalNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -144,6 +176,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (OffsetNumber != OffsetNumber_DefaultValue) h.Add("offset",OffsetNumber);
+			if (OffsetHorizontal != OffsetHorizontal_DefaultValue) h.Add("offsetHorizontal",OffsetHorizontal);
+			if (OffsetHorizontalNumber != OffsetHorizontalNumber_DefaultValue) h.Add("offsetHorizontal",OffsetHorizontalNumber);
+			if (OffsetVertical != OffsetVertical_DefaultValue) h.Add("offsetVertical",OffsetVertical);
+			if (OffsetVerticalNumber != OffsetVerticalNumber_DefaultValue) h.Add("offsetVertical",OffsetVerticalNumber);
 			if (Title != Title_DefaultValue) h.Add("title",Title);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

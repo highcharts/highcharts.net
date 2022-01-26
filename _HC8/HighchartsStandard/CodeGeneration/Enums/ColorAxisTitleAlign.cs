@@ -5,10 +5,11 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum ExportingButtonsContextButtonVerticalAlign
+    public enum ColorAxisTitleAlign
     {
-        Top, 
-		Middle, 
-		Bottom
+        Middle, 
+		Left, 
+		Center, 
+		Right
     }
 }

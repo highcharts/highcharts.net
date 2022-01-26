@@ -31,7 +31,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Marker = Marker_DefaultValue = new SunburstSeriesDataMarker();
 			Name = Name_DefaultValue = "";
 			Parent = Parent_DefaultValue = "";
-			PointPadding = PointPadding_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Sliced = Sliced_DefaultValue = false;
 			Value = Value_DefaultValue = null;
@@ -147,13 +146,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Point padding for a single point.
-		/// </summary>
-		public double? PointPadding { get; set; }
-		private double? PointPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -203,7 +195,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Marker.IsDirty(ref highcharts)) h.Add("marker",Marker.ToHashtable(ref highcharts));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Sliced != Sliced_DefaultValue) h.Add("sliced",Sliced);
 			if (Value != Value_DefaultValue) h.Add("value",Value);

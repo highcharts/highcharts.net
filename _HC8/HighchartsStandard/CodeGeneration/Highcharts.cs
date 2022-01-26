@@ -171,7 +171,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A collection of options for buttons and menus appearing in the exportingmodule.
+		/// A collection of options for buttons and menus appearing in the exportingmodule or in Stock Tools.
 		/// </summary>
 		public Navigation Navigation { get; set; }
 		private Navigation Navigation_DefaultValue { get; set; }

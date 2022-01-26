@@ -19,8 +19,8 @@ namespace Highsoft.Web.Mvc.Charts
 			AlignTicks = AlignTicks_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
-			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "";
+			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
+			BorderColor = BorderColor_DefaultValue = "#335cad";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
 			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "";
 			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "";
-			PlotBorderColor = PlotBorderColor_DefaultValue = "";
+			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
 			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
 			Polar = Polar_DefaultValue = false;

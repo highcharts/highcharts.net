@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = null;
 			ExposeAsGroupOnly = ExposeAsGroupOnly_DefaultValue = null;
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new PyramidSeriesAccessibilityKeyboardNavigation();
-			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
+			Point = Point_DefaultValue = new PyramidSeriesAccessibilityPoint();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -55,10 +55,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Formatter function to use instead of the default for pointdescriptions. Same as `accessibility.point.descriptionFormatter`, but fora single series.
+		/// Point accessibility options for a series.
 		/// </summary>
-		public string PointDescriptionFormatter { get; set; }
-		private string PointDescriptionFormatter_DefaultValue { get; set; }
+		public PyramidSeriesAccessibilityPoint Point { get; set; }
+		private PyramidSeriesAccessibilityPoint Point_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (ExposeAsGroupOnly != ExposeAsGroupOnly_DefaultValue) h.Add("exposeAsGroupOnly",ExposeAsGroupOnly);
 			if (KeyboardNavigation.IsDirty(ref highcharts)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(ref highcharts));
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum NavigationButtonOptionsVerticalAlign
+    public enum ColorAxisPlotBandsLabelVerticalAlign
     {
         Top, 
 		Middle, 
