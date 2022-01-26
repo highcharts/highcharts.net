@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>9.2.2.1</AssemblyVersion>
-    <FileVersion>9.2.2.1</FileVersion>
+    <AssemblyVersion>9.2.2.2</AssemblyVersion>
+    <FileVersion>9.2.2.2</FileVersion>
     <Company>Highsoft</Company>
     <Product>Highcharts .NET</Product>
-    <Version>9.2.2.1</Version>
+    <Version>9.2.2.2</Version>
     <Authors>Highsoft</Authors>
     <Copyright>Copyright ©  2021</Copyright>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
@@ -18,6 +18,9 @@
     <RootNamespace>Highcharts</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+      #9.2.2.2
+      Add solution for Blazor
+      
       #9.1.2.2
       MenuItem fix.
 
