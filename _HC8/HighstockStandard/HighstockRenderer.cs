@@ -83,6 +83,24 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             return GetJsonResponse();
         }
 
+        public string GetJsonOptionsForBlazor()
+        {
+            Hashtable options = _chart.ToHashtable(ref _chart);
+
+            List<Hashtable> series = new List<Hashtable>();
+            List<Hashtable> drilldownSeries = new List<Hashtable>();
+
+            if (_chart.Series != null)
+                series = SeriesToHashtables(_chart.Series);
+
+            if (series.Count > 0)
+            {
+                options["series"] = series;
+            }
+
+            return JsonConvert.SerializeObject(options);
+        }
+
         private string GetStartupJavascriptFunction(string functionName)
         {
             StringBuilder sb = new StringBuilder();

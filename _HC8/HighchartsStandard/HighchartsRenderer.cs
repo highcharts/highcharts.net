@@ -125,6 +125,31 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             return GetJsonResponse();
         }
 
+        public string GetJsonOptionsForBlazor()
+        {
+            Hashtable options = _chart.ToHashtable(ref _chart);
+
+            List<Hashtable> series = new List<Hashtable>();
+            List<Hashtable> drilldownSeries = new List<Hashtable>();
+
+            if (_chart.Series != null)
+                series = SeriesToHashtables(_chart.Series);
+            if (_chart.Drilldown.Series != null)
+                drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
+
+            if (series.Count > 0)
+            {
+                options["series"] = series;
+            }
+            if (drilldownSeries.Count > 0)
+            {
+                Hashtable drilldown = options["drilldown"] as Hashtable;
+                drilldown["series"] = drilldownSeries;
+            }
+
+            return JsonConvert.SerializeObject(options);
+        }
+
         private string GetStartupOptions()
         {            
             StringBuilder sb = new StringBuilder();            
@@ -167,7 +192,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
                 if (json.Contains(matchedString))
                 {
-                    string replacementstring = String.Format("\"{0}\":{1}", realKey, value.Remove(value.Length-1,1).Remove(0,1));
+                    string replacementstring = String.Format("\"{0}\":{1}", realKey, value.Remove(value.Length - 1, 1).Remove(0, 1));
 
                     if (matchedString.Contains("animation") || matchedString.Contains("pointPlacement"))
                         replacementstring = replacementstring.Replace("\\", "");
@@ -177,7 +202,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 }
             }
 
-            foreach(var key in keysToRemove)
+            foreach (var key in keysToRemove)
                 _chart.functions.Remove(key);
 
             keysToRemove.Clear();

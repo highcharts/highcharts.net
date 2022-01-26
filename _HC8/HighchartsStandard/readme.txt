@@ -1,5 +1,23 @@
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
 
+#9.2.2.2
+Add solution for Blazor
+      
+#9.1.2.2
+MenuItem fix.
+
+#9.1.2.1
+Add support for multithreading
+
+# 8.2.2.3
+Fix Animation and PointPlacement
+
+#Version 8.2.2.2
+Fix Opacity, YAxisLabels, MenuItem, functions
+
+#Version 8.1.2.4
+Fix States objects
+
 #Version 8.0.0.3
 Serial key is no required.
 
