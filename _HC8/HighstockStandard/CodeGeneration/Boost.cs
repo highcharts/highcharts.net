@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			AllowForce = AllowForce_DefaultValue = true;
 			Debug = Debug_DefaultValue = new BoostDebug();
 			Enabled = Enabled_DefaultValue = true;
-			SeriesThreshold = SeriesThreshold_DefaultValue = null;
+			SeriesThreshold = SeriesThreshold_DefaultValue = 50;
 			UseGPUTranslations = UseGPUTranslations_DefaultValue = false;
 			UsePreallocated = UsePreallocated_DefaultValue = false;
 			

@@ -46,6 +46,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Errorbar = Errorbar_DefaultValue = new PlotOptionsErrorbar();
 			Flags = Flags_DefaultValue = new PlotOptionsFlags();
 			Heikinashi = Heikinashi_DefaultValue = new PlotOptionsHeikinashi();
+			Hlc = Hlc_DefaultValue = new PlotOptionsHlc();
 			Hollowcandlestick = Hollowcandlestick_DefaultValue = new PlotOptionsHollowcandlestick();
 			Ikh = Ikh_DefaultValue = new PlotOptionsIkh();
 			Keltnerchannels = Keltnerchannels_DefaultValue = new PlotOptionsKeltnerchannels();
@@ -115,7 +116,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Absolute Price Oscillator. This series requires the `linkedTo` option tobe set and should be loaded after the `stock/indicators/indicators.js`and `stock/indicators/ema.js`.In TypeScript the [type](series.apo.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `apo` series are defined in   [plotOptions.apo](plotOptions.apo).3. Options for one single series are given in   [the series instance array](series.apo).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        apo: {            // shared options for all apo series        }    },    series: [{        // specific options for this series instance        type: 'apo'    }]});```            
+		/// Absolute Price Oscillator. This series requires the `linkedTo` option tobe set and should be loaded after the `stock/indicators/indicators.js`.In TypeScript the [type](series.apo.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `apo` series are defined in   [plotOptions.apo](plotOptions.apo).3. Options for one single series are given in   [the series instance array](series.apo).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        apo: {            // shared options for all apo series        }    },    series: [{        // specific options for this series instance        type: 'apo'    }]});```            
 		/// </summary>
 		public PlotOptionsApo Apo { get; set; }
 		private PlotOptionsApo Apo_DefaultValue { get; set; }
@@ -185,7 +186,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A candlestick chart is a style of financial chart used to describe pricemovements over time.In TypeScript the [type](series.candlestick.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `candlestick` series are defined in   [plotOptions.candlestick](plotOptions.candlestick).3. Options for one single series are given in   [the series instance array](series.candlestick).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        candlestick: {            // shared options for all candlestick series        }    },    series: [{        // specific options for this series instance        type: 'candlestick'    }]});```            
+		/// A candlestick chart is a style of financial chart used to describeprice movements over time.In TypeScript the [type](series.candlestick.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `candlestick` series are defined in   [plotOptions.candlestick](plotOptions.candlestick).3. Options for one single series are given in   [the series instance array](series.candlestick).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        candlestick: {            // shared options for all candlestick series        }    },    series: [{        // specific options for this series instance        type: 'candlestick'    }]});```            
 		/// </summary>
 		public PlotOptionsCandlestick Candlestick { get; set; }
 		private PlotOptionsCandlestick Candlestick_DefaultValue { get; set; }
@@ -199,7 +200,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Chaikin Oscillator. This series requires the `linkedTo` option tobe set and should be loaded after the `stock/indicators/indicators.js`and `stock/indicators/ema.js`.In TypeScript the [type](series.chaikin.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `chaikin` series are defined in   [plotOptions.chaikin](plotOptions.chaikin).3. Options for one single series are given in   [the series instance array](series.chaikin).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        chaikin: {            // shared options for all chaikin series        }    },    series: [{        // specific options for this series instance        type: 'chaikin'    }]});```            
+		/// Chaikin Oscillator. This series requires the `linkedTo` option tobe set and should be loaded after the `stock/indicators/indicators.js`.In TypeScript the [type](series.chaikin.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `chaikin` series are defined in   [plotOptions.chaikin](plotOptions.chaikin).3. Options for one single series are given in   [the series instance array](series.chaikin).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        chaikin: {            // shared options for all chaikin series        }    },    series: [{        // specific options for this series instance        type: 'chaikin'    }]});```            
 		/// </summary>
 		public PlotOptionsChaikin Chaikin { get; set; }
 		private PlotOptionsChaikin Chaikin_DefaultValue { get; set; }
@@ -241,7 +242,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Double exponential moving average (DEMA) indicator. This series requires`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js` and `stock/indicators/ema.js`.In TypeScript the [type](series.dema.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `dema` series are defined in   [plotOptions.dema](plotOptions.dema).3. Options for one single series are given in   [the series instance array](series.dema).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        dema: {            // shared options for all dema series        }    },    series: [{        // specific options for this series instance        type: 'dema'    }]});```            
+		/// Double exponential moving average (DEMA) indicator. This series requires`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js`.In TypeScript the [type](series.dema.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `dema` series are defined in   [plotOptions.dema](plotOptions.dema).3. Options for one single series are given in   [the series instance array](series.dema).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        dema: {            // shared options for all dema series        }    },    series: [{        // specific options for this series instance        type: 'dema'    }]});```            
 		/// </summary>
 		public PlotOptionsDema Dema { get; set; }
 		private PlotOptionsDema Dema_DefaultValue { get; set; }
@@ -301,6 +302,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsHeikinashi Heikinashi { get; set; }
 		private PlotOptionsHeikinashi Heikinashi_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An HLC chart is a style of financial chart used to describe pricemovements over time. It displays high, low and close values perdata point.In TypeScript the [type](series.hlc.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `hlc` series are defined in   [plotOptions.hlc](plotOptions.hlc).3. Options for one single series are given in   [the series instance array](series.hlc).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        hlc: {            // shared options for all hlc series        }    },    series: [{        // specific options for this series instance        type: 'hlc'    }]});```            
+		/// </summary>
+		public PlotOptionsHlc Hlc { get; set; }
+		private PlotOptionsHlc Hlc_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -374,7 +382,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Moving Average Convergence Divergence (MACD). This series requires`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js` and `stock/indicators/ema.js`.In TypeScript the [type](series.macd.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `macd` series are defined in   [plotOptions.macd](plotOptions.macd).3. Options for one single series are given in   [the series instance array](series.macd).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        macd: {            // shared options for all macd series        }    },    series: [{        // specific options for this series instance        type: 'macd'    }]});```            
+		/// Moving Average Convergence Divergence (MACD). This series requires`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js`.In TypeScript the [type](series.macd.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `macd` series are defined in   [plotOptions.macd](plotOptions.macd).3. Options for one single series are given in   [the series instance array](series.macd).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        macd: {            // shared options for all macd series        }    },    series: [{        // specific options for this series instance        type: 'macd'    }]});```            
 		/// </summary>
 		public PlotOptionsMacd Macd { get; set; }
 		private PlotOptionsMacd Macd_DefaultValue { get; set; }
@@ -437,7 +445,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Percentage Price Oscillator. This series requires the`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js` and `stock/indicators/ema.js`.In TypeScript the [type](series.ppo.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `ppo` series are defined in   [plotOptions.ppo](plotOptions.ppo).3. Options for one single series are given in   [the series instance array](series.ppo).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        ppo: {            // shared options for all ppo series        }    },    series: [{        // specific options for this series instance        type: 'ppo'    }]});```            
+		/// Percentage Price Oscillator. This series requires the`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js`.In TypeScript the [type](series.ppo.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `ppo` series are defined in   [plotOptions.ppo](plotOptions.ppo).3. Options for one single series are given in   [the series instance array](series.ppo).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        ppo: {            // shared options for all ppo series        }    },    series: [{        // specific options for this series instance        type: 'ppo'    }]});```            
 		/// </summary>
 		public PlotOptionsPpo Ppo { get; set; }
 		private PlotOptionsPpo Ppo_DefaultValue { get; set; }
@@ -528,7 +536,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Triple exponential moving average (TEMA) indicator. This series requires`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js` and `stock/indicators/ema.js`.In TypeScript the [type](series.tema.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `tema` series are defined in   [plotOptions.tema](plotOptions.tema).3. Options for one single series are given in   [the series instance array](series.tema).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        tema: {            // shared options for all tema series        }    },    series: [{        // specific options for this series instance        type: 'tema'    }]});```            
+		/// Triple exponential moving average (TEMA) indicator. This series requires`linkedTo` option to be set and should be loaded after the`stock/indicators/indicators.js`.In TypeScript the [type](series.tema.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `tema` series are defined in   [plotOptions.tema](plotOptions.tema).3. Options for one single series are given in   [the series instance array](series.tema).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        tema: {            // shared options for all tema series        }    },    series: [{        // specific options for this series instance        type: 'tema'    }]});```            
 		/// </summary>
 		public PlotOptionsTema Tema { get; set; }
 		private PlotOptionsTema Tema_DefaultValue { get; set; }
@@ -542,7 +550,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Triple exponential average (TRIX) oscillator. This series requires`linkedTo` option to be set.Requires https://code.highcharts.com/stock/indicators/ema.jsand https://code.highcharts.com/stock/indicators/tema.js.In TypeScript the [type](series.trix.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `trix` series are defined in   [plotOptions.trix](plotOptions.trix).3. Options for one single series are given in   [the series instance array](series.trix).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        trix: {            // shared options for all trix series        }    },    series: [{        // specific options for this series instance        type: 'trix'    }]});```            
+		/// Triple exponential average (TRIX) oscillator. This series requires`linkedTo` option to be set.In TypeScript the [type](series.trix.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `trix` series are defined in   [plotOptions.trix](plotOptions.trix).3. Options for one single series are given in   [the series instance array](series.trix).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        trix: {            // shared options for all trix series        }    },    series: [{        // specific options for this series instance        type: 'trix'    }]});```            
 		/// </summary>
 		public PlotOptionsTrix Trix { get; set; }
 		private PlotOptionsTrix Trix_DefaultValue { get; set; }
@@ -639,6 +647,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Errorbar.IsDirty(ref highstock)) h.Add("errorbar",Errorbar.ToHashtable(ref highstock));
 			if (Flags.IsDirty(ref highstock)) h.Add("flags",Flags.ToHashtable(ref highstock));
 			if (Heikinashi.IsDirty(ref highstock)) h.Add("heikinashi",Heikinashi.ToHashtable(ref highstock));
+			if (Hlc.IsDirty(ref highstock)) h.Add("hlc",Hlc.ToHashtable(ref highstock));
 			if (Hollowcandlestick.IsDirty(ref highstock)) h.Add("hollowcandlestick",Hollowcandlestick.ToHashtable(ref highstock));
 			if (Ikh.IsDirty(ref highstock)) h.Add("ikh",Ikh.ToHashtable(ref highstock));
 			if (Keltnerchannels.IsDirty(ref highstock)) h.Add("keltnerchannels",Keltnerchannels.ToHashtable(ref highstock));

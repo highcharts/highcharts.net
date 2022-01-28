@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsKlingerParams()
 		{
 			FastAvgPeriod = FastAvgPeriod_DefaultValue = 34;
-			Index = Index_DefaultValue = 0;
+			Index = Index_DefaultValue = 3;
 			Period = Period_DefaultValue = 14;
 			SignalPeriod = SignalPeriod_DefaultValue = 13;
 			SlowAvgPeriod = SlowAvgPeriod_DefaultValue = 55;

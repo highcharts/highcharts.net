@@ -55,7 +55,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The closing value of each data point.
+		/// 
 		/// </summary>
 		public double? Close { get; set; }
 		private double? Close_DefaultValue { get; set; }

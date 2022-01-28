@@ -24,6 +24,10 @@ namespace SourceCodeGenerator.Services
 
         public void Update(ApiItem item)
         {
+            if (ChildrenToAdd.ContainsKey(item.FullName))
+                foreach (var child in ChildrenToAdd[item.FullName])
+                    item.Children.Add(child);
+
             //title
             if(ItemsToUpdate.ContainsKey(item.Title))
             {
@@ -335,6 +339,8 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("borderRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("staggerLines", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("xAxisUnit", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            
+            ChildrenToAdd.Add("series.ohlc.data", new List<ApiItem>() { new ApiItem { Title = "close", FullName = "series.ohlc.data.close", ReturnType = "Number" } });
         }
 
         public void Delete(ApiItem item)

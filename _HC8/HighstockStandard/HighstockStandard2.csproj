@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Highstock</AssemblyName>
-    <Version>9.2.2.2</Version>
+    <Version>9.3.2.1</Version>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>highcharts.snk</AssemblyOriginatorKeyFile>
@@ -50,14 +50,14 @@
 
       #Version 7.1.1.1
       Move to .NET Standard. Please note that upgrading the wrapper to version 7.1.1.1 may require some changes in your application. Please see http://dotnet.highcharts.com/Highcharts/Demo/Docs?section=UpgradeToStandard for more details.</PackageReleaseNotes>
-    <Copyright>Copyright ©  2021</Copyright>
+    <Copyright>Copyright ©  2022</Copyright>
     <Description>Highcharts .NET is .NET Standard library which allows developers to make charts using Highcharts API. Official Highsoft's library. Examples, API and documentation are available on project home page. Please note that upgrading the wrapper to version 7.1.1 may require some changes in your application. Please see http://dotnet.highcharts.com/Highcharts/Demo/Docs?section=UpgradeToStandard for more details.</Description>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageIconUrl>http://dotnet.highcharts.com/Content/images/logo_png.png</PackageIconUrl>
     <PackageTags>chart charts charting graph graphs plot plots diagram diagrams highcharts highstock visualisation visualization data-visualisation data-visualization diagram line-chart 3d-chart finance web-forms mvc</PackageTags>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <AssemblyVersion>9.2.2.2</AssemblyVersion>
-    <FileVersion>9.2.2.2</FileVersion>
+    <AssemblyVersion>9.3.2.1</AssemblyVersion>
+    <FileVersion>9.3.2.1</FileVersion>
     <PackageLicenseUrl></PackageLicenseUrl>
   </PropertyGroup>
 

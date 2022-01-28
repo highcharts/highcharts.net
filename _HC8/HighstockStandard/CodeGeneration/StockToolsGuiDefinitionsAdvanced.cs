@@ -17,9 +17,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		public StockToolsGuiDefinitionsAdvanced()
 		{
 			Fibonacci = Fibonacci_DefaultValue = new StockToolsGuiDefinitionsAdvancedFibonacci();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = null;
 			Items = Items_DefaultValue = new List<string>();
 			ParallelChannel = ParallelChannel_DefaultValue = new StockToolsGuiDefinitionsAdvancedParallelChannel();
 			Pitchfork = Pitchfork_DefaultValue = new StockToolsGuiDefinitionsAdvancedPitchfork();
+			TimeCycles = TimeCycles_DefaultValue = new StockToolsGuiDefinitionsAdvancedTimeCycles();
 			
 		}	
 		
@@ -29,6 +31,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public StockToolsGuiDefinitionsAdvancedFibonacci Fibonacci { get; set; }
 		private StockToolsGuiDefinitionsAdvancedFibonacci Fibonacci_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public Object FibonacciTimeZones { get; set; }
+		private Object FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -50,6 +59,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public StockToolsGuiDefinitionsAdvancedPitchfork Pitchfork { get; set; }
 		private StockToolsGuiDefinitionsAdvancedPitchfork Pitchfork_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public StockToolsGuiDefinitionsAdvancedTimeCycles TimeCycles { get; set; }
+		private StockToolsGuiDefinitionsAdvancedTimeCycles TimeCycles_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable(ref Highstock highstock)
@@ -58,9 +74,11 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Fibonacci.IsDirty(ref highstock)) h.Add("fibonacci",Fibonacci.ToHashtable(ref highstock));
+			if (FibonacciTimeZones != null) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (Items != Items_DefaultValue) h.Add("items",Items);
 			if (ParallelChannel.IsDirty(ref highstock)) h.Add("parallelChannel",ParallelChannel.ToHashtable(ref highstock));
 			if (Pitchfork.IsDirty(ref highstock)) h.Add("pitchfork",Pitchfork.ToHashtable(ref highstock));
+			if (TimeCycles.IsDirty(ref highstock)) h.Add("timeCycles",TimeCycles.ToHashtable(ref highstock));
 			
 
 			return h;

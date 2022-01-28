@@ -16,13 +16,13 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ColorAxisScrollbar()
 		{
-			BarBackgroundColor = BarBackgroundColor_DefaultValue = "";
-			BarBorderColor = BarBorderColor_DefaultValue = "";
+			BarBackgroundColor = BarBackgroundColor_DefaultValue = "#cccccc";
+			BarBorderColor = BarBorderColor_DefaultValue = "#cccccc";
 			BarBorderRadius = BarBorderRadius_DefaultValue = 0;
 			BarBorderWidth = BarBorderWidth_DefaultValue = 1;
-			ButtonArrowColor = ButtonArrowColor_DefaultValue = "";
-			ButtonBackgroundColor = ButtonBackgroundColor_DefaultValue = "";
-			ButtonBorderColor = ButtonBorderColor_DefaultValue = "";
+			ButtonArrowColor = ButtonArrowColor_DefaultValue = "#333333";
+			ButtonBackgroundColor = ButtonBackgroundColor_DefaultValue = "#e6e6e6";
+			ButtonBorderColor = ButtonBorderColor_DefaultValue = "#cccccc";
 			ButtonBorderRadius = ButtonBorderRadius_DefaultValue = 0;
 			ButtonBorderWidth = ButtonBorderWidth_DefaultValue = 1;
 			Enabled = Enabled_DefaultValue = true;
@@ -30,10 +30,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			LiveRedraw = LiveRedraw_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			MinWidth = MinWidth_DefaultValue = 6;
-			RifleColor = RifleColor_DefaultValue = "";
+			Opposite = Opposite_DefaultValue = true;
+			RifleColor = RifleColor_DefaultValue = "#333333";
 			ShowFull = ShowFull_DefaultValue = true;
-			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "";
-			TrackBorderColor = TrackBorderColor_DefaultValue = "";
+			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "#f2f2f2";
+			TrackBorderColor = TrackBorderColor_DefaultValue = "#f2f2f2";
 			TrackBorderRadius = TrackBorderRadius_DefaultValue = 0;
 			TrackBorderWidth = TrackBorderWidth_DefaultValue = 1;
 			ZIndex = ZIndex_DefaultValue = 3;
@@ -140,6 +141,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Defines the position of the scrollbar. By default, it is positionedon the opposite of the main axis (right side of the chart).However, in the case of RTL languages could be set to `false`which positions the scrollbar on the left.Works only for vertical axes.This means yAxis in a non-inverted chart and xAxis in the inverted.
+		/// </summary>
+		public bool? Opposite { get; set; }
+		private bool? Opposite_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the small rifles in the middle of the scrollbar.
 		/// </summary>
 		public string RifleColor { get; set; }
@@ -207,6 +215,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MinWidth != MinWidth_DefaultValue) h.Add("minWidth",MinWidth);
+			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (RifleColor != RifleColor_DefaultValue) h.Add("rifleColor",RifleColor);
 			if (ShowFull != ShowFull_DefaultValue) h.Add("showFull",ShowFull);
 			if (TrackBackgroundColor != TrackBackgroundColor_DefaultValue) h.Add("trackBackgroundColor",TrackBackgroundColor);

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigatorXAxisTitleStyle()
 		{
-			Color = Color_DefaultValue = "";
+			Color = Color_DefaultValue = "#666666";
 			
 		}	
 		

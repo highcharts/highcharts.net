@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsSlowstochasticParams()
 		{
-			Index = Index_DefaultValue = 0;
+			Index = Index_DefaultValue = 3;
 			Period = Period_DefaultValue = 14;
 			Periods = Periods_DefaultValue = new List<double?>{14,3,3};
 			

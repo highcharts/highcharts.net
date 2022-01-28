@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsMacdParams()
 		{
-			Index = Index_DefaultValue = 0;
+			Index = Index_DefaultValue = 3;
 			LongPeriod = LongPeriod_DefaultValue = 26;
 			Period = Period_DefaultValue = 26;
 			ShortPeriod = ShortPeriod_DefaultValue = 12;

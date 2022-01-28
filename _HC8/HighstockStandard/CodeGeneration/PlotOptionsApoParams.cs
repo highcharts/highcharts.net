@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsApoParams()
 		{
-			Index = Index_DefaultValue = 0;
+			Index = Index_DefaultValue = 3;
 			Period = Period_DefaultValue = "undefined";
 			Periods = Periods_DefaultValue = new List<double>();
 			

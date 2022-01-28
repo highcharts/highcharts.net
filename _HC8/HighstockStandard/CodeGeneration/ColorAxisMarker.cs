@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
-			Color = Color_DefaultValue = "";
+			Color = Color_DefaultValue = "#999999";
 			Width = Width_DefaultValue = null;
 			
 		}	

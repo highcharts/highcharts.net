@@ -19,10 +19,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			DashStyle = DashStyle_DefaultValue = AnnotationsVerticalLineTypeOptionsConnectorDashStyle.Null;
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			MarkerEnd = MarkerEnd_DefaultValue = "arrow";
+			Ry = Ry_DefaultValue = null;
 			Snap = Snap_DefaultValue = 2;
 			Src = Src_DefaultValue = "";
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
+			XAxis = XAxis_DefaultValue = "";
+			YAxis = YAxis_DefaultValue = "";
 			
 		}	
 		
@@ -46,6 +49,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string MarkerEnd { get; set; }
 		private string MarkerEnd_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The radius of the shape in y direction.Used for the ellipse.
+		/// </summary>
+		public double? Ry { get; set; }
+		private double? Ry_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -74,6 +84,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? StrokeWidth { get; set; }
 		private double? StrokeWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The xAxis index to which the points should be attached.Used for the ellipse.
+		/// </summary>
+		public string XAxis { get; set; }
+		private string XAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The yAxis index to which the points should be attached.Used for the ellipse.
+		/// </summary>
+		public string YAxis { get; set; }
+		private string YAxis_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable(ref Highstock highstock)
@@ -84,10 +108,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
+			if (Ry != Ry_DefaultValue) h.Add("ry",Ry);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Src != Src_DefaultValue) h.Add("src",Src);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			
 
 			return h;

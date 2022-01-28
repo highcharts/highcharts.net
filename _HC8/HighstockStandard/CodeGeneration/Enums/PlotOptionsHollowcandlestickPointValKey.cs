@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsHollowcandlestickPointValKey
     {
-        Open, 
-		High, 
+        High, 
 		Low, 
 		Close
     }

@@ -16,10 +16,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsKeltnerchannelsParams()
 		{
-			Index = Index_DefaultValue = 0;
-			MultiplierATR = MultiplierATR_DefaultValue = 2;
-			Period = Period_DefaultValue = 20;
-			PeriodATR = PeriodATR_DefaultValue = 10;
+			Index = Index_DefaultValue = 3;
+			Period = Period_DefaultValue = 14;
 			
 		}	
 		
@@ -32,24 +30,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The ATR multiplier.
-		/// </summary>
-		public double? MultiplierATR { get; set; }
-		private double? MultiplierATR_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
+		/// The base period for indicator calculations. This is the number ofdata points which are taken into account for the indicatorcalculations.
 		/// </summary>
 		public double? Period { get; set; }
 		private double? Period_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The ATR period.
-		/// </summary>
-		public double? PeriodATR { get; set; }
-		private double? PeriodATR_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable(ref Highstock highstock)
@@ -58,9 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (MultiplierATR != MultiplierATR_DefaultValue) h.Add("multiplierATR",MultiplierATR);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
-			if (PeriodATR != PeriodATR_DefaultValue) h.Add("periodATR",PeriodATR);
 			
 
 			return h;

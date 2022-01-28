@@ -20,10 +20,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			AnimationBool = AnimationBool_DefaultValue = null;
 			ControlPointOptions = ControlPointOptions_DefaultValue = new AnnotationsControlPointOptions();
 			CrookedLine = CrookedLine_DefaultValue = new AnnotationsCrookedLine();
+			Crop = Crop_DefaultValue = true;
 			Draggable = Draggable_DefaultValue = "xy";
 			ElliottWave = ElliottWave_DefaultValue = new AnnotationsElliottWave();
 			Events = Events_DefaultValue = new AnnotationsEvents();
 			Fibonacci = Fibonacci_DefaultValue = new AnnotationsFibonacci();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new AnnotationsFibonacciTimeZone();
 			Id = Id_DefaultValue = "";
 			IdNumber = IdNumber_DefaultValue = null;
 			InfinityLine = InfinityLine_DefaultValue = new AnnotationsInfinityLine();
@@ -33,6 +35,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Pitchfork = Pitchfork_DefaultValue = new AnnotationsPitchfork();
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsShapeOptions();
 			Shapes = Shapes_DefaultValue = new List<AnnotationsShapes>();
+			TimeCycles = TimeCycles_DefaultValue = new AnnotationsTimeCycles();
 			Tunnel = Tunnel_DefaultValue = new AnnotationsTunnel();
 			VerticalLine = VerticalLine_DefaultValue = new AnnotationsVerticalLine();
 			Visible = Visible_DefaultValue = true;
@@ -70,6 +73,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to hide the part of the annotationthat is outside the plot area.
+		/// </summary>
+		public bool? Crop { get; set; }
+		private bool? Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Allow an annotation to be draggable by a user. Possiblevalues are `'x'`, `'xy'`, `'y'` and `''` (disabled).
 		/// </summary>
 		public string Draggable { get; set; }
@@ -95,6 +105,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public AnnotationsFibonacci Fibonacci { get; set; }
 		private AnnotationsFibonacci Fibonacci_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Fibonacci Time Zones annotation.
+		/// </summary>
+		public AnnotationsFibonacciTimeZone FibonacciTimeZones { get; set; }
+		private AnnotationsFibonacciTimeZone FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -161,6 +178,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The TimeCycles Annotation
+		/// </summary>
+		public AnnotationsTimeCycles TimeCycles { get; set; }
+		private AnnotationsTimeCycles TimeCycles_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A tunnel annotation.
 		/// </summary>
 		public AnnotationsTunnel Tunnel { get; set; }
@@ -197,10 +221,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (ControlPointOptions.IsDirty(ref highstock)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(ref highstock));
 			if (CrookedLine.IsDirty(ref highstock)) h.Add("crookedLine",CrookedLine.ToHashtable(ref highstock));
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
 			if (ElliottWave.IsDirty(ref highstock)) h.Add("elliottWave",ElliottWave.ToHashtable(ref highstock));
 			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
 			if (Fibonacci.IsDirty(ref highstock)) h.Add("fibonacci",Fibonacci.ToHashtable(ref highstock));
+			if (FibonacciTimeZones.IsDirty(ref highstock)) h.Add("fibonacciTimeZones",FibonacciTimeZones.ToHashtable(ref highstock));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
 			if (InfinityLine.IsDirty(ref highstock)) h.Add("infinityLine",InfinityLine.ToHashtable(ref highstock));
@@ -210,6 +236,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Pitchfork.IsDirty(ref highstock)) h.Add("pitchfork",Pitchfork.ToHashtable(ref highstock));
 			if (ShapeOptions.IsDirty(ref highstock)) h.Add("shapeOptions",ShapeOptions.ToHashtable(ref highstock));
 			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(ref highstock,Shapes));
+			if (TimeCycles.IsDirty(ref highstock)) h.Add("timeCycles",TimeCycles.ToHashtable(ref highstock));
 			if (Tunnel.IsDirty(ref highstock)) h.Add("tunnel",Tunnel.ToHashtable(ref highstock));
 			if (VerticalLine.IsDirty(ref highstock)) h.Add("verticalLine",VerticalLine.ToHashtable(ref highstock));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);

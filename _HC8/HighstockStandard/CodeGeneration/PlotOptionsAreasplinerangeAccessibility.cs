@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = null;
 			ExposeAsGroupOnly = ExposeAsGroupOnly_DefaultValue = null;
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new PlotOptionsAreasplinerangeAccessibilityKeyboardNavigation();
-			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
+			Point = Point_DefaultValue = new PlotOptionsAreasplinerangeAccessibilityPoint();
 			
 		}	
 		
@@ -54,10 +54,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Formatter function to use instead of the default for pointdescriptions. Same as `accessibility.point.descriptionFormatter`, but fora single series.
+		/// Point accessibility options for a series.
 		/// </summary>
-		public string PointDescriptionFormatter { get; set; }
-		private string PointDescriptionFormatter_DefaultValue { get; set; }
+		public PlotOptionsAreasplinerangeAccessibilityPoint Point { get; set; }
+		private PlotOptionsAreasplinerangeAccessibilityPoint Point_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable(ref Highstock highstock)
@@ -69,7 +69,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (ExposeAsGroupOnly != ExposeAsGroupOnly_DefaultValue) h.Add("exposeAsGroupOnly",ExposeAsGroupOnly);
 			if (KeyboardNavigation.IsDirty(ref highstock)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(ref highstock));
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));
 			
 
 			return h;

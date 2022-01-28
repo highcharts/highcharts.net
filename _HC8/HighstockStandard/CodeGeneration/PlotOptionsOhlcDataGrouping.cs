@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			FirstAnchor = FirstAnchor_DefaultValue = "start";
 			Forced = Forced_DefaultValue = false;
 			GroupAll = GroupAll_DefaultValue = false;
-			GroupPixelWidth = GroupPixelWidth_DefaultValue = 5;
+			GroupPixelWidth = GroupPixelWidth_DefaultValue = 2;
 			LastAnchor = LastAnchor_DefaultValue = "start";
 			Smoothed = Smoothed_DefaultValue = false;
 			
@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The method of approximation inside a group. When for example 30 daysare grouped into one month, this determines what value should representthe group. Possible values are "average", "averages", "open", "high","low", "close" and "sum". For OHLC and candlestick series the approximationis "ohlc" by default, which finds the open, high, low and close valueswithin all the grouped data. For ranges, the approximation is "range",which finds the low and high values. For multi-dimensional data,like ranges and OHLC, "averages" will compute the average for eachdimension.Custom aggregate methods can be added by assigning a callback functionas the approximation. This function takes a numeric array as theargument and should return a single numeric value or `null`. Notethat the numeric array will never contain null values, only truenumbers. Instead, if null values are present in the raw data, thenumeric array will have an `.hasNulls` property set to `true`. Forsingle-value data sets the data is available in the first argumentof the callback function. For OHLC data sets, all the open valuesare in the first argument, all high values in the second etc.Since v4.2.7, grouping meta data is available in the approximationcallback from `this.dataGroupInfo`. It can be used to extract informationfrom the raw data.Defaults to `average` for line-type series, `sum` for columns, `range`for range series and `ohlc` for OHLC and candlestick.
+		/// 
 		/// </summary>
 		public string Approximation { get; set; }
 		private string Approximation_DefaultValue { get; set; }
@@ -80,7 +80,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The approximate pixel width of each group. If for example a serieswith 30 points is displayed over a 600 pixel wide plot area, nogrouping is performed. If however the series contains so many pointsthat the spacing is less than the groupPixelWidth, Highcharts willtry to group it into appropriate groups so that each is more or lesstwo pixels wide. Defaults to `5`.
+		/// The approximate pixel width of each group. If for example a serieswith 30 points is displayed over a 600 pixel wide plot area, no groupingis performed. If however the series contains so many points thatthe spacing is less than the groupPixelWidth, Highcharts will tryto group it into appropriate groups so that each is more or lesstwo pixels wide. If multiple series with different group pixel widthsare drawn on the same x axis, all series will take the greatest width.For example, line series have 2px default group width, while columnseries have 10px. If combined, both the line and the column willhave 10px by default.
 		/// </summary>
 		public double? GroupPixelWidth { get; set; }
 		private double? GroupPixelWidth_DefaultValue { get; set; }

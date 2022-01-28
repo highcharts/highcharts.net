@@ -38,6 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareBase = CompareBase_DefaultValue = PlotOptionsCandlestickCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
+			Cumulative = Cumulative_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsCandlestickCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = PlotOptionsCandlestickDashStyle.Null;
@@ -256,6 +257,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).
+		/// </summary>
+		public bool? Cumulative { get; set; }
+		private bool? Cumulative_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public PlotOptionsCandlestickCursor Cursor { get; set; }
@@ -277,7 +285,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Data grouping is the concept of sampling the data values into largerblocks in order to ease readability and increase performance of theJavaScript charts. Highcharts Stock by default applies data grouping whenthe points become closer than a certain pixel value, determined bythe `groupPixelWidth` option.If data grouping is applied, the grouping information of groupedpoints can be read from the [Point.dataGroup](/class-reference/Highcharts.Point#dataGroup). If point options other thanthe data itself are set, for example `name` or `color` or custom properties,the grouping logic doesn't know how to group it. In this case the options ofthe first point instance are copied over to the group point. This can bealtered through a custom `approximation` callback function.
 		/// </summary>
 		public PlotOptionsCandlestickDataGrouping DataGrouping { get; set; }
 		private PlotOptionsCandlestickDataGrouping DataGrouping_DefaultValue { get; set; }
@@ -522,7 +530,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Determines which one of `open`, `high`, `low`, `close` values shouldbe represented as `point.y`, which is later used to set dataLabelposition and [compare](#plotOptions.series.compare).
+		/// Determines which one of  `high`, `low`, `close` values shouldbe represented as `point.y`, which is later used to set dataLabelposition and [compare](#plotOptions.series.compare).
 		/// </summary>
 		public PlotOptionsCandlestickPointValKey PointValKey { get; set; }
 		private PlotOptionsCandlestickPointValKey PointValKey_DefaultValue { get; set; }
@@ -620,7 +628,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from [tooltip](#tooltip), but onlythe following properties can be defined on a series level.
 		/// </summary>
 		public PlotOptionsCandlestickTooltip Tooltip { get; set; }
 		private PlotOptionsCandlestickTooltip Tooltip_DefaultValue { get; set; }
@@ -695,6 +703,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
+			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));

@@ -36,6 +36,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
+			Cumulative = Cumulative_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = BbSeriesCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = BbSeriesDashStyle.Null;
@@ -45,6 +46,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Description = Description_DefaultValue = "";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new BbSeriesEvents();
+			FillColor = FillColor_DefaultValue = "";
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = BbSeriesFindNearestPointBy.X;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = BbSeriesGapUnit.Relative;
@@ -237,6 +239,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).
+		/// </summary>
+		public bool? Cumulative { get; set; }
+		private bool? Cumulative_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public BbSeriesCursor Cursor { get; set; }
@@ -297,6 +306,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public BbSeriesEvents Events { get; set; }
 		private BbSeriesEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Option for fill color between lines in Bollinger Bands Indicator.
+		/// </summary>
+		public object FillColor { get; set; }
+		private object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -653,6 +669,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
+			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
@@ -662,6 +679,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
+			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", Highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", Highstock.FirstCharacterToLower(GapUnit.ToString()));

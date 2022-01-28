@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			AddButton = AddButton_DefaultValue = "add";
 			Algorithm = Algorithm_DefaultValue = "Algorithm";
-			ArrowLine = ArrowLine_DefaultValue = "Arrow line";
+			ArrowInfinityLine = ArrowInfinityLine_DefaultValue = "Arrow line";
 			ArrowRay = ArrowRay_DefaultValue = "Arrow ray";
 			ArrowSegment = ArrowSegment_DefaultValue = "Arrow segment";
 			Average = Average_DefaultValue = "Average";
@@ -30,6 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderWidth = BorderWidth_DefaultValue = "Border width";
 			BottomBand = BottomBand_DefaultValue = "Bottom band";
 			Circle = Circle_DefaultValue = "Circle";
+			ClearFilter = ClearFilter_DefaultValue = "✕ clear filter";
 			Color = Color_DefaultValue = "Color";
 			Connector = Connector_DefaultValue = "Connector";
 			Crooked3 = Crooked3_DefaultValue = "Crooked 3 line";
@@ -41,9 +42,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			EditButton = EditButton_DefaultValue = "edit";
 			Elliott3 = Elliott3_DefaultValue = "Elliott 3 line";
 			Elliott5 = Elliott5_DefaultValue = "Elliott 5 line";
+			Ellipse = Ellipse_DefaultValue = "Ellipse";
 			Factor = Factor_DefaultValue = "Factor";
 			FastAvgPeriod = FastAvgPeriod_DefaultValue = "Fast average period";
 			Fibonacci = Fibonacci_DefaultValue = "Fibonacci";
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = "Fibonacci Time Zones";
 			Fill = Fill_DefaultValue = "Fill";
 			Flags = Flags_DefaultValue = "Flags";
 			FontSize = FontSize_DefaultValue = "Font size";
@@ -53,6 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			HorizontalLine = HorizontalLine_DefaultValue = "Horizontal line";
 			Increment = Increment_DefaultValue = "Increment";
 			Index = Index_DefaultValue = "Index";
+			IndicatorAliases = IndicatorAliases_DefaultValue = new LangNavigationPopupIndicatorAliases();
 			InfinityLine = InfinityLine_DefaultValue = "Infinity line";
 			InitialAccelerationFactor = InitialAccelerationFactor_DefaultValue = "Initial acceleration factor";
 			InnerBackground = InnerBackground_DefaultValue = "Inner background";
@@ -71,6 +75,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Multiplier = Multiplier_DefaultValue = "Multiplier";
 			MultiplierATR = MultiplierATR_DefaultValue = "ATR multiplier";
 			Name = Name_DefaultValue = "Name";
+			NoFilterMatch = NoFilterMatch_DefaultValue = "No match";
 			OuterBackground = OuterBackground_DefaultValue = "Outer background";
 			Padding = Padding_DefaultValue = "Padding";
 			ParallelChannel = ParallelChannel_DefaultValue = "Parallel channel";
@@ -85,6 +90,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Rectangle = Rectangle_DefaultValue = "Rectangle";
 			RemoveButton = RemoveButton_DefaultValue = "remove";
 			SaveButton = SaveButton_DefaultValue = "save";
+			SearchIndicators = SearchIndicators_DefaultValue = "Search Indicators";
 			Segment = Segment_DefaultValue = "Segment";
 			Series = Series_DefaultValue = new List<Series>();
 			ShapeOptions = ShapeOptions_DefaultValue = "Shape options";
@@ -97,6 +103,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Stroke = Stroke_DefaultValue = "Line color";
 			StrokeWidth = StrokeWidth_DefaultValue = "Line width";
 			Style = Style_DefaultValue = new Hashtable();
+			TimeCycles = TimeCycles_DefaultValue = "Time Cycles";
 			Title = Title_DefaultValue = "Title";
 			TopBand = TopBand_DefaultValue = "Top band";
 			Tunnel = Tunnel_DefaultValue = "Tunnel";
@@ -128,8 +135,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string ArrowLine { get; set; }
-		private string ArrowLine_DefaultValue { get; set; }
+		public string ArrowInfinityLine { get; set; }
+		private string ArrowInfinityLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -212,6 +219,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public string ClearFilter { get; set; }
+		private string ClearFilter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
@@ -289,6 +303,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public string Ellipse { get; set; }
+		private string Ellipse_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Factor { get; set; }
 		private string Factor_DefaultValue { get; set; }
 		 
@@ -305,6 +326,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Fibonacci { get; set; }
 		private string Fibonacci_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string FibonacciTimeZones { get; set; }
+		private string FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -368,6 +396,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Index { get; set; }
 		private string Index_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Configure the aliases for indicator names.
+		/// </summary>
+		public LangNavigationPopupIndicatorAliases IndicatorAliases { get; set; }
+		private LangNavigationPopupIndicatorAliases IndicatorAliases_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -499,6 +534,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public string NoFilterMatch { get; set; }
+		private string NoFilterMatch_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string OuterBackground { get; set; }
 		private string OuterBackground_DefaultValue { get; set; }
 		 
@@ -597,6 +639,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public string SearchIndicators { get; set; }
+		private string SearchIndicators_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Segment { get; set; }
 		private string Segment_DefaultValue { get; set; }
 		 
@@ -681,6 +730,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public string TimeCycles { get; set; }
+		private string TimeCycles_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Title { get; set; }
 		private string Title_DefaultValue { get; set; }
 		 
@@ -755,7 +811,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (AddButton != AddButton_DefaultValue) h.Add("addButton",AddButton);
 			if (Algorithm != Algorithm_DefaultValue) h.Add("algorithm",Algorithm);
-			if (ArrowLine != ArrowLine_DefaultValue) h.Add("arrowLine",ArrowLine);
+			if (ArrowInfinityLine != ArrowInfinityLine_DefaultValue) h.Add("arrowInfinityLine",ArrowInfinityLine);
 			if (ArrowRay != ArrowRay_DefaultValue) h.Add("arrowRay",ArrowRay);
 			if (ArrowSegment != ArrowSegment_DefaultValue) h.Add("arrowSegment",ArrowSegment);
 			if (Average != Average_DefaultValue) h.Add("average",Average);
@@ -767,6 +823,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (BottomBand != BottomBand_DefaultValue) h.Add("bottomBand",BottomBand);
 			if (Circle != Circle_DefaultValue) h.Add("circle",Circle);
+			if (ClearFilter != ClearFilter_DefaultValue) h.Add("clearFilter",ClearFilter);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Connector != Connector_DefaultValue) h.Add("connector",Connector);
 			if (Crooked3 != Crooked3_DefaultValue) h.Add("crooked3",Crooked3);
@@ -778,9 +835,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (EditButton != EditButton_DefaultValue) h.Add("editButton",EditButton);
 			if (Elliott3 != Elliott3_DefaultValue) h.Add("elliott3",Elliott3);
 			if (Elliott5 != Elliott5_DefaultValue) h.Add("elliott5",Elliott5);
+			if (Ellipse != Ellipse_DefaultValue) h.Add("ellipse",Ellipse);
 			if (Factor != Factor_DefaultValue) h.Add("factor",Factor);
 			if (FastAvgPeriod != FastAvgPeriod_DefaultValue) h.Add("fastAvgPeriod",FastAvgPeriod);
 			if (Fibonacci != Fibonacci_DefaultValue) h.Add("fibonacci",Fibonacci);
+			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (Flags != Flags_DefaultValue) h.Add("flags",Flags);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
@@ -790,6 +849,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (HorizontalLine != HorizontalLine_DefaultValue) h.Add("horizontalLine",HorizontalLine);
 			if (Increment != Increment_DefaultValue) h.Add("increment",Increment);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
+			if (IndicatorAliases.IsDirty(ref highstock)) h.Add("indicatorAliases",IndicatorAliases.ToHashtable(ref highstock));
 			if (InfinityLine != InfinityLine_DefaultValue) h.Add("infinityLine",InfinityLine);
 			if (InitialAccelerationFactor != InitialAccelerationFactor_DefaultValue) h.Add("initialAccelerationFactor",InitialAccelerationFactor);
 			if (InnerBackground != InnerBackground_DefaultValue) h.Add("innerBackground",InnerBackground);
@@ -808,6 +868,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Multiplier != Multiplier_DefaultValue) h.Add("multiplier",Multiplier);
 			if (MultiplierATR != MultiplierATR_DefaultValue) h.Add("multiplierATR",MultiplierATR);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (NoFilterMatch != NoFilterMatch_DefaultValue) h.Add("noFilterMatch",NoFilterMatch);
 			if (OuterBackground != OuterBackground_DefaultValue) h.Add("outerBackground",OuterBackground);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (ParallelChannel != ParallelChannel_DefaultValue) h.Add("parallelChannel",ParallelChannel);
@@ -822,6 +883,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Rectangle != Rectangle_DefaultValue) h.Add("rectangle",Rectangle);
 			if (RemoveButton != RemoveButton_DefaultValue) h.Add("removeButton",RemoveButton);
 			if (SaveButton != SaveButton_DefaultValue) h.Add("saveButton",SaveButton);
+			if (SearchIndicators != SearchIndicators_DefaultValue) h.Add("searchIndicators",SearchIndicators);
 			if (Segment != Segment_DefaultValue) h.Add("segment",Segment);
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (ShapeOptions != ShapeOptions_DefaultValue) h.Add("shapeOptions",ShapeOptions);
@@ -834,6 +896,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (TimeCycles != TimeCycles_DefaultValue) h.Add("timeCycles",TimeCycles);
 			if (Title != Title_DefaultValue) h.Add("title",Title);
 			if (TopBand != TopBand_DefaultValue) h.Add("topBand",TopBand);
 			if (Tunnel != Tunnel_DefaultValue) h.Add("tunnel",Tunnel);

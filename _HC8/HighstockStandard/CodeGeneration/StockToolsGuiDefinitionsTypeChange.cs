@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Items = Items_DefaultValue = new List<string>();
 			TypeCandlestick = TypeCandlestick_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeCandlestick();
 			TypeHeikinAshi = TypeHeikinAshi_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeHeikinAshi();
+			TypeHLC = TypeHLC_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeHLC();
 			TypeHollowCandlestick = TypeHollowCandlestick_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeHollowCandlestick();
 			TypeLine = TypeLine_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeLine();
 			TypeOHLC = TypeOHLC_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeOHLC();
@@ -50,6 +51,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public StockToolsGuiDefinitionsTypeChangeTypeHLC TypeHLC { get; set; }
+		private StockToolsGuiDefinitionsTypeChangeTypeHLC TypeHLC_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public StockToolsGuiDefinitionsTypeChangeTypeHollowCandlestick TypeHollowCandlestick { get; set; }
 		private StockToolsGuiDefinitionsTypeChangeTypeHollowCandlestick TypeHollowCandlestick_DefaultValue { get; set; }
 		 
@@ -76,6 +84,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Items != Items_DefaultValue) h.Add("items",Items);
 			if (TypeCandlestick.IsDirty(ref highstock)) h.Add("typeCandlestick",TypeCandlestick.ToHashtable(ref highstock));
 			if (TypeHeikinAshi.IsDirty(ref highstock)) h.Add("typeHeikinAshi",TypeHeikinAshi.ToHashtable(ref highstock));
+			if (TypeHLC.IsDirty(ref highstock)) h.Add("typeHLC",TypeHLC.ToHashtable(ref highstock));
 			if (TypeHollowCandlestick.IsDirty(ref highstock)) h.Add("typeHollowCandlestick",TypeHollowCandlestick.ToHashtable(ref highstock));
 			if (TypeLine.IsDirty(ref highstock)) h.Add("typeLine",TypeLine.ToHashtable(ref highstock));
 			if (TypeOHLC.IsDirty(ref highstock)) h.Add("typeOHLC",TypeOHLC.ToHashtable(ref highstock));

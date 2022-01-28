@@ -19,14 +19,17 @@ namespace Highsoft.Web.Mvc.Stocks
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
 			ControlPointOptions = ControlPointOptions_DefaultValue = new NavigationAnnotationsOptionsControlPointOptions();
+			Crop = Crop_DefaultValue = true;
 			Draggable = Draggable_DefaultValue = "xy";
 			Events = Events_DefaultValue = new NavigationAnnotationsOptionsEvents();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new NavigationAnnotationsOptionsFibonacciTimeZone();
 			Id = Id_DefaultValue = "";
 			IdNumber = IdNumber_DefaultValue = null;
 			LabelOptions = LabelOptions_DefaultValue = new NavigationAnnotationsOptionsLabelOptions();
 			Labels = Labels_DefaultValue = new NavigationAnnotationsOptionsLabels();
 			ShapeOptions = ShapeOptions_DefaultValue = new NavigationAnnotationsOptionsShapeOptions();
 			Shapes = Shapes_DefaultValue = new NavigationAnnotationsOptionsShapes();
+			TimeCycles = TimeCycles_DefaultValue = new NavigationAnnotationsOptionsTimeCycles();
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
@@ -55,6 +58,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to hide the part of the annotationthat is outside the plot area.
+		/// </summary>
+		public bool? Crop { get; set; }
+		private bool? Crop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Allow an annotation to be draggable by a user. Possiblevalues are `'x'`, `'xy'`, `'y'` and `''` (disabled).
 		/// </summary>
 		public string Draggable { get; set; }
@@ -66,6 +76,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public NavigationAnnotationsOptionsEvents Events { get; set; }
 		private NavigationAnnotationsOptionsEvents Events_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The Fibonacci Time Zones annotation.
+		/// </summary>
+		public NavigationAnnotationsOptionsFibonacciTimeZone FibonacciTimeZones { get; set; }
+		private NavigationAnnotationsOptionsFibonacciTimeZone FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -111,6 +128,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The TimeCycles Annotation
+		/// </summary>
+		public NavigationAnnotationsOptionsTimeCycles TimeCycles { get; set; }
+		private NavigationAnnotationsOptionsTimeCycles TimeCycles_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether the annotation is visible.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -132,14 +156,17 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Animation.IsDirty(ref highstock)) h.Add("animation",Animation.ToJSON(ref highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (ControlPointOptions.IsDirty(ref highstock)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(ref highstock));
+			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
 			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
+			if (FibonacciTimeZones.IsDirty(ref highstock)) h.Add("fibonacciTimeZones",FibonacciTimeZones.ToHashtable(ref highstock));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
 			if (LabelOptions.IsDirty(ref highstock)) h.Add("labelOptions",LabelOptions.ToHashtable(ref highstock));
 			if (Labels.IsDirty(ref highstock)) h.Add("labels",Labels.ToHashtable(ref highstock));
 			if (ShapeOptions.IsDirty(ref highstock)) h.Add("shapeOptions",ShapeOptions.ToHashtable(ref highstock));
 			if (Shapes.IsDirty(ref highstock)) h.Add("shapes",Shapes.ToHashtable(ref highstock));
+			if (TimeCycles.IsDirty(ref highstock)) h.Add("timeCycles",TimeCycles.ToHashtable(ref highstock));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			

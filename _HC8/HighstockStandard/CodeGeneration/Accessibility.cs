@@ -75,7 +75,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Amount of landmarks/regions to create for screen reader users. Morelandmarks can make navigation with screen readers easier, but canbe distracting if there are lots of charts on the page. Three modesare available: - `all`: Adds regions for all series, legend, menu, information     region. - `one`: Adds a single landmark per chart. - `disabled`: No landmarks are added.
+		/// Amount of landmarks/regions to create for screen reader users. Morelandmarks can make navigation with screen readers easier, but canbe distracting if there are lots of charts on the page. Three modesare available: - `all`: Adds regions for all series, legend, information     region. - `one`: Adds a single landmark per chart. - `disabled`: No landmarks are added.
 		/// </summary>
 		public AccessibilityLandmarkVerbosity LandmarkVerbosity { get; set; }
 		private AccessibilityLandmarkVerbosity LandmarkVerbosity_DefaultValue { get; set; }

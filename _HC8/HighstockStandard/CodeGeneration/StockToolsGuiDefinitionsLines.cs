@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public StockToolsGuiDefinitionsLines()
 		{
-			ArrowLine = ArrowLine_DefaultValue = new StockToolsGuiDefinitionsLinesArrowLine();
+			ArrowInfinityLine = ArrowInfinityLine_DefaultValue = new StockToolsGuiDefinitionsLinesArrowInfinityLine();
 			ArrowRay = ArrowRay_DefaultValue = new StockToolsGuiDefinitionsLinesArrowRay();
 			ArrowSegment = ArrowSegment_DefaultValue = new StockToolsGuiDefinitionsLinesArrowSegment();
 			HorizontalLine = HorizontalLine_DefaultValue = new StockToolsGuiDefinitionsLinesHorizontalLine();
@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public StockToolsGuiDefinitionsLinesArrowLine ArrowLine { get; set; }
-		private StockToolsGuiDefinitionsLinesArrowLine ArrowLine_DefaultValue { get; set; }
+		public StockToolsGuiDefinitionsLinesArrowInfinityLine ArrowInfinityLine { get; set; }
+		private StockToolsGuiDefinitionsLinesArrowInfinityLine ArrowInfinityLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -97,7 +97,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (ArrowLine.IsDirty(ref highstock)) h.Add("arrowLine",ArrowLine.ToHashtable(ref highstock));
+			if (ArrowInfinityLine.IsDirty(ref highstock)) h.Add("arrowInfinityLine",ArrowInfinityLine.ToHashtable(ref highstock));
 			if (ArrowRay.IsDirty(ref highstock)) h.Add("arrowRay",ArrowRay.ToHashtable(ref highstock));
 			if (ArrowSegment.IsDirty(ref highstock)) h.Add("arrowSegment",ArrowSegment.ToHashtable(ref highstock));
 			if (HorizontalLine.IsDirty(ref highstock)) h.Add("horizontalLine",HorizontalLine.ToHashtable(ref highstock));

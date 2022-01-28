@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public StockToolsGuiDefinitionsSimpleShapes()
 		{
 			Circle = Circle_DefaultValue = new StockToolsGuiDefinitionsSimpleShapesCircle();
+			Ellipse = Ellipse_DefaultValue = new StockToolsGuiDefinitionsSimpleShapesEllipse();
 			Items = Items_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new StockToolsGuiDefinitionsSimpleShapesLabel();
 			Rectangle = Rectangle_DefaultValue = new StockToolsGuiDefinitionsSimpleShapesRectangle();
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public StockToolsGuiDefinitionsSimpleShapesCircle Circle { get; set; }
 		private StockToolsGuiDefinitionsSimpleShapesCircle Circle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public StockToolsGuiDefinitionsSimpleShapesEllipse Ellipse { get; set; }
+		private StockToolsGuiDefinitionsSimpleShapesEllipse Ellipse_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -58,6 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Circle.IsDirty(ref highstock)) h.Add("circle",Circle.ToHashtable(ref highstock));
+			if (Ellipse.IsDirty(ref highstock)) h.Add("ellipse",Ellipse.ToHashtable(ref highstock));
 			if (Items != Items_DefaultValue) h.Add("items",Items);
 			if (Label.IsDirty(ref highstock)) h.Add("label",Label.ToHashtable(ref highstock));
 			if (Rectangle.IsDirty(ref highstock)) h.Add("rectangle",Rectangle.ToHashtable(ref highstock));

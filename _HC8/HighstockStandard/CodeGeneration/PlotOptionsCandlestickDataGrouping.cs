@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// The method of approximation inside a group. When for example 30 daysare grouped into one month, this determines what value should representthe group. Possible values are "average", "averages", "open", "high","low", "close" and "sum". For OHLC and candlestick series the approximationis "ohlc" by default, which finds the open, high, low and close valueswithin all the grouped data. For ranges, the approximation is "range",which finds the low and high values. For multi-dimensional data,like ranges and OHLC, "averages" will compute the average for eachdimension.Custom aggregate methods can be added by assigning a callback functionas the approximation. This function takes a numeric array as theargument and should return a single numeric value or `null`. Notethat the numeric array will never contain null values, only truenumbers. Instead, if null values are present in the raw data, thenumeric array will have an `.hasNulls` property set to `true`. Forsingle-value data sets the data is available in the first argumentof the callback function. For OHLC data sets, all the open valuesare in the first argument, all high values in the second etc.Since v4.2.7, grouping meta data is available in the approximationcallback from `this.dataGroupInfo`. It can be used to extract informationfrom the raw data.Defaults to `average` for line-type series, `sum` for columns, `range`for range series, `hlc` for HLC, and `ohlc` for OHLC and candlestick.
 		/// </summary>
 		public string Approximation { get; set; }
 		private string Approximation_DefaultValue { get; set; }

@@ -63,14 +63,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
 		/// </summary>
 		public string XAxis { get; set; }
 		private string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
 		/// </summary>
 		public string YAxis { get; set; }
 		private string YAxis_DefaultValue { get; set; }

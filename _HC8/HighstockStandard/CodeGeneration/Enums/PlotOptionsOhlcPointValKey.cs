@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsOhlcPointValKey
     {
-        Open, 
-		High, 
+        High, 
 		Low, 
 		Close
     }

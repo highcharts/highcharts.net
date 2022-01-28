@@ -32,12 +32,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
-			ColorKey = ColorKey_DefaultValue = "close";
+			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
 			Compare = Compare_DefaultValue = "";
 			CompareBase = CompareBase_DefaultValue = PlotOptionsOhlcCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
+			Cumulative = Cumulative_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsOhlcCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = PlotOptionsOhlcDashStyle.Null;
@@ -88,10 +89,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			SoftThreshold = SoftThreshold_DefaultValue = true;
 			States = States_DefaultValue = new PlotOptionsOhlcStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
-			Threshold = Threshold_DefaultValue = null;
+			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsOhlcTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			UpColor = UpColor_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsOhlcZone>();
@@ -212,7 +212,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Determines what data value should be used to calculate point colorif `colorAxis` is used. Requires to set `min` and `max` if somecustom point property is used or if approximation for data groupingis set to `'sum'`.
 		/// </summary>
 		public string ColorKey { get; set; }
 		private string ColorKey_DefaultValue { get; set; }
@@ -251,6 +251,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? CropThreshold { get; set; }
 		private double? CropThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).
+		/// </summary>
+		public bool? Cumulative { get; set; }
+		private bool? Cumulative_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -513,7 +520,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Determines which one of `open`, `high`, `low`, `close` values shouldbe represented as `point.y`, which is later used to set dataLabelposition and [compare](#plotOptions.series.compare).
+		/// Determines which one of  `high`, `low`, `close` values shouldbe represented as `point.y`, which is later used to set dataLabelposition and [compare](#plotOptions.series.compare).
 		/// </summary>
 		public PlotOptionsOhlcPointValKey PointValKey { get; set; }
 		private PlotOptionsOhlcPointValKey PointValKey_DefaultValue { get; set; }
@@ -604,14 +611,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
 		/// </summary>
 		public double? Threshold { get; set; }
 		private double? Threshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from [tooltip](#tooltip), but onlythe following properties can be defined on a series level.
 		/// </summary>
 		public PlotOptionsOhlcTooltip Tooltip { get; set; }
 		private PlotOptionsOhlcTooltip Tooltip_DefaultValue { get; set; }
@@ -622,13 +629,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? TurboThreshold { get; set; }
 		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Line color for up points.
-		/// </summary>
-		public string UpColor { get; set; }
-		private string UpColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -679,6 +679,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
+			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
@@ -732,7 +733,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty(ref highstock)) h.Add("tooltip",Tooltip.ToHashtable(ref highstock));
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (UpColor != UpColor_DefaultValue) h.Add("upColor",UpColor);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(ref highstock,Zones));

@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The average used to calculate the Disparity Index indicator.By default it uses SMA. To use other averages, e.g. EMA,the `stock/indicators/ema.js` file needs to be loaded.If value is different than ema|dema|tema|wma, then sma is used.
+		/// The average used to calculate the Disparity Index indicator.By default it uses SMA, with EMA as an option. To use otheraverages, e.g. TEMA, the `stock/indicators/tema.js` file needs tobe loaded.If value is different than `ema`, `dema`, `tema` or `wma`,then sma is used.
 		/// </summary>
 		public string Average { get; set; }
 		private string Average_DefaultValue { get; set; }

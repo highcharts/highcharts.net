@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsRocTooltip()
 		{
-			ChangeDecimals = ChangeDecimals_DefaultValue = null;
+			ChangeDecimals = ChangeDecimals_DefaultValue = 2;
 			ClusterFormat = ClusterFormat_DefaultValue = "";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Distance = Distance_DefaultValue = 16;
@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// How many decimals to show for the `point.change` value when the`series.compare` option is set. This is overridable in each series'tooltip options object. The default is to preserve all decimals.
+		/// How many decimals to show for the `point.change`or the `point.cumulativeSum` value when the `series.compare`or the `series.cumulative` option is set.This is overridable in each series' tooltip options object.
 		/// </summary>
 		public double? ChangeDecimals { get; set; }
 		private double? ChangeDecimals_DefaultValue { get; set; }
@@ -51,7 +51,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// For series on datetime axes, the date format in the tooltip'sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts#.dateFormat).
+		/// For series on datetime axes, the date format in the tooltip'sheader will by default be guessed based on the closest data points.This member gives the default string representations used foreach unit. For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts.Time#dateFormat).
 		/// </summary>
 		public Hashtable DateTimeLabelFormats { get; set; }
 		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }

@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public LangStockToolsGui()
 		{
 			Advanced = Advanced_DefaultValue = "Advanced";
-			ArrowLine = ArrowLine_DefaultValue = "Arrow line";
+			ArrowInfinityLine = ArrowInfinityLine_DefaultValue = "Arrow line";
 			ArrowRay = ArrowRay_DefaultValue = "Arrow ray";
 			ArrowSegment = ArrowSegment_DefaultValue = "Arrow segment";
 			Circle = Circle_DefaultValue = "Circle";
@@ -27,7 +27,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			CurrentPriceIndicator = CurrentPriceIndicator_DefaultValue = "Current Price Indicators";
 			Elliott3 = Elliott3_DefaultValue = "Elliott 3 line";
 			Elliott5 = Elliott5_DefaultValue = "Elliott 5 line";
+			Ellipse = Ellipse_DefaultValue = "Ellipse";
 			Fibonacci = Fibonacci_DefaultValue = "Fibonacci";
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = "Fibonacci Time Zones";
 			FlagCirclepin = FlagCirclepin_DefaultValue = "Flag circle";
 			FlagDiamondpin = FlagDiamondpin_DefaultValue = "Flag diamond";
 			Flags = Flags_DefaultValue = "Flags";
@@ -51,10 +53,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			SaveChart = SaveChart_DefaultValue = "Save chart";
 			Segment = Segment_DefaultValue = "Segment";
 			SimpleShapes = SimpleShapes_DefaultValue = "Simple shapes";
+			TimeCycles = TimeCycles_DefaultValue = "Time Cycles";
 			ToggleAnnotations = ToggleAnnotations_DefaultValue = "Toggle annotations";
 			TypeCandlestick = TypeCandlestick_DefaultValue = "Candlestick";
 			TypeChange = TypeChange_DefaultValue = "Type change";
 			TypeHeikinAshi = TypeHeikinAshi_DefaultValue = "Heikin Ashi";
+			TypeHLC = TypeHLC_DefaultValue = "HLC";
 			TypeHollowCandlestick = TypeHollowCandlestick_DefaultValue = "Hollow Candlestick";
 			TypeLine = TypeLine_DefaultValue = "Line";
 			TypeOHLC = TypeOHLC_DefaultValue = "OHLC";
@@ -81,8 +85,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string ArrowLine { get; set; }
-		private string ArrowLine_DefaultValue { get; set; }
+		public string ArrowInfinityLine { get; set; }
+		private string ArrowInfinityLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -151,8 +155,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public string Ellipse { get; set; }
+		private string Ellipse_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string Fibonacci { get; set; }
 		private string Fibonacci_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string FibonacciTimeZones { get; set; }
+		private string FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -319,6 +337,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
+		public string TimeCycles { get; set; }
+		private string TimeCycles_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public string ToggleAnnotations { get; set; }
 		private string ToggleAnnotations_DefaultValue { get; set; }
 		 
@@ -342,6 +367,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string TypeHeikinAshi { get; set; }
 		private string TypeHeikinAshi_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string TypeHLC { get; set; }
+		private string TypeHLC_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -434,7 +466,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Advanced != Advanced_DefaultValue) h.Add("advanced",Advanced);
-			if (ArrowLine != ArrowLine_DefaultValue) h.Add("arrowLine",ArrowLine);
+			if (ArrowInfinityLine != ArrowInfinityLine_DefaultValue) h.Add("arrowInfinityLine",ArrowInfinityLine);
 			if (ArrowRay != ArrowRay_DefaultValue) h.Add("arrowRay",ArrowRay);
 			if (ArrowSegment != ArrowSegment_DefaultValue) h.Add("arrowSegment",ArrowSegment);
 			if (Circle != Circle_DefaultValue) h.Add("circle",Circle);
@@ -444,7 +476,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CurrentPriceIndicator != CurrentPriceIndicator_DefaultValue) h.Add("currentPriceIndicator",CurrentPriceIndicator);
 			if (Elliott3 != Elliott3_DefaultValue) h.Add("elliott3",Elliott3);
 			if (Elliott5 != Elliott5_DefaultValue) h.Add("elliott5",Elliott5);
+			if (Ellipse != Ellipse_DefaultValue) h.Add("ellipse",Ellipse);
 			if (Fibonacci != Fibonacci_DefaultValue) h.Add("fibonacci",Fibonacci);
+			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (FlagCirclepin != FlagCirclepin_DefaultValue) h.Add("flagCirclepin",FlagCirclepin);
 			if (FlagDiamondpin != FlagDiamondpin_DefaultValue) h.Add("flagDiamondpin",FlagDiamondpin);
 			if (Flags != Flags_DefaultValue) h.Add("flags",Flags);
@@ -468,10 +502,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SaveChart != SaveChart_DefaultValue) h.Add("saveChart",SaveChart);
 			if (Segment != Segment_DefaultValue) h.Add("segment",Segment);
 			if (SimpleShapes != SimpleShapes_DefaultValue) h.Add("simpleShapes",SimpleShapes);
+			if (TimeCycles != TimeCycles_DefaultValue) h.Add("timeCycles",TimeCycles);
 			if (ToggleAnnotations != ToggleAnnotations_DefaultValue) h.Add("toggleAnnotations",ToggleAnnotations);
 			if (TypeCandlestick != TypeCandlestick_DefaultValue) h.Add("typeCandlestick",TypeCandlestick);
 			if (TypeChange != TypeChange_DefaultValue) h.Add("typeChange",TypeChange);
 			if (TypeHeikinAshi != TypeHeikinAshi_DefaultValue) h.Add("typeHeikinAshi",TypeHeikinAshi);
+			if (TypeHLC != TypeHLC_DefaultValue) h.Add("typeHLC",TypeHLC);
 			if (TypeHollowCandlestick != TypeHollowCandlestick_DefaultValue) h.Add("typeHollowCandlestick",TypeHollowCandlestick);
 			if (TypeLine != TypeLine_DefaultValue) h.Add("typeLine",TypeLine);
 			if (TypeOHLC != TypeOHLC_DefaultValue) h.Add("typeOHLC",TypeOHLC);

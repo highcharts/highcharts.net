@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LinearregressionangleSeriesParams()
 		{
-			Index = Index_DefaultValue = 0;
+			Index = Index_DefaultValue = 3;
 			Period = Period_DefaultValue = 14;
 			
 		}	

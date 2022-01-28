@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigatorHandles()
 		{
-			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "";
+			BackgroundColor = BackgroundColor_DefaultValue = "#f2f2f2";
+			BorderColor = BorderColor_DefaultValue = "#999999";
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 15;
 			LineWidth = LineWidth_DefaultValue = null;

@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsPriceenvelopesParams()
 		{
 			BottomBand = BottomBand_DefaultValue = null;
-			Index = Index_DefaultValue = 0;
+			Index = Index_DefaultValue = 3;
 			Period = Period_DefaultValue = 20;
 			TopBand = TopBand_DefaultValue = null;
 			

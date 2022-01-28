@@ -37,6 +37,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			Crisp = Crisp_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
+			Cumulative = Cumulative_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsDumbbellCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = PlotOptionsDumbbellDashStyle.Null;
@@ -239,6 +240,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? CropThreshold { get; set; }
 		private double? CropThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).
+		/// </summary>
+		public bool? Cumulative { get; set; }
+		private bool? Cumulative_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -638,6 +646,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
+			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", Highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
