@@ -13,8 +13,7 @@ using System.IO;
 using System.Collections;
 using System.Text;
 using System.Runtime.Remoting;
-
-
+using System.Diagnostics;
 
 /// <summary>
 /// Summary description for AspNetMvc
@@ -229,6 +228,8 @@ public class HighchartsGenerator
 
     private List<ApiItem> GetChildrenFromBaseClasses(ApiItem item)
     {
+        Debug.WriteLine(item.FullName);
+
         var addedChildren = new List<ApiItem>();
 
         if (item == null)
