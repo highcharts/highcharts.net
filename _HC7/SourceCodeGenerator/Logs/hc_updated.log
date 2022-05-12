@@ -606,4 +606,4 @@ plotOptions.boxplot.Exclude:borderColor,borderRadius,borderWidth,groupZPadding,b
 series.boxplot.Exclude:dataParser,dataURL,marker,stack,stacking,boostThreshold,boostBlending
 annotations.labels.point.Types:string,*
 annotations.shapes.point.Types:string,*
-plotOptions.arcdiagram.dataLabels.linkTextPath.Extends:null
+series.lollipop.Extends:series,plotOptions.lollipop

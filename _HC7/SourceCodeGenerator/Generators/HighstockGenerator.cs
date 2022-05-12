@@ -80,9 +80,9 @@ public class HighstockGenerator
         _previousVersionApiItems = PreviousJsonParser.Get();
 
         Console.WriteLine("Comparing current version to previous version");
-        ComparisonService.SetValuesFromFile(@"d:\work\hs_updated.log");
+        ComparisonService.SetValuesFromFile(@"Logs\hs_updated.log");
         ComparisonService.Compare(_apiItems, _previousVersionApiItems);
-        ComparisonService.SaveChanges(@"d:\work\hs.log", @"d:\work\hs_old.log", @"d:\work\hs_new_changes.log", FileService);
+        ComparisonService.SaveChanges(@"Logs\hs.log", @"Logs\hs_old.log", @"Logs\hs_new_changes.log", FileService);
 
         ProcessApiItems(_apiItems);
         MultiplyObjects(_apiItems);

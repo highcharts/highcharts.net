@@ -82,9 +82,9 @@ public class HighchartsGenerator
         _previousVersionApiItems = PreviousVersionJsonParser.Get();
 
         Console.WriteLine("Comparing current version to previous version");
-        ComparisonService.SetValuesFromFile(@"d:\work\hc_updated.log");
+        ComparisonService.SetValuesFromFile(@"Logs\hc_updated.log");
         ComparisonService.Compare(_apiItems, _previousVersionApiItems);
-        ComparisonService.SaveChanges(@"d:\work\hc.log", @"d:\work\hc_old.log", @"d:\work\hc_new_changes.log", FileService);
+        ComparisonService.SaveChanges(@"Logs\hc.log", @"Logs\hc_old.log", @"Logs\hc_new_changes.log", FileService);
         //Console.WriteLine("--------------------------------------------------------");
         //Console.WriteLine("old to new");
         //CompareItems(_previousVersionApiItems, _apiItems);
@@ -1357,6 +1357,7 @@ public class HighchartsGenerator
         _seriesMappings.Add("series<funnel>", "FunnelSeries");
         _seriesMappings.Add("series<gauge>", "GaugeSeries");
         _seriesMappings.Add("series<heatmap>", "HeatmapSeries");
+        _seriesMappings.Add("series<lollipop>", "Lollipop");
         _seriesMappings.Add("series<line>", "LineSeries");
         _seriesMappings.Add("series<pie>", "PieSeries");
         _seriesMappings.Add("series<polygon>", "PolygonSeries");
