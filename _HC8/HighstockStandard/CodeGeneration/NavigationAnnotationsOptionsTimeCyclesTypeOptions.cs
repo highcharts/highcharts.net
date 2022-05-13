@@ -34,8 +34,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public Object Points { get; set; }
-		private Object Points_DefaultValue { get; set; }
+		public string Points { get; set; }
+		private string Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>

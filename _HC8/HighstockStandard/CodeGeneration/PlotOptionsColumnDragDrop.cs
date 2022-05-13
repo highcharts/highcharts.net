@@ -48,7 +48,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the drag handles.
+		/// Options for the drag handles available in column series.
 		/// </summary>
 		public PlotOptionsColumnDragDropDragHandle DragHandle { get; set; }
 		private PlotOptionsColumnDragDropDragHandle DragHandle_DefaultValue { get; set; }

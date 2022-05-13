@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AccessibilitySeries()
 		{
 			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
+			DescriptionFormat = DescriptionFormat_DefaultValue = "{seriesDescription}{authorDescription}{axisDescription}";
 			DescriptionFormatter = DescriptionFormatter_DefaultValue = "";
 			PointDescriptionEnabledThreshold = PointDescriptionEnabledThreshold_DefaultValue = 200;
 			PointDescriptionEnabledThresholdBool = PointDescriptionEnabledThresholdBool_DefaultValue = null;
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? DescribeSingleSeries { get; set; }
 		private bool? DescribeSingleSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Format to use for describing the data series group to assistivetechnology - including screen readers.The series context and its subproperties are available under thevariable `{series}`, for example `{series.name}` for the seriesname, and `{series.points.length}` for the number of data points.The chart context and its subproperties are available under thevariable `{chart}`, for example `{chart.series.length}` for thenumber of series in the chart.`{seriesDescription}` refers to the automatic description of theseries type and number of points added by Highcharts by default.`{authorDescription}` refers to the description added in[series.description](#plotOptions.series.description) if one ispresent. `{axisDescription}` refers to the description added ifthe chart has multiple X or Y axes.Note that if [series.descriptionFormatter](#accessibility.series.descriptionFormatter)is declared it will take precedence, and this option will beoverridden.
+		/// </summary>
+		public string DescriptionFormat { get; set; }
+		private string DescriptionFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -58,6 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
+			if (DescriptionFormat != DescriptionFormat_DefaultValue) h.Add("descriptionFormat",DescriptionFormat);
 			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); Highstock.AddFunction("descriptionFormatter", DescriptionFormatter); }  
 			if (PointDescriptionEnabledThreshold != PointDescriptionEnabledThreshold_DefaultValue) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThreshold);
 			if (PointDescriptionEnabledThresholdBool != PointDescriptionEnabledThresholdBool_DefaultValue) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThresholdBool);

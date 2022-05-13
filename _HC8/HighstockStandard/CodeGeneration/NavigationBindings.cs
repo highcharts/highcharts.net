@@ -128,7 +128,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// A ellipse annotation bindings. Includes `start` and two events in`steps` array. First updates the second point, responsible for arx width, and second updates the ry width.
 		/// </summary>
 		public Hashtable EllipseAnnotation { get; set; }
 		private Hashtable EllipseAnnotation_DefaultValue { get; set; }
@@ -317,7 +317,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow and a label withvalue.
+		/// A time cycles annotation bindings. Includes `start` event and 1 `step`event. first click marks the beginning of the circle, and the second onesets its diameter.
 		/// </summary>
 		public Hashtable TimeCycles { get; set; }
 		private Hashtable TimeCycles_DefaultValue { get; set; }
@@ -386,14 +386,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CurrentPriceIndicator != CurrentPriceIndicator_DefaultValue) h.Add("currentPriceIndicator",CurrentPriceIndicator);
 			if (Elliott3 != Elliott3_DefaultValue) h.Add("elliott3",Elliott3);
 			if (Elliott5 != Elliott5_DefaultValue) h.Add("elliott5",Elliott5);
-			if (EllipseAnnotation != null) h.Add("ellipseAnnotation",EllipseAnnotation);
+			if (EllipseAnnotation != EllipseAnnotation_DefaultValue) h.Add("ellipseAnnotation",EllipseAnnotation);
 			if (Fibonacci != Fibonacci_DefaultValue) h.Add("fibonacci",Fibonacci);
 			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (FlagCirclepin != FlagCirclepin_DefaultValue) h.Add("flagCirclepin",FlagCirclepin);
 			if (FlagDiamondpin != FlagDiamondpin_DefaultValue) h.Add("flagDiamondpin",FlagDiamondpin);
 			if (FlagSimplepin != FlagSimplepin_DefaultValue) h.Add("flagSimplepin",FlagSimplepin);
 			if (FlagSquarepin != FlagSquarepin_DefaultValue) h.Add("flagSquarepin",FlagSquarepin);
-			if (FullScreen != null) h.Add("fullScreen",FullScreen);
+			if (FullScreen != FullScreen_DefaultValue) h.Add("fullScreen",FullScreen);
 			if (HorizontalLine != HorizontalLine_DefaultValue) h.Add("horizontalLine",HorizontalLine);
 			if (Indicators != Indicators_DefaultValue) h.Add("indicators",Indicators);
 			if (InfinityLine != InfinityLine_DefaultValue) h.Add("infinityLine",InfinityLine);
@@ -405,15 +405,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Pitchfork != Pitchfork_DefaultValue) h.Add("pitchfork",Pitchfork);
 			if (Ray != Ray_DefaultValue) h.Add("ray",Ray);
 			if (RectangleAnnotation != RectangleAnnotation_DefaultValue) h.Add("rectangleAnnotation",RectangleAnnotation);
-			if (SaveChart != null) h.Add("saveChart",SaveChart);
+			if (SaveChart != SaveChart_DefaultValue) h.Add("saveChart",SaveChart);
 			if (Segment != Segment_DefaultValue) h.Add("segment",Segment);
 			if (SeriesTypeCandlestick != SeriesTypeCandlestick_DefaultValue) h.Add("seriesTypeCandlestick",SeriesTypeCandlestick);
 			if (SeriesTypeHeikinAshi != SeriesTypeHeikinAshi_DefaultValue) h.Add("seriesTypeHeikinAshi",SeriesTypeHeikinAshi);
-			if (SeriesTypeHLC != null) h.Add("seriesTypeHLC",SeriesTypeHLC);
+			if (SeriesTypeHLC != SaveChart_DefaultValue) h.Add("seriesTypeHLC",SeriesTypeHLC);
 			if (SeriesTypeHollowCandlestick != SeriesTypeHollowCandlestick_DefaultValue) h.Add("seriesTypeHollowCandlestick",SeriesTypeHollowCandlestick);
 			if (SeriesTypeLine != SeriesTypeLine_DefaultValue) h.Add("seriesTypeLine",SeriesTypeLine);
 			if (SeriesTypeOhlc != SeriesTypeOhlc_DefaultValue) h.Add("seriesTypeOhlc",SeriesTypeOhlc);
-			if (TimeCycles != null) h.Add("timeCycles",TimeCycles);
+			if (TimeCycles != TimeCycles_DefaultValue) h.Add("timeCycles",TimeCycles);
 			if (ToggleAnnotations != ToggleAnnotations_DefaultValue) h.Add("toggleAnnotations",ToggleAnnotations);
 			if (VerticalArrow != VerticalArrow_DefaultValue) h.Add("verticalArrow",VerticalArrow);
 			if (VerticalCounter != VerticalCounter_DefaultValue) h.Add("verticalCounter",VerticalCounter);

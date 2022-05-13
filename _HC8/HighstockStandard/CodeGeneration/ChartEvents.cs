@@ -21,6 +21,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			BeforePrint = BeforePrint_DefaultValue = "";
 			Click = Click_DefaultValue = "";
 			ExportData = ExportData_DefaultValue = "";
+			FullscreenClose = FullscreenClose_DefaultValue = "";
+			FullscreenOpen = FullscreenOpen_DefaultValue = "";
 			Load = Load_DefaultValue = "";
 			Redraw = Redraw_DefaultValue = "";
 			Render = Render_DefaultValue = "";
@@ -65,6 +67,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Fires when a fullscreen is closed through the context menu item,or a fullscreen is closed on the `Escape` button click,or the `Chart.fullscreen.close` method.
+		/// </summary>
+		public string FullscreenClose { get; set; }
+		private string FullscreenClose_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires when a fullscreen is opened through the context menu item,or the `Chart.fullscreen.open` method.
+		/// </summary>
+		public string FullscreenOpen { get; set; }
+		private string FullscreenOpen_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Fires when the chart is finished loading. Since v4.2.2, it also waitsfor images to be loaded, for example from point markers. Oneparameter, `event`, is passed to the function, containing commonevent information.There is also a second parameter to the chart constructor where acallback function can be passed to be executed on chart.load.
 		/// </summary>
 		public string Load { get; set; }
@@ -102,6 +118,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highstock.AddFunction("beforePrint", BeforePrint); }  
 			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("click", Click); }  
 			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); Highstock.AddFunction("exportData", ExportData); }  
+			if (FullscreenClose != FullscreenClose_DefaultValue) { h.Add("fullscreenClose",FullscreenClose); Highstock.AddFunction("fullscreenClose", FullscreenClose); }  
+			if (FullscreenOpen != FullscreenOpen_DefaultValue) { h.Add("fullscreenOpen",FullscreenOpen); Highstock.AddFunction("fullscreenOpen", FullscreenOpen); }  
 			if (Load != Load_DefaultValue) { h.Add("load",Load); Highstock.AddFunction("load", Load); }  
 			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highstock.AddFunction("redraw", Redraw); }  
 			if (Render != Render_DefaultValue) { h.Add("render",Render); Highstock.AddFunction("render", Render); }  

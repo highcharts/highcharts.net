@@ -18,9 +18,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			DateFormat = DateFormat_DefaultValue = "";
 			DateFormatter = DateFormatter_DefaultValue = "";
+			DescribeNull = DescribeNull_DefaultValue = true;
 			DescriptionFormatter = DescriptionFormatter_DefaultValue = "";
 			ValueDecimals = ValueDecimals_DefaultValue = null;
-			ValueDescriptionFormat = ValueDescriptionFormat_DefaultValue = "{index}. {xDescription}{separator}{value}.";
+			ValueDescriptionFormat = ValueDescriptionFormat_DefaultValue = "{xDescription}{separator}{value}.";
 			ValuePrefix = ValuePrefix_DefaultValue = "";
 			ValueSuffix = ValueSuffix_DefaultValue = "";
 			
@@ -42,6 +43,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether or not to describe points with the value `null` toassistive technology, such as screen readers.
+		/// </summary>
+		public bool? DescribeNull { get; set; }
+		private bool? DescribeNull_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Formatter function to use instead of the default for pointdescriptions.Receives one argument, `point`, referring to the point todescribe. Should return a string with the description of thepoint for a screen reader user. If `false` is returned, thedefault formatter will be used for that point.Note: Prefer using [accessibility.point.valueDescriptionFormat](#accessibility.point.valueDescriptionFormat)instead if possible, as default functionality such as describingannotations will be preserved.
 		/// </summary>
 		public string DescriptionFormatter { get; set; }
@@ -56,7 +64,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Format to use for describing the values of data pointsto assistive technology - including screen readers.The point context is available as `{point}`.Additionally, the series name, annotation info, anddescription added in `point.accessibility.description`is added by default if relevant. To override this, use the[accessibility.point.descriptionFormatter](#accessibility.point.descriptionFormatter)option.
+		/// Format to use for describing the values of data pointsto assistive technology - including screen readers.The point context is available as `{point}`.Other available context variables include `{index}`, `{value}`, and `{xDescription}`.Additionally, the series name, annotation info, anddescription added in `point.accessibility.description`is added by default if relevant. To override this, use the[accessibility.point.descriptionFormatter](#accessibility.point.descriptionFormatter)option.
 		/// </summary>
 		public string ValueDescriptionFormat { get; set; }
 		private string ValueDescriptionFormat_DefaultValue { get; set; }
@@ -83,6 +91,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
 			if (DateFormatter != DateFormatter_DefaultValue) { h.Add("dateFormatter",DateFormatter); Highstock.AddFunction("dateFormatter", DateFormatter); }  
+			if (DescribeNull != DescribeNull_DefaultValue) h.Add("describeNull",DescribeNull);
 			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); Highstock.AddFunction("descriptionFormatter", DescriptionFormatter); }  
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValueDescriptionFormat != ValueDescriptionFormat_DefaultValue) h.Add("valueDescriptionFormat",ValueDescriptionFormat);

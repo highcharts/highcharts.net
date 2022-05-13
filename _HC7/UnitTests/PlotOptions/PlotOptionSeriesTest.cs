@@ -25,7 +25,7 @@ namespace UnitTests
         //    return _chart.PlotOptions.Line;
         //}
 
-        public PlotOptionSeriesTest()
+        private PlotOptionSeriesTest()
         {
             _chart = new Highcharts();
             _renderer = new HighchartsRenderer(_chart);

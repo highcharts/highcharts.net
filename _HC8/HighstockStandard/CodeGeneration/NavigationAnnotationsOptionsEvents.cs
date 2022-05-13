@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Add = Add_DefaultValue = "";
 			AfterUpdate = AfterUpdate_DefaultValue = "";
+			Click = Click_DefaultValue = "";
 			Remove = Remove_DefaultValue = "";
 			
 		}	
@@ -38,6 +39,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Fires when the annotation is clicked.
+		/// </summary>
+		public string Click { get; set; }
+		private string Click_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Event callback when annotation is removed from the chart.
 		/// </summary>
 		public string Remove { get; set; }
@@ -51,6 +59,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Add != Add_DefaultValue) { h.Add("add",Add); Highstock.AddFunction("add", Add); }  
 			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); Highstock.AddFunction("afterUpdate", AfterUpdate); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("click", Click); }  
 			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); Highstock.AddFunction("remove", Remove); }  
 			
 

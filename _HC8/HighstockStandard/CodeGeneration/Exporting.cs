@@ -28,6 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			FormAttributes = FormAttributes_DefaultValue = null;
 			LibURL = LibURL_DefaultValue = "";
 			MenuItemDefinitions = MenuItemDefinitions_DefaultValue = null;
+			PdfFont = PdfFont_DefaultValue = new ExportingPdfFont();
 			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
 			Scale = Scale_DefaultValue = 2;
 			ShowTable = ShowTable_DefaultValue = false;
@@ -115,7 +116,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Path where Highcharts will look for export module dependencies toload on demand if they don't already exist on `window`. Should currentlypoint to location of [CanVG](https://github.com/canvg/canvg) library,[jsPDF](https://github.com/yWorks/jsPDF) and[svg2pdf.js](https://github.com/yWorks/svg2pdf.js), required for clientside export in certain browsers.
+		/// Path where Highcharts will look for export module dependencies toload on demand if they don't already exist on `window`. Should currentlypoint to location of [CanVG](https://github.com/canvg/canvg) library,[jsPDF](https://github.com/parallax/jsPDF) and[svg2pdf.js](https://github.com/yWorks/svg2pdf.js), required for clientside export in certain browsers.
 		/// </summary>
 		public string LibURL { get; set; }
 		private string LibURL_DefaultValue { get; set; }
@@ -126,6 +127,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Object MenuItemDefinitions { get; set; }
 		private Object MenuItemDefinitions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Settings for a custom font for the exported PDF, when using the`offline-exporting` module. This is used for languages containingnon-ASCII characters, like Chinese, Russian, Japanese etc.As described in the [jsPDFdocs](https://github.com/parallax/jsPDF#use-of-unicode-characters--utf-8),the 14 standard fonts in PDF are limited to the ASCII-codepage.Therefore, in order to support other text in the exported PDF, one ormore TTF font files have to be passed on to the exporting module.See more in [thedocs](https://www.highcharts.com/docs/export-module/client-side-export).
+		/// </summary>
+		public ExportingPdfFont PdfFont { get; set; }
+		private ExportingPdfFont PdfFont_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -229,6 +237,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);
 			if (LibURL != LibURL_DefaultValue) h.Add("libURL",LibURL);
 			if (MenuItemDefinitions != MenuItemDefinitions_DefaultValue) h.Add("menuItemDefinitions",MenuItemDefinitions);
+			if (PdfFont.IsDirty(ref highstock)) h.Add("pdfFont",PdfFont.ToHashtable(ref highstock));
 			if (PrintMaxWidth != PrintMaxWidth_DefaultValue) h.Add("printMaxWidth",PrintMaxWidth);
 			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
 			if (ShowTable != ShowTable_DefaultValue) h.Add("showTable",ShowTable);

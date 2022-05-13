@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			AfterRegionLabel = AfterRegionLabel_DefaultValue = "";
 			Annotations = Annotations_DefaultValue = new List<Annotations>();
-			BeforeRegionLabel = BeforeRegionLabel_DefaultValue = "Chart screen reader information, {chartTitle}.";
+			BeforeRegionLabel = BeforeRegionLabel_DefaultValue = "";
 			EndOfChartMarker = EndOfChartMarker_DefaultValue = "End of interactive chart.";
 			
 		}	

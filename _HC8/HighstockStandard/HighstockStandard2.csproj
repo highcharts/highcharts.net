@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Highstock</AssemblyName>
-    <Version>9.3.2.1</Version>
+    <Version>10.1.0.1</Version>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>highcharts.snk</AssemblyOriginatorKeyFile>

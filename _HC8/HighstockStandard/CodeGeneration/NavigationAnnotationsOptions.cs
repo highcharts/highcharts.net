@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Crop = Crop_DefaultValue = true;
 			Draggable = Draggable_DefaultValue = "xy";
 			Events = Events_DefaultValue = new NavigationAnnotationsOptionsEvents();
-			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new NavigationAnnotationsOptionsFibonacciTimeZone();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new object();
 			Id = Id_DefaultValue = "";
 			IdNumber = IdNumber_DefaultValue = null;
 			LabelOptions = LabelOptions_DefaultValue = new NavigationAnnotationsOptionsLabelOptions();
@@ -81,8 +81,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The Fibonacci Time Zones annotation.
 		/// </summary>
-		public NavigationAnnotationsOptionsFibonacciTimeZone FibonacciTimeZones { get; set; }
-		private NavigationAnnotationsOptionsFibonacciTimeZone FibonacciTimeZones_DefaultValue { get; set; }
+		public object FibonacciTimeZones { get; set; }
+		private object FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -159,7 +159,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
 			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
-			if (FibonacciTimeZones.IsDirty(ref highstock)) h.Add("fibonacciTimeZones",FibonacciTimeZones.ToHashtable(ref highstock));
+			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
 			if (LabelOptions.IsDirty(ref highstock)) h.Add("labelOptions",LabelOptions.ToHashtable(ref highstock));

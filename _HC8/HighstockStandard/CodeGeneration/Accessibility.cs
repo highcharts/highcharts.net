@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable accessibility functionality for the chart.
+		/// Enable accessibility functionality for the chart. For moreinformation on how to include these features, and why this isrecommended, see [Highcharts Accessibility](https://www.highcharts.com/docs/accessibility/accessibility-module).Highcharts will by default emit a warning to the console ifthe [accessibility module](https://code.highcharts.com/modules/accessibility.js)is not loaded. Setting this option to `false` will overrideand silence the warning.Once the module is loaded, setting this option to `false`will disable the module for this chart.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }

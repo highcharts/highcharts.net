@@ -16,7 +16,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public Chart()
 		{
+			AlignThresholds = AlignThresholds_DefaultValue = false;
 			AlignTicks = AlignTicks_DefaultValue = true;
+			AllowMutatingData = AllowMutatingData_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
@@ -67,10 +69,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
+		/// When using multiple axes, align the thresholds. When this is true, otherticks will also be aligned.Note that for line series and some other series types, the `threshold`option is set to `null` by default. This will in turn cause their y-axisto not have a threshold. In order to avoid that, set the series`threshold` to 0 or another number.If `startOnTick` or `endOnTick` in the axis options are set to false, orif the axis is logarithmic, the threshold will not be aligned.
+		/// </summary>
+		public bool AlignThresholds { get; set; }
+		private bool AlignThresholds_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When using multiple axes, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in the axis options are set to false,then the `alignTicks ` will be disabled for the axis.Disabled for logarithmic axes.
 		/// </summary>
 		public bool? AlignTicks { get; set; }
 		private bool? AlignTicks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// By default, (because of memory and performance reasons) the chart doesnot copy the data but keeps it as a reference. In some cases, this mightresult in mutating the original data source. In order to prevent that,set that property to false. Please note that changing that might decreaseperformance, especially with bigger sets of data.
+		/// </summary>
+		public bool? AllowMutatingData { get; set; }
+		private bool? AllowMutatingData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -393,7 +409,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (AlignThresholds != AlignThresholds_DefaultValue) h.Add("alignThresholds",AlignThresholds);
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
+			if (AllowMutatingData != AllowMutatingData_DefaultValue) h.Add("allowMutatingData",AllowMutatingData);
 			if (Animation.IsDirty(ref highstock)) h.Add("animation",Animation.ToJSON(ref highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);

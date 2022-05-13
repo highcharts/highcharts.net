@@ -235,7 +235,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A callback function to place the tooltip in a default position. Thecallback receives three parameters: `labelWidth`, `labelHeight` and`point`, where point contains values for `plotX` and `plotY` tellingwhere the reference point is in the plot area. Add `chart.plotLeft`and `chart.plotTop` to get the full coordinates.Since v7, when [tooltip.split](#tooltip.split) option is enabled,positioner is called for each of the boxes separately, includingxAxis header. xAxis header is not a point, instead `point` argumentcontains info:`{ plotX: Number, plotY: Number, isHeader: Boolean }`The return should be an object containing x and y values, for example`{ x: 100, y: 100 }`.
+		/// A callback function to place the tooltip in a custom position. Thecallback receives three parameters: `labelWidth`, `labelHeight` and`point`, where point contains values for `plotX` and `plotY` tellingwhere the reference point is in the plot area. Add `chart.plotLeft`and `chart.plotTop` to get the full coordinates.To find the actual hovered `Point` instance, use`this.chart.hoverPoint`. For shared or split tooltips, all the hoverpoints are available in `this.chart.hoverPoints`.Since v7, when [tooltip.split](#tooltip.split) option is enabled,positioner is called for each of the boxes separately, includingxAxis header. xAxis header is not a point, instead `point` argumentcontains info: `{ plotX: Number, plotY: Number, isHeader: Boolean }`The return should be an object containing x and y values, for example`{ x: 100, y: 100 }`.
 		/// </summary>
 		public string Positioner { get; set; }
 		private string Positioner_DefaultValue { get; set; }

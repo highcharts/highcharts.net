@@ -28,9 +28,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
-			Compare = Compare_DefaultValue = "";
-			CompareBase = CompareBase_DefaultValue = VbpSeriesCompareBase.Min;
-			CompareStart = CompareStart_DefaultValue = false;
 			CompareToMain = CompareToMain_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			Crisp = Crisp_DefaultValue = true;
@@ -180,27 +177,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ColorKey { get; set; }
 		private string ColorKey_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Compare the values of the series against the first non-null, non-zero value in the visible range. The y axis will show percentageor absolute change depending on whether `compare` is set to `"percent"`or `"value"`. When this is applied to multiple series, it allowscomparing the development of the series against each other. Addsa `change` field to every point object.
-		/// </summary>
-		public string Compare { get; set; }
-		private string Compare_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When [compare](#plotOptions.series.compare) is `percent`, this optiondictates whether to use 0 or 100 as the base of comparison.
-		/// </summary>
-		public VbpSeriesCompareBase CompareBase { get; set; }
-		private VbpSeriesCompareBase CompareBase_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines if comparison should start from the first point within the visiblerange or should start from the first point **before** the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
-		/// </summary>
-		public bool? CompareStart { get; set; }
-		private bool? CompareStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -661,9 +637,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
-			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
-			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
-			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CompareToMain != CompareToMain_DefaultValue) h.Add("compareToMain",CompareToMain);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);

@@ -18,7 +18,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			DraggableX = DraggableX_DefaultValue = null;
 			DraggableY = DraggableY_DefaultValue = null;
-			DragHandle = DragHandle_DefaultValue = new HlcSeriesDataDragDropDragHandle();
 			DragMaxX = DragMaxX_DefaultValue = null;
 			DragMaxY = DragMaxY_DefaultValue = null;
 			DragMinX = DragMinX_DefaultValue = null;
@@ -45,13 +44,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? DraggableY { get; set; }
 		private bool? DraggableY_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the drag handles.
-		/// </summary>
-		public HlcSeriesDataDragDropDragHandle DragHandle { get; set; }
-		private HlcSeriesDataDragDropDragHandle DragHandle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -131,7 +123,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (DraggableX != DraggableX_DefaultValue) h.Add("draggableX",DraggableX);
 			if (DraggableY != DraggableY_DefaultValue) h.Add("draggableY",DraggableY);
-			if (DragHandle.IsDirty(ref highstock)) h.Add("dragHandle",DragHandle.ToHashtable(ref highstock));
 			if (DragMaxX != DragMaxX_DefaultValue) h.Add("dragMaxX",DragMaxX);
 			if (DragMaxY != DragMaxY_DefaultValue) h.Add("dragMaxY",DragMaxY);
 			if (DragMinX != DragMinX_DefaultValue) h.Add("dragMinX",DragMinX);

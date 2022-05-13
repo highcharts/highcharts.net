@@ -48,7 +48,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Lang configuration for the series main summary. Each seriestype has two modes:1. This series type is the only series type used in the   chart2. This is a combination chart with multiple series typesIf a definition does not exist for the specific series typeand mode, the 'default' lang definitions are used.
+		/// Lang configuration for the series main summary. Each seriestype has two modes:1. This series type is the only series type used in the   chart2. This is a combination chart with multiple series typesIf a definition does not exist for the specific series typeand mode, the 'default' lang definitions are used.Chart and its subproperties can be accessed with the `{chart}` variable.The series and its subproperties can be accessed with the `{series}` variable.The series index (starting from 1) can be accessed with the `{seriesNumber}` variable.
 		/// </summary>
 		public LangAccessibilitySeriesSummary Summary { get; set; }
 		private LangAccessibilitySeriesSummary Summary_DefaultValue { get; set; }

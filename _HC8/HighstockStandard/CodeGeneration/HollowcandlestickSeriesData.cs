@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Accessibility = Accessibility_DefaultValue = new HollowcandlestickSeriesDataAccessibility();
 			ClassName = ClassName_DefaultValue = "";
+			Close = Close_DefaultValue = null;
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Custom = Custom_DefaultValue = new Hashtable();
@@ -51,6 +52,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Close { get; set; }
+		private double? Close_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -174,6 +182,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Close != Close_DefaultValue) h.Add("close",Close);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);

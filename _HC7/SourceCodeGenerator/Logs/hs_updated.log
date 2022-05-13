@@ -641,3 +641,4 @@ series.tema.Extends:series,plotOptions.tema
 series.trix.Extends:series,plotOptions.trix
 annotations.labels.point.Types:string,*
 annotations.shapes.point.Types:string,*
+series.lollipop.Extends:series,plotOptions.lollipop

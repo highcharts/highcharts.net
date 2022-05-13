@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 4;
+			States = States_DefaultValue = new PlotOptionsDemaStatesSelectMarkerStates();
 			Symbol = Symbol_DefaultValue = "";
 			Width = Width_DefaultValue = null;
 			
@@ -79,6 +80,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// States for a single point marker.
+		/// </summary>
+		public PlotOptionsDemaStatesSelectMarkerStates States { get; set; }
+		private PlotOptionsDemaStatesSelectMarkerStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A predefined shape or symbol for the marker. When undefined, thesymbol is pulled from options.symbols. Other possible values are`'circle'`, `'square'`,`'diamond'`, `'triangle'` and`'triangle-down'`.Additionally, the URL to a graphic can be given on this form:`'url(graphic.png)'`. Note that for the image to be applied toexported charts, its URL needs to be accessible by the exportserver.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
 		/// </summary>
 		public string Symbol { get; set; }
@@ -104,6 +112,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (States.IsDirty(ref highstock)) h.Add("states",States.ToHashtable(ref highstock));
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			

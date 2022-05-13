@@ -348,7 +348,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
+		/// 
 		/// </summary>
 		public PlotOptionsColumnDragDrop DragDrop { get; set; }
 		private PlotOptionsColumnDragDrop DragDrop_DefaultValue { get; set; }

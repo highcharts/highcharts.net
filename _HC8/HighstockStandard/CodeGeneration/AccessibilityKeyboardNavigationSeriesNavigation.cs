@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Mode = Mode_DefaultValue = AccessibilityKeyboardNavigationSeriesNavigationMode.Normal;
 			PointNavigationEnabledThreshold = PointNavigationEnabledThreshold_DefaultValue = null;
 			PointNavigationEnabledThresholdBool = PointNavigationEnabledThresholdBool_DefaultValue = null;
+			RememberPointFocus = RememberPointFocus_DefaultValue = false;
 			SkipNullPoints = SkipNullPoints_DefaultValue = true;
 			
 		}	
@@ -46,6 +47,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Remember which point was focused even after navigating awayfrom the series, so that when navigating back to the seriesyou start at the last focused point.
+		/// </summary>
+		public bool? RememberPointFocus { get; set; }
+		private bool? RememberPointFocus_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Skip null points when navigating through points with thekeyboard.
 		/// </summary>
 		public bool? SkipNullPoints { get; set; }
@@ -60,6 +68,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Mode != Mode_DefaultValue) h.Add("mode", Highstock.FirstCharacterToLower(Mode.ToString()));
 			if (PointNavigationEnabledThreshold != PointNavigationEnabledThreshold_DefaultValue) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThreshold);
 			if (PointNavigationEnabledThresholdBool != PointNavigationEnabledThresholdBool_DefaultValue) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThresholdBool);
+			if (RememberPointFocus != RememberPointFocus_DefaultValue) h.Add("rememberPointFocus",RememberPointFocus);
 			if (SkipNullPoints != SkipNullPoints_DefaultValue) h.Add("skipNullPoints",SkipNullPoints);
 			
 

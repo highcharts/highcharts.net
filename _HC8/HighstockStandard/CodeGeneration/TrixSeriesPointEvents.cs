@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Fires when the mouse enters the area close to the point. Oneparameter, `event`, is passed to the function, containing commonevent information.
+		/// Fires when the mouse enters the area close to the point. Oneparameter, `event`, is passed to the function, containing commonevent information.Returning `false` cancels the default behavior, which is to show atooltip for the point.
 		/// </summary>
 		public string MouseOver { get; set; }
 		private string MouseOver_DefaultValue { get; set; }

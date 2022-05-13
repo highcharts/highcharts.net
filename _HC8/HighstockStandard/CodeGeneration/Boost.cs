@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			AllowForce = AllowForce_DefaultValue = true;
 			Debug = Debug_DefaultValue = new BoostDebug();
 			Enabled = Enabled_DefaultValue = true;
+			PixelRatio = PixelRatio_DefaultValue = 1;
 			SeriesThreshold = SeriesThreshold_DefaultValue = 50;
 			UseGPUTranslations = UseGPUTranslations_DefaultValue = false;
 			UsePreallocated = UsePreallocated_DefaultValue = false;
@@ -45,6 +46,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel ratio for the WebGL content. If 0, the `window.devicePixelRatio` isused. This ensures sharp graphics on high DPI displays like Apple's Retina,as well as when a page is zoomed.The default is left at 1 for now, as this is a new feature that has thepotential to break existing setups. Over time, when it has been battletested, the intention is to set it to 0 by default.Another use case for this option is to set it to 2 in order to make exportedand upscaled charts render sharp.One limitation when using the `pixelRatio` is that the line width of graphsis scaled down. Since the Boost module currently can only render 1px linewidths, it is scaled down to a thin 0.5 pixels on a Retina display.
+		/// </summary>
+		public double? PixelRatio { get; set; }
+		private double? PixelRatio_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -76,6 +84,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AllowForce != AllowForce_DefaultValue) h.Add("allowForce",AllowForce);
 			if (Debug.IsDirty(ref highstock)) h.Add("debug",Debug.ToHashtable(ref highstock));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (PixelRatio != PixelRatio_DefaultValue) h.Add("pixelRatio",PixelRatio);
 			if (SeriesThreshold != SeriesThreshold_DefaultValue) h.Add("seriesThreshold",SeriesThreshold);
 			if (UseGPUTranslations != UseGPUTranslations_DefaultValue) h.Add("useGPUTranslations",UseGPUTranslations);
 			if (UsePreallocated != UsePreallocated_DefaultValue) h.Add("usePreallocated",UsePreallocated);
