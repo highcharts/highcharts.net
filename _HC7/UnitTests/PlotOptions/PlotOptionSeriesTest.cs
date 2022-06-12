@@ -7,7 +7,7 @@ using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 
-namespace UnitTests
+namespace UnitTests.PlotOptions
 {
     public class PlotOptionSeriesTest
     {
@@ -25,16 +25,16 @@ namespace UnitTests
         //    return _chart.PlotOptions.Line;
         //}
 
-        private PlotOptionSeriesTest()
+        public PlotOptionSeriesTest()
         {
             _chart = new Highcharts();
             _renderer = new HighchartsRenderer(_chart);
         }
 
-        public PlotOptionSeriesTest(ChartType chartType) : this()
-        {
-            _chart.Chart.Type = chartType;
-        }
+        //public PlotOptionSeriesTest(ChartType chartType) : this()
+        //{
+        //    _chart.Chart.Type = chartType;
+        //}
 
         [Theory]
         [InlineData("Description")]
@@ -128,10 +128,10 @@ namespace UnitTests
         [Fact]
         public void Test_IfAnimationLimitRenders_Correct()
         {
-            var limit = 250;
+            double limit = 250;
             _chart.PlotOptions.Series.AnimationLimit = limit;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animationLimit\":{limit}}}}}", _renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animationLimit\":{limit}.0}}}}", _renderer.RenderHtml());
         }
 
         //missing boostBlending
@@ -142,7 +142,7 @@ namespace UnitTests
             var limit = 2000;
             _chart.PlotOptions.Series.BoostThreshold = limit;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"boostThreshold\":{limit}}}}}", _renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"boostThreshold\":{limit}.0}}}}", _renderer.RenderHtml());
         }
 
         [Fact]
@@ -210,7 +210,7 @@ namespace UnitTests
             var value = 2;
             _chart.PlotOptions.Series.ColorAxisNumber = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"colorAxis\":{value}}}}}", _renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"colorAxis\":{value}.0}}}}", _renderer.RenderHtml());
         }
 
         [Theory]

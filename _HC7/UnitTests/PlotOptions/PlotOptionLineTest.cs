@@ -9,8 +9,8 @@ using Highsoft.Web.Mvc.Charts.Rendering;
 
 namespace UnitTests.PlotOptions
 {
-    internal class PlotOptionLineTest : PlotOptionSeriesTest
-    {
-        public PlotOptionLineTest() : base(ChartType.Line) { }
-    }
+    //public class PlotOptionLineTest : PlotOptionSeriesTest
+    //{
+    //    //public PlotOptionLineTest() : base(ChartType.Line) { }
+    //}
 }
