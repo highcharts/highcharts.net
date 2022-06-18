@@ -13,15 +13,11 @@ namespace UnitTests.PlotOptions
     {
         protected HcFixture _fixture;
 
-        //public PlotOptionSeriesTest()
-        //{
-        //    _fixture = new HcFixture();
-        //}
-
         public PlotOptionSeriesTest(HcFixture fixture)
         {
             _fixture = fixture;
         }
+
 
         [Theory]
         [InlineData("Description")]
