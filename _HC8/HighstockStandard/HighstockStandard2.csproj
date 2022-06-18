@@ -56,8 +56,8 @@
     <PackageIconUrl>http://dotnet.highcharts.com/Content/images/logo_png.png</PackageIconUrl>
     <PackageTags>chart charts charting graph graphs plot plots diagram diagrams highcharts highstock visualisation visualization data-visualisation data-visualization diagram line-chart 3d-chart finance web-forms mvc</PackageTags>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <AssemblyVersion>9.3.2.1</AssemblyVersion>
-    <FileVersion>9.3.2.1</FileVersion>
+    <AssemblyVersion>10.1.0.1</AssemblyVersion>
+    <FileVersion>10.1.0.1</FileVersion>
     <PackageLicenseUrl></PackageLicenseUrl>
   </PropertyGroup>
 
