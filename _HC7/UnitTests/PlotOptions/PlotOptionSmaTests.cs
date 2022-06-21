@@ -9,12 +9,12 @@ using Highsoft.Web.Mvc.Charts.Rendering;
 
 namespace UnitTests.PlotOptions
 {
-    public class PlotOptionLineTest : PlotOptionSeriesTest
+    public class PlotOptionSmaTests : PlotOptionLineTests
     {
-        public PlotOptionLineTest(HcFixture fixture) : base(fixture)
+        public PlotOptionSmaTests(HcFixture fixture) : base(fixture)
         {
             _fixture = fixture;
-            _fixture.ChartType = ChartType.Line;
+            _fixture.ChartType = ChartType.Sma;
         }
     }
 }

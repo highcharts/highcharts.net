@@ -9,11 +9,11 @@ using Highsoft.Web.Mvc.Charts.Rendering;
 
 namespace UnitTests.PlotOptions
 {
-    public class PlotOptionSeriesTest : IClassFixture<HcFixture>
+    public class PlotOptionSeriesTests : IClassFixture<HcFixture>
     {
         protected HcFixture _fixture;
 
-        public PlotOptionSeriesTest(HcFixture fixture)
+        public PlotOptionSeriesTests(HcFixture fixture)
         {
             _fixture = fixture;
         }
@@ -139,7 +139,7 @@ namespace UnitTests.PlotOptions
 
             chart.PlotOptions.Series.Animation.Duration = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"duration\":{value}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"duration\":{value}.0}}}}}}", renderer.RenderHtml());
         }
 
         //There are other members in Animation which are not present in json file
