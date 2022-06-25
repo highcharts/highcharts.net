@@ -139,7 +139,7 @@ namespace UnitTests.PlotOptions
 
             chart.PlotOptions.Series.Animation.Duration = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"duration\":{value}.0}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"duration\":{value}}}}}}}", renderer.RenderHtml());
         }
 
         //There are other members in Animation which are not present in json file

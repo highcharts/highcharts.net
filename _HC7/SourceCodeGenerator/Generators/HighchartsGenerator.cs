@@ -863,7 +863,7 @@ public class HighchartsGenerator
             if (child.FullName == "lang.accessibility.series")
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
-            if (child.FullName == "plotOptions.series")
+            if (child.FullName == "plotOptions.series" || propertyName == "Animation")
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             if (child.Title.ToLower() == "series" && child.ParentFullName == "Highcharts")
