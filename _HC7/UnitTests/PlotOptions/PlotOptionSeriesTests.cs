@@ -154,7 +154,7 @@ namespace UnitTests.PlotOptions
 
             chart.PlotOptions.Series.AnimationLimit = limit;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animationLimit\":{limit}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animationLimit\":{limit}.0}}}}", renderer.RenderHtml());
         }
 
         //missing boostBlending
@@ -169,7 +169,7 @@ namespace UnitTests.PlotOptions
 
             chart.PlotOptions.Series.BoostThreshold = limit;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"boostThreshold\":{limit}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"boostThreshold\":{limit}.0}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -265,7 +265,7 @@ namespace UnitTests.PlotOptions
 
             chart.PlotOptions.Series.ColorAxisNumber = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"colorAxis\":{value}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"colorAxis\":{value}.0}}}}", renderer.RenderHtml());
         }
 
         [Theory]
