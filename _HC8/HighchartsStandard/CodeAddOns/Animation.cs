@@ -11,18 +11,19 @@ using Newtonsoft.Json;
 namespace Highsoft.Web.Mvc.Charts
 {
 	public partial class Animation : BaseObject
-	{        
-		
+	{
+        Hashtable h = new Hashtable();
+
         public Animation() {
-            Enabled = true;
+            Defer = 0;
             Duration = 0;
             Easing = "";            
 		}
 
         /// <summary>
-        /// If a shadow with default values should be enabled
+        /// The animation delay time in milliseconds.
         /// </summary>
-        public bool Enabled { get; set; }
+        public int Defer { get; set; }
 
         /// <summary>
         /// The duration of the animation in milliseconds
@@ -37,28 +38,29 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override Hashtable ToHashtable(ref Highcharts highcharts)
         {
-            Hashtable h = new Hashtable();
+            if (h.Count > 0)
+                return h;
 
             if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
             if (Duration > 0) h.Add("duration", Duration);
+            if (Defer > 0) h.Add("defer", Defer);
 
             return h;
         }
 
         internal override string ToJSON(ref Highcharts highcharts)
         {
-            Hashtable h = ToHashtable(ref highcharts);
             if (h.Count > 0)
                 return JsonConvert.SerializeObject(h);
             else
-                return Enabled.ToString().ToLower();
+                return String.Empty;
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
         internal override bool IsDirty(ref Highcharts highcharts)
         {
-            return (Enabled != true || ToHashtable(ref highcharts).Count > 0);
+            return ToHashtable(ref highcharts).Count > 0;
         }
 	}
 }

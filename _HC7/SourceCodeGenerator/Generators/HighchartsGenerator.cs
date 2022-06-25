@@ -1142,7 +1142,7 @@ public class HighchartsGenerator
     {
         _propertyInitMappings.Add("shadow", "new Shadow() { Enabled = false }");
         _propertyInitMappings.Add("plotShadow", "new Shadow() { Enabled = false }");
-        _propertyInitMappings.Add("animation", "new Animation() { Enabled = true }");
+        _propertyInitMappings.Add("animation", "new Animation()");
         _propertyInitMappings.Add("pointPlacement", "new PointPlacement()");
         _propertyInitMappings.Add("crosshairs", "new List<Crosshair>()");
         _propertyInitMappings.Add("menuItems", "new List<MenuItem>()");
@@ -1390,7 +1390,7 @@ public class HighchartsGenerator
     }
     private void InitCustomProperties()
     {
-        _customProperties.Add("Animation");
+        //_customProperties.Add("Animation");
         _customProperties.Add("PlotShadow");
         _customProperties.Add("PointPlacement");
         //_customProperties.Add("Symbol");
