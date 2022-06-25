@@ -16,5 +16,12 @@ namespace UnitTests.PlotOptions
             _fixture = fixture;
             _fixture.ChartType = ChartType.Line;
         }
+
+        //[Theory(Skip = "it doesn't exist in this object")]
+        //[InlineData("Description")]
+        //public override void Test_IfAccessibilityDescriptionRenders_Correct(string description)
+        //{
+            
+        //}
     }
 }
