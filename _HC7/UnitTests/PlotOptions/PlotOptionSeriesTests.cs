@@ -109,7 +109,7 @@ namespace UnitTests.PlotOptions
         }
 
         [Theory]
-        [InlineData(true)]
+        [InlineData(false)]
         public void Test_IfAccessibilityPointDescribeNullSetOnFalseRenders_Correct(bool describeNull)
         {
             var chart = new Highcharts();
@@ -200,9 +200,9 @@ namespace UnitTests.PlotOptions
         }
         #endregion
 
-        //missing tests for the rest of Point members
-
         #endregion
+
+        //continue making tests from here
 
         [Fact]
         public void Test_IfAllowPointSelectRenders_Correct()
