@@ -18,6 +18,7 @@ namespace UnitTests.PlotOptions
             _fixture = fixture;
         }
 
+        #region Acessibility
 
         [Theory]
         [InlineData("Description")]
@@ -61,6 +62,8 @@ namespace UnitTests.PlotOptions
             Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"exposeAsGroupOnly\":{exposeAsGroupOnly.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
+        #region KeyboardNavigation
+
         [Theory]
         [InlineData(false)]
         [InlineData(true)]
@@ -75,6 +78,62 @@ namespace UnitTests.PlotOptions
             Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"keyboardNavigation\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
         }
 
+        #endregion
+
+        #region Point
+
+        [Theory]
+        [InlineData("%Y-%m-%d %H:%M:%S")]
+        public void Test_IfAccessibilityPointDateFormatRenders_Correct(string format)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Accessibility.Point.DateFormat = format;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"dateFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("DateFormatterFunction")]
+        public void Test_IfAccessibilityPointDateFormatterRenders_Correct(string function)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Accessibility.Point.DateFormatter = function;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"dateFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(true)]
+        public void Test_IfAccessibilityPointDescribeNullSetOnFalseRenders_Correct(bool describeNull)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Accessibility.Point.DescribeNull = describeNull;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"describeNull\":{describeNull.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(true)]
+        public void Test_IfAccessibilityPointDescribeNullSetOnTrueRenders_Correct(bool describeNull)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Accessibility.Point.DescribeNull = describeNull;
+
+            Assert.DoesNotContain($"describeNull", renderer.RenderHtml());
+        }
+
         [Theory]
         [InlineData("FormatterFunction")]
         public void Test_IfAccessibilityPointDescriptionFormatterRenders_Correct(string function)
@@ -87,7 +146,63 @@ namespace UnitTests.PlotOptions
 
             Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"descriptionFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
         }
+
+        [Theory]
+        [InlineData(3)]
+        public void Test_IfAccessibilityPointValueDecimalsRenders_Correct(int decimals)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Accessibility.Point.ValueDecimals = decimals;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"valueDecimals\":{decimals}.0}}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("{Description}{separator}{value}")]
+        public void Test_IfAccessibilityPointValueDescriptionFormatRenders_Correct(string format)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Accessibility.Point.ValueDescriptionFormat = format;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"valueDescriptionFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomePrefix")]
+        public void Test_IfAccessibilityPointValuePrefixRenders_Correct(string prefix)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Accessibility.Point.ValuePrefix = prefix;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"valuePrefix\":\"{prefix}\"}}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeSuffix")]
+        public void Test_IfAccessibilityPointValueSufixRenders_Correct(string suffix)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Accessibility.Point.ValueSuffix = suffix;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"valueSuffix\":\"{suffix}\"}}}}}}}}", renderer.RenderHtml());
+        }
+        #endregion
+
         //missing tests for the rest of Point members
+
+        #endregion
 
         [Fact]
         public void Test_IfAllowPointSelectRenders_Correct()
@@ -114,6 +229,8 @@ namespace UnitTests.PlotOptions
             Assert.DoesNotContain("allowPointSelect", renderer.RenderHtml());
         }
 
+        
+
         [Fact]
         public void Test_IfAnimationEnabledRenders_Correct()
         {
@@ -128,6 +245,8 @@ namespace UnitTests.PlotOptions
         }
 
         //Animation.Defer missing
+
+        #region Animation
 
         [Fact]
         public void Test_IfAnimationDurationRenders_Correct()
@@ -157,6 +276,7 @@ namespace UnitTests.PlotOptions
             Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animationLimit\":{limit}.0}}}}", renderer.RenderHtml());
         }
 
+        #endregion
         //missing boostBlending
 
         [Fact]
