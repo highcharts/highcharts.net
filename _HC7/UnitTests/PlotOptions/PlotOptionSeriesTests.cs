@@ -202,8 +202,6 @@ namespace UnitTests.PlotOptions
 
         #endregion
 
-        //continue making tests from here
-
         [Fact]
         public void Test_IfAllowPointSelectRenders_Correct()
         {
@@ -229,40 +227,63 @@ namespace UnitTests.PlotOptions
             Assert.DoesNotContain("allowPointSelect", renderer.RenderHtml());
         }
 
-        
+        #region Animation
 
-        [Fact]
-        public void Test_IfAnimationEnabledRenders_Correct()
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void Test_IfAnimationEnabledRenders_Correct(bool enabled)
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
-            var enabled = true;
 
             chart.PlotOptions.Series.AnimationBool = enabled;
 
             Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
-        //Animation.Defer missing
-
-        #region Animation
-
-        [Fact]
-        public void Test_IfAnimationDurationRenders_Correct()
+        [Theory]
+        [InlineData(1000)]
+        public void Test_IfAnimationDurationRenders_Correct(int duration)
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
-            var value = 1000;
 
-            chart.PlotOptions.Series.Animation.Duration = value;
+            chart.PlotOptions.Series.Animation.Duration = duration;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"duration\":{value}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"duration\":{duration}}}}}}}", renderer.RenderHtml());
         }
 
-        //There are other members in Animation which are not present in json file
+        [Theory]
+        [InlineData(1000)]
+        public void Test_IfAnimationDeferRenders_Correct(int defer)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
 
+            chart.PlotOptions.Series.Animation.Defer = defer;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"defer\":{defer}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("easingFunctionName")]
+        public void Test_IfAnimationEasingRenders_Correct(string easing)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Animation.Easing = easing;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"easing\":\"{easing}\"}}}}}}", renderer.RenderHtml());
+        }
+
+        #endregion
+        
         [Fact]
         public void Test_IfAnimationLimitRenders_Correct()
         {
@@ -275,9 +296,6 @@ namespace UnitTests.PlotOptions
 
             Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animationLimit\":{limit}.0}}}}", renderer.RenderHtml());
         }
-
-        #endregion
-        //missing boostBlending
 
         [Fact]
         public void Test_IfBoostThresholdRenders_Correct()
