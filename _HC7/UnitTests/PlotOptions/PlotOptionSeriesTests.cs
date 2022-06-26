@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
@@ -582,6 +583,46 @@ namespace HC.PlotOptions
             chart.PlotOptions.Series.Cursor = cursor;
 
             Assert.Contains($"\"plotOptions\":{{\"series\":{{\"cursor\":\"{cursor.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("dataKey1", "dataValue1", "dataKey2", "dataValue2")]
+        public void Test_IfCustomRenders_Correct(string key1, string value1, string key2, string value2)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+            var extraData = new Hashtable() { { key1, value1 }, { key2, value2 } };
+
+            chart.PlotOptions.Series.Custom = extraData;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"custom\":{{\"{key1}\":\"{value1}\",\"{key2}\":\"{value2}\"}}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(PlotOptionsSeriesDashStyle.Dash)]
+        [InlineData(PlotOptionsSeriesDashStyle.DashDot)]
+        [InlineData(PlotOptionsSeriesDashStyle.Dot)]
+        [InlineData(PlotOptionsSeriesDashStyle.LongDash)]
+        [InlineData(PlotOptionsSeriesDashStyle.LongDashDot)]
+        [InlineData(PlotOptionsSeriesDashStyle.LongDashDotDot)]
+        [InlineData(PlotOptionsSeriesDashStyle.ShortDash)]
+        [InlineData(PlotOptionsSeriesDashStyle.ShortDashDot)]
+        [InlineData(PlotOptionsSeriesDashStyle.ShortDashDotDot)]
+        [InlineData(PlotOptionsSeriesDashStyle.ShortDot)]
+        public void Test_IfDashStyleRenders_Correct(PlotOptionsSeriesDashStyle style)
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+            var result = style.ToString();
+            var replacement = result[0].ToString().ToLower();
+            result = result.Remove(0, 1);
+            result = replacement + result;
+
+            chart.PlotOptions.Series.DashStyle = style;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dashStyle\":\"{result}\"}}}}", renderer.RenderHtml());
         }
     }
 }
