@@ -7,7 +7,7 @@ using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 
-namespace UnitTests.PlotOptions
+namespace HC.PlotOptions
 {
     public class PlotOptionSmaTests : PlotOptionLineTests
     {
