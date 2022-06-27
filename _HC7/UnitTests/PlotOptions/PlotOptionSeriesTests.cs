@@ -586,17 +586,17 @@ namespace HC.PlotOptions
         }
 
         [Theory]
-        [InlineData("dataKey1", "dataValue1", "dataKey2", "dataValue2")]
-        public void Test_IfCustomRenders_Correct(string key1, string value1, string key2, string value2)
+        [InlineData("dataKey1", "dataValue1")]
+        public void Test_IfCustomRenders_Correct(string key1, string value1)
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
-            var extraData = new Hashtable() { { key1, value1 }, { key2, value2 } };
+            var extraData = new Hashtable() { { key1, value1 } };
 
             chart.PlotOptions.Series.Custom = extraData;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"custom\":{{\"{key1}\":\"{value1}\",\"{key2}\":\"{value2}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"custom\":{{\"{key1}\":\"{value1}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
