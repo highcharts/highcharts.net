@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsWordcloudRotation  : BaseObject
+	public partial class PlotOptionsWordcloudRotation  : PlotOptionsSeries
 	{
 		Hashtable h = new Hashtable();
 

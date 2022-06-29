@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsSankeyDataLabelsFilter  : BaseObject
+	public partial class PlotOptionsSankeyDataLabelsFilter  : PlotOptionsSeries
 	{
 		Hashtable h = new Hashtable();
 

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsVariablepiePointEvents  : BaseObject
+	public partial class PlotOptionsVariablepiePointEvents  : PlotOptionsSeries
 	{
 		Hashtable h = new Hashtable();
 

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsPyramid3dStates  : BaseObject
+	public partial class PlotOptionsPyramid3dStates  : PlotOptionsSeries
 	{
 		Hashtable h = new Hashtable();
 

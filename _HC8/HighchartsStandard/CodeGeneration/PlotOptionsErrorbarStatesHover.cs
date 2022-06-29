@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsErrorbarStatesHover  : BaseObject
+	public partial class PlotOptionsErrorbarStatesHover  : PlotOptionsSeries
 	{
 		Hashtable h = new Hashtable();
 

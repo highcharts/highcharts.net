@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsDumbbellDataLabels  : BaseObject
+	public partial class PlotOptionsDumbbellDataLabels  : PlotOptionsSeries
 	{
 		Hashtable h = new Hashtable();
 

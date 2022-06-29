@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsXrangeDragDrop  : BaseObject
+	public partial class PlotOptionsXrangeDragDrop  : PlotOptionsSeries
 	{
 		Hashtable h = new Hashtable();
 

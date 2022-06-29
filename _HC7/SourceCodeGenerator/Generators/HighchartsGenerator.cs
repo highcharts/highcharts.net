@@ -400,8 +400,12 @@ public class HighchartsGenerator
 
         if (className.EndsWith("Series") && item.Parent?.FullName == "series")
             extendsClass = ": Series";
+        else if (className.StartsWith("PlotOptions"))
+            extendsClass = ": PlotOptionsSeries"; //avoid PlotOptionsSeries and PlotOptions
         else
             extendsClass = ": BaseObject";
+
+
 
         codeTemplate = codeTemplate
                         .Replace("{HighTemplate.Namespace}", "Highsoft.Web.Mvc." + ROOT_NAMESPACE)

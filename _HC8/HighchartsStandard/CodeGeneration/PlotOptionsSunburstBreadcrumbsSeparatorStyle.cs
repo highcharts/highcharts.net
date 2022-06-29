@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsSunburstBreadcrumbsSeparatorStyle  : BaseObject
+	public partial class PlotOptionsSunburstBreadcrumbsSeparatorStyle  : PlotOptionsSeries
 	{
 		Hashtable h = new Hashtable();
 
