@@ -400,7 +400,7 @@ public class HighchartsGenerator
 
         if (className.EndsWith("Series") && item.Parent?.FullName == "series")
             extendsClass = ": Series";
-        else if (className.StartsWith("PlotOptions"))
+        else if (className.StartsWith("PlotOptions") && !className.Equals("PlotOptions") && !className.Equals("PlotOptionsSeries"))
             extendsClass = ": PlotOptionsSeries"; //avoid PlotOptionsSeries and PlotOptions
         else
             extendsClass = ": BaseObject";
