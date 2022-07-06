@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsWaterfallDragDropGuideBox  : PlotOptionsSeries
+	public partial class PlotOptionsWaterfallDragDropGuideBox  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

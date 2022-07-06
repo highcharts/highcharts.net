@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsWordcloudStatesHoverMarkerStatesNormal  : PlotOptionsSeries
+	public partial class PlotOptionsWordcloudStatesHoverMarkerStatesNormal  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

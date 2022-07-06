@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsTimelineDragDropGuideBox  : PlotOptionsSeries
+	public partial class PlotOptionsTimelineDragDropGuideBox  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

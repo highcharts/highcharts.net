@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsNetworkgraphZone  : PlotOptionsSeries
+	public partial class PlotOptionsNetworkgraphZone  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

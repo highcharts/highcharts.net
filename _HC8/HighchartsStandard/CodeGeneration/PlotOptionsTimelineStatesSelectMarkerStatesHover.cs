@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsTimelineStatesSelectMarkerStatesHover  : PlotOptionsSeries
+	public partial class PlotOptionsTimelineStatesSelectMarkerStatesHover  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

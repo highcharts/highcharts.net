@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsAreasplineTooltipDateTimeLabelFormats  : PlotOptionsSeries
+	public partial class PlotOptionsAreasplineTooltipDateTimeLabelFormats  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsScatterClusterStates  : PlotOptionsSeries
+	public partial class PlotOptionsScatterClusterStates  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

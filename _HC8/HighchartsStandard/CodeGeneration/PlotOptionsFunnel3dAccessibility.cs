@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsFunnel3dAccessibility  : PlotOptionsSeries
+	public partial class PlotOptionsFunnel3dAccessibility  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

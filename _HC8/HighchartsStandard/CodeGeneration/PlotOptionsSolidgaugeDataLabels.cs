@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsSolidgaugeDataLabels  : PlotOptionsSeries
+	public partial class PlotOptionsSolidgaugeDataLabels  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

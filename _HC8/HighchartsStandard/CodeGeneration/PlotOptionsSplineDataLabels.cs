@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsSplineDataLabels  : PlotOptionsSeries
+	public partial class PlotOptionsSplineDataLabels  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

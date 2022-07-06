@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsStreamgraphStatesInactive  : PlotOptionsSeries
+	public partial class PlotOptionsStreamgraphStatesInactive  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

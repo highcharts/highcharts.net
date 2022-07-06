@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsTilemapStatesSelectAnimation  : PlotOptionsSeries
+	public partial class PlotOptionsTilemapStatesSelectAnimation  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

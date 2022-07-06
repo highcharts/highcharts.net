@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsTreemapPointEvents  : PlotOptionsSeries
+	public partial class PlotOptionsTreemapPointEvents  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsTilemapDragDropGuideBoxDefault  : PlotOptionsSeries
+	public partial class PlotOptionsTilemapDragDropGuideBoxDefault  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

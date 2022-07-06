@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsAreasplinerangeAnimation  : PlotOptionsSeries
+	public partial class PlotOptionsAreasplinerangeAnimation  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

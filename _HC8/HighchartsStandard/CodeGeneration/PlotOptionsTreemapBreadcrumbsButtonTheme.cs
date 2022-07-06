@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsTreemapBreadcrumbsButtonTheme  : PlotOptionsSeries
+	public partial class PlotOptionsTreemapBreadcrumbsButtonTheme  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

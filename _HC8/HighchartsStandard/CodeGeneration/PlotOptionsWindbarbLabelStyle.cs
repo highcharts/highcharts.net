@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsWindbarbLabelStyle  : PlotOptionsSeries
+	public partial class PlotOptionsWindbarbLabelStyle  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsPolygonStatesSelect  : PlotOptionsSeries
+	public partial class PlotOptionsPolygonStatesSelect  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 

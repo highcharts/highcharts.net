@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsColumnrangeAccessibilityPoint  : PlotOptionsSeries
+	public partial class PlotOptionsColumnrangeAccessibilityPoint  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 
