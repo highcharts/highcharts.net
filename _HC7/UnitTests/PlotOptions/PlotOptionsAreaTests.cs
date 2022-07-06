@@ -7,11 +7,11 @@ using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 
-namespace HC.PlotOptions
+namespace HcTests.PlotOptions
 {
-    public class PlotOptionAreaTests : PlotOptionLineTests
+    public class PlotOptionsAreaTests : PlotOptionsLineTests
     {
-        public PlotOptionAreaTests(HcFixture fixture) : base(fixture)
+        public PlotOptionsAreaTests(HcFixture fixture) : base(fixture)
         {
             _fixture = fixture;
             _fixture.ChartType = ChartType.Area;

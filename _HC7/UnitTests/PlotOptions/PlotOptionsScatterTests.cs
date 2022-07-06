@@ -7,14 +7,14 @@ using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 
-namespace HC.PlotOptions
+namespace HcTests.PlotOptions
 {
-    public class PlotOptionSplineTests : PlotOptionSeriesTests
+    public class PlotOptionsScatterTests : PlotOptionsLineTests
     {
-        public PlotOptionSplineTests(HcFixture fixture) : base(fixture)
+        public PlotOptionsScatterTests(HcFixture fixture) : base(fixture)
         {
             _fixture = fixture;
-            _fixture.ChartType = ChartType.Spline;
+            _fixture.ChartType = ChartType.Scatter;
         }
     }
 }

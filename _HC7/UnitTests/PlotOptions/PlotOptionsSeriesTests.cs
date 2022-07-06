@@ -7,14 +7,15 @@ using System.Collections;
 using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
+using HcTests.Helpers;
 
-namespace HC.PlotOptions
+namespace HcTests.PlotOptions
 {
-    public class PlotOptionSeriesTests : IClassFixture<HcFixture>
+    public class PlotOptionsSeriesTests : IClassFixture<HcFixture>
     {
         protected HcFixture _fixture;
 
-        public PlotOptionSeriesTests(HcFixture fixture)
+        public PlotOptionsSeriesTests(HcFixture fixture)
         {
             _fixture = fixture;
         }
@@ -29,7 +30,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.Description = description;
+            TestHelper.GetPlotOptions(chart).Accessibility.Description = description;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"description\":\"{description}\"}}}}}}", renderer.RenderHtml());
         }
@@ -43,7 +44,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.Enabled = enabled;
+            TestHelper.GetPlotOptions(chart).Accessibility.Enabled = enabled;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
@@ -58,7 +59,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.ExposeAsGroupOnly = exposeAsGroupOnly;
+            TestHelper.GetPlotOptions(chart).Accessibility.ExposeAsGroupOnly = exposeAsGroupOnly;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"exposeAsGroupOnly\":{exposeAsGroupOnly.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
@@ -74,7 +75,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.KeyboardNavigation.Enabled = enabled;
+            TestHelper.GetPlotOptions(chart).Accessibility.KeyboardNavigation.Enabled = enabled;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"keyboardNavigation\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
         }
@@ -91,7 +92,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.Point.DateFormat = format;
+            TestHelper.GetPlotOptions(chart).Accessibility.Point.DateFormat = format;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"dateFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
         }
@@ -104,7 +105,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.Point.DateFormatter = function;
+            TestHelper.GetPlotOptions(chart).Accessibility.Point.DateFormatter = function;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"dateFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
         }
@@ -119,7 +120,7 @@ namespace HC.PlotOptions
 
             
 
-            chart.PlotOptions.Series.Accessibility.Point.DescribeNull = describeNull;
+            TestHelper.GetPlotOptions(chart).Accessibility.Point.DescribeNull = describeNull;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"describeNull\":{describeNull.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
         }
@@ -132,7 +133,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.Point.DescribeNull = describeNull;
+            TestHelper.GetPlotOptions(chart).Accessibility.Point.DescribeNull = describeNull;
 
             Assert.DoesNotContain($"describeNull", renderer.RenderHtml());
         }
@@ -145,7 +146,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.Point.DescriptionFormatter = function;
+            TestHelper.GetPlotOptions(chart).Accessibility.Point.DescriptionFormatter = function;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"descriptionFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
         }
@@ -158,7 +159,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.Point.ValueDecimals = decimals;
+            TestHelper.GetPlotOptions(chart).Accessibility.Point.ValueDecimals = decimals;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueDecimals\":{decimals}.0}}}}}}}}", renderer.RenderHtml());
         }
@@ -171,7 +172,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.Point.ValueDescriptionFormat = format;
+            TestHelper.GetPlotOptions(chart).Accessibility.Point.ValueDescriptionFormat = format;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueDescriptionFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
         }
@@ -184,7 +185,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.Point.ValuePrefix = prefix;
+            TestHelper.GetPlotOptions(chart).Accessibility.Point.ValuePrefix = prefix;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valuePrefix\":\"{prefix}\"}}}}}}}}", renderer.RenderHtml());
         }
@@ -197,7 +198,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Accessibility.Point.ValueSuffix = suffix;
+            TestHelper.GetPlotOptions(chart).Accessibility.Point.ValueSuffix = suffix;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueSuffix\":\"{suffix}\"}}}}}}}}", renderer.RenderHtml());
         }
@@ -213,7 +214,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var enabled = true;
 
-            chart.PlotOptions.Series.AllowPointSelect = enabled;
+            TestHelper.GetPlotOptions(chart).AllowPointSelect = enabled;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"allowPointSelect\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
@@ -225,7 +226,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.AllowPointSelect = false;
+            TestHelper.GetPlotOptions(chart).AllowPointSelect = false;
 
             Assert.DoesNotContain("allowPointSelect", renderer.RenderHtml());
         }
@@ -241,7 +242,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.AnimationBool = enabled;
+            TestHelper.GetPlotOptions(chart).AnimationBool = enabled;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
@@ -254,7 +255,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Animation.Duration = duration;
+            TestHelper.GetPlotOptions(chart).Animation.Duration = duration;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"duration\":{duration}}}}}}}", renderer.RenderHtml());
         }
@@ -267,7 +268,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Animation.Defer = defer;
+            TestHelper.GetPlotOptions(chart).Animation.Defer = defer;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"defer\":{defer}}}}}}}", renderer.RenderHtml());
         }
@@ -280,7 +281,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Animation.Easing = easing;
+            TestHelper.GetPlotOptions(chart).Animation.Easing = easing;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"easing\":\"{easing}\"}}}}}}", renderer.RenderHtml());
         }
@@ -295,7 +296,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.AnimationLimit = limit;
+            TestHelper.GetPlotOptions(chart).AnimationLimit = limit;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animationLimit\":{limit}.0}}}}", renderer.RenderHtml());
         }
@@ -310,7 +311,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.BoostBlending = boostBlending;
+            TestHelper.GetPlotOptions(chart).BoostBlending = boostBlending;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"boostBlending\":\"{boostBlending.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
         }
@@ -322,7 +323,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.BoostBlending = PlotOptionsSeriesBoostBlending.Undefined;
+            TestHelper.GetPlotOptions(chart).BoostBlending = PlotOptionsSeriesBoostBlending.Undefined;
 
             Assert.DoesNotContain($"\"boostBlending\"", renderer.RenderHtml());
         }
@@ -335,7 +336,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.BoostThreshold = limit;
+            TestHelper.GetPlotOptions(chart).BoostThreshold = limit;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"boostThreshold\":{limit}.0}}}}", renderer.RenderHtml());
         }
@@ -348,7 +349,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 5000;
 
-            chart.PlotOptions.Series.BoostThreshold = defaultValue;
+            TestHelper.GetPlotOptions(chart).BoostThreshold = defaultValue;
 
             Assert.DoesNotContain("boostThreshold", renderer.RenderHtml());
         }
@@ -364,7 +365,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.ClassName = className;
+            TestHelper.GetPlotOptions(chart).ClassName = className;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"className\":\"{className}\"}}}}", renderer.RenderHtml());
         }
@@ -377,7 +378,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.PlotOptions.Series.Clip = value;
+            TestHelper.GetPlotOptions(chart).Clip = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"clip\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
@@ -390,7 +391,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.PlotOptions.Series.Clip = value;
+            TestHelper.GetPlotOptions(chart).Clip = value;
 
             Assert.DoesNotContain("clip", renderer.RenderHtml());
         }
@@ -403,7 +404,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Color = color;
+            TestHelper.GetPlotOptions(chart).Color = color;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"color\":\"{color.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
         }
@@ -418,7 +419,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.ColorAxis = id;
+            TestHelper.GetPlotOptions(chart).ColorAxis = id;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":\"{id}\"}}}}", renderer.RenderHtml());
         }
@@ -432,7 +433,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.ColorAxisNumber = index;
+            TestHelper.GetPlotOptions(chart).ColorAxisNumber = index;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":{index}.0}}}}", renderer.RenderHtml());
         }
@@ -445,7 +446,7 @@ namespace HC.PlotOptions
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
-            chart.PlotOptions.Series.ColorAxisBool = value;
+            TestHelper.GetPlotOptions(chart).ColorAxisBool = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
@@ -458,7 +459,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.ColorIndex = value;
+            TestHelper.GetPlotOptions(chart).ColorIndex = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorIndex\":{value}.0}}}}", renderer.RenderHtml());
         }
@@ -471,7 +472,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.ColorKey = value;
+            TestHelper.GetPlotOptions(chart).ColorKey = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorKey\":\"{value}\"}}}}", renderer.RenderHtml());
         }
@@ -485,7 +486,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.ConnectEnds = value;
+            TestHelper.GetPlotOptions(chart).ConnectEnds = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"connectEnds\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
@@ -498,7 +499,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.PlotOptions.Series.ConnectNulls = value;
+            TestHelper.GetPlotOptions(chart).ConnectNulls = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"connectNulls\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
@@ -511,7 +512,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.PlotOptions.Series.ConnectNulls = value;
+            TestHelper.GetPlotOptions(chart).ConnectNulls = value;
 
             Assert.DoesNotContain($"\"connectNulls\"", renderer.RenderHtml());
         }
@@ -526,7 +527,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.PlotOptions.Series.Crisp = value;
+            TestHelper.GetPlotOptions(chart).Crisp = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"crisp\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
@@ -539,7 +540,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.PlotOptions.Series.Crisp = value;
+            TestHelper.GetPlotOptions(chart).Crisp = value;
 
             Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
         }
@@ -553,7 +554,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.CropThreshold = value;
+            TestHelper.GetPlotOptions(chart).CropThreshold = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"cropThreshold\":{value}.0}}}}", renderer.RenderHtml());
         }
@@ -566,7 +567,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 300;
 
-            chart.PlotOptions.Series.CropThreshold = defaultValue;
+            TestHelper.GetPlotOptions(chart).CropThreshold = defaultValue;
 
             Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
         }
@@ -582,7 +583,7 @@ namespace HC.PlotOptions
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.Cursor = cursor;
+            TestHelper.GetPlotOptions(chart).Cursor = cursor;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"cursor\":\"{cursor.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
         }
@@ -596,7 +597,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var extraData = new Hashtable() { { key1, value1 } };
 
-            chart.PlotOptions.Series.Custom = extraData;
+            TestHelper.GetPlotOptions(chart).Custom = extraData;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"custom\":{{\"{key1}\":\"{value1}\"}}}}}}", renderer.RenderHtml());
         }
@@ -622,7 +623,7 @@ namespace HC.PlotOptions
             result = result.Remove(0, 1);
             result = replacement + result;
 
-            chart.PlotOptions.Series.DashStyle = style;
+            TestHelper.GetPlotOptions(chart).DashStyle = style;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dashStyle\":\"{result}\"}}}}", renderer.RenderHtml());
         }

@@ -7,14 +7,14 @@ using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 
-namespace HC.PlotOptions
+namespace HcTests.PlotOptions
 {
-    public class PlotOptionSmaTests : PlotOptionLineTests
+    public class PlotOptionsColumnTests : PlotOptionsLineTests
     {
-        public PlotOptionSmaTests(HcFixture fixture) : base(fixture)
+        public PlotOptionsColumnTests(HcFixture fixture) : base(fixture)
         {
             _fixture = fixture;
-            _fixture.ChartType = ChartType.Sma;
+            _fixture.ChartType = ChartType.Column;
         }
     }
 }

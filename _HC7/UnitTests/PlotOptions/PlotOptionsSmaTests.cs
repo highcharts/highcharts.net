@@ -7,14 +7,14 @@ using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 
-namespace HC.PlotOptions
+namespace HcTests.PlotOptions
 {
-    public class PlotOptionParetoTests : PlotOptionLineTests
+    public class PlotOptionsSmaTests : PlotOptionsLineTests
     {
-        public PlotOptionParetoTests(HcFixture fixture) : base(fixture)
+        public PlotOptionsSmaTests(HcFixture fixture) : base(fixture)
         {
             _fixture = fixture;
-            _fixture.ChartType = ChartType.Pareto;
+            _fixture.ChartType = ChartType.Sma;
         }
     }
 }

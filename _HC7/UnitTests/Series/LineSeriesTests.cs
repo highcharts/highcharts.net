@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Xunit;
 
 
-namespace HC.Series
+namespace HcTests.Series
 {
     public class LineSeriesTests
     {

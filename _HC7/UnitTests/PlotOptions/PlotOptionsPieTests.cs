@@ -7,14 +7,14 @@ using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 
-namespace HC.PlotOptions
+namespace HcTests.PlotOptions
 {
-    public class PlotOptionScatterTests : PlotOptionLineTests
+    public class PlotOptionsPieTests : PlotOptionsLineTests
     {
-        public PlotOptionScatterTests(HcFixture fixture) : base(fixture)
+        public PlotOptionsPieTests(HcFixture fixture) : base(fixture)
         {
             _fixture = fixture;
-            _fixture.ChartType = ChartType.Scatter;
+            _fixture.ChartType = ChartType.Pie;
         }
     }
 }

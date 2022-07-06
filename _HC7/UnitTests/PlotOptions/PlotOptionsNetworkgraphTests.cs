@@ -7,14 +7,14 @@ using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 
-namespace HC.PlotOptions
+namespace HcTests.PlotOptions
 {
-    public class PlotOptionPieTests : PlotOptionLineTests
+    public class PlotOptionsNetworkgraphTests : PlotOptionsLineTests
     {
-        public PlotOptionPieTests(HcFixture fixture) : base(fixture)
+        public PlotOptionsNetworkgraphTests(HcFixture fixture) : base(fixture)
         {
             _fixture = fixture;
-            _fixture.ChartType = ChartType.Pie;
+            _fixture.ChartType = ChartType.Networkgraph;
         }
     }
 }
