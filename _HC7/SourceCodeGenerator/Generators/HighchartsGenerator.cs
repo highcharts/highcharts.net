@@ -401,9 +401,6 @@ public class HighchartsGenerator
         if (className.EndsWith("Series") && item.Parent?.FullName == "series")
             extendsClass = ": Series";
         else
-            if ((className.StartsWith("PlotOptions") && className.Where(p => p.ToString() == p.ToString().ToUpper()).Count() == 3) && !className.Equals("PlotOptions"))
-                extendsClass = ": BaseObject, IPlotOptionsSeries";
-        else
             extendsClass = ": BaseObject";
 
         codeTemplate = codeTemplate
