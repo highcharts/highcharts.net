@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = "justify";
-			Padding = Padding_DefaultValue = "5";
+			Padding = Padding_DefaultValue = "0";
 			ParentNodeFormat = ParentNodeFormat_DefaultValue = "";
 			ParentNodeFormatter = ParentNodeFormatter_DefaultValue = "";
 			ParentNodeTextPath = ParentNodeTextPath_DefaultValue = new PlotOptionsPackedbubbleDataLabelsParentNodeTextPath();
@@ -222,7 +222,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When either the `borderWidth` or the `backgroundColor` is set,this is the padding within the box.
+		/// 
 		/// </summary>
 		public string Padding { get; set; }
 		private string Padding_DefaultValue { get; set; }

@@ -45,6 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Name = Name_DefaultValue = "";
+			OnPoint = OnPoint_DefaultValue = new SolidgaugeSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Overshoot = Overshoot_DefaultValue = null;
 			Point = Point_DefaultValue = new SolidgaugeSeriesPoint();
@@ -278,6 +279,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public SolidgaugeSeriesOnPoint OnPoint { get; set; }
+		private SolidgaugeSeriesOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -481,6 +489,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (OnPoint.IsDirty(ref highcharts)) h.Add("onPoint",OnPoint.ToHashtable(ref highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
 			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));

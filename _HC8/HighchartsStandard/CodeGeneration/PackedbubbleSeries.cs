@@ -58,6 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinSizeNumber = MinSizeNumber_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "";
+			OnPoint = OnPoint_DefaultValue = new PackedbubbleSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			ParentNode = ParentNode_DefaultValue = new PackedbubbleSeriesParentNode();
 			Point = Point_DefaultValue = new PackedbubbleSeriesPoint();
@@ -388,6 +389,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public PackedbubbleSeriesOnPoint OnPoint { get; set; }
+		private PackedbubbleSeriesOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -646,6 +654,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinSizeNumber != MinSizeNumber_DefaultValue) h.Add("minSize",MinSizeNumber);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (OnPoint.IsDirty(ref highcharts)) h.Add("onPoint",OnPoint.ToHashtable(ref highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (ParentNode.IsDirty(ref highcharts)) h.Add("parentNode",ParentNode.ToHashtable(ref highcharts));
 			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));

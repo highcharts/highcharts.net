@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public SankeySeriesLevelsStatesInactive()
 		{
 			LinkOpacity = LinkOpacity_DefaultValue = new Hashtable();
+			Opacity = Opacity_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Charts
 		private Hashtable LinkOpacity_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Opacity of the nodes in the sankey diagram in inactive mode.
+		/// </summary>
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(ref Highcharts highcharts)
@@ -37,6 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
+			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

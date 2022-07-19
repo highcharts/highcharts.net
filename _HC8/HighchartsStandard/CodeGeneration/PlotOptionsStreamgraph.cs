@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsStreamgraph  : BaseObject, IPlotOptionsSeries
+	public partial class PlotOptionsStreamgraph  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 
@@ -43,7 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsStreamgraphEvents();
 			FillColor = FillColor_DefaultValue = null;
-			FillOpacity = FillOpacity_DefaultValue = null;
+			FillOpacity = FillOpacity_DefaultValue = 1;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsStreamgraphFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
@@ -56,6 +56,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Marker = Marker_DefaultValue = new PlotOptionsStreamgraphMarker();
 			NegativeColor = NegativeColor_DefaultValue = "";
 			NegativeFillColor = NegativeFillColor_DefaultValue = "";
+			OnPoint = OnPoint_DefaultValue = new PlotOptionsStreamgraphOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsStreamgraphPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -367,6 +368,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public PlotOptionsStreamgraphOnPoint OnPoint { get; set; }
+		private PlotOptionsStreamgraphOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -588,6 +596,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Marker.IsDirty(ref highcharts)) h.Add("marker",Marker.ToHashtable(ref highcharts));
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
+			if (OnPoint.IsDirty(ref highcharts)) h.Add("onPoint",OnPoint.ToHashtable(ref highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  

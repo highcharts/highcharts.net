@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsSunburst  : BaseObject, IPlotOptionsSeries
+	public partial class PlotOptionsSunburst  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 
@@ -45,6 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Levels = Levels_DefaultValue = new List<PlotOptionsSunburstLevels>();
 			LevelSize = LevelSize_DefaultValue = new PlotOptionsSunburstLevelSize();
 			LinkedTo = LinkedTo_DefaultValue = "";
+			OnPoint = OnPoint_DefaultValue = new PlotOptionsSunburstOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsSunburstPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -276,6 +277,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public PlotOptionsSunburstOnPoint OnPoint { get; set; }
+		private PlotOptionsSunburstOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -465,6 +473,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(ref highcharts,Levels));
 			if (LevelSize.IsDirty(ref highcharts)) h.Add("levelSize",LevelSize.ToHashtable(ref highcharts));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (OnPoint.IsDirty(ref highcharts)) h.Add("onPoint",OnPoint.ToHashtable(ref highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsSankey  : BaseObject, IPlotOptionsSeries
+	public partial class PlotOptionsSankey  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 
@@ -47,6 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
 			NodePadding = NodePadding_DefaultValue = 10;
 			NodeWidth = NodeWidth_DefaultValue = 20;
+			OnPoint = OnPoint_DefaultValue = new PlotOptionsSankeyOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsSankeyPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -283,7 +284,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public PlotOptionsSankeyOnPoint OnPoint { get; set; }
+		private PlotOptionsSankeyOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Opacity for the nodes in the sankey diagram.
 		/// </summary>
 		public double? Opacity { get; set; }
 		private double? Opacity_DefaultValue { get; set; }
@@ -411,6 +419,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
+			if (OnPoint.IsDirty(ref highcharts)) h.Add("onPoint",OnPoint.ToHashtable(ref highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  

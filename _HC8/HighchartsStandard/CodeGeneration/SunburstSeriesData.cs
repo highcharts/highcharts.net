@@ -34,7 +34,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Selected = Selected_DefaultValue = false;
 			Sliced = Sliced_DefaultValue = false;
 			Value = Value_DefaultValue = null;
-			Weight = Weight_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -132,7 +131,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name decides the text for a word.
+		/// The name of the point as shown in the legend, tooltip, dataLabels, etc.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
@@ -166,13 +165,6 @@ namespace Highsoft.Web.Mvc.Charts
 		private double? Value_DefaultValue { get; set; }
 		 
 
-		/// <summary>
-		/// The weighting of a word. The weight decides the relative size of a wordcompared to the rest of the collection.
-		/// </summary>
-		public double? Weight { get; set; }
-		private double? Weight_DefaultValue { get; set; }
-		 
-
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(ref Highcharts highcharts)
@@ -198,7 +190,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Sliced != Sliced_DefaultValue) h.Add("sliced",Sliced);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
-			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

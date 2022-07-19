@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
+			Weight = Weight_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -112,7 +113,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The name of the point as shown in the legend, tooltip, dataLabels, etc.
+		/// The name decides the text for a word.
 		/// </summary>
 		public string Name { get; set; }
 		private string Name_DefaultValue { get; set; }
@@ -123,6 +124,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Selected { get; set; }
 		private bool? Selected_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The weighting of a word. The weight decides the relative size of a wordcompared to the rest of the collection.
+		/// </summary>
+		public double? Weight { get; set; }
+		private double? Weight_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -145,6 +153,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

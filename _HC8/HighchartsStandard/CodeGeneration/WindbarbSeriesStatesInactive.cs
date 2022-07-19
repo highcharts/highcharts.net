@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Opacity of inactive markers.
+		/// Opacity of series elements (dataLabels, line, area).
 		/// </summary>
 		public double? Opacity { get; set; }
 		private double? Opacity_DefaultValue { get; set; }

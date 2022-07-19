@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsGauge  : BaseObject, IPlotOptionsSeries
+	public partial class PlotOptionsGauge  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 
@@ -38,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Linecap = Linecap_DefaultValue = PlotOptionsGaugeLinecap.Round;
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
+			OnPoint = OnPoint_DefaultValue = new PlotOptionsGaugeOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Overshoot = Overshoot_DefaultValue = null;
 			Pivot = Pivot_DefaultValue = new PlotOptionsGaugePivot();
@@ -216,6 +217,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public PlotOptionsGaugeOnPoint OnPoint { get; set; }
+		private PlotOptionsGaugeOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -314,7 +322,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from [tooltip](#tooltip), but onlythe following properties can be defined on a series level.
+		/// 
 		/// </summary>
 		public PlotOptionsGaugeTooltip Tooltip { get; set; }
 		private PlotOptionsGaugeTooltip Tooltip_DefaultValue { get; set; }
@@ -370,6 +378,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (OnPoint.IsDirty(ref highcharts)) h.Add("onPoint",OnPoint.ToHashtable(ref highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
 			if (Pivot.IsDirty(ref highcharts)) h.Add("pivot",Pivot.ToHashtable(ref highcharts));

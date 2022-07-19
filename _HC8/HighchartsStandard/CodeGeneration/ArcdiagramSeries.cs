@@ -55,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Nodes = Nodes_DefaultValue = new ArcdiagramSeriesNodes();
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			Offset = Offset_DefaultValue = " 100% ";
+			OnPoint = OnPoint_DefaultValue = new ArcdiagramSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new ArcdiagramSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -348,6 +349,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public ArcdiagramSeriesOnPoint OnPoint { get; set; }
+		private ArcdiagramSeriesOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -491,6 +499,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Nodes.IsDirty(ref highcharts)) h.Add("nodes",Nodes.ToHashtable(ref highcharts));
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
+			if (OnPoint.IsDirty(ref highcharts)) h.Add("onPoint",OnPoint.ToHashtable(ref highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  

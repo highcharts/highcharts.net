@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsXrange  : BaseObject, IPlotOptionsSeries
+	public partial class PlotOptionsXrange  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 
@@ -52,6 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
+			OnPoint = OnPoint_DefaultValue = new PlotOptionsXrangeOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			PartialFill = PartialFill_DefaultValue = new PlotOptionsXrangePartialFill();
 			Point = Point_DefaultValue = new PlotOptionsXrangePoint();
@@ -331,6 +332,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public PlotOptionsXrangeOnPoint OnPoint { get; set; }
+		private PlotOptionsXrangeOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -520,6 +528,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
+			if (OnPoint.IsDirty(ref highcharts)) h.Add("onPoint",OnPoint.ToHashtable(ref highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (PartialFill.IsDirty(ref highcharts)) h.Add("partialFill",PartialFill.ToHashtable(ref highcharts));
 			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));

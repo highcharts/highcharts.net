@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PlotOptionsWindbarb  : BaseObject, IPlotOptionsSeries
+	public partial class PlotOptionsWindbarb  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 
@@ -60,6 +60,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
 			NegativeColor = NegativeColor_DefaultValue = "";
+			OnPoint = OnPoint_DefaultValue = new PlotOptionsWindbarbOnPoint();
 			OnSeries = OnSeries_DefaultValue = "";
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsWindbarbPoint();
@@ -402,6 +403,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public PlotOptionsWindbarbOnPoint OnPoint { get; set; }
+		private PlotOptionsWindbarbOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The id of another series in the chart that the wind barbs areprojected on. When `null`, the wind symbols are drawn on the X axis,but offset up or down by the `yOffset` setting.
 		/// </summary>
 		public string OnSeries { get; set; }
@@ -648,6 +656,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (OnPoint.IsDirty(ref highcharts)) h.Add("onPoint",OnPoint.ToHashtable(ref highcharts));
 			if (OnSeries != OnSeries_DefaultValue) h.Add("onSeries",OnSeries);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));

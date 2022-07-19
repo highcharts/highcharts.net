@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FlagDiamondpin = FlagDiamondpin_DefaultValue = new Object();
 			FlagSimplepin = FlagSimplepin_DefaultValue = new Object();
 			FlagSquarepin = FlagSquarepin_DefaultValue = new Object();
-			FullScreen = FullScreen_DefaultValue = new Object();
+			FullScreen = FullScreen_DefaultValue = new NavigationBindingsFullScreen();
 			HorizontalLine = HorizontalLine_DefaultValue = new Object();
 			Indicators = Indicators_DefaultValue = new Object();
 			InfinityLine = InfinityLine_DefaultValue = new Object();
@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Pitchfork = Pitchfork_DefaultValue = new Object();
 			Ray = Ray_DefaultValue = new Object();
 			RectangleAnnotation = RectangleAnnotation_DefaultValue = new Object();
-			SaveChart = SaveChart_DefaultValue = new Object();
+			SaveChart = SaveChart_DefaultValue = new NavigationBindingsSaveChart();
 			Segment = Segment_DefaultValue = new Object();
 			SeriesTypeCandlestick = SeriesTypeCandlestick_DefaultValue = new Object();
 			SeriesTypeHeikinAshi = SeriesTypeHeikinAshi_DefaultValue = null;

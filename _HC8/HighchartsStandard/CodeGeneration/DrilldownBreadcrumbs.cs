@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Formatter = Formatter_DefaultValue = "";
 			Position = Position_DefaultValue = new Hashtable();
 			RelativeTo = RelativeTo_DefaultValue = "plotBox";
+			Rtl = Rtl_DefaultValue = false;
 			Separator = Separator_DefaultValue = new DrilldownBreadcrumbsSeparator();
 			ShowFullPath = ShowFullPath_DefaultValue = true;
 			Style = Style_DefaultValue = new Hashtable();
@@ -91,6 +92,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to reverse the order of buttons. This is common in Arabicand Hebrew.
+		/// </summary>
+		public bool? Rtl { get; set; }
+		private bool? Rtl_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options object for Breadcrumbs separator.
 		/// </summary>
 		public DrilldownBreadcrumbsSeparator Separator { get; set; }
@@ -140,6 +148,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
+			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
 			if (Separator.IsDirty(ref highcharts)) h.Add("separator",Separator.ToHashtable(ref highcharts));
 			if (ShowFullPath != ShowFullPath_DefaultValue) h.Add("showFullPath",ShowFullPath);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
