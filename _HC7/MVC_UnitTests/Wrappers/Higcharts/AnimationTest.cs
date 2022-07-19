@@ -22,16 +22,16 @@ namespace Highsoft.Web.Mvc.UnitTests
         [TestMethod]
         public void Test_IfAnimationEnableWorks_Correct()
         {
-            _chart.Chart.Animation = new Animation { Enabled = true };
+            _chart.Chart.AnimationBool = true;
             var json = _renderer.RenderHtml();
 
-            Assert.IsTrue(!json.Contains("\"animation\""));
+            Assert.IsTrue(json.Contains("\"animation\":true"));
         }
 
         [TestMethod]
         public void Test_IfAnimationDisableWorks_Correct()
         {
-            _chart.Chart.Animation = new Animation { Enabled = false };
+            _chart.Chart.AnimationBool = false;
             var json = _renderer.RenderHtml();
 
             Assert.IsTrue(json.Contains("\"animation\":false"));
