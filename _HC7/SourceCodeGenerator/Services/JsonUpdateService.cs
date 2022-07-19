@@ -341,6 +341,8 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("xAxisUnit", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             
             ChildrenToAdd.Add("series.ohlc.data", new List<ApiItem>() { new ApiItem { Title = "close", FullName = "series.ohlc.data.close", ReturnType = "Number" } });
+
+            ItemsToUpdate.Add("legend.enabled", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Default, Value = "null" } });
         }
 
         public void Delete(ApiItem item)
