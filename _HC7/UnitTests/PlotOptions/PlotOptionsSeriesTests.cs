@@ -27,12 +27,11 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityDescriptionRenders_Correct(string description)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.Description = description;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"description\":\"{description}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"description\":\"{description}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -46,7 +45,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.Enabled = enabled;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
 
@@ -61,7 +60,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.ExposeAsGroupOnly = exposeAsGroupOnly;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"exposeAsGroupOnly\":{exposeAsGroupOnly.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"exposeAsGroupOnly\":{exposeAsGroupOnly.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
         #region KeyboardNavigation
@@ -77,7 +76,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.KeyboardNavigation.Enabled = enabled;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"keyboardNavigation\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"keyboardNavigation\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
         }
 
         #endregion
@@ -94,7 +93,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.Point.DateFormat = format;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"dateFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"dateFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -107,7 +106,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.Point.DateFormatter = function;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"dateFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"dateFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -122,7 +121,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.Point.DescribeNull = describeNull;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"describeNull\":{describeNull.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"describeNull\":{describeNull.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -148,7 +147,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.Point.DescriptionFormatter = function;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"descriptionFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"descriptionFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -161,7 +160,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.Point.ValueDecimals = decimals;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueDecimals\":{decimals}.0}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"valueDecimals\":{decimals}.0}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -174,7 +173,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.Point.ValueDescriptionFormat = format;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueDescriptionFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"valueDescriptionFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -187,7 +186,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.Point.ValuePrefix = prefix;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valuePrefix\":\"{prefix}\"}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"valuePrefix\":\"{prefix}\"}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -200,7 +199,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Accessibility.Point.ValueSuffix = suffix;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueSuffix\":\"{suffix}\"}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"accessibility\":{{\"point\":{{\"valueSuffix\":\"{suffix}\"}}}}}}}}", renderer.RenderHtml());
         }
         #endregion
 
@@ -216,7 +215,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.AllowPointSelect = enabled;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"allowPointSelect\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"allowPointSelect\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -244,7 +243,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.AnimationBool = enabled;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -257,7 +256,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Animation.Duration = duration;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"duration\":{duration}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"duration\":{duration}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -270,7 +269,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Animation.Defer = defer;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"defer\":{defer}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"defer\":{defer}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -283,7 +282,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Animation.Easing = easing;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"easing\":\"{easing}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animation\":{{\"easing\":\"{easing}\"}}}}}}", renderer.RenderHtml());
         }
 
         #endregion
@@ -298,7 +297,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.AnimationLimit = limit;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animationLimit\":{limit}.0}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"animationLimit\":{limit}.0}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -313,7 +312,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.BoostBlending = boostBlending;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"boostBlending\":\"{boostBlending.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"boostBlending\":\"{boostBlending.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -338,7 +337,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.BoostThreshold = limit;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"boostThreshold\":{limit}.0}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"boostThreshold\":{limit}.0}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -367,7 +366,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.ClassName = className;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"className\":\"{className}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"className\":\"{className}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -380,7 +379,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Clip = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"clip\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"clip\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -406,7 +405,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Color = color;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"color\":\"{color.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"color\":\"{color.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
         }
 
         //missing logic for GradientColorObject and PatternObject
@@ -421,7 +420,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.ColorAxis = id;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":\"{id}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"colorAxis\":\"{id}\"}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -435,7 +434,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.ColorAxisNumber = index;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":{index}.0}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"colorAxis\":{index}.0}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -448,7 +447,7 @@ namespace HcTests.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             chart.PlotOptions.Series.ColorAxisBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"colorAxis\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -461,7 +460,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.ColorIndex = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorIndex\":{value}.0}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"colorIndex\":{value}.0}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -474,7 +473,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.ColorKey = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorKey\":\"{value}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"colorKey\":\"{value}\"}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -488,7 +487,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.ConnectEnds = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"connectEnds\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"connectEnds\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -501,7 +500,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.ConnectNulls = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"connectNulls\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"connectNulls\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -529,7 +528,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Crisp = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"crisp\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"crisp\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -556,7 +555,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.CropThreshold = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"cropThreshold\":{value}.0}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"cropThreshold\":{value}.0}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -585,7 +584,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Cursor = cursor;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"cursor\":\"{cursor.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"cursor\":\"{cursor.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -599,7 +598,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.Custom = extraData;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"custom\":{{\"{key1}\":\"{value1}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"custom\":{{\"{key1}\":\"{value1}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -625,7 +624,7 @@ namespace HcTests.PlotOptions
 
             chart.PlotOptions.Series.DashStyle = style;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dashStyle\":\"{result}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dashStyle\":\"{result}\"}}}}", renderer.RenderHtml());
         }
     }
 }
