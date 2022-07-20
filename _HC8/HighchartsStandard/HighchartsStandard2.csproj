@@ -18,6 +18,9 @@
     <RootNamespace>Highcharts</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+      #10.2.0.1
+      Fix Legend.Enabled
+
       #9.2.2.2
       Add solution for Blazor
       
