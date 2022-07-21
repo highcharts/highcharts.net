@@ -71,8 +71,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// When using multiple axes, align the thresholds. When this is true, otherticks will also be aligned.Note that for line series and some other series types, the `threshold`option is set to `null` by default. This will in turn cause their y-axisto not have a threshold. In order to avoid that, set the series`threshold` to 0 or another number.If `startOnTick` or `endOnTick` in the axis options are set to false, orif the axis is logarithmic, the threshold will not be aligned.
 		/// </summary>
-		public bool AlignThresholds { get; set; }
-		private bool AlignThresholds_DefaultValue { get; set; }
+		public bool? AlignThresholds { get; set; }
+		private bool? AlignThresholds_DefaultValue { get; set; }
 		 
 
 		/// <summary>

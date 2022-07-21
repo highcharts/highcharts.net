@@ -60,6 +60,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Marker = Marker_DefaultValue = new AroonoscillatorSeriesMarker();
 			Name = Name_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "";
+			OnPoint = OnPoint_DefaultValue = new AroonoscillatorSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Params = Params_DefaultValue = new AroonoscillatorSeriesParams();
 			Point = Point_DefaultValue = new AroonoscillatorSeriesPoint();
@@ -402,6 +403,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public AroonoscillatorSeriesOnPoint OnPoint { get; set; }
+		private AroonoscillatorSeriesOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -653,6 +661,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Marker.IsDirty(ref highstock)) h.Add("marker",Marker.ToHashtable(ref highstock));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (OnPoint.IsDirty(ref highstock)) h.Add("onPoint",OnPoint.ToHashtable(ref highstock));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Params.IsDirty(ref highstock)) h.Add("params",Params.ToHashtable(ref highstock));
 			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));

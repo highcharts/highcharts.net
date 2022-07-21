@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public StockToolsGuiDefinitionsAdvanced()
 		{
 			Fibonacci = Fibonacci_DefaultValue = new StockToolsGuiDefinitionsAdvancedFibonacci();
-			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new object();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new Hashtable();
 			Items = Items_DefaultValue = new List<string>();
 			ParallelChannel = ParallelChannel_DefaultValue = new StockToolsGuiDefinitionsAdvancedParallelChannel();
 			Pitchfork = Pitchfork_DefaultValue = new StockToolsGuiDefinitionsAdvancedPitchfork();
@@ -36,8 +36,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public object FibonacciTimeZones { get; set; }
-		private object FibonacciTimeZones_DefaultValue { get; set; }
+		public Hashtable FibonacciTimeZones { get; set; }
+		private Hashtable FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>

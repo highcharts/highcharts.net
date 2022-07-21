@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
-			Compare = Compare_DefaultValue = "";
+			Compare = Compare_DefaultValue = FlagsSeriesCompare.Null;
 			CompareBase = CompareBase_DefaultValue = FlagsSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Crisp = Crisp_DefaultValue = true;
@@ -72,6 +72,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Name = Name_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "";
 			OnKey = OnKey_DefaultValue = FlagsSeriesOnKey.Y;
+			OnPoint = OnPoint_DefaultValue = new FlagsSeriesOnPoint();
 			OnSeries = OnSeries_DefaultValue = "";
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new FlagsSeriesPoint();
@@ -233,8 +234,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Compare the values of the series against the first non-null, non-zero value in the visible range. The y axis will show percentageor absolute change depending on whether `compare` is set to `"percent"`or `"value"`. When this is applied to multiple series, it allowscomparing the development of the series against each other. Addsa `change` field to every point object.
 		/// </summary>
-		public string Compare { get; set; }
-		private string Compare_DefaultValue { get; set; }
+		public FlagsSeriesCompare Compare { get; set; }
+		private FlagsSeriesCompare Compare_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -508,6 +509,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public FlagsSeriesOnKey OnKey { get; set; }
 		private FlagsSeriesOnKey OnKey_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public FlagsSeriesOnPoint OnPoint { get; set; }
+		private FlagsSeriesOnPoint OnPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -825,7 +833,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
+			if (Compare != Compare_DefaultValue) h.Add("compare", Highstock.FirstCharacterToLower(Compare.ToString()));
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
@@ -865,6 +873,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (OnKey != OnKey_DefaultValue) h.Add("onKey", Highstock.FirstCharacterToLower(OnKey.ToString()));
+			if (OnPoint.IsDirty(ref highstock)) h.Add("onPoint",OnPoint.ToHashtable(ref highstock));
 			if (OnSeries != OnSeries_DefaultValue) h.Add("onSeries",OnSeries);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));

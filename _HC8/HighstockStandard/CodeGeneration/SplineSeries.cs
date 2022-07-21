@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
-			Compare = Compare_DefaultValue = "";
+			Compare = Compare_DefaultValue = SplineSeriesCompare.Null;
 			CompareBase = CompareBase_DefaultValue = SplineSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
@@ -65,6 +65,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Marker = Marker_DefaultValue = new SplineSeriesMarker();
 			Name = Name_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "";
+			OnPoint = OnPoint_DefaultValue = new SplineSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new SplineSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -197,8 +198,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Compare the values of the series against the first non-null, non-zero value in the visible range. The y axis will show percentageor absolute change depending on whether `compare` is set to `"percent"`or `"value"`. When this is applied to multiple series, it allowscomparing the development of the series against each other. Addsa `change` field to every point object.
 		/// </summary>
-		public string Compare { get; set; }
-		private string Compare_DefaultValue { get; set; }
+		public SplineSeriesCompare Compare { get; set; }
+		private SplineSeriesCompare Compare_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -444,6 +445,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string NegativeColor { get; set; }
 		private string NegativeColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public SplineSeriesOnPoint OnPoint { get; set; }
+		private SplineSeriesOnPoint OnPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -702,7 +710,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ColorAxisBool != ColorAxisBool_DefaultValue) h.Add("colorAxis",ColorAxisBool);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
-			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
+			if (Compare != Compare_DefaultValue) h.Add("compare", Highstock.FirstCharacterToLower(Compare.ToString()));
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
@@ -738,6 +746,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Marker.IsDirty(ref highstock)) h.Add("marker",Marker.ToHashtable(ref highstock));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (OnPoint.IsDirty(ref highstock)) h.Add("onPoint",OnPoint.ToHashtable(ref highstock));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  

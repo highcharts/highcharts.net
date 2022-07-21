@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
-			Compare = Compare_DefaultValue = "";
+			Compare = Compare_DefaultValue = PlotOptionsKlingerCompare.Null;
 			CompareBase = CompareBase_DefaultValue = PlotOptionsKlingerCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			CompareToMain = CompareToMain_DefaultValue = false;
@@ -58,6 +58,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsKlingerMarker();
 			NegativeColor = NegativeColor_DefaultValue = "";
+			OnPoint = OnPoint_DefaultValue = new PlotOptionsKlingerOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Params = Params_DefaultValue = new PlotOptionsKlingerParams();
 			Point = Point_DefaultValue = new PlotOptionsKlingerPoint();
@@ -171,8 +172,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Compare the values of the series against the first non-null, non-zero value in the visible range. The y axis will show percentageor absolute change depending on whether `compare` is set to `"percent"`or `"value"`. When this is applied to multiple series, it allowscomparing the development of the series against each other. Addsa `change` field to every point object.
 		/// </summary>
-		public string Compare { get; set; }
-		private string Compare_DefaultValue { get; set; }
+		public PlotOptionsKlingerCompare Compare { get; set; }
+		private PlotOptionsKlingerCompare Compare_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -379,6 +380,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public PlotOptionsKlingerOnPoint OnPoint { get; set; }
+		private PlotOptionsKlingerOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -549,7 +557,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
-			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
+			if (Compare != Compare_DefaultValue) h.Add("compare", Highstock.FirstCharacterToLower(Compare.ToString()));
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CompareToMain != CompareToMain_DefaultValue) h.Add("compareToMain",CompareToMain);
@@ -579,6 +587,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Marker.IsDirty(ref highstock)) h.Add("marker",Marker.ToHashtable(ref highstock));
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
+			if (OnPoint.IsDirty(ref highstock)) h.Add("onPoint",OnPoint.ToHashtable(ref highstock));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Params.IsDirty(ref highstock)) h.Add("params",Params.ToHashtable(ref highstock));
 			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));

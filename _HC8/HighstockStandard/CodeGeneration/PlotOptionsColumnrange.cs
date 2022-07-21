@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
-			Compare = Compare_DefaultValue = "";
+			Compare = Compare_DefaultValue = PlotOptionsColumnrangeCompare.Null;
 			CompareBase = CompareBase_DefaultValue = PlotOptionsColumnrangeCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Crisp = Crisp_DefaultValue = true;
@@ -69,6 +69,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
+			OnPoint = OnPoint_DefaultValue = new PlotOptionsColumnrangeOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsColumnrangePoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
@@ -76,7 +77,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsColumnrangePointIntervalUnit.Null;
 			PointPadding = PointPadding_DefaultValue = null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
-			PointRange = PointRange_DefaultValue = 0;
+			PointRange = PointRange_DefaultValue = null;
 			PointStart = PointStart_DefaultValue = 0;
 			PointWidth = PointWidth_DefaultValue = null;
 			RelativeXValue = RelativeXValue_DefaultValue = false;
@@ -248,8 +249,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Compare the values of the series against the first non-null, non-zero value in the visible range. The y axis will show percentageor absolute change depending on whether `compare` is set to `"percent"`or `"value"`. When this is applied to multiple series, it allowscomparing the development of the series against each other. Addsa `change` field to every point object.
 		/// </summary>
-		public string Compare { get; set; }
-		private string Compare_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeCompare Compare { get; set; }
+		private PlotOptionsColumnrangeCompare Compare_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -470,6 +471,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Options for the `Series on point` feature. Only `pie` and `sunburst` seriesare supported at this moment.
+		/// </summary>
+		public PlotOptionsColumnrangeOnPoint OnPoint { get; set; }
+		private PlotOptionsColumnrangeOnPoint OnPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
@@ -519,7 +527,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The width of each point on the x axis. For example in a column chartwith one value each day, the pointRange would be 1 day (= 24 * 3600* 1000 milliseconds). This is normally computed automatically, butthis option can be used to override the automatic value.
+		/// 
 		/// </summary>
 		public double? PointRange { get; set; }
 		private double? PointRange_DefaultValue { get; set; }
@@ -670,7 +678,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Compare != Compare_DefaultValue) h.Add("compare",Compare);
+			if (Compare != Compare_DefaultValue) h.Add("compare", Highstock.FirstCharacterToLower(Compare.ToString()));
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", Highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
@@ -702,6 +710,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
+			if (OnPoint.IsDirty(ref highstock)) h.Add("onPoint",OnPoint.ToHashtable(ref highstock));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
