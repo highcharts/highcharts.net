@@ -8,6 +8,7 @@ using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 using HcTests.Helpers;
+using System.Globalization;
 
 namespace HcTests.PlotOptions
 {
@@ -40,7 +41,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityEnabledRenders_Correct(bool enabled)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.Enabled = enabled;
@@ -55,7 +56,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityExposeAsGroupOnlyRenders_Correct(bool exposeAsGroupOnly)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.ExposeAsGroupOnly = exposeAsGroupOnly;
@@ -71,7 +72,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityKeyboardNavigationEnabledRenders_Correct(bool enabled)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.KeyboardNavigation.Enabled = enabled;
@@ -88,7 +89,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityPointDateFormatRenders_Correct(string format)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.Point.DateFormat = format;
@@ -101,7 +102,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityPointDateFormatterRenders_Correct(string function)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.Point.DateFormatter = function;
@@ -114,7 +115,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityPointDescribeNullSetOnFalseRenders_Correct(bool describeNull)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             
@@ -129,7 +130,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityPointDescribeNullSetOnTrueRenders_Correct(bool describeNull)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.Point.DescribeNull = describeNull;
@@ -142,7 +143,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityPointDescriptionFormatterRenders_Correct(string function)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.Point.DescriptionFormatter = function;
@@ -155,7 +156,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityPointValueDecimalsRenders_Correct(int decimals)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.Point.ValueDecimals = decimals;
@@ -168,7 +169,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityPointValueDescriptionFormatRenders_Correct(string format)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.Point.ValueDescriptionFormat = format;
@@ -181,7 +182,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityPointValuePrefixRenders_Correct(string prefix)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.Point.ValuePrefix = prefix;
@@ -194,7 +195,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAccessibilityPointValueSufixRenders_Correct(string suffix)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Accessibility.Point.ValueSuffix = suffix;
@@ -209,7 +210,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAllowPointSelectRenders_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             var enabled = true;
 
@@ -222,7 +223,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAllowPointSelectDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.AllowPointSelect = false;
@@ -238,7 +239,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAnimationEnabledRenders_Correct(bool enabled)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.AnimationBool = enabled;
@@ -251,7 +252,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAnimationDurationRenders_Correct(int duration)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Animation.Duration = duration;
@@ -264,7 +265,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAnimationDeferRenders_Correct(int defer)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Animation.Defer = defer;
@@ -277,7 +278,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAnimationEasingRenders_Correct(string easing)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Animation.Easing = easing;
@@ -292,7 +293,7 @@ namespace HcTests.PlotOptions
         public void Test_IfAnimationLimitRenders_Correct(int limit)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.AnimationLimit = limit;
@@ -307,7 +308,7 @@ namespace HcTests.PlotOptions
         public void Test_IfBoostBlendingRenders_Correct(PlotOptionsSeriesBoostBlending boostBlending)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.BoostBlending = boostBlending;
@@ -319,7 +320,7 @@ namespace HcTests.PlotOptions
         public void Test_IfBoostBlendingDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.BoostBlending = PlotOptionsSeriesBoostBlending.Undefined;
@@ -332,7 +333,7 @@ namespace HcTests.PlotOptions
         public void Test_IfBoostThresholdRenders_Correct(int limit)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.BoostThreshold = limit;
@@ -344,7 +345,7 @@ namespace HcTests.PlotOptions
         public void Test_IfBoostThresholdDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 5000;
 
@@ -361,7 +362,7 @@ namespace HcTests.PlotOptions
         public void Test_IfClassNameRenders_Correct(string className)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.ClassName = className;
@@ -373,7 +374,7 @@ namespace HcTests.PlotOptions
         public void Test_IfClipRenders_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
@@ -386,7 +387,7 @@ namespace HcTests.PlotOptions
         public void Test_IfClipDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
@@ -400,7 +401,7 @@ namespace HcTests.PlotOptions
         public void Test_IfColorRenders_Correct(string color)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Color = color;
@@ -415,7 +416,7 @@ namespace HcTests.PlotOptions
         public void Test_IfColorAxisRendersString_Correct(string id)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.ColorAxis = id;
@@ -429,7 +430,7 @@ namespace HcTests.PlotOptions
         public void Test_IfColorAxisRendersNumber_Correct(int index)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.ColorAxisNumber = index;
@@ -443,7 +444,7 @@ namespace HcTests.PlotOptions
         public void Test_IfColorAxisRendersBool_Correct(bool value)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             chart.PlotOptions.Series.ColorAxisBool = value;
 
@@ -455,7 +456,7 @@ namespace HcTests.PlotOptions
         public void Test_IfColorIndexRenders_Correct(int value)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.ColorIndex = value;
@@ -468,7 +469,7 @@ namespace HcTests.PlotOptions
         public void Test_IfColorKeyRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.ColorKey = value;
@@ -482,7 +483,7 @@ namespace HcTests.PlotOptions
         public void Test_IfConnectEndsRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.ConnectEnds = value;
@@ -494,7 +495,7 @@ namespace HcTests.PlotOptions
         public void Test_IfConnectNullsRenders_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
@@ -507,7 +508,7 @@ namespace HcTests.PlotOptions
         public void Test_IfConnectNullsDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
@@ -522,7 +523,7 @@ namespace HcTests.PlotOptions
         public void Test_IfCrispRenders_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
@@ -535,7 +536,7 @@ namespace HcTests.PlotOptions
         public void Test_IfCrispDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
@@ -550,7 +551,7 @@ namespace HcTests.PlotOptions
         public void Test_IfCropThresholdRenders_Correct(int value)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.CropThreshold = value;
@@ -562,7 +563,7 @@ namespace HcTests.PlotOptions
         public void Test_IfCropThresholdDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 300;
 
@@ -579,7 +580,7 @@ namespace HcTests.PlotOptions
         public void Test_IfCursorRenders_Correct(PlotOptionsSeriesCursor cursor)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Series.Cursor = cursor;
@@ -592,7 +593,7 @@ namespace HcTests.PlotOptions
         public void Test_IfCustomRenders_Correct(string key1, string value1)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
+            
             var renderer = new HighchartsRenderer(chart);
             var extraData = new Hashtable() { { key1, value1 } };
 
@@ -615,16 +616,533 @@ namespace HcTests.PlotOptions
         public void Test_IfDashStyleRenders_Correct(PlotOptionsSeriesDashStyle style)
         {
             var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
-            var result = style.ToString();
-            var replacement = result[0].ToString().ToLower();
-            result = result.Remove(0, 1);
-            result = replacement + result;
 
             chart.PlotOptions.Series.DashStyle = style;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dashStyle\":\"{result}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dashStyle\":\"{chart.FirstCharacterToLower(style.ToString())}\"}}}}", renderer.RenderHtml());
+        }
+
+
+        //missing dataLabels
+        //missing dataSorting
+
+        [Theory]
+        [InlineData("SomePlotOptionsDescription")]
+        public void Test_IfDescriptionRenders_Correct(string description)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Description = description;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"description\":\"{description}\"}}}}", renderer.RenderHtml());
+        }
+
+        //missing dragDrop
+
+        [Fact]
+        public void Test_IfEnableMouseTrackingRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var value = false;
+
+            chart.PlotOptions.Series.EnableMouseTracking = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"enableMouseTracking\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfEnableMouseTrackingDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var value = true;
+
+            chart.PlotOptions.Series.EnableMouseTracking = value;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"enableMouseTracking\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        }
+
+        //missing Events
+
+        [Fact]
+        public void Test_IfFindNearestPointByRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var value = PlotOptionsSeriesFindNearestPointBy.Xy;
+
+            chart.PlotOptions.Series.FindNearestPointBy = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"findNearestPointBy\":\"{value.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfFindNearestPointByDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var value = PlotOptionsSeriesFindNearestPointBy.X;
+
+            chart.PlotOptions.Series.FindNearestPointBy = value;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"findNearestPointBy\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfGetExtremesFromAllRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var value = true;
+
+            chart.PlotOptions.Series.GetExtremesFromAll = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"getExtremesFromAll\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfGetExtremesFromAllDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var value = false;
+
+            chart.PlotOptions.Series.GetExtremesFromAll = value;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"getExtremesFromAll\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void Test_IfIncludeInDataExportFromAllRenders_Correct(bool value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.IncludeInDataExport = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"includeInDataExport\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfIncludeInDataExportFromAllDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool? value = null;
+
+            chart.PlotOptions.Series.IncludeInDataExport = value;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"includeInDataExport\":{value}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("name", "y", "dataLabels.style.visibility", "true")]
+        public void Test_IfKeysRenders_Correct(string arg1, string arg2, string arg3, string arg4)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var value = new List<string> { arg1, arg2, arg3, arg4 };
+
+            chart.PlotOptions.Series.Keys = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"keys\":[\"{arg1}\",\"{arg2}\",\"{arg3}\",\"{arg4}\"]}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfKeysDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var value = new List<string>();
+
+            chart.PlotOptions.Series.Keys = value;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"keys\":}}}}", renderer.RenderHtml());
+        }
+
+        //missing label
+
+        [Theory]
+        [InlineData(PlotOptionsSeriesLinecap.Square)]
+        //missing PlotOptionsSeriesLinecap.Butt ?
+        public void Test_IfLinecapRenders_Correct(PlotOptionsSeriesLinecap value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Linecap = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"linecap\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfLinecapDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = PlotOptionsSeriesLinecap.Round;
+
+            chart.PlotOptions.Series.Linecap = defaultValue;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"linecap\":{defaultValue.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(5)]
+        [InlineData(10)]
+        public void Test_IfLineWidthRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.LineWidth = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"lineWidth\":{string.Format(new CultureInfo("en-us"),"{0:N1}",value)}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfLineWidthDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 2;
+
+            chart.PlotOptions.Series.LineWidth = defaultValue;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"lineWidth\":{string.Format(new CultureInfo("en-us"), "{0:N1}", defaultValue)}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(":previous")]
+        [InlineData("IdAnotherSeries")]
+        public void Test_IfLinkedToRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.LinkedTo = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"linkedTo\":\"{value}\"}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfLinkedToDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            string defaultValue = String.Empty;
+
+            chart.PlotOptions.Series.LinkedTo = defaultValue;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"linkedTo\":{defaultValue}}}}}", renderer.RenderHtml());
+        }
+
+        //missing Marker
+
+        [Theory]
+        [InlineData("#FF0000")]
+        [InlineData("#0088FF")]
+        public void Test_IfNegativeColorRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.NegativeColor = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"negativeColor\":\"{value}\"}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfNegativeColorDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            string defaultValue = String.Empty;
+
+            chart.PlotOptions.Series.NegativeColor = defaultValue;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"negativeColor\":{defaultValue}}}}}", renderer.RenderHtml());
+        }
+
+        //missing onPoint
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(10)]
+        [InlineData(100)]
+        public void Test_IfOpacityRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Opacity = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfOpacityDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 1;
+
+            chart.PlotOptions.Series.Opacity = defaultValue;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", defaultValue)}}}}}", renderer.RenderHtml());
+        }
+
+        //missing Point
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointDescriptionFormatterRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.PointDescriptionFormatter = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"pointDescriptionFormatter\":{value}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointDescriptionFormatterDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.PointDescriptionFormatter = defaultValue;
+
+            Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"pointDescriptionFormatter\":{defaultValue}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(10)]
+        [InlineData(100)]
+        public void Test_IfPointIntervalRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.PointInterval = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"pointInterval\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointIntervalDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 1;
+
+            chart.PlotOptions.Series.PointInterval = defaultValue;
+
+            Assert.DoesNotContain($"pointInterval", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(PlotOptionsSeriesPointIntervalUnit.Day)]
+        [InlineData(PlotOptionsSeriesPointIntervalUnit.Month)]
+        [InlineData(PlotOptionsSeriesPointIntervalUnit.Year)]
+        public void Test_IfPointIntervalUnitRenders_Correct(PlotOptionsSeriesPointIntervalUnit value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.PointIntervalUnit = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"pointIntervalUnit\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointIntervalUnitDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = PlotOptionsSeriesPointIntervalUnit.Null;
+
+            chart.PlotOptions.Series.PointIntervalUnit = defaultValue;
+
+            Assert.DoesNotContain($"pointIntervalUnit", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(PointPlacementEnum.Between)]
+        [InlineData(PointPlacementEnum.On)]
+        public void Test_IfPointPlacementEnumRenders_Correct(PointPlacementEnum value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.PointPlacement = new PointPlacement() { PointPlacementEnum = value };
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"pointPlacement\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-0.5)]
+        [InlineData(0.5)]
+        public void Test_IfPointPlacementNumberRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.PointPlacement = new PointPlacement() { Value = value };
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"pointPlacement\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointPlacementDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = PointPlacementEnum.Null;
+
+            chart.PlotOptions.Series.PointPlacement = new PointPlacement() { PointPlacementEnum = defaultValue };
+
+            Assert.DoesNotContain($"pointPlacement", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(10)]
+        public void Test_IfPointStartRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.PointStart = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"pointStart\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointStartDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 0;
+
+            chart.PlotOptions.Series.PointStart = defaultValue;
+
+            Assert.DoesNotContain($"pointStart", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfRelativeXValueRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = true;
+
+            chart.PlotOptions.Series.RelativeXValue = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"relativeXValue\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfRelativeXValueDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = false;
+
+            chart.PlotOptions.Series.RelativeXValue = defaultValue;
+
+            Assert.DoesNotContain($"relativeXValue", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfSelectedRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = true;
+
+            chart.PlotOptions.Series.Selected = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"selected\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfSelectedDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = false;
+
+            chart.PlotOptions.Series.Selected = defaultValue;
+
+            Assert.DoesNotContain($"selected", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfShadowBoolRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = true;
+
+            chart.PlotOptions.Series.ShadowBool = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"shadow\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfShadowWithDefaultValuesRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = true;
+
+            chart.PlotOptions.Series.Shadow = new Shadow() { Enabled = value };
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"shasdow\":{{\"Enabled\":true,\"Color\":\"\",\"OffsetX\":1,\"OffsetY\":1,\"Opacity\":0.15,\"Width\":3}}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(true, "#00ffdd", 10, 20, 30, 40)]
+        [InlineData(false, "#ffccaa", 40, 30, 20, 10)]
+        public void Test_IfShadowRenders_Correct(bool enabled, string color, int offsetX, int offsetY, double opacity, int width)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = false;
+
+            chart.PlotOptions.Series.Shadow = new Shadow()
+            {
+                Enabled = value,
+                Color = color,
+                OffsetX = offsetX,
+                OffsetY = offsetY,
+                Opacity = opacity,
+                Width = width
+            };
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"shadow\":{{\"enabled\":{chart.FirstCharacterToLower(enabled.ToString())},\"color\":\"{color}\",\"offsetX\":{offsetX},\"offsetY\":{offsetY},\"opacity\":{opacity},\"width\":{width}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfShadowBoolDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = false;
+
+            chart.PlotOptions.Series.ShadowBool = defaultValue;
+
+            Assert.DoesNotContain($"shadow", renderer.RenderHtml());
         }
     }
 }
