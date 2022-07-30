@@ -866,7 +866,7 @@ public class HighchartsGenerator
             if (child.FullName == "plotOptions.series" || propertyName == "Animation")
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
-            if (child.Title.Equals("shadow") && child.ReturnType.Equals("Object"))
+            if ((child.Title.Equals("shadow") && child.ReturnType.Equals("Object")) || child.Title.Equals("plotShadow"))
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             if (child.Title.ToLower() == "series" && child.ParentFullName == "Highcharts")
@@ -1143,8 +1143,8 @@ public class HighchartsGenerator
     }
     private void InitPropertyInitMappings()
     {
-        _propertyInitMappings.Add("shadow", "new Shadow() { Enabled = false }");
-        _propertyInitMappings.Add("plotShadow", "new Shadow() { Enabled = false }");
+        _propertyInitMappings.Add("shadow", "new Shadow()");
+        _propertyInitMappings.Add("plotShadow", "new Shadow()");
         _propertyInitMappings.Add("animation", "new Animation()");
         _propertyInitMappings.Add("pointPlacement", "new PointPlacement()");
         _propertyInitMappings.Add("crosshairs", "new List<Crosshair>()");
@@ -1394,7 +1394,7 @@ public class HighchartsGenerator
     private void InitCustomProperties()
     {
         //_customProperties.Add("Animation");
-        _customProperties.Add("PlotShadow");
+        //_customProperties.Add("PlotShadow");
         _customProperties.Add("PointPlacement");
         //_customProperties.Add("Symbol");
     }

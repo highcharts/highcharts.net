@@ -40,7 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = "5";
 			Position = Position_DefaultValue = new Hashtable();
 			Rotation = Rotation_DefaultValue = 0;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shadow = Shadow_DefaultValue = new Shadow();
 			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
 			Style = Style_DefaultValue = new Hashtable();

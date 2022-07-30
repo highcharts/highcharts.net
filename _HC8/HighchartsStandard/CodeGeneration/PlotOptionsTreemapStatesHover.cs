@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "";
 			Brightness = Brightness_DefaultValue = new Hashtable();
 			Opacity = Opacity_DefaultValue = null;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shadow = Shadow_DefaultValue = new Shadow();
 			
 			CustomFields = new Hashtable();
 		}	

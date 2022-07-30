@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = "5";
 			Point = Point_DefaultValue = null;
 			PointString = PointString_DefaultValue = "null";
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shadow = Shadow_DefaultValue = new Shadow();
 			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new Hashtable();

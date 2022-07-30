@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BaseWidth = BaseWidth_DefaultValue = 3;
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BorderWidth = BorderWidth_DefaultValue = 0;
-			Path = Path_DefaultValue = "";
+			Path = Path_DefaultValue = new Hashtable();
 			Radius = Radius_DefaultValue = "80%";
 			RearLength = RearLength_DefaultValue = "10%";
 			TopWidth = TopWidth_DefaultValue = 1;
@@ -68,8 +68,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array with an SVG path for the custom dial.
 		/// </summary>
-		public Highcharts.SVGPathArray Path { get; set; }
-		private Highcharts.SVGPathArray Path_DefaultValue { get; set; }
+		public Hashtable Path { get; set; }
+		private Hashtable Path_DefaultValue { get; set; }
 		 
 
 		/// <summary>

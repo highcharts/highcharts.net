@@ -13,7 +13,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	public partial class Shadow  : BaseObject
 	{
 		public Shadow() {
-            Enabled = false;
+            //Enabled = false;
             Color = "";
             OffsetX = 0;
             OffsetY = 0;
@@ -21,10 +21,11 @@ namespace Highsoft.Web.Mvc.Stocks
             Width = 0;
 		}
 
+        //deprecated - use ShadowBool
         /// <summary>
         /// If a shadow with default values should be enabled
         /// </summary>
-        public bool Enabled { get; set; }
+        //public bool Enabled { get; set; }
 
 		/// <summary>
 		/// The Color of the Shadow
@@ -66,18 +67,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
         internal override string ToJSON(ref Highstock highcharts)
         {
-            Hashtable h = ToHashtable(ref highcharts);
-            if (h.Count > 0)
-                return JsonConvert.SerializeObject(h);
-            else
-                return Enabled.ToString().ToLower();
+            return string.Empty;
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
         internal override bool IsDirty(ref Highstock highcharts)
         {
-            return (Enabled != false || ToHashtable(ref highcharts).Count > 0);
+            return ToHashtable(ref highcharts).Count > 0;
         }
 
 	}

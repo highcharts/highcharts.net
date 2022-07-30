@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = true;
 			Overflow = Overflow_DefaultValue = NavigationAnnotationsOptionsLabelOptionsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shadow = Shadow_DefaultValue = new Shadow();
 			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new Hashtable();

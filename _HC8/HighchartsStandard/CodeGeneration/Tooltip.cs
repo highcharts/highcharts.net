@@ -41,7 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointFormat = PointFormat_DefaultValue = "";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shadow = Shadow_DefaultValue = new Shadow();
 			ShadowBool = ShadowBool_DefaultValue = true;
 			Shape = Shape_DefaultValue = "callout";
 			Shared = Shared_DefaultValue = false;

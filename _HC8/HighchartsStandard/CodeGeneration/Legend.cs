@@ -45,7 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = "8";
 			Reversed = Reversed_DefaultValue = false;
 			Rtl = Rtl_DefaultValue = false;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shadow = Shadow_DefaultValue = new Shadow();
 			SquareSymbol = SquareSymbol_DefaultValue = true;
 			Style = Style_DefaultValue = new Hashtable();
 			SymbolHeight = SymbolHeight_DefaultValue = null;

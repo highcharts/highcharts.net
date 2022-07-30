@@ -12,8 +12,10 @@ namespace Highsoft.Web.Mvc.Charts
 {
 	public partial class Shadow  : BaseObject
 	{
-		public Shadow() {
-            Enabled = false;
+        Hashtable h = new Hashtable();
+
+        public Shadow() {
+            //Enabled = false;
             Color = "";
             OffsetX = 0;
             OffsetY = 0;
@@ -21,10 +23,11 @@ namespace Highsoft.Web.Mvc.Charts
             Width = 0;
 		}
 
+        //deprecated - use ShadowBool instead
         /// <summary>
         /// If a shadow with default values should be enabled
         /// </summary>
-        public bool Enabled { get; set; }
+        //public bool Enabled { get; set; }
 
 		/// <summary>
 		/// The Color of the Shadow
@@ -53,7 +56,8 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override Hashtable ToHashtable(ref Highcharts highcharts)
         {
-            Hashtable h = new Hashtable();
+            if (h.Count > 0)
+                return h;
 
             if (!String.IsNullOrEmpty(Color)) h.Add("color", Color);
             if (OffsetX != 0) h.Add("offsetX", OffsetX);
@@ -66,18 +70,14 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override string ToJSON(ref Highcharts highcharts)
         {
-            Hashtable h = ToHashtable(ref highcharts);
-            if (h.Count > 0)
-                return JsonConvert.SerializeObject(h);
-            else
-                return Enabled.ToString().ToLower();
+            return String.Empty;
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
         internal override bool IsDirty(ref Highcharts highcharts)
         {
-            return (Enabled != false || ToHashtable(ref highcharts).Count > 0);
+            return ToHashtable(ref highcharts).Count > 0;
         }
 
 	}

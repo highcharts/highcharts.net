@@ -1256,8 +1256,8 @@ public class HighstockGenerator
     }
     private void InitPropertyInitMappings()
     {
-        _propertyInitMappings.Add("shadow", "new Shadow() { Enabled = false }");
-        _propertyInitMappings.Add("plotShadow", "new Shadow() { Enabled = false }");
+        _propertyInitMappings.Add("shadow", "new Shadow()");
+        _propertyInitMappings.Add("plotShadow", "new Shadow()");
         _propertyInitMappings.Add("animation", "new Animation() { Enabled = true }");
         _propertyInitMappings.Add("pointPlacement", "new PointPlacement()");
         _propertyInitMappings.Add("crosshairs", "new List<Crosshair>()");
