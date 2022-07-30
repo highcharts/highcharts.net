@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			BubbleLegend = BubbleLegend_DefaultValue = new LegendBubbleLegend();
 			ClassName = ClassName_DefaultValue = "highcharts-no-tooltip";
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = null;
 			Floating = Floating_DefaultValue = false;
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new Hashtable();
 			ItemDistance = ItemDistance_DefaultValue = null;

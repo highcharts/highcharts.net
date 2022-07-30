@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
+			ShadowBool = ShadowBool_DefaultValue = true;
 			Shape = Shape_DefaultValue = "callout";
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
@@ -357,7 +357,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); highcharts.AddFunction("pointFormatter", PointFormatter); }  
 			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); highcharts.AddFunction("positioner", Positioner); }  
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(ref highcharts)) h.Add("shadow",Shadow.ToHashtable(ref highcharts));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);

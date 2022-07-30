@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ActiveColor = ActiveColor_DefaultValue = "#003399";
 			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = true;
 			ArrowSize = ArrowSize_DefaultValue = 12;
 			Enabled = Enabled_DefaultValue = true;
 			InactiveColor = InactiveColor_DefaultValue = "#cccccc";

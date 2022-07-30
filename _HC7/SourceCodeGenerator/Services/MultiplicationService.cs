@@ -76,7 +76,11 @@ namespace SourceCodeGenerator.Services
                 if (counter > 0)
                 {
                     clone.Suffix = "Bool";
-                    clone.Defaults = "null";
+
+                    if (bool.TryParse(item.Defaults, out bool defaultValue))
+                        clone.Defaults = defaultValue.ToString().ToLower();
+                    else
+                        clone.Defaults = "null";
                 }
                 else
                     clone.Suffix = string.Empty;

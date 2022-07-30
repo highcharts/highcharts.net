@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = false;
 			Defer = Defer_DefaultValue = null;
-			DeferBool = DeferBool_DefaultValue = null;
+			DeferBool = DeferBool_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Filter = Filter_DefaultValue = new PlotOptionsHeatmapDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Position = Position_DefaultValue = new Hashtable();
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
+			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
 			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new PlotOptionsHeatmapDataLabelsTextPath();
@@ -333,7 +333,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(ref highcharts)) h.Add("shadow",Shadow.ToHashtable(ref highcharts));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);

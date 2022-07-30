@@ -866,6 +866,9 @@ public class HighchartsGenerator
             if (child.FullName == "plotOptions.series" || propertyName == "Animation")
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
+            if (child.Title.Equals("shadow") && child.ReturnType.Equals("Object"))
+                return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
+
             if (child.Title.ToLower() == "series" && child.ParentFullName == "Highcharts")
                 return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 

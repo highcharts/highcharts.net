@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Mode = Mode_DefaultValue = AccessibilityKeyboardNavigationSeriesNavigationMode.Normal;
 			PointNavigationEnabledThreshold = PointNavigationEnabledThreshold_DefaultValue = null;
-			PointNavigationEnabledThresholdBool = PointNavigationEnabledThresholdBool_DefaultValue = null;
+			PointNavigationEnabledThresholdBool = PointNavigationEnabledThresholdBool_DefaultValue = false;
 			RememberPointFocus = RememberPointFocus_DefaultValue = false;
 			SkipNullPoints = SkipNullPoints_DefaultValue = true;
 			

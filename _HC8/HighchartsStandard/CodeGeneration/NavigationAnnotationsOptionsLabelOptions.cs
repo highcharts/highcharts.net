@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Overflow = Overflow_DefaultValue = NavigationAnnotationsOptionsLabelOptionsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
 			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
+			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
@@ -235,7 +235,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(ref highcharts)) h.Add("shadow",Shadow.ToHashtable(ref highcharts));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);

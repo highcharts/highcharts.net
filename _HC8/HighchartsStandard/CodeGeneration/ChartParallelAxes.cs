@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new ChartParallelAxesCrosshair();
-			CrosshairBool = CrosshairBool_DefaultValue = null;
+			CrosshairBool = CrosshairBool_DefaultValue = false;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = true;
 			Events = Events_DefaultValue = new ChartParallelAxesEvents();

@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = null;
-			DeferBool = DeferBool_DefaultValue = null;
+			DeferBool = DeferBool_DefaultValue = true;
 			Distance = Distance_DefaultValue = 100;
 			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsTimelineDataLabelsFilter();
