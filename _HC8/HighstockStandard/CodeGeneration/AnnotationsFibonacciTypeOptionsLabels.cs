@@ -31,8 +31,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = true;
 			Overflow = Overflow_DefaultValue = AnnotationsFibonacciTypeOptionsLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = "5";
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
+			Shadow = Shadow_DefaultValue = new Shadow();
+			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
@@ -232,7 +232,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(ref highstock)) h.Add("shadow",Shadow.ToHashtable(ref highstock));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);

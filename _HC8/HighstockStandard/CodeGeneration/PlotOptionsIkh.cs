@@ -68,8 +68,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			SenkouSpan = SenkouSpan_DefaultValue = new PlotOptionsIkhSenkouSpan();
 			SenkouSpanA = SenkouSpanA_DefaultValue = new PlotOptionsIkhSenkouSpanA();
 			SenkouSpanB = SenkouSpanB_DefaultValue = new PlotOptionsIkhSenkouSpanB();
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
+			Shadow = Shadow_DefaultValue = new Shadow();
+			ShadowBool = ShadowBool_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
@@ -621,7 +621,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SenkouSpan.IsDirty(ref highstock)) h.Add("senkouSpan",SenkouSpan.ToHashtable(ref highstock));
 			if (SenkouSpanA.IsDirty(ref highstock)) h.Add("senkouSpanA",SenkouSpanA.ToHashtable(ref highstock));
 			if (SenkouSpanB.IsDirty(ref highstock)) h.Add("senkouSpanB",SenkouSpanB.ToHashtable(ref highstock));
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(ref highstock)) h.Add("shadow",Shadow.ToHashtable(ref highstock));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

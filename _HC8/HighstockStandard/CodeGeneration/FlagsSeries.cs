@@ -84,8 +84,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointStart = PointStart_DefaultValue = 0;
 			RelativeXValue = RelativeXValue_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
+			Shadow = Shadow_DefaultValue = new Shadow();
+			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "flag";
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
@@ -885,7 +885,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(ref highstock)) h.Add("shadow",Shadow.ToHashtable(ref highstock));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

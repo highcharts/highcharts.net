@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = null;
-			DeferBool = DeferBool_DefaultValue = null;
+			DeferBool = DeferBool_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Filter = Filter_DefaultValue = new HollowcandlestickSeriesDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Padding = Padding_DefaultValue = "5";
 			Position = Position_DefaultValue = new Hashtable();
 			Rotation = Rotation_DefaultValue = 0;
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
+			Shadow = Shadow_DefaultValue = new Shadow();
+			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
 			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new HollowcandlestickSeriesDataLabelsTextPath();
@@ -330,7 +330,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Position != Position_DefaultValue) h.Add("position",Position);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(ref highstock)) h.Add("shadow",Shadow.ToHashtable(ref highstock));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);

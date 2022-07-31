@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointFormat = PointFormat_DefaultValue = "";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
+			Shadow = Shadow_DefaultValue = new Shadow();
+			ShadowBool = ShadowBool_DefaultValue = true;
 			Shape = Shape_DefaultValue = "callout";
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
@@ -363,7 +363,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); Highstock.AddFunction("pointFormatter", PointFormatter); }  
 			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highstock.AddFunction("positioner", Positioner); }  
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(ref highstock)) h.Add("shadow",Shadow.ToHashtable(ref highstock));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);

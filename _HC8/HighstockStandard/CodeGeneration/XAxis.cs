@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new XAxisCrosshair();
-			CrosshairBool = CrosshairBool_DefaultValue = null;
+			CrosshairBool = CrosshairBool_DefaultValue = false;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Events = Events_DefaultValue = new XAxisEvents();

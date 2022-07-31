@@ -45,12 +45,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "";
 			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
-			PlotShadow = PlotShadow_DefaultValue = new Shadow() { Enabled = false };
+			PlotShadow = PlotShadow_DefaultValue = new Shadow();
 			Reflow = Reflow_DefaultValue = true;
 			RenderTo = RenderTo_DefaultValue = "";
 			ResetZoomButton = ResetZoomButton_DefaultValue = new ChartResetZoomButton();
 			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(51,92,173,0.25)";
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
+			Shadow = Shadow_DefaultValue = new Shadow();
 			Spacing = Spacing_DefaultValue = new List<double>();
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
@@ -438,7 +438,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
-			if (PlotShadow.IsDirty(ref highstock)) h.Add("plotShadow",PlotShadow.ToJSON(ref highstock));
+			if (PlotShadow.IsDirty(ref highstock)) h.Add("plotShadow",PlotShadow.ToHashtable(ref highstock));
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
 			if (ResetZoomButton.IsDirty(ref highstock)) h.Add("resetZoomButton",ResetZoomButton.ToHashtable(ref highstock));

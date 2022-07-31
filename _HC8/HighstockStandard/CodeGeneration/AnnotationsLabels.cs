@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Padding = Padding_DefaultValue = "5";
 			Point = Point_DefaultValue = null;
 			PointString = PointString_DefaultValue = "null";
-			Shadow = Shadow_DefaultValue = new Shadow() { Enabled = false };
-			ShadowBool = ShadowBool_DefaultValue = null;
+			Shadow = Shadow_DefaultValue = new Shadow();
+			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
@@ -250,7 +250,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Point != Point_DefaultValue) h.Add("point",Point);
 			if (PointString != PointString_DefaultValue) h.Add("point",PointString);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(ref highstock)) h.Add("shadow",Shadow.ToHashtable(ref highstock));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);

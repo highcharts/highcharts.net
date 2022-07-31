@@ -953,6 +953,9 @@ public class HighstockGenerator
             if (child.FullName == "plotOptions.series" || child.FullName == "navigator.series")
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
+            if ((child.Title.Equals("shadow") && child.ReturnType.Equals("Object")) || child.Title.Equals("plotShadow"))
+                return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
+
             if (child.Title.ToLower() == "series" && child.ParentFullName == "Highstock")
                 return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
@@ -1531,7 +1534,7 @@ public class HighstockGenerator
     private void InitCustomProperties()
     {
         _customProperties.Add("Animation");
-        _customProperties.Add("PlotShadow");
+        //_customProperties.Add("PlotShadow");
         _customProperties.Add("PointPlacement");
         //_customProperties.Add("Symbol");
     }
