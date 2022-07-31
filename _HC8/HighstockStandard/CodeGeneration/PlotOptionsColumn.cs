@@ -750,7 +750,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (PointPlacement.IsDirty(ref highstock)) h.Add("pointPlacement",PointPlacement.ToJSON(ref highstock));
+			if (PointPlacement.IsDirty(ref highstock)) h.Add("pointPlacement",PointPlacement.ToHashtable(ref highstock));
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
