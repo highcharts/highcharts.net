@@ -1099,30 +1099,16 @@ namespace HcTests.PlotOptions
             Assert.Contains($"\"plotOptions\":{{\"series\":{{\"shadow\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
-        [Fact]
-        public void Test_IfShadowWithDefaultValuesRenders_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart);
-            bool value = true;
-
-            chart.PlotOptions.Series.Shadow = new Shadow() { Enabled = value };
-
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"shasdow\":{{\"Enabled\":true,\"Color\":\"\",\"OffsetX\":1,\"OffsetY\":1,\"Opacity\":0.15,\"Width\":3}}}}}}", renderer.RenderHtml());
-        }
-
         [Theory]
-        [InlineData(true, "#00ffdd", 10, 20, 30, 40)]
-        [InlineData(false, "#ffccaa", 40, 30, 20, 10)]
-        public void Test_IfShadowRenders_Correct(bool enabled, string color, int offsetX, int offsetY, double opacity, int width)
+        [InlineData("#00ffdd", 10, 20, 30, 40)]
+        [InlineData("#ffccaa", 40, 30, 20, 10)]
+        public void Test_IfShadowRenders_Correct(string color, int offsetX, int offsetY, double opacity, int width)
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            bool value = false;
 
             chart.PlotOptions.Series.Shadow = new Shadow()
             {
-                Enabled = value,
                 Color = color,
                 OffsetX = offsetX,
                 OffsetY = offsetY,
@@ -1130,7 +1116,13 @@ namespace HcTests.PlotOptions
                 Width = width
             };
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"shadow\":{{\"enabled\":{chart.FirstCharacterToLower(enabled.ToString())},\"color\":\"{color}\",\"offsetX\":{offsetX},\"offsetY\":{offsetY},\"opacity\":{opacity},\"width\":{width}}}}}}}", renderer.RenderHtml());
+            var result = renderer.RenderHtml();
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"shadow\":", result);
+            Assert.Contains($"\"offsetX\":{offsetX}", result);
+            Assert.Contains($"\"width\":{width}", result);
+            Assert.Contains($"\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", opacity)}", result);
+            Assert.Contains($"\"offsetY\":{offsetY}", result);
+            Assert.Contains($"\"color\":\"{color}\"", result);
         }
 
         [Fact]
