@@ -1136,5 +1136,276 @@ namespace HcTests.PlotOptions
 
             Assert.DoesNotContain($"shadow", renderer.RenderHtml());
         }
+
+        [Fact]
+        public void Test_IfShowCheckboxRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = true;
+
+            chart.PlotOptions.Series.ShowCheckbox = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"showCheckbox\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfShowCheckboxDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = false;
+
+            chart.PlotOptions.Series.ShowCheckbox = defaultValue;
+
+            Assert.DoesNotContain($"showCheckbox", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void Test_IfShowInLegendRenders_Correct(bool value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.ShowInLegend = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"showInLegend\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfShowInLegendDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.ShowInLegend = null;
+
+            Assert.DoesNotContain($"showInLegend", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void Test_IfSkipKeyboardNavigationRenders_Correct(bool value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.SkipKeyboardNavigation = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"skipKeyboardNavigation\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfSkipKeyboardNavigationDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.SkipKeyboardNavigation = null;
+
+            Assert.DoesNotContain($"skipKeyboardNavigation", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfSoftThresholdRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = false;
+
+            chart.PlotOptions.Series.SoftThreshold = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"softThreshold\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfSoftThresholdDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = true;
+
+            chart.PlotOptions.Series.SoftThreshold = defaultValue;
+
+            Assert.DoesNotContain($"softThreshold", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(PlotOptionsSeriesStacking.Overlap)]
+        [InlineData(PlotOptionsSeriesStacking.Percent)]
+        [InlineData(PlotOptionsSeriesStacking.Normal)]
+        [InlineData(PlotOptionsSeriesStacking.Stream)]
+        public void Test_IfStackingRenders_Correct(PlotOptionsSeriesStacking value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Stacking = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"stacking\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfStackingDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = PlotOptionsSeriesStacking.Null;
+
+            chart.PlotOptions.Series.Stacking = defaultValue;
+
+            Assert.DoesNotContain($"stacking", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(PlotOptionsSeriesStep.Center)]
+        [InlineData(PlotOptionsSeriesStep.Left)]
+        [InlineData(PlotOptionsSeriesStep.Right)]
+        public void Test_IfStepRenders_Correct(PlotOptionsSeriesStep value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Step = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"step\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfStepDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = PlotOptionsSeriesStep.Null;
+
+            chart.PlotOptions.Series.Step = defaultValue;
+
+            Assert.DoesNotContain($"step", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfStickyTrackingRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = false;
+
+            chart.PlotOptions.Series.StickyTracking = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfStickyTrackingDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = true;
+
+            chart.PlotOptions.Series.StickyTracking = defaultValue;
+
+            Assert.DoesNotContain($"stickyTracking", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(10)]
+        [InlineData(100)]
+        public void Test_IfThresholdTrackingRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.Threshold = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"threshold\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfthresholdDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 0;
+
+            chart.PlotOptions.Series.Threshold = defaultValue;
+
+            Assert.DoesNotContain($"threshold", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(10)]
+        [InlineData(100)]
+        public void Test_IfTurboThresholdTrackingRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.TurboThreshold = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"turboThreshold\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTurboThresholdDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 1000;
+
+            chart.PlotOptions.Series.TurboThreshold = defaultValue;
+
+            Assert.DoesNotContain($"turboThreshold", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfVisibleRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = false;
+
+            chart.PlotOptions.Series.Visible = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"visible\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfVisibleDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = true;
+
+            chart.PlotOptions.Series.Visible = defaultValue;
+
+            Assert.DoesNotContain($"visible", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfZoneAxisRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var value = "x";
+
+            chart.PlotOptions.Series.ZoneAxis = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"zoneAxis\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfZoneAxisDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = "y";
+
+            chart.PlotOptions.Series.ZoneAxis = defaultValue;
+
+            Assert.DoesNotContain($"zoneAxis", renderer.RenderHtml());
+        }
     }
 }
