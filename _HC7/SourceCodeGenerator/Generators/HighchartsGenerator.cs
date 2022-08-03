@@ -873,7 +873,7 @@ public class HighchartsGenerator
                 return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             if (propertyName.ToLower().Contains("pointplacement"))
-                return "if (PointPlacement.IsDirty())\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToHashtable());\n\t\t\t";
+                return "if (PointPlacement.IsDirty(ref highcharts))\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON(ref highcharts));\n\t\t\t";
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
@@ -1395,7 +1395,7 @@ public class HighchartsGenerator
     {
         //_customProperties.Add("Animation");
         //_customProperties.Add("PlotShadow");
-        _customProperties.Add("PointPlacement");
+        //_customProperties.Add("PointPlacement");
         //_customProperties.Add("Symbol");
     }
 

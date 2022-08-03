@@ -659,7 +659,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPlacement.IsDirty(ref highcharts)) h.Add("pointPlacement",PointPlacement.ToJSON(ref highcharts));
+			if (PointPlacement.IsDirty(ref highcharts))
+				if (PointPlacement.Value.HasValue)
+					h.Add("pointPlacement", PointPlacement.Value);
+				else
+					h.Add("pointPlacement", PointPlacement.ToJSON(ref highcharts));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);

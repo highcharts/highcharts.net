@@ -685,7 +685,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
-			if (PointPlacement.IsDirty(ref highcharts)) h.Add("pointPlacement",PointPlacement.ToJSON(ref highcharts));
+			if (PointPlacement.IsDirty(ref highcharts))
+				if (PointPlacement.Value.HasValue)
+					h.Add("pointPlacement", PointPlacement.Value);
+				else
+					h.Add("pointPlacement", PointPlacement.ToJSON(ref highcharts));
 			if (PointsInInterval != PointsInInterval_DefaultValue) h.Add("pointsInInterval",PointsInInterval);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);

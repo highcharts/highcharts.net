@@ -83,7 +83,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			RelativeXValue = RelativeXValue_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow();
-			ShadowBool = ShadowBool_DefaultValue = null;
+			ShadowBool = ShadowBool_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
@@ -748,14 +748,18 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (PointPlacement.IsDirty(ref highstock)) h.Add("pointPlacement",PointPlacement.ToHashtable(ref highstock));
+			if (PointPlacement.IsDirty(ref highstock))
+				if (PointPlacement.Value.HasValue)
+					h.Add("pointPlacement", PointPlacement.Value);
+				else
+					h.Add("pointPlacement", PointPlacement.ToJSON(ref highstock));
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (PointValKey != PointValKey_DefaultValue) h.Add("pointValKey", Highstock.FirstCharacterToLower(PointValKey.ToString()));
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(ref highstock)) h.Add("shadow",Shadow.ToHashtable(ref highstock));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);

@@ -23,6 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 
     public partial class PointPlacement : BaseObject
     {
+        Hashtable h = new Hashtable();
+
         public PointPlacement()
         {
             _Value = null;
@@ -59,7 +61,8 @@ namespace Highsoft.Web.Mvc.Charts
 
         internal override Hashtable ToHashtable(ref Highcharts highcharts)
         {
-            Hashtable h = new Hashtable();
+            if (h.Count > 0)
+                return h;
 
             if (Value.HasValue)
                 h.Add("pointPlacement", Value);

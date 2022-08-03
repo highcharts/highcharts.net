@@ -822,7 +822,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); Highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", Highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPlacement.IsDirty(ref highstock)) h.Add("pointPlacement",PointPlacement.ToHashtable(ref highstock));
+			if (PointPlacement.IsDirty(ref highstock))
+				if (PointPlacement.Value.HasValue)
+					h.Add("pointPlacement", PointPlacement.Value);
+				else
+					h.Add("pointPlacement", PointPlacement.ToJSON(ref highstock));
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);

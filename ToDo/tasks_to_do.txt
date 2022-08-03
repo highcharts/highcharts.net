@@ -5,8 +5,7 @@ Do wyjaśnienia:
 1. PlotOptionsSeriesLinecap.Butt powinno istnieć czy nie bo w kodzie nie ma a w API jest?
 2. Kolory są tylko stringiem; brak gradientu i patternu
 3. Fix PointPlacement dla Number - zmiana wprowadzona w generatorze - zweryfikować
-4. Fix ShadowBool for default. Powinno być false a nie null
-5. Set default value for Shadow.Color for HC and HS 
-6. Fix test Test_IfShadowWithDefaultValuesRenders_Correct and set default color
-7. chart.plotShadow started rendering incorrect code -> verify with Shadow (        public void Test_IfShadowWithDefaultValuesRenders_Correct())
-8. Naprawić renderowanie Shadow - brakuje ToHashtable lub ToJson w PlotOptionsSeries
+4. Remove ref highcharts/ref highstock
+4. Remove remove ToJson from all objects
+5. Remove IsDirty and include that logic to ToHashtable
+
