@@ -397,17 +397,25 @@ public class HighstockGenerator
                 || child.FullName.ToLower().Contains("legend.itemHiddenStyle.") || child.FullName.ToLower().Contains("legend.itemHoverStyle."))
                 child.IsParent = true;
 
-            string formattedProperty = FormatProperty(propertyTemplate, child);
-            string formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
-            string formattedComparer = FormatPropertyComparer(propertyName, child);
+            string formattedProperty = string.Empty;
+            string formattedDefaultProperty = string.Empty;
+            string formattedComparer = string.Empty;
+            if (!(child.FullName.ToLower().StartsWith("series") && child.FullName.ToLower().EndsWith("type")))
+            {
+                formattedProperty = FormatProperty(propertyTemplate, child);
+                formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
+                formattedComparer = FormatPropertyComparer(propertyName, child);
+            }
+            else
+                formattedComparer = "h.Add(\"type\",\"" + GetClassNameFromItem(item).ToLower().Replace("series", "") + "\");\r\n\t\t\t";
 
-            //if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
-            //    child.IsParent = false;
+                //if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
+                //    child.IsParent = false;
 
-            //if (formattedDefaultProperty.ToLower().Contains("datalabels") && formattedDefaultProperty.Contains("null"))
-            //    continue;
+                //if (formattedDefaultProperty.ToLower().Contains("datalabels") && formattedDefaultProperty.Contains("null"))
+                //    continue;
 
-            properties += formattedProperty;
+                properties += formattedProperty;
             defaultValues += formattedDefaultProperty;
             hashtableComparers += formattedComparer;
         }

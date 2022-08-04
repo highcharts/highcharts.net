@@ -4,7 +4,6 @@ Highcharts .NET testy
 Do wyjaśnienia:
 1. PlotOptionsSeriesLinecap.Butt powinno istnieć czy nie bo w kodzie nie ma a w API jest?
 2. Kolory są tylko stringiem; brak gradientu i patternu
-3. Fix PointPlacement dla Number - zmiana wprowadzona w generatorze - zweryfikować
 4. Remove ref highcharts/ref highstock
 4. Remove remove ToJson from all objects
 5. Remove IsDirty and include that logic to ToHashtable

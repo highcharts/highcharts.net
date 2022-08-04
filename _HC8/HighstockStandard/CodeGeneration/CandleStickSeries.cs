@@ -101,7 +101,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new CandleStickSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Type = Type_DefaultValue = CandleStickSeriesType.Null;
 			UpColor = UpColor_DefaultValue = "#ffffff";
 			UpLineColor = UpLineColor_DefaultValue = "";
 			Visible = Visible_DefaultValue = true;
@@ -712,13 +711,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public CandleStickSeriesType Type { get; set; }
-		private CandleStickSeriesType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The fill color of the candlestick when values are rising.In styled mode, the up color can be set with the`.highcharts-candlestick-series .highcharts-point-up` rule.
 		/// </summary>
 		public string UpColor { get; set; }
@@ -882,7 +874,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty(ref highstock)) h.Add("tooltip",Tooltip.ToHashtable(ref highstock));
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			h.Add("type","candlestick");
 			if (UpColor != UpColor_DefaultValue) h.Add("upColor",UpColor);
 			if (UpLineColor != UpLineColor_DefaultValue) h.Add("upLineColor",UpLineColor);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);

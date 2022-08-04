@@ -81,7 +81,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new VbpSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Type = Type_DefaultValue = VbpSeriesType.Null;
 			Visible = Visible_DefaultValue = true;
 			VolumeDivision = VolumeDivision_DefaultValue = new VbpSeriesVolumeDivision();
 			XAxis = XAxis_DefaultValue = "";
@@ -552,13 +551,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public VbpSeriesType Type { get; set; }
-		private VbpSeriesType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -698,7 +690,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty(ref highstock)) h.Add("tooltip",Tooltip.ToHashtable(ref highstock));
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			h.Add("type","vbp");
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (VolumeDivision.IsDirty(ref highstock)) h.Add("volumeDivision",VolumeDivision.ToHashtable(ref highstock));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);

@@ -103,7 +103,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Title = Title_DefaultValue = "A";
 			Tooltip = Tooltip_DefaultValue = new FlagsSeriesTooltip();
-			Type = Type_DefaultValue = FlagsSeriesType.Null;
 			UseHTML = UseHTML_DefaultValue = false;
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = null;
@@ -729,13 +728,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The type of series, for example `line` or `column`. By default, theseries type is inherited from [chart.type](#chart.type), so unless thechart is a combination of series types, there is no need to set it on theseries level.
-		/// </summary>
-		public FlagsSeriesType Type { get; set; }
-		private FlagsSeriesType Type_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to use HTML to render the flag texts. Using HTML allows foradvanced formatting, images and reliable bi-directional textrendering. Note that exported images won't respect the HTML, and thatHTML won't respect Z-index settings.
 		/// </summary>
 		public bool? UseHTML { get; set; }
@@ -908,7 +900,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Title != Title_DefaultValue) h.Add("title",Title);
 			if (Tooltip.IsDirty(ref highstock)) h.Add("tooltip",Tooltip.ToHashtable(ref highstock));
-			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			h.Add("type","flags");
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
