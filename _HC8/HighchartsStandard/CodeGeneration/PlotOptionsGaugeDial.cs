@@ -68,8 +68,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array with an SVG path for the custom dial.
 		/// </summary>
-		public Highcharts.SVGPathArray Path { get; set; }
-		private Highcharts.SVGPathArray Path_DefaultValue { get; set; }
+		public string Path { get; set; }
+		private string Path_DefaultValue { get; set; }
 		 
 
 		/// <summary>
