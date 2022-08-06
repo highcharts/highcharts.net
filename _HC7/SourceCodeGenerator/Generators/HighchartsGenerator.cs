@@ -879,7 +879,7 @@ public class HighchartsGenerator
         }
         
         // Enum
-        if ((child.ReturnType == "string" || child.ReturnType == "String" || child.ReturnType == TypeService.CSSType) && child.Values != null && child.Values.Count > 0)
+        if (child.ReturnType.Equals(TypeService.EnumType) || ((child.ReturnType == "string" || child.ReturnType == "String" || child.ReturnType == TypeService.CSSType) && child.Values != null && child.Values.Count > 0))
             return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), MAIN_FIELD_NAME);
         // Complex object with nested objects / properties
         if (child.IsParent)
@@ -1488,14 +1488,10 @@ public class HighchartsGenerator
             return _propertyInitMappings[nameAndSuffix].ToString();
         }
 
-        if ((item.ReturnType == "string" || item.ReturnType == "String" || item.ReturnType.Equals(TypeService.CSSType)) && item.Values != null && item.Values.Any())
+        if (item.ReturnType.Equals(TypeService.EnumType) || ((item.ReturnType == "string" || item.ReturnType == "String" || item.ReturnType.Equals(TypeService.CSSType)) && item.Values != null && item.Values.Any()))
         {
             return GetDefaultValueForEnum(item);
         }
-
-        //if (!item.IsParent)
-        //{
-
 
         if (nameAndSuffix == "position")
             return defaults;

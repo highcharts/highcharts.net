@@ -343,6 +343,7 @@ namespace SourceCodeGenerator.Services
             ChildrenToAdd.Add("series.ohlc.data", new List<ApiItem>() { new ApiItem { Title = "close", FullName = "series.ohlc.data.close", ReturnType = "Number" } });
 
             ItemsToUpdate.Add("legend.enabled", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Default, Value = "null" } });
+            ItemsToUpdate.Add("overflow", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Values, Value = "allow" } });
         }
 
         public void Delete(ApiItem item)

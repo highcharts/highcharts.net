@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = "justify";
+			Overflow = Overflow_DefaultValue = PlotOptionsPackedbubbleDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = "0";
 			ParentNodeFormat = ParentNodeFormat_DefaultValue = "";
 			ParentNodeFormatter = ParentNodeFormatter_DefaultValue = "";
@@ -217,8 +217,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. Thedefault is `"justify"`, which aligns them inside the plot area.For columns and bars, this means it will be moved inside the bar.To display data labels outside the plot area, set `crop` to`false` and `overflow` to `"allow"`.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public PlotOptionsPackedbubbleDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsPackedbubbleDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -362,7 +362,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (ParentNodeFormat != ParentNodeFormat_DefaultValue) h.Add("parentNodeFormat",ParentNodeFormat);
 			if (ParentNodeFormatter != ParentNodeFormatter_DefaultValue) { h.Add("parentNodeFormatter",ParentNodeFormatter); highcharts.AddFunction("parentNodeFormatter", ParentNodeFormatter); }  

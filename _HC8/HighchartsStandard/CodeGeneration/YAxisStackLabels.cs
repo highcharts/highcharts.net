@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "{total}";
 			Formatter = Formatter_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = "justify";
+			Overflow = Overflow_DefaultValue = YAxisStackLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
 			TextAlign = TextAlign_DefaultValue = "";
@@ -128,8 +128,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle stack total labels that flow outside the plot area.The default is set to `"justify"`,which aligns them inside the plot area.For columns and bars, this means it will be moved inside the bar.To display stack labels outside the plot area,set `crop` to `false` and `overflow` to `"allow"`.
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public YAxisStackLabelsOverflow Overflow { get; set; }
+		private YAxisStackLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -200,7 +200,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
