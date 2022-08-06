@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BackgroundColor = BackgroundColor_DefaultValue = "none";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Crop = Crop_DefaultValue = false;
-			Overflow = Overflow_DefaultValue = "none";
+			Overflow = Overflow_DefaultValue = AnnotationsFibonacciLabelOptionsOverflow.None;
 			Shape = Shape_DefaultValue = "rect";
 			Style = Style_DefaultValue = new Hashtable();
 			VerticalAlign = VerticalAlign_DefaultValue = AnnotationsFibonacciLabelOptionsVerticalAlign.Middle;
@@ -68,8 +68,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public AnnotationsFibonacciLabelOptionsOverflow Overflow { get; set; }
+		private AnnotationsFibonacciLabelOptionsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -110,7 +110,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));

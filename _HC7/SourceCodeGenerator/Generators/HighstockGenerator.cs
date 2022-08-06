@@ -974,7 +974,7 @@ public class HighstockGenerator
         }
         
         // Enum
-        if (child.Values != null && child.Values.Count > 0)
+        if (child.ReturnType.Equals(TypeService.EnumType) || (child.Values != null && child.Values.Count > 0))
             return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
         // Complex object with nested objects / properties
         if (child.IsParent)
@@ -1634,7 +1634,7 @@ public class HighstockGenerator
             return _propertyInitMappings[nameAndSuffix].ToString();
         }
 
-        if (item.Values != null && item.Values.Any())
+        if (item.ReturnType.Equals(TypeService.EnumType) || (item.Values != null && item.Values.Any()))
         {
             return GetDefaultValueForEnum(item);
         }

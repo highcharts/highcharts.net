@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BackgroundColor = BackgroundColor_DefaultValue = "none";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Crop = Crop_DefaultValue = true;
-			Overflow = Overflow_DefaultValue = "none";
+			Overflow = Overflow_DefaultValue = AnnotationsElliottWaveLabelOptionsOverflow.None;
 			Type = Type_DefaultValue = "rect";
 			Y = Y_DefaultValue = -5;
 			
@@ -66,8 +66,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public AnnotationsElliottWaveLabelOptionsOverflow Overflow { get; set; }
+		private AnnotationsElliottWaveLabelOptionsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -94,7 +94,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

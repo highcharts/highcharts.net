@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			Crop = Crop_DefaultValue = true;
 			Offset = Offset_DefaultValue = -40;
-			Overflow = Overflow_DefaultValue = "none";
+			Overflow = Overflow_DefaultValue = AnnotationsVerticalLineTypeOptionsLabelOverflow.None;
 			Shape = Shape_DefaultValue = "rect";
 			Text = Text_DefaultValue = "{y:.2f}";
 			
@@ -66,8 +66,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Overflow { get; set; }
-		private string Overflow_DefaultValue { get; set; }
+		public AnnotationsVerticalLineTypeOptionsLabelOverflow Overflow { get; set; }
+		private AnnotationsVerticalLineTypeOptionsLabelOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -94,7 +94,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow",Overflow);
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			
