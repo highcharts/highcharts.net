@@ -24,7 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = false;
 			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
-			Padding = Padding_DefaultValue = "8";
+			Padding = Padding_DefaultValue = 8;
 			Shape = Shape_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable();
 			
@@ -90,8 +90,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Padding inside the `lastVisiblePrice` label.
 		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
+		public double? Padding { get; set; }
+		private double? Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

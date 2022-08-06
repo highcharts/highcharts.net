@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Formatter = Formatter_DefaultValue = "";
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = true;
 			Overflow = Overflow_DefaultValue = AnnotationsLabelsOverflow.Justify;
-			Padding = Padding_DefaultValue = "5";
+			Padding = Padding_DefaultValue = 5;
 			Point = Point_DefaultValue = null;
 			PointString = PointString_DefaultValue = "null";
 			Shadow = Shadow_DefaultValue = new Shadow();
@@ -147,8 +147,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// When either the borderWidth or the backgroundColor isset, this is the padding within the box.
 		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
+		public double? Padding { get; set; }
+		private double? Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

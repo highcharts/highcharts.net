@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Outside = Outside_DefaultValue = null;
-			Padding = Padding_DefaultValue = "8";
+			Padding = Padding_DefaultValue = 8;
 			PointFormat = PointFormat_DefaultValue = "";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			Positioner = Positioner_DefaultValue = "";
@@ -216,8 +216,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Padding inside the tooltip, in pixels.
 		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
+		public double? Padding { get; set; }
+		private double? Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
