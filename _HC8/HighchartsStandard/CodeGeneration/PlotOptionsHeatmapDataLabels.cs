@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = false;
-			Padding = Padding_DefaultValue = "0";
+			Padding = Padding_DefaultValue = 0;
 			Position = Position_DefaultValue = new Hashtable();
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow();
@@ -213,8 +213,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
+		public double? Padding { get; set; }
+		private double? Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

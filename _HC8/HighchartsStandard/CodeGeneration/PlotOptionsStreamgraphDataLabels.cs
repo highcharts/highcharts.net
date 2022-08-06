@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = PlotOptionsStreamgraphDataLabelsOverflow.Justify;
-			Padding = Padding_DefaultValue = "5";
+			Padding = Padding_DefaultValue = 5;
 			Position = Position_DefaultValue = new Hashtable();
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow();
@@ -213,8 +213,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// When either the `borderWidth` or the `backgroundColor` is set,this is the padding within the box.
 		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
+		public double? Padding { get; set; }
+		private double? Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

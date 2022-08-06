@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Margin = Margin_DefaultValue = null;
 			MaxHeight = MaxHeight_DefaultValue = null;
 			Navigation = Navigation_DefaultValue = new LegendNavigation();
-			Padding = Padding_DefaultValue = "8";
+			Padding = Padding_DefaultValue = 8;
 			Reversed = Reversed_DefaultValue = false;
 			Rtl = Rtl_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow();
@@ -249,8 +249,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The inner padding of the legend box.
 		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
+		public double? Padding { get; set; }
+		private double? Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>

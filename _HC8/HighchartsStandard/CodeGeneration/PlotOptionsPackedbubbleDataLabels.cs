@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = PlotOptionsPackedbubbleDataLabelsOverflow.Justify;
-			Padding = Padding_DefaultValue = "0";
+			Padding = Padding_DefaultValue = 0;
 			ParentNodeFormat = ParentNodeFormat_DefaultValue = "";
 			ParentNodeFormatter = ParentNodeFormatter_DefaultValue = "";
 			ParentNodeTextPath = ParentNodeTextPath_DefaultValue = new PlotOptionsPackedbubbleDataLabelsParentNodeTextPath();
@@ -224,8 +224,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
+		public double? Padding { get; set; }
+		private double? Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
