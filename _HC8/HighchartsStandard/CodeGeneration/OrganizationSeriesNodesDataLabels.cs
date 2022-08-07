@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = OrganizationSeriesNodesDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = 5;
-			Position = Position_DefaultValue = new Hashtable();
+			Position = Position_DefaultValue = OrganizationSeriesNodesDataLabelsPosition.Center;
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow();
 			ShadowBool = ShadowBool_DefaultValue = false;
@@ -220,8 +220,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Aligns data labels relative to points. If `center` alignment isnot possible, it defaults to `right`.
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public OrganizationSeriesNodesDataLabelsPosition Position { get; set; }
+		private OrganizationSeriesNodesDataLabelsPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -331,7 +331,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position != Position_DefaultValue) h.Add("position", highcharts.FirstCharacterToLower(Position.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Shadow.IsDirty(ref highcharts)) h.Add("shadow",Shadow.ToHashtable(ref highcharts));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);

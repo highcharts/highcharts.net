@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Overflow = Overflow_DefaultValue = YAxisStackLabelsOverflow.Justify;
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
-			TextAlign = TextAlign_DefaultValue = "";
+			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Null;
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
 			X = X_DefaultValue = null;
@@ -149,8 +149,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The text alignment for the label. While `align` determines where thetexts anchor point is placed with regards to the stack, `textAlign`determines how the text is aligned against its anchor point. Possiblevalues are `"left"`, `"center"` and `"right"`. The default value iscalculated at runtime and depends on orientation and whether thestack is positive or negative.
 		/// </summary>
-		public string TextAlign { get; set; }
-		private string TextAlign_DefaultValue { get; set; }
+		public YAxisStackLabelsTextAlign TextAlign { get; set; }
+		private YAxisStackLabelsTextAlign TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -203,7 +203,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
+			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", highcharts.FirstCharacterToLower(TextAlign.ToString()));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);

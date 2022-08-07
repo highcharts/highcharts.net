@@ -156,6 +156,8 @@ public class HighchartsGenerator
             {
                 apiItem.IsParent = false;
             }
+            if (apiItem.Title.Equals("position") && !apiItem.FullName.EndsWith("dataLabels.position"))
+                apiItem.Values.Clear();
 
             // add Defaults to enum if they are not available in the Values list.
             AddDefaultsToEnum(apiItem);
@@ -389,12 +391,9 @@ public class HighchartsGenerator
 
         string className = GetClassNameFromItem(item);
 
-        //if (className.EndsWith("SeriesData"))
-        //{
         properties += CustomFieldsService.GetProperty();
         defaultValues += CustomFieldsService.GetInit();
         hashtableComparers += CustomFieldsService.GetCopyLogic();
-        //}
 
         string extendsClass = "";
 
@@ -703,8 +702,6 @@ public class HighchartsGenerator
 
         if (string.IsNullOrEmpty(result))
             return null;
-        //if (string.IsNullOrWhiteSpace(result))
-        //    throw new Exception("empty series mapping result");
 
         result = string.Empty;
         foreach (var part in item.Title.Split('-'))
@@ -767,7 +764,6 @@ public class HighchartsGenerator
             return "string";
 
         if (
-            //(nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any()) ||
             child.FullName.EndsWith("states.hover") ||
             child.FullName.EndsWith("states.inactive") ||
             child.FullName.EndsWith("states.normal") ||
@@ -884,9 +880,6 @@ public class HighchartsGenerator
         // Complex object with nested objects / properties
         if (child.IsParent)
         {
-            if ((child.ParentFullName == "chart.resetZoomButton" || child.ParentFullName == "credits" || child.ParentFullName == "noData") && propertyName == "Position")
-                return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
-
             if (child.ReturnType == "Array.<*>" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
@@ -925,10 +918,6 @@ public class HighchartsGenerator
             if (item.Children.Any() || item.Extends.Any())
             {
                 var children = GetChildren(item);
-
-                //if (item.ReturnType.Contains(TypeService.CSSType))
-                //    continue;
-                //these classes are already created
 
                 if (item.ParentFullName != null && item.ParentFullName.EndsWith("levels") && item.Title == "dataLabels")
                     continue;
@@ -1047,7 +1036,7 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("pointPlacement", "PointPlacement");
         _propertyTypeMappings.Add("center", "string[]");
         _propertyTypeMappings.Add("margin", "string[]");
-        _propertyTypeMappings.Add("position", "Hashtable");
+        //_propertyTypeMappings.Add("position", "Hashtable");
         _propertyTypeMappings.Add("dateTimeLabelFormats", "Hashtable");
         _propertyTypeMappings.Add("inputPosition", "Hashtable");
         _propertyTypeMappings.Add("attr", "Hashtable");
@@ -1153,7 +1142,7 @@ public class HighchartsGenerator
         _propertyInitMappings.Add("colors", "new List<string>()");
         _propertyInitMappings.Add("center", "new string[] { \"50%\", \"50%\" }");
         _propertyInitMappings.Add("margin", "new string[] {}");
-        _propertyInitMappings.Add("position", "new Hashtable()");
+        //_propertyInitMappings.Add("position", "new Hashtable()");
         _propertyInitMappings.Add("dateTimeLabelFormats", "new Hashtable()");
         _propertyInitMappings.Add("inputPosition", "new Hashtable()");
         ////_propertyInitMappings.Add("style", "new Hashtable()");
@@ -1492,9 +1481,6 @@ public class HighchartsGenerator
         {
             return GetDefaultValueForEnum(item);
         }
-
-        if (nameAndSuffix == "position")
-            return defaults;
 
         if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
         {

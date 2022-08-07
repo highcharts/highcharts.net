@@ -43,7 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ParentNodeFormat = ParentNodeFormat_DefaultValue = "";
 			ParentNodeFormatter = ParentNodeFormatter_DefaultValue = "";
 			ParentNodeTextPath = ParentNodeTextPath_DefaultValue = new PlotOptionsPackedbubbleDataLabelsParentNodeTextPath();
-			Position = Position_DefaultValue = new Hashtable();
+			Position = Position_DefaultValue = PlotOptionsPackedbubbleDataLabelsPosition.Center;
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow();
 			ShadowBool = ShadowBool_DefaultValue = false;
@@ -252,8 +252,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Aligns data labels relative to points. If `center` alignment isnot possible, it defaults to `right`.
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public PlotOptionsPackedbubbleDataLabelsPosition Position { get; set; }
+		private PlotOptionsPackedbubbleDataLabelsPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -367,7 +367,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ParentNodeFormat != ParentNodeFormat_DefaultValue) h.Add("parentNodeFormat",ParentNodeFormat);
 			if (ParentNodeFormatter != ParentNodeFormatter_DefaultValue) { h.Add("parentNodeFormatter",ParentNodeFormatter); highcharts.AddFunction("parentNodeFormatter", ParentNodeFormatter); }  
 			if (ParentNodeTextPath.IsDirty(ref highcharts)) h.Add("parentNodeTextPath",ParentNodeTextPath.ToHashtable(ref highcharts));
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position != Position_DefaultValue) h.Add("position", highcharts.FirstCharacterToLower(Position.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Shadow.IsDirty(ref highcharts)) h.Add("shadow",Shadow.ToHashtable(ref highcharts));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);

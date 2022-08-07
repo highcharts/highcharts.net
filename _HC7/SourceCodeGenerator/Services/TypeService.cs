@@ -18,7 +18,7 @@ namespace SourceCodeGenerator.Services
         public static readonly string EnumType = "Enum";
 
         private static ISet<string> FunctionTypes = new HashSet<string> { "Function", "HTMLDOMElement", "Highcharts.XAxisCrosshairLabelFormatterCallbackFunction", "Highcharts.FormatterCallbackFunction", "Highcharts.DataGroupingApproximationValue", "Highcharts.AccessibilityAnnouncementFormatter" };//Highcharts.FormatterCallbackFunction.<Highcharts.Point>
-        private static IEnumerable<string> UniqueStringTypesNames = new List<string> { /*"Highcharts.CSSObject",*/ "Highcharts.ColorString","Highcharts.ColorType", "Highcharts.StockToolsBindingsObject", "Highcharts.ButtonRelativeToValue", "Highcharts.SeriesOrganizationNodesLayoutValue", "Highcharts.PaneBackgroundShapeValue", "Highcharts.TilemapShapeValue", "Highcharts.VariablePieSizeByValue", "Highcharts.TooltipShapeValue", "Highcharts.DashStyleValue", "Highcharts.VerticalAlignValue", "Highcharts.ColorAxisTypeValue", "Highcharts.AlignValue",
+        private static IEnumerable<string> UniqueStringTypesNames = new List<string> { /*"Highcharts.CSSObject",*/ "Highcharts.ColorString","Highcharts.ColorType", "Highcharts.StockToolsBindingsObject", "Highcharts.ButtonRelativeToValue", "Highcharts.SeriesOrganizationNodesLayoutValue", "Highcharts.PaneBackgroundShapeValue", "Highcharts.TilemapShapeValue", "Highcharts.VariablePieSizeByValue", "Highcharts.TooltipShapeValue", "Highcharts.DashStyleValue", "Highcharts.VerticalAlignValue", "Highcharts.ColorAxisTypeValue",
         "Highcharts.PathfinderTypeValue", "Highcharts.SymbolKeyValue", "Highcharts.ExportingMimeTypeValue", "Highcharts.BubbleSizeByValue", "Highcharts.AxisTypeValue", "Highcharts.FlagShapeValue",
         "Highcharts.SeriesLinecapValue", "Highcharts.AxisTitleAlignValue", "Highcharts.RangeSelectorButtonTypeValue", "Highcharts.AnnotationDraggableValue", "Highcharts.FlagsShapeValue", "Highcharts.DataGroupingAnchor","Highcharts.DataGroupingAnchorExtremes",
         "Highcharts.OrganizationHangingIndentTranslationValue"};//, "Highcharts.HTMLDOMElement" 
@@ -27,7 +27,7 @@ namespace SourceCodeGenerator.Services
         private static IEnumerable<string> UniqueObjectTypeNames = new List<string> { "Highcharts.PlotNetworkDataLabelsOptionsObject", "Highcharts.DataLabelsOptionsObject", "Highcharts.NavigationBindingsOptionsObject", "Highcharts.SVGAttributes" };
         private static ISet<string> UniqueObjectTypes = new HashSet<string>(UniqueObjectTypeNames);
 
-        private static IEnumerable<string> UniqueEnumTypeNames = new List<string> { "Highcharts.DataLabelsOverflowValue"};
+        private static IEnumerable<string> UniqueEnumTypeNames = new List<string> { "Highcharts.DataLabelsOverflowValue", "Highcharts.AlignValue" };
         private static ISet<string> UniqueEnumTypes = new HashSet<string>(UniqueEnumTypeNames);
 
         public void SetReturnType(ApiItem item)

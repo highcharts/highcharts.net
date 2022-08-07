@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Floating = Floating_DefaultValue = false;
 			Format = Format_DefaultValue = "undefined";
 			Formatter = Formatter_DefaultValue = "";
-			Position = Position_DefaultValue = new Hashtable();
+			Position = Position_DefaultValue = new SunburstSeriesBreadcrumbsPosition();
 			RelativeTo = RelativeTo_DefaultValue = "plotBox";
 			Rtl = Rtl_DefaultValue = false;
 			Separator = Separator_DefaultValue = new SunburstSeriesBreadcrumbsSeparator();
@@ -80,8 +80,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Positioning for the button row. The breadcrumbs buttons will bealigned properly for the default chart layout (title,  subtitle,legend, range selector) for the custom chart layout set the positionproperties.
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public SunburstSeriesBreadcrumbsPosition Position { get; set; }
+		private SunburstSeriesBreadcrumbsPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -146,7 +146,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position.IsDirty(ref highcharts)) h.Add("position",Position.ToHashtable(ref highcharts));
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
 			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
 			if (Separator.IsDirty(ref highcharts)) h.Add("separator",Separator.ToHashtable(ref highcharts));

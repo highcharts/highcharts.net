@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ConnectorOptions = ConnectorOptions_DefaultValue = new HeatmapSeriesOnPointConnectorOptions();
 			Id = Id_DefaultValue = "";
-			Position = Position_DefaultValue = new Hashtable();
+			Position = Position_DefaultValue = new HeatmapSeriesOnPointPosition();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options allowing to set a position and an offset of the series in the_Series on point_ feature.
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public HeatmapSeriesOnPointPosition Position { get; set; }
+		private HeatmapSeriesOnPointPosition Position_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -54,7 +54,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (ConnectorOptions.IsDirty(ref highcharts)) h.Add("connectorOptions",ConnectorOptions.ToHashtable(ref highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position.IsDirty(ref highcharts)) h.Add("position",Position.ToHashtable(ref highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

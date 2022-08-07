@@ -344,6 +344,17 @@ namespace SourceCodeGenerator.Services
 
             ItemsToUpdate.Add("legend.enabled", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Default, Value = "null" } });
             ItemsToUpdate.Add("overflow", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Values, Value = "allow" } });
+
+            ItemsToUpdate.Add("position", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" } });
+            ItemsToUpdate.Add("xAxis.title.textAlign", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Values, Value = "center" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" } });
+            ItemsToUpdate.Add("xAxis.plotBands.label.textAlign", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Values, Value = "center" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" } });
+            ItemsToUpdate.Add("xAxis.plotLines.label.textAlign", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Values, Value = "center" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" } });
+            ItemsToUpdate.Add("yAxis.stackLabels.textAlign", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Values, Value = "center" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" } });
+            
+
+
+
+
         }
 
         public void Delete(ApiItem item)

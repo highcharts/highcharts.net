@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SunburstSeriesTraverseUpButton()
 		{
-			Position = Position_DefaultValue = new Hashtable();
+			Position = Position_DefaultValue = new SunburstSeriesTraverseUpButtonPosition();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The position of the button.
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public SunburstSeriesTraverseUpButtonPosition Position { get; set; }
+		private SunburstSeriesTraverseUpButtonPosition Position_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position.IsDirty(ref highcharts)) h.Add("position",Position.ToHashtable(ref highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

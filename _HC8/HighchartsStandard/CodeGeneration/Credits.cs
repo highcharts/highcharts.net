@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Enabled = Enabled_DefaultValue = true;
 			Href = Href_DefaultValue = "https://www.highcharts.com?credits";
-			Position = Position_DefaultValue = new Hashtable();
+			Position = Position_DefaultValue = new CreditsPosition();
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "Highcharts.com";
 			
@@ -43,8 +43,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Position configuration for the credits label.
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public CreditsPosition Position { get; set; }
+		private CreditsPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -70,7 +70,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Href != Href_DefaultValue) h.Add("href",Href);
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position.IsDirty(ref highcharts)) h.Add("position",Position.ToHashtable(ref highcharts));
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (CustomFields.Count > 0)
