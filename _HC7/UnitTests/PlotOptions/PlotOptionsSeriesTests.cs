@@ -1218,8 +1218,8 @@ namespace HcTests.PlotOptions
         }
 
         [Theory]
-        [InlineData(PlotOptionsSeriesDataLabelsAlign.Left)]
-        [InlineData(PlotOptionsSeriesDataLabelsAlign.Right)]
+        [InlineData(PlotOptionsSeriesDataLabelsPosition.Left)]
+        [InlineData(PlotOptionsSeriesDataLabelsPosition.Right)]
         public void Test_IfDataLabelsPositionRenders_Correct(PlotOptionsSeriesDataLabelsPosition align)
         {
             var chart = new Highcharts();
@@ -1235,14 +1235,12 @@ namespace HcTests.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = PlotOptionsSeriesDataLabelsAlign.Center;
+            var defaultValue = PlotOptionsSeriesDataLabelsPosition.Center;
 
             chart.PlotOptions.Series.DataLabels.Position = defaultValue;
 
             Assert.DoesNotContain($"position", renderer.RenderHtml());
         }
-
-
 
         [Theory]
         [InlineData(90)]
@@ -1269,16 +1267,215 @@ namespace HcTests.PlotOptions
             Assert.DoesNotContain($"rotation", renderer.RenderHtml());
         }
 
-        #region style
+        [Fact]
+        public void Test_IfDataLabelsShadowBoolRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = true;
 
+            chart.PlotOptions.Series.DataLabels.ShadowBool = value;
 
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"shadow\":{chart.FirstCharacterToLower(value.ToString())}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("#00ffdd", 10, 20, 30, 40)]
+        [InlineData("#ffccaa", 40, 30, 20, 10)]
+        public void Test_IfDataLabelsShadowRenders_Correct(string color, int offsetX, int offsetY, double opacity, int width)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.DataLabels.Shadow = new Shadow()
+            {
+                Color = color,
+                OffsetX = offsetX,
+                OffsetY = offsetY,
+                Opacity = opacity,
+                Width = width
+            };
+
+            var result = renderer.RenderHtml();
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"shadow\":", result);
+            Assert.Contains($"\"offsetX\":{offsetX}", result);
+            Assert.Contains($"\"width\":{width}", result);
+            Assert.Contains($"\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", opacity)}", result);
+            Assert.Contains($"\"offsetY\":{offsetY}", result);
+            Assert.Contains($"\"color\":\"{color}\"", result);
+        }
+
+        [Fact]
+        public void Test_IfDataLabelsShadowBoolDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = false;
+
+            chart.PlotOptions.Series.DataLabels.ShadowBool = defaultValue;
+
+            Assert.DoesNotContain($"shadow", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("callout")]
+        [InlineData("circle")]
+        [InlineData("diamond")]
+        [InlineData("triangle")]
+        [InlineData("triangle-down")]
+        public void Test_IfDataLabelsShapeRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.DataLabels.Shape = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"shape\":\"{value}\"}}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfDataLabelsShapeDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = "square";
+
+            chart.PlotOptions.Series.DataLabels.Shape = defaultValue;
+
+            Assert.DoesNotContain($"shape", renderer.RenderHtml());
+        }
+
+        //missing style
+
+        #region textPath
+
+        //missing textPath
 
         #endregion
 
+        [Fact]
+        public void Test_IfDataLabelsUseHTMLRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var value = true;
 
+            chart.PlotOptions.Series.DataLabels.UseHTML = value;
 
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"useHTML\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+        }
 
+        [Fact]
+        public void Test_IfDataLabelsUseHTMLDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = false;
 
+            chart.PlotOptions.Series.DataLabels.UseHTML = defaultValue;
+
+            Assert.DoesNotContain($"useHTML", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(PlotOptionsSeriesDataLabelsVerticalAlign.Middle)]
+        [InlineData(PlotOptionsSeriesDataLabelsVerticalAlign.Top)]
+        public void Test_IfDataLabelsVerticalAlignRenders_Correct(PlotOptionsSeriesDataLabelsVerticalAlign align)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.DataLabels.VerticalAlign = align;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"verticalAlign\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfDataLabelsVerticalAlignDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = PlotOptionsSeriesDataLabelsVerticalAlign.Bottom;
+
+            chart.PlotOptions.Series.DataLabels.VerticalAlign = defaultValue;
+
+            Assert.DoesNotContain($"verticalAlign", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(20)]
+        [InlineData(50)]
+        public void Test_IfDataLabelsXRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.DataLabels.X = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"x\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfDataLabelsXDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 0;
+
+            chart.PlotOptions.Series.DataLabels.X = defaultValue;
+
+            Assert.DoesNotContain($"\"dataLabels\":{{\"x\":", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(20)]
+        [InlineData(50)]
+        public void Test_IfDataLabelsYRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.DataLabels.Y = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"y\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfDataLabelsYDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 0;
+
+            chart.PlotOptions.Series.DataLabels.Y = defaultValue;
+
+            Assert.DoesNotContain($"\"dataLabels\":{{\"y\":", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(20)]
+        [InlineData(50)]
+        public void Test_IfDataLabelsZRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.PlotOptions.Series.DataLabels.Z = value;
+
+            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"z\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfDataLabelsZDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 6;
+
+            chart.PlotOptions.Series.DataLabels.Z = defaultValue;
+
+            Assert.DoesNotContain($"\"dataLabels\":{{\"z\":", renderer.RenderHtml());
+        }
 
         #endregion
 
