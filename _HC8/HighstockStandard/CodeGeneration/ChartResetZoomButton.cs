@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ChartResetZoomButton()
 		{
-			Position = Position_DefaultValue = new Hashtable();
+			Position = Position_DefaultValue = new ChartResetZoomButtonPosition();
 			RelativeTo = RelativeTo_DefaultValue = "plot";
 			Theme = Theme_DefaultValue = new ChartResetZoomButtonTheme();
 			
@@ -26,8 +26,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The position of the button.
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public ChartResetZoomButtonPosition Position { get; set; }
+		private ChartResetZoomButtonPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -49,7 +49,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position.IsDirty(ref highstock)) h.Add("position",Position.ToHashtable(ref highstock));
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
 			if (Theme.IsDirty(ref highstock)) h.Add("theme",Theme.ToHashtable(ref highstock));
 			

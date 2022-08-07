@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public NoData()
 		{
 			Attr = Attr_DefaultValue = new Hashtable();
-			Position = Position_DefaultValue = new Hashtable();
+			Position = Position_DefaultValue = new NoDataPosition();
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			
@@ -34,8 +34,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The position of the no-data label, relative to the plot area.
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public NoDataPosition Position { get; set; }
+		private NoDataPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -58,7 +58,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Attr != Attr_DefaultValue) h.Add("attr",Attr);
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position.IsDirty(ref highstock)) h.Add("position",Position.ToHashtable(ref highstock));
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			

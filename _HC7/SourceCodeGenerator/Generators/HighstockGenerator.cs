@@ -100,11 +100,6 @@ public class HighstockGenerator
 
         foreach (ApiItem apiItem in items)
         {
-            //if (apiItem.ReturnType != null && apiItem.ReturnType.Contains("|"))
-            //    multitypeslist += System.Environment.NewLine+apiItem.FullName+" : "+apiItem.ReturnType;
-
-            //if (apiItem.FullName.ToLower().Contains("chart") && apiItem.FullName.ToLower().Contains("width"))
-            //if(apiItem.FullName.ToLower().Contains("pointplacement"))
             if (apiItem.Values != null && apiItem.Values.Count > 1)
                 multitypeslist += System.Environment.NewLine + apiItem.FullName + " : " + apiItem.ReturnType;
 
@@ -157,6 +152,8 @@ public class HighstockGenerator
             {
                 apiItem.IsParent = false;
             }
+            if (apiItem.Title.Equals("position") && !apiItem.FullName.EndsWith("dataLabels.position"))
+                apiItem.Values.Clear();
 
             // add Defaults to enum if they are not available in the Values list.
             AddDefaultsToEnum(apiItem);
@@ -390,9 +387,6 @@ public class HighstockGenerator
             if (child.ParentFullName.ToLower().Contains("highstock") && propertyName.ToLower().Contains("series") && propertyName.Length > 6)
                 continue;
 
-            //if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
-            //    child.IsParent = true;
-
             if (child.FullName.ToLower().Contains("labels.style.") || child.FullName.ToLower().Contains("credits.style.") || child.FullName.ToLower().Contains("title.style.") || child.FullName.ToLower().Contains("labels.items.style.")
                 || child.FullName.ToLower().Contains("legend.itemHiddenStyle.") || child.FullName.ToLower().Contains("legend.itemHoverStyle."))
                 child.IsParent = true;
@@ -409,13 +403,7 @@ public class HighstockGenerator
             else
                 formattedComparer = "h.Add(\"type\",\"" + GetClassNameFromItem(item).ToLower().Replace("series", "") + "\");\r\n\t\t\t";
 
-                //if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
-                //    child.IsParent = false;
-
-                //if (formattedDefaultProperty.ToLower().Contains("datalabels") && formattedDefaultProperty.Contains("null"))
-                //    continue;
-
-                properties += formattedProperty;
+            properties += formattedProperty;
             defaultValues += formattedDefaultProperty;
             hashtableComparers += formattedComparer;
         }
@@ -941,9 +929,6 @@ public class HighstockGenerator
             if (propertyName == "Data")
                 return "if (Data.Any()) h.Add(\"data\",HashifyList(ref " + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
 
-            //if (propertyName == "Stops")
-            //    return "if (Stops.Any()) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
-
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
 
@@ -979,9 +964,6 @@ public class HighstockGenerator
         // Complex object with nested objects / properties
         if (child.IsParent)
         {
-            if ((child.ParentFullName == "chart.resetZoomButton" || child.ParentFullName == "credits" || child.ParentFullName == "noData") && propertyName == "Position")
-                return "if (Position.Count > 0) h.Add(\"position\",Position);\n\t\t\t";
-
             if (child.ReturnType == "Array.<*>" && child.Title == "zones")
                 return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
@@ -1066,8 +1048,6 @@ public class HighstockGenerator
                             child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title))).ToList();
                     }
 
-
-                    //children = item.Children.Where(p => !baseChildren.Any(x => x.Title == p.Title)).ToList();
                     children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title)));
                 }
             }
@@ -1138,7 +1118,7 @@ public class HighstockGenerator
         _propertyTypeMappings.Add("pointPlacement", "PointPlacement");
         _propertyTypeMappings.Add("center", "string[]");
         _propertyTypeMappings.Add("margin", "string[]");
-        _propertyTypeMappings.Add("position", "Hashtable");
+        //_propertyTypeMappings.Add("position", "Hashtable");
         _propertyTypeMappings.Add("dateTimeLabelFormats", "Hashtable");
         _propertyTypeMappings.Add("inputPosition", "Hashtable");
         _propertyTypeMappings.Add("attr", "Hashtable");
@@ -1277,7 +1257,7 @@ public class HighstockGenerator
         _propertyInitMappings.Add("colors", "new List<string>()");
         _propertyInitMappings.Add("center", "new string[] { \"50%\", \"50%\" }");
         _propertyInitMappings.Add("margin", "new string[] {}");
-        _propertyInitMappings.Add("position", "new Hashtable()");
+        //_propertyInitMappings.Add("position", "new Hashtable()");
         _propertyInitMappings.Add("dateTimeLabelFormats", "new Hashtable()");
         _propertyInitMappings.Add("inputPosition", "new Hashtable()");
         ////_propertyInitMappings.Add("style", "new Hashtable()");
@@ -1596,9 +1576,6 @@ public class HighstockGenerator
         if (nameAndSuffix == "fillcolor")
             return "null";
 
-        //if (item.Title.ToLower() == "background" && item.ParentFullName.ToLower() == "pane")
-        //    return "new List<Background>()";
-
         if (nameAndSuffix == "enabled" && item.ParentFullName.ToLower() == "series<treemap>.datalabels")
             return "null";
 
@@ -1617,13 +1594,8 @@ public class HighstockGenerator
         if (nameAndSuffix == "stops")
             return "new List<Stop>()";
 
-        //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
-        //    item.IsParent = true;
         if ((nameAndSuffix == "xAxis" || nameAndSuffix == "yAxis") && item.ParentFullName != ROOT_CLASS)
             return "\"\"";
-
-        //if (nameAndSuffix.ToLower().EndsWith("style") && item.Children.Any())
-        //    return "new " + GetClassNameFromItem(item) + "()";
 
         if (_propertyInitMappings[item.FullName] != null)
         {
@@ -1639,22 +1611,12 @@ public class HighstockGenerator
             return GetDefaultValueForEnum(item);
         }
 
-        //if (!item.IsParent)
-        //{
-
-
-        if (nameAndSuffix == "position")
-            return defaults;
-
         if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
         {
             return "double.MinValue";
         }
         if (item.ReturnType.ToLower() == "function" || item.ReturnType.ToLower() == "string|function")
             return "\"\"";
-
-        //if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
-        //    defaults = "";
 
         if (item.ReturnType == "Array.<*>" && item.Title == "zones")
             return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
@@ -1728,30 +1690,6 @@ public class HighstockGenerator
             if (item.ReturnType == "Number" || item.ReturnType == "Boolean")
                 return "null";
         }
-
-
-        //}
-        //else
-        //{
-        //return String.Format("new {0}()", FirstCharToUpper(item.Title));
-        //if (_propertyInitMappings[item.FullName] != null)
-        //{
-        //    return _propertyInitMappings[item.FullName].ToString();
-        //}
-        //if (_propertyInitMappings[item.Title] != null)
-        //{
-        //    return _propertyInitMappings[item.Title].ToString();
-        //}
-
-        //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
-        //    item.IsParent = false;
-
-
-        //else
-        //    return item.Defaults;
-
-
-        //}
 
         if (defaults == "")
             return "\"\"";

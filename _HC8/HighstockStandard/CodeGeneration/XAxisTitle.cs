@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "null";
-			TextAlign = TextAlign_DefaultValue = "";
+			TextAlign = TextAlign_DefaultValue = XAxisTitleTextAlign.Null;
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
@@ -83,8 +83,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Alignment of the text, can be `"left"`, `"right"` or `"center"`.Default alignment depends on the[title.align](xAxis.title.align):Horizontal axes:- for `align` = `"low"`, `textAlign` is set to `left`- for `align` = `"middle"`, `textAlign` is set to `center`- for `align` = `"high"`, `textAlign` is set to `right`Vertical axes:- for `align` = `"low"` and `opposite` = `true`, `textAlign` is  set to `right`- for `align` = `"low"` and `opposite` = `false`, `textAlign` is  set to `left`- for `align` = `"middle"`, `textAlign` is set to `center`- for `align` = `"high"` and `opposite` = `true` `textAlign` is  set to `left`- for `align` = `"high"` and `opposite` = `false` `textAlign` is  set to `right`
 		/// </summary>
-		public string TextAlign { get; set; }
-		private string TextAlign_DefaultValue { get; set; }
+		public XAxisTitleTextAlign TextAlign { get; set; }
+		private XAxisTitleTextAlign TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -120,7 +120,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
+			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", Highstock.FirstCharacterToLower(TextAlign.ToString()));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

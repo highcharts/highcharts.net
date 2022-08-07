@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Rotation = Rotation_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
-			TextAlign = TextAlign_DefaultValue = "";
+			TextAlign = TextAlign_DefaultValue = NavigatorXAxisPlotBandsLabelTextAlign.Null;
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = NavigatorXAxisPlotBandsLabelVerticalAlign.Top;
 			X = X_DefaultValue = null;
@@ -60,8 +60,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The text alignment for the label. While `align` determines where thetexts anchor point is placed within the plot band, `textAlign` determineshow the text is aligned against its anchor point. Possible values are"left", "center" and "right". Defaults to the same as the `align` option.
 		/// </summary>
-		public string TextAlign { get; set; }
-		private string TextAlign_DefaultValue { get; set; }
+		public NavigatorXAxisPlotBandsLabelTextAlign TextAlign { get; set; }
+		private NavigatorXAxisPlotBandsLabelTextAlign TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -101,7 +101,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign",TextAlign);
+			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", Highstock.FirstCharacterToLower(TextAlign.ToString()));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);

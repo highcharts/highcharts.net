@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			NullFormatter = NullFormatter_DefaultValue = "";
 			Overflow = Overflow_DefaultValue = PlotOptionsColumnrangeDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = 5;
-			Position = Position_DefaultValue = new Hashtable();
+			Position = Position_DefaultValue = PlotOptionsColumnrangeDataLabelsPosition.Center;
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow();
 			ShadowBool = ShadowBool_DefaultValue = false;
@@ -223,8 +223,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Aligns data labels relative to points. If `center` alignment isnot possible, it defaults to `right`.
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public PlotOptionsColumnrangeDataLabelsPosition Position { get; set; }
+		private PlotOptionsColumnrangeDataLabelsPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -360,7 +360,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); Highstock.AddFunction("nullFormatter", NullFormatter); }  
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position != Position_DefaultValue) h.Add("position", Highstock.FirstCharacterToLower(Position.ToString()));
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Shadow.IsDirty(ref highstock)) h.Add("shadow",Shadow.ToHashtable(ref highstock));
 			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);

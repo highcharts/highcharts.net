@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			ConnectorOptions = ConnectorOptions_DefaultValue = new PlotOptionsDumbbellOnPointConnectorOptions();
 			Id = Id_DefaultValue = "";
-			Position = Position_DefaultValue = new Hashtable();
+			Position = Position_DefaultValue = new PlotOptionsDumbbellOnPointPosition();
 			
 		}	
 		
@@ -40,8 +40,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Options allowing to set a position and an offset of the series in the_Series on point_ feature.
 		/// </summary>
-		public Hashtable Position { get; set; }
-		private Hashtable Position_DefaultValue { get; set; }
+		public PlotOptionsDumbbellOnPointPosition Position { get; set; }
+		private PlotOptionsDumbbellOnPointPosition Position_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable(ref Highstock highstock)
@@ -51,7 +51,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (ConnectorOptions.IsDirty(ref highstock)) h.Add("connectorOptions",ConnectorOptions.ToHashtable(ref highstock));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Position != Position_DefaultValue) h.Add("position",Position);
+			if (Position.IsDirty(ref highstock)) h.Add("position",Position.ToHashtable(ref highstock));
 			
 
 			return h;
