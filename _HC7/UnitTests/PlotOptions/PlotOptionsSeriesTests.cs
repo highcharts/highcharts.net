@@ -9,6 +9,7 @@ using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 using HcTests.Helpers;
 using System.Globalization;
+using TH = HcTests.Helpers.TestHelper;
 
 namespace HcTests.PlotOptions
 {
@@ -19,6 +20,8 @@ namespace HcTests.PlotOptions
         public PlotOptionsSeriesTests(HcFixture fixture)
         {
             _fixture = fixture;
+            //_fixture.RootPath.Add("plotOptions");
+            //_fixture.RootPath.Add("series");
         }
 
         #region Acessibility
@@ -1345,11 +1348,85 @@ namespace HcTests.PlotOptions
             Assert.DoesNotContain($"shape", renderer.RenderHtml());
         }
 
-        //missing style
+        [Theory]
+        [InlineData("background", "green")]
+        [InlineData("backgroundColor","#0022ff")]
+        [InlineData("border", "4px dotted blue")]
+        [InlineData("color", "contrast")]
+        [InlineData("cursor", "alias")]
+        [InlineData("fontFamily", "Arial, Helvetica, sans-serif")]
+        [InlineData("fontSize", "20px")]
+        [InlineData("fontWeight", "64px")]
+        [InlineData("padding", "1em 2em 2em")]
+        [InlineData("position", "relative")]
+        [InlineData("textAlign", "center")]
+        [InlineData("textDecoration", "underline")]
+        [InlineData("textOutline", "something")]
+        [InlineData("textOverflow", "ellipsis")]
+        [InlineData("top", "50px")]
+        [InlineData("transition", "width 2s")]
+        [InlineData("whiteSpace", "break-spaces")]
+        public void Test_IfDataLabelsStyleStringRenders_Correct(string param1, string param1_value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "dataLabels", "style" };
+            var style = new Hashtable();
+            style.Add(param1, param1_value);
+            
+            chart.PlotOptions.Series.DataLabels.Style = style;
+            
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString(param1, param1_value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("borderRadius", 25)]
+        [InlineData("height", 20)]
+        [InlineData("lineWidth", 2)]
+        [InlineData("opacity", 20)]
+        [InlineData("width", 50)]
+        public void Test_IfDataLabelsStyleNumberRenders_Correct(string param1, double param1_value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "dataLabels", "style" };
+            var style = new Hashtable();
+            style.Add(param1, param1_value);
+
+            chart.PlotOptions.Series.DataLabels.Style = style;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString(param1, param1_value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
 
         #region textPath
 
-        //missing textPath
+        //missing textPath.attributes - fix and set as hashtable
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void Test_IfDataLabelsTextPathEnabledRenders_Correct(bool value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string> { "plotOptions", "series", "dataLabels", "textPath" };
+
+            chart.PlotOptions.Series.DataLabels.TextPath.Enabled = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled",value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfDataLabelsTextPathEnabledDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool? defaultValue = null;
+
+            chart.PlotOptions.Series.DataLabels.TextPath.Enabled = defaultValue;
+
+            Assert.DoesNotContain($"enabled", renderer.RenderHtml());
+        }
 
         #endregion
 

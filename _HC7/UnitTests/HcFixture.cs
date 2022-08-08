@@ -12,6 +12,7 @@ namespace HcTests
     public class HcFixture : IDisposable
     {
         public ChartType ChartType { get; set; }
+        //public List<string> RootPath;
         //public Highcharts Options { get; set; }
 
         //public HighchartsRenderer Renderer { get; set; }
@@ -19,6 +20,7 @@ namespace HcTests
         public HcFixture()
         {
             ChartType = ChartType.Line;
+            //RootPath = new List<string>();
             //Options = new Highcharts();
             //Options.Chart.Type = ChartType;
             //Renderer = new HighchartsRenderer(Options);

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
-using Highsoft.Web.Mvc.Charts;
 
 namespace HcTests.Helpers
 {
@@ -233,5 +230,38 @@ namespace HcTests.Helpers
     //                return hc.PlotOptions.Line;
     //        }
     //    }
+
+		public static string GetJsonLeadingPath(IEnumerable<string> properties)
+        {
+			StringBuilder sb = new StringBuilder();
+			sb.Append($"\"");
+			sb.Append(properties.Aggregate((p, q) => p = $"{p}\":{{\"{q}"));
+			sb.Append($"\":{{");
+
+			return sb.ToString();
+        }
+
+		public static string GetJsonTrailingString(IEnumerable<string> properties)
+        {
+			return new string('}', properties.Count());
+        }
+
+		public static string GetPropertyString(string name, double value)
+        {
+			return string.Format(CultureInfo.InvariantCulture, "\"{0}\":{1:N1}", name, value).Replace(",", "");
+		}
+
+		public static string GetPropertyString(string name, string value)
+        {
+			return $"\"{name}\":\"{value}\"";
+		}
+
+		public static string GetPropertyString(string name, bool value)
+        {
+			return $"\"{name}\":{value.ToString().ToLower()}";
+        }
+
+
+
     }
 }
