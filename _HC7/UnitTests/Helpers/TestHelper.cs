@@ -261,7 +261,10 @@ namespace HcTests.Helpers
 			return $"\"{name}\":{value.ToString().ToLower()}";
         }
 
+		public static string GetFunctionPropertyString(string name, string value)
+		{
+			return $"\"{name}\":{value}";
+		}
 
-
-    }
+	}
 }
