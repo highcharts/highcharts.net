@@ -1556,7 +1556,87 @@ namespace HcTests.PlotOptions
 
         #endregion
 
-        //missing dataSorting
+        #region dataSorting
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void Test_IfDataSortingEnabledRenders_Correct(bool value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string> { "plotOptions", "series", "dataSorting" };
+
+            chart.PlotOptions.Series.DataSorting.Enabled = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfDataSortingEnabledDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool? defaultValue = null;
+
+            chart.PlotOptions.Series.DataSorting.Enabled = defaultValue;
+
+            Assert.DoesNotContain($"enabled", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void Test_IfDataSortingMatchByNameRenders_Correct(bool value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string> { "plotOptions", "series", "dataSorting" };
+
+            chart.PlotOptions.Series.DataSorting.MatchByName = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("matchByName", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfDataSortingMatchByNameDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool? defaultValue = null;
+
+            chart.PlotOptions.Series.DataSorting.MatchByName = defaultValue;
+
+            Assert.DoesNotContain($"matchByName", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("x")]
+        [InlineData("z")]
+        public void Test_IfDataSortingSortKeyRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "dataSorting"};
+
+            chart.PlotOptions.Series.DataSorting.SortKey = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("sortKey", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfDataSortingSortKeyDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = "y";
+
+            chart.PlotOptions.Series.DataSorting.SortKey = defaultValue;
+
+            Assert.DoesNotContain($"sortKey", renderer.RenderHtml());
+        }
+
+        #endregion
 
         [Theory]
         [InlineData("SomePlotOptionsDescription")]
@@ -1570,7 +1650,12 @@ namespace HcTests.PlotOptions
             Assert.Contains($"\"plotOptions\":{{\"series\":{{\"description\":\"{description}\"}}}}", renderer.RenderHtml());
         }
 
-        //missing dragDrop
+        #region dragDrop
+
+
+
+
+        #endregion
 
         [Fact]
         public void Test_IfEnableMouseTrackingRenders_Correct()
