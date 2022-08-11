@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json.Linq;
+using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 namespace HcTests.Helpers
 {
@@ -266,5 +269,14 @@ namespace HcTests.Helpers
 			return $"\"{name}\":{value}";
 		}
 
-	}
+		public static string GetHashtablePropertyString(string propertyName, string paramName, string valueName)
+		{
+			return $"\"{propertyName}\":{{\"{paramName}\":\"{valueName}\"}}";
+        }
+
+        public static string GetHashtablePropertyString(string propertyName, string paramName, double valueName)
+		{
+			return $"\"{propertyName}\":{{{string.Format(CultureInfo.InvariantCulture, "\"{0}\":{1:N1}", paramName, valueName).Replace(",", "")}}}";
+		}
+    }
 }
