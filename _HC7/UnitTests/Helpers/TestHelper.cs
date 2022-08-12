@@ -254,7 +254,12 @@ namespace HcTests.Helpers
 			return string.Format(CultureInfo.InvariantCulture, "\"{0}\":{1:N1}", name, value).Replace(",", "");
 		}
 
-		public static string GetPropertyString(string name, string value)
+        public static string GetPropertyString(string name, int value)
+        {
+            return $"\"{name}\":{value}";
+        }
+
+        public static string GetPropertyString(string name, string value)
         {
 			return $"\"{name}\":\"{value}\"";
 		}

@@ -15,8 +15,8 @@ namespace Highsoft.Web.Mvc.Charts
         Hashtable h = new Hashtable();
 
         public Animation() {
-            Defer = 0;
-            Duration = 0;
+            Defer = -1;
+            Duration = -1;
             Easing = "";            
 		}
 
@@ -42,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
                 return h;
 
             if (!String.IsNullOrEmpty(Easing)) h.Add("easing", Easing);
-            if (Duration > 0) h.Add("duration", Duration);
-            if (Defer > 0) h.Add("defer", Defer);
+            if (Duration > -1) h.Add("duration", Duration);
+            if (Defer > -1) h.Add("defer", Defer);
 
             return h;
         }

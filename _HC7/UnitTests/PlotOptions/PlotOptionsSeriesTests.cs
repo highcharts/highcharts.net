@@ -3020,7 +3020,211 @@ namespace HcTests.PlotOptions
             Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"negativeColor\":{defaultValue}}}}}", renderer.RenderHtml());
         }
 
-        //missing onPoint
+        #region onPoint
+
+        //fix dashStyle - should be string instead of hashtable
+        //[Theory]
+        //[InlineData("dot")]
+        //public void Test_IfOnPointConnectorOptionsDashStyleRenders_Correct(string value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart);
+        //    var pathToProperty = new List<string>() { "plotOptions", "series", "onPoint", "connectorOptions" };
+
+        //    chart.PlotOptions.Series.OnPoint.ConnectorOptions.Dashstyle = value;
+
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dashstyle", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
+
+        //[Fact]
+        //public void Test_IfOnPointConnectorOptionsDashStyleDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart);
+        //    var defaultValue = string.Empty;
+
+        //    chart.PlotOptions.Series.DataLabels.Color = defaultValue;
+
+        //    Assert.DoesNotContain($"color", renderer.RenderHtml());
+        //}
+
+        [Theory]
+        [InlineData("red")]
+        public void Test_IfOnPointConnectorOptionsStrokeRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "onPoint", "connectorOptions" };
+
+            chart.PlotOptions.Series.OnPoint.ConnectorOptions.Stroke = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("stroke", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfOnPointConnectorOptionsStrokeDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.OnPoint.ConnectorOptions.Stroke = defaultValue;
+
+            Assert.DoesNotContain($"stroke", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(5)]
+        public void Test_IfOnPointConnectorOptionsWidthRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "onPoint", "connectorOptions" };
+
+            chart.PlotOptions.Series.OnPoint.ConnectorOptions.Width = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("width", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfOnPointConnectorOptionsWidthDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 1;
+
+            chart.PlotOptions.Series.OnPoint.ConnectorOptions.Width = defaultValue;
+
+            Assert.DoesNotContain($"\"width\":", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("pointId")]
+        public void Test_IfOnPointIdRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "onPoint" };
+
+            chart.PlotOptions.Series.OnPoint.Id = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("id", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfOnPointIdDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.OnPoint.Id = defaultValue;
+
+            Assert.DoesNotContain($"\"id\":", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(5)]
+        public void Test_IfOnPointPositionOffsetXRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "onPoint", "position"};
+
+            chart.PlotOptions.Series.OnPoint.Position.OffsetX = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("offsetX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfOnPointOffsetXDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            double? defaultValue = null;
+
+            chart.PlotOptions.Series.OnPoint.Position.OffsetX = defaultValue;
+
+            Assert.DoesNotContain($"offsetX", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(5)]
+        public void Test_IfOnPointPositionOffsetYRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "onPoint", "position" };
+
+            chart.PlotOptions.Series.OnPoint.Position.OffsetY = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("offsetY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfOnPointOffsetYDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            double? defaultValue = null;
+
+            chart.PlotOptions.Series.OnPoint.Position.OffsetY = defaultValue;
+
+            Assert.DoesNotContain($"offsetY", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(5)]
+        public void Test_IfOnPointPositionXRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "onPoint", "position" };
+
+            chart.PlotOptions.Series.OnPoint.Position.X = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("x", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfOnPointXDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            double? defaultValue = null;
+
+            chart.PlotOptions.Series.OnPoint.Position.X = defaultValue;
+
+            Assert.DoesNotContain($"\"x\":", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(5)]
+        public void Test_IfOnPointPositionYRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "onPoint", "position" };
+
+            chart.PlotOptions.Series.OnPoint.Position.Y = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("y", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfOnPointYDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            double? defaultValue = null;
+
+            chart.PlotOptions.Series.OnPoint.Position.Y = defaultValue;
+
+            Assert.DoesNotContain($"\"y\":", renderer.RenderHtml());
+        }
+
+        #endregion
+
 
         [Theory]
         [InlineData(0)]
@@ -3048,7 +3252,259 @@ namespace HcTests.PlotOptions
             Assert.DoesNotContain($"\"plotOptions\":{{\"series\":{{\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", defaultValue)}}}}}", renderer.RenderHtml());
         }
 
-        //missing Point
+        #region point
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointEventsClickRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "point", "events" };
+            
+            chart.PlotOptions.Series.Point.Events.Click = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("click", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointEventsClickDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Point.Events.Click = defaultValue;
+
+            Assert.DoesNotContain($"click", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointEventsDragRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "point", "events" };
+
+            chart.PlotOptions.Series.Point.Events.Drag = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("drag", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointEventsDragDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Point.Events.Drag = defaultValue;
+
+            Assert.DoesNotContain($"drag", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointEventsDragStartRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "point", "events" };
+
+            chart.PlotOptions.Series.Point.Events.DragStart = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("dragStart", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointEventsDragStartDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Point.Events.DragStart = defaultValue;
+
+            Assert.DoesNotContain($"dragStart", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointEventsDropRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "point", "events" };
+
+            chart.PlotOptions.Series.Point.Events.Drop = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("drop", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointEventsDropDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Point.Events.Drop = defaultValue;
+
+            Assert.DoesNotContain($"drop", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointEventsMouseOutRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "point", "events" };
+
+            chart.PlotOptions.Series.Point.Events.MouseOut = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("mouseOut", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointEventsMouseOutDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Point.Events.MouseOut = defaultValue;
+
+            Assert.DoesNotContain($"mouseOut", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointEventsMouseOverRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "point", "events" };
+
+            chart.PlotOptions.Series.Point.Events.MouseOver = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("mouseOver", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointEventsMouseOverDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Point.Events.MouseOver = defaultValue;
+
+            Assert.DoesNotContain($"mouseOver", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointEventsRemoveRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "point", "events" };
+
+            chart.PlotOptions.Series.Point.Events.Remove = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("remove", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointEventsRemoveDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Point.Events.Remove = defaultValue;
+
+            Assert.DoesNotContain($"remove", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointEventsSelectRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "point", "events" };
+
+            chart.PlotOptions.Series.Point.Events.Select = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("select", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointEventsSelectDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Point.Events.Select = defaultValue;
+
+            Assert.DoesNotContain($"select", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointEventsUnselectRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "point", "events" };
+
+            chart.PlotOptions.Series.Point.Events.Unselect = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("unselect", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointEventsUnselectDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Point.Events.Unselect = defaultValue;
+
+            Assert.DoesNotContain($"unselect", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction")]
+        public void Test_IfPointEventsUpdateRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "point", "events" };
+
+            chart.PlotOptions.Series.Point.Events.Update = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("update", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfPointEventsUpdateDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Point.Events.Update = defaultValue;
+
+            Assert.DoesNotContain($"update", renderer.RenderHtml());
+        }
+
+        #endregion
 
         [Theory]
         [InlineData("SomeFunction")]
@@ -3409,6 +3865,70 @@ namespace HcTests.PlotOptions
 
             Assert.DoesNotContain($"stacking", renderer.RenderHtml());
         }
+
+        #region states
+
+        #region hover
+
+        #region animation
+        [Theory]
+        [InlineData(5)]
+        public void Test_IfStatesHoverAnimationDurationRenders_Correct(int value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "states", "hover", "animation" };
+
+            chart.PlotOptions.Series.States.Hover.Animation.Duration = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("duration", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfStatesHoverAnimationDurationDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = -1;
+
+            chart.PlotOptions.Series.States.Hover.Animation.Duration = defaultValue;
+
+            Assert.DoesNotContain($"duration", renderer.RenderHtml());
+        }
+        #endregion
+
+        [Fact]
+        public void Test_IfStatesHoverEnabledRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "states", "hover" };
+            var value = false;
+
+            chart.PlotOptions.Series.States.Hover.Enabled = false;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+
+        //fix enabled for default - should be true
+        //[Fact]
+        //public void Test_IfStatesHoverEnabledDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart);
+        //    var defaultValue = true;
+
+        //    chart.PlotOptions.Series.States.Hover.Enabled = defaultValue;
+
+        //    Assert.DoesNotContain($"enabled", renderer.RenderHtml());
+        //}
+
+
+        #endregion
+
+        #endregion
+
 
         [Theory]
         [InlineData(PlotOptionsSeriesStep.Center)]
