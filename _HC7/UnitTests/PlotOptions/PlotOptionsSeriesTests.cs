@@ -4869,7 +4869,7 @@ namespace HcTests.PlotOptions
         [Theory]
         [InlineData(10)]
         [InlineData(100)]
-        public void Test_IfThresholdTrackingRenders_Correct(double value)
+        public void Test_IfThresholdRenders_Correct(double value)
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
@@ -4880,7 +4880,7 @@ namespace HcTests.PlotOptions
         }
 
         [Fact]
-        public void Test_IfthresholdDoesntRenderForDefault_Correct()
+        public void Test_IfThresholdDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
@@ -4890,6 +4890,396 @@ namespace HcTests.PlotOptions
 
             Assert.DoesNotContain($"threshold", renderer.RenderHtml());
         }
+
+        #region tooltip
+
+        [Theory]
+        [InlineData("Clustered points: {point.clusterPointsAmount}")]
+        public void Test_IfTooltipClusterFormatRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.ClusterFormat = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("clusterFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipClusterFormatDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Tooltip.ClusterFormat = defaultValue;
+
+            Assert.DoesNotContain($"clusterFormat", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("day", "%A, %b %e, %Y")]
+        [InlineData("hour", "%A, %b %e, %H:%M")]
+        [InlineData("milisecond", "%A, %b %e, %H:%M:%S.%L")]
+        [InlineData("minute", "%A, %b %e, %H:%M")]
+        [InlineData("month", "%B %Y")]
+        [InlineData("second", "%A, %b %e, %H:%M:%S")]
+        [InlineData("week", "Week from %A, %b %e, %Y")]
+        [InlineData("year", "%Y")]
+        public void Test_IfTooltipDateTimeLabelFormatsRenders_Correct(string param, string paramValue)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+            var value = new Hashtable();
+            value.Add(param, paramValue);
+
+            chart.PlotOptions.Series.Tooltip.DateTimeLabelFormats = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetHashtablePropertyString("dateTimeLabelFormats", param, paramValue)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        //fix required - hashtable shouldn't be rendered if it's empty
+        [Fact]
+        public void Test_IfTooltipDateTimeLabelFormatsDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = new Hashtable();
+
+            chart.PlotOptions.Series.Tooltip.DateTimeLabelFormats = defaultValue;
+
+            Assert.DoesNotContain($"dateTimeLabelFormats", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(10)]
+        public void Test_IfTooltipDistanceRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.Distance = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("distance", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipDistanceDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = 16;
+
+            chart.PlotOptions.Series.Tooltip.Distance = defaultValue;
+
+            Assert.DoesNotContain($"distance", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipFollowPointerRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+            var value = true;
+
+            chart.PlotOptions.Series.Tooltip.FollowPointer = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("followPointer", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        //fix required - default should be false (not null)
+        [Fact]
+        public void Test_IfTooltipFollowPointerDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = false;
+
+            chart.PlotOptions.Series.Tooltip.FollowPointer = defaultValue;
+
+            Assert.DoesNotContain($"followPointer", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipFollowTouchMoveRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+            var value = false;
+
+            chart.PlotOptions.Series.Tooltip.FollowTouchMove = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("followTouchMove", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        //fix required - default should be true (not null)
+        [Fact]
+        public void Test_IfTooltipFollowTouchMoveDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = true;
+
+            chart.PlotOptions.Series.Tooltip.FollowTouchMove = defaultValue;
+
+            Assert.DoesNotContain($"followTouchMove", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("</table>")]
+        public void Test_IfTooltipFooterFormatRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.FooterFormat = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("footerFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipFooterFormatDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Tooltip.FooterFormat = defaultValue;
+
+            Assert.DoesNotContain($"footerFormat", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("<table><tr><th colspan='2'>{point.key}</th></tr>")]
+        public void Test_IfTooltipHeaderFormatRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.HeaderFormat = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("headerFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipHeaderFormatDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Tooltip.HeaderFormat = defaultValue;
+
+            Assert.DoesNotContain($"headerFormat", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("{series.name}: <b>{point.y}</b><br/>")]
+        public void Test_IfTooltipNullFormatRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.NullFormat = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("nullFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipNullFormatDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Tooltip.NullFormat = defaultValue;
+
+            Assert.DoesNotContain($"nullFormat", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction()")]
+        public void Test_IfTooltipNullFormatterRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.NullFormatter = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("nullFormatter", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipNullFormatterDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Tooltip.NullFormatter = defaultValue;
+
+            Assert.DoesNotContain($"nullFormatter", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("{series.name}: <b>{point.y}</b><br/>")]
+        public void Test_IfTooltipPointFormatRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.PointFormat = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("pointFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipPointFormatDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Tooltip.PointFormat = defaultValue;
+
+            Assert.DoesNotContain($"pointFormat", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("SomeFunction()")]
+        public void Test_IfTooltipPointFormatterRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.PointFormatter = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("pointFormatter", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipPointFormatterDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Tooltip.PointFormatter = defaultValue;
+
+            Assert.DoesNotContain($"pointFormatter", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(5)]
+        public void Test_IfTooltipValueDecimalsRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.ValueDecimals = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("valueDecimals", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipValueDecimalsDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            double? defaultValue = null;
+
+            chart.PlotOptions.Series.Tooltip.ValueDecimals = defaultValue;
+
+            Assert.DoesNotContain($"valueDecimals", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("$")]
+        public void Test_IfTooltipValuePrefixRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.ValuePrefix = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("valuePrefix", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipValuePrefixDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Tooltip.ValuePrefix = defaultValue;
+
+            Assert.DoesNotContain($"valuePrefix", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(" USD")]
+        public void Test_IfTooltipValueSuffixRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.ValueSuffix = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("valueSuffix", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipValueSuffixDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Tooltip.ValueSuffix = defaultValue;
+
+            Assert.DoesNotContain($"valueSuffix", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData("%Y-%m-%d")]
+        public void Test_IfTooltipXDateFormatRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "tooltip" };
+
+            chart.PlotOptions.Series.Tooltip.XDateFormat = value;
+
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("xDateFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfTooltipXDateFormatDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+
+            chart.PlotOptions.Series.Tooltip.XDateFormat = defaultValue;
+
+            Assert.DoesNotContain($"xDateFormat", renderer.RenderHtml());
+        }
+        #endregion
 
         [Theory]
         [InlineData(10)]
