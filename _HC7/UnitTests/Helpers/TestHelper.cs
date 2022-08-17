@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Highsoft.Web.Mvc.Charts;
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -244,12 +245,31 @@ namespace HcTests.Helpers
 			return sb.ToString();
         }
 
-		public static string GetJsonTrailingString(IEnumerable<string> properties)
+        public static string GetJsonLeadingPathForList(IEnumerable<string> properties)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"\"");
+            sb.Append(properties.Aggregate((p, q) => p = $"{p}\":{{\"{q}"));
+            sb.Append($"\":[{{");
+
+            return sb.ToString();
+        }
+
+        public static string GetJsonTrailingString(IEnumerable<string> properties)
         {
 			return new string('}', properties.Count());
         }
 
-		public static string GetPropertyString(string name, double value)
+        public static string GetJsonTrailingStringForList(IEnumerable<string> properties)
+        {
+			var trailingString = new StringBuilder();
+			trailingString.Append("}]");
+			trailingString.Append(new string('}', properties.Count()));
+
+            return trailingString.ToString();
+        }
+
+        public static string GetPropertyString(string name, double value)
         {
 			return string.Format(CultureInfo.InvariantCulture, "\"{0}\":{1:N1}", name, value).Replace(",", "");
 		}
@@ -269,19 +289,24 @@ namespace HcTests.Helpers
 			return $"\"{name}\":{value.ToString().ToLower()}";
         }
 
+		public static string GetEnumPropertyString(Highcharts chart, string name, string value)
+		{
+			return $"\"{name}\":\"{chart.FirstCharacterToLower(value.ToString())}\"";
+        }
+
 		public static string GetFunctionPropertyString(string name, string value)
 		{
 			return $"\"{name}\":{value}";
 		}
 
-		public static string GetHashtablePropertyString(string propertyName, string paramName, string valueName)
+		public static string GetHashtablePropertyString(string propertyName, string paramName, string paramValue)
 		{
-			return $"\"{propertyName}\":{{\"{paramName}\":\"{valueName}\"}}";
+			return $"\"{propertyName}\":{{{GetPropertyString(paramName, paramValue)}}}";
         }
 
-        public static string GetHashtablePropertyString(string propertyName, string paramName, double valueName)
+        public static string GetHashtablePropertyString(string propertyName, string paramName, double paramValue)
 		{
-			return $"\"{propertyName}\":{{{string.Format(CultureInfo.InvariantCulture, "\"{0}\":{1:N1}", paramName, valueName).Replace(",", "")}}}";
+			return $"\"{propertyName}\":{{{GetPropertyString(paramName, paramValue)}}}";
 		}
     }
 }

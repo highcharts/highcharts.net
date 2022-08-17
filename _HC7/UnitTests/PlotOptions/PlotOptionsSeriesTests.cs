@@ -627,6 +627,7 @@ namespace HcTests.PlotOptions
 
         #region databaLabels
 
+        //fix required - missing dataLabels as a list of objects (right now it is possible to have only one object)
 
         [Theory]
         [InlineData(PlotOptionsSeriesDataLabelsAlign.Left)]
@@ -5353,5 +5354,159 @@ namespace HcTests.PlotOptions
 
             Assert.DoesNotContain($"zoneAxis", renderer.RenderHtml());
         }
+
+        #region zones
+
+        [Theory]
+        [InlineData("CSSClassName")]
+        public void Test_IfZonesClassNameRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "zones" };
+            var zoneDef = new List<PlotOptionsSeriesZone> { new PlotOptionsSeriesZone { ClassName = value } };
+
+            chart.PlotOptions.Series.Zones = zoneDef;
+
+            Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("className", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfZonesClassNameDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+            var zoneDef = new List<PlotOptionsSeriesZone> { new PlotOptionsSeriesZone { ClassName = defaultValue } };
+
+            chart.PlotOptions.Series.Zones = zoneDef;
+
+            Assert.DoesNotContain($"className", renderer.RenderHtml());
+        }
+
+
+        //fix required - color exists only as a string (should be also gradient and pattern)
+        [Theory]
+        [InlineData("#0022ff")]
+        public void Test_IfZonesColorRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "zones" };
+            var zoneDef = new List<PlotOptionsSeriesZone> { new PlotOptionsSeriesZone { Color = value } };
+
+            chart.PlotOptions.Series.Zones = zoneDef;
+
+            Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("color", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfZonesColorDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+            var zoneDef = new List<PlotOptionsSeriesZone> { new PlotOptionsSeriesZone { Color = defaultValue } };
+
+            chart.PlotOptions.Series.Zones = zoneDef;
+
+            Assert.DoesNotContain($"color", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.Dash)]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.DashDot)]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.Dot)]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.LongDash)]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.LongDashDot)]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.LongDashDotDot)]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.ShortDash)]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.ShortDashDot)]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.ShortDashDotDot)]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.ShortDot)]
+        [InlineData(PlotOptionsSeriesZonesDashStyle.Solid)]
+        public void Test_IfZonesDashStyleRenders_Correct(PlotOptionsSeriesZonesDashStyle value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "zones" };
+            var zoneDef = new List<PlotOptionsSeriesZone> { new PlotOptionsSeriesZone { DashStyle = value } };
+
+            chart.PlotOptions.Series.Zones = zoneDef;
+
+            Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetEnumPropertyString(chart, "dashStyle", value.ToString())}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfZonesDashStyleDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = PlotOptionsSeriesZonesDashStyle.Null;
+            var zoneDef = new List<PlotOptionsSeriesZone> { new PlotOptionsSeriesZone { DashStyle = defaultValue } };
+
+            chart.PlotOptions.Series.Zones = zoneDef;
+
+            Assert.DoesNotContain($"dashStyle", renderer.RenderHtml());
+        }
+
+        //fix required - color exists only as a string (should be also gradient and pattern)
+        [Theory]
+        [InlineData("#0022ff")]
+        public void Test_IfZonesFillColorRenders_Correct(string value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "zones" };
+            var zoneDef = new List<PlotOptionsSeriesZone> { new PlotOptionsSeriesZone { FillColor = value } };
+
+            chart.PlotOptions.Series.Zones = zoneDef;
+
+            Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("fillColor", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        //fix required - default value for fillColor should be string.Empty (not null) 
+        [Fact]
+        public void Test_IfZonesFillColorDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = string.Empty;
+            var zoneDef = new List<PlotOptionsSeriesZone> { new PlotOptionsSeriesZone { FillColor = defaultValue } };
+
+            chart.PlotOptions.Series.Zones = zoneDef;
+
+            Assert.DoesNotContain($"fillColor", renderer.RenderHtml());
+        }
+
+        [Theory]
+        [InlineData(5)]
+        [InlineData(5000)]
+        public void Test_IfZonesValueRenders_Correct(double value)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string>() { "plotOptions", "series", "zones" };
+            var zoneDef = new List<PlotOptionsSeriesZone> { new PlotOptionsSeriesZone { Value = value } };
+
+            chart.PlotOptions.Series.Zones = zoneDef;
+
+            Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("value", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfZonesValueDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            double? defaultValue = null;
+            var zoneDef = new List<PlotOptionsSeriesZone> { new PlotOptionsSeriesZone { Value = defaultValue } };
+
+            chart.PlotOptions.Series.Zones = zoneDef;
+
+            Assert.DoesNotContain($"value", renderer.RenderHtml());
+        }
+
+        #endregion
     }
 }
