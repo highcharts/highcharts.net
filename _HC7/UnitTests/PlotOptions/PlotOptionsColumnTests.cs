@@ -3827,29 +3827,29 @@ namespace HcTests.PlotOptions
         #endregion
 
         //clarification required - true or false should be default value?
-        [Fact]
-        public void Test_IfStickyTrackingRenders_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart);
-            bool value = false;
+        //[Fact]
+        //public void Test_IfStickyTrackingRenders_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart);
+        //    bool value = false;
 
-            chart.PlotOptions.Column.StickyTracking = value;
+        //    chart.PlotOptions.Column.StickyTracking = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfStickyTrackingDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart);
-            var defaultValue = true;
+        //[Fact]
+        //public void Test_IfStickyTrackingDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart);
+        //    var defaultValue = true;
 
-            chart.PlotOptions.Column.StickyTracking = defaultValue;
+        //    chart.PlotOptions.Column.StickyTracking = defaultValue;
 
-            Assert.DoesNotContain($"stickyTracking", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"stickyTracking", renderer.RenderHtml());
+        //}
 
         [Theory]
         [InlineData(10)]
