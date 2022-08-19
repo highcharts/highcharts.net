@@ -595,6 +595,7 @@ namespace HcTests.PlotOptions
         [Theory]
         [InlineData(PlotOptionsColumnDataLabelsAlign.Left)]
         [InlineData(PlotOptionsColumnDataLabelsAlign.Right)]
+        [InlineData(PlotOptionsColumnDataLabelsAlign.Center)]
         public void Test_IfDataLabelsAlignRenders_Correct(PlotOptionsColumnDataLabelsAlign align)
         {
             var chart = new Highcharts();
@@ -610,7 +611,7 @@ namespace HcTests.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = PlotOptionsColumnDataLabelsAlign.Center;
+            var defaultValue = PlotOptionsColumnDataLabelsAlign.Undefined;
 
             chart.PlotOptions.Column.DataLabels.Align = defaultValue;
 
@@ -1422,6 +1423,7 @@ namespace HcTests.PlotOptions
         [Theory]
         [InlineData(PlotOptionsColumnDataLabelsVerticalAlign.Middle)]
         [InlineData(PlotOptionsColumnDataLabelsVerticalAlign.Top)]
+        [InlineData(PlotOptionsColumnDataLabelsVerticalAlign.Bottom)]
         public void Test_IfDataLabelsVerticalAlignRenders_Correct(PlotOptionsColumnDataLabelsVerticalAlign align)
         {
             var chart = new Highcharts();
@@ -1437,7 +1439,7 @@ namespace HcTests.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Bottom;
+            var defaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Undefined;
 
             chart.PlotOptions.Column.DataLabels.VerticalAlign = defaultValue;
 
@@ -1487,7 +1489,7 @@ namespace HcTests.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = 0;
+            double? defaultValue = null;
 
             chart.PlotOptions.Column.DataLabels.Y = defaultValue;
 
@@ -3824,7 +3826,7 @@ namespace HcTests.PlotOptions
 
         #endregion
 
-
+        //clarification required - true or false should be default value?
         [Fact]
         public void Test_IfStickyTrackingRenders_Correct()
         {
@@ -3958,7 +3960,7 @@ namespace HcTests.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = 16;
+            var defaultValue = 6;
 
             chart.PlotOptions.Column.Tooltip.Distance = defaultValue;
 
