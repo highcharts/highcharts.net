@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 
-namespace HcTests.Helpers
+namespace Tests.Helpers
 {
     public static class TestHelper
     {

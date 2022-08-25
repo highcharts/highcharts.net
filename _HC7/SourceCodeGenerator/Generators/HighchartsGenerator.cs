@@ -497,6 +497,7 @@ public class HighchartsGenerator
             apiItem.Values.Add("ad");
             apiItem.Values.Add("ao");
             apiItem.Values.Add("apo");
+            apiItem.Values.Add("arcdiagram");
             apiItem.Values.Add("area");
             apiItem.Values.Add("arearange");
             apiItem.Values.Add("areaspline");

@@ -8,9 +8,10 @@ using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 using System.Collections;
 using System.Globalization;
-using TH = HcTests.Helpers.TestHelper;
+using TH = Tests.Helpers.TestHelper;
+using UnitTests.HC;
 
-namespace HcTests.PlotOptions
+namespace HC.PlotOptions
 {
     public class PlotOptionsPieTests : IClassFixture<HcFixture>
     {

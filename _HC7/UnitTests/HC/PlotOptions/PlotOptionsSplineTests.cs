@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using Xunit;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
+using UnitTests.HC;
 
-namespace HcTests.PlotOptions
+namespace HC.PlotOptions
 {
     public class PlotOptionsSplineTests : PlotOptionsSeriesTests
     {

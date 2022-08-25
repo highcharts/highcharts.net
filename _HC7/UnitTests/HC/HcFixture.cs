@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
 
-namespace HcTests
+namespace UnitTests.HC
 {
     public class HcFixture : IDisposable
     {
@@ -25,7 +25,7 @@ namespace HcTests
             //Options.Chart.Type = ChartType;
             //Renderer = new HighchartsRenderer(Options);
         }
-        
+
         public void Dispose()
         {
         }
