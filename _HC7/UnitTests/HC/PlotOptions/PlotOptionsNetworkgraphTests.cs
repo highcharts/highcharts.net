@@ -2885,7 +2885,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             double defaultValue = 2;
 
-            chart.PlotOptions.Networkgraph.Marker.EnabledThreshold = defaultValue;
+            chart.PlotOptions.Networkgraph.States.Hover.Marker.EnabledThreshold = defaultValue;
 
             Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         }
@@ -3417,7 +3417,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             double defaultValue = 2;
 
-            chart.PlotOptions.Networkgraph.Marker.EnabledThreshold = defaultValue;
+            chart.PlotOptions.Networkgraph.States.Select.Marker.EnabledThreshold = defaultValue;
 
             Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         }

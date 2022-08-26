@@ -3486,7 +3486,6 @@ namespace HC.PlotOptions
 
         #region marker
 
-        //fix required - default value should be 2
         //[Fact]
         //public void Test_IfStatesHoverMarkerEnabledThresholdDoesntRenderForDefault_Correct()
         //{
@@ -3494,7 +3493,7 @@ namespace HC.PlotOptions
         //    var renderer = new HighchartsRenderer(chart);
         //    double defaultValue = 2;
 
-        //    chart.PlotOptions.Timeline.Marker.EnabledThreshold = defaultValue;
+        //    chart.PlotOptions.Timeline.States.Hover.Marker.EnabledThreshold = defaultValue;
 
         //    Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         //}
@@ -3515,7 +3514,7 @@ namespace HC.PlotOptions
         //    Assert.DoesNotContain($"fillColor", renderer.RenderHtml());
         //}
 
-       
+
         //missing States
 
         #endregion
@@ -3875,18 +3874,17 @@ namespace HC.PlotOptions
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabledThreshold", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
 
-        //fix required - default value should be 2
-        //[Fact]
-        //public void Test_IfStatesSelectMarkerEnabledThresholdDoesntRenderForDefault_Correct()
-        //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart);
-        //    double defaultValue = 2;
+        [Fact]
+        public void Test_IfStatesSelectMarkerEnabledThresholdDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            double defaultValue = 2;
 
-        //    chart.PlotOptions.Timeline.Marker.EnabledThreshold = defaultValue;
+            chart.PlotOptions.Timeline.States.Select.Marker.EnabledThreshold = defaultValue;
 
-        //    Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
-        //}
+            Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
+        }
 
         [Theory]
         [InlineData("red")]

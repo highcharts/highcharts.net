@@ -4111,7 +4111,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             double defaultValue = 2;
 
-            chart.PlotOptions.Series.Marker.EnabledThreshold = defaultValue;
+            chart.PlotOptions.Series.States.Hover.Marker.EnabledThreshold = defaultValue;
 
             Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         }
@@ -4641,7 +4641,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             double defaultValue = 2;
 
-            chart.PlotOptions.Series.Marker.EnabledThreshold = defaultValue;
+            chart.PlotOptions.Series.States.Select.Marker.EnabledThreshold = defaultValue;
 
             Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         }
