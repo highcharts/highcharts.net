@@ -1903,30 +1903,29 @@ namespace HC.PlotOptions
 
         #endregion
 
-        //clarification needed - what is default value?
-        //[Fact]
-        //public void Test_IfStickyTrackingRenders_Correct()
-        //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart);
-        //    bool value = false;
+        [Fact]
+        public void Test_IfStickyTrackingRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = true;
 
-        //    chart.PlotOptions.Pie.StickyTracking = value;
+            chart.PlotOptions.Pie.StickyTracking = value;
 
-        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
-        //}
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
 
-        //[Fact]
-        //public void Test_IfStickyTrackingDoesntRenderForDefault_Correct()
-        //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart);
-        //    var defaultValue = true;
+        [Fact]
+        public void Test_IfStickyTrackingDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = false;
 
-        //    chart.PlotOptions.Pie.StickyTracking = defaultValue;
+            chart.PlotOptions.Pie.StickyTracking = defaultValue;
 
-        //    Assert.DoesNotContain($"stickyTracking", renderer.RenderHtml());
-        //}
+            Assert.DoesNotContain($"stickyTracking", renderer.RenderHtml());
+        }
 
         [Fact]
         public void Test_IfTooltipFollowPointerRenders_Correct()

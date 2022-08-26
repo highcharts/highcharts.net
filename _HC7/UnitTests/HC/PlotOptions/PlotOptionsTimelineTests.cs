@@ -2616,7 +2616,6 @@ namespace HC.PlotOptions
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("radius", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
 
-        //clarification required - what is correct default value 4 or 6
         [Fact]
         public void Test_IfMarkerRadiusDoesntRenderForDefault_Correct()
         {

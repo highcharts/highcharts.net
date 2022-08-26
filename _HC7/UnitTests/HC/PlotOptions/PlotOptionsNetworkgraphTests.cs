@@ -1714,32 +1714,30 @@ namespace HC.PlotOptions
 
         #region marker
 
-        //clarification required - what value should be default ?
-        //[Theory]
-        //[InlineData(true)]
-        //[InlineData(false)]
-        //public void Test_IfMarkerEnabledRenders_Correct(bool value)
-        //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart);
-        //    var pathToProperty = new List<string> { "plotOptions", "networkgraph", "marker" };
+        [Fact]
+        public void Test_IfMarkerEnabledRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var pathToProperty = new List<string> { "plotOptions", "networkgraph", "marker" };
+            bool value = false;
 
-        //    chart.PlotOptions.Networkgraph.Marker.Enabled = value;
+            chart.PlotOptions.Networkgraph.Marker.Enabled = value;
 
-        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        //}
+            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        }
 
-        //[Fact]
-        //public void Test_IfMarkerEnabledDoesntRenderForDefault_Correct()
-        //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart);
-        //    bool? defaultValue = null;
+        [Fact]
+        public void Test_IfMarkerEnabledDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool? defaultValue = true;
 
-        //    chart.PlotOptions.Networkgraph.Marker.Enabled = defaultValue;
+            chart.PlotOptions.Networkgraph.Marker.Enabled = defaultValue;
 
-        //    Assert.DoesNotContain($"enabled", renderer.RenderHtml());
-        //}
+            Assert.DoesNotContain($"enabled", renderer.RenderHtml());
+        }
 
         [Theory]
         [InlineData(5)]
@@ -3591,30 +3589,29 @@ namespace HC.PlotOptions
 
         #endregion
 
-        //clarification required - what is correct default value
-        //[Fact]
-        //public void Test_IfStickyTrackingRenders_Correct()
-        //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart);
-        //    bool value = false;
+        [Fact]
+        public void Test_IfStickyTrackingRenders_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            bool value = true;
 
-        //    chart.PlotOptions.Networkgraph.StickyTracking = value;
+            chart.PlotOptions.Networkgraph.StickyTracking = value;
 
-        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
-        //}
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+        }
 
-        //[Fact]
-        //public void Test_IfStickyTrackingDoesntRenderForDefault_Correct()
-        //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart);
-        //    var defaultValue = true;
+        [Fact]
+        public void Test_IfStickyTrackingDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = false;
 
-        //    chart.PlotOptions.Networkgraph.StickyTracking = defaultValue;
+            chart.PlotOptions.Networkgraph.StickyTracking = defaultValue;
 
-        //    Assert.DoesNotContain($"stickyTracking", renderer.RenderHtml());
-        //}
+            Assert.DoesNotContain($"stickyTracking", renderer.RenderHtml());
+        }
 
         #region tooltip
 
