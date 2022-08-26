@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 		Atr, 
 		Bar, 
 		Bb, 
-		Belicurve, 
+		Bellcurve, 
 		Boxplot, 
 		Bubble, 
 		Bullet, 

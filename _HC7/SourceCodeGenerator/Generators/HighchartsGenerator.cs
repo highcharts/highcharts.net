@@ -507,7 +507,7 @@ public class HighchartsGenerator
             apiItem.Values.Add("atr");
             apiItem.Values.Add("bar");
             apiItem.Values.Add("bb");
-            apiItem.Values.Add("belicurve");
+            apiItem.Values.Add("bellcurve");
             apiItem.Values.Add("boxplot");
             apiItem.Values.Add("bubble");
             apiItem.Values.Add("bullet");
