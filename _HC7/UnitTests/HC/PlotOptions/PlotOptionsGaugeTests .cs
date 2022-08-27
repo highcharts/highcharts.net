@@ -13,11 +13,11 @@ using UnitTests.HC;
 
 namespace HC.PlotOptions
 {
-    public class PlotOptionGaugeTests : IClassFixture<HcFixture>
+    public class PlotOptionsGaugeTests : IClassFixture<HcFixture>
     {
         protected HcFixture _fixture;
 
-        public PlotOptionGaugeTests(HcFixture fixture)
+        public PlotOptionsGaugeTests(HcFixture fixture)
         {
             _fixture = fixture;
             _fixture.ChartType = ChartType.Gauge;
