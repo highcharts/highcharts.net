@@ -567,6 +567,7 @@ public class HighchartsGenerator
             apiItem.Values.Add("priceenvelopes");
             apiItem.Values.Add("psar");
             apiItem.Values.Add("pyramid");
+            apiItem.Values.Add("pyramid3d");
             apiItem.Values.Add("roc");
             apiItem.Values.Add("rsi");
             apiItem.Values.Add("sankey");
