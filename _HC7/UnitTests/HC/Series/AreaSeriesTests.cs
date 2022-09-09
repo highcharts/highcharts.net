@@ -53,14 +53,10 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); 
             var series = new AreaSeries(); 
             chart.Series.Add(series);
-            
 
             ((AreaSeries)chart.Series[0]).Accessibility.Description = description;
-            var result = renderer.RenderHtml();
-
-            //Assert.Contains($"\"series\":[{{", result);
-            //Assert.Contains($"\"type\":\"{_fixture.ChartType.ToString().ToLower()}\"", result);
-            Assert.Contains($"\"accessibility\":{{\"description\":\"{description}\"}}", result);
+            
+            Assert.Contains($"\"accessibility\":{{\"description\":\"{description}\"}}", renderer.RenderHtml());
         }
 
         [Theory]
