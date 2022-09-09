@@ -264,7 +264,7 @@ namespace Tests.Helpers
         {
 			var trailingString = new StringBuilder();
 			trailingString.Append("}]");
-			trailingString.Append(new string('}', properties.Count()));
+			//trailingString.Append(new string('}', properties.Count()));
 
             return trailingString.ToString();
         }
