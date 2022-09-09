@@ -14,11 +14,11 @@ using UnitTests.HC;
 
 namespace HC.Series
 {
-    public class LineSeriesTests : IClassFixture<HcFixture>
+    public class ArcdiagramSeriesTests : IClassFixture<HcFixture>
     {
         protected HcFixture _fixture;
 
-        public LineSeriesTests(HcFixture fixture)
+        public ArcdiagramSeriesTests(HcFixture fixture)
         {
             _fixture = fixture;
             _fixture.ChartType = ChartType.Line;
@@ -29,7 +29,7 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var lineSeries = new LineSeries();
+            var lineSeries = new ArcdiagramSeries();
             chart.Series.Add(lineSeries);
 
             var result = renderer.RenderHtml();
@@ -51,11 +51,11 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); 
-            var lineSeries = new LineSeries(); 
+            var lineSeries = new ArcdiagramSeries(); 
             chart.Series.Add(lineSeries);
             
 
-            ((LineSeries)chart.Series[0]).Accessibility.Description = description;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Description = description;
             var result = renderer.RenderHtml();
 
             //Assert.Contains($"\"series\":[{{", result);
@@ -70,9 +70,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries); 
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries); 
 
-            ((LineSeries)chart.Series[0]).Accessibility.Enabled = enabled;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Enabled = enabled;
 
             Assert.Contains($"\"accessibility\":{{\"enabled\":{enabled.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -85,9 +85,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Accessibility.ExposeAsGroupOnly = exposeAsGroupOnly;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.ExposeAsGroupOnly = exposeAsGroupOnly;
 
             Assert.Contains($"\"accessibility\":{{\"exposeAsGroupOnly\":{exposeAsGroupOnly.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -101,9 +101,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Accessibility.KeyboardNavigation.Enabled = enabled;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.KeyboardNavigation.Enabled = enabled;
 
             Assert.Contains($"\"accessibility\":{{\"keyboardNavigation\":{{\"enabled\":{enabled.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -118,9 +118,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Accessibility.Point.DateFormat = format;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Point.DateFormat = format;
 
             Assert.Contains($"\"accessibility\":{{\"point\":{{\"dateFormat\":\"{format}\"", renderer.RenderHtml());
         }
@@ -131,9 +131,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Accessibility.Point.DateFormatter = function;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Point.DateFormatter = function;
 
             Assert.Contains($"\"accessibility\":{{\"point\":{{\"dateFormatter\":{function}", renderer.RenderHtml());
         }
@@ -144,11 +144,11 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
 
 
-            ((LineSeries)chart.Series[0]).Accessibility.Point.DescribeNull = describeNull;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Point.DescribeNull = describeNull;
 
             Assert.Contains($"\"accessibility\":{{\"point\":{{\"describeNull\":{describeNull.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -159,9 +159,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Accessibility.Point.DescribeNull = describeNull;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Point.DescribeNull = describeNull;
 
             Assert.DoesNotContain($"describeNull", renderer.RenderHtml());
         }
@@ -172,9 +172,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Accessibility.Point.DescriptionFormatter = function;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Point.DescriptionFormatter = function;
 
             Assert.Contains($"\"accessibility\":{{\"point\":{{\"descriptionFormatter\":{function}", renderer.RenderHtml());
         }
@@ -185,9 +185,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Accessibility.Point.ValueDecimals = decimals;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Point.ValueDecimals = decimals;
 
             Assert.Contains($"\"accessibility\":{{\"point\":{{\"valueDecimals\":{decimals}.0", renderer.RenderHtml());
         }
@@ -198,9 +198,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Accessibility.Point.ValueDescriptionFormat = format;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Point.ValueDescriptionFormat = format;
 
             Assert.Contains($"\"accessibility\":{{\"point\":{{\"valueDescriptionFormat\":\"{format}\"", renderer.RenderHtml());
         }
@@ -211,9 +211,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Accessibility.Point.ValuePrefix = prefix;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Point.ValuePrefix = prefix;
 
             Assert.Contains($"\"accessibility\":{{\"point\":{{\"valuePrefix\":\"{prefix}\"", renderer.RenderHtml());
         }
@@ -224,9 +224,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Accessibility.Point.ValueSuffix = suffix;
+            ((ArcdiagramSeries)chart.Series[0]).Accessibility.Point.ValueSuffix = suffix;
 
             Assert.Contains($"\"accessibility\":{{\"point\":{{\"valueSuffix\":\"{suffix}\"", renderer.RenderHtml());
         }
@@ -239,10 +239,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var enabled = true;
 
-            ((LineSeries)chart.Series[0]).AllowPointSelect = enabled;
+            ((ArcdiagramSeries)chart.Series[0]).AllowPointSelect = enabled;
 
             Assert.Contains($"\"allowPointSelect\":{enabled.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -252,9 +252,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).AllowPointSelect = false;
+            ((ArcdiagramSeries)chart.Series[0]).AllowPointSelect = false;
 
             Assert.DoesNotContain("allowPointSelect", renderer.RenderHtml());
         }
@@ -268,9 +268,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).AnimationBool = enabled;
+            ((ArcdiagramSeries)chart.Series[0]).AnimationBool = enabled;
 
             Assert.Contains($"\"animation\":{enabled.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -281,9 +281,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Animation.Duration = duration;
+            ((ArcdiagramSeries)chart.Series[0]).Animation.Duration = duration;
 
             Assert.Contains($"\"animation\":{{\"duration\":{duration}}}", renderer.RenderHtml());
         }
@@ -294,9 +294,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Animation.Defer = defer;
+            ((ArcdiagramSeries)chart.Series[0]).Animation.Defer = defer;
 
             Assert.Contains($"\"animation\":{{\"defer\":{defer}}}", renderer.RenderHtml());
         }
@@ -307,9 +307,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Animation.Easing = easing;
+            ((ArcdiagramSeries)chart.Series[0]).Animation.Easing = easing;
 
             Assert.Contains($"\"animation\":{{\"easing\":\"{easing}\"}}", renderer.RenderHtml());
         }
@@ -323,13 +323,13 @@ namespace HC.Series
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart); 
-            var lineSeries = new LineSeries(); 
+            var lineSeries = new ArcdiagramSeries(); 
             chart.Series.Add(lineSeries);
 
             
             lineSeries.AnimationLimit = limit;
 
-            ((LineSeries)chart.Series[0]).AnimationLimit = limit;
+            ((ArcdiagramSeries)chart.Series[0]).AnimationLimit = limit;
 
             Assert.Contains($"\"animationLimit\":{limit}.0", renderer.RenderHtml());
         }
@@ -342,9 +342,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).BoostBlending = boostBlending;
+            ((ArcdiagramSeries)chart.Series[0]).BoostBlending = boostBlending;
 
             Assert.Contains($"\"boostBlending\":\"{boostBlending.ToString().ToLower()}\"", renderer.RenderHtml());
         }
@@ -354,9 +354,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).BoostBlending = LineSeriesBoostBlending.Undefined;
+            ((ArcdiagramSeries)chart.Series[0]).BoostBlending = LineSeriesBoostBlending.Undefined;
 
             Assert.DoesNotContain($"\"boostBlending\"", renderer.RenderHtml());
         }
@@ -367,9 +367,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).BoostThreshold = limit;
+            ((ArcdiagramSeries)chart.Series[0]).BoostThreshold = limit;
 
             Assert.Contains($"\"boostThreshold\":{limit}.0", renderer.RenderHtml());
         }
@@ -379,10 +379,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 5000;
 
-            ((LineSeries)chart.Series[0]).BoostThreshold = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).BoostThreshold = defaultValue;
 
             Assert.DoesNotContain("boostThreshold", renderer.RenderHtml());
         }
@@ -396,9 +396,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).ClassName = className;
+            ((ArcdiagramSeries)chart.Series[0]).ClassName = className;
 
             Assert.Contains($"\"className\":\"{className}\"", renderer.RenderHtml());
         }
@@ -408,10 +408,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = false;
 
-            ((LineSeries)chart.Series[0]).Clip = value;
+            ((ArcdiagramSeries)chart.Series[0]).Clip = value;
 
             Assert.Contains($"\"clip\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -421,10 +421,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = true;
 
-            ((LineSeries)chart.Series[0]).Clip = value;
+            ((ArcdiagramSeries)chart.Series[0]).Clip = value;
 
             Assert.DoesNotContain("clip", renderer.RenderHtml());
         }
@@ -435,9 +435,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Color = color;
+            ((ArcdiagramSeries)chart.Series[0]).Color = color;
 
             Assert.Contains($"\"color\":\"{color.ToString().ToLower()}\"", renderer.RenderHtml());
         }
@@ -450,9 +450,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).ColorAxis = id;
+            ((ArcdiagramSeries)chart.Series[0]).ColorAxis = id;
 
             Assert.Contains($"\"colorAxis\":\"{id}\"", renderer.RenderHtml());
         }
@@ -464,9 +464,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).ColorAxisNumber = index;
+            ((ArcdiagramSeries)chart.Series[0]).ColorAxisNumber = index;
 
             Assert.Contains($"\"colorAxis\":{index}.0", renderer.RenderHtml());
         }
@@ -478,8 +478,8 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
-            ((LineSeries)chart.Series[0]).ColorAxisBool = value;
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
+            ((ArcdiagramSeries)chart.Series[0]).ColorAxisBool = value;
 
             Assert.Contains($"\"colorAxis\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -490,9 +490,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).ColorIndex = value;
+            ((ArcdiagramSeries)chart.Series[0]).ColorIndex = value;
 
             Assert.Contains($"\"colorIndex\":{value}.0", renderer.RenderHtml());
         }
@@ -503,9 +503,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).ColorKey = value;
+            ((ArcdiagramSeries)chart.Series[0]).ColorKey = value;
 
             Assert.Contains($"\"colorKey\":\"{value}\"", renderer.RenderHtml());
         }
@@ -517,9 +517,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).ConnectEnds = value;
+            ((ArcdiagramSeries)chart.Series[0]).ConnectEnds = value;
 
             Assert.Contains($"\"connectEnds\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -529,10 +529,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = true;
 
-            ((LineSeries)chart.Series[0]).ConnectNulls = value;
+            ((ArcdiagramSeries)chart.Series[0]).ConnectNulls = value;
 
             Assert.Contains($"\"connectNulls\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -542,10 +542,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = false;
 
-            ((LineSeries)chart.Series[0]).ConnectNulls = value;
+            ((ArcdiagramSeries)chart.Series[0]).ConnectNulls = value;
 
             Assert.DoesNotContain($"\"connectNulls\"", renderer.RenderHtml());
         }
@@ -557,10 +557,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = false;
 
-            ((LineSeries)chart.Series[0]).Crisp = value;
+            ((ArcdiagramSeries)chart.Series[0]).Crisp = value;
 
             Assert.Contains($"\"crisp\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -570,10 +570,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = true;
 
-            ((LineSeries)chart.Series[0]).Crisp = value;
+            ((ArcdiagramSeries)chart.Series[0]).Crisp = value;
 
             Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
         }
@@ -585,9 +585,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).CropThreshold = value;
+            ((ArcdiagramSeries)chart.Series[0]).CropThreshold = value;
 
             Assert.Contains($"\"cropThreshold\":{value}.0", renderer.RenderHtml());
         }
@@ -597,10 +597,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 300;
 
-            ((LineSeries)chart.Series[0]).CropThreshold = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).CropThreshold = defaultValue;
 
             Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
         }
@@ -614,9 +614,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Cursor = cursor;
+            ((ArcdiagramSeries)chart.Series[0]).Cursor = cursor;
 
             Assert.Contains($"\"cursor\":\"{cursor.ToString().ToLower()}\"", renderer.RenderHtml());
         }
@@ -627,10 +627,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var extraData = new Hashtable() { { key1, value1 } };
 
-            ((LineSeries)chart.Series[0]).Custom = extraData;
+            ((ArcdiagramSeries)chart.Series[0]).Custom = extraData;
 
             Assert.Contains($"\"custom\":{{\"{key1}\":\"{value1}\"}}", renderer.RenderHtml());
         }
@@ -650,13 +650,13 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var result = style.ToString();
             var replacement = result[0].ToString().ToLower();
             result = result.Remove(0, 1);
             result = replacement + result;
 
-            ((LineSeries)chart.Series[0]).DashStyle = style;
+            ((ArcdiagramSeries)chart.Series[0]).DashStyle = style;
 
             Assert.Contains($"\"dashStyle\":\"{result}\"", renderer.RenderHtml());
         }
@@ -672,9 +672,9 @@ namespace HC.Series
         public void Test_IfDataLabelsAlignRenders_Correct(LineSeriesDataLabelsAlign align)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Align = align;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Align = align;
 
             Assert.Contains($"\"dataLabels\":{{\"align\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}", renderer.RenderHtml());
         }
@@ -683,10 +683,10 @@ namespace HC.Series
         public void Test_IfDataLabelsAlignDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = LineSeriesDataLabelsAlign.Center;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Align = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Align = defaultValue;
 
             Assert.DoesNotContain($"align", renderer.RenderHtml());
         }
@@ -695,10 +695,10 @@ namespace HC.Series
         public void Test_IfDataLabelsAllowOverlapRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = true;
 
-            ((LineSeries)chart.Series[0]).DataLabels.AllowOverlap = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.AllowOverlap = value;
 
             Assert.Contains($"\"dataLabels\":{{\"allowOverlap\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -707,10 +707,10 @@ namespace HC.Series
         public void Test_IfDataLabelsAllowOverlapDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = false;
 
-            ((LineSeries)chart.Series[0]).DataLabels.AllowOverlap = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.AllowOverlap = defaultValue;
 
             Assert.DoesNotContain($"allowOverlap", renderer.RenderHtml());
         }
@@ -723,9 +723,9 @@ namespace HC.Series
         public void Test_IfDataLabelsAnimationDeferRenders_Correct(int value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Animation.Defer = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Animation.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"animation\":{{\"defer\":{value}", renderer.RenderHtml());
         }
@@ -734,10 +734,10 @@ namespace HC.Series
         public void Test_IfDataLabelsAnimationDeferDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = -1;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Animation.Defer = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Animation.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
@@ -750,9 +750,9 @@ namespace HC.Series
         public void Test_IfDataLabelsBackgroundColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.BackgroundColor = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.BackgroundColor = value;
 
             Assert.Contains($"\"dataLabels\":{{\"backgroundColor\":\"{value}\"}}", renderer.RenderHtml());
         }
@@ -761,10 +761,10 @@ namespace HC.Series
         public void Test_IfDataLabelsBackgroundColorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).DataLabels.BackgroundColor = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.BackgroundColor = defaultValue;
 
             Assert.DoesNotContain($"backgroundColor", renderer.RenderHtml());
         }
@@ -775,9 +775,9 @@ namespace HC.Series
         public void Test_IfDataLabelsBorderColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.BorderColor = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.BorderColor = value;
 
             Assert.Contains($"\"dataLabels\":{{\"borderColor\":\"{value}\"}}", renderer.RenderHtml());
         }
@@ -786,10 +786,10 @@ namespace HC.Series
         public void Test_IfDataLabelsBorderColorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).DataLabels.BorderColor = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.BorderColor = defaultValue;
 
             Assert.DoesNotContain($"borderColor", renderer.RenderHtml());
         }
@@ -800,9 +800,9 @@ namespace HC.Series
         public void Test_IfDataLabelsBorderRadiusRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.BorderRadius = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.BorderRadius = value;
 
             Assert.Contains($"\"dataLabels\":{{\"borderRadius\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}", renderer.RenderHtml());
         }
@@ -811,10 +811,10 @@ namespace HC.Series
         public void Test_IfDataLabelsBorderRadiusDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).DataLabels.BorderRadius = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.BorderRadius = defaultValue;
 
             Assert.DoesNotContain($"borderRadius", renderer.RenderHtml());
         }
@@ -825,9 +825,9 @@ namespace HC.Series
         public void Test_IfDataLabelsBorderWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.BorderWidth = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.BorderWidth = value;
 
             Assert.Contains($"\"dataLabels\":{{\"borderWidth\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}", renderer.RenderHtml());
         }
@@ -836,10 +836,10 @@ namespace HC.Series
         public void Test_IfDataLabelsBorderWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).DataLabels.BorderWidth = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.BorderWidth = defaultValue;
 
             Assert.DoesNotContain($"borderWidth", renderer.RenderHtml());
         }
@@ -850,9 +850,9 @@ namespace HC.Series
         public void Test_IfDataLabelsClassNameRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.ClassName = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.ClassName = value;
 
             Assert.Contains($"\"dataLabels\":{{\"className\":\"{value}\"}}", renderer.RenderHtml());
         }
@@ -861,10 +861,10 @@ namespace HC.Series
         public void Test_IfDataLabelsClassNameDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).DataLabels.ClassName = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.ClassName = defaultValue;
 
             Assert.DoesNotContain($"className", renderer.RenderHtml());
         }
@@ -875,9 +875,9 @@ namespace HC.Series
         public void Test_IfDataLabelsColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Color = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Color = value;
 
             Assert.Contains($"\"dataLabels\":{{\"color\":\"{value}\"}}", renderer.RenderHtml());
         }
@@ -886,10 +886,10 @@ namespace HC.Series
         public void Test_IfDataLabelsColorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Color = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Color = defaultValue;
 
             Assert.DoesNotContain($"color", renderer.RenderHtml());
         }
@@ -898,10 +898,10 @@ namespace HC.Series
         public void Test_IfDataLabelsCropRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = false;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Crop = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Crop = value;
 
             Assert.Contains($"\"dataLabels\":{{\"crop\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -910,10 +910,10 @@ namespace HC.Series
         public void Test_IfDataLabelsCropDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = true;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Crop = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Crop = defaultValue;
 
             Assert.DoesNotContain($"crop", renderer.RenderHtml());
         }
@@ -922,10 +922,10 @@ namespace HC.Series
         public void Test_IfDataLabelsDeferBoolRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = false;
 
-            ((LineSeries)chart.Series[0]).DataLabels.DeferBool = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.DeferBool = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -934,10 +934,10 @@ namespace HC.Series
         public void Test_IfDataLabelsDeferBoolDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = true;
 
-            ((LineSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
@@ -948,9 +948,9 @@ namespace HC.Series
         public void Test_IfDataLabelsDeferRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Defer = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
         }
@@ -959,10 +959,10 @@ namespace HC.Series
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = true;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Enabled = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Enabled = value;
 
             Assert.Contains($"\"dataLabels\":{{\"enabled\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -971,10 +971,10 @@ namespace HC.Series
         public void Test_IfDataLabelsEnabledBoolDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = false;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Enabled = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -991,9 +991,9 @@ namespace HC.Series
         public void Test_IfDataLabelsFilterOperatorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Filter.Operator = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Filter.Operator = value;
 
             Assert.Contains($"\"dataLabels\":{{\"filter\":{{\"operator\":\"{value}\"", renderer.RenderHtml());
         }
@@ -1002,10 +1002,10 @@ namespace HC.Series
         public void Test_IfDataLabelsFilterOperatorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Filter.Operator = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Filter.Operator = defaultValue;
 
             Assert.DoesNotContain($"operator", renderer.RenderHtml());
         }
@@ -1016,9 +1016,9 @@ namespace HC.Series
         public void Test_IfDataLabelsFilterPropertyRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Filter.Property = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Filter.Property = value;
 
             Assert.Contains($"\"dataLabels\":{{\"filter\":{{\"property\":\"{value}\"", renderer.RenderHtml());
         }
@@ -1027,10 +1027,10 @@ namespace HC.Series
         public void Test_IfDataLabelsFilterPropertyDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Filter.Property = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Filter.Property = defaultValue;
 
             Assert.DoesNotContain($"property", renderer.RenderHtml());
         }
@@ -1041,9 +1041,9 @@ namespace HC.Series
         public void Test_IfDataLabelsFilterValueRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Filter.Value = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Filter.Value = value;
 
             Assert.Contains($"\"dataLabels\":{{\"filter\":{{\"value\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}", renderer.RenderHtml());
         }
@@ -1052,10 +1052,10 @@ namespace HC.Series
         public void Test_IfDataLabelsFilterValueDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Filter.Value = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Filter.Value = defaultValue;
 
             Assert.DoesNotContain($"value", renderer.RenderHtml());
         }
@@ -1068,9 +1068,9 @@ namespace HC.Series
         public void Test_IfDataLabelsFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Format = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Format = value;
 
             Assert.Contains($"\"dataLabels\":{{\"format\":\"{value}\"}}", renderer.RenderHtml());
         }
@@ -1079,10 +1079,10 @@ namespace HC.Series
         public void Test_IfDataLabelsFormatDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "point.value";
 
-            ((LineSeries)chart.Series[0]).DataLabels.Format = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Format = defaultValue;
 
             Assert.DoesNotContain($"format", renderer.RenderHtml());
         }
@@ -1092,9 +1092,9 @@ namespace HC.Series
         public void Test_IfDataLabelsFormatterRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Formatter = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Formatter = value;
 
             Assert.Contains($"\"dataLabels\":{{\"formatter\":{value}}}", renderer.RenderHtml());
         }
@@ -1103,10 +1103,10 @@ namespace HC.Series
         public void Test_IfDataLabelsFormatterDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Formatter = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Formatter = defaultValue;
 
             Assert.DoesNotContain($"formatter", renderer.RenderHtml());
         }
@@ -1117,9 +1117,9 @@ namespace HC.Series
         public void Test_IfDataLabelsInsideRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Inside = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Inside = value;
 
             Assert.Contains($"\"dataLabels\":{{\"inside\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -1128,10 +1128,10 @@ namespace HC.Series
         public void Test_IfDataLabelsInsideDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Inside = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Inside = defaultValue;
 
             Assert.DoesNotContain($"inside", renderer.RenderHtml());
         }
@@ -1142,9 +1142,9 @@ namespace HC.Series
         public void Test_IfDataLabelsNullFormatBoolRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.NullFormatBool = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.NullFormatBool = value;
 
             Assert.Contains($"\"dataLabels\":{{\"nullFormat\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -1153,10 +1153,10 @@ namespace HC.Series
         public void Test_IfDataLabelsNullFormatBoolDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DataLabels.NullFormatBool = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.NullFormatBool = defaultValue;
 
             Assert.DoesNotContain($"nullFormat", renderer.RenderHtml());
         }
@@ -1167,9 +1167,9 @@ namespace HC.Series
         public void Test_IfDataLabelsNullFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.NullFormat = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.NullFormat = value;
 
             Assert.Contains($"\"dataLabels\":{{\"nullFormat\":\"{value}\"}}", renderer.RenderHtml());
         }
@@ -1178,10 +1178,10 @@ namespace HC.Series
         public void Test_IfDataLabelsNullFormatDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).DataLabels.NullFormat = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.NullFormat = defaultValue;
 
             Assert.DoesNotContain($"nullFormat", renderer.RenderHtml());
         }
@@ -1191,9 +1191,9 @@ namespace HC.Series
         public void Test_IfDataLabelsNullFormatterRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.NullFormatter = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.NullFormatter = value;
 
             Assert.Contains($"\"dataLabels\":{{\"nullFormatter\":{value}}}", renderer.RenderHtml());
         }
@@ -1202,10 +1202,10 @@ namespace HC.Series
         public void Test_IfDataLabelsNullFormatterDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).DataLabels.NullFormatter = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.NullFormatter = defaultValue;
 
             Assert.DoesNotContain($"nullFormatter", renderer.RenderHtml());
         }
@@ -1215,9 +1215,9 @@ namespace HC.Series
         public void Test_IfDataLabelsOverflowRenders_Correct(LineSeriesDataLabelsOverflow align)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Overflow = align;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Overflow = align;
 
             Assert.Contains($"\"dataLabels\":{{\"overflow\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}", renderer.RenderHtml());
         }
@@ -1226,10 +1226,10 @@ namespace HC.Series
         public void Test_IfDataLabelsOverflowDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = LineSeriesDataLabelsOverflow.Justify;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Overflow = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Overflow = defaultValue;
 
             Assert.DoesNotContain($"overflow", renderer.RenderHtml());
         }
@@ -1240,9 +1240,9 @@ namespace HC.Series
         public void Test_IfDataLabelsPaddingRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Padding = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Padding = value;
 
             Assert.Contains($"\"dataLabels\":{{\"padding\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
         }
@@ -1251,10 +1251,10 @@ namespace HC.Series
         public void Test_IfDataLabelsPaddingDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 5;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Padding = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Padding = defaultValue;
 
             Assert.DoesNotContain($"padding", renderer.RenderHtml());
         }
@@ -1265,9 +1265,9 @@ namespace HC.Series
         public void Test_IfDataLabelsPositionRenders_Correct(LineSeriesDataLabelsPosition align)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Position = align;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Position = align;
 
             Assert.Contains($"\"dataLabels\":{{\"position\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}", renderer.RenderHtml());
         }
@@ -1276,10 +1276,10 @@ namespace HC.Series
         public void Test_IfDataLabelsPositionDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = LineSeriesDataLabelsPosition.Center;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Position = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Position = defaultValue;
 
             Assert.DoesNotContain($"position", renderer.RenderHtml());
         }
@@ -1290,9 +1290,9 @@ namespace HC.Series
         public void Test_IfDataLabelsRotationRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Rotation = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Rotation = value;
 
             Assert.Contains($"\"dataLabels\":{{\"rotation\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
         }
@@ -1301,10 +1301,10 @@ namespace HC.Series
         public void Test_IfDataLabelsRotationDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Rotation = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Rotation = defaultValue;
 
             Assert.DoesNotContain($"rotation", renderer.RenderHtml());
         }
@@ -1313,10 +1313,10 @@ namespace HC.Series
         public void Test_IfDataLabelsShadowBoolRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool value = true;
 
-            ((LineSeries)chart.Series[0]).DataLabels.ShadowBool = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.ShadowBool = value;
 
             Assert.Contains($"\"dataLabels\":{{\"shadow\":{chart.FirstCharacterToLower(value.ToString())}}}", renderer.RenderHtml());
         }
@@ -1327,9 +1327,9 @@ namespace HC.Series
         public void Test_IfDataLabelsShadowRenders_Correct(string color, int offsetX, int offsetY, double opacity, int width)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Shadow = new Shadow()
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Shadow = new Shadow()
             {
                 Color = color,
                 OffsetX = offsetX,
@@ -1351,10 +1351,10 @@ namespace HC.Series
         public void Test_IfDataLabelsShadowBoolDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = false;
 
-            ((LineSeries)chart.Series[0]).DataLabels.ShadowBool = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.ShadowBool = defaultValue;
 
             Assert.DoesNotContain($"shadow", renderer.RenderHtml());
         }
@@ -1368,9 +1368,9 @@ namespace HC.Series
         public void Test_IfDataLabelsShapeRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Shape = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Shape = value;
 
             Assert.Contains($"\"dataLabels\":{{\"shape\":\"{value}\"}}", renderer.RenderHtml());
         }
@@ -1379,10 +1379,10 @@ namespace HC.Series
         public void Test_IfDataLabelsShapeDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "square";
 
-            ((LineSeries)chart.Series[0]).DataLabels.Shape = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Shape = defaultValue;
 
             Assert.DoesNotContain($"shape", renderer.RenderHtml());
         }
@@ -1408,12 +1408,12 @@ namespace HC.Series
         public void Test_IfDataLabelsStyleStringRenders_Correct(string param1, string param1_value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dataLabels", "style" };
             var style = new Hashtable();
             style.Add(param1, param1_value);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Style = style;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Style = style;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString(param1, param1_value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1427,12 +1427,12 @@ namespace HC.Series
         public void Test_IfDataLabelsStyleNumberRenders_Correct(string param1, double param1_value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dataLabels", "style" };
             var style = new Hashtable();
             style.Add(param1, param1_value);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Style = style;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Style = style;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString(param1, param1_value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1447,10 +1447,10 @@ namespace HC.Series
         public void Test_IfDataLabelsTextPathEnabledRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "dataLabels", "textPath" };
 
-            ((LineSeries)chart.Series[0]).DataLabels.TextPath.Enabled = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.TextPath.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1459,10 +1459,10 @@ namespace HC.Series
         public void Test_IfDataLabelsTextPathEnabledDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DataLabels.TextPath.Enabled = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.TextPath.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -1473,10 +1473,10 @@ namespace HC.Series
         public void Test_IfDataLabelsUseHTMLRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = true;
 
-            ((LineSeries)chart.Series[0]).DataLabels.UseHTML = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.UseHTML = value;
 
             Assert.Contains($"\"dataLabels\":{{\"useHTML\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -1485,10 +1485,10 @@ namespace HC.Series
         public void Test_IfDataLabelsUseHTMLDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = false;
 
-            ((LineSeries)chart.Series[0]).DataLabels.UseHTML = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.UseHTML = defaultValue;
 
             Assert.DoesNotContain($"useHTML", renderer.RenderHtml());
         }
@@ -1499,9 +1499,9 @@ namespace HC.Series
         public void Test_IfDataLabelsVerticalAlignRenders_Correct(LineSeriesDataLabelsVerticalAlign align)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.VerticalAlign = align;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.VerticalAlign = align;
 
             Assert.Contains($"\"dataLabels\":{{\"verticalAlign\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}", renderer.RenderHtml());
         }
@@ -1510,10 +1510,10 @@ namespace HC.Series
         public void Test_IfDataLabelsVerticalAlignDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = LineSeriesDataLabelsVerticalAlign.Bottom;
 
-            ((LineSeries)chart.Series[0]).DataLabels.VerticalAlign = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.VerticalAlign = defaultValue;
 
             Assert.DoesNotContain($"verticalAlign", renderer.RenderHtml());
         }
@@ -1524,9 +1524,9 @@ namespace HC.Series
         public void Test_IfDataLabelsXRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.X = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.X = value;
 
             Assert.Contains($"\"dataLabels\":{{\"x\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
         }
@@ -1535,10 +1535,10 @@ namespace HC.Series
         public void Test_IfDataLabelsXDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).DataLabels.X = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.X = defaultValue;
 
             Assert.DoesNotContain($"\"dataLabels\":{{\"x\":", renderer.RenderHtml());
         }
@@ -1549,9 +1549,9 @@ namespace HC.Series
         public void Test_IfDataLabelsYRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Y = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Y = value;
 
             Assert.Contains($"\"dataLabels\":{{\"y\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
         }
@@ -1560,10 +1560,10 @@ namespace HC.Series
         public void Test_IfDataLabelsYDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Y = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Y = defaultValue;
 
             Assert.DoesNotContain($"\"dataLabels\":{{\"y\":", renderer.RenderHtml());
         }
@@ -1574,9 +1574,9 @@ namespace HC.Series
         public void Test_IfDataLabelsZRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).DataLabels.Z = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Z = value;
 
             Assert.Contains($"\"dataLabels\":{{\"z\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
         }
@@ -1585,10 +1585,10 @@ namespace HC.Series
         public void Test_IfDataLabelsZDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 6;
 
-            ((LineSeries)chart.Series[0]).DataLabels.Z = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataLabels.Z = defaultValue;
 
             Assert.DoesNotContain($"\"dataLabels\":{{\"z\":", renderer.RenderHtml());
         }
@@ -1603,10 +1603,10 @@ namespace HC.Series
         public void Test_IfDataSortingEnabledRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "dataSorting" };
 
-            ((LineSeries)chart.Series[0]).DataSorting.Enabled = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataSorting.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1615,10 +1615,10 @@ namespace HC.Series
         public void Test_IfDataSortingEnabledDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DataSorting.Enabled = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataSorting.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -1629,10 +1629,10 @@ namespace HC.Series
         public void Test_IfDataSortingMatchByNameRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "dataSorting" };
 
-            ((LineSeries)chart.Series[0]).DataSorting.MatchByName = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataSorting.MatchByName = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("matchByName", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1641,10 +1641,10 @@ namespace HC.Series
         public void Test_IfDataSortingMatchByNameDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DataSorting.MatchByName = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataSorting.MatchByName = defaultValue;
 
             Assert.DoesNotContain($"matchByName", renderer.RenderHtml());
         }
@@ -1655,10 +1655,10 @@ namespace HC.Series
         public void Test_IfDataSortingSortKeyRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dataSorting" };
 
-            ((LineSeries)chart.Series[0]).DataSorting.SortKey = value;
+            ((ArcdiagramSeries)chart.Series[0]).DataSorting.SortKey = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("sortKey", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1667,10 +1667,10 @@ namespace HC.Series
         public void Test_IfDataSortingSortKeyDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "y";
 
-            ((LineSeries)chart.Series[0]).DataSorting.SortKey = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DataSorting.SortKey = defaultValue;
 
             Assert.DoesNotContain($"sortKey", renderer.RenderHtml());
         }
@@ -1682,9 +1682,9 @@ namespace HC.Series
         public void Test_IfDescriptionRenders_Correct(string description)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Description = description;
+            ((ArcdiagramSeries)chart.Series[0]).Description = description;
 
             Assert.Contains($"\"description\":\"{description}\"", renderer.RenderHtml());
         }
@@ -1697,10 +1697,10 @@ namespace HC.Series
         public void Test_IfDragDropDraggableXRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "dragDrop" };
 
-            ((LineSeries)chart.Series[0]).DragDrop.DraggableX = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DraggableX = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("draggableX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1709,10 +1709,10 @@ namespace HC.Series
         public void Test_IfDragDropDraggableXDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DragDrop.DraggableX = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DraggableX = defaultValue;
 
             Assert.DoesNotContain($"draggableX", renderer.RenderHtml());
         }
@@ -1723,10 +1723,10 @@ namespace HC.Series
         public void Test_IfDragDropDraggableYRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "dragDrop" };
 
-            ((LineSeries)chart.Series[0]).DragDrop.DraggableY = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DraggableY = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("draggableY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1735,10 +1735,10 @@ namespace HC.Series
         public void Test_IfDragDropDraggableYDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DragDrop.DraggableY = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DraggableY = defaultValue;
 
             Assert.DoesNotContain($"draggableY", renderer.RenderHtml());
         }
@@ -1749,10 +1749,10 @@ namespace HC.Series
         public void Test_IfDragDropDragMaxXRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop" };
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragMaxX = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragMaxX = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMaxX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1761,10 +1761,10 @@ namespace HC.Series
         public void Test_IfDragDropDragMaxXDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragMaxX = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragMaxX = defaultValue;
 
             Assert.DoesNotContain($"dragMaxX", renderer.RenderHtml());
         }
@@ -1775,10 +1775,10 @@ namespace HC.Series
         public void Test_IfDragDropDragMaxYRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop" };
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragMaxY = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragMaxY = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMaxY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1787,10 +1787,10 @@ namespace HC.Series
         public void Test_IfDragDropDragMaxYDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragMaxY = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragMaxY = defaultValue;
 
             Assert.DoesNotContain($"dragMaxY", renderer.RenderHtml());
         }
@@ -1801,10 +1801,10 @@ namespace HC.Series
         public void Test_IfDragDropDragMinXRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop" };
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragMinX = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragMinX = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMinX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1813,10 +1813,10 @@ namespace HC.Series
         public void Test_IfDragDropDragMinXDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragMinX = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragMinX = defaultValue;
 
             Assert.DoesNotContain($"dragMinX", renderer.RenderHtml());
         }
@@ -1827,10 +1827,10 @@ namespace HC.Series
         public void Test_IfDragDropDragMinYRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop" };
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragMinY = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragMinY = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMinY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1839,10 +1839,10 @@ namespace HC.Series
         public void Test_IfDragDropDragMinYDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragMinY = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragMinY = defaultValue;
 
             Assert.DoesNotContain($"dragMinY", renderer.RenderHtml());
         }
@@ -1853,11 +1853,11 @@ namespace HC.Series
         public void Test_IfDragDropDragPrecisionXRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop" };
 
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragPrecisionX = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragPrecisionX = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragPrecisionX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1866,10 +1866,10 @@ namespace HC.Series
         public void Test_IfDragDropDragPrecisionXDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragPrecisionX = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragPrecisionX = defaultValue;
 
             Assert.DoesNotContain($"dragPrecisionX", renderer.RenderHtml());
         }
@@ -1880,11 +1880,11 @@ namespace HC.Series
         public void Test_IfDragDropDragPrecisionYRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop" };
 
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragPrecisionY = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragPrecisionY = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragPrecisionY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1893,10 +1893,10 @@ namespace HC.Series
         public void Test_IfDragDropDragPrecisionYDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragPrecisionY = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragPrecisionY = defaultValue;
 
             Assert.DoesNotContain($"dragPrecisionY", renderer.RenderHtml());
         }
@@ -1907,11 +1907,11 @@ namespace HC.Series
         public void Test_IfDragDropDragSensitivityRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop" };
 
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragSensitivity = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragSensitivity = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragSensitivity", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1920,10 +1920,10 @@ namespace HC.Series
         public void Test_IfDragDropDragSensitivityDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = 2;
 
-            ((LineSeries)chart.Series[0]).DragDrop.DragSensitivity = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.DragSensitivity = defaultValue;
 
             Assert.DoesNotContain($"dragPrecisionY", renderer.RenderHtml());
         }
@@ -1933,11 +1933,11 @@ namespace HC.Series
         public void Test_IfDragDropGroupByRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop" };
 
 
-            ((LineSeries)chart.Series[0]).DragDrop.GroupBy = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GroupBy = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("groupBy", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1946,10 +1946,10 @@ namespace HC.Series
         public void Test_IfDragDropGroupByDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).DragDrop.GroupBy = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GroupBy = defaultValue;
 
             Assert.DoesNotContain($"groupBy", renderer.RenderHtml());
         }
@@ -1959,11 +1959,11 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultClassNameRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.ClassName = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.ClassName = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("className", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1972,10 +1972,10 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "highcharts-drag-box-default";
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.ClassName = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.ClassName = defaultValue;
 
             Assert.DoesNotContain($"className", renderer.RenderHtml());
         }
@@ -1985,11 +1985,11 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.Color = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.Color = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("color", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1998,10 +1998,10 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultColorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "rgba(0, 0, 0, 0.1)";
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.Color = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.Color = defaultValue;
 
             Assert.DoesNotContain($"color", renderer.RenderHtml());
         }
@@ -2011,11 +2011,11 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultCursorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.Cursor = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.Cursor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("cursor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2024,10 +2024,10 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultCursorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "move";
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.Cursor = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.Cursor = defaultValue;
 
             Assert.DoesNotContain($"cursor", renderer.RenderHtml());
         }
@@ -2037,11 +2037,11 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultLineColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineColor = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2050,10 +2050,10 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultLineColorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "#888";
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineColor = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineColor = defaultValue;
 
             Assert.DoesNotContain($"lineColor", renderer.RenderHtml());
         }
@@ -2063,11 +2063,11 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultLineWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineWidth = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2076,10 +2076,10 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultLineWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 1;
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineWidth = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -2089,11 +2089,11 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultZIndexRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.ZIndex = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.ZIndex = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("zIndex", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2102,10 +2102,10 @@ namespace HC.Series
         public void Test_IfDragDropGuideBoxDefaultZIndexDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 900;
 
-            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.ZIndex = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.GuideBox.Default.ZIndex = defaultValue;
 
             Assert.DoesNotContain($"zIndex", renderer.RenderHtml());
         }
@@ -2114,11 +2114,11 @@ namespace HC.Series
         public void Test_IfDragDropLiveRedrawRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "dragDrop" };
             bool value = false;
 
-            ((LineSeries)chart.Series[0]).DragDrop.LiveRedraw = value;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.LiveRedraw = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("liveRedraw", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2127,10 +2127,10 @@ namespace HC.Series
         public void Test_IfDragDropLiveRedrawDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool defaultValue = true;
 
-            ((LineSeries)chart.Series[0]).DragDrop.LiveRedraw = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).DragDrop.LiveRedraw = defaultValue;
 
             Assert.DoesNotContain($"liveRedraw", renderer.RenderHtml());
         }
@@ -2141,10 +2141,10 @@ namespace HC.Series
         public void Test_IfEnableMouseTrackingRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = false;
 
-            ((LineSeries)chart.Series[0]).EnableMouseTracking = value;
+            ((ArcdiagramSeries)chart.Series[0]).EnableMouseTracking = value;
 
             Assert.Contains($"\"enableMouseTracking\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -2153,10 +2153,10 @@ namespace HC.Series
         public void Test_IfEnableMouseTrackingDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = true;
 
-            ((LineSeries)chart.Series[0]).EnableMouseTracking = value;
+            ((ArcdiagramSeries)chart.Series[0]).EnableMouseTracking = value;
 
             Assert.DoesNotContain($"\"enableMouseTracking\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -2168,10 +2168,10 @@ namespace HC.Series
         public void Test_IfEventsAfterAnimateRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "events" };
 
-            ((LineSeries)chart.Series[0]).Events.AfterAnimate = value;
+            ((ArcdiagramSeries)chart.Series[0]).Events.AfterAnimate = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("afterAnimate", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2180,10 +2180,10 @@ namespace HC.Series
         public void Test_IfEventsAfterAnimateDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Events.AfterAnimate = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Events.AfterAnimate = defaultValue;
 
             Assert.DoesNotContain($"afterAnimate", renderer.RenderHtml());
         }
@@ -2193,10 +2193,10 @@ namespace HC.Series
         public void Test_IfEventsCheckboxClickRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "events" };
 
-            ((LineSeries)chart.Series[0]).Events.CheckboxClick = value;
+            ((ArcdiagramSeries)chart.Series[0]).Events.CheckboxClick = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("checkboxClick", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2205,10 +2205,10 @@ namespace HC.Series
         public void Test_IfEventsCheckboxClickDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Events.CheckboxClick = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Events.CheckboxClick = defaultValue;
 
             Assert.DoesNotContain($"checkboxClick", renderer.RenderHtml());
         }
@@ -2218,10 +2218,10 @@ namespace HC.Series
         public void Test_IfEventsClickRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "events" };
 
-            ((LineSeries)chart.Series[0]).Events.Click = value;
+            ((ArcdiagramSeries)chart.Series[0]).Events.Click = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("click", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2230,10 +2230,10 @@ namespace HC.Series
         public void Test_IfEventsclickDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Events.Click = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Events.Click = defaultValue;
 
             Assert.DoesNotContain($"click", renderer.RenderHtml());
         }
@@ -2243,10 +2243,10 @@ namespace HC.Series
         public void Test_IfEventsHideRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "events" };
 
-            ((LineSeries)chart.Series[0]).Events.Hide = value;
+            ((ArcdiagramSeries)chart.Series[0]).Events.Hide = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("hide", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2255,10 +2255,10 @@ namespace HC.Series
         public void Test_IfEventsHideDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Events.Hide = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Events.Hide = defaultValue;
 
             Assert.DoesNotContain($"hide", renderer.RenderHtml());
         }
@@ -2268,10 +2268,10 @@ namespace HC.Series
         public void Test_IfEventsLegendItemClickRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "events" };
 
-            ((LineSeries)chart.Series[0]).Events.LegendItemClick = value;
+            ((ArcdiagramSeries)chart.Series[0]).Events.LegendItemClick = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("legendItemClick", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2280,10 +2280,10 @@ namespace HC.Series
         public void Test_IfEventsLegendItemClickDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Events.LegendItemClick = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Events.LegendItemClick = defaultValue;
 
             Assert.DoesNotContain($"legendItemClick", renderer.RenderHtml());
         }
@@ -2293,10 +2293,10 @@ namespace HC.Series
         public void Test_IfEventsMouseOutRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "events" };
 
-            ((LineSeries)chart.Series[0]).Events.MouseOut = value;
+            ((ArcdiagramSeries)chart.Series[0]).Events.MouseOut = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("mouseOut", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2305,10 +2305,10 @@ namespace HC.Series
         public void Test_IfEventsMouseOutDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Events.MouseOut = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Events.MouseOut = defaultValue;
 
             Assert.DoesNotContain($"mouseOut", renderer.RenderHtml());
         }
@@ -2318,10 +2318,10 @@ namespace HC.Series
         public void Test_IfEventsMouseOverRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "events" };
 
-            ((LineSeries)chart.Series[0]).Events.MouseOver = value;
+            ((ArcdiagramSeries)chart.Series[0]).Events.MouseOver = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("mouseOver", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2330,10 +2330,10 @@ namespace HC.Series
         public void Test_IfEventsMouseOverDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Events.MouseOver = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Events.MouseOver = defaultValue;
 
             Assert.DoesNotContain($"mouseOver", renderer.RenderHtml());
         }
@@ -2343,10 +2343,10 @@ namespace HC.Series
         public void Test_IfEventsShowRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "events" };
 
-            ((LineSeries)chart.Series[0]).Events.Show = value;
+            ((ArcdiagramSeries)chart.Series[0]).Events.Show = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("show", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2355,10 +2355,10 @@ namespace HC.Series
         public void Test_IfEventsShowDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Events.Show = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Events.Show = defaultValue;
 
             Assert.DoesNotContain($"show", renderer.RenderHtml());
         }
@@ -2370,10 +2370,10 @@ namespace HC.Series
         public void Test_IfFindNearestPointByRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = LineSeriesFindNearestPointBy.Xy;
 
-            ((LineSeries)chart.Series[0]).FindNearestPointBy = value;
+            ((ArcdiagramSeries)chart.Series[0]).FindNearestPointBy = value;
 
             Assert.Contains($"\"findNearestPointBy\":\"{value.ToString().ToLower()}\"", renderer.RenderHtml());
         }
@@ -2382,10 +2382,10 @@ namespace HC.Series
         public void Test_IfFindNearestPointByDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = LineSeriesFindNearestPointBy.X;
 
-            ((LineSeries)chart.Series[0]).FindNearestPointBy = value;
+            ((ArcdiagramSeries)chart.Series[0]).FindNearestPointBy = value;
 
             Assert.DoesNotContain($"\"findNearestPointBy\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -2394,10 +2394,10 @@ namespace HC.Series
         public void Test_IfGetExtremesFromAllRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = true;
 
-            ((LineSeries)chart.Series[0]).GetExtremesFromAll = value;
+            ((ArcdiagramSeries)chart.Series[0]).GetExtremesFromAll = value;
 
             Assert.Contains($"\"getExtremesFromAll\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -2406,10 +2406,10 @@ namespace HC.Series
         public void Test_IfGetExtremesFromAllDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = false;
 
-            ((LineSeries)chart.Series[0]).GetExtremesFromAll = value;
+            ((ArcdiagramSeries)chart.Series[0]).GetExtremesFromAll = value;
 
             Assert.DoesNotContain($"\"getExtremesFromAll\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -2420,9 +2420,9 @@ namespace HC.Series
         public void Test_IfIncludeInDataExportFromAllRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).IncludeInDataExport = value;
+            ((ArcdiagramSeries)chart.Series[0]).IncludeInDataExport = value;
 
             Assert.Contains($"\"includeInDataExport\":{value.ToString().ToLower()}", renderer.RenderHtml());
         }
@@ -2431,10 +2431,10 @@ namespace HC.Series
         public void Test_IfIncludeInDataExportFromAllDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? value = null;
 
-            ((LineSeries)chart.Series[0]).IncludeInDataExport = value;
+            ((ArcdiagramSeries)chart.Series[0]).IncludeInDataExport = value;
 
             Assert.DoesNotContain($"\"includeInDataExport\":{value}", renderer.RenderHtml());
         }
@@ -2444,10 +2444,10 @@ namespace HC.Series
         public void Test_IfKeysRenders_Correct(string arg1, string arg2, string arg3, string arg4)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = new List<string> { arg1, arg2, arg3, arg4 };
 
-            ((LineSeries)chart.Series[0]).Keys = value;
+            ((ArcdiagramSeries)chart.Series[0]).Keys = value;
 
             Assert.Contains($"\"keys\":[\"{arg1}\",\"{arg2}\",\"{arg3}\",\"{arg4}\"]", renderer.RenderHtml());
         }
@@ -2457,10 +2457,10 @@ namespace HC.Series
         //public void Test_IfKeysDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var value = new List<string>();
 
-        //    ((LineSeries)chart.Series[0]).Keys = value;
+        //    ((ArcdiagramSeries)chart.Series[0]).Keys = value;
 
         //    Assert.DoesNotContain($"\"keys\":", renderer.RenderHtml());
         //}
@@ -2473,11 +2473,11 @@ namespace HC.Series
         public void Test_IfLabelConnectorAllowedRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "label" };
             var value = true;
 
-            ((LineSeries)chart.Series[0]).Label.ConnectorAllowed = value;
+            ((ArcdiagramSeries)chart.Series[0]).Label.ConnectorAllowed = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("connectorAllowed", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2486,10 +2486,10 @@ namespace HC.Series
         public void Test_IfLabelConnectorAllowedDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = false;
 
-            ((LineSeries)chart.Series[0]).Label.ConnectorAllowed = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Label.ConnectorAllowed = defaultValue;
 
             Assert.DoesNotContain($"connectorAllowed", renderer.RenderHtml());
         }
@@ -2499,10 +2499,10 @@ namespace HC.Series
         public void Test_IfLabelConnectorNeighbourDistanceRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "label" };
 
-            ((LineSeries)chart.Series[0]).Label.ConnectorNeighbourDistance = value;
+            ((ArcdiagramSeries)chart.Series[0]).Label.ConnectorNeighbourDistance = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("connectorNeighbourDistance", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2511,10 +2511,10 @@ namespace HC.Series
         public void Test_IfLabelConnectorNeighbourDistanceDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 24;
 
-            ((LineSeries)chart.Series[0]).Label.ConnectorNeighbourDistance = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Label.ConnectorNeighbourDistance = defaultValue;
 
             Assert.DoesNotContain($"connectorNeighbourDistance", renderer.RenderHtml());
         }
@@ -2523,11 +2523,11 @@ namespace HC.Series
         public void Test_IfLabelEnabledRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "label" };
             var value = false;
 
-            ((LineSeries)chart.Series[0]).Label.Enabled = value;
+            ((ArcdiagramSeries)chart.Series[0]).Label.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2536,10 +2536,10 @@ namespace HC.Series
         public void Test_IfLabelEnabledDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = true;
 
-            ((LineSeries)chart.Series[0]).Label.Enabled = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Label.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -2549,10 +2549,10 @@ namespace HC.Series
         public void Test_IfLabelFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "label" };
 
-            ((LineSeries)chart.Series[0]).Label.Format = value;
+            ((ArcdiagramSeries)chart.Series[0]).Label.Format = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("format", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2566,10 +2566,10 @@ namespace HC.Series
         //public void Test_IfLabelFormatDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = string.Empty;
 
-        //    ((LineSeries)chart.Series[0]).Label.Format = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).Label.Format = defaultValue;
 
         //    Assert.DoesNotContain($"format", renderer.RenderHtml());
         //}
@@ -2579,10 +2579,10 @@ namespace HC.Series
         public void Test_IfLabelFormatterRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "label" };
 
-            ((LineSeries)chart.Series[0]).Label.Formatter = value;
+            ((ArcdiagramSeries)chart.Series[0]).Label.Formatter = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("formatter", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2591,10 +2591,10 @@ namespace HC.Series
         public void Test_IfLabelFormatterDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Label.Formatter = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Label.Formatter = defaultValue;
 
             Assert.DoesNotContain($"formatter", renderer.RenderHtml());
         }
@@ -2604,10 +2604,10 @@ namespace HC.Series
         public void Test_IfLabelMaxFontSizeRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "label" };
 
-            ((LineSeries)chart.Series[0]).Label.MaxFontSize = value;
+            ((ArcdiagramSeries)chart.Series[0]).Label.MaxFontSize = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("maxFontSize", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2616,10 +2616,10 @@ namespace HC.Series
         public void Test_IfLabelMaxFontSizeDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).Label.MaxFontSize = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Label.MaxFontSize = defaultValue;
 
             Assert.DoesNotContain($"maxFontSize", renderer.RenderHtml());
         }
@@ -2629,10 +2629,10 @@ namespace HC.Series
         public void Test_IfLabelMinFontSizeRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "label" };
 
-            ((LineSeries)chart.Series[0]).Label.MinFontSize = value;
+            ((ArcdiagramSeries)chart.Series[0]).Label.MinFontSize = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("minFontSize", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2641,10 +2641,10 @@ namespace HC.Series
         public void Test_IfLabelMinFontSizeDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).Label.MinFontSize = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Label.MinFontSize = defaultValue;
 
             Assert.DoesNotContain($"minFontSize", renderer.RenderHtml());
         }
@@ -2655,10 +2655,10 @@ namespace HC.Series
         public void Test_IfLabelOnAreaRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "label" };
 
-            ((LineSeries)chart.Series[0]).Label.OnArea = value;
+            ((ArcdiagramSeries)chart.Series[0]).Label.OnArea = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("onArea", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2667,10 +2667,10 @@ namespace HC.Series
         public void Test_IfLabelOnAreaDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).Label.OnArea = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Label.OnArea = defaultValue;
 
             Assert.DoesNotContain($"onArea", renderer.RenderHtml());
         }
@@ -2680,13 +2680,13 @@ namespace HC.Series
         public void Test_IfLabelStyleRenders_Correct(string paramName, string paramValue)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "label" };
             var value = new Hashtable();
             value.Add(paramName, paramValue);
 
 
-            ((LineSeries)chart.Series[0]).Label.Style = value;
+            ((ArcdiagramSeries)chart.Series[0]).Label.Style = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetHashtablePropertyString("style", paramName, paramValue)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2699,10 +2699,10 @@ namespace HC.Series
         //public void Test_IfLabelStyleDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = new Hashtable();
 
-        //    ((LineSeries)chart.Series[0]).Label.Style = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).Label.Style = defaultValue;
 
         //    Assert.DoesNotContain($"style", renderer.RenderHtml());
         //}
@@ -2719,9 +2719,9 @@ namespace HC.Series
         //public void Test_IfLinecapRenders_Correct(LineSeriesLinecap value)
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-        //    ((LineSeries)chart.Series[0]).Linecap = value;
+        //    ((ArcdiagramSeries)chart.Series[0]).Linecap = value;
 
         //    Assert.Contains($"\"linecap\":\"{chart.FirstCharacterToLower(value.ToString())}\"", renderer.RenderHtml());
         //}
@@ -2730,10 +2730,10 @@ namespace HC.Series
         //public void Test_IfLinecapDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = LineSeriesLinecap.Round;
 
-        //    ((LineSeries)chart.Series[0]).Linecap = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).Linecap = defaultValue;
 
         //    Assert.DoesNotContain($"\"linecap\":{defaultValue.ToString().ToLower()}", renderer.RenderHtml());
         //}
@@ -2745,9 +2745,9 @@ namespace HC.Series
         public void Test_IfLineWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).LineWidth = value;
+            ((ArcdiagramSeries)chart.Series[0]).LineWidth = value;
 
             Assert.Contains($"\"lineWidth\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}", renderer.RenderHtml());
         }
@@ -2756,10 +2756,10 @@ namespace HC.Series
         public void Test_IfLineWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 2;
 
-            ((LineSeries)chart.Series[0]).LineWidth = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).LineWidth = defaultValue;
 
             Assert.DoesNotContain($"\"lineWidth\":{string.Format(new CultureInfo("en-us"), "{0:N1}", defaultValue)}", renderer.RenderHtml());
         }
@@ -2770,9 +2770,9 @@ namespace HC.Series
         public void Test_IfLinkedToRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).LinkedTo = value;
+            ((ArcdiagramSeries)chart.Series[0]).LinkedTo = value;
 
             Assert.Contains($"\"linkedTo\":\"{value}\"", renderer.RenderHtml());
         }
@@ -2781,10 +2781,10 @@ namespace HC.Series
         public void Test_IfLinkedToDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             string defaultValue = String.Empty;
 
-            ((LineSeries)chart.Series[0]).LinkedTo = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).LinkedTo = defaultValue;
 
             Assert.DoesNotContain($"\"linkedTo\":{defaultValue}", renderer.RenderHtml());
         }
@@ -2797,10 +2797,10 @@ namespace HC.Series
         public void Test_IfMarkerEnabledRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "marker" };
 
-            ((LineSeries)chart.Series[0]).Marker.Enabled = value;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2809,10 +2809,10 @@ namespace HC.Series
         public void Test_IfMarkerEnabledDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).Marker.Enabled = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -2823,10 +2823,10 @@ namespace HC.Series
         public void Test_IfMarkerEnabledThresholdRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "marker" };
 
-            ((LineSeries)chart.Series[0]).Marker.EnabledThreshold = value;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.EnabledThreshold = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabledThreshold", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2835,10 +2835,10 @@ namespace HC.Series
         public void Test_IfMarkerEnabledThresholdDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double defaultValue = 2;
 
-            ((LineSeries)chart.Series[0]).Marker.EnabledThreshold = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.EnabledThreshold = defaultValue;
 
             Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         }
@@ -2848,10 +2848,10 @@ namespace HC.Series
         public void Test_IfMarkerFillColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "marker" };
 
-            ((LineSeries)chart.Series[0]).Marker.FillColor = value;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.FillColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("fillColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2864,10 +2864,10 @@ namespace HC.Series
         //public void Test_IfMarkerFillColorDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = string.Empty;
 
-        //    ((LineSeries)chart.Series[0]).Marker.FillColor = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).Marker.FillColor = defaultValue;
 
         //    Assert.DoesNotContain($"fillColor", renderer.RenderHtml());
         //}
@@ -2878,10 +2878,10 @@ namespace HC.Series
         public void Test_IfMarkerHeightRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "marker" };
 
-            ((LineSeries)chart.Series[0]).Marker.Height = value;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.Height = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("height", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2890,10 +2890,10 @@ namespace HC.Series
         public void Test_IfMarkerHeightDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).Marker.Height = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.Height = defaultValue;
 
             Assert.DoesNotContain($"\"height\":", renderer.RenderHtml());
         }
@@ -2903,10 +2903,10 @@ namespace HC.Series
         public void Test_IfMarkerLineColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "marker" };
 
-            ((LineSeries)chart.Series[0]).Marker.LineColor = value;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.LineColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2916,10 +2916,10 @@ namespace HC.Series
         public void Test_IfMarkerLineColorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "#ffffff";
 
-            ((LineSeries)chart.Series[0]).Marker.LineColor = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.LineColor = defaultValue;
 
             Assert.DoesNotContain($"lineColor", renderer.RenderHtml());
         }
@@ -2929,10 +2929,10 @@ namespace HC.Series
         public void Test_IfMarkerLineWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "marker" };
 
-            ((LineSeries)chart.Series[0]).Marker.LineWidth = value;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2942,10 +2942,10 @@ namespace HC.Series
         public void Test_IfMarkerLineWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).Marker.LineWidth = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -2955,10 +2955,10 @@ namespace HC.Series
         public void Test_IfMarkerRadiusRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "marker" };
 
-            ((LineSeries)chart.Series[0]).Marker.Radius = value;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.Radius = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("radius", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2968,10 +2968,10 @@ namespace HC.Series
         public void Test_IfMarkerRadiusDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 4;
 
-            ((LineSeries)chart.Series[0]).Marker.Radius = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.Radius = defaultValue;
 
             Assert.DoesNotContain($"radius", renderer.RenderHtml());
         }
@@ -2988,10 +2988,10 @@ namespace HC.Series
         public void Test_IfMarkerSymbolRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "marker" };
 
-            ((LineSeries)chart.Series[0]).Marker.Symbol = value;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.Symbol = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("symbol", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3000,10 +3000,10 @@ namespace HC.Series
         public void Test_IfMarkerSymbolDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Marker.Symbol = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.Symbol = defaultValue;
 
             Assert.DoesNotContain($"symbol", renderer.RenderHtml());
         }
@@ -3014,10 +3014,10 @@ namespace HC.Series
         public void Test_IfMarkerWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "marker" };
 
-            ((LineSeries)chart.Series[0]).Marker.Width = value;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.Width = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("width", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3026,10 +3026,10 @@ namespace HC.Series
         public void Test_IfMarkerWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).Marker.Width = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Marker.Width = defaultValue;
 
             Assert.DoesNotContain($"\"width\":", renderer.RenderHtml());
         }
@@ -3042,9 +3042,9 @@ namespace HC.Series
         public void Test_IfNegativeColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).NegativeColor = value;
+            ((ArcdiagramSeries)chart.Series[0]).NegativeColor = value;
 
             Assert.Contains($"\"negativeColor\":\"{value}\"", renderer.RenderHtml());
         }
@@ -3053,10 +3053,10 @@ namespace HC.Series
         public void Test_IfNegativeColorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             string defaultValue = String.Empty;
 
-            ((LineSeries)chart.Series[0]).NegativeColor = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).NegativeColor = defaultValue;
 
             Assert.DoesNotContain($"\"negativeColor\":{defaultValue}", renderer.RenderHtml());
         }
@@ -3069,10 +3069,10 @@ namespace HC.Series
         //public void Test_IfOnPointConnectorOptionsDashStyleRenders_Correct(string value)
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var pathToProperty = new List<string>() { "onPoint", "connectorOptions" };
 
-        //    ((LineSeries)chart.Series[0]).OnPoint.ConnectorOptions.Dashstyle = value;
+        //    ((ArcdiagramSeries)chart.Series[0]).OnPoint.ConnectorOptions.Dashstyle = value;
 
         //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dashstyle", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         //}
@@ -3081,10 +3081,10 @@ namespace HC.Series
         //public void Test_IfOnPointConnectorOptionsDashStyleDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = string.Empty;
 
-        //    ((LineSeries)chart.Series[0]).DataLabels.Color = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).DataLabels.Color = defaultValue;
 
         //    Assert.DoesNotContain($"color", renderer.RenderHtml());
         //}
@@ -3094,10 +3094,10 @@ namespace HC.Series
         public void Test_IfOnPointConnectorOptionsStrokeRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "onPoint", "connectorOptions" };
 
-            ((LineSeries)chart.Series[0]).OnPoint.ConnectorOptions.Stroke = value;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.ConnectorOptions.Stroke = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("stroke", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3106,10 +3106,10 @@ namespace HC.Series
         public void Test_IfOnPointConnectorOptionsStrokeDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).OnPoint.ConnectorOptions.Stroke = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.ConnectorOptions.Stroke = defaultValue;
 
             Assert.DoesNotContain($"stroke", renderer.RenderHtml());
         }
@@ -3119,10 +3119,10 @@ namespace HC.Series
         public void Test_IfOnPointConnectorOptionsWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "onPoint", "connectorOptions" };
 
-            ((LineSeries)chart.Series[0]).OnPoint.ConnectorOptions.Width = value;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.ConnectorOptions.Width = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("width", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3131,10 +3131,10 @@ namespace HC.Series
         public void Test_IfOnPointConnectorOptionsWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 1;
 
-            ((LineSeries)chart.Series[0]).OnPoint.ConnectorOptions.Width = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.ConnectorOptions.Width = defaultValue;
 
             Assert.DoesNotContain($"\"width\":", renderer.RenderHtml());
         }
@@ -3144,10 +3144,10 @@ namespace HC.Series
         public void Test_IfOnPointIdRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "onPoint" };
 
-            ((LineSeries)chart.Series[0]).OnPoint.Id = value;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.Id = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("id", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3156,10 +3156,10 @@ namespace HC.Series
         public void Test_IfOnPointIdDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).OnPoint.Id = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.Id = defaultValue;
 
             Assert.DoesNotContain($"\"id\":", renderer.RenderHtml());
         }
@@ -3169,10 +3169,10 @@ namespace HC.Series
         public void Test_IfOnPointPositionOffsetXRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "onPoint", "position" };
 
-            ((LineSeries)chart.Series[0]).OnPoint.Position.OffsetX = value;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.Position.OffsetX = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("offsetX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3181,10 +3181,10 @@ namespace HC.Series
         public void Test_IfOnPointOffsetXDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).OnPoint.Position.OffsetX = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.Position.OffsetX = defaultValue;
 
             Assert.DoesNotContain($"offsetX", renderer.RenderHtml());
         }
@@ -3194,10 +3194,10 @@ namespace HC.Series
         public void Test_IfOnPointPositionOffsetYRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "onPoint", "position" };
 
-            ((LineSeries)chart.Series[0]).OnPoint.Position.OffsetY = value;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.Position.OffsetY = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("offsetY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3206,10 +3206,10 @@ namespace HC.Series
         public void Test_IfOnPointOffsetYDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).OnPoint.Position.OffsetY = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.Position.OffsetY = defaultValue;
 
             Assert.DoesNotContain($"offsetY", renderer.RenderHtml());
         }
@@ -3219,10 +3219,10 @@ namespace HC.Series
         public void Test_IfOnPointPositionXRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "onPoint", "position" };
 
-            ((LineSeries)chart.Series[0]).OnPoint.Position.X = value;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.Position.X = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("x", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3231,10 +3231,10 @@ namespace HC.Series
         public void Test_IfOnPointXDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).OnPoint.Position.X = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.Position.X = defaultValue;
 
             Assert.DoesNotContain($"\"x\":", renderer.RenderHtml());
         }
@@ -3244,10 +3244,10 @@ namespace HC.Series
         public void Test_IfOnPointPositionYRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "onPoint", "position" };
 
-            ((LineSeries)chart.Series[0]).OnPoint.Position.Y = value;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.Position.Y = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("y", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3256,10 +3256,10 @@ namespace HC.Series
         public void Test_IfOnPointYDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).OnPoint.Position.Y = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).OnPoint.Position.Y = defaultValue;
 
             Assert.DoesNotContain($"\"y\":", renderer.RenderHtml());
         }
@@ -3274,9 +3274,9 @@ namespace HC.Series
         public void Test_IfOpacityRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Opacity = value;
+            ((ArcdiagramSeries)chart.Series[0]).Opacity = value;
 
             Assert.Contains($"\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}", renderer.RenderHtml());
         }
@@ -3285,10 +3285,10 @@ namespace HC.Series
         public void Test_IfOpacityDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 1;
 
-            ((LineSeries)chart.Series[0]).Opacity = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Opacity = defaultValue;
 
             Assert.DoesNotContain($"\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", defaultValue)}", renderer.RenderHtml());
         }
@@ -3300,10 +3300,10 @@ namespace HC.Series
         public void Test_IfPointEventsClickRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "point", "events" };
 
-            ((LineSeries)chart.Series[0]).Point.Events.Click = value;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Click = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("click", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3312,10 +3312,10 @@ namespace HC.Series
         public void Test_IfPointEventsClickDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Point.Events.Click = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Click = defaultValue;
 
             Assert.DoesNotContain($"click", renderer.RenderHtml());
         }
@@ -3325,10 +3325,10 @@ namespace HC.Series
         public void Test_IfPointEventsDragRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "point", "events" };
 
-            ((LineSeries)chart.Series[0]).Point.Events.Drag = value;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Drag = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("drag", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3337,10 +3337,10 @@ namespace HC.Series
         public void Test_IfPointEventsDragDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Point.Events.Drag = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Drag = defaultValue;
 
             Assert.DoesNotContain($"drag", renderer.RenderHtml());
         }
@@ -3350,10 +3350,10 @@ namespace HC.Series
         public void Test_IfPointEventsDragStartRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "point", "events" };
 
-            ((LineSeries)chart.Series[0]).Point.Events.DragStart = value;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.DragStart = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("dragStart", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3362,10 +3362,10 @@ namespace HC.Series
         public void Test_IfPointEventsDragStartDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Point.Events.DragStart = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.DragStart = defaultValue;
 
             Assert.DoesNotContain($"dragStart", renderer.RenderHtml());
         }
@@ -3375,10 +3375,10 @@ namespace HC.Series
         public void Test_IfPointEventsDropRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "point", "events" };
 
-            ((LineSeries)chart.Series[0]).Point.Events.Drop = value;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Drop = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("drop", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3387,10 +3387,10 @@ namespace HC.Series
         public void Test_IfPointEventsDropDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Point.Events.Drop = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Drop = defaultValue;
 
             Assert.DoesNotContain($"drop", renderer.RenderHtml());
         }
@@ -3400,10 +3400,10 @@ namespace HC.Series
         public void Test_IfPointEventsMouseOutRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "point", "events" };
 
-            ((LineSeries)chart.Series[0]).Point.Events.MouseOut = value;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.MouseOut = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("mouseOut", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3412,10 +3412,10 @@ namespace HC.Series
         public void Test_IfPointEventsMouseOutDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Point.Events.MouseOut = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.MouseOut = defaultValue;
 
             Assert.DoesNotContain($"mouseOut", renderer.RenderHtml());
         }
@@ -3425,10 +3425,10 @@ namespace HC.Series
         public void Test_IfPointEventsMouseOverRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "point", "events" };
 
-            ((LineSeries)chart.Series[0]).Point.Events.MouseOver = value;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.MouseOver = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("mouseOver", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3437,10 +3437,10 @@ namespace HC.Series
         public void Test_IfPointEventsMouseOverDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Point.Events.MouseOver = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.MouseOver = defaultValue;
 
             Assert.DoesNotContain($"mouseOver", renderer.RenderHtml());
         }
@@ -3450,10 +3450,10 @@ namespace HC.Series
         public void Test_IfPointEventsRemoveRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "point", "events" };
 
-            ((LineSeries)chart.Series[0]).Point.Events.Remove = value;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Remove = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("remove", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3462,10 +3462,10 @@ namespace HC.Series
         public void Test_IfPointEventsRemoveDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Point.Events.Remove = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Remove = defaultValue;
 
             Assert.DoesNotContain($"remove", renderer.RenderHtml());
         }
@@ -3475,10 +3475,10 @@ namespace HC.Series
         public void Test_IfPointEventsSelectRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "point", "events" };
 
-            ((LineSeries)chart.Series[0]).Point.Events.Select = value;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Select = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("select", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3487,10 +3487,10 @@ namespace HC.Series
         public void Test_IfPointEventsSelectDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Point.Events.Select = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Select = defaultValue;
 
             Assert.DoesNotContain($"select", renderer.RenderHtml());
         }
@@ -3500,10 +3500,10 @@ namespace HC.Series
         public void Test_IfPointEventsUnselectRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "point", "events" };
 
-            ((LineSeries)chart.Series[0]).Point.Events.Unselect = value;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Unselect = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("unselect", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3512,10 +3512,10 @@ namespace HC.Series
         public void Test_IfPointEventsUnselectDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Point.Events.Unselect = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Unselect = defaultValue;
 
             Assert.DoesNotContain($"unselect", renderer.RenderHtml());
         }
@@ -3525,10 +3525,10 @@ namespace HC.Series
         public void Test_IfPointEventsUpdateRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "point", "events" };
 
-            ((LineSeries)chart.Series[0]).Point.Events.Update = value;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Update = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("update", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3537,10 +3537,10 @@ namespace HC.Series
         public void Test_IfPointEventsUpdateDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Point.Events.Update = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Point.Events.Update = defaultValue;
 
             Assert.DoesNotContain($"update", renderer.RenderHtml());
         }
@@ -3552,9 +3552,9 @@ namespace HC.Series
         public void Test_IfPointDescriptionFormatterRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).PointDescriptionFormatter = value;
+            ((ArcdiagramSeries)chart.Series[0]).PointDescriptionFormatter = value;
 
             Assert.Contains($"\"pointDescriptionFormatter\":{value}", renderer.RenderHtml());
         }
@@ -3563,10 +3563,10 @@ namespace HC.Series
         public void Test_IfPointDescriptionFormatterDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).PointDescriptionFormatter = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).PointDescriptionFormatter = defaultValue;
 
             Assert.DoesNotContain($"\"pointDescriptionFormatter\":{defaultValue}", renderer.RenderHtml());
         }
@@ -3577,9 +3577,9 @@ namespace HC.Series
         public void Test_IfPointIntervalRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).PointInterval = value;
+            ((ArcdiagramSeries)chart.Series[0]).PointInterval = value;
 
             Assert.Contains($"\"pointInterval\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}", renderer.RenderHtml());
         }
@@ -3588,10 +3588,10 @@ namespace HC.Series
         public void Test_IfPointIntervalDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 1;
 
-            ((LineSeries)chart.Series[0]).PointInterval = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).PointInterval = defaultValue;
 
             Assert.DoesNotContain($"pointInterval", renderer.RenderHtml());
         }
@@ -3603,9 +3603,9 @@ namespace HC.Series
         public void Test_IfPointIntervalUnitRenders_Correct(LineSeriesPointIntervalUnit value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).PointIntervalUnit = value;
+            ((ArcdiagramSeries)chart.Series[0]).PointIntervalUnit = value;
 
             Assert.Contains($"\"pointIntervalUnit\":\"{chart.FirstCharacterToLower(value.ToString())}\"", renderer.RenderHtml());
         }
@@ -3614,10 +3614,10 @@ namespace HC.Series
         public void Test_IfPointIntervalUnitDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = LineSeriesPointIntervalUnit.Null;
 
-            ((LineSeries)chart.Series[0]).PointIntervalUnit = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).PointIntervalUnit = defaultValue;
 
             Assert.DoesNotContain($"pointIntervalUnit", renderer.RenderHtml());
         }
@@ -3628,9 +3628,9 @@ namespace HC.Series
         public void Test_IfPointPlacementEnumRenders_Correct(PointPlacementEnum value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).PointPlacement = new PointPlacement() { PointPlacementEnum = value };
+            ((ArcdiagramSeries)chart.Series[0]).PointPlacement = new PointPlacement() { PointPlacementEnum = value };
 
             Assert.Contains($"\"pointPlacement\":\"{chart.FirstCharacterToLower(value.ToString())}\"", renderer.RenderHtml());
         }
@@ -3642,9 +3642,9 @@ namespace HC.Series
         public void Test_IfPointPlacementNumberRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).PointPlacement = new PointPlacement() { Value = value };
+            ((ArcdiagramSeries)chart.Series[0]).PointPlacement = new PointPlacement() { Value = value };
 
             Assert.Contains($"\"pointPlacement\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}", renderer.RenderHtml());
         }
@@ -3653,10 +3653,10 @@ namespace HC.Series
         public void Test_IfPointPlacementDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = PointPlacementEnum.Null;
 
-            ((LineSeries)chart.Series[0]).PointPlacement = new PointPlacement() { PointPlacementEnum = defaultValue };
+            ((ArcdiagramSeries)chart.Series[0]).PointPlacement = new PointPlacement() { PointPlacementEnum = defaultValue };
 
             Assert.DoesNotContain($"pointPlacement", renderer.RenderHtml());
         }
@@ -3667,9 +3667,9 @@ namespace HC.Series
         public void Test_IfPointStartRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).PointStart = value;
+            ((ArcdiagramSeries)chart.Series[0]).PointStart = value;
 
             Assert.Contains($"\"pointStart\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}", renderer.RenderHtml());
         }
@@ -3678,10 +3678,10 @@ namespace HC.Series
         public void Test_IfPointStartDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).PointStart = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).PointStart = defaultValue;
 
             Assert.DoesNotContain($"pointStart", renderer.RenderHtml());
         }
@@ -3690,10 +3690,10 @@ namespace HC.Series
         public void Test_IfRelativeXValueRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool value = true;
 
-            ((LineSeries)chart.Series[0]).RelativeXValue = value;
+            ((ArcdiagramSeries)chart.Series[0]).RelativeXValue = value;
 
             Assert.Contains($"\"relativeXValue\":{chart.FirstCharacterToLower(value.ToString())}", renderer.RenderHtml());
         }
@@ -3702,10 +3702,10 @@ namespace HC.Series
         public void Test_IfRelativeXValueDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = false;
 
-            ((LineSeries)chart.Series[0]).RelativeXValue = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).RelativeXValue = defaultValue;
 
             Assert.DoesNotContain($"relativeXValue", renderer.RenderHtml());
         }
@@ -3714,10 +3714,10 @@ namespace HC.Series
         public void Test_IfSelectedRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool value = true;
 
-            ((LineSeries)chart.Series[0]).Selected = value;
+            ((ArcdiagramSeries)chart.Series[0]).Selected = value;
 
             Assert.Contains($"\"selected\":{chart.FirstCharacterToLower(value.ToString())}", renderer.RenderHtml());
         }
@@ -3726,10 +3726,10 @@ namespace HC.Series
         public void Test_IfSelectedDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = false;
 
-            ((LineSeries)chart.Series[0]).Selected = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Selected = defaultValue;
 
             Assert.DoesNotContain($"selected", renderer.RenderHtml());
         }
@@ -3738,10 +3738,10 @@ namespace HC.Series
         public void Test_IfShadowBoolRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool value = true;
 
-            ((LineSeries)chart.Series[0]).ShadowBool = value;
+            ((ArcdiagramSeries)chart.Series[0]).ShadowBool = value;
 
             Assert.Contains($"\"shadow\":{chart.FirstCharacterToLower(value.ToString())}", renderer.RenderHtml());
         }
@@ -3752,9 +3752,9 @@ namespace HC.Series
         public void Test_IfShadowRenders_Correct(string color, int offsetX, int offsetY, double opacity, int width)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Shadow = new Shadow()
+            ((ArcdiagramSeries)chart.Series[0]).Shadow = new Shadow()
             {
                 Color = color,
                 OffsetX = offsetX,
@@ -3776,10 +3776,10 @@ namespace HC.Series
         public void Test_IfShadowBoolDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = false;
 
-            ((LineSeries)chart.Series[0]).ShadowBool = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).ShadowBool = defaultValue;
 
             Assert.DoesNotContain($"shadow", renderer.RenderHtml());
         }
@@ -3788,10 +3788,10 @@ namespace HC.Series
         public void Test_IfShowCheckboxRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool value = true;
 
-            ((LineSeries)chart.Series[0]).ShowCheckbox = value;
+            ((ArcdiagramSeries)chart.Series[0]).ShowCheckbox = value;
 
             Assert.Contains($"\"showCheckbox\":{chart.FirstCharacterToLower(value.ToString())}", renderer.RenderHtml());
         }
@@ -3800,10 +3800,10 @@ namespace HC.Series
         public void Test_IfShowCheckboxDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = false;
 
-            ((LineSeries)chart.Series[0]).ShowCheckbox = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).ShowCheckbox = defaultValue;
 
             Assert.DoesNotContain($"showCheckbox", renderer.RenderHtml());
         }
@@ -3814,9 +3814,9 @@ namespace HC.Series
         public void Test_IfShowInLegendRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).ShowInLegend = value;
+            ((ArcdiagramSeries)chart.Series[0]).ShowInLegend = value;
 
             Assert.Contains($"\"showInLegend\":{chart.FirstCharacterToLower(value.ToString())}", renderer.RenderHtml());
         }
@@ -3825,9 +3825,9 @@ namespace HC.Series
         public void Test_IfShowInLegendDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).ShowInLegend = null;
+            ((ArcdiagramSeries)chart.Series[0]).ShowInLegend = null;
 
             Assert.DoesNotContain($"showInLegend", renderer.RenderHtml());
         }
@@ -3838,9 +3838,9 @@ namespace HC.Series
         public void Test_IfSkipKeyboardNavigationRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).SkipKeyboardNavigation = value;
+            ((ArcdiagramSeries)chart.Series[0]).SkipKeyboardNavigation = value;
 
             Assert.Contains($"\"skipKeyboardNavigation\":{chart.FirstCharacterToLower(value.ToString())}", renderer.RenderHtml());
         }
@@ -3849,9 +3849,9 @@ namespace HC.Series
         public void Test_IfSkipKeyboardNavigationDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).SkipKeyboardNavigation = null;
+            ((ArcdiagramSeries)chart.Series[0]).SkipKeyboardNavigation = null;
 
             Assert.DoesNotContain($"skipKeyboardNavigation", renderer.RenderHtml());
         }
@@ -3860,10 +3860,10 @@ namespace HC.Series
         public void Test_IfSoftThresholdRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool value = false;
 
-            ((LineSeries)chart.Series[0]).SoftThreshold = value;
+            ((ArcdiagramSeries)chart.Series[0]).SoftThreshold = value;
 
             Assert.Contains($"\"softThreshold\":{chart.FirstCharacterToLower(value.ToString())}", renderer.RenderHtml());
         }
@@ -3872,10 +3872,10 @@ namespace HC.Series
         public void Test_IfSoftThresholdDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = true;
 
-            ((LineSeries)chart.Series[0]).SoftThreshold = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).SoftThreshold = defaultValue;
 
             Assert.DoesNotContain($"softThreshold", renderer.RenderHtml());
         }
@@ -3888,9 +3888,9 @@ namespace HC.Series
         public void Test_IfStackingRenders_Correct(LineSeriesStacking value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Stacking = value;
+            ((ArcdiagramSeries)chart.Series[0]).Stacking = value;
 
             Assert.Contains($"\"stacking\":\"{chart.FirstCharacterToLower(value.ToString())}\"", renderer.RenderHtml());
         }
@@ -3899,10 +3899,10 @@ namespace HC.Series
         public void Test_IfStackingDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = LineSeriesStacking.Null;
 
-            ((LineSeries)chart.Series[0]).Stacking = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Stacking = defaultValue;
 
             Assert.DoesNotContain($"stacking", renderer.RenderHtml());
         }
@@ -3917,10 +3917,10 @@ namespace HC.Series
         public void Test_IfStatesHoverAnimationDurationRenders_Correct(int value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "hover", "animation" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.Animation.Duration = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Animation.Duration = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("duration", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3929,10 +3929,10 @@ namespace HC.Series
         public void Test_IfStatesHoverAnimationDurationDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = -1;
 
-            ((LineSeries)chart.Series[0]).States.Hover.Animation.Duration = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Animation.Duration = defaultValue;
 
             Assert.DoesNotContain($"duration", renderer.RenderHtml());
         }
@@ -3942,11 +3942,11 @@ namespace HC.Series
         public void Test_IfStatesHoverEnabledRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "hover" };
             var value = false;
 
-            ((LineSeries)chart.Series[0]).States.Hover.Enabled = false;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Enabled = false;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3957,10 +3957,10 @@ namespace HC.Series
         //public void Test_IfStatesHoverEnabledDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = true;
 
-        //    ((LineSeries)chart.Series[0]).States.Hover.Enabled = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Hover.Enabled = defaultValue;
 
         //    Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         //}
@@ -3973,10 +3973,10 @@ namespace HC.Series
         //public void Test_IfStatesHoverHaloAttributesRenders_Correct(int value)
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var pathToProperty = new List<string>() { "states", "hover", "halo" };
 
-        //    ((LineSeries)chart.Series[0]).States.Hover.Halo.Attributes = value;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Hover.Halo.Attributes = value;
 
         //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("attributes", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         //}
@@ -3985,10 +3985,10 @@ namespace HC.Series
         //public void Test_IfStatesHoverHaloAttributesDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = new Hashtable();
 
-        //    ((LineSeries)chart.Series[0]).States.Hover.Animation.Duration = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Hover.Animation.Duration = defaultValue;
 
         //    Assert.DoesNotContain($"duration", renderer.RenderHtml());
         //}
@@ -3999,10 +3999,10 @@ namespace HC.Series
         public void Test_IfStatesHoverHaloOpacityRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "hover", "halo" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.Halo.Opacity = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Halo.Opacity = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("opacity", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4013,10 +4013,10 @@ namespace HC.Series
         //public void Test_IfStatesHoverHaloOpacityDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = 0.25;
 
-        //    ((LineSeries)chart.Series[0]).States.Hover.Halo.Opacity = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Hover.Halo.Opacity = defaultValue;
 
         //    Assert.DoesNotContain($"opacity", renderer.RenderHtml());
         //}
@@ -4029,10 +4029,10 @@ namespace HC.Series
         //public void Test_IfStatesHoverHaloSizeRenders_Correct(double value)
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var pathToProperty = new List<string>() { "states", "hover", "halo" };
 
-        //    ((LineSeries)chart.Series[0]).States.Hover.Halo.Size = value;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Hover.Halo.Size = value;
 
         //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("size", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         //}
@@ -4043,10 +4043,10 @@ namespace HC.Series
         //public void Test_IfStatesHoverHaloOpacityDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = 0.25;
 
-        //    ((LineSeries)chart.Series[0]).States.Hover.Halo.Opacity = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Hover.Halo.Opacity = defaultValue;
 
         //    Assert.DoesNotContain($"opacity", renderer.RenderHtml());
         //}
@@ -4058,10 +4058,10 @@ namespace HC.Series
         public void Test_IfStatesHoverLineWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "hover" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.LineWidth = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4070,10 +4070,10 @@ namespace HC.Series
         public void Test_IfStatesHoverLineWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).States.Hover.LineWidth = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -4083,10 +4083,10 @@ namespace HC.Series
         public void Test_IfStatesHoverLineWidthPlusRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "hover" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.LineWidthPlus = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.LineWidthPlus = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidthPlus", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4097,10 +4097,10 @@ namespace HC.Series
         //public void Test_IfStatesHoverLineWidthPlusDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    double? defaultValue = 1;
 
-        //    ((LineSeries)chart.Series[0]).States.Hover.LineWidthPlus = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Hover.LineWidthPlus = defaultValue;
 
         //    Assert.DoesNotContain($"lineWidthPlus", renderer.RenderHtml());
         //}
@@ -4113,10 +4113,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerEnabledRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.Enabled = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4125,10 +4125,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerEnabledDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.Enabled = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -4139,10 +4139,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerEnabledThresholdRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.EnabledThreshold = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.EnabledThreshold = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabledThreshold", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4151,10 +4151,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerEnabledThresholdDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double defaultValue = 2;
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.EnabledThreshold = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.EnabledThreshold = defaultValue;
 
             Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         }
@@ -4164,10 +4164,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerFillColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.FillColor = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.FillColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("fillColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4180,10 +4180,10 @@ namespace HC.Series
         //public void Test_IfStatesHoverMarkerFillColorDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = string.Empty;
 
-        //    ((LineSeries)chart.Series[0]).States.Hover.Marker.FillColor = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.FillColor = defaultValue;
 
         //    Assert.DoesNotContain($"fillColor", renderer.RenderHtml());
         //}
@@ -4194,10 +4194,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerHeightRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.Height = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.Height = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("height", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4206,10 +4206,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerHeightDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.Height = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.Height = defaultValue;
 
             Assert.DoesNotContain($"\"height\":", renderer.RenderHtml());
         }
@@ -4219,10 +4219,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerLineColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.LineColor = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.LineColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4232,10 +4232,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerLineColorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "#ffffff";
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.LineColor = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.LineColor = defaultValue;
 
             Assert.DoesNotContain($"lineColor", renderer.RenderHtml());
         }
@@ -4245,10 +4245,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerLineWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.LineWidth = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4258,10 +4258,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerLineWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.LineWidth = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -4271,10 +4271,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerRadiusRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.Radius = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.Radius = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("radius", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4284,10 +4284,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerRadiusDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 4;
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.Radius = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.Radius = defaultValue;
 
             Assert.DoesNotContain($"radius", renderer.RenderHtml());
         }
@@ -4300,10 +4300,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.Width = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.Width = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("width", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4312,10 +4312,10 @@ namespace HC.Series
         public void Test_IfStatesHoverMarkerWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).States.Hover.Marker.Width = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Hover.Marker.Width = defaultValue;
 
             Assert.DoesNotContain($"\"width\":", renderer.RenderHtml());
         }
@@ -4332,10 +4332,10 @@ namespace HC.Series
         public void Test_IfStatesInactiveAnimationDurationRenders_Correct(int value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "inactive", "animation" };
 
-            ((LineSeries)chart.Series[0]).States.Inactive.Animation.Duration = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Inactive.Animation.Duration = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("duration", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4344,10 +4344,10 @@ namespace HC.Series
         public void Test_IfStatesInactiveAnimationDurationDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = -1;
 
-            ((LineSeries)chart.Series[0]).States.Inactive.Animation.Duration = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Inactive.Animation.Duration = defaultValue;
 
             Assert.DoesNotContain($"duration", renderer.RenderHtml());
         }
@@ -4357,11 +4357,11 @@ namespace HC.Series
         public void Test_IfStatesInactiveEnabledRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "inactive" };
             var value = false;
 
-            ((LineSeries)chart.Series[0]).States.Inactive.Enabled = false;
+            ((ArcdiagramSeries)chart.Series[0]).States.Inactive.Enabled = false;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4372,10 +4372,10 @@ namespace HC.Series
         //public void Test_IfStatesInactiveEnabledDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = true;
 
-        //    ((LineSeries)chart.Series[0]).States.Inactive.Enabled = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Inactive.Enabled = defaultValue;
 
         //    Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         //}
@@ -4385,10 +4385,10 @@ namespace HC.Series
         public void Test_IfStatesInactiveOpacityRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "inactive" };
 
-            ((LineSeries)chart.Series[0]).States.Inactive.Opacity = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Inactive.Opacity = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("opacity", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4398,10 +4398,10 @@ namespace HC.Series
         //public void Test_IfStatesInactiveOpacityDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = 0.2;
 
-        //    ((LineSeries)chart.Series[0]).States.Inactive.Opacity = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Inactive.Opacity = defaultValue;
 
         //    Assert.DoesNotContain($"opacity", renderer.RenderHtml());
         //}
@@ -4415,10 +4415,10 @@ namespace HC.Series
         public void Test_IfStatesNormalAnimationDurationRenders_Correct(int value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "normal", "animation" };
 
-            ((LineSeries)chart.Series[0]).States.Normal.Animation.Duration = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Normal.Animation.Duration = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("duration", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4427,10 +4427,10 @@ namespace HC.Series
         public void Test_IfStatesNormalAnimationDurationDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = -1;
 
-            ((LineSeries)chart.Series[0]).States.Normal.Animation.Duration = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Normal.Animation.Duration = defaultValue;
 
             Assert.DoesNotContain($"duration", renderer.RenderHtml());
         }
@@ -4447,10 +4447,10 @@ namespace HC.Series
         public void Test_IfStatesSelectAnimationDurationRenders_Correct(int value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "select", "animation" };
 
-            ((LineSeries)chart.Series[0]).States.Select.Animation.Duration = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Animation.Duration = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("duration", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4459,10 +4459,10 @@ namespace HC.Series
         public void Test_IfStatesSelectAnimationDurationDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = -1;
 
-            ((LineSeries)chart.Series[0]).States.Select.Animation.Duration = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Animation.Duration = defaultValue;
 
             Assert.DoesNotContain($"duration", renderer.RenderHtml());
         }
@@ -4472,11 +4472,11 @@ namespace HC.Series
         public void Test_IfStatesSelectEnabledRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "select" };
             var value = false;
 
-            ((LineSeries)chart.Series[0]).States.Select.Enabled = false;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Enabled = false;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4487,10 +4487,10 @@ namespace HC.Series
         //public void Test_IfStatesSelectEnabledDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = true;
 
-        //    ((LineSeries)chart.Series[0]).States.Select.Enabled = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Select.Enabled = defaultValue;
 
         //    Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         //}
@@ -4503,10 +4503,10 @@ namespace HC.Series
         //public void Test_IfStatesSelectHaloAttributesRenders_Correct(int value)
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var pathToProperty = new List<string>() { "states", "select", "halo" };
 
-        //    ((LineSeries)chart.Series[0]).States.Select.Halo.Attributes = value;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Select.Halo.Attributes = value;
 
         //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("attributes", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         //}
@@ -4515,10 +4515,10 @@ namespace HC.Series
         //public void Test_IfStatesSelectHaloAttributesDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = new Hashtable();
 
-        //    ((LineSeries)chart.Series[0]).States.Select.Animation.Duration = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Select.Animation.Duration = defaultValue;
 
         //    Assert.DoesNotContain($"duration", renderer.RenderHtml());
         //}
@@ -4529,10 +4529,10 @@ namespace HC.Series
         public void Test_IfStatesSelectHaloOpacityRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "select", "halo" };
 
-            ((LineSeries)chart.Series[0]).States.Select.Halo.Opacity = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Halo.Opacity = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("opacity", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4543,10 +4543,10 @@ namespace HC.Series
         //public void Test_IfStatesSelectHaloOpacityDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = 0.25;
 
-        //    ((LineSeries)chart.Series[0]).States.Select.Halo.Opacity = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Select.Halo.Opacity = defaultValue;
 
         //    Assert.DoesNotContain($"opacity", renderer.RenderHtml());
         //}
@@ -4559,10 +4559,10 @@ namespace HC.Series
         //public void Test_IfStatesSelectHaloSizeRenders_Correct(double value)
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var pathToProperty = new List<string>() { "states", "select", "halo" };
 
-        //    ((LineSeries)chart.Series[0]).States.Select.Halo.Size = value;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Select.Halo.Size = value;
 
         //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("size", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         //}
@@ -4573,10 +4573,10 @@ namespace HC.Series
         //public void Test_IfStatesSelectHaloOpacityDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = 0.25;
 
-        //    ((LineSeries)chart.Series[0]).States.Select.Halo.Opacity = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Select.Halo.Opacity = defaultValue;
 
         //    Assert.DoesNotContain($"opacity", renderer.RenderHtml());
         //}
@@ -4588,10 +4588,10 @@ namespace HC.Series
         public void Test_IfStatesSelectLineWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "select" };
 
-            ((LineSeries)chart.Series[0]).States.Select.LineWidth = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4600,10 +4600,10 @@ namespace HC.Series
         public void Test_IfStatesSelectLineWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).States.Select.LineWidth = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -4613,10 +4613,10 @@ namespace HC.Series
         public void Test_IfStatesSelectLineWidthPlusRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "states", "select" };
 
-            ((LineSeries)chart.Series[0]).States.Select.LineWidthPlus = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.LineWidthPlus = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidthPlus", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4627,10 +4627,10 @@ namespace HC.Series
         //public void Test_IfStatesSelectLineWidthPlusDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    double? defaultValue = 1;
 
-        //    ((LineSeries)chart.Series[0]).States.Select.LineWidthPlus = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Select.LineWidthPlus = defaultValue;
 
         //    Assert.DoesNotContain($"lineWidthPlus", renderer.RenderHtml());
         //}
@@ -4643,10 +4643,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerEnabledRenders_Correct(bool value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.Enabled = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4655,10 +4655,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerEnabledDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.Enabled = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -4669,10 +4669,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerEnabledThresholdRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.EnabledThreshold = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.EnabledThreshold = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabledThreshold", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4681,10 +4681,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerEnabledThresholdDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double defaultValue = 2;
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.EnabledThreshold = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.EnabledThreshold = defaultValue;
 
             Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         }
@@ -4694,10 +4694,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerFillColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.FillColor = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.FillColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("fillColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4710,10 +4710,10 @@ namespace HC.Series
         //public void Test_IfStatesSelectMarkerFillColorDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = string.Empty;
 
-        //    ((LineSeries)chart.Series[0]).States.Select.Marker.FillColor = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.FillColor = defaultValue;
 
         //    Assert.DoesNotContain($"fillColor", renderer.RenderHtml());
         //}
@@ -4724,10 +4724,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerHeightRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.Height = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.Height = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("height", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4736,10 +4736,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerHeightDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.Height = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.Height = defaultValue;
 
             Assert.DoesNotContain($"\"height\":", renderer.RenderHtml());
         }
@@ -4749,10 +4749,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerLineColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.LineColor = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.LineColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4762,10 +4762,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerLineColorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "#ffffff";
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.LineColor = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.LineColor = defaultValue;
 
             Assert.DoesNotContain($"lineColor", renderer.RenderHtml());
         }
@@ -4775,10 +4775,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerLineWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.LineWidth = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4788,10 +4788,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerLineWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.LineWidth = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -4801,10 +4801,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerRadiusRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.Radius = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.Radius = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("radius", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4814,10 +4814,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerRadiusDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 4;
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.Radius = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.Radius = defaultValue;
 
             Assert.DoesNotContain($"radius", renderer.RenderHtml());
         }
@@ -4830,10 +4830,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerWidthRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.Width = value;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.Width = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("width", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4842,10 +4842,10 @@ namespace HC.Series
         public void Test_IfStatesSelectMarkerWidthDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).States.Select.Marker.Width = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).States.Select.Marker.Width = defaultValue;
 
             Assert.DoesNotContain($"\"width\":", renderer.RenderHtml());
         }
@@ -4864,9 +4864,9 @@ namespace HC.Series
         public void Test_IfStepRenders_Correct(LineSeriesStep value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Step = value;
+            ((ArcdiagramSeries)chart.Series[0]).Step = value;
 
             Assert.Contains($"\"step\":\"{chart.FirstCharacterToLower(value.ToString())}\"", renderer.RenderHtml());
         }
@@ -4875,10 +4875,10 @@ namespace HC.Series
         public void Test_IfStepDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = LineSeriesStep.Null;
 
-            ((LineSeries)chart.Series[0]).Step = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Step = defaultValue;
 
             Assert.DoesNotContain($"step", renderer.RenderHtml());
         }
@@ -4887,10 +4887,10 @@ namespace HC.Series
         public void Test_IfStickyTrackingRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool value = false;
 
-            ((LineSeries)chart.Series[0]).StickyTracking = value;
+            ((ArcdiagramSeries)chart.Series[0]).StickyTracking = value;
 
             Assert.Contains($"\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}", renderer.RenderHtml());
         }
@@ -4899,10 +4899,10 @@ namespace HC.Series
         public void Test_IfStickyTrackingDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = true;
 
-            ((LineSeries)chart.Series[0]).StickyTracking = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).StickyTracking = defaultValue;
 
             Assert.DoesNotContain($"stickyTracking", renderer.RenderHtml());
         }
@@ -4913,9 +4913,9 @@ namespace HC.Series
         public void Test_IfThresholdRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).Threshold = value;
+            ((ArcdiagramSeries)chart.Series[0]).Threshold = value;
 
             Assert.Contains($"\"threshold\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}", renderer.RenderHtml());
         }
@@ -4924,10 +4924,10 @@ namespace HC.Series
         public void Test_IfThresholdDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 0;
 
-            ((LineSeries)chart.Series[0]).Threshold = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Threshold = defaultValue;
 
             Assert.DoesNotContain($"threshold", renderer.RenderHtml());
         }
@@ -4939,10 +4939,10 @@ namespace HC.Series
         public void Test_IfTooltipClusterFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.ClusterFormat = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.ClusterFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("clusterFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4951,10 +4951,10 @@ namespace HC.Series
         public void Test_IfTooltipClusterFormatDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Tooltip.ClusterFormat = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.ClusterFormat = defaultValue;
 
             Assert.DoesNotContain($"clusterFormat", renderer.RenderHtml());
         }
@@ -4971,12 +4971,12 @@ namespace HC.Series
         public void Test_IfTooltipDateTimeLabelFormatsRenders_Correct(string param, string paramValue)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
             var value = new Hashtable();
             value.Add(param, paramValue);
 
-            ((LineSeries)chart.Series[0]).Tooltip.DateTimeLabelFormats = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.DateTimeLabelFormats = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetHashtablePropertyString("dateTimeLabelFormats", param, paramValue)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4986,10 +4986,10 @@ namespace HC.Series
         //public void Test_IfTooltipDateTimeLabelFormatsDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = new Hashtable();
 
-        //    ((LineSeries)chart.Series[0]).Tooltip.DateTimeLabelFormats = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).Tooltip.DateTimeLabelFormats = defaultValue;
 
         //    Assert.DoesNotContain($"dateTimeLabelFormats", renderer.RenderHtml());
         //}
@@ -4999,10 +4999,10 @@ namespace HC.Series
         public void Test_IfTooltipDistanceRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.Distance = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.Distance = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("distance", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5011,10 +5011,10 @@ namespace HC.Series
         public void Test_IfTooltipDistanceDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 16;
 
-            ((LineSeries)chart.Series[0]).Tooltip.Distance = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.Distance = defaultValue;
 
             Assert.DoesNotContain($"distance", renderer.RenderHtml());
         }
@@ -5023,11 +5023,11 @@ namespace HC.Series
         public void Test_IfTooltipFollowPointerRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
             var value = true;
 
-            ((LineSeries)chart.Series[0]).Tooltip.FollowPointer = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.FollowPointer = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("followPointer", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5037,10 +5037,10 @@ namespace HC.Series
         //public void Test_IfTooltipFollowPointerDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = false;
 
-        //    ((LineSeries)chart.Series[0]).Tooltip.FollowPointer = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).Tooltip.FollowPointer = defaultValue;
 
         //    Assert.DoesNotContain($"followPointer", renderer.RenderHtml());
         //}
@@ -5049,11 +5049,11 @@ namespace HC.Series
         public void Test_IfTooltipFollowTouchMoveRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
             var value = false;
 
-            ((LineSeries)chart.Series[0]).Tooltip.FollowTouchMove = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.FollowTouchMove = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("followTouchMove", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5063,10 +5063,10 @@ namespace HC.Series
         //public void Test_IfTooltipFollowTouchMoveDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = true;
 
-        //    ((LineSeries)chart.Series[0]).Tooltip.FollowTouchMove = defaultValue;
+        //    ((ArcdiagramSeries)chart.Series[0]).Tooltip.FollowTouchMove = defaultValue;
 
         //    Assert.DoesNotContain($"followTouchMove", renderer.RenderHtml());
         //}
@@ -5076,10 +5076,10 @@ namespace HC.Series
         public void Test_IfTooltipFooterFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.FooterFormat = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.FooterFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("footerFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5088,10 +5088,10 @@ namespace HC.Series
         public void Test_IfTooltipFooterFormatDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Tooltip.FooterFormat = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.FooterFormat = defaultValue;
 
             Assert.DoesNotContain($"footerFormat", renderer.RenderHtml());
         }
@@ -5101,10 +5101,10 @@ namespace HC.Series
         public void Test_IfTooltipHeaderFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.HeaderFormat = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.HeaderFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("headerFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5113,10 +5113,10 @@ namespace HC.Series
         public void Test_IfTooltipHeaderFormatDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Tooltip.HeaderFormat = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.HeaderFormat = defaultValue;
 
             Assert.DoesNotContain($"headerFormat", renderer.RenderHtml());
         }
@@ -5126,10 +5126,10 @@ namespace HC.Series
         public void Test_IfTooltipNullFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.NullFormat = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.NullFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("nullFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5138,10 +5138,10 @@ namespace HC.Series
         public void Test_IfTooltipNullFormatDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Tooltip.NullFormat = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.NullFormat = defaultValue;
 
             Assert.DoesNotContain($"nullFormat", renderer.RenderHtml());
         }
@@ -5151,10 +5151,10 @@ namespace HC.Series
         public void Test_IfTooltipNullFormatterRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.NullFormatter = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.NullFormatter = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("nullFormatter", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5163,10 +5163,10 @@ namespace HC.Series
         public void Test_IfTooltipNullFormatterDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Tooltip.NullFormatter = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.NullFormatter = defaultValue;
 
             Assert.DoesNotContain($"nullFormatter", renderer.RenderHtml());
         }
@@ -5176,10 +5176,10 @@ namespace HC.Series
         public void Test_IfTooltipPointFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.PointFormat = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.PointFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("pointFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5188,10 +5188,10 @@ namespace HC.Series
         public void Test_IfTooltipPointFormatDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Tooltip.PointFormat = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.PointFormat = defaultValue;
 
             Assert.DoesNotContain($"pointFormat", renderer.RenderHtml());
         }
@@ -5201,10 +5201,10 @@ namespace HC.Series
         public void Test_IfTooltipPointFormatterRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.PointFormatter = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.PointFormatter = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("pointFormatter", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5213,10 +5213,10 @@ namespace HC.Series
         public void Test_IfTooltipPointFormatterDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Tooltip.PointFormatter = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.PointFormatter = defaultValue;
 
             Assert.DoesNotContain($"pointFormatter", renderer.RenderHtml());
         }
@@ -5226,10 +5226,10 @@ namespace HC.Series
         public void Test_IfTooltipValueDecimalsRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.ValueDecimals = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.ValueDecimals = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("valueDecimals", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5238,10 +5238,10 @@ namespace HC.Series
         public void Test_IfTooltipValueDecimalsDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
 
-            ((LineSeries)chart.Series[0]).Tooltip.ValueDecimals = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.ValueDecimals = defaultValue;
 
             Assert.DoesNotContain($"valueDecimals", renderer.RenderHtml());
         }
@@ -5251,10 +5251,10 @@ namespace HC.Series
         public void Test_IfTooltipValuePrefixRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.ValuePrefix = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.ValuePrefix = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("valuePrefix", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5263,10 +5263,10 @@ namespace HC.Series
         public void Test_IfTooltipValuePrefixDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Tooltip.ValuePrefix = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.ValuePrefix = defaultValue;
 
             Assert.DoesNotContain($"valuePrefix", renderer.RenderHtml());
         }
@@ -5276,10 +5276,10 @@ namespace HC.Series
         public void Test_IfTooltipValueSuffixRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.ValueSuffix = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.ValueSuffix = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("valueSuffix", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5288,10 +5288,10 @@ namespace HC.Series
         public void Test_IfTooltipValueSuffixDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Tooltip.ValueSuffix = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.ValueSuffix = defaultValue;
 
             Assert.DoesNotContain($"valueSuffix", renderer.RenderHtml());
         }
@@ -5301,10 +5301,10 @@ namespace HC.Series
         public void Test_IfTooltipXDateFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "tooltip" };
 
-            ((LineSeries)chart.Series[0]).Tooltip.XDateFormat = value;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.XDateFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("xDateFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5313,10 +5313,10 @@ namespace HC.Series
         public void Test_IfTooltipXDateFormatDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
 
-            ((LineSeries)chart.Series[0]).Tooltip.XDateFormat = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Tooltip.XDateFormat = defaultValue;
 
             Assert.DoesNotContain($"xDateFormat", renderer.RenderHtml());
         }
@@ -5328,9 +5328,9 @@ namespace HC.Series
         public void Test_IfTurboThresholdTrackingRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
 
-            ((LineSeries)chart.Series[0]).TurboThreshold = value;
+            ((ArcdiagramSeries)chart.Series[0]).TurboThreshold = value;
 
             Assert.Contains($"\"turboThreshold\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}", renderer.RenderHtml());
         }
@@ -5339,10 +5339,10 @@ namespace HC.Series
         public void Test_IfTurboThresholdDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = 1000;
 
-            ((LineSeries)chart.Series[0]).TurboThreshold = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).TurboThreshold = defaultValue;
 
             Assert.DoesNotContain($"turboThreshold", renderer.RenderHtml());
         }
@@ -5351,10 +5351,10 @@ namespace HC.Series
         public void Test_IfVisibleRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             bool value = false;
 
-            ((LineSeries)chart.Series[0]).Visible = value;
+            ((ArcdiagramSeries)chart.Series[0]).Visible = value;
 
             Assert.Contains($"\"visible\":{chart.FirstCharacterToLower(value.ToString())}", renderer.RenderHtml());
         }
@@ -5363,10 +5363,10 @@ namespace HC.Series
         public void Test_IfVisibleDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = true;
 
-            ((LineSeries)chart.Series[0]).Visible = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).Visible = defaultValue;
 
             Assert.DoesNotContain($"visible", renderer.RenderHtml());
         }
@@ -5375,10 +5375,10 @@ namespace HC.Series
         public void Test_IfZoneAxisRenders_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var value = "x";
 
-            ((LineSeries)chart.Series[0]).ZoneAxis = value;
+            ((ArcdiagramSeries)chart.Series[0]).ZoneAxis = value;
 
             Assert.Contains($"\"zoneAxis\":\"{chart.FirstCharacterToLower(value.ToString())}\"", renderer.RenderHtml());
         }
@@ -5387,10 +5387,10 @@ namespace HC.Series
         public void Test_IfZoneAxisDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = "y";
 
-            ((LineSeries)chart.Series[0]).ZoneAxis = defaultValue;
+            ((ArcdiagramSeries)chart.Series[0]).ZoneAxis = defaultValue;
 
             Assert.DoesNotContain($"zoneAxis", renderer.RenderHtml());
         }
@@ -5402,11 +5402,11 @@ namespace HC.Series
         public void Test_IfZonesClassNameRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "zones" };
             var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { ClassName = value } };
 
-            ((LineSeries)chart.Series[0]).Zones = zoneDef;
+            ((ArcdiagramSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("className", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5415,11 +5415,11 @@ namespace HC.Series
         public void Test_IfZonesClassNameDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
             var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { ClassName = defaultValue } };
 
-            ((LineSeries)chart.Series[0]).Zones = zoneDef;
+            ((ArcdiagramSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.DoesNotContain($"className", renderer.RenderHtml());
         }
@@ -5431,11 +5431,11 @@ namespace HC.Series
         public void Test_IfZonesColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "zones" };
             var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { Color = value } };
 
-            ((LineSeries)chart.Series[0]).Zones = zoneDef;
+            ((ArcdiagramSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("color", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5444,11 +5444,11 @@ namespace HC.Series
         public void Test_IfZonesColorDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = string.Empty;
             var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { Color = defaultValue } };
 
-            ((LineSeries)chart.Series[0]).Zones = zoneDef;
+            ((ArcdiagramSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.DoesNotContain($"color", renderer.RenderHtml());
         }
@@ -5468,11 +5468,11 @@ namespace HC.Series
         public void Test_IfZonesDashStyleRenders_Correct(LineSeriesZonesDashStyle value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "zones" };
             var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { DashStyle = value } };
 
-            ((LineSeries)chart.Series[0]).Zones = zoneDef;
+            ((ArcdiagramSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetEnumPropertyString(chart, "dashStyle", value.ToString())}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5481,11 +5481,11 @@ namespace HC.Series
         public void Test_IfZonesDashStyleDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var defaultValue = LineSeriesZonesDashStyle.Null;
             var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { DashStyle = defaultValue } };
 
-            ((LineSeries)chart.Series[0]).Zones = zoneDef;
+            ((ArcdiagramSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.DoesNotContain($"dashStyle", renderer.RenderHtml());
         }
@@ -5496,11 +5496,11 @@ namespace HC.Series
         public void Test_IfZonesFillColorRenders_Correct(string value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "zones" };
             var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { FillColor = value } };
 
-            ((LineSeries)chart.Series[0]).Zones = zoneDef;
+            ((ArcdiagramSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("fillColor", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5510,11 +5510,11 @@ namespace HC.Series
         //public void Test_IfZonesFillColorDoesntRenderForDefault_Correct()
         //{
         //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+        //    var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
         //    var defaultValue = string.Empty;
         //    var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { FillColor = defaultValue } };
 
-        //    ((LineSeries)chart.Series[0]).Zones = zoneDef;
+        //    ((ArcdiagramSeries)chart.Series[0]).Zones = zoneDef;
 
         //    Assert.DoesNotContain($"fillColor", renderer.RenderHtml());
         //}
@@ -5525,11 +5525,11 @@ namespace HC.Series
         public void Test_IfZonesValueRenders_Correct(double value)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             var pathToProperty = new List<string>() { "zones" };
             var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { Value = value } };
 
-            ((LineSeries)chart.Series[0]).Zones = zoneDef;
+            ((ArcdiagramSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("value", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5538,11 +5538,11 @@ namespace HC.Series
         public void Test_IfZonesValueDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var lineSeries = new LineSeries(); chart.Series.Add(lineSeries);
+            var renderer = new HighchartsRenderer(chart); var lineSeries = new ArcdiagramSeries(); chart.Series.Add(lineSeries);
             double? defaultValue = null;
             var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { Value = defaultValue } };
 
-            ((LineSeries)chart.Series[0]).Zones = zoneDef;
+            ((ArcdiagramSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.DoesNotContain($"value", renderer.RenderHtml());
         }
