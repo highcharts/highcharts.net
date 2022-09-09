@@ -35,6 +35,24 @@ namespace HC.Series
         //    Assert.Contains("\"formatter\":formatXLabels", _renderer.RenderHtml());
         //}
 
+        [Fact]
+        public void Test_IfSeriesRendersType_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var lineSeries = new LineSeries();
+            chart.Series.Add(lineSeries);
+
+            var result = renderer.RenderHtml();
+
+            Assert.Contains($"\"series\":[{{\"type\":\"{_fixture.ChartType.ToString().ToLower()}\"", result);
+        }
+
+        //Specific for Series
+
+
+
+        //From plotOptions
 
         #region Acessibility
 
@@ -44,10 +62,15 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
+            var lineSeries = new LineSeries();
+            chart.Series.Add(lineSeries);
 
             ((LineSeries)chart.Series[0]).Accessibility.Description = description;
+            var result = renderer.RenderHtml();
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"description\":\"{description}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":[{{", result);
+            Assert.Contains($"\"type\":\"{_fixture.ChartType.ToString().ToLower()}\"", result);
+            Assert.Contains($"\"accessibility\":{{\"description\":\"{description}\"}}", result);
         }
 
         [Theory]
@@ -59,9 +82,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.Enabled = enabled;
+            ((LineSeries)chart.Series[0]).Accessibility.Enabled = enabled;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
 
@@ -74,9 +97,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.ExposeAsGroupOnly = exposeAsGroupOnly;
+            ((LineSeries)chart.Series[0]).Accessibility.ExposeAsGroupOnly = exposeAsGroupOnly;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"exposeAsGroupOnly\":{exposeAsGroupOnly.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"exposeAsGroupOnly\":{exposeAsGroupOnly.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
         #region KeyboardNavigation
@@ -90,9 +113,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.KeyboardNavigation.Enabled = enabled;
+            ((LineSeries)chart.Series[0]).Accessibility.KeyboardNavigation.Enabled = enabled;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"keyboardNavigation\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"keyboardNavigation\":{{\"enabled\":{enabled.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
         }
 
         #endregion
@@ -107,9 +130,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.Point.DateFormat = format;
+            ((LineSeries)chart.Series[0]).Accessibility.Point.DateFormat = format;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"dateFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"dateFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -120,9 +143,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.Point.DateFormatter = function;
+            ((LineSeries)chart.Series[0]).Accessibility.Point.DateFormatter = function;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"dateFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"dateFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -135,9 +158,9 @@ namespace HC.Series
 
 
 
-            chart.Series.Line.Accessibility.Point.DescribeNull = describeNull;
+            ((LineSeries)chart.Series[0]).Accessibility.Point.DescribeNull = describeNull;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"describeNull\":{describeNull.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"describeNull\":{describeNull.ToString().ToLower()}}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -148,7 +171,7 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.Point.DescribeNull = describeNull;
+            ((LineSeries)chart.Series[0]).Accessibility.Point.DescribeNull = describeNull;
 
             Assert.DoesNotContain($"describeNull", renderer.RenderHtml());
         }
@@ -161,9 +184,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.Point.DescriptionFormatter = function;
+            ((LineSeries)chart.Series[0]).Accessibility.Point.DescriptionFormatter = function;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"descriptionFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"descriptionFormatter\":{function}}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -174,9 +197,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.Point.ValueDecimals = decimals;
+            ((LineSeries)chart.Series[0]).Accessibility.Point.ValueDecimals = decimals;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueDecimals\":{decimals}.0}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueDecimals\":{decimals}.0}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -187,9 +210,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.Point.ValueDescriptionFormat = format;
+            ((LineSeries)chart.Series[0]).Accessibility.Point.ValueDescriptionFormat = format;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueDescriptionFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueDescriptionFormat\":\"{format}\"}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -200,9 +223,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.Point.ValuePrefix = prefix;
+            ((LineSeries)chart.Series[0]).Accessibility.Point.ValuePrefix = prefix;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valuePrefix\":\"{prefix}\"}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valuePrefix\":\"{prefix}\"}}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -213,9 +236,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Accessibility.Point.ValueSuffix = suffix;
+            ((LineSeries)chart.Series[0]).Accessibility.Point.ValueSuffix = suffix;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueSuffix\":\"{suffix}\"}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"accessibility\":{{\"point\":{{\"valueSuffix\":\"{suffix}\"}}}}}}}}", renderer.RenderHtml());
         }
         #endregion
 
@@ -229,9 +252,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var enabled = true;
 
-            chart.Series.Line.AllowPointSelect = enabled;
+            ((LineSeries)chart.Series[0]).AllowPointSelect = enabled;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"allowPointSelect\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"allowPointSelect\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -241,7 +264,7 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.AllowPointSelect = false;
+            ((LineSeries)chart.Series[0]).AllowPointSelect = false;
 
             Assert.DoesNotContain("allowPointSelect", renderer.RenderHtml());
         }
@@ -257,9 +280,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.AnimationBool = enabled;
+            ((LineSeries)chart.Series[0]).AnimationBool = enabled;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -270,9 +293,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Animation.Duration = duration;
+            ((LineSeries)chart.Series[0]).Animation.Duration = duration;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"duration\":{duration}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"duration\":{duration}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -283,9 +306,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Animation.Defer = defer;
+            ((LineSeries)chart.Series[0]).Animation.Defer = defer;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"defer\":{defer}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"defer\":{defer}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -296,9 +319,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Animation.Easing = easing;
+            ((LineSeries)chart.Series[0]).Animation.Easing = easing;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"easing\":\"{easing}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{{\"easing\":\"{easing}\"}}}}}}", renderer.RenderHtml());
         }
 
         #endregion
@@ -315,24 +338,24 @@ namespace HC.Series
             chart.Series.Add(lineSeries);
             lineSeries.AnimationLimit = limit;
 
-            chart.Series[0].AnimationLimit = limit;
+            ((LineSeries)chart.Series[0]).AnimationLimit = limit;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animationLimit\":{limit}.0}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animationLimit\":{limit}.0}}}}", renderer.RenderHtml());
         }
 
         [Theory]
-        [InlineData(SeriesLineBoostBlending.Add)]
-        [InlineData(SeriesLineBoostBlending.Darken)]
-        [InlineData(SeriesLineBoostBlending.Multiply)]
-        public void Test_IfBoostBlendingRenders_Correct(SeriesLineBoostBlending boostBlending)
+        [InlineData(LineSeriesBoostBlending.Add)]
+        [InlineData(LineSeriesBoostBlending.Darken)]
+        [InlineData(LineSeriesBoostBlending.Multiply)]
+        public void Test_IfBoostBlendingRenders_Correct(LineSeriesBoostBlending boostBlending)
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.BoostBlending = boostBlending;
+            ((LineSeries)chart.Series[0]).BoostBlending = boostBlending;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"boostBlending\":\"{boostBlending.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"boostBlending\":\"{boostBlending.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -342,7 +365,7 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.BoostBlending = SeriesLineBoostBlending.Undefined;
+            ((LineSeries)chart.Series[0]).BoostBlending = LineSeriesBoostBlending.Undefined;
 
             Assert.DoesNotContain($"\"boostBlending\"", renderer.RenderHtml());
         }
@@ -355,9 +378,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.BoostThreshold = limit;
+            ((LineSeries)chart.Series[0]).BoostThreshold = limit;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"boostThreshold\":{limit}.0}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"boostThreshold\":{limit}.0}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -368,7 +391,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 5000;
 
-            chart.Series.Line.BoostThreshold = defaultValue;
+            ((LineSeries)chart.Series[0]).BoostThreshold = defaultValue;
 
             Assert.DoesNotContain("boostThreshold", renderer.RenderHtml());
         }
@@ -384,9 +407,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.ClassName = className;
+            ((LineSeries)chart.Series[0]).ClassName = className;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"className\":\"{className}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"className\":\"{className}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -397,9 +420,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.Series.Line.Clip = value;
+            ((LineSeries)chart.Series[0]).Clip = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"clip\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"clip\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -410,7 +433,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.Series.Line.Clip = value;
+            ((LineSeries)chart.Series[0]).Clip = value;
 
             Assert.DoesNotContain("clip", renderer.RenderHtml());
         }
@@ -423,9 +446,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Color = color;
+            ((LineSeries)chart.Series[0]).Color = color;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"color\":\"{color.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"color\":\"{color.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
         }
 
         //missing logic for GradientColorObject and PatternObject
@@ -438,9 +461,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.ColorAxis = id;
+            ((LineSeries)chart.Series[0]).ColorAxis = id;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":\"{id}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":\"{id}\"}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -452,9 +475,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.ColorAxisNumber = index;
+            ((LineSeries)chart.Series[0]).ColorAxisNumber = index;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":{index}.0}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":{index}.0}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -465,9 +488,9 @@ namespace HC.Series
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
-            chart.Series.Line.ColorAxisBool = value;
+            ((LineSeries)chart.Series[0]).ColorAxisBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorAxis\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -478,9 +501,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.ColorIndex = value;
+            ((LineSeries)chart.Series[0]).ColorIndex = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorIndex\":{value}.0}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorIndex\":{value}.0}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -491,9 +514,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.ColorKey = value;
+            ((LineSeries)chart.Series[0]).ColorKey = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorKey\":\"{value}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"colorKey\":\"{value}\"}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -505,9 +528,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.ConnectEnds = value;
+            ((LineSeries)chart.Series[0]).ConnectEnds = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"connectEnds\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"connectEnds\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -518,9 +541,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.Series.Line.ConnectNulls = value;
+            ((LineSeries)chart.Series[0]).ConnectNulls = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"connectNulls\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"connectNulls\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -531,7 +554,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.Series.Line.ConnectNulls = value;
+            ((LineSeries)chart.Series[0]).ConnectNulls = value;
 
             Assert.DoesNotContain($"\"connectNulls\"", renderer.RenderHtml());
         }
@@ -546,9 +569,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.Series.Line.Crisp = value;
+            ((LineSeries)chart.Series[0]).Crisp = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"crisp\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"crisp\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -559,7 +582,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.Series.Line.Crisp = value;
+            ((LineSeries)chart.Series[0]).Crisp = value;
 
             Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
         }
@@ -573,9 +596,9 @@ namespace HC.Series
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.CropThreshold = value;
+            ((LineSeries)chart.Series[0]).CropThreshold = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"cropThreshold\":{value}.0}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"cropThreshold\":{value}.0}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -586,25 +609,25 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 300;
 
-            chart.Series.Line.CropThreshold = defaultValue;
+            ((LineSeries)chart.Series[0]).CropThreshold = defaultValue;
 
             Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
         }
 
         [Theory]
-        [InlineData(SeriesLineCursor.Default)]
-        [InlineData(SeriesLineCursor.Help)]
-        [InlineData(SeriesLineCursor.Pointer)]
-        [InlineData(SeriesLineCursor.None)]
-        public void Test_IfCursorRenders_Correct(SeriesLineCursor cursor)
+        [InlineData(LineSeriesCursor.Default)]
+        [InlineData(LineSeriesCursor.Help)]
+        [InlineData(LineSeriesCursor.Pointer)]
+        [InlineData(LineSeriesCursor.None)]
+        public void Test_IfCursorRenders_Correct(LineSeriesCursor cursor)
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Cursor = cursor;
+            ((LineSeries)chart.Series[0]).Cursor = cursor;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"cursor\":\"{cursor.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"cursor\":\"{cursor.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -616,23 +639,23 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var extraData = new Hashtable() { { key1, value1 } };
 
-            chart.Series.Line.Custom = extraData;
+            ((LineSeries)chart.Series[0]).Custom = extraData;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"custom\":{{\"{key1}\":\"{value1}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"custom\":{{\"{key1}\":\"{value1}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
-        [InlineData(SeriesLineDashStyle.Dash)]
-        [InlineData(SeriesLineDashStyle.DashDot)]
-        [InlineData(SeriesLineDashStyle.Dot)]
-        [InlineData(SeriesLineDashStyle.LongDash)]
-        [InlineData(SeriesLineDashStyle.LongDashDot)]
-        [InlineData(SeriesLineDashStyle.LongDashDotDot)]
-        [InlineData(SeriesLineDashStyle.ShortDash)]
-        [InlineData(SeriesLineDashStyle.ShortDashDot)]
-        [InlineData(SeriesLineDashStyle.ShortDashDotDot)]
-        [InlineData(SeriesLineDashStyle.ShortDot)]
-        public void Test_IfDashStyleRenders_Correct(SeriesLineDashStyle style)
+        [InlineData(LineSeriesDashStyle.Dash)]
+        [InlineData(LineSeriesDashStyle.DashDot)]
+        [InlineData(LineSeriesDashStyle.Dot)]
+        [InlineData(LineSeriesDashStyle.LongDash)]
+        [InlineData(LineSeriesDashStyle.LongDashDot)]
+        [InlineData(LineSeriesDashStyle.LongDashDotDot)]
+        [InlineData(LineSeriesDashStyle.ShortDash)]
+        [InlineData(LineSeriesDashStyle.ShortDashDot)]
+        [InlineData(LineSeriesDashStyle.ShortDashDotDot)]
+        [InlineData(LineSeriesDashStyle.ShortDot)]
+        public void Test_IfDashStyleRenders_Correct(LineSeriesDashStyle style)
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
@@ -642,9 +665,9 @@ namespace HC.Series
             result = result.Remove(0, 1);
             result = replacement + result;
 
-            chart.Series.Line.DashStyle = style;
+            ((LineSeries)chart.Series[0]).DashStyle = style;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dashStyle\":\"{result}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dashStyle\":\"{result}\"}}}}", renderer.RenderHtml());
         }
 
 
@@ -653,16 +676,16 @@ namespace HC.Series
         //fix required - missing dataLabels as a list of objects (right now it is possible to have only one object)
 
         [Theory]
-        [InlineData(SeriesLineDataLabelsAlign.Left)]
-        [InlineData(SeriesLineDataLabelsAlign.Right)]
-        public void Test_IfDataLabelsAlignRenders_Correct(SeriesLineDataLabelsAlign align)
+        [InlineData(LineSeriesDataLabelsAlign.Left)]
+        [InlineData(LineSeriesDataLabelsAlign.Right)]
+        public void Test_IfDataLabelsAlignRenders_Correct(LineSeriesDataLabelsAlign align)
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Align = align;
+            ((LineSeries)chart.Series[0]).DataLabels.Align = align;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"align\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"align\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -670,9 +693,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = SeriesLineDataLabelsAlign.Center;
+            var defaultValue = LineSeriesDataLabelsAlign.Center;
 
-            chart.Series.Line.DataLabels.Align = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Align = defaultValue;
 
             Assert.DoesNotContain($"align", renderer.RenderHtml());
         }
@@ -684,9 +707,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.Series.Line.DataLabels.AllowOverlap = value;
+            ((LineSeries)chart.Series[0]).DataLabels.AllowOverlap = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"allowOverlap\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"allowOverlap\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -696,7 +719,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
-            chart.Series.Line.DataLabels.AllowOverlap = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.AllowOverlap = defaultValue;
 
             Assert.DoesNotContain($"allowOverlap", renderer.RenderHtml());
         }
@@ -711,9 +734,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Animation.Defer = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Animation.Defer = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"animation\":{{\"defer\":{value}}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"animation\":{{\"defer\":{value}}}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -723,7 +746,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = -1;
 
-            chart.Series.Line.DataLabels.Animation.Defer = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Animation.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
@@ -738,9 +761,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.BackgroundColor = value;
+            ((LineSeries)chart.Series[0]).DataLabels.BackgroundColor = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"backgroundColor\":\"{value}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"backgroundColor\":\"{value}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -750,7 +773,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.DataLabels.BackgroundColor = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.BackgroundColor = defaultValue;
 
             Assert.DoesNotContain($"backgroundColor", renderer.RenderHtml());
         }
@@ -763,9 +786,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.BorderColor = value;
+            ((LineSeries)chart.Series[0]).DataLabels.BorderColor = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"borderColor\":\"{value}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"borderColor\":\"{value}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -775,7 +798,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.DataLabels.BorderColor = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.BorderColor = defaultValue;
 
             Assert.DoesNotContain($"borderColor", renderer.RenderHtml());
         }
@@ -788,9 +811,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.BorderRadius = value;
+            ((LineSeries)chart.Series[0]).DataLabels.BorderRadius = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"borderRadius\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"borderRadius\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -800,7 +823,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
-            chart.Series.Line.DataLabels.BorderRadius = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.BorderRadius = defaultValue;
 
             Assert.DoesNotContain($"borderRadius", renderer.RenderHtml());
         }
@@ -813,9 +836,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.BorderWidth = value;
+            ((LineSeries)chart.Series[0]).DataLabels.BorderWidth = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"borderWidth\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"borderWidth\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -825,7 +848,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
-            chart.Series.Line.DataLabels.BorderWidth = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.BorderWidth = defaultValue;
 
             Assert.DoesNotContain($"borderWidth", renderer.RenderHtml());
         }
@@ -838,9 +861,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.ClassName = value;
+            ((LineSeries)chart.Series[0]).DataLabels.ClassName = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"className\":\"{value}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"className\":\"{value}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -850,7 +873,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.DataLabels.ClassName = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.ClassName = defaultValue;
 
             Assert.DoesNotContain($"className", renderer.RenderHtml());
         }
@@ -863,9 +886,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Color = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Color = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"color\":\"{value}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"color\":\"{value}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -875,7 +898,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.DataLabels.Color = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Color = defaultValue;
 
             Assert.DoesNotContain($"color", renderer.RenderHtml());
         }
@@ -887,9 +910,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.Series.Line.DataLabels.Crop = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Crop = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"crop\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"crop\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -899,7 +922,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = true;
 
-            chart.Series.Line.DataLabels.Crop = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Crop = defaultValue;
 
             Assert.DoesNotContain($"crop", renderer.RenderHtml());
         }
@@ -911,9 +934,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.Series.Line.DataLabels.DeferBool = value;
+            ((LineSeries)chart.Series[0]).DataLabels.DeferBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -923,7 +946,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = true;
 
-            chart.Series.Line.DataLabels.DeferBool = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
@@ -936,9 +959,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Defer = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Defer = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -948,9 +971,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.Series.Line.DataLabels.Enabled = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Enabled = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"enabled\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"enabled\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -960,7 +983,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
-            chart.Series.Line.DataLabels.Enabled = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -979,9 +1002,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Filter.Operator = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Filter.Operator = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"filter\":{{\"operator\":\"{value}\"}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"filter\":{{\"operator\":\"{value}\"}}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -991,7 +1014,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.DataLabels.Filter.Operator = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Filter.Operator = defaultValue;
 
             Assert.DoesNotContain($"operator", renderer.RenderHtml());
         }
@@ -1004,9 +1027,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Filter.Property = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Filter.Property = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"filter\":{{\"property\":\"{value}\"}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"filter\":{{\"property\":\"{value}\"}}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1016,7 +1039,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.DataLabels.Filter.Property = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Filter.Property = defaultValue;
 
             Assert.DoesNotContain($"property", renderer.RenderHtml());
         }
@@ -1029,9 +1052,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Filter.Value = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Filter.Value = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"filter\":{{\"value\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"filter\":{{\"value\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1041,7 +1064,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.DataLabels.Filter.Value = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Filter.Value = defaultValue;
 
             Assert.DoesNotContain($"value", renderer.RenderHtml());
         }
@@ -1056,9 +1079,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Format = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Format = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"format\":\"{value}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"format\":\"{value}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1068,7 +1091,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "point.value";
 
-            chart.Series.Line.DataLabels.Format = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Format = defaultValue;
 
             Assert.DoesNotContain($"format", renderer.RenderHtml());
         }
@@ -1080,9 +1103,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Formatter = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Formatter = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"formatter\":{value}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"formatter\":{value}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1092,7 +1115,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.DataLabels.Formatter = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Formatter = defaultValue;
 
             Assert.DoesNotContain($"formatter", renderer.RenderHtml());
         }
@@ -1105,9 +1128,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Inside = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Inside = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"inside\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"inside\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1117,7 +1140,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.DataLabels.Inside = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Inside = defaultValue;
 
             Assert.DoesNotContain($"inside", renderer.RenderHtml());
         }
@@ -1130,9 +1153,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.NullFormatBool = value;
+            ((LineSeries)chart.Series[0]).DataLabels.NullFormatBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"nullFormat\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"nullFormat\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1142,7 +1165,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.DataLabels.NullFormatBool = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.NullFormatBool = defaultValue;
 
             Assert.DoesNotContain($"nullFormat", renderer.RenderHtml());
         }
@@ -1155,9 +1178,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.NullFormat = value;
+            ((LineSeries)chart.Series[0]).DataLabels.NullFormat = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"nullFormat\":\"{value}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"nullFormat\":\"{value}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1167,7 +1190,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.DataLabels.NullFormat = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.NullFormat = defaultValue;
 
             Assert.DoesNotContain($"nullFormat", renderer.RenderHtml());
         }
@@ -1179,9 +1202,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.NullFormatter = value;
+            ((LineSeries)chart.Series[0]).DataLabels.NullFormatter = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"nullFormatter\":{value}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"nullFormatter\":{value}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1191,21 +1214,21 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.DataLabels.NullFormatter = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.NullFormatter = defaultValue;
 
             Assert.DoesNotContain($"nullFormatter", renderer.RenderHtml());
         }
 
         [Theory]
-        [InlineData(SeriesLineDataLabelsOverflow.Allow)]
-        public void Test_IfDataLabelsOverflowRenders_Correct(SeriesLineDataLabelsOverflow align)
+        [InlineData(LineSeriesDataLabelsOverflow.Allow)]
+        public void Test_IfDataLabelsOverflowRenders_Correct(LineSeriesDataLabelsOverflow align)
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Overflow = align;
+            ((LineSeries)chart.Series[0]).DataLabels.Overflow = align;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"overflow\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"overflow\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1213,9 +1236,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = SeriesLineDataLabelsOverflow.Justify;
+            var defaultValue = LineSeriesDataLabelsOverflow.Justify;
 
-            chart.Series.Line.DataLabels.Overflow = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Overflow = defaultValue;
 
             Assert.DoesNotContain($"overflow", renderer.RenderHtml());
         }
@@ -1228,9 +1251,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Padding = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Padding = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"padding\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"padding\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1240,22 +1263,22 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 5;
 
-            chart.Series.Line.DataLabels.Padding = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Padding = defaultValue;
 
             Assert.DoesNotContain($"padding", renderer.RenderHtml());
         }
 
         [Theory]
-        [InlineData(SeriesLineDataLabelsPosition.Left)]
-        [InlineData(SeriesLineDataLabelsPosition.Right)]
-        public void Test_IfDataLabelsPositionRenders_Correct(SeriesLineDataLabelsPosition align)
+        [InlineData(LineSeriesDataLabelsPosition.Left)]
+        [InlineData(LineSeriesDataLabelsPosition.Right)]
+        public void Test_IfDataLabelsPositionRenders_Correct(LineSeriesDataLabelsPosition align)
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Position = align;
+            ((LineSeries)chart.Series[0]).DataLabels.Position = align;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"position\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"position\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1263,9 +1286,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = SeriesLineDataLabelsPosition.Center;
+            var defaultValue = LineSeriesDataLabelsPosition.Center;
 
-            chart.Series.Line.DataLabels.Position = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Position = defaultValue;
 
             Assert.DoesNotContain($"position", renderer.RenderHtml());
         }
@@ -1278,9 +1301,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Rotation = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Rotation = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"rotation\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"rotation\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1290,7 +1313,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
-            chart.Series.Line.DataLabels.Rotation = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Rotation = defaultValue;
 
             Assert.DoesNotContain($"rotation", renderer.RenderHtml());
         }
@@ -1302,9 +1325,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool value = true;
 
-            chart.Series.Line.DataLabels.ShadowBool = value;
+            ((LineSeries)chart.Series[0]).DataLabels.ShadowBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"shadow\":{chart.FirstCharacterToLower(value.ToString())}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"shadow\":{chart.FirstCharacterToLower(value.ToString())}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -1315,7 +1338,7 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Shadow = new Shadow()
+            ((LineSeries)chart.Series[0]).DataLabels.Shadow = new Shadow()
             {
                 Color = color,
                 OffsetX = offsetX,
@@ -1325,7 +1348,7 @@ namespace HC.Series
             };
 
             var result = renderer.RenderHtml();
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"shadow\":", result);
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"shadow\":", result);
             Assert.Contains($"\"offsetX\":{offsetX}", result);
             Assert.Contains($"\"width\":{width}", result);
             Assert.Contains($"\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", opacity)}", result);
@@ -1340,7 +1363,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
-            chart.Series.Line.DataLabels.ShadowBool = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.ShadowBool = defaultValue;
 
             Assert.DoesNotContain($"shadow", renderer.RenderHtml());
         }
@@ -1356,9 +1379,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Shape = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Shape = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"shape\":\"{value}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"shape\":\"{value}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1368,7 +1391,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "square";
 
-            chart.Series.Line.DataLabels.Shape = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Shape = defaultValue;
 
             Assert.DoesNotContain($"shape", renderer.RenderHtml());
         }
@@ -1395,11 +1418,11 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dataLabels", "style" };
+            var pathToProperty = new List<string>() { "series", "line", "dataLabels", "style" };
             var style = new Hashtable();
             style.Add(param1, param1_value);
 
-            chart.Series.Line.DataLabels.Style = style;
+            ((LineSeries)chart.Series[0]).DataLabels.Style = style;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString(param1, param1_value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1414,11 +1437,11 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dataLabels", "style" };
+            var pathToProperty = new List<string>() { "series", "line", "dataLabels", "style" };
             var style = new Hashtable();
             style.Add(param1, param1_value);
 
-            chart.Series.Line.DataLabels.Style = style;
+            ((LineSeries)chart.Series[0]).DataLabels.Style = style;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString(param1, param1_value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1434,9 +1457,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "dataLabels", "textPath" };
+            var pathToProperty = new List<string> { "series", "line", "dataLabels", "textPath" };
 
-            chart.Series.Line.DataLabels.TextPath.Enabled = value;
+            ((LineSeries)chart.Series[0]).DataLabels.TextPath.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1448,7 +1471,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.DataLabels.TextPath.Enabled = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.TextPath.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -1462,9 +1485,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.Series.Line.DataLabels.UseHTML = value;
+            ((LineSeries)chart.Series[0]).DataLabels.UseHTML = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"useHTML\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"useHTML\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1474,22 +1497,22 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
-            chart.Series.Line.DataLabels.UseHTML = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.UseHTML = defaultValue;
 
             Assert.DoesNotContain($"useHTML", renderer.RenderHtml());
         }
 
         [Theory]
-        [InlineData(SeriesLineDataLabelsVerticalAlign.Middle)]
-        [InlineData(SeriesLineDataLabelsVerticalAlign.Top)]
-        public void Test_IfDataLabelsVerticalAlignRenders_Correct(SeriesLineDataLabelsVerticalAlign align)
+        [InlineData(LineSeriesDataLabelsVerticalAlign.Middle)]
+        [InlineData(LineSeriesDataLabelsVerticalAlign.Top)]
+        public void Test_IfDataLabelsVerticalAlignRenders_Correct(LineSeriesDataLabelsVerticalAlign align)
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.VerticalAlign = align;
+            ((LineSeries)chart.Series[0]).DataLabels.VerticalAlign = align;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"verticalAlign\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"verticalAlign\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1497,9 +1520,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = SeriesLineDataLabelsVerticalAlign.Bottom;
+            var defaultValue = LineSeriesDataLabelsVerticalAlign.Bottom;
 
-            chart.Series.Line.DataLabels.VerticalAlign = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.VerticalAlign = defaultValue;
 
             Assert.DoesNotContain($"verticalAlign", renderer.RenderHtml());
         }
@@ -1512,9 +1535,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.X = value;
+            ((LineSeries)chart.Series[0]).DataLabels.X = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"x\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"x\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1524,7 +1547,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
-            chart.Series.Line.DataLabels.X = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.X = defaultValue;
 
             Assert.DoesNotContain($"\"dataLabels\":{{\"x\":", renderer.RenderHtml());
         }
@@ -1537,9 +1560,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Y = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Y = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"y\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"y\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1549,7 +1572,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
-            chart.Series.Line.DataLabels.Y = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Y = defaultValue;
 
             Assert.DoesNotContain($"\"dataLabels\":{{\"y\":", renderer.RenderHtml());
         }
@@ -1562,9 +1585,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.DataLabels.Z = value;
+            ((LineSeries)chart.Series[0]).DataLabels.Z = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"z\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"z\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1574,7 +1597,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 6;
 
-            chart.Series.Line.DataLabels.Z = defaultValue;
+            ((LineSeries)chart.Series[0]).DataLabels.Z = defaultValue;
 
             Assert.DoesNotContain($"\"dataLabels\":{{\"z\":", renderer.RenderHtml());
         }
@@ -1590,9 +1613,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "dataSorting" };
+            var pathToProperty = new List<string> { "series", "line", "dataSorting" };
 
-            chart.Series.Line.DataSorting.Enabled = value;
+            ((LineSeries)chart.Series[0]).DataSorting.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1604,7 +1627,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.DataSorting.Enabled = defaultValue;
+            ((LineSeries)chart.Series[0]).DataSorting.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -1616,9 +1639,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "dataSorting" };
+            var pathToProperty = new List<string> { "series", "line", "dataSorting" };
 
-            chart.Series.Line.DataSorting.MatchByName = value;
+            ((LineSeries)chart.Series[0]).DataSorting.MatchByName = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("matchByName", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1630,7 +1653,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.DataSorting.MatchByName = defaultValue;
+            ((LineSeries)chart.Series[0]).DataSorting.MatchByName = defaultValue;
 
             Assert.DoesNotContain($"matchByName", renderer.RenderHtml());
         }
@@ -1642,9 +1665,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dataSorting" };
+            var pathToProperty = new List<string>() { "series", "line", "dataSorting" };
 
-            chart.Series.Line.DataSorting.SortKey = value;
+            ((LineSeries)chart.Series[0]).DataSorting.SortKey = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("sortKey", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1656,7 +1679,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "y";
 
-            chart.Series.Line.DataSorting.SortKey = defaultValue;
+            ((LineSeries)chart.Series[0]).DataSorting.SortKey = defaultValue;
 
             Assert.DoesNotContain($"sortKey", renderer.RenderHtml());
         }
@@ -1670,9 +1693,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Description = description;
+            ((LineSeries)chart.Series[0]).Description = description;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"description\":\"{description}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"description\":\"{description}\"}}}}", renderer.RenderHtml());
         }
 
         #region dragDrop
@@ -1684,9 +1707,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string> { "series", "line", "dragDrop" };
 
-            chart.Series.Line.DragDrop.DraggableX = value;
+            ((LineSeries)chart.Series[0]).DragDrop.DraggableX = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("draggableX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1698,7 +1721,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.DragDrop.DraggableX = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.DraggableX = defaultValue;
 
             Assert.DoesNotContain($"draggableX", renderer.RenderHtml());
         }
@@ -1710,9 +1733,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string> { "series", "line", "dragDrop" };
 
-            chart.Series.Line.DragDrop.DraggableY = value;
+            ((LineSeries)chart.Series[0]).DragDrop.DraggableY = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("draggableY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1724,7 +1747,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.DragDrop.DraggableY = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.DraggableY = defaultValue;
 
             Assert.DoesNotContain($"draggableY", renderer.RenderHtml());
         }
@@ -1736,9 +1759,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop" };
 
-            chart.Series.Line.DragDrop.DragMaxX = value;
+            ((LineSeries)chart.Series[0]).DragDrop.DragMaxX = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMaxX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1750,7 +1773,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.DragDrop.DragMaxX = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.DragMaxX = defaultValue;
 
             Assert.DoesNotContain($"dragMaxX", renderer.RenderHtml());
         }
@@ -1762,9 +1785,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop" };
 
-            chart.Series.Line.DragDrop.DragMaxY = value;
+            ((LineSeries)chart.Series[0]).DragDrop.DragMaxY = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMaxY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1776,7 +1799,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.DragDrop.DragMaxY = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.DragMaxY = defaultValue;
 
             Assert.DoesNotContain($"dragMaxY", renderer.RenderHtml());
         }
@@ -1788,9 +1811,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop" };
 
-            chart.Series.Line.DragDrop.DragMinX = value;
+            ((LineSeries)chart.Series[0]).DragDrop.DragMinX = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMinX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1802,7 +1825,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.DragDrop.DragMinX = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.DragMinX = defaultValue;
 
             Assert.DoesNotContain($"dragMinX", renderer.RenderHtml());
         }
@@ -1814,9 +1837,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop" };
 
-            chart.Series.Line.DragDrop.DragMinY = value;
+            ((LineSeries)chart.Series[0]).DragDrop.DragMinY = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMinY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1828,7 +1851,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.DragDrop.DragMinY = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.DragMinY = defaultValue;
 
             Assert.DoesNotContain($"dragMinY", renderer.RenderHtml());
         }
@@ -1840,10 +1863,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop" };
 
 
-            chart.Series.Line.DragDrop.DragPrecisionX = value;
+            ((LineSeries)chart.Series[0]).DragDrop.DragPrecisionX = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragPrecisionX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1855,7 +1878,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = 0;
 
-            chart.Series.Line.DragDrop.DragPrecisionX = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.DragPrecisionX = defaultValue;
 
             Assert.DoesNotContain($"dragPrecisionX", renderer.RenderHtml());
         }
@@ -1867,10 +1890,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop" };
 
 
-            chart.Series.Line.DragDrop.DragPrecisionY = value;
+            ((LineSeries)chart.Series[0]).DragDrop.DragPrecisionY = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragPrecisionY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1882,7 +1905,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = 0;
 
-            chart.Series.Line.DragDrop.DragPrecisionY = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.DragPrecisionY = defaultValue;
 
             Assert.DoesNotContain($"dragPrecisionY", renderer.RenderHtml());
         }
@@ -1894,10 +1917,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop" };
 
 
-            chart.Series.Line.DragDrop.DragSensitivity = value;
+            ((LineSeries)chart.Series[0]).DragDrop.DragSensitivity = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragSensitivity", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1909,7 +1932,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = 2;
 
-            chart.Series.Line.DragDrop.DragSensitivity = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.DragSensitivity = defaultValue;
 
             Assert.DoesNotContain($"dragPrecisionY", renderer.RenderHtml());
         }
@@ -1920,10 +1943,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop" };
 
 
-            chart.Series.Line.DragDrop.GroupBy = value;
+            ((LineSeries)chart.Series[0]).DragDrop.GroupBy = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("groupBy", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1935,7 +1958,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.DragDrop.GroupBy = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.GroupBy = defaultValue;
 
             Assert.DoesNotContain($"groupBy", renderer.RenderHtml());
         }
@@ -1946,10 +1969,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop", "guideBox", "default" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop", "guideBox", "default" };
 
 
-            chart.Series.Line.DragDrop.GuideBox.Default.ClassName = value;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.ClassName = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("className", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1961,7 +1984,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "highcharts-drag-box-default";
 
-            chart.Series.Line.DragDrop.GuideBox.Default.ClassName = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.ClassName = defaultValue;
 
             Assert.DoesNotContain($"className", renderer.RenderHtml());
         }
@@ -1972,10 +1995,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop", "guideBox", "default" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop", "guideBox", "default" };
 
 
-            chart.Series.Line.DragDrop.GuideBox.Default.Color = value;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.Color = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("color", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -1987,7 +2010,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "rgba(0, 0, 0, 0.1)";
 
-            chart.Series.Line.DragDrop.GuideBox.Default.Color = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.Color = defaultValue;
 
             Assert.DoesNotContain($"color", renderer.RenderHtml());
         }
@@ -1998,10 +2021,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop", "guideBox", "default" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop", "guideBox", "default" };
 
 
-            chart.Series.Line.DragDrop.GuideBox.Default.Cursor = value;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.Cursor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("cursor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2013,7 +2036,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "move";
 
-            chart.Series.Line.DragDrop.GuideBox.Default.Cursor = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.Cursor = defaultValue;
 
             Assert.DoesNotContain($"cursor", renderer.RenderHtml());
         }
@@ -2024,10 +2047,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop", "guideBox", "default" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop", "guideBox", "default" };
 
 
-            chart.Series.Line.DragDrop.GuideBox.Default.LineColor = value;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2039,7 +2062,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "#888";
 
-            chart.Series.Line.DragDrop.GuideBox.Default.LineColor = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineColor = defaultValue;
 
             Assert.DoesNotContain($"lineColor", renderer.RenderHtml());
         }
@@ -2050,10 +2073,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop", "guideBox", "default" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop", "guideBox", "default" };
 
 
-            chart.Series.Line.DragDrop.GuideBox.Default.LineWidth = value;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2065,7 +2088,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 1;
 
-            chart.Series.Line.DragDrop.GuideBox.Default.LineWidth = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -2076,10 +2099,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "dragDrop", "guideBox", "default" };
+            var pathToProperty = new List<string>() { "series", "line", "dragDrop", "guideBox", "default" };
 
 
-            chart.Series.Line.DragDrop.GuideBox.Default.ZIndex = value;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.ZIndex = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("zIndex", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2091,7 +2114,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 900;
 
-            chart.Series.Line.DragDrop.GuideBox.Default.ZIndex = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.GuideBox.Default.ZIndex = defaultValue;
 
             Assert.DoesNotContain($"zIndex", renderer.RenderHtml());
         }
@@ -2101,10 +2124,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "dragDrop" };
+            var pathToProperty = new List<string> { "series", "line", "dragDrop" };
             bool value = false;
 
-            chart.Series.Line.DragDrop.LiveRedraw = value;
+            ((LineSeries)chart.Series[0]).DragDrop.LiveRedraw = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("liveRedraw", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2116,7 +2139,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool defaultValue = true;
 
-            chart.Series.Line.DragDrop.LiveRedraw = defaultValue;
+            ((LineSeries)chart.Series[0]).DragDrop.LiveRedraw = defaultValue;
 
             Assert.DoesNotContain($"liveRedraw", renderer.RenderHtml());
         }
@@ -2130,9 +2153,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.Series.Line.EnableMouseTracking = value;
+            ((LineSeries)chart.Series[0]).EnableMouseTracking = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"enableMouseTracking\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"enableMouseTracking\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -2142,9 +2165,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.Series.Line.EnableMouseTracking = value;
+            ((LineSeries)chart.Series[0]).EnableMouseTracking = value;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"enableMouseTracking\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"enableMouseTracking\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         #region events
@@ -2155,9 +2178,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "events" };
+            var pathToProperty = new List<string> { "series", "line", "events" };
 
-            chart.Series.Line.Events.AfterAnimate = value;
+            ((LineSeries)chart.Series[0]).Events.AfterAnimate = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("afterAnimate", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2169,7 +2192,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Events.AfterAnimate = defaultValue;
+            ((LineSeries)chart.Series[0]).Events.AfterAnimate = defaultValue;
 
             Assert.DoesNotContain($"afterAnimate", renderer.RenderHtml());
         }
@@ -2180,9 +2203,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "events" };
+            var pathToProperty = new List<string> { "series", "line", "events" };
 
-            chart.Series.Line.Events.CheckboxClick = value;
+            ((LineSeries)chart.Series[0]).Events.CheckboxClick = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("checkboxClick", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2194,7 +2217,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Events.CheckboxClick = defaultValue;
+            ((LineSeries)chart.Series[0]).Events.CheckboxClick = defaultValue;
 
             Assert.DoesNotContain($"checkboxClick", renderer.RenderHtml());
         }
@@ -2205,9 +2228,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "events" };
+            var pathToProperty = new List<string> { "series", "line", "events" };
 
-            chart.Series.Line.Events.Click = value;
+            ((LineSeries)chart.Series[0]).Events.Click = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("click", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2219,7 +2242,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Events.Click = defaultValue;
+            ((LineSeries)chart.Series[0]).Events.Click = defaultValue;
 
             Assert.DoesNotContain($"click", renderer.RenderHtml());
         }
@@ -2230,9 +2253,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "events" };
+            var pathToProperty = new List<string> { "series", "line", "events" };
 
-            chart.Series.Line.Events.Hide = value;
+            ((LineSeries)chart.Series[0]).Events.Hide = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("hide", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2244,7 +2267,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Events.Hide = defaultValue;
+            ((LineSeries)chart.Series[0]).Events.Hide = defaultValue;
 
             Assert.DoesNotContain($"hide", renderer.RenderHtml());
         }
@@ -2255,9 +2278,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "events" };
+            var pathToProperty = new List<string> { "series", "line", "events" };
 
-            chart.Series.Line.Events.LegendItemClick = value;
+            ((LineSeries)chart.Series[0]).Events.LegendItemClick = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("legendItemClick", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2269,7 +2292,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Events.LegendItemClick = defaultValue;
+            ((LineSeries)chart.Series[0]).Events.LegendItemClick = defaultValue;
 
             Assert.DoesNotContain($"legendItemClick", renderer.RenderHtml());
         }
@@ -2280,9 +2303,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "events" };
+            var pathToProperty = new List<string> { "series", "line", "events" };
 
-            chart.Series.Line.Events.MouseOut = value;
+            ((LineSeries)chart.Series[0]).Events.MouseOut = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("mouseOut", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2294,7 +2317,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Events.MouseOut = defaultValue;
+            ((LineSeries)chart.Series[0]).Events.MouseOut = defaultValue;
 
             Assert.DoesNotContain($"mouseOut", renderer.RenderHtml());
         }
@@ -2305,9 +2328,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "events" };
+            var pathToProperty = new List<string> { "series", "line", "events" };
 
-            chart.Series.Line.Events.MouseOver = value;
+            ((LineSeries)chart.Series[0]).Events.MouseOver = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("mouseOver", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2319,7 +2342,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Events.MouseOver = defaultValue;
+            ((LineSeries)chart.Series[0]).Events.MouseOver = defaultValue;
 
             Assert.DoesNotContain($"mouseOver", renderer.RenderHtml());
         }
@@ -2330,9 +2353,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "events" };
+            var pathToProperty = new List<string> { "series", "line", "events" };
 
-            chart.Series.Line.Events.Show = value;
+            ((LineSeries)chart.Series[0]).Events.Show = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("show", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2344,7 +2367,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Events.Show = defaultValue;
+            ((LineSeries)chart.Series[0]).Events.Show = defaultValue;
 
             Assert.DoesNotContain($"show", renderer.RenderHtml());
         }
@@ -2357,11 +2380,11 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var value = SeriesLineFindNearestPointBy.Xy;
+            var value = LineSeriesFindNearestPointBy.Xy;
 
-            chart.Series.Line.FindNearestPointBy = value;
+            ((LineSeries)chart.Series[0]).FindNearestPointBy = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"findNearestPointBy\":\"{value.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"findNearestPointBy\":\"{value.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -2369,11 +2392,11 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var value = SeriesLineFindNearestPointBy.X;
+            var value = LineSeriesFindNearestPointBy.X;
 
-            chart.Series.Line.FindNearestPointBy = value;
+            ((LineSeries)chart.Series[0]).FindNearestPointBy = value;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"findNearestPointBy\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"findNearestPointBy\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -2383,9 +2406,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
-            chart.Series.Line.GetExtremesFromAll = value;
+            ((LineSeries)chart.Series[0]).GetExtremesFromAll = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"getExtremesFromAll\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"getExtremesFromAll\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -2395,9 +2418,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.Series.Line.GetExtremesFromAll = value;
+            ((LineSeries)chart.Series[0]).GetExtremesFromAll = value;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"getExtremesFromAll\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"getExtremesFromAll\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -2408,9 +2431,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.IncludeInDataExport = value;
+            ((LineSeries)chart.Series[0]).IncludeInDataExport = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"includeInDataExport\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"includeInDataExport\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -2420,9 +2443,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? value = null;
 
-            chart.Series.Line.IncludeInDataExport = value;
+            ((LineSeries)chart.Series[0]).IncludeInDataExport = value;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"includeInDataExport\":{value}}}}}", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"includeInDataExport\":{value}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -2433,9 +2456,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = new List<string> { arg1, arg2, arg3, arg4 };
 
-            chart.Series.Line.Keys = value;
+            ((LineSeries)chart.Series[0]).Keys = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"keys\":[\"{arg1}\",\"{arg2}\",\"{arg3}\",\"{arg4}\"]}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"keys\":[\"{arg1}\",\"{arg2}\",\"{arg3}\",\"{arg4}\"]}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -2445,9 +2468,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = new List<string>();
 
-            chart.Series.Line.Keys = value;
+            ((LineSeries)chart.Series[0]).Keys = value;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"keys\":}}}}", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"keys\":}}}}", renderer.RenderHtml());
         }
 
         #region label
@@ -2459,10 +2482,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "label" };
+            var pathToProperty = new List<string> { "series", "line", "label" };
             var value = true;
 
-            chart.Series.Line.Label.ConnectorAllowed = value;
+            ((LineSeries)chart.Series[0]).Label.ConnectorAllowed = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("connectorAllowed", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2474,7 +2497,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
-            chart.Series.Line.Label.ConnectorAllowed = defaultValue;
+            ((LineSeries)chart.Series[0]).Label.ConnectorAllowed = defaultValue;
 
             Assert.DoesNotContain($"connectorAllowed", renderer.RenderHtml());
         }
@@ -2485,9 +2508,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "label" };
+            var pathToProperty = new List<string> { "series", "line", "label" };
 
-            chart.Series.Line.Label.ConnectorNeighbourDistance = value;
+            ((LineSeries)chart.Series[0]).Label.ConnectorNeighbourDistance = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("connectorNeighbourDistance", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2499,7 +2522,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 24;
 
-            chart.Series.Line.Label.ConnectorNeighbourDistance = defaultValue;
+            ((LineSeries)chart.Series[0]).Label.ConnectorNeighbourDistance = defaultValue;
 
             Assert.DoesNotContain($"connectorNeighbourDistance", renderer.RenderHtml());
         }
@@ -2509,10 +2532,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "label" };
+            var pathToProperty = new List<string> { "series", "line", "label" };
             var value = false;
 
-            chart.Series.Line.Label.Enabled = value;
+            ((LineSeries)chart.Series[0]).Label.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2524,7 +2547,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = true;
 
-            chart.Series.Line.Label.Enabled = defaultValue;
+            ((LineSeries)chart.Series[0]).Label.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -2535,9 +2558,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "label" };
+            var pathToProperty = new List<string> { "series", "line", "label" };
 
-            chart.Series.Line.Label.Format = value;
+            ((LineSeries)chart.Series[0]).Label.Format = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("format", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2554,7 +2577,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = string.Empty;
 
-        //    chart.Series.Line.Label.Format = defaultValue;
+        //    ((LineSeries)chart.Series[0]).Label.Format = defaultValue;
 
         //    Assert.DoesNotContain($"format", renderer.RenderHtml());
         //}
@@ -2565,9 +2588,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "label" };
+            var pathToProperty = new List<string> { "series", "line", "label" };
 
-            chart.Series.Line.Label.Formatter = value;
+            ((LineSeries)chart.Series[0]).Label.Formatter = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("formatter", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2579,7 +2602,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Label.Formatter = defaultValue;
+            ((LineSeries)chart.Series[0]).Label.Formatter = defaultValue;
 
             Assert.DoesNotContain($"formatter", renderer.RenderHtml());
         }
@@ -2590,9 +2613,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "label" };
+            var pathToProperty = new List<string> { "series", "line", "label" };
 
-            chart.Series.Line.Label.MaxFontSize = value;
+            ((LineSeries)chart.Series[0]).Label.MaxFontSize = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("maxFontSize", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2604,7 +2627,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.Label.MaxFontSize = defaultValue;
+            ((LineSeries)chart.Series[0]).Label.MaxFontSize = defaultValue;
 
             Assert.DoesNotContain($"maxFontSize", renderer.RenderHtml());
         }
@@ -2615,9 +2638,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "label" };
+            var pathToProperty = new List<string> { "series", "line", "label" };
 
-            chart.Series.Line.Label.MinFontSize = value;
+            ((LineSeries)chart.Series[0]).Label.MinFontSize = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("minFontSize", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2629,7 +2652,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.Label.MinFontSize = defaultValue;
+            ((LineSeries)chart.Series[0]).Label.MinFontSize = defaultValue;
 
             Assert.DoesNotContain($"minFontSize", renderer.RenderHtml());
         }
@@ -2641,9 +2664,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "label" };
+            var pathToProperty = new List<string> { "series", "line", "label" };
 
-            chart.Series.Line.Label.OnArea = value;
+            ((LineSeries)chart.Series[0]).Label.OnArea = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("onArea", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2655,7 +2678,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.Label.OnArea = defaultValue;
+            ((LineSeries)chart.Series[0]).Label.OnArea = defaultValue;
 
             Assert.DoesNotContain($"onArea", renderer.RenderHtml());
         }
@@ -2666,12 +2689,12 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "label" };
+            var pathToProperty = new List<string> { "series", "line", "label" };
             var value = new Hashtable();
             value.Add(paramName, paramValue);
 
 
-            chart.Series.Line.Label.Style = value;
+            ((LineSeries)chart.Series[0]).Label.Style = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetHashtablePropertyString("style", paramName, paramValue)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2687,7 +2710,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = new Hashtable();
 
-        //    chart.Series.Line.Label.Style = defaultValue;
+        //    ((LineSeries)chart.Series[0]).Label.Style = defaultValue;
 
         //    Assert.DoesNotContain($"style", renderer.RenderHtml());
         //}
@@ -2699,16 +2722,16 @@ namespace HC.Series
 
         //fix required - Linecap should be enum (not string)
         //[Theory]
-        //[InlineData(SeriesLineLinecap.Square)]
-        ////missing SeriesLineLinecap.Butt ?
-        //public void Test_IfLinecapRenders_Correct(SeriesLineLinecap value)
+        //[InlineData(LineSeriesLinecap.Square)]
+        ////missing LineSeriesLinecap.Butt ?
+        //public void Test_IfLinecapRenders_Correct(LineSeriesLinecap value)
         //{
         //    var chart = new Highcharts();
         //    var renderer = new HighchartsRenderer(chart);
 
-        //    chart.Series.Line.Linecap = value;
+        //    ((LineSeries)chart.Series[0]).Linecap = value;
 
-        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linecap\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+        //    Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linecap\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
         //}
 
         //[Fact]
@@ -2716,11 +2739,11 @@ namespace HC.Series
         //{
         //    var chart = new Highcharts();
         //    var renderer = new HighchartsRenderer(chart);
-        //    var defaultValue = SeriesLineLinecap.Round;
+        //    var defaultValue = LineSeriesLinecap.Round;
 
-        //    chart.Series.Line.Linecap = defaultValue;
+        //    ((LineSeries)chart.Series[0]).Linecap = defaultValue;
 
-        //    Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linecap\":{defaultValue.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        //    Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linecap\":{defaultValue.ToString().ToLower()}}}}}", renderer.RenderHtml());
         //}
 
         [Theory]
@@ -2732,9 +2755,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.LineWidth = value;
+            ((LineSeries)chart.Series[0]).LineWidth = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"lineWidth\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"lineWidth\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -2744,9 +2767,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 2;
 
-            chart.Series.Line.LineWidth = defaultValue;
+            ((LineSeries)chart.Series[0]).LineWidth = defaultValue;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"lineWidth\":{string.Format(new CultureInfo("en-us"), "{0:N1}", defaultValue)}}}}}", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"lineWidth\":{string.Format(new CultureInfo("en-us"), "{0:N1}", defaultValue)}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -2757,9 +2780,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.LinkedTo = value;
+            ((LineSeries)chart.Series[0]).LinkedTo = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linkedTo\":\"{value}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linkedTo\":\"{value}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -2769,9 +2792,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             string defaultValue = String.Empty;
 
-            chart.Series.Line.LinkedTo = defaultValue;
+            ((LineSeries)chart.Series[0]).LinkedTo = defaultValue;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linkedTo\":{defaultValue}}}}}", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linkedTo\":{defaultValue}}}}}", renderer.RenderHtml());
         }
 
         #region marker
@@ -2783,9 +2806,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "marker" };
 
-            chart.Series.Line.Marker.Enabled = value;
+            ((LineSeries)chart.Series[0]).Marker.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2797,7 +2820,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.Marker.Enabled = defaultValue;
+            ((LineSeries)chart.Series[0]).Marker.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -2809,9 +2832,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "marker" };
 
-            chart.Series.Line.Marker.EnabledThreshold = value;
+            ((LineSeries)chart.Series[0]).Marker.EnabledThreshold = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabledThreshold", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2823,7 +2846,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double defaultValue = 2;
 
-            chart.Series.Line.Marker.EnabledThreshold = defaultValue;
+            ((LineSeries)chart.Series[0]).Marker.EnabledThreshold = defaultValue;
 
             Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         }
@@ -2834,9 +2857,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "marker" };
 
-            chart.Series.Line.Marker.FillColor = value;
+            ((LineSeries)chart.Series[0]).Marker.FillColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("fillColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2852,7 +2875,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = string.Empty;
 
-        //    chart.Series.Line.Marker.FillColor = defaultValue;
+        //    ((LineSeries)chart.Series[0]).Marker.FillColor = defaultValue;
 
         //    Assert.DoesNotContain($"fillColor", renderer.RenderHtml());
         //}
@@ -2864,9 +2887,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "marker" };
 
-            chart.Series.Line.Marker.Height = value;
+            ((LineSeries)chart.Series[0]).Marker.Height = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("height", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2878,7 +2901,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.Marker.Height = defaultValue;
+            ((LineSeries)chart.Series[0]).Marker.Height = defaultValue;
 
             Assert.DoesNotContain($"\"height\":", renderer.RenderHtml());
         }
@@ -2889,9 +2912,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "marker" };
 
-            chart.Series.Line.Marker.LineColor = value;
+            ((LineSeries)chart.Series[0]).Marker.LineColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2904,7 +2927,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "#ffffff";
 
-            chart.Series.Line.Marker.LineColor = defaultValue;
+            ((LineSeries)chart.Series[0]).Marker.LineColor = defaultValue;
 
             Assert.DoesNotContain($"lineColor", renderer.RenderHtml());
         }
@@ -2915,9 +2938,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "marker" };
 
-            chart.Series.Line.Marker.LineWidth = value;
+            ((LineSeries)chart.Series[0]).Marker.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2930,7 +2953,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
-            chart.Series.Line.Marker.LineWidth = defaultValue;
+            ((LineSeries)chart.Series[0]).Marker.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -2941,9 +2964,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "marker" };
 
-            chart.Series.Line.Marker.Radius = value;
+            ((LineSeries)chart.Series[0]).Marker.Radius = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("radius", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2956,7 +2979,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 4;
 
-            chart.Series.Line.Marker.Radius = defaultValue;
+            ((LineSeries)chart.Series[0]).Marker.Radius = defaultValue;
 
             Assert.DoesNotContain($"radius", renderer.RenderHtml());
         }
@@ -2974,9 +2997,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "marker" };
 
-            chart.Series.Line.Marker.Symbol = value;
+            ((LineSeries)chart.Series[0]).Marker.Symbol = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("symbol", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -2988,7 +3011,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Marker.Symbol = defaultValue;
+            ((LineSeries)chart.Series[0]).Marker.Symbol = defaultValue;
 
             Assert.DoesNotContain($"symbol", renderer.RenderHtml());
         }
@@ -3000,9 +3023,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "marker" };
 
-            chart.Series.Line.Marker.Width = value;
+            ((LineSeries)chart.Series[0]).Marker.Width = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("width", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3014,7 +3037,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.Marker.Width = defaultValue;
+            ((LineSeries)chart.Series[0]).Marker.Width = defaultValue;
 
             Assert.DoesNotContain($"\"width\":", renderer.RenderHtml());
         }
@@ -3029,9 +3052,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.NegativeColor = value;
+            ((LineSeries)chart.Series[0]).NegativeColor = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"negativeColor\":\"{value}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"negativeColor\":\"{value}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3041,9 +3064,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             string defaultValue = String.Empty;
 
-            chart.Series.Line.NegativeColor = defaultValue;
+            ((LineSeries)chart.Series[0]).NegativeColor = defaultValue;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"negativeColor\":{defaultValue}}}}}", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"negativeColor\":{defaultValue}}}}}", renderer.RenderHtml());
         }
 
         #region onPoint
@@ -3055,9 +3078,9 @@ namespace HC.Series
         //{
         //    var chart = new Highcharts();
         //    var renderer = new HighchartsRenderer(chart);
-        //    var pathToProperty = new List<string>() { "plotOptions", "line", "onPoint", "connectorOptions" };
+        //    var pathToProperty = new List<string>() { "series", "line", "onPoint", "connectorOptions" };
 
-        //    chart.Series.Line.OnPoint.ConnectorOptions.Dashstyle = value;
+        //    ((LineSeries)chart.Series[0]).OnPoint.ConnectorOptions.Dashstyle = value;
 
         //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dashstyle", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         //}
@@ -3069,7 +3092,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = string.Empty;
 
-        //    chart.Series.Line.DataLabels.Color = defaultValue;
+        //    ((LineSeries)chart.Series[0]).DataLabels.Color = defaultValue;
 
         //    Assert.DoesNotContain($"color", renderer.RenderHtml());
         //}
@@ -3080,9 +3103,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "onPoint", "connectorOptions" };
+            var pathToProperty = new List<string>() { "series", "line", "onPoint", "connectorOptions" };
 
-            chart.Series.Line.OnPoint.ConnectorOptions.Stroke = value;
+            ((LineSeries)chart.Series[0]).OnPoint.ConnectorOptions.Stroke = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("stroke", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3094,7 +3117,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.OnPoint.ConnectorOptions.Stroke = defaultValue;
+            ((LineSeries)chart.Series[0]).OnPoint.ConnectorOptions.Stroke = defaultValue;
 
             Assert.DoesNotContain($"stroke", renderer.RenderHtml());
         }
@@ -3105,9 +3128,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "onPoint", "connectorOptions" };
+            var pathToProperty = new List<string>() { "series", "line", "onPoint", "connectorOptions" };
 
-            chart.Series.Line.OnPoint.ConnectorOptions.Width = value;
+            ((LineSeries)chart.Series[0]).OnPoint.ConnectorOptions.Width = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("width", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3119,7 +3142,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 1;
 
-            chart.Series.Line.OnPoint.ConnectorOptions.Width = defaultValue;
+            ((LineSeries)chart.Series[0]).OnPoint.ConnectorOptions.Width = defaultValue;
 
             Assert.DoesNotContain($"\"width\":", renderer.RenderHtml());
         }
@@ -3130,9 +3153,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "onPoint" };
+            var pathToProperty = new List<string>() { "series", "line", "onPoint" };
 
-            chart.Series.Line.OnPoint.Id = value;
+            ((LineSeries)chart.Series[0]).OnPoint.Id = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("id", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3144,7 +3167,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.OnPoint.Id = defaultValue;
+            ((LineSeries)chart.Series[0]).OnPoint.Id = defaultValue;
 
             Assert.DoesNotContain($"\"id\":", renderer.RenderHtml());
         }
@@ -3155,9 +3178,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "onPoint", "position" };
+            var pathToProperty = new List<string>() { "series", "line", "onPoint", "position" };
 
-            chart.Series.Line.OnPoint.Position.OffsetX = value;
+            ((LineSeries)chart.Series[0]).OnPoint.Position.OffsetX = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("offsetX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3169,7 +3192,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.OnPoint.Position.OffsetX = defaultValue;
+            ((LineSeries)chart.Series[0]).OnPoint.Position.OffsetX = defaultValue;
 
             Assert.DoesNotContain($"offsetX", renderer.RenderHtml());
         }
@@ -3180,9 +3203,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "onPoint", "position" };
+            var pathToProperty = new List<string>() { "series", "line", "onPoint", "position" };
 
-            chart.Series.Line.OnPoint.Position.OffsetY = value;
+            ((LineSeries)chart.Series[0]).OnPoint.Position.OffsetY = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("offsetY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3194,7 +3217,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.OnPoint.Position.OffsetY = defaultValue;
+            ((LineSeries)chart.Series[0]).OnPoint.Position.OffsetY = defaultValue;
 
             Assert.DoesNotContain($"offsetY", renderer.RenderHtml());
         }
@@ -3205,9 +3228,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "onPoint", "position" };
+            var pathToProperty = new List<string>() { "series", "line", "onPoint", "position" };
 
-            chart.Series.Line.OnPoint.Position.X = value;
+            ((LineSeries)chart.Series[0]).OnPoint.Position.X = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("x", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3219,7 +3242,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.OnPoint.Position.X = defaultValue;
+            ((LineSeries)chart.Series[0]).OnPoint.Position.X = defaultValue;
 
             Assert.DoesNotContain($"\"x\":", renderer.RenderHtml());
         }
@@ -3230,9 +3253,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "onPoint", "position" };
+            var pathToProperty = new List<string>() { "series", "line", "onPoint", "position" };
 
-            chart.Series.Line.OnPoint.Position.Y = value;
+            ((LineSeries)chart.Series[0]).OnPoint.Position.Y = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("y", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3244,7 +3267,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.OnPoint.Position.Y = defaultValue;
+            ((LineSeries)chart.Series[0]).OnPoint.Position.Y = defaultValue;
 
             Assert.DoesNotContain($"\"y\":", renderer.RenderHtml());
         }
@@ -3261,9 +3284,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Opacity = value;
+            ((LineSeries)chart.Series[0]).Opacity = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3273,9 +3296,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 1;
 
-            chart.Series.Line.Opacity = defaultValue;
+            ((LineSeries)chart.Series[0]).Opacity = defaultValue;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", defaultValue)}}}}}", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", defaultValue)}}}}}", renderer.RenderHtml());
         }
 
         #region point
@@ -3286,9 +3309,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "point", "events" };
+            var pathToProperty = new List<string>() { "series", "line", "point", "events" };
 
-            chart.Series.Line.Point.Events.Click = value;
+            ((LineSeries)chart.Series[0]).Point.Events.Click = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("click", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3300,7 +3323,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Point.Events.Click = defaultValue;
+            ((LineSeries)chart.Series[0]).Point.Events.Click = defaultValue;
 
             Assert.DoesNotContain($"click", renderer.RenderHtml());
         }
@@ -3311,9 +3334,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "point", "events" };
+            var pathToProperty = new List<string>() { "series", "line", "point", "events" };
 
-            chart.Series.Line.Point.Events.Drag = value;
+            ((LineSeries)chart.Series[0]).Point.Events.Drag = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("drag", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3325,7 +3348,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Point.Events.Drag = defaultValue;
+            ((LineSeries)chart.Series[0]).Point.Events.Drag = defaultValue;
 
             Assert.DoesNotContain($"drag", renderer.RenderHtml());
         }
@@ -3336,9 +3359,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "point", "events" };
+            var pathToProperty = new List<string>() { "series", "line", "point", "events" };
 
-            chart.Series.Line.Point.Events.DragStart = value;
+            ((LineSeries)chart.Series[0]).Point.Events.DragStart = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("dragStart", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3350,7 +3373,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Point.Events.DragStart = defaultValue;
+            ((LineSeries)chart.Series[0]).Point.Events.DragStart = defaultValue;
 
             Assert.DoesNotContain($"dragStart", renderer.RenderHtml());
         }
@@ -3361,9 +3384,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "point", "events" };
+            var pathToProperty = new List<string>() { "series", "line", "point", "events" };
 
-            chart.Series.Line.Point.Events.Drop = value;
+            ((LineSeries)chart.Series[0]).Point.Events.Drop = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("drop", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3375,7 +3398,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Point.Events.Drop = defaultValue;
+            ((LineSeries)chart.Series[0]).Point.Events.Drop = defaultValue;
 
             Assert.DoesNotContain($"drop", renderer.RenderHtml());
         }
@@ -3386,9 +3409,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "point", "events" };
+            var pathToProperty = new List<string>() { "series", "line", "point", "events" };
 
-            chart.Series.Line.Point.Events.MouseOut = value;
+            ((LineSeries)chart.Series[0]).Point.Events.MouseOut = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("mouseOut", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3400,7 +3423,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Point.Events.MouseOut = defaultValue;
+            ((LineSeries)chart.Series[0]).Point.Events.MouseOut = defaultValue;
 
             Assert.DoesNotContain($"mouseOut", renderer.RenderHtml());
         }
@@ -3411,9 +3434,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "point", "events" };
+            var pathToProperty = new List<string>() { "series", "line", "point", "events" };
 
-            chart.Series.Line.Point.Events.MouseOver = value;
+            ((LineSeries)chart.Series[0]).Point.Events.MouseOver = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("mouseOver", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3425,7 +3448,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Point.Events.MouseOver = defaultValue;
+            ((LineSeries)chart.Series[0]).Point.Events.MouseOver = defaultValue;
 
             Assert.DoesNotContain($"mouseOver", renderer.RenderHtml());
         }
@@ -3436,9 +3459,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "point", "events" };
+            var pathToProperty = new List<string>() { "series", "line", "point", "events" };
 
-            chart.Series.Line.Point.Events.Remove = value;
+            ((LineSeries)chart.Series[0]).Point.Events.Remove = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("remove", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3450,7 +3473,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Point.Events.Remove = defaultValue;
+            ((LineSeries)chart.Series[0]).Point.Events.Remove = defaultValue;
 
             Assert.DoesNotContain($"remove", renderer.RenderHtml());
         }
@@ -3461,9 +3484,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "point", "events" };
+            var pathToProperty = new List<string>() { "series", "line", "point", "events" };
 
-            chart.Series.Line.Point.Events.Select = value;
+            ((LineSeries)chart.Series[0]).Point.Events.Select = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("select", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3475,7 +3498,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Point.Events.Select = defaultValue;
+            ((LineSeries)chart.Series[0]).Point.Events.Select = defaultValue;
 
             Assert.DoesNotContain($"select", renderer.RenderHtml());
         }
@@ -3486,9 +3509,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "point", "events" };
+            var pathToProperty = new List<string>() { "series", "line", "point", "events" };
 
-            chart.Series.Line.Point.Events.Unselect = value;
+            ((LineSeries)chart.Series[0]).Point.Events.Unselect = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("unselect", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3500,7 +3523,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Point.Events.Unselect = defaultValue;
+            ((LineSeries)chart.Series[0]).Point.Events.Unselect = defaultValue;
 
             Assert.DoesNotContain($"unselect", renderer.RenderHtml());
         }
@@ -3511,9 +3534,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "point", "events" };
+            var pathToProperty = new List<string>() { "series", "line", "point", "events" };
 
-            chart.Series.Line.Point.Events.Update = value;
+            ((LineSeries)chart.Series[0]).Point.Events.Update = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("update", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3525,7 +3548,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Point.Events.Update = defaultValue;
+            ((LineSeries)chart.Series[0]).Point.Events.Update = defaultValue;
 
             Assert.DoesNotContain($"update", renderer.RenderHtml());
         }
@@ -3539,9 +3562,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.PointDescriptionFormatter = value;
+            ((LineSeries)chart.Series[0]).PointDescriptionFormatter = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointDescriptionFormatter\":{value}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointDescriptionFormatter\":{value}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3551,9 +3574,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.PointDescriptionFormatter = defaultValue;
+            ((LineSeries)chart.Series[0]).PointDescriptionFormatter = defaultValue;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointDescriptionFormatter\":{defaultValue}}}}}", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointDescriptionFormatter\":{defaultValue}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -3564,9 +3587,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.PointInterval = value;
+            ((LineSeries)chart.Series[0]).PointInterval = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointInterval\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointInterval\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3576,23 +3599,23 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 1;
 
-            chart.Series.Line.PointInterval = defaultValue;
+            ((LineSeries)chart.Series[0]).PointInterval = defaultValue;
 
             Assert.DoesNotContain($"pointInterval", renderer.RenderHtml());
         }
 
         [Theory]
-        [InlineData(SeriesLinePointIntervalUnit.Day)]
-        [InlineData(SeriesLinePointIntervalUnit.Month)]
-        [InlineData(SeriesLinePointIntervalUnit.Year)]
-        public void Test_IfPointIntervalUnitRenders_Correct(SeriesLinePointIntervalUnit value)
+        [InlineData(LineSeriesPointIntervalUnit.Day)]
+        [InlineData(LineSeriesPointIntervalUnit.Month)]
+        [InlineData(LineSeriesPointIntervalUnit.Year)]
+        public void Test_IfPointIntervalUnitRenders_Correct(LineSeriesPointIntervalUnit value)
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.PointIntervalUnit = value;
+            ((LineSeries)chart.Series[0]).PointIntervalUnit = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointIntervalUnit\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointIntervalUnit\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3600,9 +3623,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = SeriesLinePointIntervalUnit.Null;
+            var defaultValue = LineSeriesPointIntervalUnit.Null;
 
-            chart.Series.Line.PointIntervalUnit = defaultValue;
+            ((LineSeries)chart.Series[0]).PointIntervalUnit = defaultValue;
 
             Assert.DoesNotContain($"pointIntervalUnit", renderer.RenderHtml());
         }
@@ -3615,9 +3638,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.PointPlacement = new PointPlacement() { PointPlacementEnum = value };
+            ((LineSeries)chart.Series[0]).PointPlacement = new PointPlacement() { PointPlacementEnum = value };
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointPlacement\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointPlacement\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -3629,9 +3652,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.PointPlacement = new PointPlacement() { Value = value };
+            ((LineSeries)chart.Series[0]).PointPlacement = new PointPlacement() { Value = value };
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointPlacement\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointPlacement\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3641,7 +3664,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = PointPlacementEnum.Null;
 
-            chart.Series.Line.PointPlacement = new PointPlacement() { PointPlacementEnum = defaultValue };
+            ((LineSeries)chart.Series[0]).PointPlacement = new PointPlacement() { PointPlacementEnum = defaultValue };
 
             Assert.DoesNotContain($"pointPlacement", renderer.RenderHtml());
         }
@@ -3654,9 +3677,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.PointStart = value;
+            ((LineSeries)chart.Series[0]).PointStart = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointStart\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"pointStart\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3666,7 +3689,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
-            chart.Series.Line.PointStart = defaultValue;
+            ((LineSeries)chart.Series[0]).PointStart = defaultValue;
 
             Assert.DoesNotContain($"pointStart", renderer.RenderHtml());
         }
@@ -3678,9 +3701,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool value = true;
 
-            chart.Series.Line.RelativeXValue = value;
+            ((LineSeries)chart.Series[0]).RelativeXValue = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"relativeXValue\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"relativeXValue\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3690,7 +3713,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
-            chart.Series.Line.RelativeXValue = defaultValue;
+            ((LineSeries)chart.Series[0]).RelativeXValue = defaultValue;
 
             Assert.DoesNotContain($"relativeXValue", renderer.RenderHtml());
         }
@@ -3702,9 +3725,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool value = true;
 
-            chart.Series.Line.Selected = value;
+            ((LineSeries)chart.Series[0]).Selected = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"selected\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"selected\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3714,7 +3737,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
-            chart.Series.Line.Selected = defaultValue;
+            ((LineSeries)chart.Series[0]).Selected = defaultValue;
 
             Assert.DoesNotContain($"selected", renderer.RenderHtml());
         }
@@ -3726,9 +3749,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool value = true;
 
-            chart.Series.Line.ShadowBool = value;
+            ((LineSeries)chart.Series[0]).ShadowBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"shadow\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"shadow\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -3739,7 +3762,7 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Shadow = new Shadow()
+            ((LineSeries)chart.Series[0]).Shadow = new Shadow()
             {
                 Color = color,
                 OffsetX = offsetX,
@@ -3749,7 +3772,7 @@ namespace HC.Series
             };
 
             var result = renderer.RenderHtml();
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"shadow\":", result);
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"shadow\":", result);
             Assert.Contains($"\"offsetX\":{offsetX}", result);
             Assert.Contains($"\"width\":{width}", result);
             Assert.Contains($"\"opacity\":{string.Format(new CultureInfo("en-us"), "{0:N1}", opacity)}", result);
@@ -3764,7 +3787,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
-            chart.Series.Line.ShadowBool = defaultValue;
+            ((LineSeries)chart.Series[0]).ShadowBool = defaultValue;
 
             Assert.DoesNotContain($"shadow", renderer.RenderHtml());
         }
@@ -3776,9 +3799,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool value = true;
 
-            chart.Series.Line.ShowCheckbox = value;
+            ((LineSeries)chart.Series[0]).ShowCheckbox = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"showCheckbox\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"showCheckbox\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3788,7 +3811,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
-            chart.Series.Line.ShowCheckbox = defaultValue;
+            ((LineSeries)chart.Series[0]).ShowCheckbox = defaultValue;
 
             Assert.DoesNotContain($"showCheckbox", renderer.RenderHtml());
         }
@@ -3801,9 +3824,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.ShowInLegend = value;
+            ((LineSeries)chart.Series[0]).ShowInLegend = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"showInLegend\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"showInLegend\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3812,7 +3835,7 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.ShowInLegend = null;
+            ((LineSeries)chart.Series[0]).ShowInLegend = null;
 
             Assert.DoesNotContain($"showInLegend", renderer.RenderHtml());
         }
@@ -3825,9 +3848,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.SkipKeyboardNavigation = value;
+            ((LineSeries)chart.Series[0]).SkipKeyboardNavigation = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"skipKeyboardNavigation\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"skipKeyboardNavigation\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3836,7 +3859,7 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.SkipKeyboardNavigation = null;
+            ((LineSeries)chart.Series[0]).SkipKeyboardNavigation = null;
 
             Assert.DoesNotContain($"skipKeyboardNavigation", renderer.RenderHtml());
         }
@@ -3848,9 +3871,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool value = false;
 
-            chart.Series.Line.SoftThreshold = value;
+            ((LineSeries)chart.Series[0]).SoftThreshold = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"softThreshold\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"softThreshold\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3860,24 +3883,24 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = true;
 
-            chart.Series.Line.SoftThreshold = defaultValue;
+            ((LineSeries)chart.Series[0]).SoftThreshold = defaultValue;
 
             Assert.DoesNotContain($"softThreshold", renderer.RenderHtml());
         }
 
         [Theory]
-        [InlineData(SeriesLineStacking.Overlap)]
-        [InlineData(SeriesLineStacking.Percent)]
-        [InlineData(SeriesLineStacking.Normal)]
-        [InlineData(SeriesLineStacking.Stream)]
-        public void Test_IfStackingRenders_Correct(SeriesLineStacking value)
+        [InlineData(LineSeriesStacking.Overlap)]
+        [InlineData(LineSeriesStacking.Percent)]
+        [InlineData(LineSeriesStacking.Normal)]
+        [InlineData(LineSeriesStacking.Stream)]
+        public void Test_IfStackingRenders_Correct(LineSeriesStacking value)
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Stacking = value;
+            ((LineSeries)chart.Series[0]).Stacking = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stacking\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stacking\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3885,9 +3908,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = SeriesLineStacking.Null;
+            var defaultValue = LineSeriesStacking.Null;
 
-            chart.Series.Line.Stacking = defaultValue;
+            ((LineSeries)chart.Series[0]).Stacking = defaultValue;
 
             Assert.DoesNotContain($"stacking", renderer.RenderHtml());
         }
@@ -3903,9 +3926,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "hover", "animation" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "hover", "animation" };
 
-            chart.Series.Line.States.Hover.Animation.Duration = value;
+            ((LineSeries)chart.Series[0]).States.Hover.Animation.Duration = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("duration", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3917,7 +3940,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = -1;
 
-            chart.Series.Line.States.Hover.Animation.Duration = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Hover.Animation.Duration = defaultValue;
 
             Assert.DoesNotContain($"duration", renderer.RenderHtml());
         }
@@ -3928,10 +3951,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "hover" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "hover" };
             var value = false;
 
-            chart.Series.Line.States.Hover.Enabled = false;
+            ((LineSeries)chart.Series[0]).States.Hover.Enabled = false;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -3945,7 +3968,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = true;
 
-        //    chart.Series.Line.States.Hover.Enabled = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Hover.Enabled = defaultValue;
 
         //    Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         //}
@@ -3959,9 +3982,9 @@ namespace HC.Series
         //{
         //    var chart = new Highcharts();
         //    var renderer = new HighchartsRenderer(chart);
-        //    var pathToProperty = new List<string>() { "plotOptions", "line", "states", "hover", "halo" };
+        //    var pathToProperty = new List<string>() { "series", "line", "states", "hover", "halo" };
 
-        //    chart.Series.Line.States.Hover.Halo.Attributes = value;
+        //    ((LineSeries)chart.Series[0]).States.Hover.Halo.Attributes = value;
 
         //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("attributes", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         //}
@@ -3973,7 +3996,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = new Hashtable();
 
-        //    chart.Series.Line.States.Hover.Animation.Duration = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Hover.Animation.Duration = defaultValue;
 
         //    Assert.DoesNotContain($"duration", renderer.RenderHtml());
         //}
@@ -3985,9 +4008,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "hover", "halo" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "hover", "halo" };
 
-            chart.Series.Line.States.Hover.Halo.Opacity = value;
+            ((LineSeries)chart.Series[0]).States.Hover.Halo.Opacity = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("opacity", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4001,7 +4024,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = 0.25;
 
-        //    chart.Series.Line.States.Hover.Halo.Opacity = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Hover.Halo.Opacity = defaultValue;
 
         //    Assert.DoesNotContain($"opacity", renderer.RenderHtml());
         //}
@@ -4015,9 +4038,9 @@ namespace HC.Series
         //{
         //    var chart = new Highcharts();
         //    var renderer = new HighchartsRenderer(chart);
-        //    var pathToProperty = new List<string>() { "plotOptions", "line", "states", "hover", "halo" };
+        //    var pathToProperty = new List<string>() { "series", "line", "states", "hover", "halo" };
 
-        //    chart.Series.Line.States.Hover.Halo.Size = value;
+        //    ((LineSeries)chart.Series[0]).States.Hover.Halo.Size = value;
 
         //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("size", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         //}
@@ -4031,7 +4054,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = 0.25;
 
-        //    chart.Series.Line.States.Hover.Halo.Opacity = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Hover.Halo.Opacity = defaultValue;
 
         //    Assert.DoesNotContain($"opacity", renderer.RenderHtml());
         //}
@@ -4044,9 +4067,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "hover" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "hover" };
 
-            chart.Series.Line.States.Hover.LineWidth = value;
+            ((LineSeries)chart.Series[0]).States.Hover.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4058,7 +4081,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.States.Hover.LineWidth = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Hover.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -4069,9 +4092,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "hover" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "hover" };
 
-            chart.Series.Line.States.Hover.LineWidthPlus = value;
+            ((LineSeries)chart.Series[0]).States.Hover.LineWidthPlus = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidthPlus", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4085,7 +4108,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    double? defaultValue = 1;
 
-        //    chart.Series.Line.States.Hover.LineWidthPlus = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Hover.LineWidthPlus = defaultValue;
 
         //    Assert.DoesNotContain($"lineWidthPlus", renderer.RenderHtml());
         //}
@@ -4099,9 +4122,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "hover", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "hover", "marker" };
 
-            chart.Series.Line.States.Hover.Marker.Enabled = value;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4113,7 +4136,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.States.Hover.Marker.Enabled = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -4125,9 +4148,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "hover", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "hover", "marker" };
 
-            chart.Series.Line.States.Hover.Marker.EnabledThreshold = value;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.EnabledThreshold = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabledThreshold", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4139,7 +4162,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double defaultValue = 2;
 
-            chart.Series.Line.States.Hover.Marker.EnabledThreshold = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.EnabledThreshold = defaultValue;
 
             Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         }
@@ -4150,9 +4173,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "hover", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "hover", "marker" };
 
-            chart.Series.Line.States.Hover.Marker.FillColor = value;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.FillColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("fillColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4168,7 +4191,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = string.Empty;
 
-        //    chart.Series.Line.States.Hover.Marker.FillColor = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Hover.Marker.FillColor = defaultValue;
 
         //    Assert.DoesNotContain($"fillColor", renderer.RenderHtml());
         //}
@@ -4180,9 +4203,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "hover", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "hover", "marker" };
 
-            chart.Series.Line.States.Hover.Marker.Height = value;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.Height = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("height", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4194,7 +4217,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.States.Hover.Marker.Height = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.Height = defaultValue;
 
             Assert.DoesNotContain($"\"height\":", renderer.RenderHtml());
         }
@@ -4205,9 +4228,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "hover", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "hover", "marker" };
 
-            chart.Series.Line.States.Hover.Marker.LineColor = value;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.LineColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4220,7 +4243,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "#ffffff";
 
-            chart.Series.Line.States.Hover.Marker.LineColor = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.LineColor = defaultValue;
 
             Assert.DoesNotContain($"lineColor", renderer.RenderHtml());
         }
@@ -4231,9 +4254,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "hover", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "hover", "marker" };
 
-            chart.Series.Line.States.Hover.Marker.LineWidth = value;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4246,7 +4269,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
-            chart.Series.Line.States.Hover.Marker.LineWidth = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -4257,9 +4280,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "hover", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "hover", "marker" };
 
-            chart.Series.Line.States.Hover.Marker.Radius = value;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.Radius = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("radius", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4272,7 +4295,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 4;
 
-            chart.Series.Line.States.Hover.Marker.Radius = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.Radius = defaultValue;
 
             Assert.DoesNotContain($"radius", renderer.RenderHtml());
         }
@@ -4286,9 +4309,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "hover", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "hover", "marker" };
 
-            chart.Series.Line.States.Hover.Marker.Width = value;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.Width = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("width", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4300,7 +4323,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.States.Hover.Marker.Width = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Hover.Marker.Width = defaultValue;
 
             Assert.DoesNotContain($"\"width\":", renderer.RenderHtml());
         }
@@ -4318,9 +4341,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "inactive", "animation" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "inactive", "animation" };
 
-            chart.Series.Line.States.Inactive.Animation.Duration = value;
+            ((LineSeries)chart.Series[0]).States.Inactive.Animation.Duration = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("duration", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4332,7 +4355,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = -1;
 
-            chart.Series.Line.States.Inactive.Animation.Duration = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Inactive.Animation.Duration = defaultValue;
 
             Assert.DoesNotContain($"duration", renderer.RenderHtml());
         }
@@ -4343,10 +4366,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "inactive" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "inactive" };
             var value = false;
 
-            chart.Series.Line.States.Inactive.Enabled = false;
+            ((LineSeries)chart.Series[0]).States.Inactive.Enabled = false;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4360,7 +4383,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = true;
 
-        //    chart.Series.Line.States.Inactive.Enabled = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Inactive.Enabled = defaultValue;
 
         //    Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         //}
@@ -4371,9 +4394,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "inactive" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "inactive" };
 
-            chart.Series.Line.States.Inactive.Opacity = value;
+            ((LineSeries)chart.Series[0]).States.Inactive.Opacity = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("opacity", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4386,7 +4409,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = 0.2;
 
-        //    chart.Series.Line.States.Inactive.Opacity = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Inactive.Opacity = defaultValue;
 
         //    Assert.DoesNotContain($"opacity", renderer.RenderHtml());
         //}
@@ -4401,9 +4424,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "normal", "animation" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "normal", "animation" };
 
-            chart.Series.Line.States.Normal.Animation.Duration = value;
+            ((LineSeries)chart.Series[0]).States.Normal.Animation.Duration = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("duration", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4415,7 +4438,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = -1;
 
-            chart.Series.Line.States.Normal.Animation.Duration = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Normal.Animation.Duration = defaultValue;
 
             Assert.DoesNotContain($"duration", renderer.RenderHtml());
         }
@@ -4433,9 +4456,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "select", "animation" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "select", "animation" };
 
-            chart.Series.Line.States.Select.Animation.Duration = value;
+            ((LineSeries)chart.Series[0]).States.Select.Animation.Duration = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("duration", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4447,7 +4470,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = -1;
 
-            chart.Series.Line.States.Select.Animation.Duration = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Select.Animation.Duration = defaultValue;
 
             Assert.DoesNotContain($"duration", renderer.RenderHtml());
         }
@@ -4458,10 +4481,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "select" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "select" };
             var value = false;
 
-            chart.Series.Line.States.Select.Enabled = false;
+            ((LineSeries)chart.Series[0]).States.Select.Enabled = false;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4475,7 +4498,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = true;
 
-        //    chart.Series.Line.States.Select.Enabled = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Select.Enabled = defaultValue;
 
         //    Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         //}
@@ -4489,9 +4512,9 @@ namespace HC.Series
         //{
         //    var chart = new Highcharts();
         //    var renderer = new HighchartsRenderer(chart);
-        //    var pathToProperty = new List<string>() { "plotOptions", "line", "states", "select", "halo" };
+        //    var pathToProperty = new List<string>() { "series", "line", "states", "select", "halo" };
 
-        //    chart.Series.Line.States.Select.Halo.Attributes = value;
+        //    ((LineSeries)chart.Series[0]).States.Select.Halo.Attributes = value;
 
         //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("attributes", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         //}
@@ -4503,7 +4526,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = new Hashtable();
 
-        //    chart.Series.Line.States.Select.Animation.Duration = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Select.Animation.Duration = defaultValue;
 
         //    Assert.DoesNotContain($"duration", renderer.RenderHtml());
         //}
@@ -4515,9 +4538,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "select", "halo" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "select", "halo" };
 
-            chart.Series.Line.States.Select.Halo.Opacity = value;
+            ((LineSeries)chart.Series[0]).States.Select.Halo.Opacity = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("opacity", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4531,7 +4554,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = 0.25;
 
-        //    chart.Series.Line.States.Select.Halo.Opacity = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Select.Halo.Opacity = defaultValue;
 
         //    Assert.DoesNotContain($"opacity", renderer.RenderHtml());
         //}
@@ -4545,9 +4568,9 @@ namespace HC.Series
         //{
         //    var chart = new Highcharts();
         //    var renderer = new HighchartsRenderer(chart);
-        //    var pathToProperty = new List<string>() { "plotOptions", "line", "states", "select", "halo" };
+        //    var pathToProperty = new List<string>() { "series", "line", "states", "select", "halo" };
 
-        //    chart.Series.Line.States.Select.Halo.Size = value;
+        //    ((LineSeries)chart.Series[0]).States.Select.Halo.Size = value;
 
         //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("size", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         //}
@@ -4561,7 +4584,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = 0.25;
 
-        //    chart.Series.Line.States.Select.Halo.Opacity = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Select.Halo.Opacity = defaultValue;
 
         //    Assert.DoesNotContain($"opacity", renderer.RenderHtml());
         //}
@@ -4574,9 +4597,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "select" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "select" };
 
-            chart.Series.Line.States.Select.LineWidth = value;
+            ((LineSeries)chart.Series[0]).States.Select.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4588,7 +4611,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.States.Select.LineWidth = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Select.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -4599,9 +4622,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "states", "select" };
+            var pathToProperty = new List<string>() { "series", "line", "states", "select" };
 
-            chart.Series.Line.States.Select.LineWidthPlus = value;
+            ((LineSeries)chart.Series[0]).States.Select.LineWidthPlus = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidthPlus", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4615,7 +4638,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    double? defaultValue = 1;
 
-        //    chart.Series.Line.States.Select.LineWidthPlus = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Select.LineWidthPlus = defaultValue;
 
         //    Assert.DoesNotContain($"lineWidthPlus", renderer.RenderHtml());
         //}
@@ -4629,9 +4652,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "select", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "select", "marker" };
 
-            chart.Series.Line.States.Select.Marker.Enabled = value;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.Enabled = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabled", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4643,7 +4666,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
-            chart.Series.Line.States.Select.Marker.Enabled = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.Enabled = defaultValue;
 
             Assert.DoesNotContain($"enabled", renderer.RenderHtml());
         }
@@ -4655,9 +4678,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "select", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "select", "marker" };
 
-            chart.Series.Line.States.Select.Marker.EnabledThreshold = value;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.EnabledThreshold = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("enabledThreshold", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4669,7 +4692,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double defaultValue = 2;
 
-            chart.Series.Line.States.Select.Marker.EnabledThreshold = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.EnabledThreshold = defaultValue;
 
             Assert.DoesNotContain($"enabledThreshold", renderer.RenderHtml());
         }
@@ -4680,9 +4703,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "select", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "select", "marker" };
 
-            chart.Series.Line.States.Select.Marker.FillColor = value;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.FillColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("fillColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4698,7 +4721,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = string.Empty;
 
-        //    chart.Series.Line.States.Select.Marker.FillColor = defaultValue;
+        //    ((LineSeries)chart.Series[0]).States.Select.Marker.FillColor = defaultValue;
 
         //    Assert.DoesNotContain($"fillColor", renderer.RenderHtml());
         //}
@@ -4710,9 +4733,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "select", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "select", "marker" };
 
-            chart.Series.Line.States.Select.Marker.Height = value;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.Height = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("height", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4724,7 +4747,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.States.Select.Marker.Height = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.Height = defaultValue;
 
             Assert.DoesNotContain($"\"height\":", renderer.RenderHtml());
         }
@@ -4735,9 +4758,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "select", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "select", "marker" };
 
-            chart.Series.Line.States.Select.Marker.LineColor = value;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.LineColor = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4750,7 +4773,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "#ffffff";
 
-            chart.Series.Line.States.Select.Marker.LineColor = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.LineColor = defaultValue;
 
             Assert.DoesNotContain($"lineColor", renderer.RenderHtml());
         }
@@ -4761,9 +4784,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "select", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "select", "marker" };
 
-            chart.Series.Line.States.Select.Marker.LineWidth = value;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.LineWidth = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4776,7 +4799,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
-            chart.Series.Line.States.Select.Marker.LineWidth = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.LineWidth = defaultValue;
 
             Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
         }
@@ -4787,9 +4810,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "select", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "select", "marker" };
 
-            chart.Series.Line.States.Select.Marker.Radius = value;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.Radius = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("radius", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4802,7 +4825,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 4;
 
-            chart.Series.Line.States.Select.Marker.Radius = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.Radius = defaultValue;
 
             Assert.DoesNotContain($"radius", renderer.RenderHtml());
         }
@@ -4816,9 +4839,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string> { "plotOptions", "line", "states", "select", "marker" };
+            var pathToProperty = new List<string> { "series", "line", "states", "select", "marker" };
 
-            chart.Series.Line.States.Select.Marker.Width = value;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.Width = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("width", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4830,7 +4853,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.States.Select.Marker.Width = defaultValue;
+            ((LineSeries)chart.Series[0]).States.Select.Marker.Width = defaultValue;
 
             Assert.DoesNotContain($"\"width\":", renderer.RenderHtml());
         }
@@ -4843,17 +4866,17 @@ namespace HC.Series
 
 
         [Theory]
-        [InlineData(SeriesLineStep.Center)]
-        [InlineData(SeriesLineStep.Left)]
-        [InlineData(SeriesLineStep.Right)]
-        public void Test_IfStepRenders_Correct(SeriesLineStep value)
+        [InlineData(LineSeriesStep.Center)]
+        [InlineData(LineSeriesStep.Left)]
+        [InlineData(LineSeriesStep.Right)]
+        public void Test_IfStepRenders_Correct(LineSeriesStep value)
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Step = value;
+            ((LineSeries)chart.Series[0]).Step = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"step\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"step\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -4861,9 +4884,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = SeriesLineStep.Null;
+            var defaultValue = LineSeriesStep.Null;
 
-            chart.Series.Line.Step = defaultValue;
+            ((LineSeries)chart.Series[0]).Step = defaultValue;
 
             Assert.DoesNotContain($"step", renderer.RenderHtml());
         }
@@ -4875,9 +4898,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool value = false;
 
-            chart.Series.Line.StickyTracking = value;
+            ((LineSeries)chart.Series[0]).StickyTracking = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -4887,7 +4910,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = true;
 
-            chart.Series.Line.StickyTracking = defaultValue;
+            ((LineSeries)chart.Series[0]).StickyTracking = defaultValue;
 
             Assert.DoesNotContain($"stickyTracking", renderer.RenderHtml());
         }
@@ -4900,9 +4923,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.Threshold = value;
+            ((LineSeries)chart.Series[0]).Threshold = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"threshold\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"threshold\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -4912,7 +4935,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
-            chart.Series.Line.Threshold = defaultValue;
+            ((LineSeries)chart.Series[0]).Threshold = defaultValue;
 
             Assert.DoesNotContain($"threshold", renderer.RenderHtml());
         }
@@ -4925,9 +4948,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.ClusterFormat = value;
+            ((LineSeries)chart.Series[0]).Tooltip.ClusterFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("clusterFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4939,7 +4962,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Tooltip.ClusterFormat = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.ClusterFormat = defaultValue;
 
             Assert.DoesNotContain($"clusterFormat", renderer.RenderHtml());
         }
@@ -4957,11 +4980,11 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
             var value = new Hashtable();
             value.Add(param, paramValue);
 
-            chart.Series.Line.Tooltip.DateTimeLabelFormats = value;
+            ((LineSeries)chart.Series[0]).Tooltip.DateTimeLabelFormats = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetHashtablePropertyString("dateTimeLabelFormats", param, paramValue)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4974,7 +4997,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = new Hashtable();
 
-        //    chart.Series.Line.Tooltip.DateTimeLabelFormats = defaultValue;
+        //    ((LineSeries)chart.Series[0]).Tooltip.DateTimeLabelFormats = defaultValue;
 
         //    Assert.DoesNotContain($"dateTimeLabelFormats", renderer.RenderHtml());
         //}
@@ -4985,9 +5008,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.Distance = value;
+            ((LineSeries)chart.Series[0]).Tooltip.Distance = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("distance", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -4999,7 +5022,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 16;
 
-            chart.Series.Line.Tooltip.Distance = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.Distance = defaultValue;
 
             Assert.DoesNotContain($"distance", renderer.RenderHtml());
         }
@@ -5009,10 +5032,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
             var value = true;
 
-            chart.Series.Line.Tooltip.FollowPointer = value;
+            ((LineSeries)chart.Series[0]).Tooltip.FollowPointer = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("followPointer", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5025,7 +5048,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = false;
 
-        //    chart.Series.Line.Tooltip.FollowPointer = defaultValue;
+        //    ((LineSeries)chart.Series[0]).Tooltip.FollowPointer = defaultValue;
 
         //    Assert.DoesNotContain($"followPointer", renderer.RenderHtml());
         //}
@@ -5035,10 +5058,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
             var value = false;
 
-            chart.Series.Line.Tooltip.FollowTouchMove = value;
+            ((LineSeries)chart.Series[0]).Tooltip.FollowTouchMove = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("followTouchMove", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5051,7 +5074,7 @@ namespace HC.Series
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = true;
 
-        //    chart.Series.Line.Tooltip.FollowTouchMove = defaultValue;
+        //    ((LineSeries)chart.Series[0]).Tooltip.FollowTouchMove = defaultValue;
 
         //    Assert.DoesNotContain($"followTouchMove", renderer.RenderHtml());
         //}
@@ -5062,9 +5085,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.FooterFormat = value;
+            ((LineSeries)chart.Series[0]).Tooltip.FooterFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("footerFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5076,7 +5099,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Tooltip.FooterFormat = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.FooterFormat = defaultValue;
 
             Assert.DoesNotContain($"footerFormat", renderer.RenderHtml());
         }
@@ -5087,9 +5110,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.HeaderFormat = value;
+            ((LineSeries)chart.Series[0]).Tooltip.HeaderFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("headerFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5101,7 +5124,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Tooltip.HeaderFormat = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.HeaderFormat = defaultValue;
 
             Assert.DoesNotContain($"headerFormat", renderer.RenderHtml());
         }
@@ -5112,9 +5135,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.NullFormat = value;
+            ((LineSeries)chart.Series[0]).Tooltip.NullFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("nullFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5126,7 +5149,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Tooltip.NullFormat = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.NullFormat = defaultValue;
 
             Assert.DoesNotContain($"nullFormat", renderer.RenderHtml());
         }
@@ -5137,9 +5160,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.NullFormatter = value;
+            ((LineSeries)chart.Series[0]).Tooltip.NullFormatter = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("nullFormatter", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5151,7 +5174,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Tooltip.NullFormatter = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.NullFormatter = defaultValue;
 
             Assert.DoesNotContain($"nullFormatter", renderer.RenderHtml());
         }
@@ -5162,9 +5185,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.PointFormat = value;
+            ((LineSeries)chart.Series[0]).Tooltip.PointFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("pointFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5176,7 +5199,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Tooltip.PointFormat = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.PointFormat = defaultValue;
 
             Assert.DoesNotContain($"pointFormat", renderer.RenderHtml());
         }
@@ -5187,9 +5210,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.PointFormatter = value;
+            ((LineSeries)chart.Series[0]).Tooltip.PointFormatter = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetFunctionPropertyString("pointFormatter", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5201,7 +5224,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Tooltip.PointFormatter = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.PointFormatter = defaultValue;
 
             Assert.DoesNotContain($"pointFormatter", renderer.RenderHtml());
         }
@@ -5212,9 +5235,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.ValueDecimals = value;
+            ((LineSeries)chart.Series[0]).Tooltip.ValueDecimals = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("valueDecimals", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5226,7 +5249,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
-            chart.Series.Line.Tooltip.ValueDecimals = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.ValueDecimals = defaultValue;
 
             Assert.DoesNotContain($"valueDecimals", renderer.RenderHtml());
         }
@@ -5237,9 +5260,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.ValuePrefix = value;
+            ((LineSeries)chart.Series[0]).Tooltip.ValuePrefix = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("valuePrefix", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5251,7 +5274,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Tooltip.ValuePrefix = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.ValuePrefix = defaultValue;
 
             Assert.DoesNotContain($"valuePrefix", renderer.RenderHtml());
         }
@@ -5262,9 +5285,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.ValueSuffix = value;
+            ((LineSeries)chart.Series[0]).Tooltip.ValueSuffix = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("valueSuffix", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5276,7 +5299,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Tooltip.ValueSuffix = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.ValueSuffix = defaultValue;
 
             Assert.DoesNotContain($"valueSuffix", renderer.RenderHtml());
         }
@@ -5287,9 +5310,9 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "tooltip" };
+            var pathToProperty = new List<string>() { "series", "line", "tooltip" };
 
-            chart.Series.Line.Tooltip.XDateFormat = value;
+            ((LineSeries)chart.Series[0]).Tooltip.XDateFormat = value;
 
             Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("xDateFormat", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5301,7 +5324,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
-            chart.Series.Line.Tooltip.XDateFormat = defaultValue;
+            ((LineSeries)chart.Series[0]).Tooltip.XDateFormat = defaultValue;
 
             Assert.DoesNotContain($"xDateFormat", renderer.RenderHtml());
         }
@@ -5315,9 +5338,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
-            chart.Series.Line.TurboThreshold = value;
+            ((LineSeries)chart.Series[0]).TurboThreshold = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"turboThreshold\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"turboThreshold\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -5327,7 +5350,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 1000;
 
-            chart.Series.Line.TurboThreshold = defaultValue;
+            ((LineSeries)chart.Series[0]).TurboThreshold = defaultValue;
 
             Assert.DoesNotContain($"turboThreshold", renderer.RenderHtml());
         }
@@ -5339,9 +5362,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             bool value = false;
 
-            chart.Series.Line.Visible = value;
+            ((LineSeries)chart.Series[0]).Visible = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"visible\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"visible\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -5351,7 +5374,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = true;
 
-            chart.Series.Line.Visible = defaultValue;
+            ((LineSeries)chart.Series[0]).Visible = defaultValue;
 
             Assert.DoesNotContain($"visible", renderer.RenderHtml());
         }
@@ -5363,9 +5386,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var value = "x";
 
-            chart.Series.Line.ZoneAxis = value;
+            ((LineSeries)chart.Series[0]).ZoneAxis = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"zoneAxis\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"series\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"zoneAxis\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -5375,7 +5398,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "y";
 
-            chart.Series.Line.ZoneAxis = defaultValue;
+            ((LineSeries)chart.Series[0]).ZoneAxis = defaultValue;
 
             Assert.DoesNotContain($"zoneAxis", renderer.RenderHtml());
         }
@@ -5388,10 +5411,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "zones" };
-            var zoneDef = new List<SeriesLineZone> { new SeriesLineZone { ClassName = value } };
+            var pathToProperty = new List<string>() { "series", "line", "zones" };
+            var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { ClassName = value } };
 
-            chart.Series.Line.Zones = zoneDef;
+            ((LineSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("className", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5402,9 +5425,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<SeriesLineZone> { new SeriesLineZone { ClassName = defaultValue } };
+            var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { ClassName = defaultValue } };
 
-            chart.Series.Line.Zones = zoneDef;
+            ((LineSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.DoesNotContain($"className", renderer.RenderHtml());
         }
@@ -5417,10 +5440,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "zones" };
-            var zoneDef = new List<SeriesLineZone> { new SeriesLineZone { Color = value } };
+            var pathToProperty = new List<string>() { "series", "line", "zones" };
+            var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { Color = value } };
 
-            chart.Series.Line.Zones = zoneDef;
+            ((LineSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("color", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5431,33 +5454,33 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<SeriesLineZone> { new SeriesLineZone { Color = defaultValue } };
+            var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { Color = defaultValue } };
 
-            chart.Series.Line.Zones = zoneDef;
+            ((LineSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.DoesNotContain($"color", renderer.RenderHtml());
         }
 
         [Theory]
-        [InlineData(SeriesLineZonesDashStyle.Dash)]
-        [InlineData(SeriesLineZonesDashStyle.DashDot)]
-        [InlineData(SeriesLineZonesDashStyle.Dot)]
-        [InlineData(SeriesLineZonesDashStyle.LongDash)]
-        [InlineData(SeriesLineZonesDashStyle.LongDashDot)]
-        [InlineData(SeriesLineZonesDashStyle.LongDashDotDot)]
-        [InlineData(SeriesLineZonesDashStyle.ShortDash)]
-        [InlineData(SeriesLineZonesDashStyle.ShortDashDot)]
-        [InlineData(SeriesLineZonesDashStyle.ShortDashDotDot)]
-        [InlineData(SeriesLineZonesDashStyle.ShortDot)]
-        [InlineData(SeriesLineZonesDashStyle.Solid)]
-        public void Test_IfZonesDashStyleRenders_Correct(SeriesLineZonesDashStyle value)
+        [InlineData(LineSeriesZonesDashStyle.Dash)]
+        [InlineData(LineSeriesZonesDashStyle.DashDot)]
+        [InlineData(LineSeriesZonesDashStyle.Dot)]
+        [InlineData(LineSeriesZonesDashStyle.LongDash)]
+        [InlineData(LineSeriesZonesDashStyle.LongDashDot)]
+        [InlineData(LineSeriesZonesDashStyle.LongDashDotDot)]
+        [InlineData(LineSeriesZonesDashStyle.ShortDash)]
+        [InlineData(LineSeriesZonesDashStyle.ShortDashDot)]
+        [InlineData(LineSeriesZonesDashStyle.ShortDashDotDot)]
+        [InlineData(LineSeriesZonesDashStyle.ShortDot)]
+        [InlineData(LineSeriesZonesDashStyle.Solid)]
+        public void Test_IfZonesDashStyleRenders_Correct(LineSeriesZonesDashStyle value)
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "zones" };
-            var zoneDef = new List<SeriesLineZone> { new SeriesLineZone { DashStyle = value } };
+            var pathToProperty = new List<string>() { "series", "line", "zones" };
+            var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { DashStyle = value } };
 
-            chart.Series.Line.Zones = zoneDef;
+            ((LineSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetEnumPropertyString(chart, "dashStyle", value.ToString())}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5467,10 +5490,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = SeriesLineZonesDashStyle.Null;
-            var zoneDef = new List<SeriesLineZone> { new SeriesLineZone { DashStyle = defaultValue } };
+            var defaultValue = LineSeriesZonesDashStyle.Null;
+            var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { DashStyle = defaultValue } };
 
-            chart.Series.Line.Zones = zoneDef;
+            ((LineSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.DoesNotContain($"dashStyle", renderer.RenderHtml());
         }
@@ -5482,10 +5505,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "zones" };
-            var zoneDef = new List<SeriesLineZone> { new SeriesLineZone { FillColor = value } };
+            var pathToProperty = new List<string>() { "series", "line", "zones" };
+            var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { FillColor = value } };
 
-            chart.Series.Line.Zones = zoneDef;
+            ((LineSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("fillColor", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5497,9 +5520,9 @@ namespace HC.Series
         //    var chart = new Highcharts();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<SeriesLineZone> { new SeriesLineZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { FillColor = defaultValue } };
 
-        //    chart.Series.Line.Zones = zoneDef;
+        //    ((LineSeries)chart.Series[0]).Zones = zoneDef;
 
         //    Assert.DoesNotContain($"fillColor", renderer.RenderHtml());
         //}
@@ -5511,10 +5534,10 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var pathToProperty = new List<string>() { "plotOptions", "line", "zones" };
-            var zoneDef = new List<SeriesLineZone> { new SeriesLineZone { Value = value } };
+            var pathToProperty = new List<string>() { "series", "line", "zones" };
+            var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { Value = value } };
 
-            chart.Series.Line.Zones = zoneDef;
+            ((LineSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.Contains($"{TH.GetJsonLeadingPathForList(pathToProperty)}{TH.GetPropertyString("value", value)}{TH.GetJsonTrailingStringForList(pathToProperty)}", renderer.RenderHtml());
         }
@@ -5525,9 +5548,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<SeriesLineZone> { new SeriesLineZone { Value = defaultValue } };
+            var zoneDef = new List<LineSeriesZone> { new LineSeriesZone { Value = defaultValue } };
 
-            chart.Series.Line.Zones = zoneDef;
+            ((LineSeries)chart.Series[0]).Zones = zoneDef;
 
             Assert.DoesNotContain($"value", renderer.RenderHtml());
         }
