@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxSpeed = MaxSpeed_DefaultValue = 10;
 			RepulsiveForce = RepulsiveForce_DefaultValue = "";
 			Theta = Theta_DefaultValue = null;
+			Type = Type_DefaultValue = NetworkgraphSeriesLayoutAlgorithmType.ReingoldFruchterman;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -125,6 +126,13 @@ namespace Highsoft.Web.Mvc.Charts
 		private double? Theta_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Type of the algorithm used when positioning nodes.
+		/// </summary>
+		public NetworkgraphSeriesLayoutAlgorithmType Type { get; set; }
+		private NetworkgraphSeriesLayoutAlgorithmType Type_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(ref Highcharts highcharts)
@@ -145,7 +153,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
 			if (RepulsiveForce != RepulsiveForce_DefaultValue) { h.Add("repulsiveForce",RepulsiveForce); highcharts.AddFunction("repulsiveForce", RepulsiveForce); }  
 			if (Theta != Theta_DefaultValue) h.Add("theta",Theta);
-			h.Add("type","networkgraphlayoutalgorithm");
+			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

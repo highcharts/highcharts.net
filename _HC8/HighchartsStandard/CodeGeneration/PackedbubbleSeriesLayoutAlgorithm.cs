@@ -31,6 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ParentNodeOptions = ParentNodeOptions_DefaultValue = new PackedbubbleSeriesLayoutAlgorithmParentNodeOptions();
 			SeriesInteraction = SeriesInteraction_DefaultValue = true;
 			SplitSeries = SplitSeries_DefaultValue = "false";
+			Type = Type_DefaultValue = PackedbubbleSeriesLayoutAlgorithmType.ReingoldFruchterman;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -141,6 +142,13 @@ namespace Highsoft.Web.Mvc.Charts
 		private string SplitSeries_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Type of the algorithm used when positioning nodes.
+		/// </summary>
+		public PackedbubbleSeriesLayoutAlgorithmType Type { get; set; }
+		private PackedbubbleSeriesLayoutAlgorithmType Type_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(ref Highcharts highcharts)
@@ -163,7 +171,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ParentNodeOptions.IsDirty(ref highcharts)) h.Add("parentNodeOptions",ParentNodeOptions.ToHashtable(ref highcharts));
 			if (SeriesInteraction != SeriesInteraction_DefaultValue) h.Add("seriesInteraction",SeriesInteraction);
 			if (SplitSeries != SplitSeries_DefaultValue) h.Add("splitSeries",SplitSeries);
-			h.Add("type","packedbubblelayoutalgorithm");
+			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

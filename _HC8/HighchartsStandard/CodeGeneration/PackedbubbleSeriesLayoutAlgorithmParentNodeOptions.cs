@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxIterations = MaxIterations_DefaultValue = 400;
 			MaxSpeed = MaxSpeed_DefaultValue = 50;
 			SeriesInteraction = SeriesInteraction_DefaultValue = true;
+			Type = Type_DefaultValue = PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsType.ReingoldFruchterman;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -101,6 +102,13 @@ namespace Highsoft.Web.Mvc.Charts
 		private bool? SeriesInteraction_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Type of the algorithm used when positioning nodes.
+		/// </summary>
+		public PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsType Type { get; set; }
+		private PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsType Type_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(ref Highcharts highcharts)
@@ -118,7 +126,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
 			if (SeriesInteraction != SeriesInteraction_DefaultValue) h.Add("seriesInteraction",SeriesInteraction);
-			h.Add("type","packedbubblelayoutalgorithmparentnodeoptions");
+			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

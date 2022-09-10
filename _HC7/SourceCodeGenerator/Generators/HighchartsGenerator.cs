@@ -369,7 +369,7 @@ public class HighchartsGenerator
             string formattedProperty = string.Empty;
             string formattedDefaultProperty = string.Empty;
             string formattedComparer = string.Empty;
-            if (!(child.FullName.ToLower().StartsWith("series") && child.FullName.ToLower().EndsWith("type")))
+            if (!((child.FullName.ToLower().StartsWith("series") && child.FullName.ToLower().EndsWith("type") && child.FullName.Split('.').Length == 3) || child.FullName.ToLower().Equals("series.type")))
             {
                 formattedProperty = FormatProperty(propertyTemplate, child);
                 formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
