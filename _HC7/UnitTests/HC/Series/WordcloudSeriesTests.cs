@@ -348,7 +348,7 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new WordcloudSeries(); chart.Series.Add(series);
-            var value = false;
+            var value = true;
 
             ((WordcloudSeries)chart.Series[0]).Clip = value;
 
@@ -360,7 +360,7 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new WordcloudSeries(); chart.Series.Add(series);
-            var value = true;
+            var value = false;
 
             ((WordcloudSeries)chart.Series[0]).Clip = value;
 
