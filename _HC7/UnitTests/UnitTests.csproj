@@ -25,4 +25,8 @@
     <ProjectReference Include="..\..\_HC8\HighstockStandard\HighstockStandard2.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="HS\Series\" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
 ﻿using Highsoft.Web.Mvc.Charts;
+using Highsoft.Web.Mvc.Stocks;
 using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -294,7 +295,12 @@ namespace Tests.Helpers
 			return $"\"{name}\":\"{chart.FirstCharacterToLower(value.ToString())}\"";
         }
 
-		public static string GetFunctionPropertyString(string name, string value)
+        public static string GetEnumPropertyString(Highstock chart, string name, string value)
+        {
+            return $"\"{name}\":\"{Highstock.FirstCharacterToLower(value.ToString())}\"";
+        }
+
+        public static string GetFunctionPropertyString(string name, string value)
 		{
 			return $"\"{name}\":{value}";
 		}
