@@ -50,6 +50,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		Heikinashi,
 		Histogram, 
 		Hlc,
+		Hollowcandlestick,
 		Id, 
 		Ikh, 
 		Index, 

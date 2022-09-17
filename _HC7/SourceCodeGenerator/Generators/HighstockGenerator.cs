@@ -639,6 +639,7 @@ public class HighstockGenerator
             apiItem.Values.Add("heatmap");
             apiItem.Values.Add("histogram");
             apiItem.Values.Add("hlc");
+            apiItem.Values.Add("hollowcandlestick");
             apiItem.Values.Add("id");
             apiItem.Values.Add("ikh");
             apiItem.Values.Add("index");
