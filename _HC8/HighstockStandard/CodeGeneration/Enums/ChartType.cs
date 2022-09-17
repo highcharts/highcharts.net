@@ -49,6 +49,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		Heatmap,
 		Heikinashi,
 		Histogram, 
+		Hlc,
 		Id, 
 		Ikh, 
 		Index, 
