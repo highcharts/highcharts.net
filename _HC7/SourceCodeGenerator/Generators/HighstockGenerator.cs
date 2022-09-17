@@ -635,6 +635,7 @@ public class HighstockGenerator
             apiItem.Values.Add("funnel3d");
             apiItem.Values.Add("gantt");
             apiItem.Values.Add("gauge");
+            apiItem.Values.Add("heikinashi");
             apiItem.Values.Add("heatmap");
             apiItem.Values.Add("histogram");
             apiItem.Values.Add("id");
