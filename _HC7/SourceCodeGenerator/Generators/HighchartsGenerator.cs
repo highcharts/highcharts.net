@@ -521,6 +521,7 @@ public class HighchartsGenerator
             apiItem.Values.Add("columnrange");
             apiItem.Values.Add("cylinder");
             apiItem.Values.Add("dema");
+            apiItem.Values.Add("disparityindex");
             apiItem.Values.Add("dependencywheel");
             apiItem.Values.Add("dpo");
             apiItem.Values.Add("dumbbell");
