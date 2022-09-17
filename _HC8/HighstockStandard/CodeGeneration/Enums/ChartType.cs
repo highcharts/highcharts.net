@@ -35,6 +35,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		Cylinder, 
 		Dema,
 		Disparityindex,
+		Dmi,
 		Dependencywheel, 
 		Dpo, 
 		Dumbbell, 
