@@ -515,6 +515,7 @@ public class HighchartsGenerator
             apiItem.Values.Add("cci");
             apiItem.Values.Add("chaikin");
             apiItem.Values.Add("cmf");
+            apiItem.Values.Add("cmo");
             apiItem.Values.Add("column");
             apiItem.Values.Add("columnpyramid");
             apiItem.Values.Add("columnrange");
