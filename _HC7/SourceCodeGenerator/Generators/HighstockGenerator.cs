@@ -645,6 +645,7 @@ public class HighstockGenerator
             apiItem.Values.Add("index");
             apiItem.Values.Add("item");
             apiItem.Values.Add("keltnerchannels");
+            apiItem.Values.Add("klinger");
             apiItem.Values.Add("legendindex");
             apiItem.Values.Add("line");
             apiItem.Values.Add("linearregression");
