@@ -649,7 +649,7 @@ public class HighstockGenerator
             apiItem.Values.Add("legendindex");
             apiItem.Values.Add("line");
             apiItem.Values.Add("linearregression");
-            apiItem.Values.Add("linearregressiongle");
+            apiItem.Values.Add("linearregressionagle");
             apiItem.Values.Add("linearregressionintercept");
             apiItem.Values.Add("linearregressionslope");
             apiItem.Values.Add("lollipop");

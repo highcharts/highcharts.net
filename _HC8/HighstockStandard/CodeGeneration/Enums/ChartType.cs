@@ -60,7 +60,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		Legendindex, 
 		Line, 
 		Linearregression, 
-		Linearregressiongle, 
+		Linearregressionangle, 
 		Linearregressionintercept, 
 		Linearregressionslope, 
 		Lollipop, 
