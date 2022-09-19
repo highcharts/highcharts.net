@@ -967,7 +967,7 @@ public class HighstockGenerator
         
         // Enum
         if (child.ReturnType.Equals(TypeService.EnumType) || (child.Values != null && child.Values.Count > 0))
-            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
+            return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), MAIN_FIELD_NAME);
         // Complex object with nested objects / properties
         if (child.IsParent)
         {
@@ -979,7 +979,7 @@ public class HighstockGenerator
 
             // Event (javascript function)
             if (child.ReturnType != null && (child.ReturnType.ToLower() == "function" || child.ReturnType.ToLower() == "string|function"))
-                return String.Format(functionPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix), propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), ROOT_CLASS);
+                return String.Format(functionPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix), propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), MAIN_FIELD_NAME);
             // Just a property
             else
             {

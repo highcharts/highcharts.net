@@ -11,14 +11,14 @@ namespace Highsoft.Web.Mvc.Stocks
 {
 	public partial class Highstock
 	{
-        internal static Hashtable functions = new Hashtable();
+        internal Hashtable functions = new Hashtable();
 
-        internal static void AddFunction(string eventName, string functionName)
+        internal void AddFunction(string eventName, string functionName)
         {
             functions[Guid.NewGuid()+"."+eventName] = functionName;
         }
 
-        public static string FirstCharacterToLower(string str)
+        public string FirstCharacterToLower(string str)
         {
             if (String.IsNullOrEmpty(str) || Char.IsLower(str, 0))
                 return str;
