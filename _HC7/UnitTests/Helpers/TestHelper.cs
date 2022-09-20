@@ -297,7 +297,7 @@ namespace Tests.Helpers
 
         public static string GetEnumPropertyString(Highstock chart, string name, string value)
         {
-            return $"\"{name}\":\"{Highstock.FirstCharacterToLower(value.ToString())}\"";
+            return $"\"{name}\":\"{chart.FirstCharacterToLower(value.ToString())}\"";
         }
 
         public static string GetFunctionPropertyString(string name, string value)

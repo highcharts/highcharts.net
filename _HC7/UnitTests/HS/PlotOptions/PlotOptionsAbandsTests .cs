@@ -580,7 +580,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.DataLabels.Align = align;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"align\":\"{Highstock.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"align\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1100,7 +1100,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.DataLabels.Overflow = align;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"overflow\":\"{Highstock.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"overflow\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1150,7 +1150,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.DataLabels.Position = align;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"position\":\"{Highstock.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"position\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1199,7 +1199,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.DataLabels.ShadowBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"shadow\":{Highstock.FirstCharacterToLower(value.ToString())}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"shadow\":{chart.FirstCharacterToLower(value.ToString())}}}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -1384,7 +1384,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.DataLabels.VerticalAlign = align;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"verticalAlign\":\"{Highstock.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"verticalAlign\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -2130,7 +2130,7 @@ namespace HS.PlotOptions
 
         //    chart.PlotOptions.Abands.Linecap = value;
 
-        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linecap\":\"{Highstock.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linecap\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
         //}
 
         //[Fact]
@@ -2987,7 +2987,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.RelativeXValue = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"relativeXValue\":{Highstock.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"relativeXValue\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3011,7 +3011,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.Selected = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"selected\":{Highstock.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"selected\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3035,7 +3035,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.ShadowBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"shadow\":{Highstock.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"shadow\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Theory]
@@ -3085,7 +3085,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.ShowCheckbox = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"showCheckbox\":{Highstock.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"showCheckbox\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3110,7 +3110,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.ShowInLegend = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"showInLegend\":{Highstock.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"showInLegend\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3134,7 +3134,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.SkipKeyboardNavigation = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"skipKeyboardNavigation\":{Highstock.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"skipKeyboardNavigation\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -3157,7 +3157,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.SoftThreshold = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"softThreshold\":{Highstock.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"softThreshold\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -4136,7 +4136,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.Step = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"step\":\"{Highstock.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"step\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -4160,7 +4160,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.StickyTracking = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stickyTracking\":{Highstock.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"stickyTracking\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -4264,7 +4264,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.Visible = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"visible\":{Highstock.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"visible\":{chart.FirstCharacterToLower(value.ToString())}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -4288,7 +4288,7 @@ namespace HS.PlotOptions
 
             chart.PlotOptions.Abands.ZoneAxis = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"zoneAxis\":\"{Highstock.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"zoneAxis\":\"{chart.FirstCharacterToLower(value.ToString())}\"}}}}", renderer.RenderHtml());
         }
 
         [Fact]
