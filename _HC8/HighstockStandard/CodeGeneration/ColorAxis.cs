@@ -517,7 +517,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (DataClassColor != DataClassColor_DefaultValue) h.Add("dataClassColor", Highstock.FirstCharacterToLower(DataClassColor.ToString()));
+			if (DataClassColor != DataClassColor_DefaultValue) h.Add("dataClassColor", highstock.FirstCharacterToLower(DataClassColor.ToString()));
 			if (DataClasses != DataClasses_DefaultValue) h.Add("dataClasses", HashifyList(ref highstock,DataClasses));
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
@@ -545,7 +545,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
 			if (MinorTickIntervalNumber != MinorTickIntervalNumber_DefaultValue) h.Add("minorTickInterval",MinorTickIntervalNumber);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
-			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", Highstock.FirstCharacterToLower(MinorTickPosition.ToString()));
+			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", highstock.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
@@ -567,8 +567,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickInterval != TickInterval_DefaultValue) h.Add("tickInterval",TickInterval);
 			if (TickLength != TickLength_DefaultValue) h.Add("tickLength",TickLength);
 			if (TickPixelInterval != TickPixelInterval_DefaultValue) h.Add("tickPixelInterval",TickPixelInterval);
-			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", Highstock.FirstCharacterToLower(TickPosition.ToString()));
-			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); Highstock.AddFunction("tickPositioner", TickPositioner); }  
+			if (TickPosition != TickPosition_DefaultValue) h.Add("tickPosition", highstock.FirstCharacterToLower(TickPosition.ToString()));
+			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); highstock.AddFunction("tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Type != Type_DefaultValue) h.Add("type",Type);

@@ -113,17 +113,17 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); Highstock.AddFunction("addSeries", AddSeries); }  
-			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); Highstock.AddFunction("afterPrint", AfterPrint); }  
-			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); Highstock.AddFunction("beforePrint", BeforePrint); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); Highstock.AddFunction("click", Click); }  
-			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); Highstock.AddFunction("exportData", ExportData); }  
-			if (FullscreenClose != FullscreenClose_DefaultValue) { h.Add("fullscreenClose",FullscreenClose); Highstock.AddFunction("fullscreenClose", FullscreenClose); }  
-			if (FullscreenOpen != FullscreenOpen_DefaultValue) { h.Add("fullscreenOpen",FullscreenOpen); Highstock.AddFunction("fullscreenOpen", FullscreenOpen); }  
-			if (Load != Load_DefaultValue) { h.Add("load",Load); Highstock.AddFunction("load", Load); }  
-			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); Highstock.AddFunction("redraw", Redraw); }  
-			if (Render != Render_DefaultValue) { h.Add("render",Render); Highstock.AddFunction("render", Render); }  
-			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); Highstock.AddFunction("selection", Selection); }  
+			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); highstock.AddFunction("addSeries", AddSeries); }  
+			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); highstock.AddFunction("afterPrint", AfterPrint); }  
+			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); highstock.AddFunction("beforePrint", BeforePrint); }  
+			if (Click != Click_DefaultValue) { h.Add("click",Click); highstock.AddFunction("click", Click); }  
+			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); highstock.AddFunction("exportData", ExportData); }  
+			if (FullscreenClose != FullscreenClose_DefaultValue) { h.Add("fullscreenClose",FullscreenClose); highstock.AddFunction("fullscreenClose", FullscreenClose); }  
+			if (FullscreenOpen != FullscreenOpen_DefaultValue) { h.Add("fullscreenOpen",FullscreenOpen); highstock.AddFunction("fullscreenOpen", FullscreenOpen); }  
+			if (Load != Load_DefaultValue) { h.Add("load",Load); highstock.AddFunction("load", Load); }  
+			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); highstock.AddFunction("redraw", Redraw); }  
+			if (Render != Render_DefaultValue) { h.Add("render",Render); highstock.AddFunction("render", Render); }  
+			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); highstock.AddFunction("selection", Selection); }  
 			
 
 			return h;

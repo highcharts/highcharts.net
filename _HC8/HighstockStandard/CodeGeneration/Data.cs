@@ -249,10 +249,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); Highstock.AddFunction("beforeParse", BeforeParse); }  
+			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); highstock.AddFunction("beforeParse", BeforeParse); }  
 			if (Columns != Columns_DefaultValue) h.Add("columns",Columns);
 			if (ColumnsURL != ColumnsURL_DefaultValue) h.Add("columnsURL",ColumnsURL);
-			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); Highstock.AddFunction("complete", Complete); }  
+			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); highstock.AddFunction("complete", Complete); }  
 			if (Csv != Csv_DefaultValue) h.Add("csv",Csv);
 			if (CsvURL != CsvURL_DefaultValue) h.Add("csvURL",CsvURL);
 			if (DataRefreshRate != DataRefreshRate_DefaultValue) h.Add("dataRefreshRate",DataRefreshRate);
@@ -268,8 +268,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GoogleSpreadsheetWorksheet != GoogleSpreadsheetWorksheet_DefaultValue) h.Add("googleSpreadsheetWorksheet",GoogleSpreadsheetWorksheet);
 			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
 			if (LineDelimiter != LineDelimiter_DefaultValue) h.Add("lineDelimiter",LineDelimiter);
-			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); Highstock.AddFunction("parsed", Parsed); }  
-			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); Highstock.AddFunction("parseDate", ParseDate); }  
+			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); highstock.AddFunction("parsed", Parsed); }  
+			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); highstock.AddFunction("parseDate", ParseDate); }  
 			if (Rows != Rows_DefaultValue) h.Add("rows",Rows);
 			if (RowsURL != RowsURL_DefaultValue) h.Add("rowsURL",RowsURL);
 			if (SeriesMapping != SeriesMapping_DefaultValue) h.Add("seriesMapping",SeriesMapping);

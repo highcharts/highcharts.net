@@ -106,7 +106,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Anchor != Anchor_DefaultValue) h.Add("anchor",Anchor);
-			if (Approximation != Approximation_DefaultValue) { h.Add("approximation",Approximation); Highstock.AddFunction("approximation", Approximation); }  
+			if (Approximation != Approximation_DefaultValue) { h.Add("approximation",Approximation); highstock.AddFunction("approximation", Approximation); }  
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (FirstAnchor != FirstAnchor_DefaultValue) h.Add("firstAnchor",FirstAnchor);

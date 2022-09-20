@@ -362,7 +362,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
-			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
 			if (AlignColumns != AlignColumns_DefaultValue) h.Add("alignColumns",AlignColumns);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -382,7 +382,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ItemWidth != ItemWidth_DefaultValue) h.Add("itemWidth",ItemWidth);
 			if (LabelFormat != LabelFormat_DefaultValue) h.Add("labelFormat",LabelFormat);
 			if (LabelFormatter != LabelFormatter_DefaultValue) h.Add("labelFormatter",LabelFormatter);
-			if (Layout != Layout_DefaultValue) h.Add("layout", Highstock.FirstCharacterToLower(Layout.ToString()));
+			if (Layout != Layout_DefaultValue) h.Add("layout", highstock.FirstCharacterToLower(Layout.ToString()));
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
 			if (Navigation.IsDirty(ref highstock)) h.Add("navigation",Navigation.ToHashtable(ref highstock));
@@ -398,7 +398,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SymbolWidth != SymbolWidth_DefaultValue) h.Add("symbolWidth",SymbolWidth);
 			if (Title.IsDirty(ref highstock)) h.Add("title",Title.ToHashtable(ref highstock));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (X != X_DefaultValue) h.Add("x",X);

@@ -89,12 +89,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", Highstock.FirstCharacterToLower(Align.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

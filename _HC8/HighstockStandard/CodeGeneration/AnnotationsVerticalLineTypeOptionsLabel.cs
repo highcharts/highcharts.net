@@ -94,7 +94,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", Highstock.FirstCharacterToLower(Overflow.ToString()));
+			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			

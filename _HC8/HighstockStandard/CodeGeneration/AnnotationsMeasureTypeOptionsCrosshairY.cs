@@ -57,9 +57,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd", Highstock.FirstCharacterToLower(MarkerEnd.ToString()));
+			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd", highstock.FirstCharacterToLower(MarkerEnd.ToString()));
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			
 

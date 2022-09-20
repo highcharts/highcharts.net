@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); Highstock.AddFunction("positioner", Positioner); }  
+			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); highstock.AddFunction("positioner", Positioner); }  
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);

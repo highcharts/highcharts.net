@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Crop = Crop_DefaultValue = true;
 			Draggable = Draggable_DefaultValue = "xy";
 			Events = Events_DefaultValue = new NavigationAnnotationsOptionsEvents();
-			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new Hashtable();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new object();
 			Id = Id_DefaultValue = "";
 			IdNumber = IdNumber_DefaultValue = null;
 			LabelOptions = LabelOptions_DefaultValue = new NavigationAnnotationsOptionsLabelOptions();
@@ -81,8 +81,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The Fibonacci Time Zones annotation.
 		/// </summary>
-		public Hashtable FibonacciTimeZones { get; set; }
-		private Hashtable FibonacciTimeZones_DefaultValue { get; set; }
+		public object FibonacciTimeZones { get; set; }
+		private object FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -74,8 +74,8 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Date != Date_DefaultValue) h.Add("date",Date);
-			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); Highstock.AddFunction("getTimezoneOffset", GetTimezoneOffset); }  
-			if (Moment != Moment_DefaultValue) { h.Add("moment",Moment); Highstock.AddFunction("moment", Moment); }  
+			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); highstock.AddFunction("getTimezoneOffset", GetTimezoneOffset); }  
+			if (Moment != Moment_DefaultValue) { h.Add("moment",Moment); highstock.AddFunction("moment", Moment); }  
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);

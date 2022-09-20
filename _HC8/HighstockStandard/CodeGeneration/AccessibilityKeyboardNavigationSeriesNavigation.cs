@@ -65,7 +65,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Mode != Mode_DefaultValue) h.Add("mode", Highstock.FirstCharacterToLower(Mode.ToString()));
+			if (Mode != Mode_DefaultValue) h.Add("mode", highstock.FirstCharacterToLower(Mode.ToString()));
 			if (PointNavigationEnabledThreshold != PointNavigationEnabledThreshold_DefaultValue) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThreshold);
 			if (PointNavigationEnabledThresholdBool != PointNavigationEnabledThresholdBool_DefaultValue) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThresholdBool);
 			if (RememberPointFocus != RememberPointFocus_DefaultValue) h.Add("rememberPointFocus",RememberPointFocus);

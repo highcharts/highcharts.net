@@ -57,10 +57,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (ClosePopup != ClosePopup_DefaultValue) { h.Add("closePopup",ClosePopup); Highstock.AddFunction("closePopup", ClosePopup); }  
-			if (DeselectButton != DeselectButton_DefaultValue) { h.Add("deselectButton",DeselectButton); Highstock.AddFunction("deselectButton", DeselectButton); }  
-			if (SelectButton != SelectButton_DefaultValue) { h.Add("selectButton",SelectButton); Highstock.AddFunction("selectButton", SelectButton); }  
-			if (ShowPopup != ShowPopup_DefaultValue) { h.Add("showPopup",ShowPopup); Highstock.AddFunction("showPopup", ShowPopup); }  
+			if (ClosePopup != ClosePopup_DefaultValue) { h.Add("closePopup",ClosePopup); highstock.AddFunction("closePopup", ClosePopup); }  
+			if (DeselectButton != DeselectButton_DefaultValue) { h.Add("deselectButton",DeselectButton); highstock.AddFunction("deselectButton", DeselectButton); }  
+			if (SelectButton != SelectButton_DefaultValue) { h.Add("selectButton",SelectButton); highstock.AddFunction("selectButton", SelectButton); }  
+			if (ShowPopup != ShowPopup_DefaultValue) { h.Add("showPopup",ShowPopup); highstock.AddFunction("showPopup", ShowPopup); }  
 			
 
 			return h;

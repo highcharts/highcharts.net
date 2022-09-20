@@ -170,7 +170,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             }
 
             string json = JsonConvert.SerializeObject(options);
-            var functions = Highstock.functions;
+            var functions = _chart.functions;
             List<string> keysToRemove = new List<string>();
 
             foreach (string key in functions.Keys)
@@ -188,7 +188,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             }
 
             foreach (var key in keysToRemove)
-                Highstock.functions.Remove(key);
+                _chart.functions.Remove(key);
 
             keysToRemove.Clear();
 

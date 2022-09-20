@@ -127,7 +127,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (HighContrastTheme != HighContrastTheme_DefaultValue) h.Add("highContrastTheme",HighContrastTheme);
 			if (KeyboardNavigation.IsDirty(ref highstock)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(ref highstock));
-			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", Highstock.FirstCharacterToLower(LandmarkVerbosity.ToString()));
+			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", highstock.FirstCharacterToLower(LandmarkVerbosity.ToString()));
 			if (LinkedDescription != LinkedDescription_DefaultValue) h.Add("linkedDescription",LinkedDescription);
 			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));
 			if (ScreenReaderSection.IsDirty(ref highstock)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(ref highstock));

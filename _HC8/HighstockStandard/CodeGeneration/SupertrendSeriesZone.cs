@@ -67,7 +67,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", Highstock.FirstCharacterToLower(DashStyle.ToString()));
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			

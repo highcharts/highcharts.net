@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ElliottWave = ElliottWave_DefaultValue = new AnnotationsElliottWave();
 			Events = Events_DefaultValue = new AnnotationsEvents();
 			Fibonacci = Fibonacci_DefaultValue = new AnnotationsFibonacci();
-			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new Hashtable();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new object();
 			Id = Id_DefaultValue = "";
 			IdNumber = IdNumber_DefaultValue = null;
 			InfinityLine = InfinityLine_DefaultValue = new AnnotationsInfinityLine();
@@ -110,8 +110,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The Fibonacci Time Zones annotation.
 		/// </summary>
-		public Hashtable FibonacciTimeZones { get; set; }
-		private Hashtable FibonacciTimeZones_DefaultValue { get; set; }
+		public object FibonacciTimeZones { get; set; }
+		private object FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>

@@ -386,7 +386,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CurrentPriceIndicator != CurrentPriceIndicator_DefaultValue) h.Add("currentPriceIndicator",CurrentPriceIndicator);
 			if (Elliott3 != Elliott3_DefaultValue) h.Add("elliott3",Elliott3);
 			if (Elliott5 != Elliott5_DefaultValue) h.Add("elliott5",Elliott5);
-			if (EllipseAnnotation != EllipseAnnotation_DefaultValue) h.Add("ellipseAnnotation",EllipseAnnotation);
+			if (EllipseAnnotation != Elliott3_DefaultValue) h.Add("ellipseAnnotation",EllipseAnnotation);
 			if (Fibonacci != Fibonacci_DefaultValue) h.Add("fibonacci",Fibonacci);
 			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (FlagCirclepin != FlagCirclepin_DefaultValue) h.Add("flagCirclepin",FlagCirclepin);

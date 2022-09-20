@@ -222,7 +222,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Buttons != Buttons_DefaultValue) h.Add("buttons", HashifyList(ref highstock,Buttons));
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (ButtonTheme != ButtonTheme_DefaultValue) h.Add("buttonTheme",ButtonTheme);
-			if (Dropdown != Dropdown_DefaultValue) h.Add("dropdown", Highstock.FirstCharacterToLower(Dropdown.ToString()));
+			if (Dropdown != Dropdown_DefaultValue) h.Add("dropdown", highstock.FirstCharacterToLower(Dropdown.ToString()));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
@@ -230,7 +230,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (InputBoxHeight != InputBoxHeight_DefaultValue) h.Add("inputBoxHeight",InputBoxHeight);
 			if (InputBoxWidth != InputBoxWidth_DefaultValue) h.Add("inputBoxWidth",InputBoxWidth);
 			if (InputDateFormat != InputDateFormat_DefaultValue) h.Add("inputDateFormat",InputDateFormat);
-			if (InputDateParser != InputDateParser_DefaultValue) { h.Add("inputDateParser",InputDateParser); Highstock.AddFunction("inputDateParser", InputDateParser); }  
+			if (InputDateParser != InputDateParser_DefaultValue) { h.Add("inputDateParser",InputDateParser); highstock.AddFunction("inputDateParser", InputDateParser); }  
 			if (InputEditDateFormat != InputEditDateFormat_DefaultValue) h.Add("inputEditDateFormat",InputEditDateFormat);
 			if (InputEnabled != InputEnabled_DefaultValue) h.Add("inputEnabled",InputEnabled);
 			if (InputPosition != InputPosition_DefaultValue) h.Add("inputPosition",InputPosition);
@@ -238,7 +238,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (InputStyle != InputStyle_DefaultValue) h.Add("inputStyle",InputStyle);
 			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", Highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			

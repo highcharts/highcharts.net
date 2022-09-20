@@ -431,9 +431,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MarginLeft != MarginLeft_DefaultValue) h.Add("marginLeft",MarginLeft);
 			if (MarginRight != MarginRight_DefaultValue) h.Add("marginRight",MarginRight);
 			if (MarginTop != MarginTop_DefaultValue) h.Add("marginTop",MarginTop);
-			if (NumberFormatter != NumberFormatter_DefaultValue) { h.Add("numberFormatter",NumberFormatter); Highstock.AddFunction("numberFormatter", NumberFormatter); }  
+			if (NumberFormatter != NumberFormatter_DefaultValue) { h.Add("numberFormatter",NumberFormatter); highstock.AddFunction("numberFormatter", NumberFormatter); }  
 			if (Panning.IsDirty(ref highstock)) h.Add("panning",Panning.ToHashtable(ref highstock));
-			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", Highstock.FirstCharacterToLower(PinchType.ToString()));
+			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", highstock.FirstCharacterToLower(PinchType.ToString()));
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
@@ -451,12 +451,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SpacingTop != SpacingTop_DefaultValue) h.Add("spacingTop",SpacingTop);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (StyledMode != StyledMode_DefaultValue) h.Add("styledMode",StyledMode);
-			if (Type != Type_DefaultValue) h.Add("type", Highstock.FirstCharacterToLower(Type.ToString()));
+			if (Type != Type_DefaultValue) h.Add("type", highstock.FirstCharacterToLower(Type.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (ZoomBySingleTouch != ZoomBySingleTouch_DefaultValue) h.Add("zoomBySingleTouch",ZoomBySingleTouch);
-			if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", Highstock.FirstCharacterToLower(ZoomKey.ToString()));
-			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", Highstock.FirstCharacterToLower(ZoomType.ToString()));
+			if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", highstock.FirstCharacterToLower(ZoomKey.ToString()));
+			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", highstock.FirstCharacterToLower(ZoomType.ToString()));
 			
 
 			return h;
