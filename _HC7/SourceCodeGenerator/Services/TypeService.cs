@@ -21,7 +21,7 @@ namespace SourceCodeGenerator.Services
         private static IEnumerable<string> UniqueStringTypesNames = new List<string> { /*"Highcharts.CSSObject",*/ "Highcharts.ColorString","Highcharts.ColorType", "Highcharts.StockToolsBindingsObject", "Highcharts.ButtonRelativeToValue", "Highcharts.SeriesOrganizationNodesLayoutValue", "Highcharts.PaneBackgroundShapeValue", "Highcharts.TilemapShapeValue", "Highcharts.VariablePieSizeByValue", "Highcharts.TooltipShapeValue", "Highcharts.DashStyleValue", "Highcharts.VerticalAlignValue", "Highcharts.ColorAxisTypeValue",
         "Highcharts.PathfinderTypeValue", "Highcharts.SymbolKeyValue", "Highcharts.ExportingMimeTypeValue", "Highcharts.BubbleSizeByValue", "Highcharts.AxisTypeValue", "Highcharts.FlagShapeValue",
         "Highcharts.SeriesLinecapValue", "Highcharts.AxisTitleAlignValue", "Highcharts.RangeSelectorButtonTypeValue", "Highcharts.AnnotationDraggableValue", "Highcharts.FlagsShapeValue", "Highcharts.DataGroupingAnchor","Highcharts.DataGroupingAnchorExtremes",
-        "Highcharts.OrganizationHangingIndentTranslationValue"};//, "Highcharts.HTMLDOMElement" 
+        "Highcharts.OrganizationHangingIndentTranslationValue", "Highcharts.SVGPathArray"};//, "Highcharts.HTMLDOMElement" 
         private static ISet<string> UniqueStringTypes = new HashSet<string>(UniqueStringTypesNames);
 
         private static IEnumerable<string> UniqueObjectTypeNames = new List<string> { "Highcharts.PlotNetworkDataLabelsOptionsObject", "Highcharts.DataLabelsOptionsObject", "Highcharts.NavigationBindingsOptionsObject", "Highcharts.SVGAttributes" };

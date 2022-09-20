@@ -44,7 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new AreasplinerangeSeriesEvents();
 			FillColor = FillColor_DefaultValue = null;
-			FillOpacity = FillOpacity_DefaultValue = null;
+			FillOpacity = FillOpacity_DefaultValue = "0.75";
+			FillOpacityNumber = FillOpacityNumber_DefaultValue = null;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = AreasplinerangeSeriesFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Id = Id_DefaultValue = "";
@@ -295,8 +296,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? FillOpacity { get; set; }
-		private double? FillOpacity_DefaultValue { get; set; }
+		public string FillOpacity { get; set; }
+		private string FillOpacity_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? FillOpacityNumber { get; set; }
+		private double? FillOpacityNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -657,6 +665,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty(ref highcharts)) h.Add("events",Events.ToHashtable(ref highcharts));
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
+			if (FillOpacityNumber != FillOpacityNumber_DefaultValue) h.Add("fillOpacity",FillOpacityNumber);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
