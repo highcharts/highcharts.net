@@ -17,13 +17,7 @@ namespace SourceCodeGenerator.Services
                 return _assemblyFolderPath + "\\CodeTemplates";
             }
         }
-        private string RootClassTemplatePath
-        {
-            get
-            {
-                return TemplatesFolderPath + "\\RootClass.tpl";
-            }
-        }
+        
         private string RootClassTemplatePathNETStandard
         {
             get
@@ -31,13 +25,7 @@ namespace SourceCodeGenerator.Services
                 return TemplatesFolderPath + "\\RootClass_NETStandard.tpl";
             }
         }
-        private string ClassTemplatePath
-        {
-            get
-            {
-                return TemplatesFolderPath + "\\Class.tpl";
-            }
-        }
+        
         private string ClassTemplatePathNETStandard
         {
             get
