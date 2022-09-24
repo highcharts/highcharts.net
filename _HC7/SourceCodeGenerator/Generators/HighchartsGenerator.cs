@@ -562,6 +562,7 @@ public class HighchartsGenerator
             apiItem.Values.Add("name");
             apiItem.Values.Add("natr");
             apiItem.Values.Add("networkgraph");
+            apiItem.Values.Add("obv");
             apiItem.Values.Add("ohlc");
             apiItem.Values.Add("organization");
             apiItem.Values.Add("packedbubble");

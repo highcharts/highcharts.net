@@ -75,6 +75,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		Name, 
 		Natr, 
 		Networkgraph, 
+		Obv,
 		Ohlc, 
 		Organization, 
 		Packedbubble, 
