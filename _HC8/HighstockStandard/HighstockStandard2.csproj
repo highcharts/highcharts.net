@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Highstock</AssemblyName>
-    <Version>10.2.0.1</Version>
+    <Version>10.2.1.1</Version>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>highcharts.snk</AssemblyOriginatorKeyFile>
@@ -59,8 +59,8 @@
     <PackageIconUrl>http://dotnet.highcharts.com/Content/images/logo_png.png</PackageIconUrl>
     <PackageTags>chart charts charting graph graphs plot plots diagram diagrams highcharts highstock visualisation visualization data-visualisation data-visualization diagram line-chart 3d-chart finance web-forms mvc</PackageTags>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <AssemblyVersion>10.2.0.1</AssemblyVersion>
-    <FileVersion>10.2.0.1</FileVersion>
+    <AssemblyVersion>10.2.1.1</AssemblyVersion>
+    <FileVersion>10.2.1.1</FileVersion>
     <PackageLicenseUrl></PackageLicenseUrl>
   </PropertyGroup>
 
