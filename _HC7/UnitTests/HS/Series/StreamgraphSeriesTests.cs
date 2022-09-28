@@ -331,30 +331,6 @@ namespace HS.Series
             Assert.Contains($"\"animationLimit\":{limit}.0", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(2000)]
-        public void Test_IfBoostThresholdRenders_Correct(int limit)
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
-
-            ((StreamgraphSeries)chart.Series[0]).BoostThreshold = limit;
-
-            Assert.Contains($"\"boostThreshold\":{limit}.0", renderer.RenderHtml());
-        }
-
-        [Fact]
-        public void Test_IfBoostThresholdDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
-            var defaultValue = 5000;
-
-            ((StreamgraphSeries)chart.Series[0]).BoostThreshold = defaultValue;
-
-            Assert.DoesNotContain("boostThreshold", renderer.RenderHtml());
-        }
-
         //missing borderColor
         //missing borderWidth
 
