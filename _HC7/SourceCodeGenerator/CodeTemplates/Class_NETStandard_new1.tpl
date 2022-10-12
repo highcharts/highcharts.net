@@ -42,7 +42,7 @@ namespace {HighTemplate.Namespace}
 		// and therefore needs to be serialized
 		internal override bool IsDirty(Highcharts highcharts)
 		{
-			return ToHashtable(ref highcharts).Count > 0;
+			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

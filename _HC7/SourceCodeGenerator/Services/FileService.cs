@@ -56,6 +56,22 @@ namespace SourceCodeGenerator.Services
             }
         }
 
+        private string SeriesPropertyTemplatePath
+        {
+            get
+            {
+                return TemplatesFolderPath + "\\SeriesProperty.tpl";
+            }
+        }
+
+        private string SeriesInheritedPropertyTemplatePath
+        {
+            get
+            {
+                return TemplatesFolderPath + "\\SeriesInheritedProperty.tpl";
+            }
+        }
+
         private string JsonFolderPath
         {
             get
@@ -107,6 +123,17 @@ namespace SourceCodeGenerator.Services
         {
             return GetFileContent(PropertyTemplatePath);
         }
+        
+        public string GetSeriesPropertyTemplate()
+        {
+            return GetFileContent(SeriesPropertyTemplatePath);
+        }
+
+        public string GetSeriesInheritedPropertyTemplate()
+        {
+            return GetFileContent(SeriesInheritedPropertyTemplatePath);
+        }
+
         public string GetEnumTemplate()
         {
             return GetFileContent(EnumTemplatePath);
@@ -161,6 +188,8 @@ namespace SourceCodeGenerator.Services
         string GetRootClassTemplate();
         string GetClassTemplate(Product product);
         string GetPropertyTemplate();
+        string GetSeriesPropertyTemplate();
+        string GetSeriesInheritedPropertyTemplate();
         string GetEnumTemplate();
         string GetJsonContent();
         void SaveClass(string product, string className, string content);

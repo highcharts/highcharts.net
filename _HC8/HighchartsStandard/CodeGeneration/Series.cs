@@ -32,8 +32,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An id for the series. This can be used after render time to get a pointerto the series object through `chart.get()`.
 		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
+		public virtual string Id { get; set; }
+		protected virtual string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>

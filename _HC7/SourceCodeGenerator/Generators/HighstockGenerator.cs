@@ -310,12 +310,14 @@ public class HighstockGenerator
 
     private void GenerateClass(ApiItem item, List<ApiItem> children)
     {
+
+
         //do not generate class for NavigatorSeries (and children), because there should be Series
         if (item.FullName.Contains("navigator.series"))
             return;
 
         string codeTemplate = FileService.GetClassTemplate(Product.Highstock);
-        string propertyTemplate = FileService.GetPropertyTemplate();
+        string propertyTemplate = item.FullName.ToLower().Equals("series") ? FileService.GetSeriesPropertyTemplate() : FileService.GetPropertyTemplate();
 
         string properties = "";
         string defaultValues = "";
@@ -390,6 +392,13 @@ public class HighstockGenerator
             if (child.FullName.ToLower().Contains("labels.style.") || child.FullName.ToLower().Contains("credits.style.") || child.FullName.ToLower().Contains("title.style.") || child.FullName.ToLower().Contains("labels.items.style.")
                 || child.FullName.ToLower().Contains("legend.itemHiddenStyle.") || child.FullName.ToLower().Contains("legend.itemHoverStyle."))
                 child.IsParent = true;
+
+            if (item.FullName.ToLower().StartsWith("series.") && item.FullName.Split('.').Length == 2 &&
+                (child.FullName.EndsWith("id") || child.FullName.EndsWith("index") || child.FullName.EndsWith("legendIndex") || child.FullName.EndsWith("name")
+                 || child.FullName.EndsWith("stack") || child.FullName.EndsWith("xAxis") || child.FullName.EndsWith("yAxis") || child.FullName.EndsWith("zIndex")))
+                propertyTemplate = FileService.GetSeriesInheritedPropertyTemplate();
+            else
+                propertyTemplate = item.FullName.ToLower().Equals("series") ? FileService.GetSeriesPropertyTemplate() : FileService.GetPropertyTemplate();
 
             string formattedProperty = string.Empty;
             string formattedDefaultProperty = string.Empty;

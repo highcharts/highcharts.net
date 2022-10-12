@@ -42,7 +42,7 @@ namespace {HighTemplate.Namespace}
 		// and therefore needs to be serialized
 		internal override bool IsDirty(Highstock highstock)
 		{
-			return ToHashtable(ref highstock).Count > 0;
+			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

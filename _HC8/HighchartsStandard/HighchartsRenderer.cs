@@ -214,7 +214,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
         {
             List<Hashtable> results = new List<Hashtable>();
 
-            foreach (Series series in listOfSeries)
+            foreach (var series in listOfSeries)
                 results.Add(series.ToHashtable(ref _chart));
 
             return results;
