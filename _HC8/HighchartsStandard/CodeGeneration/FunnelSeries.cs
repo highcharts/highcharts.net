@@ -294,8 +294,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An id for the series. This can be used after render time to get a pointerto the series object through `chart.get()`.
 		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
+		public override string Id { get; set; }
+		protected override string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -315,8 +315,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The index of the series in the chart, affecting the internal index in the`chart.series` array, the visible Z index as well as the order in thelegend.
 		/// </summary>
-		public double? Index { get; set; }
-		private double? Index_DefaultValue { get; set; }
+		public override double? Index { get; set; }
+		protected override double? Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -329,8 +329,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The sequential index of the series in the legend.
 		/// </summary>
-		public double? LegendIndex { get; set; }
-		private double? LegendIndex_DefaultValue { get; set; }
+		public override double? LegendIndex { get; set; }
+		protected override double? LegendIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -364,8 +364,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The name of the series as shown in the legend, tooltip etc.
 		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
+		public override string Name { get; set; }
+		protected override string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -553,13 +553,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Define the visual z index of the series.
 		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
+		public override double? ZIndex { get; set; }
+		protected override double? ZIndex_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable(ref Highcharts highcharts)
+		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
@@ -644,7 +644,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON(ref Highcharts highcharts)
+		internal override string ToJSON(Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -654,9 +654,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty(ref Highcharts highcharts)
+		internal override bool IsDirty(Highcharts highcharts)
 		{
-			return ToHashtable(ref highcharts).Count > 0;
+			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

@@ -76,6 +76,7 @@ namespace Highsoft.Web.Mvc.Charts
 		Name, 
 		Natr, 
 		Networkgraph, 
+		Obv, 
 		Ohlc, 
 		Organization, 
 		Packedbubble, 

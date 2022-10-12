@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FlagDiamondpin = FlagDiamondpin_DefaultValue = new Object();
 			FlagSimplepin = FlagSimplepin_DefaultValue = new Object();
 			FlagSquarepin = FlagSquarepin_DefaultValue = new Object();
-			FullScreen = FullScreen_DefaultValue = new NavigationBindingsFullScreen();
+			FullScreen = FullScreen_DefaultValue = new Object();
 			HorizontalLine = HorizontalLine_DefaultValue = new Object();
 			Indicators = Indicators_DefaultValue = new Object();
 			InfinityLine = InfinityLine_DefaultValue = new Object();
@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Pitchfork = Pitchfork_DefaultValue = new Object();
 			Ray = Ray_DefaultValue = new Object();
 			RectangleAnnotation = RectangleAnnotation_DefaultValue = new Object();
-			SaveChart = SaveChart_DefaultValue = new NavigationBindingsSaveChart();
+			SaveChart = SaveChart_DefaultValue = new Object();
 			Segment = Segment_DefaultValue = new Object();
 			SeriesTypeCandlestick = SeriesTypeCandlestick_DefaultValue = new Object();
 			SeriesTypeHeikinAshi = SeriesTypeHeikinAshi_DefaultValue = null;
@@ -375,7 +375,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Hashtable CustomFields { get; set; } 
 
-		internal override Hashtable ToHashtable(ref Highcharts highcharts)
+		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
 			if (h.Count > 0)
 				return h;
@@ -436,7 +436,7 @@ namespace Highsoft.Web.Mvc.Charts
 			return h;
 		}
 
-		internal override string ToJSON(ref Highcharts highcharts)
+		internal override string ToJSON(Highcharts highcharts)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -446,9 +446,9 @@ namespace Highsoft.Web.Mvc.Charts
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty(ref Highcharts highcharts)
+		internal override bool IsDirty(Highcharts highcharts)
 		{
-			return ToHashtable(ref highcharts).Count > 0;
+			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }
