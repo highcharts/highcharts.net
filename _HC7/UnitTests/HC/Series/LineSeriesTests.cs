@@ -14,11 +14,11 @@ using UnitTests.HC;
 
 namespace HC.Series
 {
-    public class LineSeriesTests : IClassFixture<HcFixture>
+    public class LineSeriesTests : SeriesTests
     {
-        protected HcFixture _fixture;
+        protected new HcFixture _fixture;
 
-        public LineSeriesTests(HcFixture fixture)
+        public LineSeriesTests(HcFixture fixture) : base(fixture)
         {
             _fixture = fixture;
             _fixture.ChartType = ChartType.Line;

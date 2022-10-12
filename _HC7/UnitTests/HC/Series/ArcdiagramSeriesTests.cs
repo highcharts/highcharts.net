@@ -14,11 +14,11 @@ using UnitTests.HC;
 
 namespace HC.Series
 {
-    public class ArcdiagramSeriesTests : IClassFixture<HcFixture>
+    public class ArcdiagramSeriesTests : SeriesTests
     {
         protected HcFixture _fixture;
 
-        public ArcdiagramSeriesTests(HcFixture fixture)
+        public ArcdiagramSeriesTests(HcFixture fixture) : base(fixture)
         {
             _fixture = fixture;
             _fixture.ChartType = ChartType.Arcdiagram;
