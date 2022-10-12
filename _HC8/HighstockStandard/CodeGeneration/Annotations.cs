@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ElliottWave = ElliottWave_DefaultValue = new AnnotationsElliottWave();
 			Events = Events_DefaultValue = new AnnotationsEvents();
 			Fibonacci = Fibonacci_DefaultValue = new AnnotationsFibonacci();
-			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new object();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new AnnotationsFibonacciTimeZones();
 			Id = Id_DefaultValue = "";
 			IdNumber = IdNumber_DefaultValue = null;
 			InfinityLine = InfinityLine_DefaultValue = new AnnotationsInfinityLine();
@@ -110,8 +110,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The Fibonacci Time Zones annotation.
 		/// </summary>
-		public object FibonacciTimeZones { get; set; }
-		private object FibonacciTimeZones_DefaultValue { get; set; }
+		public AnnotationsFibonacciTimeZones FibonacciTimeZones { get; set; }
+		private AnnotationsFibonacciTimeZones FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -212,7 +212,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private double? ZIndex_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable(ref Highstock highstock)
+		internal override Hashtable ToHashtable(Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -226,7 +226,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ElliottWave.IsDirty(ref highstock)) h.Add("elliottWave",ElliottWave.ToHashtable(ref highstock));
 			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
 			if (Fibonacci.IsDirty(ref highstock)) h.Add("fibonacci",Fibonacci.ToHashtable(ref highstock));
-			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
+			if (FibonacciTimeZones.IsDirty(ref highstock)) h.Add("fibonacciTimeZones",FibonacciTimeZones.ToHashtable(ref highstock));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
 			if (InfinityLine.IsDirty(ref highstock)) h.Add("infinityLine",InfinityLine.ToHashtable(ref highstock));
@@ -246,7 +246,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON(ref Highstock highstock)
+		internal override string ToJSON(Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -256,9 +256,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty(ref Highstock highstock)
+		internal override bool IsDirty(Highstock highstock)
 		{
-			return ToHashtable(ref highstock).Count > 0;
+			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

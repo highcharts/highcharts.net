@@ -31,60 +31,60 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An id for the series. This can be used after render time to get a pointerto the series object through `chart.get()`.
 		/// </summary>
-		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
+		public virtual string Id { get; set; }
+		protected virtual string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The index of the series in the chart, affecting the internal index in the`chart.series` array, the visible Z index as well as the order in thelegend.
 		/// </summary>
-		public double? Index { get; set; }
-		private double? Index_DefaultValue { get; set; }
+		public virtual double? Index { get; set; }
+		protected virtual double? Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The sequential index of the series in the legend.
 		/// </summary>
-		public double? LegendIndex { get; set; }
-		private double? LegendIndex_DefaultValue { get; set; }
+		public virtual double? LegendIndex { get; set; }
+		protected virtual double? LegendIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The name of the series as shown in the legend, tooltip etc.
 		/// </summary>
-		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
+		public virtual string Name { get; set; }
+		protected virtual string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
 		/// </summary>
-		public string Stack { get; set; }
-		private string Stack_DefaultValue { get; set; }
+		public virtual string Stack { get; set; }
+		protected virtual string Stack_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When using dual or multiple x axes, this number defines which xAxis theparticular series is connected to. It refers to either the{@link #xAxis.id|axis id}or the index of the axis in the xAxis array, with 0 being the first.
 		/// </summary>
-		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
+		public virtual string XAxis { get; set; }
+		protected virtual string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When using dual or multiple y axes, this number defines which yAxis theparticular series is connected to. It refers to either the{@link #yAxis.id|axis id}or the index of the axis in the yAxis array, with 0 being the first.
 		/// </summary>
-		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
+		public virtual string YAxis { get; set; }
+		protected virtual string YAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Define the visual z index of the series.
 		/// </summary>
-		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
+		public virtual double? ZIndex { get; set; }
+		protected virtual double? ZIndex_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable(ref Highstock highstock)
+		internal override Hashtable ToHashtable(Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -103,7 +103,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON(ref Highstock highstock)
+		internal override string ToJSON(Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -113,9 +113,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty(ref Highstock highstock)
+		internal override bool IsDirty(Highstock highstock)
 		{
-			return ToHashtable(ref highstock).Count > 0;
+			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

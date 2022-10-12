@@ -94,8 +94,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsHollowcandlestickTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			UpColor = UpColor_DefaultValue = "#06b535";
-			UpLineColor = UpLineColor_DefaultValue = "#06b535";
+			UpColor = UpColor_DefaultValue = #06b535;
+			UpLineColor = UpLineColor_DefaultValue = #06b535;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsHollowcandlestickZone>();
@@ -652,15 +652,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The fill color of the candlestick when the currentclose is higher than the previous one.
 		/// </summary>
-		public string UpColor { get; set; }
-		private string UpColor_DefaultValue { get; set; }
+		public ColorType UpColor { get; set; }
+		private ColorType UpColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the line/border of the hollow candlestick whenthe current close is higher than the previous one.
 		/// </summary>
-		public string UpLineColor { get; set; }
-		private string UpLineColor_DefaultValue { get; set; }
+		public ColorType UpLineColor { get; set; }
+		private ColorType UpLineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -684,7 +684,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private List<PlotOptionsHollowcandlestickZone> Zones_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable(ref Highstock highstock)
+		internal override Hashtable ToHashtable(Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -781,7 +781,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON(ref Highstock highstock)
+		internal override string ToJSON(Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -791,9 +791,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty(ref Highstock highstock)
+		internal override bool IsDirty(Highstock highstock)
 		{
-			return ToHashtable(ref highstock).Count > 0;
+			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public StockToolsGuiDefinitionsAdvanced()
 		{
 			Fibonacci = Fibonacci_DefaultValue = new StockToolsGuiDefinitionsAdvancedFibonacci();
-			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new object();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new StockToolsGuiDefinitionsAdvancedFibonacciTimeZones();
 			Items = Items_DefaultValue = new List<string>();
 			ParallelChannel = ParallelChannel_DefaultValue = new StockToolsGuiDefinitionsAdvancedParallelChannel();
 			Pitchfork = Pitchfork_DefaultValue = new StockToolsGuiDefinitionsAdvancedPitchfork();
@@ -36,8 +36,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public object FibonacciTimeZones { get; set; }
-		private object FibonacciTimeZones_DefaultValue { get; set; }
+		public StockToolsGuiDefinitionsAdvancedFibonacciTimeZones FibonacciTimeZones { get; set; }
+		private StockToolsGuiDefinitionsAdvancedFibonacciTimeZones FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -68,13 +68,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		private StockToolsGuiDefinitionsAdvancedTimeCycles TimeCycles_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable(ref Highstock highstock)
+		internal override Hashtable ToHashtable(Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
 
 			if (Fibonacci.IsDirty(ref highstock)) h.Add("fibonacci",Fibonacci.ToHashtable(ref highstock));
-			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
+			if (FibonacciTimeZones.IsDirty(ref highstock)) h.Add("fibonacciTimeZones",FibonacciTimeZones.ToHashtable(ref highstock));
 			if (Items != Items_DefaultValue) h.Add("items",Items);
 			if (ParallelChannel.IsDirty(ref highstock)) h.Add("parallelChannel",ParallelChannel.ToHashtable(ref highstock));
 			if (Pitchfork.IsDirty(ref highstock)) h.Add("pitchfork",Pitchfork.ToHashtable(ref highstock));
@@ -84,7 +84,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON(ref Highstock highstock)
+		internal override string ToJSON(Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -94,9 +94,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty(ref Highstock highstock)
+		internal override bool IsDirty(Highstock highstock)
 		{
-			return ToHashtable(ref highstock).Count > 0;
+			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

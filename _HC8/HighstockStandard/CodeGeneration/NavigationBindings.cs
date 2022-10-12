@@ -372,7 +372,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		private Hashtable ZoomY_DefaultValue { get; set; }
 		  
 
-		internal override Hashtable ToHashtable(ref Highstock highstock)
+		internal override Hashtable ToHashtable(Highstock highstock)
 		{
 			if (h.Count > 0)
 				return h;
@@ -386,14 +386,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CurrentPriceIndicator != CurrentPriceIndicator_DefaultValue) h.Add("currentPriceIndicator",CurrentPriceIndicator);
 			if (Elliott3 != Elliott3_DefaultValue) h.Add("elliott3",Elliott3);
 			if (Elliott5 != Elliott5_DefaultValue) h.Add("elliott5",Elliott5);
-			if (EllipseAnnotation != Elliott3_DefaultValue) h.Add("ellipseAnnotation",EllipseAnnotation);
+			if (EllipseAnnotation.IsDirty(ref highstock)) h.Add("ellipseAnnotation",EllipseAnnotation.ToHashtable(ref highstock));
 			if (Fibonacci != Fibonacci_DefaultValue) h.Add("fibonacci",Fibonacci);
 			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (FlagCirclepin != FlagCirclepin_DefaultValue) h.Add("flagCirclepin",FlagCirclepin);
 			if (FlagDiamondpin != FlagDiamondpin_DefaultValue) h.Add("flagDiamondpin",FlagDiamondpin);
 			if (FlagSimplepin != FlagSimplepin_DefaultValue) h.Add("flagSimplepin",FlagSimplepin);
 			if (FlagSquarepin != FlagSquarepin_DefaultValue) h.Add("flagSquarepin",FlagSquarepin);
-			if (FullScreen != FullScreen_DefaultValue) h.Add("fullScreen",FullScreen);
+			if (FullScreen.IsDirty(ref highstock)) h.Add("fullScreen",FullScreen.ToHashtable(ref highstock));
 			if (HorizontalLine != HorizontalLine_DefaultValue) h.Add("horizontalLine",HorizontalLine);
 			if (Indicators != Indicators_DefaultValue) h.Add("indicators",Indicators);
 			if (InfinityLine != InfinityLine_DefaultValue) h.Add("infinityLine",InfinityLine);
@@ -405,15 +405,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Pitchfork != Pitchfork_DefaultValue) h.Add("pitchfork",Pitchfork);
 			if (Ray != Ray_DefaultValue) h.Add("ray",Ray);
 			if (RectangleAnnotation != RectangleAnnotation_DefaultValue) h.Add("rectangleAnnotation",RectangleAnnotation);
-			if (SaveChart != SaveChart_DefaultValue) h.Add("saveChart",SaveChart);
+			if (SaveChart.IsDirty(ref highstock)) h.Add("saveChart",SaveChart.ToHashtable(ref highstock));
 			if (Segment != Segment_DefaultValue) h.Add("segment",Segment);
 			if (SeriesTypeCandlestick != SeriesTypeCandlestick_DefaultValue) h.Add("seriesTypeCandlestick",SeriesTypeCandlestick);
 			if (SeriesTypeHeikinAshi != SeriesTypeHeikinAshi_DefaultValue) h.Add("seriesTypeHeikinAshi",SeriesTypeHeikinAshi);
-			if (SeriesTypeHLC != SeriesTypeHLC_DefaultValue) h.Add("seriesTypeHLC",SeriesTypeHLC);
+			if (SeriesTypeHLC.IsDirty(ref highstock)) h.Add("seriesTypeHLC",SeriesTypeHLC.ToHashtable(ref highstock));
 			if (SeriesTypeHollowCandlestick != SeriesTypeHollowCandlestick_DefaultValue) h.Add("seriesTypeHollowCandlestick",SeriesTypeHollowCandlestick);
 			if (SeriesTypeLine != SeriesTypeLine_DefaultValue) h.Add("seriesTypeLine",SeriesTypeLine);
 			if (SeriesTypeOhlc != SeriesTypeOhlc_DefaultValue) h.Add("seriesTypeOhlc",SeriesTypeOhlc);
-			if (TimeCycles != TimeCycles_DefaultValue) h.Add("timeCycles",TimeCycles);
+			if (TimeCycles.IsDirty(ref highstock)) h.Add("timeCycles",TimeCycles.ToHashtable(ref highstock));
 			if (ToggleAnnotations != ToggleAnnotations_DefaultValue) h.Add("toggleAnnotations",ToggleAnnotations);
 			if (VerticalArrow != VerticalArrow_DefaultValue) h.Add("verticalArrow",VerticalArrow);
 			if (VerticalCounter != VerticalCounter_DefaultValue) h.Add("verticalCounter",VerticalCounter);
@@ -426,7 +426,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			return h;
 		}
 
-		internal override string ToJSON(ref Highstock highstock)
+		internal override string ToJSON(Highstock highstock)
 		{            
 			if (h.Count > 0)
 				return JsonConvert.SerializeObject(h);
@@ -436,9 +436,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		// checks if the state of the object is different from the default
 		// and therefore needs to be serialized
-		internal override bool IsDirty(ref Highstock highstock)
+		internal override bool IsDirty(Highstock highstock)
 		{
-			return ToHashtable(ref highstock).Count > 0;
+			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }
