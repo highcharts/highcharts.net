@@ -168,7 +168,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
 			if (ParentNodeLimit != ParentNodeLimit_DefaultValue) h.Add("parentNodeLimit",ParentNodeLimit);
-			if (ParentNodeOptions.IsDirty(ref highcharts)) h.Add("parentNodeOptions",ParentNodeOptions.ToHashtable(ref highcharts));
+			if (ParentNodeOptions.IsDirty(highcharts)) h.Add("parentNodeOptions",ParentNodeOptions.ToHashtable(highcharts));
 			if (SeriesInteraction != SeriesInteraction_DefaultValue) h.Add("seriesInteraction",SeriesInteraction);
 			if (SplitSeries != SplitSeries_DefaultValue) h.Add("splitSeries",SplitSeries);
 			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));

@@ -269,7 +269,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(ref highcharts)) h.Add("accessibility",Accessibility.ToHashtable(ref highcharts));
+			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
 			if (ContextButtonTitle != ContextButtonTitle_DefaultValue) h.Add("contextButtonTitle",ContextButtonTitle);
 			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
 			if (DownloadCSV != DownloadCSV_DefaultValue) h.Add("downloadCSV",DownloadCSV);
@@ -280,13 +280,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);
 			if (DrillUpText != DrillUpText_DefaultValue) h.Add("drillUpText",DrillUpText);
 			if (ExitFullscreen != ExitFullscreen_DefaultValue) h.Add("exitFullscreen",ExitFullscreen);
-			if (ExportData.IsDirty(ref highcharts)) h.Add("exportData",ExportData.ToHashtable(ref highcharts));
+			if (ExportData.IsDirty(highcharts)) h.Add("exportData",ExportData.ToHashtable(highcharts));
 			if (HideData != HideData_DefaultValue) h.Add("hideData",HideData);
 			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
 			if (MainBreadcrumb != MainBreadcrumb_DefaultValue) h.Add("mainBreadcrumb",MainBreadcrumb);
 			if (Months != Months_DefaultValue) h.Add("months",Months);
-			if (Navigation.IsDirty(ref highcharts)) h.Add("navigation",Navigation.ToHashtable(ref highcharts));
+			if (Navigation.IsDirty(highcharts)) h.Add("navigation",Navigation.ToHashtable(highcharts));
 			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);

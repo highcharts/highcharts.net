@@ -45,7 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
-			if (Condition.IsDirty(ref highcharts)) h.Add("condition",Condition.ToHashtable(ref highcharts));
+			if (Condition.IsDirty(highcharts)) h.Add("condition",Condition.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

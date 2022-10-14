@@ -121,7 +121,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Label.IsDirty(ref highstock)) h.Add("label",Label.ToHashtable(ref highstock));
+			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			

@@ -141,15 +141,15 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
-			if (ButtonTheme.IsDirty(ref highcharts)) h.Add("buttonTheme",ButtonTheme.ToHashtable(ref highcharts));
-			if (Events.IsDirty(ref highcharts)) h.Add("events",Events.ToHashtable(ref highcharts));
+			if (ButtonTheme.IsDirty(highcharts)) h.Add("buttonTheme",ButtonTheme.ToHashtable(highcharts));
+			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (Position.IsDirty(ref highcharts)) h.Add("position",Position.ToHashtable(ref highcharts));
+			if (Position.IsDirty(highcharts)) h.Add("position",Position.ToHashtable(highcharts));
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
 			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
-			if (Separator.IsDirty(ref highcharts)) h.Add("separator",Separator.ToHashtable(ref highcharts));
+			if (Separator.IsDirty(highcharts)) h.Add("separator",Separator.ToHashtable(highcharts));
 			if (ShowFullPath != ShowFullPath_DefaultValue) h.Add("showFullPath",ShowFullPath);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);

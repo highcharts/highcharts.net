@@ -343,7 +343,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Alternate != Alternate_DefaultValue) h.Add("alternate",Alternate);
-			if (Animation.IsDirty(ref highcharts)) h.Add("animation",Animation.ToHashtable(ref highcharts));
+			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -358,7 +358,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DeferBool != DeferBool_DefaultValue) h.Add("defer",DeferBool);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Filter.IsDirty(ref highcharts)) h.Add("filter",Filter.ToHashtable(ref highcharts));
+			if (Filter.IsDirty(highcharts)) h.Add("filter",Filter.ToHashtable(highcharts));
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
@@ -372,7 +372,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (TextPath.IsDirty(ref highcharts)) h.Add("textPath",TextPath.ToHashtable(ref highcharts));
+			if (TextPath.IsDirty(highcharts)) h.Add("textPath",TextPath.ToHashtable(highcharts));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);

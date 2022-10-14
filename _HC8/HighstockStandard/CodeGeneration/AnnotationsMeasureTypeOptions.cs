@@ -97,12 +97,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Background.IsDirty(ref highstock)) h.Add("background",Background.ToHashtable(ref highstock));
-			if (CrosshairX.IsDirty(ref highstock)) h.Add("crosshairX",CrosshairX.ToHashtable(ref highstock));
-			if (CrosshairY.IsDirty(ref highstock)) h.Add("crosshairY",CrosshairY.ToHashtable(ref highstock));
-			if (Label.IsDirty(ref highstock)) h.Add("label",Label.ToHashtable(ref highstock));
-			if (Line.IsDirty(ref highstock)) h.Add("line",Line.ToHashtable(ref highstock));
-			if (Points != Points_DefaultValue) h.Add("points", HashifyList(ref highstock,Points));
+			if (Background.IsDirty(highstock)) h.Add("background",Background.ToHashtable(highstock));
+			if (CrosshairX.IsDirty(highstock)) h.Add("crosshairX",CrosshairX.ToHashtable(highstock));
+			if (CrosshairY.IsDirty(highstock)) h.Add("crosshairY",CrosshairY.ToHashtable(highstock));
+			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
+			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(highstock,Points));
 			if (SelectType != SelectType_DefaultValue) h.Add("selectType",SelectType);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);

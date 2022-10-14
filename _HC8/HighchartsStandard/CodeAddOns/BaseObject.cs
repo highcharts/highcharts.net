@@ -12,17 +12,17 @@ namespace Highsoft.Web.Mvc.Charts
 {
 	public abstract class BaseObject
 	{
-        abstract internal Hashtable ToHashtable(ref Highcharts highcharts);
-        abstract internal string ToJSON(ref Highcharts highcharts);
-        abstract internal bool IsDirty(ref Highcharts highcharts);
+        abstract internal Hashtable ToHashtable(Highcharts highcharts);
+        abstract internal string ToJSON(Highcharts highcharts);
+        abstract internal bool IsDirty(Highcharts highcharts);
 
-        internal List<Hashtable> HashifyList(ref Highcharts highcharts, IEnumerable list)
+        internal List<Hashtable> HashifyList(Highcharts highcharts, IEnumerable list)
         {
             List<Hashtable> result = new List<Hashtable>();
 
             foreach (BaseObject baseObject in list)
             {
-                result.Add(baseObject.ToHashtable(ref highcharts));
+                result.Add(baseObject.ToHashtable(highcharts));
             }
 
             return result;

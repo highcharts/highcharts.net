@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Gui.IsDirty(ref highstock)) h.Add("gui",Gui.ToHashtable(ref highstock));
+			if (Gui.IsDirty(highstock)) h.Add("gui",Gui.ToHashtable(highstock));
 			
 
 			return h;

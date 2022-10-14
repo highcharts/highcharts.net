@@ -79,7 +79,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (NullPointValue != NullPointValue_DefaultValue) h.Add("nullPointValue",NullPointValue);
 			if (PointAnnotationsDescription != PointAnnotationsDescription_DefaultValue) h.Add("pointAnnotationsDescription",PointAnnotationsDescription);
-			if (Summary.IsDirty(ref highcharts)) h.Add("summary",Summary.ToHashtable(ref highcharts));
+			if (Summary.IsDirty(highcharts)) h.Add("summary",Summary.ToHashtable(highcharts));
 			if (XAxisDescription != XAxisDescription_DefaultValue) h.Add("xAxisDescription",XAxisDescription);
 			if (YAxisDescription != YAxisDescription_DefaultValue) h.Add("yAxisDescription",YAxisDescription);
 			if (CustomFields.Count > 0)

@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Position.IsDirty(ref highcharts)) h.Add("position",Position.ToHashtable(ref highcharts));
+			if (Position.IsDirty(highcharts)) h.Add("position",Position.ToHashtable(highcharts));
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
 			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
 			if (CustomFields.Count > 0)

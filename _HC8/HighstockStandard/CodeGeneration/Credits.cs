@@ -67,7 +67,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Href != Href_DefaultValue) h.Add("href",Href);
-			if (Position.IsDirty(ref highstock)) h.Add("position",Position.ToHashtable(ref highstock));
+			if (Position.IsDirty(highstock)) h.Add("position",Position.ToHashtable(highstock));
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			

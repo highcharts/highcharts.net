@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Halo.IsDirty(ref highstock)) h.Add("halo",Halo.ToHashtable(ref highstock));
+			if (Halo.IsDirty(highstock)) h.Add("halo",Halo.ToHashtable(highstock));
 			
 
 			return h;

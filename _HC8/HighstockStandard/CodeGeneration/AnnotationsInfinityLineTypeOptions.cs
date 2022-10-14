@@ -57,8 +57,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Line.IsDirty(ref highstock)) h.Add("line",Line.ToHashtable(ref highstock));
-			if (Points != Points_DefaultValue) h.Add("points", HashifyList(ref highstock,Points));
+			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(highstock,Points));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

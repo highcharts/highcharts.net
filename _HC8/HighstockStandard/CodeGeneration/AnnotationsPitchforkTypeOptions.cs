@@ -73,10 +73,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (InnerBackground.IsDirty(ref highstock)) h.Add("innerBackground",InnerBackground.ToHashtable(ref highstock));
-			if (Line.IsDirty(ref highstock)) h.Add("line",Line.ToHashtable(ref highstock));
-			if (OuterBackground.IsDirty(ref highstock)) h.Add("outerBackground",OuterBackground.ToHashtable(ref highstock));
-			if (Points != Points_DefaultValue) h.Add("points", HashifyList(ref highstock,Points));
+			if (InnerBackground.IsDirty(highstock)) h.Add("innerBackground",InnerBackground.ToHashtable(highstock));
+			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
+			if (OuterBackground.IsDirty(highstock)) h.Add("outerBackground",OuterBackground.ToHashtable(highstock));
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(highstock,Points));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

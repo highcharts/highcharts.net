@@ -218,8 +218,8 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (AllButtonsEnabled != AllButtonsEnabled_DefaultValue) h.Add("allButtonsEnabled",AllButtonsEnabled);
-			if (ButtonPosition.IsDirty(ref highstock)) h.Add("buttonPosition",ButtonPosition.ToHashtable(ref highstock));
-			if (Buttons != Buttons_DefaultValue) h.Add("buttons", HashifyList(ref highstock,Buttons));
+			if (ButtonPosition.IsDirty(highstock)) h.Add("buttonPosition",ButtonPosition.ToHashtable(highstock));
+			if (Buttons != Buttons_DefaultValue) h.Add("buttons", HashifyList(highstock,Buttons));
 			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
 			if (ButtonTheme != ButtonTheme_DefaultValue) h.Add("buttonTheme",ButtonTheme);
 			if (Dropdown != Dropdown_DefaultValue) h.Add("dropdown", highstock.FirstCharacterToLower(Dropdown.ToString()));

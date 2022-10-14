@@ -217,28 +217,28 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(ref highstock)) h.Add("animation",Animation.ToJSON(ref highstock));
+			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (ControlPointOptions.IsDirty(ref highstock)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(ref highstock));
-			if (CrookedLine.IsDirty(ref highstock)) h.Add("crookedLine",CrookedLine.ToHashtable(ref highstock));
+			if (ControlPointOptions.IsDirty(highstock)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(highstock));
+			if (CrookedLine.IsDirty(highstock)) h.Add("crookedLine",CrookedLine.ToHashtable(highstock));
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
-			if (ElliottWave.IsDirty(ref highstock)) h.Add("elliottWave",ElliottWave.ToHashtable(ref highstock));
-			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
-			if (Fibonacci.IsDirty(ref highstock)) h.Add("fibonacci",Fibonacci.ToHashtable(ref highstock));
-			if (FibonacciTimeZones.IsDirty(ref highstock)) h.Add("fibonacciTimeZones",FibonacciTimeZones.ToHashtable(ref highstock));
+			if (ElliottWave.IsDirty(highstock)) h.Add("elliottWave",ElliottWave.ToHashtable(highstock));
+			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
+			if (Fibonacci.IsDirty(highstock)) h.Add("fibonacci",Fibonacci.ToHashtable(highstock));
+			if (FibonacciTimeZones.IsDirty(highstock)) h.Add("fibonacciTimeZones",FibonacciTimeZones.ToHashtable(highstock));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
-			if (InfinityLine.IsDirty(ref highstock)) h.Add("infinityLine",InfinityLine.ToHashtable(ref highstock));
-			if (LabelOptions.IsDirty(ref highstock)) h.Add("labelOptions",LabelOptions.ToHashtable(ref highstock));
-			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(ref highstock,Labels));
-			if (Measure.IsDirty(ref highstock)) h.Add("measure",Measure.ToHashtable(ref highstock));
-			if (Pitchfork.IsDirty(ref highstock)) h.Add("pitchfork",Pitchfork.ToHashtable(ref highstock));
-			if (ShapeOptions.IsDirty(ref highstock)) h.Add("shapeOptions",ShapeOptions.ToHashtable(ref highstock));
-			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(ref highstock,Shapes));
-			if (TimeCycles.IsDirty(ref highstock)) h.Add("timeCycles",TimeCycles.ToHashtable(ref highstock));
-			if (Tunnel.IsDirty(ref highstock)) h.Add("tunnel",Tunnel.ToHashtable(ref highstock));
-			if (VerticalLine.IsDirty(ref highstock)) h.Add("verticalLine",VerticalLine.ToHashtable(ref highstock));
+			if (InfinityLine.IsDirty(highstock)) h.Add("infinityLine",InfinityLine.ToHashtable(highstock));
+			if (LabelOptions.IsDirty(highstock)) h.Add("labelOptions",LabelOptions.ToHashtable(highstock));
+			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(highstock,Labels));
+			if (Measure.IsDirty(highstock)) h.Add("measure",Measure.ToHashtable(highstock));
+			if (Pitchfork.IsDirty(highstock)) h.Add("pitchfork",Pitchfork.ToHashtable(highstock));
+			if (ShapeOptions.IsDirty(highstock)) h.Add("shapeOptions",ShapeOptions.ToHashtable(highstock));
+			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(highstock,Shapes));
+			if (TimeCycles.IsDirty(highstock)) h.Add("timeCycles",TimeCycles.ToHashtable(highstock));
+			if (Tunnel.IsDirty(highstock)) h.Add("tunnel",Tunnel.ToHashtable(highstock));
+			if (VerticalLine.IsDirty(highstock)) h.Add("verticalLine",VerticalLine.ToHashtable(highstock));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			

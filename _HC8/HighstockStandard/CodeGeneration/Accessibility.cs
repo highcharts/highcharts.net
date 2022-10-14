@@ -121,16 +121,16 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (AnnounceNewData.IsDirty(ref highstock)) h.Add("announceNewData",AnnounceNewData.ToHashtable(ref highstock));
+			if (AnnounceNewData.IsDirty(highstock)) h.Add("announceNewData",AnnounceNewData.ToHashtable(highstock));
 			if (CustomComponents != CustomComponents_DefaultValue) h.Add("customComponents",CustomComponents);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (HighContrastTheme != HighContrastTheme_DefaultValue) h.Add("highContrastTheme",HighContrastTheme);
-			if (KeyboardNavigation.IsDirty(ref highstock)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(ref highstock));
+			if (KeyboardNavigation.IsDirty(highstock)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(highstock));
 			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", highstock.FirstCharacterToLower(LandmarkVerbosity.ToString()));
 			if (LinkedDescription != LinkedDescription_DefaultValue) h.Add("linkedDescription",LinkedDescription);
-			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));
-			if (ScreenReaderSection.IsDirty(ref highstock)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(ref highstock));
+			if (Point.IsDirty(highstock)) h.Add("point",Point.ToHashtable(highstock));
+			if (ScreenReaderSection.IsDirty(highstock)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highstock));
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
 			

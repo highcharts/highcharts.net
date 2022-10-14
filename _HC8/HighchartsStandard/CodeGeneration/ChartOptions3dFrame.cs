@@ -100,14 +100,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Back.IsDirty(ref highcharts)) h.Add("back",Back.ToHashtable(ref highcharts));
-			if (Bottom.IsDirty(ref highcharts)) h.Add("bottom",Bottom.ToHashtable(ref highcharts));
-			if (Front.IsDirty(ref highcharts)) h.Add("front",Front.ToHashtable(ref highcharts));
-			if (Left.IsDirty(ref highcharts)) h.Add("left",Left.ToHashtable(ref highcharts));
-			if (Right.IsDirty(ref highcharts)) h.Add("right",Right.ToHashtable(ref highcharts));
-			if (Side.IsDirty(ref highcharts)) h.Add("side",Side.ToHashtable(ref highcharts));
+			if (Back.IsDirty(highcharts)) h.Add("back",Back.ToHashtable(highcharts));
+			if (Bottom.IsDirty(highcharts)) h.Add("bottom",Bottom.ToHashtable(highcharts));
+			if (Front.IsDirty(highcharts)) h.Add("front",Front.ToHashtable(highcharts));
+			if (Left.IsDirty(highcharts)) h.Add("left",Left.ToHashtable(highcharts));
+			if (Right.IsDirty(highcharts)) h.Add("right",Right.ToHashtable(highcharts));
+			if (Side.IsDirty(highcharts)) h.Add("side",Side.ToHashtable(highcharts));
 			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (Top.IsDirty(ref highcharts)) h.Add("top",Top.ToHashtable(ref highcharts));
+			if (Top.IsDirty(highcharts)) h.Add("top",Top.ToHashtable(highcharts));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

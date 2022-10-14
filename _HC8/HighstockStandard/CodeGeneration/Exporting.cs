@@ -225,11 +225,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
+			if (Accessibility.IsDirty(highstock)) h.Add("accessibility",Accessibility.ToHashtable(highstock));
 			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
-			if (Buttons.IsDirty(ref highstock)) h.Add("buttons",Buttons.ToHashtable(ref highstock));
+			if (Buttons.IsDirty(highstock)) h.Add("buttons",Buttons.ToHashtable(highstock));
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
-			if (Csv.IsDirty(ref highstock)) h.Add("csv",Csv.ToHashtable(ref highstock));
+			if (Csv.IsDirty(highstock)) h.Add("csv",Csv.ToHashtable(highstock));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Error != Error_DefaultValue) { h.Add("error",Error); highstock.AddFunction("error", Error); }  
 			if (FallbackToExportServer != FallbackToExportServer_DefaultValue) h.Add("fallbackToExportServer",FallbackToExportServer);
@@ -237,7 +237,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);
 			if (LibURL != LibURL_DefaultValue) h.Add("libURL",LibURL);
 			if (MenuItemDefinitions != MenuItemDefinitions_DefaultValue) h.Add("menuItemDefinitions",MenuItemDefinitions);
-			if (PdfFont.IsDirty(ref highstock)) h.Add("pdfFont",PdfFont.ToHashtable(ref highstock));
+			if (PdfFont.IsDirty(highstock)) h.Add("pdfFont",PdfFont.ToHashtable(highstock));
 			if (PrintMaxWidth != PrintMaxWidth_DefaultValue) h.Add("printMaxWidth",PrintMaxWidth);
 			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
 			if (ShowTable != ShowTable_DefaultValue) h.Add("showTable",ShowTable);

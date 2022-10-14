@@ -149,7 +149,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
 			if (BaseSeriesNumber != BaseSeriesNumber_DefaultValue) h.Add("baseSeries",BaseSeriesNumber);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Handles.IsDirty(ref highstock)) h.Add("handles",Handles.ToHashtable(ref highstock));
+			if (Handles.IsDirty(highstock)) h.Add("handles",Handles.ToHashtable(highstock));
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MaskFill != MaskFill_DefaultValue) h.Add("maskFill",MaskFill);
@@ -157,7 +157,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (OutlineColor != OutlineColor_DefaultValue) h.Add("outlineColor",OutlineColor);
 			if (OutlineWidth != OutlineWidth_DefaultValue) h.Add("outlineWidth",OutlineWidth);
-			if (Series.IsDirty(ref highstock)) h.Add("series",Series.ToHashtable(ref highstock));
+			if (Series.IsDirty(highstock)) h.Add("series",Series.ToHashtable(highstock));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

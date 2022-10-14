@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Rules != Rules_DefaultValue) h.Add("rules", HashifyList(ref highstock,Rules));
+			if (Rules != Rules_DefaultValue) h.Add("rules", HashifyList(highstock,Rules));
 			
 
 			return h;

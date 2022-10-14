@@ -918,17 +918,17 @@ public class HighstockGenerator
     private string FormatPropertyComparer(string propertyName, ApiItem child)
     {
         string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
-        string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList(ref " + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
+        string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList(" + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
         string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", {3}.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
         string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); {4}.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
-        string complexPropertyFormat = "if ({0}.IsDirty(ref " + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToHashtable(ref " + MAIN_FIELD_NAME + "));\n\t\t\t";
-        string customPropertyFormat = "if ({0}.IsDirty(ref " + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToJSON(ref " + MAIN_FIELD_NAME + "));\n\t\t\t";
+        string complexPropertyFormat = "if ({0}.IsDirty(" + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToHashtable(" + MAIN_FIELD_NAME + "));\n\t\t\t";
+        string customPropertyFormat = "if ({0}.IsDirty(" + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToJSON(" + MAIN_FIELD_NAME + "));\n\t\t\t";
 
         // fully qualified names that are collections
         if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
         {
             if (child.FullName == "Data")
-                return "if (Data.Any()) h.Add(\"data\",HashifyList(ref " + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
+                return "if (Data.Any()) h.Add(\"data\",HashifyList(" + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
 
             if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.ParentFullName != "Highstock")
                 return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
@@ -944,7 +944,7 @@ public class HighstockGenerator
                 return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
             if (propertyName == "Data")
-                return "if (Data.Any()) h.Add(\"data\",HashifyList(ref " + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
+                return "if (Data.Any()) h.Add(\"data\",HashifyList(" + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
 
             return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
@@ -970,7 +970,7 @@ public class HighstockGenerator
                 return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             if (propertyName.ToLower().Contains("pointplacement"))
-                return "if (PointPlacement.IsDirty(ref highstock))\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON(ref highstock));\n\t\t\t";
+                return "if (PointPlacement.IsDirty(highstock))\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON(highstock));\n\t\t\t";
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }

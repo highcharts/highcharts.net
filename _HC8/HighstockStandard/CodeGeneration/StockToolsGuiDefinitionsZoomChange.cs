@@ -58,9 +58,9 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Items != Items_DefaultValue) h.Add("items",Items);
-			if (ZoomX.IsDirty(ref highstock)) h.Add("zoomX",ZoomX.ToHashtable(ref highstock));
-			if (ZoomXY.IsDirty(ref highstock)) h.Add("zoomXY",ZoomXY.ToHashtable(ref highstock));
-			if (ZoomY.IsDirty(ref highstock)) h.Add("zoomY",ZoomY.ToHashtable(ref highstock));
+			if (ZoomX.IsDirty(highstock)) h.Add("zoomX",ZoomX.ToHashtable(highstock));
+			if (ZoomXY.IsDirty(highstock)) h.Add("zoomXY",ZoomXY.ToHashtable(highstock));
+			if (ZoomY.IsDirty(highstock)) h.Add("zoomY",ZoomY.ToHashtable(highstock));
 			
 
 			return h;

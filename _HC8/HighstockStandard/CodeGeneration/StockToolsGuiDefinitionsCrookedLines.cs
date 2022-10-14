@@ -65,10 +65,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Crooked3.IsDirty(ref highstock)) h.Add("crooked3",Crooked3.ToHashtable(ref highstock));
-			if (Crooked5.IsDirty(ref highstock)) h.Add("crooked5",Crooked5.ToHashtable(ref highstock));
-			if (Elliott3.IsDirty(ref highstock)) h.Add("elliott3",Elliott3.ToHashtable(ref highstock));
-			if (Elliott5.IsDirty(ref highstock)) h.Add("elliott5",Elliott5.ToHashtable(ref highstock));
+			if (Crooked3.IsDirty(highstock)) h.Add("crooked3",Crooked3.ToHashtable(highstock));
+			if (Crooked5.IsDirty(highstock)) h.Add("crooked5",Crooked5.ToHashtable(highstock));
+			if (Elliott3.IsDirty(highstock)) h.Add("elliott3",Elliott3.ToHashtable(highstock));
+			if (Elliott5.IsDirty(highstock)) h.Add("elliott5",Elliott5.ToHashtable(highstock));
 			if (Items != Items_DefaultValue) h.Add("items",Items);
 			
 

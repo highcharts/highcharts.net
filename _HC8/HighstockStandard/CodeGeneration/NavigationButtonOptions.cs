@@ -59,7 +59,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Theme.IsDirty(ref highstock)) h.Add("theme",Theme.ToHashtable(ref highstock));
+			if (Theme.IsDirty(highstock)) h.Add("theme",Theme.ToHashtable(highstock));
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			
 

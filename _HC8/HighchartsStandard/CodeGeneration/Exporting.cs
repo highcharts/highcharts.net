@@ -228,11 +228,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(ref highcharts)) h.Add("accessibility",Accessibility.ToHashtable(ref highcharts));
+			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
 			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
-			if (Buttons.IsDirty(ref highcharts)) h.Add("buttons",Buttons.ToHashtable(ref highcharts));
+			if (Buttons.IsDirty(highcharts)) h.Add("buttons",Buttons.ToHashtable(highcharts));
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
-			if (Csv.IsDirty(ref highcharts)) h.Add("csv",Csv.ToHashtable(ref highcharts));
+			if (Csv.IsDirty(highcharts)) h.Add("csv",Csv.ToHashtable(highcharts));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Error != Error_DefaultValue) { h.Add("error",Error); highcharts.AddFunction("error", Error); }  
 			if (FallbackToExportServer != FallbackToExportServer_DefaultValue) h.Add("fallbackToExportServer",FallbackToExportServer);
@@ -240,7 +240,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);
 			if (LibURL != LibURL_DefaultValue) h.Add("libURL",LibURL);
 			if (MenuItemDefinitions != MenuItemDefinitions_DefaultValue) h.Add("menuItemDefinitions",MenuItemDefinitions);
-			if (PdfFont.IsDirty(ref highcharts)) h.Add("pdfFont",PdfFont.ToHashtable(ref highcharts));
+			if (PdfFont.IsDirty(highcharts)) h.Add("pdfFont",PdfFont.ToHashtable(highcharts));
 			if (PrintMaxWidth != PrintMaxWidth_DefaultValue) h.Add("printMaxWidth",PrintMaxWidth);
 			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
 			if (ShowTable != ShowTable_DefaultValue) h.Add("showTable",ShowTable);

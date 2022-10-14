@@ -479,7 +479,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AlignThresholds != AlignThresholds_DefaultValue) h.Add("alignThresholds",AlignThresholds);
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (AllowMutatingData != AllowMutatingData_DefaultValue) h.Add("allowMutatingData",AllowMutatingData);
-			if (Animation.IsDirty(ref highcharts)) h.Add("animation",Animation.ToHashtable(ref highcharts));
+			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
@@ -489,7 +489,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorCount != ColorCount_DefaultValue) h.Add("colorCount",ColorCount);
 			if (DefaultSeriesType != DefaultSeriesType_DefaultValue) h.Add("defaultSeriesType",DefaultSeriesType);
 			if (DisplayErrors != DisplayErrors_DefaultValue) h.Add("displayErrors",DisplayErrors);
-			if (Events.IsDirty(ref highcharts)) h.Add("events",Events.ToHashtable(ref highcharts));
+			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (IgnoreHiddenSeries != IgnoreHiddenSeries_DefaultValue) h.Add("ignoreHiddenSeries",IgnoreHiddenSeries);
@@ -500,22 +500,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MarginRight != MarginRight_DefaultValue) h.Add("marginRight",MarginRight);
 			if (MarginTop != MarginTop_DefaultValue) h.Add("marginTop",MarginTop);
 			if (NumberFormatter != NumberFormatter_DefaultValue) { h.Add("numberFormatter",NumberFormatter); highcharts.AddFunction("numberFormatter", NumberFormatter); }  
-			if (Options3d.IsDirty(ref highcharts)) h.Add("options3d",Options3d.ToHashtable(ref highcharts));
+			if (Options3d.IsDirty(highcharts)) h.Add("options3d",Options3d.ToHashtable(highcharts));
 			if (PanKey != PanKey_DefaultValue) h.Add("panKey", highcharts.FirstCharacterToLower(PanKey.ToString()));
-			if (Panning.IsDirty(ref highcharts)) h.Add("panning",Panning.ToHashtable(ref highcharts));
-			if (ParallelAxes.IsDirty(ref highcharts)) h.Add("parallelAxes",ParallelAxes.ToHashtable(ref highcharts));
+			if (Panning.IsDirty(highcharts)) h.Add("panning",Panning.ToHashtable(highcharts));
+			if (ParallelAxes.IsDirty(highcharts)) h.Add("parallelAxes",ParallelAxes.ToHashtable(highcharts));
 			if (ParallelCoordinates != ParallelCoordinates_DefaultValue) h.Add("parallelCoordinates",ParallelCoordinates);
 			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", highcharts.FirstCharacterToLower(PinchType.ToString()));
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
-			if (PlotShadow.IsDirty(ref highcharts)) h.Add("plotShadow",PlotShadow.ToHashtable(ref highcharts));
+			if (PlotShadow.IsDirty(highcharts)) h.Add("plotShadow",PlotShadow.ToHashtable(highcharts));
 			if (Polar != Polar_DefaultValue) h.Add("polar",Polar);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
-			if (ResetZoomButton.IsDirty(ref highcharts)) h.Add("resetZoomButton",ResetZoomButton.ToHashtable(ref highcharts));
-			if (ScrollablePlotArea.IsDirty(ref highcharts)) h.Add("scrollablePlotArea",ScrollablePlotArea.ToHashtable(ref highcharts));
+			if (ResetZoomButton.IsDirty(highcharts)) h.Add("resetZoomButton",ResetZoomButton.ToHashtable(highcharts));
+			if (ScrollablePlotArea.IsDirty(highcharts)) h.Add("scrollablePlotArea",ScrollablePlotArea.ToHashtable(highcharts));
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);
 			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
 			if (ShowAxes != ShowAxes_DefaultValue) h.Add("showAxes",ShowAxes);

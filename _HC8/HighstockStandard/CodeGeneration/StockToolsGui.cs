@@ -75,7 +75,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Buttons != Buttons_DefaultValue) h.Add("buttons",Buttons);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Definitions.IsDirty(ref highstock)) h.Add("definitions",Definitions.ToHashtable(ref highstock));
+			if (Definitions.IsDirty(highstock)) h.Add("definitions",Definitions.ToHashtable(highstock));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (IconsURL != IconsURL_DefaultValue) h.Add("iconsURL",IconsURL);
 			if (ToolbarClassName != ToolbarClassName_DefaultValue) h.Add("toolbarClassName",ToolbarClassName);

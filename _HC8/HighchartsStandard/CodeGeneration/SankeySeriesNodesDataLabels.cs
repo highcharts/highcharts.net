@@ -103,7 +103,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Format.IsDirty(ref highcharts)) h.Add("format",Format.ToHashtable(ref highcharts));
+			if (Format.IsDirty(highcharts)) h.Add("format",Format.ToHashtable(highcharts));
 			if (FormatString != FormatString_DefaultValue) h.Add("format",FormatString);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);

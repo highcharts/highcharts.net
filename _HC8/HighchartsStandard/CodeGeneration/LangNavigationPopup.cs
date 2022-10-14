@@ -852,7 +852,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (HorizontalLine != HorizontalLine_DefaultValue) h.Add("horizontalLine",HorizontalLine);
 			if (Increment != Increment_DefaultValue) h.Add("increment",Increment);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (IndicatorAliases.IsDirty(ref highcharts)) h.Add("indicatorAliases",IndicatorAliases.ToHashtable(ref highcharts));
+			if (IndicatorAliases.IsDirty(highcharts)) h.Add("indicatorAliases",IndicatorAliases.ToHashtable(highcharts));
 			if (InfinityLine != InfinityLine_DefaultValue) h.Add("infinityLine",InfinityLine);
 			if (InitialAccelerationFactor != InitialAccelerationFactor_DefaultValue) h.Add("initialAccelerationFactor",InitialAccelerationFactor);
 			if (InnerBackground != InnerBackground_DefaultValue) h.Add("innerBackground",InnerBackground);

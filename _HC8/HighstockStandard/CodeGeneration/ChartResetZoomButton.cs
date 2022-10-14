@@ -49,9 +49,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Position.IsDirty(ref highstock)) h.Add("position",Position.ToHashtable(ref highstock));
+			if (Position.IsDirty(highstock)) h.Add("position",Position.ToHashtable(highstock));
 			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
-			if (Theme.IsDirty(ref highstock)) h.Add("theme",Theme.ToHashtable(ref highstock));
+			if (Theme.IsDirty(highstock)) h.Add("theme",Theme.ToHashtable(highstock));
 			
 
 			return h;

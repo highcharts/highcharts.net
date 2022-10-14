@@ -49,9 +49,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Hover.IsDirty(ref highstock)) h.Add("hover",Hover.ToHashtable(ref highstock));
-			if (Normal.IsDirty(ref highstock)) h.Add("normal",Normal.ToHashtable(ref highstock));
-			if (Select.IsDirty(ref highstock)) h.Add("select",Select.ToHashtable(ref highstock));
+			if (Hover.IsDirty(highstock)) h.Add("hover",Hover.ToHashtable(highstock));
+			if (Normal.IsDirty(highstock)) h.Add("normal",Normal.ToHashtable(highstock));
+			if (Select.IsDirty(highstock)) h.Add("select",Select.ToHashtable(highstock));
 			
 
 			return h;

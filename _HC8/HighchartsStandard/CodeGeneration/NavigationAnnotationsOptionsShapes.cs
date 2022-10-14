@@ -177,9 +177,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);
-			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
+			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
 			if (PointString != PointString_DefaultValue) h.Add("point",PointString);
-			if (Points.IsDirty(ref highcharts)) h.Add("points",Points.ToHashtable(ref highcharts));
+			if (Points.IsDirty(highcharts)) h.Add("points",Points.ToHashtable(highcharts));
 			if (R != R_DefaultValue) h.Add("r",R);
 			if (Ry != Ry_DefaultValue) h.Add("ry",Ry);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);

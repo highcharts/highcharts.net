@@ -58,9 +58,9 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Items != Items_DefaultValue) h.Add("items",Items);
-			if (VerticalArrow.IsDirty(ref highstock)) h.Add("verticalArrow",VerticalArrow.ToHashtable(ref highstock));
-			if (VerticalCounter.IsDirty(ref highstock)) h.Add("verticalCounter",VerticalCounter.ToHashtable(ref highstock));
-			if (VerticalLabel.IsDirty(ref highstock)) h.Add("verticalLabel",VerticalLabel.ToHashtable(ref highstock));
+			if (VerticalArrow.IsDirty(highstock)) h.Add("verticalArrow",VerticalArrow.ToHashtable(highstock));
+			if (VerticalCounter.IsDirty(highstock)) h.Add("verticalCounter",VerticalCounter.ToHashtable(highstock));
+			if (VerticalLabel.IsDirty(highstock)) h.Add("verticalLabel",VerticalLabel.ToHashtable(highstock));
 			
 
 			return h;

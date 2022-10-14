@@ -73,12 +73,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(ref highstock)) h.Add("animation",Animation.ToJSON(ref highstock));
+			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo.IsDirty(ref highstock)) h.Add("halo",Halo.ToHashtable(ref highstock));
+			if (Halo.IsDirty(highstock)) h.Add("halo",Halo.ToHashtable(highstock));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
-			if (Marker.IsDirty(ref highstock)) h.Add("marker",Marker.ToHashtable(ref highstock));
+			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
 			
 
 			return h;

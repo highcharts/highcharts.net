@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Styles.IsDirty(ref highstock)) h.Add("styles",Styles.ToHashtable(ref highstock));
+			if (Styles.IsDirty(highstock)) h.Add("styles",Styles.ToHashtable(highstock));
 			
 
 			return h;

@@ -697,19 +697,19 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
+			if (Accessibility.IsDirty(highstock)) h.Add("accessibility",Accessibility.ToHashtable(highstock));
 			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
-			if (Breaks.IsDirty(ref highstock)) h.Add("breaks",Breaks.ToHashtable(ref highstock));
+			if (Breaks.IsDirty(highstock)) h.Add("breaks",Breaks.ToHashtable(highstock));
 			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Crosshair.IsDirty(ref highstock)) h.Add("crosshair",Crosshair.ToHashtable(ref highstock));
+			if (Crosshair.IsDirty(highstock)) h.Add("crosshair",Crosshair.ToHashtable(highstock));
 			if (CrosshairBool != CrosshairBool_DefaultValue) h.Add("crosshair",CrosshairBool);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
-			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
+			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
 			if (GridLineColor != GridLineColor_DefaultValue) h.Add("gridLineColor",GridLineColor);
 			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle);
@@ -718,7 +718,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Labels.IsDirty(ref highstock)) h.Add("labels",Labels.ToHashtable(ref highstock));
+			if (Labels.IsDirty(highstock)) h.Add("labels",Labels.ToHashtable(highstock));
 			if (Left != Left_DefaultValue) h.Add("left",Left);
 			if (LeftNumber != LeftNumber_DefaultValue) h.Add("left",LeftNumber);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
@@ -750,13 +750,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
-			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(ref highstock,PlotBands));
-			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(ref highstock,PlotLines));
+			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(highstock,PlotBands));
+			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(highstock,PlotLines));
 			if (Range != Range_DefaultValue) h.Add("range",Range);
-			if (Resize.IsDirty(ref highstock)) h.Add("resize",Resize.ToHashtable(ref highstock));
+			if (Resize.IsDirty(highstock)) h.Add("resize",Resize.ToHashtable(highstock));
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
-			if (Scrollbar.IsDirty(ref highstock)) h.Add("scrollbar",Scrollbar.ToHashtable(ref highstock));
+			if (Scrollbar.IsDirty(highstock)) h.Add("scrollbar",Scrollbar.ToHashtable(highstock));
 			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
@@ -773,7 +773,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); highstock.AddFunction("tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
-			if (Title.IsDirty(ref highstock)) h.Add("title",Title.ToHashtable(ref highstock));
+			if (Title.IsDirty(highstock)) h.Add("title",Title.ToHashtable(highstock));
 			if (Top != Top_DefaultValue) h.Add("top",Top);
 			if (TopNumber != TopNumber_DefaultValue) h.Add("top",TopNumber);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);

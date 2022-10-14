@@ -97,15 +97,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (ArrowInfinityLine.IsDirty(ref highstock)) h.Add("arrowInfinityLine",ArrowInfinityLine.ToHashtable(ref highstock));
-			if (ArrowRay.IsDirty(ref highstock)) h.Add("arrowRay",ArrowRay.ToHashtable(ref highstock));
-			if (ArrowSegment.IsDirty(ref highstock)) h.Add("arrowSegment",ArrowSegment.ToHashtable(ref highstock));
-			if (HorizontalLine.IsDirty(ref highstock)) h.Add("horizontalLine",HorizontalLine.ToHashtable(ref highstock));
+			if (ArrowInfinityLine.IsDirty(highstock)) h.Add("arrowInfinityLine",ArrowInfinityLine.ToHashtable(highstock));
+			if (ArrowRay.IsDirty(highstock)) h.Add("arrowRay",ArrowRay.ToHashtable(highstock));
+			if (ArrowSegment.IsDirty(highstock)) h.Add("arrowSegment",ArrowSegment.ToHashtable(highstock));
+			if (HorizontalLine.IsDirty(highstock)) h.Add("horizontalLine",HorizontalLine.ToHashtable(highstock));
 			if (Items != Items_DefaultValue) h.Add("items",Items);
-			if (Line.IsDirty(ref highstock)) h.Add("line",Line.ToHashtable(ref highstock));
-			if (Ray.IsDirty(ref highstock)) h.Add("ray",Ray.ToHashtable(ref highstock));
-			if (Segment.IsDirty(ref highstock)) h.Add("segment",Segment.ToHashtable(ref highstock));
-			if (VerticalLine.IsDirty(ref highstock)) h.Add("verticalLine",VerticalLine.ToHashtable(ref highstock));
+			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
+			if (Ray.IsDirty(highstock)) h.Add("ray",Ray.ToHashtable(highstock));
+			if (Segment.IsDirty(highstock)) h.Add("segment",Segment.ToHashtable(highstock));
+			if (VerticalLine.IsDirty(highstock)) h.Add("verticalLine",VerticalLine.ToHashtable(highstock));
 			
 
 			return h;

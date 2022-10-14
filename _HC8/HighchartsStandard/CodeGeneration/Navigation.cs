@@ -84,12 +84,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AnnotationsOptions.IsDirty(ref highcharts)) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable(ref highcharts));
-			if (Bindings.IsDirty(ref highcharts)) h.Add("bindings",Bindings.ToHashtable(ref highcharts));
+			if (AnnotationsOptions.IsDirty(highcharts)) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable(highcharts));
+			if (Bindings.IsDirty(highcharts)) h.Add("bindings",Bindings.ToHashtable(highcharts));
 			if (BindingsClassName != BindingsClassName_DefaultValue) h.Add("bindingsClassName",BindingsClassName);
-			if (Breadcrumbs.IsDirty(ref highcharts)) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(ref highcharts));
-			if (ButtonOptions.IsDirty(ref highcharts)) h.Add("buttonOptions",ButtonOptions.ToHashtable(ref highcharts));
-			if (Events.IsDirty(ref highcharts)) h.Add("events",Events.ToHashtable(ref highcharts));
+			if (Breadcrumbs.IsDirty(highcharts)) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(highcharts));
+			if (ButtonOptions.IsDirty(highcharts)) h.Add("buttonOptions",ButtonOptions.ToHashtable(highcharts));
+			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (IconsURL != IconsURL_DefaultValue) h.Add("iconsURL",IconsURL);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

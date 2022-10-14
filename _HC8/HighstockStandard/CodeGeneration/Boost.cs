@@ -82,7 +82,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (AllowForce != AllowForce_DefaultValue) h.Add("allowForce",AllowForce);
-			if (Debug.IsDirty(ref highstock)) h.Add("debug",Debug.ToHashtable(ref highstock));
+			if (Debug.IsDirty(highstock)) h.Add("debug",Debug.ToHashtable(highstock));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (PixelRatio != PixelRatio_DefaultValue) h.Add("pixelRatio",PixelRatio);
 			if (SeriesThreshold != SeriesThreshold_DefaultValue) h.Add("seriesThreshold",SeriesThreshold);

@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Hover.IsDirty(ref highstock)) h.Add("hover",Hover.ToHashtable(ref highstock));
+			if (Hover.IsDirty(highstock)) h.Add("hover",Hover.ToHashtable(highstock));
 			
 
 			return h;

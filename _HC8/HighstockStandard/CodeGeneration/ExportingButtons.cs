@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (ContextButton.IsDirty(ref highstock)) h.Add("contextButton",ContextButton.ToHashtable(ref highstock));
+			if (ContextButton.IsDirty(highstock)) h.Add("contextButton",ContextButton.ToHashtable(highstock));
 			
 
 			return h;

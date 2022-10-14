@@ -131,7 +131,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (DraggableX != DraggableX_DefaultValue) h.Add("draggableX",DraggableX);
 			if (DraggableY != DraggableY_DefaultValue) h.Add("draggableY",DraggableY);
-			if (DragHandle.IsDirty(ref highstock)) h.Add("dragHandle",DragHandle.ToHashtable(ref highstock));
+			if (DragHandle.IsDirty(highstock)) h.Add("dragHandle",DragHandle.ToHashtable(highstock));
 			if (DragMaxX != DragMaxX_DefaultValue) h.Add("dragMaxX",DragMaxX);
 			if (DragMaxY != DragMaxY_DefaultValue) h.Add("dragMaxY",DragMaxY);
 			if (DragMinX != DragMinX_DefaultValue) h.Add("dragMinX",DragMinX);
@@ -140,7 +140,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DragPrecisionY != DragPrecisionY_DefaultValue) h.Add("dragPrecisionY",DragPrecisionY);
 			if (DragSensitivity != DragSensitivity_DefaultValue) h.Add("dragSensitivity",DragSensitivity);
 			if (GroupBy != GroupBy_DefaultValue) h.Add("groupBy",GroupBy);
-			if (GuideBox.IsDirty(ref highstock)) h.Add("guideBox",GuideBox.ToHashtable(ref highstock));
+			if (GuideBox.IsDirty(highstock)) h.Add("guideBox",GuideBox.ToHashtable(highstock));
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
 			
 

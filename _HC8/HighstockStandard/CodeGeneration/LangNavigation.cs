@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Popup.IsDirty(ref highstock)) h.Add("popup",Popup.ToHashtable(ref highstock));
+			if (Popup.IsDirty(highstock)) h.Add("popup",Popup.ToHashtable(highstock));
 			
 
 			return h;

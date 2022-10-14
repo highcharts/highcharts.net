@@ -361,14 +361,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(ref highstock)) h.Add("accessibility",Accessibility.ToHashtable(ref highstock));
+			if (Accessibility.IsDirty(highstock)) h.Add("accessibility",Accessibility.ToHashtable(highstock));
 			if (Align != Align_DefaultValue) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
 			if (AlignColumns != AlignColumns_DefaultValue) h.Add("alignColumns",AlignColumns);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (BubbleLegend.IsDirty(ref highstock)) h.Add("bubbleLegend",BubbleLegend.ToHashtable(ref highstock));
+			if (BubbleLegend.IsDirty(highstock)) h.Add("bubbleLegend",BubbleLegend.ToHashtable(highstock));
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
@@ -385,7 +385,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Layout != Layout_DefaultValue) h.Add("layout", highstock.FirstCharacterToLower(Layout.ToString()));
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
-			if (Navigation.IsDirty(ref highstock)) h.Add("navigation",Navigation.ToHashtable(ref highstock));
+			if (Navigation.IsDirty(highstock)) h.Add("navigation",Navigation.ToHashtable(highstock));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
@@ -396,7 +396,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SymbolPadding != SymbolPadding_DefaultValue) h.Add("symbolPadding",SymbolPadding);
 			if (SymbolRadius != SymbolRadius_DefaultValue) h.Add("symbolRadius",SymbolRadius);
 			if (SymbolWidth != SymbolWidth_DefaultValue) h.Add("symbolWidth",SymbolWidth);
-			if (Title.IsDirty(ref highstock)) h.Add("title",Title.ToHashtable(ref highstock));
+			if (Title.IsDirty(highstock)) h.Add("title",Title.ToHashtable(highstock));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);

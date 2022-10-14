@@ -178,11 +178,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ConnectorDistance != ConnectorDistance_DefaultValue) h.Add("connectorDistance",ConnectorDistance);
 			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Labels.IsDirty(ref highstock)) h.Add("labels",Labels.ToHashtable(ref highstock));
+			if (Labels.IsDirty(highstock)) h.Add("labels",Labels.ToHashtable(highstock));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (MaxSize != MaxSize_DefaultValue) h.Add("maxSize",MaxSize);
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
-			if (Ranges.IsDirty(ref highstock)) h.Add("ranges",Ranges.ToHashtable(ref highstock));
+			if (Ranges.IsDirty(highstock)) h.Add("ranges",Ranges.ToHashtable(highstock));
 			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy",SizeBy);
 			if (SizeByAbsoluteValue != SizeByAbsoluteValue_DefaultValue) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

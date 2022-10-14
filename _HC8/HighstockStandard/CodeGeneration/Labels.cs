@@ -41,7 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Items != Items_DefaultValue) h.Add("items", HashifyList(ref highstock,Items));
+			if (Items != Items_DefaultValue) h.Add("items", HashifyList(highstock,Items));
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			
 

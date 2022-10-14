@@ -77,7 +77,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (States.IsDirty(ref highstock)) h.Add("states",States.ToHashtable(ref highstock));
+			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			
 

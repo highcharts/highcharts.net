@@ -58,7 +58,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (AfterRegionLabel != AfterRegionLabel_DefaultValue) h.Add("afterRegionLabel",AfterRegionLabel);
-			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(ref highstock,Annotations));
+			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(highstock,Annotations));
 			if (BeforeRegionLabel != BeforeRegionLabel_DefaultValue) h.Add("beforeRegionLabel",BeforeRegionLabel);
 			if (EndOfChartMarker != EndOfChartMarker_DefaultValue) h.Add("endOfChartMarker",EndOfChartMarker);
 			

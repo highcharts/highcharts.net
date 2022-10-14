@@ -156,21 +156,21 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Day.IsDirty(ref highcharts)) h.Add("day",Day.ToHashtable(ref highcharts));
+			if (Day.IsDirty(highcharts)) h.Add("day",Day.ToHashtable(highcharts));
 			if (DayString != DayString_DefaultValue) h.Add("day",DayString);
-			if (Hour.IsDirty(ref highcharts)) h.Add("hour",Hour.ToHashtable(ref highcharts));
+			if (Hour.IsDirty(highcharts)) h.Add("hour",Hour.ToHashtable(highcharts));
 			if (HourString != HourString_DefaultValue) h.Add("hour",HourString);
-			if (Millisecond.IsDirty(ref highcharts)) h.Add("millisecond",Millisecond.ToHashtable(ref highcharts));
+			if (Millisecond.IsDirty(highcharts)) h.Add("millisecond",Millisecond.ToHashtable(highcharts));
 			if (MillisecondString != MillisecondString_DefaultValue) h.Add("millisecond",MillisecondString);
-			if (Minute.IsDirty(ref highcharts)) h.Add("minute",Minute.ToHashtable(ref highcharts));
+			if (Minute.IsDirty(highcharts)) h.Add("minute",Minute.ToHashtable(highcharts));
 			if (MinuteString != MinuteString_DefaultValue) h.Add("minute",MinuteString);
-			if (Month.IsDirty(ref highcharts)) h.Add("month",Month.ToHashtable(ref highcharts));
+			if (Month.IsDirty(highcharts)) h.Add("month",Month.ToHashtable(highcharts));
 			if (MonthString != MonthString_DefaultValue) h.Add("month",MonthString);
-			if (Second.IsDirty(ref highcharts)) h.Add("second",Second.ToHashtable(ref highcharts));
+			if (Second.IsDirty(highcharts)) h.Add("second",Second.ToHashtable(highcharts));
 			if (SecondString != SecondString_DefaultValue) h.Add("second",SecondString);
-			if (Week.IsDirty(ref highcharts)) h.Add("week",Week.ToHashtable(ref highcharts));
+			if (Week.IsDirty(highcharts)) h.Add("week",Week.ToHashtable(highcharts));
 			if (WeekString != WeekString_DefaultValue) h.Add("week",WeekString);
-			if (Year.IsDirty(ref highcharts)) h.Add("year",Year.ToHashtable(ref highcharts));
+			if (Year.IsDirty(highcharts)) h.Add("year",Year.ToHashtable(highcharts));
 			if (YearString != YearString_DefaultValue) h.Add("year",YearString);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

@@ -52,9 +52,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ConnectorOptions.IsDirty(ref highcharts)) h.Add("connectorOptions",ConnectorOptions.ToHashtable(ref highcharts));
+			if (ConnectorOptions.IsDirty(highcharts)) h.Add("connectorOptions",ConnectorOptions.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Position.IsDirty(ref highcharts)) h.Add("position",Position.ToHashtable(ref highcharts));
+			if (Position.IsDirty(highcharts)) h.Add("position",Position.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

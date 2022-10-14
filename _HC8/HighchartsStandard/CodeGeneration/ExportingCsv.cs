@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(ref highcharts,Annotations));
+			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(highcharts,Annotations));
 			if (ColumnHeaderFormatter != ColumnHeaderFormatter_DefaultValue) { h.Add("columnHeaderFormatter",ColumnHeaderFormatter); highcharts.AddFunction("columnHeaderFormatter", ColumnHeaderFormatter); }  
 			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
 			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);

@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (AfterRegionLabel != AfterRegionLabel_DefaultValue) h.Add("afterRegionLabel",AfterRegionLabel);
-			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(ref highcharts,Annotations));
+			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(highcharts,Annotations));
 			if (BeforeRegionLabel != BeforeRegionLabel_DefaultValue) h.Add("beforeRegionLabel",BeforeRegionLabel);
 			if (EndOfChartMarker != EndOfChartMarker_DefaultValue) h.Add("endOfChartMarker",EndOfChartMarker);
 			if (CustomFields.Count > 0)

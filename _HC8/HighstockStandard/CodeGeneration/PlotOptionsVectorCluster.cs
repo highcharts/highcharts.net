@@ -122,17 +122,17 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
-			if (Animation.IsDirty(ref highstock)) h.Add("animation",Animation.ToJSON(ref highstock));
+			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (DataLabels.IsDirty(ref highstock)) h.Add("dataLabels",DataLabels.ToHashtable(ref highstock));
+			if (DataLabels.IsDirty(highstock)) h.Add("dataLabels",DataLabels.ToHashtable(highstock));
 			if (DrillToCluster != DrillToCluster_DefaultValue) h.Add("drillToCluster",DrillToCluster);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
-			if (LayoutAlgorithm.IsDirty(ref highstock)) h.Add("layoutAlgorithm",LayoutAlgorithm.ToHashtable(ref highstock));
-			if (Marker.IsDirty(ref highstock)) h.Add("marker",Marker.ToHashtable(ref highstock));
+			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
+			if (LayoutAlgorithm.IsDirty(highstock)) h.Add("layoutAlgorithm",LayoutAlgorithm.ToHashtable(highstock));
+			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
 			if (MinimumClusterSize != MinimumClusterSize_DefaultValue) h.Add("minimumClusterSize",MinimumClusterSize);
-			if (States.IsDirty(ref highstock)) h.Add("states",States.ToHashtable(ref highstock));
-			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(ref highstock,Zones));
+			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
+			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(highstock,Zones));
 			
 
 			return h;

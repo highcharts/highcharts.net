@@ -167,7 +167,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DragPrecisionY != DragPrecisionY_DefaultValue) h.Add("dragPrecisionY",DragPrecisionY);
 			if (DragSensitivity != DragSensitivity_DefaultValue) h.Add("dragSensitivity",DragSensitivity);
 			if (GroupBy != GroupBy_DefaultValue) h.Add("groupBy",GroupBy);
-			if (GuideBox.IsDirty(ref highstock)) h.Add("guideBox",GuideBox.ToHashtable(ref highstock));
+			if (GuideBox.IsDirty(highstock)) h.Add("guideBox",GuideBox.ToHashtable(highstock));
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
 			
 

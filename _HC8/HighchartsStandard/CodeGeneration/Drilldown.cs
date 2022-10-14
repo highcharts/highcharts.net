@@ -95,10 +95,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ActiveAxisLabelStyle != ActiveAxisLabelStyle_DefaultValue) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle);
 			if (ActiveDataLabelStyle != ActiveDataLabelStyle_DefaultValue) h.Add("activeDataLabelStyle",ActiveDataLabelStyle);
 			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);
-			if (Animation.IsDirty(ref highcharts)) h.Add("animation",Animation.ToHashtable(ref highcharts));
+			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (Breadcrumbs.IsDirty(ref highcharts)) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(ref highcharts));
-			if (DrillUpButton.IsDirty(ref highcharts)) h.Add("drillUpButton",DrillUpButton.ToHashtable(ref highcharts));
+			if (Breadcrumbs.IsDirty(highcharts)) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(highcharts));
+			if (DrillUpButton.IsDirty(highcharts)) h.Add("drillUpButton",DrillUpButton.ToHashtable(highcharts));
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

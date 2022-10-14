@@ -65,10 +65,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (FlagCirclepin.IsDirty(ref highstock)) h.Add("flagCirclepin",FlagCirclepin.ToHashtable(ref highstock));
-			if (FlagDiamondpin.IsDirty(ref highstock)) h.Add("flagDiamondpin",FlagDiamondpin.ToHashtable(ref highstock));
-			if (FlagSimplepin.IsDirty(ref highstock)) h.Add("flagSimplepin",FlagSimplepin.ToHashtable(ref highstock));
-			if (FlagSquarepin.IsDirty(ref highstock)) h.Add("flagSquarepin",FlagSquarepin.ToHashtable(ref highstock));
+			if (FlagCirclepin.IsDirty(highstock)) h.Add("flagCirclepin",FlagCirclepin.ToHashtable(highstock));
+			if (FlagDiamondpin.IsDirty(highstock)) h.Add("flagDiamondpin",FlagDiamondpin.ToHashtable(highstock));
+			if (FlagSimplepin.IsDirty(highstock)) h.Add("flagSimplepin",FlagSimplepin.ToHashtable(highstock));
+			if (FlagSquarepin.IsDirty(highstock)) h.Add("flagSquarepin",FlagSquarepin.ToHashtable(highstock));
 			if (Items != Items_DefaultValue) h.Add("items",Items);
 			
 

@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Styles.IsDirty(ref highstock)) h.Add("styles",Styles.ToHashtable(ref highstock));
-			if (Zones.IsDirty(ref highstock)) h.Add("zones",Zones.ToHashtable(ref highstock));
+			if (Styles.IsDirty(highstock)) h.Add("styles",Styles.ToHashtable(highstock));
+			if (Zones.IsDirty(highstock)) h.Add("zones",Zones.ToHashtable(highstock));
 			
 
 			return h;

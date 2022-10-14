@@ -80,7 +80,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (States.IsDirty(ref highcharts)) h.Add("states",States.ToHashtable(ref highcharts));
+			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

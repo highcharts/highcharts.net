@@ -153,21 +153,21 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Day.IsDirty(ref highstock)) h.Add("day",Day.ToHashtable(ref highstock));
+			if (Day.IsDirty(highstock)) h.Add("day",Day.ToHashtable(highstock));
 			if (DayString != DayString_DefaultValue) h.Add("day",DayString);
-			if (Hour.IsDirty(ref highstock)) h.Add("hour",Hour.ToHashtable(ref highstock));
+			if (Hour.IsDirty(highstock)) h.Add("hour",Hour.ToHashtable(highstock));
 			if (HourString != HourString_DefaultValue) h.Add("hour",HourString);
-			if (Millisecond.IsDirty(ref highstock)) h.Add("millisecond",Millisecond.ToHashtable(ref highstock));
+			if (Millisecond.IsDirty(highstock)) h.Add("millisecond",Millisecond.ToHashtable(highstock));
 			if (MillisecondString != MillisecondString_DefaultValue) h.Add("millisecond",MillisecondString);
-			if (Minute.IsDirty(ref highstock)) h.Add("minute",Minute.ToHashtable(ref highstock));
+			if (Minute.IsDirty(highstock)) h.Add("minute",Minute.ToHashtable(highstock));
 			if (MinuteString != MinuteString_DefaultValue) h.Add("minute",MinuteString);
-			if (Month.IsDirty(ref highstock)) h.Add("month",Month.ToHashtable(ref highstock));
+			if (Month.IsDirty(highstock)) h.Add("month",Month.ToHashtable(highstock));
 			if (MonthString != MonthString_DefaultValue) h.Add("month",MonthString);
-			if (Second.IsDirty(ref highstock)) h.Add("second",Second.ToHashtable(ref highstock));
+			if (Second.IsDirty(highstock)) h.Add("second",Second.ToHashtable(highstock));
 			if (SecondString != SecondString_DefaultValue) h.Add("second",SecondString);
-			if (Week.IsDirty(ref highstock)) h.Add("week",Week.ToHashtable(ref highstock));
+			if (Week.IsDirty(highstock)) h.Add("week",Week.ToHashtable(highstock));
 			if (WeekString != WeekString_DefaultValue) h.Add("week",WeekString);
-			if (Year.IsDirty(ref highstock)) h.Add("year",Year.ToHashtable(ref highstock));
+			if (Year.IsDirty(highstock)) h.Add("year",Year.ToHashtable(highstock));
 			if (YearString != YearString_DefaultValue) h.Add("year",YearString);
 			
 

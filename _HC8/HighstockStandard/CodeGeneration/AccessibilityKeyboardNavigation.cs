@@ -66,9 +66,9 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (FocusBorder.IsDirty(ref highstock)) h.Add("focusBorder",FocusBorder.ToHashtable(ref highstock));
+			if (FocusBorder.IsDirty(highstock)) h.Add("focusBorder",FocusBorder.ToHashtable(highstock));
 			if (Order != Order_DefaultValue) h.Add("order",Order);
-			if (SeriesNavigation.IsDirty(ref highstock)) h.Add("seriesNavigation",SeriesNavigation.ToHashtable(ref highstock));
+			if (SeriesNavigation.IsDirty(highstock)) h.Add("seriesNavigation",SeriesNavigation.ToHashtable(highstock));
 			if (WrapAround != WrapAround_DefaultValue) h.Add("wrapAround",WrapAround);
 			
 

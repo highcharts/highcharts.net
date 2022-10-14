@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Rules != Rules_DefaultValue) h.Add("rules", HashifyList(ref highcharts,Rules));
+			if (Rules != Rules_DefaultValue) h.Add("rules", HashifyList(highcharts,Rules));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -82,12 +82,12 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Items != Items_DefaultValue) h.Add("items",Items);
-			if (TypeCandlestick.IsDirty(ref highstock)) h.Add("typeCandlestick",TypeCandlestick.ToHashtable(ref highstock));
-			if (TypeHeikinAshi.IsDirty(ref highstock)) h.Add("typeHeikinAshi",TypeHeikinAshi.ToHashtable(ref highstock));
-			if (TypeHLC.IsDirty(ref highstock)) h.Add("typeHLC",TypeHLC.ToHashtable(ref highstock));
-			if (TypeHollowCandlestick.IsDirty(ref highstock)) h.Add("typeHollowCandlestick",TypeHollowCandlestick.ToHashtable(ref highstock));
-			if (TypeLine.IsDirty(ref highstock)) h.Add("typeLine",TypeLine.ToHashtable(ref highstock));
-			if (TypeOHLC.IsDirty(ref highstock)) h.Add("typeOHLC",TypeOHLC.ToHashtable(ref highstock));
+			if (TypeCandlestick.IsDirty(highstock)) h.Add("typeCandlestick",TypeCandlestick.ToHashtable(highstock));
+			if (TypeHeikinAshi.IsDirty(highstock)) h.Add("typeHeikinAshi",TypeHeikinAshi.ToHashtable(highstock));
+			if (TypeHLC.IsDirty(highstock)) h.Add("typeHLC",TypeHLC.ToHashtable(highstock));
+			if (TypeHollowCandlestick.IsDirty(highstock)) h.Add("typeHollowCandlestick",TypeHollowCandlestick.ToHashtable(highstock));
+			if (TypeLine.IsDirty(highstock)) h.Add("typeLine",TypeLine.ToHashtable(highstock));
+			if (TypeOHLC.IsDirty(highstock)) h.Add("typeOHLC",TypeOHLC.ToHashtable(highstock));
 			
 
 			return h;

@@ -73,10 +73,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Connector.IsDirty(ref highstock)) h.Add("connector",Connector.ToHashtable(ref highstock));
-			if (Label.IsDirty(ref highstock)) h.Add("label",Label.ToHashtable(ref highstock));
-			if (Line.IsDirty(ref highstock)) h.Add("line",Line.ToHashtable(ref highstock));
-			if (Points != Points_DefaultValue) h.Add("points", HashifyList(ref highstock,Points));
+			if (Connector.IsDirty(highstock)) h.Add("connector",Connector.ToHashtable(highstock));
+			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
+			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(highstock,Points));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

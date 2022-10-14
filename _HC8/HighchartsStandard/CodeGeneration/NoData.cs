@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Attr != Attr_DefaultValue) h.Add("attr",Attr);
-			if (Position.IsDirty(ref highcharts)) h.Add("position",Position.ToHashtable(ref highcharts));
+			if (Position.IsDirty(highcharts)) h.Add("position",Position.ToHashtable(highcharts));
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (CustomFields.Count > 0)

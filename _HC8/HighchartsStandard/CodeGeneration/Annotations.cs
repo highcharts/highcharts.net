@@ -140,18 +140,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(ref highcharts)) h.Add("animation",Animation.ToHashtable(ref highcharts));
+			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (ControlPointOptions.IsDirty(ref highcharts)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(ref highcharts));
+			if (ControlPointOptions.IsDirty(highcharts)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(highcharts));
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
-			if (Events.IsDirty(ref highcharts)) h.Add("events",Events.ToHashtable(ref highcharts));
+			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
-			if (LabelOptions.IsDirty(ref highcharts)) h.Add("labelOptions",LabelOptions.ToHashtable(ref highcharts));
-			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(ref highcharts,Labels));
-			if (ShapeOptions.IsDirty(ref highcharts)) h.Add("shapeOptions",ShapeOptions.ToHashtable(ref highcharts));
-			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(ref highcharts,Shapes));
+			if (LabelOptions.IsDirty(highcharts)) h.Add("labelOptions",LabelOptions.ToHashtable(highcharts));
+			if (Labels != Labels_DefaultValue) h.Add("labels", HashifyList(highcharts,Labels));
+			if (ShapeOptions.IsDirty(highcharts)) h.Add("shapeOptions",ShapeOptions.ToHashtable(highcharts));
+			if (Shapes != Shapes_DefaultValue) h.Add("shapes", HashifyList(highcharts,Shapes));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)

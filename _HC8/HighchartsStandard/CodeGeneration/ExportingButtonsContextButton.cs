@@ -136,12 +136,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (MenuClassName != MenuClassName_DefaultValue) h.Add("menuClassName",MenuClassName);
-			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems", HashifyList(ref highcharts,MenuItems));
+			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems", HashifyList(highcharts,MenuItems));
 			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); highcharts.AddFunction("onclick", Onclick); }  
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Theme.IsDirty(ref highcharts)) h.Add("theme",Theme.ToHashtable(ref highcharts));
+			if (Theme.IsDirty(highcharts)) h.Add("theme",Theme.ToHashtable(highcharts));
 			if (TitleKey != TitleKey_DefaultValue) h.Add("titleKey",TitleKey);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

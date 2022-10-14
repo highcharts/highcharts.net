@@ -96,10 +96,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderDashStyle != BorderDashStyle_DefaultValue) h.Add("borderDashStyle",BorderDashStyle);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorVariation.IsDirty(ref highcharts)) h.Add("colorVariation",ColorVariation.ToHashtable(ref highcharts));
+			if (ColorVariation.IsDirty(highcharts)) h.Add("colorVariation",ColorVariation.ToHashtable(highcharts));
 			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
 			if (Level != Level_DefaultValue) h.Add("level",Level);
-			if (LevelSize.IsDirty(ref highcharts)) h.Add("levelSize",LevelSize.ToHashtable(ref highcharts));
+			if (LevelSize.IsDirty(highcharts)) h.Add("levelSize",LevelSize.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

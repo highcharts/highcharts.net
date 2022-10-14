@@ -174,9 +174,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
 			if (MarkerStart != MarkerStart_DefaultValue) h.Add("markerStart",MarkerStart);
-			if (Point.IsDirty(ref highstock)) h.Add("point",Point.ToHashtable(ref highstock));
+			if (Point.IsDirty(highstock)) h.Add("point",Point.ToHashtable(highstock));
 			if (PointString != PointString_DefaultValue) h.Add("point",PointString);
-			if (Points.IsDirty(ref highstock)) h.Add("points",Points.ToHashtable(ref highstock));
+			if (Points.IsDirty(highstock)) h.Add("points",Points.ToHashtable(highstock));
 			if (R != R_DefaultValue) h.Add("r",R);
 			if (Ry != Ry_DefaultValue) h.Add("ry",Ry);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);

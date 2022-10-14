@@ -849,7 +849,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (HorizontalLine != HorizontalLine_DefaultValue) h.Add("horizontalLine",HorizontalLine);
 			if (Increment != Increment_DefaultValue) h.Add("increment",Increment);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (IndicatorAliases.IsDirty(ref highstock)) h.Add("indicatorAliases",IndicatorAliases.ToHashtable(ref highstock));
+			if (IndicatorAliases.IsDirty(highstock)) h.Add("indicatorAliases",IndicatorAliases.ToHashtable(highstock));
 			if (InfinityLine != InfinityLine_DefaultValue) h.Add("infinityLine",InfinityLine);
 			if (InitialAccelerationFactor != InitialAccelerationFactor_DefaultValue) h.Add("initialAccelerationFactor",InitialAccelerationFactor);
 			if (InnerBackground != InnerBackground_DefaultValue) h.Add("innerBackground",InnerBackground);

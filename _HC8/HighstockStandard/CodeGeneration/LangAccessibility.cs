@@ -185,26 +185,26 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (AnnounceNewData.IsDirty(ref highstock)) h.Add("announceNewData",AnnounceNewData.ToHashtable(ref highstock));
-			if (Axis.IsDirty(ref highstock)) h.Add("axis",Axis.ToHashtable(ref highstock));
+			if (AnnounceNewData.IsDirty(highstock)) h.Add("announceNewData",AnnounceNewData.ToHashtable(highstock));
+			if (Axis.IsDirty(highstock)) h.Add("axis",Axis.ToHashtable(highstock));
 			if (ChartContainerLabel != ChartContainerLabel_DefaultValue) h.Add("chartContainerLabel",ChartContainerLabel);
-			if (ChartTypes.IsDirty(ref highstock)) h.Add("chartTypes",ChartTypes.ToHashtable(ref highstock));
+			if (ChartTypes.IsDirty(highstock)) h.Add("chartTypes",ChartTypes.ToHashtable(highstock));
 			if (Credits != Credits_DefaultValue) h.Add("credits",Credits);
 			if (DefaultChartTitle != DefaultChartTitle_DefaultValue) h.Add("defaultChartTitle",DefaultChartTitle);
 			if (DrillUpButton != DrillUpButton_DefaultValue) h.Add("drillUpButton",DrillUpButton);
-			if (Exporting.IsDirty(ref highstock)) h.Add("exporting",Exporting.ToHashtable(ref highstock));
+			if (Exporting.IsDirty(highstock)) h.Add("exporting",Exporting.ToHashtable(highstock));
 			if (GraphicContainerLabel != GraphicContainerLabel_DefaultValue) h.Add("graphicContainerLabel",GraphicContainerLabel);
-			if (Legend.IsDirty(ref highstock)) h.Add("legend",Legend.ToHashtable(ref highstock));
-			if (RangeSelector.IsDirty(ref highstock)) h.Add("rangeSelector",RangeSelector.ToHashtable(ref highstock));
-			if (ScreenReaderSection.IsDirty(ref highstock)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(ref highstock));
-			if (Series.IsDirty(ref highstock)) h.Add("series",Series.ToHashtable(ref highstock));
-			if (SeriesTypeDescriptions.IsDirty(ref highstock)) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable(ref highstock));
-			if (Sonification.IsDirty(ref highstock)) h.Add("sonification",Sonification.ToHashtable(ref highstock));
+			if (Legend.IsDirty(highstock)) h.Add("legend",Legend.ToHashtable(highstock));
+			if (RangeSelector.IsDirty(highstock)) h.Add("rangeSelector",RangeSelector.ToHashtable(highstock));
+			if (ScreenReaderSection.IsDirty(highstock)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highstock));
+			if (Series.IsDirty(highstock)) h.Add("series",Series.ToHashtable(highstock));
+			if (SeriesTypeDescriptions.IsDirty(highstock)) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable(highstock));
+			if (Sonification.IsDirty(highstock)) h.Add("sonification",Sonification.ToHashtable(highstock));
 			if (SvgContainerLabel != SvgContainerLabel_DefaultValue) h.Add("svgContainerLabel",SvgContainerLabel);
 			if (SvgContainerTitle != SvgContainerTitle_DefaultValue) h.Add("svgContainerTitle",SvgContainerTitle);
-			if (Table.IsDirty(ref highstock)) h.Add("table",Table.ToHashtable(ref highstock));
+			if (Table.IsDirty(highstock)) h.Add("table",Table.ToHashtable(highstock));
 			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
-			if (Zoom.IsDirty(ref highstock)) h.Add("zoom",Zoom.ToHashtable(ref highstock));
+			if (Zoom.IsDirty(highstock)) h.Add("zoom",Zoom.ToHashtable(highstock));
 			
 
 			return h;

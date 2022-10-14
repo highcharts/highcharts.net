@@ -71,8 +71,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (ExposeAsGroupOnly != ExposeAsGroupOnly_DefaultValue) h.Add("exposeAsGroupOnly",ExposeAsGroupOnly);
-			if (KeyboardNavigation.IsDirty(ref highcharts)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(ref highcharts));
-			if (Point.IsDirty(ref highcharts)) h.Add("point",Point.ToHashtable(ref highcharts));
+			if (KeyboardNavigation.IsDirty(highcharts)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(highcharts));
+			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

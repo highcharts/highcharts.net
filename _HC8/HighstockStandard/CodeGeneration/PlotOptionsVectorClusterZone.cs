@@ -59,7 +59,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (From != From_DefaultValue) h.Add("from",From);
-			if (Marker.IsDirty(ref highstock)) h.Add("marker",Marker.ToHashtable(ref highstock));
+			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
 			if (To != To_DefaultValue) h.Add("to",To);
 			
 

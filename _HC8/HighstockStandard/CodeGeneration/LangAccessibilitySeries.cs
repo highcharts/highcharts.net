@@ -76,7 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (NullPointValue != NullPointValue_DefaultValue) h.Add("nullPointValue",NullPointValue);
 			if (PointAnnotationsDescription != PointAnnotationsDescription_DefaultValue) h.Add("pointAnnotationsDescription",PointAnnotationsDescription);
-			if (Summary.IsDirty(ref highstock)) h.Add("summary",Summary.ToHashtable(ref highstock));
+			if (Summary.IsDirty(highstock)) h.Add("summary",Summary.ToHashtable(highstock));
 			if (XAxisDescription != XAxisDescription_DefaultValue) h.Add("xAxisDescription",XAxisDescription);
 			if (YAxisDescription != YAxisDescription_DefaultValue) h.Add("yAxisDescription",YAxisDescription);
 			

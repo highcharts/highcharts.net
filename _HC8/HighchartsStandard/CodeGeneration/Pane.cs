@@ -92,7 +92,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Background != Background_DefaultValue) h.Add("background", HashifyList(ref highcharts,Background));
+			if (Background != Background_DefaultValue) h.Add("background", HashifyList(highcharts,Background));
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);

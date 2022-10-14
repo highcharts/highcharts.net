@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ContextButton.IsDirty(ref highcharts)) h.Add("contextButton",ContextButton.ToHashtable(ref highcharts));
+			if (ContextButton.IsDirty(highcharts)) h.Add("contextButton",ContextButton.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

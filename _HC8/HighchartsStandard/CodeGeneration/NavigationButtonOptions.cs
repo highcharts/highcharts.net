@@ -62,7 +62,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Theme.IsDirty(ref highcharts)) h.Add("theme",Theme.ToHashtable(ref highcharts));
+			if (Theme.IsDirty(highcharts)) h.Add("theme",Theme.ToHashtable(highcharts));
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

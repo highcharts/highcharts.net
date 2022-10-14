@@ -49,9 +49,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (ConnectorOptions.IsDirty(ref highstock)) h.Add("connectorOptions",ConnectorOptions.ToHashtable(ref highstock));
+			if (ConnectorOptions.IsDirty(highstock)) h.Add("connectorOptions",ConnectorOptions.ToHashtable(highstock));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Position.IsDirty(ref highstock)) h.Add("position",Position.ToHashtable(ref highstock));
+			if (Position.IsDirty(highstock)) h.Add("position",Position.ToHashtable(highstock));
 			
 
 			return h;

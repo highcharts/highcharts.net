@@ -69,9 +69,9 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (FocusBorder.IsDirty(ref highcharts)) h.Add("focusBorder",FocusBorder.ToHashtable(ref highcharts));
+			if (FocusBorder.IsDirty(highcharts)) h.Add("focusBorder",FocusBorder.ToHashtable(highcharts));
 			if (Order != Order_DefaultValue) h.Add("order",Order);
-			if (SeriesNavigation.IsDirty(ref highcharts)) h.Add("seriesNavigation",SeriesNavigation.ToHashtable(ref highcharts));
+			if (SeriesNavigation.IsDirty(highcharts)) h.Add("seriesNavigation",SeriesNavigation.ToHashtable(highcharts));
 			if (WrapAround != WrapAround_DefaultValue) h.Add("wrapAround",WrapAround);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

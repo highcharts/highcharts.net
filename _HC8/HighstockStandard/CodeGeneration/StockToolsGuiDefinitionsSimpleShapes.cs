@@ -65,11 +65,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Circle.IsDirty(ref highstock)) h.Add("circle",Circle.ToHashtable(ref highstock));
-			if (Ellipse.IsDirty(ref highstock)) h.Add("ellipse",Ellipse.ToHashtable(ref highstock));
+			if (Circle.IsDirty(highstock)) h.Add("circle",Circle.ToHashtable(highstock));
+			if (Ellipse.IsDirty(highstock)) h.Add("ellipse",Ellipse.ToHashtable(highstock));
 			if (Items != Items_DefaultValue) h.Add("items",Items);
-			if (Label.IsDirty(ref highstock)) h.Add("label",Label.ToHashtable(ref highstock));
-			if (Rectangle.IsDirty(ref highstock)) h.Add("rectangle",Rectangle.ToHashtable(ref highstock));
+			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
+			if (Rectangle.IsDirty(highstock)) h.Add("rectangle",Rectangle.ToHashtable(highstock));
 			
 
 			return h;

@@ -42,7 +42,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
-			if (Condition.IsDirty(ref highstock)) h.Add("condition",Condition.ToHashtable(ref highstock));
+			if (Condition.IsDirty(highstock)) h.Add("condition",Condition.ToHashtable(highstock));
 			
 
 			return h;

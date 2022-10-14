@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (Arrow.IsDirty(ref highstock)) h.Add("arrow",Arrow.ToHashtable(ref highstock));
-			if (ReverseArrow.IsDirty(ref highstock)) h.Add("reverseArrow",ReverseArrow.ToHashtable(ref highstock));
+			if (Arrow.IsDirty(highstock)) h.Add("arrow",Arrow.ToHashtable(highstock));
+			if (ReverseArrow.IsDirty(highstock)) h.Add("reverseArrow",ReverseArrow.ToHashtable(highstock));
 			
 
 			return h;

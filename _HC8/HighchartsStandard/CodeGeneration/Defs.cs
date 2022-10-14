@@ -44,8 +44,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Arrow.IsDirty(ref highcharts)) h.Add("arrow",Arrow.ToHashtable(ref highcharts));
-			if (ReverseArrow.IsDirty(ref highcharts)) h.Add("reverseArrow",ReverseArrow.ToHashtable(ref highcharts));
+			if (Arrow.IsDirty(highcharts)) h.Add("arrow",Arrow.ToHashtable(highcharts));
+			if (ReverseArrow.IsDirty(highcharts)) h.Add("reverseArrow",ReverseArrow.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

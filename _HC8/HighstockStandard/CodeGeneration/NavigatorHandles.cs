@@ -86,7 +86,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Symbols != Symbols_DefaultValue) h.Add("symbols", HashifyList(ref highstock,Symbols));
+			if (Symbols != Symbols_DefaultValue) h.Add("symbols", HashifyList(highstock,Symbols));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			
 

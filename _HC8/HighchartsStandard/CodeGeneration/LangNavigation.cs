@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Popup.IsDirty(ref highcharts)) h.Add("popup",Popup.ToHashtable(ref highcharts));
+			if (Popup.IsDirty(highcharts)) h.Add("popup",Popup.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

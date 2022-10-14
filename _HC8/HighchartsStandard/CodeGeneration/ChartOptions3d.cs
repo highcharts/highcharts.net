@@ -98,7 +98,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (FitToPlot != FitToPlot_DefaultValue) h.Add("fitToPlot",FitToPlot);
-			if (Frame.IsDirty(ref highcharts)) h.Add("frame",Frame.ToHashtable(ref highcharts));
+			if (Frame.IsDirty(highcharts)) h.Add("frame",Frame.ToHashtable(highcharts));
 			if (ViewDistance != ViewDistance_DefaultValue) h.Add("viewDistance",ViewDistance);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

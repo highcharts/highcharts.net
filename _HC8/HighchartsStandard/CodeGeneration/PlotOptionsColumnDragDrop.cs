@@ -134,7 +134,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (DraggableX != DraggableX_DefaultValue) h.Add("draggableX",DraggableX);
 			if (DraggableY != DraggableY_DefaultValue) h.Add("draggableY",DraggableY);
-			if (DragHandle.IsDirty(ref highcharts)) h.Add("dragHandle",DragHandle.ToHashtable(ref highcharts));
+			if (DragHandle.IsDirty(highcharts)) h.Add("dragHandle",DragHandle.ToHashtable(highcharts));
 			if (DragMaxX != DragMaxX_DefaultValue) h.Add("dragMaxX",DragMaxX);
 			if (DragMaxY != DragMaxY_DefaultValue) h.Add("dragMaxY",DragMaxY);
 			if (DragMinX != DragMinX_DefaultValue) h.Add("dragMinX",DragMinX);
@@ -143,7 +143,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DragPrecisionY != DragPrecisionY_DefaultValue) h.Add("dragPrecisionY",DragPrecisionY);
 			if (DragSensitivity != DragSensitivity_DefaultValue) h.Add("dragSensitivity",DragSensitivity);
 			if (GroupBy != GroupBy_DefaultValue) h.Add("groupBy",GroupBy);
-			if (GuideBox.IsDirty(ref highcharts)) h.Add("guideBox",GuideBox.ToHashtable(ref highcharts));
+			if (GuideBox.IsDirty(highcharts)) h.Add("guideBox",GuideBox.ToHashtable(highcharts));
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

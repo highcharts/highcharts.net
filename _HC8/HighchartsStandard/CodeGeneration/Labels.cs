@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Items != Items_DefaultValue) h.Add("items", HashifyList(ref highcharts,Items));
+			if (Items != Items_DefaultValue) h.Add("items", HashifyList(highcharts,Items));
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

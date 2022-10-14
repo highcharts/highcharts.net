@@ -89,7 +89,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (ControlledAxis.IsDirty(ref highstock)) h.Add("controlledAxis",ControlledAxis.ToHashtable(ref highstock));
+			if (ControlledAxis.IsDirty(highstock)) h.Add("controlledAxis",ControlledAxis.ToHashtable(highstock));
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);

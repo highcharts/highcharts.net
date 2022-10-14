@@ -99,11 +99,11 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (BackgroundColors != BackgroundColors_DefaultValue) h.Add("backgroundColors",BackgroundColors);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Labels.IsDirty(ref highstock)) h.Add("labels",Labels.ToHashtable(ref highstock));
-			if (Line.IsDirty(ref highstock)) h.Add("line",Line.ToHashtable(ref highstock));
+			if (Labels.IsDirty(highstock)) h.Add("labels",Labels.ToHashtable(highstock));
+			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineColors != LineColors_DefaultValue) h.Add("lineColors",LineColors);
-			if (Points != Points_DefaultValue) h.Add("points", HashifyList(ref highstock,Points));
+			if (Points != Points_DefaultValue) h.Add("points", HashifyList(highstock,Points));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

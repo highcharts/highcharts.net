@@ -85,7 +85,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (AllowForce != AllowForce_DefaultValue) h.Add("allowForce",AllowForce);
-			if (Debug.IsDirty(ref highcharts)) h.Add("debug",Debug.ToHashtable(ref highcharts));
+			if (Debug.IsDirty(highcharts)) h.Add("debug",Debug.ToHashtable(highcharts));
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (PixelRatio != PixelRatio_DefaultValue) h.Add("pixelRatio",PixelRatio);
 			if (SeriesThreshold != SeriesThreshold_DefaultValue) h.Add("seriesThreshold",SeriesThreshold);

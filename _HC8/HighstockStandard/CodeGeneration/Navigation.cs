@@ -73,11 +73,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (AnnotationsOptions.IsDirty(ref highstock)) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable(ref highstock));
-			if (Bindings.IsDirty(ref highstock)) h.Add("bindings",Bindings.ToHashtable(ref highstock));
+			if (AnnotationsOptions.IsDirty(highstock)) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable(highstock));
+			if (Bindings.IsDirty(highstock)) h.Add("bindings",Bindings.ToHashtable(highstock));
 			if (BindingsClassName != BindingsClassName_DefaultValue) h.Add("bindingsClassName",BindingsClassName);
-			if (ButtonOptions.IsDirty(ref highstock)) h.Add("buttonOptions",ButtonOptions.ToHashtable(ref highstock));
-			if (Events.IsDirty(ref highstock)) h.Add("events",Events.ToHashtable(ref highstock));
+			if (ButtonOptions.IsDirty(highstock)) h.Add("buttonOptions",ButtonOptions.ToHashtable(highstock));
+			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
 			if (IconsURL != IconsURL_DefaultValue) h.Add("iconsURL",IconsURL);
 			
 
