@@ -41,7 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
         /// </summary>
         public SymbolEnum SymbolEnum { get; set; }
 
-        internal override Hashtable ToHashtable(ref Highstock highcharts)
+        internal override Hashtable ToHashtable(Highstock highcharts)
         {
             Hashtable h = new Hashtable();
 
@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Stocks
             return h;
         }
 
-        internal override string ToJSON(ref Highstock highcharts)
+        internal override string ToJSON(Highstock highcharts)
         {
             if (Url != null)
             {
@@ -73,9 +73,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
-        internal override bool IsDirty(ref Highstock highcharts)
+        internal override bool IsDirty(Highstock highcharts)
         {
-            return ToHashtable(ref highcharts).Count > 0;
+            return ToHashtable(highcharts).Count > 0;
         }
     }
 

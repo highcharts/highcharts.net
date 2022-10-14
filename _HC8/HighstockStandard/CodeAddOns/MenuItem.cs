@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Stocks
         /// </summary>
         public string OnClick { get; set; }
 
-        internal override Hashtable ToHashtable(ref Highstock highstock)
+        internal override Hashtable ToHashtable(Highstock highstock)
         {
             Hashtable h = new Hashtable();
 
@@ -37,16 +37,16 @@ namespace Highsoft.Web.Mvc.Stocks
             return h;
         }
 
-        internal override string ToJSON(ref Highstock highcharts)
+        internal override string ToJSON(Highstock highcharts)
         {
-            return JsonConvert.SerializeObject(ToHashtable(ref highcharts));
+            return JsonConvert.SerializeObject(ToHashtable(highcharts));
         }
 
         // checks if the state of the object is different from the default
         // and therefore needs to be serialized
-        internal override bool IsDirty(ref Highstock highcharts)
+        internal override bool IsDirty(Highstock highcharts)
         {
-            return ToHashtable(ref highcharts).Count > 0;
+            return ToHashtable(highcharts).Count > 0;
         }   
 	}
 }
