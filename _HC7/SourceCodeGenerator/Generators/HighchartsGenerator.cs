@@ -99,10 +99,6 @@ public class HighchartsGenerator
         GenerateClassesForLevel(_apiItems);
     }
 
-
-
-
-
     private void ProcessApiItems(IList<ApiItem> items)
     {
         foreach (ApiItem apiItem in items)
