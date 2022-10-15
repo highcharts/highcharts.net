@@ -111,14 +111,15 @@ namespace SourceCodeGenerator.Services
         {
             return GetFileContent(RootClassTemplatePathNETStandard);
         }
+
         public string GetClassTemplate(Product product)
         {
             if (product == Product.Highcharts)
                 return GetFileContent(ClassTemplatePathNETStandard);
 
             return GetFileContent(ClassTemplatePathNETStandard_HS);
-            
         }
+
         public string GetPropertyTemplate()
         {
             return GetFileContent(PropertyTemplatePath);

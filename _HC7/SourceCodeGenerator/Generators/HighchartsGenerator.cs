@@ -91,7 +91,7 @@ public class HighchartsGenerator
 
 
         ProcessApiItems(_apiItems);
-        MultiplyObjects(_apiItems);
+        _apiItems = MultiplyObjects(_apiItems);
 
 
         var root = new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS };
@@ -172,8 +172,10 @@ public class HighchartsGenerator
         }
     }
 
-    private void MultiplyObjects(IList<ApiItem> items)
+    private List<ApiItem> MultiplyObjects(IList<ApiItem> items)
     {
+        var apiClones = new List<ApiItem>();
+
         for (int i = 0; i < items.Count; i++)
         {
             if (items[i].FullName.Contains("pointPlacement"))
@@ -182,11 +184,21 @@ public class HighchartsGenerator
             var clones = MultiplicationService.MultiplyObject(items[i]);
 
             if (clones.Any())
-                items = items.Concat(clones).ToList();
+                apiClones.AddRange(clones);
+            else
+            {
+                apiClones.Add(items[i]);
 
-            if (items[i].Children.Any())
-                MultiplyObjects(items[i].Children);
+                if (items[i].Children.Any())
+                {
+                    var last = apiClones.Last();
+                    last.Children = MultiplyObjects(items[i].Children);
+                }
+            }
+            
         }
+
+        return apiClones;
     }
 
     //update defaults because of differences between HS i HC
@@ -267,7 +279,7 @@ public class HighchartsGenerator
             {
                 //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
                 var children = baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !p.Extends.Any(q => q == "series"));
-                addedChildren.AddRange(children.Where(p => !addedChildren.Any(x => x.Title == p.Title)));
+                addedChildren.AddRange(children.Where(p => !addedChildren.Any(x => x.Title == p.Title && x.Suffix == p.Suffix)));
 
                 //do usuniecią po naprawie jsona
                 addedChildren = addedChildren.Where(p => p.Title != "wordcloud" && p.Title != "sunburst").ToList();
@@ -276,7 +288,7 @@ public class HighchartsGenerator
             {
                 //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
                 var children = baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title));
-                addedChildren.AddRange(children.Where(p => !addedChildren.Any(x => x.Title == p.Title)));
+                addedChildren.AddRange(children.Where(p => !addedChildren.Any(x => x.Title == p.Title && x.Suffix == p.Suffix)));
             }
         }
 
@@ -981,9 +993,8 @@ public class HighchartsGenerator
                             child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title))).ToList();
                     }
 
-
                     //children = item.Children.Where(p => !baseChildren.Any(x => x.Title == p.Title)).ToList();
-                    children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title)));
+                    children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && x.Suffix == p.Suffix)));
                 }
             }
         }
