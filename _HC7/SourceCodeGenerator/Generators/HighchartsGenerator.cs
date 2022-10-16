@@ -191,7 +191,7 @@ public class HighchartsGenerator
                     last.Children = MultiplyObjects(items[i].Children);
                 }
             }
-            
+
         }
 
         return apiClones;
@@ -373,7 +373,7 @@ public class HighchartsGenerator
                 || child.FullName.ToLower().Contains("legend.itemHiddenStyle.") || child.FullName.ToLower().Contains("legend.itemHoverStyle."))
                 child.IsParent = true;
 
-            if (item.FullName.ToLower().StartsWith("series.") && item.FullName.Split('.').Length == 2 && 
+            if (item.FullName.ToLower().StartsWith("series.") && item.FullName.Split('.').Length == 2 &&
                 (child.FullName.EndsWith("id") || child.FullName.EndsWith("index") || child.FullName.EndsWith("legendIndex") || child.FullName.EndsWith("name")
                  || child.FullName.EndsWith("stack") || child.FullName.EndsWith("xAxis") || child.FullName.EndsWith("yAxis") || child.FullName.EndsWith("zIndex")))
                 propertyTemplate = FileService.GetSeriesInheritedPropertyTemplate();
@@ -391,7 +391,7 @@ public class HighchartsGenerator
                 formattedComparer = FormatPropertyComparer(propertyName, child);
             }
             else
-                formattedComparer = "h.Add(\"type\",\""+GetClassNameFromItem(item).ToLower().Replace("series","")+"\");\r\n\t\t\t";
+                formattedComparer = "h.Add(\"type\",\"" + GetClassNameFromItem(item).ToLower().Replace("series", "") + "\");\r\n\t\t\t";
 
             if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
                 child.IsParent = false;
@@ -842,7 +842,7 @@ public class HighchartsGenerator
         string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList(" + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
         string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", {3}.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
         string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); {4}.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
-        string complexPropertyFormat = "if ({0}.IsDirty(" + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToHashtable(" + MAIN_FIELD_NAME+"));\n\t\t\t";
+        string complexPropertyFormat = "if ({0}.IsDirty(" + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToHashtable(" + MAIN_FIELD_NAME + "));\n\t\t\t";
         string customPropertyFormat = "if ({0}.IsDirty(" + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToJSON(" + MAIN_FIELD_NAME + "));\n\t\t\t";
 
         // fully qualified names that are collections
@@ -898,7 +898,7 @@ public class HighchartsGenerator
 
             return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
         }
-        
+
         // Enum
         if (child.ReturnType.Equals(TypeService.EnumType) || ((child.ReturnType == "string" || child.ReturnType == "String" || child.ReturnType == TypeService.CSSType) && child.Values != null && child.Values.Count > 0))
             return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), MAIN_FIELD_NAME);
@@ -971,25 +971,19 @@ public class HighchartsGenerator
         {
             children = item.Children.ToList(); // FindImmediateChildren(item);
 
-            //warunek do usunięcia
-            if (item.FullName != "series.bellcurve.data" && item.FullName != "series.histogram.data")
+            if (item.Extends.Any())
             {
+                var baseChildren = GetChildrenFromBaseClasses(item);
 
-                if (item.Extends.Any())
+                foreach (var baseElement in baseChildren.Where(p => children.Any(x => x.Title == p.Title)))
                 {
-                    var baseChildren = GetChildrenFromBaseClasses(item);
+                    var child = children.FirstOrDefault(p => p.Title == baseElement.Title);
 
-                    foreach (var baseElement in baseChildren.Where(p => children.Any(x => x.Title == p.Title)))
-                    {
-                        var child = children.FirstOrDefault(p => p.Title == baseElement.Title);
-
-                        if (child != null)
-                            child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title))).ToList();
-                    }
-
-                    //children = item.Children.Where(p => !baseChildren.Any(x => x.Title == p.Title)).ToList();
-                    children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(x.Suffix) || x.Suffix == p.Suffix))));
+                    if (child != null)
+                        child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(x.Suffix) || x.Suffix == p.Suffix)))).ToList();
                 }
+
+                children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(x.Suffix) || x.Suffix == p.Suffix))));
             }
         }
 
@@ -1152,7 +1146,7 @@ public class HighchartsGenerator
         _propertyTypeMappings.Add("plotOptions.pyramid.dataLabels", "Hashtable");
         _propertyTypeMappings.Add("plotOptions.variablepie.dataLabels", "Hashtable");
         _propertyTypeMappings.Add("defs.arrow.children", "List<object>");
-        
+
     }
     private void InitPropertyInitMappings()
     {
@@ -1530,7 +1524,7 @@ public class HighchartsGenerator
 
         if (item.ReturnType.Contains(TypeService.CSSType))
             item.Defaults = "css";
-        
+
         if (!String.IsNullOrEmpty(item.Defaults))
         {
             if (item.ReturnType == "String" ||
