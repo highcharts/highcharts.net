@@ -980,10 +980,10 @@ public class HighchartsGenerator
                     var child = children.FirstOrDefault(p => p.Title == baseElement.Title);
 
                     if (child != null)
-                        child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(x.Suffix) || x.Suffix == p.Suffix)))).ToList();
+                        child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix)))).ToList();
                 }
 
-                children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(x.Suffix) || x.Suffix == p.Suffix))));
+                children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix))));
             }
         }
 
