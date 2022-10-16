@@ -331,8 +331,6 @@ public class HighchartsGenerator
         string codeTemplate = FileService.GetClassTemplate(Product.Highcharts);
         string propertyTemplate = item.FullName.ToLower().Equals("series") ? FileService.GetSeriesPropertyTemplate() : FileService.GetPropertyTemplate();
 
-        
-
         string properties = "";
         string defaultValues = "";
         string hashtableComparers = "";
@@ -990,7 +988,7 @@ public class HighchartsGenerator
                     }
 
                     //children = item.Children.Where(p => !baseChildren.Any(x => x.Title == p.Title)).ToList();
-                    children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && x.Suffix == p.Suffix)));
+                    children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(x.Suffix) || x.Suffix == p.Suffix))));
                 }
             }
         }
