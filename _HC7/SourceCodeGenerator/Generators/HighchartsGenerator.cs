@@ -268,7 +268,7 @@ public class HighchartsGenerator
             if (baseClass.Extends.Any())
             {
                 //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
-                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title)));
+                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !baseClass.Exclude.Any(q => q == p.Title)));
             }
 
             if (baseClass.FullName == "series")
