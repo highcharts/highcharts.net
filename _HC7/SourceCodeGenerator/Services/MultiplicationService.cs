@@ -19,7 +19,7 @@ namespace SourceCodeGenerator.Services
             if (IsObject(item))
             {
                 var clone = item.Clone();
-                //clone.Types.Clear();
+                clone.Types.Clear();
                 clone.ReturnType = "Object";
                 clone.Defaults = "null";
                 clone.Suffix = string.Empty;
@@ -30,7 +30,7 @@ namespace SourceCodeGenerator.Services
             if (IsString(item))
             {
                 var clone = item.Clone();
-                //clone.Types.Clear();
+                clone.Types.Clear();
                 clone.ReturnType = "String";
 
                 if (counter > 0)
@@ -50,7 +50,7 @@ namespace SourceCodeGenerator.Services
             if (IsNumber(item))
             {
                 var clone = item.Clone();
-                //clone.Types.Clear();
+                clone.Types.Clear();
                 clone.ReturnType = "Number";
                 
                 if (counter > 0)
@@ -70,7 +70,7 @@ namespace SourceCodeGenerator.Services
             if (IsBoolean(item))
             {
                 var clone = item.Clone();
-                //clone.Types.Clear();
+                clone.Types.Clear();
                 clone.ReturnType = "Boolean";
                 
                 if (counter > 0)
@@ -90,9 +90,6 @@ namespace SourceCodeGenerator.Services
                 clonedObjects.Add(clone);
                 counter++;
             }
-
-            
-
 
             //place for arrrays
 

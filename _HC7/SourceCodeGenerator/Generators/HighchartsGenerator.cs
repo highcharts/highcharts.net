@@ -175,7 +175,10 @@ public class HighchartsGenerator
         for (int i = 0; i < items.Count; i++)
         {
             if (items[i].FullName.Contains("pointPlacement"))
+            {
+                apiClones.Add(items[i]);
                 continue;
+            }
 
             var clones = MultiplicationService.MultiplyObject(items[i]);
 
@@ -241,6 +244,7 @@ public class HighchartsGenerator
         Debug.WriteLine(item.FullName);
 
         var addedChildren = new List<ApiItem>();
+        var finalChildren = new List<ApiItem>();
 
         if (item == null)
             return addedChildren;
@@ -266,29 +270,25 @@ public class HighchartsGenerator
             }
 
             if (baseClass.Extends.Any())
-            {
-                //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
                 addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !baseClass.Exclude.Any(q => q == p.Title)));
-            }
+
+            addedChildren = addedChildren.Where(p => !baseClass.Exclude.Any(q => q == p.Title)).ToList();
+            //it's possible that next line may be needed (requires changes)
+            //addedChildren.Where(p => baseClass.Children.Any(q => q.Title == p.Title)).ToList().ForEach(e => e.Children.AddRange(GetChildren(baseClass.Children.First(s => s.Title == e.Title)).Where(o => !e.Children.Any(u => o.Title == u.Title))));
+            var childrenWithoutMerged = baseClass.Children.Where(p => !addedChildren.Any(q => q.Title == p.Title)).ToList();
 
             if (baseClass.FullName == "series")
-            {
-                //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
-                var children = baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !p.Extends.Any(q => q == "series"));
-                addedChildren.AddRange(children.Where(p => !addedChildren.Any(x => x.Title == p.Title && x.Suffix == p.Suffix)));
-
-                //do usuniecią po naprawie jsona
-                addedChildren = addedChildren.Where(p => p.Title != "wordcloud" && p.Title != "sunburst").ToList();
-            }
+                addedChildren.AddRange(childrenWithoutMerged.Where(p => !p.Extends.Any(q => q == "series")));
             else
-            {
-                //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
-                var children = baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title));
-                addedChildren.AddRange(children.Where(p => !addedChildren.Any(x => x.Title == p.Title && x.Suffix == p.Suffix)));
-            }
+                addedChildren.AddRange(childrenWithoutMerged);
+
+            addedChildren = addedChildren.Where(p => !item.Exclude.Any(q => q == p.Title)).ToList();
+
+            finalChildren.AddRange(addedChildren);
+            addedChildren.Clear();
         }
 
-        return addedChildren;
+        return finalChildren;
     }
 
     private ApiItem FindApiItem(string baseClassFullName, ApiItem item)
@@ -298,11 +298,10 @@ public class HighchartsGenerator
             if (item.Parent.FullName == baseClassFullName)
                 return item.Parent;
 
-            foreach (var apiItem in item.Parent.Children)
-            {
-                if (apiItem.FullName == baseClassFullName)
-                    return apiItem;
-            }
+            var apiItem = item.Parent.Children.FirstOrDefault(p => p.FullName == baseClassFullName);
+
+            if(apiItem != null) 
+                return apiItem;
         }
 
         return FindApiItemInTree(baseClassFullName, _apiItems);
@@ -980,10 +979,10 @@ public class HighchartsGenerator
                     var child = children.FirstOrDefault(p => p.Title == baseElement.Title);
 
                     if (child != null)
-                        child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix)))).ToList();
+                        child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title))).ToList();// && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix)
                 }
 
-                children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix))));
+                children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title)).OrderBy(q => q.Title)); //&& (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix));));
             }
         }
 

@@ -15,14 +15,14 @@ public class ApiItem
 
     public string Description { get; set; }
     public string Defaults { get; set; }
-    public IList<string> Values { get; set; }
+    public List<string> Values { get; set; }
     public bool Deprecated { get; set; }
     public List<string> Products { get; set; }
-    public IList<string> Types { get; set; }
-    public IList<string> Extends { get; set; }
-    public IList<string> Exclude { get; set; }
+    public List<string> Types { get; set; }
+    public List<string> Extends { get; set; }
+    public List<string> Exclude { get; set; }
     public string Since { get; set; }
-    public IList<ApiItem> Children { get; set; }
+    public List<ApiItem> Children { get; set; }
     public ApiItem Parent { get; set; }
     public string Suffix { get; set; }
 
