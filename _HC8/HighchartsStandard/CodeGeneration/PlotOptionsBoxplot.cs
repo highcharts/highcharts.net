@@ -87,7 +87,7 @@ namespace Highsoft.Web.Mvc.Charts
 			StemDashStyle = StemDashStyle_DefaultValue = new Hashtable();
 			StemWidth = StemWidth_DefaultValue = null;
 			StickyTracking = StickyTracking_DefaultValue = true;
-			Threshold = Threshold_DefaultValue = new PlotOptionsBoxplotThreshold();
+			Threshold = Threshold_DefaultValue = null;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsBoxplotTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
@@ -603,8 +603,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsBoxplotThreshold Threshold { get; set; }
-		private PlotOptionsBoxplotThreshold Threshold_DefaultValue { get; set; }
+		public double? Threshold { get; set; }
+		private double? Threshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -759,7 +759,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StemDashStyle != StemDashStyle_DefaultValue) h.Add("stemDashStyle",StemDashStyle);
 			if (StemWidth != StemWidth_DefaultValue) h.Add("stemWidth",StemWidth);
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Threshold.IsDirty(highcharts)) h.Add("threshold",Threshold.ToHashtable(highcharts));
+			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty(highcharts)) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);

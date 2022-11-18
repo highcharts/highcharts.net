@@ -241,8 +241,6 @@ public class HighchartsGenerator
 
     private List<ApiItem> GetChildrenFromBaseClasses(ApiItem item)
     {
-        Debug.WriteLine(item.FullName);
-
         var addedChildren = new List<ApiItem>();
         var finalChildren = new List<ApiItem>();
 
@@ -982,7 +980,7 @@ public class HighchartsGenerator
                         child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title))).ToList();// && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix)
                 }
 
-                children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title)).OrderBy(q => q.Title)); //&& (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix));));
+                children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title)));//.OrderBy(q => q.Title)); //&& (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix));));
             }
         }
 

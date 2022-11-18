@@ -43,11 +43,11 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
             Hashtable options = new Hashtable();
 
-            if (global != null && global.IsDirty(ref _chart))
-                options.Add("global", global.ToHashtable(ref _chart));
+            if (global != null && global.IsDirty(_chart))
+                options.Add("global", global.ToHashtable(_chart));
 
-            if (lang != null && lang.IsDirty(ref _chart))
-                options.Add("lang", lang.ToHashtable(ref _chart));
+            if (lang != null && lang.IsDirty(_chart))
+                options.Add("lang", lang.ToHashtable(_chart));
 
             sb.Append(JsonConvert.SerializeObject(options));
             sb.Append(");</script>");
@@ -127,7 +127,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         public string GetJsonOptionsForBlazor()
         {
-            Hashtable options = _chart.ToHashtable(ref _chart);
+            Hashtable options = _chart.ToHashtable(_chart);
 
             List<Hashtable> series = new List<Hashtable>();
             List<Hashtable> drilldownSeries = new List<Hashtable>();
@@ -159,7 +159,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         private void RenderChartSettings(StringBuilder s)
         {            
-            Hashtable options = _chart.ToHashtable(ref _chart);
+            Hashtable options = _chart.ToHashtable(_chart);
 
             List<Hashtable> series = new List<Hashtable>();
             List<Hashtable> drilldownSeries = new List<Hashtable>();
@@ -212,10 +212,10 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         private List<Hashtable> SeriesToHashtables(List<Series>  listOfSeries)
         {
-            List<Hashtable> results = new List<Hashtable>();
+            List<Hashtable> results = new List<Hashtable>(); 
 
             foreach (var series in listOfSeries)
-                results.Add(series.ToHashtable(ref _chart));
+                results.Add(series.ToHashtable(_chart));
 
             return results;
         }
