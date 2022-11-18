@@ -17,14 +17,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		public NavigationAnnotationsOptions()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
 			ControlPointOptions = ControlPointOptions_DefaultValue = new NavigationAnnotationsOptionsControlPointOptions();
 			Crop = Crop_DefaultValue = true;
 			Draggable = Draggable_DefaultValue = "xy";
 			Events = Events_DefaultValue = new NavigationAnnotationsOptionsEvents();
-			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new NavigationAnnotationsOptionsFibonacciTimeZones();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new Hashtable();
 			Id = Id_DefaultValue = "";
-			IdNumber = IdNumber_DefaultValue = null;
 			LabelOptions = LabelOptions_DefaultValue = new NavigationAnnotationsOptionsLabelOptions();
 			Labels = Labels_DefaultValue = new NavigationAnnotationsOptionsLabels();
 			ShapeOptions = ShapeOptions_DefaultValue = new NavigationAnnotationsOptionsShapeOptions();
@@ -41,13 +39,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable the initial animation when a series isdisplayed for the `annotation`. The animation can also be setas a configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
-		/// </summary>
-		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -81,8 +72,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The Fibonacci Time Zones annotation.
 		/// </summary>
-		public NavigationAnnotationsOptionsFibonacciTimeZones FibonacciTimeZones { get; set; }
-		private NavigationAnnotationsOptionsFibonacciTimeZones FibonacciTimeZones_DefaultValue { get; set; }
+		public Hashtable FibonacciTimeZones { get; set; }
+		private Hashtable FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -90,13 +81,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sets an ID for an annotation. Can be user later whenremoving an annotation in [Chart#removeAnnotation(id)](/class-reference/Highcharts.Chart#removeAnnotation) method.
-		/// </summary>
-		public double? IdNumber { get; set; }
-		private double? IdNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -154,14 +138,12 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (ControlPointOptions.IsDirty(highstock)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(highstock));
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
-			if (FibonacciTimeZones.IsDirty(highstock)) h.Add("fibonacciTimeZones",FibonacciTimeZones.ToHashtable(highstock));
+			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
 			if (LabelOptions.IsDirty(highstock)) h.Add("labelOptions",LabelOptions.ToHashtable(highstock));
 			if (Labels.IsDirty(highstock)) h.Add("labels",Labels.ToHashtable(highstock));
 			if (ShapeOptions.IsDirty(highstock)) h.Add("shapeOptions",ShapeOptions.ToHashtable(highstock));

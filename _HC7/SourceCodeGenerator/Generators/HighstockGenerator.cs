@@ -165,21 +165,35 @@ public class HighstockGenerator
         }
     }
 
-    private void MultiplyObjects(IList<ApiItem> items)
+    private List<ApiItem> MultiplyObjects(IList<ApiItem> items)
     {
+        var apiClones = new List<ApiItem>();
+
         for (int i = 0; i < items.Count; i++)
         {
             if (items[i].FullName.Contains("pointPlacement"))
+            {
+                apiClones.Add(items[i]);
                 continue;
+            }
 
             var clones = MultiplicationService.MultiplyObject(items[i]);
 
             if (clones.Any())
-                items = items.Concat(clones).ToList();
+                apiClones.AddRange(clones);
+            else
+            {
+                apiClones.Add(items[i]);
 
-            if (items[i].Children.Any())
-                MultiplyObjects(items[i].Children);
+                if (items[i].Children.Any())
+                {
+                    var last = apiClones.Last();
+                    last.Children = MultiplyObjects(items[i].Children);
+                }
+            }
         }
+
+        return apiClones;
     }
 
     //update defaults because of differences between HS i HC
@@ -227,6 +241,8 @@ public class HighstockGenerator
             return new List<ApiItem>();
 
         var addedChildren = new List<ApiItem>();
+        var finalChildren = new List<ApiItem>();
+
         foreach (var baseClassFullName in item.Extends)
         {
             var baseClass = FindApiItem(baseClassFullName, item);
@@ -248,29 +264,25 @@ public class HighstockGenerator
             }
 
             if (baseClass.Extends.Any())
-            {
-                //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
-                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !item.Exclude.Any(q => q == p.Title) && !baseClass.Exclude.Any(q => q == p.Title)));
-            }
+                addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !baseClass.Exclude.Any(q => q == p.Title)));
+
+            addedChildren = addedChildren.Where(p => !baseClass.Exclude.Any(q => q == p.Title)).ToList();
+            //it's possible that next line may be needed (requires changes)
+            //addedChildren.Where(p => baseClass.Children.Any(q => q.Title == p.Title)).ToList().ForEach(e => e.Children.AddRange(GetChildren(baseClass.Children.First(s => s.Title == e.Title)).Where(o => !e.Children.Any(u => o.Title == u.Title))));
+            var childrenWithoutMerged = baseClass.Children.Where(p => !addedChildren.Any(q => q.Title == p.Title)).ToList();
 
             if (baseClass.FullName == "series")
-            {
-                //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
-                var children = baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !p.Extends.Any(q => q == "series"));
-                addedChildren.AddRange(children.Where(p => !addedChildren.Any(x => x.Title == p.Title)));
-
-                //do usuniecią po naprawie jsona
-                addedChildren = addedChildren.Where(p => p.Title != "wordcloud" && p.Title != "sunburst").ToList();
-            }
+                addedChildren.AddRange(childrenWithoutMerged.Where(p => !p.Extends.Any(q => q == "series")));
             else
-            {
-                //removed: && !item.Children.Select(x => x.Title).Any(q => q == p.Title)
-                var children = baseClass.Children.Where(p => !item.Exclude.Any(q => q == p.Title));
-                addedChildren.AddRange(children.Where(p => !addedChildren.Any(x => x.Title == p.Title)));
-            }
+                addedChildren.AddRange(childrenWithoutMerged);
+
+            addedChildren = addedChildren.Where(p => !item.Exclude.Any(q => q == p.Title)).ToList();
+
+            finalChildren.AddRange(addedChildren);
+            addedChildren.Clear();
         }
 
-        return addedChildren.Distinct(new ApiItemComparer()).ToList();
+        return finalChildren;
     }
 
     private ApiItem FindApiItem(string baseClassFullName, ApiItem item)
@@ -1052,7 +1064,6 @@ public class HighstockGenerator
             //warunek do usunięcia
             if (item.FullName != "series.bellcurve.data" && item.FullName != "series.histogram.data")
             {
-
                 if (item.Extends.Any())
                 {
                     var baseChildren = GetChildrenFromBaseClasses(item);
