@@ -20,7 +20,7 @@ namespace SourceCodeGenerator.Generators
 {
     public class HighchartsGenerator : Generator
     {
-        const string ROOT_CLASS = "Highcharts"; // the name of the root class
+        protected override string RootClass { get { return "Highcharts"; } } // the name of the root class
         const string MAIN_FIELD_NAME = "highcharts";
         const string ROOT_NAMESPACE = "Charts"; // the name of the root class
 
@@ -32,7 +32,7 @@ namespace SourceCodeGenerator.Generators
         public override void GenerateCode(bool isNETStandard)
         {
             IsNETStandard = isNETStandard;
-            FileService.PrepareFolder(ROOT_CLASS);
+            FileService.PrepareFolder(RootClass);
             _apiItems = JsonParser.Get();
             _previousVersionApiItems = PreviousVersionJsonParser.Get();
 
@@ -49,7 +49,7 @@ namespace SourceCodeGenerator.Generators
             _apiItems = MultiplyObjects(_apiItems);
 
 
-            var root = new ApiItem { Title = ROOT_CLASS, FullName = ROOT_CLASS };
+            var root = new ApiItem { Title = RootClass, FullName = RootClass };
             GenerateClass(root, GetChildren(root));
             GenerateClassesForLevel(_apiItems);
         }
@@ -123,38 +123,6 @@ namespace SourceCodeGenerator.Generators
             }
         }
 
-        protected override List<ApiItem> MultiplyObjects(IList<ApiItem> items)
-        {
-            var apiClones = new List<ApiItem>();
-
-            for (int i = 0; i < items.Count; i++)
-            {
-                if (items[i].FullName.Contains("pointPlacement"))
-                {
-                    apiClones.Add(items[i]);
-                    continue;
-                }
-
-                var clones = MultiplicationService.MultiplyObject(items[i]);
-
-                if (clones.Any())
-                    apiClones.AddRange(clones);
-                else
-                {
-                    apiClones.Add(items[i]);
-
-                    if (items[i].Children.Any())
-                    {
-                        var last = apiClones.Last();
-                        last.Children = MultiplyObjects(items[i].Children);
-                    }
-                }
-
-            }
-
-            return apiClones;
-        }
-
         //update defaults because of differences between HS i HC
         protected override void UpdateDefaultsForHighcharts(ApiItem apiItem)
         {
@@ -194,89 +162,8 @@ namespace SourceCodeGenerator.Generators
                 apiItem.Defaults = "0.01";
         }
 
-        protected override List<ApiItem> GetChildrenFromBaseClasses(ApiItem item)
-        {
-            var addedChildren = new List<ApiItem>();
-            var finalChildren = new List<ApiItem>();
 
-            if (item == null)
-                return addedChildren;
-
-            foreach (var baseClassFullName in item?.Extends)
-            {
-                var baseClass = FindApiItem(baseClassFullName, item);
-
-                //children for base class are not yet generated
-                if (baseClass == null)
-                {
-                    List<string> parts = baseClassFullName.Split('.').ToList();
-                    var baseClassTitle = parts[parts.Count - 1];
-                    parts.RemoveAt(parts.Count - 1);
-                    var baseClassParentFullName = string.Join(".", parts);
-                    var baseClassParent = FindApiItem(baseClassParentFullName, item.Parent);
-
-                    var baseClassParentChildren = GetChildrenFromBaseClasses(baseClassParent);
-                    baseClass = baseClassParentChildren.Where(p => p.Title == baseClassTitle).FirstOrDefault();
-
-                    if (baseClass == null)
-                        return addedChildren;
-                }
-
-                if (baseClass.Extends.Any())
-                    addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !baseClass.Exclude.Any(q => q == p.Title)));
-
-                addedChildren = addedChildren.Where(p => !baseClass.Exclude.Any(q => q == p.Title)).ToList();
-                //it's possible that next line may be needed (requires changes)
-                //addedChildren.Where(p => baseClass.Children.Any(q => q.Title == p.Title)).ToList().ForEach(e => e.Children.AddRange(GetChildren(baseClass.Children.First(s => s.Title == e.Title)).Where(o => !e.Children.Any(u => o.Title == u.Title))));
-                var childrenWithoutMerged = baseClass.Children.Where(p => !addedChildren.Any(q => q.Title == p.Title)).ToList();
-
-                if (baseClass.FullName == "series")
-                    addedChildren.AddRange(childrenWithoutMerged.Where(p => !p.Extends.Any(q => q == "series")));
-                else
-                    addedChildren.AddRange(childrenWithoutMerged);
-
-                addedChildren = addedChildren.Where(p => !item.Exclude.Any(q => q == p.Title)).ToList();
-
-                finalChildren.AddRange(addedChildren);
-                addedChildren.Clear();
-            }
-
-            return finalChildren;
-        }
-
-        protected override ApiItem FindApiItem(string baseClassFullName, ApiItem item)
-        {
-            if (item?.Parent != null)
-            {
-                if (item.Parent.FullName == baseClassFullName)
-                    return item.Parent;
-
-                var apiItem = item.Parent.Children.FirstOrDefault(p => p.FullName == baseClassFullName);
-
-                if (apiItem != null)
-                    return apiItem;
-            }
-
-            return FindApiItemInTree(baseClassFullName, _apiItems);
-        }
-
-        protected override ApiItem FindApiItemInTree(string baseClassFullName, IList<ApiItem> items)
-        {
-            foreach (var item in items)
-            {
-                if (item.FullName == baseClassFullName)
-                    return item;
-
-                if (item.Children.Any())
-                {
-                    var result = FindApiItemInTree(baseClassFullName, item.Children);
-                    if (result != null)
-                        return result;
-                }
-            }
-
-            return null;
-        }
+        
 
         protected override void GenerateClass(ApiItem item, List<ApiItem> children)
         {
@@ -377,7 +264,7 @@ namespace SourceCodeGenerator.Generators
                             .Replace("{HighTemplate.ExtendsClass}", extendsClass)
                             .Replace("{HighTemplate.ClassName}", className);
 
-            FileService.SaveClass(ROOT_CLASS, className, codeTemplate);
+            FileService.SaveClass(RootClass, className, codeTemplate);
         }
 
         protected override void GenerateEnum(ApiItem apiItem)
@@ -428,7 +315,7 @@ namespace SourceCodeGenerator.Generators
                             .Replace("{HighTemplate.EnumName}", GetClassNameFromItem(apiItem))
                             .Replace("{HighTemplate.EnumList}", enumList);
 
-            FileService.SaveEnum(ROOT_CLASS, GetClassNameFromItem(apiItem), enumTemplate);
+            FileService.SaveEnum(RootClass, GetClassNameFromItem(apiItem), enumTemplate);
         }
 
         protected override void AddDefaultsToEnum(ApiItem apiItem)
@@ -636,7 +523,7 @@ namespace SourceCodeGenerator.Generators
             string[] parts = item.FullName.Split('.');
             StringBuilder result = new StringBuilder();
 
-            if (item.ParentFullName == ROOT_CLASS)
+            if (item.ParentFullName == RootClass)
                 result.Append(FirstCharToUpper(item.Title));
             else
                 foreach (string part in parts)
@@ -737,7 +624,7 @@ namespace SourceCodeGenerator.Generators
             if (propertyName.ToLower() == "data" && child.ParentFullName != null)
                 return "List<" + GetClassNameFromItem(child) + ">";
 
-            if (child.ParentFullName != ROOT_CLASS && (nameAndSuffix.ToLower() == "xaxis" || nameAndSuffix.ToLower() == "yaxis"))
+            if (child.ParentFullName != RootClass && (nameAndSuffix.ToLower() == "xaxis" || nameAndSuffix.ToLower() == "yaxis"))
                 return "string";
 
             if (
@@ -885,76 +772,8 @@ namespace SourceCodeGenerator.Generators
             }
         }
 
-        protected override void GenerateClassesForLevel(IList<ApiItem> items, int level = 0)
-        {
-            foreach (ApiItem item in items)
-            {
-                if (item.FullName.EndsWith("plotOptions.pie"))
-                    item.Exclude.Remove("dataLabels");
 
-                if (item.Children.Any() || item.Extends.Any())
-                {
-                    var children = GetChildren(item);
-
-                    if (item.ParentFullName != null && item.ParentFullName.EndsWith("levels") && item.Title == "dataLabels")
-                        continue;
-
-                    if (item.FullName == "series")
-                    {
-                        var seriesChildren = item.Children.Where(p => !item.Exclude.Any(q => q == p.Title) && !p.Extends.Any(q => q == "series")).ToList();
-                        GenerateClass(item, seriesChildren);
-                    }
-                    else
-                        GenerateClass(item, children);
-
-                    GenerateClassesForLevel(children, level + 1);
-                }
-            }
-        }
-
-        protected override List<ApiItem> GetChildren(ApiItem item)
-        {
-            List<ApiItem> children;
-            List<ApiItem> clones = new List<ApiItem>();
-
-            if (item.Title == ROOT_CLASS)
-                children = _apiItems;// FindRootChildren();
-            else
-            {
-                children = item.Children.ToList(); // FindImmediateChildren(item);
-
-                if (item.Extends.Any())
-                {
-                    var baseChildren = GetChildrenFromBaseClasses(item);
-
-                    foreach (var baseElement in baseChildren.Where(p => children.Any(x => x.Title == p.Title)))
-                    {
-                        var child = children.FirstOrDefault(p => p.Title == baseElement.Title);
-
-                        if (child != null)
-                            child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title))).ToList();// && (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix)
-                    }
-
-                    children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title)));//.OrderBy(q => q.Title)); //&& (string.IsNullOrEmpty(x.Suffix) == string.IsNullOrEmpty(p.Suffix) || x.Suffix == p.Suffix));));
-                }
-            }
-
-            foreach (var child in children)
-            {
-                var clone = child.Clone();
-                clone.Parent = item;
-                clone.FullName = item.FullName + "." + child.Title;
-
-                //ignored for multitypes
-                var multipliedClones = MultiplicationService.MultiplyObject(clone);
-                if (multipliedClones.Any() && !clone.FullName.Contains("pointPlacement"))
-                    clones.AddRange(multipliedClones);
-                else
-                    clones.Add(clone);
-            }
-
-            return clones.OrderBy(p => p.Title).ToList();
-        }
+        
 
         protected override void InitEnumMappings()
         {
@@ -1357,27 +1176,8 @@ namespace SourceCodeGenerator.Generators
             //_customProperties.Add("PointPlacement");
             //_customProperties.Add("Symbol");
         }
-        protected override string FirstCharToUpper(string input)
-        {
-            if (String.IsNullOrEmpty(input))
-                throw new ArgumentException("String is empty");
+        
 
-            return input.First().ToString().ToUpper() + input.Substring(1);
-        }
-        protected override string FirstCharToLower(string input)
-        {
-            if (String.IsNullOrEmpty(input))
-                throw new ArgumentException("String is empty");
-
-            return input.First().ToString().ToLower() + input.Substring(1);
-        }
-        protected override string GetJSName(string name, string suffix)
-        {
-            if (string.IsNullOrEmpty(suffix))
-                return FirstCharToLower(name);
-
-            return FirstCharToLower(name.Replace(suffix, ""));
-        }
         protected override string MapDefaultValue(ApiItem item)
         {
             string defaults;
@@ -1426,7 +1226,7 @@ namespace SourceCodeGenerator.Generators
 
             //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
             //    item.IsParent = true;
-            if ((nameAndSuffix == "xAxis" || nameAndSuffix == "yAxis") && item.ParentFullName != ROOT_CLASS)
+            if ((nameAndSuffix == "xAxis" || nameAndSuffix == "yAxis") && item.ParentFullName != RootClass)
                 return "\"\"";
 
             if (
