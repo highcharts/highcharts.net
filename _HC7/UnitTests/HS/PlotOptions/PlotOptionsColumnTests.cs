@@ -556,17 +556,17 @@ namespace HS.PlotOptions
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"align\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
         }
 
-        [Fact]
-        public void Test_IfDataLabelsAlignDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart);
-            var defaultValue = PlotOptionsColumnDataLabelsAlign.Undefined;
+        //[Fact]
+        //public void Test_IfDataLabelsAlignDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highstock();
+        //    var renderer = new HighstockRenderer(chart);
+        //    var defaultValue = PlotOptionsColumnDataLabelsAlign.Undefined;
 
-            chart.PlotOptions.Column.DataLabels.Align = defaultValue;
+        //    chart.PlotOptions.Column.DataLabels.Align = defaultValue;
 
-            Assert.DoesNotContain($"align", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"align", renderer.RenderHtml());
+        //}
 
         [Fact]
         public void Test_IfDataLabelsAllowOverlapRenders_Correct()
@@ -1361,17 +1361,17 @@ namespace HS.PlotOptions
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"verticalAlign\":\"{chart.FirstCharacterToLower(align.ToString())}\"}}}}}}", renderer.RenderHtml());
         }
 
-        [Fact]
-        public void Test_IfDataLabelsVerticalAlignDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart);
-            var defaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Undefined;
+        //[Fact]
+        //public void Test_IfDataLabelsVerticalAlignDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highstock();
+        //    var renderer = new HighstockRenderer(chart);
+        //    var defaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Undefined;
 
-            chart.PlotOptions.Column.DataLabels.VerticalAlign = defaultValue;
+        //    chart.PlotOptions.Column.DataLabels.VerticalAlign = defaultValue;
 
-            Assert.DoesNotContain($"verticalAlign", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"verticalAlign", renderer.RenderHtml());
+        //}
 
         [Theory]
         [InlineData(20)]

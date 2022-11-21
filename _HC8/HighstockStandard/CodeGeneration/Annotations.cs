@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ElliottWave = ElliottWave_DefaultValue = new AnnotationsElliottWave();
 			Events = Events_DefaultValue = new AnnotationsEvents();
 			Fibonacci = Fibonacci_DefaultValue = new AnnotationsFibonacci();
-			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new AnnotationsFibonacciTimeZones();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new Hashtable();
 			Id = Id_DefaultValue = "";
 			IdNumber = IdNumber_DefaultValue = null;
 			InfinityLine = InfinityLine_DefaultValue = new AnnotationsInfinityLine();
@@ -110,8 +110,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The Fibonacci Time Zones annotation.
 		/// </summary>
-		public AnnotationsFibonacciTimeZones FibonacciTimeZones { get; set; }
-		private AnnotationsFibonacciTimeZones FibonacciTimeZones_DefaultValue { get; set; }
+		public Hashtable FibonacciTimeZones { get; set; }
+		private Hashtable FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -226,7 +226,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ElliottWave.IsDirty(highstock)) h.Add("elliottWave",ElliottWave.ToHashtable(highstock));
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
 			if (Fibonacci.IsDirty(highstock)) h.Add("fibonacci",Fibonacci.ToHashtable(highstock));
-			if (FibonacciTimeZones.IsDirty(highstock)) h.Add("fibonacciTimeZones",FibonacciTimeZones.ToHashtable(highstock));
+			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
 			if (InfinityLine.IsDirty(highstock)) h.Add("infinityLine",InfinityLine.ToHashtable(highstock));
