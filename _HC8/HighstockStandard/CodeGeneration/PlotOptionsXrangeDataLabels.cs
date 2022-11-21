@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Filter = Filter_DefaultValue = new PlotOptionsXrangeDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = true;
+			Inside = Inside_DefaultValue = null;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new PlotOptionsXrangeDataLabelsTextPath();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsXrangeDataLabelsVerticalAlign.Middle;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsXrangeDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			Z = Z_DefaultValue = 6;
@@ -175,7 +175,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// For points with an extent, like columns or map areas, whether toalign the data label inside the box or to the actual value point.Defaults to `false` in most cases, `true` in stacked columns.
 		/// </summary>
 		public bool? Inside { get; set; }
 		private bool? Inside_DefaultValue { get; set; }
@@ -273,7 +273,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// The vertical alignment of a data label. Can be one of `top`,`middle` or `bottom`. The default value depends on the data, forinstance in a column chart, the label is above positive valuesand below negative values.
 		/// </summary>
 		public PlotOptionsXrangeDataLabelsVerticalAlign VerticalAlign { get; set; }
 		private PlotOptionsXrangeDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }

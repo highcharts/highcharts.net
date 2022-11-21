@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsColumnDataLabels()
 		{
-			Align = Align_DefaultValue = PlotOptionsColumnDataLabelsAlign.Undefined;
+			Align = Align_DefaultValue = PlotOptionsColumnDataLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
@@ -47,16 +47,16 @@ namespace Highsoft.Web.Mvc.Stocks
 			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new PlotOptionsColumnDataLabelsTextPath();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Undefined;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsColumnDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = null;
+			Y = Y_DefaultValue = 0;
 			Z = Z_DefaultValue = 6;
 			
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// The alignment of the data label compared to the point. If`right`, the right side of the label should be touching thepoint. For points with an extent, like columns, the alignmentsalso dictates how to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside)option. Can be one of `left`, `center` or `right`.
 		/// </summary>
 		public PlotOptionsColumnDataLabelsAlign Align { get; set; }
 		private PlotOptionsColumnDataLabelsAlign Align_DefaultValue { get; set; }
@@ -273,7 +273,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// The vertical alignment of a data label. Can be one of `top`,`middle` or `bottom`. The default value depends on the data, forinstance in a column chart, the label is above positive valuesand below negative values.
 		/// </summary>
 		public PlotOptionsColumnDataLabelsVerticalAlign VerticalAlign { get; set; }
 		private PlotOptionsColumnDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }

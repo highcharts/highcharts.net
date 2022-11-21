@@ -32,6 +32,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Overflow = Overflow_DefaultValue = AnnotationsElliottWaveTypeOptionsPointsLabelOverflow.Justify;
 			Padding = Padding_DefaultValue = 5;
 			Shadow = Shadow_DefaultValue = new Shadow();
+			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "callout";
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "";
@@ -156,6 +157,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The shadow of the box. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The name of a symbol to use for the border around thelabel. Symbols are predefined functions on the Rendererobject.
 		/// </summary>
 		public string Shape { get; set; }
@@ -225,6 +233,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Shadow.IsDirty(highstock)) h.Add("shadow",Shadow.ToHashtable(highstock));
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Text != Text_DefaultValue) h.Add("text",Text);

@@ -244,7 +244,7 @@ namespace SourceCodeGenerator.Generators
                                 child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title))).ToList();
                         }
 
-                        children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title)));
+                        children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && x.Suffix == p.Suffix)));
                     }
                 }
             }
