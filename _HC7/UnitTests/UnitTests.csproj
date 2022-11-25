@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\_HC8\HighchartsStandard\HighchartsStandard2.csproj" />
-    <ProjectReference Include="..\..\_HC8\HighstockStandard\HighstockStandard2.csproj" />
+    <ProjectReference Include="..\..\_HC8\HighchartsStandard\HighchartsStandard.csproj" />
+    <ProjectReference Include="..\..\_HC8\HighstockStandard\HighstockStandard.csproj" />
   </ItemGroup>
 
 </Project>

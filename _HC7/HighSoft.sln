@@ -17,9 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponsiveRules", "Responsi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Demo_Standard", "MVC_Demo_Standard\MVC_Demo_Standard.csproj", "{CF9708E9-2657-45C6-8C9E-71C69734AEF5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighchartsStandard2", "..\_HC8\HighchartsStandard\HighchartsStandard2.csproj", "{5263A8FD-5372-4433-B171-A00B0B8C42A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighchartsStandard", "..\_HC8\HighchartsStandard\HighchartsStandard.csproj", "{5263A8FD-5372-4433-B171-A00B0B8C42A1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighstockStandard2", "..\_HC8\HighstockStandard\HighstockStandard2.csproj", "{DF9A356F-C423-492E-AA8F-F85E509AB2B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighstockStandard", "..\_HC8\HighstockStandard\HighstockStandard.csproj", "{DF9A356F-C423-492E-AA8F-F85E509AB2B4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp1", "D:\work\blazor\BlazorApp1\BlazorApp1\BlazorApp1.csproj", "{4FCAD34F-9B5F-4316-BA0D-6EB7B2C48978}"
 EndProject

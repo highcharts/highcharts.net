@@ -1436,13 +1436,13 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\_HC8\HighchartsStandard\HighchartsStandard2.csproj">
+    <ProjectReference Include="..\..\_HC8\HighchartsStandard\HighchartsStandard.csproj">
       <Project>{5263a8fd-5372-4433-b171-a00b0b8c42a1}</Project>
-      <Name>HighchartsStandard2</Name>
+      <Name>HighchartsStandard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\_HC8\HighstockStandard\HighstockStandard2.csproj">
+    <ProjectReference Include="..\..\_HC8\HighstockStandard\HighstockStandard.csproj">
       <Project>{df9a356f-c423-492e-aa8f-f85e509ab2b4}</Project>
-      <Name>HighstockStandard2</Name>
+      <Name>HighstockStandard</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
