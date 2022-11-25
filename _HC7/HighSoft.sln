@@ -11,15 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceCodeGenerator", "Sour
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetOptionsSample", "..\..\..\.NET Projects\SetOptionsSample\SetOptionsSample\SetOptionsSample.csproj", "{E09DEA83-134D-4CFA-A68F-31F28944B3F4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighchartsStandard", "HighchartsStandard\HighchartsStandard.csproj", "{FA48870E-277D-4640-B710-AAE1B29CD4C5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegendItemClick", "D:\work\LegendItemClick\LegendItemClick\LegendItemClick\LegendItemClick.csproj", "{94BA9D3D-0BBE-40FF-A67E-365EF05FBAC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponsiveRules", "ResponsiveRules\ResponsiveRules.csproj", "{F4B0E856-705F-4398-9FF3-4C085573DC88}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Demo_Standard", "MVC_Demo_Standard\MVC_Demo_Standard.csproj", "{CF9708E9-2657-45C6-8C9E-71C69734AEF5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighstockStandard", "HighstockStandard\HighstockStandard.csproj", "{3C277349-2E72-4BB1-81FA-1BBE8233EBC3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighchartsStandard2", "..\_HC8\HighchartsStandard\HighchartsStandard2.csproj", "{5263A8FD-5372-4433-B171-A00B0B8C42A1}"
 EndProject
@@ -27,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighstockStandard2", "..\_H
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp1", "D:\work\blazor\BlazorApp1\BlazorApp1\BlazorApp1.csproj", "{4FCAD34F-9B5F-4316-BA0D-6EB7B2C48978}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{EB6D3FBB-803E-451A-A571-01C832A4E970}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{EB6D3FBB-803E-451A-A571-01C832A4E970}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,10 +47,6 @@ Global
 		{E09DEA83-134D-4CFA-A68F-31F28944B3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E09DEA83-134D-4CFA-A68F-31F28944B3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E09DEA83-134D-4CFA-A68F-31F28944B3F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA48870E-277D-4640-B710-AAE1B29CD4C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA48870E-277D-4640-B710-AAE1B29CD4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA48870E-277D-4640-B710-AAE1B29CD4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA48870E-277D-4640-B710-AAE1B29CD4C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{94BA9D3D-0BBE-40FF-A67E-365EF05FBAC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{94BA9D3D-0BBE-40FF-A67E-365EF05FBAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94BA9D3D-0BBE-40FF-A67E-365EF05FBAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -67,10 +59,6 @@ Global
 		{CF9708E9-2657-45C6-8C9E-71C69734AEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF9708E9-2657-45C6-8C9E-71C69734AEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF9708E9-2657-45C6-8C9E-71C69734AEF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C277349-2E72-4BB1-81FA-1BBE8233EBC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C277349-2E72-4BB1-81FA-1BBE8233EBC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C277349-2E72-4BB1-81FA-1BBE8233EBC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C277349-2E72-4BB1-81FA-1BBE8233EBC3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5263A8FD-5372-4433-B171-A00B0B8C42A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5263A8FD-5372-4433-B171-A00B0B8C42A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5263A8FD-5372-4433-B171-A00B0B8C42A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
