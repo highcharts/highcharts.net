@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Series()
 		{
-			Id = Id_DefaultValue = null;
+			Id = Id_DefaultValue = string.Empty;
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
 			Name = Name_DefaultValue = null;

@@ -350,9 +350,6 @@ namespace SourceCodeGenerator.Services
 
             ItemsToUpdate.Add("plotOptions.arearange.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("plotOptions.boxplot.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
-
-
-
         }
 
         public void Delete(ApiItem item)
@@ -371,9 +368,6 @@ namespace SourceCodeGenerator.Services
 
             if (item.FullName == "plotOptions.packedbubble.layoutAlgorithm.initialPositionRadius")
                 item.Extends.Clear();
-
-            
-
         }
 
         private IList<ApiItem> GetItemsFromDefaultValue(ApiItem item)

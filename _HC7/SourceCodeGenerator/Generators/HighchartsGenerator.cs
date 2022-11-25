@@ -1088,6 +1088,7 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("navigation.bindings.zoomY", "new Object()");
 
             _propertyInitMappings.Add("drilldown.activeDataLabelStyle", "new Hashtable()");
+            _propertyInitMappings.Add("series.id", "string.Empty");
 
         }
         protected override void InitLists()
