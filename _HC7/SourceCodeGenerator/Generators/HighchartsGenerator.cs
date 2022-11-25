@@ -1089,6 +1089,8 @@ namespace SourceCodeGenerator.Generators
 
             _propertyInitMappings.Add("drilldown.activeDataLabelStyle", "new Hashtable()");
             _propertyInitMappings.Add("series.id", "string.Empty");
+            _propertyInitMappings.Add("series.funnel3d.dataLabels.verticalAlign", "Funnel3dSeriesDataLabelsVerticalAlign.Middle");
+            _propertyInitMappings.Add("series.pyramid3d.dataLabels.verticalAlign", "Pyramid3dSeriesDataLabelsVerticalAlign.Middle");
 
         }
         protected override void InitLists()
