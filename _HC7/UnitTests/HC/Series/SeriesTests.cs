@@ -22,6 +22,7 @@ namespace HC.Series
         public SeriesTests(HcFixture fixture)
         {
             _fixture = fixture;
+            _fixture.Reset();
         }
 
         [Theory]
@@ -37,11 +38,11 @@ namespace HC.Series
         }
 
         [Fact]
-        public void Test_IfIdRendersForDefault_Correct()
+        public void Test_IfIdDoesntRendersForDefault_Correct()
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = _fixture.Series; chart.Series.Add(series);
-            string defaultValue = null;
+            string defaultValue = string.Empty;
 
             chart.Series[0].Id = defaultValue;
 

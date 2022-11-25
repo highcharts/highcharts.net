@@ -34,7 +34,11 @@ namespace UnitTests.HC
         public HcFixture()
         {
             Series = new Series();
-            ChartType = ChartType.Line;
+        }
+
+        public void Reset()
+        {
+            Series = new Series();
         }
 
         public void Dispose()
