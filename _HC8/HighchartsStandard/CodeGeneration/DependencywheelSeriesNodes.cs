@@ -23,6 +23,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Id = Id_DefaultValue = "";
 			Level = Level_DefaultValue = null;
 			Name = Name_DefaultValue = "";
+			Offset = Offset_DefaultValue = "0";
+			OffsetNumber = OffsetNumber_DefaultValue = null;
 			OffsetHorizontal = OffsetHorizontal_DefaultValue = "";
 			OffsetHorizontalNumber = OffsetHorizontalNumber_DefaultValue = null;
 			OffsetVertical = OffsetVertical_DefaultValue = "";
@@ -82,6 +84,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// This option is deprecated, use[offsetHorizontal](#series.sankey.nodes.offsetHorizontal) and[offsetVertical](#series.sankey.nodes.offsetVertical) instead.In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
+		/// </summary>
+		public string Offset { get; set; }
+		private string Offset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This option is deprecated, use[offsetHorizontal](#series.sankey.nodes.offsetHorizontal) and[offsetVertical](#series.sankey.nodes.offsetVertical) instead.In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
+		/// </summary>
+		public double? OffsetNumber { get; set; }
+		private double? OffsetNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percantage string is given, the node is offset by the percentage of thenode size.
 		/// </summary>
 		public string OffsetHorizontal { get; set; }
@@ -123,6 +139,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Level != Level_DefaultValue) h.Add("level",Level);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
+			if (OffsetNumber != OffsetNumber_DefaultValue) h.Add("offset",OffsetNumber);
 			if (OffsetHorizontal != OffsetHorizontal_DefaultValue) h.Add("offsetHorizontal",OffsetHorizontal);
 			if (OffsetHorizontalNumber != OffsetHorizontalNumber_DefaultValue) h.Add("offsetHorizontal",OffsetHorizontalNumber);
 			if (OffsetVertical != OffsetVertical_DefaultValue) h.Add("offsetVertical",OffsetVertical);

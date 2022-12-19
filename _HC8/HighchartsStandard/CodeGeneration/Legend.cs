@@ -54,6 +54,8 @@ namespace Highsoft.Web.Mvc.Charts
 			SymbolWidth = SymbolWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new LegendTitle();
 			UseHTML = UseHTML_DefaultValue = false;
+			ValueDecimals = ValueDecimals_DefaultValue = -1;
+			ValueSuffix = ValueSuffix_DefaultValue = "  ";
 			VerticalAlign = VerticalAlign_DefaultValue = LegendVerticalAlign.Bottom;
 			Width = Width_DefaultValue = "";
 			WidthNumber = WidthNumber_DefaultValue = null;
@@ -331,6 +333,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// For a color axis with data classes, how many decimals to render inthe legend. The default preserves the decimals of the range numbers.
+		/// </summary>
+		public double? ValueDecimals { get; set; }
+		private double? ValueDecimals_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// For a color axis with data classes, a suffix for the range numbers inthe legend.
+		/// </summary>
+		public string ValueSuffix { get; set; }
+		private string ValueSuffix_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The vertical alignment of the legend box. Can be one of `top`,`middle` or `bottom`. Vertical position can be further determinedby the `y` option.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.When the [layout](#legend.layout) option is `proximate`, the`verticalAlign` option doesn't apply.
 		/// </summary>
 		public LegendVerticalAlign VerticalAlign { get; set; }
@@ -410,6 +426,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SymbolWidth != SymbolWidth_DefaultValue) h.Add("symbolWidth",SymbolWidth);
 			if (Title.IsDirty(highcharts)) h.Add("title",Title.ToHashtable(highcharts));
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
+			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);

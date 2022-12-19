@@ -16,6 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PackedbubbleSeriesLayoutAlgorithm()
 		{
+			Approximation = Approximation_DefaultValue = PackedbubbleSeriesLayoutAlgorithmApproximation.None;
+			AttractiveForce = AttractiveForce_DefaultValue = "";
 			BubblePadding = BubblePadding_DefaultValue = 5;
 			DragBetweenSeries = DragBetweenSeries_DefaultValue = false;
 			EnableSimulation = EnableSimulation_DefaultValue = true;
@@ -29,13 +31,29 @@ namespace Highsoft.Web.Mvc.Charts
 			MaxSpeed = MaxSpeed_DefaultValue = 5;
 			ParentNodeLimit = ParentNodeLimit_DefaultValue = false;
 			ParentNodeOptions = ParentNodeOptions_DefaultValue = new PackedbubbleSeriesLayoutAlgorithmParentNodeOptions();
+			RepulsiveForce = RepulsiveForce_DefaultValue = "";
 			SeriesInteraction = SeriesInteraction_DefaultValue = true;
-			SplitSeries = SplitSeries_DefaultValue = "false";
+			SplitSeries = SplitSeries_DefaultValue = false;
+			Theta = Theta_DefaultValue = null;
 			Type = Type_DefaultValue = PackedbubbleSeriesLayoutAlgorithmType.ReingoldFruchterman;
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// Approximation used to calculate repulsive forces affecting nodes.By default, when calculateing net force, nodes are comparedagainst each other, which gives O(N^2) complexity. UsingBarnes-Hut approximation, we decrease this to O(N log N), but theresulting graph will have different layout. Barnes-Hutapproximation divides space into rectangles via quad tree, whereforces exerted on nodes are calculated directly for nearby cells,and for all others, cells are treated as a separate node withcenter of mass.
+		/// </summary>
+		public PackedbubbleSeriesLayoutAlgorithmApproximation Approximation { get; set; }
+		private PackedbubbleSeriesLayoutAlgorithmApproximation Approximation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Attraction force applied on a node which is conected to anothernode by a link. Passed are two arguments:- `d` - which is current distance between two nodes- `k` - which is desired distance between two nodesIn `verlet` integration, defaults to:`function (d, k) { return (k - d) / d; }`
+		/// </summary>
+		public string AttractiveForce { get; set; }
+		private string AttractiveForce_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The distance between two bubbles, when the algorithm starts totreat two bubbles as overlapping. The `bubblePadding` is also theexpected distance between all the bubbles on simulation end.
@@ -129,6 +147,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Repulsive force applied on a node. Passed are two arguments:- `d` - which is current distance between two nodes- `k` - which is desired distance between two nodesIn `verlet` integration, defaults to:`function (d, k) { return (k - d) / d * (k > d ? 1 : 0) }`
+		/// </summary>
+		public string RepulsiveForce { get; set; }
+		private string RepulsiveForce_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether series should interact with each other or not. When`parentNodeLimit` is set to true, thi option should be set tofalse to avoid sticking points in wrong series parentNode.
 		/// </summary>
 		public bool? SeriesInteraction { get; set; }
@@ -138,8 +163,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Whether to split series into individual groups or to mix allseries together.
 		/// </summary>
-		public string SplitSeries { get; set; }
-		private string SplitSeries_DefaultValue { get; set; }
+		public bool? SplitSeries { get; set; }
+		private bool? SplitSeries_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Barnes-Hut approximation only.Deteremines when distance between cell and node is small enoughto caculate forces. Value of `theta` is compared directly withquotient `s / d`, where `s` is the size of the cell, and `d` isdistance between center of cell's mass and currently comparednode.
+		/// </summary>
+		public double? Theta { get; set; }
+		private double? Theta_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -156,6 +188,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
+			if (Approximation != Approximation_DefaultValue) h.Add("approximation", highcharts.FirstCharacterToLower(Approximation.ToString()));
+			if (AttractiveForce != AttractiveForce_DefaultValue) { h.Add("attractiveForce",AttractiveForce); highcharts.AddFunction("attractiveForce", AttractiveForce); }  
 			if (BubblePadding != BubblePadding_DefaultValue) h.Add("bubblePadding",BubblePadding);
 			if (DragBetweenSeries != DragBetweenSeries_DefaultValue) h.Add("dragBetweenSeries",DragBetweenSeries);
 			if (EnableSimulation != EnableSimulation_DefaultValue) h.Add("enableSimulation",EnableSimulation);
@@ -169,8 +203,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
 			if (ParentNodeLimit != ParentNodeLimit_DefaultValue) h.Add("parentNodeLimit",ParentNodeLimit);
 			if (ParentNodeOptions.IsDirty(highcharts)) h.Add("parentNodeOptions",ParentNodeOptions.ToHashtable(highcharts));
+			if (RepulsiveForce != RepulsiveForce_DefaultValue) { h.Add("repulsiveForce",RepulsiveForce); highcharts.AddFunction("repulsiveForce", RepulsiveForce); }  
 			if (SeriesInteraction != SeriesInteraction_DefaultValue) h.Add("seriesInteraction",SeriesInteraction);
 			if (SplitSeries != SplitSeries_DefaultValue) h.Add("splitSeries",SplitSeries);
+			if (Theta != Theta_DefaultValue) h.Add("theta",Theta);
 			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

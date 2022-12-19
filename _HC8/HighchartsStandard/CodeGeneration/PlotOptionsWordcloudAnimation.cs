@@ -16,19 +16,11 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsWordcloudAnimation()
 		{
-			Defer = Defer_DefaultValue = 0;
 			Duration = Duration_DefaultValue = 500;
 			
 			CustomFields = new Hashtable();
 		}	
 		
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? Defer { get; set; }
-		private double? Defer_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
@@ -44,7 +36,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

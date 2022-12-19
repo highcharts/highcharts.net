@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderDashStyle = BorderDashStyle_DefaultValue = new Hashtable();
 			BorderWidth = BorderWidth_DefaultValue = null;
 			Color = Color_DefaultValue = "";
+			ColorByPoint = ColorByPoint_DefaultValue = null;
 			ColorVariation = ColorVariation_DefaultValue = new SunburstSeriesLevelsColorVariation();
 			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
 			Level = Level_DefaultValue = null;
@@ -55,6 +56,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines whether the chart should receive one color per point basedon this level.
+		/// </summary>
+		public bool? ColorByPoint { get; set; }
+		private bool? ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -96,6 +104,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderDashStyle != BorderDashStyle_DefaultValue) h.Add("borderDashStyle",BorderDashStyle);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorVariation.IsDirty(highcharts)) h.Add("colorVariation",ColorVariation.ToHashtable(highcharts));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Level != Level_DefaultValue) h.Add("level",Level);

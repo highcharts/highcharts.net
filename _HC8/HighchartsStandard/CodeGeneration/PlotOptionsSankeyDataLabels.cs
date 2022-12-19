@@ -20,23 +20,20 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = null;
-			BackgroundColor = BackgroundColor_DefaultValue = "none";
+			BackgroundColor = BackgroundColor_DefaultValue = "";
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			Crop = Crop_DefaultValue = false;
+			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = null;
 			DeferBool = DeferBool_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = false;
 			Filter = Filter_DefaultValue = new PlotOptionsSankeyDataLabelsFilter();
-			Format = Format_DefaultValue = new PlotOptionsSankeyDataLabelsFormat();
-			FormatString = FormatString_DefaultValue = "null";
+			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = true;
-			NodeFormat = NodeFormat_DefaultValue = "undefined";
-			NodeFormatter = NodeFormatter_DefaultValue = "";
+			Inside = Inside_DefaultValue = null;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -53,7 +50,7 @@ namespace Highsoft.Web.Mvc.Charts
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsSankeyDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
-			Z = Z_DefaultValue = 6;
+			ZIndex = ZIndex_DefaultValue = 6;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -88,7 +85,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// The background color or gradient for the data label.
 		/// </summary>
 		public string BackgroundColor { get; set; }
 		private string BackgroundColor_DefaultValue { get; set; }
@@ -123,14 +120,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The text color for the data labels. Defaults to `undefined`. Forcertain series types, like column or map, the data labels can bedrawn inside the points. In this case the data label will bedrawn with maximum contrast by default. Additionally, it will begiven a `text-outline` style with the opposite color, to furtherincrease the contrast. This can be overridden by setting the`text-outline` style to `none` in the `dataLabels.style` option.
+		/// This options is deprecated.Use [style.color](#plotOptions.series.dataLabels.style) instead.The text color for the data labels. Defaults to `undefined`. Forcertain series types, like column or map, the data labels can bedrawn inside the points. In this case the data label will bedrawn with maximum contrast by default. Additionally, it will begiven a `text-outline` style with the opposite color, to furtherincrease the contrast. This can be overridden by setting the`text-outline` style to `none` in the `dataLabels.style` option.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to hide data labels that are outside the plot area. Bydefault, the data label is moved inside the plot area accordingto the[overflow](#plotOptions.series.dataLabels.overflow)option.
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
@@ -151,7 +148,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Enable or disable the data labels.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -165,63 +162,42 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// A[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
 		/// </summary>
-		public PlotOptionsSankeyDataLabelsFormat Format { get; set; }
-		private PlotOptionsSankeyDataLabelsFormat Format_DefaultValue { get; set; }
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public string FormatString { get; set; }
-		private string FormatString_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
+		/// Callback JavaScript function to format the data label. Note that if a`format` is defined, the format takes precedence and the formatter isignored.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// For points with an extent, like columns or map areas, whether toalign the data label inside the box or to the actual value point.Defaults to `false` in most cases, `true` in stacked columns.
 		/// </summary>
 		public bool? Inside { get; set; }
 		private bool? Inside_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)specifying what to show for _nodes_ in the sankey diagram. Bydefault the `nodeFormatter` returns `{point.name}`.
-		/// </summary>
-		public string NodeFormat { get; set; }
-		private string NodeFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Callback to format data labels for _nodes_ in the sankey diagram.The `nodeFormat` option takes precedence over the`nodeFormatter`.
-		/// </summary>
-		public string NodeFormatter { get; set; }
-		private string NodeFormatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null points.
+		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null pointsi.e `heatmap` or `tilemap`. Does not work with series that don'tdisplay null points, like `line`, `column`, `bar` or `pie`.
 		/// </summary>
 		public string NullFormat { get; set; }
 		private string NullFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null points.
+		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null pointsi.e `heatmap` or `tilemap`. Does not work with series that don'tdisplay null points, like `line`, `column`, `bar` or `pie`.
 		/// </summary>
 		public bool? NullFormatBool { get; set; }
 		private bool? NullFormatBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function that defines formatting for pointswith the value of null. Works analogously to[formatter](#plotOptions.series.dataLabels.formatter).`nullPointFormatter` can be applied only to series which supportdisplaying null points.
+		/// Callback JavaScript function that defines formatting for pointswith the value of null. Works analogously to[formatter](#plotOptions.series.dataLabels.formatter).`nullFormatter` can be applied only to series which supportdisplaying null points i.e `heatmap` or `tilemap`. Does not workwith series that don't display null points, like `line`, `column`,`bar` or `pie`.
 		/// </summary>
 		public string NullFormatter { get; set; }
 		private string NullFormatter_DefaultValue { get; set; }
@@ -319,10 +295,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The Z index of the data labels. The default Z index puts it abovethe series. Use a Z index of 2 to display it behind the series.
+		/// The z index of the data labels. Use a `zIndex` of 6 to display it abovethe series, or use a `zIndex` of 2 to display it behind the series.
 		/// </summary>
-		public double? Z { get; set; }
-		private double? Z_DefaultValue { get; set; }
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -347,12 +323,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DeferBool != DeferBool_DefaultValue) h.Add("defer",DeferBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty(highcharts)) h.Add("filter",Filter.ToHashtable(highcharts));
-			if (Format.IsDirty(highcharts)) h.Add("format",Format.ToHashtable(highcharts));
-			if (FormatString != FormatString_DefaultValue) h.Add("format",FormatString);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
-			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); highcharts.AddFunction("nodeFormatter", NodeFormatter); }  
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
@@ -369,7 +342,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Z != Z_DefaultValue) h.Add("z",Z);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

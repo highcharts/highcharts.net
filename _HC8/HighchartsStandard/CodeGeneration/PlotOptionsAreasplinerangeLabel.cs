@@ -22,10 +22,11 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "undefined";
 			Formatter = Formatter_DefaultValue = "";
-			MaxFontSize = MaxFontSize_DefaultValue = null;
-			MinFontSize = MinFontSize_DefaultValue = null;
+			MaxFontSize = MaxFontSize_DefaultValue = 0;
+			MinFontSize = MinFontSize_DefaultValue = 0;
 			OnArea = OnArea_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
+			UseHTML = UseHTML_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -101,6 +102,13 @@ namespace Highsoft.Web.Mvc.Charts
 		private Hashtable Style_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Whether to use HTML to render the series label.
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
@@ -118,6 +126,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
 			if (OnArea != OnArea_DefaultValue) h.Add("onArea",OnArea);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

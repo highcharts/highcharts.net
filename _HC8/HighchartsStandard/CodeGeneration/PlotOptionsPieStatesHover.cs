@@ -20,6 +20,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Brightness = Brightness_DefaultValue = new Hashtable();
 			Enabled = Enabled_DefaultValue = null;
 			Halo = Halo_DefaultValue = new PlotOptionsPieStatesHoverHalo();
+			LineWidth = LineWidth_DefaultValue = null;
+			LineWidthPlus = LineWidthPlus_DefaultValue = null;
+			Marker = Marker_DefaultValue = new PlotOptionsPieStatesHoverMarker();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -53,6 +56,27 @@ namespace Highsoft.Web.Mvc.Charts
 		private PlotOptionsPieStatesHoverHalo Halo_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Pixel width of the graph line. By default this property isundefined, and the `lineWidthPlus` property dictates how muchto increase the linewidth from normal state.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The additional line width for the graph of a hovered series.
+		/// </summary>
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In Highcharts 1.0, the appearance of all markers belongingto the hovered series. For settings on the hover state of theindividual point, see[marker.states.hover](#plotOptions.series.marker.states.hover).
+		/// </summary>
+		public PlotOptionsPieStatesHoverMarker Marker { get; set; }
+		private PlotOptionsPieStatesHoverMarker Marker_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
@@ -64,6 +88,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Halo.IsDirty(highcharts)) h.Add("halo",Halo.ToHashtable(highcharts));
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
+			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

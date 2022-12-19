@@ -28,10 +28,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new VennSeriesDataEvents();
 			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
+			Marker = Marker_DefaultValue = new VennSeriesDataMarker();
 			Name = Name_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
 			Sets = Sets_DefaultValue = new List<string>();
 			Value = Value_DefaultValue = null;
+			X = X_DefaultValue = double.MinValue;
+			Y = Y_DefaultValue = double.MinValue;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -59,7 +62,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color by is set bythe `fill` attribute, so the change in class name won't have a visual effectby default.
+		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -122,6 +125,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the point markers of line-like series.
+		/// </summary>
+		public VennSeriesDataMarker Marker { get; set; }
+		private VennSeriesDataMarker Marker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The name of the point. Used in data labels and tooltip. If name is notdefined then it will default to the joined values in[sets](#series.venn.sets).
 		/// </summary>
 		public double? Name { get; set; }
@@ -149,6 +159,20 @@ namespace Highsoft.Web.Mvc.Charts
 		private double? Value_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
+		/// </summary>
+		public double? X { get; set; }
+		private double? X_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The y value of the point.
+		/// </summary>
+		public double? Y { get; set; }
+		private double? Y_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
@@ -168,10 +192,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
+			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (Sets != Sets_DefaultValue) h.Add("sets",Sets);
 			if (Value != Value_DefaultValue) h.Add("value",Value);
+			if (X != X_DefaultValue) h.Add("x",X);
+			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

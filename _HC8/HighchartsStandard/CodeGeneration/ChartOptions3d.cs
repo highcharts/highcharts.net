@@ -58,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Wether to render the chart using the 3D functionality.
+		/// Whether to render the chart using the 3D functionality.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }

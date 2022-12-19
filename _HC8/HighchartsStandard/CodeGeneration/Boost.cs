@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// If set to true, the whole chart will be boosted if one of the seriescrosses its threshold, and all the series can be boosted.
+		/// The chart will be boosted, if one of the series crosses its threshold and allthe series in the chart can be boosted.
 		/// </summary>
 		public bool? AllowForce { get; set; }
 		private bool? AllowForce_DefaultValue { get; set; }

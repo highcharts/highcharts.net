@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = "rgba(100, 100, 100, 0.5)";
 			DashStyle = DashStyle_DefaultValue = NetworkgraphSeriesLinkDashStyle.Null;
+			Opacity = Opacity_DefaultValue = 1;
 			Width = Width_DefaultValue = 1;
 			
 			CustomFields = new Hashtable();
@@ -39,6 +40,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Opacity of the link between two nodes.
+		/// </summary>
+		public double? Opacity { get; set; }
+		private double? Opacity_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Width (px) of the link between two nodes.
 		/// </summary>
 		public double? Width { get; set; }
@@ -54,6 +62,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

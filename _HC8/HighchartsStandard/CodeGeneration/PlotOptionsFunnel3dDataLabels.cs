@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsFunnel3dDataLabels()
 		{
-			Align = Align_DefaultValue = PlotOptionsFunnel3dDataLabelsAlign.Right;
+			Align = Align_DefaultValue = PlotOptionsFunnel3dDataLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = null;
@@ -26,18 +26,18 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			Crop = Crop_DefaultValue = false;
+			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = null;
 			DeferBool = DeferBool_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Filter = Filter_DefaultValue = new PlotOptionsFunnel3dDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = false;
+			Inside = Inside_DefaultValue = null;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = PlotOptionsFunnel3dDataLabelsOverflow.Allow;
+			Overflow = Overflow_DefaultValue = PlotOptionsFunnel3dDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = 5;
 			Position = Position_DefaultValue = PlotOptionsFunnel3dDataLabelsPosition.Center;
 			Rotation = Rotation_DefaultValue = 0;
@@ -50,14 +50,14 @@ namespace Highsoft.Web.Mvc.Charts
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsFunnel3dDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
-			Z = Z_DefaultValue = 6;
+			ZIndex = ZIndex_DefaultValue = 6;
 			
 			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// The alignment of the data label compared to the point. If`right`, the right side of the label should be touching thepoint. For points with an extent, like columns, the alignmentsalso dictates how to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside)option. Can be one of `left`, `center` or `right`.
 		/// </summary>
 		public PlotOptionsFunnel3dDataLabelsAlign Align { get; set; }
 		private PlotOptionsFunnel3dDataLabelsAlign Align_DefaultValue { get; set; }
@@ -120,14 +120,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The text color for the data labels. Defaults to `undefined`. Forcertain series types, like column or map, the data labels can bedrawn inside the points. In this case the data label will bedrawn with maximum contrast by default. Additionally, it will begiven a `text-outline` style with the opposite color, to furtherincrease the contrast. This can be overridden by setting the`text-outline` style to `none` in the `dataLabels.style` option.
+		/// This options is deprecated.Use [style.color](#plotOptions.series.dataLabels.style) instead.The text color for the data labels. Defaults to `undefined`. Forcertain series types, like column or map, the data labels can bedrawn inside the points. In this case the data label will bedrawn with maximum contrast by default. Additionally, it will begiven a `text-outline` style with the opposite color, to furtherincrease the contrast. This can be overridden by setting the`text-outline` style to `none` in the `dataLabels.style` option.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to hide data labels that are outside the plot area. Bydefault, the data label is moved inside the plot area accordingto the[overflow](#plotOptions.series.dataLabels.overflow)option.
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
@@ -176,35 +176,35 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// For points with an extent, like columns or map areas, whether toalign the data label inside the box or to the actual value point.Defaults to `false` in most cases, `true` in stacked columns.
 		/// </summary>
 		public bool? Inside { get; set; }
 		private bool? Inside_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null points.
+		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null pointsi.e `heatmap` or `tilemap`. Does not work with series that don'tdisplay null points, like `line`, `column`, `bar` or `pie`.
 		/// </summary>
 		public string NullFormat { get; set; }
 		private string NullFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null points.
+		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null pointsi.e `heatmap` or `tilemap`. Does not work with series that don'tdisplay null points, like `line`, `column`, `bar` or `pie`.
 		/// </summary>
 		public bool? NullFormatBool { get; set; }
 		private bool? NullFormatBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function that defines formatting for pointswith the value of null. Works analogously to[formatter](#plotOptions.series.dataLabels.formatter).`nullPointFormatter` can be applied only to series which supportdisplaying null points.
+		/// Callback JavaScript function that defines formatting for pointswith the value of null. Works analogously to[formatter](#plotOptions.series.dataLabels.formatter).`nullFormatter` can be applied only to series which supportdisplaying null points i.e `heatmap` or `tilemap`. Does not workwith series that don't display null points, like `line`, `column`,`bar` or `pie`.
 		/// </summary>
 		public string NullFormatter { get; set; }
 		private string NullFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// How to handle data labels that flow outside the plot area. Thedefault is `"justify"`, which aligns them inside the plot area.For columns and bars, this means it will be moved inside the bar.To display data labels outside the plot area, set `crop` to`false` and `overflow` to `"allow"`.
 		/// </summary>
 		public PlotOptionsFunnel3dDataLabelsOverflow Overflow { get; set; }
 		private PlotOptionsFunnel3dDataLabelsOverflow Overflow_DefaultValue { get; set; }
@@ -295,10 +295,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The Z index of the data labels. The default Z index puts it abovethe series. Use a Z index of 2 to display it behind the series.
+		/// The z index of the data labels. Use a `zIndex` of 6 to display it abovethe series, or use a `zIndex` of 2 to display it behind the series.
 		/// </summary>
-		public double? Z { get; set; }
-		private double? Z_DefaultValue { get; set; }
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -342,7 +342,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Z != Z_DefaultValue) h.Add("z",Z);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

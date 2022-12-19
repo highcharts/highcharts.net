@@ -59,6 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Sunburst = Sunburst_DefaultValue = new PlotOptionsSunburst();
 			Tilemap = Tilemap_DefaultValue = new PlotOptionsTilemap();
 			Timeline = Timeline_DefaultValue = new PlotOptionsTimeline();
+			Treegraph = Treegraph_DefaultValue = new PlotOptionsTreegraph();
 			Treemap = Treemap_DefaultValue = new PlotOptionsTreemap();
 			Variablepie = Variablepie_DefaultValue = new PlotOptionsVariablepie();
 			Variwide = Variwide_DefaultValue = new PlotOptionsVariwide();
@@ -172,7 +173,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A dependency wheel chart is a type of flow diagram, where all nodes arelaid out in a circle, and the flow between the are drawn as link bands.In TypeScript the [type](series.dependencywheel.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `dependencywheel` series are defined in   [plotOptions.dependencywheel](plotOptions.dependencywheel).3. Options for one single series are given in   [the series instance array](series.dependencywheel).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        dependencywheel: {            // shared options for all dependencywheel series        }    },    series: [{        // specific options for this series instance        type: 'dependencywheel'    }]});```            
+		/// A dependency wheel chart is a type of flow diagram, where all nodes are laidout in a circle, and the flow between the are drawn as link bands.In TypeScript the [type](series.dependencywheel.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `dependencywheel` series are defined in   [plotOptions.dependencywheel](plotOptions.dependencywheel).3. Options for one single series are given in   [the series instance array](series.dependencywheel).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        dependencywheel: {            // shared options for all dependencywheel series        }    },    series: [{        // specific options for this series instance        type: 'dependencywheel'    }]});```            
 		/// </summary>
 		public PlotOptionsDependencywheel Dependencywheel { get; set; }
 		private PlotOptionsDependencywheel Dependencywheel_DefaultValue { get; set; }
@@ -375,6 +376,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A treegraph series is a diagram, which shows a relation between ancestorsand descendants with a clear parent - child relation.The best examples of the dataStructures, which best reflect this chartare e.g. genealogy tree or directory structure.TODO change back the demo pathIn TypeScript the [type](series.treegraph.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `treegraph` series are defined in   [plotOptions.treegraph](plotOptions.treegraph).3. Options for one single series are given in   [the series instance array](series.treegraph).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        treegraph: {            // shared options for all treegraph series        }    },    series: [{        // specific options for this series instance        type: 'treegraph'    }]});```            
+		/// </summary>
+		public PlotOptionsTreegraph Treegraph { get; set; }
+		private PlotOptionsTreegraph Treegraph_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A treemap displays hierarchical data using nested rectangles. The datacan be laid out in varying ways depending on options.In TypeScript the [type](series.treemap.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `treemap` series are defined in   [plotOptions.treemap](plotOptions.treemap).3. Options for one single series are given in   [the series instance array](series.treemap).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        treemap: {            // shared options for all treemap series        }    },    series: [{        // specific options for this series instance        type: 'treemap'    }]});```            
 		/// </summary>
 		public PlotOptionsTreemap Treemap { get; set; }
@@ -487,6 +495,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Sunburst.IsDirty(highcharts)) h.Add("sunburst",Sunburst.ToHashtable(highcharts));
 			if (Tilemap.IsDirty(highcharts)) h.Add("tilemap",Tilemap.ToHashtable(highcharts));
 			if (Timeline.IsDirty(highcharts)) h.Add("timeline",Timeline.ToHashtable(highcharts));
+			if (Treegraph.IsDirty(highcharts)) h.Add("treegraph",Treegraph.ToHashtable(highcharts));
 			if (Treemap.IsDirty(highcharts)) h.Add("treemap",Treemap.ToHashtable(highcharts));
 			if (Variablepie.IsDirty(highcharts)) h.Add("variablepie",Variablepie.ToHashtable(highcharts));
 			if (Variwide.IsDirty(highcharts)) h.Add("variwide",Variwide.ToHashtable(highcharts));

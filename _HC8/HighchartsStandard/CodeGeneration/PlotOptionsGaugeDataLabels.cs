@@ -21,14 +21,15 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			BorderRadius = BorderRadius_DefaultValue = 3;
-			BorderWidth = BorderWidth_DefaultValue = 1;
+			BorderColor = BorderColor_DefaultValue = "";
+			BorderRadius = BorderRadius_DefaultValue = 0;
+			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			Crop = Crop_DefaultValue = false;
-			Defer = Defer_DefaultValue = false;
-			Enabled = Enabled_DefaultValue = true;
+			Crop = Crop_DefaultValue = true;
+			Defer = Defer_DefaultValue = null;
+			DeferBool = DeferBool_DefaultValue = true;
+			Enabled = Enabled_DefaultValue = false;
 			Filter = Filter_DefaultValue = new PlotOptionsGaugeDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
@@ -46,11 +47,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new PlotOptionsGaugeDataLabelsTextPath();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsGaugeDataLabelsVerticalAlign.Top;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsGaugeDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 15;
-			Z = Z_DefaultValue = 6;
-			ZIndex = ZIndex_DefaultValue = 2;
+			Y = Y_DefaultValue = 0;
+			ZIndex = ZIndex_DefaultValue = 6;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -92,21 +92,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// The border color for the data label. Defaults to `undefined`.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// The border radius in pixels for the data label.
 		/// </summary>
 		public double? BorderRadius { get; set; }
 		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// The border width in pixels for the data label.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -120,28 +120,35 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The text color for the data labels. Defaults to `undefined`. Forcertain series types, like column or map, the data labels can bedrawn inside the points. In this case the data label will bedrawn with maximum contrast by default. Additionally, it will begiven a `text-outline` style with the opposite color, to furtherincrease the contrast. This can be overridden by setting the`text-outline` style to `none` in the `dataLabels.style` option.
+		/// This options is deprecated.Use [style.color](#plotOptions.series.dataLabels.style) instead.The text color for the data labels. Defaults to `undefined`. Forcertain series types, like column or map, the data labels can bedrawn inside the points. In this case the data label will bedrawn with maximum contrast by default. Additionally, it will begiven a `text-outline` style with the opposite color, to furtherincrease the contrast. This can be overridden by setting the`text-outline` style to `none` in the `dataLabels.style` option.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to hide data labels that are outside the plot area. Bydefault, the data label is moved inside the plot area accordingto the[overflow](#plotOptions.series.dataLabels.overflow)option.
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to defer displaying the data labels until the initialseries animation has finished. Setting to `false` renders thedata label immediately. If set to `true` inherits the defertime set in [plotOptions.series.animation](#plotOptions.series.animation).If set to a number, a defer time is specified in milliseconds.
 		/// </summary>
-		public bool? Defer { get; set; }
-		private bool? Defer_DefaultValue { get; set; }
+		public double? Defer { get; set; }
+		private double? Defer_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to defer displaying the data labels until the initialseries animation has finished. Setting to `false` renders thedata label immediately. If set to `true` inherits the defertime set in [plotOptions.series.animation](#plotOptions.series.animation).If set to a number, a defer time is specified in milliseconds.
+		/// </summary>
+		public bool? DeferBool { get; set; }
+		private bool? DeferBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable the data labels.
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -176,21 +183,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null points.
+		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null pointsi.e `heatmap` or `tilemap`. Does not work with series that don'tdisplay null points, like `line`, `column`, `bar` or `pie`.
 		/// </summary>
 		public string NullFormat { get; set; }
 		private string NullFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null points.
+		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null pointsi.e `heatmap` or `tilemap`. Does not work with series that don'tdisplay null points, like `line`, `column`, `bar` or `pie`.
 		/// </summary>
 		public bool? NullFormatBool { get; set; }
 		private bool? NullFormatBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function that defines formatting for pointswith the value of null. Works analogously to[formatter](#plotOptions.series.dataLabels.formatter).`nullPointFormatter` can be applied only to series which supportdisplaying null points.
+		/// Callback JavaScript function that defines formatting for pointswith the value of null. Works analogously to[formatter](#plotOptions.series.dataLabels.formatter).`nullFormatter` can be applied only to series which supportdisplaying null points i.e `heatmap` or `tilemap`. Does not workwith series that don't display null points, like `line`, `column`,`bar` or `pie`.
 		/// </summary>
 		public string NullFormatter { get; set; }
 		private string NullFormatter_DefaultValue { get; set; }
@@ -267,7 +274,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// The vertical alignment of a data label. Can be one of `top`,`middle` or `bottom`. The default value depends on the data, forinstance in a column chart, the label is above positive valuesand below negative values.
 		/// </summary>
 		public PlotOptionsGaugeDataLabelsVerticalAlign VerticalAlign { get; set; }
 		private PlotOptionsGaugeDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
@@ -281,21 +288,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// The y position offset of the label relative to the point inpixels.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The Z index of the data labels. The default Z index puts it abovethe series. Use a Z index of 2 to display it behind the series.
-		/// </summary>
-		public double? Z { get; set; }
-		private double? Z_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
+		/// The z index of the data labels. Use a `zIndex` of 6 to display it abovethe series, or use a `zIndex` of 2 to display it behind the series.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
@@ -320,6 +320,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
+			if (DeferBool != DeferBool_DefaultValue) h.Add("defer",DeferBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty(highcharts)) h.Add("filter",Filter.ToHashtable(highcharts));
 			if (Format != Format_DefaultValue) h.Add("format",Format);
@@ -341,7 +342,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Z != Z_DefaultValue) h.Add("z",Z);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

@@ -75,7 +75,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
-			ShowLastLabel = ShowLastLabel_DefaultValue = true;
+			ShowLastLabel = ShowLastLabel_DefaultValue = "undefined";
 			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
@@ -522,10 +522,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to show the last tick label.
 		/// </summary>
-		public bool? ShowLastLabel { get; set; }
-		private bool? ShowLastLabel_DefaultValue { get; set; }
+		public string ShowLastLabel { get; set; }
+		private string ShowLastLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>

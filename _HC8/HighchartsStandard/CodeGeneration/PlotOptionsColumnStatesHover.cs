@@ -21,6 +21,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Brightness = Brightness_DefaultValue = new Hashtable();
 			Color = Color_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = null;
+			Halo = Halo_DefaultValue = new PlotOptionsColumnStatesHoverHalo();
+			LineWidth = LineWidth_DefaultValue = null;
+			LineWidthPlus = LineWidthPlus_DefaultValue = null;
+			Marker = Marker_DefaultValue = new PlotOptionsColumnStatesHoverMarker();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -61,6 +65,34 @@ namespace Highsoft.Web.Mvc.Charts
 		private bool? Enabled_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Options for the halo appearing around the hovered point inline-type series as well as outside the hovered slice in piecharts. By default the halo is filled by the current point orseries color with an opacity of 0.25\. The halo can bedisabled by setting the `halo` option to `null`.In styled mode, the halo is styled with the`.highcharts-halo` class, with colors inherited from`.highcharts-color-{n}`.
+		/// </summary>
+		public PlotOptionsColumnStatesHoverHalo Halo { get; set; }
+		private PlotOptionsColumnStatesHoverHalo Halo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Pixel width of the graph line. By default this property isundefined, and the `lineWidthPlus` property dictates how muchto increase the linewidth from normal state.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The additional line width for the graph of a hovered series.
+		/// </summary>
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In Highcharts 1.0, the appearance of all markers belongingto the hovered series. For settings on the hover state of theindividual point, see[marker.states.hover](#plotOptions.series.marker.states.hover).
+		/// </summary>
+		public PlotOptionsColumnStatesHoverMarker Marker { get; set; }
+		private PlotOptionsColumnStatesHoverMarker Marker_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
@@ -73,6 +105,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Halo.IsDirty(highcharts)) h.Add("halo",Halo.ToHashtable(highcharts));
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
+			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

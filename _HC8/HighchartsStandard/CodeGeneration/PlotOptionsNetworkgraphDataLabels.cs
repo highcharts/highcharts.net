@@ -31,12 +31,9 @@ namespace Highsoft.Web.Mvc.Charts
 			DeferBool = DeferBool_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Filter = Filter_DefaultValue = new PlotOptionsNetworkgraphDataLabelsFilter();
-			Format = Format_DefaultValue = "";
+			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
-			LinkFormat = LinkFormat_DefaultValue = "";
-			LinkFormatter = LinkFormatter_DefaultValue = "";
-			LinkTextPath = LinkTextPath_DefaultValue = new PlotOptionsNetworkgraphDataLabelsLinkTextPath();
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -53,7 +50,7 @@ namespace Highsoft.Web.Mvc.Charts
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsNetworkgraphDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
-			Z = Z_DefaultValue = 6;
+			ZIndex = ZIndex_DefaultValue = 6;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -123,7 +120,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The text color for the data labels. Defaults to `undefined`. Forcertain series types, like column or map, the data labels can bedrawn inside the points. In this case the data label will bedrawn with maximum contrast by default. Additionally, it will begiven a `text-outline` style with the opposite color, to furtherincrease the contrast. This can be overridden by setting the`text-outline` style to `none` in the `dataLabels.style` option.
+		/// This options is deprecated.Use [style.color](#plotOptions.series.dataLabels.style) instead.The text color for the data labels. Defaults to `undefined`. Forcertain series types, like column or map, the data labels can bedrawn inside the points. In this case the data label will bedrawn with maximum contrast by default. Additionally, it will begiven a `text-outline` style with the opposite color, to furtherincrease the contrast. This can be overridden by setting the`text-outline` style to `none` in the `dataLabels.style` option.
 		/// </summary>
 		public string Color { get; set; }
 		private string Color_DefaultValue { get; set; }
@@ -165,14 +162,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)specifying what to show for _node_ in the networkgraph. In v7.0defaults to `{key}`, since v7.1 defaults to `undefined` and`formatter` is used instead.
+		/// A[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the data label for a node.Note that if a `format` is defined, the format takes precedenceand the formatter is ignored.
+		/// Callback JavaScript function to format the data label. Note that if a`format` is defined, the format takes precedence and the formatter isignored.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
@@ -186,42 +183,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)specifying what to show for _links_ in the networkgraph.(Default: `undefined`)
-		/// </summary>
-		public string LinkFormat { get; set; }
-		private string LinkFormat_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Callback to format data labels for _links_ in the sankey diagram.The `linkFormat` option takes precedence over the`linkFormatter`.
-		/// </summary>
-		public string LinkFormatter { get; set; }
-		private string LinkFormatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for a _link_ label text which should follow linkconnection. Border and background are disabled for a label thatfollows a path.**Note:** Only SVG-based renderer supports this option. Setting`useHTML` to true will disable this option.
-		/// </summary>
-		public PlotOptionsNetworkgraphDataLabelsLinkTextPath LinkTextPath { get; set; }
-		private PlotOptionsNetworkgraphDataLabelsLinkTextPath LinkTextPath_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null points.
+		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null pointsi.e `heatmap` or `tilemap`. Does not work with series that don'tdisplay null points, like `line`, `column`, `bar` or `pie`.
 		/// </summary>
 		public string NullFormat { get; set; }
 		private string NullFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null points.
+		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null pointsi.e `heatmap` or `tilemap`. Does not work with series that don'tdisplay null points, like `line`, `column`, `bar` or `pie`.
 		/// </summary>
 		public bool? NullFormatBool { get; set; }
 		private bool? NullFormatBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function that defines formatting for pointswith the value of null. Works analogously to[formatter](#plotOptions.series.dataLabels.formatter).`nullPointFormatter` can be applied only to series which supportdisplaying null points.
+		/// Callback JavaScript function that defines formatting for pointswith the value of null. Works analogously to[formatter](#plotOptions.series.dataLabels.formatter).`nullFormatter` can be applied only to series which supportdisplaying null points i.e `heatmap` or `tilemap`. Does not workwith series that don't display null points, like `line`, `column`,`bar` or `pie`.
 		/// </summary>
 		public string NullFormatter { get; set; }
 		private string NullFormatter_DefaultValue { get; set; }
@@ -277,14 +253,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Styles for the label. The default `color` setting is`"contrast"`, which is a pseudo color that Highcharts picks upand applies the maximum contrast to the underlying point item,for example the bar in a bar chart.The `textOutline` is a pseudo property that applies an outline ofthe given width with the given color, which by default is themaximum contrast to the text. So a bright text color will resultin a black text outline for maximum readability on a mixedbackground. In some cases, especially with grayscale text, thetext outline doesn't work well, in which cases it can be disabledby setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the sameeffect can be acheived through the `text-shadow` CSS property.For some series types, where each point has an extent, like forexample tree maps, the data label may overflow the point. Thereare two strategies for handling overflow. By default, the textwill wrap to multiple lines. The other strategy is to set`style.textOverflow` to `ellipsis`, which will keep the text onone line plus it will break inside long words.
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Options for a label text which should follow marker's shape.Border and background are disabled for a label that follows apath.**Note:** Only SVG-based renderer supports this option. Setting`useHTML` to true will disable this option.
 		/// </summary>
 		public PlotOptionsNetworkgraphDataLabelsTextPath TextPath { get; set; }
 		private PlotOptionsNetworkgraphDataLabelsTextPath TextPath_DefaultValue { get; set; }
@@ -319,10 +295,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The Z index of the data labels. The default Z index puts it abovethe series. Use a Z index of 2 to display it behind the series.
+		/// The z index of the data labels. Use a `zIndex` of 6 to display it abovethe series, or use a `zIndex` of 2 to display it behind the series.
 		/// </summary>
-		public double? Z { get; set; }
-		private double? Z_DefaultValue { get; set; }
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -350,9 +326,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (LinkFormat != LinkFormat_DefaultValue) h.Add("linkFormat",LinkFormat);
-			if (LinkFormatter != LinkFormatter_DefaultValue) { h.Add("linkFormatter",LinkFormatter); highcharts.AddFunction("linkFormatter", LinkFormatter); }  
-			if (LinkTextPath.IsDirty(highcharts)) h.Add("linkTextPath",LinkTextPath.ToHashtable(highcharts));
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
@@ -369,7 +342,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (Z != Z_DefaultValue) h.Add("z",Z);
+			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

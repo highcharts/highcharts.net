@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = null;
 			Radius = Radius_DefaultValue = 4;
+			States = States_DefaultValue = new PlotOptionsPackedbubbleLayoutAlgorithmParentNodeOptionsMarkerStates();
 			Symbol = Symbol_DefaultValue = "circle";
 			Width = Width_DefaultValue = null;
 			
@@ -88,6 +89,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// States for a single point marker.
+		/// </summary>
+		public PlotOptionsPackedbubbleLayoutAlgorithmParentNodeOptionsMarkerStates States { get; set; }
+		private PlotOptionsPackedbubbleLayoutAlgorithmParentNodeOptionsMarkerStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public string Symbol { get; set; }
@@ -116,6 +124,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (CustomFields.Count > 0)

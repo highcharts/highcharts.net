@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public OrganizationSeriesNodesDataLabelsTextPath()
 		{
 			Attributes = Attributes_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	

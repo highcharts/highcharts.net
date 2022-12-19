@@ -16,15 +16,24 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AnnotationsControlPointOptions()
 		{
+			Events = Events_DefaultValue = "";
 			Height = Height_DefaultValue = 10;
 			Positioner = Positioner_DefaultValue = "";
 			Style = Style_DefaultValue = new Hashtable();
+			Symbol = Symbol_DefaultValue = "circle";
 			Visible = Visible_DefaultValue = false;
 			Width = Width_DefaultValue = 10;
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Events { get; set; }
+		private string Events_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -50,6 +59,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
+		public string Symbol { get; set; }
+		private string Symbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
 		 
@@ -68,9 +84,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
+			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); highcharts.AddFunction("positioner", Positioner); }  
 			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (CustomFields.Count > 0)

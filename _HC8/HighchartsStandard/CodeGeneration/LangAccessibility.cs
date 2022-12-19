@@ -27,6 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GraphicContainerLabel = GraphicContainerLabel_DefaultValue = "";
 			Legend = Legend_DefaultValue = new LangAccessibilityLegend();
 			RangeSelector = RangeSelector_DefaultValue = new LangAccessibilityRangeSelector();
+			ResetZoomButton = ResetZoomButton_DefaultValue = "";
 			ScreenReaderSection = ScreenReaderSection_DefaultValue = new LangAccessibilityScreenReaderSection();
 			Series = Series_DefaultValue = new LangAccessibilitySeries();
 			SeriesTypeDescriptions = SeriesTypeDescriptions_DefaultValue = new LangAccessibilitySeriesTypeDescriptions();
@@ -119,6 +120,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public string ResetZoomButton { get; set; }
+		private string ResetZoomButton_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Language options for the screen reader information sections addedbefore and after the charts.
 		/// </summary>
 		public LangAccessibilityScreenReaderSection ScreenReaderSection { get; set; }
@@ -199,6 +207,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GraphicContainerLabel != GraphicContainerLabel_DefaultValue) h.Add("graphicContainerLabel",GraphicContainerLabel);
 			if (Legend.IsDirty(highcharts)) h.Add("legend",Legend.ToHashtable(highcharts));
 			if (RangeSelector.IsDirty(highcharts)) h.Add("rangeSelector",RangeSelector.ToHashtable(highcharts));
+			if (ResetZoomButton != ResetZoomButton_DefaultValue) h.Add("resetZoomButton",ResetZoomButton);
 			if (ScreenReaderSection.IsDirty(highcharts)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highcharts));
 			if (Series.IsDirty(highcharts)) h.Add("series",Series.ToHashtable(highcharts));
 			if (SeriesTypeDescriptions.IsDirty(highcharts)) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable(highcharts));
