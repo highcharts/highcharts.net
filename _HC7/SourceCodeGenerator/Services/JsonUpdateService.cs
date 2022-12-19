@@ -44,6 +44,7 @@ namespace SourceCodeGenerator.Services
 
             AddDefaultNull(item);
             Delete(item);
+            SetSmallBooleanDefaults(item);
         }
 
         public void UpdateProducts(ApiItem item)
@@ -366,8 +367,14 @@ namespace SourceCodeGenerator.Services
             if (item.FullName == "series.stack")
                 item.Types.Remove("*");
 
-            if (item.FullName == "plotOptions.packedbubble.layoutAlgorithm.initialPositionRadius")
+            if (item.FullName == "plotOptions.packedbubble.layoutAlgorithm.initialPositionRadius" || item.FullName.Equals("plotOptions.treegraph.dataLabels.linkTextPath"))
                 item.Extends.Clear();
+        }
+
+        private void SetSmallBooleanDefaults(ApiItem item)
+        {
+            if (item.Defaults == bool.FalseString || item.Defaults == bool.TrueString)
+                item.Defaults = item.Defaults.ToLower();
         }
 
         private IList<ApiItem> GetItemsFromDefaultValue(ApiItem item)

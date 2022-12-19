@@ -96,7 +96,7 @@ plotOptions.pie.colors.Types:Array.<string>
 plotOptions.pie.dataLabels.Types:Object
 plotOptions.pie.point.events.legendItemClick.Types:function
 plotOptions.polygon.Exclude:softThreshold,threshold
-plotOptions.sankey.Exclude:animationLimit,boostThreshold,borderColor,borderRadius,borderWidth,crisp,cropThreshold,depth,edgeColor,edgeWidth,findNearestPointBy,grouping,groupPadding,groupZPadding,maxPointWidth,negativeColor,pointInterval,pointIntervalUnit,pointPadding,pointPlacement,pointRange,pointStart,pointWidth,shadow,softThreshold,stacking,threshold,zoneAxis,zones
+plotOptions.sankey.Exclude:animationLimit,boostBlending,boostThreshold,borderRadius,crisp,cropThreshold,depth,edgeColor,edgeWidth,findNearestPointBy,grouping,groupPadding,groupZPadding,maxPointWidth,negativeColor,pointInterval,pointIntervalUnit,pointPadding,pointPlacement,pointRange,pointStart,pointWidth,shadow,softThreshold,stacking,threshold,zoneAxis,zones,minPointLength
 plotOptions.sankey.dataLabels.Types:Object
 plotOptions.sankey.tooltip.nodeFormatter.Types:function
 plotOptions.series.cursor.Types:string
@@ -180,7 +180,7 @@ series.pie.data.Types:Array.<(number|Array.<string, number>|*)>
 series.pie.events.ReturnType:Object
 series.polygon.data.Types:Array.<(number|Array.<(number|string), number>|*)>
 series.pyramid.data.Types:Array.<(number|*)>
-series.sankey.Exclude:animationLimit,boostThreshold,borderColor,borderRadius,borderWidth,crisp,cropThreshold,dataParser,dataURL,depth,edgeColor,edgeWidth,findNearestPointBy,grouping,groupPadding,groupZPadding,maxPointWidth,negativeColor,pointInterval,pointIntervalUnit,pointPadding,pointPlacement,pointRange,pointStart,pointWidth,shadow,softThreshold,stacking,threshold,zoneAxis,zones
+series.sankey.Exclude:animationLimit,boostThreshold,borderRadius,crisp,cropThreshold,dataParser,dataURL,depth,edgeColor,edgeWidth,findNearestPointBy,grouping,groupPadding,groupZPadding,maxPointWidth,negativeColor,pointInterval,pointIntervalUnit,pointPadding,pointPlacement,pointRange,pointStart,pointWidth,shadow,softThreshold,stacking,threshold,zoneAxis,zones
 series.sankey.data.Exclude:drilldown,marker,x,y
 series.sankey.data.color.Types:string
 series.sankey.data.weight.Types:number
@@ -362,6 +362,7 @@ plotOptions.tilemap.Types:Object
 plotOptions.timeline.Types:Object
 plotOptions.timeline.dataLabels.connectorColor.Types:String
 plotOptions.timeline.dataLabels.formatter.Types:Highcharts.FormatterCallbackFunction.<object>
+plotOptions.treegraph.dataLabels.linkTextPath:null
 plotOptions.treemap.Types:Object
 plotOptions.treemap.levels.borderDashStyle.Types:string
 plotOptions.treemap.levels.dataLabels.Types:object
@@ -607,3 +608,4 @@ series.boxplot.Exclude:dataParser,dataURL,marker,stack,stacking,boostThreshold,b
 annotations.labels.point.Types:string,*
 annotations.shapes.point.Types:string,*
 series.lollipop.Extends:series,plotOptions.lollipop
+plotOptions.series.animation.Types:boolean,Partial.<Highcharts.AnimationOptionsObject>

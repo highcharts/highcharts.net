@@ -86,9 +86,10 @@ namespace SourceCodeGenerator.Parser
                 if (jSince != null)
                     apiItem.Since = jSince.Value<string>();
 
-                JToken jDeprecated = doclet.SelectToken("deprecated", false);
-                if (jDeprecated != null)
-                    apiItem.Deprecated = jDeprecated.Value<bool>();
+                //JToken jDeprecated = doclet.SelectToken("deprecated", false);
+
+                //if (jDeprecated != null)
+                //    apiItem.Deprecated = jDeprecated.Value<bool>();
 
                 JToken jDefault = doclet.SelectToken("defaultvalue", false);
                 if (jDefault != null)
@@ -110,6 +111,24 @@ namespace SourceCodeGenerator.Parser
 
                     //tylko testowo
                     apiItem.ReturnType = apiItem.Types[0];
+                }
+
+                var jTags = doclet.SelectToken("tags", false);
+                if(jTags != null)
+                {
+                    var elements = jTags.Children<JToken>();
+
+                    if (elements.Any())
+                    {
+                        var jTagOriginalTitle = elements.FirstOrDefault(p => p.SelectToken("originalTitle", false).Value<string>().Equals("validvalue"));
+
+                        if(jTagOriginalTitle != null)
+                        {
+                            var jTagOriginalTitleValue = jTagOriginalTitle.SelectToken("value");
+                            if (jTagOriginalTitleValue != null)
+                                apiItem.Values = GetValues(jTagOriginalTitleValue.Value<string>());
+                        }
+                    }
                 }
             }
 

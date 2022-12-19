@@ -186,10 +186,6 @@ namespace SourceCodeGenerator.Services
                 if (item.FullName.Equals("plotOptions.boxplot"))
                     changedItem = ChangedItem.Exclude;
 
-
-
-
-
                 if (changedItem == ChangedItem.Exclude)
                 {
                     if (_makeAutoUpdate)
