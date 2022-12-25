@@ -17,11 +17,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		public BubbleSeriesDataMarker()
 		{
 			Enabled = Enabled_DefaultValue = null;
+			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			FillColor = FillColor_DefaultValue = "";
+			Height = Height_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
+			Radius = Radius_DefaultValue = 4;
 			States = States_DefaultValue = new BubbleSeriesDataMarkerStates();
 			Symbol = Symbol_DefaultValue = "";
+			Width = Width_DefaultValue = null;
 			
 		}	
 		
@@ -34,10 +38,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The threshold for how dense the point markers should be beforethey are hidden, given that `enabled` is not defined. The numberindicates the horizontal distance between the two closest pointsin the series, as multiples of the `marker.radius`. In otherwords, the default value of 2 means points are hidden ifoverlapping horizontally.
+		/// </summary>
+		public double? EnabledThreshold { get; set; }
+		private double? EnabledThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The fill color of the point marker. When `undefined`, the series'or point's color is used.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Image markers only. Set the image width explicitly. When usingthis option, a `width` must also be set.
+		/// </summary>
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -55,6 +73,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The radius of the point marker.
+		/// </summary>
+		public double? Radius { get; set; }
+		private double? Radius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// States for a single point marker.
 		/// </summary>
 		public BubbleSeriesDataMarkerStates States { get; set; }
@@ -66,6 +91,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Symbol { get; set; }
 		private string Symbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Image markers only. Set the image width explicitly. When usingthis option, a `height` must also be set.
+		/// </summary>
+		public double? Width { get; set; }
+		private double? Width_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -74,11 +106,15 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
 			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
+			if (Width != Width_DefaultValue) h.Add("width",Width);
 			
 
 			return h;

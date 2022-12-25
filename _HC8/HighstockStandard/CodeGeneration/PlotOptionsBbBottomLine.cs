@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Styles for a bottom line.
+		/// Styles for the bottom line.
 		/// </summary>
 		public PlotOptionsBbBottomLineStyles Styles { get; set; }
 		private PlotOptionsBbBottomLineStyles Styles_DefaultValue { get; set; }

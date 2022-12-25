@@ -16,8 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsTrendlineParams()
 		{
-			Index = Index_DefaultValue = "3";
-			IndexNumber = IndexNumber_DefaultValue = null;
+			Index = Index_DefaultValue = 3;
 			Period = Period_DefaultValue = "undefined";
 			
 		}	
@@ -26,15 +25,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
 		/// </summary>
-		public string Index { get; set; }
-		private string Index_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
-		/// </summary>
-		public double? IndexNumber { get; set; }
-		private double? IndexNumber_DefaultValue { get; set; }
+		public double? Index { get; set; }
+		private double? Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -50,7 +42,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (IndexNumber != IndexNumber_DefaultValue) h.Add("index",IndexNumber);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
 			
 

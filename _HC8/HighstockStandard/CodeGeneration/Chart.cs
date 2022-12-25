@@ -62,6 +62,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Width = Width_DefaultValue = "";
 			WidthNumber = WidthNumber_DefaultValue = null;
 			ZoomBySingleTouch = ZoomBySingleTouch_DefaultValue = false;
+			Zooming = Zooming_DefaultValue = new ChartZooming();
 			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
 			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
 			
@@ -391,6 +392,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Chart zooming options.
+		/// </summary>
+		public ChartZooming Zooming { get; set; }
+		private ChartZooming Zooming_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set a key to hold when dragging to zoom the chart. This is useful to avoidzooming while moving points. Should be set different than[chart.panKey](#chart.panKey).
 		/// </summary>
 		public ChartZoomKey ZoomKey { get; set; }
@@ -455,6 +463,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (ZoomBySingleTouch != ZoomBySingleTouch_DefaultValue) h.Add("zoomBySingleTouch",ZoomBySingleTouch);
+			if (Zooming.IsDirty(highstock)) h.Add("zooming",Zooming.ToHashtable(highstock));
 			if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", highstock.FirstCharacterToLower(ZoomKey.ToString()));
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", highstock.FirstCharacterToLower(ZoomType.ToString()));
 			

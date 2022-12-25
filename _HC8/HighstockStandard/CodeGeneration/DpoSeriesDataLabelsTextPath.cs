@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public DpoSeriesDataLabelsTextPath()
 		{
 			Attributes = Attributes_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = false;
 			
 		}	
 		

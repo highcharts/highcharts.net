@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ChangeDecimals = ChangeDecimals_DefaultValue = 2;
 			ClassName = ClassName_DefaultValue = "";
-			ClusterFormat = ClusterFormat_DefaultValue = "";
+			ClusterFormat = ClusterFormat_DefaultValue = "Clustered points: {point.clusterPointsAmount}";
 			Crosshairs = Crosshairs_DefaultValue = new List<Crosshair>();
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Distance = Distance_DefaultValue = 16;

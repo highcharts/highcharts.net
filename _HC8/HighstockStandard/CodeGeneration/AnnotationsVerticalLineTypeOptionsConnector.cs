@@ -18,12 +18,16 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			DashStyle = DashStyle_DefaultValue = AnnotationsVerticalLineTypeOptionsConnectorDashStyle.Null;
 			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
+			Height = Height_DefaultValue = null;
 			MarkerEnd = MarkerEnd_DefaultValue = "arrow";
+			R = R_DefaultValue = 0;
 			Ry = Ry_DefaultValue = null;
 			Snap = Snap_DefaultValue = 2;
 			Src = Src_DefaultValue = "";
 			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
+			Type = Type_DefaultValue = "rect";
+			Width = Width_DefaultValue = null;
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -45,10 +49,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The height of the shape.
+		/// </summary>
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public string MarkerEnd { get; set; }
 		private string MarkerEnd_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The radius of the shape.
+		/// </summary>
+		public double? R { get; set; }
+		private double? R_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -87,6 +105,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The type of the shape.Avaliable options are circle, rect and ellipse.
+		/// </summary>
+		public string Type { get; set; }
+		private string Type_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the shape.
+		/// </summary>
+		public double? Width { get; set; }
+		private double? Width_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The xAxis index to which the points should be attached.Used for the ellipse.
 		/// </summary>
 		public string XAxis { get; set; }
@@ -107,12 +139,16 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd",MarkerEnd);
+			if (R != R_DefaultValue) h.Add("r",R);
 			if (Ry != Ry_DefaultValue) h.Add("ry",Ry);
 			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
 			if (Src != Src_DefaultValue) h.Add("src",Src);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
+			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

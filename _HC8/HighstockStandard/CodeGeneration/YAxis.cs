@@ -68,6 +68,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinTickInterval = MinTickInterval_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			Opposite = Opposite_DefaultValue = false;
+			Ordinal = Ordinal_DefaultValue = true;
+			Overscroll = Overscroll_DefaultValue = 0;
 			PanningEnabled = PanningEnabled_DefaultValue = true;
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
@@ -78,7 +80,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Scrollbar = Scrollbar_DefaultValue = new YAxisScrollbar();
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
-			ShowLastLabel = ShowLastLabel_DefaultValue = true;
+			ShowLastLabel = ShowLastLabel_DefaultValue = "undefined";
 			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
@@ -469,6 +471,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// In an ordinal axis, the points are equally spaced in the chartregardless of the actual time or x distance between them. This meansthat missing data periods (e.g. nights or weekends for a stock chart)will not take up space in the chart.Having `ordinal: false` will show any gaps created by the `gapSize`setting proportionate to their duration.In stock charts the X axis is ordinal by default, unlessthe boost module is used and at least one of the series' data lengthexceeds the [boostThreshold](#series.line.boostThreshold).For an ordinal axis, `minPadding` and `maxPadding` are ignored. Use[overscroll](#xAxis.overscroll) instead.
+		/// </summary>
+		public bool? Ordinal { get; set; }
+		private bool? Ordinal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Additional range on the right side of the xAxis. Works similar to`xAxis.maxPadding`, but value is set in milliseconds. Can be set forboth main `xAxis` and the navigator's `xAxis`.
+		/// </summary>
+		public double? Overscroll { get; set; }
+		private double? Overscroll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to pan axis. If `chart.panning` is enabled, the optionallows to disable panning on an individual axis.
 		/// </summary>
 		public bool? PanningEnabled { get; set; }
@@ -539,10 +555,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to show the last tick label.
 		/// </summary>
-		public bool? ShowLastLabel { get; set; }
-		private bool? ShowLastLabel_DefaultValue { get; set; }
+		public string ShowLastLabel { get; set; }
+		private string ShowLastLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -749,6 +765,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
+			if (Ordinal != Ordinal_DefaultValue) h.Add("ordinal",Ordinal);
+			if (Overscroll != Overscroll_DefaultValue) h.Add("overscroll",Overscroll);
 			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(highstock,PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(highstock,PlotLines));

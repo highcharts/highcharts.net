@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public WmaSeriesDataLabelsTextPath()
 		{
 			Attributes = Attributes_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = false;
 			
 		}	
 		

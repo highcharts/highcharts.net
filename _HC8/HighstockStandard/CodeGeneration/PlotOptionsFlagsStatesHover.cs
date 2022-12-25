@@ -22,7 +22,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = null;
 			FillColor = FillColor_DefaultValue = "";
+			Halo = Halo_DefaultValue = new PlotOptionsFlagsStatesHoverHalo();
 			LineColor = LineColor_DefaultValue = "";
+			LineWidth = LineWidth_DefaultValue = null;
+			LineWidthPlus = LineWidthPlus_DefaultValue = null;
+			Marker = Marker_DefaultValue = new PlotOptionsFlagsStatesHoverMarker();
 			
 		}	
 		
@@ -70,10 +74,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Options for the halo appearing around the hovered point inline-type series as well as outside the hovered slice in piecharts. By default the halo is filled by the current point orseries color with an opacity of 0.25\. The halo can bedisabled by setting the `halo` option to `null`.In styled mode, the halo is styled with the`.highcharts-halo` class, with colors inherited from`.highcharts-color-{n}`.
+		/// </summary>
+		public PlotOptionsFlagsStatesHoverHalo Halo { get; set; }
+		private PlotOptionsFlagsStatesHoverHalo Halo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The color of the line/border of the flag.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Pixel width of the graph line. By default this property isundefined, and the `lineWidthPlus` property dictates how muchto increase the linewidth from normal state.
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The additional line width for the graph of a hovered series.
+		/// </summary>
+		public double? LineWidthPlus { get; set; }
+		private double? LineWidthPlus_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// In Highcharts 1.0, the appearance of all markers belongingto the hovered series. For settings on the hover state of theindividual point, see[marker.states.hover](#plotOptions.series.marker.states.hover).
+		/// </summary>
+		public PlotOptionsFlagsStatesHoverMarker Marker { get; set; }
+		private PlotOptionsFlagsStatesHoverMarker Marker_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -87,7 +119,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (Halo.IsDirty(highstock)) h.Add("halo",Halo.ToHashtable(highstock));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
+			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
 			
 
 			return h;

@@ -22,10 +22,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "undefined";
 			Formatter = Formatter_DefaultValue = "";
-			MaxFontSize = MaxFontSize_DefaultValue = null;
-			MinFontSize = MinFontSize_DefaultValue = null;
+			MaxFontSize = MaxFontSize_DefaultValue = 0;
+			MinFontSize = MinFontSize_DefaultValue = 0;
 			OnArea = OnArea_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
+			UseHTML = UseHTML_DefaultValue = false;
 			
 		}	
 		
@@ -98,6 +99,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to use HTML to render the series label.
+		/// </summary>
+		public bool? UseHTML { get; set; }
+		private bool? UseHTML_DefaultValue { get; set; }
 		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -115,6 +123,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
 			if (OnArea != OnArea_DefaultValue) h.Add("onArea",OnArea);
 			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			
 
 			return h;

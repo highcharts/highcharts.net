@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LangNavigationPopup()
 		{
-			AddButton = AddButton_DefaultValue = "add";
+			AddButton = AddButton_DefaultValue = "Add";
 			Algorithm = Algorithm_DefaultValue = "Algorithm";
 			ArrowInfinityLine = ArrowInfinityLine_DefaultValue = "Arrow line";
 			ArrowRay = ArrowRay_DefaultValue = "Arrow ray";
@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			CrosshairY = CrosshairY_DefaultValue = "Crosshair Y";
 			Decimals = Decimals_DefaultValue = "Decimals";
 			Deviation = Deviation_DefaultValue = "Deviation";
-			EditButton = EditButton_DefaultValue = "edit";
+			EditButton = EditButton_DefaultValue = "Edit";
 			Elliott3 = Elliott3_DefaultValue = "Elliott 3 line";
 			Elliott5 = Elliott5_DefaultValue = "Elliott 5 line";
 			Ellipse = Ellipse_DefaultValue = "Ellipse";
@@ -88,8 +88,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Ranges = Ranges_DefaultValue = "Ranges";
 			Ray = Ray_DefaultValue = "Ray";
 			Rectangle = Rectangle_DefaultValue = "Rectangle";
-			RemoveButton = RemoveButton_DefaultValue = "remove";
-			SaveButton = SaveButton_DefaultValue = "save";
+			RemoveButton = RemoveButton_DefaultValue = "Remove";
+			SaveButton = SaveButton_DefaultValue = "Save";
 			SearchIndicators = SearchIndicators_DefaultValue = "Search Indicators";
 			Segment = Segment_DefaultValue = "Segment";
 			Series = Series_DefaultValue = new List<Series>();

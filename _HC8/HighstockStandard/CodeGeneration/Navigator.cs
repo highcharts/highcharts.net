@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
 			OutlineWidth = OutlineWidth_DefaultValue = 1;
 			Series = Series_DefaultValue = new Series();
+			StickToMax = StickToMax_DefaultValue = null;
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -127,6 +128,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Enable or disable navigator sticking to right, while adding newpoints. If `undefined`, the navigator sticks to the axis maximum onlyif it was already at the maximum prior to adding points.
+		/// </summary>
+		public bool? StickToMax { get; set; }
+		private bool? StickToMax_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options for the navigator X axis. Default series options for thenavigator xAxis are:```jsxAxis: {    tickWidth: 0,    lineWidth: 0,    gridLineWidth: 1,    tickPixelInterval: 200,    labels: {           align: 'left',        style: {            color: '#888'        },        x: 3,        y: -4    }}```
 		/// </summary>
 		public string XAxis { get; set; }
@@ -158,6 +166,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (OutlineColor != OutlineColor_DefaultValue) h.Add("outlineColor",OutlineColor);
 			if (OutlineWidth != OutlineWidth_DefaultValue) h.Add("outlineWidth",OutlineWidth);
 			if (Series.IsDirty(highstock)) h.Add("series",Series.ToHashtable(highstock));
+			if (StickToMax != StickToMax_DefaultValue) h.Add("stickToMax",StickToMax);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			

@@ -23,6 +23,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 4;
+			States = States_DefaultValue = new AreasplinerangeSeriesStatesHoverMarkerStates();
+			Symbol = Symbol_DefaultValue = "";
 			Width = Width_DefaultValue = null;
 			
 		}	
@@ -78,6 +80,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// States for a single point marker.
+		/// </summary>
+		public AreasplinerangeSeriesStatesHoverMarkerStates States { get; set; }
+		private AreasplinerangeSeriesStatesHoverMarkerStates States_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A predefined shape or symbol for the marker. When undefined, thesymbol is pulled from options.symbols. Other possible values are`'circle'`, `'square'`,`'diamond'`, `'triangle'` and`'triangle-down'`.Additionally, the URL to a graphic can be given on this form:`'url(graphic.png)'`. Note that for the image to be applied toexported charts, its URL needs to be accessible by the exportserver.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
+		/// </summary>
+		public string Symbol { get; set; }
+		private string Symbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Image markers only. Set the image width explicitly. When usingthis option, a `height` must also be set.
 		/// </summary>
 		public double? Width { get; set; }
@@ -96,6 +112,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
+			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			
 

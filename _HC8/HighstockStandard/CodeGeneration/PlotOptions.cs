@@ -43,7 +43,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Dpo = Dpo_DefaultValue = new PlotOptionsDpo();
 			Dumbbell = Dumbbell_DefaultValue = new PlotOptionsDumbbell();
 			Ema = Ema_DefaultValue = new PlotOptionsEma();
-			Errorbar = Errorbar_DefaultValue = new PlotOptionsErrorbar();
 			Flags = Flags_DefaultValue = new PlotOptionsFlags();
 			Heikinashi = Heikinashi_DefaultValue = new PlotOptionsHeikinashi();
 			Hlc = Hlc_DefaultValue = new PlotOptionsHlc();
@@ -281,13 +280,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsEma Ema { get; set; }
 		private PlotOptionsEma Ema_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Error bars are a graphical representation of the variability of data andare used on graphs to indicate the error, or uncertainty in a reportedmeasurement.In TypeScript the [type](series.errorbar.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `errorbar` series are defined in   [plotOptions.errorbar](plotOptions.errorbar).3. Options for one single series are given in   [the series instance array](series.errorbar).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        errorbar: {            // shared options for all errorbar series        }    },    series: [{        // specific options for this series instance        type: 'errorbar'    }]});```            
-		/// </summary>
-		public PlotOptionsErrorbar Errorbar { get; set; }
-		private PlotOptionsErrorbar Errorbar_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -644,7 +636,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Dpo.IsDirty(highstock)) h.Add("dpo",Dpo.ToHashtable(highstock));
 			if (Dumbbell.IsDirty(highstock)) h.Add("dumbbell",Dumbbell.ToHashtable(highstock));
 			if (Ema.IsDirty(highstock)) h.Add("ema",Ema.ToHashtable(highstock));
-			if (Errorbar.IsDirty(highstock)) h.Add("errorbar",Errorbar.ToHashtable(highstock));
 			if (Flags.IsDirty(highstock)) h.Add("flags",Flags.ToHashtable(highstock));
 			if (Heikinashi.IsDirty(highstock)) h.Add("heikinashi",Heikinashi.ToHashtable(highstock));
 			if (Hlc.IsDirty(highstock)) h.Add("hlc",Hlc.ToHashtable(highstock));

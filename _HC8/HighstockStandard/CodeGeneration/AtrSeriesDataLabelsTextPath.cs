@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AtrSeriesDataLabelsTextPath()
 		{
 			Attributes = Attributes_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = false;
 			
 		}	
 		

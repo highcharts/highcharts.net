@@ -75,7 +75,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Scrollbar = Scrollbar_DefaultValue = new XAxisScrollbar();
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
-			ShowLastLabel = ShowLastLabel_DefaultValue = true;
+			ShowLastLabel = ShowLastLabel_DefaultValue = null;
 			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;

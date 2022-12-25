@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ButtonBorderRadius = ButtonBorderRadius_DefaultValue = 0;
 			ButtonBorderWidth = ButtonBorderWidth_DefaultValue = 1;
 			Enabled = Enabled_DefaultValue = false;
+			Height = Height_DefaultValue = null;
 			LiveRedraw = LiveRedraw_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			MinWidth = MinWidth_DefaultValue = 6;
@@ -110,6 +111,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The height of the scrollbar. The height also applies to the widthof the scroll arrows so that they are always squares. Defaults to20 for touch devices and 14 for mouse devices.
+		/// </summary>
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -211,6 +219,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ButtonBorderRadius != ButtonBorderRadius_DefaultValue) h.Add("buttonBorderRadius",ButtonBorderRadius);
 			if (ButtonBorderWidth != ButtonBorderWidth_DefaultValue) h.Add("buttonBorderWidth",ButtonBorderWidth);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (MinWidth != MinWidth_DefaultValue) h.Add("minWidth",MinWidth);

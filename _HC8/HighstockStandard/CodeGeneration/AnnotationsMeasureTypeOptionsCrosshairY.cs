@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The dash or dot style of the crosshair's line. For possiblevalues, see [this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
+		/// The dash or dot style of the crosshair's line. For possiblevalues, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public AnnotationsMeasureTypeOptionsCrosshairYDashStyle DashStyle { get; set; }
 		private AnnotationsMeasureTypeOptionsCrosshairYDashStyle DashStyle_DefaultValue { get; set; }

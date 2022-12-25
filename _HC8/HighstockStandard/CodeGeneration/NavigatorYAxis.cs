@@ -33,16 +33,25 @@ namespace Highsoft.Web.Mvc.Stocks
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = new Hashtable();
 			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			GridZIndex = GridZIndex_DefaultValue = 1;
+			Height = Height_DefaultValue = "";
+			HeightNumber = HeightNumber_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Labels = Labels_DefaultValue = new NavigatorYAxisLabels();
 			Left = Left_DefaultValue = "";
 			LeftNumber = LeftNumber_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ccd6eb";
 			LineWidth = LineWidth_DefaultValue = 1;
+			LinkedTo = LinkedTo_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			Max = Max_DefaultValue = null;
+			MaxLength = MaxLength_DefaultValue = "";
+			MaxLengthNumber = MaxLengthNumber_DefaultValue = null;
 			MaxPadding = MaxPadding_DefaultValue = null;
+			MaxRange = MaxRange_DefaultValue = null;
+			MaxZoom = MaxZoom_DefaultValue = null;
 			Min = Min_DefaultValue = null;
+			MinLength = MinLength_DefaultValue = "";
+			MinLengthNumber = MinLengthNumber_DefaultValue = null;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = new Hashtable();
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
@@ -54,15 +63,23 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinorTicks = MinorTicks_DefaultValue = false;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			MinPadding = MinPadding_DefaultValue = null;
+			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			Opposite = Opposite_DefaultValue = false;
+			Ordinal = Ordinal_DefaultValue = true;
+			Overscroll = Overscroll_DefaultValue = 0;
 			PanningEnabled = PanningEnabled_DefaultValue = true;
+			PlotBands = PlotBands_DefaultValue = new List<NavigatorYAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<NavigatorYAxisPlotLines>();
+			Range = Range_DefaultValue = null;
+			Resize = Resize_DefaultValue = new NavigatorYAxisResize();
 			Reversed = Reversed_DefaultValue = null;
 			ReversedStacks = ReversedStacks_DefaultValue = false;
+			Scrollbar = Scrollbar_DefaultValue = new NavigatorYAxisScrollbar();
+			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
-			ShowLastLabel = ShowLastLabel_DefaultValue = true;
+			ShowLastLabel = ShowLastLabel_DefaultValue = null;
 			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
@@ -77,6 +94,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickPositions = TickPositions_DefaultValue = new List<double>();
 			TickWidth = TickWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new NavigatorYAxisTitle();
+			Top = Top_DefaultValue = "";
+			TopNumber = TopNumber_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = "";
 			WidthNumber = WidthNumber_DefaultValue = null;
@@ -206,6 +225,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The height as the vertical axis. If it's a number, it isinterpreted as pixels.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the total plot height.
+		/// </summary>
+		public string Height { get; set; }
+		private string Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The height as the vertical axis. If it's a number, it isinterpreted as pixels.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the total plot height.
+		/// </summary>
+		public double? HeightNumber { get; set; }
+		private double? HeightNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the axis. This can be used after render time to geta pointer to the axis object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -248,6 +281,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Index of another axis that this axis is linked to. When an axis islinked to a master axis, it will take the same extremes asthe master, but as assigned by min or max or by setExtremes.It can be used to show additional info, or to ease reading thechart by duplicating the scales.
+		/// </summary>
+		public double? LinkedTo { get; set; }
+		private double? LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// If there are multiple axes on the same side of the chart, the pixelmargin between the axes. Defaults to 0 on vertical axes, 15 onhorizontal axes.
 		/// </summary>
 		public double? Margin { get; set; }
@@ -262,6 +302,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Maximal size of a resizable axis. Could be set as a percentof plot area or pixel size.
+		/// </summary>
+		public string MaxLength { get; set; }
+		private string MaxLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Maximal size of a resizable axis. Could be set as a percentof plot area or pixel size.
+		/// </summary>
+		public double? MaxLengthNumber { get; set; }
+		private double? MaxLengthNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public double? MaxPadding { get; set; }
@@ -269,10 +323,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Maximum range which can be set using the navigator's handles.Opposite of [xAxis.minRange](#xAxis.minRange).
+		/// </summary>
+		public double? MaxRange { get; set; }
+		private double? MaxRange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Deprecated. Use `minRange` instead.
+		/// </summary>
+		public double? MaxZoom { get; set; }
+		private double? MaxZoom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The minimum value of the axis. If `null` the min value isautomatically calculated.If the [startOnTick](#yAxis.startOnTick) option is true (default),the `min` value might be rounded down.The automatically calculated minimum value is also affected by[floor](#yAxis.floor), [softMin](#yAxis.softMin),[minPadding](#yAxis.minPadding), [minRange](#yAxis.minRange)as well as [series.threshold](#plotOptions.series.threshold)and [series.softThreshold](#plotOptions.series.softThreshold).
 		/// </summary>
 		public double? Min { get; set; }
 		private double? Min_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Minimal size of a resizable axis. Could be set as a percentof plot area or pixel size.
+		/// </summary>
+		public string MinLength { get; set; }
+		private string MinLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Minimal size of a resizable axis. Could be set as a percentof plot area or pixel size.
+		/// </summary>
+		public double? MinLengthNumber { get; set; }
+		private double? MinLengthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -353,6 +435,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The minimum range to display on this axis. The entire axis will notbe allowed to span over a smaller interval than this. For example,for a datetime axis the main unit is milliseconds. If minRange isset to 3600000, you can't zoom in more than to one hour.The default minRange for the x axis is five times the smallestinterval between any of the data points.On a logarithmic axis, the unit for the minimum range is the power.So a minRange of 1 means that the axis can be zoomed to 10-100,100-1000, 1000-10000 etc.**Note**: The `minPadding`, `maxPadding`, `startOnTick` and`endOnTick` settings also affect how the extremes of the axisare computed.
+		/// </summary>
+		public double? MinRange { get; set; }
+		private double? MinRange_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The minimum tick interval allowed in axis values. For example onzooming in on an axis with daily data, this can be used to preventthe axis from showing hours. Defaults to the closest distance betweentwo points on the axis.
 		/// </summary>
 		public double? MinTickInterval { get; set; }
@@ -374,6 +463,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// In an ordinal axis, the points are equally spaced in the chartregardless of the actual time or x distance between them. This meansthat missing data periods (e.g. nights or weekends for a stock chart)will not take up space in the chart.Having `ordinal: false` will show any gaps created by the `gapSize`setting proportionate to their duration.In stock charts the X axis is ordinal by default, unlessthe boost module is used and at least one of the series' data lengthexceeds the [boostThreshold](#series.line.boostThreshold).For an ordinal axis, `minPadding` and `maxPadding` are ignored. Use[overscroll](#xAxis.overscroll) instead.
+		/// </summary>
+		public bool? Ordinal { get; set; }
+		private bool? Ordinal_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Additional range on the right side of the xAxis. Works similar to`xAxis.maxPadding`, but value is set in milliseconds. Can be set forboth main `xAxis` and the navigator's `xAxis`.
+		/// </summary>
+		public double? Overscroll { get; set; }
+		private double? Overscroll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to pan axis. If `chart.panning` is enabled, the optionallows to disable panning on an individual axis.
 		/// </summary>
 		public bool? PanningEnabled { get; set; }
@@ -381,10 +484,31 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// An array of colored bands stretching across the plot area marking aninterval on the axis.In styled mode, the plot bands are styled by the `.highcharts-plot-band`class in addition to the `className` option.
+		/// </summary>
+		public List<NavigatorYAxisPlotBands> PlotBands { get; set; }
+		private List<NavigatorYAxisPlotBands> PlotBands_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the`.highcharts-plot-line` class in addition to the `className` option.
 		/// </summary>
 		public List<NavigatorYAxisPlotLines> PlotLines { get; set; }
 		private List<NavigatorYAxisPlotLines> PlotLines_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The zoomed range to display when only defining one or none of `min`or `max`. For example, to show the latest month, a range of one monthcan be set.
+		/// </summary>
+		public double? Range { get; set; }
+		private double? Range_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for axis resizing. It adds a thick line between panes whichthe user can drag in order to resize the panes.
+		/// </summary>
+		public NavigatorYAxisResize Resize { get; set; }
+		private NavigatorYAxisResize Resize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -399,6 +523,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? ReversedStacks { get; set; }
 		private bool? ReversedStacks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An optional scrollbar to display on the X axis in response tolimiting the minimum and maximum of the axis values.In styled mode, all the presentational options for the scrollbar arereplaced by the classes `.highcharts-scrollbar-thumb`,`.highcharts-scrollbar-arrow`, `.highcharts-scrollbar-button`,`.highcharts-scrollbar-rifles` and `.highcharts-scrollbar-track`.
+		/// </summary>
+		public NavigatorYAxisScrollbar Scrollbar { get; set; }
+		private NavigatorYAxisScrollbar Scrollbar_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to show the axis line and title when the axis has no data.
+		/// </summary>
+		public bool? ShowEmpty { get; set; }
+		private bool? ShowEmpty_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -514,6 +652,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The top position as the vertical axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the plot height, offset from plot area top.
+		/// </summary>
+		public string Top { get; set; }
+		private string Top_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The top position as the vertical axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the plot height, offset from plot area top.
+		/// </summary>
+		public double? TopNumber { get; set; }
+		private double? TopNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether axis, including axis title, line, ticks and labels, shouldbe visible.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -570,16 +722,25 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle);
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labels.IsDirty(highstock)) h.Add("labels",Labels.ToHashtable(highstock));
 			if (Left != Left_DefaultValue) h.Add("left",Left);
 			if (LeftNumber != LeftNumber_DefaultValue) h.Add("left",LeftNumber);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
+			if (MaxLength != MaxLength_DefaultValue) h.Add("maxLength",MaxLength);
+			if (MaxLengthNumber != MaxLengthNumber_DefaultValue) h.Add("maxLength",MaxLengthNumber);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
+			if (MaxRange != MaxRange_DefaultValue) h.Add("maxRange",MaxRange);
+			if (MaxZoom != MaxZoom_DefaultValue) h.Add("maxZoom",MaxZoom);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
+			if (MinLength != MinLength_DefaultValue) h.Add("minLength",MinLength);
+			if (MinLengthNumber != MinLengthNumber_DefaultValue) h.Add("minLength",MinLengthNumber);
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
 			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle",MinorGridLineDashStyle);
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
@@ -591,13 +752,21 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
+			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
 			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
+			if (Ordinal != Ordinal_DefaultValue) h.Add("ordinal",Ordinal);
+			if (Overscroll != Overscroll_DefaultValue) h.Add("overscroll",Overscroll);
 			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
+			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(highstock,PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(highstock,PlotLines));
+			if (Range != Range_DefaultValue) h.Add("range",Range);
+			if (Resize.IsDirty(highstock)) h.Add("resize",Resize.ToHashtable(highstock));
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
+			if (Scrollbar.IsDirty(highstock)) h.Add("scrollbar",Scrollbar.ToHashtable(highstock));
+			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
 			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
@@ -614,6 +783,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty(highstock)) h.Add("title",Title.ToHashtable(highstock));
+			if (Top != Top_DefaultValue) h.Add("top",Top);
+			if (TopNumber != TopNumber_DefaultValue) h.Add("top",TopNumber);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
