@@ -41,6 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Cumulative = Cumulative_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = XrangeSeriesCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = XrangeSeriesDashStyle.Null;
 			Data = Data_DefaultValue = new List<XrangeSeriesData>();
 			DataGrouping = DataGrouping_DefaultValue = new XrangeSeriesDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();
@@ -270,6 +271,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Hashtable Custom { get; set; }
 		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// </summary>
+		public XrangeSeriesDashStyle DashStyle { get; set; }
+		private XrangeSeriesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -666,6 +674,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(highstock,Data));
 			if (DataGrouping.IsDirty(highstock)) h.Add("dataGrouping",DataGrouping.ToHashtable(highstock));
 			if (DataLabels.IsDirty(highstock)) h.Add("dataLabels",DataLabels.ToHashtable(highstock));

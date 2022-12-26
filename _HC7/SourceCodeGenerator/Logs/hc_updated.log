@@ -151,7 +151,7 @@ series.bubble.marker.ReturnType:Object
 series.bullet.data.targetOptions.ReturnType:Object
 series.bullet.states.hover.ReturnType:Object
 series.bullet.states.select.ReturnType:Object
-series.column.Exclude:connectNulls,dashStyle,dataParser,dataURL,gapSize,gapUnit,linecap,lineWidth,marker,connectEnds,step
+series.column.Exclude:connectNulls,dataParser,dataURL,gapSize,gapUnit,linecap,lineWidth,marker,connectEnds,step
 series.column.data.Types:Array.<(number|Array.<(number|string), number>|*)>
 series.column.data.pointWidth.Types:Number
 series.column.states.hover.ReturnType:Object
@@ -494,7 +494,7 @@ plotOptions.boxplot.medianWidth.Types:number
 plotOptions.bubble.ReturnType:object
 plotOptions.bubble.marker.ReturnType:object
 plotOptions.bullet.Exclude:allAreas,boostThreshold,colorAxis,compare,compareBase
-plotOptions.column.Exclude:connectNulls,dashStyle,gapSize,gapUnit,linecap,lineWidth,marker,connectEnds,step,useOhlcData
+plotOptions.column.Exclude:connectNulls,gapSize,gapUnit,linecap,lineWidth,marker,connectEnds,step,useOhlcData
 plotOptions.column.states.hover.ReturnType:object
 plotOptions.column.states.select.ReturnType:object
 plotOptions.column.threshold.Types:number
