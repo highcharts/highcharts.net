@@ -419,17 +419,18 @@ namespace HS.Series
             Assert.DoesNotContain("clip", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData("#ffffff")]
-        public void Test_IfColorRenders_Correct(string color)
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
+        //commented because Color exists in plotOptions.series only for highmaps
+        //[Theory]
+        //[InlineData("#ffffff")]
+        //public void Test_IfColorRenders_Correct(string color)
+        //{
+        //    var chart = new Highstock();
+        //    var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
 
-            ((SupertrendSeries)chart.Series[0]).Color = color;
+        //    ((SupertrendSeries)chart.Series[0]).Color = color;
 
-            Assert.Contains($"\"color\":\"{color.ToString().ToLower()}\"", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"color\":\"{color.ToString().ToLower()}\"", renderer.RenderHtml());
+        //}
 
         //missing logic for GradientColorObject and PatternObject
 
@@ -1476,9 +1477,9 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
 
-            ((SupertrendSeries)chart.Series[0]).DataLabels.Z = value;
+            ((SupertrendSeries)chart.Series[0]).DataLabels.ZIndex = value;
 
-            Assert.Contains($"\"dataLabels\":{{\"z\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
+            Assert.Contains($"\"dataLabels\":{{\"zIndex\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1488,9 +1489,9 @@ namespace HS.Series
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
             var defaultValue = 6;
 
-            ((SupertrendSeries)chart.Series[0]).DataLabels.Z = defaultValue;
+            ((SupertrendSeries)chart.Series[0]).DataLabels.ZIndex = defaultValue;
 
-            Assert.DoesNotContain($"\"dataLabels\":{{\"z\":", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"dataLabels\":{{\"zIndex\":", renderer.RenderHtml());
         }
 
         #endregion

@@ -1412,9 +1412,9 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
 
-            ((WindbarbSeries)chart.Series[0]).DataLabels.Z = value;
+            ((WindbarbSeries)chart.Series[0]).DataLabels.ZIndex = value;
 
-            Assert.Contains($"\"dataLabels\":{{\"z\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
+            Assert.Contains($"\"dataLabels\":{{\"zIndex\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1424,9 +1424,9 @@ namespace HS.Series
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
             var defaultValue = 6;
 
-            ((WindbarbSeries)chart.Series[0]).DataLabels.Z = defaultValue;
+            ((WindbarbSeries)chart.Series[0]).DataLabels.ZIndex = defaultValue;
 
-            Assert.DoesNotContain($"\"dataLabels\":{{\"z\":", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"dataLabels\":{{\"zIndex\":", renderer.RenderHtml());
         }
 
         #endregion
