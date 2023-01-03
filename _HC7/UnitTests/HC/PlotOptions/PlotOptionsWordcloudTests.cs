@@ -305,31 +305,32 @@ namespace HC.PlotOptions
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"className\":\"{className}\"}}}}", renderer.RenderHtml());
         }
 
-        [Fact]
-        public void Test_IfClipRenders_Correct()
-        {
-            var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart);
-            var value = true;
+        //Clip has been commented because it doesn't exist anymore in API
+        //[Fact]
+        //public void Test_IfClipRenders_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    chart.Chart.Type = _fixture.ChartType;
+        //    var renderer = new HighchartsRenderer(chart);
+        //    var value = true;
 
-            chart.PlotOptions.Wordcloud.Clip = value;
+        //    chart.PlotOptions.Wordcloud.Clip = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"clip\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"clip\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfClipDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighchartsRenderer(chart);
-            var value = false;
+        //[Fact]
+        //public void Test_IfClipDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    chart.Chart.Type = _fixture.ChartType;
+        //    var renderer = new HighchartsRenderer(chart);
+        //    var value = false;
 
-            chart.PlotOptions.Wordcloud.Clip = value;
+        //    chart.PlotOptions.Wordcloud.Clip = value;
 
-            Assert.DoesNotContain("clip", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain("clip", renderer.RenderHtml());
+        //}
 
         [Theory]
         [InlineData("#ffffff")]

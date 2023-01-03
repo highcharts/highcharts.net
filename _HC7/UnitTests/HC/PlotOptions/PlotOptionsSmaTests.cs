@@ -1545,9 +1545,9 @@
 //            var chart = new Highcharts();
 //            var renderer = new HighchartsRenderer(chart);
 
-//            chart.PlotOptions.Sma.DataLabels.Z = value;
+//            chart.PlotOptions.Sma.DataLabels.ZIndex = value;
 
-//            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"z\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+//            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"zIndex\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
 //        }
 
 //        [Fact]
@@ -1557,9 +1557,9 @@
 //            var renderer = new HighchartsRenderer(chart);
 //            var defaultValue = 6;
 
-//            chart.PlotOptions.Sma.DataLabels.Z = defaultValue;
+//            chart.PlotOptions.Sma.DataLabels.ZIndex = defaultValue;
 
-//            Assert.DoesNotContain($"\"dataLabels\":{{\"z\":", renderer.RenderHtml());
+//            Assert.DoesNotContain($"\"dataLabels\":{{\"zIndex\":", renderer.RenderHtml());
 //        }
 
 //        #endregion
