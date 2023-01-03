@@ -343,29 +343,30 @@ namespace HC.Series
             Assert.Contains($"\"className\":\"{className}\"", renderer.RenderHtml());
         }
 
-        [Fact]
-        public void Test_IfClipRenders_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new WordcloudSeries(); chart.Series.Add(series);
-            var value = true;
+        //Clip has been commented because it doesn't exist anymore in API
+        //[Fact]
+        //public void Test_IfClipRenders_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new WordcloudSeries(); chart.Series.Add(series);
+        //    var value = true;
 
-            ((WordcloudSeries)chart.Series[0]).Clip = value;
+        //    ((WordcloudSeries)chart.Series[0]).Clip = value;
 
-            Assert.Contains($"\"clip\":{value.ToString().ToLower()}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"clip\":{value.ToString().ToLower()}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfClipDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new WordcloudSeries(); chart.Series.Add(series);
-            var value = false;
+        //[Fact]
+        //public void Test_IfClipDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new WordcloudSeries(); chart.Series.Add(series);
+        //    var value = false;
 
-            ((WordcloudSeries)chart.Series[0]).Clip = value;
+        //    ((WordcloudSeries)chart.Series[0]).Clip = value;
 
-            Assert.DoesNotContain("clip", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain("clip", renderer.RenderHtml());
+        //}
 
         [Theory]
         [InlineData("#ffffff")]

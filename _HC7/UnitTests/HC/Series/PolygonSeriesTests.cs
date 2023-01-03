@@ -1473,9 +1473,9 @@ namespace HC.Series
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
 
-            ((PolygonSeries)chart.Series[0]).DataLabels.Z = value;
+            ((PolygonSeries)chart.Series[0]).DataLabels.ZIndex = value;
 
-            Assert.Contains($"\"dataLabels\":{{\"z\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
+            Assert.Contains($"\"dataLabels\":{{\"zIndex\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1485,9 +1485,9 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
             var defaultValue = 6;
 
-            ((PolygonSeries)chart.Series[0]).DataLabels.Z = defaultValue;
+            ((PolygonSeries)chart.Series[0]).DataLabels.ZIndex = defaultValue;
 
-            Assert.DoesNotContain($"\"dataLabels\":{{\"z\":", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"dataLabels\":{{\"zIndex\":", renderer.RenderHtml());
         }
 
         #endregion
