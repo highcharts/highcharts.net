@@ -387,18 +387,19 @@ namespace HS.PlotOptions
             Assert.DoesNotContain("clip", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData("#ffffff")]
-        public void Test_IfColorRenders_Correct(string color)
-        {
-            var chart = new Highstock();
-            chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighstockRenderer(chart);
+        //commented because Color exists in plotOptions.series only for highmaps
+        //[Theory]
+        //[InlineData("#ffffff")]
+        //public void Test_IfColorRenders_Correct(string color)
+        //{
+        //    var chart = new Highstock();
+        //    chart.Chart.Type = _fixture.ChartType;
+        //    var renderer = new HighstockRenderer(chart);
 
-            chart.PlotOptions.Supertrend.Color = color;
+        //    chart.PlotOptions.Supertrend.Color = color;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"color\":\"{color.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"color\":\"{color.ToString().ToLower()}\"}}}}", renderer.RenderHtml());
+        //}
 
         //missing logic for GradientColorObject and PatternObject
 
@@ -1430,9 +1431,9 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
 
-            chart.PlotOptions.Supertrend.DataLabels.Z = value;
+            chart.PlotOptions.Supertrend.DataLabels.ZIndex = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"z\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"zIndex\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1442,9 +1443,9 @@ namespace HS.PlotOptions
             var renderer = new HighstockRenderer(chart);
             var defaultValue = 6;
 
-            chart.PlotOptions.Supertrend.DataLabels.Z = defaultValue;
+            chart.PlotOptions.Supertrend.DataLabels.ZIndex = defaultValue;
 
-            Assert.DoesNotContain($"\"dataLabels\":{{\"z\":", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"dataLabels\":{{\"zIndex\":", renderer.RenderHtml());
         }
 
         #endregion

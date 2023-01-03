@@ -1457,9 +1457,9 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
 
-            chart.PlotOptions.Dmi.DataLabels.Z = value;
+            chart.PlotOptions.Dmi.DataLabels.ZIndex = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"z\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"zIndex\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -1469,9 +1469,9 @@ namespace HS.PlotOptions
             var renderer = new HighstockRenderer(chart);
             var defaultValue = 6;
 
-            chart.PlotOptions.Dmi.DataLabels.Z = defaultValue;
+            chart.PlotOptions.Dmi.DataLabels.ZIndex = defaultValue;
 
-            Assert.DoesNotContain($"\"dataLabels\":{{\"z\":", renderer.RenderHtml());
+            Assert.DoesNotContain($"\"dataLabels\":{{\"zIndex\":", renderer.RenderHtml());
         }
 
         #endregion
