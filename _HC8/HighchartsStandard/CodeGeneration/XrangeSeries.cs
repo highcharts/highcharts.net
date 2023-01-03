@@ -38,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = XrangeSeriesCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = XrangeSeriesDashStyle.Null;
 			Data = Data_DefaultValue = new List<XrangeSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();
 			DataSorting = DataSorting_DefaultValue = new XrangeSeriesDataSorting();
@@ -243,6 +244,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Custom { get; set; }
 		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// </summary>
+		public XrangeSeriesDashStyle DashStyle { get; set; }
+		private XrangeSeriesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -610,6 +618,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(highcharts,Data));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (DataSorting.IsDirty(highcharts)) h.Add("dataSorting",DataSorting.ToHashtable(highcharts));

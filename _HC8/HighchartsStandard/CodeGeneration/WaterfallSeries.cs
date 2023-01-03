@@ -287,7 +287,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A name for the dash style to use for the line connecting the columnsof the waterfall series. Possible values: Dash, DashDot, Dot,LongDash, LongDashDot, LongDashDotDot, ShortDash, ShortDashDot,ShortDashDotDot, ShortDot, SolidIn styled mode, the stroke dash-array can be set with the`.highcharts-graph` class.
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
 		/// </summary>
 		public WaterfallSeriesDashStyle DashStyle { get; set; }
 		private WaterfallSeriesDashStyle DashStyle_DefaultValue { get; set; }

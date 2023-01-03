@@ -41,6 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsColumnpyramidCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
+			DashStyle = DashStyle_DefaultValue = PlotOptionsColumnpyramidDashStyle.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsColumnpyramidDataLabels();
 			DataSorting = DataSorting_DefaultValue = new PlotOptionsColumnpyramidDataSorting();
 			Depth = Depth_DefaultValue = 25;
@@ -268,6 +269,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Custom { get; set; }
 		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
+		/// </summary>
+		public PlotOptionsColumnpyramidDashStyle DashStyle { get; set; }
+		private PlotOptionsColumnpyramidDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -645,6 +653,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
+			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (DataSorting.IsDirty(highcharts)) h.Add("dataSorting",DataSorting.ToHashtable(highcharts));
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
