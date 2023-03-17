@@ -104,5 +104,8 @@ _HC8/HighstockStandard/obj/
 _HC7/UnitTests/obj/
 _HC7/UnitTests/bin/
 Demos/CustomFieldsSample/CustomFieldsSample/obj/
-Demos/CustomFieldsSample/packages/
+Demos/CustomFieldsSample/CustomFieldsSample/bin/
+Demos/CustomFieldsSample/test/packages/
+Demos/CustomFieldsSample/test/CustomFieldsSample/bin/
+Demos/CustomFieldsSample/test/CustomFieldsSample/obj/
 
