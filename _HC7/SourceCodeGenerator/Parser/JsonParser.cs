@@ -113,6 +113,15 @@ namespace SourceCodeGenerator.Parser
                     apiItem.ReturnType = apiItem.Types[0];
                 }
 
+                JToken jDefaultByProduct = doclet.SelectToken("defaultByProduct", false);
+                if(jDefaultByProduct != null)
+                {
+                    var defaultValue = jDefaultByProduct.SelectToken(Product, false);
+
+                    if(defaultValue != null)
+                        apiItem.Defaults = defaultValue.Value<string>();
+                }
+
                 var jTags = doclet.SelectToken("tags", false);
                 if(jTags != null)
                 {
