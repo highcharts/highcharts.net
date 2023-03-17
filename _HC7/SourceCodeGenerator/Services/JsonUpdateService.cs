@@ -351,6 +351,9 @@ namespace SourceCodeGenerator.Services
 
             ItemsToUpdate.Add("plotOptions.arearange.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("plotOptions.boxplot.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
+            
+            ItemsToUpdate.Add("plotOptions.organization.link.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value= "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Curved" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Straight" } });
+            ItemsToUpdate.Add("plotOptions.treegraph.link.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "Curved" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Curved" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Straight" } });
         }
 
         public void Delete(ApiItem item)
