@@ -270,6 +270,7 @@ namespace HC.PlotOptions
 
         [Theory]
         [InlineData("ClassName")]
+        [InlineData("ClassName")]
         public void Test_IfClassNameRenders_Correct(string className)
         {
             var chart = new Highcharts();
@@ -1173,7 +1174,6 @@ namespace HC.PlotOptions
 
         [Theory]
         [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfDataLabelsTextPathEnabledRenders_Correct(bool value)
         {
             var chart = new Highcharts();

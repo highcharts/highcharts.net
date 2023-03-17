@@ -1317,7 +1317,6 @@ namespace HC.PlotOptions
 
         [Theory]
         [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfDataLabelsTextPathEnabledRenders_Correct(bool value)
         {
             var chart = new Highcharts();
@@ -1334,7 +1333,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            bool? defaultValue = null;
+            bool? defaultValue = false;
 
             chart.PlotOptions.Boxplot.DataLabels.TextPath.Enabled = defaultValue;
 

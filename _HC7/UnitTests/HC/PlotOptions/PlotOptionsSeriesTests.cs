@@ -10,6 +10,7 @@ using Highsoft.Web.Mvc.Charts.Rendering;
 using System.Globalization;
 using TH = Tests.Helpers.TestHelper;
 using UnitTests.HC;
+using System.Drawing;
 
 namespace HC.PlotOptions
 {
@@ -1403,7 +1404,6 @@ namespace HC.PlotOptions
 
         [Theory]
         [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfDataLabelsTextPathEnabledRenders_Correct(bool value)
         {
             var chart = new Highcharts();
@@ -1420,7 +1420,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            bool? defaultValue = null;
+            bool? defaultValue = false;
 
             chart.PlotOptions.Series.DataLabels.TextPath.Enabled = defaultValue;
 
@@ -4892,7 +4892,7 @@ namespace HC.PlotOptions
         #region tooltip
 
         [Theory]
-        [InlineData("Clustered points: {point.clusterPointsAmount}")]
+        [InlineData("Clustered points: {point.otherValue}")]
         public void Test_IfTooltipClusterFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
@@ -4909,7 +4909,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = string.Empty;
+            var defaultValue = "Clustered points: {point.clusterPointsAmount}";
 
             chart.PlotOptions.Series.Tooltip.ClusterFormat = defaultValue;
 

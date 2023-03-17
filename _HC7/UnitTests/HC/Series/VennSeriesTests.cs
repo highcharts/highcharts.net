@@ -1301,7 +1301,6 @@ namespace HC.Series
 
         [Theory]
         [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfDataLabelsTextPathEnabledRenders_Correct(bool value)
         {
             var chart = new Highcharts();
@@ -1318,7 +1317,7 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
-            bool? defaultValue = null;
+            bool? defaultValue = false;
 
             ((VennSeries)chart.Series[0]).DataLabels.TextPath.Enabled = defaultValue;
 
