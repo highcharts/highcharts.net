@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new Hashtable();
 			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation();
+			AnimationBool = AnimationBool_DefaultValue = null;
 			Breadcrumbs = Breadcrumbs_DefaultValue = new DrilldownBreadcrumbs();
 			DrillUpButton = DrillUpButton_DefaultValue = new DrilldownDrillUpButton();
 			Series = Series_DefaultValue = new List<Series>();
@@ -57,6 +58,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Set the animation for all drilldown animations. Animation of a drilldownoccurs when drilling between a column point and a column series,or a pie slice and a full pie series. Drilldown can still be usedbetween series and points of different types, but animation willnot occur.The animation can either be set as a boolean or a configurationobject. If `true`, it will use the 'swing' jQuery easing and a durationof 500 ms. If used as a configuration object, the following propertiesare supported:- `duration`: The duration of the animation in milliseconds.- `easing`: A string reference to an easing function set on the `Math`  object. See  [the easing demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/).
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options for the breadcrumbs, the navigation at the top leading the wayup through the drilldown levels.
 		/// </summary>
 		public DrilldownBreadcrumbs Breadcrumbs { get; set; }
@@ -88,6 +96,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ActiveDataLabelStyle != ActiveDataLabelStyle_DefaultValue) h.Add("activeDataLabelStyle",ActiveDataLabelStyle);
 			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Breadcrumbs.IsDirty(highcharts)) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(highcharts));
 			if (DrillUpButton.IsDirty(highcharts)) h.Add("drillUpButton",DrillUpButton.ToHashtable(highcharts));
 			if (Series != Series_DefaultValue) h.Add("series",Series);

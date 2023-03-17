@@ -147,7 +147,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement.
+		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement. Changes to the series' color will also be reflected in achart's legend and tooltip.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
@@ -266,7 +266,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data labels, appearing next to each datapoint.Since v6.2.0, multiple data labels can be applied to each singlepoint by defining them as an array of configs.In styled mode, the data labels can be styled with the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](https://www.highcharts.com/samples/highcharts/css/series-datalabels)).
+		/// 
 		/// </summary>
 		public PlotOptionsLollipopDataLabels DataLabels { get; set; }
 		private PlotOptionsLollipopDataLabels DataLabels_DefaultValue { get; set; }
@@ -399,7 +399,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the`.highcharts-point`, `.highcharts-point-hover` and`.highcharts-point-select` class names.
+		/// Options for the point markers of line and scatter-like series. Propertieslike `fillColor`, `lineColor` and `lineWidth` define the visualappearance of the markers. The `symbol` option defines the shape. Otherseries types, like column series, don't have markers, but have visualoptions on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select` class names.
 		/// </summary>
 		public PlotOptionsLollipopMarker Marker { get; set; }
 		private PlotOptionsLollipopMarker Marker_DefaultValue { get; set; }
@@ -581,7 +581,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from [tooltip](#tooltip), but onlythe following properties can be defined on a series level.
 		/// </summary>
 		public PlotOptionsLollipopTooltip Tooltip { get; set; }
 		private PlotOptionsLollipopTooltip Tooltip_DefaultValue { get; set; }

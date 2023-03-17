@@ -24,19 +24,15 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new DependencywheelSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new DependencywheelSeriesDataDragDrop();
-			Drilldown = Drilldown_DefaultValue = "";
 			Events = Events_DefaultValue = new DependencywheelSeriesDataEvents();
 			From = From_DefaultValue = "";
 			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
-			Marker = Marker_DefaultValue = new DependencywheelSeriesDataMarker();
 			Name = Name_DefaultValue = "";
 			Outgoing = Outgoing_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			To = To_DefaultValue = "";
 			Weight = Weight_DefaultValue = null;
-			X = X_DefaultValue = double.MinValue;
-			Y = Y_DefaultValue = double.MinValue;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -50,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An additional, individual class name for the data point's graphicrepresentation.
+		/// An additional, individual class name for the data point's graphicrepresentation. Changes to a point's color will also be reflected in achart's legend and tooltip.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
@@ -99,13 +95,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series) array touse for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The individual point events.
 		/// </summary>
 		public DependencywheelSeriesDataEvents Events { get; set; }
@@ -131,13 +120,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Labelrank { get; set; }
 		private double? Labelrank_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the point markers of line-like series.
-		/// </summary>
-		public DependencywheelSeriesDataMarker Marker { get; set; }
-		private DependencywheelSeriesDataMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -175,20 +157,6 @@ namespace Highsoft.Web.Mvc.Charts
 		private double? Weight_DefaultValue { get; set; }
 		 
 
-		/// <summary>
-		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y value of the point.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
@@ -204,19 +172,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Outgoing != Outgoing_DefaultValue) h.Add("outgoing",Outgoing);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

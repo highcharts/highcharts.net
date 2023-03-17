@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Label = Label_DefaultValue = new YAxisPlotLinesLabel();
+			Labels = Labels_DefaultValue = new YAxisPlotLinesLabels();
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = 2;
 			ZIndex = ZIndex_DefaultValue = null;
@@ -81,6 +82,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public YAxisPlotLinesLabels Labels { get; set; }
+		private YAxisPlotLinesLabels Labels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The position of the line in axis units.
 		/// </summary>
 		public double? Value { get; set; }
@@ -115,6 +123,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events != Events_DefaultValue) h.Add("events",Events);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
+			if (Labels.IsDirty(highcharts)) h.Add("labels",Labels.ToHashtable(highcharts));
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

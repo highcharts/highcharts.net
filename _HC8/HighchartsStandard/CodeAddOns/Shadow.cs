@@ -15,7 +15,7 @@ namespace Highsoft.Web.Mvc.Charts
         Hashtable h = new Hashtable();
 
         public Shadow() {
-            //Enabled = false;
+            Enabled = false;
             Color = "";
             OffsetX = 0;
             OffsetY = 0;
@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
         /// <summary>
         /// If a shadow with default values should be enabled
         /// </summary>
-        //public bool Enabled { get; set; }
+        public bool Enabled { get; set; }
 
 		/// <summary>
 		/// The Color of the Shadow

@@ -91,6 +91,7 @@ namespace Highsoft.Web.Mvc.Charts
 			StackNumber = StackNumber_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = ErrorbarSeriesStacking.Null;
 			States = States_DefaultValue = new ErrorbarSeriesStates();
+			StemColor = StemColor_DefaultValue = "";
 			StemDashStyle = StemDashStyle_DefaultValue = new Hashtable();
 			StemWidth = StemWidth_DefaultValue = null;
 			StickyTracking = StickyTracking_DefaultValue = true;
@@ -165,7 +166,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement.
+		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement. Changes to the series' color will also be reflected in achart's legend and tooltip.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
@@ -641,6 +642,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The color of the stem, the vertical line extending from the box tothe whiskers. If `undefined`, the series color is used.In styled mode, the stem stroke can be set with the`.highcharts-boxplot-stem` class.
+		/// </summary>
+		public string StemColor { get; set; }
+		private string StemColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The dash style of the stem, the vertical line extending from thebox to the whiskers.
 		/// </summary>
 		public Hashtable StemDashStyle { get; set; }
@@ -859,6 +867,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", highcharts.FirstCharacterToLower(Stacking.ToString()));
 			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
+			if (StemColor != StemColor_DefaultValue) h.Add("stemColor",StemColor);
 			if (StemDashStyle != StemDashStyle_DefaultValue) h.Add("stemDashStyle",StemDashStyle);
 			if (StemWidth != StemWidth_DefaultValue) h.Add("stemWidth",StemWidth);
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);

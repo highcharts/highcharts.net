@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The animation delay time in milliseconds.Set to `0` renders dataLabel immediately.As `undefined` inherits defer time from the [series.animation.defer](#plotOptions.series.animation.defer).
+		/// The animation delay time in milliseconds. Set to `0` to render thedata labels immediately. As `undefined` inherits defer time from the[series.animation.defer](#plotOptions.series.animation.defer).
 		/// </summary>
 		public double? Defer { get; set; }
 		private double? Defer_DefaultValue { get; set; }

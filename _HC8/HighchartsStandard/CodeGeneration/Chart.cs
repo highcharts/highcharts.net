@@ -149,7 +149,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// In styled mode, this sets how many colors the class namesshould rotate between. With ten colors, series (or points) aregiven class names like `highcharts-color-0`, `highcharts-color-0`[...] `highcharts-color-9`. The equivalent in non-styled modeis to set colors using the [colors](#colors) setting.
+		/// In styled mode, this sets how many colors the class namesshould rotate between. With ten colors, series (or points) aregiven class names like `highcharts-color-0`, `highcharts-color-1`[...] `highcharts-color-9`. The equivalent in non-styled modeis to set colors using the [colors](#colors) setting.
 		/// </summary>
 		public double? ColorCount { get; set; }
 		private double? ColorCount_DefaultValue { get; set; }
@@ -415,7 +415,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Additional CSS styles to apply inline to the container `div`. Notethat since the default font styles are applied in the renderer, itis ignorant of the individual chart options and must be set globally.
+		/// Additional CSS styles to apply inline to the container `div`. Notethat since the default font styles are applied in the renderer, itis ignorant of the individual chart options and must be set globally.Also note that changing the font size in the `chart.style` options onlyapplies to those elements that do not have a specific `fontSize` setting.
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }

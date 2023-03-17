@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LineWidth = LineWidth_DefaultValue = 1;
 			Offset = Offset_DefaultValue = null;
 			Radius = Radius_DefaultValue = 10;
-			Type = Type_DefaultValue =  default ;
+			Type = Type_DefaultValue = OrganizationSeriesLinkType.Default;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -57,8 +57,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Type of the link shape.
 		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
+		public OrganizationSeriesLinkType Type { get; set; }
+		private OrganizationSeriesLinkType Type_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

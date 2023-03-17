@@ -141,7 +141,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement.
+		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement. Changes to the series' color will also be reflected in achart's legend and tooltip.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
@@ -365,7 +365,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the point markers of line-like series. Properties like`fillColor`, `lineColor` and `lineWidth` define the visual appearanceof the markers. Other series types, like column series, don't havemarkers, but have visual options on the series level instead.In styled mode, the markers can be styled with the`.highcharts-point`, `.highcharts-point-hover` and`.highcharts-point-select` class names.
+		/// Options for the point markers of line and scatter-like series. Propertieslike `fillColor`, `lineColor` and `lineWidth` define the visualappearance of the markers. The `symbol` option defines the shape. Otherseries types, like column series, don't have markers, but have visualoptions on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select` class names.
 		/// </summary>
 		public PlotOptionsArearangeMarker Marker { get; set; }
 		private PlotOptionsArearangeMarker Marker_DefaultValue { get; set; }

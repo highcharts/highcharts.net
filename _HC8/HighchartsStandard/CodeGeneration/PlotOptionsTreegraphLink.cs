@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Cursor = Cursor_DefaultValue = "default";
 			LineWidth = LineWidth_DefaultValue = 1;
 			Radius = Radius_DefaultValue = 10;
-			Type = Type_DefaultValue = "curved";
+			Type = Type_DefaultValue = PlotOptionsTreegraphLinkType.Curved;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -57,8 +57,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Type of the link shape.
 		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
+		public PlotOptionsTreegraphLinkType Type { get; set; }
+		private PlotOptionsTreegraphLinkType Type_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new ChartParallelAxesPlotLinesEvents();
 			Id = Id_DefaultValue = "";
 			Label = Label_DefaultValue = new ChartParallelAxesPlotLinesLabel();
+			Labels = Labels_DefaultValue = new ChartParallelAxesPlotLinesLabels();
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = 2;
 			ZIndex = ZIndex_DefaultValue = null;
@@ -81,6 +82,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public ChartParallelAxesPlotLinesLabels Labels { get; set; }
+		private ChartParallelAxesPlotLinesLabels Labels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The position of the line in axis units.
 		/// </summary>
 		public double? Value { get; set; }
@@ -115,6 +123,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
+			if (Labels.IsDirty(highcharts)) h.Add("labels",Labels.ToHashtable(highcharts));
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);

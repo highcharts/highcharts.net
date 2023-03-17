@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "#666666";
 			LineWidth = LineWidth_DefaultValue = 1;
 			Radius = Radius_DefaultValue = 10;
-			Type = Type_DefaultValue =  default ;
+			Type = Type_DefaultValue = PlotOptionsOrganizationLinkType.Default;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -49,8 +49,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Type of the link shape.
 		/// </summary>
-		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
+		public PlotOptionsOrganizationLinkType Type { get; set; }
+		private PlotOptionsOrganizationLinkType Type_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

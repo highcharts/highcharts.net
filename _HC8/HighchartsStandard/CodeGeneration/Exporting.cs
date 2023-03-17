@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Accessibility = Accessibility_DefaultValue = new ExportingAccessibility();
 			AllowHTML = AllowHTML_DefaultValue = false;
+			AllowTableSorting = AllowTableSorting_DefaultValue = true;
 			Buttons = Buttons_DefaultValue = new ExportingButtons();
 			ChartOptions = ChartOptions_DefaultValue = null;
 			Csv = Csv_DefaultValue = new ExportingCsv();
@@ -58,6 +59,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? AllowHTML { get; set; }
 		private bool? AllowHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Allows the end user to sort the data table by clicking on column headers.
+		/// </summary>
+		public bool? AllowTableSorting { get; set; }
+		private bool? AllowTableSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -230,6 +238,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
 			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
+			if (AllowTableSorting != AllowTableSorting_DefaultValue) h.Add("allowTableSorting",AllowTableSorting);
 			if (Buttons.IsDirty(highcharts)) h.Add("buttons",Buttons.ToHashtable(highcharts));
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
 			if (Csv.IsDirty(highcharts)) h.Add("csv",Csv.ToHashtable(highcharts));

@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The alignment of the data label compared to the point. If`right`, the right side of the label should be touching thepoint. For points with an extent, like columns, the alignmentsalso dictates how to align it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside)option. Can be one of `left`, `center` or `right`.
+		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. For pointswith an extent, like columns, the alignments also dictates how toalign it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
 		/// </summary>
 		public PlotOptionsPackedbubbleDataLabelsAlign Align { get; set; }
 		private PlotOptionsPackedbubbleDataLabelsAlign Align_DefaultValue { get; set; }
@@ -71,28 +71,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series isdisplayed for the `dataLabels`. The animation can also be set asa configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
+		/// Enable or disable the initial animation when a series is displayedfor the `dataLabels`. The animation can also be set as aconfiguration object. Please note that this option only applies tothe initial animation.For other animations, see [chart.animation](#chart.animation) and theanimation parameter under the API methods. The following propertiesare supported:- `defer`: The animation delay time in milliseconds.
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Enable or disable the initial animation when a series isdisplayed for the `dataLabels`. The animation can also be set asa configuration object. Please note that this option onlyapplies to the initial animation.For other animations, see [chart.animation](#chart.animation)and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.
+		/// Enable or disable the initial animation when a series is displayedfor the `dataLabels`. The animation can also be set as aconfiguration object. Please note that this option only applies tothe initial animation.For other animations, see [chart.animation](#chart.animation) and theanimation parameter under the API methods. The following propertiesare supported:- `defer`: The animation delay time in milliseconds.
 		/// </summary>
 		public bool? AnimationBool { get; set; }
 		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The background color or gradient for the data label.
+		/// The background color or gradient for the data label. Setting it to`auto` will use the point's color.
 		/// </summary>
 		public string BackgroundColor { get; set; }
 		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border color for the data label. Defaults to `undefined`.
+		/// The border color for the data label. Setting it to `auto` will usethe point's color. Defaults to `undefined`.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
