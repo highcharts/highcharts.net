@@ -115,6 +115,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Volume = Volume_DefaultValue = "Volume";
 			XAxisUnit = XAxisUnit_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -802,7 +803,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? XAxisUnit { get; set; }
 		private double? XAxisUnit_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -907,7 +910,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (VerticalLine != VerticalLine_DefaultValue) h.Add("verticalLine",VerticalLine);
 			if (Volume != Volume_DefaultValue) h.Add("volume",Volume);
 			if (XAxisUnit != XAxisUnit_DefaultValue) h.Add("xAxisUnit",XAxisUnit);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

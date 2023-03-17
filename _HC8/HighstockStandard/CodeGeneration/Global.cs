@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			UseUTC = UseUTC_DefaultValue = null;
 			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string VMLRadialGradientURL { get; set; }
 		private string VMLRadialGradientURL_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -79,7 +82,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
 			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

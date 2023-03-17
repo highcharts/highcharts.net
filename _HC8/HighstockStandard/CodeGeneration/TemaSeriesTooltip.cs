@@ -21,8 +21,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			ClusterFormat = ClusterFormat_DefaultValue = "Clustered points: {point.clusterPointsAmount}";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Distance = Distance_DefaultValue = 16;
-			FollowPointer = FollowPointer_DefaultValue = null;
-			FollowTouchMove = FollowTouchMove_DefaultValue = null;
+			FollowPointer = FollowPointer_DefaultValue = false;
+			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			FooterFormat = FooterFormat_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
 			HeaderShape = HeaderShape_DefaultValue = TemaSeriesTooltipHeaderShape.Callout;
@@ -33,13 +33,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			Padding = Padding_DefaultValue = 8;
 			PointFormat = PointFormat_DefaultValue = "";
 			PointFormatter = PointFormatter_DefaultValue = "";
-			Split = Split_DefaultValue = null;
+			Split = Split_DefaultValue = true;
 			StickOnContact = StickOnContact_DefaultValue = false;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = "";
 			ValueSuffix = ValueSuffix_DefaultValue = "";
 			XDateFormat = XDateFormat_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -202,7 +203,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string XDateFormat { get; set; }
 		private string XDateFormat_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -232,7 +235,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
 			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);
 			if (XDateFormat != XDateFormat_DefaultValue) h.Add("xDateFormat",XDateFormat);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

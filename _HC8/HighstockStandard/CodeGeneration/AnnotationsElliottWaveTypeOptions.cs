@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Line = Line_DefaultValue = new AnnotationsElliottWaveTypeOptionsLine();
 			Points = Points_DefaultValue = new List<AnnotationsElliottWaveTypeOptionsPoints>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<AnnotationsElliottWaveTypeOptionsPoints> Points { get; set; }
 		private List<AnnotationsElliottWaveTypeOptionsPoints> Points_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
 			if (Points != Points_DefaultValue) h.Add("points", HashifyList(highstock,Points));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

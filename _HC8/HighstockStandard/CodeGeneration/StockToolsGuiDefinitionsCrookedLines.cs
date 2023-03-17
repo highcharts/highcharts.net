@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Elliott5 = Elliott5_DefaultValue = new StockToolsGuiDefinitionsCrookedLinesElliott5();
 			Items = Items_DefaultValue = new List<string>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<string> Items { get; set; }
 		private List<string> Items_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Elliott3.IsDirty(highstock)) h.Add("elliott3",Elliott3.ToHashtable(highstock));
 			if (Elliott5.IsDirty(highstock)) h.Add("elliott5",Elliott5.ToHashtable(highstock));
 			if (Items != Items_DefaultValue) h.Add("items",Items);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

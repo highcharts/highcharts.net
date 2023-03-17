@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LegendLabel = LegendLabel_DefaultValue = "Chart legend: {legendTitle}";
 			LegendLabelNoTitle = LegendLabelNoTitle_DefaultValue = "Toggle series visibility, {chartTitle}";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string LegendLabelNoTitle { get; set; }
 		private string LegendLabelNoTitle_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LegendItem != LegendItem_DefaultValue) h.Add("legendItem",LegendItem);
 			if (LegendLabel != LegendLabel_DefaultValue) h.Add("legendLabel",LegendLabel);
 			if (LegendLabelNoTitle != LegendLabelNoTitle_DefaultValue) h.Add("legendLabelNoTitle",LegendLabelNoTitle);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -33,6 +33,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Year = Year_DefaultValue = new XAxisDateTimeLabelFormatsYear();
 			YearString = YearString_DefaultValue = "null";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -146,7 +147,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string YearString { get; set; }
 		private string YearString_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -169,7 +172,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (WeekString != WeekString_DefaultValue) h.Add("week",WeekString);
 			if (Year.IsDirty(highstock)) h.Add("year",Year.ToHashtable(highstock));
 			if (YearString != YearString_DefaultValue) h.Add("year",YearString);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			RememberPointFocus = RememberPointFocus_DefaultValue = false;
 			SkipNullPoints = SkipNullPoints_DefaultValue = true;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? SkipNullPoints { get; set; }
 		private bool? SkipNullPoints_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointNavigationEnabledThresholdBool != PointNavigationEnabledThresholdBool_DefaultValue) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThresholdBool);
 			if (RememberPointFocus != RememberPointFocus_DefaultValue) h.Add("rememberPointFocus",RememberPointFocus);
 			if (SkipNullPoints != SkipNullPoints_DefaultValue) h.Add("skipNullPoints",SkipNullPoints);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

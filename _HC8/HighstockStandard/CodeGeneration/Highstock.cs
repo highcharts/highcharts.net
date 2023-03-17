@@ -48,6 +48,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			XAxis = XAxis_DefaultValue = new List<XAxis>();
 			YAxis = YAxis_DefaultValue = new List<YAxis>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -266,7 +267,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<YAxis> YAxis { get; set; }
 		private List<YAxis> YAxis_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -304,7 +307,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Tooltip.IsDirty(highstock)) h.Add("tooltip",Tooltip.ToHashtable(highstock));
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(highstock,XAxis));
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(highstock,YAxis));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

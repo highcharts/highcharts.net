@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			VerticalCounter = VerticalCounter_DefaultValue = new StockToolsGuiDefinitionsVerticalLabelsVerticalCounter();
 			VerticalLabel = VerticalLabel_DefaultValue = new StockToolsGuiDefinitionsVerticalLabelsVerticalLabel();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public StockToolsGuiDefinitionsVerticalLabelsVerticalLabel VerticalLabel { get; set; }
 		private StockToolsGuiDefinitionsVerticalLabelsVerticalLabel VerticalLabel_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (VerticalArrow.IsDirty(highstock)) h.Add("verticalArrow",VerticalArrow.ToHashtable(highstock));
 			if (VerticalCounter.IsDirty(highstock)) h.Add("verticalCounter",VerticalCounter.ToHashtable(highstock));
 			if (VerticalLabel.IsDirty(highstock)) h.Add("verticalLabel",VerticalLabel.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

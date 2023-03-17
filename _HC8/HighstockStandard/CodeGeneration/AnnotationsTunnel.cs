@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ControlPointOptions = ControlPointOptions_DefaultValue = new AnnotationsTunnelControlPointOptions();
 			TypeOptions = TypeOptions_DefaultValue = new AnnotationsTunnelTypeOptions();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public AnnotationsTunnelTypeOptions TypeOptions { get; set; }
 		private AnnotationsTunnelTypeOptions TypeOptions_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (ControlPointOptions.IsDirty(highstock)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(highstock));
 			if (TypeOptions.IsDirty(highstock)) h.Add("typeOptions",TypeOptions.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

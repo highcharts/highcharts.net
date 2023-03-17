@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Click = Click_DefaultValue = "";
 			Remove = Remove_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Remove { get; set; }
 		private string Remove_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); highstock.AddFunction("afterUpdate", AfterUpdate); }  
 			if (Click != Click_DefaultValue) { h.Add("click",Click); highstock.AddFunction("click", Click); }  
 			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); highstock.AddFunction("remove", Remove); }  
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

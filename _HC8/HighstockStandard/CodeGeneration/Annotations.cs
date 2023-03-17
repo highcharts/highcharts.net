@@ -41,6 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -210,7 +211,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -241,7 +244,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (VerticalLine.IsDirty(highstock)) h.Add("verticalLine",VerticalLine.ToHashtable(highstock));
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

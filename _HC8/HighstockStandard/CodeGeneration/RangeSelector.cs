@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ButtonSpacing = ButtonSpacing_DefaultValue = 5;
 			ButtonTheme = ButtonTheme_DefaultValue = null;
 			Dropdown = Dropdown_DefaultValue = RangeSelectorDropdown.Responsive;
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			Floating = Floating_DefaultValue = false;
 			Height = Height_DefaultValue = null;
 			InputBoxBorderColor = InputBoxBorderColor_DefaultValue = "none";
@@ -41,6 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -210,7 +211,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -241,7 +244,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Shape = Shape_DefaultValue = "rect";
 			Text = Text_DefaultValue = "{y:.2f}";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -82,7 +83,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Text { get; set; }
 		private string Text_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -97,7 +100,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highstock.FirstCharacterToLower(Overflow.ToString()));
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
 			if (Text != Text_DefaultValue) h.Add("text",Text);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

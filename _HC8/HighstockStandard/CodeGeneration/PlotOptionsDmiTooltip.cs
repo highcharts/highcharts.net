@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			PointFormat = PointFormat_DefaultValue = "<span style='color: {point.color}'>●</span><b> {series.name}</b><br/><span style='color: {point.color}'>DX</span>: {point.y}<br/><span style='color: {point.series.options.plusDILine.styles.lineColor}'>+DI</span>: {point.plusDI}<br/><span style='color: {point.series.options.minusDILine.styles.lineColor}'>-DI</span>: {point.minusDI}<br/>";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,7 +27,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string PointFormat { get; set; }
 		private string PointFormat_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Styles = Styles_DefaultValue = new MacdSeriesMacdLineStyles();
 			Zones = Zones_DefaultValue = new MacdSeriesMacdLineZone();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public MacdSeriesMacdLineZone Zones { get; set; }
 		private MacdSeriesMacdLineZone Zones_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Styles.IsDirty(highstock)) h.Add("styles",Styles.ToHashtable(highstock));
 			if (Zones.IsDirty(highstock)) h.Add("zones",Zones.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

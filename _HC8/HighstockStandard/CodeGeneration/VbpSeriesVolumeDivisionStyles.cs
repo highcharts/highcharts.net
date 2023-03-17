@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			NegativeColor = NegativeColor_DefaultValue = "rgba(244, 91, 91, 0.8)";
 			PositiveColor = PositiveColor_DefaultValue = "rgba(144, 237, 125, 0.8)";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string PositiveColor { get; set; }
 		private string PositiveColor_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (PositiveColor != PositiveColor_DefaultValue) h.Add("positiveColor",PositiveColor);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Accessibility = Accessibility_DefaultValue = new ExportingAccessibility();
 			AllowHTML = AllowHTML_DefaultValue = false;
+			AllowTableSorting = AllowTableSorting_DefaultValue = true;
 			Buttons = Buttons_DefaultValue = new ExportingButtons();
 			ChartOptions = ChartOptions_DefaultValue = null;
 			Csv = Csv_DefaultValue = new ExportingCsv();
@@ -42,6 +43,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			UseRowspanHeaders = UseRowspanHeaders_DefaultValue = true;
 			Width = Width_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -57,6 +59,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? AllowHTML { get; set; }
 		private bool? AllowHTML_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Allows the end user to sort the data table by clicking on column headers.
+		/// </summary>
+		public bool? AllowTableSorting { get; set; }
+		private bool? AllowTableSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -218,7 +227,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -227,6 +238,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Accessibility.IsDirty(highstock)) h.Add("accessibility",Accessibility.ToHashtable(highstock));
 			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
+			if (AllowTableSorting != AllowTableSorting_DefaultValue) h.Add("allowTableSorting",AllowTableSorting);
 			if (Buttons.IsDirty(highstock)) h.Add("buttons",Buttons.ToHashtable(highstock));
 			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
 			if (Csv.IsDirty(highstock)) h.Add("csv",Csv.ToHashtable(highstock));
@@ -250,7 +262,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (UseMultiLevelHeaders != UseMultiLevelHeaders_DefaultValue) h.Add("useMultiLevelHeaders",UseMultiLevelHeaders);
 			if (UseRowspanHeaders != UseRowspanHeaders_DefaultValue) h.Add("useRowspanHeaders",UseRowspanHeaders);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

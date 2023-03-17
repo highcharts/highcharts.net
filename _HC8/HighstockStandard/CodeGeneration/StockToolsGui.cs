@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			IconsURL = IconsURL_DefaultValue = "";
 			ToolbarClassName = ToolbarClassName_DefaultValue = "stocktools-toolbar";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ToolbarClassName { get; set; }
 		private string ToolbarClassName_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -79,7 +82,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (IconsURL != IconsURL_DefaultValue) h.Add("iconsURL",IconsURL);
 			if (ToolbarClassName != ToolbarClassName_DefaultValue) h.Add("toolbarClassName",ToolbarClassName);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

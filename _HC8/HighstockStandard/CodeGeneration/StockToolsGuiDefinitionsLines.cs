@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Segment = Segment_DefaultValue = new StockToolsGuiDefinitionsLinesSegment();
 			VerticalLine = VerticalLine_DefaultValue = new StockToolsGuiDefinitionsLinesVerticalLine();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -90,7 +91,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public StockToolsGuiDefinitionsLinesVerticalLine VerticalLine { get; set; }
 		private StockToolsGuiDefinitionsLinesVerticalLine VerticalLine_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -106,7 +109,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Ray.IsDirty(highstock)) h.Add("ray",Ray.ToHashtable(highstock));
 			if (Segment.IsDirty(highstock)) h.Add("segment",Segment.ToHashtable(highstock));
 			if (VerticalLine.IsDirty(highstock)) h.Add("verticalLine",VerticalLine.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

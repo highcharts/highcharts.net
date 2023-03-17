@@ -18,15 +18,18 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Defer = Defer_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
-		/// The animation delay time in milliseconds.Set to `0` renders dataLabel immediately.As `undefined` inherits defer time from the [series.animation.defer](#plotOptions.series.animation.defer).
+		/// The animation delay time in milliseconds. Set to `0` to render thedata labels immediately. As `undefined` inherits defer time from the[series.animation.defer](#plotOptions.series.animation.defer).
 		/// </summary>
 		public double? Defer { get; set; }
 		private double? Defer_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

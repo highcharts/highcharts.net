@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			XAxisDescription = XAxisDescription_DefaultValue = "X axis, {name}";
 			YAxisDescription = YAxisDescription_DefaultValue = "Y axis, {name}";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string YAxisDescription { get; set; }
 		private string YAxisDescription_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -79,7 +82,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Summary.IsDirty(highstock)) h.Add("summary",Summary.ToHashtable(highstock));
 			if (XAxisDescription != XAxisDescription_DefaultValue) h.Add("xAxisDescription",XAxisDescription);
 			if (YAxisDescription != YAxisDescription_DefaultValue) h.Add("yAxisDescription",YAxisDescription);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

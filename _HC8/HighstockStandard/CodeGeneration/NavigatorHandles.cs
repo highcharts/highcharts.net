@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Symbols = Symbols_DefaultValue = new List<string>();
 			Width = Width_DefaultValue = 7;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -74,7 +75,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -88,7 +91,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Symbols != Symbols_DefaultValue) h.Add("symbols", HashifyList(highstock,Symbols));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

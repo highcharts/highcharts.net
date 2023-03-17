@@ -38,6 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			TrackBorderWidth = TrackBorderWidth_DefaultValue = 1;
 			ZIndex = ZIndex_DefaultValue = 3;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -186,7 +187,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -214,7 +217,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TrackBorderRadius != TrackBorderRadius_DefaultValue) h.Add("trackBorderRadius",TrackBorderRadius);
 			if (TrackBorderWidth != TrackBorderWidth_DefaultValue) h.Add("trackBorderWidth",TrackBorderWidth);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			OnPlayAsSoundClick = OnPlayAsSoundClick_DefaultValue = "";
 			OnViewDataTableClick = OnViewDataTableClick_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -74,7 +75,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string OnViewDataTableClick { get; set; }
 		private string OnViewDataTableClick_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -88,7 +91,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (BeforeChartFormatter != BeforeChartFormatter_DefaultValue) { h.Add("beforeChartFormatter",BeforeChartFormatter); highstock.AddFunction("beforeChartFormatter", BeforeChartFormatter); }  
 			if (OnPlayAsSoundClick != OnPlayAsSoundClick_DefaultValue) { h.Add("onPlayAsSoundClick",OnPlayAsSoundClick); highstock.AddFunction("onPlayAsSoundClick", OnPlayAsSoundClick); }  
 			if (OnViewDataTableClick != OnViewDataTableClick_DefaultValue) { h.Add("onViewDataTableClick",OnViewDataTableClick); highstock.AddFunction("onViewDataTableClick", OnViewDataTableClick); }  
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

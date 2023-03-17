@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Repeat = Repeat_DefaultValue = 0;
 			To = To_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? To { get; set; }
 		private double? To_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Repeat != Repeat_DefaultValue) h.Add("repeat",Repeat);
 			if (To != To_DefaultValue) h.Add("to",To);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

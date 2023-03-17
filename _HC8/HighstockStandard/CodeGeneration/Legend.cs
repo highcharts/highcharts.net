@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = null;
 			Floating = Floating_DefaultValue = false;
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new Hashtable();
-			ItemDistance = ItemDistance_DefaultValue = null;
+			ItemDistance = ItemDistance_DefaultValue = 20;
 			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable();
 			ItemHoverStyle = ItemHoverStyle_DefaultValue = new Hashtable();
 			ItemMarginBottom = ItemMarginBottom_DefaultValue = 0;
@@ -59,6 +59,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -354,7 +355,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -403,7 +406,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

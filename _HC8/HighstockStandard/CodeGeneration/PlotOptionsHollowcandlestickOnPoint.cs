@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Id = Id_DefaultValue = "";
 			Position = Position_DefaultValue = new PlotOptionsHollowcandlestickOnPointPosition();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsHollowcandlestickOnPointPosition Position { get; set; }
 		private PlotOptionsHollowcandlestickOnPointPosition Position_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ConnectorOptions.IsDirty(highstock)) h.Add("connectorOptions",ConnectorOptions.ToHashtable(highstock));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Position.IsDirty(highstock)) h.Add("position",Position.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

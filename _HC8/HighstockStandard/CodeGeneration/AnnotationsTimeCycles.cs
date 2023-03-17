@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShapeOptions = ShapeOptions_DefaultValue = new AnnotationsTimeCyclesShapeOptions();
 			TypeOptions = TypeOptions_DefaultValue = new AnnotationsTimeCyclesTypeOptions();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public AnnotationsTimeCyclesTypeOptions TypeOptions { get; set; }
 		private AnnotationsTimeCyclesTypeOptions TypeOptions_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ControlPointOptions.IsDirty(highstock)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(highstock));
 			if (ShapeOptions.IsDirty(highstock)) h.Add("shapeOptions",ShapeOptions.ToHashtable(highstock));
 			if (TypeOptions.IsDirty(highstock)) h.Add("typeOptions",TypeOptions.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

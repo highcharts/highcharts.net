@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Period = Period_DefaultValue = "undefined";
 			Periods = Periods_DefaultValue = new List<int>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<int> Periods { get; set; }
 		private List<int> Periods_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Period != Period_DefaultValue) h.Add("period",Period);
 			if (Periods != Periods_DefaultValue) h.Add("periods",Periods);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

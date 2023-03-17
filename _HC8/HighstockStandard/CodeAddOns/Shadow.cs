@@ -13,7 +13,7 @@ namespace Highsoft.Web.Mvc.Stocks
 	public partial class Shadow  : BaseObject
 	{
 		public Shadow() {
-            //Enabled = false;
+            Enabled = false;
             Color = "";
             OffsetX = 0;
             OffsetY = 0;
@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
         /// <summary>
         /// If a shadow with default values should be enabled
         /// </summary>
-        //public bool Enabled { get; set; }
+        public bool Enabled { get; set; }
 
 		/// <summary>
 		/// The Color of the Shadow

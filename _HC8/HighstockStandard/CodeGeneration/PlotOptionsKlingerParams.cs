@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SlowAvgPeriod = SlowAvgPeriod_DefaultValue = 55;
 			VolumeSeriesID = VolumeSeriesID_DefaultValue = "volume";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string VolumeSeriesID { get; set; }
 		private string VolumeSeriesID_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -79,7 +82,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (SignalPeriod != SignalPeriod_DefaultValue) h.Add("signalPeriod",SignalPeriod);
 			if (SlowAvgPeriod != SlowAvgPeriod_DefaultValue) h.Add("slowAvgPeriod",SlowAvgPeriod);
 			if (VolumeSeriesID != VolumeSeriesID_DefaultValue) h.Add("volumeSeriesID",VolumeSeriesID);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

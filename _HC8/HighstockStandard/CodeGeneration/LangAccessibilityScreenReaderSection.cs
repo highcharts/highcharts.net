@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BeforeRegionLabel = BeforeRegionLabel_DefaultValue = "";
 			EndOfChartMarker = EndOfChartMarker_DefaultValue = "End of interactive chart.";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string EndOfChartMarker { get; set; }
 		private string EndOfChartMarker_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(highstock,Annotations));
 			if (BeforeRegionLabel != BeforeRegionLabel_DefaultValue) h.Add("beforeRegionLabel",BeforeRegionLabel);
 			if (EndOfChartMarker != EndOfChartMarker_DefaultValue) h.Add("endOfChartMarker",EndOfChartMarker);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

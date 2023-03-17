@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Arrow = Arrow_DefaultValue = new DefsArrow();
 			ReverseArrow = ReverseArrow_DefaultValue = new DefsReverse_arrow();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public DefsReverse_arrow ReverseArrow { get; set; }
 		private DefsReverse_arrow ReverseArrow_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Arrow.IsDirty(highstock)) h.Add("arrow",Arrow.ToHashtable(highstock));
 			if (ReverseArrow.IsDirty(highstock)) h.Add("reverseArrow",ReverseArrow.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

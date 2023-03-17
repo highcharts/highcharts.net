@@ -90,6 +90,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Xrange = Xrange_DefaultValue = new PlotOptionsXrange();
 			Zigzag = Zigzag_DefaultValue = new PlotOptionsZigzag();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -602,7 +603,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsZigzag Zigzag { get; set; }
 		private PlotOptionsZigzag Zigzag_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -682,7 +685,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Wma.IsDirty(highstock)) h.Add("wma",Wma.ToHashtable(highstock));
 			if (Xrange.IsDirty(highstock)) h.Add("xrange",Xrange.ToHashtable(highstock));
 			if (Zigzag.IsDirty(highstock)) h.Add("zigzag",Zigzag.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

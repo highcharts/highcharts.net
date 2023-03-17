@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SeriesNavigation = SeriesNavigation_DefaultValue = new AccessibilityKeyboardNavigationSeriesNavigation();
 			WrapAround = WrapAround_DefaultValue = true;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? WrapAround { get; set; }
 		private bool? WrapAround_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Order != Order_DefaultValue) h.Add("order",Order);
 			if (SeriesNavigation.IsDirty(highstock)) h.Add("seriesNavigation",SeriesNavigation.ToHashtable(highstock));
 			if (WrapAround != WrapAround_DefaultValue) h.Add("wrapAround",WrapAround);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

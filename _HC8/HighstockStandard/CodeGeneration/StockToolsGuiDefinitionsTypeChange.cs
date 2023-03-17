@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			TypeLine = TypeLine_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeLine();
 			TypeOHLC = TypeOHLC_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeOHLC();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -74,7 +75,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public StockToolsGuiDefinitionsTypeChangeTypeOHLC TypeOHLC { get; set; }
 		private StockToolsGuiDefinitionsTypeChangeTypeOHLC TypeOHLC_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -88,7 +91,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TypeHollowCandlestick.IsDirty(highstock)) h.Add("typeHollowCandlestick",TypeHollowCandlestick.ToHashtable(highstock));
 			if (TypeLine.IsDirty(highstock)) h.Add("typeLine",TypeLine.ToHashtable(highstock));
 			if (TypeOHLC.IsDirty(highstock)) h.Add("typeOHLC",TypeOHLC.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

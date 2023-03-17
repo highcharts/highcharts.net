@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Main = Main_DefaultValue = "%H:%M:%S.%L";
 			Range = Range_DefaultValue = false;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Range { get; set; }
 		private bool? Range_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Main != Main_DefaultValue) h.Add("main",Main);
 			if (Range != Range_DefaultValue) h.Add("range",Range);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

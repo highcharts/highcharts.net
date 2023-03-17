@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Opacity = Opacity_DefaultValue = null;
 			Size = Size_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Hashtable Size { get; set; }
 		private Hashtable Size_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Size != Size_DefaultValue) h.Add("size",Size);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

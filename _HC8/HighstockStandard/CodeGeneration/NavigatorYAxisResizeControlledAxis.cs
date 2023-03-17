@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Next = Next_DefaultValue = new List<string>();
 			Prev = Prev_DefaultValue = new List<string>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -32,9 +33,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Array of axes that should move with the current axiswhile resizing.
 		/// </summary>
-		public List<string>  Prev { get; set; }
+		public List<string> Prev { get; set; }
 		private List<string> Prev_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Next != Next_DefaultValue) h.Add("next",Next);
 			if (Prev != Prev_DefaultValue) h.Add("prev",Prev);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

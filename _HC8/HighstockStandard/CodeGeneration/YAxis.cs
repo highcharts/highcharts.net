@@ -67,7 +67,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
-			Opposite = Opposite_DefaultValue = false;
+			Opposite = Opposite_DefaultValue = true;
 			Ordinal = Ordinal_DefaultValue = true;
 			Overscroll = Overscroll_DefaultValue = 0;
 			PanningEnabled = PanningEnabled_DefaultValue = true;
@@ -75,12 +75,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
 			Range = Range_DefaultValue = null;
 			Resize = Resize_DefaultValue = new YAxisResize();
-			Reversed = Reversed_DefaultValue = null;
+			Reversed = Reversed_DefaultValue = false;
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			Scrollbar = Scrollbar_DefaultValue = new YAxisScrollbar();
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
-			ShowLastLabel = ShowLastLabel_DefaultValue = "undefined";
+			ShowLastLabel = ShowLastLabel_DefaultValue = null;
 			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
@@ -103,6 +103,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ZIndex = ZIndex_DefaultValue = 2;
 			ZoomEnabled = ZoomEnabled_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -557,8 +558,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Whether to show the last tick label.
 		/// </summary>
-		public string ShowLastLabel { get; set; }
-		private string ShowLastLabel_DefaultValue { get; set; }
+		public bool? ShowLastLabel { get; set; }
+		private bool? ShowLastLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -706,7 +707,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? ZoomEnabled { get; set; }
 		private bool? ZoomEnabled_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -799,7 +802,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

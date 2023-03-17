@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			TypeOptions = TypeOptions_DefaultValue = new AnnotationsVerticalLineTypeOptions();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,7 +27,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public AnnotationsVerticalLineTypeOptions TypeOptions { get; set; }
 		private AnnotationsVerticalLineTypeOptions TypeOptions_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -34,7 +37,14 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (TypeOptions.IsDirty(highstock)) h.Add("typeOptions",TypeOptions.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

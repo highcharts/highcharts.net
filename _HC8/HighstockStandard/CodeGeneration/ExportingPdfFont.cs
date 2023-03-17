@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Italic = Italic_DefaultValue = "undefined";
 			Normal = Normal_DefaultValue = "undefined";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Normal { get; set; }
 		private string Normal_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Bolditalic != Bolditalic_DefaultValue) h.Add("bolditalic",Bolditalic);
 			if (Italic != Italic_DefaultValue) h.Add("italic",Italic);
 			if (Normal != Normal_DefaultValue) h.Add("normal",Normal);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new PlotOptionsKlingerAccessibilityKeyboardNavigation();
 			Point = Point_DefaultValue = new PlotOptionsKlingerAccessibilityPoint();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsKlingerAccessibilityPoint Point { get; set; }
 		private PlotOptionsKlingerAccessibilityPoint Point_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ExposeAsGroupOnly != ExposeAsGroupOnly_DefaultValue) h.Add("exposeAsGroupOnly",ExposeAsGroupOnly);
 			if (KeyboardNavigation.IsDirty(highstock)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(highstock));
 			if (Point.IsDirty(highstock)) h.Add("point",Point.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

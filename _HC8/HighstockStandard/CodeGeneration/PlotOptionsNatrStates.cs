@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Normal = Normal_DefaultValue = new PlotOptionsNatrStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsNatrStatesSelect();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsNatrStatesSelect Select { get; set; }
 		private PlotOptionsNatrStatesSelect Select_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Inactive.IsDirty(highstock)) h.Add("inactive",Inactive.ToHashtable(highstock));
 			if (Normal.IsDirty(highstock)) h.Add("normal",Normal.ToHashtable(highstock));
 			if (Select.IsDirty(highstock)) h.Add("select",Select.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

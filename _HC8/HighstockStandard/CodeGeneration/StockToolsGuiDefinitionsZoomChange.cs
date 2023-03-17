@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ZoomXY = ZoomXY_DefaultValue = new StockToolsGuiDefinitionsZoomChangeZoomXY();
 			ZoomY = ZoomY_DefaultValue = new StockToolsGuiDefinitionsZoomChangeZoomY();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public StockToolsGuiDefinitionsZoomChangeZoomY ZoomY { get; set; }
 		private StockToolsGuiDefinitionsZoomChangeZoomY ZoomY_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ZoomX.IsDirty(highstock)) h.Add("zoomX",ZoomX.ToHashtable(highstock));
 			if (ZoomXY.IsDirty(highstock)) h.Add("zoomXY",ZoomXY.ToHashtable(highstock));
 			if (ZoomY.IsDirty(highstock)) h.Add("zoomY",ZoomY.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

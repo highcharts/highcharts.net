@@ -27,6 +27,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LastAnchor = LastAnchor_DefaultValue = "start";
 			Smoothed = Smoothed_DefaultValue = false;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -98,7 +99,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Smoothed { get; set; }
 		private bool? Smoothed_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -115,7 +118,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GroupPixelWidth != GroupPixelWidth_DefaultValue) h.Add("groupPixelWidth",GroupPixelWidth);
 			if (LastAnchor != LastAnchor_DefaultValue) h.Add("lastAnchor",LastAnchor);
 			if (Smoothed != Smoothed_DefaultValue) h.Add("smoothed",Smoothed);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

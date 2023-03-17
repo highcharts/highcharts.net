@@ -23,10 +23,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = new ColorAxisPlotLinesEvents();
 			Id = Id_DefaultValue = "";
 			Label = Label_DefaultValue = new ColorAxisPlotLinesLabel();
+			Labels = Labels_DefaultValue = new ColorAxisPlotLinesLabels();
 			Value = Value_DefaultValue = null;
 			Width = Width_DefaultValue = 2;
 			ZIndex = ZIndex_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -80,6 +82,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public ColorAxisPlotLinesLabels Labels { get; set; }
+		private ColorAxisPlotLinesLabels Labels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The position of the line in axis units.
 		/// </summary>
 		public double? Value { get; set; }
@@ -98,7 +107,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -112,10 +123,18 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
+			if (Labels.IsDirty(highstock)) h.Add("labels",Labels.ToHashtable(highstock));
 			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

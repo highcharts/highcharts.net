@@ -45,6 +45,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SwitchRowsAndColumns = SwitchRowsAndColumns_DefaultValue = false;
 			Table = Table_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -242,7 +243,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Table { get; set; }
 		private string Table_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -277,7 +280,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (StartRow != StartRow_DefaultValue) h.Add("startRow",StartRow);
 			if (SwitchRowsAndColumns != SwitchRowsAndColumns_DefaultValue) h.Add("switchRowsAndColumns",SwitchRowsAndColumns);
 			if (Table != Table_DefaultValue) h.Add("table",Table);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

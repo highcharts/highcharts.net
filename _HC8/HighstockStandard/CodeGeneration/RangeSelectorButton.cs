@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Title = Title_DefaultValue = "";
 			Type = Type_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -90,7 +91,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Type { get; set; }
 		private string Type_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -106,7 +109,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Title != Title_DefaultValue) h.Add("title",Title);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

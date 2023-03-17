@@ -50,6 +50,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
          "Friday", "Saturday"};
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -275,7 +276,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<string> Weekdays { get; set; }
 		private List<string> Weekdays_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -314,7 +317,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ViewData != ViewData_DefaultValue) h.Add("viewData",ViewData);
 			if (ViewFullscreen != ViewFullscreen_DefaultValue) h.Add("viewFullscreen",ViewFullscreen);
 			if (Weekdays != Weekdays_DefaultValue) h.Add("weekdays",Weekdays);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

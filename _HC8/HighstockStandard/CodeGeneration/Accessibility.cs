@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Series = Series_DefaultValue = new List<Series>();
 			TypeDescription = TypeDescription_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -114,7 +115,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string TypeDescription { get; set; }
 		private string TypeDescription_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -133,7 +136,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ScreenReaderSection.IsDirty(highstock)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highstock));
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

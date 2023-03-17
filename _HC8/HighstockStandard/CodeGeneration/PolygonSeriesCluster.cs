@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			States = States_DefaultValue = new PolygonSeriesClusterStates();
 			Zones = Zones_DefaultValue = new List<PolygonSeriesClusterZone>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -114,7 +115,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<PolygonSeriesClusterZone> Zones { get; set; }
 		private List<PolygonSeriesClusterZone> Zones_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -133,7 +136,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MinimumClusterSize != MinimumClusterSize_DefaultValue) h.Add("minimumClusterSize",MinimumClusterSize);
 			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(highstock,Zones));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

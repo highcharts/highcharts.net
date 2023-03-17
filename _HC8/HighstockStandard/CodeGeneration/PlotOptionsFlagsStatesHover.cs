@@ -28,6 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LineWidthPlus = LineWidthPlus_DefaultValue = null;
 			Marker = Marker_DefaultValue = new PlotOptionsFlagsStatesHoverMarker();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -106,7 +107,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsFlagsStatesHoverMarker Marker { get; set; }
 		private PlotOptionsFlagsStatesHoverMarker Marker_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -124,7 +127,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -64,6 +64,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Wma = Wma_DefaultValue = new List<string>();
 			Zigzag = Zigzag_DefaultValue = new List<string>();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -394,7 +395,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public List<string> Zigzag { get; set; }
 		private List<string> Zigzag_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -448,7 +451,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Williamsr != Williamsr_DefaultValue) h.Add("williamsr",Williamsr);
 			if (Wma != Wma_DefaultValue) h.Add("wma",Wma);
 			if (Zigzag != Zigzag_DefaultValue) h.Add("zigzag",Zigzag);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

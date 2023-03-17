@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MenuItemStyle = MenuItemStyle_DefaultValue = new Hashtable();
 			MenuStyle = MenuStyle_DefaultValue = new Hashtable();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -90,7 +91,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Hashtable MenuStyle { get; set; }
 		private Hashtable MenuStyle_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -106,7 +109,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MenuItemHoverStyle != MenuItemHoverStyle_DefaultValue) h.Add("menuItemHoverStyle",MenuItemHoverStyle);
 			if (MenuItemStyle != MenuItemStyle_DefaultValue) h.Add("menuItemStyle",MenuItemStyle);
 			if (MenuStyle != MenuStyle_DefaultValue) h.Add("menuStyle",MenuStyle);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

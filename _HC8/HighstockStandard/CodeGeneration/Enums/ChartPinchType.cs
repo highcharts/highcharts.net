@@ -7,9 +7,9 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum ChartPinchType
     {
-        Null, 
-		X, 
+        X, 
 		Y, 
-		Xy
+		Xy, 
+		Null
     }
 }

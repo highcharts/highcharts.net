@@ -38,6 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ThousandsSep = ThousandsSep_DefaultValue = ",";
 			Zoom = Zoom_DefaultValue = new LangAccessibilityZoom();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -186,7 +187,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public LangAccessibilityZoom Zoom { get; set; }
 		private LangAccessibilityZoom Zoom_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -214,7 +217,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Table.IsDirty(highstock)) h.Add("table",Table.ToHashtable(highstock));
 			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
 			if (Zoom.IsDirty(highstock)) h.Add("zoom",Zoom.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

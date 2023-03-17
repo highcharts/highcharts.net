@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			SelectButton = SelectButton_DefaultValue = "";
 			ShowPopup = ShowPopup_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ShowPopup { get; set; }
 		private string ShowPopup_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DeselectButton != DeselectButton_DefaultValue) { h.Add("deselectButton",DeselectButton); highstock.AddFunction("deselectButton", DeselectButton); }  
 			if (SelectButton != SelectButton_DefaultValue) { h.Add("selectButton",SelectButton); highstock.AddFunction("selectButton", SelectButton); }  
 			if (ShowPopup != ShowPopup_DefaultValue) { h.Add("showPopup",ShowPopup); highstock.AddFunction("showPopup", ShowPopup); }  
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

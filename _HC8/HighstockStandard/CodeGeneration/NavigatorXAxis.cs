@@ -97,6 +97,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ZIndex = ZIndex_DefaultValue = 2;
 			ZoomEnabled = ZoomEnabled_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -658,7 +659,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? ZoomEnabled { get; set; }
 		private bool? ZoomEnabled_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -745,7 +748,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

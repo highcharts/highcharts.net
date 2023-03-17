@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MaxInputLabel = MaxInputLabel_DefaultValue = "Select end date.";
 			MinInputLabel = MinInputLabel_DefaultValue = "Select start date.";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string MinInputLabel { get; set; }
 		private string MinInputLabel_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DropdownLabel != DropdownLabel_DefaultValue) h.Add("dropdownLabel",DropdownLabel);
 			if (MaxInputLabel != MaxInputLabel_DefaultValue) h.Add("maxInputLabel",MaxInputLabel);
 			if (MinInputLabel != MinInputLabel_DefaultValue) h.Add("minInputLabel",MinInputLabel);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

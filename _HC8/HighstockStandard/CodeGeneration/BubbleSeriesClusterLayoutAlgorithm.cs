@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Iterations = Iterations_DefaultValue = null;
 			KmeansThreshold = KmeansThreshold_DefaultValue = 100;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -66,7 +67,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? KmeansThreshold { get; set; }
 		private double? KmeansThreshold_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -80,7 +83,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Iterations != Iterations_DefaultValue) h.Add("iterations",Iterations);
 			if (KmeansThreshold != KmeansThreshold_DefaultValue) h.Add("kmeansThreshold",KmeansThreshold);
 			h.Add("type","bubbleclusterlayoutalgorithm");
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

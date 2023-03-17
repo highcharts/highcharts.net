@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			KmeansThreshold = KmeansThreshold_DefaultValue = 100;
 			Type = Type_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -74,7 +75,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Type { get; set; }
 		private string Type_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -88,7 +91,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Iterations != Iterations_DefaultValue) h.Add("iterations",Iterations);
 			if (KmeansThreshold != KmeansThreshold_DefaultValue) h.Add("kmeansThreshold",KmeansThreshold);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

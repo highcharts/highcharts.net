@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MouseOver = MouseOver_DefaultValue = "";
 			Show = Show_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -82,7 +83,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Show { get; set; }
 		private string Show_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -97,7 +100,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); highstock.AddFunction("mouseOut", MouseOut); }  
 			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); highstock.AddFunction("mouseOver", MouseOver); }  
 			if (Show != Show_DefaultValue) { h.Add("show",Show); highstock.AddFunction("show", Show); }  
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

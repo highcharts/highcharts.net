@@ -16,17 +16,18 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public SmaSeriesMarker()
 		{
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = false;
 			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			FillColor = FillColor_DefaultValue = "";
 			Height = Height_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
-			Radius = Radius_DefaultValue = 4;
+			Radius = Radius_DefaultValue = 2;
 			States = States_DefaultValue = new SmaSeriesMarkerStates();
 			Symbol = Symbol_DefaultValue = "";
 			Width = Width_DefaultValue = null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -98,7 +99,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Width { get; set; }
 		private double? Width_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -115,7 +118,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

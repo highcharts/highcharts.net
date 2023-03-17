@@ -28,6 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Render = Render_DefaultValue = "";
 			Selection = Selection_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -106,7 +107,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Selection { get; set; }
 		private string Selection_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -124,7 +127,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); highstock.AddFunction("redraw", Redraw); }  
 			if (Render != Render_DefaultValue) { h.Add("render",Render); highstock.AddFunction("render", Render); }  
 			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); highstock.AddFunction("selection", Selection); }  
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Attributes = Attributes_DefaultValue = null;
 			TagName = TagName_DefaultValue = "marker";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string TagName { get; set; }
 		private string TagName_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
 			if (TagName != TagName_DefaultValue) h.Add("tagName",TagName);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

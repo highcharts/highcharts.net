@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			RefX = RefX_DefaultValue = 9;
 			RefY = RefY_DefaultValue = 5;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? RefY { get; set; }
 		private double? RefY_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MarkerWidth != MarkerWidth_DefaultValue) h.Add("markerWidth",MarkerWidth);
 			if (RefX != RefX_DefaultValue) h.Add("refX",RefX);
 			if (RefY != RefY_DefaultValue) h.Add("refY",RefY);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

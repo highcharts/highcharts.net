@@ -28,8 +28,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Distance = Distance_DefaultValue = 16;
 			Enabled = Enabled_DefaultValue = true;
-			FollowPointer = FollowPointer_DefaultValue = null;
-			FollowTouchMove = FollowTouchMove_DefaultValue = null;
+			FollowPointer = FollowPointer_DefaultValue = false;
+			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			FooterFormat = FooterFormat_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
@@ -47,7 +47,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Shape = Shape_DefaultValue = "callout";
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
-			Split = Split_DefaultValue = null;
+			Split = Split_DefaultValue = true;
 			StickOnContact = StickOnContact_DefaultValue = false;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
@@ -56,6 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ValueSuffix = ValueSuffix_DefaultValue = "";
 			XDateFormat = XDateFormat_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -330,7 +331,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string XDateFormat { get; set; }
 		private string XDateFormat_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -376,7 +379,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
 			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);
 			if (XDateFormat != XDateFormat_DefaultValue) h.Add("xDateFormat",XDateFormat);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

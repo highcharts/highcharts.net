@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			TableSummary = TableSummary_DefaultValue = "Table representation of chart.";
 			ViewAsDataTableButtonText = ViewAsDataTableButtonText_DefaultValue = "View as data table, {chartTitle}";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,7 +35,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ViewAsDataTableButtonText { get; set; }
 		private string ViewAsDataTableButtonText_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -43,7 +46,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (TableSummary != TableSummary_DefaultValue) h.Add("tableSummary",TableSummary);
 			if (ViewAsDataTableButtonText != ViewAsDataTableButtonText_DefaultValue) h.Add("viewAsDataTableButtonText",ViewAsDataTableButtonText);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

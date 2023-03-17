@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Normal = Normal_DefaultValue = new PlotOptionsKlingerStatesSelectMarkerStatesNormal();
 			Select = Select_DefaultValue = new PlotOptionsKlingerStatesSelectMarkerStatesSelect();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,7 +43,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsKlingerStatesSelectMarkerStatesSelect Select { get; set; }
 		private PlotOptionsKlingerStatesSelectMarkerStatesSelect Select_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -52,7 +55,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Hover.IsDirty(highstock)) h.Add("hover",Hover.ToHashtable(highstock));
 			if (Normal.IsDirty(highstock)) h.Add("normal",Normal.ToHashtable(highstock));
 			if (Select.IsDirty(highstock)) h.Add("select",Select.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

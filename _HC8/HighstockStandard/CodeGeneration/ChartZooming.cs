@@ -17,11 +17,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		public ChartZooming()
 		{
 			Key = Key_DefaultValue = ChartZoomingKey.Null;
-			PinchType = PinchType_DefaultValue = ChartZoomingPinchType.Null;
+			PinchType = PinchType_DefaultValue = ChartZoomingPinchType.X;
 			ResetButton = ResetButton_DefaultValue = new ChartZoomingResetButton();
 			SingleTouch = SingleTouch_DefaultValue = false;
 			Type = Type_DefaultValue = ChartZoomingType.Null;
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -58,7 +59,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public ChartZoomingType Type { get; set; }
 		private ChartZoomingType Type_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -70,7 +73,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ResetButton.IsDirty(highstock)) h.Add("resetButton",ResetButton.ToHashtable(highstock));
 			if (SingleTouch != SingleTouch_DefaultValue) h.Add("singleTouch",SingleTouch);
 			if (Type != Type_DefaultValue) h.Add("type", highstock.FirstCharacterToLower(Type.ToString()));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

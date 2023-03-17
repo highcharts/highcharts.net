@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MeasureXY = MeasureXY_DefaultValue = new StockToolsGuiDefinitionsMeasureMeasureXY();
 			MeasureY = MeasureY_DefaultValue = new StockToolsGuiDefinitionsMeasureMeasureY();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public StockToolsGuiDefinitionsMeasureMeasureY MeasureY { get; set; }
 		private StockToolsGuiDefinitionsMeasureMeasureY MeasureY_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MeasureX.IsDirty(highstock)) h.Add("measureX",MeasureX.ToHashtable(highstock));
 			if (MeasureXY.IsDirty(highstock)) h.Add("measureXY",MeasureXY.ToHashtable(highstock));
 			if (MeasureY.IsDirty(highstock)) h.Add("measureY",MeasureY.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

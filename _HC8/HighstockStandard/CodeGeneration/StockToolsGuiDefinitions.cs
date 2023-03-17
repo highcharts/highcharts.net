@@ -32,6 +32,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			VerticalLabels = VerticalLabels_DefaultValue = new StockToolsGuiDefinitionsVerticalLabels();
 			ZoomChange = ZoomChange_DefaultValue = new StockToolsGuiDefinitionsZoomChange();
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -138,7 +139,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public StockToolsGuiDefinitionsZoomChange ZoomChange { get; set; }
 		private StockToolsGuiDefinitionsZoomChange ZoomChange_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -160,7 +163,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TypeChange.IsDirty(highstock)) h.Add("typeChange",TypeChange.ToHashtable(highstock));
 			if (VerticalLabels.IsDirty(highstock)) h.Add("verticalLabels",VerticalLabels.ToHashtable(highstock));
 			if (ZoomChange.IsDirty(highstock)) h.Add("zoomChange",ZoomChange.ToHashtable(highstock));
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

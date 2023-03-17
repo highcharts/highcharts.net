@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			DescriptionSinglePoint = DescriptionSinglePoint_DefaultValue = "{annotationText}. Related to {annotationPoint}";
 			Heading = Heading_DefaultValue = "Chart annotations summary";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -50,7 +51,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Heading { get; set; }
 		private string Heading_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -61,7 +64,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DescriptionNoPoints != DescriptionNoPoints_DefaultValue) h.Add("descriptionNoPoints",DescriptionNoPoints);
 			if (DescriptionSinglePoint != DescriptionSinglePoint_DefaultValue) h.Add("descriptionSinglePoint",DescriptionSinglePoint);
 			if (Heading != Heading_DefaultValue) h.Add("heading",Heading);
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}

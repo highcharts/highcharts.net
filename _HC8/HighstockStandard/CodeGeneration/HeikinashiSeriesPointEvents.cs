@@ -27,6 +27,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Unselect = Unselect_DefaultValue = "";
 			Update = Update_DefaultValue = "";
 			
+			CustomFields = new Hashtable();
 		}	
 		
 
@@ -98,7 +99,9 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Update { get; set; }
 		private string Update_DefaultValue { get; set; }
-		  
+		 
+
+		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
@@ -115,7 +118,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Select != Select_DefaultValue) { h.Add("select",Select); highstock.AddFunction("select", Select); }  
 			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); highstock.AddFunction("unselect", Unselect); }  
 			if (Update != Update_DefaultValue) { h.Add("update",Update); highstock.AddFunction("update", Update); }  
-			
+			if (CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
 
 			return h;
 		}
