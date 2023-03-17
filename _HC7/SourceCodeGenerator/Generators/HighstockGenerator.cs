@@ -148,9 +148,6 @@ namespace SourceCodeGenerator.Generators
                 apiItem.Defaults = "Chart title";
             }
 
-            if (apiItem.FullName.StartsWith("yAxis.opposite"))
-                apiItem.Defaults = "false";
-
             if (apiItem.FullName.StartsWith("xAxis.minPadding"))
                 apiItem.Defaults = "0.01";
 
@@ -158,7 +155,7 @@ namespace SourceCodeGenerator.Generators
                 apiItem.Defaults = "0.01";
         }
 
-        
+
 
         protected override void GenerateClass(ApiItem item, List<ApiItem> children)
         {
@@ -269,15 +266,11 @@ namespace SourceCodeGenerator.Generators
                 hashtableComparers += formattedComparer;
             }
 
-
             string className = GetClassNameFromItem(item);
 
-            if (className.EndsWith("SeriesData"))
-            {
-                properties += CustomFieldsService.GetProperty();
-                defaultValues += CustomFieldsService.GetInit();
-                hashtableComparers += CustomFieldsService.GetCopyLogic();
-            }
+            properties += CustomFieldsService.GetProperty();
+            defaultValues += CustomFieldsService.GetInit();
+            hashtableComparers += CustomFieldsService.GetCopyLogic();
 
             string extendsClass = "";
 
