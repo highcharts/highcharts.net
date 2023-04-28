@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
             sb.Append("<script type='text/javascript'>");
             sb.Append($"var ChartOptions = {GetStartupOptions()};");
-            sb.Append($"new Highcharts.chart(\"{_chart.Chart.RenderTo}\",ChartOptions);");
+            sb.Append($"Highcharts.chart(\"{_chart.Chart.RenderTo}\",ChartOptions);");
 
             sb.Append("</script>");
             return sb.ToString();
@@ -112,7 +112,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
 
             sb.Append($"function {functionName}() {{");
             sb.Append($"var ChartOptions = {GetStartupOptions()};");
-            sb.Append($"new Highcharts.StockChart(\"{_chart.Chart.RenderTo}\",ChartOptions);");
+            sb.Append($"Highcharts.StockChart(\"{_chart.Chart.RenderTo}\",ChartOptions);");
             sb.Append("}");
 
             sb.Append("</script>");
@@ -135,7 +135,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
             
             sb.Append($"function createChart{_chart.Chart.RenderTo}() {{");//s3
             sb.Append($"var ChartOptions = {GetStartupOptions()};");//s3
-            sb.Append($"new Highcharts.StockChart(\"{_chart.Chart.RenderTo}\",ChartOptions);");//s3
+            sb.Append($"Highcharts.StockChart(\"{_chart.Chart.RenderTo}\",ChartOptions);");//s3
             sb.Append("}");//s3
 
             sb.Append("</script>");
