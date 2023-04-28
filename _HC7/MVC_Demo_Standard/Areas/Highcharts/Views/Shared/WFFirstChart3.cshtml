@@ -5,7 +5,7 @@
         <li>Add references.<br/>
                            <pre>using Highsoft.Web.Mvc.Charts;<br />using Highsoft.Web.Mvc.Charts.Rendering;</pre></li>
         <li>Create <code>Highcharts</code> object in <code>Page_Load</code> method.<br />
-            <pre>
+                                                                                   <pre>
 public partial class HighchartsControl : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -23,15 +23,15 @@ public partial class HighchartsControl : System.Web.UI.UserControl
                 Text = "Source: WorldClimate.com",
                 X = -20
             },
-            XAxis = new List<XAxis>
+            XAxis = new List&lt;XAxis&gt;
             {
                 new XAxis
                 {
-                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    Categories = new List&lt;string&gt; { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
                             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
                 }
             },
-            YAxis = new List<YAxis>
+            YAxis = new List&lt;YAxis&gt;
             {
                 new YAxis
                 {
@@ -39,7 +39,7 @@ public partial class HighchartsControl : System.Web.UI.UserControl
                     {
                         Text = "Temperature (°C)"
                     },
-                    PlotLines = new List<YAxisPlotLines>
+                    PlotLines = new List&lt;YAxisPlotLines&gt;
                     {
                         new YAxisPlotLines
                         {
@@ -61,27 +61,27 @@ public partial class HighchartsControl : System.Web.UI.UserControl
                 VerticalAlign = LegendVerticalAlign.Middle,
                 BorderWidth = 0
             },
-            Series = new List<Series>
+            Series = new List&lt;Series&gt;
             {
                 new LineSeries
                 {
                     Name = "Tokyo",
-                    Data = tokyoData as List<LineSeriesData>
+                    Data = tokyoData as List&lt;LineSeriesData&gt;
                 },
                 new LineSeries
                 {
                     Name = "NY",
-                    Data = nyData as List<LineSeriesData>
+                    Data = nyData as List&lt;LineSeriesData&gt;
                 },
                 new LineSeries
                 {
                     Name = "Berlin",
-                    Data = berlinData as List<LineSeriesData>
+                    Data = berlinData as List&lt;LineSeriesData&gt;
                 },
                 new LineSeries
                 {
                     Name = "London",
-                    Data = londonData as List<LineSeriesData>
+                    Data = londonData as List&lt;LineSeriesData&gt;
                 }
             }
         };
@@ -108,14 +108,14 @@ namespace HighchartsWebForms.Control
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<double> tokyoValues = new List<double> { 7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6 };
-            List<double> nyValues = new List<double> { -0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5 };
-            List<double> berlinValues = new List<double> { -0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0 };
-            List<double> londonValues = new List<double> { 3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8 };
-            List<LineSeriesData> tokyoData = new List<LineSeriesData>();
-            List<LineSeriesData> nyData = new List<LineSeriesData>();
-            List<LineSeriesData> berlinData = new List<LineSeriesData>();
-            List<LineSeriesData> londonData = new List<LineSeriesData>();
+            List&lt;double&gt; tokyoValues = new List&lt;double&gt; { 7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6 };
+            List&lt;double&gt; nyValues = new List&lt;double&gt; { -0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5 };
+            List&lt;double&gt; berlinValues = new List&lt;double&gt; { -0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0 };
+            List&lt;double&gt; londonValues = new List&lt;double&gt; { 3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8 };
+            List&lt;LineSeriesData> tokyoData = new List&lt;LineSeriesData&gt;();
+            List&lt;LineSeriesData> nyData = new List&lt;LineSeriesData&gt;();
+            List&lt;LineSeriesData> berlinData = new List&lt;LineSeriesData&gt;();
+            List&lt;LineSeriesData> londonData = new List&lt;LineSeriesData&gt;();
 
             tokyoValues.ForEach(p => tokyoData.Add(new LineSeriesData { Y = p }));
             nyValues.ForEach(p => nyData.Add(new LineSeriesData { Y = p }));
@@ -134,15 +134,15 @@ namespace HighchartsWebForms.Control
                     Text = "Source: WorldClimate.com",
                     X = -20
                 },
-                XAxis = new List<XAxis>
+                XAxis = new List&lt;XAxis&gt;
             {
                 new XAxis
                 {
-                    Categories = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    Categories = new List&lt;string&gt; { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" },
                 }
             },
-                YAxis = new List<YAxis>
+                YAxis = new List&lt;YAxis&gt;
             {
                 new YAxis
                 {
@@ -150,7 +150,7 @@ namespace HighchartsWebForms.Control
                     {
                         Text = "Temperature (°C)"
                     },
-                    PlotLines = new List<YAxisPlotLines>
+                    PlotLines = new List&lt;YAxisPlotLines&gt;
                     {
                             new YAxisPlotLines
                         {
@@ -172,27 +172,27 @@ namespace HighchartsWebForms.Control
                     VerticalAlign = LegendVerticalAlign.Middle,
                     BorderWidth = 0
                 },
-                Series = new List<Series>
+                Series = new List&lt;Series&gt;
             {
                 new LineSeries
                 {
                     Name = "Tokyo",
-                    Data = tokyoData as List<LineSeriesData>
+                    Data = tokyoData as List&lt;LineSeriesData&gt;
                 },
                 new LineSeries
                 {
                     Name = "NY",
-                    Data = nyData as List<LineSeriesData>
+                    Data = nyData as List&lt;LineSeriesData&gt;
                 },
                 new LineSeries
                 {
                     Name = "Berlin",
-                    Data = berlinData as List<LineSeriesData>
+                    Data = berlinData as List&lt;LineSeriesData&gt;
                 },
                 new LineSeries
                 {
                     Name = "London",
-                    Data = londonData as List<LineSeriesData>
+                    Data = londonData as List&lt;LineSeriesData&gt;
                 }
             }
             };
