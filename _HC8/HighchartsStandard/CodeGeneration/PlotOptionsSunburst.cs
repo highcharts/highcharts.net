@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			AllowTraversingTree = AllowTraversingTree_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = true;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsSunburstBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = 1;

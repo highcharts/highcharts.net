@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowTraversingTree = AllowTraversingTree_DefaultValue = false;
 			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = true;
 			AnimationLimit = AnimationLimit_DefaultValue = 250;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsTreemapBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;

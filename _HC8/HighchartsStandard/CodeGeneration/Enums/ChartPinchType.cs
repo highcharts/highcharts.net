@@ -7,9 +7,10 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartPinchType
     {
-        Null, 
+        Undefined, 
 		X, 
 		Y, 
-		Xy
+		Xy, 
+		Null
     }
 }

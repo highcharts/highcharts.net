@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
 			X = X_DefaultValue = -8;
-			Y = Y_DefaultValue = null;
+			Y = Y_DefaultValue = 3;
 			ZIndex = ZIndex_DefaultValue = 7;
 			
 			CustomFields = new Hashtable();

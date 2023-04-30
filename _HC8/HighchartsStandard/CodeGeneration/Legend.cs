@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = null;
 			Floating = Floating_DefaultValue = false;
 			ItemCheckboxStyle = ItemCheckboxStyle_DefaultValue = new Hashtable();
-			ItemDistance = ItemDistance_DefaultValue = null;
+			ItemDistance = ItemDistance_DefaultValue = 20;
 			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable();
 			ItemHoverStyle = ItemHoverStyle_DefaultValue = new Hashtable();
 			ItemMarginBottom = ItemMarginBottom_DefaultValue = 0;

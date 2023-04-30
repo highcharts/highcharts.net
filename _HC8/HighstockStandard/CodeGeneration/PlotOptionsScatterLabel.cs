@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "undefined";
 			Formatter = Formatter_DefaultValue = "";
-			MaxFontSize = MaxFontSize_DefaultValue = 0;
-			MinFontSize = MinFontSize_DefaultValue = 0;
+			MaxFontSize = MaxFontSize_DefaultValue = null;
+			MinFontSize = MinFontSize_DefaultValue = null;
 			OnArea = OnArea_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;

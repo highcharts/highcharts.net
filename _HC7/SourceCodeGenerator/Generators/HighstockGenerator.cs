@@ -632,6 +632,9 @@ namespace SourceCodeGenerator.Generators
 
             result = result.Replace('-', '_');
 
+            if (result.ToString().Equals("NavigationAnnotationsOptionsFibonacciTimeZone"))
+                result.Replace("NavigationAnnotationsOptionsFibonacciTimeZone", "NavigationAnnotationsOptionsFibonacciTimeZones");
+
             return result.ToString();
         }
 

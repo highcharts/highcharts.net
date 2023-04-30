@@ -10,11 +10,11 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Stocks
 {
-	public partial class NavigationAnnotationsOptionsFibonacciTimeZone  : BaseObject
+	public partial class NavigationAnnotationsOptionsFibonacciTimeZones  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 
-		public NavigationAnnotationsOptionsFibonacciTimeZone()
+		public NavigationAnnotationsOptionsFibonacciTimeZones()
 		{
 			ControlPointOptions = ControlPointOptions_DefaultValue = new NavigationAnnotationsOptionsFibonacciTimeZonesControlPointOptions();
 			LabelOptions = LabelOptions_DefaultValue = new NavigationAnnotationsOptionsFibonacciTimeZonesLabelOptions();

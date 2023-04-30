@@ -20,8 +20,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ClusterFormat = ClusterFormat_DefaultValue = "Clustered points: {point.clusterPointsAmount}";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Distance = Distance_DefaultValue = 16;
-			FollowPointer = FollowPointer_DefaultValue = null;
-			FollowTouchMove = FollowTouchMove_DefaultValue = null;
+			FollowPointer = FollowPointer_DefaultValue = false;
+			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			FooterFormat = FooterFormat_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
 			HeaderShape = HeaderShape_DefaultValue = ErrorbarSeriesTooltipHeaderShape.Callout;
@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Padding = Padding_DefaultValue = 8;
 			PointFormat = PointFormat_DefaultValue = "";
 			PointFormatter = PointFormatter_DefaultValue = "";
-			Split = Split_DefaultValue = null;
+			Split = Split_DefaultValue = false;
 			StickOnContact = StickOnContact_DefaultValue = false;
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = "";

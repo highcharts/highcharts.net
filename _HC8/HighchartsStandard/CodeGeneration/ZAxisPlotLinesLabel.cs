@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Text = Text_DefaultValue = "";
 			TextAlign = TextAlign_DefaultValue = ZAxisPlotLinesLabelTextAlign.Null;
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = ZAxisPlotLinesLabelVerticalAlign.Null;
+			VerticalAlign = VerticalAlign_DefaultValue = ZAxisPlotLinesLabelVerticalAlign.Top;
 			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			

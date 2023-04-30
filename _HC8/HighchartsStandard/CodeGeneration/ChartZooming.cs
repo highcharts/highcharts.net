@@ -16,11 +16,11 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartZooming()
 		{
-			Key = Key_DefaultValue = ChartZoomingKey.Null;
-			PinchType = PinchType_DefaultValue = ChartZoomingPinchType.Null;
+			Key = Key_DefaultValue = ChartZoomingKey.Undefined;
+			PinchType = PinchType_DefaultValue = ChartZoomingPinchType.Undefined;
 			ResetButton = ResetButton_DefaultValue = new ChartZoomingResetButton();
 			SingleTouch = SingleTouch_DefaultValue = false;
-			Type = Type_DefaultValue = ChartZoomingType.Null;
+			Type = Type_DefaultValue = ChartZoomingType.Undefined;
 			
 			CustomFields = new Hashtable();
 		}	

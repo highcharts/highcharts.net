@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigatorYAxisResizeControlledAxis()
 		{
-			Next = Next_DefaultValue = new List<string>();
-			Prev = Prev_DefaultValue = new List<string>();
+			Next = Next_DefaultValue = {};
+			Prev = Prev_DefaultValue = {};
 			
 			CustomFields = new Hashtable();
 		}	
@@ -26,15 +26,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Array of axes that should move out of the way of resizingbeing done for the current axis. If not set, the next axiswill be used.
 		/// </summary>
-		public List<string> Next { get; set; }
-		private List<string> Next_DefaultValue { get; set; }
+		public Array.<(number|string)> Next { get; set; }
+		private Array.<(number|string)> Next_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Array of axes that should move with the current axiswhile resizing.
 		/// </summary>
-		public List<string> Prev { get; set; }
-		private List<string> Prev_DefaultValue { get; set; }
+		public Array.<(number|string)> Prev { get; set; }
+		private Array.<(number|string)> Prev_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

@@ -27,8 +27,8 @@ namespace Highsoft.Web.Mvc.Charts
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			Distance = Distance_DefaultValue = 16;
 			Enabled = Enabled_DefaultValue = true;
-			FollowPointer = FollowPointer_DefaultValue = null;
-			FollowTouchMove = FollowTouchMove_DefaultValue = null;
+			FollowPointer = FollowPointer_DefaultValue = false;
+			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			FooterFormat = FooterFormat_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Shape = Shape_DefaultValue = "callout";
 			Shared = Shared_DefaultValue = false;
 			Snap = Snap_DefaultValue = null;
-			Split = Split_DefaultValue = null;
+			Split = Split_DefaultValue = false;
 			StickOnContact = StickOnContact_DefaultValue = false;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;

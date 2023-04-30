@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SpacingTop = SpacingTop_DefaultValue = 10;
 			Style = Style_DefaultValue = new Hashtable();
 			StyledMode = StyledMode_DefaultValue = false;
-			Type = Type_DefaultValue = ChartType.Abands;
+			Type = Type_DefaultValue = ChartType.Line;
 			Width = Width_DefaultValue = "";
 			WidthNumber = WidthNumber_DefaultValue = null;
 			ZoomBySingleTouch = ZoomBySingleTouch_DefaultValue = false;

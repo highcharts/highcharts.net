@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AnnotationsTimeCyclesTypeOptions()
 		{
 			Line = Line_DefaultValue = new AnnotationsTimeCyclesTypeOptionsLine();
-			Points = Points_DefaultValue = "";
+			Points = Points_DefaultValue = null;
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Points { get; set; }
-		private string Points_DefaultValue { get; set; }
+		public Object Points { get; set; }
+		private Object Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>

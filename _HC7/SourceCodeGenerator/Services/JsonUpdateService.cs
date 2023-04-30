@@ -354,6 +354,14 @@ namespace SourceCodeGenerator.Services
             
             ItemsToUpdate.Add("plotOptions.organization.link.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value= "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Curved" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Straight" } });
             ItemsToUpdate.Add("plotOptions.treegraph.link.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "Curved" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Curved" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Straight" } });
+
+            ItemsToUpdate.Add("plotOptions.series.label.maxFontSize", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Default, Value = "null" } });
+            ItemsToUpdate.Add("plotOptions.series.label.minFontSize", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Default, Value = "null" } });
+
+            ItemsToUpdate.Add("annotations.fibonacciTimeZones.typeOptions.points", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value= "Object" } });
+            ItemsToUpdate.Add("annotations.timeCycles.typeOptions.points", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+
+            ItemsToUpdate.Add("lang.accessibility.resetZoomButton", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
         }
 
         public void Delete(ApiItem item)

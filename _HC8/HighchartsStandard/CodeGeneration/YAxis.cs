@@ -71,7 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PanningEnabled = PanningEnabled_DefaultValue = true;
 			PlotBands = PlotBands_DefaultValue = new List<YAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<YAxisPlotLines>();
-			Reversed = Reversed_DefaultValue = null;
+			Reversed = Reversed_DefaultValue = false;
 			ReversedStacks = ReversedStacks_DefaultValue = true;
 			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
@@ -96,7 +96,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TooltipValueFormat = TooltipValueFormat_DefaultValue = "undefined";
 			Top = Top_DefaultValue = "";
 			TopNumber = TopNumber_DefaultValue = null;
-			Type = Type_DefaultValue = "";
+			Type = Type_DefaultValue = "linear";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
 			Width = Width_DefaultValue = "";

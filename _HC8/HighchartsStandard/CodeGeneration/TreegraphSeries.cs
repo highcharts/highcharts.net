@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowTraversingTree = AllowTraversingTree_DefaultValue = false;
 			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = true;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
 			BorderRadius = BorderRadius_DefaultValue = 0;
