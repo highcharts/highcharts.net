@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Highstock</AssemblyName>
-    <Version>10.3.3.1</Version>
+    <Version>10.3.3.2</Version>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>highcharts.snk</AssemblyOriginatorKeyFile>
@@ -11,7 +11,10 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageId>Highsoft.Highstock</PackageId>
     <PackageReleaseNotes>
-      Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+     #10.3.3.2
+     Add solution for JS v11
+
      #10.3.3.1
      Add Custom Fields to Highstock .NET
 
@@ -62,8 +65,8 @@
     <PackageIconUrl>http://dotnet.highcharts.com/Content/images/logo_png.png</PackageIconUrl>
     <PackageTags>chart charts charting graph graphs plot plots diagram diagrams highcharts highstock visualisation visualization data-visualisation data-visualization diagram line-chart 3d-chart finance web-forms mvc</PackageTags>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <AssemblyVersion>10.3.3.1</AssemblyVersion>
-    <FileVersion>10.3.3.1</FileVersion>
+    <AssemblyVersion>10.3.3.2</AssemblyVersion>
+    <FileVersion>10.3.3.2</FileVersion>
     <PackageLicenseUrl></PackageLicenseUrl>
   </PropertyGroup>
 
