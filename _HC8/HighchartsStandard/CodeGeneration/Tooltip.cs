@@ -17,10 +17,10 @@ namespace Highsoft.Web.Mvc.Charts
 		public Tooltip()
 		{
 			Animation = Animation_DefaultValue = new Animation();
-			BackgroundColor = BackgroundColor_DefaultValue = "";
+			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 3;
-			BorderWidth = BorderWidth_DefaultValue = 1;
+			BorderWidth = BorderWidth_DefaultValue = "undefined";
 			ClassName = ClassName_DefaultValue = "";
 			ClusterFormat = ClusterFormat_DefaultValue = "Clustered points: {point.clusterPointsAmount}";
 			Crosshairs = Crosshairs_DefaultValue = new List<Crosshair>();
@@ -88,10 +88,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pixel width of the tooltip border.In styled mode, the stroke width is set in the`.highcharts-tooltip-box` class.
+		/// The pixel width of the tooltip border. Defaults to 0 for singletooltips and 1 for split tooltips.In styled mode, the stroke width is set in the`.highcharts-tooltip-box` class.
 		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
+		public string BorderWidth { get; set; }
+		private string BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -270,7 +270,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Split the tooltip into one label per series, with the header closeto the axis. This is recommended over [shared](#tooltip.shared)tooltips for charts with multiple line series, generally making themeasier to read. This option takes precedence over `tooltip.shared`.
+		/// Split the tooltip into one label per series, with the header closeto the axis. This is recommended over [shared](#tooltip.shared)tooltips for charts with multiple line series, generally making themeasier to read. This option takes precedence over `tooltip.shared`.Not supported for [polar](#chart.polar) and [inverted](#chart.inverted) charts.
 		/// </summary>
 		public bool? Split { get; set; }
 		private bool? Split_DefaultValue { get; set; }

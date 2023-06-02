@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public HeikinashiSeriesAccessibility()
 		{
 			Description = Description_DefaultValue = "";
+			DescriptionFormat = DescriptionFormat_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = null;
 			ExposeAsGroupOnly = ExposeAsGroupOnly_DefaultValue = null;
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new HeikinashiSeriesAccessibilityKeyboardNavigation();
@@ -31,6 +32,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Format to use for describing the data series group to assistivetechnology - including screen readers.
+		/// </summary>
+		public string DescriptionFormat { get; set; }
+		private string DescriptionFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -69,6 +77,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (DescriptionFormat != DescriptionFormat_DefaultValue) h.Add("descriptionFormat",DescriptionFormat);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (ExposeAsGroupOnly != ExposeAsGroupOnly_DefaultValue) h.Add("exposeAsGroupOnly",ExposeAsGroupOnly);
 			if (KeyboardNavigation.IsDirty(highstock)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(highstock));

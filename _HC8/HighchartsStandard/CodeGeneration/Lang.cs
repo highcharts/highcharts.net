@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DecimalPoint = DecimalPoint_DefaultValue = ".";
 			DownloadCSV = DownloadCSV_DefaultValue = "Download CSV";
 			DownloadJPEG = DownloadJPEG_DefaultValue = "Download JPEG image";
+			DownloadMIDI = DownloadMIDI_DefaultValue = "Download MIDI";
 			DownloadPDF = DownloadPDF_DefaultValue = "Download PDF document";
 			DownloadPNG = DownloadPNG_DefaultValue = "Download PNG image";
 			DownloadSVG = DownloadSVG_DefaultValue = "Download SVG vector image";
@@ -37,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			NoData = NoData_DefaultValue = "No data to display";
 			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
 			NumericSymbols = NumericSymbols_DefaultValue = new List<string> {"k", "M", "G", "T", "P", "E"};
+			PlayAsSound = PlayAsSound_DefaultValue = "Play as sound";
 			PrintChart = PrintChart_DefaultValue = "Print chart";
 			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
 			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
@@ -53,7 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Configure the accessibility strings in the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and information on itsfeatures, see[Highcharts Accessibility](https://www.highcharts.com/docs/chart-concepts/accessibility).For more dynamic control over the accessibility functionality, see[accessibility.point.descriptionFormatter](#accessibility.point.descriptionFormatter),[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),and[accessibility.screenReaderSection.beforeChartFormatter](#accessibility.screenReaderSection.beforeChartFormatter).
+		/// Configure the accessibility strings in the chart. Requires the[accessibility module](https://code.highcharts.com/modules/accessibility.js)to be loaded. For a description of the module and information on itsfeatures, see[Highcharts Accessibility](https://www.highcharts.com/docs/chart-concepts/accessibility).The lang options use [Format Strings](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#format-strings)with variables that are replaced at run time. These variables should beused when available, to avoid duplicating text that is defined elsewhere.For more dynamic control over the accessibility functionality, see[accessibility.point.descriptionFormatter](#accessibility.point.descriptionFormatter),[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),and[accessibility.screenReaderSection.beforeChartFormatter](#accessibility.screenReaderSection.beforeChartFormatter).
 		/// </summary>
 		public LangAccessibility Accessibility { get; set; }
 		private LangAccessibility Accessibility_DefaultValue { get; set; }
@@ -85,6 +87,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string DownloadJPEG { get; set; }
 		private string DownloadJPEG_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The text for the MIDI download menu item in the export menu.
+		/// </summary>
+		public string DownloadMIDI { get; set; }
+		private string DownloadMIDI_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -200,6 +209,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The text for the Play as sound menu item in the export menu.
+		/// </summary>
+		public string PlayAsSound { get; set; }
+		private string PlayAsSound_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Exporting module only. The text for the menu item to print the chart.
 		/// </summary>
 		public string PrintChart { get; set; }
@@ -274,6 +290,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
 			if (DownloadCSV != DownloadCSV_DefaultValue) h.Add("downloadCSV",DownloadCSV);
 			if (DownloadJPEG != DownloadJPEG_DefaultValue) h.Add("downloadJPEG",DownloadJPEG);
+			if (DownloadMIDI != DownloadMIDI_DefaultValue) h.Add("downloadMIDI",DownloadMIDI);
 			if (DownloadPDF != DownloadPDF_DefaultValue) h.Add("downloadPDF",DownloadPDF);
 			if (DownloadPNG != DownloadPNG_DefaultValue) h.Add("downloadPNG",DownloadPNG);
 			if (DownloadSVG != DownloadSVG_DefaultValue) h.Add("downloadSVG",DownloadSVG);
@@ -290,6 +307,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
 			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
 			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);
+			if (PlayAsSound != PlayAsSound_DefaultValue) h.Add("playAsSound",PlayAsSound);
 			if (PrintChart != PrintChart_DefaultValue) h.Add("printChart",PrintChart);
 			if (ResetZoom != ResetZoom_DefaultValue) h.Add("resetZoom",ResetZoom);
 			if (ResetZoomTitle != ResetZoomTitle_DefaultValue) h.Add("resetZoomTitle",ResetZoomTitle);

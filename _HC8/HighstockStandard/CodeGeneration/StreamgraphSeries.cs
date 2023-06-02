@@ -21,8 +21,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = true;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BoostBlending = BoostBlending_DefaultValue = StreamgraphSeriesBoostBlending.Undefined;
-			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
@@ -63,9 +61,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			LastPrice = LastPrice_DefaultValue = new StreamgraphSeriesLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new StreamgraphSeriesLastVisiblePrice();
 			LegendIndex = LegendIndex_DefaultValue = null;
+			LegendSymbol = LegendSymbol_DefaultValue = StreamgraphSeriesLegendSymbol.Rectangle;
 			Linecap = Linecap_DefaultValue = StreamgraphSeriesLinecap.Round;
 			LineColor = LineColor_DefaultValue = "";
-			LineWidth = LineWidth_DefaultValue = 2;
+			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new StreamgraphSeriesMarker();
 			Name = Name_DefaultValue = "";
@@ -89,17 +88,16 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
+			Sonification = Sonification_DefaultValue = new StreamgraphSeriesSonification();
 			Stack = Stack_DefaultValue = "";
 			StackNumber = StackNumber_DefaultValue = null;
 			Stacking = Stacking_DefaultValue = StreamgraphSeriesStacking.Null;
 			States = States_DefaultValue = new StreamgraphSeriesStates();
-			Step = Step_DefaultValue = StreamgraphSeriesStep.Null;
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new StreamgraphSeriesTooltip();
 			TrackByArea = TrackByArea_DefaultValue = false;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
 			XAxisNumber = XAxisNumber_DefaultValue = null;
@@ -149,20 +147,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Sets the color blending in the boost module.
-		/// </summary>
-		public StreamgraphSeriesBoostBlending BoostBlending { get; set; }
-		private StreamgraphSeriesBoostBlending BoostBlending_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.
-		/// </summary>
-		public double? BoostThreshold { get; set; }
-		private double? BoostThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement. Changes to the series' color will also be reflected in achart's legend and tooltip.
 		/// </summary>
 		public string ClassName { get; set; }
@@ -205,7 +189,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -240,7 +224,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.
+		/// Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.In stacked area chart, if `connectNulls` is set to true,null points are interpreted as 0.
 		/// </summary>
 		public bool? ConnectNulls { get; set; }
 		private bool? ConnectNulls_DefaultValue { get; set; }
@@ -443,6 +427,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public StreamgraphSeriesLegendSymbol LegendSymbol { get; set; }
+		private StreamgraphSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The line cap used for line ends and line joins on the graph.
 		/// </summary>
 		public StreamgraphSeriesLinecap Linecap { get; set; }
@@ -576,14 +567,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -625,6 +616,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Sonification/audio chart options for a series.
+		/// </summary>
+		public StreamgraphSeriesSonification Sonification { get; set; }
+		private StreamgraphSeriesSonification Sonification_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
 		/// </summary>
 		public override string Stack { get; set; }
@@ -650,13 +648,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public StreamgraphSeriesStates States { get; set; }
 		private StreamgraphSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply steps to the line. Possible values are `left`,`center` and `right`.
-		/// </summary>
-		public StreamgraphSeriesStep Step { get; set; }
-		private StreamgraphSeriesStep Step_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -692,13 +683,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? TurboThreshold { get; set; }
 		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The parameter allows setting line series type and use OHLC indicators.Data in OHLC format is required.
-		/// </summary>
-		public bool? UseOhlcData { get; set; }
-		private bool? UseOhlcData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -769,8 +753,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highstock.FirstCharacterToLower(BoostBlending.ToString()));
-			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -811,6 +793,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LastPrice.IsDirty(highstock)) h.Add("lastPrice",LastPrice.ToHashtable(highstock));
 			if (LastVisiblePrice.IsDirty(highstock)) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable(highstock));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highstock.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
@@ -841,18 +824,17 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (Sonification.IsDirty(highstock)) h.Add("sonification",Sonification.ToHashtable(highstock));
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
 			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
 			if (Stacking != Stacking_DefaultValue) h.Add("stacking", highstock.FirstCharacterToLower(Stacking.ToString()));
 			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
-			if (Step != Step_DefaultValue) h.Add("step", highstock.FirstCharacterToLower(Step.ToString()));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty(highstock)) h.Add("tooltip",Tooltip.ToHashtable(highstock));
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			h.Add("type","streamgraph");
-			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);

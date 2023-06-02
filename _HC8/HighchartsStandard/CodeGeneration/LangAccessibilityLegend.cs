@@ -25,21 +25,21 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// 
+		/// Accessible label for individual legend items. `{itemName}` refersto the visual text in the legend for that item.
 		/// </summary>
 		public string LegendItem { get; set; }
 		private string LegendItem_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Accessible label for the legend, for charts where there is alegend title defined. `{legendTitle}` refers to the visual textin the legend title.
 		/// </summary>
 		public string LegendLabel { get; set; }
 		private string LegendLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Accessible label for the legend, for charts where there is nolegend title defined.
 		/// </summary>
 		public string LegendLabelNoTitle { get; set; }
 		private string LegendLabelNoTitle_DefaultValue { get; set; }

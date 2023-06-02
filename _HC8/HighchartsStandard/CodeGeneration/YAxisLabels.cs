@@ -20,8 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
-			Distance = Distance_DefaultValue = "-25";
-			DistanceNumber = DistanceNumber_DefaultValue = null;
+			Distance = Distance_DefaultValue = 15;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Step = Step_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
-			X = X_DefaultValue = -8;
+			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = 3;
 			ZIndex = ZIndex_DefaultValue = 7;
 			
@@ -73,17 +72,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Angular gauges and solid gauges only.The label's pixel distance from the perimeter of the plot area.Since v7.1.2: If it's a percentage string, it is interpreted thesame as [series.radius](#plotOptions.gauge.radius), so label can bealigned under the gauge's shape.
+		/// The label's pixel distance from the perimeter of the plot area.On cartesian charts, this is overridden if the `labels.y` settingis set.* On polar charts, if it's a percentage string, it is interpretedthe same as [series.radius](#plotOptions.gauge.radius), so thelabel can be aligned under the gauge's shape.
 		/// </summary>
-		public string Distance { get; set; }
-		private string Distance_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Angular gauges and solid gauges only.The label's pixel distance from the perimeter of the plot area.Since v7.1.2: If it's a percentage string, it is interpreted thesame as [series.radius](#plotOptions.gauge.radius), so label can bealigned under the gauge's shape.
-		/// </summary>
-		public double? DistanceNumber { get; set; }
-		private double? DistanceNumber_DefaultValue { get; set; }
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -217,7 +209,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (AutoRotationLimit != AutoRotationLimit_DefaultValue) h.Add("autoRotationLimit",AutoRotationLimit);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (DistanceNumber != DistanceNumber_DefaultValue) h.Add("distance",DistanceNumber);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  

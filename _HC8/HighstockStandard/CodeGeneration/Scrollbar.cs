@@ -18,23 +18,24 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			BarBackgroundColor = BarBackgroundColor_DefaultValue = "#cccccc";
 			BarBorderColor = BarBorderColor_DefaultValue = "#cccccc";
-			BarBorderRadius = BarBorderRadius_DefaultValue = 0;
-			BarBorderWidth = BarBorderWidth_DefaultValue = 1;
+			BarBorderRadius = BarBorderRadius_DefaultValue = 5;
+			BarBorderWidth = BarBorderWidth_DefaultValue = 0;
 			ButtonArrowColor = ButtonArrowColor_DefaultValue = "#333333";
 			ButtonBackgroundColor = ButtonBackgroundColor_DefaultValue = "#e6e6e6";
 			ButtonBorderColor = ButtonBorderColor_DefaultValue = "#cccccc";
 			ButtonBorderRadius = ButtonBorderRadius_DefaultValue = 0;
 			ButtonBorderWidth = ButtonBorderWidth_DefaultValue = 1;
+			ButtonsEnabled = ButtonsEnabled_DefaultValue = false;
 			Enabled = Enabled_DefaultValue = true;
-			Height = Height_DefaultValue = null;
+			Height = Height_DefaultValue = 10;
 			LiveRedraw = LiveRedraw_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			MinWidth = MinWidth_DefaultValue = 6;
-			RifleColor = RifleColor_DefaultValue = "#333333";
+			RifleColor = RifleColor_DefaultValue = "none";
 			ShowFull = ShowFull_DefaultValue = true;
-			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "#f2f2f2";
-			TrackBorderColor = TrackBorderColor_DefaultValue = "#f2f2f2";
-			TrackBorderRadius = TrackBorderRadius_DefaultValue = 0;
+			TrackBackgroundColor = TrackBackgroundColor_DefaultValue = "rgba(255, 255, 255, 0.001)";
+			TrackBorderColor = TrackBorderColor_DefaultValue = "#cccccc";
+			TrackBorderRadius = TrackBorderRadius_DefaultValue = 5;
 			TrackBorderWidth = TrackBorderWidth_DefaultValue = 1;
 			ZIndex = ZIndex_DefaultValue = 3;
 			
@@ -106,6 +107,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Enable or disable the buttons at the end of the scrollbar.
+		/// </summary>
+		public bool? ButtonsEnabled { get; set; }
+		private bool? ButtonsEnabled_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the scrollbar.
 		/// </summary>
 		public bool? Enabled { get; set; }
@@ -113,7 +121,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The height of the scrollbar. The height also applies to the widthof the scroll arrows so that they are always squares. Defaults to20 for touch devices and 14 for mouse devices.
+		/// The height of the scrollbar. If `buttonsEnabled` is true , the heightalso applies to the width of the scroll arrows so that they are alwayssquares.
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
@@ -127,7 +135,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The margin between the scrollbar and its axis when the scrollbar isapplied directly to an axis.
+		/// The margin between the scrollbar and its axis when the scrollbar isapplied directly to an axis, or the navigator in case that is enabled.Defaults to 10 for axis, 0 for navigator.
 		/// </summary>
 		public double? Margin { get; set; }
 		private double? Margin_DefaultValue { get; set; }
@@ -205,6 +213,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ButtonBorderColor != ButtonBorderColor_DefaultValue) h.Add("buttonBorderColor",ButtonBorderColor);
 			if (ButtonBorderRadius != ButtonBorderRadius_DefaultValue) h.Add("buttonBorderRadius",ButtonBorderRadius);
 			if (ButtonBorderWidth != ButtonBorderWidth_DefaultValue) h.Add("buttonBorderWidth",ButtonBorderWidth);
+			if (ButtonsEnabled != ButtonsEnabled_DefaultValue) h.Add("buttonsEnabled",ButtonsEnabled);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);

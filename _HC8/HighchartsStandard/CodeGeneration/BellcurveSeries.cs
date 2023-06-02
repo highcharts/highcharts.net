@@ -23,7 +23,6 @@ namespace Highsoft.Web.Mvc.Charts
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BaseSeries = BaseSeries_DefaultValue = "";
 			BaseSeriesNumber = BaseSeriesNumber_DefaultValue = null;
-			BoostBlending = BoostBlending_DefaultValue = BellcurveSeriesBoostBlending.Undefined;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
@@ -41,7 +40,6 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new BellcurveSeriesDataLabels();
 			DataSorting = DataSorting_DefaultValue = new BellcurveSeriesDataSorting();
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new BellcurveSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new BellcurveSeriesEvents();
 			FillColor = FillColor_DefaultValue = null;
@@ -55,9 +53,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new BellcurveSeriesLabel();
 			LegendIndex = LegendIndex_DefaultValue = null;
+			LegendSymbol = LegendSymbol_DefaultValue = BellcurveSeriesLegendSymbol.Rectangle;
 			Linecap = Linecap_DefaultValue = BellcurveSeriesLinecap.Round;
 			LineColor = LineColor_DefaultValue = "";
-			LineWidth = LineWidth_DefaultValue = 2;
+			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new BellcurveSeriesMarker();
 			Name = Name_DefaultValue = "";
@@ -78,16 +77,15 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
+			Sonification = Sonification_DefaultValue = new BellcurveSeriesSonification();
 			Stack = Stack_DefaultValue = "";
 			StackNumber = StackNumber_DefaultValue = null;
 			States = States_DefaultValue = new BellcurveSeriesStates();
-			Step = Step_DefaultValue = BellcurveSeriesStep.Null;
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new BellcurveSeriesTooltip();
 			TrackByArea = TrackByArea_DefaultValue = false;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
 			XAxisNumber = XAxisNumber_DefaultValue = null;
@@ -151,13 +149,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Sets the color blending in the boost module.
-		/// </summary>
-		public BellcurveSeriesBoostBlending BoostBlending { get; set; }
-		private BellcurveSeriesBoostBlending BoostBlending_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement. Changes to the series' color will also be reflected in achart's legend and tooltip.
 		/// </summary>
 		public string ClassName { get; set; }
@@ -200,7 +191,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -274,13 +265,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
-		/// </summary>
-		public BellcurveSeriesDragDrop DragDrop { get; set; }
-		private BellcurveSeriesDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -372,6 +356,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override double? LegendIndex { get; set; }
 		protected override double? LegendIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public BellcurveSeriesLegendSymbol LegendSymbol { get; set; }
+		private BellcurveSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -494,14 +485,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -536,6 +527,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Sonification/audio chart options for a series.
+		/// </summary>
+		public BellcurveSeriesSonification Sonification { get; set; }
+		private BellcurveSeriesSonification Sonification_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
 		/// </summary>
 		public override string Stack { get; set; }
@@ -554,13 +552,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public BellcurveSeriesStates States { get; set; }
 		private BellcurveSeriesStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply steps to the line. Possible values are `left`,`center` and `right`.
-		/// </summary>
-		public BellcurveSeriesStep Step { get; set; }
-		private BellcurveSeriesStep Step_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -596,13 +587,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? TurboThreshold { get; set; }
 		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The parameter allows setting line series type and use OHLC indicators.Data in OHLC format is required.
-		/// </summary>
-		public bool? UseOhlcData { get; set; }
-		private bool? UseOhlcData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -675,7 +659,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
 			if (BaseSeriesNumber != BaseSeriesNumber_DefaultValue) h.Add("baseSeries",BaseSeriesNumber);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -693,7 +676,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (DataSorting.IsDirty(highcharts)) h.Add("dataSorting",DataSorting.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
@@ -707,6 +689,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
@@ -734,17 +717,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
 			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
 			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
-			if (Step != Step_DefaultValue) h.Add("step", highcharts.FirstCharacterToLower(Step.ToString()));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty(highcharts)) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
 			if (TrackByArea != TrackByArea_DefaultValue) h.Add("trackByArea",TrackByArea);
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			h.Add("type","bellcurve");
-			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);

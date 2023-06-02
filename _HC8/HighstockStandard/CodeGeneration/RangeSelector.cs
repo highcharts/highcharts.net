@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			InputBoxBorderColor = InputBoxBorderColor_DefaultValue = "none";
 			InputBoxHeight = InputBoxHeight_DefaultValue = 17;
 			InputBoxWidth = InputBoxWidth_DefaultValue = null;
-			InputDateFormat = InputDateFormat_DefaultValue = "%b %e, %Y";
+			InputDateFormat = InputDateFormat_DefaultValue = "%e %b %Y";
 			InputDateParser = InputDateParser_DefaultValue = "";
 			InputEditDateFormat = InputEditDateFormat_DefaultValue = "%Y-%m-%d";
 			InputEnabled = InputEnabled_DefaultValue = true;
@@ -130,7 +130,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The date format in the input boxes when not selected for editing.Defaults to `%b %e, %Y`.This is used to determine which type of input to show,`datetime-local`, `date` or `time` and falling back to `text` whenthe browser does not support the input type or the format containsmilliseconds.
+		/// The date format in the input boxes when not selected for editing.Defaults to `%e %b %Y`.This is used to determine which type of input to show,`datetime-local`, `date` or `time` and falling back to `text` whenthe browser does not support the input type or the format containsmilliseconds.
 		/// </summary>
 		public string InputDateFormat { get; set; }
 		private string InputDateFormat_DefaultValue { get; set; }

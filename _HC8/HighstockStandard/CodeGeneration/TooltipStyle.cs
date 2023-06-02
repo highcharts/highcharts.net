@@ -18,8 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Color = Color_DefaultValue = "#333333";
 			Cursor = Cursor_DefaultValue = "default";
-			FontSize = FontSize_DefaultValue = "12px";
-			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
+			FontSize = FontSize_DefaultValue = "0.8em";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -46,13 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string FontSize_DefaultValue { get; set; }
 		 
 
-		/// <summary>
-		/// 
-		/// </summary>
-		public string WhiteSpace { get; set; }
-		private string WhiteSpace_DefaultValue { get; set; }
-		 
-
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -63,7 +55,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			if (WhiteSpace != WhiteSpace_DefaultValue) h.Add("whiteSpace",WhiteSpace);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

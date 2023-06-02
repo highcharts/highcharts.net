@@ -22,25 +22,25 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowTraversingTree = AllowTraversingTree_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = true;
-			BoostBlending = BoostBlending_DefaultValue = SunburstSeriesBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
+			BorderRadius = BorderRadius_DefaultValue = null;
+			BorderRadiusString = BorderRadiusString_DefaultValue = "null";
+			BorderRadiusNumber = BorderRadiusNumber_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			Breadcrumbs = Breadcrumbs_DefaultValue = new SunburstSeriesBreadcrumbs();
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			ClassName = ClassName_DefaultValue = "";
+			Clip = Clip_DefaultValue = false;
 			Color = Color_DefaultValue = "";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
 			ColorIndex = ColorIndex_DefaultValue = null;
-			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
 			Crisp = Crisp_DefaultValue = true;
 			Cursor = Cursor_DefaultValue = SunburstSeriesCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			Data = Data_DefaultValue = new List<SunburstSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
-			DataSorting = DataSorting_DefaultValue = new SunburstSeriesDataSorting();
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new SunburstSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new SunburstSeriesEvents();
 			FillColor = FillColor_DefaultValue = null;
@@ -48,12 +48,11 @@ namespace Highsoft.Web.Mvc.Charts
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			Label = Label_DefaultValue = new SunburstSeriesLabel();
 			LegendIndex = LegendIndex_DefaultValue = null;
+			LegendSymbol = LegendSymbol_DefaultValue = SunburstSeriesLegendSymbol.Rectangle;
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
 			Levels = Levels_DefaultValue = new List<SunburstSeriesLevels>();
 			LevelSize = LevelSize_DefaultValue = new SunburstSeriesLevelSize();
-			LinkedTo = LinkedTo_DefaultValue = "";
 			Name = Name_DefaultValue = "";
 			OnPoint = OnPoint_DefaultValue = new SunburstSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
@@ -70,6 +69,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SizeNumber = SizeNumber_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
+			Sonification = Sonification_DefaultValue = new SunburstSeriesSonification();
 			StartAngle = StartAngle_DefaultValue = 0;
 			States = States_DefaultValue = new SunburstSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
@@ -131,17 +131,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Sets the color blending in the boost module.
-		/// </summary>
-		public SunburstSeriesBoostBlending BoostBlending { get; set; }
-		private SunburstSeriesBoostBlending BoostBlending_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each slice. When `null`, theborder takes the same color as the slice fill. This can be usedtogether with a `borderWidth` to fill drawing gaps created byantialiazing artefacts in borderless pies.In styled mode, the border stroke is given in the `.highcharts-point`class.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each slice. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa size relative to the radius and the inner radius.
+		/// </summary>
+		public Object BorderRadius { get; set; }
+		private Object BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each slice. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa size relative to the radius and the inner radius.
+		/// </summary>
+		public string BorderRadiusString { get; set; }
+		private string BorderRadiusString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each slice. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa size relative to the radius and the inner radius.
+		/// </summary>
+		public double? BorderRadiusNumber { get; set; }
+		private double? BorderRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -173,6 +187,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public bool? Clip { get; set; }
+		private bool? Clip_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the `options.colors` array.In styled mode, the color can be defined by the[colorIndex](#plotOptions.series.colorIndex) option. Also, the seriescolor can be set with the `.highcharts-series`,`.highcharts-color-{n}`, `.highcharts-{type}-series` or`.highcharts-series-{n}` class, or individual classes given by the`className` option.
 		/// </summary>
 		public string Color { get; set; }
@@ -187,17 +208,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines what data value should be used to calculate point colorif `colorAxis` is used. Requires to set `min` and `max` if somecustom point property is used or if approximation for data groupingis set to `'sum'`.
-		/// </summary>
-		public string ColorKey { get; set; }
-		private string ColorKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -243,24 +257,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public SunburstSeriesDataSorting DataSorting { get; set; }
-		private SunburstSeriesDataSorting DataSorting_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
-		/// </summary>
-		public SunburstSeriesDragDrop DragDrop { get; set; }
-		private SunburstSeriesDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -313,17 +313,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.
-		/// </summary>
-		public SunburstSeriesLabel Label { get; set; }
-		private SunburstSeriesLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The sequential index of the series in the legend.
 		/// </summary>
 		public override double? LegendIndex { get; set; }
 		protected override double? LegendIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public SunburstSeriesLegendSymbol LegendSymbol { get; set; }
+		private SunburstSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -345,13 +345,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public SunburstSeriesLevelSize LevelSize { get; set; }
 		private SunburstSeriesLevelSize LevelSize_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.If master series uses data sorting and linked series does not haveits own sorting definition, the linked series will be sorted in thesame order as the master one.
-		/// </summary>
-		public string LinkedTo { get; set; }
-		private string LinkedTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -411,14 +404,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -464,6 +457,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? SlicedOffset { get; set; }
 		private double? SlicedOffset_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sonification/audio chart options for a series.
+		/// </summary>
+		public SunburstSeriesSonification Sonification { get; set; }
+		private SunburstSeriesSonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -570,25 +570,25 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowTraversingTree != AllowTraversingTree_DefaultValue) h.Add("allowTraversingTree",AllowTraversingTree);
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderRadiusString != BorderRadiusString_DefaultValue) h.Add("borderRadius",BorderRadiusString);
+			if (BorderRadiusNumber != BorderRadiusNumber_DefaultValue) h.Add("borderRadius",BorderRadiusNumber);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (Breadcrumbs.IsDirty(highcharts)) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(highcharts));
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Data.Any()) h.Add("data",HashifyList(highcharts,Data));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (DataSorting.IsDirty(highcharts)) h.Add("dataSorting",DataSorting.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
@@ -596,12 +596,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
 			if (Levels != Levels_DefaultValue) h.Add("levels", HashifyList(highcharts,Levels));
 			if (LevelSize.IsDirty(highcharts)) h.Add("levelSize",LevelSize.ToHashtable(highcharts));
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
@@ -618,6 +617,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SizeNumber != SizeNumber_DefaultValue) h.Add("size",SizeNumber);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SlicedOffset != SlicedOffset_DefaultValue) h.Add("slicedOffset",SlicedOffset);
+			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
 			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);

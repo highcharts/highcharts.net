@@ -22,7 +22,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new OrganizationSeriesDataDragDrop();
 			Events = Events_DefaultValue = new OrganizationSeriesDataEvents();
 			From = From_DefaultValue = "";
 			Id = Id_DefaultValue = "";
@@ -59,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.
+		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.Since v11, CSS variables on the form `--highcharts-color-{n}` make changingthe color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -77,13 +76,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.
-		/// </summary>
-		public OrganizationSeriesDataDragDrop DragDrop { get; set; }
-		private OrganizationSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -162,7 +154,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);

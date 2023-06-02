@@ -21,8 +21,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = true;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BoostBlending = BoostBlending_DefaultValue = VennSeriesBoostBlending.Undefined;
-			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
 			BorderDashStyle = BorderDashStyle_DefaultValue = new Hashtable();
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -43,17 +41,15 @@ namespace Highsoft.Web.Mvc.Charts
 			DashStyle = DashStyle_DefaultValue = VennSeriesDashStyle.Null;
 			Data = Data_DefaultValue = new List<VennSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new VennSeriesDataLabels();
-			DataSorting = DataSorting_DefaultValue = new VennSeriesDataSorting();
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new VennSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new VennSeriesEvents();
 			Id = Id_DefaultValue = "";
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
-			Jitter = Jitter_DefaultValue = new VennSeriesJitter();
 			Keys = Keys_DefaultValue = new List<string>();
 			LegendIndex = LegendIndex_DefaultValue = null;
+			LegendSymbol = LegendSymbol_DefaultValue = VennSeriesLegendSymbol.Rectangle;
 			Name = Name_DefaultValue = "";
 			OnPoint = OnPoint_DefaultValue = new VennSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
@@ -61,17 +57,15 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			RelativeXValue = RelativeXValue_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
-			Shadow = Shadow_DefaultValue = new Shadow();
-			ShadowBool = ShadowBool_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			Sonification = Sonification_DefaultValue = new VennSeriesSonification();
 			States = States_DefaultValue = new VennSeriesStates();
 			Step = Step_DefaultValue = VennSeriesStep.Null;
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new VennSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = null;
 			
@@ -112,20 +106,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? AnimationLimit { get; set; }
 		private double? AnimationLimit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sets the color blending in the boost module.
-		/// </summary>
-		public VennSeriesBoostBlending BoostBlending { get; set; }
-		private VennSeriesBoostBlending BoostBlending_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.
-		/// </summary>
-		public double? BoostThreshold { get; set; }
-		private double? BoostThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -213,7 +193,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -269,24 +249,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public VennSeriesDataSorting DataSorting { get; set; }
-		private VennSeriesDataSorting DataSorting_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
-		/// </summary>
-		public VennSeriesDragDrop DragDrop { get; set; }
-		private VennSeriesDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -325,13 +291,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Apply a jitter effect for the rendered markers. When plottingdiscrete values, a little random noise may help telling the pointsapart. The jitter setting applies a random displacement of up to `n`axis units in either direction. So for example on a horizontal Xaxis, setting the `jitter.x` to 0.24 will render the point in arandom position between 0.24 units to the left and 0.24 units to theright of the true axis position. On a category axis, setting it to0.5 will fill up the bin and make the data appear continuous.When rendered on top of a box plot or a column series, a jitter valueof 0.24 will correspond to the underlying series' default[groupPadding](https://api.highcharts.com/highcharts/plotOptions.column.groupPadding)and [pointPadding](https://api.highcharts.com/highcharts/plotOptions.column.pointPadding)settings.
-		/// </summary>
-		public VennSeriesJitter Jitter { get; set; }
-		private VennSeriesJitter Jitter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
@@ -343,6 +302,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override double? LegendIndex { get; set; }
 		protected override double? LegendIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public VennSeriesLegendSymbol LegendSymbol { get; set; }
+		private VennSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -395,20 +361,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
-		/// </summary>
-		public bool? ShadowBool { get; set; }
-		private bool? ShadowBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
 		/// </summary>
 		public bool? ShowCheckbox { get; set; }
@@ -427,6 +379,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sonification/audio chart options for a series.
+		/// </summary>
+		public VennSeriesSonification Sonification { get; set; }
+		private VennSeriesSonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -465,13 +424,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The parameter allows setting line series type and use OHLC indicators.Data in OHLC format is required.
-		/// </summary>
-		public bool? UseOhlcData { get; set; }
-		private bool? UseOhlcData_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -497,8 +449,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highcharts.FirstCharacterToLower(BoostBlending.ToString()));
-			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderDashStyle != BorderDashStyle_DefaultValue) h.Add("borderDashStyle",BorderDashStyle);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -519,17 +469,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(highcharts,Data));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (DataSorting.IsDirty(highcharts)) h.Add("dataSorting",DataSorting.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (Jitter.IsDirty(highcharts)) h.Add("jitter",Jitter.ToHashtable(highcharts));
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
@@ -537,18 +485,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow.IsDirty(highcharts)) h.Add("shadow",Shadow.ToHashtable(highcharts));
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
 			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
 			if (Step != Step_DefaultValue) h.Add("step", highcharts.FirstCharacterToLower(Step.ToString()));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty(highcharts)) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			h.Add("type","venn");
-			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)

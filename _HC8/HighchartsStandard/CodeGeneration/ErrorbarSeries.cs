@@ -59,6 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new ErrorbarSeriesLabel();
 			LegendIndex = LegendIndex_DefaultValue = null;
+			LegendSymbol = LegendSymbol_DefaultValue = ErrorbarSeriesLegendSymbol.Rectangle;
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
@@ -87,9 +88,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			Stack = Stack_DefaultValue = "";
-			StackNumber = StackNumber_DefaultValue = null;
-			Stacking = Stacking_DefaultValue = ErrorbarSeriesStacking.Null;
+			Sonification = Sonification_DefaultValue = new ErrorbarSeriesSonification();
 			States = States_DefaultValue = new ErrorbarSeriesStates();
 			StemColor = StemColor_DefaultValue = "";
 			StemDashStyle = StemDashStyle_DefaultValue = new Hashtable();
@@ -215,7 +214,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -418,6 +417,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public ErrorbarSeriesLegendSymbol LegendSymbol { get; set; }
+		private ErrorbarSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The width of the line surrounding the box. If any of[stemWidth](#plotOptions.boxplot.stemWidth),[medianWidth](#plotOptions.boxplot.medianWidth)or [whiskerWidth](#plotOptions.boxplot.whiskerWidth) are `null`,the lineWidth also applies to these lines.
 		/// </summary>
 		public double? LineWidth { get; set; }
@@ -572,14 +578,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -614,24 +620,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
+		/// Sonification/audio chart options for a series.
 		/// </summary>
-		public override string Stack { get; set; }
-		protected override string Stack_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option allows grouping series in a stacked chart. The stack optioncan be a string or anything else, as long as the grouped series' stackoptions match each other after conversion into a string.
-		/// </summary>
-		public override double? StackNumber { get; set; }
-		protected override double? StackNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`.When stacking is enabled, data must be sortedin ascending X order.Some stacking options are related to specific series types. In thestreamgraph series type, the stacking option is set to `"stream"`.The second one is `"overlap"`, which only applies to waterfallseries.
-		/// </summary>
-		public ErrorbarSeriesStacking Stacking { get; set; }
-		private ErrorbarSeriesStacking Stacking_DefaultValue { get; set; }
+		public ErrorbarSeriesSonification Sonification { get; set; }
+		private ErrorbarSeriesSonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -831,6 +823,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
@@ -863,9 +856,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
-			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking", highcharts.FirstCharacterToLower(Stacking.ToString()));
+			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
 			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
 			if (StemColor != StemColor_DefaultValue) h.Add("stemColor",StemColor);
 			if (StemDashStyle != StemDashStyle_DefaultValue) h.Add("stemDashStyle",StemDashStyle);

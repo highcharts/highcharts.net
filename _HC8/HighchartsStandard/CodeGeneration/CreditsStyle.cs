@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = "#999999";
 			Cursor = Cursor_DefaultValue = "pointer";
-			FontSize = FontSize_DefaultValue = "9px";
+			FontSize = FontSize_DefaultValue = "0.6em";
 			
 			CustomFields = new Hashtable();
 		}	

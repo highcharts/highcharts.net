@@ -16,9 +16,9 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public XAxisLabelsStyle()
 		{
-			Color = Color_DefaultValue = "#666666";
+			Color = Color_DefaultValue = "#333333";
 			Cursor = Cursor_DefaultValue = "default";
-			FontSize = FontSize_DefaultValue = "11px";
+			FontSize = FontSize_DefaultValue = "0.8em";
 			
 			CustomFields = new Hashtable();
 		}	

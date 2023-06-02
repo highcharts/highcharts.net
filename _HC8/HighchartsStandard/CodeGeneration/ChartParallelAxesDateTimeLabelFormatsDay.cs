@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartParallelAxesDateTimeLabelFormatsDay()
 		{
-			Main = Main_DefaultValue = "%e. %b";
+			Main = Main_DefaultValue = "%e %b";
 			
 			CustomFields = new Hashtable();
 		}	

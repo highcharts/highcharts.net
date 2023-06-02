@@ -20,37 +20,29 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = true;
-			BoostBlending = BoostBlending_DefaultValue = PlotOptionsSolidgaugeBoostBlending.Undefined;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
-			ColorAxis = ColorAxis_DefaultValue = "0";
-			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
-			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorByPoint = ColorByPoint_DefaultValue = true;
 			ColorIndex = ColorIndex_DefaultValue = null;
-			ColorKey = ColorKey_DefaultValue = "y";
 			Crisp = Crisp_DefaultValue = true;
 			Cursor = Cursor_DefaultValue = PlotOptionsSolidgaugeCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsSolidgaugeDataLabels();
-			DataSorting = DataSorting_DefaultValue = new PlotOptionsSolidgaugeDataSorting();
 			Description = Description_DefaultValue = "";
-			Dial = Dial_DefaultValue = new PlotOptionsSolidgaugeDial();
-			DragDrop = DragDrop_DefaultValue = new PlotOptionsSolidgaugeDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsSolidgaugeEvents();
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			InnerRadius = InnerRadius_DefaultValue = "'60%'";
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsSolidgaugeLabel();
+			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsSolidgaugeLegendSymbol.Rectangle;
 			Linecap = Linecap_DefaultValue = PlotOptionsSolidgaugeLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 2;
+			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsSolidgaugeOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Overshoot = Overshoot_DefaultValue = 0;
-			Pivot = Pivot_DefaultValue = new PlotOptionsSolidgaugePivot();
 			Point = Point_DefaultValue = new PlotOptionsSolidgaugePoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
@@ -63,12 +55,12 @@ namespace Highsoft.Web.Mvc.Charts
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			Sonification = Sonification_DefaultValue = new PlotOptionsSolidgaugeSonification();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = null;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsSolidgaugeTooltip();
 			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
-			Wrap = Wrap_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -103,13 +95,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Sets the color blending in the boost module.
-		/// </summary>
-		public PlotOptionsSolidgaugeBoostBlending BoostBlending { get; set; }
-		private PlotOptionsSolidgaugeBoostBlending BoostBlending_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement. Changes to the series' color will also be reflected in achart's legend and tooltip.
 		/// </summary>
 		public string ClassName { get; set; }
@@ -131,27 +116,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
-		/// </summary>
-		public string ColorAxis { get; set; }
-		private string ColorAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
-		/// </summary>
-		public double? ColorAxisNumber { get; set; }
-		private double? ColorAxisNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
-		/// </summary>
-		public bool? ColorAxisBool { get; set; }
-		private bool? ColorAxisBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to give each point an individual color.
 		/// </summary>
 		public bool? ColorByPoint { get; set; }
@@ -159,17 +123,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines what data value should be used to calculate point colorif `colorAxis` is used. Requires to set `min` and `max` if somecustom point property is used or if approximation for data groupingis set to `'sum'`.
-		/// </summary>
-		public string ColorKey { get; set; }
-		private string ColorKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -201,31 +158,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public PlotOptionsSolidgaugeDataSorting DataSorting { get; set; }
-		private PlotOptionsSolidgaugeDataSorting DataSorting_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the dial or arrow pointer of the gauge.In styled mode, the dial is styled with the`.highcharts-gauge-series .highcharts-dial` rule.
-		/// </summary>
-		public PlotOptionsSolidgaugeDial Dial { get; set; }
-		private PlotOptionsSolidgaugeDial Dial_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
-		/// </summary>
-		public PlotOptionsSolidgaugeDragDrop DragDrop { get; set; }
-		private PlotOptionsSolidgaugeDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -271,6 +207,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public PlotOptionsSolidgaugeLegendSymbol LegendSymbol { get; set; }
+		private PlotOptionsSolidgaugeLegendSymbol LegendSymbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether the strokes of the solid gauge should be `round` or `square`.
 		/// </summary>
 		public PlotOptionsSolidgaugeLinecap Linecap { get; set; }
@@ -310,13 +253,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Overshoot { get; set; }
 		private double? Overshoot_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the pivot or the center point of the gauge.In styled mode, the pivot is styled with the`.highcharts-gauge-series .highcharts-pivot` rule.
-		/// </summary>
-		public PlotOptionsSolidgaugePivot Pivot { get; set; }
-		private PlotOptionsSolidgaugePivot Pivot_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -369,7 +305,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to draw rounded edges on the gauge.
+		/// Whether to draw rounded edges on the gauge. This options adds the radiusof the rounding to the ends of the arc, so it extends past the actualvalues. When `borderRadius` is set, it takes precedence over `rounded`. A`borderRadius` of 50% behaves like `rounded`, except the shape is notextended past its value.
 		/// </summary>
 		public bool? Rounded { get; set; }
 		private bool? Rounded_DefaultValue { get; set; }
@@ -401,6 +337,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sonification/audio chart options for a series.
+		/// </summary>
+		public PlotOptionsSolidgaugeSonification Sonification { get; set; }
+		private PlotOptionsSolidgaugeSonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -438,13 +381,6 @@ namespace Highsoft.Web.Mvc.Charts
 		private bool? Visible_DefaultValue { get; set; }
 		 
 
-		/// <summary>
-		/// When this option is `true`, the dial will wrap around the axes.For instance, in a full-range gauge going from 0 to 360, a valueof 400 will point to 40\. When `wrap` is `false`, the dial stopsat 360.
-		/// </summary>
-		public bool? Wrap { get; set; }
-		private bool? Wrap_DefaultValue { get; set; }
-		 
-
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
@@ -456,37 +392,29 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highcharts.FirstCharacterToLower(BoostBlending.ToString()));
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
-			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
-			if (ColorAxisBool != ColorAxisBool_DefaultValue) h.Add("colorAxis",ColorAxisBool);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (DataSorting.IsDirty(highcharts)) h.Add("dataSorting",DataSorting.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Dial.IsDirty(highcharts)) h.Add("dial",Dial.ToHashtable(highcharts));
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Overshoot != Overshoot_DefaultValue) h.Add("overshoot",Overshoot);
-			if (Pivot.IsDirty(highcharts)) h.Add("pivot",Pivot.ToHashtable(highcharts));
 			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
@@ -499,12 +427,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty(highcharts)) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
 			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Wrap != Wrap_DefaultValue) h.Add("wrap",Wrap);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

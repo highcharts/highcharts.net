@@ -27,6 +27,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new YAxisCrosshair();
 			CrosshairBool = CrosshairBool_DefaultValue = false;
+			Crossing = Crossing_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = true;
 			Events = Events_DefaultValue = new YAxisEvents();
@@ -42,7 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Labels = Labels_DefaultValue = new YAxisLabels();
 			Left = Left_DefaultValue = "";
 			LeftNumber = LeftNumber_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "";
+			LineColor = LineColor_DefaultValue = "#333333";
 			LineWidth = LineWidth_DefaultValue = 0;
 			LinkedTo = LinkedTo_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
@@ -61,6 +62,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = YAxisMinorTickPosition.Outside;
 			MinorTicks = MinorTicks_DefaultValue = false;
+			MinorTicksPerMajor = MinorTicksPerMajor_DefaultValue = 5;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			MinPadding = MinPadding_DefaultValue = null;
 			MinRange = MinRange_DefaultValue = null;
@@ -79,11 +81,12 @@ namespace Highsoft.Web.Mvc.Charts
 			SoftMax = SoftMax_DefaultValue = null;
 			SoftMin = SoftMin_DefaultValue = null;
 			StackLabels = StackLabels_DefaultValue = new YAxisStackLabels();
+			StackShadow = StackShadow_DefaultValue = new YAxisStackShadow();
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = true;
 			Stops = Stops_DefaultValue = new List<Stop>();
 			TickAmount = TickAmount_DefaultValue = null;
-			TickColor = TickColor_DefaultValue = "#ccd6eb";
+			TickColor = TickColor_DefaultValue = "#333333";
 			TickInterval = TickInterval_DefaultValue = null;
 			TickLength = TickLength_DefaultValue = 10;
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = YAxisTickmarkPlacement.Between;
@@ -183,6 +186,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? CrosshairBool { get; set; }
 		private bool? CrosshairBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The value on a perpendicular axis where this axis should cross. Thisis typically used on mathematical plots where the axes cross at 0.When `crossing` is set, space will not be reserved at the sides ofthe chart for axis labels and title, so those may be clipped. In thiscase it is better to place the axes without the `crossing` option.
+		/// </summary>
+		public double? Crossing { get; set; }
+		private double? Crossing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -291,7 +301,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// The color of the line marking the axis itself.In styled mode, the line stroke is given in the`.highcharts-axis-line` or `.highcharts-xaxis-line` class.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
@@ -417,10 +427,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable minor ticks. Unless[minorTickInterval](#xAxis.minorTickInterval) is set, the tickinterval is calculated as a fifth of the `tickInterval`.On a logarithmic axis, minor ticks are laid out based on a bestguess, attempting to enter approximately 5 minor ticks betweeneach major tick.Prior to v6.0.0, ticks were unabled in auto layout by setting`minorTickInterval` to `"auto"`.
+		/// Enable or disable minor ticks. The interval between the minor tickscan be controlled either by the[minorTicksPerMajor](#xAxis.minorTicksPerMajor) setting, or as anabsolute [minorTickInterval](#xAxis.minorTickInterval) value.On a logarithmic axis, minor ticks are laid out based on a bestguess, attempting to enter an approximate number of minor ticksbetween each major tick based on[minorTicksPerMajor](#xAxis.minorTicksPerMajor).Prior to v6.0.0, ticks were enabled in auto layout by setting`minorTickInterval` to `"auto"`.
 		/// </summary>
 		public bool? MinorTicks { get; set; }
 		private bool? MinorTicks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The number of minor ticks per major tick. Works for `linear`,`logarithmic` and `datetime` axes.
+		/// </summary>
+		public double? MinorTicksPerMajor { get; set; }
+		private double? MinorTicksPerMajor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -547,6 +564,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public YAxisStackLabels StackLabels { get; set; }
 		private YAxisStackLabels StackLabels_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Relevant only for pictorial series. The `stackShadow` forms the background ofstacked points. Requires `series.stacking` to be defined.
+		/// </summary>
+		public YAxisStackShadow StackShadow { get; set; }
+		private YAxisStackShadow StackShadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -735,6 +759,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crosshair.IsDirty(highcharts)) h.Add("crosshair",Crosshair.ToHashtable(highcharts));
 			if (CrosshairBool != CrosshairBool_DefaultValue) h.Add("crosshair",CrosshairBool);
+			if (Crossing != Crossing_DefaultValue) h.Add("crossing",Crossing);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
@@ -769,6 +794,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
+			if (MinorTicksPerMajor != MinorTicksPerMajor_DefaultValue) h.Add("minorTicksPerMajor",MinorTicksPerMajor);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
@@ -787,6 +813,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);
 			if (SoftMin != SoftMin_DefaultValue) h.Add("softMin",SoftMin);
 			if (StackLabels.IsDirty(highcharts)) h.Add("stackLabels",StackLabels.ToHashtable(highcharts));
+			if (StackShadow.IsDirty(highcharts)) h.Add("stackShadow",StackShadow.ToHashtable(highcharts));
 			if (StartOfWeek != StartOfWeek_DefaultValue) h.Add("startOfWeek",StartOfWeek);
 			if (StartOnTick != StartOnTick_DefaultValue) h.Add("startOnTick",StartOnTick);
 			if (Stops.Any()) h.Add("stops", GetLists(Stops));

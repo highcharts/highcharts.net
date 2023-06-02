@@ -45,6 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Organization = Organization_DefaultValue = new PlotOptionsOrganization();
 			Packedbubble = Packedbubble_DefaultValue = new PlotOptionsPackedbubble();
 			Pareto = Pareto_DefaultValue = new PlotOptionsPareto();
+			Pictorial = Pictorial_DefaultValue = new PlotOptionsPictorial();
 			Pie = Pie_DefaultValue = new PlotOptionsPie();
 			Polygon = Polygon_DefaultValue = new PlotOptionsPolygon();
 			Pyramid = Pyramid_DefaultValue = new PlotOptionsPyramid();
@@ -278,6 +279,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// A pictorial chart uses vector images to represents the data.The shape of the data point is taken from the path parameter.In TypeScript the [type](series.pictorial.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `pictorial` series are defined in   [plotOptions.pictorial](plotOptions.pictorial).3. Options for one single series are given in   [the series instance array](series.pictorial).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        pictorial: {            // shared options for all pictorial series        }    },    series: [{        // specific options for this series instance        type: 'pictorial'    }]});```            
+		/// </summary>
+		public PlotOptionsPictorial Pictorial { get; set; }
+		private PlotOptionsPictorial Pictorial_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// A pie chart is a circular graphic which is divided into slices toillustrate numerical proportion.In TypeScript the [type](series.pie.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `pie` series are defined in   [plotOptions.pie](plotOptions.pie).3. Options for one single series are given in   [the series instance array](series.pie).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        pie: {            // shared options for all pie series        }    },    series: [{        // specific options for this series instance        type: 'pie'    }]});```            
 		/// </summary>
 		public PlotOptionsPie Pie { get; set; }
@@ -481,6 +489,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Organization.IsDirty(highcharts)) h.Add("organization",Organization.ToHashtable(highcharts));
 			if (Packedbubble.IsDirty(highcharts)) h.Add("packedbubble",Packedbubble.ToHashtable(highcharts));
 			if (Pareto.IsDirty(highcharts)) h.Add("pareto",Pareto.ToHashtable(highcharts));
+			if (Pictorial.IsDirty(highcharts)) h.Add("pictorial",Pictorial.ToHashtable(highcharts));
 			if (Pie.IsDirty(highcharts)) h.Add("pie",Pie.ToHashtable(highcharts));
 			if (Polygon.IsDirty(highcharts)) h.Add("polygon",Polygon.ToHashtable(highcharts));
 			if (Pyramid.IsDirty(highcharts)) h.Add("pyramid",Pyramid.ToHashtable(highcharts));

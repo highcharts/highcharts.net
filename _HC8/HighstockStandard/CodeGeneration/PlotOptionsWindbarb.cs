@@ -21,9 +21,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = true;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BoostBlending = BoostBlending_DefaultValue = PlotOptionsWindbarbBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderRadius = BorderRadius_DefaultValue = 0;
+			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = null;
 			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
@@ -48,7 +47,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			DataSorting = DataSorting_DefaultValue = new PlotOptionsWindbarbDataSorting();
 			Depth = Depth_DefaultValue = 25;
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new PlotOptionsWindbarbDragDrop();
 			EdgeColor = EdgeColor_DefaultValue = "";
 			EdgeWidth = EdgeWidth_DefaultValue = 1;
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -63,6 +61,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Label = Label_DefaultValue = new PlotOptionsWindbarbLabel();
 			LastPrice = LastPrice_DefaultValue = new PlotOptionsWindbarbLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsWindbarbLastVisiblePrice();
+			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsWindbarbLegendSymbol.Rectangle;
 			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
@@ -87,6 +86,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
+			Sonification = Sonification_DefaultValue = new PlotOptionsWindbarbSonification();
 			States = States_DefaultValue = new PlotOptionsWindbarbStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
@@ -139,13 +139,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Sets the color blending in the boost module.
-		/// </summary>
-		public PlotOptionsWindbarbBoostBlending BoostBlending { get; set; }
-		private PlotOptionsWindbarbBoostBlending BoostBlending_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the`.highcharts-point` rule.
 		/// </summary>
 		public string BorderColor { get; set; }
@@ -153,7 +146,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The corner radius of the border surrounding each column or bar.
+		/// The corner radius of the border surrounding each column or bar. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa relative size. For columns this is relative to the column width, forpies it is relative to the radius and the inner radius.
 		/// </summary>
 		public double? BorderRadius { get; set; }
 		private double? BorderRadius_DefaultValue { get; set; }
@@ -223,7 +216,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -328,13 +321,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
-		/// </summary>
-		public PlotOptionsWindbarbDragDrop DragDrop { get; set; }
-		private PlotOptionsWindbarbDragDrop DragDrop_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 3D columns only. The color of the edges. Similar to `borderColor`, except itdefaults to the same color as the column.
 		/// </summary>
 		public string EdgeColor { get; set; }
@@ -430,6 +416,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsWindbarbLastVisiblePrice LastVisiblePrice { get; set; }
 		private PlotOptionsWindbarbLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public PlotOptionsWindbarbLegendSymbol LegendSymbol { get; set; }
+		private PlotOptionsWindbarbLegendSymbol LegendSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -601,6 +594,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Sonification/audio chart options for a series.
+		/// </summary>
+		public PlotOptionsWindbarbSonification Sonification { get; set; }
+		private PlotOptionsWindbarbSonification Sonification_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsWindbarbStates States { get; set; }
@@ -689,7 +689,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highstock.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -716,7 +715,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DataSorting.IsDirty(highstock)) h.Add("dataSorting",DataSorting.ToHashtable(highstock));
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highstock)) h.Add("dragDrop",DragDrop.ToHashtable(highstock));
 			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
 			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
@@ -731,6 +729,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
 			if (LastPrice.IsDirty(highstock)) h.Add("lastPrice",LastPrice.ToHashtable(highstock));
 			if (LastVisiblePrice.IsDirty(highstock)) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable(highstock));
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highstock.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
@@ -759,6 +758,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (Sonification.IsDirty(highstock)) h.Add("sonification",Sonification.ToHashtable(highstock));
 			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);

@@ -20,9 +20,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			AlignTicks = AlignTicks_DefaultValue = true;
 			AllowMutatingData = AllowMutatingData_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = true;
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
-			BorderColor = BorderColor_DefaultValue = "#335cad";
+			BorderColor = BorderColor_DefaultValue = "#334eff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
@@ -351,14 +351,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Additional CSS styles to apply inline to the container `div`. Notethat since the default font styles are applied in the renderer, itis ignorant of the individual chart options and must be set globally.Also note that changing the font size in the `chart.style` options onlyapplies to those elements that do not have a specific `fontSize` setting.
+		/// Additional CSS styles to apply inline to the container `div` and the rootSVG.Since v11, the root font size is 1rem by default, and all child elementare given a relative `em` font size by default. This allows implementersto control all the chart's font sizes by only setting the root level.
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply styled mode. When in styled mode, no presentationalattributes or CSS are applied to the chart SVG. Instead, CSS rulesare required to style the chart. The default style sheet isavailable from `https://code.highcharts.com/css/highcharts.css`.
+		/// Whether to apply styled mode. When in styled mode, no presentationalattributes or CSS are applied to the chart SVG. Instead, CSS rulesare required to style the chart. The default style sheet isavailable from `https://code.highcharts.com/css/highcharts.css`.[Read more in the docs](https://www.highcharts.com/docs/chart-design-and-style/style-by-css)on what classes and variables are available.
 		/// </summary>
 		public bool? StyledMode { get; set; }
 		private bool? StyledMode_DefaultValue { get; set; }

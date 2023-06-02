@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
-			Distance = Distance_DefaultValue = null;
+			Distance = Distance_DefaultValue = 15;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Polar charts only. The label's pixel distance from the perimeterof the plot area.
+		/// The label's pixel distance from the perimeter of the plot area.On cartesian charts, this is overridden if the `labels.y` settingis set.* On polar charts, if it's a percentage string, it is interpretedthe same as [series.radius](#plotOptions.gauge.radius), so thelabel can be aligned under the gauge's shape.
 		/// </summary>
 		public double? Distance { get; set; }
 		private double? Distance_DefaultValue { get; set; }

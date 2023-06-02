@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public NetworkgraphSeriesEvents()
 		{
 			AfterAnimate = AfterAnimate_DefaultValue = "";
+			AfterSimulation = AfterSimulation_DefaultValue = "";
 			CheckboxClick = CheckboxClick_DefaultValue = "";
 			Click = Click_DefaultValue = "";
 			Hide = Hide_DefaultValue = "";
@@ -34,6 +35,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string AfterAnimate { get; set; }
 		private string AfterAnimate_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Fires after the simulation is ended and the layout is stable.
+		/// </summary>
+		public string AfterSimulation { get; set; }
+		private string AfterSimulation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -93,6 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); highcharts.AddFunction("afterAnimate", AfterAnimate); }  
+			if (AfterSimulation != AfterSimulation_DefaultValue) { h.Add("afterSimulation",AfterSimulation); highcharts.AddFunction("afterSimulation", AfterSimulation); }  
 			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); highcharts.AddFunction("checkboxClick", CheckboxClick); }  
 			if (Click != Click_DefaultValue) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
 			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); highcharts.AddFunction("hide", Hide); }  

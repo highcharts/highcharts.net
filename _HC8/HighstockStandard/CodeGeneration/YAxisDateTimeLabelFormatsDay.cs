@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public YAxisDateTimeLabelFormatsDay()
 		{
-			Main = Main_DefaultValue = "%e. %b";
+			Main = Main_DefaultValue = "%e %b";
 			
 			CustomFields = new Hashtable();
 		}	

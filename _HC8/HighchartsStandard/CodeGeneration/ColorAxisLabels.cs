@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
-			Distance = Distance_DefaultValue = null;
+			Distance = Distance_DefaultValue = 8;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Step = Step_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
-			X = X_DefaultValue = 0;
+			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
 			
@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Polar charts only. The label's pixel distance from the perimeterof the plot area.
+		/// 
 		/// </summary>
 		public double? Distance { get; set; }
 		private double? Distance_DefaultValue { get; set; }
@@ -177,14 +177,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The x position offset of all labels relative to the tickpositions on the axis.
+		/// The x position offset of all labels relative to the tickpositions on the axis. Overrides the `labels.distance` option.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y position offset of all labels relative to the tickpositions on the axis. The default makes it adapt to the fontsize of the bottom axis.
+		/// The y position offset of all labels relative to the tickpositions on the axis. Overrides the `labels.distance` option.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }

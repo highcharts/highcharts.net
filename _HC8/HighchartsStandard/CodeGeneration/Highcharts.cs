@@ -29,7 +29,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Drilldown = Drilldown_DefaultValue = new Drilldown();
 			Exporting = Exporting_DefaultValue = new Exporting();
 			Global = Global_DefaultValue = new Global();
-			Labels = Labels_DefaultValue = new Labels();
 			Lang = Lang_DefaultValue = new Lang();
 			Legend = Legend_DefaultValue = new Legend();
 			Loading = Loading_DefaultValue = new Loading();
@@ -39,6 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PlotOptions = PlotOptions_DefaultValue = new PlotOptions();
 			Responsive = Responsive_DefaultValue = new Responsive();
 			Series = Series_DefaultValue = new List<Series>();
+			Sonification = Sonification_DefaultValue = new Sonification();
 			Subtitle = Subtitle_DefaultValue = new Subtitle();
 			Time = Time_DefaultValue = new Time();
 			Title = Title_DefaultValue = new Title();
@@ -94,7 +94,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array containing the default colors for the chart's series. Whenall colors are used, new colors are pulled from the start again.Default colors can also be set on a series or series.type basis,see [column.colors](#plotOptions.column.colors),[pie.colors](#plotOptions.pie.colors).In styled mode, the colors option doesn't exist. Instead, colorsare defined in CSS and applied either through series or point classnames, or through the [chart.colorCount](#chart.colorCount) option.### LegacyIn Highcharts 3.x, the default colors were:```jscolors: ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',        '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']```In Highcharts 2.x, the default colors were:```jscolors: ['#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE',        '#DB843D', '#92A8CD', '#A47D7C', '#B5CA92']```
+		/// An array containing the default colors for the chart's series. Whenall colors are used, new colors are pulled from the start again.Default colors can also be set on a series or series.type basis,see [column.colors](#plotOptions.column.colors),[pie.colors](#plotOptions.pie.colors).In styled mode, the colors option doesn't exist. Instead, colorsare defined in CSS and applied either through series or point classnames, or through the [chart.colorCount](#chart.colorCount) option.
 		/// </summary>
 		public List<string> Colors { get; set; }
 		private List<string> Colors_DefaultValue { get; set; }
@@ -140,13 +140,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Global Global { get; set; }
 		private Global Global_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// HTML labels that can be positioned anywhere in the chart area.This option is deprecated since v7.1.2. Instead, use[annotations](#annotations) that support labels.
-		/// </summary>
-		public Labels Labels { get; set; }
-		private Labels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -210,6 +203,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<Series> Series { get; set; }
 		private List<Series> Series_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for configuring sonification and audio charts. Requires the[sonification module](https://code.highcharts.com/modules/sonification.js)to be loaded.
+		/// </summary>
+		public Sonification Sonification { get; set; }
+		private Sonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -281,7 +281,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Drilldown.IsDirty(highcharts)) h.Add("drilldown",Drilldown.ToHashtable(highcharts));
 			if (Exporting.IsDirty(highcharts)) h.Add("exporting",Exporting.ToHashtable(highcharts));
 			if (Global.IsDirty(highcharts)) h.Add("global",Global.ToHashtable(highcharts));
-			if (Labels.IsDirty(highcharts)) h.Add("labels",Labels.ToHashtable(highcharts));
 			if (Lang.IsDirty(highcharts)) h.Add("lang",Lang.ToHashtable(highcharts));
 			if (Legend.IsDirty(highcharts)) h.Add("legend",Legend.ToHashtable(highcharts));
 			if (Loading.IsDirty(highcharts)) h.Add("loading",Loading.ToHashtable(highcharts));
@@ -291,6 +290,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PlotOptions.IsDirty(highcharts)) h.Add("plotOptions",PlotOptions.ToHashtable(highcharts));
 			if (Responsive.IsDirty(highcharts)) h.Add("responsive",Responsive.ToHashtable(highcharts));
 			if (Series != Series_DefaultValue) h.Add("series", HashifyList(highcharts,Series));
+			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
 			if (Subtitle.IsDirty(highcharts)) h.Add("subtitle",Subtitle.ToHashtable(highcharts));
 			if (Time.IsDirty(highcharts)) h.Add("time",Time.ToHashtable(highcharts));
 			if (Title.IsDirty(highcharts)) h.Add("title",Title.ToHashtable(highcharts));

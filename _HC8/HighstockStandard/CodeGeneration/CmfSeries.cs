@@ -20,7 +20,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = true;
-			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = CmfSeriesBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
 			ClassName = ClassName_DefaultValue = "";
@@ -28,6 +27,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
+			Compare = Compare_DefaultValue = CmfSeriesCompare.Null;
+			CompareBase = CompareBase_DefaultValue = CmfSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			CompareToMain = CompareToMain_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
@@ -41,7 +42,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			DataLabels = DataLabels_DefaultValue = new CmfSeriesDataLabels();
 			DataSorting = DataSorting_DefaultValue = new CmfSeriesDataSorting();
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new CmfSeriesDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new CmfSeriesEvents();
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = CmfSeriesFindNearestPointBy.X;
@@ -55,8 +55,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			LastPrice = LastPrice_DefaultValue = new CmfSeriesLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new CmfSeriesLastVisiblePrice();
 			LegendIndex = LegendIndex_DefaultValue = null;
+			LegendSymbol = LegendSymbol_DefaultValue = CmfSeriesLegendSymbol.Rectangle;
 			Linecap = Linecap_DefaultValue = CmfSeriesLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 2;
+			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new CmfSeriesMarker();
 			Name = Name_DefaultValue = "";
@@ -74,6 +75,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
+			Sonification = Sonification_DefaultValue = new CmfSeriesSonification();
 			Stack = Stack_DefaultValue = "";
 			StackNumber = StackNumber_DefaultValue = null;
 			States = States_DefaultValue = new CmfSeriesStates();
@@ -124,13 +126,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// For some series, there is a limit that shuts down animationby default when the total number of points in the chart is too high.For example, for a column chart and its derivatives, animation doesnot run if there is more than 250 points totally. To disable thiscap, set `animationLimit` to `Infinity`. This option works if animationis fired on individual points, not on a group of points like e.g. duringthe initial animation.
-		/// </summary>
-		public double? AnimationLimit { get; set; }
-		private double? AnimationLimit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Sets the color blending in the boost module.
 		/// </summary>
 		public CmfSeriesBoostBlending BoostBlending { get; set; }
@@ -166,7 +161,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -177,6 +172,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ColorKey { get; set; }
 		private string ColorKey_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Compare the values of the series against the first non-null, non-zero value in the visible range. The y axis will show percentageor absolute change depending on whether `compare` is set to `"percent"`or `"value"`. When this is applied to multiple series, it allowscomparing the development of the series against each other. Addsa `change` field to every point object.
+		/// </summary>
+		public CmfSeriesCompare Compare { get; set; }
+		private CmfSeriesCompare Compare_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When [compare](#plotOptions.series.compare) is `percent`, this optiondictates whether to use 0 or 100 as the base of comparison.
+		/// </summary>
+		public CmfSeriesCompareBase CompareBase { get; set; }
+		private CmfSeriesCompareBase CompareBase_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -194,7 +203,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.
+		/// Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.In stacked area chart, if `connectNulls` is set to true,null points are interpreted as 0.
 		/// </summary>
 		public bool? ConnectNulls { get; set; }
 		private bool? ConnectNulls_DefaultValue { get; set; }
@@ -268,13 +277,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
-		/// </summary>
-		public CmfSeriesDragDrop DragDrop { get; set; }
-		private CmfSeriesDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -369,6 +371,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public CmfSeriesLegendSymbol LegendSymbol { get; set; }
+		private CmfSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The line cap used for line ends and line joins on the graph.
 		/// </summary>
 		public CmfSeriesLinecap Linecap { get; set; }
@@ -460,14 +469,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -499,6 +508,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sonification/audio chart options for a series.
+		/// </summary>
+		public CmfSeriesSonification Sonification { get; set; }
+		private CmfSeriesSonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -624,7 +640,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highstock.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -632,6 +647,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
+			if (Compare != Compare_DefaultValue) h.Add("compare", highstock.FirstCharacterToLower(Compare.ToString()));
+			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CompareToMain != CompareToMain_DefaultValue) h.Add("compareToMain",CompareToMain);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
@@ -645,7 +662,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DataLabels.IsDirty(highstock)) h.Add("dataLabels",DataLabels.ToHashtable(highstock));
 			if (DataSorting.IsDirty(highstock)) h.Add("dataSorting",DataSorting.ToHashtable(highstock));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highstock)) h.Add("dragDrop",DragDrop.ToHashtable(highstock));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
@@ -659,6 +675,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LastPrice.IsDirty(highstock)) h.Add("lastPrice",LastPrice.ToHashtable(highstock));
 			if (LastVisiblePrice.IsDirty(highstock)) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable(highstock));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highstock.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
@@ -678,6 +695,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (Sonification.IsDirty(highstock)) h.Add("sonification",Sonification.ToHashtable(highstock));
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
 			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
 			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));

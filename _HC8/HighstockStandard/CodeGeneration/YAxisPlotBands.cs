@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "#e6ebf5";
+			Color = Color_DefaultValue = "#e6e9ff";
 			Events = Events_DefaultValue = null;
 			From = From_DefaultValue = null;
 			Id = Id_DefaultValue = "";

@@ -57,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Accessible label for the chart container HTML element.`{title}` refers to the chart title.
 		/// </summary>
 		public string ChartContainerLabel { get; set; }
 		private string ChartContainerLabel_DefaultValue { get; set; }
@@ -71,21 +71,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Accessible label for the chart credits.`{creditsStr}` refers to the visual text in the credits.
 		/// </summary>
 		public string Credits { get; set; }
 		private string Credits_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Default title of the chart for assistive technology, for chartswithout a chart title.
 		/// </summary>
 		public string DefaultChartTitle { get; set; }
 		private string DefaultChartTitle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// 
+		/// Accessible label for the drill-up button.`{buttonText}` refers to the visual text on the button.
 		/// </summary>
 		public string DrillUpButton { get; set; }
 		private string DrillUpButton_DefaultValue { get; set; }
@@ -155,7 +155,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Accessible label for the chart SVG element.`{chartTitle}` refers to the chart title.
 		/// </summary>
 		public string SvgContainerLabel { get; set; }
 		private string SvgContainerLabel_DefaultValue { get; set; }

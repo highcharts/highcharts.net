@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigationAnnotationsOptionsFibonacciTimeZonesTypeOptions()
 		{
+			ControlPointOptions = ControlPointOptions_DefaultValue = new NavigationAnnotationsOptionsFibonacciTimeZonesTypeOptionsControlPointOptions();
 			Line = Line_DefaultValue = new NavigationAnnotationsOptionsFibonacciTimeZonesTypeOptionsLine();
 			Points = Points_DefaultValue = null;
 			XAxis = XAxis_DefaultValue = "";
@@ -24,6 +25,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public NavigationAnnotationsOptionsFibonacciTimeZonesTypeOptionsControlPointOptions ControlPointOptions { get; set; }
+		private NavigationAnnotationsOptionsFibonacciTimeZonesTypeOptionsControlPointOptions ControlPointOptions_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -60,6 +68,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (ControlPointOptions.IsDirty(highstock)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(highstock));
 			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
 			if (Points != Points_DefaultValue) h.Add("points",Points);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);

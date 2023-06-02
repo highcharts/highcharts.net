@@ -21,7 +21,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = true;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BoostBlending = BoostBlending_DefaultValue = PlotOptionsXrangeBoostBlending.Undefined;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderRadius = BorderRadius_DefaultValue = 3;
 			BorderWidth = BorderWidth_DefaultValue = null;
@@ -45,7 +44,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			DashStyle = DashStyle_DefaultValue = PlotOptionsXrangeDashStyle.Null;
 			DataGrouping = DataGrouping_DefaultValue = new PlotOptionsXrangeDataGrouping();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsXrangeDataLabels();
-			DataSorting = DataSorting_DefaultValue = new PlotOptionsXrangeDataSorting();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new PlotOptionsXrangeDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -58,6 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Label = Label_DefaultValue = new PlotOptionsXrangeLabel();
 			LastPrice = LastPrice_DefaultValue = new PlotOptionsXrangeLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsXrangeLastVisiblePrice();
+			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsXrangeLegendSymbol.Rectangle;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
 			MinPointLength = MinPointLength_DefaultValue = 0;
@@ -77,6 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			Sonification = Sonification_DefaultValue = new PlotOptionsXrangeSonification();
 			States = States_DefaultValue = new PlotOptionsXrangeStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsXrangeTooltip();
@@ -122,13 +122,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? AnimationLimit { get; set; }
 		private double? AnimationLimit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Sets the color blending in the boost module.
-		/// </summary>
-		public PlotOptionsXrangeBoostBlending BoostBlending { get; set; }
-		private PlotOptionsXrangeBoostBlending BoostBlending_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -209,7 +202,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -290,13 +283,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsXrangeDataLabels DataLabels { get; set; }
 		private PlotOptionsXrangeDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public PlotOptionsXrangeDataSorting DataSorting { get; set; }
-		private PlotOptionsXrangeDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -381,6 +367,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsXrangeLastVisiblePrice LastVisiblePrice { get; set; }
 		private PlotOptionsXrangeLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public PlotOptionsXrangeLegendSymbol LegendSymbol { get; set; }
+		private PlotOptionsXrangeLegendSymbol LegendSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -475,14 +468,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -514,6 +507,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
 		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sonification/audio chart options for a series.
+		/// </summary>
+		public PlotOptionsXrangeSonification Sonification { get; set; }
+		private PlotOptionsXrangeSonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -577,7 +577,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highstock.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
@@ -601,7 +600,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataGrouping.IsDirty(highstock)) h.Add("dataGrouping",DataGrouping.ToHashtable(highstock));
 			if (DataLabels.IsDirty(highstock)) h.Add("dataLabels",DataLabels.ToHashtable(highstock));
-			if (DataSorting.IsDirty(highstock)) h.Add("dataSorting",DataSorting.ToHashtable(highstock));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty(highstock)) h.Add("dragDrop",DragDrop.ToHashtable(highstock));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
@@ -614,6 +612,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
 			if (LastPrice.IsDirty(highstock)) h.Add("lastPrice",LastPrice.ToHashtable(highstock));
 			if (LastVisiblePrice.IsDirty(highstock)) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable(highstock));
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highstock.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
 			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
@@ -633,6 +632,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (Sonification.IsDirty(highstock)) h.Add("sonification",Sonification.ToHashtable(highstock));
 			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Tooltip.IsDirty(highstock)) h.Add("tooltip",Tooltip.ToHashtable(highstock));

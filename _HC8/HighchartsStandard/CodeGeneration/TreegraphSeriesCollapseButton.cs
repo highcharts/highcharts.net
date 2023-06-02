@@ -17,10 +17,12 @@ namespace Highsoft.Web.Mvc.Charts
 		public TreegraphSeriesCollapseButton()
 		{
 			Enabled = Enabled_DefaultValue = true;
-			Height = Height_DefaultValue = 10;
+			Height = Height_DefaultValue = 18;
+			LineWidth = LineWidth_DefaultValue = 1;
 			OnlyOnHover = OnlyOnHover_DefaultValue = true;
 			Shape = Shape_DefaultValue = "circle";
-			Width = Width_DefaultValue = 10;
+			Style = Style_DefaultValue = new Hashtable();
+			Width = Width_DefaultValue = 18;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			
@@ -43,6 +45,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The line width of the button in pixels
+		/// </summary>
+		public double? LineWidth { get; set; }
+		private double? LineWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether the button should be visible only when the node ishovered. When set to true, the button is hidden for nodes,which are not collapsed, and shown for the collapsed ones.
 		/// </summary>
 		public bool? OnlyOnHover { get; set; }
@@ -54,6 +63,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Shape { get; set; }
 		private string Shape_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// CSS styles for the collapse button.In styled mode, the collapse button style is given in the`.highcharts-collapse-button` class.
+		/// </summary>
+		public Hashtable Style { get; set; }
+		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -86,8 +102,10 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (OnlyOnHover != OnlyOnHover_DefaultValue) h.Add("onlyOnHover",OnlyOnHover);
 			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (Style != Style_DefaultValue) h.Add("style",Style);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);

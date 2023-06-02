@@ -27,7 +27,7 @@ namespace SourceCodeGenerator.Services
         private static IEnumerable<string> UniqueObjectTypeNames = new List<string> { "Highcharts.PlotNetworkDataLabelsOptionsObject", "Highcharts.DataLabelsOptionsObject", "Highcharts.NavigationBindingsOptionsObject", "Highcharts.SVGAttributes" };
         private static ISet<string> UniqueObjectTypes = new HashSet<string>(UniqueObjectTypeNames);
 
-        private static IEnumerable<string> UniqueEnumTypeNames = new List<string> { "Highcharts.DataLabelsOverflowValue", "Highcharts.AlignValue" };
+        private static IEnumerable<string> UniqueEnumTypeNames = new List<string> { "Highcharts.DataLabelsOverflowValue", "Highcharts.AlignValue"};
         private static ISet<string> UniqueEnumTypes = new HashSet<string>(UniqueEnumTypeNames);
 
         public void SetReturnType(ApiItem item)

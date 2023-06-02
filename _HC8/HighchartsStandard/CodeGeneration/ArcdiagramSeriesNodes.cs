@@ -18,9 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
-			Column = Column_DefaultValue = null;
 			Id = Id_DefaultValue = "";
-			Level = Level_DefaultValue = null;
 			Name = Name_DefaultValue = "";
 			Offset = Offset_DefaultValue = "0";
 			OffsetNumber = OffsetNumber_DefaultValue = null;
@@ -48,24 +46,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An optional column index of where to place the node. The default behaviour isto place it next to the preceding node. Note that this option name iscounter intuitive in inverted charts, like for example an organization chartrendered top down. In this case the "columns" are horizontal.
-		/// </summary>
-		public double? Column { get; set; }
-		private double? Column_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The id of the auto-generated node, refering to the `from` or `to` setting ofthe link.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An optional level index of where to place the node. The default behaviour isto place it next to the preceding node. Alias of `nodes.column`, but ininverted sankeys and org charts, the levels are laid out as rows.
-		/// </summary>
-		public double? Level { get; set; }
-		private double? Level_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -126,9 +110,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Column != Column_DefaultValue) h.Add("column",Column);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Level != Level_DefaultValue) h.Add("level",Level);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (OffsetNumber != OffsetNumber_DefaultValue) h.Add("offset",OffsetNumber);

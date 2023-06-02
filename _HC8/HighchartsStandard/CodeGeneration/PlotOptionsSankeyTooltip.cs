@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsSankeyTooltip()
 		{
 			FollowPointer = FollowPointer_DefaultValue = true;
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 10px'>{series.name}</span><br/>";
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 0.8em'>{series.name}</span><br/>";
 			NodeFormat = NodeFormat_DefaultValue = "{point.name}: <b>{point.sum}</b><br/>";
 			NodeFormatter = NodeFormatter_DefaultValue = "";
 			PointFormat = PointFormat_DefaultValue = "{point.fromNode.name} → {point.toNode.name}: <b>{point.weight}</b><br/>";

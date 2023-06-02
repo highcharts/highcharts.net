@@ -18,18 +18,13 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Accessibility = Accessibility_DefaultValue = new TreegraphSeriesAccessibility();
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			AllowTraversingTree = AllowTraversingTree_DefaultValue = false;
-			AlternateStartingDirection = AlternateStartingDirection_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = true;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "#e6e6e6";
-			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 1;
-			Breadcrumbs = Breadcrumbs_DefaultValue = new TreegraphSeriesBreadcrumbs();
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
-			Cluster = Cluster_DefaultValue = new TreegraphSeriesCluster();
 			CollapseButton = CollapseButton_DefaultValue = new TreegraphSeriesCollapseButton();
 			Color = Color_DefaultValue = "";
 			ColorByPoint = ColorByPoint_DefaultValue = false;
@@ -39,50 +34,37 @@ namespace Highsoft.Web.Mvc.Charts
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = TreegraphSeriesCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
-			DashStyle = DashStyle_DefaultValue = TreegraphSeriesDashStyle.Null;
 			Data = Data_DefaultValue = new List<TreegraphSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new TreegraphSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new TreegraphSeriesEvents();
 			Id = Id_DefaultValue = "";
-			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
-			InteractByLeaf = InteractByLeaf_DefaultValue = null;
-			Jitter = Jitter_DefaultValue = new TreegraphSeriesJitter();
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new TreegraphSeriesLabel();
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = TreegraphSeriesLayoutAlgorithm.SliceAndDice;
-			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreegraphSeriesLayoutStartingDirection.Vertical;
 			LegendIndex = LegendIndex_DefaultValue = null;
-			LevelIsConstant = LevelIsConstant_DefaultValue = true;
+			LegendSymbol = LegendSymbol_DefaultValue = TreegraphSeriesLegendSymbol.Rectangle;
 			Levels = Levels_DefaultValue = new TreegraphSeriesLevels();
-			Linecap = Linecap_DefaultValue = TreegraphSeriesLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 2;
 			Link = Link_DefaultValue = new TreegraphSeriesLink();
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new TreegraphSeriesMarker();
 			Name = Name_DefaultValue = "";
-			NegativeColor = NegativeColor_DefaultValue = "";
 			OnPoint = OnPoint_DefaultValue = new TreegraphSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new TreegraphSeriesPoint();
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Reversed = Reversed_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
-			Shadow = Shadow_DefaultValue = new Shadow();
-			ShadowBool = ShadowBool_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			SortIndex = SortIndex_DefaultValue = null;
+			Sonification = Sonification_DefaultValue = new TreegraphSeriesSonification();
 			States = States_DefaultValue = new TreegraphSeriesStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
-			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new TreegraphSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			UseOhlcData = UseOhlcData_DefaultValue = null;
 			Visible = Visible_DefaultValue = true;
 			ZIndex = ZIndex_DefaultValue = null;
 			
@@ -102,20 +84,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
 		private bool? AllowPointSelect_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When enabled the user can click on a point which is a parent andzoom in on its children.
-		/// </summary>
-		public bool? AllowTraversingTree { get; set; }
-		private bool? AllowTraversingTree_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enabling this option will make the treemap alternate the drawingdirection between vertical and horizontal. The next levels startingdirection will always be the opposite of the previous.
-		/// </summary>
-		public bool? AlternateStartingDirection { get; set; }
-		private bool? AlternateStartingDirection_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -147,24 +115,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border radius for each treemap item.
-		/// </summary>
-		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The width of the border surrounding each tree map item.
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the breadcrumbs, the navigation at the top leading theway up through the traversed levels.
-		/// </summary>
-		public TreegraphSeriesBreadcrumbs Breadcrumbs { get; set; }
-		private TreegraphSeriesBreadcrumbs Breadcrumbs_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -179,13 +133,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Clip { get; set; }
 		private bool? Clip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for marker clusters, the concept of sampling the datavalues into larger blocks in order to ease readability andincrease performance of the JavaScript charts.Note: marker clusters module is not working with `boost`and `draggable-points` modules.The marker clusters feature requires the marker-clusters.jsfile to be loaded, found in the modules directory of the downloadpackage, or online at [code.highcharts.com/modules/marker-clusters.js](code.highcharts.com/modules/marker-clusters.js).
-		/// </summary>
-		public TreegraphSeriesCluster Cluster { get; set; }
-		private TreegraphSeriesCluster Cluster_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -210,7 +157,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -231,7 +178,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points(including markers and columns), is that animation is performed onupdates. On the other hand, when the series contains more points thanthe crop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping awayinvisible points is to increase performance on large series.
+		/// When the series contains less points than the crop threshold, allpoints are drawn, event if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points(including markers and columns), is that animation is performed onupdates. On the other hand, when the series contains more points thanthe crop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping awayinvisible points is to increase performance on large series.
 		/// </summary>
 		public double? CropThreshold { get; set; }
 		private double? CropThreshold_DefaultValue { get; set; }
@@ -249,13 +196,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Custom { get; set; }
 		private Hashtable Custom_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Name of the dash style to use for the graph, or for some series typesthe outline of each shape.In styled mode, the[stroke dash-array](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/series-dashstyle/)can be set with the same classes as listed under[series.color](#plotOptions.series.color).
-		/// </summary>
-		public TreegraphSeriesDashStyle DashStyle { get; set; }
-		private TreegraphSeriesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -301,13 +241,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to ignore hidden points when the layout algorithm runs.If `false`, hidden points will leave open spaces.
-		/// </summary>
-		public bool? IgnoreHiddenPoint { get; set; }
-		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
@@ -319,20 +252,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override double? Index { get; set; }
 		protected override double? Index_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option decides if the user can interact with the parent nodesor just the leaf nodes. When this option is undefined, it will betrue by default. However when allowTraversingTree is true, then itwill be false by default.
-		/// </summary>
-		public bool? InteractByLeaf { get; set; }
-		private bool? InteractByLeaf_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Apply a jitter effect for the rendered markers. When plottingdiscrete values, a little random noise may help telling the pointsapart. The jitter setting applies a random displacement of up to `n`axis units in either direction. So for example on a horizontal Xaxis, setting the `jitter.x` to 0.24 will render the point in arandom position between 0.24 units to the left and 0.24 units to theright of the true axis position. On a category axis, setting it to0.5 will fill up the bin and make the data appear continuous.When rendered on top of a box plot or a column series, a jitter valueof 0.24 will correspond to the underlying series' default[groupPadding](https://api.highcharts.com/highcharts/plotOptions.column.groupPadding)and [pointPadding](https://api.highcharts.com/highcharts/plotOptions.column.pointPadding)settings.
-		/// </summary>
-		public TreegraphSeriesJitter Jitter { get; set; }
-		private TreegraphSeriesJitter Jitter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -350,20 +269,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This option decides which algorithm is used for setting positionand dimensions of the points.
-		/// </summary>
-		public TreegraphSeriesLayoutAlgorithm LayoutAlgorithm { get; set; }
-		private TreegraphSeriesLayoutAlgorithm LayoutAlgorithm_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Defines which direction the layout algorithm will start drawing.
-		/// </summary>
-		public TreegraphSeriesLayoutStartingDirection LayoutStartingDirection { get; set; }
-		private TreegraphSeriesLayoutStartingDirection LayoutStartingDirection_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The sequential index of the series in the legend.
 		/// </summary>
 		public override double? LegendIndex { get; set; }
@@ -371,10 +276,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Used together with the levels and allowTraversingTree options. Whenset to false the first level visible to be level one, which isdynamic when traversing the tree. Otherwise the level will be thesame as the tree structure.
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
 		/// </summary>
-		public bool? LevelIsConstant { get; set; }
-		private bool? LevelIsConstant_DefaultValue { get; set; }
+		public TreegraphSeriesLegendSymbol LegendSymbol { get; set; }
+		private TreegraphSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -382,20 +287,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public TreegraphSeriesLevels Levels { get; set; }
 		private TreegraphSeriesLevels Levels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The line cap used for line ends and line joins on the graph.
-		/// </summary>
-		public TreegraphSeriesLinecap Linecap { get; set; }
-		private TreegraphSeriesLinecap Linecap_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Pixel width of the graph line.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -424,13 +315,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override string Name { get; set; }
 		protected override string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The color for the parts of the graph or points that are below the[threshold](#plotOptions.series.threshold). Note that `zones` takesprecedence over the negative color. Using `negativeColor` isequivalent to applying a zone with value of 0.
-		/// </summary>
-		public string NegativeColor { get; set; }
-		private string NegativeColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -476,20 +360,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
-		/// </summary>
-		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
-		/// </summary>
-		public bool? ShadowBool { get; set; }
-		private bool? ShadowBool_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
 		/// </summary>
 		public bool? ShowCheckbox { get; set; }
@@ -511,10 +381,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The sort index of the point inside the treemap level.
+		/// Sonification/audio chart options for a series.
 		/// </summary>
-		public double? SortIndex { get; set; }
-		private double? SortIndex_DefaultValue { get; set; }
+		public TreegraphSeriesSonification Sonification { get; set; }
+		private TreegraphSeriesSonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -532,13 +402,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The threshold, also called zero level or base level. For line typeseries this is only used in conjunction with[negativeColor](#plotOptions.series.negativeColor).
-		/// </summary>
-		public double? Threshold { get; set; }
-		private double? Threshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from [tooltip](#tooltip), but onlythe following properties can be defined on a series level.
 		/// </summary>
 		public TreegraphSeriesTooltip Tooltip { get; set; }
@@ -550,13 +413,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? TurboThreshold { get; set; }
 		private double? TurboThreshold_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The parameter allows setting line series type and use OHLC indicators.Data in OHLC format is required.
-		/// </summary>
-		public bool? UseOhlcData { get; set; }
-		private bool? UseOhlcData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -582,18 +438,13 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (AllowTraversingTree != AllowTraversingTree_DefaultValue) h.Add("allowTraversingTree",AllowTraversingTree);
-			if (AlternateStartingDirection != AlternateStartingDirection_DefaultValue) h.Add("alternateStartingDirection",AlternateStartingDirection);
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Breadcrumbs.IsDirty(highcharts)) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(highcharts));
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (Cluster.IsDirty(highcharts)) h.Add("cluster",Cluster.ToHashtable(highcharts));
 			if (CollapseButton.IsDirty(highcharts)) h.Add("collapseButton",CollapseButton.ToHashtable(highcharts));
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
@@ -603,51 +454,38 @@ namespace Highsoft.Web.Mvc.Charts
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Data.Any()) h.Add("data",HashifyList(highcharts,Data));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (InteractByLeaf != InteractByLeaf_DefaultValue) h.Add("interactByLeaf",InteractByLeaf);
-			if (Jitter.IsDirty(highcharts)) h.Add("jitter",Jitter.ToHashtable(highcharts));
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
-			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
-			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
-			if (LevelIsConstant != LevelIsConstant_DefaultValue) h.Add("levelIsConstant",LevelIsConstant);
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (Levels.IsDirty(highcharts)) h.Add("levels",Levels.ToHashtable(highcharts));
-			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highcharts.FirstCharacterToLower(Linecap.ToString()));
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Link.IsDirty(highcharts)) h.Add("link",Link.ToHashtable(highcharts));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow.IsDirty(highcharts)) h.Add("shadow",Shadow.ToHashtable(highcharts));
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (SortIndex != SortIndex_DefaultValue) h.Add("sortIndex",SortIndex);
+			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
 			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty(highcharts)) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			h.Add("type","treegraph");
-			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)

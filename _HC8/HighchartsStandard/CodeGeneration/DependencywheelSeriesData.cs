@@ -21,15 +21,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Custom = Custom_DefaultValue = new Hashtable();
-			DataLabels = DataLabels_DefaultValue = new DependencywheelSeriesDataLabels();
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new DependencywheelSeriesDataDragDrop();
 			Events = Events_DefaultValue = new DependencywheelSeriesDataEvents();
 			From = From_DefaultValue = "";
 			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
 			Name = Name_DefaultValue = "";
-			Outgoing = Outgoing_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			To = To_DefaultValue = "";
 			Weight = Weight_DefaultValue = null;
@@ -60,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.
+		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.Since v11, CSS variables on the form `--highcharts-color-{n}` make changingthe color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -74,24 +71,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Individual data label for each point. The options are the same asthe ones for [plotOptions.series.dataLabels](#plotOptions.series.dataLabels).
-		/// </summary>
-		public DependencywheelSeriesDataLabels DataLabels { get; set; }
-		private DependencywheelSeriesDataLabels DataLabels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// A description of the point to add to the screen reader informationabout the point.
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.
-		/// </summary>
-		public DependencywheelSeriesDataDragDrop DragDrop { get; set; }
-		private DependencywheelSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -130,13 +113,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether the link goes out of the system.
-		/// </summary>
-		public bool? Outgoing { get; set; }
-		private bool? Outgoing_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -169,15 +145,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Outgoing != Outgoing_DefaultValue) h.Add("outgoing",Outgoing);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);

@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new XAxisCrosshair();
 			CrosshairBool = CrosshairBool_DefaultValue = false;
+			Crossing = Crossing_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Events = Events_DefaultValue = new XAxisEvents();
@@ -40,7 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Labels = Labels_DefaultValue = new XAxisLabels();
 			Left = Left_DefaultValue = "";
 			LeftNumber = LeftNumber_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "#ccd6eb";
+			LineColor = LineColor_DefaultValue = "#333333";
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
@@ -58,6 +59,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = XAxisMinorTickPosition.Outside;
 			MinorTicks = MinorTicks_DefaultValue = false;
+			MinorTicksPerMajor = MinorTicksPerMajor_DefaultValue = 5;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			MinPadding = MinPadding_DefaultValue = null;
 			MinRange = MinRange_DefaultValue = null;
@@ -81,7 +83,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = false;
 			TickAmount = TickAmount_DefaultValue = null;
-			TickColor = TickColor_DefaultValue = "#ccd6eb";
+			TickColor = TickColor_DefaultValue = "#333333";
 			TickInterval = TickInterval_DefaultValue = null;
 			TickLength = TickLength_DefaultValue = 10;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 100;
@@ -170,6 +172,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? CrosshairBool { get; set; }
 		private bool? CrosshairBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The value on a perpendicular axis where this axis should cross. Thisis typically used on mathematical plots where the axes cross at 0.When `crossing` is set, space will not be reserved at the sides ofthe chart for axis labels and title, so those may be clipped. In thiscase it is better to place the axes without the `crossing` option.
+		/// </summary>
+		public double? Crossing { get; set; }
+		private double? Crossing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -390,10 +399,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable minor ticks. Unless[minorTickInterval](#xAxis.minorTickInterval) is set, the tickinterval is calculated as a fifth of the `tickInterval`.On a logarithmic axis, minor ticks are laid out based on a bestguess, attempting to enter approximately 5 minor ticks betweeneach major tick.Prior to v6.0.0, ticks were unabled in auto layout by setting`minorTickInterval` to `"auto"`.
+		/// Enable or disable minor ticks. The interval between the minor tickscan be controlled either by the[minorTicksPerMajor](#xAxis.minorTicksPerMajor) setting, or as anabsolute [minorTickInterval](#xAxis.minorTickInterval) value.On a logarithmic axis, minor ticks are laid out based on a bestguess, attempting to enter an approximate number of minor ticksbetween each major tick based on[minorTicksPerMajor](#xAxis.minorTicksPerMajor).Prior to v6.0.0, ticks were enabled in auto layout by setting`minorTickInterval` to `"auto"`.
 		/// </summary>
 		public bool? MinorTicks { get; set; }
 		private bool? MinorTicks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The number of minor ticks per major tick. Works for `linear`,`logarithmic` and `datetime` axes.
+		/// </summary>
+		public double? MinorTicksPerMajor { get; set; }
+		private double? MinorTicksPerMajor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -686,6 +702,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crosshair.IsDirty(highstock)) h.Add("crosshair",Crosshair.ToHashtable(highstock));
 			if (CrosshairBool != CrosshairBool_DefaultValue) h.Add("crosshair",CrosshairBool);
+			if (Crossing != Crossing_DefaultValue) h.Add("crossing",Crossing);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
@@ -718,6 +735,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", highstock.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
+			if (MinorTicksPerMajor != MinorTicksPerMajor_DefaultValue) h.Add("minorTicksPerMajor",MinorTicksPerMajor);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);

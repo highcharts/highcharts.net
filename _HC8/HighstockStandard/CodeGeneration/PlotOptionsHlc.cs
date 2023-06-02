@@ -23,9 +23,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BoostBlending = BoostBlending_DefaultValue = PlotOptionsHlcBoostBlending.Undefined;
 			BoostThreshold = BoostThreshold_DefaultValue = 5000;
-			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderRadius = BorderRadius_DefaultValue = 0;
-			BorderWidth = BorderWidth_DefaultValue = null;
 			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
@@ -40,7 +37,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Compare = Compare_DefaultValue = PlotOptionsHlcCompare.Null;
 			CompareBase = CompareBase_DefaultValue = PlotOptionsHlcCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
-			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cumulative = Cumulative_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsHlcCursor.Null;
@@ -66,6 +62,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Label = Label_DefaultValue = new PlotOptionsHlcLabel();
 			LastPrice = LastPrice_DefaultValue = new PlotOptionsHlcLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsHlcLastVisiblePrice();
+			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsHlcLegendSymbol.Rectangle;
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			MaxPointWidth = MaxPointWidth_DefaultValue = null;
@@ -92,7 +89,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowInNavigator = ShowInNavigator_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
-			Stacking = Stacking_DefaultValue = PlotOptionsHlcStacking.Null;
+			Sonification = Sonification_DefaultValue = new PlotOptionsHlcSonification();
 			States = States_DefaultValue = new PlotOptionsHlcStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Threshold = Threshold_DefaultValue = 0;
@@ -156,27 +153,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The color of the border surrounding each column or bar.In styled mode, the border stroke can be set with the`.highcharts-point` rule.
-		/// </summary>
-		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The corner radius of the border surrounding each column or bar.
-		/// </summary>
-		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the border surrounding each column or bar. Defaults to`1` when there is room for a border, but to `0` when the columns areso dense that a border would cover the next column.In styled mode, the stroke width can be set with the`.highcharts-point` rule.
-		/// </summary>
-		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When `true`, the columns will center in the category, ignoring nullor missing points. When `false`, space will be reserved for null ormissing points.
 		/// </summary>
 		public bool? CenterInCategory { get; set; }
@@ -233,7 +209,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -272,13 +248,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? CompareStart { get; set; }
 		private bool? CompareStart_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
-		/// </summary>
-		public bool? Crisp { get; set; }
-		private bool? Crisp_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -457,6 +426,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public PlotOptionsHlcLegendSymbol LegendSymbol { get; set; }
+		private PlotOptionsHlcLegendSymbol LegendSymbol_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The pixel width of the line/border. Defaults to `1`.
 		/// </summary>
 		public double? LineWidth { get; set; }
@@ -590,14 +566,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -639,10 +615,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to stack the values of each series on top of each other.Possible values are `undefined` to disable, `"normal"` to stack byvalue or `"percent"`.When stacking is enabled, data must be sortedin ascending X order.Some stacking options are related to specific series types. In thestreamgraph series type, the stacking option is set to `"stream"`.The second one is `"overlap"`, which only applies to waterfallseries.
+		/// Sonification/audio chart options for a series.
 		/// </summary>
-		public PlotOptionsHlcStacking Stacking { get; set; }
-		private PlotOptionsHlcStacking Stacking_DefaultValue { get; set; }
+		public PlotOptionsHlcSonification Sonification { get; set; }
+		private PlotOptionsHlcSonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -715,9 +691,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highstock.FirstCharacterToLower(BoostBlending.ToString()));
 			if (BoostThreshold != BoostThreshold_DefaultValue) h.Add("boostThreshold",BoostThreshold);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
@@ -732,7 +705,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Compare != Compare_DefaultValue) h.Add("compare", highstock.FirstCharacterToLower(Compare.ToString()));
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
-			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highstock.FirstCharacterToLower(Cursor.ToString()));
@@ -758,6 +730,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
 			if (LastPrice.IsDirty(highstock)) h.Add("lastPrice",LastPrice.ToHashtable(highstock));
 			if (LastVisiblePrice.IsDirty(highstock)) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable(highstock));
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highstock.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
@@ -788,7 +761,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowInNavigator != ShowInNavigator_DefaultValue) h.Add("showInNavigator",ShowInNavigator);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking", highstock.FirstCharacterToLower(Stacking.ToString()));
+			if (Sonification.IsDirty(highstock)) h.Add("sonification",Sonification.ToHashtable(highstock));
 			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);

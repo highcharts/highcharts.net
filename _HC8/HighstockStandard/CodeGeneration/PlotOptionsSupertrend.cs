@@ -26,13 +26,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			ChangeTrendLine = ChangeTrendLine_DefaultValue = new PlotOptionsSupertrendChangeTrendLine();
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
+			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
+			Compare = Compare_DefaultValue = PlotOptionsSupertrendCompare.Null;
+			CompareBase = CompareBase_DefaultValue = PlotOptionsSupertrendCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			CompareToMain = CompareToMain_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			Crisp = Crisp_DefaultValue = true;
-			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cumulative = Cumulative_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsSupertrendCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
@@ -41,7 +43,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsSupertrendDataLabels();
 			DataSorting = DataSorting_DefaultValue = new PlotOptionsSupertrendDataSorting();
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new PlotOptionsSupertrendDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsSupertrendEvents();
 			FallingTrendColor = FallingTrendColor_DefaultValue = "#f21313";
@@ -53,8 +54,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Label = Label_DefaultValue = new PlotOptionsSupertrendLabel();
 			LastPrice = LastPrice_DefaultValue = new PlotOptionsSupertrendLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsSupertrendLastVisiblePrice();
+			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsSupertrendLegendSymbol.Rectangle;
 			Linecap = Linecap_DefaultValue = PlotOptionsSupertrendLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 2;
+			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsSupertrendMarker();
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsSupertrendOnPoint();
@@ -71,6 +73,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ShowInLegend = ShowInLegend_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SoftThreshold = SoftThreshold_DefaultValue = true;
+			Sonification = Sonification_DefaultValue = new PlotOptionsSupertrendSonification();
 			States = States_DefaultValue = new PlotOptionsSupertrendStates();
 			Step = Step_DefaultValue = PlotOptionsSupertrendStep.Null;
 			StickyTracking = StickyTracking_DefaultValue = true;
@@ -155,7 +158,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// The main color of the series. In line type series it applies to theline and the point markers unless otherwise specified. In bar typeseries it applies to the bars unless a color is specified per point.The default value is pulled from the `options.colors` array.In styled mode, the color can be defined by the[colorIndex](#plotOptions.series.colorIndex) option. Also, the seriescolor can be set with the `.highcharts-series`,`.highcharts-color-{n}`, `.highcharts-{type}-series` or`.highcharts-series-{n}` class, or individual classes given by the`className` option.
+		/// </summary>
+		public string Color { get; set; }
+		private string Color_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -166,6 +176,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ColorKey { get; set; }
 		private string ColorKey_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Compare the values of the series against the first non-null, non-zero value in the visible range. The y axis will show percentageor absolute change depending on whether `compare` is set to `"percent"`or `"value"`. When this is applied to multiple series, it allowscomparing the development of the series against each other. Addsa `change` field to every point object.
+		/// </summary>
+		public PlotOptionsSupertrendCompare Compare { get; set; }
+		private PlotOptionsSupertrendCompare Compare_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When [compare](#plotOptions.series.compare) is `percent`, this optiondictates whether to use 0 or 100 as the base of comparison.
+		/// </summary>
+		public PlotOptionsSupertrendCompareBase CompareBase { get; set; }
+		private PlotOptionsSupertrendCompareBase CompareBase_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -183,7 +207,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.
+		/// Whether to connect a graph line across null points, or render a gapbetween the two points on either side of the null.In stacked area chart, if `connectNulls` is set to true,null points are interpreted as 0.
 		/// </summary>
 		public bool? ConnectNulls { get; set; }
 		private bool? ConnectNulls_DefaultValue { get; set; }
@@ -194,13 +218,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Crisp { get; set; }
 		private bool? Crisp_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When the series contains less points than the crop threshold, allpoints are drawn, even if the points fall outside the visible plotarea at the current zoom. The advantage of drawing all points(including markers and columns), is that animation is performed onupdates. On the other hand, when the series contains more points thanthe crop threshold, the series data is cropped to only contain pointsthat fall within the plot area. The advantage of cropping awayinvisible points is to increase performance on large series.
-		/// </summary>
-		public double? CropThreshold { get; set; }
-		private double? CropThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -257,13 +274,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
-		/// </summary>
-		public PlotOptionsSupertrendDragDrop DragDrop { get; set; }
-		private PlotOptionsSupertrendDragDrop DragDrop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -341,6 +351,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsSupertrendLastVisiblePrice LastVisiblePrice { get; set; }
 		private PlotOptionsSupertrendLastVisiblePrice LastVisiblePrice_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// </summary>
+		public PlotOptionsSupertrendLegendSymbol LegendSymbol { get; set; }
+		private PlotOptionsSupertrendLegendSymbol LegendSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -428,14 +445,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.
+		/// Whether to apply a drop shadow to the graph line. Since 2.3 theshadow can be an object configuration containing `color`, `offsetX`,`offsetY`, `opacity` and `width`.Note that in some cases, like stacked columns or other dense layouts, theseries may cast shadows on each other. In that case, the`chart.seriesGroupShadow` allows applying a common drop shadow to thewhole series group.
 		/// </summary>
 		public bool? ShadowBool { get; set; }
 		private bool? ShadowBool_DefaultValue { get; set; }
@@ -467,6 +484,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? SoftThreshold { get; set; }
 		private bool? SoftThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Sonification/audio chart options for a series.
+		/// </summary>
+		public PlotOptionsSupertrendSonification Sonification { get; set; }
+		private PlotOptionsSupertrendSonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -542,13 +566,15 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ChangeTrendLine.IsDirty(highstock)) h.Add("changeTrendLine",ChangeTrendLine.ToHashtable(highstock));
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
+			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
+			if (Compare != Compare_DefaultValue) h.Add("compare", highstock.FirstCharacterToLower(Compare.ToString()));
+			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (CompareToMain != CompareToMain_DefaultValue) h.Add("compareToMain",CompareToMain);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
@@ -557,7 +583,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DataLabels.IsDirty(highstock)) h.Add("dataLabels",DataLabels.ToHashtable(highstock));
 			if (DataSorting.IsDirty(highstock)) h.Add("dataSorting",DataSorting.ToHashtable(highstock));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highstock)) h.Add("dragDrop",DragDrop.ToHashtable(highstock));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
 			if (FallingTrendColor != FallingTrendColor_DefaultValue) h.Add("fallingTrendColor",FallingTrendColor);
@@ -569,6 +594,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
 			if (LastPrice.IsDirty(highstock)) h.Add("lastPrice",LastPrice.ToHashtable(highstock));
 			if (LastVisiblePrice.IsDirty(highstock)) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable(highstock));
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highstock.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
@@ -587,6 +613,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
+			if (Sonification.IsDirty(highstock)) h.Add("sonification",Sonification.ToHashtable(highstock));
 			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
 			if (Step != Step_DefaultValue) h.Add("step", highstock.FirstCharacterToLower(Step.ToString()));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);

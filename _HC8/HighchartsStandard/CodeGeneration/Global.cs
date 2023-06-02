@@ -22,7 +22,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Timezone = Timezone_DefaultValue = "";
 			TimezoneOffset = TimezoneOffset_DefaultValue = null;
 			UseUTC = UseUTC_DefaultValue = null;
-			VMLRadialGradientURL = VMLRadialGradientURL_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -70,13 +69,6 @@ namespace Highsoft.Web.Mvc.Charts
 		private bool? UseUTC_DefaultValue { get; set; }
 		 
 
-		/// <summary>
-		/// Path to the pattern image required by VML browsers in order todraw radial gradients.
-		/// </summary>
-		public string VMLRadialGradientURL { get; set; }
-		private string VMLRadialGradientURL_DefaultValue { get; set; }
-		 
-
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
@@ -90,7 +82,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
-			if (VMLRadialGradientURL != VMLRadialGradientURL_DefaultValue) h.Add("vMLRadialGradientURL",VMLRadialGradientURL);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

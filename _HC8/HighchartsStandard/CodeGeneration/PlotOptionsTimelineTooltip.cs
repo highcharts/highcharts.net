@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTimelineTooltip()
 		{
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='color:{point.color}'>●</span> <span style='font-size: 10px'> {point.key}</span><br/>";
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='color:{point.color}'>●</span> <span style='font-size: 0.8em'> {point.key}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "{point.description}";
 			
 			CustomFields = new Hashtable();

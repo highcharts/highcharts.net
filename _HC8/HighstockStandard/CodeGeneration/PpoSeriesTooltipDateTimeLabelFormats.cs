@@ -16,13 +16,13 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PpoSeriesTooltipDateTimeLabelFormats()
 		{
-			Day = Day_DefaultValue = "%A, %b %e, %Y";
-			Hour = Hour_DefaultValue = "%A, %b %e, %H:%M";
-			Millisecond = Millisecond_DefaultValue = "%A, %b %e, %H:%M:%S.%L";
-			Minute = Minute_DefaultValue = "%A, %b %e, %H:%M";
+			Day = Day_DefaultValue = "%A, %e %b %Y";
+			Hour = Hour_DefaultValue = "%A, %e %b, %H:%M";
+			Millisecond = Millisecond_DefaultValue = "%A, %e %b, %H:%M:%S.%L";
+			Minute = Minute_DefaultValue = "%A, %e %b, %H:%M";
 			Month = Month_DefaultValue = "%B %Y";
-			Second = Second_DefaultValue = "%A, %b %e, %H:%M:%S";
-			Week = Week_DefaultValue = "Week from %A, %b %e, %Y";
+			Second = Second_DefaultValue = "%A, %e %b, %H:%M:%S";
+			Week = Week_DefaultValue = "Week from %A, %e %b %Y";
 			Year = Year_DefaultValue = "%Y";
 			
 			CustomFields = new Hashtable();

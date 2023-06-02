@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ButtonSpacing = ButtonSpacing_DefaultValue = 3;
 			ClassName = ClassName_DefaultValue = "highcharts-contextbutton";
 			Enabled = Enabled_DefaultValue = true;
-			Height = Height_DefaultValue = 22;
+			Height = Height_DefaultValue = 28;
 			MenuClassName = MenuClassName_DefaultValue = "highcharts-contextmenu";
 			MenuItems = MenuItems_DefaultValue = new List<MenuItem>();
 			Onclick = Onclick_DefaultValue = "";
@@ -37,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			TitleKey = TitleKey_DefaultValue = "contextButtonTitle";
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = ExportingButtonsContextButtonVerticalAlign.Top;
-			Width = Width_DefaultValue = 24;
+			Width = Width_DefaultValue = 28;
 			X = X_DefaultValue = -10;
 			Y = Y_DefaultValue = 0;
 			

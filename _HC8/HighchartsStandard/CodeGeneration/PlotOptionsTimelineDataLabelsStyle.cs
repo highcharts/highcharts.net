@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTimelineDataLabelsStyle()
 		{
-			FontSize = FontSize_DefaultValue = "12px";
+			FontSize = FontSize_DefaultValue = "0.8em";
 			FontWeight = FontWeight_DefaultValue = "normal";
 			TextOutline = TextOutline_DefaultValue = "none";
 			

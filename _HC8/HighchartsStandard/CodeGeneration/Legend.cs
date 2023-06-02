@@ -31,8 +31,8 @@ namespace Highsoft.Web.Mvc.Charts
 			ItemDistance = ItemDistance_DefaultValue = 20;
 			ItemHiddenStyle = ItemHiddenStyle_DefaultValue = new Hashtable();
 			ItemHoverStyle = ItemHoverStyle_DefaultValue = new Hashtable();
-			ItemMarginBottom = ItemMarginBottom_DefaultValue = 0;
-			ItemMarginTop = ItemMarginTop_DefaultValue = 0;
+			ItemMarginBottom = ItemMarginBottom_DefaultValue = 2;
+			ItemMarginTop = ItemMarginTop_DefaultValue = 2;
 			ItemStyle = ItemStyle_DefaultValue = new Hashtable();
 			ItemWidth = ItemWidth_DefaultValue = null;
 			LabelFormat = LabelFormat_DefaultValue = "{name}";
@@ -305,7 +305,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border radius of the symbol for series types that use a rectanglein the legend. Defaults to half the `symbolHeight`.
+		/// The border radius of the symbol for series types that use a rectanglein the legend. Defaults to half the `symbolHeight`, effectivelycreating a circle.For color axis scales, it defaults to 3.
 		/// </summary>
 		public double? SymbolRadius { get; set; }
 		private double? SymbolRadius_DefaultValue { get; set; }

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsScatterTooltip()
 		{
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='color:{point.color}'>●</span> <span style='font-size: 10px'> {series.name}</span><br/>";
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='color:{point.color}'>●</span> <span style='font-size: 0.8em'> {series.name}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>";
 			
 			CustomFields = new Hashtable();

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LegendNavigation()
 		{
-			ActiveColor = ActiveColor_DefaultValue = "#003399";
+			ActiveColor = ActiveColor_DefaultValue = "#0022ff";
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = true;
 			ArrowSize = ArrowSize_DefaultValue = 12;

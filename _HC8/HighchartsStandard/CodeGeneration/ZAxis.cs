@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
+			Crossing = Crossing_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Events = Events_DefaultValue = new ZAxisEvents();
@@ -33,12 +34,8 @@ namespace Highsoft.Web.Mvc.Charts
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = ZAxisGridLineInterpolation.Null;
 			GridLineWidth = GridLineWidth_DefaultValue = null;
 			GridZIndex = GridZIndex_DefaultValue = 1;
-			Height = Height_DefaultValue = "";
-			HeightNumber = HeightNumber_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Labels = Labels_DefaultValue = new ZAxisLabels();
-			Left = Left_DefaultValue = "";
-			LeftNumber = LeftNumber_DefaultValue = null;
 			LinkedTo = LinkedTo_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			Max = Max_DefaultValue = null;
@@ -54,6 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ZAxisMinorTickPosition.Outside;
 			MinorTicks = MinorTicks_DefaultValue = false;
+			MinorTicksPerMajor = MinorTicksPerMajor_DefaultValue = 5;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			MinPadding = MinPadding_DefaultValue = null;
 			MinRange = MinRange_DefaultValue = null;
@@ -73,7 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = false;
 			TickAmount = TickAmount_DefaultValue = null;
-			TickColor = TickColor_DefaultValue = "#ccd6eb";
+			TickColor = TickColor_DefaultValue = "#333333";
 			TickInterval = TickInterval_DefaultValue = null;
 			TickLength = TickLength_DefaultValue = 10;
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = ZAxisTickmarkPlacement.Between;
@@ -83,13 +81,9 @@ namespace Highsoft.Web.Mvc.Charts
 			TickPositions = TickPositions_DefaultValue = new List<double>();
 			TickWidth = TickWidth_DefaultValue = null;
 			Title = Title_DefaultValue = new ZAxisTitle();
-			Top = Top_DefaultValue = "";
-			TopNumber = TopNumber_DefaultValue = null;
 			Type = Type_DefaultValue = "linear";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
-			Width = Width_DefaultValue = "";
-			WidthNumber = WidthNumber_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 2;
 			ZoomEnabled = ZoomEnabled_DefaultValue = null;
 			
@@ -151,6 +145,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The value on a perpendicular axis where this axis should cross. Thisis typically used on mathematical plots where the axes cross at 0.When `crossing` is set, space will not be reserved at the sides ofthe chart for axis labels and title, so those may be clipped. In thiscase it is better to place the axes without the `crossing` option.
+		/// </summary>
+		public double? Crossing { get; set; }
+		private double? Crossing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -217,20 +218,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The height as the vertical axis. If it's a number, it isinterpreted as pixels.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the total plot height.
-		/// </summary>
-		public string Height { get; set; }
-		private string Height_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The height as the vertical axis. If it's a number, it isinterpreted as pixels.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the total plot height.
-		/// </summary>
-		public double? HeightNumber { get; set; }
-		private double? HeightNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An id for the axis. This can be used after render time to geta pointer to the axis object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -242,20 +229,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public ZAxisLabels Labels { get; set; }
 		private ZAxisLabels Labels_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The left position as the horizontal axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts v5.0.13: If it's a percentage string, it isinterpreted as percentages of the plot width, offset from plot arealeft.
-		/// </summary>
-		public string Left { get; set; }
-		private string Left_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The left position as the horizontal axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts v5.0.13: If it's a percentage string, it isinterpreted as percentages of the plot width, offset from plot arealeft.
-		/// </summary>
-		public double? LeftNumber { get; set; }
-		private double? LeftNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -357,10 +330,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable minor ticks. Unless[minorTickInterval](#xAxis.minorTickInterval) is set, the tickinterval is calculated as a fifth of the `tickInterval`.On a logarithmic axis, minor ticks are laid out based on a bestguess, attempting to enter approximately 5 minor ticks betweeneach major tick.Prior to v6.0.0, ticks were unabled in auto layout by setting`minorTickInterval` to `"auto"`.
+		/// Enable or disable minor ticks. The interval between the minor tickscan be controlled either by the[minorTicksPerMajor](#xAxis.minorTicksPerMajor) setting, or as anabsolute [minorTickInterval](#xAxis.minorTickInterval) value.On a logarithmic axis, minor ticks are laid out based on a bestguess, attempting to enter an approximate number of minor ticksbetween each major tick based on[minorTicksPerMajor](#xAxis.minorTicksPerMajor).Prior to v6.0.0, ticks were enabled in auto layout by setting`minorTickInterval` to `"auto"`.
 		/// </summary>
 		public bool? MinorTicks { get; set; }
 		private bool? MinorTicks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The number of minor ticks per major tick. Works for `linear`,`logarithmic` and `datetime` axes.
+		/// </summary>
+		public double? MinorTicksPerMajor { get; set; }
+		private double? MinorTicksPerMajor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -567,20 +547,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The top position as the vertical axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the plot height, offset from plot area top.
-		/// </summary>
-		public string Top { get; set; }
-		private string Top_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The top position as the vertical axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the plot height, offset from plot area top.
-		/// </summary>
-		public double? TopNumber { get; set; }
-		private double? TopNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The type of axis. Can be one of `linear`, `logarithmic`, `datetime`or `category`. In a datetime axis, the numbers are given inmilliseconds, and tick marks are placed on appropriate values likefull hours or days. In a category axis, the[point names](#series.line.data.name) of the chart's series are usedfor categories, if not a [categories](#xAxis.categories) array isdefined.
 		/// </summary>
 		public string Type { get; set; }
@@ -599,20 +565,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Visible { get; set; }
 		private bool? Visible_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width as the horizontal axis. If it's a number, it is interpretedas pixels.Since Highcharts v5.0.13: If it's a percentage string, it isinterpreted as percentages of the total plot width.
-		/// </summary>
-		public string Width { get; set; }
-		private string Width_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width as the horizontal axis. If it's a number, it is interpretedas pixels.Since Highcharts v5.0.13: If it's a percentage string, it isinterpreted as percentages of the total plot width.
-		/// </summary>
-		public double? WidthNumber { get; set; }
-		private double? WidthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -644,6 +596,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (Crossing != Crossing_DefaultValue) h.Add("crossing",Crossing);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
@@ -653,12 +606,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labels.IsDirty(highcharts)) h.Add("labels",Labels.ToHashtable(highcharts));
-			if (Left != Left_DefaultValue) h.Add("left",Left);
-			if (LeftNumber != LeftNumber_DefaultValue) h.Add("left",LeftNumber);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
@@ -674,6 +623,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
+			if (MinorTicksPerMajor != MinorTicksPerMajor_DefaultValue) h.Add("minorTicksPerMajor",MinorTicksPerMajor);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
 			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
@@ -703,13 +653,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Title.IsDirty(highcharts)) h.Add("title",Title.ToHashtable(highcharts));
-			if (Top != Top_DefaultValue) h.Add("top",Top);
-			if (TopNumber != TopNumber_DefaultValue) h.Add("top",TopNumber);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
 			if (CustomFields.Count > 0)

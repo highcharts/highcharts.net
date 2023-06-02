@@ -17,13 +17,11 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsVectorClusterMarker()
 		{
 			Enabled = Enabled_DefaultValue = false;
-			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			FillColor = FillColor_DefaultValue = "";
 			Height = Height_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
 			Radius = Radius_DefaultValue = 15;
-			States = States_DefaultValue = new PlotOptionsVectorClusterMarkerStates();
 			Symbol = Symbol_DefaultValue = "cluster";
 			Width = Width_DefaultValue = null;
 			
@@ -36,13 +34,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The threshold for how dense the point markers should be beforethey are hidden, given that `enabled` is not defined. The numberindicates the horizontal distance between the two closest pointsin the series, as multiples of the `marker.radius`. In otherwords, the default value of 2 means points are hidden ifoverlapping horizontally.
-		/// </summary>
-		public double? EnabledThreshold { get; set; }
-		private double? EnabledThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -81,13 +72,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// States for a single point marker.
-		/// </summary>
-		public PlotOptionsVectorClusterMarkerStates States { get; set; }
-		private PlotOptionsVectorClusterMarkerStates States_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// 
 		/// </summary>
 		public string Symbol { get; set; }
@@ -109,13 +93,11 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (States.IsDirty(highstock)) h.Add("states",States.ToHashtable(highstock));
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (CustomFields.Count > 0)

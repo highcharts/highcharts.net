@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SunburstSeriesBreadcrumbsButtonThemeStyle()
 		{
-			Color = Color_DefaultValue = "#335cad";
+			Color = Color_DefaultValue = "#334eff";
 			
 			CustomFields = new Hashtable();
 		}	

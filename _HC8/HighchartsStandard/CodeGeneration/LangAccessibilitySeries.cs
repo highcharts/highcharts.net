@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// User supplied description text. This is added in the pointcomment description by default if present.
+		/// User supplied description text. This is added in the pointcomment description by default if present.`{description}` refers to the value given in[point.accessibility.description](#series.line.data.accessibility.description).
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }

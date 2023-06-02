@@ -23,17 +23,13 @@ namespace Highsoft.Web.Mvc.Charts
 			Custom = Custom_DefaultValue = new Hashtable();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new NetworkgraphSeriesDataDragDrop();
-			Drilldown = Drilldown_DefaultValue = "";
 			Events = Events_DefaultValue = new NetworkgraphSeriesDataEvents();
 			From = From_DefaultValue = "";
 			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
-			Marker = Marker_DefaultValue = new NetworkgraphSeriesDataMarker();
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			To = To_DefaultValue = "";
-			X = X_DefaultValue = double.MinValue;
-			Y = Y_DefaultValue = double.MinValue;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -61,7 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.
+		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.Since v11, CSS variables on the form `--highcharts-color-{n}` make changingthe color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -86,13 +82,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public NetworkgraphSeriesDataDragDrop DragDrop { get; set; }
 		private NetworkgraphSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The `id` of a series in the [drilldown.series](#drilldown.series) array touse for a drilldown for this point.
-		/// </summary>
-		public string Drilldown { get; set; }
-		private string Drilldown_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -124,13 +113,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the point markers of line-like series.
-		/// </summary>
-		public NetworkgraphSeriesDataMarker Marker { get; set; }
-		private NetworkgraphSeriesDataMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The name of the point as shown in the legend, tooltip, dataLabels, etc.
 		/// </summary>
 		public string Name { get; set; }
@@ -151,20 +133,6 @@ namespace Highsoft.Web.Mvc.Charts
 		private string To_DefaultValue { get; set; }
 		 
 
-		/// <summary>
-		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
-		/// </summary>
-		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y value of the point.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
@@ -179,17 +147,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (From != From_DefaultValue) h.Add("from",From);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (To != To_DefaultValue) h.Add("to",To);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

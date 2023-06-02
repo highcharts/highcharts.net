@@ -31,7 +31,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new BarSeriesDataEvents();
 			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
-			Marker = Marker_DefaultValue = new BarSeriesDataMarker();
 			Name = Name_DefaultValue = "";
 			PointWidth = PointWidth_DefaultValue = null;
 			Selected = Selected_DefaultValue = false;
@@ -78,7 +77,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.
+		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.Since v11, CSS variables on the form `--highcharts-color-{n}` make changingthe color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -148,13 +147,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for the point markers of line-like series.
-		/// </summary>
-		public BarSeriesDataMarker Marker { get; set; }
-		private BarSeriesDataMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The name of the point as shown in the legend, tooltip, dataLabels, etc.
 		/// </summary>
 		public string Name { get; set; }
@@ -211,7 +203,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);

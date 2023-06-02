@@ -17,45 +17,32 @@ namespace Highsoft.Web.Mvc.Charts
 		public ColorAxis()
 		{
 			Accessibility = Accessibility_DefaultValue = new ColorAxisAccessibility();
-			AlignTicks = AlignTicks_DefaultValue = true;
 			AllowDecimals = AllowDecimals_DefaultValue = true;
-			AlternateGridColor = AlternateGridColor_DefaultValue = "";
 			Angle = Angle_DefaultValue = 0;
-			Breaks = Breaks_DefaultValue = new ColorAxisBreaks();
-			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
-			Crosshair = Crosshair_DefaultValue = new ColorAxisCrosshair();
-			CrosshairBool = CrosshairBool_DefaultValue = false;
+			Crossing = Crossing_DefaultValue = null;
 			DataClassColor = DataClassColor_DefaultValue = ColorAxisDataClassColor.Tween;
 			DataClasses = DataClasses_DefaultValue = new List<ColorAxisDataClasses>();
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = true;
 			Events = Events_DefaultValue = new ColorAxisEvents();
 			Floor = Floor_DefaultValue = null;
-			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
+			GridLineColor = GridLineColor_DefaultValue = "#ffffff";
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = new Hashtable();
 			GridLineInterpolation = GridLineInterpolation_DefaultValue = ColorAxisGridLineInterpolation.Null;
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			GridZIndex = GridZIndex_DefaultValue = 1;
-			Height = Height_DefaultValue = "";
-			HeightNumber = HeightNumber_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Labels = Labels_DefaultValue = new ColorAxisLabels();
 			Layout = Layout_DefaultValue = "";
-			Left = Left_DefaultValue = "";
-			LeftNumber = LeftNumber_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "#ccd6eb";
-			LineWidth = LineWidth_DefaultValue = 1;
-			LinkedTo = LinkedTo_DefaultValue = null;
+			LineColor = LineColor_DefaultValue = "#333333";
 			Margin = Margin_DefaultValue = null;
 			Marker = Marker_DefaultValue = new ColorAxisMarker();
 			Max = Max_DefaultValue = null;
-			MaxColor = MaxColor_DefaultValue = "#003399";
+			MaxColor = MaxColor_DefaultValue = "#0022ff";
 			MaxPadding = MaxPadding_DefaultValue = 0;
-			MaxZoom = MaxZoom_DefaultValue = null;
 			Min = Min_DefaultValue = null;
-			MinColor = MinColor_DefaultValue = "#e6ebf5";
+			MinColor = MinColor_DefaultValue = "#e6e9ff";
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = new Hashtable();
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
@@ -65,19 +52,11 @@ namespace Highsoft.Web.Mvc.Charts
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = ColorAxisMinorTickPosition.Outside;
 			MinorTicks = MinorTicks_DefaultValue = false;
+			MinorTicksPerMajor = MinorTicksPerMajor_DefaultValue = 5;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			MinPadding = MinPadding_DefaultValue = 0;
-			MinRange = MinRange_DefaultValue = null;
-			MinTickInterval = MinTickInterval_DefaultValue = null;
-			Offset = Offset_DefaultValue = null;
-			Opposite = Opposite_DefaultValue = false;
-			Pane = Pane_DefaultValue = null;
 			PanningEnabled = PanningEnabled_DefaultValue = true;
-			PlotBands = PlotBands_DefaultValue = new ColorAxisPlotBands();
-			PlotLines = PlotLines_DefaultValue = new ColorAxisPlotLines();
 			Reversed = Reversed_DefaultValue = null;
-			ReversedStacks = ReversedStacks_DefaultValue = false;
-			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			ShowInLegend = ShowInLegend_DefaultValue = true;
 			ShowLastLabel = ShowLastLabel_DefaultValue = null;
@@ -87,7 +66,7 @@ namespace Highsoft.Web.Mvc.Charts
 			StartOnTick = StartOnTick_DefaultValue = true;
 			Stops = Stops_DefaultValue = new List<Stop>();
 			TickAmount = TickAmount_DefaultValue = null;
-			TickColor = TickColor_DefaultValue = "#ccd6eb";
+			TickColor = TickColor_DefaultValue = "#333333";
 			TickInterval = TickInterval_DefaultValue = null;
 			TickLength = TickLength_DefaultValue = 5;
 			TickmarkPlacement = TickmarkPlacement_DefaultValue = ColorAxisTickmarkPlacement.Between;
@@ -96,16 +75,10 @@ namespace Highsoft.Web.Mvc.Charts
 			TickPositioner = TickPositioner_DefaultValue = "";
 			TickPositions = TickPositions_DefaultValue = new List<double>();
 			TickWidth = TickWidth_DefaultValue = null;
-			Title = Title_DefaultValue = new ColorAxisTitle();
-			Top = Top_DefaultValue = "";
-			TopNumber = TopNumber_DefaultValue = null;
 			Type = Type_DefaultValue = "linear";
 			UniqueNames = UniqueNames_DefaultValue = true;
 			Visible = Visible_DefaultValue = true;
-			Width = Width_DefaultValue = "";
-			WidthNumber = WidthNumber_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 2;
-			ZoomEnabled = ZoomEnabled_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -119,13 +92,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When using multiple axis, the ticks of two or more opposite axeswill automatically be aligned by adding ticks to the axis or axeswith the least ticks, as if `tickAmount` were specified.This can be prevented by setting `alignTicks` to false. If the gridlines look messy, it's a good idea to hide them for the secondaryaxis by setting `gridLineWidth` to 0.If `startOnTick` or `endOnTick` in an Axis options are set to false,then the `alignTicks ` will be disabled for the Axis.Disabled for logarithmic axes.
-		/// </summary>
-		public bool? AlignTicks { get; set; }
-		private bool? AlignTicks_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to allow decimals on the color axis.
 		/// </summary>
 		public bool? AllowDecimals { get; set; }
@@ -133,31 +99,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When using an alternate grid color, a band is painted across theplot area between every other grid line.
-		/// </summary>
-		public string AlternateGridColor { get; set; }
-		private string AlternateGridColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// In a polar chart, this is the angle of the Y axis in degrees, where0 is up and 90 is right. The angle determines the position of theaxis line and the labels, though the coordinate system is unaffected.Since v8.0.0 this option is also applicable for X axis (invertedpolar).
 		/// </summary>
 		public double? Angle { get; set; }
 		private double? Angle_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array defining breaks in the axis, the sections defined will beleft out and all the points shifted closer to each other.
-		/// </summary>
-		public ColorAxisBreaks Breaks { get; set; }
-		private ColorAxisBreaks Breaks_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// If categories are present for the xAxis, names are used instead ofnumbers for that axis.Since Highcharts 3.0, categories can alsobe extracted by giving each point a [name](#series.data) and settingaxis [type](#xAxis.type) to `category`. However, if you have multipleseries, best practice remains defining the `categories` array.Example: `categories: ['Apples', 'Bananas', 'Oranges']`
-		/// </summary>
-		public List<string> Categories { get; set; }
-		private List<string> Categories_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -175,17 +120,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Configure a crosshair that follows either the mouse pointer or thehovered point.In styled mode, the crosshairs are styled in the`.highcharts-crosshair`, `.highcharts-crosshair-thin` or`.highcharts-xaxis-category` classes.
+		/// The value on a perpendicular axis where this axis should cross. Thisis typically used on mathematical plots where the axes cross at 0.When `crossing` is set, space will not be reserved at the sides ofthe chart for axis labels and title, so those may be clipped. In thiscase it is better to place the axes without the `crossing` option.
 		/// </summary>
-		public ColorAxisCrosshair Crosshair { get; set; }
-		private ColorAxisCrosshair Crosshair_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Configure a crosshair that follows either the mouse pointer or thehovered point.In styled mode, the crosshairs are styled in the`.highcharts-crosshair`, `.highcharts-crosshair-thin` or`.highcharts-xaxis-category` classes.
-		/// </summary>
-		public bool? CrosshairBool { get; set; }
-		private bool? CrosshairBool_DefaultValue { get; set; }
+		public double? Crossing { get; set; }
+		private double? Crossing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -200,13 +138,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<ColorAxisDataClasses> DataClasses { get; set; }
 		private List<ColorAxisDataClasses> DataClasses_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// For a datetime axis, the scale will automatically adjust to theappropriate unit. This member gives the default stringrepresentations used for each unit. For intermediate values,different units may be used, for example the `day` unit can be usedon midnight and `hour` unit be used for intermediate values on thesame axis.For an overview of the replacement codes, see[dateFormat](/class-reference/Highcharts.Time#dateFormat).Defaults to:```js{    millisecond: '%H:%M:%S.%L',    second: '%H:%M:%S',    minute: '%H:%M',    hour: '%H:%M',    day: '%e. %b',    week: '%e. %b',    month: '%b \'%y',    year: '%Y'}```
-		/// </summary>
-		public Hashtable DateTimeLabelFormats { get; set; }
-		private Hashtable DateTimeLabelFormats_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -266,20 +197,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The height as the vertical axis. If it's a number, it isinterpreted as pixels.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the total plot height.
-		/// </summary>
-		public string Height { get; set; }
-		private string Height_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The height as the vertical axis. If it's a number, it isinterpreted as pixels.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the total plot height.
-		/// </summary>
-		public double? HeightNumber { get; set; }
-		private double? HeightNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An id for the axis. This can be used after render time to geta pointer to the axis object through `chart.get()`.
 		/// </summary>
 		public string Id { get; set; }
@@ -301,38 +218,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The left position as the horizontal axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts v5.0.13: If it's a percentage string, it isinterpreted as percentages of the plot width, offset from plot arealeft.
-		/// </summary>
-		public string Left { get; set; }
-		private string Left_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The left position as the horizontal axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts v5.0.13: If it's a percentage string, it isinterpreted as percentages of the plot width, offset from plot arealeft.
-		/// </summary>
-		public double? LeftNumber { get; set; }
-		private double? LeftNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The color of the line marking the axis itself.In styled mode, the line stroke is given in the`.highcharts-axis-line` or `.highcharts-xaxis-line` class.
 		/// </summary>
 		public string LineColor { get; set; }
 		private string LineColor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width of the line marking the axis itself.In styled mode, the stroke width is given in the`.highcharts-axis-line` or `.highcharts-xaxis-line` class.
-		/// </summary>
-		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Index of another axis that this axis is linked to. When an axis islinked to a master axis, it will take the same extremes asthe master, but as assigned by min or max or by setExtremes.It can be used to show additional info, or to ease reading thechart by duplicating the scales.
-		/// </summary>
-		public double? LinkedTo { get; set; }
-		private double? LinkedTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -368,13 +257,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? MaxPadding { get; set; }
 		private double? MaxPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Deprecated. Use `minRange` instead.
-		/// </summary>
-		public double? MaxZoom { get; set; }
-		private double? MaxZoom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -448,10 +330,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable minor ticks. Unless[minorTickInterval](#xAxis.minorTickInterval) is set, the tickinterval is calculated as a fifth of the `tickInterval`.On a logarithmic axis, minor ticks are laid out based on a bestguess, attempting to enter approximately 5 minor ticks betweeneach major tick.Prior to v6.0.0, ticks were unabled in auto layout by setting`minorTickInterval` to `"auto"`.
+		/// Enable or disable minor ticks. The interval between the minor tickscan be controlled either by the[minorTicksPerMajor](#xAxis.minorTicksPerMajor) setting, or as anabsolute [minorTickInterval](#xAxis.minorTickInterval) value.On a logarithmic axis, minor ticks are laid out based on a bestguess, attempting to enter an approximate number of minor ticksbetween each major tick based on[minorTicksPerMajor](#xAxis.minorTicksPerMajor).Prior to v6.0.0, ticks were enabled in auto layout by setting`minorTickInterval` to `"auto"`.
 		/// </summary>
 		public bool? MinorTicks { get; set; }
 		private bool? MinorTicks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The number of minor ticks per major tick. Works for `linear`,`logarithmic` and `datetime` axes.
+		/// </summary>
+		public double? MinorTicksPerMajor { get; set; }
+		private double? MinorTicksPerMajor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -469,41 +358,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The minimum range to display on this axis. The entire axis will notbe allowed to span over a smaller interval than this. For example,for a datetime axis the main unit is milliseconds. If minRange isset to 3600000, you can't zoom in more than to one hour.The default minRange for the x axis is five times the smallestinterval between any of the data points.On a logarithmic axis, the unit for the minimum range is the power.So a minRange of 1 means that the axis can be zoomed to 10-100,100-1000, 1000-10000 etc.**Note**: The `minPadding`, `maxPadding`, `startOnTick` and`endOnTick` settings also affect how the extremes of the axisare computed.
-		/// </summary>
-		public double? MinRange { get; set; }
-		private double? MinRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The minimum tick interval allowed in axis values. For example onzooming in on an axis with daily data, this can be used to preventthe axis from showing hours. Defaults to the closest distance betweentwo points on the axis.
-		/// </summary>
-		public double? MinTickInterval { get; set; }
-		private double? MinTickInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The distance in pixels from the plot area to the axis line.A positive offset moves the axis with it's line, labels and ticksaway from the plot area. This is typically used when two or moreaxes are displayed on the same side of the plot. With multipleaxes the offset is dynamically adjusted to avoid collision, thiscan be overridden by setting offset explicitly.
-		/// </summary>
-		public double? Offset { get; set; }
-		private double? Offset_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display the axis on the opposite side of the normal. Thenormal is on the left side for vertical axes and bottom forhorizontal, so the opposite sides will be right and top respectively.This is typically used with dual or multiple axes.
-		/// </summary>
-		public bool? Opposite { get; set; }
-		private bool? Opposite_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Refers to the index in the [panes](#panes) array. Used for circulargauges and polar charts. When the option is not set then first panewill be used.
-		/// </summary>
-		public double? Pane { get; set; }
-		private double? Pane_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to pan axis. If `chart.panning` is enabled, the optionallows to disable panning on an individual axis.
 		/// </summary>
 		public bool? PanningEnabled { get; set; }
@@ -511,38 +365,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array of colored bands stretching across the plot area marking aninterval on the axis.In styled mode, the plot bands are styled by the `.highcharts-plot-band`class in addition to the `className` option.
-		/// </summary>
-		public ColorAxisPlotBands PlotBands { get; set; }
-		private ColorAxisPlotBands PlotBands_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An array of lines stretching across the plot area, marking a specificvalue on one of the axes.In styled mode, the plot lines are styled by the`.highcharts-plot-line` class in addition to the `className` option.
-		/// </summary>
-		public ColorAxisPlotLines PlotLines { get; set; }
-		private ColorAxisPlotLines PlotLines_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to reverse the axis so that the highest number is closestto the origin. Defaults to `false` in a horizontal legend and`true` in a vertical legend, where the smallest value starts ontop.
 		/// </summary>
 		public bool? Reversed { get; set; }
 		private bool? Reversed_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This option determines how stacks should be ordered within a group.For example reversed xAxis also reverses stacks, so first seriescomes last in a group. To keep order like for non-reversed xAxisenable this option.
-		/// </summary>
-		public bool? ReversedStacks { get; set; }
-		private bool? ReversedStacks_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to show the axis line and title when the axis has no data.
-		/// </summary>
-		public bool? ShowEmpty { get; set; }
-		private bool? ShowEmpty_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -672,27 +498,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The axis title, showing next to the axis line.
-		/// </summary>
-		public ColorAxisTitle Title { get; set; }
-		private ColorAxisTitle Title_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The top position as the vertical axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the plot height, offset from plot area top.
-		/// </summary>
-		public string Top { get; set; }
-		private string Top_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The top position as the vertical axis. If it's a number, it isinterpreted as pixel position relative to the chart.Since Highcharts 2: If it's a percentage string, it is interpretedas percentages of the plot height, offset from plot area top.
-		/// </summary>
-		public double? TopNumber { get; set; }
-		private double? TopNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The type of interpolation to use for the color axis. Can be`linear` or `logarithmic`.
 		/// </summary>
 		public string Type { get; set; }
@@ -714,31 +519,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The width as the horizontal axis. If it's a number, it is interpretedas pixels.Since Highcharts v5.0.13: If it's a percentage string, it isinterpreted as percentages of the total plot width.
-		/// </summary>
-		public string Width { get; set; }
-		private string Width_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The width as the horizontal axis. If it's a number, it is interpretedas pixels.Since Highcharts v5.0.13: If it's a percentage string, it isinterpreted as percentages of the total plot width.
-		/// </summary>
-		public double? WidthNumber { get; set; }
-		private double? WidthNumber_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The Z index for the axis group.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to zoom axis. If `chart.zoomType` is set, the option allowsto disable zooming on an individual axis.
-		/// </summary>
-		public bool? ZoomEnabled { get; set; }
-		private bool? ZoomEnabled_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -749,19 +533,13 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (AlignTicks != AlignTicks_DefaultValue) h.Add("alignTicks",AlignTicks);
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
-			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
 			if (Angle != Angle_DefaultValue) h.Add("angle",Angle);
-			if (Breaks.IsDirty(highcharts)) h.Add("breaks",Breaks.ToHashtable(highcharts));
-			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Crosshair.IsDirty(highcharts)) h.Add("crosshair",Crosshair.ToHashtable(highcharts));
-			if (CrosshairBool != CrosshairBool_DefaultValue) h.Add("crosshair",CrosshairBool);
+			if (Crossing != Crossing_DefaultValue) h.Add("crossing",Crossing);
 			if (DataClassColor != DataClassColor_DefaultValue) h.Add("dataClassColor", highcharts.FirstCharacterToLower(DataClassColor.ToString()));
 			if (DataClasses != DataClasses_DefaultValue) h.Add("dataClasses", HashifyList(highcharts,DataClasses));
-			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Floor != Floor_DefaultValue) h.Add("floor",Floor);
@@ -770,22 +548,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GridLineInterpolation != GridLineInterpolation_DefaultValue) h.Add("gridLineInterpolation", highcharts.FirstCharacterToLower(GridLineInterpolation.ToString()));
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labels.IsDirty(highcharts)) h.Add("labels",Labels.ToHashtable(highcharts));
 			if (Layout != Layout_DefaultValue) h.Add("layout",Layout);
-			if (Left != Left_DefaultValue) h.Add("left",Left);
-			if (LeftNumber != LeftNumber_DefaultValue) h.Add("left",LeftNumber);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (MaxColor != MaxColor_DefaultValue) h.Add("maxColor",MaxColor);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
-			if (MaxZoom != MaxZoom_DefaultValue) h.Add("maxZoom",MaxZoom);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinColor != MinColor_DefaultValue) h.Add("minColor",MinColor);
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
@@ -797,19 +568,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", highcharts.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
+			if (MinorTicksPerMajor != MinorTicksPerMajor_DefaultValue) h.Add("minorTicksPerMajor",MinorTicksPerMajor);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
-			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
-			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
-			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
-			if (Pane != Pane_DefaultValue) h.Add("pane",Pane);
 			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
-			if (PlotBands.IsDirty(highcharts)) h.Add("plotBands",PlotBands.ToHashtable(highcharts));
-			if (PlotLines.IsDirty(highcharts)) h.Add("plotLines",PlotLines.ToHashtable(highcharts));
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
-			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
-			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
@@ -828,16 +591,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TickPositioner != TickPositioner_DefaultValue) { h.Add("tickPositioner",TickPositioner); highcharts.AddFunction("tickPositioner", TickPositioner); }  
 			if (TickPositions != TickPositions_DefaultValue) h.Add("tickPositions",TickPositions);
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
-			if (Title.IsDirty(highcharts)) h.Add("title",Title.ToHashtable(highcharts));
-			if (Top != Top_DefaultValue) h.Add("top",Top);
-			if (TopNumber != TopNumber_DefaultValue) h.Add("top",TopNumber);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (UniqueNames != UniqueNames_DefaultValue) h.Add("uniqueNames",UniqueNames);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (ZoomEnabled != ZoomEnabled_DefaultValue) h.Add("zoomEnabled",ZoomEnabled);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -20,7 +20,9 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = true;
-			BoostBlending = BoostBlending_DefaultValue = PlotOptionsItemBoostBlending.Undefined;
+			BorderRadius = BorderRadius_DefaultValue = null;
+			BorderRadiusString = BorderRadiusString_DefaultValue = "null";
+			BorderRadiusNumber = BorderRadiusNumber_DefaultValue = null;
 			Center = Center_DefaultValue = new string[] { "50%", "50%" };
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
@@ -34,7 +36,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Crisp = Crisp_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsItemCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
-			DataSorting = DataSorting_DefaultValue = new PlotOptionsItemDataSorting();
 			Description = Description_DefaultValue = "";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EndAngle = EndAngle_DefaultValue = null;
@@ -46,9 +47,8 @@ namespace Highsoft.Web.Mvc.Charts
 			InnerSizeNumber = InnerSizeNumber_DefaultValue = null;
 			ItemPadding = ItemPadding_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
-			Label = Label_DefaultValue = new PlotOptionsItemLabel();
 			Layout = Layout_DefaultValue = "vertical";
-			LinkedTo = LinkedTo_DefaultValue = "";
+			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsItemLegendSymbol.Rectangle;
 			Marker = Marker_DefaultValue = new PlotOptionsItemMarker();
 			MinSize = MinSize_DefaultValue = "80";
 			MinSizeNumber = MinSizeNumber_DefaultValue = null;
@@ -64,6 +64,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Size = Size_DefaultValue = "0";
 			SizeNumber = SizeNumber_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
+			Sonification = Sonification_DefaultValue = new PlotOptionsItemSonification();
 			StartAngle = StartAngle_DefaultValue = null;
 			States = States_DefaultValue = new PlotOptionsItemStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
@@ -105,10 +106,24 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Sets the color blending in the boost module.
+		/// The corner radius of the border surrounding each slice. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa size relative to the radius and the inner radius.
 		/// </summary>
-		public PlotOptionsItemBoostBlending BoostBlending { get; set; }
-		private PlotOptionsItemBoostBlending BoostBlending_DefaultValue { get; set; }
+		public Object BorderRadius { get; set; }
+		private Object BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each slice. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa size relative to the radius and the inner radius.
+		/// </summary>
+		public string BorderRadiusString { get; set; }
+		private string BorderRadiusString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each slice. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa size relative to the radius and the inner radius.
+		/// </summary>
+		public double? BorderRadiusNumber { get; set; }
+		private double? BorderRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -161,7 +176,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.
+		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -200,13 +215,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Custom { get; set; }
 		private Hashtable Custom_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for the series data sorting.
-		/// </summary>
-		public PlotOptionsItemDataSorting DataSorting { get; set; }
-		private PlotOptionsItemDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -287,13 +295,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.
-		/// </summary>
-		public PlotOptionsItemLabel Label { get; set; }
-		private PlotOptionsItemLabel Label_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The layout of the items in rectangular view. Can be either`horizontal` or `vertical`.
 		/// </summary>
 		public string Layout { get; set; }
@@ -301,10 +302,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.If master series uses data sorting and linked series does not haveits own sorting definition, the linked series will be sorted in thesame order as the master one.
+		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
 		/// </summary>
-		public string LinkedTo { get; set; }
-		private string LinkedTo_DefaultValue { get; set; }
+		public PlotOptionsItemLegendSymbol LegendSymbol { get; set; }
+		private PlotOptionsItemLegendSymbol LegendSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -413,6 +414,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Sonification/audio chart options for a series.
+		/// </summary>
+		public PlotOptionsItemSonification Sonification { get; set; }
+		private PlotOptionsItemSonification Sonification_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// In circular view, the start angle of the item layout, in degreeswhere 0 is up.
 		/// </summary>
 		public double? StartAngle { get; set; }
@@ -472,7 +480,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (BoostBlending != BoostBlending_DefaultValue) h.Add("boostBlending", highcharts.FirstCharacterToLower(BoostBlending.ToString()));
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderRadiusString != BorderRadiusString_DefaultValue) h.Add("borderRadius",BorderRadiusString);
+			if (BorderRadiusNumber != BorderRadiusNumber_DefaultValue) h.Add("borderRadius",BorderRadiusNumber);
 			if (Center != Center_DefaultValue) h.Add("center",Center);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
@@ -486,7 +496,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DataSorting.IsDirty(highcharts)) h.Add("dataSorting",DataSorting.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
@@ -498,9 +507,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (InnerSizeNumber != InnerSizeNumber_DefaultValue) h.Add("innerSize",InnerSizeNumber);
 			if (ItemPadding != ItemPadding_DefaultValue) h.Add("itemPadding",ItemPadding);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
 			if (Layout != Layout_DefaultValue) h.Add("layout",Layout);
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
 			if (MinSizeNumber != MinSizeNumber_DefaultValue) h.Add("minSize",MinSizeNumber);
@@ -516,6 +524,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Size != Size_DefaultValue) h.Add("size",Size);
 			if (SizeNumber != SizeNumber_DefaultValue) h.Add("size",SizeNumber);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
 			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
 			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);

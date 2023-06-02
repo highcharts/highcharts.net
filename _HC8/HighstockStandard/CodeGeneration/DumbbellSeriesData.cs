@@ -33,11 +33,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Labelrank = Labelrank_DefaultValue = null;
 			Low = Low_DefaultValue = null;
 			LowColor = LowColor_DefaultValue = "#333333";
-			Marker = Marker_DefaultValue = new DumbbellSeriesDataMarker();
 			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			X = X_DefaultValue = double.MinValue;
-			Y = Y_DefaultValue = double.MinValue;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -65,7 +63,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.
+		/// A specific color index to use for the point, so its graphic representationsare given the class name `highcharts-color-{n}`. In styled mode this willchange the color of the graphic. In non-styled mode, the color is set by the`fill` attribute, so the change in class name won't have a visual effect bydefault.Since v11, CSS variables on the form `--highcharts-color-{n}` make changingthe color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
@@ -163,13 +161,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Options for the point markers of line-like series.
-		/// </summary>
-		public DumbbellSeriesDataMarker Marker { get; set; }
-		private DumbbellSeriesDataMarker Marker_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The name of the point as shown in the legend, tooltip, dataLabels, etc.
 		/// </summary>
 		public string Name { get; set; }
@@ -188,13 +179,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The y value of the point.
-		/// </summary>
-		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -221,11 +205,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
 			if (Low != Low_DefaultValue) h.Add("low",Low);
 			if (LowColor != LowColor_DefaultValue) h.Add("lowColor",LowColor);
-			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "highcharts-navigator-xaxis";
 			Crosshair = Crosshair_DefaultValue = new NavigatorXAxisCrosshair();
+			Crossing = Crossing_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
 			EndOnTick = EndOnTick_DefaultValue = false;
 			Events = Events_DefaultValue = new NavigatorXAxisEvents();
@@ -39,14 +40,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			Labels = Labels_DefaultValue = new NavigatorXAxisLabels();
 			Left = Left_DefaultValue = "";
 			LeftNumber = LeftNumber_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "#ccd6eb";
+			LineColor = LineColor_DefaultValue = "#333333";
 			LineWidth = LineWidth_DefaultValue = 0;
-			LinkedTo = LinkedTo_DefaultValue = null;
 			Margin = Margin_DefaultValue = null;
 			Max = Max_DefaultValue = null;
 			MaxPadding = MaxPadding_DefaultValue = null;
-			MaxRange = MaxRange_DefaultValue = null;
-			MaxZoom = MaxZoom_DefaultValue = null;
 			Min = Min_DefaultValue = null;
 			MinorGridLineColor = MinorGridLineColor_DefaultValue = "#f2f2f2";
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = new Hashtable();
@@ -57,22 +55,18 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = NavigatorXAxisMinorTickPosition.Outside;
 			MinorTicks = MinorTicks_DefaultValue = false;
+			MinorTicksPerMajor = MinorTicksPerMajor_DefaultValue = 5;
 			MinorTickWidth = MinorTickWidth_DefaultValue = 0;
 			MinPadding = MinPadding_DefaultValue = null;
-			MinRange = MinRange_DefaultValue = null;
 			MinTickInterval = MinTickInterval_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
-			Opposite = Opposite_DefaultValue = false;
 			Ordinal = Ordinal_DefaultValue = true;
 			Overscroll = Overscroll_DefaultValue = 0;
 			PanningEnabled = PanningEnabled_DefaultValue = true;
 			PlotBands = PlotBands_DefaultValue = new List<NavigatorXAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<NavigatorXAxisPlotLines>();
-			Range = Range_DefaultValue = null;
 			Reversed = Reversed_DefaultValue = null;
 			ReversedStacks = ReversedStacks_DefaultValue = false;
-			Scrollbar = Scrollbar_DefaultValue = new NavigatorXAxisScrollbar();
-			ShowEmpty = ShowEmpty_DefaultValue = true;
 			ShowFirstLabel = ShowFirstLabel_DefaultValue = true;
 			ShowLastLabel = ShowLastLabel_DefaultValue = null;
 			SoftMax = SoftMax_DefaultValue = null;
@@ -80,7 +74,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			StartOfWeek = StartOfWeek_DefaultValue = 1;
 			StartOnTick = StartOnTick_DefaultValue = false;
 			TickAmount = TickAmount_DefaultValue = null;
-			TickColor = TickColor_DefaultValue = "#ccd6eb";
+			TickColor = TickColor_DefaultValue = "#333333";
 			TickInterval = TickInterval_DefaultValue = null;
 			TickLength = TickLength_DefaultValue = 0;
 			TickPixelInterval = TickPixelInterval_DefaultValue = 200;
@@ -162,6 +156,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public NavigatorXAxisCrosshair Crosshair { get; set; }
 		private NavigatorXAxisCrosshair Crosshair_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The value on a perpendicular axis where this axis should cross. Thisis typically used on mathematical plots where the axes cross at 0.When `crossing` is set, space will not be reserved at the sides ofthe chart for axis labels and title, so those may be clipped. In thiscase it is better to place the axes without the `crossing` option.
+		/// </summary>
+		public double? Crossing { get; set; }
+		private double? Crossing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -277,13 +278,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Index of another axis that this axis is linked to. When an axis islinked to a master axis, it will take the same extremes asthe master, but as assigned by min or max or by setExtremes.It can be used to show additional info, or to ease reading thechart by duplicating the scales.
-		/// </summary>
-		public double? LinkedTo { get; set; }
-		private double? LinkedTo_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// If there are multiple axes on the same side of the chart, the pixelmargin between the axes. Defaults to 0 on vertical axes, 15 onhorizontal axes.
 		/// </summary>
 		public double? Margin { get; set; }
@@ -302,20 +296,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? MaxPadding { get; set; }
 		private double? MaxPadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Maximum range which can be set using the navigator's handles.Opposite of [xAxis.minRange](#xAxis.minRange).
-		/// </summary>
-		public double? MaxRange { get; set; }
-		private double? MaxRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Deprecated. Use `minRange` instead.
-		/// </summary>
-		public double? MaxZoom { get; set; }
-		private double? MaxZoom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -382,10 +362,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable minor ticks. Unless[minorTickInterval](#xAxis.minorTickInterval) is set, the tickinterval is calculated as a fifth of the `tickInterval`.On a logarithmic axis, minor ticks are laid out based on a bestguess, attempting to enter approximately 5 minor ticks betweeneach major tick.Prior to v6.0.0, ticks were unabled in auto layout by setting`minorTickInterval` to `"auto"`.
+		/// Enable or disable minor ticks. The interval between the minor tickscan be controlled either by the[minorTicksPerMajor](#xAxis.minorTicksPerMajor) setting, or as anabsolute [minorTickInterval](#xAxis.minorTickInterval) value.On a logarithmic axis, minor ticks are laid out based on a bestguess, attempting to enter an approximate number of minor ticksbetween each major tick based on[minorTicksPerMajor](#xAxis.minorTicksPerMajor).Prior to v6.0.0, ticks were enabled in auto layout by setting`minorTickInterval` to `"auto"`.
 		/// </summary>
 		public bool? MinorTicks { get; set; }
 		private bool? MinorTicks_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The number of minor ticks per major tick. Works for `linear`,`logarithmic` and `datetime` axes.
+		/// </summary>
+		public double? MinorTicksPerMajor { get; set; }
+		private double? MinorTicksPerMajor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -403,13 +390,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The minimum range to display on this axis. The entire axis will notbe allowed to span over a smaller interval than this. For example,for a datetime axis the main unit is milliseconds. If minRange isset to 3600000, you can't zoom in more than to one hour.The default minRange for the x axis is five times the smallestinterval between any of the data points.On a logarithmic axis, the unit for the minimum range is the power.So a minRange of 1 means that the axis can be zoomed to 10-100,100-1000, 1000-10000 etc.**Note**: The `minPadding`, `maxPadding`, `startOnTick` and`endOnTick` settings also affect how the extremes of the axisare computed.
-		/// </summary>
-		public double? MinRange { get; set; }
-		private double? MinRange_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The minimum tick interval allowed in axis values. For example onzooming in on an axis with daily data, this can be used to preventthe axis from showing hours. Defaults to the closest distance betweentwo points on the axis.
 		/// </summary>
 		public double? MinTickInterval { get; set; }
@@ -421,13 +401,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Offset { get; set; }
 		private double? Offset_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to display the axis on the opposite side of the normal. Thenormal is on the left side for vertical axes and bottom forhorizontal, so the opposite sides will be right and top respectively.This is typically used with dual or multiple axes.
-		/// </summary>
-		public bool? Opposite { get; set; }
-		private bool? Opposite_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -466,13 +439,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The zoomed range to display when only defining one or none of `min`or `max`. For example, to show the latest month, a range of one monthcan be set.
-		/// </summary>
-		public double? Range { get; set; }
-		private double? Range_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Whether to reverse the axis so that the highest number is closestto the origin. If the chart is inverted, the x axis is reversed bydefault.
 		/// </summary>
 		public bool? Reversed { get; set; }
@@ -484,20 +450,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? ReversedStacks { get; set; }
 		private bool? ReversedStacks_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// An optional scrollbar to display on the X axis in response tolimiting the minimum and maximum of the axis values.In styled mode, all the presentational options for the scrollbar arereplaced by the classes `.highcharts-scrollbar-thumb`,`.highcharts-scrollbar-arrow`, `.highcharts-scrollbar-button`,`.highcharts-scrollbar-rifles` and `.highcharts-scrollbar-track`.
-		/// </summary>
-		public NavigatorXAxisScrollbar Scrollbar { get; set; }
-		private NavigatorXAxisScrollbar Scrollbar_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Whether to show the axis line and title when the axis has no data.
-		/// </summary>
-		public bool? ShowEmpty { get; set; }
-		private bool? ShowEmpty_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -677,6 +629,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Crosshair.IsDirty(highstock)) h.Add("crosshair",Crosshair.ToHashtable(highstock));
+			if (Crossing != Crossing_DefaultValue) h.Add("crossing",Crossing);
 			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
 			if (EndOnTick != EndOnTick_DefaultValue) h.Add("endOnTick",EndOnTick);
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
@@ -693,12 +646,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LeftNumber != LeftNumber_DefaultValue) h.Add("left",LeftNumber);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (MaxPadding != MaxPadding_DefaultValue) h.Add("maxPadding",MaxPadding);
-			if (MaxRange != MaxRange_DefaultValue) h.Add("maxRange",MaxRange);
-			if (MaxZoom != MaxZoom_DefaultValue) h.Add("maxZoom",MaxZoom);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (MinorGridLineColor != MinorGridLineColor_DefaultValue) h.Add("minorGridLineColor",MinorGridLineColor);
 			if (MinorGridLineDashStyle != MinorGridLineDashStyle_DefaultValue) h.Add("minorGridLineDashStyle",MinorGridLineDashStyle);
@@ -709,22 +659,18 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", highstock.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
+			if (MinorTicksPerMajor != MinorTicksPerMajor_DefaultValue) h.Add("minorTicksPerMajor",MinorTicksPerMajor);
 			if (MinorTickWidth != MinorTickWidth_DefaultValue) h.Add("minorTickWidth",MinorTickWidth);
 			if (MinPadding != MinPadding_DefaultValue) h.Add("minPadding",MinPadding);
-			if (MinRange != MinRange_DefaultValue) h.Add("minRange",MinRange);
 			if (MinTickInterval != MinTickInterval_DefaultValue) h.Add("minTickInterval",MinTickInterval);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
 			if (Ordinal != Ordinal_DefaultValue) h.Add("ordinal",Ordinal);
 			if (Overscroll != Overscroll_DefaultValue) h.Add("overscroll",Overscroll);
 			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(highstock,PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(highstock,PlotLines));
-			if (Range != Range_DefaultValue) h.Add("range",Range);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (ReversedStacks != ReversedStacks_DefaultValue) h.Add("reversedStacks",ReversedStacks);
-			if (Scrollbar.IsDirty(highstock)) h.Add("scrollbar",Scrollbar.ToHashtable(highstock));
-			if (ShowEmpty != ShowEmpty_DefaultValue) h.Add("showEmpty",ShowEmpty);
 			if (ShowFirstLabel != ShowFirstLabel_DefaultValue) h.Add("showFirstLabel",ShowFirstLabel);
 			if (ShowLastLabel != ShowLastLabel_DefaultValue) h.Add("showLastLabel",ShowLastLabel);
 			if (SoftMax != SoftMax_DefaultValue) h.Add("softMax",SoftMax);

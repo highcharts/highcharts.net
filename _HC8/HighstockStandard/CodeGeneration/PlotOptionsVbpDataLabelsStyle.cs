@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsVbpDataLabelsStyle()
 		{
-			FontSize = FontSize_DefaultValue = "7px";
+			FontSize = FontSize_DefaultValue = "0.5em";
 			
 			CustomFields = new Hashtable();
 		}	

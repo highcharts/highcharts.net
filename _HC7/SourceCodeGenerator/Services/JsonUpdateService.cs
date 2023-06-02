@@ -362,6 +362,18 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("annotations.timeCycles.typeOptions.points", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
 
             ItemsToUpdate.Add("lang.accessibility.resetZoomButton", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+
+            ItemsToUpdate.Add("sonification.globalContextTracks.valueMapFunction", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "linear" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "logarithmic" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "linear" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" } });
+            ItemsToUpdate.Add("sonification.defaultInstrumentOptions.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "instrument" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "speech" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "instrument" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" } });
+            ItemsToUpdate.Add("sonification.defaultSpeechOptions.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "instrument" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "speech" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "speech" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" } });
+            ItemsToUpdate.Add("sonification.pointGrouping.algorithm", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "minimax" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "first" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "last" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "middle" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "firstlast" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "minimax" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" } });
+            ItemsToUpdate.Add("sonification.order", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "sequential" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "simultaneous" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "sequential" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" } });
+            ItemsToUpdate.Add("series.organization.dataLabels.linkTextPath", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.organization.dataLabels.linkTextPath" } });
+            ItemsToUpdate.Add("series.organization.nodes.dataLabels.linkTextPath", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.organization.dataLabels.linkTextPath" } });
+            ItemsToUpdate.Add("sonification.defaultInstrumentOptions.activeWhen", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("sonification.defaultInstrumentOptions.mapping.pitch.scale", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Default, Value = "new List<double>()" } });
+            ItemsToUpdate.Add("plotOptions.columnrange.borderRadius", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+            ItemsToUpdate.Add("annotations.crookedLine.labelOptions", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
         }
 
         public void Delete(ApiItem item)

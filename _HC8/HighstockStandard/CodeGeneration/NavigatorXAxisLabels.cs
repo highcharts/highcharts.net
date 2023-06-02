@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Formatter = Formatter_DefaultValue = "";
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = NavigatorXAxisLabelsOverflow.Justify;
+			ReserveSpace = ReserveSpace_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = 0;
 			Step = Step_DefaultValue = 0;
@@ -91,6 +92,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public NavigatorXAxisLabelsOverflow Overflow { get; set; }
 		private NavigatorXAxisLabelsOverflow Overflow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to reserve space for the labels. By default, space isreserved for the labels in these cases:* On all horizontal axes.* On vertical axes if `label.align` is `right` on a left-sideaxis or `left` on a right-side axis.* On vertical axes if `label.align` is `center`.This can be turned off when for example the labels are renderedinside the plot area instead of outside.
+		/// </summary>
+		public bool? ReserveSpace { get; set; }
+		private bool? ReserveSpace_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -164,6 +172,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highstock.AddFunction("formatter", Formatter); }  
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highstock.FirstCharacterToLower(Overflow.ToString()));
+			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);

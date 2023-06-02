@@ -24,12 +24,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			Formatter = Formatter_DefaultValue = "";
 			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
 			Overflow = Overflow_DefaultValue = XAxisLabelsOverflow.Justify;
+			ReserveSpace = ReserveSpace_DefaultValue = null;
 			Rotation = Rotation_DefaultValue = 0;
 			StaggerLines = StaggerLines_DefaultValue = 0;
 			Step = Step_DefaultValue = 0;
 			Style = Style_DefaultValue = new Hashtable();
 			UseHTML = UseHTML_DefaultValue = false;
-			X = X_DefaultValue = 0;
+			X = X_DefaultValue = null;
 			Y = Y_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 7;
 			
@@ -94,6 +95,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to reserve space for the labels. By default, space isreserved for the labels in these cases:* On all horizontal axes.* On vertical axes if `label.align` is `right` on a left-sideaxis or `left` on a right-side axis.* On vertical axes if `label.align` is `center`.This can be turned off when for example the labels are renderedinside the plot area instead of outside.
+		/// </summary>
+		public bool? ReserveSpace { get; set; }
+		private bool? ReserveSpace_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Rotation of the labels in degrees. When `undefined`, the`autoRotation` option takes precedence.
 		/// </summary>
 		public double? Rotation { get; set; }
@@ -129,14 +137,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The x position offset of all labels relative to the tickpositions on the axis.
+		/// The x position offset of all labels relative to the tickpositions on the axis. Overrides the `labels.distance` option.
 		/// </summary>
 		public double? X { get; set; }
 		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The y position offset of all labels relative to the tickpositions on the axis. The default makes it adapt to the fontsize of the bottom axis.
+		/// The y position offset of all labels relative to the tickpositions on the axis. Overrides the `labels.distance` option.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
@@ -164,6 +172,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highstock.AddFunction("formatter", Formatter); }  
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highstock.FirstCharacterToLower(Overflow.ToString()));
+			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
 			if (Step != Step_DefaultValue) h.Add("step",Step);

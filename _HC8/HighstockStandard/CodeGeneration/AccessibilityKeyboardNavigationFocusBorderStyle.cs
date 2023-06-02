@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public AccessibilityKeyboardNavigationFocusBorderStyle()
 		{
 			BorderRadius = BorderRadius_DefaultValue = 3;
-			Color = Color_DefaultValue = "#335cad";
+			Color = Color_DefaultValue = "#334eff";
 			LineWidth = LineWidth_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();

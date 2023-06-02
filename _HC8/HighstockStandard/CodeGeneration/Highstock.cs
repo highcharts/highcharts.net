@@ -28,7 +28,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			Defs = Defs_DefaultValue = new Defs();
 			Exporting = Exporting_DefaultValue = new Exporting();
 			Global = Global_DefaultValue = new Global();
-			Labels = Labels_DefaultValue = new Labels();
 			Lang = Lang_DefaultValue = new Lang();
 			Legend = Legend_DefaultValue = new Legend();
 			Loading = Loading_DefaultValue = new Loading();
@@ -40,6 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Responsive = Responsive_DefaultValue = new Responsive();
 			Scrollbar = Scrollbar_DefaultValue = new Scrollbar();
 			Series = Series_DefaultValue = new List<Series>();
+			Sonification = Sonification_DefaultValue = new Sonification();
 			StockTools = StockTools_DefaultValue = new StockTools();
 			Subtitle = Subtitle_DefaultValue = new Subtitle();
 			Time = Time_DefaultValue = new Time();
@@ -95,7 +95,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An array containing the default colors for the chart's series. Whenall colors are used, new colors are pulled from the start again.Default colors can also be set on a series or series.type basis,see [column.colors](#plotOptions.column.colors),[pie.colors](#plotOptions.pie.colors).In styled mode, the colors option doesn't exist. Instead, colorsare defined in CSS and applied either through series or point classnames, or through the [chart.colorCount](#chart.colorCount) option.### LegacyIn Highcharts 3.x, the default colors were:```jscolors: ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',        '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']```In Highcharts 2.x, the default colors were:```jscolors: ['#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE',        '#DB843D', '#92A8CD', '#A47D7C', '#B5CA92']```
+		/// An array containing the default colors for the chart's series. Whenall colors are used, new colors are pulled from the start again.Default colors can also be set on a series or series.type basis,see [column.colors](#plotOptions.column.colors),[pie.colors](#plotOptions.pie.colors).In styled mode, the colors option doesn't exist. Instead, colorsare defined in CSS and applied either through series or point classnames, or through the [chart.colorCount](#chart.colorCount) option.
 		/// </summary>
 		public List<string> Colors { get; set; }
 		private List<string> Colors_DefaultValue { get; set; }
@@ -134,13 +134,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Global Global { get; set; }
 		private Global Global_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// HTML labels that can be positioned anywhere in the chart area.This option is deprecated since v7.1.2. Instead, use[annotations](#annotations) that support labels.
-		/// </summary>
-		public Labels Labels { get; set; }
-		private Labels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -221,6 +214,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Options for configuring sonification and audio charts. Requires the[sonification module](https://code.highcharts.com/modules/sonification.js)to be loaded.
+		/// </summary>
+		public Sonification Sonification { get; set; }
+		private Sonification Sonification_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Configure the stockTools gui strings in the chart. Requires the[stockTools module]() to be loaded. For a description of the moduleand information on its features, see [Highcharts StockTools]().
 		/// </summary>
 		public StockTools StockTools { get; set; }
@@ -288,7 +288,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Defs.IsDirty(highstock)) h.Add("defs",Defs.ToHashtable(highstock));
 			if (Exporting.IsDirty(highstock)) h.Add("exporting",Exporting.ToHashtable(highstock));
 			if (Global.IsDirty(highstock)) h.Add("global",Global.ToHashtable(highstock));
-			if (Labels.IsDirty(highstock)) h.Add("labels",Labels.ToHashtable(highstock));
 			if (Lang.IsDirty(highstock)) h.Add("lang",Lang.ToHashtable(highstock));
 			if (Legend.IsDirty(highstock)) h.Add("legend",Legend.ToHashtable(highstock));
 			if (Loading.IsDirty(highstock)) h.Add("loading",Loading.ToHashtable(highstock));
@@ -300,6 +299,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Responsive.IsDirty(highstock)) h.Add("responsive",Responsive.ToHashtable(highstock));
 			if (Scrollbar.IsDirty(highstock)) h.Add("scrollbar",Scrollbar.ToHashtable(highstock));
 			if (Series != Series_DefaultValue) h.Add("series", HashifyList(highstock,Series));
+			if (Sonification.IsDirty(highstock)) h.Add("sonification",Sonification.ToHashtable(highstock));
 			if (StockTools.IsDirty(highstock)) h.Add("stockTools",StockTools.ToHashtable(highstock));
 			if (Subtitle.IsDirty(highstock)) h.Add("subtitle",Subtitle.ToHashtable(highstock));
 			if (Time.IsDirty(highstock)) h.Add("time",Time.ToHashtable(highstock));

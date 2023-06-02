@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AnimationBool = AnimationBool_DefaultValue = null;
 			Breadcrumbs = Breadcrumbs_DefaultValue = new DrilldownBreadcrumbs();
 			DrillUpButton = DrillUpButton_DefaultValue = new DrilldownDrillUpButton();
+			MapZooming = MapZooming_DefaultValue = true;
 			Series = Series_DefaultValue = new List<Series>();
 			
 			CustomFields = new Hashtable();
@@ -79,6 +80,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Enable or disable zooming into a region of clicked map point you want todrill into. If mapZooming is set to false the drilldown/drillupanimations only fade in/fade out without zooming to a specific map point.
+		/// </summary>
+		public bool? MapZooming { get; set; }
+		private bool? MapZooming_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An array of series configurations for the drill down. Each seriesconfiguration uses the same syntax as the [series](#series) option set.These drilldown series are hidden by default. The drilldown series islinked to the parent series' point by its `id`.
 		/// </summary>
 		public List<Series> Series { get; set; }
@@ -99,6 +107,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Breadcrumbs.IsDirty(highcharts)) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(highcharts));
 			if (DrillUpButton.IsDirty(highcharts)) h.Add("drillUpButton",DrillUpButton.ToHashtable(highcharts));
+			if (MapZooming != MapZooming_DefaultValue) h.Add("mapZooming",MapZooming);
 			if (Series != Series_DefaultValue) h.Add("series",Series);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

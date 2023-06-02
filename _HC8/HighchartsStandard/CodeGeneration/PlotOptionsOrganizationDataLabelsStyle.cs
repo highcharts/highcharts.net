@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsOrganizationDataLabelsStyle()
 		{
-			FontSize = FontSize_DefaultValue = "13px";
+			FontSize = FontSize_DefaultValue = "0.9em";
 			FontWeight = FontWeight_DefaultValue = "normal";
 			
 			CustomFields = new Hashtable();

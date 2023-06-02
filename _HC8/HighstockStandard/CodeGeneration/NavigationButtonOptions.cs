@@ -19,7 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Align = Align_DefaultValue = NavigationButtonOptionsAlign.Right;
 			ButtonSpacing = ButtonSpacing_DefaultValue = 3;
 			Enabled = Enabled_DefaultValue = true;
-			Height = Height_DefaultValue = 22;
+			Height = Height_DefaultValue = 28;
 			SymbolFill = SymbolFill_DefaultValue = "#666666";
 			SymbolSize = SymbolSize_DefaultValue = 14;
 			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Theme = Theme_DefaultValue = new NavigationButtonOptionsTheme();
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = NavigationButtonOptionsVerticalAlign.Top;
-			Width = Width_DefaultValue = 24;
+			Width = Width_DefaultValue = 28;
 			Y = Y_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTreegraphMarker()
 		{
-			Enabled = Enabled_DefaultValue = null;
-			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			FillColor = FillColor_DefaultValue = null;
 			FillOpacity = FillOpacity_DefaultValue = 1;
 			Height = Height_DefaultValue = null;
@@ -31,20 +29,6 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomFields = new Hashtable();
 		}	
 		
-
-		/// <summary>
-		/// Enable or disable the point marker. If `undefined`, the markersare hidden when the data is dense, and shown for more widespreaddata points.
-		/// </summary>
-		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The threshold for how dense the point markers should be beforethey are hidden, given that `enabled` is not defined. The numberindicates the horizontal distance between the two closest pointsin the series, as multiples of the `marker.radius`. In otherwords, the default value of 2 means points are hidden ifoverlapping horizontally.
-		/// </summary>
-		public double? EnabledThreshold { get; set; }
-		private double? EnabledThreshold_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// The fill color of the point marker. When `undefined`, the series'or point's color is used.
@@ -116,8 +100,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (Height != Height_DefaultValue) h.Add("height",Height);

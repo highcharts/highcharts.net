@@ -16,12 +16,20 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigationAnnotationsOptionsFibonacciTimeZonesTypeOptionsLine()
 		{
+			Fill = Fill_DefaultValue = "undefined";
 			Stroke = Stroke_DefaultValue = " rgba(0, 0, 0, 0.75) ";
 			StrokeWidth = StrokeWidth_DefaultValue = 1;
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Fill { get; set; }
+		private string Fill_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// The color of the lines.
@@ -44,6 +52,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
 			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
 			if (CustomFields.Count > 0)

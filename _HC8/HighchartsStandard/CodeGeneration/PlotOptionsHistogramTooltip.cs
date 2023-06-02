@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsHistogramTooltip()
 		{
 			HeaderFormat = HeaderFormat_DefaultValue = "";
-			PointFormat = PointFormat_DefaultValue = "<span style='font-size: 10px'>{point.x} - {point.x2}</span><br/><span style='color:{point.color}'>●</span> {series.name} <b>{point.y}</b><br/>";
+			PointFormat = PointFormat_DefaultValue = "<span style='font-size: 0.8em'>{point.x} - {point.x2}</span><br/><span style='color:{point.color}'>●</span> {series.name} <b>{point.y}</b><br/>";
 			
 			CustomFields = new Hashtable();
 		}	

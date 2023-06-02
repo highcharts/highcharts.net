@@ -16,11 +16,19 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsAreasplinerangeLabelStyle()
 		{
+			FontSize = FontSize_DefaultValue = "0.8em";
 			FontWeight = FontWeight_DefaultValue = "bold";
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string FontSize { get; set; }
+		private string FontSize_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -36,6 +44,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
 			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

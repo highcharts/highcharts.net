@@ -1216,7 +1216,7 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("navigation.bindings.flagDiamondpin", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.flagSimplepin", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.flagSquarepin", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.fullScreen", "new Object()");
+            //_propertyInitMappings.Add("navigation.bindings.fullScreen", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.horizontalLine", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.indicators", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.infinityLine", "new Object()");
@@ -1228,7 +1228,7 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("navigation.bindings.pitchfork", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.ray", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.rectangleAnnotation", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.saveChart", "new Object()");
+            //_propertyInitMappings.Add("navigation.bindings.saveChart", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.segment", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.seriesTypeCandlestick", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.seriesTypeLine", "new Object()");

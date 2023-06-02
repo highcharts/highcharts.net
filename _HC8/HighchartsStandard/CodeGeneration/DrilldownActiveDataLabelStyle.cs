@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public DrilldownActiveDataLabelStyle()
 		{
-			Color = Color_DefaultValue = "#003399";
+			Color = Color_DefaultValue = "#0022ff";
 			Cursor = Cursor_DefaultValue = "pointer";
 			FontWeight = FontWeight_DefaultValue = "bold";
 			TextDecoration = TextDecoration_DefaultValue = "underline";
