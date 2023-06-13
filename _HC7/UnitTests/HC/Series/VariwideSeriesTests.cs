@@ -784,7 +784,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new VariwideSeries(); chart.Series.Add(series);
             var value = false;
 
-            ((VariwideSeries)chart.Series[0]).DataLabels.DeferBool = value;
+            ((VariwideSeries)chart.Series[0]).DataLabels.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -796,7 +796,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new VariwideSeries(); chart.Series.Add(series);
             var defaultValue = true;
 
-            ((VariwideSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+            ((VariwideSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }

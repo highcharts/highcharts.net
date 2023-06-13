@@ -677,7 +677,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             bool? value = true;
 
-            chart.PlotOptions.Gauge.DataLabels.DeferBool = value;
+            chart.PlotOptions.Gauge.DataLabels.Defer = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
@@ -689,7 +689,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
-            chart.PlotOptions.Gauge.DataLabels.DeferBool = defaultValue;
+            chart.PlotOptions.Gauge.DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }

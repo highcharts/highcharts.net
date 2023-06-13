@@ -891,7 +891,7 @@
 //            var renderer = new HighstockRenderer(chart); var series = new ErrorbarSeries(); chart.Series.Add(series);
 //            var value = false;
 
-//            ((ErrorbarSeries)chart.Series[0]).DataLabels.DeferBool = value;
+//            ((ErrorbarSeries)chart.Series[0]).DataLabels.Defer = value;
 
 //            Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
 //        }
@@ -903,7 +903,7 @@
 //            var renderer = new HighstockRenderer(chart); var series = new ErrorbarSeries(); chart.Series.Add(series);
 //            var defaultValue = true;
 
-//            ((ErrorbarSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+//            ((ErrorbarSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
 
 //            Assert.DoesNotContain($"defer", renderer.RenderHtml());
 //        }

@@ -847,7 +847,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             var value = false;
 
-            ((StreamgraphSeries)chart.Series[0]).DataLabels.DeferBool = value;
+            ((StreamgraphSeries)chart.Series[0]).DataLabels.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -859,7 +859,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             var defaultValue = true;
 
-            ((StreamgraphSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+            ((StreamgraphSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }

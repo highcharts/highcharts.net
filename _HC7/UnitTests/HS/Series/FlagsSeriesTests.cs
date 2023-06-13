@@ -821,7 +821,7 @@ namespace HS.Series
             var renderer = new HighstockRenderer(chart); var series = new FlagsSeries(); chart.Series.Add(series);
             var value = false;
 
-            ((FlagsSeries)chart.Series[0]).DataLabels.DeferBool = value;
+            ((FlagsSeries)chart.Series[0]).DataLabels.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -833,23 +833,23 @@ namespace HS.Series
             var renderer = new HighstockRenderer(chart); var series = new FlagsSeries(); chart.Series.Add(series);
             var defaultValue = true;
 
-            ((FlagsSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+            ((FlagsSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(2000)]
-        [InlineData(5000)]
-        public void Test_IfDataLabelsDeferRenders_Correct(double value)
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new FlagsSeries(); chart.Series.Add(series);
+        //[Theory]
+        //[InlineData(2000)]
+        //[InlineData(5000)]
+        //public void Test_IfDataLabelsDeferRenders_Correct(double value)
+        //{
+        //    var chart = new Highstock();
+        //    var renderer = new HighstockRenderer(chart); var series = new FlagsSeries(); chart.Series.Add(series);
 
-            ((FlagsSeries)chart.Series[0]).DataLabels.Defer = value;
+        //    ((FlagsSeries)chart.Series[0]).DataLabels.Defer = value;
 
-            Assert.Contains($"\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
+        //}
 
         [Fact]
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()

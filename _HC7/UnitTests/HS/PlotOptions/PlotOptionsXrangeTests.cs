@@ -672,7 +672,7 @@ namespace HS.PlotOptions
             var renderer = new HighstockRenderer(chart);
             var value = false;
 
-            chart.PlotOptions.Xrange.DataLabels.DeferBool = value;
+            chart.PlotOptions.Xrange.DataLabels.Defer = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
@@ -684,7 +684,7 @@ namespace HS.PlotOptions
             var renderer = new HighstockRenderer(chart);
             var defaultValue = true;
 
-            chart.PlotOptions.Xrange.DataLabels.DeferBool = defaultValue;
+            chart.PlotOptions.Xrange.DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }

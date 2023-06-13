@@ -806,7 +806,7 @@ namespace HS.PlotOptions
             var renderer = new HighstockRenderer(chart);
             var value = false;
 
-            chart.PlotOptions.Ppo.DataLabels.DeferBool = value;
+            chart.PlotOptions.Ppo.DataLabels.Defer = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
@@ -818,7 +818,7 @@ namespace HS.PlotOptions
             var renderer = new HighstockRenderer(chart);
             var defaultValue = true;
 
-            chart.PlotOptions.Ppo.DataLabels.DeferBool = defaultValue;
+            chart.PlotOptions.Ppo.DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }

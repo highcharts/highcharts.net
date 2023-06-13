@@ -743,7 +743,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new TimelineSeries(); chart.Series.Add(series);
             var value = false;
 
-            ((TimelineSeries)chart.Series[0]).DataLabels.DeferBool = value;
+            ((TimelineSeries)chart.Series[0]).DataLabels.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -755,7 +755,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new TimelineSeries(); chart.Series.Add(series);
             var defaultValue = true;
 
-            ((TimelineSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+            ((TimelineSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }

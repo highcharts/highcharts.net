@@ -812,7 +812,7 @@
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    var value = false;
 
-//        //    chart.PlotOptions.Errorbar.DataLabels.DeferBool = value;
+//        //    chart.PlotOptions.Errorbar.DataLabels.Defer = value;
 
 //        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
 //        //}
@@ -824,7 +824,7 @@
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    var defaultValue = true;
 
-//        //    chart.PlotOptions.Errorbar.DataLabels.DeferBool = defaultValue;
+//        //    chart.PlotOptions.Errorbar.DataLabels.Defer = defaultValue;
 
 //        //    Assert.DoesNotContain($"defer", renderer.RenderHtml());
 //        //}

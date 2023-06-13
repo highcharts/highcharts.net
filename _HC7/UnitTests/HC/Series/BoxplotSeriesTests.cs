@@ -808,7 +808,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new BoxplotSeries(); chart.Series.Add(series);
             var value = false;
 
-            ((BoxplotSeries)chart.Series[0]).DataLabels.DeferBool = value;
+            ((BoxplotSeries)chart.Series[0]).DataLabels.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -820,23 +820,23 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new BoxplotSeries(); chart.Series.Add(series);
             var defaultValue = true;
 
-            ((BoxplotSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+            ((BoxplotSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(2000)]
-        [InlineData(5000)]
-        public void Test_IfDataLabelsDeferRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new BoxplotSeries(); chart.Series.Add(series);
+        //[Theory]
+        //[InlineData(2000)]
+        //[InlineData(5000)]
+        //public void Test_IfDataLabelsDeferRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new BoxplotSeries(); chart.Series.Add(series);
 
-            ((BoxplotSeries)chart.Series[0]).DataLabels.Defer = value;
+        //    ((BoxplotSeries)chart.Series[0]).DataLabels.Defer = value;
 
-            Assert.Contains($"\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
+        //}
 
         [Fact]
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()

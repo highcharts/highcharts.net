@@ -888,41 +888,41 @@ namespace HC.PlotOptions
         }
 
         [Fact]
-        public void Test_IfDataLabelsDeferBoolRenders_Correct()
+        public void Test_IfDataLabelsDeferRenders_Correct()
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.PlotOptions.Arearange.DataLabels.DeferBool = value;
+            chart.PlotOptions.Arearange.DataLabels.Defer = value;
 
             Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
-        public void Test_IfDataLabelsDeferBoolDoesntRenderForDefault_Correct()
+        public void Test_IfDataLabelsDeferDoesntRenderForDefault_Correct()
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = true;
 
-            chart.PlotOptions.Arearange.DataLabels.DeferBool = defaultValue;
+            chart.PlotOptions.Arearange.DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(2000)]
-        [InlineData(5000)]
-        public void Test_IfDataLabelsDeferRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart);
+        //[Theory]
+        //[InlineData(2000)]
+        //[InlineData(5000)]
+        //public void Test_IfDataLabelsDeferRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Arearange.DataLabels.Defer = value;
+        //    chart.PlotOptions.Arearange.DataLabels.Defer = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
+        //}
 
         [Fact]
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()

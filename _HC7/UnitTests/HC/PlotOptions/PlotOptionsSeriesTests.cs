@@ -886,7 +886,7 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
-            chart.PlotOptions.Series.DataLabels.DeferBool = value;
+            chart.PlotOptions.Series.DataLabels.Defer = value;
 
             Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
         }
@@ -898,23 +898,23 @@ namespace HC.PlotOptions
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = true;
 
-            chart.PlotOptions.Series.DataLabels.DeferBool = defaultValue;
+            chart.PlotOptions.Series.DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(2000)]
-        [InlineData(5000)]
-        public void Test_IfDataLabelsDeferRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart);
+        //[Theory]
+        //[InlineData(2000)]
+        //[InlineData(5000)]
+        //public void Test_IfDataLabelsDeferRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Series.DataLabels.Defer = value;
+        //    chart.PlotOptions.Series.DataLabels.Defer = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",","")}}}}}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"plotOptions\":{{\"series\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",","")}}}}}}}", renderer.RenderHtml());
+        //}
 
         [Fact]
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()

@@ -783,7 +783,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
             var value = false;
 
-            ((VennSeries)chart.Series[0]).DataLabels.DeferBool = value;
+            ((VennSeries)chart.Series[0]).DataLabels.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -795,7 +795,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
             var defaultValue = true;
 
-            ((VennSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+            ((VennSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }

@@ -894,7 +894,7 @@
 //            var renderer = new HighchartsRenderer(chart);
 //            var value = false;
 
-//            chart.PlotOptions.Sma.DataLabels.DeferBool = value;
+//            chart.PlotOptions.Sma.DataLabels.Defer = value;
 
 //            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}}}}}", renderer.RenderHtml());
 //        }
@@ -906,7 +906,7 @@
 //            var renderer = new HighchartsRenderer(chart);
 //            var defaultValue = true;
 
-//            chart.PlotOptions.Sma.DataLabels.DeferBool = defaultValue;
+//            chart.PlotOptions.Sma.DataLabels.Defer = defaultValue;
 
 //            Assert.DoesNotContain($"defer", renderer.RenderHtml());
 //        }

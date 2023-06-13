@@ -695,7 +695,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new SolidgaugeSeries(); chart.Series.Add(series);
             var value = false;
 
-            ((SolidgaugeSeries)chart.Series[0]).DataLabels.DeferBool = value;
+            ((SolidgaugeSeries)chart.Series[0]).DataLabels.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -707,7 +707,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new SolidgaugeSeries(); chart.Series.Add(series);
             var defaultValue = true;
 
-            ((SolidgaugeSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+            ((SolidgaugeSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }

@@ -850,7 +850,7 @@ namespace HS.Series
             var renderer = new HighstockRenderer(chart); var series = new RsiSeries(); chart.Series.Add(series);
             var value = false;
 
-            ((RsiSeries)chart.Series[0]).DataLabels.DeferBool = value;
+            ((RsiSeries)chart.Series[0]).DataLabels.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -862,7 +862,7 @@ namespace HS.Series
             var renderer = new HighstockRenderer(chart); var series = new RsiSeries(); chart.Series.Add(series);
             var defaultValue = true;
 
-            ((RsiSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+            ((RsiSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }

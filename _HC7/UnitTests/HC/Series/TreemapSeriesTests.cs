@@ -857,7 +857,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new TreemapSeries(); chart.Series.Add(series);
             var value = false;
 
-            ((TreemapSeries)chart.Series[0]).DataLabels.DeferBool = value;
+            ((TreemapSeries)chart.Series[0]).DataLabels.Defer = value;
 
             Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
         }
@@ -869,7 +869,7 @@ namespace HC.Series
             var renderer = new HighchartsRenderer(chart); var series = new TreemapSeries(); chart.Series.Add(series);
             var defaultValue = true;
 
-            ((TreemapSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+            ((TreemapSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
