@@ -858,13 +858,12 @@ namespace HC.PlotOptions
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(2000)]
-        [InlineData(5000)]
-        public void Test_IfDataLabelsDeferRenders_Correct(double value)
+        [Fact]
+        public void Test_IfDataLabelsDeferRenders_Correct()
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
+            var value = false;
 
             chart.PlotOptions.Spline.DataLabels.Defer = value;
 

@@ -843,29 +843,29 @@ namespace HS.Series
             Assert.DoesNotContain($"crop", renderer.RenderHtml());
         }
 
-        [Fact]
-        public void Test_IfDataLabelsDeferBoolRenders_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new MfiSeries(); chart.Series.Add(series);
-            var value = false;
+        //[Fact]
+        //public void Test_IfDataLabelsDeferBoolRenders_Correct()
+        //{
+        //    var chart = new Highstock();
+        //    var renderer = new HighstockRenderer(chart); var series = new MfiSeries(); chart.Series.Add(series);
+        //    var value = false;
 
-            ((MfiSeries)chart.Series[0]).DataLabels.DeferBool = value;
+        //    ((MfiSeries)chart.Series[0]).DataLabels.DeferBool = value;
 
-            Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDataLabelsDeferBoolDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new MfiSeries(); chart.Series.Add(series);
-            var defaultValue = true;
+        //[Fact]
+        //public void Test_IfDataLabelsDeferBoolDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highstock();
+        //    var renderer = new HighstockRenderer(chart); var series = new MfiSeries(); chart.Series.Add(series);
+        //    var defaultValue = true;
 
-            ((MfiSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+        //    ((MfiSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
 
-            Assert.DoesNotContain($"defer", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"defer", renderer.RenderHtml());
+        //}
 
         //[Theory]
         //[InlineData(2000)]

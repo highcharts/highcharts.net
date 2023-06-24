@@ -801,29 +801,29 @@ namespace HC.Series
             Assert.DoesNotContain($"crop", renderer.RenderHtml());
         }
 
-        [Fact]
-        public void Test_IfDataLabelsDeferBoolRenders_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new HistogramSeries(); chart.Series.Add(series);
-            var value = false;
+        //[Fact]
+        //public void Test_IfDataLabelsDeferBoolRenders_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new HistogramSeries(); chart.Series.Add(series);
+        //    var value = false;
 
-            ((HistogramSeries)chart.Series[0]).DataLabels.DeferBool = value;
+        //    ((HistogramSeries)chart.Series[0]).DataLabels.DeferBool = value;
 
-            Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"dataLabels\":{{\"defer\":{value.ToString().ToLower()}}}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDataLabelsDeferBoolDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new HistogramSeries(); chart.Series.Add(series);
-            var defaultValue = true;
+        //[Fact]
+        //public void Test_IfDataLabelsDeferBoolDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new HistogramSeries(); chart.Series.Add(series);
+        //    var defaultValue = true;
 
-            ((HistogramSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
+        //    ((HistogramSeries)chart.Series[0]).DataLabels.DeferBool = defaultValue;
 
-            Assert.DoesNotContain($"defer", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"defer", renderer.RenderHtml());
+        //}
 
         //[Theory]
         //[InlineData(2000)]

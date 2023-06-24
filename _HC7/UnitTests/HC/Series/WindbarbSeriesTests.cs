@@ -774,13 +774,12 @@ namespace HC.Series
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(2000)]
-        [InlineData(5000)]
-        public void Test_IfDataLabelsDeferRenders_Correct(double value)
+        [Fact]
+        public void Test_IfDataLabelsDeferRenders_Correct()
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
+            var value = false;
 
             ((WindbarbSeries)chart.Series[0]).DataLabels.Defer = value;
 

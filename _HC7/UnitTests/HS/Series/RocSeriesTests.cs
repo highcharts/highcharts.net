@@ -867,13 +867,12 @@ namespace HS.Series
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(2000)]
-        [InlineData(5000)]
-        public void Test_IfDataLabelsDeferRenders_Correct(double value)
+        [Fact]
+        public void Test_IfDataLabelsDeferRenders_Correct()
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new RocSeries(); chart.Series.Add(series);
+            var value = false;
 
             ((RocSeries)chart.Series[0]).DataLabels.Defer = value;
 

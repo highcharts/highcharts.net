@@ -800,13 +800,12 @@ namespace HC.Series
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(2000)]
-        [InlineData(5000)]
-        public void Test_IfDataLabelsDeferRenders_Correct(double value)
+        [Fact]
+        public void Test_IfDataLabelsDeferRenders_Correct()
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var value = false;
 
             ((VennSeries)chart.Series[0]).DataLabels.Defer = value;
 

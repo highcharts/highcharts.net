@@ -504,30 +504,30 @@ namespace HS.Series
             Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(0)]
-        [InlineData(299)]
-        public void Test_IfCropThresholdRenders_Correct(int value)
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new FlagsSeries(); chart.Series.Add(series);
+        //[Theory]
+        //[InlineData(0)]
+        //[InlineData(299)]
+        //public void Test_IfCropThresholdRenders_Correct(int value)
+        //{
+        //    var chart = new Highstock();
+        //    var renderer = new HighstockRenderer(chart); var series = new FlagsSeries(); chart.Series.Add(series);
 
-            ((FlagsSeries)chart.Series[0]).CropThreshold = value;
+        //    ((FlagsSeries)chart.Series[0]).CropThreshold = value;
 
-            Assert.Contains($"\"cropThreshold\":{value}.0", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"cropThreshold\":{value}.0", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfCropThresholdDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new FlagsSeries(); chart.Series.Add(series);
-            var defaultValue = 300;
+        //[Fact]
+        //public void Test_IfCropThresholdDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highstock();
+        //    var renderer = new HighstockRenderer(chart); var series = new FlagsSeries(); chart.Series.Add(series);
+        //    var defaultValue = 300;
 
-            ((FlagsSeries)chart.Series[0]).CropThreshold = defaultValue;
+        //    ((FlagsSeries)chart.Series[0]).CropThreshold = defaultValue;
 
-            Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
+        //}
 
         [Theory]
         [InlineData(FlagsSeriesCursor.Default)]
