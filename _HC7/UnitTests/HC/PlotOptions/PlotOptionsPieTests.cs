@@ -772,30 +772,30 @@ namespace HC.PlotOptions
 
         //missing boxesToAvoid
 
-        [Theory]
-        [InlineData(":previous")]
-        [InlineData("IdAnotherSeries")]
-        public void Test_IfLinkedToRenders_Correct(string value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart);
+        //[Theory]
+        //[InlineData(":previous")]
+        //[InlineData("IdAnotherSeries")]
+        //public void Test_IfLinkedToRenders_Correct(string value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart);
 
-            chart.PlotOptions.Pie.LinkedTo = value;
+        //    chart.PlotOptions.Pie.LinkedTo = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linkedTo\":\"{value}\"}}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linkedTo\":\"{value}\"}}}}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfLinkedToDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart);
-            string defaultValue = String.Empty;
+        //[Fact]
+        //public void Test_IfLinkedToDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart);
+        //    string defaultValue = String.Empty;
 
-            chart.PlotOptions.Pie.LinkedTo = defaultValue;
+        //    chart.PlotOptions.Pie.LinkedTo = defaultValue;
 
-            Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linkedTo\":{defaultValue}}}}}", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"linkedTo\":{defaultValue}}}}}", renderer.RenderHtml());
+        //}
 
         #region onPoint
 

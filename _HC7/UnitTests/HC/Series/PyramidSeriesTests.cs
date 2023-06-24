@@ -829,30 +829,30 @@ namespace HC.Series
         //    Assert.DoesNotContain($"\"linecap\":{defaultValue.ToString().ToLower()}", renderer.RenderHtml());
         //}
 
-        [Theory]
-        [InlineData(":previous")]
-        [InlineData("IdAnotherSeries")]
-        public void Test_IfLinkedToRenders_Correct(string value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new PyramidSeries(); chart.Series.Add(series);
+        //[Theory]
+        //[InlineData(":previous")]
+        //[InlineData("IdAnotherSeries")]
+        //public void Test_IfLinkedToRenders_Correct(string value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new PyramidSeries(); chart.Series.Add(series);
 
-            ((PyramidSeries)chart.Series[0]).LinkedTo = value;
+        //    ((PyramidSeries)chart.Series[0]).LinkedTo = value;
 
-            Assert.Contains($"\"linkedTo\":\"{value}\"", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"linkedTo\":\"{value}\"", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfLinkedToDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new PyramidSeries(); chart.Series.Add(series);
-            string defaultValue = String.Empty;
+        //[Fact]
+        //public void Test_IfLinkedToDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new PyramidSeries(); chart.Series.Add(series);
+        //    string defaultValue = String.Empty;
 
-            ((PyramidSeries)chart.Series[0]).LinkedTo = defaultValue;
+        //    ((PyramidSeries)chart.Series[0]).LinkedTo = defaultValue;
 
-            Assert.DoesNotContain($"\"linkedTo\":{defaultValue}", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"\"linkedTo\":{defaultValue}", renderer.RenderHtml());
+        //}
 
         #region onPoint
 

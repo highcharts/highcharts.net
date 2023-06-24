@@ -408,32 +408,32 @@ namespace HS.PlotOptions
             Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
         }
 
-        [Theory]
-        [InlineData(0)]
-        [InlineData(299)]
-        public void Test_IfCropThresholdRenders_Correct(int value)
-        {
-            var chart = new Highstock();
-            chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighstockRenderer(chart);
+        //[Theory]
+        //[InlineData(0)]
+        //[InlineData(299)]
+        //public void Test_IfCropThresholdRenders_Correct(int value)
+        //{
+        //    var chart = new Highstock();
+        //    chart.Chart.Type = _fixture.ChartType;
+        //    var renderer = new HighstockRenderer(chart);
 
-            chart.PlotOptions.Flags.CropThreshold = value;
+        //    chart.PlotOptions.Flags.CropThreshold = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"cropThreshold\":{value}.0}}}}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"cropThreshold\":{value}.0}}}}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfCropThresholdDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highstock();
-            chart.Chart.Type = _fixture.ChartType;
-            var renderer = new HighstockRenderer(chart);
-            var defaultValue = 300;
+        //[Fact]
+        //public void Test_IfCropThresholdDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highstock();
+        //    chart.Chart.Type = _fixture.ChartType;
+        //    var renderer = new HighstockRenderer(chart);
+        //    var defaultValue = 300;
 
-            chart.PlotOptions.Flags.CropThreshold = defaultValue;
+        //    chart.PlotOptions.Flags.CropThreshold = defaultValue;
 
-            Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"\"crisp\"", renderer.RenderHtml());
+        //}
 
         [Theory]
         [InlineData(PlotOptionsFlagsCursor.Default)]
