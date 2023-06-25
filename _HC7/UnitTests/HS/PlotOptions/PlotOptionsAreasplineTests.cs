@@ -235,18 +235,30 @@ namespace HS.PlotOptions
 
         #region Animation
 
-        [Theory]
-        [InlineData(true)]
-        [InlineData(false)]
-        public void Test_IfAnimationEnabledRenders_Correct(bool enabled)
+        [Fact]
+        public void Test_IfAnimationEnabledRenders_Correct()
         {
             var chart = new Highstock();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighstockRenderer(chart);
+            var value = false;
 
-            chart.PlotOptions.Areaspline.AnimationBool = enabled;
+            chart.PlotOptions.Areaspline.AnimationBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfAnimationEnabledDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highstock();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighstockRenderer(chart);
+            var value = true;
+
+            chart.PlotOptions.Areaspline.AnimationBool = value;
+
+            Assert.DoesNotContain("animation", renderer.RenderHtml());
         }
 
         //fix required - shows up with backslash
