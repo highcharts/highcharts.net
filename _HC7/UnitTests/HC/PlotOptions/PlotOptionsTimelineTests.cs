@@ -235,18 +235,30 @@ namespace HC.PlotOptions
 
         #region Animation
 
-        [Theory]
-        [InlineData(true)]
-        [InlineData(false)]
-        public void Test_IfAnimationEnabledRenders_Correct(bool enabled)
+        [Fact]
+        public void Test_IfAnimationEnabledRenders_Correct()
         {
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
+            var value = false;
 
-            chart.PlotOptions.Timeline.AnimationBool = enabled;
+            chart.PlotOptions.Timeline.AnimationBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{enabled.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfAnimationEnabledDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            chart.Chart.Type = _fixture.ChartType;
+            var renderer = new HighchartsRenderer(chart);
+            var value = true;
+
+            chart.PlotOptions.Timeline.AnimationBool = value;
+
+            Assert.DoesNotContain("animation", renderer.RenderHtml());
         }
 
         [Theory]

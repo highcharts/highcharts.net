@@ -259,18 +259,28 @@ namespace HS.Series
 
         #region Animation
 
-        [Theory]
-        [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfAnimationEnabledRenders_Correct(bool enabled)
         {
             var chart = new Highstock();
 
             var renderer = new HighstockRenderer(chart); var series = new AbandsSeries(); chart.Series.Add(series);
+            var value = false;
 
-            ((AbandsSeries)chart.Series[0]).AnimationBool = enabled;
+            ((AbandsSeries)chart.Series[0]).AnimationBool = value;
 
-            Assert.Contains($"\"animation\":{enabled.ToString().ToLower()}", renderer.RenderHtml());
+            Assert.Contains($"\"animation\":{value.ToString().ToLower()}", renderer.RenderHtml());
+        }
+
+        public void Test_IfAnimationEnabledDoesntRenderForDefault_Correct(bool enabled)
+        {
+            var chart = new Highstock();
+
+            var renderer = new HighstockRenderer(chart); var series = new AbandsSeries(); chart.Series.Add(series);
+            var value = true;
+
+            ((AbandsSeries)chart.Series[0]).AnimationBool = value;
+
+            Assert.DoesNotContain("animation", renderer.RenderHtml());
         }
 
         //fix required - extra slashes in result string

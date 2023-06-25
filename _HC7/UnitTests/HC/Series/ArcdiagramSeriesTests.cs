@@ -241,17 +241,28 @@ namespace HC.Series
 
         #region Animation
 
-        [Theory]
-        [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfAnimationEnabledRenders_Correct(bool enabled)
         {
             var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series =  new ArcdiagramSeries(); chart.Series.Add(series);
 
-            ((ArcdiagramSeries)chart.Series[0]).AnimationBool = enabled;
+            var renderer = new HighchartsRenderer(chart); var series = new ArcdiagramSeries(); chart.Series.Add(series);
+            var value = false;
 
-            Assert.Contains($"\"animation\":{enabled.ToString().ToLower()}", renderer.RenderHtml());
+            ((ArcdiagramSeries)chart.Series[0]).AnimationBool = value;
+
+            Assert.Contains($"\"animation\":{value.ToString().ToLower()}", renderer.RenderHtml());
+        }
+
+        public void Test_IfAnimationEnabledDoesntRenderForDefault_Correct(bool enabled)
+        {
+            var chart = new Highcharts();
+
+            var renderer = new HighchartsRenderer(chart); var series = new ArcdiagramSeries(); chart.Series.Add(series);
+            var value = true;
+
+            ((ArcdiagramSeries)chart.Series[0]).AnimationBool = value;
+
+            Assert.DoesNotContain("animation", renderer.RenderHtml());
         }
 
         [Theory]
