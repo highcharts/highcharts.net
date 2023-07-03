@@ -259,26 +259,28 @@ namespace HS.Series
 
         #region Animation
 
-        public void Test_IfAnimationEnabledRenders_Correct(bool enabled)
+        [Fact]
+        public void Test_IfAnimationEnabledRenders_Correct()
         {
             var chart = new Highstock();
 
             var renderer = new HighstockRenderer(chart); var series = new AreaSeries(); chart.Series.Add(series);
-            var value = false;
+            var enabled = false;
 
-            ((AreaSeries)chart.Series[0]).AnimationBool = value;
+            ((AreaSeries)chart.Series[0]).AnimationBool = enabled;
 
-            Assert.Contains($"\"animation\":{value.ToString().ToLower()}", renderer.RenderHtml());
+            Assert.Contains($"\"animation\":{enabled.ToString().ToLower()}", renderer.RenderHtml());
         }
 
-        public void Test_IfAnimationEnabledDoesntRenderForDefault_Correct(bool enabled)
+        [Fact]
+        public void Test_IfAnimationEnabledDoesntRenderForDefault_Correct()
         {
             var chart = new Highstock();
 
             var renderer = new HighstockRenderer(chart); var series = new AreaSeries(); chart.Series.Add(series);
-            var value = true;
+            var enabled = true;
 
-            ((AreaSeries)chart.Series[0]).AnimationBool = value;
+            ((AreaSeries)chart.Series[0]).AnimationBool = enabled;
 
             Assert.DoesNotContain("animation", renderer.RenderHtml());
         }

@@ -259,18 +259,30 @@ namespace HC.Series
 
         #region Animation
 
-        [Theory]
-        [InlineData(true)]
-        [InlineData(false)]
-        public void Test_IfAnimationEnabledRenders_Correct(bool enabled)
+        [Fact]
+        public void Test_IfAnimationEnabledRenders_Correct()
         {
             var chart = new Highcharts();
-            
+
             var renderer = new HighchartsRenderer(chart); var series = new Pyramid3dSeries(); chart.Series.Add(series);
+            var enabled = false;
 
             ((Pyramid3dSeries)chart.Series[0]).AnimationBool = enabled;
 
             Assert.Contains($"\"animation\":{enabled.ToString().ToLower()}", renderer.RenderHtml());
+        }
+
+        [Fact]
+        public void Test_IfAnimationEnabledDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+
+            var renderer = new HighchartsRenderer(chart); var series = new Pyramid3dSeries(); chart.Series.Add(series);
+            var enabled = true;
+
+            ((Pyramid3dSeries)chart.Series[0]).AnimationBool = enabled;
+
+            Assert.DoesNotContain("animation", renderer.RenderHtml());
         }
 
         [Theory]
