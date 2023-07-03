@@ -4842,7 +4842,7 @@ namespace HC.Series
         #region tooltip
 
         [Theory]
-        [InlineData("Clustered points: {point.clusterPointsAmount}")]
+        [InlineData("Clustered points2: {point.clusterPointsAmount}")]
         public void Test_IfTooltipClusterFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
@@ -4859,7 +4859,7 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
-            var defaultValue = string.Empty;
+            var defaultValue = "Clustered points: {point.clusterPointsAmount}";
 
             ((AreasplineSeries)chart.Series[0]).Tooltip.ClusterFormat = defaultValue;
 

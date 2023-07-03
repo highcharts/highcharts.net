@@ -1504,7 +1504,7 @@ namespace HC.PlotOptions
         #region tooltip
 
         [Theory]
-        [InlineData("Clustered points: {point.clusterPointsAmount}")]
+        [InlineData("Clustered points2: {point.clusterPointsAmount}")]
         public void Test_IfTooltipClusterFormatRenders_Correct(string value)
         {
             var chart = new Highcharts();
@@ -1521,7 +1521,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = string.Empty;
+            var defaultValue = "Clustered points: {point.clusterPointsAmount}";
 
             chart.PlotOptions.Funnel.Tooltip.ClusterFormat = defaultValue;
 
