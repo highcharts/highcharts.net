@@ -2219,7 +2219,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
-            var defaultValue = 2;
+            var defaultValue = 1;
 
             ((PsarSeries)chart.Series[0]).LineWidth = defaultValue;
 

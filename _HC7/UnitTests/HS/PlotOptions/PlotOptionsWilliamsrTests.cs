@@ -2175,7 +2175,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            var defaultValue = 2;
+            var defaultValue = 1;
 
             chart.PlotOptions.Williamsr.LineWidth = defaultValue;
 

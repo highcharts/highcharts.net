@@ -1943,7 +1943,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = 2;
+            var defaultValue = 1;
 
             chart.PlotOptions.Solidgauge.LineWidth = defaultValue;
 

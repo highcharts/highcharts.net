@@ -2219,7 +2219,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WilliamsrSeries(); chart.Series.Add(series);
-            var defaultValue = 2;
+            var defaultValue = 1;
 
             ((WilliamsrSeries)chart.Series[0]).LineWidth = defaultValue;
 

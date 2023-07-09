@@ -2156,7 +2156,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new VectorSeries(); chart.Series.Add(series);
-            var defaultValue = 2;
+            var defaultValue = 1;
 
             ((VectorSeries)chart.Series[0]).LineWidth = defaultValue;
 

@@ -2690,7 +2690,7 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new AreasplinerangeSeries(); chart.Series.Add(series);
-            var defaultValue = 2;
+            var defaultValue = 1;
 
             ((AreasplinerangeSeries)chart.Series[0]).LineWidth = defaultValue;
 

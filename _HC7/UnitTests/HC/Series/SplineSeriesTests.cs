@@ -2689,7 +2689,7 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new SplineSeries(); chart.Series.Add(series);
-            var defaultValue = 2;
+            var defaultValue = 1;
 
             ((SplineSeries)chart.Series[0]).LineWidth = defaultValue;
 
