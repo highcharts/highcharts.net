@@ -20,19 +20,22 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = null;
-			BackgroundColor = BackgroundColor_DefaultValue = "";
+			BackgroundColor = BackgroundColor_DefaultValue = "none";
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			Crop = Crop_DefaultValue = true;
+			Crop = Crop_DefaultValue = false;
 			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
+			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsSankeyDataLabelsFilter();
-			Format = Format_DefaultValue = "point.value";
+			Format = Format_DefaultValue = new PlotOptionsSankeyDataLabelsFormat();
+			FormatString = FormatString_DefaultValue = "null";
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = null;
+			Inside = Inside_DefaultValue = true;
+			NodeFormat = NodeFormat_DefaultValue = "undefined";
+			NodeFormatter = NodeFormatter_DefaultValue = "";
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -84,7 +87,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The background color or gradient for the data label. Setting it to`auto` will use the point's color.
+		/// 
 		/// </summary>
 		public string BackgroundColor { get; set; }
 		private string BackgroundColor_DefaultValue { get; set; }
@@ -126,7 +129,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to hide data labels that are outside the plot area. Bydefault, the data label is moved inside the plot area accordingto the[overflow](#plotOptions.series.dataLabels.overflow)option.
+		/// 
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
@@ -140,7 +143,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the data labels.
+		/// 
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -154,24 +157,45 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
+		/// 
 		/// </summary>
-		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
+		public PlotOptionsSankeyDataLabelsFormat Format { get; set; }
+		private PlotOptionsSankeyDataLabelsFormat Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the data label. Note that if a`format` is defined, the format takes precedence and the formatter isignored.
+		/// 
+		/// </summary>
+		public string FormatString { get; set; }
+		private string FormatString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// For points with an extent, like columns or map areas, whether toalign the data label inside the box or to the actual value point.Defaults to `false` in most cases, `true` in stacked columns.
+		/// 
 		/// </summary>
 		public bool? Inside { get; set; }
 		private bool? Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)specifying what to show for _nodes_ in the sankey diagram. Bydefault the `nodeFormatter` returns `{point.name}`.
+		/// </summary>
+		public string NodeFormat { get; set; }
+		private string NodeFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback to format data labels for _nodes_ in the sankey diagram.The `nodeFormat` option takes precedence over the`nodeFormatter`.
+		/// </summary>
+		public string NodeFormatter { get; set; }
+		private string NodeFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -314,9 +338,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty(highcharts)) h.Add("filter",Filter.ToHashtable(highcharts));
-			if (Format != Format_DefaultValue) h.Add("format",Format);
+			if (Format.IsDirty(highcharts)) h.Add("format",Format.ToHashtable(highcharts));
+			if (FormatString != FormatString_DefaultValue) h.Add("format",FormatString);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
+			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); highcharts.AddFunction("nodeFormatter", NodeFormatter); }  
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  

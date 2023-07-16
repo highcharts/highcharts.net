@@ -4,17 +4,7 @@ using SourceCodeGenerator.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Web;
-using System.Web.Script.Serialization;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.IO;
-using System.Collections;
 using System.Text;
-using System.Runtime.Remoting;
-using System.Diagnostics;
-
 
 namespace SourceCodeGenerator.Generators
 {
@@ -47,7 +37,6 @@ namespace SourceCodeGenerator.Generators
 
             ProcessApiItems(_apiItems);
             _apiItems = MultiplyObjects(_apiItems);
-
 
             var root = new ApiItem { Title = RootClass, FullName = RootClass };
             GenerateClass(root, GetChildren(root));
@@ -176,6 +165,13 @@ namespace SourceCodeGenerator.Generators
 
             if (item.FullName.ToLower().EndsWith("zones"))
                 item.FullName = item.FullName.Remove(item.FullName.Length - 5) + "Zone";
+
+            if (item.FullName.Equals("plotOptions.dependencywheel.dataLabels.textPath"))
+                if (!children.Any(p => p.Title.ToLower().Equals("enabled")))
+                    children.Add(new ApiItem { Title = "enabled", FullName = item.FullName + ".enabled", IsParent = true, Defaults = "false", 
+                        ParentFullName = item.FullName, ReturnType = "Boolean" 
+                    });
+
 
             foreach (ApiItem child in children.GroupBy(p => p.FullName + p.Suffix).Select(group => group.FirstOrDefault()).OrderBy(q => q.FullName))
             {
@@ -1091,8 +1087,8 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("series.id", "string.Empty");
             _propertyInitMappings.Add("series.funnel3d.dataLabels.verticalAlign", "Funnel3dSeriesDataLabelsVerticalAlign.Middle");
             _propertyInitMappings.Add("series.pyramid3d.dataLabels.verticalAlign", "Pyramid3dSeriesDataLabelsVerticalAlign.Middle");
-
         }
+
         protected override void InitLists()
         {
             _lists.Add("pane.background");

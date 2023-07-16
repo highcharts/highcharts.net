@@ -28,11 +28,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
+			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsTreegraphDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
+			LinkTextPath = LinkTextPath_DefaultValue = new PlotOptionsTreegraphDataLabelsLinkTextPath();
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -133,14 +134,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to defer displaying the data labels until the initialseries animation has finished. Setting to `false` renders thedata label immediately. If set to `true` inherits the defertime set in [plotOptions.series.animation](#plotOptions.series.animation).
+		/// 
 		/// </summary>
 		public bool? Defer { get; set; }
 		private bool? Defer_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Enable or disable the data labels.
+		/// 
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -172,6 +173,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Inside { get; set; }
 		private bool? Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for a _link_ label text which should follow linkconnection. Border and background are disabled for a labelthat follows a path.**Note:** Only SVG-based renderer supports this option.Setting `useHTML` to true will disable this option.
+		/// </summary>
+		public PlotOptionsTreegraphDataLabelsLinkTextPath LinkTextPath { get; set; }
+		private PlotOptionsTreegraphDataLabelsLinkTextPath LinkTextPath_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -245,7 +253,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Styles for the label. The default `color` setting is`"contrast"`, which is a pseudo color that Highcharts picks upand applies the maximum contrast to the underlying point item,for example the bar in a bar chart.The `textOutline` is a pseudo property that applies an outline ofthe given width with the given color, which by default is themaximum contrast to the text. So a bright text color will resultin a black text outline for maximum readability on a mixedbackground. In some cases, especially with grayscale text, thetext outline doesn't work well, in which cases it can be disabledby setting it to `"none"`. When `useHTML` is true, the`textOutline` will not be picked up. In this, case, the sameeffect can be acheived through the `text-shadow` CSS property.For some series types, where each point has an extent, like forexample tree maps, the data label may overflow the point. Thereare two strategies for handling overflow. By default, the textwill wrap to multiple lines. The other strategy is to set`style.textOverflow` to `ellipsis`, which will keep the text onone line plus it will break inside long words.
+		/// 
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }
@@ -317,6 +325,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (LinkTextPath.IsDirty(highcharts)) h.Add("linkTextPath",LinkTextPath.ToHashtable(highcharts));
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  

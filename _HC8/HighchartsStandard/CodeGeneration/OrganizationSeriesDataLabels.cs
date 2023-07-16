@@ -33,6 +33,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
+			LinkFormat = LinkFormat_DefaultValue = "";
+			LinkFormatter = LinkFormatter_DefaultValue = "";
+			LinkTextPath = LinkTextPath_DefaultValue = new OrganizationSeriesDataLabelsLinkTextPath();
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -172,6 +175,27 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Inside { get; set; }
 		private bool? Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The format string specifying what to show for *links* in theorganization chart.Best to use with [`linkTextPath`](#series.organization.dataLabels.linkTextPath) enabled.
+		/// </summary>
+		public string LinkFormat { get; set; }
+		private string LinkFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback to format data labels for _links_ in theorganization chart. The `linkFormat` option takesprecedence over the `linkFormatter`.
+		/// </summary>
+		public string LinkFormatter { get; set; }
+		private string LinkFormatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for a _link_ label text which should follow linkconnection.
+		/// </summary>
+		public OrganizationSeriesDataLabelsLinkTextPath LinkTextPath { get; set; }
+		private OrganizationSeriesDataLabelsLinkTextPath LinkTextPath_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -317,6 +341,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (LinkFormat != LinkFormat_DefaultValue) h.Add("linkFormat",LinkFormat);
+			if (LinkFormatter != LinkFormatter_DefaultValue) { h.Add("linkFormatter",LinkFormatter); highcharts.AddFunction("linkFormatter", LinkFormatter); }  
+			if (LinkTextPath.IsDirty(highcharts)) h.Add("linkTextPath",LinkTextPath.ToHashtable(highcharts));
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  

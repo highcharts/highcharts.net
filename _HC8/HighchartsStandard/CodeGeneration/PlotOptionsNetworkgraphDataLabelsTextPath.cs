@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsNetworkgraphDataLabelsTextPath()
 		{
-			Attributes = Attributes_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
@@ -24,14 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Presentation attributes for the text path.
-		/// </summary>
-		public Object Attributes { get; set; }
-		private Object Attributes_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Enable or disable `textPath` option for link's or marker's datalabels.
+		/// 
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -44,7 +36,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

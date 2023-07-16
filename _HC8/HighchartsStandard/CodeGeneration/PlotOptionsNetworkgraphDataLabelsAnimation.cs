@@ -16,14 +16,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsNetworkgraphDataLabelsAnimation()
 		{
-			Defer = Defer_DefaultValue = null;
+			Defer = Defer_DefaultValue = 1000;
 			
 			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
-		/// The animation delay time in milliseconds. Set to `0` to render thedata labels immediately. As `undefined` inherits defer time from the[series.animation.defer](#plotOptions.series.animation.defer).
+		/// 
 		/// </summary>
 		public double? Defer { get; set; }
 		private double? Defer_DefaultValue { get; set; }

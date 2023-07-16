@@ -28,11 +28,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
+			Distance = Distance_DefaultValue = 0;
 			Enabled = Enabled_DefaultValue = false;
 			Filter = Filter_DefaultValue = new PlotOptionsDependencywheelDataLabelsFilter();
-			Format = Format_DefaultValue = "point.value";
+			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
+			NodeFormat = NodeFormat_DefaultValue = "";
+			NodeFormatter = NodeFormatter_DefaultValue = "";
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -140,6 +143,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Distance between the data label and the center of the node.
+		/// </summary>
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the data labels.
 		/// </summary>
 		public bool? Enabled { get; set; }
@@ -154,14 +164,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
+		/// A format string for data labels of the links between nodes. Availablevariables are the same as for `formatter`.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback JavaScript function to format the data label. Note that if a`format` is defined, the format takes precedence and the formatter isignored.
+		/// Callback to format data labels of the links between nodes. The `format`option takes precedence over the `formatter` option.
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }
@@ -172,6 +182,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Inside { get; set; }
 		private bool? Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The format string specifying what to show for nodes in the sankeydiagram. By default the nodeFormatter returns `{point.name}`. Availablevariables are the same as for `nodeFormatter`.
+		/// </summary>
+		public string NodeFormat { get; set; }
+		private string NodeFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback to format data labels of nodes in the dependency wheel. The`nodeFormat` option takes precedence over the `nodeFormatter` option.
+		/// </summary>
+		public string NodeFormatter { get; set; }
+		private string NodeFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -252,7 +276,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Options for a label text which should follow marker's shape.Border and background are disabled for a label that follows apath.**Note:** Only SVG-based renderer supports this option. Setting`useHTML` to true will disable this option.
+		/// 
 		/// </summary>
 		public PlotOptionsDependencywheelDataLabelsTextPath TextPath { get; set; }
 		private PlotOptionsDependencywheelDataLabelsTextPath TextPath_DefaultValue { get; set; }
@@ -312,11 +336,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
 			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Filter.IsDirty(highcharts)) h.Add("filter",Filter.ToHashtable(highcharts));
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
+			if (NodeFormatter != NodeFormatter_DefaultValue) h.Add("nodeFormatter",NodeFormatter);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  

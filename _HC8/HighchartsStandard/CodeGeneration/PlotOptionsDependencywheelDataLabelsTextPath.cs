@@ -24,14 +24,14 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Presentation attributes for the text path.
+		/// 
 		/// </summary>
 		public Object Attributes { get; set; }
 		private Object Attributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Enable or disable `textPath` option for link's or marker's datalabels.
+		/// 
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }

@@ -21,14 +21,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = null;
 			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderRadius = BorderRadius_DefaultValue = 0;
-			BorderWidth = BorderWidth_DefaultValue = 0;
+			BorderColor = BorderColor_DefaultValue = "#cccccc";
+			BorderRadius = BorderRadius_DefaultValue = 3;
+			BorderWidth = BorderWidth_DefaultValue = 1;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			Crop = Crop_DefaultValue = true;
-			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
+			Crop = Crop_DefaultValue = false;
+			Defer = Defer_DefaultValue = false;
+			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsGaugeDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
@@ -46,10 +46,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new PlotOptionsGaugeDataLabelsTextPath();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsGaugeDataLabelsVerticalAlign.Bottom;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsGaugeDataLabelsVerticalAlign.Top;
 			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
-			ZIndex = ZIndex_DefaultValue = 6;
+			Y = Y_DefaultValue = 15;
+			ZIndex = ZIndex_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -91,21 +91,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border color for the data label. Setting it to `auto` will usethe point's color. Defaults to `undefined`.
+		/// 
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border radius in pixels for the data label.
+		/// 
 		/// </summary>
 		public double? BorderRadius { get; set; }
 		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The border width in pixels for the data label.
+		/// 
 		/// </summary>
 		public double? BorderWidth { get; set; }
 		private double? BorderWidth_DefaultValue { get; set; }
@@ -126,21 +126,21 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to hide data labels that are outside the plot area. Bydefault, the data label is moved inside the plot area accordingto the[overflow](#plotOptions.series.dataLabels.overflow)option.
+		/// 
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Whether to defer displaying the data labels until the initialseries animation has finished. Setting to `false` renders thedata label immediately. If set to `true` inherits the defertime set in [plotOptions.series.animation](#plotOptions.series.animation).
+		/// 
 		/// </summary>
 		public bool? Defer { get; set; }
 		private bool? Defer_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Enable or disable the data labels.
+		/// 
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -266,7 +266,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The vertical alignment of a data label. Can be one of `top`,`middle` or `bottom`. The default value depends on the data, forinstance in a column chart, the label is above positive valuesand below negative values.
+		/// 
 		/// </summary>
 		public PlotOptionsGaugeDataLabelsVerticalAlign VerticalAlign { get; set; }
 		private PlotOptionsGaugeDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
@@ -280,14 +280,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The y position offset of the label relative to the point inpixels.
+		/// 
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The z index of the data labels. Use a `zIndex` of 6 to display it abovethe series, or use a `zIndex` of 2 to display it behind the series.
+		/// 
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsFunnel3dDataLabels()
 		{
-			Align = Align_DefaultValue = PlotOptionsFunnel3dDataLabelsAlign.Center;
+			Align = Align_DefaultValue = PlotOptionsFunnel3dDataLabelsAlign.Right;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = null;
@@ -26,17 +26,17 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "";
-			Crop = Crop_DefaultValue = true;
+			Crop = Crop_DefaultValue = false;
 			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
 			Filter = Filter_DefaultValue = new PlotOptionsFunnel3dDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = null;
+			Inside = Inside_DefaultValue = false;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = PlotOptionsFunnel3dDataLabelsOverflow.Justify;
+			Overflow = Overflow_DefaultValue = PlotOptionsFunnel3dDataLabelsOverflow.Allow;
 			Padding = Padding_DefaultValue = 5;
 			Position = Position_DefaultValue = PlotOptionsFunnel3dDataLabelsPosition.Center;
 			Rotation = Rotation_DefaultValue = 0;
@@ -56,7 +56,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. For pointswith an extent, like columns, the alignments also dictates how toalign it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
+		/// 
 		/// </summary>
 		public PlotOptionsFunnel3dDataLabelsAlign Align { get; set; }
 		private PlotOptionsFunnel3dDataLabelsAlign Align_DefaultValue { get; set; }
@@ -126,7 +126,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to hide data labels that are outside the plot area. Bydefault, the data label is moved inside the plot area accordingto the[overflow](#plotOptions.series.dataLabels.overflow)option.
+		/// 
 		/// </summary>
 		public bool? Crop { get; set; }
 		private bool? Crop_DefaultValue { get; set; }
@@ -168,7 +168,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For points with an extent, like columns or map areas, whether toalign the data label inside the box or to the actual value point.Defaults to `false` in most cases, `true` in stacked columns.
+		/// 
 		/// </summary>
 		public bool? Inside { get; set; }
 		private bool? Inside_DefaultValue { get; set; }
@@ -196,7 +196,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// How to handle data labels that flow outside the plot area. Thedefault is `"justify"`, which aligns them inside the plot area.For columns and bars, this means it will be moved inside the bar.To display data labels outside the plot area, set `crop` to`false` and `overflow` to `"allow"`.
+		/// 
 		/// </summary>
 		public PlotOptionsFunnel3dDataLabelsOverflow Overflow { get; set; }
 		private PlotOptionsFunnel3dDataLabelsOverflow Overflow_DefaultValue { get; set; }

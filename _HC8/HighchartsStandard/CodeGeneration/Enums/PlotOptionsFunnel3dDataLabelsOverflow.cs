@@ -7,7 +7,6 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsFunnel3dDataLabelsOverflow
     {
-        Justify, 
-		Allow
+        Allow
     }
 }

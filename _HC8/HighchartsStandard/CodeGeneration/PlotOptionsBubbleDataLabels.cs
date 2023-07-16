@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Filter = Filter_DefaultValue = new PlotOptionsBubbleDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = null;
+			Inside = Inside_DefaultValue = true;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new PlotOptionsBubbleDataLabelsTextPath();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsBubbleDataLabelsVerticalAlign.Bottom;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsBubbleDataLabelsVerticalAlign.Middle;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -168,7 +168,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// For points with an extent, like columns or map areas, whether toalign the data label inside the box or to the actual value point.Defaults to `false` in most cases, `true` in stacked columns.
+		/// 
 		/// </summary>
 		public bool? Inside { get; set; }
 		private bool? Inside_DefaultValue { get; set; }
@@ -266,7 +266,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The vertical alignment of a data label. Can be one of `top`,`middle` or `bottom`. The default value depends on the data, forinstance in a column chart, the label is above positive valuesand below negative values.
+		/// 
 		/// </summary>
 		public PlotOptionsBubbleDataLabelsVerticalAlign VerticalAlign { get; set; }
 		private PlotOptionsBubbleDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }

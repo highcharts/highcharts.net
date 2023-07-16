@@ -33,6 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
+			LinkTextPath = LinkTextPath_DefaultValue = new PlotOptionsArcdiagramDataLabelsLinkTextPath();
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -172,6 +173,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Inside { get; set; }
 		private bool? Inside_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for a _link_ label text which should follow linkconnection. Border and background are disabled for a label thatfollows a path.**Note:** Only SVG-based renderer supports this option. Setting`useHTML` to true will disable this option.
+		/// </summary>
+		public PlotOptionsArcdiagramDataLabelsLinkTextPath LinkTextPath { get; set; }
+		private PlotOptionsArcdiagramDataLabelsLinkTextPath LinkTextPath_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -317,6 +325,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
+			if (LinkTextPath.IsDirty(highcharts)) h.Add("linkTextPath",LinkTextPath.ToHashtable(highcharts));
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  

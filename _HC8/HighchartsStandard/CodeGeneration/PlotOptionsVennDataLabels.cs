@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
+			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsVennDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new PlotOptionsVennDataLabelsTextPath();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsVennDataLabelsVerticalAlign.Bottom;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsVennDataLabelsVerticalAlign.Middle;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -140,7 +140,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enable or disable the data labels.
+		/// 
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -266,7 +266,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The vertical alignment of a data label. Can be one of `top`,`middle` or `bottom`. The default value depends on the data, forinstance in a column chart, the label is above positive valuesand below negative values.
+		/// 
 		/// </summary>
 		public PlotOptionsVennDataLabelsVerticalAlign VerticalAlign { get; set; }
 		private PlotOptionsVennDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }

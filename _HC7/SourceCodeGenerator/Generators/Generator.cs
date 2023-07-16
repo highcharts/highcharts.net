@@ -241,10 +241,20 @@ namespace SourceCodeGenerator.Generators
                             var child = children.FirstOrDefault(p => p.Title == baseElement.Title);
 
                             if (child != null)
-                                child.Children = child.Children.Concat(baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title))).ToList();
+                            {
+                                foreach (var element in baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title)).ToList())
+                                {
+                                    var clone = element.Clone();
+                                    clone.ParentFullName = child.FullName;
+                                    clone.FullName = clone.ParentFullName + '.' + clone.Title;
+                                    child.Children.Add(clone);
+                                }
+                                //elementsToClone.ForEach(p => { p.ParentFullName = child.FullName; p.FullName = child.FullName + p.Title; });
+                                //child.Children = child.Children.Concat(elementsToClone).ToList();
+                            }
                         }
 
-                        children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && x.Suffix == p.Suffix)));
+                        children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && (x.Suffix == p.Suffix || (string.IsNullOrEmpty(x.Suffix) && string.IsNullOrEmpty(p.Suffix))))));
                     }
                 }
             }
