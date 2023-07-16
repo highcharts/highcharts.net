@@ -1202,7 +1202,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            bool? defaultValue = null;
+            bool? defaultValue = false;
 
             chart.PlotOptions.Organization.DataLabels.TextPath.Enabled = defaultValue;
 

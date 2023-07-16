@@ -847,7 +847,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = "point.value";
+            var defaultValue = string.Empty;
 
             chart.PlotOptions.Dependencywheel.DataLabels.Format = defaultValue;
 

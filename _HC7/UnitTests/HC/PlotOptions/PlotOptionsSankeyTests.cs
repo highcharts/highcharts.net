@@ -3160,7 +3160,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = "<span style='font-size: 10px'>{series.name}</span><br/>";
+            var defaultValue = "<span style='font-size: 0.8em'>{series.name}</span><br/>";
 
             chart.PlotOptions.Sankey.Tooltip.HeaderFormat = defaultValue;
 

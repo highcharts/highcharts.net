@@ -2139,7 +2139,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = 2;
+            var defaultValue = 0;
 
             chart.PlotOptions.Vector.LineWidth = defaultValue;
 
@@ -3560,7 +3560,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = "[{point.x}, {point.y}] Length: {point.length} Direction: {point.direction}°";
+            var defaultValue = "x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>";
 
             chart.PlotOptions.Vector.Tooltip.PointFormat = defaultValue;
 

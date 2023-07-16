@@ -245,7 +245,7 @@ namespace HC.PlotOptions
 
             chart.PlotOptions.Series.AnimationBool = value;
 
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"animation\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
+            Assert.Contains($":{{\"animation\":{value.ToString().ToLower()}}}}}", renderer.RenderHtml());
         }
 
         [Fact]

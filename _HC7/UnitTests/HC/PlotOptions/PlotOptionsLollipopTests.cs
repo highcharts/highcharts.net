@@ -612,7 +612,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = PlotOptionsLollipopDataLabelsAlign.Center;
+            var defaultValue = PlotOptionsLollipopDataLabelsAlign.Undefined;
 
             chart.PlotOptions.Lollipop.DataLabels.Align = defaultValue;
 
@@ -1438,7 +1438,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = PlotOptionsLollipopDataLabelsVerticalAlign.Bottom;
+            var defaultValue = PlotOptionsLollipopDataLabelsVerticalAlign.Undefined;
 
             chart.PlotOptions.Lollipop.DataLabels.VerticalAlign = defaultValue;
 
@@ -4814,7 +4814,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = "<span style='color:{series.color}'>●</span> {series.name}: <b>{point.y}</b><br/>";
+            var defaultValue = "<span style='color:{series.color}'>●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>";
 
             chart.PlotOptions.Lollipop.Tooltip.PointFormat = defaultValue;
 
