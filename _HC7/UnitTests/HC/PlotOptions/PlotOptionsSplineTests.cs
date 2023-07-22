@@ -879,11 +879,7 @@ namespace HC.PlotOptions
 
             chart.PlotOptions.Spline.DataLabels.Defer = value;
 
-            var result = renderer.RenderHtml();
-            var pattern = $"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value.ToString().ToLower()).Replace(",", "")}}}}}}}";
-
-
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", result);
+            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value.ToString().ToLower()).Replace(",", "")}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]
