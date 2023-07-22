@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-using Highsoft.Web.Mvc.Charts;
+﻿using Highsoft.Web.Mvc.Charts;
 using Highsoft.Web.Mvc.Charts.Rendering;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
-using TH = Tests.Helpers.TestHelper;
 using UnitTests.HC;
+using Xunit;
+using TH = Tests.Helpers.TestHelper;
 
 namespace HC.PlotOptions
 {

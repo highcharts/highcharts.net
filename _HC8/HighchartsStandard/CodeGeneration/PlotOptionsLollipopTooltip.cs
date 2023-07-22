@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			HeaderFormat = HeaderFormat_DefaultValue = "";
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatter = NullFormatter_DefaultValue = "";
-			PointFormat = PointFormat_DefaultValue = "";
+			PointFormat = PointFormat_DefaultValue = "<span style='color:{series.color}'>●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>";
 			PointFormatter = PointFormatter_DefaultValue = "";
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValuePrefix = ValuePrefix_DefaultValue = "";

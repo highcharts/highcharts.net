@@ -759,6 +759,7 @@ namespace SourceCodeGenerator.Generators
                         (child.FullName.EndsWith("states.hover") || child.FullName.EndsWith("states.inactive") || child.FullName.EndsWith("states.normal") || child.FullName.EndsWith("states.select")))
                         return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
+                
                     return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
                 }
             }
@@ -1087,6 +1088,8 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("series.id", "string.Empty");
             _propertyInitMappings.Add("series.funnel3d.dataLabels.verticalAlign", "Funnel3dSeriesDataLabelsVerticalAlign.Middle");
             _propertyInitMappings.Add("series.pyramid3d.dataLabels.verticalAlign", "Pyramid3dSeriesDataLabelsVerticalAlign.Middle");
+            _propertyInitMappings.Add("plotOptions.lollipop.tooltip.pointFormat", "\"<span style='color:{series.color}'>●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>\"");
+            _propertyInitMappings.Add("plotOptions.vector.tooltip.pointFormat", "\"x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>\"");
         }
 
         protected override void InitLists()

@@ -795,7 +795,7 @@ namespace HC.Series
 
             ((VectorSeries)chart.Series[0]).DataLabels.Defer = value;
 
-            Assert.Contains($"\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
+            Assert.Contains($"\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value.ToString().ToLower()).Replace(",", "")}}}", renderer.RenderHtml());
         }
 
         [Fact]
