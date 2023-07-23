@@ -374,6 +374,11 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("sonification.defaultInstrumentOptions.mapping.pitch.scale", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Default, Value = "new List<double>()" } });
             ItemsToUpdate.Add("plotOptions.columnrange.borderRadius", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
             ItemsToUpdate.Add("annotations.crookedLine.labelOptions", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
+
+            ItemsToUpdate.Add("plotOptions.series.boostBlending", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "add" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "multiply" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "darken" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("plotOptions.series.pointIntervalUnit", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "day" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "month" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "year" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("plotOptions.series.stacking", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "normal" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "overlap" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "percent" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "stream" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+            ItemsToUpdate.Add("plotOptions.series.step", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "center" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
         }
 
         public void Delete(ApiItem item)
