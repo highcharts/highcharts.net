@@ -72,17 +72,13 @@
     <Compile Include="Website\Highcharts\BasicLine.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\_HC8\HighchartsStandard\HighchartsStandard.csproj">
-      <Project>{5263a8fd-5372-4433-b171-a00b0b8c42a1}</Project>
-      <Name>HighchartsStandard</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\_HC8\HighstockStandard\HighstockStandard.csproj">
-      <Project>{df9a356f-c423-492e-aa8f-f85e509ab2b4}</Project>
-      <Name>HighstockStandard</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\HighchartsStandard\HighchartsStandard.csproj">
+      <Project>{d5c8fc1f-55bc-43e4-b488-ebf73736b6b9}</Project>
+      <Name>HighchartsStandard</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

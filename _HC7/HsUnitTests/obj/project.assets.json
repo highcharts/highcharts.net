@@ -5462,13 +5462,13 @@
     },
     "Highsoft.Highcharts/11.0.1.1": {
       "type": "project",
-      "path": "../../_HC8/HighchartsStandard/HighchartsStandard.csproj",
-      "msbuildProject": "../../_HC8/HighchartsStandard/HighchartsStandard.csproj"
+      "path": "../HighchartsStandard/HighchartsStandard.csproj",
+      "msbuildProject": "../HighchartsStandard/HighchartsStandard.csproj"
     },
     "Highsoft.Highstock/11.0.1.1": {
       "type": "project",
-      "path": "../../_HC8/HighstockStandard/HighstockStandard.csproj",
-      "msbuildProject": "../../_HC8/HighstockStandard/HighstockStandard.csproj"
+      "path": "../HighstockStandard/HighstockStandard.csproj",
+      "msbuildProject": "../HighstockStandard/HighstockStandard.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5513,11 +5513,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Repositories\\highcharts.net\\_HC8\\HighchartsStandard\\HighchartsStandard.csproj": {
-              "projectPath": "C:\\Repositories\\highcharts.net\\_HC8\\HighchartsStandard\\HighchartsStandard.csproj"
+            "C:\\Repositories\\highcharts.net\\_HC7\\HighchartsStandard\\HighchartsStandard.csproj": {
+              "projectPath": "C:\\Repositories\\highcharts.net\\_HC7\\HighchartsStandard\\HighchartsStandard.csproj"
             },
-            "C:\\Repositories\\highcharts.net\\_HC8\\HighstockStandard\\HighstockStandard.csproj": {
-              "projectPath": "C:\\Repositories\\highcharts.net\\_HC8\\HighstockStandard\\HighstockStandard.csproj"
+            "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\HighstockStandard.csproj": {
+              "projectPath": "C:\\Repositories\\highcharts.net\\_HC7\\HighstockStandard\\HighstockStandard.csproj"
             }
           }
         }
