@@ -24,7 +24,8 @@ namespace SourceCodeGenerator.Services
         "Highcharts.OrganizationHangingIndentTranslationValue", "Highcharts.SVGPathArray", "Highcharts.Dictionary.<function()>"};//, "Highcharts.HTMLDOMElement" 
         private static ISet<string> UniqueStringTypes = new HashSet<string>(UniqueStringTypesNames);
 
-        private static IEnumerable<string> UniqueObjectTypeNames = new List<string> { "Highcharts.PlotNetworkDataLabelsOptionsObject", "Highcharts.DataLabelsOptionsObject", "Highcharts.NavigationBindingsOptionsObject", "Highcharts.SVGAttributes" };
+        private static IEnumerable<string> UniqueObjectTypeNames = new List<string> { "Highcharts.PlotNetworkDataLabelsOptionsObject", "Highcharts.DataLabelsOptionsObject", "Highcharts.NavigationBindingsOptionsObject", "Highcharts.SVGAttributes", "Highcharts.SeriesSankeyDataLabelsOptionsObject"
+        , "Highcharts.SeriesArcDiagramDataLabelsOptionsObject", "Highcharts.SeriesTreegraphDataLabelsOptionsObject", "Highcharts.SeriesPackedBubbleDataLabelsOptionsObject", "Highcharts.SeriesNetworkgraphDataLabelsOptionsObject", "Highcharts.SeriesOrganizationDataLabelsOptionsObject", "Highcharts.SeriesSunburstDataLabelsOptionsObject"};
         private static ISet<string> UniqueObjectTypes = new HashSet<string>(UniqueObjectTypeNames);
 
         private static IEnumerable<string> UniqueEnumTypeNames = new List<string> { "Highcharts.DataLabelsOverflowValue", "Highcharts.AlignValue"};
@@ -56,6 +57,13 @@ namespace SourceCodeGenerator.Services
 
                 item.Types.Remove("*");
                 item.ReturnType = ObjectType;
+            }
+
+            if(IsHiddenEnum(item))
+            {
+                item.Values = item.Types;
+                item.Types = new List<string> { EnumType };
+                item.ReturnType = EnumType;
             }
         }
         private string GetType(ApiItem item)
@@ -112,6 +120,17 @@ namespace SourceCodeGenerator.Services
         private bool IsEnum(ApiItem item)
         {
             if (UniqueEnumTypes.Contains(item.ReturnType))
+                return true;
+
+            return false;
+        }
+
+        private bool IsHiddenEnum(ApiItem item)
+        {
+            if (item.Types.Count > 1 && !item.Values.Any() && !item.ReturnType.Equals(CSSRawType) && !item.ReturnType.Equals(CSSType)
+                && !item.ReturnType.Equals(StringType) && !item.ReturnType.Equals(ObjectType)
+                && !item.ReturnType.Equals(BoolType) && !item.ReturnType.Equals(NumberType)
+                && !item.ReturnType.Equals(FunctionType) && !item.ReturnType.Equals(EnumType))
                 return true;
 
             return false;

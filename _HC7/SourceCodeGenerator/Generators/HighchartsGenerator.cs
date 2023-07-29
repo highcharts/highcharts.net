@@ -568,7 +568,6 @@ namespace SourceCodeGenerator.Generators
                 result += FirstCharToUpper(part);
 
             result = result + item.Suffix;
-
             result = result.Replace('-', '_');
 
             return result;

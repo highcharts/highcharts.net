@@ -101,13 +101,14 @@ namespace SourceCodeGenerator.Parser
 
                 JToken jValues = doclet.SelectToken("values", false);
                 if (jValues != null)
-                    apiItem.Values = GetValues(jValues.Value<string>());
+                    apiItem.Values = GetValues(jValues.Value<string>()).Select(p => p = p.Replace("\"", "")).ToList();
 
                 JToken jType = doclet.SelectToken("type", false);
                 if (jType != null)
                 {
                     JToken jNames = jType.SelectToken("names");
                     apiItem.Types = jNames.Select(t => (string)t).ToList();
+                    apiItem.Types = apiItem.Types.Select(p => p = p.Replace("\"", "")).Where(t => t != "null").ToList();
 
                     //tylko testowo
                     apiItem.ReturnType = apiItem.Types[0];
