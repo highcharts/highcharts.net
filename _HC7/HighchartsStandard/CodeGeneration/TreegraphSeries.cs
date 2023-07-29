@@ -39,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Description = Description_DefaultValue = "";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new TreegraphSeriesEvents();
+			FillSpace = FillSpace_DefaultValue = false;
 			Id = Id_DefaultValue = "";
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
@@ -54,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			OnPoint = OnPoint_DefaultValue = new TreegraphSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new TreegraphSeriesPoint();
+			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			Reversed = Reversed_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
@@ -234,6 +236,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether the treegraph series should fill the entire plot area in the Xaxis direction, even when there are collapsed points.
+		/// </summary>
+		public bool? FillSpace { get; set; }
+		private bool? FillSpace_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An id for the series. This can be used after render time to get a pointerto the series object through `chart.get()`.
 		/// </summary>
 		public override string Id { get; set; }
@@ -336,6 +345,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public TreegraphSeriesPoint Point { get; set; }
 		private TreegraphSeriesPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Same as[accessibility.point.descriptionFormat](#accessibility.point.descriptionFormat),but for an individual series. Overrides the chart wide configuration.
+		/// </summary>
+		public string PointDescriptionFormat { get; set; }
+		private string PointDescriptionFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -459,6 +475,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
+			if (FillSpace != FillSpace_DefaultValue) h.Add("fillSpace",FillSpace);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
@@ -474,6 +491,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
+			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);

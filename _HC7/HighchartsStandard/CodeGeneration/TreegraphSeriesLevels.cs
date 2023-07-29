@@ -23,9 +23,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new TreegraphSeriesLevelsColorVariation();
 			DataLabels = DataLabels_DefaultValue = new TreegraphSeriesDataLabels();
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = TreegraphSeriesLevelsLayoutAlgorithm.Null;
-			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreegraphSeriesLevelsLayoutStartingDirection.Null;
+			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = TreegraphSeriesLevelsLayoutAlgorithm.SliceAndDice;
+			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreegraphSeriesLevelsLayoutStartingDirection.Vertical;
 			Level = Level_DefaultValue = null;
+			Marker = Marker_DefaultValue = new TreegraphSeriesLevelsMarker();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -101,6 +102,13 @@ namespace Highsoft.Web.Mvc.Charts
 		private double? Level_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Set marker options for nodes at the level.
+		/// </summary>
+		public TreegraphSeriesLevelsMarker Marker { get; set; }
+		private TreegraphSeriesLevelsMarker Marker_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
@@ -118,6 +126,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
 			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (Level != Level_DefaultValue) h.Add("level",Level);
+			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

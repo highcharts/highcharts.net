@@ -7,7 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsNetworkgraphLayoutAlgorithmApproximation
     {
-        Barnes_hut, 
+        BarnesHut, 
 		None
     }
 }

@@ -24,7 +24,6 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
-			Cluster = Cluster_DefaultValue = new PlotOptionsTilemapCluster();
 			Color = Color_DefaultValue = "";
 			ColorAxis = ColorAxis_DefaultValue = "0";
 			ColorAxisNumber = ColorAxisNumber_DefaultValue = null;
@@ -37,10 +36,10 @@ namespace Highsoft.Web.Mvc.Charts
 			Custom = Custom_DefaultValue = new Hashtable();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsTilemapDataLabels();
 			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new PlotOptionsTilemapDragDrop();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsTilemapEvents();
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
+			Interpolation = Interpolation_DefaultValue = false;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsTilemapLabel();
 			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsTilemapLegendSymbol.Rectangle;
@@ -50,6 +49,7 @@ namespace Highsoft.Web.Mvc.Charts
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsTilemapOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsTilemapPoint();
+			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = 2;
 			RelativeXValue = RelativeXValue_DefaultValue = false;
@@ -126,13 +126,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Clip { get; set; }
 		private bool? Clip_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Options for marker clusters, the concept of sampling the datavalues into larger blocks in order to ease readability andincrease performance of the JavaScript charts.Note: marker clusters module is not working with `boost`and `draggable-points` modules.The marker clusters feature requires the marker-clusters.jsfile to be loaded, found in the modules directory of the downloadpackage, or online at [code.highcharts.com/modules/marker-clusters.js](code.highcharts.com/modules/marker-clusters.js).
-		/// </summary>
-		public PlotOptionsTilemapCluster Cluster { get; set; }
-		private PlotOptionsTilemapCluster Cluster_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -220,13 +213,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The draggable-points module allows points to be moved around or modified inthe chart. In addition to the options mentioned under the `dragDrop` APIstructure, the module fires three events,[point.dragStart](plotOptions.series.point.events.dragStart),[point.drag](plotOptions.series.point.events.drag) and[point.drop](plotOptions.series.point.events.drop).
-		/// </summary>
-		public PlotOptionsTilemapDragDrop DragDrop { get; set; }
-		private PlotOptionsTilemapDragDrop DragDrop_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
@@ -245,6 +231,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
 		private bool? IncludeInDataExport_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Make the heatmap render its data points as an interpolated image.
+		/// </summary>
+		public bool? Interpolation { get; set; }
+		private bool? Interpolation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -308,6 +301,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsTilemapPoint Point { get; set; }
 		private PlotOptionsTilemapPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Same as[accessibility.point.descriptionFormat](#accessibility.point.descriptionFormat),but for an individual series. Overrides the chart wide configuration.
+		/// </summary>
+		public string PointDescriptionFormat { get; set; }
+		private string PointDescriptionFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -444,7 +444,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (Cluster.IsDirty(highcharts)) h.Add("cluster",Cluster.ToHashtable(highcharts));
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorAxis != ColorAxis_DefaultValue) h.Add("colorAxis",ColorAxis);
 			if (ColorAxisNumber != ColorAxisNumber_DefaultValue) h.Add("colorAxis",ColorAxisNumber);
@@ -457,10 +456,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
+			if (Interpolation != Interpolation_DefaultValue) h.Add("interpolation",Interpolation);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
 			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
@@ -470,6 +469,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
+			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);

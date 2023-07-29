@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Floor = Floor_DefaultValue = null;
 			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = new Hashtable();
-			GridLineInterpolation = GridLineInterpolation_DefaultValue = ZAxisGridLineInterpolation.Null;
+			GridLineInterpolation = GridLineInterpolation_DefaultValue = ZAxisGridLineInterpolation.Circle;
 			GridLineWidth = GridLineWidth_DefaultValue = null;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = "";

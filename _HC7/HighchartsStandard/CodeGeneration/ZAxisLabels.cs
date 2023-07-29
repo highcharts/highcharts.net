@@ -51,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to allow the axis labels to overlap.When false, overlapping labels are hidden.
+		/// Whether to allow the axis labels to overlap. When false,overlapping labels are hidden.
 		/// </summary>
 		public bool? AllowOverlap { get; set; }
 		private bool? AllowOverlap_DefaultValue { get; set; }
@@ -72,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The label's pixel distance from the perimeter of the plot area.On cartesian charts, this is overridden if the `labels.y` settingis set.* On polar charts, if it's a percentage string, it is interpretedthe same as [series.radius](#plotOptions.gauge.radius), so thelabel can be aligned under the gauge's shape.
+		/// The label's pixel distance from the perimeter of the plot area.On cartesian charts, this is overridden if the `labels.y` settingis set.
 		/// </summary>
 		public double? Distance { get; set; }
 		private double? Distance_DefaultValue { get; set; }

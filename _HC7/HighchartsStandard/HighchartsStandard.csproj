@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>11.0.1.1</AssemblyVersion>
-    <FileVersion>11.0.1.1</FileVersion>
+    <AssemblyVersion>11.1.0.1</AssemblyVersion>
+    <FileVersion>11.1.0.1</FileVersion>
     <Company>Highsoft</Company>
     <Product>Highcharts .NET</Product>
-    <Version>11.0.1.1</Version>
+    <Version>11.1.0.1</Version>
     <Authors>Highsoft</Authors>
     <Copyright>Copyright ©  2023</Copyright>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>

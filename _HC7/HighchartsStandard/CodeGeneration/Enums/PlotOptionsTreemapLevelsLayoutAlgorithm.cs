@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsTreemapLevelsLayoutAlgorithm
     {
-        Null, 
-		SliceAndDice, 
+        SliceAndDice, 
 		Stripes, 
 		Squarified, 
 		Strip

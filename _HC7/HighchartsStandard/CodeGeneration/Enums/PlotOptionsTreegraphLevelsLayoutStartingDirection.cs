@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsTreegraphLevelsLayoutStartingDirection
     {
-        Null, 
-		Vertical, 
+        Vertical, 
 		Horizontal
     }
 }

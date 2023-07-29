@@ -51,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to allow the axis labels to overlap.When false, overlapping labels are hidden.
+		/// Whether to allow the axis labels to overlap. When false,overlapping labels are hidden.
 		/// </summary>
 		public bool? AllowOverlap { get; set; }
 		private bool? AllowOverlap_DefaultValue { get; set; }

@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum YAxisGridLineInterpolation
     {
-        Null, 
-		Circle, 
+        Circle, 
 		Polygon
     }
 }

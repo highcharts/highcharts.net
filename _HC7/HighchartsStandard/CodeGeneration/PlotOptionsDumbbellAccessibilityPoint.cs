@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DateFormat = DateFormat_DefaultValue = "";
 			DateFormatter = DateFormatter_DefaultValue = "";
 			DescribeNull = DescribeNull_DefaultValue = true;
+			DescriptionFormat = DescriptionFormat_DefaultValue = "";
 			DescriptionFormatter = DescriptionFormatter_DefaultValue = "";
 			ValueDecimals = ValueDecimals_DefaultValue = null;
 			ValueDescriptionFormat = ValueDescriptionFormat_DefaultValue = "{xDescription}{separator}{value}.";
@@ -48,6 +49,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? DescribeNull { get; set; }
 		private bool? DescribeNull_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)to use instead of the default for point descriptions.The context of the format string is the point instance.As opposed to [accessibility.point.valueDescriptionFormat](#accessibility.point.valueDescriptionFormat),this option replaces the whole description.
+		/// </summary>
+		public string DescriptionFormat { get; set; }
+		private string DescriptionFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -95,6 +103,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
 			if (DateFormatter != DateFormatter_DefaultValue) { h.Add("dateFormatter",DateFormatter); highcharts.AddFunction("dateFormatter", DateFormatter); }  
 			if (DescribeNull != DescribeNull_DefaultValue) h.Add("describeNull",DescribeNull);
+			if (DescriptionFormat != DescriptionFormat_DefaultValue) h.Add("descriptionFormat",DescriptionFormat);
 			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); highcharts.AddFunction("descriptionFormatter", DescriptionFormatter); }  
 			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValueDescriptionFormat != ValueDescriptionFormat_DefaultValue) h.Add("valueDescriptionFormat",ValueDescriptionFormat);

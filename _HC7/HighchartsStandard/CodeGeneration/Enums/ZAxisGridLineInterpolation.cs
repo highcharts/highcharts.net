@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ZAxisGridLineInterpolation
     {
-        Null, 
-		Circle, 
+        Circle, 
 		Polygon
     }
 }

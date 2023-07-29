@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = true;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderRadius = BorderRadius_DefaultValue = null;
+			BorderRadius = BorderRadius_DefaultValue = 0;
 			BorderRadiusString = BorderRadiusString_DefaultValue = "null";
 			BorderRadiusNumber = BorderRadiusNumber_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = 1;
@@ -61,6 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsFunnelOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsFunnelPoint();
+			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			RelativeXValue = RelativeXValue_DefaultValue = false;
 			Reversed = Reversed_DefaultValue = false;
@@ -122,10 +123,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The corner radius of the border surrounding each slice. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa size relative to the radius and the inner radius.
+		/// The corner radius of the border surrounding all points or series. Anumber signifies pixels. A percentage string, like for example `50%`,signifies a size relative to the series width.
 		/// </summary>
-		public Object BorderRadius { get; set; }
-		private Object BorderRadius_DefaultValue { get; set; }
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -402,6 +403,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Same as[accessibility.point.descriptionFormat](#accessibility.point.descriptionFormat),but for an individual series. Overrides the chart wide configuration.
+		/// </summary>
+		public string PointDescriptionFormat { get; set; }
+		private string PointDescriptionFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Same as[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),but for an individual series. Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
@@ -593,6 +601,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
+			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);

@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TreemapSeriesLevelsColorVariation()
 		{
-			Key = Key_DefaultValue = TreemapSeriesLevelsColorVariationKey.Null;
+			Key = Key_DefaultValue = "";
 			To = To_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
@@ -26,8 +26,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The key of a color variation. Currently supports `brightness` only.
 		/// </summary>
-		public TreemapSeriesLevelsColorVariationKey Key { get; set; }
-		private TreemapSeriesLevelsColorVariationKey Key_DefaultValue { get; set; }
+		public string Key { get; set; }
+		private string Key_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -44,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Key != Key_DefaultValue) h.Add("key", highcharts.FirstCharacterToLower(Key.ToString()));
+			if (Key != Key_DefaultValue) h.Add("key",Key);
 			if (To != To_DefaultValue) h.Add("to",To);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsTreegraphLevelsColorVariation();
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreegraphDataLabels();
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreegraphLevelsLayoutAlgorithm.Null;
-			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreegraphLevelsLayoutStartingDirection.Null;
+			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreegraphLevelsLayoutAlgorithm.SliceAndDice;
+			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreegraphLevelsLayoutStartingDirection.Vertical;
 			Level = Level_DefaultValue = null;
 			
 			CustomFields = new Hashtable();

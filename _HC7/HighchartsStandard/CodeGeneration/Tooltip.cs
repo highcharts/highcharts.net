@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			BorderColor = BorderColor_DefaultValue = "";
 			BorderRadius = BorderRadius_DefaultValue = 3;
-			BorderWidth = BorderWidth_DefaultValue = "undefined";
+			BorderWidth = BorderWidth_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
 			ClusterFormat = ClusterFormat_DefaultValue = "Clustered points: {point.clusterPointsAmount}";
 			Crosshairs = Crosshairs_DefaultValue = new List<Crosshair>();
@@ -30,6 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FollowPointer = FollowPointer_DefaultValue = false;
 			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			FooterFormat = FooterFormat_DefaultValue = "";
+			Format = Format_DefaultValue = "undefined";
 			Formatter = Formatter_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
 			HeaderShape = HeaderShape_DefaultValue = TooltipHeaderShape.Callout;
@@ -90,8 +91,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The pixel width of the tooltip border. Defaults to 0 for singletooltips and 1 for split tooltips.In styled mode, the stroke width is set in the`.highcharts-tooltip-box` class.
 		/// </summary>
-		public string BorderWidth { get; set; }
-		private string BorderWidth_DefaultValue { get; set; }
+		public double? BorderWidth { get; set; }
+		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -155,6 +156,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string FooterFormat { get; set; }
 		private string FooterFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the whole tooltip. When format strings are a requirement, it isusually more convenient to use `headerFormat`, `pointFormat` and`footerFormat`, but the `format` option allows combining them intoone setting.The context of the format string is the same as that of the`formatter` callback.
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -346,6 +354,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", highcharts.FirstCharacterToLower(HeaderShape.ToString()));

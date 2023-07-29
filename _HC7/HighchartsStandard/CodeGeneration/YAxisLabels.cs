@@ -20,7 +20,8 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
 			AutoRotationLimit = AutoRotationLimit_DefaultValue = 80;
-			Distance = Distance_DefaultValue = 15;
+			Distance = Distance_DefaultValue = "";
+			DistanceNumber = DistanceNumber_DefaultValue = null;
 			Enabled = Enabled_DefaultValue = true;
 			Format = Format_DefaultValue = "";
 			Formatter = Formatter_DefaultValue = "";
@@ -51,7 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to allow the axis labels to overlap.When false, overlapping labels are hidden.
+		/// Whether to allow the axis labels to overlap. When false,overlapping labels are hidden.
 		/// </summary>
 		public bool? AllowOverlap { get; set; }
 		private bool? AllowOverlap_DefaultValue { get; set; }
@@ -72,10 +73,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The label's pixel distance from the perimeter of the plot area.On cartesian charts, this is overridden if the `labels.y` settingis set.* On polar charts, if it's a percentage string, it is interpretedthe same as [series.radius](#plotOptions.gauge.radius), so thelabel can be aligned under the gauge's shape.
+		/// The label's pixel distance from the perimeter of the plot area.On cartesian charts, this is overridden if the `labels.y` settingis set.On polar charts, if it's a percentage string, it is interpretedthe same as [series.radius](#plotOptions.gauge.radius), so thelabel can be aligned under the gauge's shape.
 		/// </summary>
-		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
+		public string Distance { get; set; }
+		private string Distance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The label's pixel distance from the perimeter of the plot area.On cartesian charts, this is overridden if the `labels.y` settingis set.On polar charts, if it's a percentage string, it is interpretedthe same as [series.radius](#plotOptions.gauge.radius), so thelabel can be aligned under the gauge's shape.
+		/// </summary>
+		public double? DistanceNumber { get; set; }
+		private double? DistanceNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -209,6 +217,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
 			if (AutoRotationLimit != AutoRotationLimit_DefaultValue) h.Add("autoRotationLimit",AutoRotationLimit);
 			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (DistanceNumber != DistanceNumber_DefaultValue) h.Add("distance",DistanceNumber);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  

@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Floor = Floor_DefaultValue = null;
 			GridLineColor = GridLineColor_DefaultValue = "#ffffff";
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = new Hashtable();
-			GridLineInterpolation = GridLineInterpolation_DefaultValue = ColorAxisGridLineInterpolation.Null;
+			GridLineInterpolation = GridLineInterpolation_DefaultValue = ColorAxisGridLineInterpolation.Circle;
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Id = Id_DefaultValue = "";

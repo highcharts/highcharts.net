@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Floor = Floor_DefaultValue = null;
 			GridLineColor = GridLineColor_DefaultValue = "#e6e6e6";
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = new Hashtable();
-			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Null;
+			GridLineInterpolation = GridLineInterpolation_DefaultValue = YAxisGridLineInterpolation.Circle;
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Height = Height_DefaultValue = "";

@@ -22,8 +22,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Color = Color_DefaultValue = "";
 			ColorVariation = ColorVariation_DefaultValue = new TreemapSeriesLevelsColorVariation();
 			DataLabels = DataLabels_DefaultValue = new TreemapSeriesDataLabels();
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = TreemapSeriesLevelsLayoutAlgorithm.Null;
-			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreemapSeriesLevelsLayoutStartingDirection.Null;
+			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = TreemapSeriesLevelsLayoutAlgorithm.SliceAndDice;
+			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = TreemapSeriesLevelsLayoutStartingDirection.Vertical;
 			Level = Level_DefaultValue = null;
 			
 			CustomFields = new Hashtable();

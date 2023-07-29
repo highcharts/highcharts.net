@@ -21,10 +21,12 @@ namespace Highsoft.Web.Mvc.Charts
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = true;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BinsNumber = BinsNumber_DefaultValue = null;
+			BinsNumber = BinsNumber_DefaultValue = PlotOptionsHistogramBinsNumber.SquareRoot;
 			BinWidth = BinWidth_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderRadius = BorderRadius_DefaultValue = 3;
+			BorderRadius = BorderRadius_DefaultValue = null;
+			BorderRadiusString = BorderRadiusString_DefaultValue = "null";
+			BorderRadiusNumber = BorderRadiusNumber_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = null;
 			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
@@ -66,6 +68,7 @@ namespace Highsoft.Web.Mvc.Charts
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsHistogramOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsHistogramPoint();
+			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = 0;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
@@ -132,8 +135,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A preferable number of bins. It is a suggestion, so a histogram mayhave a different number of bins. By default it is set to the squareroot of the base series' data length. Available options are:`square-root`, `sturges`, `rice`. You can also define a functionwhich takes a `baseSeries` as a parameter and should return apositive integer.
 		/// </summary>
-		public double? BinsNumber { get; set; }
-		private double? BinsNumber_DefaultValue { get; set; }
+		public PlotOptionsHistogramBinsNumber BinsNumber { get; set; }
+		private PlotOptionsHistogramBinsNumber BinsNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -153,8 +156,22 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The corner radius of the border surrounding each column or bar. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa relative size. For columns this is relative to the column width, forpies it is relative to the radius and the inner radius.
 		/// </summary>
-		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
+		public Object BorderRadius { get; set; }
+		private Object BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each column or bar. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa relative size. For columns this is relative to the column width, forpies it is relative to the radius and the inner radius.
+		/// </summary>
+		public string BorderRadiusString { get; set; }
+		private string BorderRadiusString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each column or bar. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa relative size. For columns this is relative to the column width, forpies it is relative to the radius and the inner radius.
+		/// </summary>
+		public double? BorderRadiusNumber { get; set; }
+		private double? BorderRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -445,6 +462,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Same as[accessibility.point.descriptionFormat](#accessibility.point.descriptionFormat),but for an individual series. Overrides the chart wide configuration.
+		/// </summary>
+		public string PointDescriptionFormat { get; set; }
+		private string PointDescriptionFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Same as[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),but for an individual series. Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
@@ -617,10 +641,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (BinsNumber != BinsNumber_DefaultValue) h.Add("binsNumber",BinsNumber);
+			if (BinsNumber != BinsNumber_DefaultValue) h.Add("binsNumber", highcharts.FirstCharacterToLower(BinsNumber.ToString()));
 			if (BinWidth != BinWidth_DefaultValue) h.Add("binWidth",BinWidth);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderRadiusString != BorderRadiusString_DefaultValue) h.Add("borderRadius",BorderRadiusString);
+			if (BorderRadiusNumber != BorderRadiusNumber_DefaultValue) h.Add("borderRadius",BorderRadiusNumber);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -662,6 +688,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
+			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (PointPlacement.IsDirty(highcharts))

@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FollowPointer = FollowPointer_DefaultValue = false;
 			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			FooterFormat = FooterFormat_DefaultValue = "";
+			Format = Format_DefaultValue = "undefined";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -76,6 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string FooterFormat { get; set; }
 		private string FooterFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the whole tooltip. When format strings are a requirement, it isusually more convenient to use `headerFormat`, `pointFormat` and`footerFormat`, but the `format` option allows combining them intoone setting.The context of the format string is the same as that of the`formatter` callback.
+		/// </summary>
+		public string Format { get; set; }
+		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -154,6 +162,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
 			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
+			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  

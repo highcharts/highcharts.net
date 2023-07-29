@@ -40,16 +40,17 @@ namespace Highsoft.Web.Mvc.Charts
 			MarginTop = MarginTop_DefaultValue = null;
 			NumberFormatter = NumberFormatter_DefaultValue = "";
 			Options3d = Options3d_DefaultValue = new ChartOptions3d();
-			PanKey = PanKey_DefaultValue = ChartPanKey.Null;
+			PanKey = PanKey_DefaultValue = ChartPanKey.Alt;
 			Panning = Panning_DefaultValue = new ChartPanning();
 			ParallelAxes = ParallelAxes_DefaultValue = new ChartParallelAxes();
 			ParallelCoordinates = ParallelCoordinates_DefaultValue = false;
-			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
+			PinchType = PinchType_DefaultValue = ChartPinchType.Undefined;
 			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "";
 			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "";
 			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
 			PlotShadow = PlotShadow_DefaultValue = new Shadow();
+			PlotShadowBool = PlotShadowBool_DefaultValue = false;
 			Polar = Polar_DefaultValue = false;
 			Reflow = Reflow_DefaultValue = true;
 			RenderTo = RenderTo_DefaultValue = "";
@@ -57,6 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ScrollablePlotArea = ScrollablePlotArea_DefaultValue = new ChartScrollablePlotArea();
 			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(51,92,173,0.25)";
 			Shadow = Shadow_DefaultValue = new Shadow();
+			ShadowBool = ShadowBool_DefaultValue = false;
 			ShowAxes = ShowAxes_DefaultValue = null;
 			Spacing = Spacing_DefaultValue = new List<double>();
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
@@ -68,10 +70,9 @@ namespace Highsoft.Web.Mvc.Charts
 			Type = Type_DefaultValue = ChartType.Line;
 			Width = Width_DefaultValue = "";
 			WidthNumber = WidthNumber_DefaultValue = null;
-			ZoomBySingleTouch = ZoomBySingleTouch_DefaultValue = false;
 			Zooming = Zooming_DefaultValue = new ChartZooming();
-			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
-			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
+			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Alt;
+			ZoomType = ZoomType_DefaultValue = ChartZoomType.X;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -316,6 +317,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the plot area. Requires thatplotBackgroundColor be set. The shadow can be an object configurationcontaining `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? PlotShadowBool { get; set; }
+		private bool? PlotShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When true, cartesian charts like line, spline, area and column aretransformed into the polar coordinate system. This produces _polarcharts_, also known as _radar charts_.
 		/// </summary>
 		public bool? Polar { get; set; }
@@ -362,6 +370,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the outer chart area. Requiresthat backgroundColor be set. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -442,13 +457,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Enables zooming by a single touch, in combination with[chart.zoomType](#chart.zoomType). When enabled, two-finger pinchwill still work as set up by [chart.pinchType](#chart.pinchType).However, `zoomBySingleTouch` will interfere with touch-dragging thechart to read the tooltip. And especially when vertical zooming isenabled, it will make it hard to scroll vertically on the page.
-		/// </summary>
-		public bool? ZoomBySingleTouch { get; set; }
-		private bool? ZoomBySingleTouch_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Chart zooming options.
 		/// </summary>
 		public ChartZooming Zooming { get; set; }
@@ -504,19 +512,21 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Panning.IsDirty(highcharts)) h.Add("panning",Panning.ToHashtable(highcharts));
 			if (ParallelAxes.IsDirty(highcharts)) h.Add("parallelAxes",ParallelAxes.ToHashtable(highcharts));
 			if (ParallelCoordinates != ParallelCoordinates_DefaultValue) h.Add("parallelCoordinates",ParallelCoordinates);
-			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", highcharts.FirstCharacterToLower(PinchType.ToString()));
+			if (PinchType != PinchType_DefaultValue) h.Add("pinchType",PinchType);
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
 			if (PlotShadow.IsDirty(highcharts)) h.Add("plotShadow",PlotShadow.ToHashtable(highcharts));
+			if (PlotShadowBool != PlotShadowBool_DefaultValue) h.Add("plotShadow",PlotShadowBool);
 			if (Polar != Polar_DefaultValue) h.Add("polar",Polar);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
 			if (ResetZoomButton.IsDirty(highcharts)) h.Add("resetZoomButton",ResetZoomButton.ToHashtable(highcharts));
 			if (ScrollablePlotArea.IsDirty(highcharts)) h.Add("scrollablePlotArea",ScrollablePlotArea.ToHashtable(highcharts));
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(highcharts)) h.Add("shadow",Shadow.ToHashtable(highcharts));
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (ShowAxes != ShowAxes_DefaultValue) h.Add("showAxes",ShowAxes);
 			if (Spacing != Spacing_DefaultValue) h.Add("spacing",Spacing);
 			if (SpacingBottom != SpacingBottom_DefaultValue) h.Add("spacingBottom",SpacingBottom);
@@ -528,7 +538,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
-			if (ZoomBySingleTouch != ZoomBySingleTouch_DefaultValue) h.Add("zoomBySingleTouch",ZoomBySingleTouch);
 			if (Zooming.IsDirty(highcharts)) h.Add("zooming",Zooming.ToHashtable(highcharts));
 			if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", highcharts.FirstCharacterToLower(ZoomKey.ToString()));
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", highcharts.FirstCharacterToLower(ZoomType.ToString()));
