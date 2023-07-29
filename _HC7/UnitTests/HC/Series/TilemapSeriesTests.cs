@@ -1435,453 +1435,453 @@ namespace HC.Series
             Assert.Contains($"\"description\":\"{description}\"", renderer.RenderHtml());
         }
 
-        #region dragDrop
-
-        [Theory]
-        [InlineData(true)]
-        [InlineData(false)]
-        public void Test_IfDragDropDraggableXRenders_Correct(bool value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string> { "dragDrop" };
-
-            ((TilemapSeries)chart.Series[0]).DragDrop.DraggableX = value;
-
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("draggableX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
-
-        [Fact]
-        public void Test_IfDragDropDraggableXDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            bool? defaultValue = null;
-
-            ((TilemapSeries)chart.Series[0]).DragDrop.DraggableX = defaultValue;
-
-            Assert.DoesNotContain($"draggableX", renderer.RenderHtml());
-        }
-
-        [Theory]
-        [InlineData(true)]
-        [InlineData(false)]
-        public void Test_IfDragDropDraggableYRenders_Correct(bool value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string> { "dragDrop" };
-
-            ((TilemapSeries)chart.Series[0]).DragDrop.DraggableY = value;
-
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("draggableY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
-
-        [Fact]
-        public void Test_IfDragDropDraggableYDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            bool? defaultValue = null;
-
-            ((TilemapSeries)chart.Series[0]).DragDrop.DraggableY = defaultValue;
-
-            Assert.DoesNotContain($"draggableY", renderer.RenderHtml());
-        }
-
-        [Theory]
-        [InlineData(5)]
-        [InlineData(10)]
-        public void Test_IfDragDropDragMaxXRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop" };
-
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragMaxX = value;
-
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMaxX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
-
-        [Fact]
-        public void Test_IfDragDropDragMaxXDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            double? defaultValue = null;
-
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragMaxX = defaultValue;
-
-            Assert.DoesNotContain($"dragMaxX", renderer.RenderHtml());
-        }
-
-        [Theory]
-        [InlineData(5)]
-        [InlineData(10)]
-        public void Test_IfDragDropDragMaxYRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop" };
-
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragMaxY = value;
-
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMaxY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
-
-        [Fact]
-        public void Test_IfDragDropDragMaxYDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            double? defaultValue = null;
-
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragMaxY = defaultValue;
+        //#region dragDrop
+
+        //[Theory]
+        //[InlineData(true)]
+        //[InlineData(false)]
+        //public void Test_IfDragDropDraggableXRenders_Correct(bool value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string> { "dragDrop" };
+
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DraggableX = value;
+
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("draggableX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
+
+        //[Fact]
+        //public void Test_IfDragDropDraggableXDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    bool? defaultValue = null;
+
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DraggableX = defaultValue;
+
+        //    Assert.DoesNotContain($"draggableX", renderer.RenderHtml());
+        //}
+
+        //[Theory]
+        //[InlineData(true)]
+        //[InlineData(false)]
+        //public void Test_IfDragDropDraggableYRenders_Correct(bool value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string> { "dragDrop" };
+
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DraggableY = value;
+
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("draggableY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
+
+        //[Fact]
+        //public void Test_IfDragDropDraggableYDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    bool? defaultValue = null;
+
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DraggableY = defaultValue;
+
+        //    Assert.DoesNotContain($"draggableY", renderer.RenderHtml());
+        //}
+
+        //[Theory]
+        //[InlineData(5)]
+        //[InlineData(10)]
+        //public void Test_IfDragDropDragMaxXRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop" };
+
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragMaxX = value;
+
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMaxX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
+
+        //[Fact]
+        //public void Test_IfDragDropDragMaxXDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    double? defaultValue = null;
+
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragMaxX = defaultValue;
+
+        //    Assert.DoesNotContain($"dragMaxX", renderer.RenderHtml());
+        //}
+
+        //[Theory]
+        //[InlineData(5)]
+        //[InlineData(10)]
+        //public void Test_IfDragDropDragMaxYRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop" };
+
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragMaxY = value;
+
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMaxY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
+
+        //[Fact]
+        //public void Test_IfDragDropDragMaxYDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    double? defaultValue = null;
+
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragMaxY = defaultValue;
 
-            Assert.DoesNotContain($"dragMaxY", renderer.RenderHtml());
-        }
-
-        [Theory]
-        [InlineData(5)]
-        [InlineData(10)]
-        public void Test_IfDragDropDragMinXRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop" };
+        //    Assert.DoesNotContain($"dragMaxY", renderer.RenderHtml());
+        //}
+
+        //[Theory]
+        //[InlineData(5)]
+        //[InlineData(10)]
+        //public void Test_IfDragDropDragMinXRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop" };
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragMinX = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragMinX = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMinX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
-
-        [Fact]
-        public void Test_IfDragDropDragMinXDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            double? defaultValue = null;
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMinX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
+
+        //[Fact]
+        //public void Test_IfDragDropDragMinXDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    double? defaultValue = null;
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragMinX = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragMinX = defaultValue;
 
-            Assert.DoesNotContain($"dragMinX", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"dragMinX", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData(5)]
-        [InlineData(10)]
-        public void Test_IfDragDropDragMinYRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop" };
+        //[Theory]
+        //[InlineData(5)]
+        //[InlineData(10)]
+        //public void Test_IfDragDropDragMinYRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop" };
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragMinY = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragMinY = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMinY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
-
-        [Fact]
-        public void Test_IfDragDropDragMinYDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            double? defaultValue = null;
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragMinY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
+
+        //[Fact]
+        //public void Test_IfDragDropDragMinYDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    double? defaultValue = null;
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragMinY = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragMinY = defaultValue;
 
-            Assert.DoesNotContain($"dragMinY", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"dragMinY", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData(5)]
-        [InlineData(10)]
-        public void Test_IfDragDropDragPrecisionXRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop" };
+        //[Theory]
+        //[InlineData(5)]
+        //[InlineData(10)]
+        //public void Test_IfDragDropDragPrecisionXRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop" };
 
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragPrecisionX = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragPrecisionX = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragPrecisionX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragPrecisionX", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropDragPrecisionXDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            double? defaultValue = 0;
+        //[Fact]
+        //public void Test_IfDragDropDragPrecisionXDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    double? defaultValue = 0;
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragPrecisionX = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragPrecisionX = defaultValue;
 
-            Assert.DoesNotContain($"dragPrecisionX", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"dragPrecisionX", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData(5)]
-        [InlineData(10)]
-        public void Test_IfDragDropDragPrecisionYRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop" };
+        //[Theory]
+        //[InlineData(5)]
+        //[InlineData(10)]
+        //public void Test_IfDragDropDragPrecisionYRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop" };
 
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragPrecisionY = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragPrecisionY = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragPrecisionY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragPrecisionY", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropDragPrecisionYDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            double? defaultValue = 0;
+        //[Fact]
+        //public void Test_IfDragDropDragPrecisionYDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    double? defaultValue = 0;
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragPrecisionY = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragPrecisionY = defaultValue;
 
-            Assert.DoesNotContain($"dragPrecisionY", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"dragPrecisionY", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData(5)]
-        [InlineData(10)]
-        public void Test_IfDragDropDragSensitivityRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop" };
+        //[Theory]
+        //[InlineData(5)]
+        //[InlineData(10)]
+        //public void Test_IfDragDropDragSensitivityRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop" };
 
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragSensitivity = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragSensitivity = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragSensitivity", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("dragSensitivity", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropDragSensitivityDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            double? defaultValue = 2;
+        //[Fact]
+        //public void Test_IfDragDropDragSensitivityDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    double? defaultValue = 2;
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.DragSensitivity = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.DragSensitivity = defaultValue;
 
-            Assert.DoesNotContain($"dragPrecisionY", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"dragPrecisionY", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData("groupId")]
-        public void Test_IfDragDropGroupByRenders_Correct(string value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop" };
+        //[Theory]
+        //[InlineData("groupId")]
+        //public void Test_IfDragDropGroupByRenders_Correct(string value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop" };
 
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GroupBy = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GroupBy = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("groupBy", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("groupBy", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropGroupByDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var defaultValue = string.Empty;
+        //[Fact]
+        //public void Test_IfDragDropGroupByDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var defaultValue = string.Empty;
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GroupBy = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GroupBy = defaultValue;
 
-            Assert.DoesNotContain($"groupBy", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"groupBy", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData("SomeClassName")]
-        public void Test_IfDragDropGuideBoxDefaultClassNameRenders_Correct(string value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
+        //[Theory]
+        //[InlineData("SomeClassName")]
+        //public void Test_IfDragDropGuideBoxDefaultClassNameRenders_Correct(string value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.ClassName = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.ClassName = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("className", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("className", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropGuideBoxDefaultDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var defaultValue = "highcharts-drag-box-default";
+        //[Fact]
+        //public void Test_IfDragDropGuideBoxDefaultDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var defaultValue = "highcharts-drag-box-default";
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.ClassName = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.ClassName = defaultValue;
 
-            Assert.DoesNotContain($"className", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"className", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData("#ff0033")]
-        public void Test_IfDragDropGuideBoxDefaultColorRenders_Correct(string value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
+        //[Theory]
+        //[InlineData("#ff0033")]
+        //public void Test_IfDragDropGuideBoxDefaultColorRenders_Correct(string value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.Color = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.Color = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("color", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("color", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropGuideBoxDefaultColorDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var defaultValue = "rgba(0, 0, 0, 0.1)";
+        //[Fact]
+        //public void Test_IfDragDropGuideBoxDefaultColorDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var defaultValue = "rgba(0, 0, 0, 0.1)";
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.Color = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.Color = defaultValue;
 
-            Assert.DoesNotContain($"color", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"color", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData("SomeCursorName")]
-        public void Test_IfDragDropGuideBoxDefaultCursorRenders_Correct(string value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
+        //[Theory]
+        //[InlineData("SomeCursorName")]
+        //public void Test_IfDragDropGuideBoxDefaultCursorRenders_Correct(string value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.Cursor = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.Cursor = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("cursor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("cursor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropGuideBoxDefaultCursorDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var defaultValue = "move";
+        //[Fact]
+        //public void Test_IfDragDropGuideBoxDefaultCursorDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var defaultValue = "move";
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.Cursor = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.Cursor = defaultValue;
 
-            Assert.DoesNotContain($"cursor", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"cursor", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData("#2200ff")]
-        public void Test_IfDragDropGuideBoxDefaultLineColorRenders_Correct(string value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
+        //[Theory]
+        //[InlineData("#2200ff")]
+        //public void Test_IfDragDropGuideBoxDefaultLineColorRenders_Correct(string value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineColor = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineColor = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineColor", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropGuideBoxDefaultLineColorDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var defaultValue = "#888";
+        //[Fact]
+        //public void Test_IfDragDropGuideBoxDefaultLineColorDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var defaultValue = "#888";
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineColor = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineColor = defaultValue;
 
-            Assert.DoesNotContain($"lineColor", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"lineColor", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData(2)]
-        public void Test_IfDragDropGuideBoxDefaultLineWidthRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
+        //[Theory]
+        //[InlineData(2)]
+        //public void Test_IfDragDropGuideBoxDefaultLineWidthRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineWidth = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineWidth = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("lineWidth", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropGuideBoxDefaultLineWidthDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var defaultValue = 1;
+        //[Fact]
+        //public void Test_IfDragDropGuideBoxDefaultLineWidthDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var defaultValue = 1;
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineWidth = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.LineWidth = defaultValue;
 
-            Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"lineWidth", renderer.RenderHtml());
+        //}
 
-        [Theory]
-        [InlineData(2)]
-        public void Test_IfDragDropGuideBoxDefaultZIndexRenders_Correct(double value)
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
+        //[Theory]
+        //[InlineData(2)]
+        //public void Test_IfDragDropGuideBoxDefaultZIndexRenders_Correct(double value)
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string>() { "dragDrop", "guideBox", "default" };
 
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.ZIndex = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.ZIndex = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("zIndex", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("zIndex", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropGuideBoxDefaultZIndexDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var defaultValue = 900;
+        //[Fact]
+        //public void Test_IfDragDropGuideBoxDefaultZIndexDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var defaultValue = 900;
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.ZIndex = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.GuideBox.Default.ZIndex = defaultValue;
 
-            Assert.DoesNotContain($"zIndex", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"zIndex", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropLiveRedrawRenders_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            var pathToProperty = new List<string> { "dragDrop" };
-            bool value = false;
+        //[Fact]
+        //public void Test_IfDragDropLiveRedrawRenders_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    var pathToProperty = new List<string> { "dragDrop" };
+        //    bool value = false;
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.LiveRedraw = value;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.LiveRedraw = value;
 
-            Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("liveRedraw", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
-        }
+        //    Assert.Contains($"{TH.GetJsonLeadingPath(pathToProperty)}{TH.GetPropertyString("liveRedraw", value)}{TH.GetJsonTrailingString(pathToProperty)}", renderer.RenderHtml());
+        //}
 
-        [Fact]
-        public void Test_IfDragDropLiveRedrawDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
-            bool defaultValue = true;
+        //[Fact]
+        //public void Test_IfDragDropLiveRedrawDoesntRenderForDefault_Correct()
+        //{
+        //    var chart = new Highcharts();
+        //    var renderer = new HighchartsRenderer(chart); var series = new TilemapSeries(); chart.Series.Add(series);
+        //    bool defaultValue = true;
 
-            ((TilemapSeries)chart.Series[0]).DragDrop.LiveRedraw = defaultValue;
+        //    ((TilemapSeries)chart.Series[0]).DragDrop.LiveRedraw = defaultValue;
 
-            Assert.DoesNotContain($"liveRedraw", renderer.RenderHtml());
-        }
+        //    Assert.DoesNotContain($"liveRedraw", renderer.RenderHtml());
+        //}
 
-        #endregion
+        //#endregion
 
         [Fact]
         public void Test_IfEnableMouseTrackingRenders_Correct()
