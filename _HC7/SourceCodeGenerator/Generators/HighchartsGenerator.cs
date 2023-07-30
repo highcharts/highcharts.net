@@ -892,7 +892,7 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("data.rows", "List<List<string>>");
             _propertyTypeMappings.Add("chart.options3d.axisLabelPosition", "string");
             _propertyTypeMappings.Add("initialPositions", "double?");
-            _propertyTypeMappings.Add("position3d", "string");
+            //_propertyTypeMappings.Add("position3d", "string");
             _propertyTypeMappings.Add("data.seriesMapping", "List<List<double?>>");
             _propertyTypeMappings.Add("tickWidth", "double?");
             _propertyTypeMappings.Add("style", "Hashtable");

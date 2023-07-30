@@ -65,6 +65,10 @@ namespace SourceCodeGenerator.Services
                 item.Types = new List<string> { EnumType };
                 item.ReturnType = EnumType;
             }
+            //else if(IsHiddenString(item))
+            //{
+            //    item.ReturnType = StringType;
+            //}
         }
         private string GetType(ApiItem item)
         {
@@ -135,6 +139,17 @@ namespace SourceCodeGenerator.Services
 
             return false;
         }
+
+        //private bool IsHiddenString(ApiItem item)
+        //{
+        //    if (item.Types.Count == 1 && !item.Values.Any() && !item.ReturnType.Equals(CSSRawType) && !item.ReturnType.Equals(CSSType)
+        //        && !item.ReturnType.Equals(StringType) && !item.ReturnType.Equals(ObjectType)
+        //        && !item.ReturnType.Equals(BoolType) && !item.ReturnType.Equals(NumberType)
+        //        && !item.ReturnType.Equals(FunctionType) && !item.ReturnType.Equals(EnumType))
+        //        return true;
+
+        //    return false;
+        //}
 
         private string SetUpperFirstChar(string text)
         {
