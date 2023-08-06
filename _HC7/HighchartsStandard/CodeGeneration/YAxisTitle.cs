@@ -145,7 +145,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Position3d != Position3d_DefaultValue) h.Add("position3d", highcharts.FirstCharacterToLower(Position3d.ToString()));
-            if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
+			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
 			if (Style != Style_DefaultValue) h.Add("style",Style);

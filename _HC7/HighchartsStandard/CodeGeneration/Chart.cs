@@ -172,8 +172,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An explicit height for the chart. If a _number_, the height isgiven in pixels. If given a _percentage string_ (for example`'56%'`), the height is given as the percentage of the actual chartwidth. This allows for preserving the aspect ratio across responsivesizes.By default (when `null`) the height is calculated from the offsetheight of the containing element, or 400 pixels if the containingelement's height is 0.
 		/// </summary>
-		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
+		public string Height { get; set; }
+		private string Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
