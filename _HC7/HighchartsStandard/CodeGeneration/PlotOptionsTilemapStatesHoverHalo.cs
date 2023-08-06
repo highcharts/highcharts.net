@@ -17,9 +17,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsTilemapStatesHoverHalo()
 		{
 			Attributes = Attributes_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			Opacity = Opacity_DefaultValue = null;
-			Size = Size_DefaultValue = new Hashtable();
+			Size = Size_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -49,8 +49,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Size { get; set; }
-		private Hashtable Size_DefaultValue { get; set; }
+		public double? Size { get; set; }
+		private double? Size_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

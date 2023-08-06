@@ -17,7 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public BulletSeriesStatesSelect()
 		{
 			Animation = Animation_DefaultValue = new Animation();
-			Enabled = Enabled_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -28,6 +29,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Animation setting for hovering the graph in line-type series.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -45,6 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

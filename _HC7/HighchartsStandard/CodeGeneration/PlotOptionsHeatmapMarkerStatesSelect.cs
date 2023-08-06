@@ -16,10 +16,10 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsHeatmapMarkerStatesSelect()
 		{
-			Height = Height_DefaultValue = new Hashtable();
-			HeightPlus = HeightPlus_DefaultValue = new Hashtable();
-			Width = Width_DefaultValue = new Hashtable();
-			WidthPlus = WidthPlus_DefaultValue = new Hashtable();
+			Height = Height_DefaultValue = null;
+			HeightPlus = HeightPlus_DefaultValue = null;
+			Width = Width_DefaultValue = null;
+			WidthPlus = WidthPlus_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -28,29 +28,29 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Set the marker's fixed height on select state.
 		/// </summary>
-		public Hashtable Height { get; set; }
-		private Hashtable Height_DefaultValue { get; set; }
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of pixels to increase the height of theselected point.
 		/// </summary>
-		public Hashtable HeightPlus { get; set; }
-		private Hashtable HeightPlus_DefaultValue { get; set; }
+		public double? HeightPlus { get; set; }
+		private double? HeightPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Set the marker's fixed width on select state.
 		/// </summary>
-		public Hashtable Width { get; set; }
-		private Hashtable Width_DefaultValue { get; set; }
+		public double? Width { get; set; }
+		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of pixels to increase the width of theselected point.
 		/// </summary>
-		public Hashtable WidthPlus { get; set; }
-		private Hashtable WidthPlus_DefaultValue { get; set; }
+		public double? WidthPlus { get; set; }
+		private double? WidthPlus_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

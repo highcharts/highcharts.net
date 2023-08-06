@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTilemapStatesHoverHaloAttributes()
 		{
-			ZIndex = ZIndex_DefaultValue = new Hashtable();
+			ZIndex = ZIndex_DefaultValue = 3;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable ZIndex { get; set; }
-		private Hashtable ZIndex_DefaultValue { get; set; }
+		public double? ZIndex { get; set; }
+		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

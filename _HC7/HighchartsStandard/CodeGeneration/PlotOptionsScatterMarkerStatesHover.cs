@@ -17,13 +17,14 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsScatterMarkerStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation();
-			Enabled = Enabled_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			FillColor = FillColor_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = null;
-			LineWidthPlus = LineWidthPlus_DefaultValue = null;
-			Radius = Radius_DefaultValue = new Hashtable();
-			RadiusPlus = RadiusPlus_DefaultValue = new Hashtable();
+			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
+			Radius = Radius_DefaultValue = null;
+			RadiusPlus = RadiusPlus_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -34,6 +35,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Animation when hovering over the marker.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -74,15 +82,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The radius of the point marker. In hover state, itdefaults to the normal state's radius + 2 as per the[radiusPlus](#plotOptions.series.marker.states.hover.radiusPlus)option.
 		/// </summary>
-		public Hashtable Radius { get; set; }
-		private Hashtable Radius_DefaultValue { get; set; }
+		public double? Radius { get; set; }
+		private double? Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of pixels to increase the radius of thehovered point.
 		/// </summary>
-		public Hashtable RadiusPlus { get; set; }
-		private Hashtable RadiusPlus_DefaultValue { get; set; }
+		public double? RadiusPlus { get; set; }
+		private double? RadiusPlus_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -93,6 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);

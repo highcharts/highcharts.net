@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public HeatmapSeriesMarkerStatesSelect()
 		{
-			HeightPlus = HeightPlus_DefaultValue = new Hashtable();
-			WidthPlus = WidthPlus_DefaultValue = new Hashtable();
+			HeightPlus = HeightPlus_DefaultValue = null;
+			WidthPlus = WidthPlus_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -26,15 +26,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The number of pixels to increase the height of thehovered point.
 		/// </summary>
-		public Hashtable HeightPlus { get; set; }
-		private Hashtable HeightPlus_DefaultValue { get; set; }
+		public double? HeightPlus { get; set; }
+		private double? HeightPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of pixels to increase the width of thehovered point.
 		/// </summary>
-		public Hashtable WidthPlus { get; set; }
-		private Hashtable WidthPlus_DefaultValue { get; set; }
+		public double? WidthPlus { get; set; }
+		private double? WidthPlus_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

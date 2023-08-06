@@ -16,11 +16,11 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ParetoSeriesMarkerStatesSelect()
 		{
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			FillColor = FillColor_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "";
-			LineWidth = LineWidth_DefaultValue = null;
-			Radius = Radius_DefaultValue = new Hashtable();
+			LineColor = LineColor_DefaultValue = "#000000";
+			LineWidth = LineWidth_DefaultValue = 2;
+			Radius = Radius_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -57,8 +57,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The radius of the point marker. In hover state, itdefaults to the normal state's radius + 2.
 		/// </summary>
-		public Hashtable Radius { get; set; }
-		private Hashtable Radius_DefaultValue { get; set; }
+		public double? Radius { get; set; }
+		private double? Radius_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

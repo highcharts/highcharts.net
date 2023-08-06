@@ -17,7 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsNetworkgraphStatesInactive()
 		{
 			Animation = Animation_DefaultValue = new Animation();
-			LinkOpacity = LinkOpacity_DefaultValue = new Hashtable();
+			AnimationBool = AnimationBool_DefaultValue = null;
+			LinkOpacity = LinkOpacity_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -31,10 +32,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Animation when not hovering over the node.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Opacity of inactive links.
 		/// </summary>
-		public Hashtable LinkOpacity { get; set; }
-		private Hashtable LinkOpacity_DefaultValue { get; set; }
+		public double? LinkOpacity { get; set; }
+		private double? LinkOpacity_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -45,6 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

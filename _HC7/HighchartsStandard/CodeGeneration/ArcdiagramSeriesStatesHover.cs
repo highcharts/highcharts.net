@@ -17,10 +17,11 @@ namespace Highsoft.Web.Mvc.Charts
 		public ArcdiagramSeriesStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation();
-			Enabled = Enabled_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			Halo = Halo_DefaultValue = new ArcdiagramSeriesStatesHoverHalo();
 			LineWidth = LineWidth_DefaultValue = null;
-			LineWidthPlus = LineWidthPlus_DefaultValue = null;
+			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
 			Marker = Marker_DefaultValue = new ArcdiagramSeriesStatesHoverMarker();
 			
 			CustomFields = new Hashtable();
@@ -32,6 +33,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Animation setting for hovering the graph in line-type series.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -77,6 +85,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Halo.IsDirty(highcharts)) h.Add("halo",Halo.ToHashtable(highcharts));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

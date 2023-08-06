@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsNetworkgraphMarkerStatesInactive()
 		{
 			Animation = Animation_DefaultValue = new Animation();
+			AnimationBool = AnimationBool_DefaultValue = null;
 			Opacity = Opacity_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
@@ -28,6 +29,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Animation when not hovering over the node.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -45,6 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVennStatesHover()
 		{
-			BorderColor = BorderColor_DefaultValue = "";
-			Opacity = Opacity_DefaultValue = null;
+			BorderColor = BorderColor_DefaultValue = "#333333";
+			Opacity = Opacity_DefaultValue = 1;
 			
 			CustomFields = new Hashtable();
 		}	

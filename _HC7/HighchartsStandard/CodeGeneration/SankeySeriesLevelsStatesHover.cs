@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SankeySeriesLevelsStatesHover()
 		{
-			LinkOpacity = LinkOpacity_DefaultValue = new Hashtable();
-			Opacity = Opacity_DefaultValue = null;
+			LinkOpacity = LinkOpacity_DefaultValue = 1;
+			Opacity = Opacity_DefaultValue = 1;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -26,8 +26,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Opacity for the links between nodes in the sankey diagram inhover mode.
 		/// </summary>
-		public Hashtable LinkOpacity { get; set; }
-		private Hashtable LinkOpacity_DefaultValue { get; set; }
+		public double? LinkOpacity { get; set; }
+		private double? LinkOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>

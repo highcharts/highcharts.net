@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsFunnelStatesSelect()
 		{
-			BorderColor = BorderColor_DefaultValue = "";
-			Color = Color_DefaultValue = "";
+			BorderColor = BorderColor_DefaultValue = "#000000";
+			Color = Color_DefaultValue = "#cccccc";
 			
 			CustomFields = new Hashtable();
 		}	

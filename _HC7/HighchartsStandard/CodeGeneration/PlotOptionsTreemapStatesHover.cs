@@ -16,8 +16,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTreemapStatesHover()
 		{
-			BorderColor = BorderColor_DefaultValue = "";
-			Brightness = Brightness_DefaultValue = new Hashtable();
+			BorderColor = BorderColor_DefaultValue = "#999999";
+			Brightness = Brightness_DefaultValue = null;
 			Opacity = Opacity_DefaultValue = null;
 			Shadow = Shadow_DefaultValue = new Shadow();
 			
@@ -35,8 +35,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Brightness for the hovered point. Defaults to 0 if theheatmap series is loaded first, otherwise 0.1.
 		/// </summary>
-		public Hashtable Brightness { get; set; }
-		private Hashtable Brightness_DefaultValue { get; set; }
+		public double? Brightness { get; set; }
+		private double? Brightness_DefaultValue { get; set; }
 		 
 
 		/// <summary>

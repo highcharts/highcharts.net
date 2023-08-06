@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsWindbarbStatesHover()
 		{
-			LineWidthPlus = LineWidthPlus_DefaultValue = null;
+			LineWidthPlus = LineWidthPlus_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	

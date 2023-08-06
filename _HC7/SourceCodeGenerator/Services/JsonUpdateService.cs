@@ -61,28 +61,13 @@ namespace SourceCodeGenerator.Services
 
         public void UpdateCSSObject(ApiItem item)
         {
-            if (item.FullName.ToLower().EndsWith("style") || (item.ReturnType.Contains("Highcharts.Dictionary.<*>") || item.Types.Contains("Highcharts.Dictionary.<*>"))
-                || item.FullName.Contains("states.inactive") || item.FullName.Contains("states.normal") || item.FullName.Contains("states.hover") || item.FullName.Contains("states.select"))
+            if (item.FullName.ToLower().EndsWith("style") || item.ReturnType.Contains("Highcharts.Dictionary.<*>") || item.Types.Contains("Highcharts.Dictionary.<*>"))
             {
                 item.Types.Clear();
                 item.Defaults = string.Empty;
                 item.Types.Add(TypeService.CSSRawType);
                 item.ReturnType = TypeService.CSSRawType;
             }
-
-            if (item.ReturnType != TypeService.CSSRawType)
-                return;
-
-
-
-            //item.ReturnType = TypeService.ObjectType;
-            //if(!item.Types.Contains(TypeService.ObjectType))
-            //    item.Types.Add(TypeService.ObjectType);
-
-            //item.Types.Remove(TypeService.CSSType);
-
-            //if (!string.IsNullOrEmpty(item.Defaults))
-            //    item.Children = GetItemsFromDefaultValue(item);
         }
 
         private void UpdateProperty(ApiItem item, UpdateInfo info)

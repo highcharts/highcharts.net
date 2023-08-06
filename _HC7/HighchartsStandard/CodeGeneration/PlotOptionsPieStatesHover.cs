@@ -17,8 +17,9 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsPieStatesHover()
 		{
 			Animation = Animation_DefaultValue = new Animation();
-			Brightness = Brightness_DefaultValue = new Hashtable();
-			Enabled = Enabled_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = null;
+			Brightness = Brightness_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			Halo = Halo_DefaultValue = new PlotOptionsPieStatesHoverHalo();
 			
 			CustomFields = new Hashtable();
@@ -33,10 +34,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Animation setting for hovering the graph in line-type series.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// How much to brighten the point on interaction. Requires themain color to be defined in hex or rgb(a) format.In styled mode, the hover brightness is by default replacedby a fill-opacity given in the `.highcharts-point-hover`class.
 		/// </summary>
-		public Hashtable Brightness { get; set; }
-		private Hashtable Brightness_DefaultValue { get; set; }
+		public double? Brightness { get; set; }
+		private double? Brightness_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -61,6 +69,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Halo.IsDirty(highcharts)) h.Add("halo",Halo.ToHashtable(highcharts));

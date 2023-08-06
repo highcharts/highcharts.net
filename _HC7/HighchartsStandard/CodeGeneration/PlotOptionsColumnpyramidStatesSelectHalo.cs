@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Attributes = Attributes_DefaultValue = null;
 			Opacity = Opacity_DefaultValue = null;
-			Size = Size_DefaultValue = new Hashtable();
+			Size = Size_DefaultValue = 10;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -41,8 +41,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The pixel size of the halo. For point markers this is theradius of the halo. For pie slices it is the width of thehalo outside the slice. For bubbles it defaults to 5 andis the width of the halo outside the bubble.
 		/// </summary>
-		public Hashtable Size { get; set; }
-		private Hashtable Size_DefaultValue { get; set; }
+		public double? Size { get; set; }
+		private double? Size_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

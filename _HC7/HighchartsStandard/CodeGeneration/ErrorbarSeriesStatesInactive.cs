@@ -17,7 +17,8 @@ namespace Highsoft.Web.Mvc.Charts
 		public ErrorbarSeriesStatesInactive()
 		{
 			Animation = Animation_DefaultValue = new Animation();
-			Enabled = Enabled_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			Opacity = Opacity_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Animation when not hovering over the marker.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -53,6 +61,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (CustomFields.Count > 0)
