@@ -58,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinNodeLength = MinNodeLength_DefaultValue = 10;
 			Name = Name_DefaultValue = "";
 			NodePadding = NodePadding_DefaultValue = 10;
-			Nodes = Nodes_DefaultValue = new OrganizationSeriesNodes();
+			Nodes = Nodes_DefaultValue = new List<OrganizationSeriesNodes>();
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			OnPoint = OnPoint_DefaultValue = new OrganizationSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
@@ -385,8 +385,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A collection of options for the individual nodes. The nodes in an org chartare auto-generated instances of `Highcharts.Point`, but options can beapplied here and linked by the `id`.
 		/// </summary>
-		public OrganizationSeriesNodes Nodes { get; set; }
-		private OrganizationSeriesNodes Nodes_DefaultValue { get; set; }
+		public List<OrganizationSeriesNodes> Nodes { get; set; }
+		private List<OrganizationSeriesNodes> Nodes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -606,7 +606,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinNodeLength != MinNodeLength_DefaultValue) h.Add("minNodeLength",MinNodeLength);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
-			if (Nodes.IsDirty(highcharts)) h.Add("nodes",Nodes.ToHashtable(highcharts));
+			if (Nodes != Nodes_DefaultValue) h.Add("nodes", HashifyList(highcharts,Nodes));
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);

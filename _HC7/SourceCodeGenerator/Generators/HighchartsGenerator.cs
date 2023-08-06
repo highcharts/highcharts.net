@@ -905,6 +905,8 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("series.pyramid3d.data", "List<Hashtable>");
             _propertyTypeMappings.Add("defs.arrow.children", "List<object>");
 
+            _propertyTypeMappings.Add("series.organization.nodes", "List<OrganizationSeriesNodes>");
+
         }
         protected override void InitPropertyInitMappings()
         {
@@ -1077,6 +1079,8 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("series.pyramid3d.dataLabels.verticalAlign", "Pyramid3dSeriesDataLabelsVerticalAlign.Middle");
             _propertyInitMappings.Add("plotOptions.lollipop.tooltip.pointFormat", "\"<span style='color:{series.color}'>●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>\"");
             _propertyInitMappings.Add("plotOptions.vector.tooltip.pointFormat", "\"x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>\"");
+
+            _propertyInitMappings.Add("series.organization.nodes", "new List<OrganizationSeriesNodes>()");
         }
 
         protected override void InitLists()
@@ -1112,6 +1116,7 @@ namespace SourceCodeGenerator.Generators
             _lists.Add("series.sunburst.levels");
             _lists.Add("series.sankey.nodes");
             _lists.Add("exporting.buttons.contextButton.menuItems");
+            _lists.Add("series.organization.nodes");
         }
         protected override void InitSeriesMappings()
         {
