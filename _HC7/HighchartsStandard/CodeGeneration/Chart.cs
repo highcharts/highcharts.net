@@ -512,7 +512,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Panning.IsDirty(highcharts)) h.Add("panning",Panning.ToHashtable(highcharts));
 			if (ParallelAxes.IsDirty(highcharts)) h.Add("parallelAxes",ParallelAxes.ToHashtable(highcharts));
 			if (ParallelCoordinates != ParallelCoordinates_DefaultValue) h.Add("parallelCoordinates",ParallelCoordinates);
-			if (PinchType != PinchType_DefaultValue) h.Add("pinchType",PinchType);
+			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", highcharts.FirstCharacterToLower(PinchType.ToString()));
 			if (PlotBackgroundColor != PlotBackgroundColor_DefaultValue) h.Add("plotBackgroundColor",PlotBackgroundColor);
 			if (PlotBackgroundImage != PlotBackgroundImage_DefaultValue) h.Add("plotBackgroundImage",PlotBackgroundImage);
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);

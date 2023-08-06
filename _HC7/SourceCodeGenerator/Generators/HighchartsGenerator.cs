@@ -121,9 +121,6 @@ namespace SourceCodeGenerator.Generators
             if (apiItem.FullName == "chart.panning")
                 apiItem.Defaults = "false";
 
-            if (apiItem.FullName == "chart.pinchType")
-                apiItem.Defaults = "null";
-
             if (apiItem.FullName.EndsWith("title.text"))
             {
                 if (apiItem.FullName.StartsWith("legend") || apiItem.FullName.StartsWith("xAxis") || apiItem.FullName.StartsWith("zAxis"))
@@ -721,7 +718,7 @@ namespace SourceCodeGenerator.Generators
                 if (child.FullName == "plotOptions.series" || propertyName == "Animation")
                     return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
-                if ((child.Title.Equals("shadow") && child.ReturnType.Equals("Object")) || child.Title.Equals("plotShadow"))
+                if ((child.Title.Equals("shadow") || child.Title.Equals("plotShadow")) && child.ReturnType.Equals("Object"))
                     return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
                 if (child.Title.ToLower() == "series" && child.ParentFullName == "Highcharts")

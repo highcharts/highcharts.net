@@ -148,7 +148,6 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("followPointer", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
             ItemsToUpdate.Add("nodeFormat", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.columnrange.marker", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
-            ItemsToUpdate.Add("chart.pinchType", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Values, Value = "null" } });
             ItemsToUpdate.Add("xAxis.minPadding", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("xAxis.maxPadding", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("yAxis.minPadding", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
