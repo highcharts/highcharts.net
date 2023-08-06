@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Crisp = Crisp_DefaultValue = true;
 			Cursor = Cursor_DefaultValue = PlotOptionsPyramidCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
-			DataLabels = DataLabels_DefaultValue = new Hashtable();
+			DataLabels = DataLabels_DefaultValue = new PlotOptionsPyramidDataLabels();
 			Depth = Depth_DefaultValue = 0;
 			Description = Description_DefaultValue = "";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -244,8 +244,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable DataLabels { get; set; }
-		private Hashtable DataLabels_DefaultValue { get; set; }
+		public PlotOptionsPyramidDataLabels DataLabels { get; set; }
+		private PlotOptionsPyramidDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -578,7 +578,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DataLabels != DataLabels_DefaultValue) h.Add("dataLabels",DataLabels);
+			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);

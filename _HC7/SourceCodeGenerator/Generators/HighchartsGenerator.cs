@@ -901,13 +901,8 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("plotOptions.sankey.levels.states", "Hashtable");
 
             _propertyTypeMappings.Add("legend.bubbleLegend.ranges.value", "double?");
-            _propertyTypeMappings.Add("plotOptions.sunburst.dataLabels", "Hashtable");
             _propertyTypeMappings.Add("plotOptions.sunburst.levels.dataLabels", "Hashtable");
             _propertyTypeMappings.Add("series.pyramid3d.data", "List<Hashtable>");
-            _propertyTypeMappings.Add("plotOptions.pie.dataLabels", "Hashtable");
-            _propertyTypeMappings.Add("plotOptions.item.dataLabels", "Hashtable");
-            _propertyTypeMappings.Add("plotOptions.pyramid.dataLabels", "Hashtable");
-            _propertyTypeMappings.Add("plotOptions.variablepie.dataLabels", "Hashtable");
             _propertyTypeMappings.Add("defs.arrow.children", "List<object>");
 
         }
@@ -1024,17 +1019,12 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("plotOptions.sankey.levels.states", "new Hashtable()");
 
             _propertyInitMappings.Add("legend.bubbleLegend.ranges.value", "null");
-            _propertyInitMappings.Add("plotOptions.sunburst.dataLabels", "new Hashtable()");
             _propertyInitMappings.Add("plotOptions.sunburst.levels.dataLabels", "new Hashtable()");
             _propertyInitMappings.Add("series.pyramid3d.data", "new List<Hashtable()>");
             _propertyInitMappings.Add("plotOptions.item.rows", "null");
             _propertyInitMappings.Add("series.item.rows", "null");
             _propertyInitMappings.Add("initialPositionRadius", "null");
             _propertyInitMappings.Add("accessibility.customComponents", "new object()");
-            _propertyInitMappings.Add("plotOptions.pie.dataLabels", "new Hashtable()");
-            _propertyInitMappings.Add("plotOptions.item.dataLabels", "new Hashtable()");
-            _propertyInitMappings.Add("plotOptions.pyramid.dataLabels", "new Hashtable()");
-            _propertyInitMappings.Add("plotOptions.variablepie.dataLabels", "new Hashtable()");
             _propertyInitMappings.Add("pane.background.backgroundColor", "new object()");
             _propertyInitMappings.Add("defs.arrow.children", "new List<object>()");
             _propertyInitMappings.Add("accessibility.keyboardNavigation.order", "new List<string>()");
