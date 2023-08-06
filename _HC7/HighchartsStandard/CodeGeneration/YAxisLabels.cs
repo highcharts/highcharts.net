@@ -224,7 +224,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
 			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Position3d != Position3d_DefaultValue) h.Add("position3d",Position3d);
+			if (Position3d != Position3d_DefaultValue) h.Add("position3d", highcharts.FirstCharacterToLower(Position3d.ToString()));
 			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
 			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
 			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
