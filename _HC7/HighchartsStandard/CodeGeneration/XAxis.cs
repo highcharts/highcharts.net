@@ -21,7 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowDecimals = AllowDecimals_DefaultValue = null;
 			AlternateGridColor = AlternateGridColor_DefaultValue = "";
 			Angle = Angle_DefaultValue = 0;
-			Breaks = Breaks_DefaultValue = new XAxisBreaks();
+			Breaks = Breaks_DefaultValue = new List<XAxisBreaks>();
 			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
 			ClassName = ClassName_DefaultValue = "";
@@ -143,8 +143,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// An array defining breaks in the axis, the sections defined will beleft out and all the points shifted closer to each other.
 		/// </summary>
-		public XAxisBreaks Breaks { get; set; }
-		private XAxisBreaks Breaks_DefaultValue { get; set; }
+		public List<XAxisBreaks> Breaks { get; set; }
+		private List<XAxisBreaks> Breaks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -705,7 +705,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowDecimals != AllowDecimals_DefaultValue) h.Add("allowDecimals",AllowDecimals);
 			if (AlternateGridColor != AlternateGridColor_DefaultValue) h.Add("alternateGridColor",AlternateGridColor);
 			if (Angle != Angle_DefaultValue) h.Add("angle",Angle);
-			if (Breaks.IsDirty(highcharts)) h.Add("breaks",Breaks.ToHashtable(highcharts));
+			if (Breaks != Breaks_DefaultValue) h.Add("breaks", HashifyList(highcharts,Breaks));
 			if (Categories != Categories_DefaultValue) h.Add("categories",Categories);
 			if (Ceiling != Ceiling_DefaultValue) h.Add("ceiling",Ceiling);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);

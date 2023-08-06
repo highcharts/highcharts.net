@@ -844,6 +844,8 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("zAxis.plotBands", "List<ZAxisPlotBands>");
             _propertyTypeMappings.Add("zAxis.plotLines", "List<ZAxisPlotLines>");
             _propertyTypeMappings.Add("zAxis.plotBands.label.style", "Hashtable");
+            _propertyTypeMappings.Add("xAxis.breaks", "List<XAxisBreaks>");
+            _propertyTypeMappings.Add("yAxis.breaks", "List<YAxisBreaks>");
             _propertyTypeMappings.Add("series<treemap>.levels", "List<TreemapSeriesLevels>");
             _propertyTypeMappings.Add("pane.background", "List<PaneBackground>");
             _propertyTypeMappings.Add("plotOptions.series", "PlotOptionsSeries");
@@ -944,6 +946,8 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("zAxis.plotLines", "new List<ZAxisPlotLines>()");
             _propertyInitMappings.Add("zAxis.plotBands", "new List<ZAxisPlotBands>()");
             _propertyInitMappings.Add("zAxis.plotBands.label.style", "new Hashtable()");
+            _propertyInitMappings.Add("xAxis.breaks", "new List<XAxisBreaks>()");
+            _propertyInitMappings.Add("yAxis.breaks", "new List<YAxisBreaks>()");
             _propertyInitMappings.Add("series<treemap>.levels", "new List<TreemapSeriesLevels>()");
             _propertyInitMappings.Add("pane.background", "new List<PaneBackground>()");
             _propertyInitMappings.Add("plotOptions.series", "new PlotOptionsSeries()");
@@ -1100,6 +1104,8 @@ namespace SourceCodeGenerator.Generators
             _lists.Add("xAxis.plotLines");
             _lists.Add("zAxis.plotBands");
             _lists.Add("zAxis.plotLines");
+            _lists.Add("xAxis.breaks");
+            _lists.Add("yAxis.breaks");
             _lists.Add("series<treemap>.levels");
             _lists.Add("annotations");
             _lists.Add("annotations.labels");
