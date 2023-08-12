@@ -458,7 +458,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
 			if (PlotShadow.IsDirty(highstock)) h.Add("plotShadow",PlotShadow.ToHashtable(highstock));
-			if (PlotShadowBool.IsDirty(highstock)) h.Add("plotShadow",PlotShadowBool.ToHashtable(highstock));
+			if (PlotShadowBool != PlotShadowBool_DefaultValue) h.Add("plotShadow",PlotShadowBool);
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
 			if (ResetZoomButton.IsDirty(highstock)) h.Add("resetZoomButton",ResetZoomButton.ToHashtable(highstock));

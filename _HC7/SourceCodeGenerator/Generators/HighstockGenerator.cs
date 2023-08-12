@@ -790,7 +790,7 @@ namespace SourceCodeGenerator.Generators
                 if (child.FullName == "plotOptions.series" || child.FullName == "navigator.series")
                     return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
-                if ((child.Title.Equals("shadow") && child.ReturnType.Equals("Object")) || child.Title.Equals("plotShadow"))
+                if ((child.Title.Equals("shadow") || child.Title.Equals("plotShadow")) && child.ReturnType.Equals("Object"))
                     return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
                 if (child.Title.ToLower() == "series" && child.ParentFullName == "Highstock")
