@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsMacdSignalLine()
 		{
 			Styles = Styles_DefaultValue = new PlotOptionsMacdSignalLineStyles();
-			Zones = Zones_DefaultValue = new PlotOptionsMacdSignalLineZone();
+			Zones = Zones_DefaultValue = new PlotOptionsMacdSignalLineZones();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public PlotOptionsMacdSignalLineZone Zones { get; set; }
-		private PlotOptionsMacdSignalLineZone Zones_DefaultValue { get; set; }
+		public PlotOptionsMacdSignalLineZones Zones { get; set; }
+		private PlotOptionsMacdSignalLineZones Zones_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

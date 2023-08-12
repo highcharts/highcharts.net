@@ -157,8 +157,6 @@ namespace SourceCodeGenerator.Generators
 
         protected override void GenerateClass(ApiItem item, List<ApiItem> children)
         {
-
-
             //do not generate class for NavigatorSeries (and children), because there should be Series
             if (item.FullName.Contains("navigator.series"))
                 return;
@@ -169,11 +167,6 @@ namespace SourceCodeGenerator.Generators
             string properties = "";
             string defaultValues = "";
             string hashtableComparers = "";
-
-
-
-            if (item.FullName.ToLower().EndsWith("zones"))
-                item.FullName = item.FullName.Remove(item.FullName.Length - 5) + "Zone";
 
             if (item.FullName.Equals("annotations.crookedLine") || item.FullName.Equals("annotations.elliottWave") || item.FullName.Equals("annotations.fibonacci") || item.FullName.Equals("annotations.infinityLine") || item.FullName.Equals("annotations.pitchfork") || item.FullName.Equals("annotations.lineShapes") || item.FullName.Equals("annotations.tunnel") || item.FullName.Equals("annotations.measure") || item.FullName.Equals("annotations.verticalLine"))
                 children = item.Children.Where(p => p.FullName.Contains("controlPointOptions") || p.FullName.Contains("labelOptions") || p.FullName.Contains("shapeOptions") || p.FullName.Contains("typeOptions")).ToList();
@@ -189,7 +182,6 @@ namespace SourceCodeGenerator.Generators
                     !item.FullName.Equals("annotations.tunnel.controlPointOptions.events") &&
                     !item.FullName.Equals("annotations.tunnel.typeOptions.heightControlPoint.events") &&
                     (item.FullName.EndsWith("draggable") || item.FullName.EndsWith("events") ||
-                    //item.FullName.EndsWith("labels") ||
                     item.FullName.EndsWith("shapes") || item.FullName.EndsWith("visible") || item.FullName.EndsWith("zIndex")))
                     return;
 
@@ -596,9 +588,6 @@ namespace SourceCodeGenerator.Generators
         protected override string GetClassNameFromItem(ApiItem item)
         {
             string[] parts = item.FullName.Split('.');
-            if (parts[parts.Length - 1] == "zones")
-                parts[parts.Length - 1] = "zone";
-
             StringBuilder result = new StringBuilder();
 
             if (item.ParentFullName == RootClass)
@@ -630,13 +619,8 @@ namespace SourceCodeGenerator.Generators
 
             result = result.Replace('-', '_');
 
-            if (result.ToString().Equals("NavigationAnnotationsOptionsFibonacciTimeZone"))
-                result.Replace("NavigationAnnotationsOptionsFibonacciTimeZone", "NavigationAnnotationsOptionsFibonacciTimeZones");
-
             return result.ToString();
         }
-
-
 
         protected override string GetPropertyName(ApiItem item)
         {
@@ -648,8 +632,6 @@ namespace SourceCodeGenerator.Generators
 
             if (string.IsNullOrEmpty(result))
                 return null;
-            //if (string.IsNullOrWhiteSpace(result))
-            //    throw new Exception("empty series mapping result");
 
             result = string.Empty;
             foreach (var part in item.Title.Split('-'))
@@ -714,7 +696,6 @@ namespace SourceCodeGenerator.Generators
                 return "string";
 
             if (
-                //(nameAndSuffix.ToLower().EndsWith("style") && child.Children.Any()) || 
                 child.FullName.EndsWith("states.hover") ||
                 child.FullName.EndsWith("states.inactive") ||
                 child.FullName.EndsWith("states.normal") ||
@@ -742,7 +723,7 @@ namespace SourceCodeGenerator.Generators
                     return _typeMappings[returnType].ToString();
 
             if (child.ReturnType == "Array.<*>" && child.Title == "zones")
-                returnType = string.Format("List<{0}>", GetClassNameFromItem(child).Replace("Zones", "Zone"));
+                returnType = string.Format("List<{0}>", GetClassNameFromItem(child));//.Replace("Zones", "Zone"));
             else
                 if (child.Children.Any() || child.Extends.Any())
                 returnType = GetClassNameFromItem(child);
@@ -830,7 +811,7 @@ namespace SourceCodeGenerator.Generators
                 if (child.ReturnType == "Array.<*>" && child.Title == "zones")
                     return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
-                if (child.Children.Any() || child.Extends.Any())// && child.ReturnType.ToLower() == "object")
+                if (child.Children.Any() || child.Extends.Any())
                     return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
                 // Event (javascript function)
@@ -1311,9 +1292,6 @@ namespace SourceCodeGenerator.Generators
         protected override void InitCustomProperties()
         {
             _customProperties.Add("Animation");
-            //_customProperties.Add("PlotShadow");
-            //_customProperties.Add("PointPlacement");
-            //_customProperties.Add("Symbol");
         }
 
         protected override string MapDefaultValue(ApiItem item)
@@ -1387,7 +1365,7 @@ namespace SourceCodeGenerator.Generators
                 return "\"\"";
 
             if (item.ReturnType == "Array.<*>" && item.Title == "zones")
-                return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
+                return string.Format("new List<{0}>()", GetClassNameFromItem(item));//.Replace("Zones", "Zone"));
 
             if ((item.Children.Any() || item.Extends.Any()) && _lists.Contains(item.FullName))
                 return string.Format("new List<{0}>()", GetClassNameFromItem(item));
@@ -1437,10 +1415,7 @@ namespace SourceCodeGenerator.Generators
                     (_typeMappings[(item.ReturnType)] != null &&
                     _typeMappings[(item.ReturnType)].ToString() == "Hashtable"))
                 {
-                    string result = "new Hashtable()";// + "{" + item.Defaults
-                                                      //.Replace(",", "},{")
-                                                      //.Replace(";", "},{")
-                                                      //.Replace(":", ",") + "}";
+                    string result = "new Hashtable()";
                     if (nameAndSuffix == "position")
                         result = result.Replace("0", "\"0\"");
 

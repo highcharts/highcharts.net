@@ -27,7 +27,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Marker = Marker_DefaultValue = new ScatterSeriesClusterMarker();
 			MinimumClusterSize = MinimumClusterSize_DefaultValue = 2;
 			States = States_DefaultValue = new ScatterSeriesClusterStates();
-			Zones = Zones_DefaultValue = new List<ScatterSeriesClusterZone>();
+			Zones = Zones_DefaultValue = new List<ScatterSeriesClusterZones>();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -113,8 +113,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array defining zones within marker clusters.In styled mode, the color zones are styled with the`.highcharts-cluster-zone-{n}` class, or customclassed from the `className`option.
 		/// </summary>
-		public List<ScatterSeriesClusterZone> Zones { get; set; }
-		private List<ScatterSeriesClusterZone> Zones_DefaultValue { get; set; }
+		public List<ScatterSeriesClusterZones> Zones { get; set; }
+		private List<ScatterSeriesClusterZones> Zones_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

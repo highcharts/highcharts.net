@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public MacdSeriesMacdLine()
 		{
 			Styles = Styles_DefaultValue = new MacdSeriesMacdLineStyles();
-			Zones = Zones_DefaultValue = new MacdSeriesMacdLineZone();
+			Zones = Zones_DefaultValue = new MacdSeriesMacdLineZones();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -33,8 +33,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public MacdSeriesMacdLineZone Zones { get; set; }
-		private MacdSeriesMacdLineZone Zones_DefaultValue { get; set; }
+		public MacdSeriesMacdLineZones Zones { get; set; }
+		private MacdSeriesMacdLineZones Zones_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

@@ -80,7 +80,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new List<PlotOptionsDemaZone>();
+			Zones = Zones_DefaultValue = new List<PlotOptionsDemaZones>();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -537,8 +537,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied to theX axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option. The zone definitions have to be in ascending order regardingto the value.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
-		public List<PlotOptionsDemaZone> Zones { get; set; }
-		private List<PlotOptionsDemaZone> Zones_DefaultValue { get; set; }
+		public List<PlotOptionsDemaZones> Zones { get; set; }
+		private List<PlotOptionsDemaZones> Zones_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
