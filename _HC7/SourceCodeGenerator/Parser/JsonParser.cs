@@ -111,7 +111,7 @@ namespace SourceCodeGenerator.Parser
                     apiItem.Types = apiItem.Types.Select(p => p = p.Replace("\"", "")).Where(t => t != "null").ToList();
 
                     //tylko testowo
-                    apiItem.ReturnType = apiItem.Types[0];
+                    apiItem.ReturnType = apiItem.Types[0].ToLower().Equals("undefined") ? apiItem.Types[1] : apiItem.Types[0];
                 }
 
                 JToken jDefaultByProduct = doclet.SelectToken("defaultByProduct", false);
@@ -187,74 +187,10 @@ namespace SourceCodeGenerator.Parser
             if (apiItem.FullName.StartsWith("plotOptions.column.marker"))
                 return;
 
-            //temp solution- only for 7.1.1 version
-            //if (apiItem.FullName.Contains("plotOptions.series.dataLabels") && !apiItem.Children.Any())
-            //{
-            //    apiItem.Children.Add(new ApiItem { FullName= "plotOptions.series.dataLabels.align", Title = "align", Values = new List<string> { "left", "center", "right"}, Types = new List<string> {"String" }, ReturnType = "String", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.allowOverlap", Title = "allowOverlap", Defaults = "false", Types = new List<string> { "Boolean" }, ReturnType = "Boolean", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.backgroundColor", Title = "backgroundColor", Defaults = "", Values = new List<string> { }, Types = new List<string> { "String"}, ReturnType = "String", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.borderColor", Title = "borderColor", Types = new List<string> { "String" }, ReturnType = "String", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.borderRadius", Title = "borderRadius", Defaults = "0", Types = new List<string> { "Number" }, ReturnType = "Number", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.borderWidth", Title = "borderWidth", Defaults = "0", Types = new List<string> { "Number" }, ReturnType = "Number", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.className", Title = "className", Types = new List<string> { "String" }, ReturnType = "String", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.color", Title = "color", Types = new List<string> { "String" }, ReturnType = "String", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.crop", Title = "crop", Defaults = "true",  Types = new List<string> { "Boolean" }, ReturnType = "Boolean", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.defer", Title = "defer", Defaults = "true", Types = new List<string> { "Boolean" }, ReturnType = "Boolean", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.enabled", Title = "enabled", Defaults = "false", Types = new List<string> { "Boolean" }, ReturnType = "Boolean", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem
-            //    {
-            //        FullName = "plotOptions.series.dataLabels.filter",
-            //        Title = "filter", Types = new List<string> { "*" }, ReturnType = "*", Children = new List<ApiItem>
-            //    {
-            //        new ApiItem{ FullName= "plotOptions.series.dataLabels.filter.operator", Title = "operator", Types = new List<string>{ "String" }, ReturnType = "String", IsParent = true },
-            //        new ApiItem{ FullName= "plotOptions.series.dataLabels.filter.property", Title = "property", Types = new List<string>{ "String" }, ReturnType = "String", IsParent = true  },
-            //        new ApiItem{ FullName= "plotOptions.series.dataLabels.filter.value", Title = "value", Types = new List<string>{ "String" }, ReturnType = "String", IsParent = true  }
-            //    },
-            //        IsParent = true
-            //    });
-
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.format", Title = "format", Types = new List<string> { "String" }, ReturnType = "String", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.formatter", Title = "formatter", Types = new List<string> { "function" }, ReturnType = "function", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.inside", Title = "inside", Types = new List<string> { "Boolean"}, ReturnType = "Boolean", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.overflow", Title = "overflow", Defaults = "justify", Values = new List<string> { "allow", "justify"}, Types = new List<string> {"String" }, ReturnType = "String", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.padding", Title = "padding", Defaults = "0", Types = new List<string> { "Number" }, ReturnType = "Number", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.rotation", Title = "rotation", Defaults = "0", Types = new List<string> { "Number" }, ReturnType = "Number", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.shadow", Title = "shadow", Defaults = "false", Types = new List<string> { "Boolean" }, ReturnType = "Boolean", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.shape", Title = "shape", Defaults = "square", Types = new List<string> { "String" }, ReturnType = "String", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem
-            //    {
-            //        FullName = "plotOptions.series.dataLabels.style",
-            //        Defaults = "{\"color\": \"contrast\", \"fontSize\": \"11px\", \"fontWeight\": \"bold\", \"textOutline\": \"1px contrast\" }",
-            //        Title = "style",
-            //        Types = new List<string> { "Object" },
-            //        ReturnType = "Object",
-            //        Children = new List<ApiItem>
-            //    {
-            //        new ApiItem { FullName = "plotOptions.series.dataLabels.style.color", Title = "color", Types = new List<string>{ "String" }, ReturnType = "String", IsParent = true  },
-            //        new ApiItem { FullName = "plotOptions.series.dataLabels.style.fontSize", Title = "fontSize", Types = new List<string>{ "String" }, ReturnType = "String", IsParent = true  },
-            //        new ApiItem { FullName = "plotOptions.series.dataLabels.style.fontWeight", Title = "fontWeight", Types = new List<string>{ "String" }, ReturnType = "String", IsParent = true  },
-            //        new ApiItem { FullName = "plotOptions.series.dataLabels.style.textOutline", Title = "textOutline", Types = new List<string>{ "String" }, ReturnType = "String", IsParent = true  }
-            //    }
-            //    });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.useHTML", Title = "useHTML", Defaults = "false", Types = new List<string> { "Boolean" }, ReturnType = "Boolean", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.verticalAlign", Title = "verticalAlign", Values = new List<string> { "top", "middle", "bottom" }, Types = new List<string> { "String" }, ReturnType = "String", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.x", Title = "x", Types = new List<string> { "Number" }, ReturnType = "Number", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.y", Title = "y", Types = new List<string> { "Number" }, ReturnType = "Number", IsParent = true });
-            //    apiItem.Children.Add(new ApiItem { FullName = "plotOptions.series.dataLabels.zIndex", Title = "zIndex", Defaults = "6", Types = new List<string> { "Number" }, ReturnType = "Number", IsParent = true });
-            //}
-
             UpdateService.UpdateCSSObject(apiItem);
             UpdateService.Update(apiItem);
 
             TypeService.SetReturnType(apiItem);
-
-            //if (apiItem.FullName.Equals("series.funnel3d.data") || apiItem.FullName.Equals("series.pyramid3d.data"))
-            //    apiItem.Extends.Clear();
-
-
-
-
-            ////////////////////////end of modification area
 
             if (parent == null)
                 Items.Add(apiItem);

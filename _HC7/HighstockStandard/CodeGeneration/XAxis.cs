@@ -625,8 +625,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The pixel width of the major tick marks. Defaults to 0 on categoryaxes, otherwise 1.In styled mode, the stroke width is given in the `.highcharts-tick`class, but in order for the element to be generated on category axes,the option must be explicitly set to 1.
 		/// </summary>
-		public XAxisTickWidth TickWidth { get; set; }
-		private XAxisTickWidth TickWidth_DefaultValue { get; set; }
+		public double? TickWidth { get; set; }
+		private double? TickWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>

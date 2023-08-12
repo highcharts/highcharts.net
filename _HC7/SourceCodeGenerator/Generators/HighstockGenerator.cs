@@ -155,8 +155,6 @@ namespace SourceCodeGenerator.Generators
                 apiItem.Defaults = "0.01";
         }
 
-
-
         protected override void GenerateClass(ApiItem item, List<ApiItem> children)
         {
 
