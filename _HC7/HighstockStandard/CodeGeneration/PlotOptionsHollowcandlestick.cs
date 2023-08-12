@@ -97,8 +97,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsHollowcandlestickTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			UpColor = UpColor_DefaultValue = #06b535;
-			UpLineColor = UpLineColor_DefaultValue = #06b535;
+			UpColor = UpColor_DefaultValue = "#06b535";
+			UpLineColor = UpLineColor_DefaultValue = "#06b535";
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsHollowcandlestickZone>();
@@ -677,15 +677,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The fill color of the candlestick when the currentclose is higher than the previous one.
 		/// </summary>
-		public ColorType UpColor { get; set; }
-		private ColorType UpColor_DefaultValue { get; set; }
+		public string UpColor { get; set; }
+		private string UpColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the line/border of the hollow candlestick whenthe current close is higher than the previous one.
 		/// </summary>
-		public ColorType UpLineColor { get; set; }
-		private ColorType UpLineColor_DefaultValue { get; set; }
+		public string UpLineColor { get; set; }
+		private string UpLineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
