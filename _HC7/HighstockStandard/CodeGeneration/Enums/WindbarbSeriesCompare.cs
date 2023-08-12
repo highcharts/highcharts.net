@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum WindbarbSeriesCompare
     {
-        Null, 
-		Percent, 
+        Percent, 
 		Value
     }
 }

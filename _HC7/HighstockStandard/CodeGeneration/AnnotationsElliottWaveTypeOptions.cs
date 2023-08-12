@@ -16,28 +16,14 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsElliottWaveTypeOptions()
 		{
-			XAxis = XAxis_DefaultValue = "";
-			YAxis = YAxis_DefaultValue = "";
 			Line = Line_DefaultValue = new AnnotationsElliottWaveTypeOptionsLine();
 			Points = Points_DefaultValue = new List<AnnotationsElliottWaveTypeOptionsPoints>();
+			XAxis = XAxis_DefaultValue = "";
+			YAxis = YAxis_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
 		
-
-		/// <summary>
-		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
-		/// </summary>
-		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
-		/// </summary>
-		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
-		 
 
 		/// <summary>
 		/// 
@@ -53,6 +39,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		private List<AnnotationsElliottWaveTypeOptionsPoints> Points_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
+		/// </summary>
+		public string XAxis { get; set; }
+		private string XAxis_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
+		/// </summary>
+		public string YAxis { get; set; }
+		private string YAxis_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -60,10 +60,10 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
 			if (Points != Points_DefaultValue) h.Add("points", HashifyList(highstock,Points));
+			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
+			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

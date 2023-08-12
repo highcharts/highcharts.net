@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum WilliamsrSeriesCompare
     {
-        Null, 
-		Percent, 
+        Percent, 
 		Value
     }
 }

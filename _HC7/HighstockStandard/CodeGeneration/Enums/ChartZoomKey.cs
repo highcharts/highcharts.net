@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum ChartZoomKey
     {
-        Null, 
-		Alt, 
+        Alt, 
 		Ctrl, 
 		Meta, 
 		Shift

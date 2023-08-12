@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsLineCompare
     {
-        Null, 
-		Percent, 
+        Percent, 
 		Value
     }
 }

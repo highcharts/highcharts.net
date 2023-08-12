@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsLollipopDataLabels()
 		{
-			Align = Align_DefaultValue = PlotOptionsLollipopDataLabelsAlign.Center;
+			Align = Align_DefaultValue = PlotOptionsLollipopDataLabelsAlign.Undefined;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
@@ -46,7 +46,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Style = Style_DefaultValue = new Hashtable();
 			TextPath = TextPath_DefaultValue = new PlotOptionsLollipopDataLabelsTextPath();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsLollipopDataLabelsVerticalAlign.Bottom;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsLollipopDataLabelsVerticalAlign.Undefined;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -56,7 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. For pointswith an extent, like columns, the alignments also dictates how toalign it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
+		/// 
 		/// </summary>
 		public PlotOptionsLollipopDataLabelsAlign Align { get; set; }
 		private PlotOptionsLollipopDataLabelsAlign Align_DefaultValue { get; set; }
@@ -266,7 +266,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The vertical alignment of a data label. Can be one of `top`,`middle` or `bottom`. The default value depends on the data, forinstance in a column chart, the label is above positive valuesand below negative values.
+		/// 
 		/// </summary>
 		public PlotOptionsLollipopDataLabelsVerticalAlign VerticalAlign { get; set; }
 		private PlotOptionsLollipopDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }

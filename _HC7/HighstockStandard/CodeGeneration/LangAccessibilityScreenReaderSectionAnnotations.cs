@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LangAccessibilityScreenReaderSectionAnnotations()
 		{
-			DescriptionMultiplePoints = DescriptionMultiplePoints_DefaultValue = "{annotationText}. Related to {annotationPoint}{ Also related to, #each(additionalAnnotationPoints)}";
+			DescriptionMultiplePoints = DescriptionMultiplePoints_DefaultValue = "{annotationText}. Related to {annotationPoint}{#each additionalAnnotationPoints}, also related to {this}{/each}";
 			DescriptionNoPoints = DescriptionNoPoints_DefaultValue = "{annotationText}";
 			DescriptionSinglePoint = DescriptionSinglePoint_DefaultValue = "{annotationText}. Related to {annotationPoint}";
 			Heading = Heading_DefaultValue = "Chart annotations summary";

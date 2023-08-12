@@ -16,11 +16,11 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ChaikinSeriesMarkerStatesSelect()
 		{
-			Enabled = Enabled_DefaultValue = null;
-			FillColor = FillColor_DefaultValue = "";
-			LineColor = LineColor_DefaultValue = "";
-			LineWidth = LineWidth_DefaultValue = null;
-			Radius = Radius_DefaultValue = new Hashtable();
+			Enabled = Enabled_DefaultValue = true;
+			FillColor = FillColor_DefaultValue = "#cccccc";
+			LineColor = LineColor_DefaultValue = "#000000";
+			LineWidth = LineWidth_DefaultValue = 2;
+			Radius = Radius_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -57,8 +57,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The radius of the point marker. In hover state, itdefaults to the normal state's radius + 2.
 		/// </summary>
-		public Hashtable Radius { get; set; }
-		private Hashtable Radius_DefaultValue { get; set; }
+		public double? Radius { get; set; }
+		private double? Radius_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

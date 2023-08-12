@@ -22,7 +22,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			AnimationBool = AnimationBool_DefaultValue = true;
 			AnimationLimit = AnimationLimit_DefaultValue = null;
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderRadius = BorderRadius_DefaultValue = 3;
+			BorderRadius = BorderRadius_DefaultValue = null;
+			BorderRadiusString = BorderRadiusString_DefaultValue = "null";
+			BorderRadiusNumber = BorderRadiusNumber_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = null;
 			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
@@ -35,7 +37,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
-			Compare = Compare_DefaultValue = XrangeSeriesCompare.Null;
+			Compare = Compare_DefaultValue = XrangeSeriesCompare.Percent;
 			CompareBase = CompareBase_DefaultValue = XrangeSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Cumulative = Cumulative_DefaultValue = false;
@@ -69,6 +71,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Opacity = Opacity_DefaultValue = 1;
 			PartialFill = PartialFill_DefaultValue = new XrangeSeriesPartialFill();
 			Point = Point_DefaultValue = new XrangeSeriesPoint();
+			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointPadding = PointPadding_DefaultValue = null;
 			PointWidth = PointWidth_DefaultValue = null;
@@ -145,8 +148,22 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The corner radius of the border surrounding each column or bar. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa relative size. For columns this is relative to the column width, forpies it is relative to the radius and the inner radius.
 		/// </summary>
-		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
+		public Object BorderRadius { get; set; }
+		private Object BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each column or bar. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa relative size. For columns this is relative to the column width, forpies it is relative to the radius and the inner radius.
+		/// </summary>
+		public string BorderRadiusString { get; set; }
+		private string BorderRadiusString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The corner radius of the border surrounding each column or bar. A numbersignifies pixels. A percentage string, like for example `50%`, signifiesa relative size. For columns this is relative to the column width, forpies it is relative to the radius and the inner radius.
+		/// </summary>
+		public double? BorderRadiusNumber { get; set; }
+		private double? BorderRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -255,7 +272,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).
+		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).With `dataGrouping` enabled, default grouping approximation is set to `sum`.
 		/// </summary>
 		public bool? Cumulative { get; set; }
 		private bool? Cumulative_DefaultValue { get; set; }
@@ -472,6 +489,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Same as[accessibility.point.descriptionFormat](#accessibility.point.descriptionFormat),but for an individual series. Overrides the chart wide configuration.
+		/// </summary>
+		public string PointDescriptionFormat { get; set; }
+		private string PointDescriptionFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Same as[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),but for an individual series. Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
@@ -667,6 +691,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderRadiusString != BorderRadiusString_DefaultValue) h.Add("borderRadius",BorderRadiusString);
+			if (BorderRadiusNumber != BorderRadiusNumber_DefaultValue) h.Add("borderRadius",BorderRadiusNumber);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
@@ -713,6 +739,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (PartialFill.IsDirty(highstock)) h.Add("partialFill",PartialFill.ToHashtable(highstock));
 			if (Point.IsDirty(highstock)) h.Add("point",Point.ToHashtable(highstock));
+			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highstock.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);

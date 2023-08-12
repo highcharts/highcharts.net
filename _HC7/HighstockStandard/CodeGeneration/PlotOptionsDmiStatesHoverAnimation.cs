@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsDmiStatesHoverAnimation()
 		{
-			Duration = Duration_DefaultValue = new Hashtable();
+			Duration = Duration_DefaultValue = 150;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The duration of the hover animation in milliseconds. Bydefault the hover state animates quickly in, and slowlyback to normal.
 		/// </summary>
-		public Hashtable Duration { get; set; }
-		private Hashtable Duration_DefaultValue { get; set; }
+		public double? Duration { get; set; }
+		private double? Duration_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

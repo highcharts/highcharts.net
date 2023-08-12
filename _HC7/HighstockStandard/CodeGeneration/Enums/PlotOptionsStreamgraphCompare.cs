@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsStreamgraphCompare
     {
-        Null, 
-		Percent, 
+        Percent, 
 		Value
     }
 }

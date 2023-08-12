@@ -30,7 +30,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorAxisBool = ColorAxisBool_DefaultValue = null;
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
-			Compare = Compare_DefaultValue = VectorSeriesCompare.Null;
+			Compare = Compare_DefaultValue = VectorSeriesCompare.Percent;
 			CompareBase = CompareBase_DefaultValue = VectorSeriesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Crisp = Crisp_DefaultValue = true;
@@ -62,6 +62,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			OnPoint = OnPoint_DefaultValue = new VectorSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new VectorSeriesPoint();
+			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = VectorSeriesPointIntervalUnit.Null;
@@ -222,7 +223,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).
+		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).With `dataGrouping` enabled, default grouping approximation is set to `sum`.
 		/// </summary>
 		public bool? Cumulative { get; set; }
 		private bool? Cumulative_DefaultValue { get; set; }
@@ -415,6 +416,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public VectorSeriesPoint Point { get; set; }
 		private VectorSeriesPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Same as[accessibility.point.descriptionFormat](#accessibility.point.descriptionFormat),but for an individual series. Overrides the chart wide configuration.
+		/// </summary>
+		public string PointDescriptionFormat { get; set; }
+		private string PointDescriptionFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -666,6 +674,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (OnPoint.IsDirty(highstock)) h.Add("onPoint",OnPoint.ToHashtable(highstock));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highstock)) h.Add("point",Point.ToHashtable(highstock));
+			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highstock.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));

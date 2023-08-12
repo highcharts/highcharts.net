@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AoSeriesMarkerStatesHoverAnimation()
 		{
-			Duration = Duration_DefaultValue = new Hashtable();
+			Duration = Duration_DefaultValue = 150;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Duration { get; set; }
-		private Hashtable Duration_DefaultValue { get; set; }
+		public double? Duration { get; set; }
+		private double? Duration_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

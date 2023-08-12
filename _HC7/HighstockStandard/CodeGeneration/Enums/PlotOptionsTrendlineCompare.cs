@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsTrendlineCompare
     {
-        Null, 
-		Percent, 
+        Percent, 
 		Value
     }
 }

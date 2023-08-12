@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsArearangeMarkerStatesNormal()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
+			AnimationBool = AnimationBool_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		private Animation Animation_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Animation when returning to normal state after hovering.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -37,6 +45,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

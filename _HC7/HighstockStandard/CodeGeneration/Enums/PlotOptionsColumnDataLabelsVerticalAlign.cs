@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsColumnDataLabelsVerticalAlign
     {
-        Top, 
+        Undefined, 
+		Top, 
 		Middle, 
 		Bottom
     }

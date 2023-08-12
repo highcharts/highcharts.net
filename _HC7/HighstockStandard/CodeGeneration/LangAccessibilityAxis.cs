@@ -22,9 +22,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			TimeRangeHours = TimeRangeHours_DefaultValue = "Data range: {range} hours.";
 			TimeRangeMinutes = TimeRangeMinutes_DefaultValue = "Data range: {range} minutes.";
 			TimeRangeSeconds = TimeRangeSeconds_DefaultValue = "Data range: {range} seconds.";
-			XAxisDescriptionPlural = XAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} X axes displaying {#each(names, -1), }and {names[-1]}.";
+			XAxisDescriptionPlural = XAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} X axes displaying {#each names}{#unless @first},{/unless}{#if @last} and{/if} {this}{/each}.";
 			XAxisDescriptionSingular = XAxisDescriptionSingular_DefaultValue = "The chart has 1 X axis displaying {names[0]}. {ranges[0]}";
-			YAxisDescriptionPlural = YAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} Y axes displaying {#each(names, -1), }and {names[-1]}.";
+			YAxisDescriptionPlural = YAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} Y axes displaying {#each names}{#unless @first},{/unless}{#if @last} and{/if} {this}{/each}.";
 			YAxisDescriptionSingular = YAxisDescriptionSingular_DefaultValue = "The chart has 1 Y axis displaying {names[0]}. {ranges[0]}";
 			
 			CustomFields = new Hashtable();

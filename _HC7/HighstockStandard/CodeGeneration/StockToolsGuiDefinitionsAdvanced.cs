@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public StockToolsGuiDefinitionsAdvanced()
 		{
 			Fibonacci = Fibonacci_DefaultValue = new StockToolsGuiDefinitionsAdvancedFibonacci();
-			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new Object();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new StockToolsGuiDefinitionsAdvancedFibonacciTimeZones();
 			Items = Items_DefaultValue = new List<string>();
 			ParallelChannel = ParallelChannel_DefaultValue = new StockToolsGuiDefinitionsAdvancedParallelChannel();
 			Pitchfork = Pitchfork_DefaultValue = new StockToolsGuiDefinitionsAdvancedPitchfork();
@@ -37,8 +37,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public Object FibonacciTimeZones { get; set; }
-		private Object FibonacciTimeZones_DefaultValue { get; set; }
+		public StockToolsGuiDefinitionsAdvancedFibonacciTimeZones FibonacciTimeZones { get; set; }
+		private StockToolsGuiDefinitionsAdvancedFibonacciTimeZones FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -77,7 +77,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Fibonacci.IsDirty(highstock)) h.Add("fibonacci",Fibonacci.ToHashtable(highstock));
-			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
+			if (FibonacciTimeZones.IsDirty(highstock)) h.Add("fibonacciTimeZones",FibonacciTimeZones.ToHashtable(highstock));
 			if (Items != Items_DefaultValue) h.Add("items",Items);
 			if (ParallelChannel.IsDirty(highstock)) h.Add("parallelChannel",ParallelChannel.ToHashtable(highstock));
 			if (Pitchfork.IsDirty(highstock)) h.Add("pitchfork",Pitchfork.ToHashtable(highstock));

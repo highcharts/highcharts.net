@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
-			Compare = Compare_DefaultValue = PlotOptionsPriceenvelopesCompare.Null;
+			Compare = Compare_DefaultValue = PlotOptionsPriceenvelopesCompare.Percent;
 			CompareBase = CompareBase_DefaultValue = PlotOptionsPriceenvelopesCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			CompareToMain = CompareToMain_DefaultValue = false;
@@ -64,6 +64,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Opacity = Opacity_DefaultValue = 1;
 			Params = Params_DefaultValue = new PlotOptionsPriceenvelopesParams();
 			Point = Point_DefaultValue = new PlotOptionsPriceenvelopesPoint();
+			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			RelativeXValue = RelativeXValue_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
@@ -230,7 +231,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).
+		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).With `dataGrouping` enabled, default grouping approximation is set to `sum`.
 		/// </summary>
 		public bool? Cumulative { get; set; }
 		private bool? Cumulative_DefaultValue { get; set; }
@@ -423,6 +424,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public PlotOptionsPriceenvelopesPoint Point { get; set; }
 		private PlotOptionsPriceenvelopesPoint Point_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Same as[accessibility.point.descriptionFormat](#accessibility.point.descriptionFormat),but for an individual series. Overrides the chart wide configuration.
+		/// </summary>
+		public string PointDescriptionFormat { get; set; }
+		private string PointDescriptionFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -620,6 +628,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Params.IsDirty(highstock)) h.Add("params",Params.ToHashtable(highstock));
 			if (Point.IsDirty(highstock)) h.Add("point",Point.ToHashtable(highstock));
+			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highstock.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);

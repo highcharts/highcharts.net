@@ -48,7 +48,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			UseHTML = UseHTML_DefaultValue = false;
 			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsArearangeDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
+			XHigh = XHigh_DefaultValue = 0;
+			XLow = XLow_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
+			YHigh = YHigh_DefaultValue = 0;
+			YLow = YLow_DefaultValue = 0;
 			ZIndex = ZIndex_DefaultValue = 6;
 			
 			CustomFields = new Hashtable();
@@ -280,10 +284,38 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// X offset of the higher data labels relative to the point value.
+		/// </summary>
+		public double? XHigh { get; set; }
+		private double? XHigh_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// X offset of the lower data labels relative to the point value.
+		/// </summary>
+		public double? XLow { get; set; }
+		private double? XLow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The y position offset of the label relative to the point inpixels.
 		/// </summary>
 		public double? Y { get; set; }
 		private double? Y_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Y offset of the higher data labels relative to the point value.
+		/// </summary>
+		public double? YHigh { get; set; }
+		private double? YHigh_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Y offset of the lower data labels relative to the point value.
+		/// </summary>
+		public double? YLow { get; set; }
+		private double? YLow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -332,7 +364,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
 			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highstock.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != X_DefaultValue) h.Add("x",X);
+			if (XHigh != XHigh_DefaultValue) h.Add("xHigh",XHigh);
+			if (XLow != XLow_DefaultValue) h.Add("xLow",XLow);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (YHigh != YHigh_DefaultValue) h.Add("yHigh",YHigh);
+			if (YLow != YLow_DefaultValue) h.Add("yLow",YLow);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			ColorIndex = ColorIndex_DefaultValue = null;
 			ColorKey = ColorKey_DefaultValue = "y";
 			Colors = Colors_DefaultValue = new List<string>();
-			Compare = Compare_DefaultValue = PlotOptionsHollowcandlestickCompare.Null;
+			Compare = Compare_DefaultValue = PlotOptionsHollowcandlestickCompare.Percent;
 			CompareBase = CompareBase_DefaultValue = PlotOptionsHollowcandlestickCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
@@ -72,6 +72,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsHollowcandlestickOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsHollowcandlestickPoint();
+			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsHollowcandlestickPointIntervalUnit.Null;
@@ -96,8 +97,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsHollowcandlestickTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			UpColor = UpColor_DefaultValue = "#06b535";
-			UpLineColor = UpLineColor_DefaultValue = "#06b535";
+			UpColor = UpColor_DefaultValue = #06b535;
+			UpLineColor = UpLineColor_DefaultValue = #06b535;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsHollowcandlestickZone>();
@@ -261,7 +262,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).
+		/// Cumulative Sum feature replaces points' values with the following formula:`sum of all previous points' values + current point's value`.Works only for points in a visible range.Adds the `cumulativeSum` field to each point object that can be accessede.g. in the [tooltip.pointFormat](https://api.highcharts.com/highstock/tooltip.pointFormat).With `dataGrouping` enabled, default grouping approximation is set to `sum`.
 		/// </summary>
 		public bool? Cumulative { get; set; }
 		private bool? Cumulative_DefaultValue { get; set; }
@@ -499,6 +500,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Same as[accessibility.point.descriptionFormat](#accessibility.point.descriptionFormat),but for an individual series. Overrides the chart wide configuration.
+		/// </summary>
+		public string PointDescriptionFormat { get; set; }
+		private string PointDescriptionFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Same as[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),but for an individual series. Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
@@ -669,15 +677,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// The fill color of the candlestick when the currentclose is higher than the previous one.
 		/// </summary>
-		public string UpColor { get; set; }
-		private string UpColor_DefaultValue { get; set; }
+		public ColorType UpColor { get; set; }
+		private ColorType UpColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the line/border of the hollow candlestick whenthe current close is higher than the previous one.
 		/// </summary>
-		public string UpLineColor { get; set; }
-		private string UpLineColor_DefaultValue { get; set; }
+		public ColorType UpLineColor { get; set; }
+		private ColorType UpLineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -764,6 +772,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (OnPoint.IsDirty(highstock)) h.Add("onPoint",OnPoint.ToHashtable(highstock));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highstock)) h.Add("point",Point.ToHashtable(highstock));
+			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highstock.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));

@@ -17,7 +17,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsWilliamsrStatesInactive()
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			Enabled = Enabled_DefaultValue = null;
+			AnimationBool = AnimationBool_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = true;
 			Opacity = Opacity_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Animation Animation { get; set; }
 		private Animation Animation_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Animation when not hovering over the marker.
+		/// </summary>
+		public bool? AnimationBool { get; set; }
+		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -53,6 +61,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
+			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (CustomFields.Count > 0)

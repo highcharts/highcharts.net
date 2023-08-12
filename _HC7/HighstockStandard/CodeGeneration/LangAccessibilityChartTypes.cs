@@ -17,26 +17,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		public LangAccessibilityChartTypes()
 		{
 			BarMultiple = BarMultiple_DefaultValue = "Bar chart with {numSeries} data series.";
-			BarSingle = BarSingle_DefaultValue = "Bar chart with {numPoints} {#plural(numPoints, bars, bar)}.";
+			BarSingle = BarSingle_DefaultValue = "Bar chart with {numPoints} {#eq numPoints 1}bar{else}bars{/eq}.";
 			BoxplotMultiple = BoxplotMultiple_DefaultValue = "Boxplot with {numSeries} data series.";
-			BoxplotSingle = BoxplotSingle_DefaultValue = "Boxplot with {numPoints} {#plural(numPoints, boxes, box)}.";
+			BoxplotSingle = BoxplotSingle_DefaultValue = "Boxplot with {numPoints} {#eq numPoints 1}box{else}boxes{/eq}.";
 			BubbleMultiple = BubbleMultiple_DefaultValue = "Bubble chart with {numSeries} data series.";
-			BubbleSingle = BubbleSingle_DefaultValue = "Bubble chart with {numPoints} {#plural(numPoints, bubbles, bubble)}.";
+			BubbleSingle = BubbleSingle_DefaultValue = "Bubble chart with {numPoints} {#eq numPoints 1}bubbles{else}bubble{/eq}.";
 			ColumnMultiple = ColumnMultiple_DefaultValue = "Bar chart with {numSeries} data series.";
-			ColumnSingle = ColumnSingle_DefaultValue = "Bar chart with {numPoints} {#plural(numPoints, bars, bar)}.";
+			ColumnSingle = ColumnSingle_DefaultValue = "Bar chart with {numPoints} {#eq numPoints 1}bar{else}bars{/eq}.";
 			CombinationChart = CombinationChart_DefaultValue = "Combination chart with {numSeries} data series.";
 			DefaultMultiple = DefaultMultiple_DefaultValue = "Chart with {numSeries} data series.";
-			DefaultSingle = DefaultSingle_DefaultValue = "Chart with {numPoints} data {#plural(numPoints, points, point)}.";
+			DefaultSingle = DefaultSingle_DefaultValue = "Chart with {numPoints} data {#eq numPoints 1}point{else}points{/eq}.";
 			EmptyChart = EmptyChart_DefaultValue = "Empty chart";
 			LineMultiple = LineMultiple_DefaultValue = "Line chart with {numSeries} lines.";
-			LineSingle = LineSingle_DefaultValue = "Line chart with {numPoints} data {#plural(numPoints, points, point)}.";
+			LineSingle = LineSingle_DefaultValue = "Line chart with {numPoints} data {#eq numPoints 1}point{else}points{/eq}.";
 			MapTypeDescription = MapTypeDescription_DefaultValue = "Map of {mapTitle} with {numSeries} data series.";
 			PieMultiple = PieMultiple_DefaultValue = "Pie chart with {numSeries} pies.";
-			PieSingle = PieSingle_DefaultValue = "Pie chart with {numPoints} {#plural(numPoints, slices, slice)}.";
+			PieSingle = PieSingle_DefaultValue = "Pie chart with {numPoints} {#eq numPoints 1}slice{else}slices{/eq}.";
 			ScatterMultiple = ScatterMultiple_DefaultValue = "Scatter chart with {numSeries} data series.";
-			ScatterSingle = ScatterSingle_DefaultValue = "Scatter chart with {numPoints} {#plural(numPoints, points, point)}.";
+			ScatterSingle = ScatterSingle_DefaultValue = "Scatter chart with {numPoints} {#eq numPoints 1}point{else}points{/eq}.";
 			SplineMultiple = SplineMultiple_DefaultValue = "Line chart with {numSeries} lines.";
-			SplineSingle = SplineSingle_DefaultValue = "Line chart with {numPoints} data {#plural(numPoints, points, point)}.";
+			SplineSingle = SplineSingle_DefaultValue = "Line chart with {numPoints} data {#eq numPoints 1}point{else}points{/eq}.";
 			UnknownMap = UnknownMap_DefaultValue = "Map of unspecified region with {numSeries} data series.";
 			
 			CustomFields = new Hashtable();

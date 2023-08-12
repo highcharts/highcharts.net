@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsBubbleStatesHoverHalo()
 		{
-			Size = Size_DefaultValue = new Hashtable();
+			Size = Size_DefaultValue = 5;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -25,8 +25,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public Hashtable Size { get; set; }
-		private Hashtable Size_DefaultValue { get; set; }
+		public double? Size { get; set; }
+		private double? Size_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 

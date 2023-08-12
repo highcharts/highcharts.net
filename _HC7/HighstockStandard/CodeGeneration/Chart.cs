@@ -46,11 +46,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
 			PlotBorderWidth = PlotBorderWidth_DefaultValue = 0;
 			PlotShadow = PlotShadow_DefaultValue = new Shadow();
+			PlotShadowBool = PlotShadowBool_DefaultValue = false;
 			Reflow = Reflow_DefaultValue = true;
 			RenderTo = RenderTo_DefaultValue = "";
 			ResetZoomButton = ResetZoomButton_DefaultValue = new ChartResetZoomButton();
 			SelectionMarkerFill = SelectionMarkerFill_DefaultValue = "rgba(51,92,173,0.25)";
 			Shadow = Shadow_DefaultValue = new Shadow();
+			ShadowBool = ShadowBool_DefaultValue = false;
 			Spacing = Spacing_DefaultValue = new List<double>();
 			SpacingBottom = SpacingBottom_DefaultValue = 15;
 			SpacingLeft = SpacingLeft_DefaultValue = 10;
@@ -61,10 +63,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Type = Type_DefaultValue = ChartType.Line;
 			Width = Width_DefaultValue = "";
 			WidthNumber = WidthNumber_DefaultValue = null;
-			ZoomBySingleTouch = ZoomBySingleTouch_DefaultValue = false;
 			Zooming = Zooming_DefaultValue = new ChartZooming();
-			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Null;
-			ZoomType = ZoomType_DefaultValue = ChartZoomType.Null;
+			ZoomKey = ZoomKey_DefaultValue = ChartZoomKey.Alt;
+			ZoomType = ZoomType_DefaultValue = ChartZoomType.X;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -281,6 +282,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether to apply a drop shadow to the plot area. Requires thatplotBackgroundColor be set. The shadow can be an object configurationcontaining `color`, `offsetX`, `offsetY`, `opacity` and `width`.
+		/// </summary>
+		public bool? PlotShadowBool { get; set; }
+		private bool? PlotShadowBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to reflow the chart to fit the width of the container divon resizing the window.
 		/// </summary>
 		public bool? Reflow { get; set; }
@@ -313,6 +321,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public Shadow Shadow { get; set; }
 		private Shadow Shadow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Whether to apply a drop shadow to the outer chart area. Requiresthat backgroundColor be set. The shadow can be an objectconfiguration containing `color`, `offsetX`, `offsetY`, `opacity` and`width`.
+		/// </summary>
+		public bool? ShadowBool { get; set; }
+		private bool? ShadowBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -386,13 +401,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enables zooming by a single touch, in combination with[chart.zoomType](#chart.zoomType). When enabled, two-finger pinchwill still work as set up by [chart.pinchType](#chart.pinchType).However, `zoomBySingleTouch` will interfere with touch-dragging thechart to read the tooltip. And especially when vertical zooming isenabled, it will make it hard to scroll vertically on the page.
-		/// </summary>
-		public bool? ZoomBySingleTouch { get; set; }
-		private bool? ZoomBySingleTouch_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Chart zooming options.
 		/// </summary>
 		public ChartZooming Zooming { get; set; }
@@ -450,11 +458,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PlotBorderColor != PlotBorderColor_DefaultValue) h.Add("plotBorderColor",PlotBorderColor);
 			if (PlotBorderWidth != PlotBorderWidth_DefaultValue) h.Add("plotBorderWidth",PlotBorderWidth);
 			if (PlotShadow.IsDirty(highstock)) h.Add("plotShadow",PlotShadow.ToHashtable(highstock));
+			if (PlotShadowBool.IsDirty(highstock)) h.Add("plotShadow",PlotShadowBool.ToHashtable(highstock));
 			if (Reflow != Reflow_DefaultValue) h.Add("reflow",Reflow);
 			if (RenderTo != RenderTo_DefaultValue) h.Add("renderTo",RenderTo);
 			if (ResetZoomButton.IsDirty(highstock)) h.Add("resetZoomButton",ResetZoomButton.ToHashtable(highstock));
 			if (SelectionMarkerFill != SelectionMarkerFill_DefaultValue) h.Add("selectionMarkerFill",SelectionMarkerFill);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (Shadow.IsDirty(highstock)) h.Add("shadow",Shadow.ToHashtable(highstock));
+			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
 			if (Spacing != Spacing_DefaultValue) h.Add("spacing",Spacing);
 			if (SpacingBottom != SpacingBottom_DefaultValue) h.Add("spacingBottom",SpacingBottom);
 			if (SpacingLeft != SpacingLeft_DefaultValue) h.Add("spacingLeft",SpacingLeft);
@@ -465,7 +475,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Type != Type_DefaultValue) h.Add("type", highstock.FirstCharacterToLower(Type.ToString()));
 			if (Width != Width_DefaultValue) h.Add("width",Width);
 			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
-			if (ZoomBySingleTouch != ZoomBySingleTouch_DefaultValue) h.Add("zoomBySingleTouch",ZoomBySingleTouch);
 			if (Zooming.IsDirty(highstock)) h.Add("zooming",Zooming.ToHashtable(highstock));
 			if (ZoomKey != ZoomKey_DefaultValue) h.Add("zoomKey", highstock.FirstCharacterToLower(ZoomKey.ToString()));
 			if (ZoomType != ZoomType_DefaultValue) h.Add("zoomType", highstock.FirstCharacterToLower(ZoomType.ToString()));

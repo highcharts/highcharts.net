@@ -16,11 +16,12 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ChartZooming()
 		{
-			Key = Key_DefaultValue = ChartZoomingKey.Null;
+			Key = Key_DefaultValue = ChartZoomingKey.Alt;
+			MouseWheel = MouseWheel_DefaultValue = null;
 			PinchType = PinchType_DefaultValue = ChartZoomingPinchType.X;
 			ResetButton = ResetButton_DefaultValue = new ChartZoomingResetButton();
 			SingleTouch = SingleTouch_DefaultValue = false;
-			Type = Type_DefaultValue = ChartZoomingType.Null;
+			Type = Type_DefaultValue = ChartZoomingType.X;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -31,6 +32,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public ChartZoomingKey Key { get; set; }
 		private ChartZoomingKey Key_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The mouse wheel zoom is a feature included in Highcharts Stock, but isalso available for Highcharts Core as a module. Zooming with the mouse wheelis enabled by default. It can be disabled by setting this option to`false`.
+		/// </summary>
+		public bool? MouseWheel { get; set; }
+		private bool? MouseWheel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -69,6 +77,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Key != Key_DefaultValue) h.Add("key", highstock.FirstCharacterToLower(Key.ToString()));
+			if (MouseWheel != MouseWheel_DefaultValue) h.Add("mouseWheel",MouseWheel);
 			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", highstock.FirstCharacterToLower(PinchType.ToString()));
 			if (ResetButton.IsDirty(highstock)) h.Add("resetButton",ResetButton.ToHashtable(highstock));
 			if (SingleTouch != SingleTouch_DefaultValue) h.Add("singleTouch",SingleTouch);

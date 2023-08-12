@@ -7,8 +7,7 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsCandlestickCompare
     {
-        Null, 
-		Percent, 
+        Percent, 
 		Value
     }
 }

@@ -28,9 +28,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			Color = Color_DefaultValue = "";
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
+			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsPivotpointsDataLabelsFilter();
-			Format = Format_DefaultValue = "point.value";
+			Format = Format_DefaultValue = "{point.pivotLine}";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
 			NullFormat = NullFormat_DefaultValue = "";
@@ -140,7 +140,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Enable or disable the data labels.
+		/// 
 		/// </summary>
 		public bool? Enabled { get; set; }
 		private bool? Enabled_DefaultValue { get; set; }
@@ -154,7 +154,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the data label. Available variables are the same as for`formatter`.
+		/// 
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }

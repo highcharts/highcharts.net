@@ -16,7 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsPolygonMarkerStatesHover()
 		{
-			Enabled = Enabled_DefaultValue = null;
+			Enabled = Enabled_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	

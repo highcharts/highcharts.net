@@ -16,11 +16,11 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public SonificationDefaultSpeechOptionsMappingPitch()
 		{
-			MapTo = MapTo_DefaultValue = "y";
-			Max = Max_DefaultValue = "c6";
-			Min = Min_DefaultValue = "c2";
+			MapTo = MapTo_DefaultValue = "undefined";
+			Max = Max_DefaultValue = "undefined";
+			Min = Min_DefaultValue = "undefined";
 			Scale = Scale_DefaultValue = new List<double>();
-			Within = Within_DefaultValue = "yAxis";
+			Within = Within_DefaultValue = "undefined";
 			
 			CustomFields = new Hashtable();
 		}	

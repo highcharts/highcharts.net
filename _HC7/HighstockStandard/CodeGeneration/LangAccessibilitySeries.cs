@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Description = Description_DefaultValue = "{description}";
 			NullPointValue = NullPointValue_DefaultValue = "No value";
-			PointAnnotationsDescription = PointAnnotationsDescription_DefaultValue = "{Annotation: #each(annotations). }";
+			PointAnnotationsDescription = PointAnnotationsDescription_DefaultValue = "{#each annotations}Annotation: {this}{/each}";
 			Summary = Summary_DefaultValue = new LangAccessibilitySeriesSummary();
 			XAxisDescription = XAxisDescription_DefaultValue = "X axis, {name}";
 			YAxisDescription = YAxisDescription_DefaultValue = "Y axis, {name}";
