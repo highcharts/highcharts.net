@@ -128,9 +128,6 @@ namespace SourceCodeGenerator.Generators
             if (apiItem.FullName == "chart.panning")
                 apiItem.Defaults = "false";
 
-            if (apiItem.FullName == "chart.pinchType")
-                apiItem.Defaults = "null";
-
             if (apiItem.FullName.EndsWith("title.text"))
             {
                 if (apiItem.FullName.StartsWith("legend") || apiItem.FullName.StartsWith("xAxis") || apiItem.FullName.StartsWith("zAxis"))

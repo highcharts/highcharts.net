@@ -40,7 +40,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MarginTop = MarginTop_DefaultValue = null;
 			NumberFormatter = NumberFormatter_DefaultValue = "";
 			Panning = Panning_DefaultValue = new ChartPanning();
-			PinchType = PinchType_DefaultValue = ChartPinchType.Null;
+			PinchType = PinchType_DefaultValue = ChartPinchType.Undefined;
 			PlotBackgroundColor = PlotBackgroundColor_DefaultValue = "";
 			PlotBackgroundImage = PlotBackgroundImage_DefaultValue = "";
 			PlotBorderColor = PlotBorderColor_DefaultValue = "#cccccc";
