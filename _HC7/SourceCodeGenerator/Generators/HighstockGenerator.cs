@@ -808,7 +808,10 @@ namespace SourceCodeGenerator.Generators
                 if (child.ReturnType == "Array.<*>" && child.Title == "zones")
                     return string.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
-                if (child.Children.Any() || child.Extends.Any())
+                if ((child.Children.Any() || child.Extends.Any())
+                    && !child.FullName.Equals("navigation.bindings.ellipseAnnotation") && !child.FullName.Equals("navigation.bindings.fullScreen")
+                    && !child.FullName.Equals("navigation.bindings.saveChart") && !child.FullName.Equals("navigation.bindings.seriesTypeHLC")
+                    && !child.FullName.Equals("navigation.bindings.timeCycles"))
                     return String.Format(complexPropertyFormat, propertyName, FirstCharToLower(propertyName));
 
                 // Event (javascript function)
