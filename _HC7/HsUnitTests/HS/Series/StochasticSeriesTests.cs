@@ -4728,7 +4728,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StochasticSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<StochasticSeriesZone> { new StochasticSeriesZone { ClassName = value } };
+            var zoneDef = new List<StochasticSeriesZones> { new StochasticSeriesZones { ClassName = value } };
 
             ((StochasticSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4741,7 +4741,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StochasticSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<StochasticSeriesZone> { new StochasticSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<StochasticSeriesZones> { new StochasticSeriesZones { ClassName = defaultValue } };
 
             ((StochasticSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4757,7 +4757,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StochasticSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<StochasticSeriesZone> { new StochasticSeriesZone { Color = value } };
+            var zoneDef = new List<StochasticSeriesZones> { new StochasticSeriesZones { Color = value } };
 
             ((StochasticSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4770,7 +4770,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StochasticSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<StochasticSeriesZone> { new StochasticSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<StochasticSeriesZones> { new StochasticSeriesZones { Color = defaultValue } };
 
             ((StochasticSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4794,7 +4794,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StochasticSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<StochasticSeriesZone> { new StochasticSeriesZone { DashStyle = value } };
+            var zoneDef = new List<StochasticSeriesZones> { new StochasticSeriesZones { DashStyle = value } };
 
             ((StochasticSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4807,7 +4807,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StochasticSeries(); chart.Series.Add(series);
             var defaultValue = StochasticSeriesZonesDashStyle.Null;
-            var zoneDef = new List<StochasticSeriesZone> { new StochasticSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<StochasticSeriesZones> { new StochasticSeriesZones { DashStyle = defaultValue } };
 
             ((StochasticSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4822,7 +4822,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StochasticSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<StochasticSeriesZone> { new StochasticSeriesZone { FillColor = value } };
+            var zoneDef = new List<StochasticSeriesZones> { new StochasticSeriesZones { FillColor = value } };
 
             ((StochasticSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4836,7 +4836,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new StochasticSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<StochasticSeriesZone> { new StochasticSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<StochasticSeriesZones> { new StochasticSeriesZones { FillColor = defaultValue } };
 
         //    ((StochasticSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4851,7 +4851,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StochasticSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<StochasticSeriesZone> { new StochasticSeriesZone { Value = value } };
+            var zoneDef = new List<StochasticSeriesZones> { new StochasticSeriesZones { Value = value } };
 
             ((StochasticSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4864,7 +4864,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StochasticSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<StochasticSeriesZone> { new StochasticSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<StochasticSeriesZones> { new StochasticSeriesZones { Value = defaultValue } };
 
             ((StochasticSeries)chart.Series[0]).Zones = zoneDef;
 

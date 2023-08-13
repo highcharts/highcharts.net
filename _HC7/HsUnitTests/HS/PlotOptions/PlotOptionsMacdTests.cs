@@ -4001,7 +4001,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "macd", "zones" };
-            var zoneDef = new List<PlotOptionsMacdZone> { new PlotOptionsMacdZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsMacdZones> { new PlotOptionsMacdZones { ClassName = value } };
 
             chart.PlotOptions.Macd.Zones = zoneDef;
 
@@ -4014,7 +4014,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsMacdZone> { new PlotOptionsMacdZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsMacdZones> { new PlotOptionsMacdZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Macd.Zones = zoneDef;
 
@@ -4030,7 +4030,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "macd", "zones" };
-            var zoneDef = new List<PlotOptionsMacdZone> { new PlotOptionsMacdZone { Color = value } };
+            var zoneDef = new List<PlotOptionsMacdZones> { new PlotOptionsMacdZones { Color = value } };
 
             chart.PlotOptions.Macd.Zones = zoneDef;
 
@@ -4043,7 +4043,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsMacdZone> { new PlotOptionsMacdZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsMacdZones> { new PlotOptionsMacdZones { Color = defaultValue } };
 
             chart.PlotOptions.Macd.Zones = zoneDef;
 
@@ -4067,7 +4067,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "macd", "zones" };
-            var zoneDef = new List<PlotOptionsMacdZone> { new PlotOptionsMacdZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsMacdZones> { new PlotOptionsMacdZones { DashStyle = value } };
 
             chart.PlotOptions.Macd.Zones = zoneDef;
 
@@ -4080,7 +4080,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsMacdZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsMacdZone> { new PlotOptionsMacdZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsMacdZones> { new PlotOptionsMacdZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Macd.Zones = zoneDef;
 
@@ -4095,7 +4095,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "macd", "zones" };
-            var zoneDef = new List<PlotOptionsMacdZone> { new PlotOptionsMacdZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsMacdZones> { new PlotOptionsMacdZones { FillColor = value } };
 
             chart.PlotOptions.Macd.Zones = zoneDef;
 
@@ -4109,7 +4109,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsMacdZone> { new PlotOptionsMacdZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsMacdZones> { new PlotOptionsMacdZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Macd.Zones = zoneDef;
 
@@ -4124,7 +4124,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "macd", "zones" };
-            var zoneDef = new List<PlotOptionsMacdZone> { new PlotOptionsMacdZone { Value = value } };
+            var zoneDef = new List<PlotOptionsMacdZones> { new PlotOptionsMacdZones { Value = value } };
 
             chart.PlotOptions.Macd.Zones = zoneDef;
 
@@ -4137,7 +4137,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsMacdZone> { new PlotOptionsMacdZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsMacdZones> { new PlotOptionsMacdZones { Value = defaultValue } };
 
             chart.PlotOptions.Macd.Zones = zoneDef;
 

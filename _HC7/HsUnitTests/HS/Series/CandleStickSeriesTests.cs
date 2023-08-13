@@ -5030,7 +5030,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CandleStickSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<CandleStickSeriesZone> { new CandleStickSeriesZone { ClassName = value } };
+            var zoneDef = new List<CandleStickSeriesZones> { new CandleStickSeriesZones { ClassName = value } };
 
             ((CandleStickSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5043,7 +5043,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CandleStickSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<CandleStickSeriesZone> { new CandleStickSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<CandleStickSeriesZones> { new CandleStickSeriesZones { ClassName = defaultValue } };
 
             ((CandleStickSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5059,7 +5059,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CandleStickSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<CandleStickSeriesZone> { new CandleStickSeriesZone { Color = value } };
+            var zoneDef = new List<CandleStickSeriesZones> { new CandleStickSeriesZones { Color = value } };
 
             ((CandleStickSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5072,7 +5072,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CandleStickSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<CandleStickSeriesZone> { new CandleStickSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<CandleStickSeriesZones> { new CandleStickSeriesZones { Color = defaultValue } };
 
             ((CandleStickSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5096,7 +5096,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CandleStickSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<CandleStickSeriesZone> { new CandleStickSeriesZone { DashStyle = value } };
+            var zoneDef = new List<CandleStickSeriesZones> { new CandleStickSeriesZones { DashStyle = value } };
 
             ((CandleStickSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5109,7 +5109,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CandleStickSeries(); chart.Series.Add(series);
             var defaultValue = CandleStickSeriesZonesDashStyle.Null;
-            var zoneDef = new List<CandleStickSeriesZone> { new CandleStickSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<CandleStickSeriesZones> { new CandleStickSeriesZones { DashStyle = defaultValue } };
 
             ((CandleStickSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5124,7 +5124,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CandleStickSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<CandleStickSeriesZone> { new CandleStickSeriesZone { FillColor = value } };
+            var zoneDef = new List<CandleStickSeriesZones> { new CandleStickSeriesZones { FillColor = value } };
 
             ((CandleStickSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5138,7 +5138,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new CandleStickSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<CandleStickSeriesZone> { new CandleStickSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<CandleStickSeriesZones> { new CandleStickSeriesZones { FillColor = defaultValue } };
 
         //    ((CandleStickSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5153,7 +5153,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CandleStickSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<CandleStickSeriesZone> { new CandleStickSeriesZone { Value = value } };
+            var zoneDef = new List<CandleStickSeriesZones> { new CandleStickSeriesZones { Value = value } };
 
             ((CandleStickSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5166,7 +5166,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CandleStickSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<CandleStickSeriesZone> { new CandleStickSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<CandleStickSeriesZones> { new CandleStickSeriesZones { Value = defaultValue } };
 
             ((CandleStickSeries)chart.Series[0]).Zones = zoneDef;
 

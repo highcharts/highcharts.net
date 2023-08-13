@@ -4323,7 +4323,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "trendline", "zones" };
-            var zoneDef = new List<PlotOptionsTrendlineZone> { new PlotOptionsTrendlineZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsTrendlineZones> { new PlotOptionsTrendlineZones { ClassName = value } };
 
             chart.PlotOptions.Trendline.Zones = zoneDef;
 
@@ -4336,7 +4336,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsTrendlineZone> { new PlotOptionsTrendlineZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsTrendlineZones> { new PlotOptionsTrendlineZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Trendline.Zones = zoneDef;
 
@@ -4352,7 +4352,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "trendline", "zones" };
-            var zoneDef = new List<PlotOptionsTrendlineZone> { new PlotOptionsTrendlineZone { Color = value } };
+            var zoneDef = new List<PlotOptionsTrendlineZones> { new PlotOptionsTrendlineZones { Color = value } };
 
             chart.PlotOptions.Trendline.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsTrendlineZone> { new PlotOptionsTrendlineZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsTrendlineZones> { new PlotOptionsTrendlineZones { Color = defaultValue } };
 
             chart.PlotOptions.Trendline.Zones = zoneDef;
 
@@ -4389,7 +4389,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "trendline", "zones" };
-            var zoneDef = new List<PlotOptionsTrendlineZone> { new PlotOptionsTrendlineZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsTrendlineZones> { new PlotOptionsTrendlineZones { DashStyle = value } };
 
             chart.PlotOptions.Trendline.Zones = zoneDef;
 
@@ -4402,7 +4402,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsTrendlineZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsTrendlineZone> { new PlotOptionsTrendlineZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsTrendlineZones> { new PlotOptionsTrendlineZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Trendline.Zones = zoneDef;
 
@@ -4417,7 +4417,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "trendline", "zones" };
-            var zoneDef = new List<PlotOptionsTrendlineZone> { new PlotOptionsTrendlineZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsTrendlineZones> { new PlotOptionsTrendlineZones { FillColor = value } };
 
             chart.PlotOptions.Trendline.Zones = zoneDef;
 
@@ -4431,7 +4431,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsTrendlineZone> { new PlotOptionsTrendlineZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsTrendlineZones> { new PlotOptionsTrendlineZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Trendline.Zones = zoneDef;
 
@@ -4446,7 +4446,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "trendline", "zones" };
-            var zoneDef = new List<PlotOptionsTrendlineZone> { new PlotOptionsTrendlineZone { Value = value } };
+            var zoneDef = new List<PlotOptionsTrendlineZones> { new PlotOptionsTrendlineZones { Value = value } };
 
             chart.PlotOptions.Trendline.Zones = zoneDef;
 
@@ -4459,7 +4459,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsTrendlineZone> { new PlotOptionsTrendlineZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsTrendlineZones> { new PlotOptionsTrendlineZones { Value = defaultValue } };
 
             chart.PlotOptions.Trendline.Zones = zoneDef;
 

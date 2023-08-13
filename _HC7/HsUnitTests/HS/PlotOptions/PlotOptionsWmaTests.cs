@@ -4323,7 +4323,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "wma", "zones" };
-            var zoneDef = new List<PlotOptionsWmaZone> { new PlotOptionsWmaZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsWmaZones> { new PlotOptionsWmaZones { ClassName = value } };
 
             chart.PlotOptions.Wma.Zones = zoneDef;
 
@@ -4336,7 +4336,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsWmaZone> { new PlotOptionsWmaZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsWmaZones> { new PlotOptionsWmaZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Wma.Zones = zoneDef;
 
@@ -4352,7 +4352,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "wma", "zones" };
-            var zoneDef = new List<PlotOptionsWmaZone> { new PlotOptionsWmaZone { Color = value } };
+            var zoneDef = new List<PlotOptionsWmaZones> { new PlotOptionsWmaZones { Color = value } };
 
             chart.PlotOptions.Wma.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsWmaZone> { new PlotOptionsWmaZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsWmaZones> { new PlotOptionsWmaZones { Color = defaultValue } };
 
             chart.PlotOptions.Wma.Zones = zoneDef;
 
@@ -4389,7 +4389,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "wma", "zones" };
-            var zoneDef = new List<PlotOptionsWmaZone> { new PlotOptionsWmaZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsWmaZones> { new PlotOptionsWmaZones { DashStyle = value } };
 
             chart.PlotOptions.Wma.Zones = zoneDef;
 
@@ -4402,7 +4402,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsWmaZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsWmaZone> { new PlotOptionsWmaZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsWmaZones> { new PlotOptionsWmaZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Wma.Zones = zoneDef;
 
@@ -4417,7 +4417,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "wma", "zones" };
-            var zoneDef = new List<PlotOptionsWmaZone> { new PlotOptionsWmaZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsWmaZones> { new PlotOptionsWmaZones { FillColor = value } };
 
             chart.PlotOptions.Wma.Zones = zoneDef;
 
@@ -4431,7 +4431,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsWmaZone> { new PlotOptionsWmaZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsWmaZones> { new PlotOptionsWmaZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Wma.Zones = zoneDef;
 
@@ -4446,7 +4446,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "wma", "zones" };
-            var zoneDef = new List<PlotOptionsWmaZone> { new PlotOptionsWmaZone { Value = value } };
+            var zoneDef = new List<PlotOptionsWmaZones> { new PlotOptionsWmaZones { Value = value } };
 
             chart.PlotOptions.Wma.Zones = zoneDef;
 
@@ -4459,7 +4459,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsWmaZone> { new PlotOptionsWmaZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsWmaZones> { new PlotOptionsWmaZones { Value = defaultValue } };
 
             chart.PlotOptions.Wma.Zones = zoneDef;
 

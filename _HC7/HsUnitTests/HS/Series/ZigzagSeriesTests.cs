@@ -4729,7 +4729,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<ZigzagSeriesZone> { new ZigzagSeriesZone { ClassName = value } };
+            var zoneDef = new List<ZigzagSeriesZones> { new ZigzagSeriesZones { ClassName = value } };
 
             ((ZigzagSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4742,7 +4742,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<ZigzagSeriesZone> { new ZigzagSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<ZigzagSeriesZones> { new ZigzagSeriesZones { ClassName = defaultValue } };
 
             ((ZigzagSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4758,7 +4758,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<ZigzagSeriesZone> { new ZigzagSeriesZone { Color = value } };
+            var zoneDef = new List<ZigzagSeriesZones> { new ZigzagSeriesZones { Color = value } };
 
             ((ZigzagSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4771,7 +4771,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<ZigzagSeriesZone> { new ZigzagSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<ZigzagSeriesZones> { new ZigzagSeriesZones { Color = defaultValue } };
 
             ((ZigzagSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4795,7 +4795,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<ZigzagSeriesZone> { new ZigzagSeriesZone { DashStyle = value } };
+            var zoneDef = new List<ZigzagSeriesZones> { new ZigzagSeriesZones { DashStyle = value } };
 
             ((ZigzagSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4808,7 +4808,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
             var defaultValue = ZigzagSeriesZonesDashStyle.Null;
-            var zoneDef = new List<ZigzagSeriesZone> { new ZigzagSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<ZigzagSeriesZones> { new ZigzagSeriesZones { DashStyle = defaultValue } };
 
             ((ZigzagSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4823,7 +4823,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<ZigzagSeriesZone> { new ZigzagSeriesZone { FillColor = value } };
+            var zoneDef = new List<ZigzagSeriesZones> { new ZigzagSeriesZones { FillColor = value } };
 
             ((ZigzagSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4837,7 +4837,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<ZigzagSeriesZone> { new ZigzagSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<ZigzagSeriesZones> { new ZigzagSeriesZones { FillColor = defaultValue } };
 
         //    ((ZigzagSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4852,7 +4852,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<ZigzagSeriesZone> { new ZigzagSeriesZone { Value = value } };
+            var zoneDef = new List<ZigzagSeriesZones> { new ZigzagSeriesZones { Value = value } };
 
             ((ZigzagSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4865,7 +4865,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<ZigzagSeriesZone> { new ZigzagSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<ZigzagSeriesZones> { new ZigzagSeriesZones { Value = defaultValue } };
 
             ((ZigzagSeries)chart.Series[0]).Zones = zoneDef;
 

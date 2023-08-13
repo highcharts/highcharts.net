@@ -4610,7 +4610,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<XrangeSeriesZone> { new XrangeSeriesZone { ClassName = value } };
+            var zoneDef = new List<XrangeSeriesZones> { new XrangeSeriesZones { ClassName = value } };
 
             ((XrangeSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4623,7 +4623,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<XrangeSeriesZone> { new XrangeSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<XrangeSeriesZones> { new XrangeSeriesZones { ClassName = defaultValue } };
 
             ((XrangeSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4639,7 +4639,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<XrangeSeriesZone> { new XrangeSeriesZone { Color = value } };
+            var zoneDef = new List<XrangeSeriesZones> { new XrangeSeriesZones { Color = value } };
 
             ((XrangeSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4652,7 +4652,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<XrangeSeriesZone> { new XrangeSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<XrangeSeriesZones> { new XrangeSeriesZones { Color = defaultValue } };
 
             ((XrangeSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4676,7 +4676,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<XrangeSeriesZone> { new XrangeSeriesZone { DashStyle = value } };
+            var zoneDef = new List<XrangeSeriesZones> { new XrangeSeriesZones { DashStyle = value } };
 
             ((XrangeSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4689,7 +4689,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
             var defaultValue = XrangeSeriesZonesDashStyle.Null;
-            var zoneDef = new List<XrangeSeriesZone> { new XrangeSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<XrangeSeriesZones> { new XrangeSeriesZones { DashStyle = defaultValue } };
 
             ((XrangeSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4704,7 +4704,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<XrangeSeriesZone> { new XrangeSeriesZone { FillColor = value } };
+            var zoneDef = new List<XrangeSeriesZones> { new XrangeSeriesZones { FillColor = value } };
 
             ((XrangeSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4718,7 +4718,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<XrangeSeriesZone> { new XrangeSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<XrangeSeriesZones> { new XrangeSeriesZones { FillColor = defaultValue } };
 
         //    ((XrangeSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4733,7 +4733,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<XrangeSeriesZone> { new XrangeSeriesZone { Value = value } };
+            var zoneDef = new List<XrangeSeriesZones> { new XrangeSeriesZones { Value = value } };
 
             ((XrangeSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4746,7 +4746,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<XrangeSeriesZone> { new XrangeSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<XrangeSeriesZones> { new XrangeSeriesZones { Value = defaultValue } };
 
             ((XrangeSeries)chart.Series[0]).Zones = zoneDef;
 

@@ -4323,7 +4323,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vwap", "zones" };
-            var zoneDef = new List<PlotOptionsVwapZone> { new PlotOptionsVwapZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsVwapZones> { new PlotOptionsVwapZones { ClassName = value } };
 
             chart.PlotOptions.Vwap.Zones = zoneDef;
 
@@ -4336,7 +4336,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsVwapZone> { new PlotOptionsVwapZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsVwapZones> { new PlotOptionsVwapZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Vwap.Zones = zoneDef;
 
@@ -4352,7 +4352,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vwap", "zones" };
-            var zoneDef = new List<PlotOptionsVwapZone> { new PlotOptionsVwapZone { Color = value } };
+            var zoneDef = new List<PlotOptionsVwapZones> { new PlotOptionsVwapZones { Color = value } };
 
             chart.PlotOptions.Vwap.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsVwapZone> { new PlotOptionsVwapZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsVwapZones> { new PlotOptionsVwapZones { Color = defaultValue } };
 
             chart.PlotOptions.Vwap.Zones = zoneDef;
 
@@ -4389,7 +4389,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vwap", "zones" };
-            var zoneDef = new List<PlotOptionsVwapZone> { new PlotOptionsVwapZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsVwapZones> { new PlotOptionsVwapZones { DashStyle = value } };
 
             chart.PlotOptions.Vwap.Zones = zoneDef;
 
@@ -4402,7 +4402,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsVwapZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsVwapZone> { new PlotOptionsVwapZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsVwapZones> { new PlotOptionsVwapZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Vwap.Zones = zoneDef;
 
@@ -4417,7 +4417,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vwap", "zones" };
-            var zoneDef = new List<PlotOptionsVwapZone> { new PlotOptionsVwapZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsVwapZones> { new PlotOptionsVwapZones { FillColor = value } };
 
             chart.PlotOptions.Vwap.Zones = zoneDef;
 
@@ -4431,7 +4431,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsVwapZone> { new PlotOptionsVwapZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsVwapZones> { new PlotOptionsVwapZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Vwap.Zones = zoneDef;
 
@@ -4446,7 +4446,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vwap", "zones" };
-            var zoneDef = new List<PlotOptionsVwapZone> { new PlotOptionsVwapZone { Value = value } };
+            var zoneDef = new List<PlotOptionsVwapZones> { new PlotOptionsVwapZones { Value = value } };
 
             chart.PlotOptions.Vwap.Zones = zoneDef;
 
@@ -4459,7 +4459,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsVwapZone> { new PlotOptionsVwapZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsVwapZones> { new PlotOptionsVwapZones { Value = defaultValue } };
 
             chart.PlotOptions.Vwap.Zones = zoneDef;
 

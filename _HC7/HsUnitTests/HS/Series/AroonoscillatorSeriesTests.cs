@@ -4727,7 +4727,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AroonoscillatorSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<AroonoscillatorSeriesZone> { new AroonoscillatorSeriesZone { ClassName = value } };
+            var zoneDef = new List<AroonoscillatorSeriesZones> { new AroonoscillatorSeriesZones { ClassName = value } };
 
             ((AroonoscillatorSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4740,7 +4740,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AroonoscillatorSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<AroonoscillatorSeriesZone> { new AroonoscillatorSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<AroonoscillatorSeriesZones> { new AroonoscillatorSeriesZones { ClassName = defaultValue } };
 
             ((AroonoscillatorSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4756,7 +4756,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AroonoscillatorSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<AroonoscillatorSeriesZone> { new AroonoscillatorSeriesZone { Color = value } };
+            var zoneDef = new List<AroonoscillatorSeriesZones> { new AroonoscillatorSeriesZones { Color = value } };
 
             ((AroonoscillatorSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4769,7 +4769,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AroonoscillatorSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<AroonoscillatorSeriesZone> { new AroonoscillatorSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<AroonoscillatorSeriesZones> { new AroonoscillatorSeriesZones { Color = defaultValue } };
 
             ((AroonoscillatorSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4793,7 +4793,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AroonoscillatorSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<AroonoscillatorSeriesZone> { new AroonoscillatorSeriesZone { DashStyle = value } };
+            var zoneDef = new List<AroonoscillatorSeriesZones> { new AroonoscillatorSeriesZones { DashStyle = value } };
 
             ((AroonoscillatorSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4806,7 +4806,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AroonoscillatorSeries(); chart.Series.Add(series);
             var defaultValue = AroonoscillatorSeriesZonesDashStyle.Null;
-            var zoneDef = new List<AroonoscillatorSeriesZone> { new AroonoscillatorSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<AroonoscillatorSeriesZones> { new AroonoscillatorSeriesZones { DashStyle = defaultValue } };
 
             ((AroonoscillatorSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4821,7 +4821,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AroonoscillatorSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<AroonoscillatorSeriesZone> { new AroonoscillatorSeriesZone { FillColor = value } };
+            var zoneDef = new List<AroonoscillatorSeriesZones> { new AroonoscillatorSeriesZones { FillColor = value } };
 
             ((AroonoscillatorSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4835,7 +4835,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new AroonoscillatorSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<AroonoscillatorSeriesZone> { new AroonoscillatorSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<AroonoscillatorSeriesZones> { new AroonoscillatorSeriesZones { FillColor = defaultValue } };
 
         //    ((AroonoscillatorSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4850,7 +4850,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AroonoscillatorSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<AroonoscillatorSeriesZone> { new AroonoscillatorSeriesZone { Value = value } };
+            var zoneDef = new List<AroonoscillatorSeriesZones> { new AroonoscillatorSeriesZones { Value = value } };
 
             ((AroonoscillatorSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4863,7 +4863,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AroonoscillatorSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<AroonoscillatorSeriesZone> { new AroonoscillatorSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<AroonoscillatorSeriesZones> { new AroonoscillatorSeriesZones { Value = defaultValue } };
 
             ((AroonoscillatorSeries)chart.Series[0]).Zones = zoneDef;
 

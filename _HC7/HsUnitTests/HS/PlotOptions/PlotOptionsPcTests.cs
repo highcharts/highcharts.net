@@ -4324,7 +4324,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pc", "zones" };
-            var zoneDef = new List<PlotOptionsPcZone> { new PlotOptionsPcZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsPcZones> { new PlotOptionsPcZones { ClassName = value } };
 
             chart.PlotOptions.Pc.Zones = zoneDef;
 
@@ -4337,7 +4337,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsPcZone> { new PlotOptionsPcZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsPcZones> { new PlotOptionsPcZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Pc.Zones = zoneDef;
 
@@ -4353,7 +4353,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pc", "zones" };
-            var zoneDef = new List<PlotOptionsPcZone> { new PlotOptionsPcZone { Color = value } };
+            var zoneDef = new List<PlotOptionsPcZones> { new PlotOptionsPcZones { Color = value } };
 
             chart.PlotOptions.Pc.Zones = zoneDef;
 
@@ -4366,7 +4366,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsPcZone> { new PlotOptionsPcZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsPcZones> { new PlotOptionsPcZones { Color = defaultValue } };
 
             chart.PlotOptions.Pc.Zones = zoneDef;
 
@@ -4390,7 +4390,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pc", "zones" };
-            var zoneDef = new List<PlotOptionsPcZone> { new PlotOptionsPcZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsPcZones> { new PlotOptionsPcZones { DashStyle = value } };
 
             chart.PlotOptions.Pc.Zones = zoneDef;
 
@@ -4403,7 +4403,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsPcZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsPcZone> { new PlotOptionsPcZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsPcZones> { new PlotOptionsPcZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Pc.Zones = zoneDef;
 
@@ -4418,7 +4418,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pc", "zones" };
-            var zoneDef = new List<PlotOptionsPcZone> { new PlotOptionsPcZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsPcZones> { new PlotOptionsPcZones { FillColor = value } };
 
             chart.PlotOptions.Pc.Zones = zoneDef;
 
@@ -4432,7 +4432,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsPcZone> { new PlotOptionsPcZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsPcZones> { new PlotOptionsPcZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Pc.Zones = zoneDef;
 
@@ -4447,7 +4447,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pc", "zones" };
-            var zoneDef = new List<PlotOptionsPcZone> { new PlotOptionsPcZone { Value = value } };
+            var zoneDef = new List<PlotOptionsPcZones> { new PlotOptionsPcZones { Value = value } };
 
             chart.PlotOptions.Pc.Zones = zoneDef;
 
@@ -4460,7 +4460,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsPcZone> { new PlotOptionsPcZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsPcZones> { new PlotOptionsPcZones { Value = defaultValue } };
 
             chart.PlotOptions.Pc.Zones = zoneDef;
 

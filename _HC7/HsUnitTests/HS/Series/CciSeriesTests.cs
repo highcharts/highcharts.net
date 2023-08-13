@@ -4727,7 +4727,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CciSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<CciSeriesZone> { new CciSeriesZone { ClassName = value } };
+            var zoneDef = new List<CciSeriesZones> { new CciSeriesZones { ClassName = value } };
 
             ((CciSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4740,7 +4740,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CciSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<CciSeriesZone> { new CciSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<CciSeriesZones> { new CciSeriesZones { ClassName = defaultValue } };
 
             ((CciSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4756,7 +4756,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CciSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<CciSeriesZone> { new CciSeriesZone { Color = value } };
+            var zoneDef = new List<CciSeriesZones> { new CciSeriesZones { Color = value } };
 
             ((CciSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4769,7 +4769,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CciSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<CciSeriesZone> { new CciSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<CciSeriesZones> { new CciSeriesZones { Color = defaultValue } };
 
             ((CciSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4793,7 +4793,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CciSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<CciSeriesZone> { new CciSeriesZone { DashStyle = value } };
+            var zoneDef = new List<CciSeriesZones> { new CciSeriesZones { DashStyle = value } };
 
             ((CciSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4806,7 +4806,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CciSeries(); chart.Series.Add(series);
             var defaultValue = CciSeriesZonesDashStyle.Null;
-            var zoneDef = new List<CciSeriesZone> { new CciSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<CciSeriesZones> { new CciSeriesZones { DashStyle = defaultValue } };
 
             ((CciSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4821,7 +4821,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CciSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<CciSeriesZone> { new CciSeriesZone { FillColor = value } };
+            var zoneDef = new List<CciSeriesZones> { new CciSeriesZones { FillColor = value } };
 
             ((CciSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4835,7 +4835,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new CciSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<CciSeriesZone> { new CciSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<CciSeriesZones> { new CciSeriesZones { FillColor = defaultValue } };
 
         //    ((CciSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4850,7 +4850,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CciSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<CciSeriesZone> { new CciSeriesZone { Value = value } };
+            var zoneDef = new List<CciSeriesZones> { new CciSeriesZones { Value = value } };
 
             ((CciSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4863,7 +4863,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CciSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<CciSeriesZone> { new CciSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<CciSeriesZones> { new CciSeriesZones { Value = defaultValue } };
 
             ((CciSeries)chart.Series[0]).Zones = zoneDef;
 

@@ -4241,7 +4241,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "streamgraph", "zones" };
-            var zoneDef = new List<PlotOptionsStreamgraphZone> { new PlotOptionsStreamgraphZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsStreamgraphZones> { new PlotOptionsStreamgraphZones { ClassName = value } };
 
             chart.PlotOptions.Streamgraph.Zones = zoneDef;
 
@@ -4254,7 +4254,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsStreamgraphZone> { new PlotOptionsStreamgraphZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsStreamgraphZones> { new PlotOptionsStreamgraphZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Streamgraph.Zones = zoneDef;
 
@@ -4270,7 +4270,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "streamgraph", "zones" };
-            var zoneDef = new List<PlotOptionsStreamgraphZone> { new PlotOptionsStreamgraphZone { Color = value } };
+            var zoneDef = new List<PlotOptionsStreamgraphZones> { new PlotOptionsStreamgraphZones { Color = value } };
 
             chart.PlotOptions.Streamgraph.Zones = zoneDef;
 
@@ -4283,7 +4283,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsStreamgraphZone> { new PlotOptionsStreamgraphZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsStreamgraphZones> { new PlotOptionsStreamgraphZones { Color = defaultValue } };
 
             chart.PlotOptions.Streamgraph.Zones = zoneDef;
 
@@ -4307,7 +4307,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "streamgraph", "zones" };
-            var zoneDef = new List<PlotOptionsStreamgraphZone> { new PlotOptionsStreamgraphZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsStreamgraphZones> { new PlotOptionsStreamgraphZones { DashStyle = value } };
 
             chart.PlotOptions.Streamgraph.Zones = zoneDef;
 
@@ -4320,7 +4320,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsStreamgraphZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsStreamgraphZone> { new PlotOptionsStreamgraphZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsStreamgraphZones> { new PlotOptionsStreamgraphZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Streamgraph.Zones = zoneDef;
 
@@ -4335,7 +4335,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "streamgraph", "zones" };
-            var zoneDef = new List<PlotOptionsStreamgraphZone> { new PlotOptionsStreamgraphZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsStreamgraphZones> { new PlotOptionsStreamgraphZones { FillColor = value } };
 
             chart.PlotOptions.Streamgraph.Zones = zoneDef;
 
@@ -4349,7 +4349,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsStreamgraphZone> { new PlotOptionsStreamgraphZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsStreamgraphZones> { new PlotOptionsStreamgraphZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Streamgraph.Zones = zoneDef;
 
@@ -4364,7 +4364,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "streamgraph", "zones" };
-            var zoneDef = new List<PlotOptionsStreamgraphZone> { new PlotOptionsStreamgraphZone { Value = value } };
+            var zoneDef = new List<PlotOptionsStreamgraphZones> { new PlotOptionsStreamgraphZones { Value = value } };
 
             chart.PlotOptions.Streamgraph.Zones = zoneDef;
 
@@ -4377,7 +4377,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsStreamgraphZone> { new PlotOptionsStreamgraphZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsStreamgraphZones> { new PlotOptionsStreamgraphZones { Value = defaultValue } };
 
             chart.PlotOptions.Streamgraph.Zones = zoneDef;
 

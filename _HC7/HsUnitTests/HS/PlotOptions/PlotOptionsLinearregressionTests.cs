@@ -4322,7 +4322,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "linearregression", "zones" };
-            var zoneDef = new List<PlotOptionsLinearregressionZone> { new PlotOptionsLinearregressionZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsLinearregressionZones> { new PlotOptionsLinearregressionZones { ClassName = value } };
 
             chart.PlotOptions.Linearregression.Zones = zoneDef;
 
@@ -4335,7 +4335,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsLinearregressionZone> { new PlotOptionsLinearregressionZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsLinearregressionZones> { new PlotOptionsLinearregressionZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Linearregression.Zones = zoneDef;
 
@@ -4351,7 +4351,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "linearregression", "zones" };
-            var zoneDef = new List<PlotOptionsLinearregressionZone> { new PlotOptionsLinearregressionZone { Color = value } };
+            var zoneDef = new List<PlotOptionsLinearregressionZones> { new PlotOptionsLinearregressionZones { Color = value } };
 
             chart.PlotOptions.Linearregression.Zones = zoneDef;
 
@@ -4364,7 +4364,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsLinearregressionZone> { new PlotOptionsLinearregressionZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsLinearregressionZones> { new PlotOptionsLinearregressionZones { Color = defaultValue } };
 
             chart.PlotOptions.Linearregression.Zones = zoneDef;
 
@@ -4388,7 +4388,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "linearregression", "zones" };
-            var zoneDef = new List<PlotOptionsLinearregressionZone> { new PlotOptionsLinearregressionZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsLinearregressionZones> { new PlotOptionsLinearregressionZones { DashStyle = value } };
 
             chart.PlotOptions.Linearregression.Zones = zoneDef;
 
@@ -4401,7 +4401,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsLinearregressionZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsLinearregressionZone> { new PlotOptionsLinearregressionZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsLinearregressionZones> { new PlotOptionsLinearregressionZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Linearregression.Zones = zoneDef;
 
@@ -4416,7 +4416,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "linearregression", "zones" };
-            var zoneDef = new List<PlotOptionsLinearregressionZone> { new PlotOptionsLinearregressionZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsLinearregressionZones> { new PlotOptionsLinearregressionZones { FillColor = value } };
 
             chart.PlotOptions.Linearregression.Zones = zoneDef;
 
@@ -4430,7 +4430,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsLinearregressionZone> { new PlotOptionsLinearregressionZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsLinearregressionZones> { new PlotOptionsLinearregressionZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Linearregression.Zones = zoneDef;
 
@@ -4445,7 +4445,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "linearregression", "zones" };
-            var zoneDef = new List<PlotOptionsLinearregressionZone> { new PlotOptionsLinearregressionZone { Value = value } };
+            var zoneDef = new List<PlotOptionsLinearregressionZones> { new PlotOptionsLinearregressionZones { Value = value } };
 
             chart.PlotOptions.Linearregression.Zones = zoneDef;
 
@@ -4458,7 +4458,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsLinearregressionZone> { new PlotOptionsLinearregressionZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsLinearregressionZones> { new PlotOptionsLinearregressionZones { Value = defaultValue } };
 
             chart.PlotOptions.Linearregression.Zones = zoneDef;
 

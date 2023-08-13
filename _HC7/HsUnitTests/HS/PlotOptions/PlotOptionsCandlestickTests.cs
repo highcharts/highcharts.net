@@ -3993,7 +3993,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "candlestick", "zones" };
-            var zoneDef = new List<PlotOptionsCandlestickZone> { new PlotOptionsCandlestickZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsCandlestickZones> { new PlotOptionsCandlestickZones { ClassName = value } };
 
             chart.PlotOptions.Candlestick.Zones = zoneDef;
 
@@ -4006,7 +4006,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsCandlestickZone> { new PlotOptionsCandlestickZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsCandlestickZones> { new PlotOptionsCandlestickZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Candlestick.Zones = zoneDef;
 
@@ -4022,7 +4022,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "candlestick", "zones" };
-            var zoneDef = new List<PlotOptionsCandlestickZone> { new PlotOptionsCandlestickZone { Color = value } };
+            var zoneDef = new List<PlotOptionsCandlestickZones> { new PlotOptionsCandlestickZones { Color = value } };
 
             chart.PlotOptions.Candlestick.Zones = zoneDef;
 
@@ -4035,7 +4035,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsCandlestickZone> { new PlotOptionsCandlestickZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsCandlestickZones> { new PlotOptionsCandlestickZones { Color = defaultValue } };
 
             chart.PlotOptions.Candlestick.Zones = zoneDef;
 
@@ -4059,7 +4059,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "candlestick", "zones" };
-            var zoneDef = new List<PlotOptionsCandlestickZone> { new PlotOptionsCandlestickZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsCandlestickZones> { new PlotOptionsCandlestickZones { DashStyle = value } };
 
             chart.PlotOptions.Candlestick.Zones = zoneDef;
 
@@ -4072,7 +4072,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsCandlestickZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsCandlestickZone> { new PlotOptionsCandlestickZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsCandlestickZones> { new PlotOptionsCandlestickZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Candlestick.Zones = zoneDef;
 
@@ -4087,7 +4087,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "candlestick", "zones" };
-            var zoneDef = new List<PlotOptionsCandlestickZone> { new PlotOptionsCandlestickZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsCandlestickZones> { new PlotOptionsCandlestickZones { FillColor = value } };
 
             chart.PlotOptions.Candlestick.Zones = zoneDef;
 
@@ -4101,7 +4101,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsCandlestickZone> { new PlotOptionsCandlestickZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsCandlestickZones> { new PlotOptionsCandlestickZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Candlestick.Zones = zoneDef;
 
@@ -4116,7 +4116,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "candlestick", "zones" };
-            var zoneDef = new List<PlotOptionsCandlestickZone> { new PlotOptionsCandlestickZone { Value = value } };
+            var zoneDef = new List<PlotOptionsCandlestickZones> { new PlotOptionsCandlestickZones { Value = value } };
 
             chart.PlotOptions.Candlestick.Zones = zoneDef;
 
@@ -4129,7 +4129,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsCandlestickZone> { new PlotOptionsCandlestickZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsCandlestickZones> { new PlotOptionsCandlestickZones { Value = defaultValue } };
 
             chart.PlotOptions.Candlestick.Zones = zoneDef;
 

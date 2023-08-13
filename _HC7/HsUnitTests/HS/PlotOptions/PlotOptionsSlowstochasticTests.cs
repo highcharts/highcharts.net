@@ -4323,7 +4323,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "slowstochastic", "zones" };
-            var zoneDef = new List<PlotOptionsSlowstochasticZone> { new PlotOptionsSlowstochasticZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsSlowstochasticZones> { new PlotOptionsSlowstochasticZones { ClassName = value } };
 
             chart.PlotOptions.Slowstochastic.Zones = zoneDef;
 
@@ -4336,7 +4336,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsSlowstochasticZone> { new PlotOptionsSlowstochasticZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsSlowstochasticZones> { new PlotOptionsSlowstochasticZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Slowstochastic.Zones = zoneDef;
 
@@ -4352,7 +4352,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "slowstochastic", "zones" };
-            var zoneDef = new List<PlotOptionsSlowstochasticZone> { new PlotOptionsSlowstochasticZone { Color = value } };
+            var zoneDef = new List<PlotOptionsSlowstochasticZones> { new PlotOptionsSlowstochasticZones { Color = value } };
 
             chart.PlotOptions.Slowstochastic.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsSlowstochasticZone> { new PlotOptionsSlowstochasticZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsSlowstochasticZones> { new PlotOptionsSlowstochasticZones { Color = defaultValue } };
 
             chart.PlotOptions.Slowstochastic.Zones = zoneDef;
 
@@ -4389,7 +4389,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "slowstochastic", "zones" };
-            var zoneDef = new List<PlotOptionsSlowstochasticZone> { new PlotOptionsSlowstochasticZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsSlowstochasticZones> { new PlotOptionsSlowstochasticZones { DashStyle = value } };
 
             chart.PlotOptions.Slowstochastic.Zones = zoneDef;
 
@@ -4402,7 +4402,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsSlowstochasticZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsSlowstochasticZone> { new PlotOptionsSlowstochasticZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsSlowstochasticZones> { new PlotOptionsSlowstochasticZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Slowstochastic.Zones = zoneDef;
 
@@ -4417,7 +4417,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "slowstochastic", "zones" };
-            var zoneDef = new List<PlotOptionsSlowstochasticZone> { new PlotOptionsSlowstochasticZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsSlowstochasticZones> { new PlotOptionsSlowstochasticZones { FillColor = value } };
 
             chart.PlotOptions.Slowstochastic.Zones = zoneDef;
 
@@ -4431,7 +4431,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsSlowstochasticZone> { new PlotOptionsSlowstochasticZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsSlowstochasticZones> { new PlotOptionsSlowstochasticZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Slowstochastic.Zones = zoneDef;
 
@@ -4446,7 +4446,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "slowstochastic", "zones" };
-            var zoneDef = new List<PlotOptionsSlowstochasticZone> { new PlotOptionsSlowstochasticZone { Value = value } };
+            var zoneDef = new List<PlotOptionsSlowstochasticZones> { new PlotOptionsSlowstochasticZones { Value = value } };
 
             chart.PlotOptions.Slowstochastic.Zones = zoneDef;
 
@@ -4459,7 +4459,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsSlowstochasticZone> { new PlotOptionsSlowstochasticZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsSlowstochasticZones> { new PlotOptionsSlowstochasticZones { Value = defaultValue } };
 
             chart.PlotOptions.Slowstochastic.Zones = zoneDef;
 

@@ -4728,7 +4728,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KlingerSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<KlingerSeriesZone> { new KlingerSeriesZone { ClassName = value } };
+            var zoneDef = new List<KlingerSeriesZones> { new KlingerSeriesZones { ClassName = value } };
 
             ((KlingerSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4741,7 +4741,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KlingerSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<KlingerSeriesZone> { new KlingerSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<KlingerSeriesZones> { new KlingerSeriesZones { ClassName = defaultValue } };
 
             ((KlingerSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4757,7 +4757,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KlingerSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<KlingerSeriesZone> { new KlingerSeriesZone { Color = value } };
+            var zoneDef = new List<KlingerSeriesZones> { new KlingerSeriesZones { Color = value } };
 
             ((KlingerSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4770,7 +4770,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KlingerSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<KlingerSeriesZone> { new KlingerSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<KlingerSeriesZones> { new KlingerSeriesZones { Color = defaultValue } };
 
             ((KlingerSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4794,7 +4794,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KlingerSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<KlingerSeriesZone> { new KlingerSeriesZone { DashStyle = value } };
+            var zoneDef = new List<KlingerSeriesZones> { new KlingerSeriesZones { DashStyle = value } };
 
             ((KlingerSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4807,7 +4807,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KlingerSeries(); chart.Series.Add(series);
             var defaultValue = KlingerSeriesZonesDashStyle.Null;
-            var zoneDef = new List<KlingerSeriesZone> { new KlingerSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<KlingerSeriesZones> { new KlingerSeriesZones { DashStyle = defaultValue } };
 
             ((KlingerSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4822,7 +4822,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KlingerSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<KlingerSeriesZone> { new KlingerSeriesZone { FillColor = value } };
+            var zoneDef = new List<KlingerSeriesZones> { new KlingerSeriesZones { FillColor = value } };
 
             ((KlingerSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4836,7 +4836,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new KlingerSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<KlingerSeriesZone> { new KlingerSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<KlingerSeriesZones> { new KlingerSeriesZones { FillColor = defaultValue } };
 
         //    ((KlingerSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4851,7 +4851,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KlingerSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<KlingerSeriesZone> { new KlingerSeriesZone { Value = value } };
+            var zoneDef = new List<KlingerSeriesZones> { new KlingerSeriesZones { Value = value } };
 
             ((KlingerSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4864,7 +4864,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KlingerSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<KlingerSeriesZone> { new KlingerSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<KlingerSeriesZones> { new KlingerSeriesZones { Value = defaultValue } };
 
             ((KlingerSeries)chart.Series[0]).Zones = zoneDef;
 

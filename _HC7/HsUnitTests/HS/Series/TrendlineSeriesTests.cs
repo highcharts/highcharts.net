@@ -4728,7 +4728,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TrendlineSeriesZone> { new TrendlineSeriesZone { ClassName = value } };
+            var zoneDef = new List<TrendlineSeriesZones> { new TrendlineSeriesZones { ClassName = value } };
 
             ((TrendlineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4741,7 +4741,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<TrendlineSeriesZone> { new TrendlineSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<TrendlineSeriesZones> { new TrendlineSeriesZones { ClassName = defaultValue } };
 
             ((TrendlineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4757,7 +4757,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TrendlineSeriesZone> { new TrendlineSeriesZone { Color = value } };
+            var zoneDef = new List<TrendlineSeriesZones> { new TrendlineSeriesZones { Color = value } };
 
             ((TrendlineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4770,7 +4770,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<TrendlineSeriesZone> { new TrendlineSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<TrendlineSeriesZones> { new TrendlineSeriesZones { Color = defaultValue } };
 
             ((TrendlineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4794,7 +4794,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TrendlineSeriesZone> { new TrendlineSeriesZone { DashStyle = value } };
+            var zoneDef = new List<TrendlineSeriesZones> { new TrendlineSeriesZones { DashStyle = value } };
 
             ((TrendlineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4807,7 +4807,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
             var defaultValue = TrendlineSeriesZonesDashStyle.Null;
-            var zoneDef = new List<TrendlineSeriesZone> { new TrendlineSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<TrendlineSeriesZones> { new TrendlineSeriesZones { DashStyle = defaultValue } };
 
             ((TrendlineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4822,7 +4822,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TrendlineSeriesZone> { new TrendlineSeriesZone { FillColor = value } };
+            var zoneDef = new List<TrendlineSeriesZones> { new TrendlineSeriesZones { FillColor = value } };
 
             ((TrendlineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4836,7 +4836,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<TrendlineSeriesZone> { new TrendlineSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<TrendlineSeriesZones> { new TrendlineSeriesZones { FillColor = defaultValue } };
 
         //    ((TrendlineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4851,7 +4851,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TrendlineSeriesZone> { new TrendlineSeriesZone { Value = value } };
+            var zoneDef = new List<TrendlineSeriesZones> { new TrendlineSeriesZones { Value = value } };
 
             ((TrendlineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4864,7 +4864,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<TrendlineSeriesZone> { new TrendlineSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<TrendlineSeriesZones> { new TrendlineSeriesZones { Value = defaultValue } };
 
             ((TrendlineSeries)chart.Series[0]).Zones = zoneDef;
 

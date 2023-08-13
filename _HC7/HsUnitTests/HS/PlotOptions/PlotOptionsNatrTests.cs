@@ -4297,7 +4297,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "natr", "zones" };
-            var zoneDef = new List<PlotOptionsNatrZone> { new PlotOptionsNatrZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsNatrZones> { new PlotOptionsNatrZones { ClassName = value } };
 
             chart.PlotOptions.Natr.Zones = zoneDef;
 
@@ -4310,7 +4310,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsNatrZone> { new PlotOptionsNatrZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsNatrZones> { new PlotOptionsNatrZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Natr.Zones = zoneDef;
 
@@ -4326,7 +4326,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "natr", "zones" };
-            var zoneDef = new List<PlotOptionsNatrZone> { new PlotOptionsNatrZone { Color = value } };
+            var zoneDef = new List<PlotOptionsNatrZones> { new PlotOptionsNatrZones { Color = value } };
 
             chart.PlotOptions.Natr.Zones = zoneDef;
 
@@ -4339,7 +4339,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsNatrZone> { new PlotOptionsNatrZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsNatrZones> { new PlotOptionsNatrZones { Color = defaultValue } };
 
             chart.PlotOptions.Natr.Zones = zoneDef;
 
@@ -4363,7 +4363,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "natr", "zones" };
-            var zoneDef = new List<PlotOptionsNatrZone> { new PlotOptionsNatrZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsNatrZones> { new PlotOptionsNatrZones { DashStyle = value } };
 
             chart.PlotOptions.Natr.Zones = zoneDef;
 
@@ -4376,7 +4376,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsNatrZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsNatrZone> { new PlotOptionsNatrZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsNatrZones> { new PlotOptionsNatrZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Natr.Zones = zoneDef;
 
@@ -4391,7 +4391,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "natr", "zones" };
-            var zoneDef = new List<PlotOptionsNatrZone> { new PlotOptionsNatrZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsNatrZones> { new PlotOptionsNatrZones { FillColor = value } };
 
             chart.PlotOptions.Natr.Zones = zoneDef;
 
@@ -4405,7 +4405,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsNatrZone> { new PlotOptionsNatrZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsNatrZones> { new PlotOptionsNatrZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Natr.Zones = zoneDef;
 
@@ -4420,7 +4420,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "natr", "zones" };
-            var zoneDef = new List<PlotOptionsNatrZone> { new PlotOptionsNatrZone { Value = value } };
+            var zoneDef = new List<PlotOptionsNatrZones> { new PlotOptionsNatrZones { Value = value } };
 
             chart.PlotOptions.Natr.Zones = zoneDef;
 
@@ -4433,7 +4433,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsNatrZone> { new PlotOptionsNatrZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsNatrZones> { new PlotOptionsNatrZones { Value = defaultValue } };
 
             chart.PlotOptions.Natr.Zones = zoneDef;
 

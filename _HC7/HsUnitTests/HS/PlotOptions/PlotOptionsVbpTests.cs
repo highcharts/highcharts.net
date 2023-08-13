@@ -4323,7 +4323,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vbp", "zones" };
-            var zoneDef = new List<PlotOptionsVbpZone> { new PlotOptionsVbpZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsVbpZones> { new PlotOptionsVbpZones { ClassName = value } };
 
             chart.PlotOptions.Vbp.Zones = zoneDef;
 
@@ -4336,7 +4336,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsVbpZone> { new PlotOptionsVbpZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsVbpZones> { new PlotOptionsVbpZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Vbp.Zones = zoneDef;
 
@@ -4352,7 +4352,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vbp", "zones" };
-            var zoneDef = new List<PlotOptionsVbpZone> { new PlotOptionsVbpZone { Color = value } };
+            var zoneDef = new List<PlotOptionsVbpZones> { new PlotOptionsVbpZones { Color = value } };
 
             chart.PlotOptions.Vbp.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsVbpZone> { new PlotOptionsVbpZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsVbpZones> { new PlotOptionsVbpZones { Color = defaultValue } };
 
             chart.PlotOptions.Vbp.Zones = zoneDef;
 
@@ -4389,7 +4389,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vbp", "zones" };
-            var zoneDef = new List<PlotOptionsVbpZone> { new PlotOptionsVbpZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsVbpZones> { new PlotOptionsVbpZones { DashStyle = value } };
 
             chart.PlotOptions.Vbp.Zones = zoneDef;
 
@@ -4402,7 +4402,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsVbpZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsVbpZone> { new PlotOptionsVbpZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsVbpZones> { new PlotOptionsVbpZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Vbp.Zones = zoneDef;
 
@@ -4417,7 +4417,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vbp", "zones" };
-            var zoneDef = new List<PlotOptionsVbpZone> { new PlotOptionsVbpZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsVbpZones> { new PlotOptionsVbpZones { FillColor = value } };
 
             chart.PlotOptions.Vbp.Zones = zoneDef;
 
@@ -4431,7 +4431,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsVbpZone> { new PlotOptionsVbpZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsVbpZones> { new PlotOptionsVbpZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Vbp.Zones = zoneDef;
 
@@ -4446,7 +4446,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vbp", "zones" };
-            var zoneDef = new List<PlotOptionsVbpZone> { new PlotOptionsVbpZone { Value = value } };
+            var zoneDef = new List<PlotOptionsVbpZones> { new PlotOptionsVbpZones { Value = value } };
 
             chart.PlotOptions.Vbp.Zones = zoneDef;
 
@@ -4459,7 +4459,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsVbpZone> { new PlotOptionsVbpZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsVbpZones> { new PlotOptionsVbpZones { Value = defaultValue } };
 
             chart.PlotOptions.Vbp.Zones = zoneDef;
 

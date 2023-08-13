@@ -4728,7 +4728,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LinearregressionSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<LinearregressionSeriesZone> { new LinearregressionSeriesZone { ClassName = value } };
+            var zoneDef = new List<LinearregressionSeriesZones> { new LinearregressionSeriesZones { ClassName = value } };
 
             ((LinearregressionSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4741,7 +4741,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LinearregressionSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<LinearregressionSeriesZone> { new LinearregressionSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<LinearregressionSeriesZones> { new LinearregressionSeriesZones { ClassName = defaultValue } };
 
             ((LinearregressionSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4757,7 +4757,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LinearregressionSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<LinearregressionSeriesZone> { new LinearregressionSeriesZone { Color = value } };
+            var zoneDef = new List<LinearregressionSeriesZones> { new LinearregressionSeriesZones { Color = value } };
 
             ((LinearregressionSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4770,7 +4770,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LinearregressionSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<LinearregressionSeriesZone> { new LinearregressionSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<LinearregressionSeriesZones> { new LinearregressionSeriesZones { Color = defaultValue } };
 
             ((LinearregressionSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4794,7 +4794,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LinearregressionSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<LinearregressionSeriesZone> { new LinearregressionSeriesZone { DashStyle = value } };
+            var zoneDef = new List<LinearregressionSeriesZones> { new LinearregressionSeriesZones { DashStyle = value } };
 
             ((LinearregressionSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4807,7 +4807,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LinearregressionSeries(); chart.Series.Add(series);
             var defaultValue = LinearregressionSeriesZonesDashStyle.Null;
-            var zoneDef = new List<LinearregressionSeriesZone> { new LinearregressionSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<LinearregressionSeriesZones> { new LinearregressionSeriesZones { DashStyle = defaultValue } };
 
             ((LinearregressionSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4822,7 +4822,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LinearregressionSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<LinearregressionSeriesZone> { new LinearregressionSeriesZone { FillColor = value } };
+            var zoneDef = new List<LinearregressionSeriesZones> { new LinearregressionSeriesZones { FillColor = value } };
 
             ((LinearregressionSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4836,7 +4836,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new LinearregressionSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<LinearregressionSeriesZone> { new LinearregressionSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<LinearregressionSeriesZones> { new LinearregressionSeriesZones { FillColor = defaultValue } };
 
         //    ((LinearregressionSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4851,7 +4851,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LinearregressionSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<LinearregressionSeriesZone> { new LinearregressionSeriesZone { Value = value } };
+            var zoneDef = new List<LinearregressionSeriesZones> { new LinearregressionSeriesZones { Value = value } };
 
             ((LinearregressionSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4864,7 +4864,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LinearregressionSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<LinearregressionSeriesZone> { new LinearregressionSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<LinearregressionSeriesZones> { new LinearregressionSeriesZones { Value = defaultValue } };
 
             ((LinearregressionSeries)chart.Series[0]).Zones = zoneDef;
 

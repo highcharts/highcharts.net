@@ -4654,7 +4654,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<SupertrendSeriesZone> { new SupertrendSeriesZone { ClassName = value } };
+            var zoneDef = new List<SupertrendSeriesZones> { new SupertrendSeriesZones { ClassName = value } };
 
             ((SupertrendSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4667,7 +4667,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<SupertrendSeriesZone> { new SupertrendSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<SupertrendSeriesZones> { new SupertrendSeriesZones { ClassName = defaultValue } };
 
             ((SupertrendSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4683,7 +4683,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<SupertrendSeriesZone> { new SupertrendSeriesZone { Color = value } };
+            var zoneDef = new List<SupertrendSeriesZones> { new SupertrendSeriesZones { Color = value } };
 
             ((SupertrendSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4696,7 +4696,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<SupertrendSeriesZone> { new SupertrendSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<SupertrendSeriesZones> { new SupertrendSeriesZones { Color = defaultValue } };
 
             ((SupertrendSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4720,7 +4720,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<SupertrendSeriesZone> { new SupertrendSeriesZone { DashStyle = value } };
+            var zoneDef = new List<SupertrendSeriesZones> { new SupertrendSeriesZones { DashStyle = value } };
 
             ((SupertrendSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4733,7 +4733,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
             var defaultValue = SupertrendSeriesZonesDashStyle.Null;
-            var zoneDef = new List<SupertrendSeriesZone> { new SupertrendSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<SupertrendSeriesZones> { new SupertrendSeriesZones { DashStyle = defaultValue } };
 
             ((SupertrendSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4748,7 +4748,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<SupertrendSeriesZone> { new SupertrendSeriesZone { FillColor = value } };
+            var zoneDef = new List<SupertrendSeriesZones> { new SupertrendSeriesZones { FillColor = value } };
 
             ((SupertrendSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4762,7 +4762,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<SupertrendSeriesZone> { new SupertrendSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<SupertrendSeriesZones> { new SupertrendSeriesZones { FillColor = defaultValue } };
 
         //    ((SupertrendSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4777,7 +4777,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<SupertrendSeriesZone> { new SupertrendSeriesZone { Value = value } };
+            var zoneDef = new List<SupertrendSeriesZones> { new SupertrendSeriesZones { Value = value } };
 
             ((SupertrendSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4790,7 +4790,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<SupertrendSeriesZone> { new SupertrendSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<SupertrendSeriesZones> { new SupertrendSeriesZones { Value = defaultValue } };
 
             ((SupertrendSeries)chart.Series[0]).Zones = zoneDef;
 

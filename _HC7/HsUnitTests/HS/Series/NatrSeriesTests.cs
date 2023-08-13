@@ -4728,7 +4728,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new NatrSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<NatrSeriesZone> { new NatrSeriesZone { ClassName = value } };
+            var zoneDef = new List<NatrSeriesZones> { new NatrSeriesZones { ClassName = value } };
 
             ((NatrSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4741,7 +4741,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new NatrSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<NatrSeriesZone> { new NatrSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<NatrSeriesZones> { new NatrSeriesZones { ClassName = defaultValue } };
 
             ((NatrSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4757,7 +4757,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new NatrSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<NatrSeriesZone> { new NatrSeriesZone { Color = value } };
+            var zoneDef = new List<NatrSeriesZones> { new NatrSeriesZones { Color = value } };
 
             ((NatrSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4770,7 +4770,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new NatrSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<NatrSeriesZone> { new NatrSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<NatrSeriesZones> { new NatrSeriesZones { Color = defaultValue } };
 
             ((NatrSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4794,7 +4794,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new NatrSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<NatrSeriesZone> { new NatrSeriesZone { DashStyle = value } };
+            var zoneDef = new List<NatrSeriesZones> { new NatrSeriesZones { DashStyle = value } };
 
             ((NatrSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4807,7 +4807,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new NatrSeries(); chart.Series.Add(series);
             var defaultValue = NatrSeriesZonesDashStyle.Null;
-            var zoneDef = new List<NatrSeriesZone> { new NatrSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<NatrSeriesZones> { new NatrSeriesZones { DashStyle = defaultValue } };
 
             ((NatrSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4822,7 +4822,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new NatrSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<NatrSeriesZone> { new NatrSeriesZone { FillColor = value } };
+            var zoneDef = new List<NatrSeriesZones> { new NatrSeriesZones { FillColor = value } };
 
             ((NatrSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4836,7 +4836,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new NatrSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<NatrSeriesZone> { new NatrSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<NatrSeriesZones> { new NatrSeriesZones { FillColor = defaultValue } };
 
         //    ((NatrSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4851,7 +4851,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new NatrSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<NatrSeriesZone> { new NatrSeriesZone { Value = value } };
+            var zoneDef = new List<NatrSeriesZones> { new NatrSeriesZones { Value = value } };
 
             ((NatrSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4864,7 +4864,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new NatrSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<NatrSeriesZone> { new NatrSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<NatrSeriesZones> { new NatrSeriesZones { Value = defaultValue } };
 
             ((NatrSeries)chart.Series[0]).Zones = zoneDef;
 

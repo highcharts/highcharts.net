@@ -4117,7 +4117,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "polygon", "zones" };
-            var zoneDef = new List<PlotOptionsPolygonZone> { new PlotOptionsPolygonZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsPolygonZones> { new PlotOptionsPolygonZones { ClassName = value } };
 
             chart.PlotOptions.Polygon.Zones = zoneDef;
 
@@ -4130,7 +4130,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsPolygonZone> { new PlotOptionsPolygonZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsPolygonZones> { new PlotOptionsPolygonZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Polygon.Zones = zoneDef;
 
@@ -4146,7 +4146,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "polygon", "zones" };
-            var zoneDef = new List<PlotOptionsPolygonZone> { new PlotOptionsPolygonZone { Color = value } };
+            var zoneDef = new List<PlotOptionsPolygonZones> { new PlotOptionsPolygonZones { Color = value } };
 
             chart.PlotOptions.Polygon.Zones = zoneDef;
 
@@ -4159,7 +4159,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsPolygonZone> { new PlotOptionsPolygonZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsPolygonZones> { new PlotOptionsPolygonZones { Color = defaultValue } };
 
             chart.PlotOptions.Polygon.Zones = zoneDef;
 
@@ -4183,7 +4183,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "polygon", "zones" };
-            var zoneDef = new List<PlotOptionsPolygonZone> { new PlotOptionsPolygonZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsPolygonZones> { new PlotOptionsPolygonZones { DashStyle = value } };
 
             chart.PlotOptions.Polygon.Zones = zoneDef;
 
@@ -4196,7 +4196,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsPolygonZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsPolygonZone> { new PlotOptionsPolygonZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsPolygonZones> { new PlotOptionsPolygonZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Polygon.Zones = zoneDef;
 
@@ -4211,7 +4211,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "polygon", "zones" };
-            var zoneDef = new List<PlotOptionsPolygonZone> { new PlotOptionsPolygonZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsPolygonZones> { new PlotOptionsPolygonZones { FillColor = value } };
 
             chart.PlotOptions.Polygon.Zones = zoneDef;
 
@@ -4225,7 +4225,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsPolygonZone> { new PlotOptionsPolygonZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsPolygonZones> { new PlotOptionsPolygonZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Polygon.Zones = zoneDef;
 
@@ -4240,7 +4240,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "polygon", "zones" };
-            var zoneDef = new List<PlotOptionsPolygonZone> { new PlotOptionsPolygonZone { Value = value } };
+            var zoneDef = new List<PlotOptionsPolygonZones> { new PlotOptionsPolygonZones { Value = value } };
 
             chart.PlotOptions.Polygon.Zones = zoneDef;
 
@@ -4253,7 +4253,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsPolygonZone> { new PlotOptionsPolygonZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsPolygonZones> { new PlotOptionsPolygonZones { Value = defaultValue } };
 
             chart.PlotOptions.Polygon.Zones = zoneDef;
 

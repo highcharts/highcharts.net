@@ -5170,7 +5170,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PolygonSeriesZone> { new PolygonSeriesZone { ClassName = value } };
+            var zoneDef = new List<PolygonSeriesZones> { new PolygonSeriesZones { ClassName = value } };
 
             ((PolygonSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5183,7 +5183,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PolygonSeriesZone> { new PolygonSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<PolygonSeriesZones> { new PolygonSeriesZones { ClassName = defaultValue } };
 
             ((PolygonSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5199,7 +5199,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PolygonSeriesZone> { new PolygonSeriesZone { Color = value } };
+            var zoneDef = new List<PolygonSeriesZones> { new PolygonSeriesZones { Color = value } };
 
             ((PolygonSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5212,7 +5212,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PolygonSeriesZone> { new PolygonSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<PolygonSeriesZones> { new PolygonSeriesZones { Color = defaultValue } };
 
             ((PolygonSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5236,7 +5236,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PolygonSeriesZone> { new PolygonSeriesZone { DashStyle = value } };
+            var zoneDef = new List<PolygonSeriesZones> { new PolygonSeriesZones { DashStyle = value } };
 
             ((PolygonSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5249,7 +5249,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
             var defaultValue = PolygonSeriesZonesDashStyle.Null;
-            var zoneDef = new List<PolygonSeriesZone> { new PolygonSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PolygonSeriesZones> { new PolygonSeriesZones { DashStyle = defaultValue } };
 
             ((PolygonSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5264,7 +5264,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PolygonSeriesZone> { new PolygonSeriesZone { FillColor = value } };
+            var zoneDef = new List<PolygonSeriesZones> { new PolygonSeriesZones { FillColor = value } };
 
             ((PolygonSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5278,7 +5278,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PolygonSeriesZone> { new PolygonSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PolygonSeriesZones> { new PolygonSeriesZones { FillColor = defaultValue } };
 
         //    ((PolygonSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5293,7 +5293,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PolygonSeriesZone> { new PolygonSeriesZone { Value = value } };
+            var zoneDef = new List<PolygonSeriesZones> { new PolygonSeriesZones { Value = value } };
 
             ((PolygonSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5306,7 +5306,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<PolygonSeriesZone> { new PolygonSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<PolygonSeriesZones> { new PolygonSeriesZones { Value = defaultValue } };
 
             ((PolygonSeries)chart.Series[0]).Zones = zoneDef;
 

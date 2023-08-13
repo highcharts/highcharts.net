@@ -4728,7 +4728,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PivotpointsSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PivotpointsSeriesZone> { new PivotpointsSeriesZone { ClassName = value } };
+            var zoneDef = new List<PivotpointsSeriesZones> { new PivotpointsSeriesZones { ClassName = value } };
 
             ((PivotpointsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4741,7 +4741,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PivotpointsSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PivotpointsSeriesZone> { new PivotpointsSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<PivotpointsSeriesZones> { new PivotpointsSeriesZones { ClassName = defaultValue } };
 
             ((PivotpointsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4757,7 +4757,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PivotpointsSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PivotpointsSeriesZone> { new PivotpointsSeriesZone { Color = value } };
+            var zoneDef = new List<PivotpointsSeriesZones> { new PivotpointsSeriesZones { Color = value } };
 
             ((PivotpointsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4770,7 +4770,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PivotpointsSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PivotpointsSeriesZone> { new PivotpointsSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<PivotpointsSeriesZones> { new PivotpointsSeriesZones { Color = defaultValue } };
 
             ((PivotpointsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4794,7 +4794,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PivotpointsSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PivotpointsSeriesZone> { new PivotpointsSeriesZone { DashStyle = value } };
+            var zoneDef = new List<PivotpointsSeriesZones> { new PivotpointsSeriesZones { DashStyle = value } };
 
             ((PivotpointsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4807,7 +4807,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PivotpointsSeries(); chart.Series.Add(series);
             var defaultValue = PivotpointsSeriesZonesDashStyle.Null;
-            var zoneDef = new List<PivotpointsSeriesZone> { new PivotpointsSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PivotpointsSeriesZones> { new PivotpointsSeriesZones { DashStyle = defaultValue } };
 
             ((PivotpointsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4822,7 +4822,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PivotpointsSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PivotpointsSeriesZone> { new PivotpointsSeriesZone { FillColor = value } };
+            var zoneDef = new List<PivotpointsSeriesZones> { new PivotpointsSeriesZones { FillColor = value } };
 
             ((PivotpointsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4836,7 +4836,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new PivotpointsSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PivotpointsSeriesZone> { new PivotpointsSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PivotpointsSeriesZones> { new PivotpointsSeriesZones { FillColor = defaultValue } };
 
         //    ((PivotpointsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4851,7 +4851,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PivotpointsSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PivotpointsSeriesZone> { new PivotpointsSeriesZone { Value = value } };
+            var zoneDef = new List<PivotpointsSeriesZones> { new PivotpointsSeriesZones { Value = value } };
 
             ((PivotpointsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4864,7 +4864,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PivotpointsSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<PivotpointsSeriesZone> { new PivotpointsSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<PivotpointsSeriesZones> { new PivotpointsSeriesZones { Value = defaultValue } };
 
             ((PivotpointsSeries)chart.Series[0]).Zones = zoneDef;
 

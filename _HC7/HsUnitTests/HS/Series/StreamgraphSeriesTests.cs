@@ -5305,7 +5305,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<StreamgraphSeriesZone> { new StreamgraphSeriesZone { ClassName = value } };
+            var zoneDef = new List<StreamgraphSeriesZones> { new StreamgraphSeriesZones { ClassName = value } };
 
             ((StreamgraphSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5318,7 +5318,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<StreamgraphSeriesZone> { new StreamgraphSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<StreamgraphSeriesZones> { new StreamgraphSeriesZones { ClassName = defaultValue } };
 
             ((StreamgraphSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5334,7 +5334,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<StreamgraphSeriesZone> { new StreamgraphSeriesZone { Color = value } };
+            var zoneDef = new List<StreamgraphSeriesZones> { new StreamgraphSeriesZones { Color = value } };
 
             ((StreamgraphSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5347,7 +5347,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<StreamgraphSeriesZone> { new StreamgraphSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<StreamgraphSeriesZones> { new StreamgraphSeriesZones { Color = defaultValue } };
 
             ((StreamgraphSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5371,7 +5371,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<StreamgraphSeriesZone> { new StreamgraphSeriesZone { DashStyle = value } };
+            var zoneDef = new List<StreamgraphSeriesZones> { new StreamgraphSeriesZones { DashStyle = value } };
 
             ((StreamgraphSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5384,7 +5384,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             var defaultValue = StreamgraphSeriesZonesDashStyle.Null;
-            var zoneDef = new List<StreamgraphSeriesZone> { new StreamgraphSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<StreamgraphSeriesZones> { new StreamgraphSeriesZones { DashStyle = defaultValue } };
 
             ((StreamgraphSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5399,7 +5399,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<StreamgraphSeriesZone> { new StreamgraphSeriesZone { FillColor = value } };
+            var zoneDef = new List<StreamgraphSeriesZones> { new StreamgraphSeriesZones { FillColor = value } };
 
             ((StreamgraphSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5413,7 +5413,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<StreamgraphSeriesZone> { new StreamgraphSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<StreamgraphSeriesZones> { new StreamgraphSeriesZones { FillColor = defaultValue } };
 
         //    ((StreamgraphSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5428,7 +5428,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<StreamgraphSeriesZone> { new StreamgraphSeriesZone { Value = value } };
+            var zoneDef = new List<StreamgraphSeriesZones> { new StreamgraphSeriesZones { Value = value } };
 
             ((StreamgraphSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5441,7 +5441,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new StreamgraphSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<StreamgraphSeriesZone> { new StreamgraphSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<StreamgraphSeriesZones> { new StreamgraphSeriesZones { Value = defaultValue } };
 
             ((StreamgraphSeries)chart.Series[0]).Zones = zoneDef;
 

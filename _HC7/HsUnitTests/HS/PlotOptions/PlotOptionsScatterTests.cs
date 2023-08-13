@@ -4189,7 +4189,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "scatter", "zones" };
-            var zoneDef = new List<PlotOptionsScatterZone> { new PlotOptionsScatterZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsScatterZones> { new PlotOptionsScatterZones { ClassName = value } };
 
             chart.PlotOptions.Scatter.Zones = zoneDef;
 
@@ -4202,7 +4202,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsScatterZone> { new PlotOptionsScatterZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsScatterZones> { new PlotOptionsScatterZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Scatter.Zones = zoneDef;
 
@@ -4218,7 +4218,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "scatter", "zones" };
-            var zoneDef = new List<PlotOptionsScatterZone> { new PlotOptionsScatterZone { Color = value } };
+            var zoneDef = new List<PlotOptionsScatterZones> { new PlotOptionsScatterZones { Color = value } };
 
             chart.PlotOptions.Scatter.Zones = zoneDef;
 
@@ -4231,7 +4231,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsScatterZone> { new PlotOptionsScatterZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsScatterZones> { new PlotOptionsScatterZones { Color = defaultValue } };
 
             chart.PlotOptions.Scatter.Zones = zoneDef;
 
@@ -4255,7 +4255,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "scatter", "zones" };
-            var zoneDef = new List<PlotOptionsScatterZone> { new PlotOptionsScatterZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsScatterZones> { new PlotOptionsScatterZones { DashStyle = value } };
 
             chart.PlotOptions.Scatter.Zones = zoneDef;
 
@@ -4268,7 +4268,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsScatterZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsScatterZone> { new PlotOptionsScatterZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsScatterZones> { new PlotOptionsScatterZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Scatter.Zones = zoneDef;
 
@@ -4283,7 +4283,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "scatter", "zones" };
-            var zoneDef = new List<PlotOptionsScatterZone> { new PlotOptionsScatterZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsScatterZones> { new PlotOptionsScatterZones { FillColor = value } };
 
             chart.PlotOptions.Scatter.Zones = zoneDef;
 
@@ -4297,7 +4297,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsScatterZone> { new PlotOptionsScatterZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsScatterZones> { new PlotOptionsScatterZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Scatter.Zones = zoneDef;
 
@@ -4312,7 +4312,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "scatter", "zones" };
-            var zoneDef = new List<PlotOptionsScatterZone> { new PlotOptionsScatterZone { Value = value } };
+            var zoneDef = new List<PlotOptionsScatterZones> { new PlotOptionsScatterZones { Value = value } };
 
             chart.PlotOptions.Scatter.Zones = zoneDef;
 
@@ -4325,7 +4325,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsScatterZone> { new PlotOptionsScatterZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsScatterZones> { new PlotOptionsScatterZones { Value = defaultValue } };
 
             chart.PlotOptions.Scatter.Zones = zoneDef;
 

@@ -5254,7 +5254,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new DumbbellSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<DumbbellSeriesZone> { new DumbbellSeriesZone { ClassName = value } };
+            var zoneDef = new List<DumbbellSeriesZones> { new DumbbellSeriesZones { ClassName = value } };
 
             ((DumbbellSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5267,7 +5267,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new DumbbellSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<DumbbellSeriesZone> { new DumbbellSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<DumbbellSeriesZones> { new DumbbellSeriesZones { ClassName = defaultValue } };
 
             ((DumbbellSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5283,7 +5283,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new DumbbellSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<DumbbellSeriesZone> { new DumbbellSeriesZone { Color = value } };
+            var zoneDef = new List<DumbbellSeriesZones> { new DumbbellSeriesZones { Color = value } };
 
             ((DumbbellSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5296,7 +5296,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new DumbbellSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<DumbbellSeriesZone> { new DumbbellSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<DumbbellSeriesZones> { new DumbbellSeriesZones { Color = defaultValue } };
 
             ((DumbbellSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5320,7 +5320,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new DumbbellSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<DumbbellSeriesZone> { new DumbbellSeriesZone { DashStyle = value } };
+            var zoneDef = new List<DumbbellSeriesZones> { new DumbbellSeriesZones { DashStyle = value } };
 
             ((DumbbellSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5333,7 +5333,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new DumbbellSeries(); chart.Series.Add(series);
             var defaultValue = DumbbellSeriesZonesDashStyle.Null;
-            var zoneDef = new List<DumbbellSeriesZone> { new DumbbellSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<DumbbellSeriesZones> { new DumbbellSeriesZones { DashStyle = defaultValue } };
 
             ((DumbbellSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5348,7 +5348,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new DumbbellSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<DumbbellSeriesZone> { new DumbbellSeriesZone { FillColor = value } };
+            var zoneDef = new List<DumbbellSeriesZones> { new DumbbellSeriesZones { FillColor = value } };
 
             ((DumbbellSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5362,7 +5362,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new DumbbellSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<DumbbellSeriesZone> { new DumbbellSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<DumbbellSeriesZones> { new DumbbellSeriesZones { FillColor = defaultValue } };
 
         //    ((DumbbellSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5377,7 +5377,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new DumbbellSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<DumbbellSeriesZone> { new DumbbellSeriesZone { Value = value } };
+            var zoneDef = new List<DumbbellSeriesZones> { new DumbbellSeriesZones { Value = value } };
 
             ((DumbbellSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5390,7 +5390,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new DumbbellSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<DumbbellSeriesZone> { new DumbbellSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<DumbbellSeriesZones> { new DumbbellSeriesZones { Value = defaultValue } };
 
             ((DumbbellSeries)chart.Series[0]).Zones = zoneDef;
 

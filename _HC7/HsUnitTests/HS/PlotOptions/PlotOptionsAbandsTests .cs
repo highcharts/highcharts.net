@@ -2211,7 +2211,6 @@ namespace HS.PlotOptions
 
         [Theory]
         [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfMarkerEnabledRenders_Correct(bool value)
         {
             var chart = new Highstock();
@@ -2228,7 +2227,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            bool? defaultValue = null;
+            bool? defaultValue = false;
 
             chart.PlotOptions.Abands.Marker.Enabled = defaultValue;
 
@@ -4323,7 +4322,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "abands", "zones" };
-            var zoneDef = new List<PlotOptionsAbandsZone> { new PlotOptionsAbandsZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsAbandsZones> { new PlotOptionsAbandsZones { ClassName = value } };
 
             chart.PlotOptions.Abands.Zones = zoneDef;
 
@@ -4336,7 +4335,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsAbandsZone> { new PlotOptionsAbandsZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsAbandsZones> { new PlotOptionsAbandsZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Abands.Zones = zoneDef;
 
@@ -4352,7 +4351,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "abands", "zones" };
-            var zoneDef = new List<PlotOptionsAbandsZone> { new PlotOptionsAbandsZone { Color = value } };
+            var zoneDef = new List<PlotOptionsAbandsZones> { new PlotOptionsAbandsZones { Color = value } };
 
             chart.PlotOptions.Abands.Zones = zoneDef;
 
@@ -4365,7 +4364,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsAbandsZone> { new PlotOptionsAbandsZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsAbandsZones> { new PlotOptionsAbandsZones { Color = defaultValue } };
 
             chart.PlotOptions.Abands.Zones = zoneDef;
 
@@ -4389,7 +4388,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "abands", "zones" };
-            var zoneDef = new List<PlotOptionsAbandsZone> { new PlotOptionsAbandsZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsAbandsZones> { new PlotOptionsAbandsZones { DashStyle = value } };
 
             chart.PlotOptions.Abands.Zones = zoneDef;
 
@@ -4402,7 +4401,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsAbandsZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsAbandsZone> { new PlotOptionsAbandsZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsAbandsZones> { new PlotOptionsAbandsZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Abands.Zones = zoneDef;
 
@@ -4417,7 +4416,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "abands", "zones" };
-            var zoneDef = new List<PlotOptionsAbandsZone> { new PlotOptionsAbandsZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsAbandsZones> { new PlotOptionsAbandsZones { FillColor = value } };
 
             chart.PlotOptions.Abands.Zones = zoneDef;
 
@@ -4431,7 +4430,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsAbandsZone> { new PlotOptionsAbandsZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsAbandsZones> { new PlotOptionsAbandsZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Abands.Zones = zoneDef;
 
@@ -4446,7 +4445,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "abands", "zones" };
-            var zoneDef = new List<PlotOptionsAbandsZone> { new PlotOptionsAbandsZone { Value = value } };
+            var zoneDef = new List<PlotOptionsAbandsZones> { new PlotOptionsAbandsZones { Value = value } };
 
             chart.PlotOptions.Abands.Zones = zoneDef;
 
@@ -4459,7 +4458,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsAbandsZone> { new PlotOptionsAbandsZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsAbandsZones> { new PlotOptionsAbandsZones { Value = defaultValue } };
 
             chart.PlotOptions.Abands.Zones = zoneDef;
 

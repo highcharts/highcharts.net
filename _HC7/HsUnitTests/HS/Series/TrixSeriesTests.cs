@@ -4727,7 +4727,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrixSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TrixSeriesZone> { new TrixSeriesZone { ClassName = value } };
+            var zoneDef = new List<TrixSeriesZones> { new TrixSeriesZones { ClassName = value } };
 
             ((TrixSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4740,7 +4740,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrixSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<TrixSeriesZone> { new TrixSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<TrixSeriesZones> { new TrixSeriesZones { ClassName = defaultValue } };
 
             ((TrixSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4756,7 +4756,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrixSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TrixSeriesZone> { new TrixSeriesZone { Color = value } };
+            var zoneDef = new List<TrixSeriesZones> { new TrixSeriesZones { Color = value } };
 
             ((TrixSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4769,7 +4769,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrixSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<TrixSeriesZone> { new TrixSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<TrixSeriesZones> { new TrixSeriesZones { Color = defaultValue } };
 
             ((TrixSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4793,7 +4793,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrixSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TrixSeriesZone> { new TrixSeriesZone { DashStyle = value } };
+            var zoneDef = new List<TrixSeriesZones> { new TrixSeriesZones { DashStyle = value } };
 
             ((TrixSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4806,7 +4806,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrixSeries(); chart.Series.Add(series);
             var defaultValue = TrixSeriesZonesDashStyle.Null;
-            var zoneDef = new List<TrixSeriesZone> { new TrixSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<TrixSeriesZones> { new TrixSeriesZones { DashStyle = defaultValue } };
 
             ((TrixSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4821,7 +4821,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrixSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TrixSeriesZone> { new TrixSeriesZone { FillColor = value } };
+            var zoneDef = new List<TrixSeriesZones> { new TrixSeriesZones { FillColor = value } };
 
             ((TrixSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4835,7 +4835,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new TrixSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<TrixSeriesZone> { new TrixSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<TrixSeriesZones> { new TrixSeriesZones { FillColor = defaultValue } };
 
         //    ((TrixSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4850,7 +4850,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrixSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TrixSeriesZone> { new TrixSeriesZone { Value = value } };
+            var zoneDef = new List<TrixSeriesZones> { new TrixSeriesZones { Value = value } };
 
             ((TrixSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4863,7 +4863,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrixSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<TrixSeriesZone> { new TrixSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<TrixSeriesZones> { new TrixSeriesZones { Value = defaultValue } };
 
             ((TrixSeries)chart.Series[0]).Zones = zoneDef;
 

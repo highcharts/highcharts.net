@@ -3994,7 +3994,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "hollowcandlestick", "zones" };
-            var zoneDef = new List<PlotOptionsHollowcandlestickZone> { new PlotOptionsHollowcandlestickZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsHollowcandlestickZones> { new PlotOptionsHollowcandlestickZones { ClassName = value } };
 
             chart.PlotOptions.Hollowcandlestick.Zones = zoneDef;
 
@@ -4007,7 +4007,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsHollowcandlestickZone> { new PlotOptionsHollowcandlestickZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsHollowcandlestickZones> { new PlotOptionsHollowcandlestickZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Hollowcandlestick.Zones = zoneDef;
 
@@ -4023,7 +4023,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "hollowcandlestick", "zones" };
-            var zoneDef = new List<PlotOptionsHollowcandlestickZone> { new PlotOptionsHollowcandlestickZone { Color = value } };
+            var zoneDef = new List<PlotOptionsHollowcandlestickZones> { new PlotOptionsHollowcandlestickZones { Color = value } };
 
             chart.PlotOptions.Hollowcandlestick.Zones = zoneDef;
 
@@ -4036,7 +4036,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsHollowcandlestickZone> { new PlotOptionsHollowcandlestickZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsHollowcandlestickZones> { new PlotOptionsHollowcandlestickZones { Color = defaultValue } };
 
             chart.PlotOptions.Hollowcandlestick.Zones = zoneDef;
 
@@ -4060,7 +4060,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "hollowcandlestick", "zones" };
-            var zoneDef = new List<PlotOptionsHollowcandlestickZone> { new PlotOptionsHollowcandlestickZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsHollowcandlestickZones> { new PlotOptionsHollowcandlestickZones { DashStyle = value } };
 
             chart.PlotOptions.Hollowcandlestick.Zones = zoneDef;
 
@@ -4073,7 +4073,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsHollowcandlestickZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsHollowcandlestickZone> { new PlotOptionsHollowcandlestickZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsHollowcandlestickZones> { new PlotOptionsHollowcandlestickZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Hollowcandlestick.Zones = zoneDef;
 
@@ -4088,7 +4088,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "hollowcandlestick", "zones" };
-            var zoneDef = new List<PlotOptionsHollowcandlestickZone> { new PlotOptionsHollowcandlestickZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsHollowcandlestickZones> { new PlotOptionsHollowcandlestickZones { FillColor = value } };
 
             chart.PlotOptions.Hollowcandlestick.Zones = zoneDef;
 
@@ -4102,7 +4102,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsHollowcandlestickZone> { new PlotOptionsHollowcandlestickZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsHollowcandlestickZones> { new PlotOptionsHollowcandlestickZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Hollowcandlestick.Zones = zoneDef;
 
@@ -4117,7 +4117,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "hollowcandlestick", "zones" };
-            var zoneDef = new List<PlotOptionsHollowcandlestickZone> { new PlotOptionsHollowcandlestickZone { Value = value } };
+            var zoneDef = new List<PlotOptionsHollowcandlestickZones> { new PlotOptionsHollowcandlestickZones { Value = value } };
 
             chart.PlotOptions.Hollowcandlestick.Zones = zoneDef;
 
@@ -4130,7 +4130,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsHollowcandlestickZone> { new PlotOptionsHollowcandlestickZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsHollowcandlestickZones> { new PlotOptionsHollowcandlestickZones { Value = defaultValue } };
 
             chart.PlotOptions.Hollowcandlestick.Zones = zoneDef;
 

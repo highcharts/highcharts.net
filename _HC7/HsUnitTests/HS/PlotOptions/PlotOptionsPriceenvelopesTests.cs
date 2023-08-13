@@ -4296,7 +4296,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "priceenvelopes", "zones" };
-            var zoneDef = new List<PlotOptionsPriceenvelopesZone> { new PlotOptionsPriceenvelopesZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsPriceenvelopesZones> { new PlotOptionsPriceenvelopesZones { ClassName = value } };
 
             chart.PlotOptions.Priceenvelopes.Zones = zoneDef;
 
@@ -4309,7 +4309,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsPriceenvelopesZone> { new PlotOptionsPriceenvelopesZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsPriceenvelopesZones> { new PlotOptionsPriceenvelopesZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Priceenvelopes.Zones = zoneDef;
 
@@ -4325,7 +4325,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "priceenvelopes", "zones" };
-            var zoneDef = new List<PlotOptionsPriceenvelopesZone> { new PlotOptionsPriceenvelopesZone { Color = value } };
+            var zoneDef = new List<PlotOptionsPriceenvelopesZones> { new PlotOptionsPriceenvelopesZones { Color = value } };
 
             chart.PlotOptions.Priceenvelopes.Zones = zoneDef;
 
@@ -4338,7 +4338,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsPriceenvelopesZone> { new PlotOptionsPriceenvelopesZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsPriceenvelopesZones> { new PlotOptionsPriceenvelopesZones { Color = defaultValue } };
 
             chart.PlotOptions.Priceenvelopes.Zones = zoneDef;
 
@@ -4362,7 +4362,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "priceenvelopes", "zones" };
-            var zoneDef = new List<PlotOptionsPriceenvelopesZone> { new PlotOptionsPriceenvelopesZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsPriceenvelopesZones> { new PlotOptionsPriceenvelopesZones { DashStyle = value } };
 
             chart.PlotOptions.Priceenvelopes.Zones = zoneDef;
 
@@ -4375,7 +4375,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsPriceenvelopesZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsPriceenvelopesZone> { new PlotOptionsPriceenvelopesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsPriceenvelopesZones> { new PlotOptionsPriceenvelopesZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Priceenvelopes.Zones = zoneDef;
 
@@ -4390,7 +4390,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "priceenvelopes", "zones" };
-            var zoneDef = new List<PlotOptionsPriceenvelopesZone> { new PlotOptionsPriceenvelopesZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsPriceenvelopesZones> { new PlotOptionsPriceenvelopesZones { FillColor = value } };
 
             chart.PlotOptions.Priceenvelopes.Zones = zoneDef;
 
@@ -4404,7 +4404,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsPriceenvelopesZone> { new PlotOptionsPriceenvelopesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsPriceenvelopesZones> { new PlotOptionsPriceenvelopesZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Priceenvelopes.Zones = zoneDef;
 
@@ -4419,7 +4419,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "priceenvelopes", "zones" };
-            var zoneDef = new List<PlotOptionsPriceenvelopesZone> { new PlotOptionsPriceenvelopesZone { Value = value } };
+            var zoneDef = new List<PlotOptionsPriceenvelopesZones> { new PlotOptionsPriceenvelopesZones { Value = value } };
 
             chart.PlotOptions.Priceenvelopes.Zones = zoneDef;
 
@@ -4432,7 +4432,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsPriceenvelopesZone> { new PlotOptionsPriceenvelopesZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsPriceenvelopesZones> { new PlotOptionsPriceenvelopesZones { Value = defaultValue } };
 
             chart.PlotOptions.Priceenvelopes.Zones = zoneDef;
 

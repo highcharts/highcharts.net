@@ -4247,7 +4247,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "supertrend", "zones" };
-            var zoneDef = new List<PlotOptionsSupertrendZone> { new PlotOptionsSupertrendZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsSupertrendZones> { new PlotOptionsSupertrendZones { ClassName = value } };
 
             chart.PlotOptions.Supertrend.Zones = zoneDef;
 
@@ -4260,7 +4260,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsSupertrendZone> { new PlotOptionsSupertrendZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsSupertrendZones> { new PlotOptionsSupertrendZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Supertrend.Zones = zoneDef;
 
@@ -4276,7 +4276,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "supertrend", "zones" };
-            var zoneDef = new List<PlotOptionsSupertrendZone> { new PlotOptionsSupertrendZone { Color = value } };
+            var zoneDef = new List<PlotOptionsSupertrendZones> { new PlotOptionsSupertrendZones { Color = value } };
 
             chart.PlotOptions.Supertrend.Zones = zoneDef;
 
@@ -4289,7 +4289,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsSupertrendZone> { new PlotOptionsSupertrendZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsSupertrendZones> { new PlotOptionsSupertrendZones { Color = defaultValue } };
 
             chart.PlotOptions.Supertrend.Zones = zoneDef;
 
@@ -4313,7 +4313,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "supertrend", "zones" };
-            var zoneDef = new List<PlotOptionsSupertrendZone> { new PlotOptionsSupertrendZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsSupertrendZones> { new PlotOptionsSupertrendZones { DashStyle = value } };
 
             chart.PlotOptions.Supertrend.Zones = zoneDef;
 
@@ -4326,7 +4326,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsSupertrendZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsSupertrendZone> { new PlotOptionsSupertrendZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsSupertrendZones> { new PlotOptionsSupertrendZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Supertrend.Zones = zoneDef;
 
@@ -4341,7 +4341,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "supertrend", "zones" };
-            var zoneDef = new List<PlotOptionsSupertrendZone> { new PlotOptionsSupertrendZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsSupertrendZones> { new PlotOptionsSupertrendZones { FillColor = value } };
 
             chart.PlotOptions.Supertrend.Zones = zoneDef;
 
@@ -4355,7 +4355,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsSupertrendZone> { new PlotOptionsSupertrendZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsSupertrendZones> { new PlotOptionsSupertrendZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Supertrend.Zones = zoneDef;
 
@@ -4370,7 +4370,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "supertrend", "zones" };
-            var zoneDef = new List<PlotOptionsSupertrendZone> { new PlotOptionsSupertrendZone { Value = value } };
+            var zoneDef = new List<PlotOptionsSupertrendZones> { new PlotOptionsSupertrendZones { Value = value } };
 
             chart.PlotOptions.Supertrend.Zones = zoneDef;
 
@@ -4383,7 +4383,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsSupertrendZone> { new PlotOptionsSupertrendZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsSupertrendZones> { new PlotOptionsSupertrendZones { Value = defaultValue } };
 
             chart.PlotOptions.Supertrend.Zones = zoneDef;
 

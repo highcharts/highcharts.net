@@ -3996,7 +3996,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "heikinashi", "zones" };
-            var zoneDef = new List<PlotOptionsHeikinashiZone> { new PlotOptionsHeikinashiZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsHeikinashiZones> { new PlotOptionsHeikinashiZones { ClassName = value } };
 
             chart.PlotOptions.Heikinashi.Zones = zoneDef;
 
@@ -4009,7 +4009,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsHeikinashiZone> { new PlotOptionsHeikinashiZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsHeikinashiZones> { new PlotOptionsHeikinashiZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Heikinashi.Zones = zoneDef;
 
@@ -4025,7 +4025,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "heikinashi", "zones" };
-            var zoneDef = new List<PlotOptionsHeikinashiZone> { new PlotOptionsHeikinashiZone { Color = value } };
+            var zoneDef = new List<PlotOptionsHeikinashiZones> { new PlotOptionsHeikinashiZones { Color = value } };
 
             chart.PlotOptions.Heikinashi.Zones = zoneDef;
 
@@ -4038,7 +4038,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsHeikinashiZone> { new PlotOptionsHeikinashiZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsHeikinashiZones> { new PlotOptionsHeikinashiZones { Color = defaultValue } };
 
             chart.PlotOptions.Heikinashi.Zones = zoneDef;
 
@@ -4062,7 +4062,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "heikinashi", "zones" };
-            var zoneDef = new List<PlotOptionsHeikinashiZone> { new PlotOptionsHeikinashiZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsHeikinashiZones> { new PlotOptionsHeikinashiZones { DashStyle = value } };
 
             chart.PlotOptions.Heikinashi.Zones = zoneDef;
 
@@ -4075,7 +4075,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsHeikinashiZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsHeikinashiZone> { new PlotOptionsHeikinashiZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsHeikinashiZones> { new PlotOptionsHeikinashiZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Heikinashi.Zones = zoneDef;
 
@@ -4090,7 +4090,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "heikinashi", "zones" };
-            var zoneDef = new List<PlotOptionsHeikinashiZone> { new PlotOptionsHeikinashiZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsHeikinashiZones> { new PlotOptionsHeikinashiZones { FillColor = value } };
 
             chart.PlotOptions.Heikinashi.Zones = zoneDef;
 
@@ -4104,7 +4104,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsHeikinashiZone> { new PlotOptionsHeikinashiZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsHeikinashiZones> { new PlotOptionsHeikinashiZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Heikinashi.Zones = zoneDef;
 
@@ -4119,7 +4119,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "heikinashi", "zones" };
-            var zoneDef = new List<PlotOptionsHeikinashiZone> { new PlotOptionsHeikinashiZone { Value = value } };
+            var zoneDef = new List<PlotOptionsHeikinashiZones> { new PlotOptionsHeikinashiZones { Value = value } };
 
             chart.PlotOptions.Heikinashi.Zones = zoneDef;
 
@@ -4132,7 +4132,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsHeikinashiZone> { new PlotOptionsHeikinashiZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsHeikinashiZones> { new PlotOptionsHeikinashiZones { Value = defaultValue } };
 
             chart.PlotOptions.Heikinashi.Zones = zoneDef;
 

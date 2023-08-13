@@ -4323,7 +4323,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "williamsr", "zones" };
-            var zoneDef = new List<PlotOptionsWilliamsrZone> { new PlotOptionsWilliamsrZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsWilliamsrZones> { new PlotOptionsWilliamsrZones { ClassName = value } };
 
             chart.PlotOptions.Williamsr.Zones = zoneDef;
 
@@ -4336,7 +4336,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsWilliamsrZone> { new PlotOptionsWilliamsrZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsWilliamsrZones> { new PlotOptionsWilliamsrZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Williamsr.Zones = zoneDef;
 
@@ -4352,7 +4352,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "williamsr", "zones" };
-            var zoneDef = new List<PlotOptionsWilliamsrZone> { new PlotOptionsWilliamsrZone { Color = value } };
+            var zoneDef = new List<PlotOptionsWilliamsrZones> { new PlotOptionsWilliamsrZones { Color = value } };
 
             chart.PlotOptions.Williamsr.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsWilliamsrZone> { new PlotOptionsWilliamsrZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsWilliamsrZones> { new PlotOptionsWilliamsrZones { Color = defaultValue } };
 
             chart.PlotOptions.Williamsr.Zones = zoneDef;
 
@@ -4389,7 +4389,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "williamsr", "zones" };
-            var zoneDef = new List<PlotOptionsWilliamsrZone> { new PlotOptionsWilliamsrZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsWilliamsrZones> { new PlotOptionsWilliamsrZones { DashStyle = value } };
 
             chart.PlotOptions.Williamsr.Zones = zoneDef;
 
@@ -4402,7 +4402,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsWilliamsrZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsWilliamsrZone> { new PlotOptionsWilliamsrZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsWilliamsrZones> { new PlotOptionsWilliamsrZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Williamsr.Zones = zoneDef;
 
@@ -4417,7 +4417,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "williamsr", "zones" };
-            var zoneDef = new List<PlotOptionsWilliamsrZone> { new PlotOptionsWilliamsrZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsWilliamsrZones> { new PlotOptionsWilliamsrZones { FillColor = value } };
 
             chart.PlotOptions.Williamsr.Zones = zoneDef;
 
@@ -4431,7 +4431,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsWilliamsrZone> { new PlotOptionsWilliamsrZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsWilliamsrZones> { new PlotOptionsWilliamsrZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Williamsr.Zones = zoneDef;
 
@@ -4446,7 +4446,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "williamsr", "zones" };
-            var zoneDef = new List<PlotOptionsWilliamsrZone> { new PlotOptionsWilliamsrZone { Value = value } };
+            var zoneDef = new List<PlotOptionsWilliamsrZones> { new PlotOptionsWilliamsrZones { Value = value } };
 
             chart.PlotOptions.Williamsr.Zones = zoneDef;
 
@@ -4459,7 +4459,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsWilliamsrZone> { new PlotOptionsWilliamsrZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsWilliamsrZones> { new PlotOptionsWilliamsrZones { Value = defaultValue } };
 
             chart.PlotOptions.Williamsr.Zones = zoneDef;
 

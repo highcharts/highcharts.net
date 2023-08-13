@@ -4323,7 +4323,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "momentum", "zones" };
-            var zoneDef = new List<PlotOptionsMomentumZone> { new PlotOptionsMomentumZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsMomentumZones> { new PlotOptionsMomentumZones { ClassName = value } };
 
             chart.PlotOptions.Momentum.Zones = zoneDef;
 
@@ -4336,7 +4336,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsMomentumZone> { new PlotOptionsMomentumZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsMomentumZones> { new PlotOptionsMomentumZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Momentum.Zones = zoneDef;
 
@@ -4352,7 +4352,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "momentum", "zones" };
-            var zoneDef = new List<PlotOptionsMomentumZone> { new PlotOptionsMomentumZone { Color = value } };
+            var zoneDef = new List<PlotOptionsMomentumZones> { new PlotOptionsMomentumZones { Color = value } };
 
             chart.PlotOptions.Momentum.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsMomentumZone> { new PlotOptionsMomentumZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsMomentumZones> { new PlotOptionsMomentumZones { Color = defaultValue } };
 
             chart.PlotOptions.Momentum.Zones = zoneDef;
 
@@ -4389,7 +4389,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "momentum", "zones" };
-            var zoneDef = new List<PlotOptionsMomentumZone> { new PlotOptionsMomentumZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsMomentumZones> { new PlotOptionsMomentumZones { DashStyle = value } };
 
             chart.PlotOptions.Momentum.Zones = zoneDef;
 
@@ -4402,7 +4402,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsMomentumZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsMomentumZone> { new PlotOptionsMomentumZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsMomentumZones> { new PlotOptionsMomentumZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Momentum.Zones = zoneDef;
 
@@ -4417,7 +4417,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "momentum", "zones" };
-            var zoneDef = new List<PlotOptionsMomentumZone> { new PlotOptionsMomentumZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsMomentumZones> { new PlotOptionsMomentumZones { FillColor = value } };
 
             chart.PlotOptions.Momentum.Zones = zoneDef;
 
@@ -4431,7 +4431,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsMomentumZone> { new PlotOptionsMomentumZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsMomentumZones> { new PlotOptionsMomentumZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Momentum.Zones = zoneDef;
 
@@ -4446,7 +4446,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "momentum", "zones" };
-            var zoneDef = new List<PlotOptionsMomentumZone> { new PlotOptionsMomentumZone { Value = value } };
+            var zoneDef = new List<PlotOptionsMomentumZones> { new PlotOptionsMomentumZones { Value = value } };
 
             chart.PlotOptions.Momentum.Zones = zoneDef;
 
@@ -4459,7 +4459,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsMomentumZone> { new PlotOptionsMomentumZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsMomentumZones> { new PlotOptionsMomentumZones { Value = defaultValue } };
 
             chart.PlotOptions.Momentum.Zones = zoneDef;
 

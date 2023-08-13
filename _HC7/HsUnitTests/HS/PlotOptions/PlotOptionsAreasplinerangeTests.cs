@@ -4242,7 +4242,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "areasplinerange", "zones" };
-            var zoneDef = new List<PlotOptionsAreasplinerangeZone> { new PlotOptionsAreasplinerangeZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsAreasplinerangeZones> { new PlotOptionsAreasplinerangeZones { ClassName = value } };
 
             chart.PlotOptions.Areasplinerange.Zones = zoneDef;
 
@@ -4255,7 +4255,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsAreasplinerangeZone> { new PlotOptionsAreasplinerangeZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsAreasplinerangeZones> { new PlotOptionsAreasplinerangeZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Areasplinerange.Zones = zoneDef;
 
@@ -4271,7 +4271,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "areasplinerange", "zones" };
-            var zoneDef = new List<PlotOptionsAreasplinerangeZone> { new PlotOptionsAreasplinerangeZone { Color = value } };
+            var zoneDef = new List<PlotOptionsAreasplinerangeZones> { new PlotOptionsAreasplinerangeZones { Color = value } };
 
             chart.PlotOptions.Areasplinerange.Zones = zoneDef;
 
@@ -4284,7 +4284,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsAreasplinerangeZone> { new PlotOptionsAreasplinerangeZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsAreasplinerangeZones> { new PlotOptionsAreasplinerangeZones { Color = defaultValue } };
 
             chart.PlotOptions.Areasplinerange.Zones = zoneDef;
 
@@ -4308,7 +4308,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "areasplinerange", "zones" };
-            var zoneDef = new List<PlotOptionsAreasplinerangeZone> { new PlotOptionsAreasplinerangeZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsAreasplinerangeZones> { new PlotOptionsAreasplinerangeZones { DashStyle = value } };
 
             chart.PlotOptions.Areasplinerange.Zones = zoneDef;
 
@@ -4321,7 +4321,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsAreasplinerangeZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsAreasplinerangeZone> { new PlotOptionsAreasplinerangeZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsAreasplinerangeZones> { new PlotOptionsAreasplinerangeZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Areasplinerange.Zones = zoneDef;
 
@@ -4336,7 +4336,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "areasplinerange", "zones" };
-            var zoneDef = new List<PlotOptionsAreasplinerangeZone> { new PlotOptionsAreasplinerangeZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsAreasplinerangeZones> { new PlotOptionsAreasplinerangeZones { FillColor = value } };
 
             chart.PlotOptions.Areasplinerange.Zones = zoneDef;
 
@@ -4350,7 +4350,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsAreasplinerangeZone> { new PlotOptionsAreasplinerangeZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsAreasplinerangeZones> { new PlotOptionsAreasplinerangeZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Areasplinerange.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "areasplinerange", "zones" };
-            var zoneDef = new List<PlotOptionsAreasplinerangeZone> { new PlotOptionsAreasplinerangeZone { Value = value } };
+            var zoneDef = new List<PlotOptionsAreasplinerangeZones> { new PlotOptionsAreasplinerangeZones { Value = value } };
 
             chart.PlotOptions.Areasplinerange.Zones = zoneDef;
 
@@ -4378,7 +4378,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsAreasplinerangeZone> { new PlotOptionsAreasplinerangeZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsAreasplinerangeZones> { new PlotOptionsAreasplinerangeZones { Value = defaultValue } };
 
             chart.PlotOptions.Areasplinerange.Zones = zoneDef;
 

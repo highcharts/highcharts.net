@@ -3966,7 +3966,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "psar", "zones" };
-            var zoneDef = new List<PlotOptionsPsarZone> { new PlotOptionsPsarZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsPsarZones> { new PlotOptionsPsarZones { ClassName = value } };
 
             chart.PlotOptions.Psar.Zones = zoneDef;
 
@@ -3979,7 +3979,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsPsarZone> { new PlotOptionsPsarZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsPsarZones> { new PlotOptionsPsarZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Psar.Zones = zoneDef;
 
@@ -3995,7 +3995,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "psar", "zones" };
-            var zoneDef = new List<PlotOptionsPsarZone> { new PlotOptionsPsarZone { Color = value } };
+            var zoneDef = new List<PlotOptionsPsarZones> { new PlotOptionsPsarZones { Color = value } };
 
             chart.PlotOptions.Psar.Zones = zoneDef;
 
@@ -4008,7 +4008,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsPsarZone> { new PlotOptionsPsarZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsPsarZones> { new PlotOptionsPsarZones { Color = defaultValue } };
 
             chart.PlotOptions.Psar.Zones = zoneDef;
 
@@ -4032,7 +4032,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "psar", "zones" };
-            var zoneDef = new List<PlotOptionsPsarZone> { new PlotOptionsPsarZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsPsarZones> { new PlotOptionsPsarZones { DashStyle = value } };
 
             chart.PlotOptions.Psar.Zones = zoneDef;
 
@@ -4045,7 +4045,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsPsarZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsPsarZone> { new PlotOptionsPsarZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsPsarZones> { new PlotOptionsPsarZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Psar.Zones = zoneDef;
 
@@ -4060,7 +4060,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "psar", "zones" };
-            var zoneDef = new List<PlotOptionsPsarZone> { new PlotOptionsPsarZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsPsarZones> { new PlotOptionsPsarZones { FillColor = value } };
 
             chart.PlotOptions.Psar.Zones = zoneDef;
 
@@ -4074,7 +4074,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsPsarZone> { new PlotOptionsPsarZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsPsarZones> { new PlotOptionsPsarZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Psar.Zones = zoneDef;
 
@@ -4089,7 +4089,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "psar", "zones" };
-            var zoneDef = new List<PlotOptionsPsarZone> { new PlotOptionsPsarZone { Value = value } };
+            var zoneDef = new List<PlotOptionsPsarZones> { new PlotOptionsPsarZones { Value = value } };
 
             chart.PlotOptions.Psar.Zones = zoneDef;
 
@@ -4102,7 +4102,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsPsarZone> { new PlotOptionsPsarZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsPsarZones> { new PlotOptionsPsarZones { Value = defaultValue } };
 
             chart.PlotOptions.Psar.Zones = zoneDef;
 

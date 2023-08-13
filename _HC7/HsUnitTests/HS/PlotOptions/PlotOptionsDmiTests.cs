@@ -4296,7 +4296,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "dmi", "zones" };
-            var zoneDef = new List<PlotOptionsDmiZone> { new PlotOptionsDmiZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsDmiZones> { new PlotOptionsDmiZones { ClassName = value } };
 
             chart.PlotOptions.Dmi.Zones = zoneDef;
 
@@ -4309,7 +4309,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsDmiZone> { new PlotOptionsDmiZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsDmiZones> { new PlotOptionsDmiZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Dmi.Zones = zoneDef;
 
@@ -4325,7 +4325,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "dmi", "zones" };
-            var zoneDef = new List<PlotOptionsDmiZone> { new PlotOptionsDmiZone { Color = value } };
+            var zoneDef = new List<PlotOptionsDmiZones> { new PlotOptionsDmiZones { Color = value } };
 
             chart.PlotOptions.Dmi.Zones = zoneDef;
 
@@ -4338,7 +4338,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsDmiZone> { new PlotOptionsDmiZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsDmiZones> { new PlotOptionsDmiZones { Color = defaultValue } };
 
             chart.PlotOptions.Dmi.Zones = zoneDef;
 
@@ -4362,7 +4362,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "dmi", "zones" };
-            var zoneDef = new List<PlotOptionsDmiZone> { new PlotOptionsDmiZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsDmiZones> { new PlotOptionsDmiZones { DashStyle = value } };
 
             chart.PlotOptions.Dmi.Zones = zoneDef;
 
@@ -4375,7 +4375,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsDmiZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsDmiZone> { new PlotOptionsDmiZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsDmiZones> { new PlotOptionsDmiZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Dmi.Zones = zoneDef;
 
@@ -4390,7 +4390,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "dmi", "zones" };
-            var zoneDef = new List<PlotOptionsDmiZone> { new PlotOptionsDmiZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsDmiZones> { new PlotOptionsDmiZones { FillColor = value } };
 
             chart.PlotOptions.Dmi.Zones = zoneDef;
 
@@ -4404,7 +4404,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsDmiZone> { new PlotOptionsDmiZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsDmiZones> { new PlotOptionsDmiZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Dmi.Zones = zoneDef;
 
@@ -4419,7 +4419,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "dmi", "zones" };
-            var zoneDef = new List<PlotOptionsDmiZone> { new PlotOptionsDmiZone { Value = value } };
+            var zoneDef = new List<PlotOptionsDmiZones> { new PlotOptionsDmiZones { Value = value } };
 
             chart.PlotOptions.Dmi.Zones = zoneDef;
 
@@ -4432,7 +4432,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsDmiZone> { new PlotOptionsDmiZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsDmiZones> { new PlotOptionsDmiZones { Value = defaultValue } };
 
             chart.PlotOptions.Dmi.Zones = zoneDef;
 

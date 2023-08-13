@@ -4323,7 +4323,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "zigzag", "zones" };
-            var zoneDef = new List<PlotOptionsZigzagZone> { new PlotOptionsZigzagZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsZigzagZones> { new PlotOptionsZigzagZones { ClassName = value } };
 
             chart.PlotOptions.Zigzag.Zones = zoneDef;
 
@@ -4336,7 +4336,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsZigzagZone> { new PlotOptionsZigzagZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsZigzagZones> { new PlotOptionsZigzagZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Zigzag.Zones = zoneDef;
 
@@ -4352,7 +4352,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "zigzag", "zones" };
-            var zoneDef = new List<PlotOptionsZigzagZone> { new PlotOptionsZigzagZone { Color = value } };
+            var zoneDef = new List<PlotOptionsZigzagZones> { new PlotOptionsZigzagZones { Color = value } };
 
             chart.PlotOptions.Zigzag.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsZigzagZone> { new PlotOptionsZigzagZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsZigzagZones> { new PlotOptionsZigzagZones { Color = defaultValue } };
 
             chart.PlotOptions.Zigzag.Zones = zoneDef;
 
@@ -4389,7 +4389,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "zigzag", "zones" };
-            var zoneDef = new List<PlotOptionsZigzagZone> { new PlotOptionsZigzagZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsZigzagZones> { new PlotOptionsZigzagZones { DashStyle = value } };
 
             chart.PlotOptions.Zigzag.Zones = zoneDef;
 
@@ -4402,7 +4402,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsZigzagZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsZigzagZone> { new PlotOptionsZigzagZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsZigzagZones> { new PlotOptionsZigzagZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Zigzag.Zones = zoneDef;
 
@@ -4417,7 +4417,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "zigzag", "zones" };
-            var zoneDef = new List<PlotOptionsZigzagZone> { new PlotOptionsZigzagZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsZigzagZones> { new PlotOptionsZigzagZones { FillColor = value } };
 
             chart.PlotOptions.Zigzag.Zones = zoneDef;
 
@@ -4431,7 +4431,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsZigzagZone> { new PlotOptionsZigzagZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsZigzagZones> { new PlotOptionsZigzagZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Zigzag.Zones = zoneDef;
 
@@ -4446,7 +4446,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "zigzag", "zones" };
-            var zoneDef = new List<PlotOptionsZigzagZone> { new PlotOptionsZigzagZone { Value = value } };
+            var zoneDef = new List<PlotOptionsZigzagZones> { new PlotOptionsZigzagZones { Value = value } };
 
             chart.PlotOptions.Zigzag.Zones = zoneDef;
 
@@ -4459,7 +4459,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsZigzagZone> { new PlotOptionsZigzagZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsZigzagZones> { new PlotOptionsZigzagZones { Value = defaultValue } };
 
             chart.PlotOptions.Zigzag.Zones = zoneDef;
 

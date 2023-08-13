@@ -3285,7 +3285,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "column", "zones" };
-            var zoneDef = new List<PlotOptionsColumnZone> { new PlotOptionsColumnZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsColumnZones> { new PlotOptionsColumnZones { ClassName = value } };
 
             chart.PlotOptions.Column.Zones = zoneDef;
 
@@ -3298,7 +3298,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsColumnZone> { new PlotOptionsColumnZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsColumnZones> { new PlotOptionsColumnZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Column.Zones = zoneDef;
 
@@ -3314,7 +3314,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "column", "zones" };
-            var zoneDef = new List<PlotOptionsColumnZone> { new PlotOptionsColumnZone { Color = value } };
+            var zoneDef = new List<PlotOptionsColumnZones> { new PlotOptionsColumnZones { Color = value } };
 
             chart.PlotOptions.Column.Zones = zoneDef;
 
@@ -3327,7 +3327,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsColumnZone> { new PlotOptionsColumnZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsColumnZones> { new PlotOptionsColumnZones { Color = defaultValue } };
 
             chart.PlotOptions.Column.Zones = zoneDef;
 
@@ -3351,7 +3351,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "column", "zones" };
-            var zoneDef = new List<PlotOptionsColumnZone> { new PlotOptionsColumnZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsColumnZones> { new PlotOptionsColumnZones { DashStyle = value } };
 
             chart.PlotOptions.Column.Zones = zoneDef;
 
@@ -3364,7 +3364,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsColumnZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsColumnZone> { new PlotOptionsColumnZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsColumnZones> { new PlotOptionsColumnZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Column.Zones = zoneDef;
 
@@ -3379,7 +3379,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "column", "zones" };
-            var zoneDef = new List<PlotOptionsColumnZone> { new PlotOptionsColumnZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsColumnZones> { new PlotOptionsColumnZones { FillColor = value } };
 
             chart.PlotOptions.Column.Zones = zoneDef;
 
@@ -3393,7 +3393,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsColumnZone> { new PlotOptionsColumnZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsColumnZones> { new PlotOptionsColumnZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Column.Zones = zoneDef;
 
@@ -3408,7 +3408,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "column", "zones" };
-            var zoneDef = new List<PlotOptionsColumnZone> { new PlotOptionsColumnZone { Value = value } };
+            var zoneDef = new List<PlotOptionsColumnZones> { new PlotOptionsColumnZones { Value = value } };
 
             chart.PlotOptions.Column.Zones = zoneDef;
 
@@ -3421,7 +3421,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsColumnZone> { new PlotOptionsColumnZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsColumnZones> { new PlotOptionsColumnZones { Value = defaultValue } };
 
             chart.PlotOptions.Column.Zones = zoneDef;
 

@@ -5305,7 +5305,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<AreasplineSeriesZone> { new AreasplineSeriesZone { ClassName = value } };
+            var zoneDef = new List<AreasplineSeriesZones> { new AreasplineSeriesZones { ClassName = value } };
 
             ((AreasplineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5318,7 +5318,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<AreasplineSeriesZone> { new AreasplineSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<AreasplineSeriesZones> { new AreasplineSeriesZones { ClassName = defaultValue } };
 
             ((AreasplineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5334,7 +5334,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<AreasplineSeriesZone> { new AreasplineSeriesZone { Color = value } };
+            var zoneDef = new List<AreasplineSeriesZones> { new AreasplineSeriesZones { Color = value } };
 
             ((AreasplineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5347,7 +5347,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<AreasplineSeriesZone> { new AreasplineSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<AreasplineSeriesZones> { new AreasplineSeriesZones { Color = defaultValue } };
 
             ((AreasplineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5371,7 +5371,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<AreasplineSeriesZone> { new AreasplineSeriesZone { DashStyle = value } };
+            var zoneDef = new List<AreasplineSeriesZones> { new AreasplineSeriesZones { DashStyle = value } };
 
             ((AreasplineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5384,7 +5384,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
             var defaultValue = AreasplineSeriesZonesDashStyle.Null;
-            var zoneDef = new List<AreasplineSeriesZone> { new AreasplineSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<AreasplineSeriesZones> { new AreasplineSeriesZones { DashStyle = defaultValue } };
 
             ((AreasplineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5399,7 +5399,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<AreasplineSeriesZone> { new AreasplineSeriesZone { FillColor = value } };
+            var zoneDef = new List<AreasplineSeriesZones> { new AreasplineSeriesZones { FillColor = value } };
 
             ((AreasplineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5413,7 +5413,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<AreasplineSeriesZone> { new AreasplineSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<AreasplineSeriesZones> { new AreasplineSeriesZones { FillColor = defaultValue } };
 
         //    ((AreasplineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5428,7 +5428,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<AreasplineSeriesZone> { new AreasplineSeriesZone { Value = value } };
+            var zoneDef = new List<AreasplineSeriesZones> { new AreasplineSeriesZones { Value = value } };
 
             ((AreasplineSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5441,7 +5441,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AreasplineSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<AreasplineSeriesZone> { new AreasplineSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<AreasplineSeriesZones> { new AreasplineSeriesZones { Value = defaultValue } };
 
             ((AreasplineSeries)chart.Series[0]).Zones = zoneDef;
 

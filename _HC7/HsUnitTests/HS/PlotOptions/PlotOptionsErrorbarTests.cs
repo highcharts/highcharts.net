@@ -4317,7 +4317,7 @@
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    var pathToProperty = new List<string>() { "plotOptions", "errorbar", "zones" };
-//        //    var zoneDef = new List<PlotOptionsErrorbarZone> { new PlotOptionsErrorbarZone { ClassName = value } };
+//        //    var zoneDef = new List<PlotOptionsErrorbarZones> { new PlotOptionsErrorbarZones { ClassName = value } };
 
 //        //    chart.PlotOptions.Errorbar.Zones = zoneDef;
 
@@ -4330,7 +4330,7 @@
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    var defaultValue = string.Empty;
-//        //    var zoneDef = new List<PlotOptionsErrorbarZone> { new PlotOptionsErrorbarZone { ClassName = defaultValue } };
+//        //    var zoneDef = new List<PlotOptionsErrorbarZones> { new PlotOptionsErrorbarZones { ClassName = defaultValue } };
 
 //        //    chart.PlotOptions.Errorbar.Zones = zoneDef;
 
@@ -4346,7 +4346,7 @@
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    var pathToProperty = new List<string>() { "plotOptions", "errorbar", "zones" };
-//        //    var zoneDef = new List<PlotOptionsErrorbarZone> { new PlotOptionsErrorbarZone { Color = value } };
+//        //    var zoneDef = new List<PlotOptionsErrorbarZones> { new PlotOptionsErrorbarZones { Color = value } };
 
 //        //    chart.PlotOptions.Errorbar.Zones = zoneDef;
 
@@ -4359,7 +4359,7 @@
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    var defaultValue = string.Empty;
-//        //    var zoneDef = new List<PlotOptionsErrorbarZone> { new PlotOptionsErrorbarZone { Color = defaultValue } };
+//        //    var zoneDef = new List<PlotOptionsErrorbarZones> { new PlotOptionsErrorbarZones { Color = defaultValue } };
 
 //        //    chart.PlotOptions.Errorbar.Zones = zoneDef;
 
@@ -4383,7 +4383,7 @@
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    var pathToProperty = new List<string>() { "plotOptions", "errorbar", "zones" };
-//        //    var zoneDef = new List<PlotOptionsErrorbarZone> { new PlotOptionsErrorbarZone { DashStyle = value } };
+//        //    var zoneDef = new List<PlotOptionsErrorbarZones> { new PlotOptionsErrorbarZones { DashStyle = value } };
 
 //        //    chart.PlotOptions.Errorbar.Zones = zoneDef;
 
@@ -4396,7 +4396,7 @@
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    var defaultValue = PlotOptionsErrorbarZonesDashStyle.Null;
-//        //    var zoneDef = new List<PlotOptionsErrorbarZone> { new PlotOptionsErrorbarZone { DashStyle = defaultValue } };
+//        //    var zoneDef = new List<PlotOptionsErrorbarZones> { new PlotOptionsErrorbarZones { DashStyle = defaultValue } };
 
 //        //    chart.PlotOptions.Errorbar.Zones = zoneDef;
 
@@ -4411,7 +4411,7 @@
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    var pathToProperty = new List<string>() { "plotOptions", "errorbar", "zones" };
-//        //    var zoneDef = new List<PlotOptionsErrorbarZone> { new PlotOptionsErrorbarZone { FillColor = value } };
+//        //    var zoneDef = new List<PlotOptionsErrorbarZones> { new PlotOptionsErrorbarZones { FillColor = value } };
 
 //        //    chart.PlotOptions.Errorbar.Zones = zoneDef;
 
@@ -4425,7 +4425,7 @@
 //        ////    var chart = new Highstock();
 //        ////    var renderer = new HighstockRenderer(chart);
 //        ////    var defaultValue = string.Empty;
-//        ////    var zoneDef = new List<PlotOptionsErrorbarZone> { new PlotOptionsErrorbarZone { FillColor = defaultValue } };
+//        ////    var zoneDef = new List<PlotOptionsErrorbarZones> { new PlotOptionsErrorbarZones { FillColor = defaultValue } };
 
 //        ////    chart.PlotOptions.Errorbar.Zones = zoneDef;
 
@@ -4440,7 +4440,7 @@
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    var pathToProperty = new List<string>() { "plotOptions", "errorbar", "zones" };
-//        //    var zoneDef = new List<PlotOptionsErrorbarZone> { new PlotOptionsErrorbarZone { Value = value } };
+//        //    var zoneDef = new List<PlotOptionsErrorbarZones> { new PlotOptionsErrorbarZones { Value = value } };
 
 //        //    chart.PlotOptions.Errorbar.Zones = zoneDef;
 
@@ -4453,7 +4453,7 @@
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
 //        //    double? defaultValue = null;
-//        //    var zoneDef = new List<PlotOptionsErrorbarZone> { new PlotOptionsErrorbarZone { Value = defaultValue } };
+//        //    var zoneDef = new List<PlotOptionsErrorbarZones> { new PlotOptionsErrorbarZones { Value = defaultValue } };
 
 //        //    chart.PlotOptions.Errorbar.Zones = zoneDef;
 

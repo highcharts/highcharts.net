@@ -4727,7 +4727,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new IkhSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<IkhSeriesZone> { new IkhSeriesZone { ClassName = value } };
+            var zoneDef = new List<IkhSeriesZones> { new IkhSeriesZones { ClassName = value } };
 
             ((IkhSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4740,7 +4740,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new IkhSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<IkhSeriesZone> { new IkhSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<IkhSeriesZones> { new IkhSeriesZones { ClassName = defaultValue } };
 
             ((IkhSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4756,7 +4756,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new IkhSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<IkhSeriesZone> { new IkhSeriesZone { Color = value } };
+            var zoneDef = new List<IkhSeriesZones> { new IkhSeriesZones { Color = value } };
 
             ((IkhSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4769,7 +4769,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new IkhSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<IkhSeriesZone> { new IkhSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<IkhSeriesZones> { new IkhSeriesZones { Color = defaultValue } };
 
             ((IkhSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4793,7 +4793,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new IkhSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<IkhSeriesZone> { new IkhSeriesZone { DashStyle = value } };
+            var zoneDef = new List<IkhSeriesZones> { new IkhSeriesZones { DashStyle = value } };
 
             ((IkhSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4806,7 +4806,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new IkhSeries(); chart.Series.Add(series);
             var defaultValue = IkhSeriesZonesDashStyle.Null;
-            var zoneDef = new List<IkhSeriesZone> { new IkhSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<IkhSeriesZones> { new IkhSeriesZones { DashStyle = defaultValue } };
 
             ((IkhSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4821,7 +4821,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new IkhSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<IkhSeriesZone> { new IkhSeriesZone { FillColor = value } };
+            var zoneDef = new List<IkhSeriesZones> { new IkhSeriesZones { FillColor = value } };
 
             ((IkhSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4835,7 +4835,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new IkhSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<IkhSeriesZone> { new IkhSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<IkhSeriesZones> { new IkhSeriesZones { FillColor = defaultValue } };
 
         //    ((IkhSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4850,7 +4850,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new IkhSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<IkhSeriesZone> { new IkhSeriesZone { Value = value } };
+            var zoneDef = new List<IkhSeriesZones> { new IkhSeriesZones { Value = value } };
 
             ((IkhSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4863,7 +4863,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new IkhSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<IkhSeriesZone> { new IkhSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<IkhSeriesZones> { new IkhSeriesZones { Value = defaultValue } };
 
             ((IkhSeries)chart.Series[0]).Zones = zoneDef;
 

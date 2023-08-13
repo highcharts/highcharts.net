@@ -4727,7 +4727,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PsarSeriesZone> { new PsarSeriesZone { ClassName = value } };
+            var zoneDef = new List<PsarSeriesZones> { new PsarSeriesZones { ClassName = value } };
 
             ((PsarSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4740,7 +4740,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PsarSeriesZone> { new PsarSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<PsarSeriesZones> { new PsarSeriesZones { ClassName = defaultValue } };
 
             ((PsarSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4756,7 +4756,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PsarSeriesZone> { new PsarSeriesZone { Color = value } };
+            var zoneDef = new List<PsarSeriesZones> { new PsarSeriesZones { Color = value } };
 
             ((PsarSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4769,7 +4769,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PsarSeriesZone> { new PsarSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<PsarSeriesZones> { new PsarSeriesZones { Color = defaultValue } };
 
             ((PsarSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4793,7 +4793,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PsarSeriesZone> { new PsarSeriesZone { DashStyle = value } };
+            var zoneDef = new List<PsarSeriesZones> { new PsarSeriesZones { DashStyle = value } };
 
             ((PsarSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4806,7 +4806,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
             var defaultValue = PsarSeriesZonesDashStyle.Null;
-            var zoneDef = new List<PsarSeriesZone> { new PsarSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PsarSeriesZones> { new PsarSeriesZones { DashStyle = defaultValue } };
 
             ((PsarSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4821,7 +4821,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PsarSeriesZone> { new PsarSeriesZone { FillColor = value } };
+            var zoneDef = new List<PsarSeriesZones> { new PsarSeriesZones { FillColor = value } };
 
             ((PsarSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4835,7 +4835,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PsarSeriesZone> { new PsarSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PsarSeriesZones> { new PsarSeriesZones { FillColor = defaultValue } };
 
         //    ((PsarSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4850,7 +4850,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<PsarSeriesZone> { new PsarSeriesZone { Value = value } };
+            var zoneDef = new List<PsarSeriesZones> { new PsarSeriesZones { Value = value } };
 
             ((PsarSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4863,7 +4863,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<PsarSeriesZone> { new PsarSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<PsarSeriesZones> { new PsarSeriesZones { Value = defaultValue } };
 
             ((PsarSeries)chart.Series[0]).Zones = zoneDef;
 

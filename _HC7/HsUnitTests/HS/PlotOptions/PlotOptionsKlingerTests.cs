@@ -4297,7 +4297,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "klinger", "zones" };
-            var zoneDef = new List<PlotOptionsKlingerZone> { new PlotOptionsKlingerZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsKlingerZones> { new PlotOptionsKlingerZones { ClassName = value } };
 
             chart.PlotOptions.Klinger.Zones = zoneDef;
 
@@ -4310,7 +4310,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsKlingerZone> { new PlotOptionsKlingerZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsKlingerZones> { new PlotOptionsKlingerZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Klinger.Zones = zoneDef;
 
@@ -4326,7 +4326,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "klinger", "zones" };
-            var zoneDef = new List<PlotOptionsKlingerZone> { new PlotOptionsKlingerZone { Color = value } };
+            var zoneDef = new List<PlotOptionsKlingerZones> { new PlotOptionsKlingerZones { Color = value } };
 
             chart.PlotOptions.Klinger.Zones = zoneDef;
 
@@ -4339,7 +4339,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsKlingerZone> { new PlotOptionsKlingerZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsKlingerZones> { new PlotOptionsKlingerZones { Color = defaultValue } };
 
             chart.PlotOptions.Klinger.Zones = zoneDef;
 
@@ -4363,7 +4363,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "klinger", "zones" };
-            var zoneDef = new List<PlotOptionsKlingerZone> { new PlotOptionsKlingerZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsKlingerZones> { new PlotOptionsKlingerZones { DashStyle = value } };
 
             chart.PlotOptions.Klinger.Zones = zoneDef;
 
@@ -4376,7 +4376,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsKlingerZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsKlingerZone> { new PlotOptionsKlingerZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsKlingerZones> { new PlotOptionsKlingerZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Klinger.Zones = zoneDef;
 
@@ -4391,7 +4391,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "klinger", "zones" };
-            var zoneDef = new List<PlotOptionsKlingerZone> { new PlotOptionsKlingerZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsKlingerZones> { new PlotOptionsKlingerZones { FillColor = value } };
 
             chart.PlotOptions.Klinger.Zones = zoneDef;
 
@@ -4405,7 +4405,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsKlingerZone> { new PlotOptionsKlingerZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsKlingerZones> { new PlotOptionsKlingerZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Klinger.Zones = zoneDef;
 
@@ -4420,7 +4420,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "klinger", "zones" };
-            var zoneDef = new List<PlotOptionsKlingerZone> { new PlotOptionsKlingerZone { Value = value } };
+            var zoneDef = new List<PlotOptionsKlingerZones> { new PlotOptionsKlingerZones { Value = value } };
 
             chart.PlotOptions.Klinger.Zones = zoneDef;
 
@@ -4433,7 +4433,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsKlingerZone> { new PlotOptionsKlingerZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsKlingerZones> { new PlotOptionsKlingerZones { Value = defaultValue } };
 
             chart.PlotOptions.Klinger.Zones = zoneDef;
 

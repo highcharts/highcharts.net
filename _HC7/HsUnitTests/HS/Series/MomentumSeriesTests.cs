@@ -4728,7 +4728,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new MomentumSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<MomentumSeriesZone> { new MomentumSeriesZone { ClassName = value } };
+            var zoneDef = new List<MomentumSeriesZones> { new MomentumSeriesZones { ClassName = value } };
 
             ((MomentumSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4741,7 +4741,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new MomentumSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<MomentumSeriesZone> { new MomentumSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<MomentumSeriesZones> { new MomentumSeriesZones { ClassName = defaultValue } };
 
             ((MomentumSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4757,7 +4757,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new MomentumSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<MomentumSeriesZone> { new MomentumSeriesZone { Color = value } };
+            var zoneDef = new List<MomentumSeriesZones> { new MomentumSeriesZones { Color = value } };
 
             ((MomentumSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4770,7 +4770,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new MomentumSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<MomentumSeriesZone> { new MomentumSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<MomentumSeriesZones> { new MomentumSeriesZones { Color = defaultValue } };
 
             ((MomentumSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4794,7 +4794,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new MomentumSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<MomentumSeriesZone> { new MomentumSeriesZone { DashStyle = value } };
+            var zoneDef = new List<MomentumSeriesZones> { new MomentumSeriesZones { DashStyle = value } };
 
             ((MomentumSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4807,7 +4807,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new MomentumSeries(); chart.Series.Add(series);
             var defaultValue = MomentumSeriesZonesDashStyle.Null;
-            var zoneDef = new List<MomentumSeriesZone> { new MomentumSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<MomentumSeriesZones> { new MomentumSeriesZones { DashStyle = defaultValue } };
 
             ((MomentumSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4822,7 +4822,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new MomentumSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<MomentumSeriesZone> { new MomentumSeriesZone { FillColor = value } };
+            var zoneDef = new List<MomentumSeriesZones> { new MomentumSeriesZones { FillColor = value } };
 
             ((MomentumSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4836,7 +4836,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new MomentumSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<MomentumSeriesZone> { new MomentumSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<MomentumSeriesZones> { new MomentumSeriesZones { FillColor = defaultValue } };
 
         //    ((MomentumSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4851,7 +4851,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new MomentumSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<MomentumSeriesZone> { new MomentumSeriesZone { Value = value } };
+            var zoneDef = new List<MomentumSeriesZones> { new MomentumSeriesZones { Value = value } };
 
             ((MomentumSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4864,7 +4864,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new MomentumSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<MomentumSeriesZone> { new MomentumSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<MomentumSeriesZones> { new MomentumSeriesZones { Value = defaultValue } };
 
             ((MomentumSeries)chart.Series[0]).Zones = zoneDef;
 

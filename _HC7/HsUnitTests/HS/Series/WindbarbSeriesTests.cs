@@ -4456,7 +4456,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<WindbarbSeriesZone> { new WindbarbSeriesZone { ClassName = value } };
+            var zoneDef = new List<WindbarbSeriesZones> { new WindbarbSeriesZones { ClassName = value } };
 
             ((WindbarbSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4469,7 +4469,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<WindbarbSeriesZone> { new WindbarbSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<WindbarbSeriesZones> { new WindbarbSeriesZones { ClassName = defaultValue } };
 
             ((WindbarbSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4485,7 +4485,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<WindbarbSeriesZone> { new WindbarbSeriesZone { Color = value } };
+            var zoneDef = new List<WindbarbSeriesZones> { new WindbarbSeriesZones { Color = value } };
 
             ((WindbarbSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4498,7 +4498,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<WindbarbSeriesZone> { new WindbarbSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<WindbarbSeriesZones> { new WindbarbSeriesZones { Color = defaultValue } };
 
             ((WindbarbSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4522,7 +4522,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<WindbarbSeriesZone> { new WindbarbSeriesZone { DashStyle = value } };
+            var zoneDef = new List<WindbarbSeriesZones> { new WindbarbSeriesZones { DashStyle = value } };
 
             ((WindbarbSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4535,7 +4535,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
             var defaultValue = WindbarbSeriesZonesDashStyle.Null;
-            var zoneDef = new List<WindbarbSeriesZone> { new WindbarbSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<WindbarbSeriesZones> { new WindbarbSeriesZones { DashStyle = defaultValue } };
 
             ((WindbarbSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4550,7 +4550,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<WindbarbSeriesZone> { new WindbarbSeriesZone { FillColor = value } };
+            var zoneDef = new List<WindbarbSeriesZones> { new WindbarbSeriesZones { FillColor = value } };
 
             ((WindbarbSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4564,7 +4564,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<WindbarbSeriesZone> { new WindbarbSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<WindbarbSeriesZones> { new WindbarbSeriesZones { FillColor = defaultValue } };
 
         //    ((WindbarbSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4579,7 +4579,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<WindbarbSeriesZone> { new WindbarbSeriesZone { Value = value } };
+            var zoneDef = new List<WindbarbSeriesZones> { new WindbarbSeriesZones { Value = value } };
 
             ((WindbarbSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4592,7 +4592,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<WindbarbSeriesZone> { new WindbarbSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<WindbarbSeriesZones> { new WindbarbSeriesZones { Value = defaultValue } };
 
             ((WindbarbSeries)chart.Series[0]).Zones = zoneDef;
 

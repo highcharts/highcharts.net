@@ -3453,7 +3453,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "windbarb", "zones" };
-            var zoneDef = new List<PlotOptionsWindbarbZone> { new PlotOptionsWindbarbZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsWindbarbZones> { new PlotOptionsWindbarbZones { ClassName = value } };
 
             chart.PlotOptions.Windbarb.Zones = zoneDef;
 
@@ -3466,7 +3466,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsWindbarbZone> { new PlotOptionsWindbarbZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsWindbarbZones> { new PlotOptionsWindbarbZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Windbarb.Zones = zoneDef;
 
@@ -3482,7 +3482,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "windbarb", "zones" };
-            var zoneDef = new List<PlotOptionsWindbarbZone> { new PlotOptionsWindbarbZone { Color = value } };
+            var zoneDef = new List<PlotOptionsWindbarbZones> { new PlotOptionsWindbarbZones { Color = value } };
 
             chart.PlotOptions.Windbarb.Zones = zoneDef;
 
@@ -3495,7 +3495,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsWindbarbZone> { new PlotOptionsWindbarbZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsWindbarbZones> { new PlotOptionsWindbarbZones { Color = defaultValue } };
 
             chart.PlotOptions.Windbarb.Zones = zoneDef;
 
@@ -3519,7 +3519,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "windbarb", "zones" };
-            var zoneDef = new List<PlotOptionsWindbarbZone> { new PlotOptionsWindbarbZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsWindbarbZones> { new PlotOptionsWindbarbZones { DashStyle = value } };
 
             chart.PlotOptions.Windbarb.Zones = zoneDef;
 
@@ -3532,7 +3532,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsWindbarbZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsWindbarbZone> { new PlotOptionsWindbarbZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsWindbarbZones> { new PlotOptionsWindbarbZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Windbarb.Zones = zoneDef;
 
@@ -3547,7 +3547,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "windbarb", "zones" };
-            var zoneDef = new List<PlotOptionsWindbarbZone> { new PlotOptionsWindbarbZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsWindbarbZones> { new PlotOptionsWindbarbZones { FillColor = value } };
 
             chart.PlotOptions.Windbarb.Zones = zoneDef;
 
@@ -3561,7 +3561,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsWindbarbZone> { new PlotOptionsWindbarbZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsWindbarbZones> { new PlotOptionsWindbarbZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Windbarb.Zones = zoneDef;
 
@@ -3576,7 +3576,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "windbarb", "zones" };
-            var zoneDef = new List<PlotOptionsWindbarbZone> { new PlotOptionsWindbarbZone { Value = value } };
+            var zoneDef = new List<PlotOptionsWindbarbZones> { new PlotOptionsWindbarbZones { Value = value } };
 
             chart.PlotOptions.Windbarb.Zones = zoneDef;
 
@@ -3589,7 +3589,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsWindbarbZone> { new PlotOptionsWindbarbZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsWindbarbZones> { new PlotOptionsWindbarbZones { Value = defaultValue } };
 
             chart.PlotOptions.Windbarb.Zones = zoneDef;
 

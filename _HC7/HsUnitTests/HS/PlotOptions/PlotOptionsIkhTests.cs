@@ -4296,7 +4296,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "ikh", "zones" };
-            var zoneDef = new List<PlotOptionsIkhZone> { new PlotOptionsIkhZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsIkhZones> { new PlotOptionsIkhZones { ClassName = value } };
 
             chart.PlotOptions.Ikh.Zones = zoneDef;
 
@@ -4309,7 +4309,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsIkhZone> { new PlotOptionsIkhZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsIkhZones> { new PlotOptionsIkhZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Ikh.Zones = zoneDef;
 
@@ -4325,7 +4325,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "ikh", "zones" };
-            var zoneDef = new List<PlotOptionsIkhZone> { new PlotOptionsIkhZone { Color = value } };
+            var zoneDef = new List<PlotOptionsIkhZones> { new PlotOptionsIkhZones { Color = value } };
 
             chart.PlotOptions.Ikh.Zones = zoneDef;
 
@@ -4338,7 +4338,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsIkhZone> { new PlotOptionsIkhZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsIkhZones> { new PlotOptionsIkhZones { Color = defaultValue } };
 
             chart.PlotOptions.Ikh.Zones = zoneDef;
 
@@ -4362,7 +4362,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "ikh", "zones" };
-            var zoneDef = new List<PlotOptionsIkhZone> { new PlotOptionsIkhZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsIkhZones> { new PlotOptionsIkhZones { DashStyle = value } };
 
             chart.PlotOptions.Ikh.Zones = zoneDef;
 
@@ -4375,7 +4375,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsIkhZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsIkhZone> { new PlotOptionsIkhZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsIkhZones> { new PlotOptionsIkhZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Ikh.Zones = zoneDef;
 
@@ -4390,7 +4390,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "ikh", "zones" };
-            var zoneDef = new List<PlotOptionsIkhZone> { new PlotOptionsIkhZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsIkhZones> { new PlotOptionsIkhZones { FillColor = value } };
 
             chart.PlotOptions.Ikh.Zones = zoneDef;
 
@@ -4404,7 +4404,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsIkhZone> { new PlotOptionsIkhZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsIkhZones> { new PlotOptionsIkhZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Ikh.Zones = zoneDef;
 
@@ -4419,7 +4419,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "ikh", "zones" };
-            var zoneDef = new List<PlotOptionsIkhZone> { new PlotOptionsIkhZone { Value = value } };
+            var zoneDef = new List<PlotOptionsIkhZones> { new PlotOptionsIkhZones { Value = value } };
 
             chart.PlotOptions.Ikh.Zones = zoneDef;
 
@@ -4432,7 +4432,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsIkhZone> { new PlotOptionsIkhZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsIkhZones> { new PlotOptionsIkhZones { Value = defaultValue } };
 
             chart.PlotOptions.Ikh.Zones = zoneDef;
 

@@ -4728,7 +4728,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TemaSeriesZone> { new TemaSeriesZone { ClassName = value } };
+            var zoneDef = new List<TemaSeriesZones> { new TemaSeriesZones { ClassName = value } };
 
             ((TemaSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4741,7 +4741,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<TemaSeriesZone> { new TemaSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<TemaSeriesZones> { new TemaSeriesZones { ClassName = defaultValue } };
 
             ((TemaSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4757,7 +4757,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TemaSeriesZone> { new TemaSeriesZone { Color = value } };
+            var zoneDef = new List<TemaSeriesZones> { new TemaSeriesZones { Color = value } };
 
             ((TemaSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4770,7 +4770,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<TemaSeriesZone> { new TemaSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<TemaSeriesZones> { new TemaSeriesZones { Color = defaultValue } };
 
             ((TemaSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4794,7 +4794,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TemaSeriesZone> { new TemaSeriesZone { DashStyle = value } };
+            var zoneDef = new List<TemaSeriesZones> { new TemaSeriesZones { DashStyle = value } };
 
             ((TemaSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4807,7 +4807,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
             var defaultValue = TemaSeriesZonesDashStyle.Null;
-            var zoneDef = new List<TemaSeriesZone> { new TemaSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<TemaSeriesZones> { new TemaSeriesZones { DashStyle = defaultValue } };
 
             ((TemaSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4822,7 +4822,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TemaSeriesZone> { new TemaSeriesZone { FillColor = value } };
+            var zoneDef = new List<TemaSeriesZones> { new TemaSeriesZones { FillColor = value } };
 
             ((TemaSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4836,7 +4836,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<TemaSeriesZone> { new TemaSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<TemaSeriesZones> { new TemaSeriesZones { FillColor = defaultValue } };
 
         //    ((TemaSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4851,7 +4851,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<TemaSeriesZone> { new TemaSeriesZone { Value = value } };
+            var zoneDef = new List<TemaSeriesZones> { new TemaSeriesZones { Value = value } };
 
             ((TemaSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4864,7 +4864,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<TemaSeriesZone> { new TemaSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<TemaSeriesZones> { new TemaSeriesZones { Value = defaultValue } };
 
             ((TemaSeries)chart.Series[0]).Zones = zoneDef;
 

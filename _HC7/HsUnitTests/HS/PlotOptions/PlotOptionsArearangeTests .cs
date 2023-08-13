@@ -4299,7 +4299,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "arearange", "zones" };
-            var zoneDef = new List<PlotOptionsArearangeZone> { new PlotOptionsArearangeZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsArearangeZones> { new PlotOptionsArearangeZones { ClassName = value } };
 
             chart.PlotOptions.Arearange.Zones = zoneDef;
 
@@ -4312,7 +4312,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsArearangeZone> { new PlotOptionsArearangeZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsArearangeZones> { new PlotOptionsArearangeZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Arearange.Zones = zoneDef;
 
@@ -4328,7 +4328,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "arearange", "zones" };
-            var zoneDef = new List<PlotOptionsArearangeZone> { new PlotOptionsArearangeZone { Color = value } };
+            var zoneDef = new List<PlotOptionsArearangeZones> { new PlotOptionsArearangeZones { Color = value } };
 
             chart.PlotOptions.Arearange.Zones = zoneDef;
 
@@ -4341,7 +4341,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsArearangeZone> { new PlotOptionsArearangeZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsArearangeZones> { new PlotOptionsArearangeZones { Color = defaultValue } };
 
             chart.PlotOptions.Arearange.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "arearange", "zones" };
-            var zoneDef = new List<PlotOptionsArearangeZone> { new PlotOptionsArearangeZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsArearangeZones> { new PlotOptionsArearangeZones { DashStyle = value } };
 
             chart.PlotOptions.Arearange.Zones = zoneDef;
 
@@ -4378,7 +4378,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsArearangeZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsArearangeZone> { new PlotOptionsArearangeZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsArearangeZones> { new PlotOptionsArearangeZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Arearange.Zones = zoneDef;
 
@@ -4393,7 +4393,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "arearange", "zones" };
-            var zoneDef = new List<PlotOptionsArearangeZone> { new PlotOptionsArearangeZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsArearangeZones> { new PlotOptionsArearangeZones { FillColor = value } };
 
             chart.PlotOptions.Arearange.Zones = zoneDef;
 
@@ -4407,7 +4407,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsArearangeZone> { new PlotOptionsArearangeZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsArearangeZones> { new PlotOptionsArearangeZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Arearange.Zones = zoneDef;
 
@@ -4422,7 +4422,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "arearange", "zones" };
-            var zoneDef = new List<PlotOptionsArearangeZone> { new PlotOptionsArearangeZone { Value = value } };
+            var zoneDef = new List<PlotOptionsArearangeZones> { new PlotOptionsArearangeZones { Value = value } };
 
             chart.PlotOptions.Arearange.Zones = zoneDef;
 
@@ -4435,7 +4435,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsArearangeZone> { new PlotOptionsArearangeZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsArearangeZones> { new PlotOptionsArearangeZones { Value = defaultValue } };
 
             chart.PlotOptions.Arearange.Zones = zoneDef;
 

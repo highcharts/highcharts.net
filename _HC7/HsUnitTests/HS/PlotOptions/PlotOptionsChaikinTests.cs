@@ -4322,7 +4322,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "chaikin", "zones" };
-            var zoneDef = new List<PlotOptionsChaikinZone> { new PlotOptionsChaikinZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsChaikinZones> { new PlotOptionsChaikinZones { ClassName = value } };
 
             chart.PlotOptions.Chaikin.Zones = zoneDef;
 
@@ -4335,7 +4335,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsChaikinZone> { new PlotOptionsChaikinZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsChaikinZones> { new PlotOptionsChaikinZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Chaikin.Zones = zoneDef;
 
@@ -4351,7 +4351,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "chaikin", "zones" };
-            var zoneDef = new List<PlotOptionsChaikinZone> { new PlotOptionsChaikinZone { Color = value } };
+            var zoneDef = new List<PlotOptionsChaikinZones> { new PlotOptionsChaikinZones { Color = value } };
 
             chart.PlotOptions.Chaikin.Zones = zoneDef;
 
@@ -4364,7 +4364,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsChaikinZone> { new PlotOptionsChaikinZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsChaikinZones> { new PlotOptionsChaikinZones { Color = defaultValue } };
 
             chart.PlotOptions.Chaikin.Zones = zoneDef;
 
@@ -4388,7 +4388,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "chaikin", "zones" };
-            var zoneDef = new List<PlotOptionsChaikinZone> { new PlotOptionsChaikinZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsChaikinZones> { new PlotOptionsChaikinZones { DashStyle = value } };
 
             chart.PlotOptions.Chaikin.Zones = zoneDef;
 
@@ -4401,7 +4401,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsChaikinZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsChaikinZone> { new PlotOptionsChaikinZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsChaikinZones> { new PlotOptionsChaikinZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Chaikin.Zones = zoneDef;
 
@@ -4416,7 +4416,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "chaikin", "zones" };
-            var zoneDef = new List<PlotOptionsChaikinZone> { new PlotOptionsChaikinZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsChaikinZones> { new PlotOptionsChaikinZones { FillColor = value } };
 
             chart.PlotOptions.Chaikin.Zones = zoneDef;
 
@@ -4430,7 +4430,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsChaikinZone> { new PlotOptionsChaikinZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsChaikinZones> { new PlotOptionsChaikinZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Chaikin.Zones = zoneDef;
 
@@ -4445,7 +4445,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "chaikin", "zones" };
-            var zoneDef = new List<PlotOptionsChaikinZone> { new PlotOptionsChaikinZone { Value = value } };
+            var zoneDef = new List<PlotOptionsChaikinZones> { new PlotOptionsChaikinZones { Value = value } };
 
             chart.PlotOptions.Chaikin.Zones = zoneDef;
 
@@ -4458,7 +4458,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsChaikinZone> { new PlotOptionsChaikinZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsChaikinZones> { new PlotOptionsChaikinZones { Value = defaultValue } };
 
             chart.PlotOptions.Chaikin.Zones = zoneDef;
 

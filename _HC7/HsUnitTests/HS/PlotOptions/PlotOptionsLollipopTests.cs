@@ -4182,7 +4182,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "lollipop", "zones" };
-            var zoneDef = new List<PlotOptionsLollipopZone> { new PlotOptionsLollipopZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsLollipopZones> { new PlotOptionsLollipopZones { ClassName = value } };
 
             chart.PlotOptions.Lollipop.Zones = zoneDef;
 
@@ -4195,7 +4195,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsLollipopZone> { new PlotOptionsLollipopZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsLollipopZones> { new PlotOptionsLollipopZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Lollipop.Zones = zoneDef;
 
@@ -4211,7 +4211,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "lollipop", "zones" };
-            var zoneDef = new List<PlotOptionsLollipopZone> { new PlotOptionsLollipopZone { Color = value } };
+            var zoneDef = new List<PlotOptionsLollipopZones> { new PlotOptionsLollipopZones { Color = value } };
 
             chart.PlotOptions.Lollipop.Zones = zoneDef;
 
@@ -4224,7 +4224,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsLollipopZone> { new PlotOptionsLollipopZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsLollipopZones> { new PlotOptionsLollipopZones { Color = defaultValue } };
 
             chart.PlotOptions.Lollipop.Zones = zoneDef;
 
@@ -4248,7 +4248,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "lollipop", "zones" };
-            var zoneDef = new List<PlotOptionsLollipopZone> { new PlotOptionsLollipopZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsLollipopZones> { new PlotOptionsLollipopZones { DashStyle = value } };
 
             chart.PlotOptions.Lollipop.Zones = zoneDef;
 
@@ -4261,7 +4261,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsLollipopZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsLollipopZone> { new PlotOptionsLollipopZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsLollipopZones> { new PlotOptionsLollipopZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Lollipop.Zones = zoneDef;
 
@@ -4276,7 +4276,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "lollipop", "zones" };
-            var zoneDef = new List<PlotOptionsLollipopZone> { new PlotOptionsLollipopZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsLollipopZones> { new PlotOptionsLollipopZones { FillColor = value } };
 
             chart.PlotOptions.Lollipop.Zones = zoneDef;
 
@@ -4290,7 +4290,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsLollipopZone> { new PlotOptionsLollipopZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsLollipopZones> { new PlotOptionsLollipopZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Lollipop.Zones = zoneDef;
 
@@ -4305,7 +4305,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "lollipop", "zones" };
-            var zoneDef = new List<PlotOptionsLollipopZone> { new PlotOptionsLollipopZone { Value = value } };
+            var zoneDef = new List<PlotOptionsLollipopZones> { new PlotOptionsLollipopZones { Value = value } };
 
             chart.PlotOptions.Lollipop.Zones = zoneDef;
 
@@ -4318,7 +4318,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsLollipopZone> { new PlotOptionsLollipopZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsLollipopZones> { new PlotOptionsLollipopZones { Value = defaultValue } };
 
             chart.PlotOptions.Lollipop.Zones = zoneDef;
 

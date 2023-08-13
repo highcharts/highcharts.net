@@ -4218,7 +4218,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "dumbbell", "zones" };
-            var zoneDef = new List<PlotOptionsDumbbellZone> { new PlotOptionsDumbbellZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsDumbbellZones> { new PlotOptionsDumbbellZones { ClassName = value } };
 
             chart.PlotOptions.Dumbbell.Zones = zoneDef;
 
@@ -4231,7 +4231,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsDumbbellZone> { new PlotOptionsDumbbellZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsDumbbellZones> { new PlotOptionsDumbbellZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Dumbbell.Zones = zoneDef;
 
@@ -4247,7 +4247,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "dumbbell", "zones" };
-            var zoneDef = new List<PlotOptionsDumbbellZone> { new PlotOptionsDumbbellZone { Color = value } };
+            var zoneDef = new List<PlotOptionsDumbbellZones> { new PlotOptionsDumbbellZones { Color = value } };
 
             chart.PlotOptions.Dumbbell.Zones = zoneDef;
 
@@ -4260,7 +4260,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsDumbbellZone> { new PlotOptionsDumbbellZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsDumbbellZones> { new PlotOptionsDumbbellZones { Color = defaultValue } };
 
             chart.PlotOptions.Dumbbell.Zones = zoneDef;
 
@@ -4284,7 +4284,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "dumbbell", "zones" };
-            var zoneDef = new List<PlotOptionsDumbbellZone> { new PlotOptionsDumbbellZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsDumbbellZones> { new PlotOptionsDumbbellZones { DashStyle = value } };
 
             chart.PlotOptions.Dumbbell.Zones = zoneDef;
 
@@ -4297,7 +4297,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsDumbbellZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsDumbbellZone> { new PlotOptionsDumbbellZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsDumbbellZones> { new PlotOptionsDumbbellZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Dumbbell.Zones = zoneDef;
 
@@ -4312,7 +4312,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "dumbbell", "zones" };
-            var zoneDef = new List<PlotOptionsDumbbellZone> { new PlotOptionsDumbbellZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsDumbbellZones> { new PlotOptionsDumbbellZones { FillColor = value } };
 
             chart.PlotOptions.Dumbbell.Zones = zoneDef;
 
@@ -4326,7 +4326,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsDumbbellZone> { new PlotOptionsDumbbellZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsDumbbellZones> { new PlotOptionsDumbbellZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Dumbbell.Zones = zoneDef;
 
@@ -4341,7 +4341,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "dumbbell", "zones" };
-            var zoneDef = new List<PlotOptionsDumbbellZone> { new PlotOptionsDumbbellZone { Value = value } };
+            var zoneDef = new List<PlotOptionsDumbbellZones> { new PlotOptionsDumbbellZones { Value = value } };
 
             chart.PlotOptions.Dumbbell.Zones = zoneDef;
 
@@ -4354,7 +4354,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsDumbbellZone> { new PlotOptionsDumbbellZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsDumbbellZones> { new PlotOptionsDumbbellZones { Value = defaultValue } };
 
             chart.PlotOptions.Dumbbell.Zones = zoneDef;
 

@@ -5030,7 +5030,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new HeikinashiSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<HeikinashiSeriesZone> { new HeikinashiSeriesZone { ClassName = value } };
+            var zoneDef = new List<HeikinashiSeriesZones> { new HeikinashiSeriesZones { ClassName = value } };
 
             ((HeikinashiSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5043,7 +5043,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new HeikinashiSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<HeikinashiSeriesZone> { new HeikinashiSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<HeikinashiSeriesZones> { new HeikinashiSeriesZones { ClassName = defaultValue } };
 
             ((HeikinashiSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5059,7 +5059,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new HeikinashiSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<HeikinashiSeriesZone> { new HeikinashiSeriesZone { Color = value } };
+            var zoneDef = new List<HeikinashiSeriesZones> { new HeikinashiSeriesZones { Color = value } };
 
             ((HeikinashiSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5072,7 +5072,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new HeikinashiSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<HeikinashiSeriesZone> { new HeikinashiSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<HeikinashiSeriesZones> { new HeikinashiSeriesZones { Color = defaultValue } };
 
             ((HeikinashiSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5096,7 +5096,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new HeikinashiSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<HeikinashiSeriesZone> { new HeikinashiSeriesZone { DashStyle = value } };
+            var zoneDef = new List<HeikinashiSeriesZones> { new HeikinashiSeriesZones { DashStyle = value } };
 
             ((HeikinashiSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5109,7 +5109,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new HeikinashiSeries(); chart.Series.Add(series);
             var defaultValue = HeikinashiSeriesZonesDashStyle.Null;
-            var zoneDef = new List<HeikinashiSeriesZone> { new HeikinashiSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<HeikinashiSeriesZones> { new HeikinashiSeriesZones { DashStyle = defaultValue } };
 
             ((HeikinashiSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5124,7 +5124,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new HeikinashiSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<HeikinashiSeriesZone> { new HeikinashiSeriesZone { FillColor = value } };
+            var zoneDef = new List<HeikinashiSeriesZones> { new HeikinashiSeriesZones { FillColor = value } };
 
             ((HeikinashiSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5138,7 +5138,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new HeikinashiSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<HeikinashiSeriesZone> { new HeikinashiSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<HeikinashiSeriesZones> { new HeikinashiSeriesZones { FillColor = defaultValue } };
 
         //    ((HeikinashiSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5153,7 +5153,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new HeikinashiSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<HeikinashiSeriesZone> { new HeikinashiSeriesZone { Value = value } };
+            var zoneDef = new List<HeikinashiSeriesZones> { new HeikinashiSeriesZones { Value = value } };
 
             ((HeikinashiSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5166,7 +5166,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new HeikinashiSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<HeikinashiSeriesZone> { new HeikinashiSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<HeikinashiSeriesZones> { new HeikinashiSeriesZones { Value = defaultValue } };
 
             ((HeikinashiSeries)chart.Series[0]).Zones = zoneDef;
 

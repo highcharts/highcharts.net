@@ -4323,7 +4323,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "trix", "zones" };
-            var zoneDef = new List<PlotOptionsTrixZone> { new PlotOptionsTrixZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsTrixZones> { new PlotOptionsTrixZones { ClassName = value } };
 
             chart.PlotOptions.Trix.Zones = zoneDef;
 
@@ -4336,7 +4336,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsTrixZone> { new PlotOptionsTrixZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsTrixZones> { new PlotOptionsTrixZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Trix.Zones = zoneDef;
 
@@ -4352,7 +4352,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "trix", "zones" };
-            var zoneDef = new List<PlotOptionsTrixZone> { new PlotOptionsTrixZone { Color = value } };
+            var zoneDef = new List<PlotOptionsTrixZones> { new PlotOptionsTrixZones { Color = value } };
 
             chart.PlotOptions.Trix.Zones = zoneDef;
 
@@ -4365,7 +4365,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsTrixZone> { new PlotOptionsTrixZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsTrixZones> { new PlotOptionsTrixZones { Color = defaultValue } };
 
             chart.PlotOptions.Trix.Zones = zoneDef;
 
@@ -4389,7 +4389,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "trix", "zones" };
-            var zoneDef = new List<PlotOptionsTrixZone> { new PlotOptionsTrixZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsTrixZones> { new PlotOptionsTrixZones { DashStyle = value } };
 
             chart.PlotOptions.Trix.Zones = zoneDef;
 
@@ -4402,7 +4402,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsTrixZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsTrixZone> { new PlotOptionsTrixZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsTrixZones> { new PlotOptionsTrixZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Trix.Zones = zoneDef;
 
@@ -4417,7 +4417,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "trix", "zones" };
-            var zoneDef = new List<PlotOptionsTrixZone> { new PlotOptionsTrixZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsTrixZones> { new PlotOptionsTrixZones { FillColor = value } };
 
             chart.PlotOptions.Trix.Zones = zoneDef;
 
@@ -4431,7 +4431,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsTrixZone> { new PlotOptionsTrixZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsTrixZones> { new PlotOptionsTrixZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Trix.Zones = zoneDef;
 
@@ -4446,7 +4446,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "trix", "zones" };
-            var zoneDef = new List<PlotOptionsTrixZone> { new PlotOptionsTrixZone { Value = value } };
+            var zoneDef = new List<PlotOptionsTrixZones> { new PlotOptionsTrixZones { Value = value } };
 
             chart.PlotOptions.Trix.Zones = zoneDef;
 
@@ -4459,7 +4459,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsTrixZone> { new PlotOptionsTrixZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsTrixZones> { new PlotOptionsTrixZones { Value = defaultValue } };
 
             chart.PlotOptions.Trix.Zones = zoneDef;
 

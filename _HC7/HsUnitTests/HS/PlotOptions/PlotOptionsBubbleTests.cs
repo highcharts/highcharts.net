@@ -3866,7 +3866,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "bubble", "zones" };
-            var zoneDef = new List<PlotOptionsBubbleZone> { new PlotOptionsBubbleZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsBubbleZones> { new PlotOptionsBubbleZones { ClassName = value } };
 
             chart.PlotOptions.Bubble.Zones = zoneDef;
 
@@ -3879,7 +3879,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsBubbleZone> { new PlotOptionsBubbleZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsBubbleZones> { new PlotOptionsBubbleZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Bubble.Zones = zoneDef;
 
@@ -3895,7 +3895,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "bubble", "zones" };
-            var zoneDef = new List<PlotOptionsBubbleZone> { new PlotOptionsBubbleZone { Color = value } };
+            var zoneDef = new List<PlotOptionsBubbleZones> { new PlotOptionsBubbleZones { Color = value } };
 
             chart.PlotOptions.Bubble.Zones = zoneDef;
 
@@ -3908,7 +3908,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsBubbleZone> { new PlotOptionsBubbleZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsBubbleZones> { new PlotOptionsBubbleZones { Color = defaultValue } };
 
             chart.PlotOptions.Bubble.Zones = zoneDef;
 
@@ -3932,7 +3932,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "bubble", "zones" };
-            var zoneDef = new List<PlotOptionsBubbleZone> { new PlotOptionsBubbleZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsBubbleZones> { new PlotOptionsBubbleZones { DashStyle = value } };
 
             chart.PlotOptions.Bubble.Zones = zoneDef;
 
@@ -3945,7 +3945,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsBubbleZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsBubbleZone> { new PlotOptionsBubbleZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsBubbleZones> { new PlotOptionsBubbleZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Bubble.Zones = zoneDef;
 
@@ -3960,7 +3960,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "bubble", "zones" };
-            var zoneDef = new List<PlotOptionsBubbleZone> { new PlotOptionsBubbleZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsBubbleZones> { new PlotOptionsBubbleZones { FillColor = value } };
 
             chart.PlotOptions.Bubble.Zones = zoneDef;
 
@@ -3974,7 +3974,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsBubbleZone> { new PlotOptionsBubbleZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsBubbleZones> { new PlotOptionsBubbleZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Bubble.Zones = zoneDef;
 
@@ -3989,7 +3989,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "bubble", "zones" };
-            var zoneDef = new List<PlotOptionsBubbleZone> { new PlotOptionsBubbleZone { Value = value } };
+            var zoneDef = new List<PlotOptionsBubbleZones> { new PlotOptionsBubbleZones { Value = value } };
 
             chart.PlotOptions.Bubble.Zones = zoneDef;
 
@@ -4002,7 +4002,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsBubbleZone> { new PlotOptionsBubbleZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsBubbleZones> { new PlotOptionsBubbleZones { Value = defaultValue } };
 
             chart.PlotOptions.Bubble.Zones = zoneDef;
 

@@ -3920,7 +3920,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "columnrange", "zones" };
-            var zoneDef = new List<PlotOptionsColumnrangeZone> { new PlotOptionsColumnrangeZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsColumnrangeZones> { new PlotOptionsColumnrangeZones { ClassName = value } };
 
             chart.PlotOptions.Columnrange.Zones = zoneDef;
 
@@ -3933,7 +3933,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsColumnrangeZone> { new PlotOptionsColumnrangeZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsColumnrangeZones> { new PlotOptionsColumnrangeZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Columnrange.Zones = zoneDef;
 
@@ -3949,7 +3949,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "columnrange", "zones" };
-            var zoneDef = new List<PlotOptionsColumnrangeZone> { new PlotOptionsColumnrangeZone { Color = value } };
+            var zoneDef = new List<PlotOptionsColumnrangeZones> { new PlotOptionsColumnrangeZones { Color = value } };
 
             chart.PlotOptions.Columnrange.Zones = zoneDef;
 
@@ -3962,7 +3962,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsColumnrangeZone> { new PlotOptionsColumnrangeZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsColumnrangeZones> { new PlotOptionsColumnrangeZones { Color = defaultValue } };
 
             chart.PlotOptions.Columnrange.Zones = zoneDef;
 
@@ -3986,7 +3986,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "columnrange", "zones" };
-            var zoneDef = new List<PlotOptionsColumnrangeZone> { new PlotOptionsColumnrangeZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsColumnrangeZones> { new PlotOptionsColumnrangeZones { DashStyle = value } };
 
             chart.PlotOptions.Columnrange.Zones = zoneDef;
 
@@ -3999,7 +3999,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsColumnrangeZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsColumnrangeZone> { new PlotOptionsColumnrangeZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsColumnrangeZones> { new PlotOptionsColumnrangeZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Columnrange.Zones = zoneDef;
 
@@ -4014,7 +4014,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "columnrange", "zones" };
-            var zoneDef = new List<PlotOptionsColumnrangeZone> { new PlotOptionsColumnrangeZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsColumnrangeZones> { new PlotOptionsColumnrangeZones { FillColor = value } };
 
             chart.PlotOptions.Columnrange.Zones = zoneDef;
 
@@ -4028,7 +4028,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsColumnrangeZone> { new PlotOptionsColumnrangeZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsColumnrangeZones> { new PlotOptionsColumnrangeZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Columnrange.Zones = zoneDef;
 
@@ -4043,7 +4043,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "columnrange", "zones" };
-            var zoneDef = new List<PlotOptionsColumnrangeZone> { new PlotOptionsColumnrangeZone { Value = value } };
+            var zoneDef = new List<PlotOptionsColumnrangeZones> { new PlotOptionsColumnrangeZones { Value = value } };
 
             chart.PlotOptions.Columnrange.Zones = zoneDef;
 
@@ -4056,7 +4056,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsColumnrangeZone> { new PlotOptionsColumnrangeZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsColumnrangeZones> { new PlotOptionsColumnrangeZones { Value = defaultValue } };
 
             chart.PlotOptions.Columnrange.Zones = zoneDef;
 

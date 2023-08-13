@@ -4243,7 +4243,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "spline", "zones" };
-            var zoneDef = new List<PlotOptionsSplineZone> { new PlotOptionsSplineZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsSplineZones> { new PlotOptionsSplineZones { ClassName = value } };
 
             chart.PlotOptions.Spline.Zones = zoneDef;
 
@@ -4256,7 +4256,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsSplineZone> { new PlotOptionsSplineZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsSplineZones> { new PlotOptionsSplineZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Spline.Zones = zoneDef;
 
@@ -4272,7 +4272,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "spline", "zones" };
-            var zoneDef = new List<PlotOptionsSplineZone> { new PlotOptionsSplineZone { Color = value } };
+            var zoneDef = new List<PlotOptionsSplineZones> { new PlotOptionsSplineZones { Color = value } };
 
             chart.PlotOptions.Spline.Zones = zoneDef;
 
@@ -4285,7 +4285,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsSplineZone> { new PlotOptionsSplineZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsSplineZones> { new PlotOptionsSplineZones { Color = defaultValue } };
 
             chart.PlotOptions.Spline.Zones = zoneDef;
 
@@ -4309,7 +4309,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "spline", "zones" };
-            var zoneDef = new List<PlotOptionsSplineZone> { new PlotOptionsSplineZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsSplineZones> { new PlotOptionsSplineZones { DashStyle = value } };
 
             chart.PlotOptions.Spline.Zones = zoneDef;
 
@@ -4322,7 +4322,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsSplineZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsSplineZone> { new PlotOptionsSplineZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsSplineZones> { new PlotOptionsSplineZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Spline.Zones = zoneDef;
 
@@ -4337,7 +4337,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "spline", "zones" };
-            var zoneDef = new List<PlotOptionsSplineZone> { new PlotOptionsSplineZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsSplineZones> { new PlotOptionsSplineZones { FillColor = value } };
 
             chart.PlotOptions.Spline.Zones = zoneDef;
 
@@ -4351,7 +4351,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsSplineZone> { new PlotOptionsSplineZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsSplineZones> { new PlotOptionsSplineZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Spline.Zones = zoneDef;
 
@@ -4366,7 +4366,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "spline", "zones" };
-            var zoneDef = new List<PlotOptionsSplineZone> { new PlotOptionsSplineZone { Value = value } };
+            var zoneDef = new List<PlotOptionsSplineZones> { new PlotOptionsSplineZones { Value = value } };
 
             chart.PlotOptions.Spline.Zones = zoneDef;
 
@@ -4379,7 +4379,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsSplineZone> { new PlotOptionsSplineZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsSplineZones> { new PlotOptionsSplineZones { Value = defaultValue } };
 
             chart.PlotOptions.Spline.Zones = zoneDef;
 

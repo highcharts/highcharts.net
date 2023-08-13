@@ -4322,7 +4322,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "disparityindex", "zones" };
-            var zoneDef = new List<PlotOptionsDisparityindexZone> { new PlotOptionsDisparityindexZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsDisparityindexZones> { new PlotOptionsDisparityindexZones { ClassName = value } };
 
             chart.PlotOptions.Disparityindex.Zones = zoneDef;
 
@@ -4335,7 +4335,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsDisparityindexZone> { new PlotOptionsDisparityindexZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsDisparityindexZones> { new PlotOptionsDisparityindexZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Disparityindex.Zones = zoneDef;
 
@@ -4351,7 +4351,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "disparityindex", "zones" };
-            var zoneDef = new List<PlotOptionsDisparityindexZone> { new PlotOptionsDisparityindexZone { Color = value } };
+            var zoneDef = new List<PlotOptionsDisparityindexZones> { new PlotOptionsDisparityindexZones { Color = value } };
 
             chart.PlotOptions.Disparityindex.Zones = zoneDef;
 
@@ -4364,7 +4364,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsDisparityindexZone> { new PlotOptionsDisparityindexZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsDisparityindexZones> { new PlotOptionsDisparityindexZones { Color = defaultValue } };
 
             chart.PlotOptions.Disparityindex.Zones = zoneDef;
 
@@ -4388,7 +4388,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "disparityindex", "zones" };
-            var zoneDef = new List<PlotOptionsDisparityindexZone> { new PlotOptionsDisparityindexZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsDisparityindexZones> { new PlotOptionsDisparityindexZones { DashStyle = value } };
 
             chart.PlotOptions.Disparityindex.Zones = zoneDef;
 
@@ -4401,7 +4401,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsDisparityindexZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsDisparityindexZone> { new PlotOptionsDisparityindexZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsDisparityindexZones> { new PlotOptionsDisparityindexZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Disparityindex.Zones = zoneDef;
 
@@ -4416,7 +4416,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "disparityindex", "zones" };
-            var zoneDef = new List<PlotOptionsDisparityindexZone> { new PlotOptionsDisparityindexZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsDisparityindexZones> { new PlotOptionsDisparityindexZones { FillColor = value } };
 
             chart.PlotOptions.Disparityindex.Zones = zoneDef;
 
@@ -4430,7 +4430,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsDisparityindexZone> { new PlotOptionsDisparityindexZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsDisparityindexZones> { new PlotOptionsDisparityindexZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Disparityindex.Zones = zoneDef;
 
@@ -4445,7 +4445,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "disparityindex", "zones" };
-            var zoneDef = new List<PlotOptionsDisparityindexZone> { new PlotOptionsDisparityindexZone { Value = value } };
+            var zoneDef = new List<PlotOptionsDisparityindexZones> { new PlotOptionsDisparityindexZones { Value = value } };
 
             chart.PlotOptions.Disparityindex.Zones = zoneDef;
 
@@ -4458,7 +4458,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsDisparityindexZone> { new PlotOptionsDisparityindexZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsDisparityindexZones> { new PlotOptionsDisparityindexZones { Value = defaultValue } };
 
             chart.PlotOptions.Disparityindex.Zones = zoneDef;
 

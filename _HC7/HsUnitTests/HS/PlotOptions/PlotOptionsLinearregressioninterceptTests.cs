@@ -4681,7 +4681,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "linearregressionintercept", "zones" };
-            var zoneDef = new List<PlotOptionsLinearregressioninterceptZone> { new PlotOptionsLinearregressioninterceptZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsLinearregressioninterceptZones> { new PlotOptionsLinearregressioninterceptZones { ClassName = value } };
 
             chart.PlotOptions.Linearregressionintercept.Zones = zoneDef;
 
@@ -4694,7 +4694,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsLinearregressioninterceptZone> { new PlotOptionsLinearregressioninterceptZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsLinearregressioninterceptZones> { new PlotOptionsLinearregressioninterceptZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Linearregressionintercept.Zones = zoneDef;
 
@@ -4710,7 +4710,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "linearregressionintercept", "zones" };
-            var zoneDef = new List<PlotOptionsLinearregressioninterceptZone> { new PlotOptionsLinearregressioninterceptZone { Color = value } };
+            var zoneDef = new List<PlotOptionsLinearregressioninterceptZones> { new PlotOptionsLinearregressioninterceptZones { Color = value } };
 
             chart.PlotOptions.Linearregressionintercept.Zones = zoneDef;
 
@@ -4723,7 +4723,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsLinearregressioninterceptZone> { new PlotOptionsLinearregressioninterceptZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsLinearregressioninterceptZones> { new PlotOptionsLinearregressioninterceptZones { Color = defaultValue } };
 
             chart.PlotOptions.Linearregressionintercept.Zones = zoneDef;
 
@@ -4747,7 +4747,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "linearregressionintercept", "zones" };
-            var zoneDef = new List<PlotOptionsLinearregressioninterceptZone> { new PlotOptionsLinearregressioninterceptZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsLinearregressioninterceptZones> { new PlotOptionsLinearregressioninterceptZones { DashStyle = value } };
 
             chart.PlotOptions.Linearregressionintercept.Zones = zoneDef;
 
@@ -4760,7 +4760,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsLinearregressioninterceptZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsLinearregressioninterceptZone> { new PlotOptionsLinearregressioninterceptZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsLinearregressioninterceptZones> { new PlotOptionsLinearregressioninterceptZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Linearregressionintercept.Zones = zoneDef;
 
@@ -4775,7 +4775,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "linearregressionintercept", "zones" };
-            var zoneDef = new List<PlotOptionsLinearregressioninterceptZone> { new PlotOptionsLinearregressioninterceptZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsLinearregressioninterceptZones> { new PlotOptionsLinearregressioninterceptZones { FillColor = value } };
 
             chart.PlotOptions.Linearregressionintercept.Zones = zoneDef;
 
@@ -4789,7 +4789,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsLinearregressioninterceptZone> { new PlotOptionsLinearregressioninterceptZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsLinearregressioninterceptZones> { new PlotOptionsLinearregressioninterceptZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Linearregressionintercept.Zones = zoneDef;
 
@@ -4804,7 +4804,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "linearregressionintercept", "zones" };
-            var zoneDef = new List<PlotOptionsLinearregressioninterceptZone> { new PlotOptionsLinearregressioninterceptZone { Value = value } };
+            var zoneDef = new List<PlotOptionsLinearregressioninterceptZones> { new PlotOptionsLinearregressioninterceptZones { Value = value } };
 
             chart.PlotOptions.Linearregressionintercept.Zones = zoneDef;
 
@@ -4817,7 +4817,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsLinearregressioninterceptZone> { new PlotOptionsLinearregressioninterceptZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsLinearregressioninterceptZones> { new PlotOptionsLinearregressioninterceptZones { Value = defaultValue } };
 
             chart.PlotOptions.Linearregressionintercept.Zones = zoneDef;
 

@@ -3467,7 +3467,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vector", "zones" };
-            var zoneDef = new List<PlotOptionsVectorZone> { new PlotOptionsVectorZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsVectorZones> { new PlotOptionsVectorZones { ClassName = value } };
 
             chart.PlotOptions.Vector.Zones = zoneDef;
 
@@ -3480,7 +3480,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsVectorZone> { new PlotOptionsVectorZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsVectorZones> { new PlotOptionsVectorZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Vector.Zones = zoneDef;
 
@@ -3496,7 +3496,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vector", "zones" };
-            var zoneDef = new List<PlotOptionsVectorZone> { new PlotOptionsVectorZone { Color = value } };
+            var zoneDef = new List<PlotOptionsVectorZones> { new PlotOptionsVectorZones { Color = value } };
 
             chart.PlotOptions.Vector.Zones = zoneDef;
 
@@ -3509,7 +3509,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsVectorZone> { new PlotOptionsVectorZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsVectorZones> { new PlotOptionsVectorZones { Color = defaultValue } };
 
             chart.PlotOptions.Vector.Zones = zoneDef;
 
@@ -3533,7 +3533,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vector", "zones" };
-            var zoneDef = new List<PlotOptionsVectorZone> { new PlotOptionsVectorZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsVectorZones> { new PlotOptionsVectorZones { DashStyle = value } };
 
             chart.PlotOptions.Vector.Zones = zoneDef;
 
@@ -3546,7 +3546,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsVectorZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsVectorZone> { new PlotOptionsVectorZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsVectorZones> { new PlotOptionsVectorZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Vector.Zones = zoneDef;
 
@@ -3561,7 +3561,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vector", "zones" };
-            var zoneDef = new List<PlotOptionsVectorZone> { new PlotOptionsVectorZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsVectorZones> { new PlotOptionsVectorZones { FillColor = value } };
 
             chart.PlotOptions.Vector.Zones = zoneDef;
 
@@ -3575,7 +3575,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsVectorZone> { new PlotOptionsVectorZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsVectorZones> { new PlotOptionsVectorZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Vector.Zones = zoneDef;
 
@@ -3590,7 +3590,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "vector", "zones" };
-            var zoneDef = new List<PlotOptionsVectorZone> { new PlotOptionsVectorZone { Value = value } };
+            var zoneDef = new List<PlotOptionsVectorZones> { new PlotOptionsVectorZones { Value = value } };
 
             chart.PlotOptions.Vector.Zones = zoneDef;
 
@@ -3603,7 +3603,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsVectorZone> { new PlotOptionsVectorZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsVectorZones> { new PlotOptionsVectorZones { Value = defaultValue } };
 
             chart.PlotOptions.Vector.Zones = zoneDef;
 

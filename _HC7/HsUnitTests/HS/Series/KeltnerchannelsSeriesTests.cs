@@ -4727,7 +4727,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KeltnerchannelsSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<KeltnerchannelsSeriesZone> { new KeltnerchannelsSeriesZone { ClassName = value } };
+            var zoneDef = new List<KeltnerchannelsSeriesZones> { new KeltnerchannelsSeriesZones { ClassName = value } };
 
             ((KeltnerchannelsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4740,7 +4740,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KeltnerchannelsSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<KeltnerchannelsSeriesZone> { new KeltnerchannelsSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<KeltnerchannelsSeriesZones> { new KeltnerchannelsSeriesZones { ClassName = defaultValue } };
 
             ((KeltnerchannelsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4756,7 +4756,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KeltnerchannelsSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<KeltnerchannelsSeriesZone> { new KeltnerchannelsSeriesZone { Color = value } };
+            var zoneDef = new List<KeltnerchannelsSeriesZones> { new KeltnerchannelsSeriesZones { Color = value } };
 
             ((KeltnerchannelsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4769,7 +4769,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KeltnerchannelsSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<KeltnerchannelsSeriesZone> { new KeltnerchannelsSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<KeltnerchannelsSeriesZones> { new KeltnerchannelsSeriesZones { Color = defaultValue } };
 
             ((KeltnerchannelsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4793,7 +4793,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KeltnerchannelsSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<KeltnerchannelsSeriesZone> { new KeltnerchannelsSeriesZone { DashStyle = value } };
+            var zoneDef = new List<KeltnerchannelsSeriesZones> { new KeltnerchannelsSeriesZones { DashStyle = value } };
 
             ((KeltnerchannelsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4806,7 +4806,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KeltnerchannelsSeries(); chart.Series.Add(series);
             var defaultValue = KeltnerchannelsSeriesZonesDashStyle.Null;
-            var zoneDef = new List<KeltnerchannelsSeriesZone> { new KeltnerchannelsSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<KeltnerchannelsSeriesZones> { new KeltnerchannelsSeriesZones { DashStyle = defaultValue } };
 
             ((KeltnerchannelsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4821,7 +4821,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KeltnerchannelsSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<KeltnerchannelsSeriesZone> { new KeltnerchannelsSeriesZone { FillColor = value } };
+            var zoneDef = new List<KeltnerchannelsSeriesZones> { new KeltnerchannelsSeriesZones { FillColor = value } };
 
             ((KeltnerchannelsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4835,7 +4835,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new KeltnerchannelsSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<KeltnerchannelsSeriesZone> { new KeltnerchannelsSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<KeltnerchannelsSeriesZones> { new KeltnerchannelsSeriesZones { FillColor = defaultValue } };
 
         //    ((KeltnerchannelsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4850,7 +4850,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KeltnerchannelsSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<KeltnerchannelsSeriesZone> { new KeltnerchannelsSeriesZone { Value = value } };
+            var zoneDef = new List<KeltnerchannelsSeriesZones> { new KeltnerchannelsSeriesZones { Value = value } };
 
             ((KeltnerchannelsSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -4863,7 +4863,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new KeltnerchannelsSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<KeltnerchannelsSeriesZone> { new KeltnerchannelsSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<KeltnerchannelsSeriesZones> { new KeltnerchannelsSeriesZones { Value = defaultValue } };
 
             ((KeltnerchannelsSeries)chart.Series[0]).Zones = zoneDef;
 

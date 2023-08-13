@@ -5255,7 +5255,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LollipopSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<LollipopSeriesZone> { new LollipopSeriesZone { ClassName = value } };
+            var zoneDef = new List<LollipopSeriesZones> { new LollipopSeriesZones { ClassName = value } };
 
             ((LollipopSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5268,7 +5268,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LollipopSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<LollipopSeriesZone> { new LollipopSeriesZone { ClassName = defaultValue } };
+            var zoneDef = new List<LollipopSeriesZones> { new LollipopSeriesZones { ClassName = defaultValue } };
 
             ((LollipopSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5284,7 +5284,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LollipopSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<LollipopSeriesZone> { new LollipopSeriesZone { Color = value } };
+            var zoneDef = new List<LollipopSeriesZones> { new LollipopSeriesZones { Color = value } };
 
             ((LollipopSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5297,7 +5297,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LollipopSeries(); chart.Series.Add(series);
             var defaultValue = string.Empty;
-            var zoneDef = new List<LollipopSeriesZone> { new LollipopSeriesZone { Color = defaultValue } };
+            var zoneDef = new List<LollipopSeriesZones> { new LollipopSeriesZones { Color = defaultValue } };
 
             ((LollipopSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5321,7 +5321,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LollipopSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<LollipopSeriesZone> { new LollipopSeriesZone { DashStyle = value } };
+            var zoneDef = new List<LollipopSeriesZones> { new LollipopSeriesZones { DashStyle = value } };
 
             ((LollipopSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5334,7 +5334,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LollipopSeries(); chart.Series.Add(series);
             var defaultValue = LollipopSeriesZonesDashStyle.Null;
-            var zoneDef = new List<LollipopSeriesZone> { new LollipopSeriesZone { DashStyle = defaultValue } };
+            var zoneDef = new List<LollipopSeriesZones> { new LollipopSeriesZones { DashStyle = defaultValue } };
 
             ((LollipopSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5349,7 +5349,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LollipopSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<LollipopSeriesZone> { new LollipopSeriesZone { FillColor = value } };
+            var zoneDef = new List<LollipopSeriesZones> { new LollipopSeriesZones { FillColor = value } };
 
             ((LollipopSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5363,7 +5363,7 @@ namespace HS.Series
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart); var series = new LollipopSeries(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<LollipopSeriesZone> { new LollipopSeriesZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<LollipopSeriesZones> { new LollipopSeriesZones { FillColor = defaultValue } };
 
         //    ((LollipopSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5378,7 +5378,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LollipopSeries(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "zones" };
-            var zoneDef = new List<LollipopSeriesZone> { new LollipopSeriesZone { Value = value } };
+            var zoneDef = new List<LollipopSeriesZones> { new LollipopSeriesZones { Value = value } };
 
             ((LollipopSeries)chart.Series[0]).Zones = zoneDef;
 
@@ -5391,7 +5391,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new LollipopSeries(); chart.Series.Add(series);
             double? defaultValue = null;
-            var zoneDef = new List<LollipopSeriesZone> { new LollipopSeriesZone { Value = defaultValue } };
+            var zoneDef = new List<LollipopSeriesZones> { new LollipopSeriesZones { Value = defaultValue } };
 
             ((LollipopSeries)chart.Series[0]).Zones = zoneDef;
 

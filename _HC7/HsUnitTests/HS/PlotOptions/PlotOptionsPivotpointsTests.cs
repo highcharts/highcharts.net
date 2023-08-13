@@ -4322,7 +4322,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pivotpoints", "zones" };
-            var zoneDef = new List<PlotOptionsPivotpointsZone> { new PlotOptionsPivotpointsZone { ClassName = value } };
+            var zoneDef = new List<PlotOptionsPivotpointsZones> { new PlotOptionsPivotpointsZones { ClassName = value } };
 
             chart.PlotOptions.Pivotpoints.Zones = zoneDef;
 
@@ -4335,7 +4335,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsPivotpointsZone> { new PlotOptionsPivotpointsZone { ClassName = defaultValue } };
+            var zoneDef = new List<PlotOptionsPivotpointsZones> { new PlotOptionsPivotpointsZones { ClassName = defaultValue } };
 
             chart.PlotOptions.Pivotpoints.Zones = zoneDef;
 
@@ -4351,7 +4351,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pivotpoints", "zones" };
-            var zoneDef = new List<PlotOptionsPivotpointsZone> { new PlotOptionsPivotpointsZone { Color = value } };
+            var zoneDef = new List<PlotOptionsPivotpointsZones> { new PlotOptionsPivotpointsZones { Color = value } };
 
             chart.PlotOptions.Pivotpoints.Zones = zoneDef;
 
@@ -4364,7 +4364,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = string.Empty;
-            var zoneDef = new List<PlotOptionsPivotpointsZone> { new PlotOptionsPivotpointsZone { Color = defaultValue } };
+            var zoneDef = new List<PlotOptionsPivotpointsZones> { new PlotOptionsPivotpointsZones { Color = defaultValue } };
 
             chart.PlotOptions.Pivotpoints.Zones = zoneDef;
 
@@ -4388,7 +4388,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pivotpoints", "zones" };
-            var zoneDef = new List<PlotOptionsPivotpointsZone> { new PlotOptionsPivotpointsZone { DashStyle = value } };
+            var zoneDef = new List<PlotOptionsPivotpointsZones> { new PlotOptionsPivotpointsZones { DashStyle = value } };
 
             chart.PlotOptions.Pivotpoints.Zones = zoneDef;
 
@@ -4401,7 +4401,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var defaultValue = PlotOptionsPivotpointsZonesDashStyle.Null;
-            var zoneDef = new List<PlotOptionsPivotpointsZone> { new PlotOptionsPivotpointsZone { DashStyle = defaultValue } };
+            var zoneDef = new List<PlotOptionsPivotpointsZones> { new PlotOptionsPivotpointsZones { DashStyle = defaultValue } };
 
             chart.PlotOptions.Pivotpoints.Zones = zoneDef;
 
@@ -4416,7 +4416,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pivotpoints", "zones" };
-            var zoneDef = new List<PlotOptionsPivotpointsZone> { new PlotOptionsPivotpointsZone { FillColor = value } };
+            var zoneDef = new List<PlotOptionsPivotpointsZones> { new PlotOptionsPivotpointsZones { FillColor = value } };
 
             chart.PlotOptions.Pivotpoints.Zones = zoneDef;
 
@@ -4430,7 +4430,7 @@ namespace HS.PlotOptions
         //    var chart = new Highstock();
         //    var renderer = new HighstockRenderer(chart);
         //    var defaultValue = string.Empty;
-        //    var zoneDef = new List<PlotOptionsPivotpointsZone> { new PlotOptionsPivotpointsZone { FillColor = defaultValue } };
+        //    var zoneDef = new List<PlotOptionsPivotpointsZones> { new PlotOptionsPivotpointsZones { FillColor = defaultValue } };
 
         //    chart.PlotOptions.Pivotpoints.Zones = zoneDef;
 
@@ -4445,7 +4445,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pivotpoints", "zones" };
-            var zoneDef = new List<PlotOptionsPivotpointsZone> { new PlotOptionsPivotpointsZone { Value = value } };
+            var zoneDef = new List<PlotOptionsPivotpointsZones> { new PlotOptionsPivotpointsZones { Value = value } };
 
             chart.PlotOptions.Pivotpoints.Zones = zoneDef;
 
@@ -4458,7 +4458,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             double? defaultValue = null;
-            var zoneDef = new List<PlotOptionsPivotpointsZone> { new PlotOptionsPivotpointsZone { Value = defaultValue } };
+            var zoneDef = new List<PlotOptionsPivotpointsZones> { new PlotOptionsPivotpointsZones { Value = defaultValue } };
 
             chart.PlotOptions.Pivotpoints.Zones = zoneDef;
 
