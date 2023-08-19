@@ -812,7 +812,7 @@ namespace HS.PlotOptions
         }
 
         [Fact]
-        public void Test_IfDataLabelsDeferBoolRenders_Correct()
+        public void Test_IfDataLabelsDeferRenders_Correct()
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
@@ -824,7 +824,7 @@ namespace HS.PlotOptions
         }
 
         [Fact]
-        public void Test_IfDataLabelsDeferBoolDoesntRenderForDefault_Correct()
+        public void Test_IfDataLabelsDeferDoesntRenderForDefault_Correct()
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
@@ -833,18 +833,6 @@ namespace HS.PlotOptions
             chart.PlotOptions.Bb.DataLabels.Defer = defaultValue;
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
-        }
-
-        [Fact]
-        public void Test_IfDataLabelsDeferRenders_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart);
-            var value = false;
-
-            chart.PlotOptions.Bb.DataLabels.Defer = value;
-
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
         }
 
         [Fact]

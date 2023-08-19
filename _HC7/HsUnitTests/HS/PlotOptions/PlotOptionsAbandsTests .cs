@@ -835,19 +835,6 @@ namespace HS.PlotOptions
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
 
-        //[Theory]
-        //[InlineData(2000)]
-        //[InlineData(5000)]
-        //public void Test_IfDataLabelsDeferRenders_Correct(double value)
-        //{
-        //    var chart = new Highstock();
-        //    var renderer = new HighstockRenderer(chart);
-
-        //    chart.PlotOptions.Abands.DataLabels.Defer = value;
-
-        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
-        //}
-
         [Fact]
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()
         {
@@ -2386,7 +2373,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             chart.PlotOptions.Abands.Marker.Radius = defaultValue;
 

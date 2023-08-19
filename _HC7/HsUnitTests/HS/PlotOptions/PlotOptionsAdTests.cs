@@ -10,8 +10,6 @@ using System.Collections;
 using System.Globalization;
 using TH = Tests.Helpers.TestHelper;
 using UnitTests.HS;
-//using Highsoft.Web.Mvc.Charts.Rendering;
-//using Highsoft.Web.Mvc.Charts;
 
 namespace HS.PlotOptions
 {
@@ -836,19 +834,6 @@ namespace HS.PlotOptions
 
             Assert.DoesNotContain($"defer", renderer.RenderHtml());
         }
-
-        //[Theory]
-        //[InlineData(2000)]
-        //[InlineData(5000)]
-        //public void Test_IfDataLabelsDeferRenders_Correct(double value)
-        //{
-        //    var chart = new Highstock();
-        //    var renderer = new HighstockRenderer(chart);
-
-        //    chart.PlotOptions.Ad.DataLabels.Defer = value;
-
-        //    Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
-        //}
 
         [Fact]
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()
