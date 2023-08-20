@@ -2418,7 +2418,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ZigzagSeries(); chart.Series.Add(series);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             ((ZigzagSeries)chart.Series[0]).Marker.Radius = defaultValue;
 

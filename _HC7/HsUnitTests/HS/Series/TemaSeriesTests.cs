@@ -2430,7 +2430,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TemaSeries(); chart.Series.Add(series);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             ((TemaSeries)chart.Series[0]).Marker.Radius = defaultValue;
 

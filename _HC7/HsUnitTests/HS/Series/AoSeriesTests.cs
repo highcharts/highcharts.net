@@ -2417,7 +2417,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AoSeries(); chart.Series.Add(series);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             ((AoSeries)chart.Series[0]).Marker.Radius = defaultValue;
 
