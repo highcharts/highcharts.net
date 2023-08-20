@@ -1317,7 +1317,6 @@
 
 //        //[Theory]
 //        //[InlineData(true)]
-//        //[InlineData(false)]
 //        //public void Test_IfDataLabelsTextPathEnabledRenders_Correct(bool value)
 //        //{
 //        //    var chart = new Highstock();
@@ -1334,7 +1333,7 @@
 //        //{
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
-//        //    bool? defaultValue = null;
+//        //    bool? defaultValue = false;
 
 //        //    chart.PlotOptions.Errorbar.DataLabels.TextPath.Enabled = defaultValue;
 
@@ -2193,7 +2192,6 @@
 
 //        //[Theory]
 //        //[InlineData(true)]
-//        //[InlineData(false)]
 //        //public void Test_IfMarkerEnabledRenders_Correct(bool value)
 //        //{
 //        //    var chart = new Highstock();
@@ -2210,7 +2208,7 @@
 //        //{
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
-//        //    bool? defaultValue = null;
+//        //    bool? defaultValue = false;
 
 //        //    chart.PlotOptions.Errorbar.Marker.Enabled = defaultValue;
 

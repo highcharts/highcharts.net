@@ -2242,7 +2242,6 @@ namespace HS.Series
 
         [Theory]
         [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfMarkerEnabledRenders_Correct(bool value)
         {
             var chart = new Highstock();
@@ -2259,7 +2258,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AdSeries(); chart.Series.Add(series);
-            bool? defaultValue = null;
+            bool? defaultValue = false;
 
             ((AdSeries)chart.Series[0]).Marker.Enabled = defaultValue;
 
