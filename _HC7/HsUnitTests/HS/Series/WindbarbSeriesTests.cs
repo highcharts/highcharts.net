@@ -3892,7 +3892,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             ((WindbarbSeries)chart.Series[0]).States.Select.Marker.Radius = defaultValue;
 

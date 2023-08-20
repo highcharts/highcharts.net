@@ -4675,7 +4675,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new ScatterSeries(); chart.Series.Add(series);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             ((ScatterSeries)chart.Series[0]).States.Select.Marker.Radius = defaultValue;
 

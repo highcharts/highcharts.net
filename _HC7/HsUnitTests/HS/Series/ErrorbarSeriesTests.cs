@@ -4768,7 +4768,7 @@
 //        {
 //            var chart = new Highstock();
 //            var renderer = new HighstockRenderer(chart); var series = new ErrorbarSeries(); chart.Series.Add(series);
-//            var defaultValue = 4;
+//            var defaultValue = 2;
 
 //            ((ErrorbarSeries)chart.Series[0]).States.Select.Marker.Radius = defaultValue;
 

@@ -4136,7 +4136,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PsarSeries(); chart.Series.Add(series);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             ((PsarSeries)chart.Series[0]).States.Select.Marker.Radius = defaultValue;
 

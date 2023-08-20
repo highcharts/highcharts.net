@@ -3790,7 +3790,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             chart.PlotOptions.Heikinashi.States.Select.Marker.Radius = defaultValue;
 
