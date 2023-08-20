@@ -3366,7 +3366,6 @@
 
 //        //[Theory]
 //        //[InlineData(true)]
-//        //[InlineData(false)]
 //        //public void Test_IfStatesHoverMarkerEnabledRenders_Correct(bool value)
 //        //{
 //        //    var chart = new Highstock();
@@ -3383,7 +3382,7 @@
 //        //{
 //        //    var chart = new Highstock();
 //        //    var renderer = new HighstockRenderer(chart);
-//        //    bool? defaultValue = null;
+//        //    bool? defaultValue = false;
 
 //        //    chart.PlotOptions.Errorbar.States.Hover.Marker.Enabled = defaultValue;
 

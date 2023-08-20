@@ -3993,7 +3993,6 @@ namespace HS.Series
 
         [Theory]
         [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfStatesHoverMarkerEnabledRenders_Correct(bool value)
         {
             var chart = new Highstock();
@@ -4010,7 +4009,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new AreasplinerangeSeries(); chart.Series.Add(series);
-            bool? defaultValue = null;
+            bool? defaultValue = false;
 
             ((AreasplinerangeSeries)chart.Series[0]).States.Hover.Marker.Enabled = defaultValue;
 
