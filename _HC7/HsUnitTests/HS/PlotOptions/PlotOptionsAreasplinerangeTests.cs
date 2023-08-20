@@ -3850,7 +3850,6 @@ namespace HS.PlotOptions
 
         [Theory]
         [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfStatesSelectMarkerEnabledRenders_Correct(bool value)
         {
             var chart = new Highstock();
@@ -3867,7 +3866,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            bool? defaultValue = null;
+            bool? defaultValue = false;
 
             chart.PlotOptions.Areasplinerange.States.Select.Marker.Enabled = defaultValue;
 

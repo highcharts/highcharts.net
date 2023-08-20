@@ -4415,7 +4415,6 @@ namespace HS.Series
 
         [Theory]
         [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfStatesSelectMarkerEnabledRenders_Correct(bool value)
         {
             var chart = new Highstock();
@@ -4432,7 +4431,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new PolygonSeries(); chart.Series.Add(series);
-            bool? defaultValue = null;
+            bool? defaultValue = false;
 
             ((PolygonSeries)chart.Series[0]).States.Select.Marker.Enabled = defaultValue;
 

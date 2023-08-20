@@ -4593,7 +4593,6 @@
 
 //        [Theory]
 //        [InlineData(true)]
-//        [InlineData(false)]
 //        public void Test_IfStatesSelectMarkerEnabledRenders_Correct(bool value)
 //        {
 //            var chart = new Highstock();
@@ -4610,7 +4609,7 @@
 //        {
 //            var chart = new Highstock();
 //            var renderer = new HighstockRenderer(chart); var series = new ErrorbarSeries(); chart.Series.Add(series);
-//            bool? defaultValue = null;
+//            bool? defaultValue = false;
 
 //            ((ErrorbarSeries)chart.Series[0]).States.Select.Marker.Enabled = defaultValue;
 
