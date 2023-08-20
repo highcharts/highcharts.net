@@ -3590,7 +3590,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new CmoSeries(); chart.Series.Add(series);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             ((CmoSeries)chart.Series[0]).States.Hover.Marker.Radius = defaultValue;
 

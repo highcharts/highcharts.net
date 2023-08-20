@@ -3591,7 +3591,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new BbSeries(); chart.Series.Add(series);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             ((BbSeries)chart.Series[0]).States.Hover.Marker.Radius = defaultValue;
 
