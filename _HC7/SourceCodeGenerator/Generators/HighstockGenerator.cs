@@ -663,9 +663,6 @@ namespace SourceCodeGenerator.Generators
             if (propertyName == "Data" && child.ParentFullName.ToLower() == "highstock")
                 returnType = "Data";
 
-            if (propertyName == "Height" && child.ParentFullName.ToLower() == "chart")
-                returnType = "double?";
-
             if (propertyName == "Margin" && child.ParentFullName.ToLower() != "chart")
                 returnType = "double?";
 

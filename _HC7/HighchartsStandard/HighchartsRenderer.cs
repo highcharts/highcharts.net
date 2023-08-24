@@ -105,10 +105,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
                 _chart.Chart.RenderTo = _chart.ID;
 
             if (addContainer)
-                sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", GetChartHeight(), GetChartWidth(), _chart.Chart.RenderTo, 
-                    string.IsNullOrEmpty(_chart.Chart.Height) ? 
-                        string.Empty : _chart.Chart.Height.ToString(), 
-                    _chart.Chart.Width.ToString());
+                sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.Chart.RenderTo, GetChartHeight(), GetChartWidth());
 
             sb.Append("<script type='text/javascript'>");
             

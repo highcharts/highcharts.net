@@ -127,7 +127,7 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 _chart.Chart.RenderTo = _chart.ID;
 
             if(addContainer)
-                sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.Chart.RenderTo, _chart.Chart.Height.ToString(), _chart.Chart.Width.ToString());
+                sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.Chart.RenderTo, GetChartHeight(), GetChartWidth());
 
             sb.Append("<script type='text/javascript'>");
 
@@ -203,6 +203,28 @@ namespace Highsoft.Web.Mvc.Stocks.Rendering
                 results.Add(series.ToHashtable(_chart));
 
             return results;
+        }
+
+        private string GetChartHeight()
+        {
+            if (string.IsNullOrEmpty(_chart.Chart.Height))
+                if (_chart.Chart.HeightNumber == null)
+                    return string.Empty;
+                else
+                    return _chart.Chart.HeightNumber.ToString();
+            else
+                return _chart.Chart.Height;
+        }
+
+        private string GetChartWidth()
+        {
+            if (string.IsNullOrEmpty(_chart.Chart.Width))
+                if (_chart.Chart.WidthNumber == null)
+                    return string.Empty;
+                else
+                    return _chart.Chart.WidthNumber.ToString();
+            else
+                return _chart.Chart.Width;
         }
     }
 }
