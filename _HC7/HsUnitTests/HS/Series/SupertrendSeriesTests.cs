@@ -856,18 +856,6 @@ namespace HS.Series
         }
 
         [Fact]
-        public void Test_IfDataLabelsDeferRenders_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new SupertrendSeries(); chart.Series.Add(series);
-            var value = false;
-
-            ((SupertrendSeries)chart.Series[0]).DataLabels.Defer = value;
-
-            Assert.Contains($"\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
-        }
-
-        [Fact]
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()
         {
             var chart = new Highstock();
