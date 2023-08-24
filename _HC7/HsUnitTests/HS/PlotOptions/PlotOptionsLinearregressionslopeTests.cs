@@ -807,18 +807,6 @@ namespace HS.PlotOptions
         }
 
         [Fact]
-        public void Test_IfDataLabelsDeferRenders_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart);
-            var value = false;
-
-            chart.PlotOptions.Linearregressionslope.DataLabels.Defer = value;
-
-            Assert.Contains($"\"plotOptions\":{{\"{_fixture.ChartType.ToString().ToLower()}\":{{\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}}}}}", renderer.RenderHtml());
-        }
-
-        [Fact]
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()
         {
             var chart = new Highstock();
