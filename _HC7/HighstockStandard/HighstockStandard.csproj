@@ -12,6 +12,9 @@
     <PackageId>Highsoft.Highstock</PackageId>
     <PackageReleaseNotes>
 Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+     #11.1.0.1
+     Fix PinchType, PlotShadow, Position3d, Chart.Height, Breaks, PlotOptionsSunburstDataLabels, PlotOptionsPyramidDataLabels, PlotOptionsPieDataLabels, OrganizationSeriesNodes, StatesHover, StatesInactive, StatesNormal, StatesSelect
+     
      #10.3.3.2
      Add solution for JS v11
 
