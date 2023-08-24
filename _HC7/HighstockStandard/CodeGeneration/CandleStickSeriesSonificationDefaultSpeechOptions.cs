@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointGrouping = PointGrouping_DefaultValue = new CandleStickSeriesSonificationDefaultSpeechOptionsPointGrouping();
 			PreferredVoice = PreferredVoice_DefaultValue = "";
 			ShowPlayMarker = ShowPlayMarker_DefaultValue = true;
+			Type = Type_DefaultValue = CandleStickSeriesSonificationDefaultSpeechOptionsType.Instrument;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -69,6 +70,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		private bool? ShowPlayMarker_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Type of track. Always `"instrument"` for instrument tracks, and`"speech"` for speech tracks.
+		/// </summary>
+		public CandleStickSeriesSonificationDefaultSpeechOptionsType Type { get; set; }
+		private CandleStickSeriesSonificationDefaultSpeechOptionsType Type_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -82,7 +90,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointGrouping.IsDirty(highstock)) h.Add("pointGrouping",PointGrouping.ToHashtable(highstock));
 			if (PreferredVoice != PreferredVoice_DefaultValue) h.Add("preferredVoice",PreferredVoice);
 			if (ShowPlayMarker != ShowPlayMarker_DefaultValue) h.Add("showPlayMarker",ShowPlayMarker);
-			h.Add("type","candlesticksonificationdefaultspeechoptions");
+			if (Type != Type_DefaultValue) h.Add("type", highstock.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -22,6 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			GridSizeNumber = GridSizeNumber_DefaultValue = null;
 			Iterations = Iterations_DefaultValue = null;
 			KmeansThreshold = KmeansThreshold_DefaultValue = 100;
+			Type = Type_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -69,6 +70,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		private double? KmeansThreshold_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Type of the algorithm used to combine points into a cluster.There are three available algorithms:1) `grid` - grid-based clustering technique. Points are assignedto squares of set size depending on their position on the plotarea. Points inside the grid square are combined into a cluster.The grid size can be controlled by `gridSize` property(grid size changes at certain zoom levels).2) `kmeans` - based on K-Means clustering technique. In thefirst step, points are divided using the grid method (distanceproperty is a grid size) to find the initial amount of clusters.Next, each point is classified by computing the distance betweeneach cluster center and that point. When the closest clusterdistance is lower than distance property set by a user the pointis added to this cluster otherwise is classified as `noise`. Thealgorithm is repeated until each cluster center not change itsprevious position more than one pixel. This technique is moreaccurate but also more time consuming than the `grid` algorithm,especially for big datasets.3) `optimizedKmeans` - based on K-Means clustering technique. Thisalgorithm uses k-means algorithm only on the chart initializationor when chart extremes have greater range than on initialization.When a chart is redrawn the algorithm checks only clustered pointsdistance from the cluster center and rebuild it when the point isspaced enough to be outside the cluster. It provides performanceimprovement and more stable clusters position yet can be used ratheron small and sparse datasets.By default, the algorithm depends on visible quantity of pointsand `kmeansThreshold`. When there are more visible points than the`kmeansThreshold` the `grid` algorithm is used, otherwise `kmeans`.The custom clustering algorithm can be added by assigning a callbackfunction as the type property. This function takes an array of`processedXData`, `processedYData`, `processedXData` indexes and`layoutAlgorithm` options as arguments and should return an objectwith grouped data.The algorithm should return an object like that:<pre>{ clusterId1: [{     x: 573,     y: 285,     index: 1 // point index in the data array }, {     x: 521,     y: 197,     index: 2 }], clusterId2: [{     ... }] ...}</pre>`clusterId` (example above - unique id of a cluster or noise)is an array of points belonging to a cluster. If thearray has only one point or fewer points than set in`cluster.minimumClusterSize` it won't be combined into a cluster.
+		/// </summary>
+		public string Type { get; set; }
+		private string Type_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -82,7 +90,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GridSizeNumber != GridSizeNumber_DefaultValue) h.Add("gridSize",GridSizeNumber);
 			if (Iterations != Iterations_DefaultValue) h.Add("iterations",Iterations);
 			if (KmeansThreshold != KmeansThreshold_DefaultValue) h.Add("kmeansThreshold",KmeansThreshold);
-			h.Add("type","vectorclusterlayoutalgorithm");
+			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			RoundToMusicalNotes = RoundToMusicalNotes_DefaultValue = true;
 			ShowPlayMarker = ShowPlayMarker_DefaultValue = true;
 			TimeInterval = TimeInterval_DefaultValue = null;
+			Type = Type_DefaultValue = AreasplineSeriesSonificationContextTracksType.Instrument;
 			ValueInterval = ValueInterval_DefaultValue = null;
 			ValueMapFunction = ValueMapFunction_DefaultValue = AreasplineSeriesSonificationContextTracksValueMapFunction.Linear;
 			ValueProp = ValueProp_DefaultValue = "'x'";
@@ -97,6 +98,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Type of track. Always `"instrument"` for instrument tracks, and`"speech"` for speech tracks.
+		/// </summary>
+		public AreasplineSeriesSonificationContextTracksType Type { get; set; }
+		private AreasplineSeriesSonificationContextTracksType Type_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set a context track to play periodically every `valueInterval`units of a data property `valueProp` while the sonification isplaying.For example, setting `valueProp` to `x` and `valueInterval` to 5will play the context track for every 5th X value.The context audio events will be mapped to time according to theprop value relative to the min/max values for that prop.
 		/// </summary>
 		public double? ValueInterval { get; set; }
@@ -133,7 +141,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (RoundToMusicalNotes != RoundToMusicalNotes_DefaultValue) h.Add("roundToMusicalNotes",RoundToMusicalNotes);
 			if (ShowPlayMarker != ShowPlayMarker_DefaultValue) h.Add("showPlayMarker",ShowPlayMarker);
 			if (TimeInterval != TimeInterval_DefaultValue) h.Add("timeInterval",TimeInterval);
-			h.Add("type","areasplinesonificationcontexttracks");
+			if (Type != Type_DefaultValue) h.Add("type", highstock.FirstCharacterToLower(Type.ToString()));
 			if (ValueInterval != ValueInterval_DefaultValue) h.Add("valueInterval",ValueInterval);
 			if (ValueMapFunction != ValueMapFunction_DefaultValue) h.Add("valueMapFunction", highstock.FirstCharacterToLower(ValueMapFunction.ToString()));
 			if (ValueProp != ValueProp_DefaultValue) h.Add("valueProp",ValueProp);

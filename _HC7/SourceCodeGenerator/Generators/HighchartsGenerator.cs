@@ -218,6 +218,9 @@ namespace SourceCodeGenerator.Generators
                 string formattedComparer = string.Empty;
                 if (!((child.FullName.ToLower().StartsWith("series") && child.FullName.ToLower().EndsWith("type") && child.FullName.Split('.').Length == 3) || child.FullName.ToLower().Equals("series.type")))
                 {
+                    if (child.FullName.ToLower().Equals("series.type"))
+                        continue;
+
                     formattedProperty = FormatProperty(propertyTemplate, child);
                     formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
                     formattedComparer = FormatPropertyComparer(propertyName, child);

@@ -24,6 +24,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointGrouping = PointGrouping_DefaultValue = new KeltnerchannelsSeriesSonificationDefaultInstrumentOptionsPointGrouping();
 			RoundToMusicalNotes = RoundToMusicalNotes_DefaultValue = true;
 			ShowPlayMarker = ShowPlayMarker_DefaultValue = true;
+			Type = Type_DefaultValue = KeltnerchannelsSeriesSonificationDefaultInstrumentOptionsType.Instrument;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -85,6 +86,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		private bool? ShowPlayMarker_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Type of track. Always `"instrument"` for instrument tracks, and`"speech"` for speech tracks.
+		/// </summary>
+		public KeltnerchannelsSeriesSonificationDefaultInstrumentOptionsType Type { get; set; }
+		private KeltnerchannelsSeriesSonificationDefaultInstrumentOptionsType Type_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -100,7 +108,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointGrouping.IsDirty(highstock)) h.Add("pointGrouping",PointGrouping.ToHashtable(highstock));
 			if (RoundToMusicalNotes != RoundToMusicalNotes_DefaultValue) h.Add("roundToMusicalNotes",RoundToMusicalNotes);
 			if (ShowPlayMarker != ShowPlayMarker_DefaultValue) h.Add("showPlayMarker",ShowPlayMarker);
-			h.Add("type","keltnerchannelssonificationdefaultinstrumentoptions");
+			if (Type != Type_DefaultValue) h.Add("type", highstock.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
