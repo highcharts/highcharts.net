@@ -122,7 +122,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
 			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
-			h.Add("type","");
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
