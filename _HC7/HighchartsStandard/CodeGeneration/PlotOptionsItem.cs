@@ -38,7 +38,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Custom = Custom_DefaultValue = new Hashtable();
 			Description = Description_DefaultValue = "";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
-			EndAngle = EndAngle_DefaultValue = PlotOptionsItemEndAngle.Undefined;
+			EndAngle = EndAngle_DefaultValue = null;
 			Events = Events_DefaultValue = new PlotOptionsItemEvents();
 			FillColor = FillColor_DefaultValue = null;
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
@@ -66,7 +66,7 @@ namespace Highsoft.Web.Mvc.Charts
 			SizeNumber = SizeNumber_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			Sonification = Sonification_DefaultValue = new PlotOptionsItemSonification();
-			StartAngle = StartAngle_DefaultValue = PlotOptionsItemStartAngle.Undefined;
+			StartAngle = StartAngle_DefaultValue = null;
 			States = States_DefaultValue = new PlotOptionsItemStates();
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Thickness = Thickness_DefaultValue = null;
@@ -235,8 +235,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// In circular view, the end angle of the item layout, in degrees where0 is up.
 		/// </summary>
-		public PlotOptionsItemEndAngle EndAngle { get; set; }
-		private PlotOptionsItemEndAngle EndAngle_DefaultValue { get; set; }
+		public double? EndAngle { get; set; }
+		private double? EndAngle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -431,8 +431,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// In circular view, the start angle of the item layout, in degreeswhere 0 is up.
 		/// </summary>
-		public PlotOptionsItemStartAngle StartAngle { get; set; }
-		private PlotOptionsItemStartAngle StartAngle_DefaultValue { get; set; }
+		public double? StartAngle { get; set; }
+		private double? StartAngle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -506,7 +506,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
-			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle", highcharts.FirstCharacterToLower(EndAngle.ToString()));
+			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
@@ -534,7 +534,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SizeNumber != SizeNumber_DefaultValue) h.Add("size",SizeNumber);
 			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
 			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
-			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle", highcharts.FirstCharacterToLower(StartAngle.ToString()));
+			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
 			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
 			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
 			if (Thickness != Thickness_DefaultValue) h.Add("thickness",Thickness);
