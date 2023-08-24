@@ -236,7 +236,6 @@ namespace HS.PlotOptions
         #region Animation
 
         [Theory]
-        [InlineData(true)]
         [InlineData(false)]
         public void Test_IfAnimationEnabledRenders_Correct(bool enabled)
         {

@@ -2946,7 +2946,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            double? defaultValue = null;
+            double? defaultValue = 3;
 
             chart.PlotOptions.Hlc.States.Hover.LineWidth = defaultValue;
 

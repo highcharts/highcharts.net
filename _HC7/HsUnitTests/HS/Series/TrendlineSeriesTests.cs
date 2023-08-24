@@ -4260,7 +4260,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
-            var defaultValue = string.Empty;
+            var defaultValue = "Clustered points: {point.clusterPointsAmount}";
 
             ((TrendlineSeries)chart.Series[0]).Tooltip.ClusterFormat = defaultValue;
 

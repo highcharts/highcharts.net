@@ -2417,7 +2417,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new VwapSeries(); chart.Series.Add(series);
-            var defaultValue = 4;
+            var defaultValue = 2;
 
             ((VwapSeries)chart.Series[0]).Marker.Radius = defaultValue;
 
@@ -4259,7 +4259,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new VwapSeries(); chart.Series.Add(series);
-            var defaultValue = string.Empty;
+            var defaultValue = "Clustered points: {point.clusterPointsAmount}";
 
             ((VwapSeries)chart.Series[0]).Tooltip.ClusterFormat = defaultValue;
 

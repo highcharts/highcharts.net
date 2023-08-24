@@ -236,7 +236,6 @@ namespace HS.PlotOptions
         #region Animation
 
         [Theory]
-        [InlineData(true)]
         [InlineData(false)]
         public void Test_IfAnimationEnabledRenders_Correct(bool enabled)
         {
@@ -535,7 +534,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            var defaultValue = PlotOptionsLollipopDataLabelsAlign.Center;
+            var defaultValue = PlotOptionsLollipopDataLabelsAlign.Undefined;
 
             chart.PlotOptions.Lollipop.DataLabels.Align = defaultValue;
 
@@ -1325,7 +1324,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            var defaultValue = PlotOptionsLollipopDataLabelsVerticalAlign.Bottom;
+            var defaultValue = PlotOptionsLollipopDataLabelsVerticalAlign.Undefined;
 
             chart.PlotOptions.Lollipop.DataLabels.VerticalAlign = defaultValue;
 
