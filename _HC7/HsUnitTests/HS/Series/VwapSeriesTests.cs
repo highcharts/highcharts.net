@@ -4255,7 +4255,7 @@ namespace HS.Series
         #region tooltip
 
         [Theory]
-        [InlineData("Clustered points: {point.clusterPointsAmount}")]
+        [InlineData("Testing points: {point.clusterPointsAmount}")]
         public void Test_IfTooltipClusterFormatRenders_Correct(string value)
         {
             var chart = new Highstock();

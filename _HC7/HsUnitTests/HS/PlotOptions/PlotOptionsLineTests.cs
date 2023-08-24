@@ -4851,7 +4851,7 @@ namespace HS.PlotOptions
         #region tooltip
 
         [Theory]
-        [InlineData("Clustered points: {point.clusterPointsAmount}")]
+        [InlineData("testing")]
         public void Test_IfTooltipClusterFormatRenders_Correct(string value)
         {
             var chart = new Highstock();
@@ -4868,7 +4868,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            var defaultValue = string.Empty;
+            var defaultValue = "Clustered points: {point.clusterPointsAmount}";
 
             chart.PlotOptions.Line.Tooltip.ClusterFormat = defaultValue;
 
@@ -4884,6 +4884,7 @@ namespace HS.PlotOptions
         [InlineData("second", "%A, %b %e, %H:%M:%S")]
         [InlineData("week", "Week from %A, %b %e, %Y")]
         [InlineData("year", "%Y")]
+
         public void Test_IfTooltipDateTimeLabelFormatsRenders_Correct(string param, string paramValue)
         {
             var chart = new Highstock();

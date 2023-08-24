@@ -4139,7 +4139,7 @@ namespace HS.Series
         #region tooltip
 
         [Theory]
-        [InlineData("Clustered points: {point.clusterPointsAmount}")]
+        [InlineData("Testing points: {point.clusterPointsAmount}")]
         public void Test_IfTooltipClusterFormatRenders_Correct(string value)
         {
             var chart = new Highstock();
@@ -4156,7 +4156,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new XrangeSeries(); chart.Series.Add(series);
-            var defaultValue = string.Empty;
+            var defaultValue = "Clustered points: {point.clusterPointsAmount}";
 
             ((XrangeSeries)chart.Series[0]).Tooltip.ClusterFormat = defaultValue;
 

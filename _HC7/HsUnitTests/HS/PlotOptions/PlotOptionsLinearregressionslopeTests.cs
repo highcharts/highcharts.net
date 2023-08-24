@@ -4182,7 +4182,7 @@ namespace HS.PlotOptions
         #region tooltip
 
         [Theory]
-        [InlineData("Clustered points: {point.clusterPointsAmount}")]
+        [InlineData("testing")]
         public void Test_IfTooltipClusterFormatRenders_Correct(string value)
         {
             var chart = new Highstock();
@@ -4199,7 +4199,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            var defaultValue = string.Empty;
+            var defaultValue = "Clustered points: {point.clusterPointsAmount}";
 
             chart.PlotOptions.Linearregressionslope.Tooltip.ClusterFormat = defaultValue;
 
