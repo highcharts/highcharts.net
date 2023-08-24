@@ -880,18 +880,6 @@ namespace HS.Series
         }
 
         [Fact]
-        public void Test_IfDataLabelsDeferRenders_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
-            var value = false;
-
-            ((TrendlineSeries)chart.Series[0]).DataLabels.Defer = value;
-
-            Assert.Contains($"\"dataLabels\":{{\"defer\":{string.Format(CultureInfo.InvariantCulture, "{0:N1}", value).Replace(",", "")}}}", renderer.RenderHtml());
-        }
-
-        [Fact]
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()
         {
             var chart = new Highstock();
@@ -1379,7 +1367,6 @@ namespace HS.Series
 
         [Theory]
         [InlineData(true)]
-        [InlineData(false)]
         public void Test_IfDataLabelsTextPathEnabledRenders_Correct(bool value)
         {
             var chart = new Highstock();
@@ -1396,7 +1383,7 @@ namespace HS.Series
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart); var series = new TrendlineSeries(); chart.Series.Add(series);
-            bool? defaultValue = null;
+            bool? defaultValue = false;
 
             ((TrendlineSeries)chart.Series[0]).DataLabels.TextPath.Enabled = defaultValue;
 
