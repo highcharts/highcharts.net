@@ -143,7 +143,6 @@ namespace SourceCodeGenerator.Services
                     new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "startOnTick" },
                     new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "plotBands" }
                 });
-            ItemsToUpdate.Add("plotOptions.pie", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Exclude, Value = "dataLabels" } });
             ItemsToUpdate.Add("pane.background.backgroundColor", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
             ItemsToUpdate.Add("pane.size", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("pane.background.innerRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });

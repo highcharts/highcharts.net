@@ -196,9 +196,6 @@ namespace SourceCodeGenerator.Generators
         {
             foreach (ApiItem item in items)
             {
-                if (item.FullName.EndsWith("plotOptions.pie"))
-                    item.Exclude.Remove("dataLabels");
-
                 if (item.Children.Any() || item.Extends.Any())
                 {
                     var children = GetChildren(item);
@@ -224,10 +221,10 @@ namespace SourceCodeGenerator.Generators
             List<ApiItem> clones = new List<ApiItem>();
 
             if (item.Title == RootClass)
-                children = _apiItems;// FindRootChildren();
+                children = _apiItems;
             else
             {
-                children = item.Children.ToList(); // FindImmediateChildren(item);
+                children = item.Children.ToList();
 
                 //warunek do usunięcia
                 if (item.FullName != "series.bellcurve.data" && item.FullName != "series.histogram.data")
@@ -249,8 +246,6 @@ namespace SourceCodeGenerator.Generators
                                     clone.FullName = clone.ParentFullName + '.' + clone.Title;
                                     child.Children.Add(clone);
                                 }
-                                //elementsToClone.ForEach(p => { p.ParentFullName = child.FullName; p.FullName = child.FullName + p.Title; });
-                                //child.Children = child.Children.Concat(elementsToClone).ToList();
                             }
                         }
 

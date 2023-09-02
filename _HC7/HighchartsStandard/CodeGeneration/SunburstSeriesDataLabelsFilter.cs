@@ -10,23 +10,39 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class SunburstSeriesDataLabelsStyle  : BaseObject
+	public partial class SunburstSeriesDataLabelsFilter  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 
-		public SunburstSeriesDataLabelsStyle()
+		public SunburstSeriesDataLabelsFilter()
 		{
-			TextOverflow = TextOverflow_DefaultValue = "ellipsis";
+			Operator = Operator_DefaultValue = "";
+			Property = Property_DefaultValue = "";
+			Value = Value_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// The operator to compare by. Can be one of `>`, `<`, `>=`, `<=`,`==`, and `===`.
 		/// </summary>
-		public string TextOverflow { get; set; }
-		private string TextOverflow_DefaultValue { get; set; }
+		public string Operator { get; set; }
+		private string Operator_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The point property to filter by. Point options are passeddirectly to properties, additionally there are `y` value,`percentage` and others listed under {@link Highcharts.Point}members.
+		/// </summary>
+		public string Property { get; set; }
+		private string Property_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The value to compare against.
+		/// </summary>
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -36,7 +52,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (TextOverflow != TextOverflow_DefaultValue) h.Add("textOverflow",TextOverflow);
+			if (Operator != Operator_DefaultValue) h.Add("operator",Operator);
+			if (Property != Property_DefaultValue) h.Add("property",Property);
+			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

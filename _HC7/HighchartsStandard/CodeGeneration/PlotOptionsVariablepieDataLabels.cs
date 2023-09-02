@@ -10,13 +10,13 @@ using System.IO;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-	public partial class PyramidSeriesDataLabels  : BaseObject
+	public partial class PlotOptionsVariablepieDataLabels  : BaseObject
 	{
 		Hashtable h = new Hashtable();
 
-		public PyramidSeriesDataLabels()
+		public PlotOptionsVariablepieDataLabels()
 		{
-			Align = Align_DefaultValue = PyramidSeriesDataLabelsAlign.Center;
+			Align = Align_DefaultValue = PlotOptionsVariablepieDataLabelsAlign.Center;
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = null;
@@ -29,24 +29,24 @@ namespace Highsoft.Web.Mvc.Charts
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
 			Enabled = Enabled_DefaultValue = false;
-			Filter = Filter_DefaultValue = new PyramidSeriesDataLabelsFilter();
+			Filter = Filter_DefaultValue = new PlotOptionsVariablepieDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = PyramidSeriesDataLabelsOverflow.Justify;
+			Overflow = Overflow_DefaultValue = PlotOptionsVariablepieDataLabelsOverflow.Justify;
 			Padding = Padding_DefaultValue = 5;
-			Position = Position_DefaultValue = PyramidSeriesDataLabelsPosition.Center;
+			Position = Position_DefaultValue = PlotOptionsVariablepieDataLabelsPosition.Center;
 			Rotation = Rotation_DefaultValue = 0;
 			Shadow = Shadow_DefaultValue = new Shadow();
 			ShadowBool = ShadowBool_DefaultValue = false;
 			Shape = Shape_DefaultValue = "square";
 			Style = Style_DefaultValue = new Hashtable();
-			TextPath = TextPath_DefaultValue = new PyramidSeriesDataLabelsTextPath();
+			TextPath = TextPath_DefaultValue = new PlotOptionsVariablepieDataLabelsTextPath();
 			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = PyramidSeriesDataLabelsVerticalAlign.Bottom;
+			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsVariablepieDataLabelsVerticalAlign.Bottom;
 			X = X_DefaultValue = 0;
 			Y = Y_DefaultValue = 0;
 			ZIndex = ZIndex_DefaultValue = 6;
@@ -58,8 +58,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The alignment of the data label compared to the point. If `right`,the right side of the label should be touching the point. For pointswith an extent, like columns, the alignments also dictates how toalign it inside the box, as given with the[inside](#plotOptions.column.dataLabels.inside) option. Can be one of`left`, `center` or `right`.
 		/// </summary>
-		public PyramidSeriesDataLabelsAlign Align { get; set; }
-		private PyramidSeriesDataLabelsAlign Align_DefaultValue { get; set; }
+		public PlotOptionsVariablepieDataLabelsAlign Align { get; set; }
+		private PlotOptionsVariablepieDataLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -149,8 +149,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A declarative filter to control of which data labels to display.The declarative filter is designed for use when callbackfunctions are not available, like when the chart options requirea pure JSON structure or for use with graphical editors. Forprogrammatic control, use the `formatter` instead, and return`undefined` to disable a single data label.
 		/// </summary>
-		public PyramidSeriesDataLabelsFilter Filter { get; set; }
-		private PyramidSeriesDataLabelsFilter Filter_DefaultValue { get; set; }
+		public PlotOptionsVariablepieDataLabelsFilter Filter { get; set; }
+		private PlotOptionsVariablepieDataLabelsFilter Filter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -198,8 +198,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// How to handle data labels that flow outside the plot area. Thedefault is `"justify"`, which aligns them inside the plot area.For columns and bars, this means it will be moved inside the bar.To display data labels outside the plot area, set `crop` to`false` and `overflow` to `"allow"`.
 		/// </summary>
-		public PyramidSeriesDataLabelsOverflow Overflow { get; set; }
-		private PyramidSeriesDataLabelsOverflow Overflow_DefaultValue { get; set; }
+		public PlotOptionsVariablepieDataLabelsOverflow Overflow { get; set; }
+		private PlotOptionsVariablepieDataLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -212,8 +212,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Aligns data labels relative to points. If `center` alignment isnot possible, it defaults to `right`.
 		/// </summary>
-		public PyramidSeriesDataLabelsPosition Position { get; set; }
-		private PyramidSeriesDataLabelsPosition Position_DefaultValue { get; set; }
+		public PlotOptionsVariablepieDataLabelsPosition Position { get; set; }
+		private PlotOptionsVariablepieDataLabelsPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -254,8 +254,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Options for a label text which should follow marker's shape.Border and background are disabled for a label that follows apath.**Note:** Only SVG-based renderer supports this option. Setting`useHTML` to true will disable this option.
 		/// </summary>
-		public PyramidSeriesDataLabelsTextPath TextPath { get; set; }
-		private PyramidSeriesDataLabelsTextPath TextPath_DefaultValue { get; set; }
+		public PlotOptionsVariablepieDataLabelsTextPath TextPath { get; set; }
+		private PlotOptionsVariablepieDataLabelsTextPath TextPath_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -268,8 +268,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The vertical alignment of a data label. Can be one of `top`,`middle` or `bottom`. The default value depends on the data, forinstance in a column chart, the label is above positive valuesand below negative values.
 		/// </summary>
-		public PyramidSeriesDataLabelsVerticalAlign VerticalAlign { get; set; }
-		private PyramidSeriesDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public PlotOptionsVariablepieDataLabelsVerticalAlign VerticalAlign { get; set; }
+		private PlotOptionsVariablepieDataLabelsVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>

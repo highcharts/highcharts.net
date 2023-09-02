@@ -39,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Cursor = Cursor_DefaultValue = VariablepieSeriesCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			Data = Data_DefaultValue = new List<VariablepieSeriesData>();
+			DataLabels = DataLabels_DefaultValue = new VariablepieSeriesDataLabels();
 			Depth = Depth_DefaultValue = 0;
 			Description = Description_DefaultValue = "";
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
@@ -253,6 +254,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public List<VariablepieSeriesData> Data { get; set; }
 		private List<VariablepieSeriesData> Data_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the series data labels, appearing next to each datapoint.Since v6.2.0, multiple data labels can be applied to each singlepoint by defining them as an array of configs.In styled mode, the data labels can be styled with the`.highcharts-data-label-box` and `.highcharts-data-label` class names([see example](https://www.highcharts.com/samples/highcharts/css/series-datalabels)).
+		/// </summary>
+		public VariablepieSeriesDataLabels DataLabels { get; set; }
+		private VariablepieSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -635,6 +643,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (Data.Any()) h.Add("data",HashifyList(highcharts,Data));
+			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);

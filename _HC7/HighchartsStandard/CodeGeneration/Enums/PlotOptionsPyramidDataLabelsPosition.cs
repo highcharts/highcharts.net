@@ -5,11 +5,10 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum SunburstSeriesDataLabelsRotationMode
+    public enum PlotOptionsPyramidDataLabelsPosition
     {
-        Auto, 
-		Perpendicular, 
-		Parallel, 
-		Circular
+        Center, 
+		Left, 
+		Right
     }
 }
