@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsIkhTooltip()
 		{
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> <b> {series.name}</b><br/>TENKAN SEN: {point.tenkanSen:.3f}<br/>KIJUN SEN: {point.kijunSen:.3f}<br/>CHIKOU SPAN: {point.chikouSpan:.3f}<br/>SENKOU SPAN A: {point.senkouSpanA:.3f}<br/>SENKOU SPAN B: {point.senkouSpanB:.3f}<br/>";
+			ValueDecimals = ValueDecimals_DefaultValue = 4;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string PointFormat_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Number of decimals in indicator series.
+		/// </summary>
+		public double? ValueDecimals { get; set; }
+		private double? ValueDecimals_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -37,6 +45,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

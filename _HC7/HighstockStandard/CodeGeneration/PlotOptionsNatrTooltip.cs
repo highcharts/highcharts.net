@@ -16,11 +16,19 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsNatrTooltip()
 		{
+			ValueDecimals = ValueDecimals_DefaultValue = 4;
 			ValueSuffix = ValueSuffix_DefaultValue = "%";
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// Number of decimals in indicator series.
+		/// </summary>
+		public double? ValueDecimals { get; set; }
+		private double? ValueDecimals_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -36,6 +44,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

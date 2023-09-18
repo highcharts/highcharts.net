@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Enabled = Enabled_DefaultValue = false;
 			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			FillColor = FillColor_DefaultValue = "";
+			FillOpacity = FillOpacity_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
@@ -50,6 +51,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The fill opacity of the bubble markers.
+		/// </summary>
+		public double? FillOpacity { get; set; }
+		private double? FillOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -111,6 +119,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

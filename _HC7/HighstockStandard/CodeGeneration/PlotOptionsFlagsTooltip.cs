@@ -18,7 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			ClusterFormat = ClusterFormat_DefaultValue = "Clustered points: {point.clusterPointsAmount}";
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			Distance = Distance_DefaultValue = 16;
+			Distance = Distance_DefaultValue = 6;
 			FollowPointer = FollowPointer_DefaultValue = false;
 			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			FooterFormat = FooterFormat_DefaultValue = "";
@@ -49,7 +49,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Distance from point to tooltip in pixels.
+		/// 
 		/// </summary>
 		public double? Distance { get; set; }
 		private double? Distance_DefaultValue { get; set; }

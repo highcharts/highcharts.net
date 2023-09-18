@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public PlotOptionsKeltnerchannelsTooltip()
 		{
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span><b> {series.name}</b><br/>Upper Channel: {point.top}<br/>EMA({series.options.params.period}): {point.middle}<br/>Lower Channel: {point.bottom}<br/>";
+			ValueDecimals = ValueDecimals_DefaultValue = 4;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		private string PointFormat_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Number of decimals in indicator series.
+		/// </summary>
+		public double? ValueDecimals { get; set; }
+		private double? ValueDecimals_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highstock highstock)
@@ -37,6 +45,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
