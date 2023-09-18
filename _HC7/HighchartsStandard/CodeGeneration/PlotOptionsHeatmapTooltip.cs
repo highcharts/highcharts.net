@@ -16,11 +16,19 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsHeatmapTooltip()
 		{
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='color:{point.color}'>●</span> <span style='font-size: 0.8em'> {series.name}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "{point.x}, {point.y}: {point.value}<br/>";
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string HeaderFormat { get; set; }
+		private string HeaderFormat_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -36,6 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

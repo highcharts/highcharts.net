@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsPolygonTooltip()
 		{
 			FollowPointer = FollowPointer_DefaultValue = true;
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='color:{point.color}'>●</span> <span style='font-size: 0.8em'> {series.name}</span><br/>";
 			PointFormat = PointFormat_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
@@ -28,6 +29,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? FollowPointer { get; set; }
 		private bool? FollowPointer_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string HeaderFormat { get; set; }
+		private string HeaderFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -45,6 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
+			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

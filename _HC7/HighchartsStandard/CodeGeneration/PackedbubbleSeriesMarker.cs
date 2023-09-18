@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = null;
 			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
 			FillColor = FillColor_DefaultValue = null;
+			FillOpacity = FillOpacity_DefaultValue = null;
 			Height = Height_DefaultValue = null;
 			LineColor = LineColor_DefaultValue = "#ffffff";
 			LineWidth = LineWidth_DefaultValue = 0;
@@ -50,6 +51,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Object FillColor { get; set; }
 		private Object FillColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The fill opacity of the bubble markers.
+		/// </summary>
+		public double? FillOpacity { get; set; }
+		private double? FillOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -111,6 +119,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
+			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

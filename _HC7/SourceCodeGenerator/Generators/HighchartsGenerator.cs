@@ -765,9 +765,6 @@ namespace SourceCodeGenerator.Generators
             }
         }
 
-
-        
-
         protected override void InitEnumMappings()
         {
             _enumMappings.Add("triangle-down", "triangledown");

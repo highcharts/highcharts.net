@@ -16,11 +16,19 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVariablepieTooltip()
 		{
+			FollowPointer = FollowPointer_DefaultValue = true;
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}<br/>Value: {point.y}<br/>Size: {point.z}<br/>";
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public bool? FollowPointer { get; set; }
+		private bool? FollowPointer_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -36,6 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
+			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

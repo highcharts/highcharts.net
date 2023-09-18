@@ -282,7 +282,6 @@ plotOptions.series.dataLabels.style.color.Types:String
 plotOptions.series.dataLabels.style.fontSize.Types:String
 plotOptions.series.dataLabels.style.fontWeight.Types:String
 plotOptions.series.dataLabels.style.textOutline.Types:String
-plotOptions.series.dataLabels.verticalAlign.Types:String
 plotOptions.series.dataLabels.x.Types:Number
 plotOptions.series.dataLabels.y.Types:Number
 plotOptions.sunburst.Exclude:allAreas,clip,colorAxis,compare,compareBase,dataGrouping,depth,endAngle,gapSize,gapUnit,ignoreHiddenPoint,innerSize,joinBy,legendType,linecap,minSize,navigatorOptions,pointRange

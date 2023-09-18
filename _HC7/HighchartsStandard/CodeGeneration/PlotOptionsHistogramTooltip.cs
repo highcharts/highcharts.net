@@ -16,12 +16,20 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsHistogramTooltip()
 		{
+			Distance = Distance_DefaultValue = 6;
 			HeaderFormat = HeaderFormat_DefaultValue = "";
 			PointFormat = PointFormat_DefaultValue = "<span style='font-size: 0.8em'>{point.x} - {point.x2}</span><br/><span style='color:{point.color}'>●</span> {series.name} <b>{point.y}</b><br/>";
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -44,6 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (CustomFields.Count > 0)

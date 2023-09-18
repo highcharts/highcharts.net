@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsSankeyTooltip()
 		{
+			Distance = Distance_DefaultValue = 6;
 			FollowPointer = FollowPointer_DefaultValue = true;
 			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 0.8em'>{series.name}</span><br/>";
 			NodeFormat = NodeFormat_DefaultValue = "{point.name}: <b>{point.sum}</b><br/>";
@@ -25,6 +26,13 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Whether the tooltip should follow the pointer or stay fixed onthe item.
@@ -68,6 +76,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
 			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);

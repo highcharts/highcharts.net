@@ -34,6 +34,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Formatter = Formatter_DefaultValue = "";
 			Inside = Inside_DefaultValue = null;
 			LinkTextPath = LinkTextPath_DefaultValue = new PlotOptionsOrganizationDataLabelsLinkTextPath();
+			NodeFormat = NodeFormat_DefaultValue = "undefined";
 			NodeFormatter = NodeFormatter_DefaultValue = "";
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
@@ -181,6 +182,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsOrganizationDataLabelsLinkTextPath LinkTextPath { get; set; }
 		private PlotOptionsOrganizationDataLabelsLinkTextPath LinkTextPath_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)specifying what to show for _nodes_ in the sankey diagram. Bydefault the `nodeFormatter` returns `{point.name}`.
+		/// </summary>
+		public string NodeFormat { get; set; }
+		private string NodeFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -334,6 +342,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
 			if (LinkTextPath.IsDirty(highcharts)) h.Add("linkTextPath",LinkTextPath.ToHashtable(highcharts));
+			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
 			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); highcharts.AddFunction("nodeFormatter", NodeFormatter); }  
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);

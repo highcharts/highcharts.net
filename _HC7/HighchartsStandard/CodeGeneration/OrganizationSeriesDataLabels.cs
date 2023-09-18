@@ -36,6 +36,8 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkFormat = LinkFormat_DefaultValue = "";
 			LinkFormatter = LinkFormatter_DefaultValue = "";
 			LinkTextPath = LinkTextPath_DefaultValue = new OrganizationSeriesDataLabelsLinkTextPath();
+			NodeFormat = NodeFormat_DefaultValue = "undefined";
+			NodeFormatter = NodeFormatter_DefaultValue = "";
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatBool = NullFormatBool_DefaultValue = null;
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -199,6 +201,20 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// The[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)specifying what to show for _nodes_ in the sankey diagram. Bydefault the `nodeFormatter` returns `{point.name}`.
+		/// </summary>
+		public string NodeFormat { get; set; }
+		private string NodeFormat_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Callback to format data labels for _nodes_ in the sankey diagram.The `nodeFormat` option takes precedence over the`nodeFormatter`.
+		/// </summary>
+		public string NodeFormatter { get; set; }
+		private string NodeFormatter_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Format for points with the value of null. Works analogously to[format](#plotOptions.series.dataLabels.format). `nullFormat` canbe applied only to series which support displaying null pointsi.e `heatmap` or `tilemap`. Does not work with series that don'tdisplay null points, like `line`, `column`, `bar` or `pie`.
 		/// </summary>
 		public string NullFormat { get; set; }
@@ -344,6 +360,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkFormat != LinkFormat_DefaultValue) h.Add("linkFormat",LinkFormat);
 			if (LinkFormatter != LinkFormatter_DefaultValue) { h.Add("linkFormatter",LinkFormatter); highcharts.AddFunction("linkFormatter", LinkFormatter); }  
 			if (LinkTextPath.IsDirty(highcharts)) h.Add("linkTextPath",LinkTextPath.ToHashtable(highcharts));
+			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
+			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); highcharts.AddFunction("nodeFormatter", NodeFormatter); }  
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  

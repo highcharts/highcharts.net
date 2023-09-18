@@ -127,13 +127,37 @@ namespace SourceCodeGenerator.Generators
                         return addedChildren;
                 }
 
-                if (baseClass.Extends.Any())
-                    addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !baseClass.Exclude.Any(q => q == p.Title)));
+                
 
-                addedChildren = addedChildren.Where(p => !baseClass.Exclude.Any(q => q == p.Title)).ToList();
                 //it's possible that next line may be needed (requires changes)
                 //addedChildren.Where(p => baseClass.Children.Any(q => q.Title == p.Title)).ToList().ForEach(e => e.Children.AddRange(GetChildren(baseClass.Children.First(s => s.Title == e.Title)).Where(o => !e.Children.Any(u => o.Title == u.Title))));
                 var childrenWithoutMerged = baseClass.Children.Where(p => !addedChildren.Any(q => q.Title == p.Title)).ToList();
+                var baseClassChildrenToUseToOverride = baseClass.Children.Where(p => addedChildren.Any(q => q.Title == p.Title)).ToList();
+                //tutaj powinna znajdować się pętla z GetChildren
+
+                foreach (var baseElement in baseClassChildrenToUseToOverride)
+                {
+                    var child = item.Children.FirstOrDefault(p => p.Title == baseElement.Title);
+
+                    if (child != null)
+                    {
+                        foreach (var element in baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title)).ToList())
+                        {
+                            var clone = element.Clone();
+                            clone.ParentFullName = child.FullName;
+                            clone.FullName = clone.ParentFullName + '.' + clone.Title;
+
+
+                            child.Children.Add(clone);
+                            addedChildren.RemoveAll(p => p.Title == baseElement.Title);
+                            addedChildren.Add(child);
+                        }
+                    }
+                }
+
+                if (baseClass.Extends.Any())
+                    addedChildren.AddRange(GetChildrenFromBaseClasses(baseClass).Where(p => !baseClass.Exclude.Any(q => q == p.Title)));
+
 
                 if (baseClass.FullName == "series")
                     addedChildren.AddRange(childrenWithoutMerged.Where(p => !p.Extends.Any(q => q == "series")));
@@ -226,31 +250,29 @@ namespace SourceCodeGenerator.Generators
             {
                 children = item.Children.ToList();
 
-                //warunek do usunięcia
-                if (item.FullName != "series.bellcurve.data" && item.FullName != "series.histogram.data")
+                if (item.Extends.Any())
                 {
-                    if (item.Extends.Any())
+                    var baseChildren = GetChildrenFromBaseClasses(item);
+
+
+                    //podobna pętla (zamieniona na funkcję) powinna znajdować się w GetChildrenFromBaseClasses
+                    foreach (var baseElement in baseChildren.Where(p => children.Any(x => x.Title == p.Title)))
                     {
-                        var baseChildren = GetChildrenFromBaseClasses(item);
+                        var child = children.FirstOrDefault(p => p.Title == baseElement.Title);
 
-                        foreach (var baseElement in baseChildren.Where(p => children.Any(x => x.Title == p.Title)))
+                        if (child != null)
                         {
-                            var child = children.FirstOrDefault(p => p.Title == baseElement.Title);
-
-                            if (child != null)
+                            foreach (var element in baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title)).ToList())
                             {
-                                foreach (var element in baseElement.Children.Where(p => !child.Children.Any(x => x.Title == p.Title)).ToList())
-                                {
-                                    var clone = element.Clone();
-                                    clone.ParentFullName = child.FullName;
-                                    clone.FullName = clone.ParentFullName + '.' + clone.Title;
-                                    child.Children.Add(clone);
-                                }
+                                var clone = element.Clone();
+                                clone.ParentFullName = child.FullName;
+                                clone.FullName = clone.ParentFullName + '.' + clone.Title;
+                                child.Children.Add(clone);
                             }
                         }
-
-                        children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && (x.Suffix == p.Suffix || (string.IsNullOrEmpty(x.Suffix) && string.IsNullOrEmpty(p.Suffix))))));
                     }
+
+                    children.AddRange(baseChildren.Where(p => !children.Any(x => x.Title == p.Title && (x.Suffix == p.Suffix || (string.IsNullOrEmpty(x.Suffix) && string.IsNullOrEmpty(p.Suffix))))));
                 }
             }
 

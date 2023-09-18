@@ -16,11 +16,19 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsErrorbarTooltip()
 		{
+			Distance = Distance_DefaultValue = 6;
 			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>";
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? Distance { get; set; }
+		private double? Distance_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -36,6 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
+			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
 			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

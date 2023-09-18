@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FollowTouchMove = FollowTouchMove_DefaultValue = true;
 			FooterFormat = FooterFormat_DefaultValue = "";
 			Format = Format_DefaultValue = "undefined";
-			HeaderFormat = HeaderFormat_DefaultValue = "";
+			HeaderFormat = HeaderFormat_DefaultValue = "<span style='color:{point.color}'>●</span> <span style='font-size: 0.8em'> {series.name}</span><br/>";
 			LinkFormat = LinkFormat_DefaultValue = "{point.fromNode.id} → {point.toNode.id}";
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -88,7 +88,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The HTML of the tooltip header line. Variables are enclosed bycurly brackets. Available variables are `point.key`, `series.name`,`series.color` and other members from the `point` and `series`objects. The `point.key` variable contains the category name, xvalue or datetime string depending on the type of axis. For datetimeaxes, the `point.key` date format can be set using`tooltip.xDateFormat`.
+		/// 
 		/// </summary>
 		public string HeaderFormat { get; set; }
 		private string HeaderFormat_DefaultValue { get; set; }
