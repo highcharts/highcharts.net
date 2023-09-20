@@ -54,14 +54,6 @@
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Highcharts, Version=11.1.0.1, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\HighchartsStandard\bin\Release\netstandard2.0\Highcharts.dll</HintPath>
-    </Reference>
-    <Reference Include="Highstock, Version=11.1.0.1, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\HighstockStandard\bin\Release\netstandard2.0\Highstock.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
@@ -1442,6 +1434,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HighchartsStandard\HighchartsStandard.csproj">
+      <Project>{d5c8fc1f-55bc-43e4-b488-ebf73736b6b9}</Project>
+      <Name>HighchartsStandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HighstockStandard\HighstockStandard.csproj">
+      <Project>{fdd00731-a836-4d1a-a823-6a5dbba298ec}</Project>
+      <Name>HighstockStandard</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

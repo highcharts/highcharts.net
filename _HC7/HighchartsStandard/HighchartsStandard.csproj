@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>11.1.0.1</AssemblyVersion>
-    <FileVersion>11.1.0.1</FileVersion>
+    <AssemblyVersion>11.1.0.2</AssemblyVersion>
+    <FileVersion>11.1.0.2</FileVersion>
     <Company>Highsoft</Company>
     <Product>Highcharts .NET</Product>
-    <Version>11.1.0.1</Version>
+    <Version>11.1.0.2</Version>
     <Authors>Highsoft</Authors>
     <Copyright>Copyright ©  2023</Copyright>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
@@ -18,6 +18,9 @@
     <RootNamespace>Highcharts</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+    #11.1.0.2
+    Fix multiple Marker, DataLabel, DragDrop, Tooltip objects
+
     #11.1.0.1
     Fix PinchType, PlotShadow, Position3d, Chart.Height, Breaks, PlotOptionsSunburstDataLabels, PlotOptionsPyramidDataLabels, PlotOptionsPieDataLabels, OrganizationSeriesNodes, StatesHover, StatesInactive, StatesNormal, StatesSelect
 
