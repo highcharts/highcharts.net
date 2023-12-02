@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public NavigatorXAxisEvents()
 		{
 			AfterSetExtremes = AfterSetExtremes_DefaultValue = "";
+			PointBreakOut = PointBreakOut_DefaultValue = "";
 			PointInBreak = PointInBreak_DefaultValue = "";
 			SetExtremes = SetExtremes_DefaultValue = "";
 			
@@ -29,6 +30,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string AfterSetExtremes { get; set; }
 		private string AfterSetExtremes_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An event fired when a point is outside a break after zoom.
+		/// </summary>
+		public string PointBreakOut { get; set; }
+		private string PointBreakOut_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -53,6 +61,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); highstock.AddFunction("afterSetExtremes", AfterSetExtremes); }  
+			if (PointBreakOut != PointBreakOut_DefaultValue) { h.Add("pointBreakOut",PointBreakOut); highstock.AddFunction("pointBreakOut", PointBreakOut); }  
 			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); highstock.AddFunction("pointInBreak", PointInBreak); }  
 			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); highstock.AddFunction("setExtremes", SetExtremes); }  
 			if (CustomFields.Count > 0)

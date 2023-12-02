@@ -48,15 +48,16 @@ namespace Highsoft.Web.Mvc.Charts
 			Height = Height_DefaultValue = "100%";
 			HeightNumber = HeightNumber_DefaultValue = null;
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsPyramidLegendSymbol.Rectangle;
 			Linecap = Linecap_DefaultValue = PlotOptionsPyramidLinecap.Round;
 			MinSize = MinSize_DefaultValue = "80";
 			MinSizeNumber = MinSizeNumber_DefaultValue = null;
-			NeckHeight = NeckHeight_DefaultValue = null;
+			NeckHeight = NeckHeight_DefaultValue = "25%";
 			NeckHeightNumber = NeckHeightNumber_DefaultValue = null;
-			NeckWidth = NeckWidth_DefaultValue = null;
+			NeckWidth = NeckWidth_DefaultValue = "30%";
 			NeckWidthNumber = NeckWidthNumber_DefaultValue = null;
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsPyramidOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
@@ -64,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			RelativeXValue = RelativeXValue_DefaultValue = false;
-			Reversed = Reversed_DefaultValue = true;
+			Reversed = Reversed_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			Shadow = Shadow_DefaultValue = new Shadow();
 			ShadowBool = ShadowBool_DefaultValue = false;
@@ -312,6 +313,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
@@ -354,10 +362,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pyramid neck width is zero by default, as opposed to the funnel,which shares the same layout logic.
+		/// The height of the neck, the lower part of the funnel. A numberdefines pixel width, a percentage string defines a percentage of theplot area height.
 		/// </summary>
-		public double? NeckHeight { get; set; }
-		private double? NeckHeight_DefaultValue { get; set; }
+		public string NeckHeight { get; set; }
+		private string NeckHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -368,10 +376,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pyramid neck width is zero by default, as opposed to the funnel,which shares the same layout logic.
+		/// The width of the neck, the lower part of the funnel. A number definespixel width, a percentage string defines a percentage of the plotarea width.
 		/// </summary>
-		public double? NeckWidth { get; set; }
-		private double? NeckWidth_DefaultValue { get; set; }
+		public string NeckWidth { get; set; }
+		private string NeckWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -424,7 +432,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pyramid is reversed by default, as opposed to the funnel, whichshares the layout engine, and is not reversed.
+		/// A reversed funnel has the widest area down. A reversed funnel withno neck width and neck height is a pyramid.
 		/// </summary>
 		public bool? Reversed { get; set; }
 		private bool? Reversed_DefaultValue { get; set; }
@@ -588,6 +596,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));

@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AfterBreaks = AfterBreaks_DefaultValue = "";
 			AfterSetExtremes = AfterSetExtremes_DefaultValue = "";
 			PointBreak = PointBreak_DefaultValue = "";
+			PointBreakOut = PointBreakOut_DefaultValue = "";
 			PointInBreak = PointInBreak_DefaultValue = "";
 			SetExtremes = SetExtremes_DefaultValue = "";
 			
@@ -48,6 +49,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// An event fired when a point is outside a break after zoom.
+		/// </summary>
+		public string PointBreakOut { get; set; }
+		private string PointBreakOut_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// An event fired when a point falls inside a break from this axis.
 		/// </summary>
 		public string PointInBreak { get; set; }
@@ -71,6 +79,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AfterBreaks != AfterBreaks_DefaultValue) { h.Add("afterBreaks",AfterBreaks); highcharts.AddFunction("afterBreaks", AfterBreaks); }  
 			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); highcharts.AddFunction("afterSetExtremes", AfterSetExtremes); }  
 			if (PointBreak != PointBreak_DefaultValue) { h.Add("pointBreak",PointBreak); highcharts.AddFunction("pointBreak", PointBreak); }  
+			if (PointBreakOut != PointBreakOut_DefaultValue) { h.Add("pointBreakOut",PointBreakOut); highcharts.AddFunction("pointBreakOut", PointBreakOut); }  
 			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); highcharts.AddFunction("pointInBreak", PointInBreak); }  
 			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); highcharts.AddFunction("setExtremes", SetExtremes); }  
 			if (CustomFields.Count > 0)

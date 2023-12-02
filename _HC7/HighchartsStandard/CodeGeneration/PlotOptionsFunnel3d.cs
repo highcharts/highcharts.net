@@ -55,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Height = Height_DefaultValue = "100%";
 			HeightNumber = HeightNumber_DefaultValue = null;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsFunnel3dLabel();
@@ -76,7 +77,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsFunnel3dPointIntervalUnit.Null;
 			PointPadding = PointPadding_DefaultValue = null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
-			PointRange = PointRange_DefaultValue = 0;
+			PointRange = PointRange_DefaultValue = null;
 			PointStart = PointStart_DefaultValue = 0;
 			PointWidth = PointWidth_DefaultValue = null;
 			RelativeXValue = RelativeXValue_DefaultValue = false;
@@ -376,6 +377,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? HeightNumber { get; set; }
 		private double? HeightNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -739,6 +747,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));

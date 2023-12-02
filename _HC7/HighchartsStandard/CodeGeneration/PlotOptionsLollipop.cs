@@ -32,7 +32,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectEnds = ConnectEnds_DefaultValue = null;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			ConnectorColor = ConnectorColor_DefaultValue = "";
-			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cursor = Cursor_DefaultValue = PlotOptionsLollipopCursor.Null;
@@ -46,7 +45,8 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new PlotOptionsLollipopEvents();
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsLollipopFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
-			GroupPadding = GroupPadding_DefaultValue = null;
+			Grouping = Grouping_DefaultValue = true;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsLollipopLabel();
@@ -54,6 +54,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Linecap = Linecap_DefaultValue = PlotOptionsLollipopLinecap.Round;
 			LineColor = LineColor_DefaultValue = "";
 			LinkedTo = LinkedTo_DefaultValue = "";
+			LowMarker = LowMarker_DefaultValue = new PlotOptionsLollipopLowMarker();
 			Marker = Marker_DefaultValue = new PlotOptionsLollipopMarker();
 			NegativeColor = NegativeColor_DefaultValue = "";
 			NegativeFillColor = NegativeFillColor_DefaultValue = "";
@@ -64,7 +65,6 @@ namespace Highsoft.Web.Mvc.Charts
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsLollipopPointIntervalUnit.Null;
-			PointPadding = PointPadding_DefaultValue = null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointRange = PointRange_DefaultValue = 1;
 			PointStart = PointStart_DefaultValue = 0;
@@ -203,13 +203,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Pixel width of the line that connects the dumbbell point'svalues.
-		/// </summary>
-		public double? ConnectorWidth { get; set; }
-		private double? ConnectorWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
 		/// </summary>
 		public bool? Crisp { get; set; }
@@ -301,10 +294,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to group non-stacked lollipop points or to let themrender independent of each other. Non-grouped lollipop pointswill be laid out individually and overlap each other.
 		/// </summary>
-		public double? GroupPadding { get; set; }
-		private double? GroupPadding_DefaultValue { get; set; }
+		public bool? Grouping { get; set; }
+		private bool? Grouping_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -354,6 +354,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string LinkedTo { get; set; }
 		private string LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the lower markers of the arearange-like series. When `lowMarker`is not defined, options inherit form the marker.
+		/// </summary>
+		public PlotOptionsLollipopLowMarker LowMarker { get; set; }
+		private PlotOptionsLollipopLowMarker LowMarker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -424,13 +431,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsLollipopPointIntervalUnit PointIntervalUnit { get; set; }
 		private PlotOptionsLollipopPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? PointPadding { get; set; }
-		private double? PointPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -596,7 +596,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectEnds != ConnectEnds_DefaultValue) h.Add("connectEnds",ConnectEnds);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
-			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
@@ -610,7 +609,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
-			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
+			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
@@ -618,6 +618,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highcharts.FirstCharacterToLower(Linecap.ToString()));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (LowMarker.IsDirty(highcharts)) h.Add("lowMarker",LowMarker.ToHashtable(highcharts));
 			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);
@@ -628,7 +629,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (PointPlacement.IsDirty(highcharts))
 				if (PointPlacement.Value.HasValue)
 					h.Add("pointPlacement", PointPlacement.Value);

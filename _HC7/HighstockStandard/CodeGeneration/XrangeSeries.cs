@@ -55,6 +55,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			GroupPadding = GroupPadding_DefaultValue = null;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Id = Id_DefaultValue = "";
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
@@ -374,6 +375,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public override string Id { get; set; }
 		protected override string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -723,6 +731,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);

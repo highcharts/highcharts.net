@@ -705,8 +705,8 @@ namespace SourceCodeGenerator.Generators
                 (child.FullName.StartsWith("annotations") && child.FullName.EndsWith("background")))
                 return GetClassNameFromItem(child);
 
-            if (child.ParentFullName.EndsWith("navigation.bindings"))
-                return "Hashtable";
+            //if (child.ParentFullName.EndsWith("navigation.bindings"))
+            //    return "Hashtable";
 
             if (_propertyTypeMappings[child.FullName] != null)
                 return _propertyTypeMappings[child.FullName].ToString();
@@ -854,7 +854,6 @@ namespace SourceCodeGenerator.Generators
             _typeMappings.Add("Text", "string");
             _typeMappings.Add("Number", "double?");
             _typeMappings.Add("Boolean", "bool?");
-            //_typeMappings.Add("Boolean|Object", "object");
             _typeMappings.Add("function", "string");
             _typeMappings.Add("function|null", "string");
             _typeMappings.Add("String|Function", "string");
@@ -888,17 +887,14 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("pointPlacement", "PointPlacement");
             _propertyTypeMappings.Add("center", "string[]");
             _propertyTypeMappings.Add("margin", "string[]");
-            //_propertyTypeMappings.Add("position", "Hashtable");
             _propertyTypeMappings.Add("dateTimeLabelFormats", "Hashtable");
             _propertyTypeMappings.Add("inputPosition", "Hashtable");
             _propertyTypeMappings.Add("attr", "Hashtable");
-            ////_propertyTypeMappings.Add("style", "Hashtable");
             _propertyTypeMappings.Add("inputStyle", "Hashtable");
             _propertyTypeMappings.Add("labelStyle", "Hashtable");
             _propertyTypeMappings.Add("stack", "string");
             _propertyTypeMappings.Add("symbol", "string");
             _propertyTypeMappings.Add("trackBorderColor", "string");
-            ////_propertyTypeMappings.Add("background", "List<Background>");
             _propertyTypeMappings.Add("menuItems", "List<MenuItem>");
             _propertyTypeMappings.Add("crosshairs", "List<Crosshair>");
             _propertyTypeMappings.Add("stops", "List<Stop>");
@@ -945,7 +941,6 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("labels.items", "List<LabelsItems>");
             _propertyTypeMappings.Add("plotOptions.sunburst.levels", "List<PlotOptionsSunburstLevels>");
             _propertyTypeMappings.Add("plotOptions.treemap.levels", "List<PlotOptionsTreemapLevels>");
-            //_propertyTypeMappings.Add("pane.background.backgroundColor", "string");
             _propertyTypeMappings.Add("responsive.rules", "List<ResponsiveRules>");
             _propertyTypeMappings.Add("series.treemap.levels", "List<TreemapSeriesLevels>");
             _propertyTypeMappings.Add("series.sunburst.levels", "List<SunburstSeriesLevels>");
@@ -1023,14 +1018,11 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("pointPlacement", "new PointPlacement()");
             _propertyInitMappings.Add("crosshairs", "new List<Crosshair>()");
             _propertyInitMappings.Add("menuItems", "new List<MenuItem>()");
-            ////_propertyInitMappings.Add("Symbol", "new Symbol()");
             _propertyInitMappings.Add("colors", "new List<string>()");
             _propertyInitMappings.Add("center", "new string[] { \"50%\", \"50%\" }");
             _propertyInitMappings.Add("margin", "new string[] {}");
-            //_propertyInitMappings.Add("position", "new Hashtable()");
             _propertyInitMappings.Add("dateTimeLabelFormats", "new Hashtable()");
             _propertyInitMappings.Add("inputPosition", "new Hashtable()");
-            ////_propertyInitMappings.Add("style", "new Hashtable()");
             _propertyInitMappings.Add("inputStyle", "new Hashtable()");
             _propertyInitMappings.Add("labelStyle", "new Hashtable()");
             _propertyInitMappings.Add("columns", "new List<List<string>>()");
@@ -1074,7 +1066,6 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("xAxis.plotLines.label.style", "new Hashtable()");
             _propertyInitMappings.Add("yAxis.plotLines.label.style", "new Hashtable()");
             _propertyInitMappings.Add("zAxis.plotLines.label.style", "new Hashtable()");
-            //_propertyInitMappings.Add("labels.items.style", "new Hashtable()");
             _propertyInitMappings.Add("xAxis.tickPositions", "new List<double>()");
             _propertyInitMappings.Add("yAxis.tickPositions", "new List<double>()");
             _propertyInitMappings.Add("zAxis.tickPositions", "new List<double>()");
@@ -1083,14 +1074,6 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("global.Date", "null");
             _propertyInitMappings.Add("boxesToAvoid", "new List<object>()");
             _propertyInitMappings.Add("labels.items", "new List<LabelsItems>()");
-            //_propertyInitMappings.Add("chart.parallelAxes.labels.style", "new Hashtable()"); object
-            //_propertyInitMappings.Add("annotations.labelOptions.style", "new Hashtable()"); object
-            //_propertyInitMappings.Add("annotations.labels.style", "new Hashtable()"); object
-            //_propertyInitMappings.Add("colorAxis.labels.style", "new Hashtable()"); o
-            //_propertyInitMappings.Add("xAxis.labels.style", "new Hashtable()"); o
-            //_propertyInitMappings.Add("yAxis.labels.style", "new Hashtable()");o
-            //_propertyInitMappings.Add("zAxis.labels.style", "new Hashtable()");o
-            //_propertyInitMappings.Add("yAxis.stackLabels.style", "new Hashtable()");o
             _propertyInitMappings.Add("legend.style", "new Hashtable()");
             _propertyInitMappings.Add("legend.navigation.style", "new Hashtable()");
             _propertyInitMappings.Add("noData.attr", "new Hashtable()");
@@ -1099,7 +1082,6 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("plotOptions.sunburst.levels", "new List<PlotOptionsSunburstLevels>()");
             _propertyInitMappings.Add("plotOptions.treemap.levels", "new List<PlotOptionsTreemapLevels>()");
             _propertyInitMappings.Add("lang.shortWeekdays", "new List<string>()");
-            //_propertyInitMappings.Add("pane.background.backgroundColor", "\"\"");
             _propertyInitMappings.Add("responsive.rules", "new List<ResponsiveRules>()");
             _propertyInitMappings.Add("series.treemap.levels", "new List<TreemapSeriesLevels>()");
             _propertyInitMappings.Add("series.sunburst.levels", "new List<SunburstSeriesLevels>()");
@@ -1180,46 +1162,6 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("accessibility.keyboardNavigation.order", "new List<string>()");
             _propertyInitMappings.Add("zoomEnabled", "null");
             _propertyInitMappings.Add("accessibility.highContrastTheme", "new Object()");
-
-            _propertyInitMappings.Add("navigation.bindings.arrowInfinityLine", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.arrowRay", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.arrowSegment", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.circleAnnotation", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.crooked3", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.crooked5", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.currentPriceIndicator", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.elliott3", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.elliott5", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.fibonacci", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.flagCirclepin", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.flagDiamondpin", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.flagSimplepin", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.flagSquarepin", "new Object()");
-            //_propertyInitMappings.Add("navigation.bindings.fullScreen", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.horizontalLine", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.indicators", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.infinityLine", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.labelAnnotation", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.measureX", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.measureXY", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.measureY", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.parallelChannel", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.pitchfork", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.ray", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.rectangleAnnotation", "new Object()");
-            //_propertyInitMappings.Add("navigation.bindings.saveChart", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.segment", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.seriesTypeCandlestick", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.seriesTypeLine", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.seriesTypeOhlc", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.toggleAnnotations", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.verticalArrow", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.verticalCounter", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.verticalLabel", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.verticalLine", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.zoomX", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.zoomXY", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.zoomY", "new Object()");
             _propertyInitMappings.Add("plotOptions.slowstochastic.params.periods", "new List<double?>{14,3,3}");
             _propertyInitMappings.Add("annotations.fibonacci.typeOptions.backgroundColors", "new List<string>()");
             _propertyInitMappings.Add("annotations.fibonacci.typeOptions.lineColors", "new List<string>()");
@@ -1228,7 +1170,6 @@ namespace SourceCodeGenerator.Generators
         {
             _lists.Add("pane.background");
             _lists.Add("MenuItem");
-            //_lists.Add("Crosshair");
             _lists.Add("Data");
             _lists.Add("Stops");
             _lists.Add("xAxis");
@@ -1246,7 +1187,6 @@ namespace SourceCodeGenerator.Generators
             _lists.Add("annotations.shapes.points");
             _lists.Add("colorAxis.dataClasses");
             _lists.Add("Highstock.colors");
-            //_lists.Add("xAxis.tickPositions");
             _lists.Add("labels.items");
             _lists.Add("plotOptions.sunburst.levels");
             _lists.Add("plotOptions.treemap.levels");
@@ -1304,9 +1244,6 @@ namespace SourceCodeGenerator.Generators
                 defaults = item.Defaults.Replace('\\', ' ').Replace('\'', ' ');
 
             var nameAndSuffix = FirstCharToLower(GetPropertyName(item));
-
-            if (item.ParentFullName.EndsWith("navigation.bindings"))
-                return "new Hashtable()";
 
             if (item.Defaults == "\n")
                 return "null";

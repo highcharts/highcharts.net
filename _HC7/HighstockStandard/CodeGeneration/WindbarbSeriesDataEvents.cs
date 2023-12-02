@@ -39,21 +39,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Callback that fires while dragging a point. The mouse event is passed in asparameter. The original data can be accessed from `e.origin`, and the newpoint values can be accessed from `e.newPoints`. If there is only a singlepoint being updated, it can be accessed from `e.newPoint` for simplicity, andits ID can be accessed from `e.newPointId`. The `this` context is the pointbeing dragged. To stop the default drag action, return false. See[drag and drop options](plotOptions.series.dragDrop).
+		/// Callback that fires while dragging a point. The mouse event is passed inas parameter. The original data can be accessed from `e.origin`, and thenew point values can be accessed from `e.newPoints`. If there is only asingle point being updated, it can be accessed from `e.newPoint` forsimplicity, and its ID can be accessed from `e.newPointId`. The `this`context is the point being dragged. To stop the default drag action,return false. See [drag and drop options](plotOptions.series.dragDrop).
 		/// </summary>
 		public string Drag { get; set; }
 		private string Drag_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback that fires when starting to drag a point. The mouse event object ispassed in as an argument. If a drag handle is used, `e.updateProp` is set tothe data property being dragged. The `this` context is the point. See[drag and drop options](plotOptions.series.dragDrop).
+		/// Callback that fires when starting to drag a point. The mouse event objectis passed in as an argument. If a drag handle is used, `e.updateProp` isset to the data property being dragged. The `this` context is the point.See [drag and drop options](plotOptions.series.dragDrop).
 		/// </summary>
 		public string DragStart { get; set; }
 		private string DragStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Callback that fires when the point is dropped. The parameters passed are thesame as for [drag](#plotOptions.series.point.events.drag). To stop thedefault drop action, return false. See[drag and drop options](plotOptions.series.dragDrop).
+		/// Callback that fires when the point is dropped. The parameters passed arethe same as for [drag](#plotOptions.series.point.events.drag). To stopthe default drop action, return false. See[drag and drop options](plotOptions.series.dragDrop).
 		/// </summary>
 		public string Drop { get; set; }
 		private string Drop_DefaultValue { get; set; }

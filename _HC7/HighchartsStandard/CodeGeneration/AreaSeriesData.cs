@@ -88,7 +88,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.
+		/// Point specific options for the draggable-points module. Overrides optionson `series.dragDrop`.
 		/// </summary>
 		public AreaSeriesDataDragDrop DragDrop { get; set; }
 		private AreaSeriesDataDragDrop DragDrop_DefaultValue { get; set; }

@@ -52,6 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Grouping = Grouping_DefaultValue = false;
 			GroupPadding = GroupPadding_DefaultValue = null;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsErrorbarLabel();
@@ -73,7 +74,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsErrorbarPointIntervalUnit.Null;
 			PointPadding = PointPadding_DefaultValue = null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
-			PointRange = PointRange_DefaultValue = 0;
+			PointRange = PointRange_DefaultValue = null;
 			PointStart = PointStart_DefaultValue = 0;
 			PointWidth = PointWidth_DefaultValue = null;
 			RelativeXValue = RelativeXValue_DefaultValue = false;
@@ -99,7 +100,7 @@ namespace Highsoft.Web.Mvc.Charts
 			WhiskerDashStyle = WhiskerDashStyle_DefaultValue = new Hashtable();
 			WhiskerLength = WhiskerLength_DefaultValue = "50%";
 			WhiskerLengthNumber = WhiskerLengthNumber_DefaultValue = null;
-			WhiskerWidth = WhiskerWidth_DefaultValue = 0;
+			WhiskerWidth = WhiskerWidth_DefaultValue = null;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsErrorbarZone>();
 			
@@ -357,6 +358,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? GroupPadding { get; set; }
 		private double? GroupPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -752,6 +760,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));

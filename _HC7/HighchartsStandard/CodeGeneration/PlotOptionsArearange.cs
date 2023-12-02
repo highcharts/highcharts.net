@@ -48,6 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FillOpacity = FillOpacity_DefaultValue = null;
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsArearangeFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsArearangeLabel();
@@ -56,6 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
+			LowMarker = LowMarker_DefaultValue = new PlotOptionsArearangeLowMarker();
 			Marker = Marker_DefaultValue = new PlotOptionsArearangeMarker();
 			NegativeColor = NegativeColor_DefaultValue = "";
 			NegativeFillColor = NegativeFillColor_DefaultValue = "";
@@ -80,7 +82,7 @@ namespace Highsoft.Web.Mvc.Charts
 			States = States_DefaultValue = new PlotOptionsArearangeStates();
 			Step = Step_DefaultValue = PlotOptionsArearangeStep.Null;
 			StickyTracking = StickyTracking_DefaultValue = true;
-			Threshold = Threshold_DefaultValue = 0;
+			Threshold = Threshold_DefaultValue = null;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsArearangeTooltip();
 			TrackByArea = TrackByArea_DefaultValue = true;
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
@@ -317,6 +319,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
@@ -370,6 +379,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string LinkedTo { get; set; }
 		private string LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the lower markers of the arearange-like series. When `lowMarker`is not defined, options inherit form the marker.
+		/// </summary>
+		public PlotOptionsArearangeLowMarker LowMarker { get; set; }
+		private PlotOptionsArearangeLowMarker LowMarker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -628,6 +644,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
@@ -636,6 +653,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (LowMarker.IsDirty(highcharts)) h.Add("lowMarker",LowMarker.ToHashtable(highcharts));
 			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);

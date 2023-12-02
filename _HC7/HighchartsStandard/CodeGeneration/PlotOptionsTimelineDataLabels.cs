@@ -31,7 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			Crop = Crop_DefaultValue = true;
 			Defer = Defer_DefaultValue = true;
-			Distance = Distance_DefaultValue = 100;
+			Distance = Distance_DefaultValue = "undefined";
 			Enabled = Enabled_DefaultValue = true;
 			Filter = Filter_DefaultValue = new PlotOptionsTimelineDataLabelsFilter();
 			Format = Format_DefaultValue = "point.value";
@@ -165,10 +165,10 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A pixel value defining the distance between the data label andthe point. Negative numbers puts the label on top of the point.
+		/// A pixel value defining the distance between the data label andthe point. Negative numbers puts the label on top of the point in anon-inverted chart. Defaults to 100 for horizontal and 20 forvertical timeline (`chart.inverted: true`).
 		/// </summary>
-		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
+		public string Distance { get; set; }
+		private string Distance_DefaultValue { get; set; }
 		 
 
 		/// <summary>

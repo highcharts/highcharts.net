@@ -34,7 +34,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareStart = CompareStart_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			ConnectorColor = ConnectorColor_DefaultValue = "";
-			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cumulative = Cumulative_DefaultValue = false;
@@ -53,8 +52,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = LollipopSeriesGapUnit.Relative;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
-			GroupPadding = GroupPadding_DefaultValue = null;
+			Grouping = Grouping_DefaultValue = true;
 			Id = Id_DefaultValue = "";
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
@@ -66,6 +66,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Linecap = Linecap_DefaultValue = LollipopSeriesLinecap.Round;
 			LineColor = LineColor_DefaultValue = "";
 			LinkedTo = LinkedTo_DefaultValue = "";
+			LowMarker = LowMarker_DefaultValue = new LollipopSeriesLowMarker();
 			Marker = Marker_DefaultValue = new LollipopSeriesMarker();
 			Name = Name_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "";
@@ -77,7 +78,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = LollipopSeriesPointIntervalUnit.Null;
-			PointPadding = PointPadding_DefaultValue = null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointRange = PointRange_DefaultValue = 0;
 			PointStart = PointStart_DefaultValue = 0;
@@ -238,13 +238,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Pixel width of the line that connects the dumbbell point'svalues.
-		/// </summary>
-		public double? ConnectorWidth { get; set; }
-		private double? ConnectorWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
 		/// </summary>
 		public bool? Crisp { get; set; }
@@ -371,10 +364,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Whether to group non-stacked lollipop points or to let themrender independent of each other. Non-grouped lollipop pointswill be laid out individually and overlap each other.
 		/// </summary>
-		public double? GroupPadding { get; set; }
-		private double? GroupPadding_DefaultValue { get; set; }
+		public bool? Grouping { get; set; }
+		private bool? Grouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -382,6 +375,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public override string Id { get; set; }
 		protected override string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -462,6 +462,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Options for the lower markers of the arearange-like series. When `lowMarker`is not defined, options inherit form the marker.
+		/// </summary>
+		public LollipopSeriesLowMarker LowMarker { get; set; }
+		private LollipopSeriesLowMarker LowMarker_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options for the point markers of line and scatter-like series. Propertieslike `fillColor`, `lineColor` and `lineWidth` define the visualappearance of the markers. The `symbol` option defines the shape. Otherseries types, like column series, don't have markers, but have visualoptions on the series level instead.In styled mode, the markers can be styled with the `.highcharts-point`,`.highcharts-point-hover` and `.highcharts-point-select` class names.
 		/// </summary>
 		public LollipopSeriesMarker Marker { get; set; }
@@ -536,13 +543,6 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public LollipopSeriesPointIntervalUnit PointIntervalUnit { get; set; }
 		private LollipopSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public double? PointPadding { get; set; }
-		private double? PointPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -766,7 +766,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
-			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
@@ -785,8 +784,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
-			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
+			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
@@ -798,6 +798,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (LowMarker.IsDirty(highstock)) h.Add("lowMarker",LowMarker.ToHashtable(highstock));
 			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
@@ -809,7 +810,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (PointPlacement.IsDirty(highstock))
 				if (PointPlacement.Value.HasValue)
 					h.Add("pointPlacement", PointPlacement.Value);

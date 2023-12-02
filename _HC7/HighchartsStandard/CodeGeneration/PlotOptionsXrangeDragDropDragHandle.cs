@@ -18,10 +18,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			ClassName = ClassName_DefaultValue = "highcharts-drag-handle";
 			Color = Color_DefaultValue = "#fff";
-			Cursor = Cursor_DefaultValue = "";
 			LineColor = LineColor_DefaultValue = "rgba(0, 0, 0, 0.6)";
 			LineWidth = LineWidth_DefaultValue = 1;
-			PathFormatter = PathFormatter_DefaultValue = "";
 			ZIndex = ZIndex_DefaultValue = 901;
 			
 			CustomFields = new Hashtable();
@@ -43,13 +41,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The mouse cursor to use for the drag handles. By default this isintelligently switching between `ew-resize` and `ns-resize` depending onthe direction the point is being dragged.
-		/// </summary>
-		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The line color of the drag handles.
 		/// </summary>
 		public string LineColor { get; set; }
@@ -61,13 +52,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Function to define the SVG path to use for the drag handles. Takes thepoint as argument. Should return an SVG path in array format. The SVGpath is automatically positioned on the point.
-		/// </summary>
-		public string PathFormatter { get; set; }
-		private string PathFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -86,10 +70,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (PathFormatter != PathFormatter_DefaultValue) { h.Add("pathFormatter",PathFormatter); highcharts.AddFunction("pathFormatter", PathFormatter); }  
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

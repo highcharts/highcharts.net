@@ -84,35 +84,35 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The X precision value to drag to for this series. Set to 0 to disable. Bydefault this is disabled, except for category axes, where the default is 1.
+		/// The X precision value to drag to for this series. Set to 0 to disable. Bydefault this is disabled, except for category axes, where the default is`1`.
 		/// </summary>
 		public double? DragPrecisionX { get; set; }
 		private double? DragPrecisionX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The Y precision value to drag to for this series. Set to 0 to disable. Bydefault this is disabled, except for category axes, where the default is 1.
+		/// The Y precision value to drag to for this series. Set to 0 to disable. Bydefault this is disabled, except for category axes, where the default is`1`.
 		/// </summary>
 		public double? DragPrecisionY { get; set; }
 		private double? DragPrecisionY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The amount of pixels to drag the pointer before it counts as a dragoperation. This prevents drag/drop to fire when just clicking or selectingpoints.
+		/// The amount of pixels to drag the pointer before it counts as a dragoperation. This prevents drag/drop to fire when just clicking orselecting points.
 		/// </summary>
 		public double? DragSensitivity { get; set; }
 		private double? DragSensitivity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Group the points by a property. Points with the same property value will begrouped together when moving.
+		/// Group the points by a property. Points with the same property value willbe grouped together when moving.
 		/// </summary>
 		public string GroupBy { get; set; }
 		private string GroupBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Style options for the guide box. The guide box has one state by default, the`default` state.
+		/// Style options for the guide box. The guide box has one state by default,the `default` state.
 		/// </summary>
 		public PlotOptionsColumnDragDropGuideBox GuideBox { get; set; }
 		private PlotOptionsColumnDragDropGuideBox GuideBox_DefaultValue { get; set; }

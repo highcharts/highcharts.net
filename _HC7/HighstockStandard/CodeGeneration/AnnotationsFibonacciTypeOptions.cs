@@ -23,6 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LineColor = LineColor_DefaultValue = "#999999";
 			LineColors = LineColors_DefaultValue = new List<string>();
 			Points = Points_DefaultValue = new List<AnnotationsFibonacciTypeOptionsPoints>();
+			Reversed = Reversed_DefaultValue = null;
 			XAxis = XAxis_DefaultValue = "";
 			YAxis = YAxis_DefaultValue = "";
 			
@@ -80,6 +81,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Whether the annotation levels should be reversed. By default theystart from 0 and go to 1.
+		/// </summary>
+		public bool? Reversed { get; set; }
+		private bool? Reversed_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
 		/// </summary>
 		public string XAxis { get; set; }
@@ -107,6 +115,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineColors != LineColors_DefaultValue) h.Add("lineColors",LineColors);
 			if (Points != Points_DefaultValue) h.Add("points", HashifyList(highstock,Points));
+			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
 			if (CustomFields.Count > 0)

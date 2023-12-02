@@ -41,7 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Order of tab navigation in the chart. Determines which elementsare tabbed to first. Available elements are: `series`, `zoom`,`rangeSelector`, `chartMenu`, `legend` and `container`. Inaddition, any custom components can be added here. Adding`container` first in order will make the keyboard focus stop onthe chart container first, requiring the user to tab again toenter the chart.
+		/// Order of tab navigation in the chart. Determines which elementsare tabbed to first. Available elements are: `series`, `zoom`,`rangeSelector`, `navigator`, `chartMenu`, `legend` and `container`.In addition, any custom components can be added here. Adding`container` first in order will make the keyboard focus stop onthe chart container first, requiring the user to tab again toenter the chart.
 		/// </summary>
 		public List<string> Order { get; set; }
 		private List<string> Order_DefaultValue { get; set; }

@@ -57,6 +57,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Height = Height_DefaultValue = "100%";
 			HeightNumber = HeightNumber_DefaultValue = null;
 			Id = Id_DefaultValue = "";
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
@@ -81,7 +82,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = Funnel3dSeriesPointIntervalUnit.Null;
 			PointPadding = PointPadding_DefaultValue = null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
-			PointRange = PointRange_DefaultValue = 0;
+			PointRange = PointRange_DefaultValue = null;
 			PointStart = PointStart_DefaultValue = 0;
 			PointWidth = PointWidth_DefaultValue = null;
 			RelativeXValue = RelativeXValue_DefaultValue = false;
@@ -402,6 +403,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override string Id { get; set; }
 		protected override string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -837,6 +845,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);

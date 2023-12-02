@@ -1042,7 +1042,7 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("navigation.bindings.currentPriceIndicator", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.elliott3", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.elliott5", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.fibonacci", "new Object()");
+            //_propertyInitMappings.Add("navigation.bindings.fibonacci", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.flagCirclepin", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.flagDiamondpin", "new Object()");
             _propertyInitMappings.Add("navigation.bindings.flagSimplepin", "new Object()");
@@ -1264,7 +1264,7 @@ namespace SourceCodeGenerator.Generators
             if (item.FullName.ToLower().Contains("levels.datalabels"))
                 item.FullName = item.FullName.Replace("levels.", "");
 
-            if (item.Children.Any() || item.Extends.Any())// || item.ReturnType == "Object")
+            if (item.Children.Any() || item.Extends.Any())
                 return String.Format("new {0}()", GetClassNameFromItem(item));
 
             if (item.ReturnType.Contains(TypeService.CSSType))
@@ -1323,30 +1323,6 @@ namespace SourceCodeGenerator.Generators
                 if (item.ReturnType == "Number" || item.ReturnType == "Boolean")
                     return "null";
             }
-
-
-            //}
-            //else
-            //{
-            //return String.Format("new {0}()", FirstCharToUpper(item.Title));
-            //if (_propertyInitMappings[item.FullName] != null)
-            //{
-            //    return _propertyInitMappings[item.FullName].ToString();
-            //}
-            //if (_propertyInitMappings[item.Title] != null)
-            //{
-            //    return _propertyInitMappings[item.Title].ToString();
-            //}
-
-            //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
-            //    item.IsParent = false;
-
-
-            //else
-            //    return item.Defaults;
-
-
-            //}
 
             if (defaults == "")
                 return "\"\"";

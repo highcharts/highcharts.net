@@ -19,7 +19,7 @@ namespace SourceCodeGenerator.Services
             ChildrenToAdd = new Dictionary<string, IList<ApiItem>>();
 
             Add();
-            
+
         }
 
         public void Update(ApiItem item)
@@ -29,7 +29,7 @@ namespace SourceCodeGenerator.Services
                     item.Children.Add(child);
 
             //title
-            if(ItemsToUpdate.ContainsKey(item.Title))
+            if (ItemsToUpdate.ContainsKey(item.Title))
             {
                 foreach (var info in ItemsToUpdate[item.Title])
                     UpdateProperty(item, info);
@@ -72,7 +72,7 @@ namespace SourceCodeGenerator.Services
 
         private void UpdateProperty(ApiItem item, UpdateInfo info)
         {
-            switch(info.Name)
+            switch (info.Name)
             {
                 case ApiPropertyName.ReturnType:
                     item.ReturnType = info.Value;
@@ -113,7 +113,6 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("lineDelimiter", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("chart.options3d.frame.visible", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("chart.options3d.frame.size", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
-            //ItemsToUpdate.Add("padding", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("background", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("transition", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.bullet.targetOptions.height", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
@@ -150,7 +149,6 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("yAxis.plotBands.innerRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("yAxis.plotBands.outerRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.treemap.levels.dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.treemap.dataLabels" } });
-            //ItemsToUpdate.Add("dataLabels", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
 
             //remove after double type solution will be implemented
             ItemsToUpdate.Add("crosshair", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
@@ -316,7 +314,7 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("borderRadius", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("staggerLines", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("xAxisUnit", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
-            
+
             ChildrenToAdd.Add("series.ohlc.data", new List<ApiItem>() { new ApiItem { Title = "close", FullName = "series.ohlc.data.close", ReturnType = "Number" } });
 
             ItemsToUpdate.Add("legend.enabled", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Default, Value = "null" } });
@@ -330,14 +328,14 @@ namespace SourceCodeGenerator.Services
 
             ItemsToUpdate.Add("plotOptions.arearange.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
             ItemsToUpdate.Add("plotOptions.boxplot.threshold", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" } });
-            
-            ItemsToUpdate.Add("plotOptions.organization.link.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value= "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Curved" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Straight" } });
+
+            ItemsToUpdate.Add("plotOptions.organization.link.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Curved" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Straight" } });
             ItemsToUpdate.Add("plotOptions.treegraph.link.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Enum" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "Curved" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Default" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Curved" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "Straight" } });
 
             ItemsToUpdate.Add("plotOptions.series.label.maxFontSize", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Default, Value = "null" } });
             ItemsToUpdate.Add("plotOptions.series.label.minFontSize", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Default, Value = "null" } });
 
-            ItemsToUpdate.Add("annotations.fibonacciTimeZones.typeOptions.points", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value= "Object" } });
+            ItemsToUpdate.Add("annotations.fibonacciTimeZones.typeOptions.points", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
             ItemsToUpdate.Add("annotations.timeCycles.typeOptions.points", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Object" } });
 
             ItemsToUpdate.Add("lang.accessibility.resetZoomButton", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
@@ -358,7 +356,7 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.series.pointIntervalUnit", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "day" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "month" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "year" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.series.stacking", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "normal" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "overlap" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "percent" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "stream" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.series.step", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "center" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
-            ItemsToUpdate.Add("operator", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" }});
+            ItemsToUpdate.Add("operator", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.networkgraph.layoutAlgorithm.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.packedbubble.layoutAlgorithm.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
         }
@@ -377,7 +375,8 @@ namespace SourceCodeGenerator.Services
             if (item.FullName == "series.stack")
                 item.Types.Remove("*");
 
-            if (item.FullName == "plotOptions.packedbubble.layoutAlgorithm.initialPositionRadius" || item.FullName.Equals("plotOptions.treegraph.dataLabels.linkTextPath"))
+            if (item.FullName == "plotOptions.packedbubble.layoutAlgorithm.initialPositionRadius" || item.FullName.Equals("plotOptions.treegraph.dataLabels.linkTextPath")
+                || item.FullName.Equals("plotOptions.arearange.lowMarker.symbol") || item.FullName.Equals("plotOptions.dumbbell.lowMarker.symbol"))
                 item.Extends.Clear();
         }
 

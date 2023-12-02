@@ -39,14 +39,17 @@ namespace Highsoft.Web.Mvc.Charts
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsDependencywheelEvents();
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsDependencywheelLabel();
 			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsDependencywheelLegendSymbol.Rectangle;
 			Levels = Levels_DefaultValue = new PlotOptionsDependencywheelLevels();
+			LinkColorMode = LinkColorMode_DefaultValue = PlotOptionsDependencywheelLinkColorMode.From;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
+			NodeAlignment = NodeAlignment_DefaultValue = PlotOptionsDependencywheelNodeAlignment.Top;
 			NodePadding = NodePadding_DefaultValue = 10;
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsDependencywheelOnPoint();
@@ -235,6 +238,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
@@ -270,6 +280,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Determines color mode for sankey links. Available options:- `from` color of the sankey link will be the same as the 'from node'- `gradient` color of the sankey link will be set to gradient betweencolors of 'from node' and 'to node'- `to` color of the sankey link will be same as the 'to node'.
+		/// </summary>
+		public PlotOptionsDependencywheelLinkColorMode LinkColorMode { get; set; }
+		private PlotOptionsDependencywheelLinkColorMode LinkColorMode_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.If master series uses data sorting and linked series does not haveits own sorting definition, the linked series will be sorted in thesame order as the master one.
 		/// </summary>
 		public string LinkedTo { get; set; }
@@ -288,6 +305,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? MinLinkWidth { get; set; }
 		private double? MinLinkWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines which side of the chart the nodes are to be aligned to. Whenthe chart is inverted, `top` aligns to the left and `bottom` to theright.
+		/// </summary>
+		public PlotOptionsDependencywheelNodeAlignment NodeAlignment { get; set; }
+		private PlotOptionsDependencywheelNodeAlignment NodeAlignment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -467,14 +491,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
 			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (Levels.IsDirty(highcharts)) h.Add("levels",Levels.ToHashtable(highcharts));
+			if (LinkColorMode != LinkColorMode_DefaultValue) h.Add("linkColorMode", highcharts.FirstCharacterToLower(LinkColorMode.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
+			if (NodeAlignment != NodeAlignment_DefaultValue) h.Add("nodeAlignment", highcharts.FirstCharacterToLower(NodeAlignment.ToString()));
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));

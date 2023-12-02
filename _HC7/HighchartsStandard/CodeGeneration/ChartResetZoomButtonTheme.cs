@@ -16,14 +16,14 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartResetZoomButtonTheme()
 		{
-			ZIndex = ZIndex_DefaultValue = 6;
+			ZIndex = ZIndex_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
 		
 
 		/// <summary>
-		/// 
+		/// zIndex of the button.
 		/// </summary>
 		public double? ZIndex { get; set; }
 		private double? ZIndex_DefaultValue { get; set; }

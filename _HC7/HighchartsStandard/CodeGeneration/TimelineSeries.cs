@@ -40,6 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new TimelineSeriesEvents();
 			Id = Id_DefaultValue = "";
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
@@ -47,7 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LegendSymbol = LegendSymbol_DefaultValue = TimelineSeriesLegendSymbol.Rectangle;
 			Linecap = Linecap_DefaultValue = TimelineSeriesLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new TimelineSeriesMarker();
 			Name = Name_DefaultValue = "";
@@ -245,6 +246,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? IgnoreHiddenPoint { get; set; }
 		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -516,6 +524,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);

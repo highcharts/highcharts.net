@@ -39,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			EqualNodes = EqualNodes_DefaultValue = false;
 			Events = Events_DefaultValue = new ArcdiagramSeriesEvents();
 			Id = Id_DefaultValue = "";
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
@@ -46,6 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LegendSymbol = LegendSymbol_DefaultValue = ArcdiagramSeriesLegendSymbol.Rectangle;
 			Levels = Levels_DefaultValue = new ArcdiagramSeriesLevels();
+			LinkColorMode = LinkColorMode_DefaultValue = ArcdiagramSeriesLinkColorMode.From;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			LinkRadius = LinkRadius_DefaultValue = null;
@@ -53,6 +55,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Marker = Marker_DefaultValue = new ArcdiagramSeriesMarker();
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
 			Name = Name_DefaultValue = "";
+			NodeAlignment = NodeAlignment_DefaultValue = ArcdiagramSeriesNodeAlignment.Top;
 			Nodes = Nodes_DefaultValue = new ArcdiagramSeriesNodes();
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			Offset = Offset_DefaultValue = " 100% ";
@@ -240,6 +243,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
@@ -289,6 +299,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Determines color mode for sankey links. Available options:- `from` color of the sankey link will be the same as the 'from node'- `gradient` color of the sankey link will be set to gradient betweencolors of 'from node' and 'to node'- `to` color of the sankey link will be same as the 'to node'.
+		/// </summary>
+		public ArcdiagramSeriesLinkColorMode LinkColorMode { get; set; }
+		private ArcdiagramSeriesLinkColorMode LinkColorMode_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.If master series uses data sorting and linked series does not haveits own sorting definition, the linked series will be sorted in thesame order as the master one.
 		/// </summary>
 		public string LinkedTo { get; set; }
@@ -335,6 +352,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override string Name { get; set; }
 		protected override string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines which side of the chart the nodes are to be aligned to. Whenthe chart is inverted, `top` aligns to the left and `bottom` to theright.
+		/// </summary>
+		public ArcdiagramSeriesNodeAlignment NodeAlignment { get; set; }
+		private ArcdiagramSeriesNodeAlignment NodeAlignment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -507,6 +531,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (EqualNodes != EqualNodes_DefaultValue) h.Add("equalNodes",EqualNodes);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
@@ -514,6 +539,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
 			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
 			if (Levels.IsDirty(highcharts)) h.Add("levels",Levels.ToHashtable(highcharts));
+			if (LinkColorMode != LinkColorMode_DefaultValue) h.Add("linkColorMode", highcharts.FirstCharacterToLower(LinkColorMode.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (LinkRadius != LinkRadius_DefaultValue) h.Add("linkRadius",LinkRadius);
@@ -521,6 +547,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (NodeAlignment != NodeAlignment_DefaultValue) h.Add("nodeAlignment", highcharts.FirstCharacterToLower(NodeAlignment.ToString()));
 			if (Nodes.IsDirty(highcharts)) h.Add("nodes",Nodes.ToHashtable(highcharts));
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);

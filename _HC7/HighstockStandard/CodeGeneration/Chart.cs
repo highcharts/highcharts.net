@@ -303,7 +303,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The button that appears after a selection zoom, allowing the userto reset zoom.
+		/// The button that appears after a selection zoom, allowing the userto reset zoom. This option is deprecated in favor of[zooming](#chart.zooming).
 		/// </summary>
 		public ChartResetZoomButton ResetZoomButton { get; set; }
 		private ChartResetZoomButton ResetZoomButton_DefaultValue { get; set; }
@@ -408,7 +408,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Set a key to hold when dragging to zoom the chart. This is useful to avoidzooming while moving points. Should be set different than[chart.panKey](#chart.panKey).
+		/// Set a key to hold when dragging to zoom the chart. This is useful toavoid zooming while moving points. Should be set different than[chart.panKey](#chart.panKey).
 		/// </summary>
 		public ChartZoomKey ZoomKey { get; set; }
 		private ChartZoomKey ZoomKey_DefaultValue { get; set; }

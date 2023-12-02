@@ -42,15 +42,16 @@ namespace Highsoft.Web.Mvc.Charts
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = VectorSeriesFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Id = Id_DefaultValue = "";
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new VectorSeriesLabel();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LegendSymbol = LegendSymbol_DefaultValue = VectorSeriesLegendSymbol.Rectangle;
-			LineWidth = LineWidth_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
-			Marker = Marker_DefaultValue = "";
+			Marker = Marker_DefaultValue = "undefined";
 			Name = Name_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "";
 			OnPoint = OnPoint_DefaultValue = new VectorSeriesOnPoint();
@@ -62,6 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = VectorSeriesPointIntervalUnit.Null;
 			PointStart = PointStart_DefaultValue = 0;
 			RelativeXValue = RelativeXValue_DefaultValue = false;
+			RotationOrigin = RotationOrigin_DefaultValue = VectorSeriesRotationOrigin.Center;
 			Selected = Selected_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
@@ -75,6 +77,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new VectorSeriesTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
+			VectorLength = VectorLength_DefaultValue = 20;
 			Visible = Visible_DefaultValue = true;
 			XAxis = XAxis_DefaultValue = "";
 			XAxisNumber = XAxisNumber_DefaultValue = null;
@@ -271,6 +274,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
@@ -329,8 +339,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// 
 		/// </summary>
-		public Object Marker { get; set; }
-		private Object Marker_DefaultValue { get; set; }
+		public string Marker { get; set; }
+		private string Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -408,6 +418,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? RelativeXValue { get; set; }
 		private bool? RelativeXValue_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will startfrom the given [x, y] position, and when `end` the vectors will endin the [x, y] position.
+		/// </summary>
+		public VectorSeriesRotationOrigin RotationOrigin { get; set; }
+		private VectorSeriesRotationOrigin RotationOrigin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -502,6 +519,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Maximum length of the arrows in the vector plot. The individual arrowlength is computed between 0 and this value.
+		/// </summary>
+		public double? VectorLength { get; set; }
+		private double? VectorLength_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
@@ -590,6 +614,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
@@ -610,6 +635,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
+			if (RotationOrigin != RotationOrigin_DefaultValue) h.Add("rotationOrigin", highcharts.FirstCharacterToLower(RotationOrigin.ToString()));
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
@@ -624,6 +650,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip.IsDirty(highcharts)) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
 			h.Add("type","vector");
+			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
 			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);

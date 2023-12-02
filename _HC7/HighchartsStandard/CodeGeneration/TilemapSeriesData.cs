@@ -89,7 +89,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.
+		/// Point specific options for the draggable-points module. Overrides optionson `series.dragDrop`.
 		/// </summary>
 		public TilemapSeriesDataDragDrop DragDrop { get; set; }
 		private TilemapSeriesDataDragDrop DragDrop_DefaultValue { get; set; }

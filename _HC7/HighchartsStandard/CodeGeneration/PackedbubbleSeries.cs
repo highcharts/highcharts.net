@@ -43,6 +43,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PackedbubbleSeriesFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Id = Id_DefaultValue = "";
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Label = Label_DefaultValue = new PackedbubbleSeriesLabel();
@@ -50,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LegendSymbol = LegendSymbol_DefaultValue = PackedbubbleSeriesLegendSymbol.Rectangle;
 			Linecap = Linecap_DefaultValue = PackedbubbleSeriesLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PackedbubbleSeriesMarker();
 			MaxSize = MaxSize_DefaultValue = "20%";
@@ -284,6 +285,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override string Id { get; set; }
 		protected override string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -663,6 +671,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));

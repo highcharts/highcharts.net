@@ -46,6 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new PlotOptionsPieEvents();
 			FillColor = FillColor_DefaultValue = null;
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = new PlotOptionsPieInactiveOtherPoints();
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
 			InnerSizeNumber = InnerSizeNumber_DefaultValue = null;
@@ -65,7 +66,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShadowBool = ShadowBool_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = false;
-			Size = Size_DefaultValue = "0";
+			Size = Size_DefaultValue = "";
 			SizeNumber = SizeNumber_DefaultValue = null;
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
 			SlicedOffset = SlicedOffset_DefaultValue = 10;
@@ -290,6 +291,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? IgnoreHiddenPoint { get; set; }
 		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsPieInactiveOtherPoints InactiveOtherPoints { get; set; }
+		private PlotOptionsPieInactiveOtherPoints InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -546,6 +554,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (InactiveOtherPoints.IsDirty(highcharts)) h.Add("inactiveOtherPoints",InactiveOtherPoints.ToHashtable(highcharts));
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
 			if (InnerSizeNumber != InnerSizeNumber_DefaultValue) h.Add("innerSize",InnerSizeNumber);

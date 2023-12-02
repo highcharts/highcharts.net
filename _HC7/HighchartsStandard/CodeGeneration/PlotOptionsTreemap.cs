@@ -52,6 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsTreemapFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			InteractByLeaf = InteractByLeaf_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
@@ -62,7 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			LevelIsConstant = LevelIsConstant_DefaultValue = true;
 			Levels = Levels_DefaultValue = new List<PlotOptionsTreemapLevels>();
 			Linecap = Linecap_DefaultValue = PlotOptionsTreemapLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			NegativeColor = NegativeColor_DefaultValue = "";
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsTreemapOnPoint();
@@ -347,6 +348,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? IgnoreHiddenPoint { get; set; }
 		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -672,6 +680,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (InteractByLeaf != InteractByLeaf_DefaultValue) h.Add("interactByLeaf",InteractByLeaf);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);

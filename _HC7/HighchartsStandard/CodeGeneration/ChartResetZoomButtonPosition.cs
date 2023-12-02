@@ -16,10 +16,10 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartResetZoomButtonPosition()
 		{
-			Align = Align_DefaultValue = ChartResetZoomButtonPositionAlign.Right;
-			VerticalAlign = VerticalAlign_DefaultValue = ChartResetZoomButtonPositionVerticalAlign.Top;
-			X = X_DefaultValue = -10;
-			Y = Y_DefaultValue = 10;
+			Align = Align_DefaultValue = null;
+			VerticalAlign = VerticalAlign_DefaultValue = "";
+			X = X_DefaultValue = null;
+			Y = Y_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -28,15 +28,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The horizontal alignment of the button.
 		/// </summary>
-		public ChartResetZoomButtonPositionAlign Align { get; set; }
-		private ChartResetZoomButtonPositionAlign Align_DefaultValue { get; set; }
+		public double? Align { get; set; }
+		private double? Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical alignment of the button.
 		/// </summary>
-		public ChartResetZoomButtonPositionVerticalAlign VerticalAlign { get; set; }
-		private ChartResetZoomButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
+		public string VerticalAlign { get; set; }
+		private string VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -60,8 +60,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (Align != Align_DefaultValue) h.Add("align",Align);
+			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign",VerticalAlign);
 			if (X != X_DefaultValue) h.Add("x",X);
 			if (Y != Y_DefaultValue) h.Add("y",Y);
 			if (CustomFields.Count > 0)

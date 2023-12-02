@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Exporting = Exporting_DefaultValue = new LangAccessibilityExporting();
 			GraphicContainerLabel = GraphicContainerLabel_DefaultValue = "";
 			Legend = Legend_DefaultValue = new LangAccessibilityLegend();
+			Navigator = Navigator_DefaultValue = new LangAccessibilityNavigator();
 			RangeSelector = RangeSelector_DefaultValue = new LangAccessibilityRangeSelector();
 			ResetZoomButton = ResetZoomButton_DefaultValue = "";
 			ScreenReaderSection = ScreenReaderSection_DefaultValue = new LangAccessibilityScreenReaderSection();
@@ -110,6 +111,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public LangAccessibilityLegend Legend { get; set; }
 		private LangAccessibilityLegend Legend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Navigator language options for accessibility.
+		/// </summary>
+		public LangAccessibilityNavigator Navigator { get; set; }
+		private LangAccessibilityNavigator Navigator_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -206,6 +214,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Exporting.IsDirty(highstock)) h.Add("exporting",Exporting.ToHashtable(highstock));
 			if (GraphicContainerLabel != GraphicContainerLabel_DefaultValue) h.Add("graphicContainerLabel",GraphicContainerLabel);
 			if (Legend.IsDirty(highstock)) h.Add("legend",Legend.ToHashtable(highstock));
+			if (Navigator.IsDirty(highstock)) h.Add("navigator",Navigator.ToHashtable(highstock));
 			if (RangeSelector.IsDirty(highstock)) h.Add("rangeSelector",RangeSelector.ToHashtable(highstock));
 			if (ResetZoomButton != ResetZoomButton_DefaultValue) h.Add("resetZoomButton",ResetZoomButton);
 			if (ScreenReaderSection.IsDirty(highstock)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highstock));

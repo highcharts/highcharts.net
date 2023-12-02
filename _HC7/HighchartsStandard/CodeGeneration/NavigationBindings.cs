@@ -26,7 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Elliott3 = Elliott3_DefaultValue = new Object();
 			Elliott5 = Elliott5_DefaultValue = new Object();
 			EllipseAnnotation = EllipseAnnotation_DefaultValue = new NavigationBindingsEllipseAnnotation();
-			Fibonacci = Fibonacci_DefaultValue = new Object();
+			Fibonacci = Fibonacci_DefaultValue = new NavigationBindingsFibonacci();
 			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = null;
 			FlagCirclepin = FlagCirclepin_DefaultValue = new Object();
 			FlagDiamondpin = FlagDiamondpin_DefaultValue = new Object();
@@ -138,8 +138,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// A fibonacci annotation bindings. Includes `start` and two events in`steps` array (updates second point, then height).
 		/// </summary>
-		public Object Fibonacci { get; set; }
-		private Object Fibonacci_DefaultValue { get; set; }
+		public NavigationBindingsFibonacci Fibonacci { get; set; }
+		private NavigationBindingsFibonacci Fibonacci_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -390,7 +390,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Elliott3 != Elliott3_DefaultValue) h.Add("elliott3",Elliott3);
 			if (Elliott5 != Elliott5_DefaultValue) h.Add("elliott5",Elliott5);
 			if (EllipseAnnotation.IsDirty(highcharts)) h.Add("ellipseAnnotation",EllipseAnnotation.ToHashtable(highcharts));
-			if (Fibonacci != Fibonacci_DefaultValue) h.Add("fibonacci",Fibonacci);
+			if (Fibonacci.IsDirty(highcharts)) h.Add("fibonacci",Fibonacci.ToHashtable(highcharts));
 			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (FlagCirclepin != FlagCirclepin_DefaultValue) h.Add("flagCirclepin",FlagCirclepin);
 			if (FlagDiamondpin != FlagDiamondpin_DefaultValue) h.Add("flagDiamondpin",FlagDiamondpin);

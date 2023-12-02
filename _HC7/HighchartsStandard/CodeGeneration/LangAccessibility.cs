@@ -26,6 +26,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Exporting = Exporting_DefaultValue = new LangAccessibilityExporting();
 			GraphicContainerLabel = GraphicContainerLabel_DefaultValue = "";
 			Legend = Legend_DefaultValue = new LangAccessibilityLegend();
+			Navigator = Navigator_DefaultValue = new LangAccessibilityNavigator();
 			RangeSelector = RangeSelector_DefaultValue = new LangAccessibilityRangeSelector();
 			ResetZoomButton = ResetZoomButton_DefaultValue = "";
 			ScreenReaderSection = ScreenReaderSection_DefaultValue = new LangAccessibilityScreenReaderSection();
@@ -110,6 +111,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public LangAccessibilityLegend Legend { get; set; }
 		private LangAccessibilityLegend Legend_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Navigator language options for accessibility.
+		/// </summary>
+		public LangAccessibilityNavigator Navigator { get; set; }
+		private LangAccessibilityNavigator Navigator_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -206,6 +214,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Exporting.IsDirty(highcharts)) h.Add("exporting",Exporting.ToHashtable(highcharts));
 			if (GraphicContainerLabel != GraphicContainerLabel_DefaultValue) h.Add("graphicContainerLabel",GraphicContainerLabel);
 			if (Legend.IsDirty(highcharts)) h.Add("legend",Legend.ToHashtable(highcharts));
+			if (Navigator.IsDirty(highcharts)) h.Add("navigator",Navigator.ToHashtable(highcharts));
 			if (RangeSelector.IsDirty(highcharts)) h.Add("rangeSelector",RangeSelector.ToHashtable(highcharts));
 			if (ResetZoomButton != ResetZoomButton_DefaultValue) h.Add("resetZoomButton",ResetZoomButton);
 			if (ScreenReaderSection.IsDirty(highcharts)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highcharts));

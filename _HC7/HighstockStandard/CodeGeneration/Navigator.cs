@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public Navigator()
 		{
+			Accessibility = Accessibility_DefaultValue = new NavigatorAccessibility();
 			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
 			BaseSeries = BaseSeries_DefaultValue = "0";
 			BaseSeriesNumber = BaseSeriesNumber_DefaultValue = null;
@@ -36,6 +37,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// Accessibility options for the navigator. Requires theAccessibility module.
+		/// </summary>
+		public NavigatorAccessibility Accessibility { get; set; }
+		private NavigatorAccessibility Accessibility_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Whether the navigator and scrollbar should adapt to updated datain the base X axis. When loading data async, as in the demo below,this should be `false`. Otherwise new data will trigger navigatorredraw, which will cause unwanted looping. In the demo below, thedata in the navigator is set only once. On navigating, only the mainchart content is updated.
@@ -156,6 +164,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (Accessibility.IsDirty(highstock)) h.Add("accessibility",Accessibility.ToHashtable(highstock));
 			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
 			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
 			if (BaseSeriesNumber != BaseSeriesNumber_DefaultValue) h.Add("baseSeries",BaseSeriesNumber);

@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Format = Format_DefaultValue = "undefined";
 			Formatter = Formatter_DefaultValue = "";
 			HeaderFormat = HeaderFormat_DefaultValue = "";
-			HeaderShape = HeaderShape_DefaultValue = TooltipHeaderShape.Callout;
+			HeaderShape = HeaderShape_DefaultValue = "callout";
 			HideDelay = HideDelay_DefaultValue = 500;
 			NullFormat = NullFormat_DefaultValue = "";
 			NullFormatter = NullFormatter_DefaultValue = "";
@@ -182,8 +182,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The name of a symbol to use for the border around the tooltipheader. Applies only when [tooltip.split](#tooltip.split) isenabled.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols` the same way as for[series.marker.symbol](plotOptions.line.marker.symbol).
 		/// </summary>
-		public TooltipHeaderShape HeaderShape { get; set; }
-		private TooltipHeaderShape HeaderShape_DefaultValue { get; set; }
+		public string HeaderShape { get; set; }
+		private string HeaderShape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -357,7 +357,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Format != Format_DefaultValue) h.Add("format",Format);
 			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", highcharts.FirstCharacterToLower(HeaderShape.ToString()));
+			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape",HeaderShape);
 			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
 			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
 			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  

@@ -93,7 +93,6 @@ namespace SourceCodeGenerator.Generators
                         last.Children = MultiplyObjects(items[i].Children);
                     }
                 }
-
             }
 
             return apiClones;
@@ -148,8 +147,8 @@ namespace SourceCodeGenerator.Generators
                             clone.FullName = clone.ParentFullName + '.' + clone.Title;
 
 
-                            child.Children.Add(clone);
-                            addedChildren.RemoveAll(p => p.Title == baseElement.Title);
+                            //child.Children.Add(clone);
+                            finalChildren.RemoveAll(p => p.Title == baseElement.Title);
                             addedChildren.Add(child);
                         }
                     }
@@ -165,6 +164,12 @@ namespace SourceCodeGenerator.Generators
                     addedChildren.AddRange(childrenWithoutMerged);
 
                 addedChildren = addedChildren.Where(p => !item.Exclude.Any(q => q == p.Title)).ToList();
+
+                //var existingChildrenFromEarlierBaseClass = addedChildren.Where(p => !finalChildren.Any(q => q.Title ==  p.Title)).ToList();
+
+
+
+
 
                 finalChildren.AddRange(addedChildren);
                 addedChildren.Clear();

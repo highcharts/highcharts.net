@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			AfterSetExtremes = AfterSetExtremes_DefaultValue = "";
 			LegendItemClick = LegendItemClick_DefaultValue = "";
+			PointBreakOut = PointBreakOut_DefaultValue = "";
 			PointInBreak = PointInBreak_DefaultValue = "";
 			SetExtremes = SetExtremes_DefaultValue = "";
 			
@@ -37,6 +38,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string LegendItemClick { get; set; }
 		private string LegendItemClick_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An event fired when a point is outside a break after zoom.
+		/// </summary>
+		public string PointBreakOut { get; set; }
+		private string PointBreakOut_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -62,6 +70,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); highstock.AddFunction("afterSetExtremes", AfterSetExtremes); }  
 			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); highstock.AddFunction("legendItemClick", LegendItemClick); }  
+			if (PointBreakOut != PointBreakOut_DefaultValue) { h.Add("pointBreakOut",PointBreakOut); highstock.AddFunction("pointBreakOut", PointBreakOut); }  
 			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); highstock.AddFunction("pointInBreak", PointInBreak); }  
 			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); highstock.AddFunction("setExtremes", SetExtremes); }  
 			if (CustomFields.Count > 0)

@@ -54,6 +54,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsArearangeGapUnit.Relative;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsArearangeLabel();
@@ -64,6 +65,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 1;
 			LinkedTo = LinkedTo_DefaultValue = "";
+			LowMarker = LowMarker_DefaultValue = new PlotOptionsArearangeLowMarker();
 			Marker = Marker_DefaultValue = new PlotOptionsArearangeMarker();
 			NegativeColor = NegativeColor_DefaultValue = "";
 			NegativeFillColor = NegativeFillColor_DefaultValue = "";
@@ -369,6 +371,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
@@ -436,6 +445,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string LinkedTo { get; set; }
 		private string LinkedTo_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Options for the lower markers of the arearange-like series. When `lowMarker`is not defined, options inherit form the marker.
+		/// </summary>
+		public PlotOptionsArearangeLowMarker LowMarker { get; set; }
+		private PlotOptionsArearangeLowMarker LowMarker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -714,6 +730,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
@@ -724,6 +741,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (LowMarker.IsDirty(highstock)) h.Add("lowMarker",LowMarker.ToHashtable(highstock));
 			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
 			if (NegativeFillColor != NegativeFillColor_DefaultValue) h.Add("negativeFillColor",NegativeFillColor);

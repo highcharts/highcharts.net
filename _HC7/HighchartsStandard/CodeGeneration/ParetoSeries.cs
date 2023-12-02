@@ -42,13 +42,14 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new ParetoSeriesEvents();
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			Id = Id_DefaultValue = "";
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Label = Label_DefaultValue = new ParetoSeriesLabel();
 			LegendIndex = LegendIndex_DefaultValue = null;
 			LegendSymbol = LegendSymbol_DefaultValue = ParetoSeriesLegendSymbol.Rectangle;
 			Linecap = Linecap_DefaultValue = ParetoSeriesLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new ParetoSeriesMarker();
 			Name = Name_DefaultValue = "";
@@ -261,6 +262,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override string Id { get; set; }
 		protected override string Id_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -534,6 +542,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));

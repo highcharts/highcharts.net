@@ -105,7 +105,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Point specific options for the draggable-points module. Overrides options on`series.dragDrop`.
+		/// Point specific options for the draggable-points module. Overrides optionson `series.dragDrop`.
 		/// </summary>
 		public DumbbellSeriesDataDragDrop DragDrop { get; set; }
 		private DumbbellSeriesDataDragDrop DragDrop_DefaultValue { get; set; }
@@ -154,7 +154,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Color of the start markers in a dumbbell graph.
+		/// Color of the start markers in a dumbbell graph. This option takespriority over the series color. To avoid this, set `lowColor` to`undefined`.
 		/// </summary>
 		public string LowColor { get; set; }
 		private string LowColor_DefaultValue { get; set; }

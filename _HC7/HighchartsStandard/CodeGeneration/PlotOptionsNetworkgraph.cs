@@ -32,11 +32,12 @@ namespace Highsoft.Web.Mvc.Charts
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new PlotOptionsNetworkgraphEvents();
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsNetworkgraphFindNearestPointBy.X;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = new PlotOptionsNetworkgraphInactiveOtherPoints();
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = new PlotOptionsNetworkgraphLayoutAlgorithm();
 			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsNetworkgraphLegendSymbol.Rectangle;
-			LineWidth = LineWidth_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = 2;
 			Link = Link_DefaultValue = new PlotOptionsNetworkgraphLink();
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsNetworkgraphMarker();
@@ -175,6 +176,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsNetworkgraphFindNearestPointBy FindNearestPointBy { get; set; }
 		private PlotOptionsNetworkgraphFindNearestPointBy FindNearestPointBy_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public PlotOptionsNetworkgraphInactiveOtherPoints InactiveOtherPoints { get; set; }
+		private PlotOptionsNetworkgraphInactiveOtherPoints InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -396,6 +404,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
+			if (InactiveOtherPoints.IsDirty(highcharts)) h.Add("inactiveOtherPoints",InactiveOtherPoints.ToHashtable(highcharts));
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (LayoutAlgorithm.IsDirty(highcharts)) h.Add("layoutAlgorithm",LayoutAlgorithm.ToHashtable(highcharts));

@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DraggableLow = DraggableLow_DefaultValue = true;
 			DraggableX = DraggableX_DefaultValue = null;
 			DraggableY = DraggableY_DefaultValue = null;
+			DragHandle = DragHandle_DefaultValue = new PlotOptionsArearangeDragDropDragHandle();
 			DragMaxX = DragMaxX_DefaultValue = null;
 			DragMaxY = DragMaxY_DefaultValue = null;
 			DragMinX = DragMinX_DefaultValue = null;
@@ -64,6 +65,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the drag handles available in column series.
+		/// </summary>
+		public PlotOptionsArearangeDragDropDragHandle DragHandle { get; set; }
+		private PlotOptionsArearangeDragDropDragHandle DragHandle_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Set the maximum X value the points can be moved to.
 		/// </summary>
 		public double? DragMaxX { get; set; }
@@ -92,35 +100,35 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The X precision value to drag to for this series. Set to 0 to disable. Bydefault this is disabled, except for category axes, where the default is 1.
+		/// The X precision value to drag to for this series. Set to 0 to disable. Bydefault this is disabled, except for category axes, where the default is`1`.
 		/// </summary>
 		public double? DragPrecisionX { get; set; }
 		private double? DragPrecisionX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The Y precision value to drag to for this series. Set to 0 to disable. Bydefault this is disabled, except for category axes, where the default is 1.
+		/// The Y precision value to drag to for this series. Set to 0 to disable. Bydefault this is disabled, except for category axes, where the default is`1`.
 		/// </summary>
 		public double? DragPrecisionY { get; set; }
 		private double? DragPrecisionY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The amount of pixels to drag the pointer before it counts as a dragoperation. This prevents drag/drop to fire when just clicking or selectingpoints.
+		/// The amount of pixels to drag the pointer before it counts as a dragoperation. This prevents drag/drop to fire when just clicking orselecting points.
 		/// </summary>
 		public double? DragSensitivity { get; set; }
 		private double? DragSensitivity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Group the points by a property. Points with the same property value will begrouped together when moving.
+		/// Group the points by a property. Points with the same property value willbe grouped together when moving.
 		/// </summary>
 		public string GroupBy { get; set; }
 		private string GroupBy_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Style options for the guide box. The guide box has one state by default, the`default` state.
+		/// Style options for the guide box. The guide box has one state by default,the `default` state.
 		/// </summary>
 		public PlotOptionsArearangeDragDropGuideBox GuideBox { get; set; }
 		private PlotOptionsArearangeDragDropGuideBox GuideBox_DefaultValue { get; set; }
@@ -144,6 +152,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DraggableLow != DraggableLow_DefaultValue) h.Add("draggableLow",DraggableLow);
 			if (DraggableX != DraggableX_DefaultValue) h.Add("draggableX",DraggableX);
 			if (DraggableY != DraggableY_DefaultValue) h.Add("draggableY",DraggableY);
+			if (DragHandle.IsDirty(highcharts)) h.Add("dragHandle",DragHandle.ToHashtable(highcharts));
 			if (DragMaxX != DragMaxX_DefaultValue) h.Add("dragMaxX",DragMaxX);
 			if (DragMaxY != DragMaxY_DefaultValue) h.Add("dragMaxY",DragMaxY);
 			if (DragMinX != DragMinX_DefaultValue) h.Add("dragMinX",DragMinX);

@@ -48,6 +48,7 @@ namespace Highsoft.Web.Mvc.Charts
 			FillColor = FillColor_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			IgnoreHiddenPoint = IgnoreHiddenPoint_DefaultValue = true;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			InnerSize = InnerSize_DefaultValue = "0";
@@ -74,7 +75,7 @@ namespace Highsoft.Web.Mvc.Charts
 			ShadowBool = ShadowBool_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
-			Size = Size_DefaultValue = "0";
+			Size = Size_DefaultValue = "";
 			SizeNumber = SizeNumber_DefaultValue = null;
 			SizeBy = SizeBy_DefaultValue = "area";
 			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
@@ -317,6 +318,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? IgnoreHiddenPoint { get; set; }
 		private bool? IgnoreHiddenPoint_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -652,6 +660,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (IgnoreHiddenPoint != IgnoreHiddenPoint_DefaultValue) h.Add("ignoreHiddenPoint",IgnoreHiddenPoint);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);

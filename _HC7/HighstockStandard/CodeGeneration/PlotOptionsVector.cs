@@ -44,15 +44,16 @@ namespace Highsoft.Web.Mvc.Stocks
 			Events = Events_DefaultValue = new PlotOptionsVectorEvents();
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsVectorFindNearestPointBy.X;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsVectorLabel();
 			LastPrice = LastPrice_DefaultValue = new PlotOptionsVectorLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsVectorLastVisiblePrice();
 			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsVectorLegendSymbol.Rectangle;
-			LineWidth = LineWidth_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
-			Marker = Marker_DefaultValue = null;
+			Marker = Marker_DefaultValue = "undefined";
 			NegativeColor = NegativeColor_DefaultValue = "";
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsVectorOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
@@ -64,6 +65,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointRange = PointRange_DefaultValue = 0;
 			PointStart = PointStart_DefaultValue = 0;
 			RelativeXValue = RelativeXValue_DefaultValue = false;
+			RotationOrigin = RotationOrigin_DefaultValue = PlotOptionsVectorRotationOrigin.Center;
 			Selected = Selected_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
 			ShowInLegend = ShowInLegend_DefaultValue = null;
@@ -76,6 +78,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Threshold = Threshold_DefaultValue = 0;
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsVectorTooltip();
 			TurboThreshold = TurboThreshold_DefaultValue = 1000;
+			VectorLength = VectorLength_DefaultValue = 20;
 			Visible = Visible_DefaultValue = true;
 			ZoneAxis = ZoneAxis_DefaultValue = "y";
 			Zones = Zones_DefaultValue = new List<PlotOptionsVectorZones>();
@@ -281,6 +284,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
@@ -323,7 +333,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Pixel width of the graph line.
+		/// The line width for each vector arrow.
 		/// </summary>
 		public double? LineWidth { get; set; }
 		private double? LineWidth_DefaultValue { get; set; }
@@ -339,8 +349,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public Object Marker { get; set; }
-		private Object Marker_DefaultValue { get; set; }
+		public string Marker { get; set; }
+		private string Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -421,6 +431,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// What part of the vector it should be rotated around. Can be one of`start`, `center` and `end`. When `start`, the vectors will startfrom the given [x, y] position, and when `end` the vectors will endin the [x, y] position.
+		/// </summary>
+		public PlotOptionsVectorRotationOrigin RotationOrigin { get; set; }
+		private PlotOptionsVectorRotationOrigin RotationOrigin_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Whether to select the series initially. If `showCheckbox` is true,the checkbox next to the series name in the legend will be checkedfor a selected series.
 		/// </summary>
 		public bool? Selected { get; set; }
@@ -491,7 +508,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A configuration object for the tooltip rendering of each singleseries. Properties are inherited from [tooltip](#tooltip), but onlythe following properties can be defined on a series level.
+		/// 
 		/// </summary>
 		public PlotOptionsVectorTooltip Tooltip { get; set; }
 		private PlotOptionsVectorTooltip Tooltip_DefaultValue { get; set; }
@@ -502,6 +519,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? TurboThreshold { get; set; }
 		private double? TurboThreshold_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Maximum length of the arrows in the vector plot. The individual arrowlength is computed between 0 and this value.
+		/// </summary>
+		public double? VectorLength { get; set; }
+		private double? VectorLength_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -560,6 +584,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
@@ -580,6 +605,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
 			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
 			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
+			if (RotationOrigin != RotationOrigin_DefaultValue) h.Add("rotationOrigin", highstock.FirstCharacterToLower(RotationOrigin.ToString()));
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
 			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
@@ -592,6 +618,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
 			if (Tooltip.IsDirty(highstock)) h.Add("tooltip",Tooltip.ToHashtable(highstock));
 			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
+			if (VectorLength != VectorLength_DefaultValue) h.Add("vectorLength",VectorLength);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
 			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(highstock,Zones));

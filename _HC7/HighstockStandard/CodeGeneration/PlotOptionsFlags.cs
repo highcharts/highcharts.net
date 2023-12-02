@@ -56,6 +56,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			GroupPadding = GroupPadding_DefaultValue = null;
 			GroupZPadding = GroupZPadding_DefaultValue = 1;
 			Height = Height_DefaultValue = null;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsFlagsLabel();
@@ -97,7 +98,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			StickyTracking = StickyTracking_DefaultValue = true;
 			Style = Style_DefaultValue = new Hashtable();
 			TextAlign = TextAlign_DefaultValue = PlotOptionsFlagsTextAlign.Center;
-			Threshold = Threshold_DefaultValue = 0;
+			Threshold = Threshold_DefaultValue = null;
 			Title = Title_DefaultValue = "A";
 			Tooltip = Tooltip_DefaultValue = new PlotOptionsFlagsTooltip();
 			UseHTML = UseHTML_DefaultValue = false;
@@ -389,6 +390,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? Height { get; set; }
 		private double? Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -788,6 +796,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));

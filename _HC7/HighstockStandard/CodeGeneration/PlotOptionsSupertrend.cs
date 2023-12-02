@@ -50,13 +50,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsSupertrendGapUnit.Relative;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Label = Label_DefaultValue = new PlotOptionsSupertrendLabel();
 			LastPrice = LastPrice_DefaultValue = new PlotOptionsSupertrendLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsSupertrendLastVisiblePrice();
 			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsSupertrendLegendSymbol.Rectangle;
 			Linecap = Linecap_DefaultValue = PlotOptionsSupertrendLinecap.Round;
-			LineWidth = LineWidth_DefaultValue = 1;
+			LineWidth = LineWidth_DefaultValue = 2;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new PlotOptionsSupertrendMarker();
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsSupertrendOnPoint();
@@ -324,6 +325,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? GetExtremesFromAll { get; set; }
 		private bool? GetExtremesFromAll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -598,6 +606,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
 			if (LastPrice.IsDirty(highstock)) h.Add("lastPrice",LastPrice.ToHashtable(highstock));

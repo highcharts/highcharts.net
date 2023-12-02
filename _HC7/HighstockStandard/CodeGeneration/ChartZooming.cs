@@ -35,7 +35,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The mouse wheel zoom is a feature included in Highcharts Stock, but isalso available for Highcharts Core as a module. Zooming with the mouse wheelis enabled by default. It can be disabled by setting this option to`false`.
+		/// The mouse wheel zoom is a feature included in Highcharts Stock, but is alsoavailable for Highcharts Core as a module. Zooming with the mouse wheel isenabled by default in Highcharts Stock. In Highcharts Core it is enabled if[chart.zooming.type](chart.zooming.type) is set. It can be disabled bysetting this option to `false`.
 		/// </summary>
 		public bool? MouseWheel { get; set; }
 		private bool? MouseWheel_DefaultValue { get; set; }

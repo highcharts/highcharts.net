@@ -16,50 +16,50 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigationBindings()
 		{
-			ArrowInfinityLine = ArrowInfinityLine_DefaultValue = new Hashtable();
-			ArrowRay = ArrowRay_DefaultValue = new Hashtable();
-			ArrowSegment = ArrowSegment_DefaultValue = new Hashtable();
-			CircleAnnotation = CircleAnnotation_DefaultValue = new Hashtable();
-			Crooked3 = Crooked3_DefaultValue = new Hashtable();
-			Crooked5 = Crooked5_DefaultValue = new Hashtable();
-			CurrentPriceIndicator = CurrentPriceIndicator_DefaultValue = new Hashtable();
-			Elliott3 = Elliott3_DefaultValue = new Hashtable();
-			Elliott5 = Elliott5_DefaultValue = new Hashtable();
-			EllipseAnnotation = EllipseAnnotation_DefaultValue = new Hashtable();
-			Fibonacci = Fibonacci_DefaultValue = new Hashtable();
-			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = new Hashtable();
-			FlagCirclepin = FlagCirclepin_DefaultValue = new Hashtable();
-			FlagDiamondpin = FlagDiamondpin_DefaultValue = new Hashtable();
-			FlagSimplepin = FlagSimplepin_DefaultValue = new Hashtable();
-			FlagSquarepin = FlagSquarepin_DefaultValue = new Hashtable();
-			FullScreen = FullScreen_DefaultValue = new Hashtable();
-			HorizontalLine = HorizontalLine_DefaultValue = new Hashtable();
-			Indicators = Indicators_DefaultValue = new Hashtable();
-			InfinityLine = InfinityLine_DefaultValue = new Hashtable();
-			LabelAnnotation = LabelAnnotation_DefaultValue = new Hashtable();
-			MeasureX = MeasureX_DefaultValue = new Hashtable();
-			MeasureXY = MeasureXY_DefaultValue = new Hashtable();
-			MeasureY = MeasureY_DefaultValue = new Hashtable();
-			ParallelChannel = ParallelChannel_DefaultValue = new Hashtable();
-			Pitchfork = Pitchfork_DefaultValue = new Hashtable();
-			Ray = Ray_DefaultValue = new Hashtable();
-			RectangleAnnotation = RectangleAnnotation_DefaultValue = new Hashtable();
-			SaveChart = SaveChart_DefaultValue = new Hashtable();
-			Segment = Segment_DefaultValue = new Hashtable();
-			SeriesTypeCandlestick = SeriesTypeCandlestick_DefaultValue = new Hashtable();
-			SeriesTypeHeikinAshi = SeriesTypeHeikinAshi_DefaultValue = new Hashtable();
-			SeriesTypeHLC = SeriesTypeHLC_DefaultValue = new Hashtable();
-			SeriesTypeHollowCandlestick = SeriesTypeHollowCandlestick_DefaultValue = new Hashtable();
-			SeriesTypeLine = SeriesTypeLine_DefaultValue = new Hashtable();
-			SeriesTypeOhlc = SeriesTypeOhlc_DefaultValue = new Hashtable();
-			TimeCycles = TimeCycles_DefaultValue = new Hashtable();
-			ToggleAnnotations = ToggleAnnotations_DefaultValue = new Hashtable();
-			VerticalArrow = VerticalArrow_DefaultValue = new Hashtable();
-			VerticalCounter = VerticalCounter_DefaultValue = new Hashtable();
-			VerticalLine = VerticalLine_DefaultValue = new Hashtable();
-			ZoomX = ZoomX_DefaultValue = new Hashtable();
-			ZoomXY = ZoomXY_DefaultValue = new Hashtable();
-			ZoomY = ZoomY_DefaultValue = new Hashtable();
+			ArrowInfinityLine = ArrowInfinityLine_DefaultValue = null;
+			ArrowRay = ArrowRay_DefaultValue = null;
+			ArrowSegment = ArrowSegment_DefaultValue = null;
+			CircleAnnotation = CircleAnnotation_DefaultValue = null;
+			Crooked3 = Crooked3_DefaultValue = null;
+			Crooked5 = Crooked5_DefaultValue = null;
+			CurrentPriceIndicator = CurrentPriceIndicator_DefaultValue = null;
+			Elliott3 = Elliott3_DefaultValue = null;
+			Elliott5 = Elliott5_DefaultValue = null;
+			EllipseAnnotation = EllipseAnnotation_DefaultValue = new NavigationBindingsEllipseAnnotation();
+			Fibonacci = Fibonacci_DefaultValue = new NavigationBindingsFibonacci();
+			FibonacciTimeZones = FibonacciTimeZones_DefaultValue = null;
+			FlagCirclepin = FlagCirclepin_DefaultValue = null;
+			FlagDiamondpin = FlagDiamondpin_DefaultValue = null;
+			FlagSimplepin = FlagSimplepin_DefaultValue = null;
+			FlagSquarepin = FlagSquarepin_DefaultValue = null;
+			FullScreen = FullScreen_DefaultValue = new NavigationBindingsFullScreen();
+			HorizontalLine = HorizontalLine_DefaultValue = null;
+			Indicators = Indicators_DefaultValue = null;
+			InfinityLine = InfinityLine_DefaultValue = null;
+			LabelAnnotation = LabelAnnotation_DefaultValue = null;
+			MeasureX = MeasureX_DefaultValue = null;
+			MeasureXY = MeasureXY_DefaultValue = null;
+			MeasureY = MeasureY_DefaultValue = null;
+			ParallelChannel = ParallelChannel_DefaultValue = null;
+			Pitchfork = Pitchfork_DefaultValue = null;
+			Ray = Ray_DefaultValue = null;
+			RectangleAnnotation = RectangleAnnotation_DefaultValue = null;
+			SaveChart = SaveChart_DefaultValue = new NavigationBindingsSaveChart();
+			Segment = Segment_DefaultValue = null;
+			SeriesTypeCandlestick = SeriesTypeCandlestick_DefaultValue = null;
+			SeriesTypeHeikinAshi = SeriesTypeHeikinAshi_DefaultValue = null;
+			SeriesTypeHLC = SeriesTypeHLC_DefaultValue = new NavigationBindingsSeriesTypeHLC();
+			SeriesTypeHollowCandlestick = SeriesTypeHollowCandlestick_DefaultValue = null;
+			SeriesTypeLine = SeriesTypeLine_DefaultValue = null;
+			SeriesTypeOhlc = SeriesTypeOhlc_DefaultValue = null;
+			TimeCycles = TimeCycles_DefaultValue = new NavigationBindingsTimeCycles();
+			ToggleAnnotations = ToggleAnnotations_DefaultValue = null;
+			VerticalArrow = VerticalArrow_DefaultValue = null;
+			VerticalCounter = VerticalCounter_DefaultValue = null;
+			VerticalLine = VerticalLine_DefaultValue = null;
+			ZoomX = ZoomX_DefaultValue = null;
+			ZoomXY = ZoomXY_DefaultValue = null;
+			ZoomY = ZoomY_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,309 +68,309 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A line with arrow annotation. Includes `start` and one event in `steps`array.
 		/// </summary>
-		public Hashtable ArrowInfinityLine { get; set; }
-		private Hashtable ArrowInfinityLine_DefaultValue { get; set; }
+		public Object ArrowInfinityLine { get; set; }
+		private Object ArrowInfinityLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A ray with an arrow annotation bindings. Includes `start` and one eventin `steps` array.
 		/// </summary>
-		public Hashtable ArrowRay { get; set; }
-		private Hashtable ArrowRay_DefaultValue { get; set; }
+		public Object ArrowRay { get; set; }
+		private Object ArrowRay_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A segment with an arrow annotation bindings. Includes `start` and oneevent in `steps` array.
 		/// </summary>
-		public Hashtable ArrowSegment { get; set; }
-		private Hashtable ArrowSegment_DefaultValue { get; set; }
+		public Object ArrowSegment { get; set; }
+		private Object ArrowSegment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A circle annotation bindings. Includes `start` and one event in`steps` array.
 		/// </summary>
-		public Hashtable CircleAnnotation { get; set; }
-		private Hashtable CircleAnnotation_DefaultValue { get; set; }
+		public Object CircleAnnotation { get; set; }
+		private Object CircleAnnotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Crooked line (three points) annotation bindings. Includes `start` and twoevents in `steps` (for second and third points in crooked line) array.
 		/// </summary>
-		public Hashtable Crooked3 { get; set; }
-		private Hashtable Crooked3_DefaultValue { get; set; }
+		public Object Crooked3 { get; set; }
+		private Object Crooked3_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Crooked line (five points) annotation bindings. Includes `start` and fourevents in `steps` (for all consequent points in crooked line) array.
 		/// </summary>
-		public Hashtable Crooked5 { get; set; }
-		private Hashtable Crooked5_DefaultValue { get; set; }
+		public Object Crooked5 { get; set; }
+		private Object Crooked5_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Hides/shows two price indicators:- last price in the dataset- last price in the selected range
 		/// </summary>
-		public Hashtable CurrentPriceIndicator { get; set; }
-		private Hashtable CurrentPriceIndicator_DefaultValue { get; set; }
+		public Object CurrentPriceIndicator { get; set; }
+		private Object CurrentPriceIndicator_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Elliott wave (three points) annotation bindings. Includes `start` and twoevents in `steps` (for second and third points) array.
 		/// </summary>
-		public Hashtable Elliott3 { get; set; }
-		private Hashtable Elliott3_DefaultValue { get; set; }
+		public Object Elliott3 { get; set; }
+		private Object Elliott3_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Elliott wave (five points) annotation bindings. Includes `start` and fourevent in `steps` (for all consequent points in Elliott wave) array.
 		/// </summary>
-		public Hashtable Elliott5 { get; set; }
-		private Hashtable Elliott5_DefaultValue { get; set; }
+		public Object Elliott5 { get; set; }
+		private Object Elliott5_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A ellipse annotation bindings. Includes `start` and two events in`steps` array. First updates the second point, responsible for arx width, and second updates the ry width.
 		/// </summary>
-		public Hashtable EllipseAnnotation { get; set; }
-		private Hashtable EllipseAnnotation_DefaultValue { get; set; }
+		public NavigationBindingsEllipseAnnotation EllipseAnnotation { get; set; }
+		private NavigationBindingsEllipseAnnotation EllipseAnnotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A fibonacci annotation bindings. Includes `start` and two events in`steps` array (updates second point, then height).
 		/// </summary>
-		public Hashtable Fibonacci { get; set; }
-		private Hashtable Fibonacci_DefaultValue { get; set; }
+		public NavigationBindingsFibonacci Fibonacci { get; set; }
+		private NavigationBindingsFibonacci Fibonacci_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The Fibonacci Time Zones annotation bindings. Includes `start` and oneevent in `steps` array.
 		/// </summary>
-		public Hashtable FibonacciTimeZones { get; set; }
-		private Hashtable FibonacciTimeZones_DefaultValue { get; set; }
+		public Object FibonacciTimeZones { get; set; }
+		private Object FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A flag series bindings. Includes `start` event. On click, finds theclosest point and marks it with a flag with `'circlepin'` shape.
 		/// </summary>
-		public Hashtable FlagCirclepin { get; set; }
-		private Hashtable FlagCirclepin_DefaultValue { get; set; }
+		public Object FlagCirclepin { get; set; }
+		private Object FlagCirclepin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A flag series bindings. Includes `start` event. On click, finds theclosest point and marks it with a flag with `'diamondpin'` shape.
 		/// </summary>
-		public Hashtable FlagDiamondpin { get; set; }
-		private Hashtable FlagDiamondpin_DefaultValue { get; set; }
+		public Object FlagDiamondpin { get; set; }
+		private Object FlagDiamondpin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A flag series bindings. Includes `start` event.On click, finds the closest point and marks it with a flag without pinshape.
 		/// </summary>
-		public Hashtable FlagSimplepin { get; set; }
-		private Hashtable FlagSimplepin_DefaultValue { get; set; }
+		public Object FlagSimplepin { get; set; }
+		private Object FlagSimplepin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A flag series bindings. Includes `start` event.On click, finds the closest point and marks it with a flag with`'squarepin'` shape.
 		/// </summary>
-		public Hashtable FlagSquarepin { get; set; }
-		private Hashtable FlagSquarepin_DefaultValue { get; set; }
+		public Object FlagSquarepin { get; set; }
+		private Object FlagSquarepin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Displays chart in fullscreen.**Note**: Fullscreen is not supported on iPhone due to iOS limitations.
 		/// </summary>
-		public Hashtable FullScreen { get; set; }
-		private Hashtable FullScreen_DefaultValue { get; set; }
+		public NavigationBindingsFullScreen FullScreen { get; set; }
+		private NavigationBindingsFullScreen FullScreen_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A horizontal line annotation. Includes `start` event.
 		/// </summary>
-		public Hashtable HorizontalLine { get; set; }
-		private Hashtable HorizontalLine_DefaultValue { get; set; }
+		public Object HorizontalLine { get; set; }
+		private Object HorizontalLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Indicators bindings. Includes `init` event to show a popup.Note: In order to show base series from the chart in the popup'sdropdown each series requires[series.id](https://api.highcharts.com/highstock/series.line.id) to bedefined.
 		/// </summary>
-		public Hashtable Indicators { get; set; }
-		private Hashtable Indicators_DefaultValue { get; set; }
+		public Object Indicators { get; set; }
+		private Object Indicators_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A line annotation. Includes `start` and one event in `steps` array.
 		/// </summary>
-		public Hashtable InfinityLine { get; set; }
-		private Hashtable InfinityLine_DefaultValue { get; set; }
+		public Object InfinityLine { get; set; }
+		private Object InfinityLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A label annotation bindings. Includes `start` event only.
 		/// </summary>
-		public Hashtable LabelAnnotation { get; set; }
-		private Hashtable LabelAnnotation_DefaultValue { get; set; }
+		public Object LabelAnnotation { get; set; }
+		private Object LabelAnnotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A measure (x-dimension) annotation bindings. Includes `start` and oneevent in `steps` array.
 		/// </summary>
-		public Hashtable MeasureX { get; set; }
-		private Hashtable MeasureX_DefaultValue { get; set; }
+		public Object MeasureX { get; set; }
+		private Object MeasureX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A measure (xy-dimension) annotation bindings. Includes `start` and oneevent in `steps` array.
 		/// </summary>
-		public Hashtable MeasureXY { get; set; }
-		private Hashtable MeasureXY_DefaultValue { get; set; }
+		public Object MeasureXY { get; set; }
+		private Object MeasureXY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A measure (y-dimension) annotation bindings. Includes `start` and oneevent in `steps` array.
 		/// </summary>
-		public Hashtable MeasureY { get; set; }
-		private Hashtable MeasureY_DefaultValue { get; set; }
+		public Object MeasureY { get; set; }
+		private Object MeasureY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A parallel channel (tunnel) annotation bindings. Includes `start` andtwo events in `steps` array (updates second point, then height).
 		/// </summary>
-		public Hashtable ParallelChannel { get; set; }
-		private Hashtable ParallelChannel_DefaultValue { get; set; }
+		public Object ParallelChannel { get; set; }
+		private Object ParallelChannel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An Andrew's pitchfork annotation bindings. Includes `start` and twoevents in `steps` array (sets second and third control points).
 		/// </summary>
-		public Hashtable Pitchfork { get; set; }
-		private Hashtable Pitchfork_DefaultValue { get; set; }
+		public Object Pitchfork { get; set; }
+		private Object Pitchfork_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A ray annotation bindings. Includes `start` and one event in `steps`array.
 		/// </summary>
-		public Hashtable Ray { get; set; }
-		private Hashtable Ray_DefaultValue { get; set; }
+		public Object Ray { get; set; }
+		private Object Ray_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A rectangle annotation bindings. Includes `start` and one eventin `steps` array.
 		/// </summary>
-		public Hashtable RectangleAnnotation { get; set; }
-		private Hashtable RectangleAnnotation_DefaultValue { get; set; }
+		public Object RectangleAnnotation { get; set; }
+		private Object RectangleAnnotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Save a chart in localStorage under `highcharts-chart` key.Stored items:- annotations- indicators (with yAxes)- flags
 		/// </summary>
-		public Hashtable SaveChart { get; set; }
-		private Hashtable SaveChart_DefaultValue { get; set; }
+		public NavigationBindingsSaveChart SaveChart { get; set; }
+		private NavigationBindingsSaveChart SaveChart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A segment annotation bindings. Includes `start` and one event in `steps`array.
 		/// </summary>
-		public Hashtable Segment { get; set; }
-		private Hashtable Segment_DefaultValue { get; set; }
+		public Object Segment { get; set; }
+		private Object Segment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Changes main series to `'candlestick'` type.
 		/// </summary>
-		public Hashtable SeriesTypeCandlestick { get; set; }
-		private Hashtable SeriesTypeCandlestick_DefaultValue { get; set; }
+		public Object SeriesTypeCandlestick { get; set; }
+		private Object SeriesTypeCandlestick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Changes main series to `'heikinashi'` type.
 		/// </summary>
-		public Hashtable SeriesTypeHeikinAshi { get; set; }
-		private Hashtable SeriesTypeHeikinAshi_DefaultValue { get; set; }
+		public Object SeriesTypeHeikinAshi { get; set; }
+		private Object SeriesTypeHeikinAshi_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Change main series to `'hlc'` type.
 		/// </summary>
-		public Hashtable SeriesTypeHLC { get; set; }
-		private Hashtable SeriesTypeHLC_DefaultValue { get; set; }
+		public NavigationBindingsSeriesTypeHLC SeriesTypeHLC { get; set; }
+		private NavigationBindingsSeriesTypeHLC SeriesTypeHLC_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Changes main series to `'hollowcandlestick'` type.
 		/// </summary>
-		public Hashtable SeriesTypeHollowCandlestick { get; set; }
-		private Hashtable SeriesTypeHollowCandlestick_DefaultValue { get; set; }
+		public Object SeriesTypeHollowCandlestick { get; set; }
+		private Object SeriesTypeHollowCandlestick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Changes main series to `'line'` type.
 		/// </summary>
-		public Hashtable SeriesTypeLine { get; set; }
-		private Hashtable SeriesTypeLine_DefaultValue { get; set; }
+		public Object SeriesTypeLine { get; set; }
+		private Object SeriesTypeLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Changes main series to `'ohlc'` type.
 		/// </summary>
-		public Hashtable SeriesTypeOhlc { get; set; }
-		private Hashtable SeriesTypeOhlc_DefaultValue { get; set; }
+		public Object SeriesTypeOhlc { get; set; }
+		private Object SeriesTypeOhlc_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A time cycles annotation bindings. Includes `start` event and 1 `step`event. first click marks the beginning of the circle, and the second onesets its diameter.
 		/// </summary>
-		public Hashtable TimeCycles { get; set; }
-		private Hashtable TimeCycles_DefaultValue { get; set; }
+		public NavigationBindingsTimeCycles TimeCycles { get; set; }
+		private NavigationBindingsTimeCycles TimeCycles_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Hides/shows all annotations on a chart.
 		/// </summary>
-		public Hashtable ToggleAnnotations { get; set; }
-		private Hashtable ToggleAnnotations_DefaultValue { get; set; }
+		public Object ToggleAnnotations { get; set; }
+		private Object ToggleAnnotations_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A vertical arrow annotation bindings. Includes `start` event. On click,finds the closest point and marks it with an arrow.`#06b535` is the color of the arrow whenpointing from above and `#f21313`when pointing from below the point.
 		/// </summary>
-		public Hashtable VerticalArrow { get; set; }
-		private Hashtable VerticalArrow_DefaultValue { get; set; }
+		public Object VerticalArrow { get; set; }
+		private Object VerticalArrow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A vertical counter annotation bindings. Includes `start` event. On click,finds the closest point and marks it with a numeric annotation -incrementing counter on each add.
 		/// </summary>
-		public Hashtable VerticalCounter { get; set; }
-		private Hashtable VerticalCounter_DefaultValue { get; set; }
+		public Object VerticalCounter { get; set; }
+		private Object VerticalCounter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A vertical line annotation. Includes `start` event.
 		/// </summary>
-		public Hashtable VerticalLine { get; set; }
-		private Hashtable VerticalLine_DefaultValue { get; set; }
+		public Object VerticalLine { get; set; }
+		private Object VerticalLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enables zooming in xAxis on a chart. Includes `start` event whichchanges [chart.zoomType](#chart.zoomType).
 		/// </summary>
-		public Hashtable ZoomX { get; set; }
-		private Hashtable ZoomX_DefaultValue { get; set; }
+		public Object ZoomX { get; set; }
+		private Object ZoomX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enables zooming in xAxis and yAxis on a chart. Includes `start` eventwhich changes [chart.zoomType](#chart.zoomType).
 		/// </summary>
-		public Hashtable ZoomXY { get; set; }
-		private Hashtable ZoomXY_DefaultValue { get; set; }
+		public Object ZoomXY { get; set; }
+		private Object ZoomXY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enables zooming in yAxis on a chart. Includes `start` event whichchanges [chart.zoomType](#chart.zoomType).
 		/// </summary>
-		public Hashtable ZoomY { get; set; }
-		private Hashtable ZoomY_DefaultValue { get; set; }
+		public Object ZoomY { get; set; }
+		private Object ZoomY_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
@@ -390,7 +390,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Elliott3 != Elliott3_DefaultValue) h.Add("elliott3",Elliott3);
 			if (Elliott5 != Elliott5_DefaultValue) h.Add("elliott5",Elliott5);
 			if (EllipseAnnotation != EllipseAnnotation_DefaultValue) h.Add("ellipseAnnotation",EllipseAnnotation);
-			if (Fibonacci != Fibonacci_DefaultValue) h.Add("fibonacci",Fibonacci);
+			if (Fibonacci.IsDirty(highstock)) h.Add("fibonacci",Fibonacci.ToHashtable(highstock));
 			if (FibonacciTimeZones != FibonacciTimeZones_DefaultValue) h.Add("fibonacciTimeZones",FibonacciTimeZones);
 			if (FlagCirclepin != FlagCirclepin_DefaultValue) h.Add("flagCirclepin",FlagCirclepin);
 			if (FlagDiamondpin != FlagDiamondpin_DefaultValue) h.Add("flagDiamondpin",FlagDiamondpin);

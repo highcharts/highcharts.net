@@ -41,6 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 			HangingIndent = HangingIndent_DefaultValue = 20;
 			HangingIndentTranslation = HangingIndentTranslation_DefaultValue = "inherit";
 			Id = Id_DefaultValue = "";
+			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Index = Index_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
@@ -50,6 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Levels = Levels_DefaultValue = new OrganizationSeriesLevels();
 			Link = Link_DefaultValue = new OrganizationSeriesLink();
 			LinkColor = LinkColor_DefaultValue = "";
+			LinkColorMode = LinkColorMode_DefaultValue = OrganizationSeriesLinkColorMode.From;
 			LinkedTo = LinkedTo_DefaultValue = "";
 			LinkLineWidth = LinkLineWidth_DefaultValue = "";
 			LinkOpacity = LinkOpacity_DefaultValue = null;
@@ -57,6 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
 			MinNodeLength = MinNodeLength_DefaultValue = 10;
 			Name = Name_DefaultValue = "";
+			NodeAlignment = NodeAlignment_DefaultValue = OrganizationSeriesNodeAlignment.Top;
 			NodePadding = NodePadding_DefaultValue = 10;
 			Nodes = Nodes_DefaultValue = new List<OrganizationSeriesNodes>();
 			NodeWidth = NodeWidth_DefaultValue = 20;
@@ -264,6 +267,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
+		/// </summary>
+		public bool? InactiveOtherPoints { get; set; }
+		private bool? InactiveOtherPoints_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
@@ -327,6 +337,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Determines color mode for sankey links. Available options:- `from` color of the sankey link will be the same as the 'from node'- `gradient` color of the sankey link will be set to gradient betweencolors of 'from node' and 'to node'- `to` color of the sankey link will be same as the 'to node'.
+		/// </summary>
+		public OrganizationSeriesLinkColorMode LinkColorMode { get; set; }
+		private OrganizationSeriesLinkColorMode LinkColorMode_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.If master series uses data sorting and linked series does not haveits own sorting definition, the linked series will be sorted in thesame order as the master one.
 		/// </summary>
 		public string LinkedTo { get; set; }
@@ -373,6 +390,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override string Name { get; set; }
 		protected override string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Determines which side of the chart the nodes are to be aligned to. Whenthe chart is inverted, `top` aligns to the left and `bottom` to theright.
+		/// </summary>
+		public OrganizationSeriesNodeAlignment NodeAlignment { get; set; }
+		private OrganizationSeriesNodeAlignment NodeAlignment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -589,6 +613,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (HangingIndent != HangingIndent_DefaultValue) h.Add("hangingIndent",HangingIndent);
 			if (HangingIndentTranslation != HangingIndentTranslation_DefaultValue) h.Add("hangingIndentTranslation",HangingIndentTranslation);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
+			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
@@ -598,6 +623,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Levels.IsDirty(highcharts)) h.Add("levels",Levels.ToHashtable(highcharts));
 			if (Link.IsDirty(highcharts)) h.Add("link",Link.ToHashtable(highcharts));
 			if (LinkColor != LinkColor_DefaultValue) h.Add("linkColor",LinkColor);
+			if (LinkColorMode != LinkColorMode_DefaultValue) h.Add("linkColorMode", highcharts.FirstCharacterToLower(LinkColorMode.ToString()));
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (LinkLineWidth != LinkLineWidth_DefaultValue) h.Add("linkLineWidth",LinkLineWidth);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
@@ -605,6 +631,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
 			if (MinNodeLength != MinNodeLength_DefaultValue) h.Add("minNodeLength",MinNodeLength);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (NodeAlignment != NodeAlignment_DefaultValue) h.Add("nodeAlignment", highcharts.FirstCharacterToLower(NodeAlignment.ToString()));
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
 			if (Nodes != Nodes_DefaultValue) h.Add("nodes", HashifyList(highcharts,Nodes));
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
