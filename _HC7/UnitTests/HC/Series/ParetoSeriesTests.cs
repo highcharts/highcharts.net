@@ -2128,7 +2128,7 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new ParetoSeries(); chart.Series.Add(series);
-            var defaultValue = 1;
+            var defaultValue = 2;
 
             ((ParetoSeries)chart.Series[0]).LineWidth = defaultValue;
 

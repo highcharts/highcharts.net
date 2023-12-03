@@ -486,7 +486,7 @@ namespace HC.PlotOptions
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
-            var value = true;
+            var value = false;
 
             chart.PlotOptions.Dumbbell.Crisp = value;
 
@@ -499,7 +499,7 @@ namespace HC.PlotOptions
             var chart = new Highcharts();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
-            var value = false;
+            var value = true;
 
             chart.PlotOptions.Dumbbell.Crisp = value;
 

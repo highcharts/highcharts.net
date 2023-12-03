@@ -2136,7 +2136,7 @@ namespace HS.PlotOptions
         {
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
-            var defaultValue = 1;
+            var defaultValue = 2;
 
             chart.PlotOptions.Supertrend.LineWidth = defaultValue;
 

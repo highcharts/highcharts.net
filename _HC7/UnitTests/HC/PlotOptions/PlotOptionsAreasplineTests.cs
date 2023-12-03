@@ -2683,7 +2683,7 @@ namespace HC.PlotOptions
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            var defaultValue = 1;
+            var defaultValue = 2;
 
             chart.PlotOptions.Areaspline.LineWidth = defaultValue;
 

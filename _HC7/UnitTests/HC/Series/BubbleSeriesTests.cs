@@ -2714,7 +2714,7 @@ namespace HC.Series
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart); var series = new BubbleSeries(); chart.Series.Add(series);
-            var defaultValue = 1;
+            var defaultValue = 2;
 
             ((BubbleSeries)chart.Series[0]).LineWidth = defaultValue;
 

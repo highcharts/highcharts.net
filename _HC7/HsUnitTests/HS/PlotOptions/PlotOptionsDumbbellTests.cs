@@ -419,7 +419,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighstockRenderer(chart);
-            var value = true;
+            var value = false;
 
             chart.PlotOptions.Dumbbell.Crisp = value;
 
@@ -432,7 +432,7 @@ namespace HS.PlotOptions
             var chart = new Highstock();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighstockRenderer(chart);
-            var value = false;
+            var value = true;
 
             chart.PlotOptions.Dumbbell.Crisp = value;
 
