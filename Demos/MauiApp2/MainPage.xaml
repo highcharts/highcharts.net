@@ -8,8 +8,8 @@
             Padding="30,0"
             Spacing="25">
             <WebView
-                HeightRequest="500"
-                WidthRequest="500"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
                 x:Name="WebViewX"
             />
             <Button

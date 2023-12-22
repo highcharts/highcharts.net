@@ -1,5 +1,6 @@
 ﻿using Highsoft.Web.Mvc.Charts.Rendering;
 using Highsoft.Web.Mvc.Charts;
+using System.Net;
 
 namespace MauiApp2
 {
@@ -26,7 +27,7 @@ namespace MauiApp2
             ExecuteChart(sender, e);
         }
 
-        private async void ExecuteChart(object sender, EventArgs e)
+        private void ExecuteChart(object sender, EventArgs e)
         {
             WebView wv = new WebView();
 
@@ -125,8 +126,24 @@ namespace MauiApp2
             var renderer = new HighchartsRenderer(chartOptions);
             var someScripts = "<script src = 'https://code.highcharts.com/highcharts.js' ></script>";
 
-            string dataUrl = "data:text/html;charset=utf-8," + someScripts + renderer.RenderHtml();
-            WebViewX.Source = dataUrl;
+
+            if(Microsoft.Maui.Devices.DeviceInfo.Platform == DevicePlatform.Android)
+            {
+                string dataUrl = someScripts + renderer.RenderHtml();
+                var htmlSource = new HtmlWebViewSource
+                {
+                    Html = dataUrl
+                };
+
+                WebViewX.Source = htmlSource;
+            }
+            else if (Microsoft.Maui.Devices.DeviceInfo.Platform == DevicePlatform.WinUI)
+            {
+                string dataUrl = "data:text/html;charset=utf-8," + someScripts + renderer.RenderHtml();
+                WebViewX.WidthRequest = 500;
+                WebViewX.HeightRequest = 500;
+                WebViewX.Source = dataUrl;
+            }
         }
     }
 
