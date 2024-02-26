@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The operator to compare by. Can be one of `>`, `<`, `>=`, `<=`,`==`, and `===`.
+		/// The operator to compare by. Can be one of `>`, `<`, `>=`, `<=`,`==`, `===`, `!=` and `!==`.
 		/// </summary>
 		public string Operator { get; set; }
 		private string Operator_DefaultValue { get; set; }

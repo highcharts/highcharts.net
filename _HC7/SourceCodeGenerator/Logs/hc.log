@@ -1,9 +1,0 @@
-lang.drillUpText.Types:
-plotOptions.boxplot.Exclude:borderColor,borderRadius,borderWidth,groupZPadding,boostThreshold,boostBlending
-plotOptions.series.states.hover.marker.Exclude:
-plotOptions.treemap.Exclude:marker
-plotOptions.treemap.colorByPoint.ReturnType:
-series.bubble.marker.ReturnType:Object
-series.lollipop.Extends:
-series.packedbubble.marker.ReturnType:Object
-series.pie.events.ReturnType:Object

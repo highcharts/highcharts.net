@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum VariablepieSeriesLegendSymbol
     {
-        LineMarker, 
+        AreaMarker, 
+		LineMarker, 
 		Rectangle
     }
 }

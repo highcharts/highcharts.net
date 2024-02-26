@@ -60,7 +60,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Label = Label_DefaultValue = new PlotOptionsAreaLabel();
 			LastPrice = LastPrice_DefaultValue = new PlotOptionsAreaLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsAreaLastVisiblePrice();
-			LegendSymbol = LegendSymbol_DefaultValue = "rectangle";
+			LegendSymbol = LegendSymbol_DefaultValue = "areaMarker";
 			Linecap = Linecap_DefaultValue = PlotOptionsAreaLinecap.Round;
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -329,7 +329,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
+		/// Fill color or gradient for the area. When `undefined`, the series'`color` is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
 		/// </summary>
 		public object FillColor { get; set; }
 		private object FillColor_DefaultValue { get; set; }

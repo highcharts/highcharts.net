@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Offset = Offset_DefaultValue = null;
 			Position3d = Position3d_DefaultValue = YAxisTitlePosition3d.Offset;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
-			Rotation = Rotation_DefaultValue = 270;
+			Rotation = Rotation_DefaultValue = null;
 			Skew3d = Skew3d_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "Values";
@@ -78,7 +78,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The rotation of the text in degrees. 0 is horizontal, 270 isvertical reading from bottom to top.
+		/// The rotation of the text in degrees. 0 is horizontal, 270 isvertical reading from bottom to top. Defaults to 0 for horizontalaxes, 270 for left-side axes and 90 for right-side axes.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }

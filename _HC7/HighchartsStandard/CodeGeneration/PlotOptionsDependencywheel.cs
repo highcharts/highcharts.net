@@ -49,7 +49,6 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkedTo = LinkedTo_DefaultValue = "";
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
-			NodeAlignment = NodeAlignment_DefaultValue = PlotOptionsDependencywheelNodeAlignment.Top;
 			NodePadding = NodePadding_DefaultValue = 10;
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsDependencywheelOnPoint();
@@ -266,7 +265,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public PlotOptionsDependencywheelLegendSymbol LegendSymbol { get; set; }
 		private PlotOptionsDependencywheelLegendSymbol LegendSymbol_DefaultValue { get; set; }
@@ -305,13 +304,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? MinLinkWidth { get; set; }
 		private double? MinLinkWidth_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines which side of the chart the nodes are to be aligned to. Whenthe chart is inverted, `top` aligns to the left and `bottom` to theright.
-		/// </summary>
-		public PlotOptionsDependencywheelNodeAlignment NodeAlignment { get; set; }
-		private PlotOptionsDependencywheelNodeAlignment NodeAlignment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -501,7 +493,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
-			if (NodeAlignment != NodeAlignment_DefaultValue) h.Add("nodeAlignment", highcharts.FirstCharacterToLower(NodeAlignment.ToString()));
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));

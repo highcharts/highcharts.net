@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum ArcdiagramSeriesNodeAlignment
+    public enum TooltipHeaderShape
     {
-        Top, 
-		Center, 
-		Bottom
+        Callout, 
+		Rect
     }
 }

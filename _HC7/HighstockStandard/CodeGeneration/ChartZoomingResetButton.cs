@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// The position of the button.
+		/// The position of the button.Note: Adjusting position values might cause overlap with chartelements. Ensure coordinates do not obstruct other components ordata visibility.
 		/// </summary>
 		public ChartZoomingResetButtonPosition Position { get; set; }
 		private ChartZoomingResetButtonPosition Position_DefaultValue { get; set; }

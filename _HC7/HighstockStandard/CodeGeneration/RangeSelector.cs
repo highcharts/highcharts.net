@@ -186,7 +186,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The index of the button to appear pre-selected.
+		/// The index of the button to appear pre-selected. If the selected rangeexceeds the total data range and the 'all' option is available,the 'all' option, showing the full range, is automatically selected.
 		/// </summary>
 		public double? Selected { get; set; }
 		private double? Selected_DefaultValue { get; set; }

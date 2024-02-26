@@ -426,7 +426,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public DumbbellSeriesLegendSymbol LegendSymbol { get; set; }
 		private DumbbellSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }

@@ -54,7 +54,6 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
 			Name = Name_DefaultValue = "";
-			NodeAlignment = NodeAlignment_DefaultValue = DependencywheelSeriesNodeAlignment.Top;
 			NodePadding = NodePadding_DefaultValue = 10;
 			Nodes = Nodes_DefaultValue = new DependencywheelSeriesNodes();
 			NodeWidth = NodeWidth_DefaultValue = 20;
@@ -307,7 +306,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public DependencywheelSeriesLegendSymbol LegendSymbol { get; set; }
 		private DependencywheelSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }
@@ -353,13 +352,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override string Name { get; set; }
 		protected override string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines which side of the chart the nodes are to be aligned to. Whenthe chart is inverted, `top` aligns to the left and `bottom` to theright.
-		/// </summary>
-		public DependencywheelSeriesNodeAlignment NodeAlignment { get; set; }
-		private DependencywheelSeriesNodeAlignment NodeAlignment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -610,7 +602,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (NodeAlignment != NodeAlignment_DefaultValue) h.Add("nodeAlignment", highcharts.FirstCharacterToLower(NodeAlignment.ToString()));
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
 			if (Nodes.IsDirty(highcharts)) h.Add("nodes",Nodes.ToHashtable(highcharts));
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);

@@ -412,7 +412,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public PlotOptionsWaterfallLegendSymbol LegendSymbol { get; set; }
 		private PlotOptionsWaterfallLegendSymbol LegendSymbol_DefaultValue { get; set; }

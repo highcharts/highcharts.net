@@ -438,7 +438,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public PlotOptionsCandlestickLegendSymbol LegendSymbol { get; set; }
 		private PlotOptionsCandlestickLegendSymbol LegendSymbol_DefaultValue { get; set; }

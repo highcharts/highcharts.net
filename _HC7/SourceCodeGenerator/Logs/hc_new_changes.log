@@ -1,4 +1,0 @@
-lang.drillUpText.Types:string
-plotOptions.series.states.hover.marker.Exclude:states
-plotOptions.treemap.colorByPoint.ReturnType:
-series.lollipop.Extends:series,plotOptions.lollipop,

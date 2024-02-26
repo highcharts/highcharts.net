@@ -281,7 +281,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The pixel height of the symbol for series types that use a rectanglein the legend. Defaults to the font size of legend items.
+		/// The pixel height of the symbol for series types that use a rectanglein the legend. Defaults to the font size of legend items.Note: This option is a default source of color axis height, if the[colorAxis.height](https://api.highcharts.com/highcharts/colorAxis.height)option is not set.
 		/// </summary>
 		public double? SymbolHeight { get; set; }
 		private double? SymbolHeight_DefaultValue { get; set; }
@@ -302,7 +302,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The pixel width of the legend item symbol. When the `squareSymbol`option is set, this defaults to the `symbolHeight`, otherwise 16.
+		/// The pixel width of the legend item symbol. When the `squareSymbol`option is set, this defaults to the `symbolHeight`, otherwise 16.Note: This option is a default source of color axis width, if the[colorAxis.width](https://api.highcharts.com/highcharts/colorAxis.width)option is not set.
 		/// </summary>
 		public double? SymbolWidth { get; set; }
 		private double? SymbolWidth_DefaultValue { get; set; }

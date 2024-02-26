@@ -145,13 +145,17 @@ namespace SourceCodeGenerator.Services
                 {
                     if (_makeAutoUpdate)
                     {
-                        item.Values.Clear();
+
 
                         if (_valuesFromUpdateFile.ContainsKey(item.FullName + "." + changedItem))
+                        {
+                            item.Values.Clear();
+
                             foreach (var value in string.Copy(_valuesFromUpdateFile[item.FullName + "." + changedItem]).Split(','))
                                 item.Values.Add(value);
+                        }
                         else
-                            _changesNotInUpdateFile.Add(item.FullName + "." + changedItem, string.Join(",",prevItem.Values));
+                            _changesNotInUpdateFile.Add(item.FullName + "." + changedItem, string.Join(",", prevItem.Values));
                     }
 
                     if (_makeManualUpdate)
@@ -165,11 +169,13 @@ namespace SourceCodeGenerator.Services
                 {
                     if (_makeAutoUpdate)
                     {
-                        item.Types.Clear();
-
                         if (_valuesFromUpdateFile.ContainsKey(item.FullName + "." + changedItem))
+                        {
+                            item.Types.Clear();
+
                             foreach (var value in string.Copy(_valuesFromUpdateFile[item.FullName + "." + changedItem]).Split(','))
                                 item.Types.Add(value);
+                        }
                         else
                             _changesNotInUpdateFile.Add(item.FullName + "." + changedItem, string.Join(",", prevItem.Types));
                     }
@@ -190,11 +196,13 @@ namespace SourceCodeGenerator.Services
                 {
                     if (_makeAutoUpdate)
                     {
-                        item.Exclude.Clear();
-
                         if (_valuesFromUpdateFile.ContainsKey(item.FullName + "." + changedItem))
+                        {
+                            item.Exclude.Clear();
+
                             foreach (var value in string.Copy(_valuesFromUpdateFile[item.FullName + "." + changedItem]).Split(','))
                                 item.Exclude.Add(value);
+                        }
                         else
                             _changesNotInUpdateFile.Add(item.FullName + "." + changedItem, string.Join(",", prevItem.Exclude));
                     }
@@ -210,11 +218,13 @@ namespace SourceCodeGenerator.Services
                 {
                     if (_makeAutoUpdate)
                     {
-                        item.Extends.Clear();
-
                         if (_valuesFromUpdateFile.ContainsKey(item.FullName + "." + changedItem))
+                        {
+                            item.Extends.Clear();
+
                             foreach (var value in string.Copy(_valuesFromUpdateFile[item.FullName + "." + changedItem]).Split(','))
                                 item.Extends.Add(value);
+                        }
                         else
                             _changesNotInUpdateFile.Add(item.FullName + "." + changedItem, string.Join(",", prevItem.Extends));
                     }

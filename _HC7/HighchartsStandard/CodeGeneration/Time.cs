@@ -18,7 +18,6 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Date = Date_DefaultValue = new DateTime();
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
-			Moment = Moment_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "undefined";
 			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
 			UseUTC = UseUTC_DefaultValue = true;
@@ -42,14 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Allows to manually load the `moment.js` library from Highcharts optionsinstead of the `window`.In case of loading the library from a `script` tag,this option is not needed, it will be loaded from there by default.
-		/// </summary>
-		public string Moment { get; set; }
-		private string Moment_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Requires [moment.js](https://momentjs.com/). If the timezone optionis specified, it creates a default[getTimezoneOffset](#time.getTimezoneOffset) function that looksup the specified timezone in moment.js. If moment.js is not included,this throws a Highcharts error in the console, but does not crash thechart.
+		/// A named time zone. Supported time zone names rely on the browserimplementations, as described in the [mdndocs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#timezone).If the given time zone is not recognized by the browser, Highchartsprovides a warning and falls back to returning a 0 offset,corresponding to the UCT time zone.Until v11.2.0, this option depended on moment.js.
 		/// </summary>
 		public string Timezone { get; set; }
 		private string Timezone_DefaultValue { get; set; }
@@ -78,7 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Date != Date_DefaultValue) h.Add("date",Date);
 			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); highcharts.AddFunction("getTimezoneOffset", GetTimezoneOffset); }  
-			if (Moment != Moment_DefaultValue) { h.Add("moment",Moment); highcharts.AddFunction("moment", Moment); }  
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
 			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
 			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);

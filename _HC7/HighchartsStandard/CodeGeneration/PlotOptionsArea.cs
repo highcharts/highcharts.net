@@ -52,7 +52,7 @@ namespace Highsoft.Web.Mvc.Charts
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsAreaLabel();
-			LegendSymbol = LegendSymbol_DefaultValue = "rectangle";
+			LegendSymbol = LegendSymbol_DefaultValue = "areaMarker";
 			Linecap = Linecap_DefaultValue = PlotOptionsAreaLinecap.Round;
 			LineColor = LineColor_DefaultValue = "";
 			LineWidth = LineWidth_DefaultValue = 2;
@@ -291,7 +291,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Fill color or gradient for the area. When `null`, the series' `color`is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
+		/// Fill color or gradient for the area. When `undefined`, the series'`color` is used with the series' `fillOpacity`.In styled mode, the fill color can be set with the `.highcharts-area`class name.
 		/// </summary>
 		public Object FillColor { get; set; }
 		private Object FillColor_DefaultValue { get; set; }

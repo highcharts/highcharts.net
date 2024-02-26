@@ -16,11 +16,19 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public YAxisDateTimeLabelFormatsWeek()
 		{
+			List = List_DefaultValue = new List<string>();
 			Main = Main_DefaultValue = "%e %b";
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public List<string> List { get; set; }
+		private List<string> List_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -36,6 +44,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (List != List_DefaultValue) h.Add("list",List);
 			if (Main != Main_DefaultValue) h.Add("main",Main);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

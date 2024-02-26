@@ -436,7 +436,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public AreasplineSeriesLegendSymbol LegendSymbol { get; set; }
 		private AreasplineSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }

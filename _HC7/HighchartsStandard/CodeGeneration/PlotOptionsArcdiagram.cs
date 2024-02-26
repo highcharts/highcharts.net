@@ -23,7 +23,6 @@ namespace Highsoft.Web.Mvc.Charts
 			BorderColor = BorderColor_DefaultValue = "#ffffff";
 			BorderWidth = BorderWidth_DefaultValue = null;
 			CenteredLinks = CenteredLinks_DefaultValue = false;
-			CenterInCategory = CenterInCategory_DefaultValue = false;
 			ClassName = ClassName_DefaultValue = "";
 			Clip = Clip_DefaultValue = true;
 			Color = Color_DefaultValue = "";
@@ -31,7 +30,6 @@ namespace Highsoft.Web.Mvc.Charts
 			ColorIndex = ColorIndex_DefaultValue = null;
 			Colors = Colors_DefaultValue = new List<string>();
 			Cursor = Cursor_DefaultValue = PlotOptionsArcdiagramCursor.Null;
-			CurveFactor = CurveFactor_DefaultValue = null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = PlotOptionsArcdiagramDashStyle.Null;
 			DataLabels = DataLabels_DefaultValue = new PlotOptionsArcdiagramDataLabels();
@@ -39,7 +37,6 @@ namespace Highsoft.Web.Mvc.Charts
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EqualNodes = EqualNodes_DefaultValue = false;
 			Events = Events_DefaultValue = new PlotOptionsArcdiagramEvents();
-			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
 			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
@@ -51,15 +48,12 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			Marker = Marker_DefaultValue = new PlotOptionsArcdiagramMarker();
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
-			NodeAlignment = NodeAlignment_DefaultValue = PlotOptionsArcdiagramNodeAlignment.Top;
-			NodePadding = NodePadding_DefaultValue = 10;
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsArcdiagramOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsArcdiagramPoint();
 			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
-			RelativeXValue = RelativeXValue_DefaultValue = false;
 			Reversed = Reversed_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
 			ShowCheckbox = ShowCheckbox_DefaultValue = false;
@@ -126,13 +120,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When `true`, the columns will center in the category, ignoring nullor missing points. When `false`, space will be reserved for null ormissing points.
-		/// </summary>
-		public bool? CenterInCategory { get; set; }
-		private bool? CenterInCategory_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement. Changes to the series' color will also be reflected in achart's legend and tooltip.
 		/// </summary>
 		public string ClassName { get; set; }
@@ -179,13 +166,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsArcdiagramCursor Cursor { get; set; }
 		private PlotOptionsArcdiagramCursor Cursor_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Higher numbers makes the links in a sankey diagram or dependencywheelrender more curved. A `curveFactor` of 0 makes the linesstraight.
-		/// </summary>
-		public double? CurveFactor { get; set; }
-		private double? CurveFactor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -238,13 +218,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Whether to use the Y extremes of the total chart width or only thezoomed area when zooming in on parts of the X axis. By default, theY axis adjusts to the min and max of the visible data. Cartesianseries only.
-		/// </summary>
-		public bool? GetExtremesFromAll { get; set; }
-		private bool? GetExtremesFromAll_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
 		/// </summary>
 		public bool? InactiveOtherPoints { get; set; }
@@ -273,7 +246,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public PlotOptionsArcdiagramLegendSymbol LegendSymbol { get; set; }
 		private PlotOptionsArcdiagramLegendSymbol LegendSymbol_DefaultValue { get; set; }
@@ -322,20 +295,6 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Determines which side of the chart the nodes are to be aligned to. Whenthe chart is inverted, `top` aligns to the left and `bottom` to theright.
-		/// </summary>
-		public PlotOptionsArcdiagramNodeAlignment NodeAlignment { get; set; }
-		private PlotOptionsArcdiagramNodeAlignment NodeAlignment_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The padding between nodes in a sankey diagram or dependency wheel, inpixels.If the number of nodes is so great that it is possible to lay themout within the plot area with the given `nodePadding`, they will berendered with a smaller padding as a strategy to avoid overflow.
-		/// </summary>
-		public double? NodePadding { get; set; }
-		private double? NodePadding_DefaultValue { get; set; }
-		 
-
-		/// <summary>
 		/// The pixel width of each node in a sankey diagram or dependency wheel,or the height in case the chart is inverted.
 		/// </summary>
 		public double? NodeWidth { get; set; }
@@ -375,13 +334,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
 		private string PointDescriptionFormatter_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// When true, X values in the data set are relative to the current`pointStart`, `pointInterval` and `pointIntervalUnit` settings. Thisallows compression of the data for datasets with irregular X values.The real X values are computed on the formula `f(x) = ax + b`, where`a` is the `pointInterval` (optionally with a time unit given by`pointIntervalUnit`), and `b` is the `pointStart`.
-		/// </summary>
-		public bool? RelativeXValue { get; set; }
-		private bool? RelativeXValue_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -475,7 +427,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (CenteredLinks != CenteredLinks_DefaultValue) h.Add("centeredLinks",CenteredLinks);
-			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
 			if (Color != Color_DefaultValue) h.Add("color",Color);
@@ -483,7 +434,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
 			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
-			if (CurveFactor != CurveFactor_DefaultValue) h.Add("curveFactor",CurveFactor);
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
@@ -491,7 +441,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (EqualNodes != EqualNodes_DefaultValue) h.Add("equalNodes",EqualNodes);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
 			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
@@ -503,15 +452,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
-			if (NodeAlignment != NodeAlignment_DefaultValue) h.Add("nodeAlignment", highcharts.FirstCharacterToLower(NodeAlignment.ToString()));
-			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
 			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
-			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
 			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
 			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
 			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);

@@ -29,7 +29,7 @@ namespace SourceCodeGenerator.Generators
             Console.WriteLine("Comparing current version to previous version");
             ComparisonService.SetValuesFromFile(@"Logs\hc_updated.log");
             ComparisonService.Compare(_apiItems, _previousVersionApiItems);
-            ComparisonService.SaveChanges(@"Logs\hc.log", @"Logs\hc_old.log", @"Logs\hc_new_changes.log", FileService);
+            ComparisonService.SaveChanges(@"Logs\hc_result_values.log", @"Logs\hc_old_values.log", @"Logs\hc_not_in_updated.log", FileService);
             //Console.WriteLine("--------------------------------------------------------");
             //Console.WriteLine("old to new");
             //CompareItems(_previousVersionApiItems, _apiItems);

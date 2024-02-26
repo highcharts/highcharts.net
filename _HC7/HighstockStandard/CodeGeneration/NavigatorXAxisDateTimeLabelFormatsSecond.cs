@@ -16,12 +16,20 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigatorXAxisDateTimeLabelFormatsSecond()
 		{
+			List = List_DefaultValue = new List<string>();
 			Main = Main_DefaultValue = "%H:%M:%S";
 			Range = Range_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public List<string> List { get; set; }
+		private List<string> List_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -44,6 +52,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (List != List_DefaultValue) h.Add("list",List);
 			if (Main != Main_DefaultValue) h.Add("main",Main);
 			if (Range != Range_DefaultValue) h.Add("range",Range);
 			if (CustomFields.Count > 0)

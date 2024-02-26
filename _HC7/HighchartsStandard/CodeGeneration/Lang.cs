@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DrillUpText = DrillUpText_DefaultValue = "";
 			ExitFullscreen = ExitFullscreen_DefaultValue = "Exit from full screen";
 			ExportData = ExportData_DefaultValue = new LangExportData();
+			ExportInProgress = ExportInProgress_DefaultValue = "Exporting...";
 			HideData = HideData_DefaultValue = "Hide data table";
 			InvalidDate = InvalidDate_DefaultValue = "";
 			Loading = Loading_DefaultValue = "Loading...";
@@ -146,6 +147,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Text to show when export is in progress.
+		/// </summary>
+		public string ExportInProgress { get; set; }
+		private string ExportInProgress_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The text for the menu item.
 		/// </summary>
 		public string HideData { get; set; }
@@ -202,7 +210,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// [Metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix) usedto shorten high numbers in axis labels. Replacing any of thepositions with `null` causes the full number to be written. Setting`numericSymbols` to `null` disables shortening altogether.
+		/// [Metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix) usedto shorten high numbers in axis labels. Replacing any of thepositions with `null` causes the full number to be written. Setting`numericSymbols` to `undefined` disables shortening altogether.
 		/// </summary>
 		public List<string> NumericSymbols { get; set; }
 		private List<string> NumericSymbols_DefaultValue { get; set; }
@@ -298,6 +306,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DrillUpText != DrillUpText_DefaultValue) h.Add("drillUpText",DrillUpText);
 			if (ExitFullscreen != ExitFullscreen_DefaultValue) h.Add("exitFullscreen",ExitFullscreen);
 			if (ExportData.IsDirty(highcharts)) h.Add("exportData",ExportData.ToHashtable(highcharts));
+			if (ExportInProgress != ExportInProgress_DefaultValue) h.Add("exportInProgress",ExportInProgress);
 			if (HideData != HideData_DefaultValue) h.Add("hideData",HideData);
 			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
 			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);

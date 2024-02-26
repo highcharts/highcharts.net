@@ -308,7 +308,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public PictorialSeriesLegendSymbol LegendSymbol { get; set; }
 		private PictorialSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }
@@ -357,7 +357,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The paths include options describing the point image.
+		/// The paths include options describing the series image. For further details onpreparing the SVG image, please refer to the [pictorialdocumentation](https://www.highcharts.com/docs/chart-and-series-types/pictorial).
 		/// </summary>
 		public PictorialSeriesPaths Paths { get; set; }
 		private PictorialSeriesPaths Paths_DefaultValue { get; set; }

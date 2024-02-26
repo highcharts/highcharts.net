@@ -30,6 +30,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = new Hashtable();
 			GridLineWidth = GridLineWidth_DefaultValue = 1;
 			GridZIndex = GridZIndex_DefaultValue = 1;
+			Height = Height_DefaultValue = "";
+			HeightNumber = HeightNumber_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Labels = Labels_DefaultValue = new ColorAxisLabels();
 			Layout = Layout_DefaultValue = "";
@@ -78,6 +80,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			TickWidth = TickWidth_DefaultValue = null;
 			Type = Type_DefaultValue = "linear";
 			Visible = Visible_DefaultValue = true;
+			Width = Width_DefaultValue = "";
+			WidthNumber = WidthNumber_DefaultValue = null;
 			ZIndex = ZIndex_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();
@@ -180,6 +184,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public double? GridZIndex { get; set; }
 		private double? GridZIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The height of the color axis. If it's a number, it is interpreted aspixels.If it's a percentage string, it is interpreted as percentages of thetotal plot height.
+		/// </summary>
+		public string Height { get; set; }
+		private string Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The height of the color axis. If it's a number, it is interpreted aspixels.If it's a percentage string, it is interpreted as percentages of thetotal plot height.
+		/// </summary>
+		public double? HeightNumber { get; set; }
+		private double? HeightNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -295,14 +313,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `null` or `undefined`, minor ticks are notshown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
+		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `undefined`, minor ticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
 		/// </summary>
 		public string MinorTickInterval { get; set; }
 		private string MinorTickInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `null` or `undefined`, minor ticks are notshown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
+		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `undefined`, minor ticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
 		/// </summary>
 		public double? MinorTickIntervalNumber { get; set; }
 		private double? MinorTickIntervalNumber_DefaultValue { get; set; }
@@ -358,7 +376,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Additional range on the right side of the xAxis. Works similar to`xAxis.maxPadding`, but value is set in milliseconds. Can be set forboth main `xAxis` and the navigator's `xAxis`.
+		/// Additional range on the right side of the xAxis. Works similar to`xAxis.maxPadding`, but value is set in milliseconds. This propertyshould be set to the same value for both the main `xAxis` and thenavigator's `xAxis` to maintain consistent behavior duringinteractions such as dragging or resizing the navigator.
 		/// </summary>
 		public double? Overscroll { get; set; }
 		private double? Overscroll_DefaultValue { get; set; }
@@ -519,6 +537,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// The width of the color axis. If it's a number, it is interpreted aspixels.If it's a percentage string, it is interpreted as percentages of thetotal plot width.
+		/// </summary>
+		public string Width { get; set; }
+		private string Width_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The width of the color axis. If it's a number, it is interpreted aspixels.If it's a percentage string, it is interpreted as percentages of thetotal plot width.
+		/// </summary>
+		public double? WidthNumber { get; set; }
+		private double? WidthNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The Z index for the axis group.
 		/// </summary>
 		public double? ZIndex { get; set; }
@@ -546,6 +578,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GridLineDashStyle != GridLineDashStyle_DefaultValue) h.Add("gridLineDashStyle",GridLineDashStyle);
 			if (GridLineWidth != GridLineWidth_DefaultValue) h.Add("gridLineWidth",GridLineWidth);
 			if (GridZIndex != GridZIndex_DefaultValue) h.Add("gridZIndex",GridZIndex);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
+			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Labels.IsDirty(highstock)) h.Add("labels",Labels.ToHashtable(highstock));
 			if (Layout != Layout_DefaultValue) h.Add("layout",Layout);
@@ -594,6 +628,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (TickWidth != TickWidth_DefaultValue) h.Add("tickWidth",TickWidth);
 			if (Type != Type_DefaultValue) h.Add("type",Type);
 			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
 			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

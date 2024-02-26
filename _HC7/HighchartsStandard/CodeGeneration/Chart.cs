@@ -21,6 +21,7 @@ namespace Highsoft.Web.Mvc.Charts
 			AllowMutatingData = AllowMutatingData_DefaultValue = true;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = true;
+			AxisLayoutRuns = AxisLayoutRuns_DefaultValue = 2;
 			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
 			BorderColor = BorderColor_DefaultValue = "#334eff";
 			BorderRadius = BorderRadius_DefaultValue = 0;
@@ -111,6 +112,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? AnimationBool { get; set; }
 		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// When a chart with an x and a y-axis is rendered, we first pre-render thelabels of both in order to measure them. Then, if either of the axislabels take up so much space that it significantly affects the length ofthe other axis, we repeat the process.By default we stop at two axis layout runs, but it may be that the secondrun also alter the space required by either axis, for example if itcauses the labels to rotate. In this situation, a subsequent redraw ofthe chart may cause the tick and label placement to change for apparentlyno reason.Use the `axisLayoutRuns` option to set the maximum allowed number ofrepetitions. But keep in mind that the default value of 2 is set becauseevery run costs performance time.**Note:** Changing that option to higher than the default might decreaseperformance significantly, especially with bigger sets of data.
+		/// </summary>
+		public double? AxisLayoutRuns { get; set; }
+		private double? AxisLayoutRuns_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -489,6 +497,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AllowMutatingData != AllowMutatingData_DefaultValue) h.Add("allowMutatingData",AllowMutatingData);
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
+			if (AxisLayoutRuns != AxisLayoutRuns_DefaultValue) h.Add("axisLayoutRuns",AxisLayoutRuns);
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
 			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);

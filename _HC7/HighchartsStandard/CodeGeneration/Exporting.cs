@@ -25,6 +25,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Enabled = Enabled_DefaultValue = true;
 			Error = Error_DefaultValue = "";
 			FallbackToExportServer = FallbackToExportServer_DefaultValue = true;
+			FetchOptions = FetchOptions_DefaultValue = "";
 			Filename = Filename_DefaultValue = "chart";
 			FormAttributes = FormAttributes_DefaultValue = null;
 			LibURL = LibURL_DefaultValue = "";
@@ -32,6 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 			PdfFont = PdfFont_DefaultValue = new ExportingPdfFont();
 			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
 			Scale = Scale_DefaultValue = 2;
+			ShowExportInProgress = ShowExportInProgress_DefaultValue = true;
 			ShowTable = ShowTable_DefaultValue = false;
 			SourceHeight = SourceHeight_DefaultValue = null;
 			SourceWidth = SourceWidth_DefaultValue = null;
@@ -111,6 +113,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// Options for the fetch request used when sending the SVG to the exportserver.See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/fetch)for more information
+		/// </summary>
+		public Object FetchOptions { get; set; }
+		private Object FetchOptions_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// The filename, without extension, to use for the exported chart.
 		/// </summary>
 		public string Filename { get; set; }
@@ -118,7 +127,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An object containing additional key value data for the POST form thatsends the SVG to the export server. For example, a `target` can be set tomake sure the generated image is received in another frame, or a custom`enctype` or `encoding` can be set.
+		/// Highcharts v11.2.0 and older. An object containing additional key valuedata for the POST form that sends the SVG to the export server. Forexample, a `target` can be set to make sure the generated image isreceived in another frame, or a custom `enctype` or `encoding` can beset.With Highcharts v11.3.0, the `fetch` API replaced the old HTML form. Tomodify the request, now use [fetchOptions](#exporting.fetchOptions)instead.
 		/// </summary>
 		public Object FormAttributes { get; set; }
 		private Object FormAttributes_DefaultValue { get; set; }
@@ -157,6 +166,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? Scale { get; set; }
 		private double? Scale_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Display a message when export is in progress.Uses [Chart.setLoading()](/class-reference/Highcharts.Chart#setLoading)The message can be altered by changing [](#lang.exporting.exportInProgress)
+		/// </summary>
+		public bool? ShowExportInProgress { get; set; }
+		private bool? ShowExportInProgress_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -245,6 +261,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Error != Error_DefaultValue) { h.Add("error",Error); highcharts.AddFunction("error", Error); }  
 			if (FallbackToExportServer != FallbackToExportServer_DefaultValue) h.Add("fallbackToExportServer",FallbackToExportServer);
+			if (FetchOptions != FetchOptions_DefaultValue) h.Add("fetchOptions",FetchOptions);
 			if (Filename != Filename_DefaultValue) h.Add("filename",Filename);
 			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);
 			if (LibURL != LibURL_DefaultValue) h.Add("libURL",LibURL);
@@ -252,6 +269,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PdfFont.IsDirty(highcharts)) h.Add("pdfFont",PdfFont.ToHashtable(highcharts));
 			if (PrintMaxWidth != PrintMaxWidth_DefaultValue) h.Add("printMaxWidth",PrintMaxWidth);
 			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
+			if (ShowExportInProgress != ShowExportInProgress_DefaultValue) h.Add("showExportInProgress",ShowExportInProgress);
 			if (ShowTable != ShowTable_DefaultValue) h.Add("showTable",ShowTable);
 			if (SourceHeight != SourceHeight_DefaultValue) h.Add("sourceHeight",SourceHeight);
 			if (SourceWidth != SourceWidth_DefaultValue) h.Add("sourceWidth",SourceWidth);

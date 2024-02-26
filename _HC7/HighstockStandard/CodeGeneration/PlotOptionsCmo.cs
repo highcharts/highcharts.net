@@ -356,7 +356,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public PlotOptionsCmoLegendSymbol LegendSymbol { get; set; }
 		private PlotOptionsCmoLegendSymbol LegendSymbol_DefaultValue { get; set; }

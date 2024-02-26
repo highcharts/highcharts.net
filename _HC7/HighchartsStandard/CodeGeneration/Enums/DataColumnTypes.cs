@@ -5,10 +5,12 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum PlotOptionsArcdiagramNodeAlignment
+    public enum DataColumnTypes
     {
-        Top, 
-		Center, 
-		Bottom
+        Null, 
+		String, 
+		Number, 
+		Float, 
+		Date
     }
 }

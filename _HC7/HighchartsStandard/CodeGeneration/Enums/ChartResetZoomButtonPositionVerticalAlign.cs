@@ -5,10 +5,11 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum DependencywheelSeriesNodeAlignment
+    public enum ChartResetZoomButtonPositionVerticalAlign
     {
-        Top, 
-		Center, 
+        Null, 
+		Top, 
+		Middle, 
 		Bottom
     }
 }

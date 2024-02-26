@@ -20,7 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Margin = Margin_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			ReserveSpace = ReserveSpace_DefaultValue = true;
-			Rotation = Rotation_DefaultValue = 0;
+			Rotation = Rotation_DefaultValue = null;
 			Style = Style_DefaultValue = new Hashtable();
 			Text = Text_DefaultValue = "null";
 			TextAlign = TextAlign_DefaultValue = NavigatorXAxisTitleTextAlign.Null;
@@ -61,7 +61,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The rotation of the text in degrees. 0 is horizontal, 270 isvertical reading from bottom to top.
+		/// The rotation of the text in degrees. 0 is horizontal, 270 isvertical reading from bottom to top. Defaults to 0 for horizontalaxes, 270 for left-side axes and 90 for right-side axes.
 		/// </summary>
 		public double? Rotation { get; set; }
 		private double? Rotation_DefaultValue { get; set; }

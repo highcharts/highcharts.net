@@ -265,7 +265,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public PlotOptionsOrganizationLegendSymbol LegendSymbol { get; set; }
 		private PlotOptionsOrganizationLegendSymbol LegendSymbol_DefaultValue { get; set; }

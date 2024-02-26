@@ -55,7 +55,6 @@ namespace Highsoft.Web.Mvc.Charts
 			Marker = Marker_DefaultValue = new ArcdiagramSeriesMarker();
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
 			Name = Name_DefaultValue = "";
-			NodeAlignment = NodeAlignment_DefaultValue = ArcdiagramSeriesNodeAlignment.Top;
 			Nodes = Nodes_DefaultValue = new ArcdiagramSeriesNodes();
 			NodeWidth = NodeWidth_DefaultValue = 20;
 			Offset = Offset_DefaultValue = " 100% ";
@@ -285,7 +284,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`lineMarker` or `rectangle`.
+		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
 		/// </summary>
 		public ArcdiagramSeriesLegendSymbol LegendSymbol { get; set; }
 		private ArcdiagramSeriesLegendSymbol LegendSymbol_DefaultValue { get; set; }
@@ -327,7 +326,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The global link weight. If not set, width is calculated per link,depending on the weight value.
+		/// The global link weight, in pixels. If not set, width is calculatedper link, depending on the weight value.
 		/// </summary>
 		public double? LinkWeight { get; set; }
 		private double? LinkWeight_DefaultValue { get; set; }
@@ -352,13 +351,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override string Name { get; set; }
 		protected override string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines which side of the chart the nodes are to be aligned to. Whenthe chart is inverted, `top` aligns to the left and `bottom` to theright.
-		/// </summary>
-		public ArcdiagramSeriesNodeAlignment NodeAlignment { get; set; }
-		private ArcdiagramSeriesNodeAlignment NodeAlignment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -547,7 +539,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (NodeAlignment != NodeAlignment_DefaultValue) h.Add("nodeAlignment", highcharts.FirstCharacterToLower(NodeAlignment.ToString()));
 			if (Nodes.IsDirty(highcharts)) h.Add("nodes",Nodes.ToHashtable(highcharts));
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);

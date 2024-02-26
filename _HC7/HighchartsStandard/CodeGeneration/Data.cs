@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			BeforeParse = BeforeParse_DefaultValue = "";
 			Columns = Columns_DefaultValue = new List<List<string>>();
 			ColumnsURL = ColumnsURL_DefaultValue = "";
+			ColumnTypes = ColumnTypes_DefaultValue = DataColumnTypes.Null;
 			Complete = Complete_DefaultValue = "";
 			Csv = Csv_DefaultValue = "";
 			CsvURL = CsvURL_DefaultValue = "";
@@ -68,6 +69,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string ColumnsURL { get; set; }
 		private string ColumnsURL_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// An array option that specifies the data type for each column in the seriesloaded within the data module.Possible values: `"string"`, `"number"`, `"float"`, `"date"`.
+		/// </summary>
+		public DataColumnTypes ColumnTypes { get; set; }
+		private DataColumnTypes ColumnTypes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -255,6 +263,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); highcharts.AddFunction("beforeParse", BeforeParse); }  
 			if (Columns != Columns_DefaultValue) h.Add("columns",Columns);
 			if (ColumnsURL != ColumnsURL_DefaultValue) h.Add("columnsURL",ColumnsURL);
+			if (ColumnTypes != ColumnTypes_DefaultValue) h.Add("columnTypes",ColumnTypes);
 			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); highcharts.AddFunction("complete", Complete); }  
 			if (Csv != Csv_DefaultValue) h.Add("csv",Csv);
 			if (CsvURL != CsvURL_DefaultValue) h.Add("csvURL",CsvURL);
