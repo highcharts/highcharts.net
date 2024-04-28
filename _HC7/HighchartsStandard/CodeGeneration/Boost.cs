@@ -57,14 +57,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Set the series threshold for when the boost should kick in globally.Setting to e.g. 20 will cause the whole chart to enter boost modeif there are 20 or more series active. When the chart is in boost mode,every series in it will be rendered to a common canvas. This offersa significant speed improvment in charts with a very highamount of series.
+		/// Set the series threshold for when the boost should kick in globally.Setting to e.g. 20 will cause the whole chart to enter boost modeif there are 20 or more series active. When the chart is in boost mode,every series in it will be rendered to a common canvas. This offersa significant speed improvement in charts with a very highamount of series.
 		/// </summary>
 		public double? SeriesThreshold { get; set; }
 		private double? SeriesThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// Enable or disable GPU translations. GPU translations are faster than doingthe translation in JavaScript.This option may cause rendering issues with certain datasets.Namely, if your dataset has large numbers with small increments (such astimestamps), it won't work correctly. This is due to floating pointprecission.
+		/// Enable or disable GPU translations. GPU translations are faster than doingthe translation in JavaScript.This option may cause rendering issues with certain datasets.Namely, if your dataset has large numbers with small increments (such astimestamps), it won't work correctly. This is due to floating pointprecision.
 		/// </summary>
 		public bool? UseGPUTranslations { get; set; }
 		private bool? UseGPUTranslations_DefaultValue { get; set; }

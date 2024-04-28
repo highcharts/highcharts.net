@@ -83,7 +83,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The border radius in pixels for the annotaiton's label.
+		/// The border radius in pixels for the annotation's label.
 		/// </summary>
 		public double? BorderRadius { get; set; }
 		private double? BorderRadius_DefaultValue { get; set; }

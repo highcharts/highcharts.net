@@ -494,7 +494,7 @@ namespace SourceCodeGenerator.Generators
 
         protected override string GetDefaultValueForEnum(ApiItem item)
         {
-            string defaultValue = item.Defaults;
+            string defaultValue = item.Defaults.Replace("\'","");
             if (String.IsNullOrEmpty(defaultValue))
             {
                 defaultValue = item.Values[0];
@@ -1081,6 +1081,7 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("plotOptions.vector.tooltip.pointFormat", "\"x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>\"");
 
             _propertyInitMappings.Add("series.organization.nodes", "new List<OrganizationSeriesNodes>()");
+            _propertyInitMappings.Add("data.columnTypes", "DataColumnTypes.Null");
         }
 
         protected override void InitLists()
@@ -1326,6 +1327,7 @@ namespace SourceCodeGenerator.Generators
 
             if (defaults == "")
                 return "\"\"";
+
             if (defaults == null)
                 return "null";
 

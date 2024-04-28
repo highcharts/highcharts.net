@@ -33,7 +33,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The opposite state of a hover for a single point link. Appliedto all links that are not comming from the hovered node.
+		/// The opposite state of a hover for a single point link. Appliedto all links that are not coming from the hovered node.
 		/// </summary>
 		public PlotOptionsNetworkgraphStatesInactive Inactive { get; set; }
 		private PlotOptionsNetworkgraphStatesInactive Inactive_DefaultValue { get; set; }

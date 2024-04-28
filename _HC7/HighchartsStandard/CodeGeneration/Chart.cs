@@ -430,7 +430,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Additional CSS styles to apply inline to the container `div` and the rootSVG.Since v11, the root font size is 1rem by default, and all child elementare given a relative `em` font size by default. This allows implementersto control all the chart's font sizes by only setting the root level.
+		/// Additional CSS styles to apply inline to the container `div` and the rootSVG.According to the CSS syntax documentation, it is recommended to quotefont family names that contain white space, digits, or punctuationcharacters other than hyphens. In such cases, wrap the fontFamilyname as follows: `fontFamily: '"Font name"'`.Since v11, the root font size is 1rem by default, and all child elementare given a relative `em` font size by default. This allows implementersto control all the chart's font sizes by only setting the root level.
 		/// </summary>
 		public Hashtable Style { get; set; }
 		private Hashtable Style_DefaultValue { get; set; }

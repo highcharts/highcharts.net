@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// Approximation used to calculate repulsive forces affecting nodes.By default, when calculateing net force, nodes are comparedagainst each other, which gives O(N^2) complexity. UsingBarnes-Hut approximation, we decrease this to O(N log N), but theresulting graph will have different layout. Barnes-Hutapproximation divides space into rectangles via quad tree, whereforces exerted on nodes are calculated directly for nearby cells,and for all others, cells are treated as a separate node withcenter of mass.
+		/// Approximation used to calculate repulsive forces affecting nodes.By default, when calculating net force, nodes are comparedagainst each other, which gives O(N^2) complexity. UsingBarnes-Hut approximation, we decrease this to O(N log N), but theresulting graph will have different layout. Barnes-Hutapproximation divides space into rectangles via quad tree, whereforces exerted on nodes are calculated directly for nearby cells,and for all others, cells are treated as a separate node withcenter of mass.
 		/// </summary>
 		public NetworkgraphSeriesLayoutAlgorithmApproximation Approximation { get; set; }
 		private NetworkgraphSeriesLayoutAlgorithmApproximation Approximation_DefaultValue { get; set; }
@@ -85,7 +85,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Integration type. Available options are `'euler'` and `'verlet'`.Integration determines how forces are applied on particles. InEuler integration, force is applied direct as`newPosition += velocity;`.In Verlet integration, new position is based on a previousposittion without velocity:`newPosition += previousPosition - newPosition`.Note that different integrations give different results as forcesare different.In Highcharts v7.0.x only `'euler'` integration was supported.
+		/// Integration type. Available options are `'euler'` and `'verlet'`.Integration determines how forces are applied on particles. InEuler integration, force is applied direct as`newPosition += velocity;`.In Verlet integration, new position is based on a previousposition without velocity:`newPosition += previousPosition - newPosition`.Note that different integrations give different results as forcesare different.In Highcharts v7.0.x only `'euler'` integration was supported.
 		/// </summary>
 		public NetworkgraphSeriesLayoutAlgorithmIntegration Integration { get; set; }
 		private NetworkgraphSeriesLayoutAlgorithmIntegration Integration_DefaultValue { get; set; }
@@ -120,7 +120,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Barnes-Hut approximation only.Deteremines when distance between cell and node is small enoughto caculate forces. Value of `theta` is compared directly withquotient `s / d`, where `s` is the size of the cell, and `d` isdistance between center of cell's mass and currently comparednode.
+		/// Barnes-Hut approximation only.Deteremines when distance between cell and node is small enoughto calculate forces. Value of `theta` is compared directly withquotient `s / d`, where `s` is the size of the cell, and `d` isdistance between center of cell's mass and currently comparednode.
 		/// </summary>
 		public double? Theta { get; set; }
 		private double? Theta_DefaultValue { get; set; }

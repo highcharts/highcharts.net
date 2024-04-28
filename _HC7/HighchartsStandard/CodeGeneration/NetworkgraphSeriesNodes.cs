@@ -50,7 +50,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The id of the auto-generated node, refering to the `from` or `to` setting ofthe link.
+		/// The id of the auto-generated node, referring to the `from` or `to` setting ofthe link.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }

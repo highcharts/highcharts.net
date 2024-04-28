@@ -290,7 +290,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Decides how the data label will be rotated relative to theperimeter of the sunburst. Valid values are `circular`, `auto`,`parallel` and `perpendicular`. When `circular`, the best fitwill be computed for the point, so that the label is curvedaround the center when there is room for it, otherwiseperpendicular. The legacy `auto` option works similiar to`circular`, but instead of curving the labels they are tangent tothe perimiter.The `rotation` option takes precedence over `rotationMode`.
+		/// Decides how the data label will be rotated relative to theperimeter of the sunburst. Valid values are `circular`, `auto`,`parallel` and `perpendicular`. When `circular`, the best fitwill be computed for the point, so that the label is curvedaround the center when there is room for it, otherwiseperpendicular. The legacy `auto` option works similar to`circular`, but instead of curving the labels they are tangent tothe perimeter.The `rotation` option takes precedence over `rotationMode`.
 		/// </summary>
 		public PlotOptionsSunburstDataLabelsRotationMode RotationMode { get; set; }
 		private PlotOptionsSunburstDataLabelsRotationMode RotationMode_DefaultValue { get; set; }

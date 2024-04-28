@@ -117,7 +117,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// When this property is true, the points acts as a summary column forthe values added or substracted since the last intermediate sum,or since the start of the series. The `y` value is ignored.
+		/// When this property is true, the points acts as a summary column forthe values added or subtracted since the last intermediate sum,or since the start of the series. The `y` value is ignored.
 		/// </summary>
 		public bool? IsIntermediateSum { get; set; }
 		private bool? IsIntermediateSum_DefaultValue { get; set; }

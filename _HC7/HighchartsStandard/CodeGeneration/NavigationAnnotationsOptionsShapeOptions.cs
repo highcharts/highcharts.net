@@ -98,7 +98,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The type of the shape.Avaliable options are circle, rect and ellipse.
+		/// The type of the shape.Available options are circle, rect and ellipse.
 		/// </summary>
 		public string Type { get; set; }
 		private string Type_DefaultValue { get; set; }

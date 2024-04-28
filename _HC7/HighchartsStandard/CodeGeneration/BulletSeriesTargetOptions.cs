@@ -29,7 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		
 
 		/// <summary>
-		/// The border color of the rectangle representing the target. Whennot set, the  point's border color is used.In styled mode, use class `highcharts-bullet-target` instead.
+		/// The border color of the rectangle representing the target. Whennot set, the point's border color is used.In styled mode, use class `highcharts-bullet-target` instead.
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }

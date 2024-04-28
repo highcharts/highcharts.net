@@ -54,9 +54,13 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
 			Name = Name_DefaultValue = "";
+			NodeAlignment = NodeAlignment_DefaultValue = DependencywheelSeriesNodeAlignment.Top;
+			NodeDistance = NodeDistance_DefaultValue = "30";
+			NodeDistanceNumber = NodeDistanceNumber_DefaultValue = null;
 			NodePadding = NodePadding_DefaultValue = 10;
 			Nodes = Nodes_DefaultValue = new DependencywheelSeriesNodes();
-			NodeWidth = NodeWidth_DefaultValue = 20;
+			NodeWidth = NodeWidth_DefaultValue = "20";
+			NodeWidthNumber = NodeWidthNumber_DefaultValue = null;
 			OnPoint = OnPoint_DefaultValue = new DependencywheelSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new DependencywheelSeriesPoint();
@@ -355,7 +359,28 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The padding between nodes in a sankey diagram or dependency wheel, inpixels.If the number of nodes is so great that it is possible to lay themout within the plot area with the given `nodePadding`, they will berendered with a smaller padding as a strategy to avoid overflow.
+		/// Determines which side of the chart the nodes are to be aligned to. Whenthe chart is inverted, `top` aligns to the left and `bottom` to theright.
+		/// </summary>
+		public DependencywheelSeriesNodeAlignment NodeAlignment { get; set; }
+		private DependencywheelSeriesNodeAlignment NodeAlignment_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The distance between nodes in a sankey diagram in the longitudinaldirection. The longitudinal direction means the direction that the chartflows - in a horizontal chart the distance is horizontal, in an invertedchart (vertical), the distance is vertical.If a number is given, it denotes pixels. If a percentage string is given,the distance is a percentage of the rendered node width. A `nodeDistance`of `100%` will render equal widths for the nodes and the gaps betweenthem.This option applies only when the `nodeWidth` option is `auto`, makingthe node width respond to the number of columns.
+		/// </summary>
+		public string NodeDistance { get; set; }
+		private string NodeDistance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The distance between nodes in a sankey diagram in the longitudinaldirection. The longitudinal direction means the direction that the chartflows - in a horizontal chart the distance is horizontal, in an invertedchart (vertical), the distance is vertical.If a number is given, it denotes pixels. If a percentage string is given,the distance is a percentage of the rendered node width. A `nodeDistance`of `100%` will render equal widths for the nodes and the gaps betweenthem.This option applies only when the `nodeWidth` option is `auto`, makingthe node width respond to the number of columns.
+		/// </summary>
+		public double? NodeDistanceNumber { get; set; }
+		private double? NodeDistanceNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The padding between nodes in a sankey diagram or dependency wheel, inpixels. For sankey charts, this applies to the nodes of the same column,so vertical distance by default, or horizontal distance in an inverted(vertical) sankey.If the number of nodes is so great that it is impossible to lay them outwithin the plot area with the given `nodePadding`, they will be renderedwith a smaller padding as a strategy to avoid overflow.
 		/// </summary>
 		public double? NodePadding { get; set; }
 		private double? NodePadding_DefaultValue { get; set; }
@@ -369,10 +394,17 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pixel width of each node in a sankey diagram or dependency wheel,or the height in case the chart is inverted.
+		/// The pixel width of each node in a sankey diagram or dependency wheel, orthe height in case the chart is inverted.Can be a number or a percentage string.Sankey series also support setting it to `auto`. With this setting, thenodes are sized to fill up the plot area in the longitudinal direction,regardless of the number of levels.
 		/// </summary>
-		public double? NodeWidth { get; set; }
-		private double? NodeWidth_DefaultValue { get; set; }
+		public string NodeWidth { get; set; }
+		private string NodeWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of each node in a sankey diagram or dependency wheel, orthe height in case the chart is inverted.Can be a number or a percentage string.Sankey series also support setting it to `auto`. With this setting, thenodes are sized to fill up the plot area in the longitudinal direction,regardless of the number of levels.
+		/// </summary>
+		public double? NodeWidthNumber { get; set; }
+		private double? NodeWidthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -602,9 +634,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (NodeAlignment != NodeAlignment_DefaultValue) h.Add("nodeAlignment", highcharts.FirstCharacterToLower(NodeAlignment.ToString()));
+			if (NodeDistance != NodeDistance_DefaultValue) h.Add("nodeDistance",NodeDistance);
+			if (NodeDistanceNumber != NodeDistanceNumber_DefaultValue) h.Add("nodeDistance",NodeDistanceNumber);
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
 			if (Nodes.IsDirty(highcharts)) h.Add("nodes",Nodes.ToHashtable(highcharts));
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
+			if (NodeWidthNumber != NodeWidthNumber_DefaultValue) h.Add("nodeWidth",NodeWidthNumber);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));

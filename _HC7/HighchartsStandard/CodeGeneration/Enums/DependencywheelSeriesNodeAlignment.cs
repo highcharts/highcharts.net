@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Highsoft.Web.Mvc.Charts
 {
-    public enum PlotOptionsColumnrangeLegendSymbol
+    public enum DependencywheelSeriesNodeAlignment
     {
-        AreaMarker, 
-		LineMarker, 
-		Rectangle
+        Top, 
+		Center, 
+		Bottom
     }
 }

@@ -53,6 +53,10 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkedTo = LinkedTo_DefaultValue = "";
 			Marker = Marker_DefaultValue = new TreegraphSeriesMarker();
 			Name = Name_DefaultValue = "";
+			NodeDistance = NodeDistance_DefaultValue = "30";
+			NodeDistanceNumber = NodeDistanceNumber_DefaultValue = null;
+			NodeWidth = NodeWidth_DefaultValue = "undefined";
+			NodeWidthNumber = NodeWidthNumber_DefaultValue = null;
 			OnPoint = OnPoint_DefaultValue = new TreegraphSeriesOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new TreegraphSeriesPoint();
@@ -202,7 +206,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// An array of data points for the series. For the `treegraph` series type,points can be given in the following ways:1. The array of arrays, with `keys` property, which defines how the fields in    array should be interpretated   ```js      keys: ['id', 'parent'],      data: [          ['Category1'],          ['Category1', 'Category2']      ]2. An array of objects with named values. The following snippet shows only a   few settings, see the complete options set below. If the total number of   data points exceeds the   series' [turboThreshold](#series.area.turboThreshold),   this option is not available.   The data of the treegraph series needs to be formatted in such a way, that   there are no circular dependencies on the nodes ```js    data: [{        id: 'Category1'    }, {        id: 'Category1',        parent: 'Category2',    }] ```
+		/// An array of data points for the series. For the `treegraph` series type,points can be given in the following ways:1. The array of arrays, with `keys` property, which defines how the fields in    array should be interpreted   ```js      keys: ['id', 'parent'],      data: [          ['Category1'],          ['Category1', 'Category2']      ]2. An array of objects with named values. The following snippet shows only a   few settings, see the complete options set below. If the total number of   data points exceeds the   series' [turboThreshold](#series.area.turboThreshold),   this option is not available.   The data of the treegraph series needs to be formatted in such a way, that   there are no circular dependencies on the nodes ```js    data: [{        id: 'Category1'    }, {        id: 'Category1',        parent: 'Category2',    }] ```
 		/// </summary>
 		public List<TreegraphSeriesData> Data { get; set; }
 		private List<TreegraphSeriesData> Data_DefaultValue { get; set; }
@@ -332,6 +336,34 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override string Name { get; set; }
 		protected override string Name_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The distance between nodes in a tree graph in the longitudinal direction.The longitudinal direction means the direction that the chart flows - ina horizontal chart the distance is horizontal, in an inverted chart(vertical), the distance is vertical.If a number is given, it denotes pixels. If a percentage string is given,the distance is a percentage of the rendered node width. A `nodeDistance`of `100%` will render equal widths for the nodes and the gaps betweenthem.This option applies only when the `nodeWidth` option is `auto`, makingthe node width respond to the number of columns.
+		/// </summary>
+		public string NodeDistance { get; set; }
+		private string NodeDistance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The distance between nodes in a tree graph in the longitudinal direction.The longitudinal direction means the direction that the chart flows - ina horizontal chart the distance is horizontal, in an inverted chart(vertical), the distance is vertical.If a number is given, it denotes pixels. If a percentage string is given,the distance is a percentage of the rendered node width. A `nodeDistance`of `100%` will render equal widths for the nodes and the gaps betweenthem.This option applies only when the `nodeWidth` option is `auto`, makingthe node width respond to the number of columns.
+		/// </summary>
+		public double? NodeDistanceNumber { get; set; }
+		private double? NodeDistanceNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of each node in a, or the height in case the chart isinverted. For tree graphs, the node width is only applied if the markersymbol is `rect`, otherwise the `marker` sizing options apply.Can be a number or a percentage string, or `auto`. If `auto`, the nodesare sized to fill up the plot area in the longitudinal direction,regardless of the number of levels.
+		/// </summary>
+		public string NodeWidth { get; set; }
+		private string NodeWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of each node in a, or the height in case the chart isinverted. For tree graphs, the node width is only applied if the markersymbol is `rect`, otherwise the `marker` sizing options apply.Can be a number or a percentage string, or `auto`. If `auto`, the nodesare sized to fill up the plot area in the longitudinal direction,regardless of the number of levels.
+		/// </summary>
+		public double? NodeWidthNumber { get; set; }
+		private double? NodeWidthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -497,6 +529,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
 			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (NodeDistance != NodeDistance_DefaultValue) h.Add("nodeDistance",NodeDistance);
+			if (NodeDistanceNumber != NodeDistanceNumber_DefaultValue) h.Add("nodeDistance",NodeDistanceNumber);
+			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
+			if (NodeWidthNumber != NodeWidthNumber_DefaultValue) h.Add("nodeWidth",NodeWidthNumber);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));

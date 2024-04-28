@@ -537,7 +537,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// A pixel value specifying a fixed width for each column or bar point.When set to `undefined`, the width is calculated from the`pointPadding` and `groupPadding`. The width effects the dimensionthat is not based on the point value. For column series it is thehoizontal length and for bar series it is the vertical length.
+		/// A pixel value specifying a fixed width for each column or bar point.When set to `undefined`, the width is calculated from the`pointPadding` and `groupPadding`. The width effects the dimensionthat is not based on the point value. For column series it is thehorizontal length and for bar series it is the vertical length.
 		/// </summary>
 		public double? PointWidth { get; set; }
 		private double? PointWidth_DefaultValue { get; set; }
@@ -642,7 +642,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// All options related with look and positiong of targets.
+		/// All options related with look and positioning of targets.
 		/// </summary>
 		public BulletSeriesTargetOptions TargetOptions { get; set; }
 		private BulletSeriesTargetOptions TargetOptions_DefaultValue { get; set; }

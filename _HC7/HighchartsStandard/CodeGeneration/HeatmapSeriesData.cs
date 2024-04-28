@@ -153,7 +153,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The value of the point, resulting in a color controled by optionsas set in the [colorAxis](#colorAxis) configuration.
+		/// The value of the point, resulting in a color controlled by optionsas set in the [colorAxis](#colorAxis) configuration.
 		/// </summary>
 		public double? Value { get; set; }
 		private double? Value_DefaultValue { get; set; }

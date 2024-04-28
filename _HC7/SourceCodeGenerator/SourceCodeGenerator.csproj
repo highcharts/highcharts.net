@@ -140,6 +140,9 @@
     <None Include="JsonFiles\highcharts_old.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="JsonFiles\highcharts_11.2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="JsonFiles\highcharts_11.1.0.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			Color = Color_DefaultValue = "";
 			ColorIndex = ColorIndex_DefaultValue = null;
+			Height = Height_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			Name = Name_DefaultValue = "";
 			Offset = Offset_DefaultValue = "0";
@@ -46,7 +47,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The id of the auto-generated node, refering to the `from` or `to` setting ofthe link.
+		/// The height of the node.
+		/// </summary>
+		public double? Height { get; set; }
+		private double? Height_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The id of the auto-generated node, referring to the `from` or `to` setting ofthe link.
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }
@@ -60,42 +68,42 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// This option is deprecated, use[offsetHorizontal](#series.sankey.nodes.offsetHorizontal) and[offsetVertical](#series.sankey.nodes.offsetVertical) instead.In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
+		/// This option is deprecated, use[offsetHorizontal](#series.sankey.nodes.offsetHorizontal) and[offsetVertical](#series.sankey.nodes.offsetVertical) instead.In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percentage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
 		/// </summary>
 		public string Offset { get; set; }
 		private string Offset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// This option is deprecated, use[offsetHorizontal](#series.sankey.nodes.offsetHorizontal) and[offsetVertical](#series.sankey.nodes.offsetVertical) instead.In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percantage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
+		/// This option is deprecated, use[offsetHorizontal](#series.sankey.nodes.offsetHorizontal) and[offsetVertical](#series.sankey.nodes.offsetVertical) instead.In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percentage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
 		/// </summary>
 		public double? OffsetNumber { get; set; }
 		private double? OffsetNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percentage string is given, the node is offset by the percentage of thenode size.
 		/// </summary>
 		public string OffsetHorizontal { get; set; }
 		private string OffsetHorizontal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percentage string is given, the node is offset by the percentage of thenode size.
 		/// </summary>
 		public double? OffsetHorizontalNumber { get; set; }
 		private double? OffsetHorizontalNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percentage string is given, the node is offset by the percentage of thenode size.
 		/// </summary>
 		public string OffsetVertical { get; set; }
 		private string OffsetVertical_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percantage string is given, the node is offset by the percentage of thenode size.
+		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percentage string is given, the node is offset by the percentage of thenode size.
 		/// </summary>
 		public double? OffsetVerticalNumber { get; set; }
 		private double? OffsetVerticalNumber_DefaultValue { get; set; }
@@ -110,6 +118,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (Color != Color_DefaultValue) h.Add("color",Color);
 			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
+			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);

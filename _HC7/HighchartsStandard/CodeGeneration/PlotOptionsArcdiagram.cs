@@ -48,7 +48,10 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			Marker = Marker_DefaultValue = new PlotOptionsArcdiagramMarker();
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
-			NodeWidth = NodeWidth_DefaultValue = 20;
+			NodeDistance = NodeDistance_DefaultValue = "30";
+			NodeDistanceNumber = NodeDistanceNumber_DefaultValue = null;
+			NodeWidth = NodeWidth_DefaultValue = "20";
+			NodeWidthNumber = NodeWidthNumber_DefaultValue = null;
 			OnPoint = OnPoint_DefaultValue = new PlotOptionsArcdiagramOnPoint();
 			Opacity = Opacity_DefaultValue = 1;
 			Point = Point_DefaultValue = new PlotOptionsArcdiagramPoint();
@@ -295,10 +298,31 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// The pixel width of each node in a sankey diagram or dependency wheel,or the height in case the chart is inverted.
+		/// The distance between nodes in a sankey diagram in the longitudinaldirection. The longitudinal direction means the direction that the chartflows - in a horizontal chart the distance is horizontal, in an invertedchart (vertical), the distance is vertical.If a number is given, it denotes pixels. If a percentage string is given,the distance is a percentage of the rendered node width. A `nodeDistance`of `100%` will render equal widths for the nodes and the gaps betweenthem.This option applies only when the `nodeWidth` option is `auto`, makingthe node width respond to the number of columns.
 		/// </summary>
-		public double? NodeWidth { get; set; }
-		private double? NodeWidth_DefaultValue { get; set; }
+		public string NodeDistance { get; set; }
+		private string NodeDistance_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The distance between nodes in a sankey diagram in the longitudinaldirection. The longitudinal direction means the direction that the chartflows - in a horizontal chart the distance is horizontal, in an invertedchart (vertical), the distance is vertical.If a number is given, it denotes pixels. If a percentage string is given,the distance is a percentage of the rendered node width. A `nodeDistance`of `100%` will render equal widths for the nodes and the gaps betweenthem.This option applies only when the `nodeWidth` option is `auto`, makingthe node width respond to the number of columns.
+		/// </summary>
+		public double? NodeDistanceNumber { get; set; }
+		private double? NodeDistanceNumber_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of each node in a sankey diagram or dependency wheel, orthe height in case the chart is inverted.Can be a number or a percentage string.Sankey series also support setting it to `auto`. With this setting, thenodes are sized to fill up the plot area in the longitudinal direction,regardless of the number of levels.
+		/// </summary>
+		public string NodeWidth { get; set; }
+		private string NodeWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The pixel width of each node in a sankey diagram or dependency wheel, orthe height in case the chart is inverted.Can be a number or a percentage string.Sankey series also support setting it to `auto`. With this setting, thenodes are sized to fill up the plot area in the longitudinal direction,regardless of the number of levels.
+		/// </summary>
+		public double? NodeWidthNumber { get; set; }
+		private double? NodeWidthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -452,7 +476,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
+			if (NodeDistance != NodeDistance_DefaultValue) h.Add("nodeDistance",NodeDistance);
+			if (NodeDistanceNumber != NodeDistanceNumber_DefaultValue) h.Add("nodeDistance",NodeDistanceNumber);
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);
+			if (NodeWidthNumber != NodeWidthNumber_DefaultValue) h.Add("nodeWidth",NodeWidthNumber);
 			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
 			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
 			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));

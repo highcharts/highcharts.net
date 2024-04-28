@@ -134,7 +134,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// By deafult sides fill is set to a gradient through this option beingset to `true`. Set to `false` to get solid color for the sides.
+		/// By default sides fill is set to a gradient through this option beingset to `true`. Set to `false` to get solid color for the sides.
 		/// </summary>
 		public bool? GradientForSides { get; set; }
 		private bool? GradientForSides_DefaultValue { get; set; }
