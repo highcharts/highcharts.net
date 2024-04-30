@@ -25,7 +25,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// Algorithm used to calculate ressistance and support lines basedon pivot points. Implemented algorithms: `'standard'`,`'fibonacci'` and `'camarilla'`
+		/// Algorithm used to calculate resistance and support lines basedon pivot points. Implemented algorithms: `'standard'`,`'fibonacci'` and `'camarilla'`
 		/// </summary>
 		public string Algorithm { get; set; }
 		private string Algorithm_DefaultValue { get; set; }

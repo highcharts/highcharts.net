@@ -413,7 +413,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of Klinger Oscillator.
+		/// Parameters used in calculation of Klinger Oscillator.
 		/// </summary>
 		public PlotOptionsKlingerParams Params { get; set; }
 		private PlotOptionsKlingerParams Params_DefaultValue { get; set; }

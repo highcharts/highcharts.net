@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		
 
 		/// <summary>
-		/// A predefined backgroud symbol for the button.
+		/// A predefined background symbol for the button.
 		/// </summary>
 		public string Symbol { get; set; }
 		private string Symbol_DefaultValue { get; set; }

@@ -412,7 +412,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of Chaikin Oscillatorseries points.
+		/// Parameters used in calculation of Chaikin Oscillatorseries points.
 		/// </summary>
 		public PlotOptionsChaikinParams Params { get; set; }
 		private PlotOptionsChaikinParams Params_DefaultValue { get; set; }

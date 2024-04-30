@@ -430,7 +430,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of regression series' points.
+		/// Parameters used in calculation of regression series' points.
 		/// </summary>
 		public VbpSeriesParams Params { get; set; }
 		private VbpSeriesParams Params_DefaultValue { get; set; }

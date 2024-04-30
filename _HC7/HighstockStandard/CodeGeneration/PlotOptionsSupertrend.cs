@@ -412,7 +412,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of Supertrend indicator series points.
+		/// Parameters used in calculation of Supertrend indicator series points.
 		/// </summary>
 		public PlotOptionsSupertrendParams Params { get; set; }
 		private PlotOptionsSupertrendParams Params_DefaultValue { get; set; }

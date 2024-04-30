@@ -413,7 +413,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of regression series' points.
+		/// Parameters used in calculation of regression series' points.
 		/// </summary>
 		public PlotOptionsAbandsParams Params { get; set; }
 		private PlotOptionsAbandsParams Params_DefaultValue { get; set; }

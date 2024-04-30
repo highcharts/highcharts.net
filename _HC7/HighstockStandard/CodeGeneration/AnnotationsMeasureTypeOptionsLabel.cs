@@ -32,7 +32,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Formatter function for the label text.Available data are:<table><tbody><tr><td>`this.min`</td><td>The mininimum value of the points in the selectedrange.</td></tr><tr><td>`this.max`</td><td>The maximum value of the points in the selectedrange.</td></tr><tr><td>`this.average`</td><td>The average value of the points in the selectedrange.</td></tr><tr><td>`this.bins`</td><td>The amount of the points in the selected range.</td></tr></table>
+		/// Formatter function for the label text.Available data are:<table><tbody><tr><td>`this.min`</td><td>The minimum value of the points in the selectedrange.</td></tr><tr><td>`this.max`</td><td>The maximum value of the points in the selectedrange.</td></tr><tr><td>`this.average`</td><td>The average value of the points in the selectedrange.</td></tr><tr><td>`this.bins`</td><td>The amount of the points in the selected range.</td></tr></table>
 		/// </summary>
 		public string Formatter { get; set; }
 		private string Formatter_DefaultValue { get; set; }

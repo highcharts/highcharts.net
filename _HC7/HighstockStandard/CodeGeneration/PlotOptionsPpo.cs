@@ -412,7 +412,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of Percentage Price Oscillator seriespoints.
+		/// Parameters used in calculation of Percentage Price Oscillator seriespoints.
 		/// </summary>
 		public PlotOptionsPpoParams Params { get; set; }
 		private PlotOptionsPpoParams Params_DefaultValue { get; set; }

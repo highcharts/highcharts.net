@@ -412,7 +412,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of Williams %R series points.
+		/// Parameters used in calculation of Williams %R series points.
 		/// </summary>
 		public PlotOptionsWilliamsrParams Params { get; set; }
 		private PlotOptionsWilliamsrParams Params_DefaultValue { get; set; }

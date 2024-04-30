@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Event callback when annotation is updated (e.g. drag anddroppped or resized by control points).
+		/// Event callback when annotation is updated (e.g. drag anddropped or resized by control points).
 		/// </summary>
 		public string AfterUpdate { get; set; }
 		private string AfterUpdate_DefaultValue { get; set; }

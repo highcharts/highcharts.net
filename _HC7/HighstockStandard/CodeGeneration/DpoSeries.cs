@@ -435,7 +435,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of regression series' points.
+		/// Parameters used in calculation of regression series' points.
 		/// </summary>
 		public DpoSeriesParams Params { get; set; }
 		private DpoSeriesParams Params_DefaultValue { get; set; }

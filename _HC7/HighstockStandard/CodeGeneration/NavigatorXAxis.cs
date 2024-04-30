@@ -23,7 +23,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Breaks = Breaks_DefaultValue = new NavigatorXAxisBreaks();
 			Categories = Categories_DefaultValue = new List<string>();
 			Ceiling = Ceiling_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = "highcharts-navigator-xaxis";
+			ClassName = ClassName_DefaultValue = "";
 			Crosshair = Crosshair_DefaultValue = new NavigatorXAxisCrosshair();
 			Crossing = Crossing_DefaultValue = null;
 			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
@@ -50,8 +50,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinorGridLineDashStyle = MinorGridLineDashStyle_DefaultValue = new Hashtable();
 			MinorGridLineWidth = MinorGridLineWidth_DefaultValue = 1;
 			MinorTickColor = MinorTickColor_DefaultValue = "#999999";
-			MinorTickInterval = MinorTickInterval_DefaultValue = "";
-			MinorTickIntervalNumber = MinorTickIntervalNumber_DefaultValue = null;
+			MinorTickInterval = MinorTickInterval_DefaultValue = null;
 			MinorTickLength = MinorTickLength_DefaultValue = 2;
 			MinorTickPosition = MinorTickPosition_DefaultValue = NavigatorXAxisMinorTickPosition.Outside;
 			MinorTicks = MinorTicks_DefaultValue = false;
@@ -61,7 +60,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			MinTickInterval = MinTickInterval_DefaultValue = null;
 			Offset = Offset_DefaultValue = null;
 			Ordinal = Ordinal_DefaultValue = true;
-			Overscroll = Overscroll_DefaultValue = 0;
+			Overscroll = Overscroll_DefaultValue = "";
+			OverscrollNumber = OverscrollNumber_DefaultValue = null;
 			PanningEnabled = PanningEnabled_DefaultValue = true;
 			PlotBands = PlotBands_DefaultValue = new List<NavigatorXAxisPlotBands>();
 			PlotLines = PlotLines_DefaultValue = new List<NavigatorXAxisPlotLines>();
@@ -145,7 +145,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// A class name that opens for styling the axis by CSS, especially inHighcharts styled mode. The class name is applied to group elementsfor the grid, axis elements and labels.
 		/// </summary>
 		public string ClassName { get; set; }
 		private string ClassName_DefaultValue { get; set; }
@@ -336,15 +336,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `undefined`, minor ticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
 		/// </summary>
-		public string MinorTickInterval { get; set; }
-		private string MinorTickInterval_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Specific tick interval in axis units for the minor ticks. On a linearaxis, if `"auto"`, the minor tick interval is calculated as a fifthof the tickInterval. If `undefined`, minor ticks are not shown.On logarithmic axes, the unit is the power of the value. For example,setting the minorTickInterval to 1 puts one tick on each of 0.1, 1,10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticksbetween 1 and 10, 10 and 100 etc.If user settings dictate minor ticks to become too dense, they don'tmake sense, and will be ignored to prevent performance problems.
-		/// </summary>
-		public double? MinorTickIntervalNumber { get; set; }
-		private double? MinorTickIntervalNumber_DefaultValue { get; set; }
+		public double? MinorTickInterval { get; set; }
+		private double? MinorTickInterval_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -411,10 +404,17 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Additional range on the right side of the xAxis. Works similar toxAxis.maxPadding, but value is set in milliseconds.Can be set for both, main xAxis and navigator's xAxis.
+		/// Additional range on the right side of the xAxis. Works similar to`xAxis.maxPadding`, but the value is set in terms of axis values,percentage or pixels.If it's a number, it is interpreted as axis values, which in adatetime axis equals milliseconds.If it's a percentage string, is interpreted as percentages of theaxis length. An overscroll of 50% will make a 100px axis 50px longer.If it's a pixel string, it is interpreted as a fixed pixel value, butlimited to 90% of the axis length.If it's undefined, the value is inherited from `xAxis.overscroll`.Can be set for both, main xAxis and navigator's xAxis.
 		/// </summary>
-		public double? Overscroll { get; set; }
-		private double? Overscroll_DefaultValue { get; set; }
+		public string Overscroll { get; set; }
+		private string Overscroll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Additional range on the right side of the xAxis. Works similar to`xAxis.maxPadding`, but the value is set in terms of axis values,percentage or pixels.If it's a number, it is interpreted as axis values, which in adatetime axis equals milliseconds.If it's a percentage string, is interpreted as percentages of theaxis length. An overscroll of 50% will make a 100px axis 50px longer.If it's a pixel string, it is interpreted as a fixed pixel value, butlimited to 90% of the axis length.If it's undefined, the value is inherited from `xAxis.overscroll`.Can be set for both, main xAxis and navigator's xAxis.
+		/// </summary>
+		public double? OverscrollNumber { get; set; }
+		private double? OverscrollNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -655,7 +655,6 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (MinorGridLineWidth != MinorGridLineWidth_DefaultValue) h.Add("minorGridLineWidth",MinorGridLineWidth);
 			if (MinorTickColor != MinorTickColor_DefaultValue) h.Add("minorTickColor",MinorTickColor);
 			if (MinorTickInterval != MinorTickInterval_DefaultValue) h.Add("minorTickInterval",MinorTickInterval);
-			if (MinorTickIntervalNumber != MinorTickIntervalNumber_DefaultValue) h.Add("minorTickInterval",MinorTickIntervalNumber);
 			if (MinorTickLength != MinorTickLength_DefaultValue) h.Add("minorTickLength",MinorTickLength);
 			if (MinorTickPosition != MinorTickPosition_DefaultValue) h.Add("minorTickPosition", highstock.FirstCharacterToLower(MinorTickPosition.ToString()));
 			if (MinorTicks != MinorTicks_DefaultValue) h.Add("minorTicks",MinorTicks);
@@ -666,6 +665,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
 			if (Ordinal != Ordinal_DefaultValue) h.Add("ordinal",Ordinal);
 			if (Overscroll != Overscroll_DefaultValue) h.Add("overscroll",Overscroll);
+			if (OverscrollNumber != OverscrollNumber_DefaultValue) h.Add("overscroll",OverscrollNumber);
 			if (PanningEnabled != PanningEnabled_DefaultValue) h.Add("panningEnabled",PanningEnabled);
 			if (PlotBands != PlotBands_DefaultValue) h.Add("plotBands", HashifyList(highstock,PlotBands));
 			if (PlotLines != PlotLines_DefaultValue) h.Add("plotLines", HashifyList(highstock,PlotLines));

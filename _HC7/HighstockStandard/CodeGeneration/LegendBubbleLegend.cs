@@ -117,7 +117,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Miximum bubble legend range size. If values for ranges arenot specified, the `minSize` and the `maxSize` are calculatedfrom bubble series.
+		/// Maximum bubble legend range size. If values for ranges arenot specified, the `minSize` and the `maxSize` are calculatedfrom bubble series.
 		/// </summary>
 		public double? MaxSize { get; set; }
 		private double? MaxSize_DefaultValue { get; set; }
@@ -159,7 +159,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Ranges with with lower value than zThreshold, are skipped.
+		/// Ranges with lower value than zThreshold are skipped.
 		/// </summary>
 		public double? ZThreshold { get; set; }
 		private double? ZThreshold_DefaultValue { get; set; }

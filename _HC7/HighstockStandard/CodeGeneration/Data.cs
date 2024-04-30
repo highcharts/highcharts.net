@@ -191,7 +191,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A callback function to access the parsed columns, the two-dimentionalinput data array directly, before they are interpreted into seriesdata and categories. Return `false` to stop completion, or call`this.complete()` to continue async.
+		/// A callback function to access the parsed columns, the two-dimensionalinput data array directly, before they are interpreted into seriesdata and categories. Return `false` to stop completion, or call`this.complete()` to continue async.
 		/// </summary>
 		public string Parsed { get; set; }
 		private string Parsed_DefaultValue { get; set; }
@@ -205,7 +205,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The same as the columns input option, but defining rows intead ofcolumns.
+		/// The same as the columns input option, but defining rows instead ofcolumns.
 		/// </summary>
 		public List<List<string>> Rows { get; set; }
 		private List<List<string>> Rows_DefaultValue { get; set; }

@@ -412,7 +412,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of Absolute Price Oscillatorseries points.
+		/// Parameters used in calculation of Absolute Price Oscillatorseries points.
 		/// </summary>
 		public PlotOptionsApoParams Params { get; set; }
 		private PlotOptionsApoParams Params_DefaultValue { get; set; }

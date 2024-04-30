@@ -455,7 +455,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of regression series' points.
+		/// Parameters used in calculation of regression series' points.
 		/// </summary>
 		public IkhSeriesParams Params { get; set; }
 		private IkhSeriesParams Params_DefaultValue { get; set; }

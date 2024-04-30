@@ -63,7 +63,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Time the the WebGL setup.This outputs the time spent on setting up the WebGL context,creating shaders, and textures.
+		/// Time the WebGL setup.This outputs the time spent on setting up the WebGL context,creating shaders, and textures.
 		/// </summary>
 		public bool? TimeSetup { get; set; }
 		private bool? TimeSetup_DefaultValue { get; set; }

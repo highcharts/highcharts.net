@@ -20,6 +20,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			CustomComponents = CustomComponents_DefaultValue = new object();
 			Description = Description_DefaultValue = "";
 			Enabled = Enabled_DefaultValue = true;
+			HighContrastMode = HighContrastMode_DefaultValue = "auto";
 			HighContrastTheme = HighContrastTheme_DefaultValue = new Object();
 			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
 			LandmarkVerbosity = LandmarkVerbosity_DefaultValue = AccessibilityLandmarkVerbosity.All;
@@ -62,7 +63,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Theme to apply to the chart when Windows High Contrast Mode isdetected. By default, a high contrast theme matching the highcontrast system system colors is used.
+		/// Controls how [highContrastTheme](#accessibility.highContrastTheme)is applied.The default option is `auto`, which applies the high contrast themethe user's system has a high contrast theme active.
+		/// </summary>
+		public string HighContrastMode { get; set; }
+		private string HighContrastMode_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Theme to apply to the chart when Windows High Contrast Mode isdetected. By default, a high contrast theme matching the highcontrast system colors is used.
 		/// </summary>
 		public Object HighContrastTheme { get; set; }
 		private Object HighContrastTheme_DefaultValue { get; set; }
@@ -128,6 +136,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CustomComponents != CustomComponents_DefaultValue) h.Add("customComponents",CustomComponents);
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (HighContrastMode != HighContrastMode_DefaultValue) h.Add("highContrastMode",HighContrastMode);
 			if (HighContrastTheme != HighContrastTheme_DefaultValue) h.Add("highContrastTheme",HighContrastTheme);
 			if (KeyboardNavigation.IsDirty(highstock)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(highstock));
 			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", highstock.FirstCharacterToLower(LandmarkVerbosity.ToString()));

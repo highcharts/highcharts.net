@@ -39,7 +39,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The id of another series to use its data as volume data for theindiator calculation.
+		/// The id of another series to use its data as volume data for theindicator calculation.
 		/// </summary>
 		public string VolumeSeriesID { get; set; }
 		private string VolumeSeriesID_DefaultValue { get; set; }

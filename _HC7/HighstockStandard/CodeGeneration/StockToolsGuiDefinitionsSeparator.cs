@@ -16,11 +16,19 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public StockToolsGuiDefinitionsSeparator()
 		{
+			ElementType = ElementType_DefaultValue = "span";
 			Symbol = Symbol_DefaultValue = "separator.svg";
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public string ElementType { get; set; }
+		private string ElementType_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// A predefined background symbol for the button.
@@ -36,6 +44,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (ElementType != ElementType_DefaultValue) h.Add("elementType",ElementType);
 			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

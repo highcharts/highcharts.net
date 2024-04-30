@@ -404,7 +404,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of aroon series points.
+		/// Parameters used in calculation of aroon series points.
 		/// </summary>
 		public PlotOptionsAroonParams Params { get; set; }
 		private PlotOptionsAroonParams Params_DefaultValue { get; set; }

@@ -451,7 +451,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Paramters used in calculation of regression series' points.
+		/// Parameters used in calculation of regression series' points.
 		/// </summary>
 		public ZigzagSeriesParams Params { get; set; }
 		private ZigzagSeriesParams Params_DefaultValue { get; set; }
