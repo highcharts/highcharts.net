@@ -28,17 +28,15 @@ namespace SourceCodeGenerator.Services
                 foreach (var child in ChildrenToAdd[item.FullName])
                     item.Children.Add(child);
 
-            //title
-            if (ItemsToUpdate.ContainsKey(item.Title))
-            {
-                foreach (var info in ItemsToUpdate[item.Title])
-                    UpdateProperty(item, info);
-            }
-
-            //fullname
             if (ItemsToUpdate.ContainsKey(item.FullName))
             {
                 foreach (var info in ItemsToUpdate[item.FullName])
+                    UpdateProperty(item, info);
+            }
+            else
+            if (ItemsToUpdate.ContainsKey(item.Title))
+            {
+                foreach (var info in ItemsToUpdate[item.Title])
                     UpdateProperty(item, info);
             }
 
@@ -257,6 +255,7 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.series.borderWidth", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Types, Value = "Number" }, new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Number" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "0" } });
 
             ItemsToUpdate.Add("verticalAlign", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "top" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "middle" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "bottom" } });
+            ItemsToUpdate.Add("xAxis.title.align", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "low" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "middle" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "high" } });
             ItemsToUpdate.Add("align", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "left" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "center" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "right" } });
             ItemsToUpdate.Add("plotOptions.series.linecap", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "round" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "square" }, new UpdateInfo { Name = ApiPropertyName.Default, Value = "round" } });
 

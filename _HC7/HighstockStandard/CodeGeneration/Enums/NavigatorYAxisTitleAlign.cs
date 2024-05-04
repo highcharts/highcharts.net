@@ -7,9 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum NavigatorYAxisTitleAlign
     {
-        Middle, 
-		Left, 
-		Center, 
-		Right
+        Low, 
+		Middle, 
+		High
     }
 }

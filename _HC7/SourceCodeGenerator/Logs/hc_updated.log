@@ -224,7 +224,6 @@ xAxis.plotLines.label.align.Types:string
 xAxis.plotLines.label.textAlign.Types:string
 xAxis.plotLines.label.verticalAlign.Types:string
 xAxis.tickWidth.Types:number
-xAxis.title.align.Types:string
 xAxis.title.textAlign.Types:string
 xAxis.type.Types:string
 yAxis.labels.align.Types:string

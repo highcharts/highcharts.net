@@ -7,9 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartParallelAxesTitleAlign
     {
-        Middle, 
-		Left, 
-		Center, 
-		Right
+        Low, 
+		Middle, 
+		High
     }
 }

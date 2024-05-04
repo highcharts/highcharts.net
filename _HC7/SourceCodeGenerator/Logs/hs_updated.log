@@ -238,7 +238,6 @@ xAxis.plotLines.label.textAlign.Types:string
 xAxis.plotLines.label.verticalAlign.Types:string
 xAxis.scrollbar.ReturnType:
 xAxis.tickWidth.Types:number
-xAxis.title.align.Types:string
 xAxis.title.textAlign.Types:string
 yAxis.labels.align.Types:string
 yAxis.max.Types:number
