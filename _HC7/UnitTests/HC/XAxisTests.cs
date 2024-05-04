@@ -8,7 +8,7 @@ using System.Globalization;
 using TH = Tests.Helpers.TestHelper;
 using UnitTests.HC;
 
-namespace UnitTests_HC.HC
+namespace HC.Axes
 {
     public class XAxisTests : IClassFixture<HcFixture>
     {
@@ -27,13 +27,42 @@ namespace UnitTests_HC.HC
         {
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
-            
+
             chart.XAxis = new List<XAxis> { new XAxis { Breaks = new List<XAxisBreaks> { new XAxisBreaks() { BreakSize = breakSize, From = from, To = to, Repeat = repeat } } } };
 
             var result = renderer.RenderHtml();
 
             //Test should be updated...
             Assert.Contains("breaks", result);
+        }
+
+        [Theory]
+        [InlineData(XAxisTitleAlign.Low)]
+        [InlineData(XAxisTitleAlign.High)]
+        public void Test_IfXAxisTitleAlignRenders_Correct(XAxisTitleAlign titleAlign)
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+
+            chart.XAxis = new List<XAxis> { new XAxis { Title = new XAxisTitle() { Align = titleAlign } } };
+
+            var result = renderer.RenderHtml();
+
+            Assert.Contains($"\"title\":{{\"align\":\"{chart.FirstCharacterToLower(titleAlign.ToString())}\"}}", result);
+        }
+
+        [Fact]
+        public void Test_IfXAxisTitleAlignDoesntRenderForDefault_Correct()
+        {
+            var chart = new Highcharts();
+            var renderer = new HighchartsRenderer(chart);
+            var defaultValue = XAxisTitleAlign.Middle;
+
+            chart.XAxis = new List<XAxis> { new XAxis { Title = new XAxisTitle() { Align = defaultValue } } };
+
+            var result = renderer.RenderHtml();
+
+            Assert.DoesNotContain("align", result);
         }
     }
 }
