@@ -7,6 +7,7 @@ using System.Collections;
 using System.Globalization;
 using TH = Tests.Helpers.TestHelper;
 using UnitTests.HC;
+using Tests.Helpers;
 
 namespace HC.Axes
 {
@@ -32,8 +33,11 @@ namespace HC.Axes
 
             var result = renderer.RenderHtml();
 
-            //Test should be updated...
-            Assert.Contains("breaks", result);
+            Assert.Contains("\"breaks\":[{", result);
+            Assert.Contains(TestHelper.GetPropertyString(nameof(to), to), result);
+            Assert.Contains(TestHelper.GetPropertyString(nameof(from), from), result);
+            Assert.Contains(TestHelper.GetPropertyString(nameof(breakSize), breakSize), result);
+            Assert.Contains(TestHelper.GetPropertyString(nameof(repeat), repeat), result);
         }
 
         [Theory]
