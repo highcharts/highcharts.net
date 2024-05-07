@@ -955,7 +955,6 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("navigator.xAxis.plotLines.label.style", "Hashtable");
             _propertyTypeMappings.Add("navigator.yAxis.plotLines.label.style", "Hashtable");
             _propertyTypeMappings.Add("time.Date", "Object");
-            _propertyTypeMappings.Add("rangeSelector.buttons.dataGrouping", "Object");
             _propertyTypeMappings.Add("rangeSelector.buttons", "List<RangeSelectorButton>");
             _propertyTypeMappings.Add("navigator.xAxis.plotLines", "List<NavigatorXAxisPlotLines>");
             _propertyTypeMappings.Add("navigator.xAxis.plotBands", "List<NavigatorXAxisPlotBands>");
@@ -1096,7 +1095,6 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("navigator.xAxis.plotLines.label.style", "new Hashtable()");
             _propertyInitMappings.Add("navigator.yAxis.plotLines.label.style", "new Hashtable()");
             _propertyInitMappings.Add("time.Date", "null");
-            _propertyInitMappings.Add("rangeSelector.buttons.dataGrouping", "null");
             _propertyInitMappings.Add("rangeSelector.buttons", "new List<RangeSelectorButton>()");
             _propertyInitMappings.Add("rangeSelector.inputBoxStyle", "new Hashtable()");
             _propertyInitMappings.Add("navigator.xAxis.plotLines", "new List<NavigatorXAxisPlotLines>()");

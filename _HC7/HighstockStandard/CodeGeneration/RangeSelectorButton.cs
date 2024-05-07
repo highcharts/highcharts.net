@@ -17,7 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public RangeSelectorButton()
 		{
 			Count = Count_DefaultValue = 1;
-			DataGrouping = DataGrouping_DefaultValue = null;
+			DataGrouping = DataGrouping_DefaultValue = new RangeSelectorButtonDataGrouping();
 			Events = Events_DefaultValue = new RangeSelectorButtonEvents();
 			OffsetMax = OffsetMax_DefaultValue = 0;
 			OffsetMin = OffsetMin_DefaultValue = 0;
@@ -40,8 +40,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A custom data grouping object for each button.
 		/// </summary>
-		public Object DataGrouping { get; set; }
-		private Object DataGrouping_DefaultValue { get; set; }
+		public RangeSelectorButtonDataGrouping DataGrouping { get; set; }
+		private RangeSelectorButtonDataGrouping DataGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -101,7 +101,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Count != Count_DefaultValue) h.Add("count",Count);
-			if (DataGrouping != DataGrouping_DefaultValue) h.Add("dataGrouping",DataGrouping);
+			if (DataGrouping.IsDirty(highstock)) h.Add("dataGrouping",DataGrouping.ToHashtable(highstock));
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
 			if (OffsetMax != OffsetMax_DefaultValue) h.Add("offsetMax",OffsetMax);
 			if (OffsetMin != OffsetMin_DefaultValue) h.Add("offsetMin",OffsetMin);

@@ -178,8 +178,6 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.pyramid", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("lang.accessibility.seriesTypeDescriptions.waterfall", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
 
-            ItemsToUpdate.Add("rangeSelector.buttons.dataGrouping", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.dataGrouping" } });
-
             ItemsToUpdateProducts.Add("drilldown.activeAxisLabelStyle", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("drilldown.activeDataLabelStyle", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
             ItemsToUpdateProducts.Add("drilldown.allowPointDrilldown", new List<UpdateInfo>() { new UpdateInfo { Name = ApiPropertyName.Products, Value = "highstock" } });
