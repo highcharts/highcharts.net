@@ -34,10 +34,10 @@ namespace HC.Axes
             var result = renderer.RenderHtml();
 
             Assert.Contains("\"breaks\":[{", result);
-            Assert.Contains(TestHelper.GetPropertyString(nameof(to), to), result);
-            Assert.Contains(TestHelper.GetPropertyString(nameof(from), from), result);
-            Assert.Contains(TestHelper.GetPropertyString(nameof(breakSize), breakSize), result);
-            Assert.Contains(TestHelper.GetPropertyString(nameof(repeat), repeat), result);
+            Assert.Contains(TH.GetPropertyString(nameof(to), to), result);
+            Assert.Contains(TH.GetPropertyString(nameof(from), from), result);
+            Assert.Contains(TH.GetPropertyString(nameof(breakSize), breakSize), result);
+            Assert.Contains(TH.GetPropertyString(nameof(repeat), repeat), result);
         }
 
         [Theory]
@@ -50,9 +50,7 @@ namespace HC.Axes
 
             chart.XAxis = new List<XAxis> { new XAxis { Title = new XAxisTitle() { Align = titleAlign } } };
 
-            var result = renderer.RenderHtml();
-
-            Assert.Contains($"\"title\":{{\"align\":\"{chart.FirstCharacterToLower(titleAlign.ToString())}\"}}", result);
+            Assert.Contains($"\"title\":{{\"align\":\"{chart.FirstCharacterToLower(titleAlign.ToString())}\"}}", renderer.RenderHtml());
         }
 
         [Fact]
@@ -64,9 +62,7 @@ namespace HC.Axes
 
             chart.XAxis = new List<XAxis> { new XAxis { Title = new XAxisTitle() { Align = defaultValue } } };
 
-            var result = renderer.RenderHtml();
-
-            Assert.DoesNotContain("align", result);
+            Assert.DoesNotContain("align", renderer.RenderHtml());
         }
     }
 }
