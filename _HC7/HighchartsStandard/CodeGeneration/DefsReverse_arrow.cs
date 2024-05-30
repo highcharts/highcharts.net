@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public DefsReverse_arrow()
 		{
-			Attributes = Attributes_DefaultValue = null;
-			TagName = TagName_DefaultValue = "marker";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
-			if (TagName != TagName_DefaultValue) h.Add("tagName",TagName);
+			if (Attributes != null) h.Add("attributes",Attributes);
+			if (TagName != null) h.Add("tagName",TagName);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

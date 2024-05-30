@@ -16,19 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationAnnotationsOptionsShapeOptions()
 		{
-			DashStyle = DashStyle_DefaultValue = NavigationAnnotationsOptionsShapeOptionsDashStyle.Null;
-			Fill = Fill_DefaultValue = "rgba(0, 0, 0, 0.75)";
-			Height = Height_DefaultValue = null;
-			R = R_DefaultValue = 0;
-			Ry = Ry_DefaultValue = null;
-			Snap = Snap_DefaultValue = 2;
-			Src = Src_DefaultValue = "";
-			Stroke = Stroke_DefaultValue = "rgba(0, 0, 0, 0.75)";
-			StrokeWidth = StrokeWidth_DefaultValue = 1;
-			Type = Type_DefaultValue = "rect";
-			Width = Width_DefaultValue = null;
-			XAxis = XAxis_DefaultValue = "";
-			YAxis = YAxis_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -132,19 +119,19 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (R != R_DefaultValue) h.Add("r",R);
-			if (Ry != Ry_DefaultValue) h.Add("ry",Ry);
-			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
-			if (Src != Src_DefaultValue) h.Add("src",Src);
-			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
-			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
+			if (DashStyle != NavigationAnnotationsOptionsShapeOptionsDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (Fill != null) h.Add("fill",Fill);
+			if (Height != null) h.Add("height",Height);
+			if (R != null) h.Add("r",R);
+			if (Ry != null) h.Add("ry",Ry);
+			if (Snap != null) h.Add("snap",Snap);
+			if (Src != null) h.Add("src",Src);
+			if (Stroke != null) h.Add("stroke",Stroke);
+			if (StrokeWidth != null) h.Add("strokeWidth",StrokeWidth);
+			if (Type != null) h.Add("type",Type);
+			if (Width != null) h.Add("width",Width);
+			if (XAxis != null) h.Add("xAxis",XAxis);
+			if (YAxis != null) h.Add("yAxis",YAxis);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

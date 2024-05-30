@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTreemapBreadcrumbsPosition()
 		{
-			Align = Align_DefaultValue = PlotOptionsTreemapBreadcrumbsPositionAlign.Left;
-			VerticalAlign = VerticalAlign_DefaultValue = PlotOptionsTreemapBreadcrumbsPositionVerticalAlign.Top;
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != PlotOptionsTreemapBreadcrumbsPositionAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (VerticalAlign != PlotOptionsTreemapBreadcrumbsPositionVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

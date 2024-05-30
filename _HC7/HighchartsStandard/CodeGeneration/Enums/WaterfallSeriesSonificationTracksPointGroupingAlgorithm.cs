@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum WaterfallSeriesSonificationTracksPointGroupingAlgorithm
     {
-        Minimax, 
+        Null, 
+		Minimax, 
 		First, 
 		Last, 
 		Middle, 

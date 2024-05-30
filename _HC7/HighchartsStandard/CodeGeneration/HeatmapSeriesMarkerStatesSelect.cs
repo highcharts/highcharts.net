@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public HeatmapSeriesMarkerStatesSelect()
 		{
-			HeightPlus = HeightPlus_DefaultValue = null;
-			WidthPlus = WidthPlus_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (HeightPlus != HeightPlus_DefaultValue) h.Add("heightPlus",HeightPlus);
-			if (WidthPlus != WidthPlus_DefaultValue) h.Add("widthPlus",WidthPlus);
+			if (HeightPlus != null) h.Add("heightPlus",HeightPlus);
+			if (WidthPlus != null) h.Add("widthPlus",WidthPlus);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

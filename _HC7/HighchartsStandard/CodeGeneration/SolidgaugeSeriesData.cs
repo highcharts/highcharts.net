@@ -16,22 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SolidgaugeSeriesData()
 		{
-			Accessibility = Accessibility_DefaultValue = new SolidgaugeSeriesDataAccessibility();
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
-			ColorIndex = ColorIndex_DefaultValue = null;
-			Custom = Custom_DefaultValue = new Hashtable();
-			DataLabels = DataLabels_DefaultValue = new SolidgaugeSeriesDataLabels();
-			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new SolidgaugeSeriesDataDragDrop();
-			Events = Events_DefaultValue = new SolidgaugeSeriesDataEvents();
-			Id = Id_DefaultValue = "";
-			InnerRadius = InnerRadius_DefaultValue = "";
-			Labelrank = Labelrank_DefaultValue = null;
-			Name = Name_DefaultValue = "";
-			Radius = Radius_DefaultValue = "";
-			Selected = Selected_DefaultValue = false;
-			Y = Y_DefaultValue = double.MinValue;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -156,22 +140,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
-			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
+			if (Custom != null) h.Add("custom",Custom);
+			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
+			if (Description != null) h.Add("description",Description);
+			if (DragDrop != null) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (Id != null) h.Add("id",Id);
+			if (InnerRadius != null) h.Add("innerRadius",InnerRadius);
+			if (Labelrank != null) h.Add("labelrank",Labelrank);
+			if (Name != null) h.Add("name",Name);
+			if (Radius != null) h.Add("radius",Radius);
+			if (Selected != null) h.Add("selected",Selected);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

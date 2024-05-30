@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public VectorSeriesClusterDataLabels()
 		{
-			Align = Align_DefaultValue = VectorSeriesClusterDataLabelsAlign.Center;
-			Enabled = Enabled_DefaultValue = true;
-			Format = Format_DefaultValue = "{point.clusterPointsAmount}";
-			Inside = Inside_DefaultValue = true;
-			Style = Style_DefaultValue = new Hashtable();
-			VerticalAlign = VerticalAlign_DefaultValue = VectorSeriesClusterDataLabelsVerticalAlign.Middle;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (Align != VectorSeriesClusterDataLabelsAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Format != null) h.Add("format",Format);
+			if (Inside != null) h.Add("inside",Inside);
+			if (Style != null) h.Add("style",Style);
+			if (VerticalAlign != VectorSeriesClusterDataLabelsVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

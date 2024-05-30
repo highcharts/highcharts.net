@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilityKeyboardNavigation()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			FocusBorder = FocusBorder_DefaultValue = new AccessibilityKeyboardNavigationFocusBorder();
-			Order = Order_DefaultValue = new List<string>();
-			SeriesNavigation = SeriesNavigation_DefaultValue = new AccessibilityKeyboardNavigationSeriesNavigation();
-			WrapAround = WrapAround_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (FocusBorder.IsDirty(highcharts)) h.Add("focusBorder",FocusBorder.ToHashtable(highcharts));
-			if (Order != Order_DefaultValue) h.Add("order",Order);
-			if (SeriesNavigation.IsDirty(highcharts)) h.Add("seriesNavigation",SeriesNavigation.ToHashtable(highcharts));
-			if (WrapAround != WrapAround_DefaultValue) h.Add("wrapAround",WrapAround);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (FocusBorder != null) h.Add("focusBorder",FocusBorder.ToHashtable(highcharts));
+			if (Order != null) h.Add("order",Order);
+			if (SeriesNavigation != null) h.Add("seriesNavigation",SeriesNavigation.ToHashtable(highcharts));
+			if (WrapAround != null) h.Add("wrapAround",WrapAround);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

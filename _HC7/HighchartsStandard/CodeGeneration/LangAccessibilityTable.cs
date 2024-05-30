@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityTable()
 		{
-			TableSummary = TableSummary_DefaultValue = "Table representation of chart.";
-			ViewAsDataTableButtonText = ViewAsDataTableButtonText_DefaultValue = "View as data table, {chartTitle}";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (TableSummary != TableSummary_DefaultValue) h.Add("tableSummary",TableSummary);
-			if (ViewAsDataTableButtonText != ViewAsDataTableButtonText_DefaultValue) h.Add("viewAsDataTableButtonText",ViewAsDataTableButtonText);
+			if (TableSummary != null) h.Add("tableSummary",TableSummary);
+			if (ViewAsDataTableButtonText != null) h.Add("viewAsDataTableButtonText",ViewAsDataTableButtonText);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

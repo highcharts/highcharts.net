@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PyramidSeriesDataDragDropGuideBox()
 		{
-			Default = Default_DefaultValue = new PyramidSeriesDataDragDropGuideBoxDefault();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Default.IsDirty(highcharts)) h.Add("default",Default.ToHashtable(highcharts));
+			if (Default != null) h.Add("default",Default.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

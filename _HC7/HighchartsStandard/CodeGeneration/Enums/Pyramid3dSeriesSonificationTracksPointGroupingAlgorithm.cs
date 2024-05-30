@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum Pyramid3dSeriesSonificationTracksPointGroupingAlgorithm
     {
-        Minimax, 
+        Null, 
+		Minimax, 
 		First, 
 		Last, 
 		Middle, 

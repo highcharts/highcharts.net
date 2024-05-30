@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ExportingCsv()
 		{
-			Annotations = Annotations_DefaultValue = new List<Annotations>();
-			ColumnHeaderFormatter = ColumnHeaderFormatter_DefaultValue = "";
-			DateFormat = DateFormat_DefaultValue = "%Y-%m-%d %H:%M:%S";
-			DecimalPoint = DecimalPoint_DefaultValue = "";
-			ItemDelimiter = ItemDelimiter_DefaultValue = "";
-			LineDelimiter = LineDelimiter_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(highcharts,Annotations));
-			if (ColumnHeaderFormatter != ColumnHeaderFormatter_DefaultValue) { h.Add("columnHeaderFormatter",ColumnHeaderFormatter); highcharts.AddFunction("columnHeaderFormatter", ColumnHeaderFormatter); }  
-			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
-			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
-			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
-			if (LineDelimiter != LineDelimiter_DefaultValue) h.Add("lineDelimiter",LineDelimiter);
+			if (Annotations != null) h.Add("annotations", HashifyList(highcharts,Annotations));
+			if (ColumnHeaderFormatter != null) { h.Add("columnHeaderFormatter",ColumnHeaderFormatter); highcharts.AddFunction("columnHeaderFormatter", ColumnHeaderFormatter); }  
+			if (DateFormat != null) h.Add("dateFormat",DateFormat);
+			if (DecimalPoint != null) h.Add("decimalPoint",DecimalPoint);
+			if (ItemDelimiter != null) h.Add("itemDelimiter",ItemDelimiter);
+			if (LineDelimiter != null) h.Add("lineDelimiter",LineDelimiter);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

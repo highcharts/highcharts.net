@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsXrangeSonificationTracksMappingHighpass()
 		{
-			Frequency = Frequency_DefaultValue = new PlotOptionsXrangeSonificationTracksMappingHighpassFrequency();
-			Resonance = Resonance_DefaultValue = new PlotOptionsXrangeSonificationTracksMappingHighpassResonance();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Frequency.IsDirty(highcharts)) h.Add("frequency",Frequency.ToHashtable(highcharts));
-			if (Resonance.IsDirty(highcharts)) h.Add("resonance",Resonance.ToHashtable(highcharts));
+			if (Frequency != null) h.Add("frequency",Frequency.ToHashtable(highcharts));
+			if (Resonance != null) h.Add("resonance",Resonance.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

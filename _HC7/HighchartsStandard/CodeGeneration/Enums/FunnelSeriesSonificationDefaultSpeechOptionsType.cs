@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum FunnelSeriesSonificationDefaultSpeechOptionsType
     {
-        Instrument, 
+        Null, 
+		Instrument, 
 		Speech
     }
 }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum Scatter3dSeriesSonificationContextTracksPointGroupingAlgorithm
     {
-        Minimax, 
+        Null, 
+		Minimax, 
 		First, 
 		Last, 
 		Middle, 

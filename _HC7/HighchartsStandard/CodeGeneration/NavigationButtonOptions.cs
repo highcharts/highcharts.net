@@ -16,22 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationButtonOptions()
 		{
-			Align = Align_DefaultValue = NavigationButtonOptionsAlign.Right;
-			ButtonSpacing = ButtonSpacing_DefaultValue = 3;
-			Enabled = Enabled_DefaultValue = true;
-			Height = Height_DefaultValue = 28;
-			SymbolFill = SymbolFill_DefaultValue = "#666666";
-			SymbolSize = SymbolSize_DefaultValue = 14;
-			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
-			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 3;
-			SymbolX = SymbolX_DefaultValue = null;
-			SymbolY = SymbolY_DefaultValue = null;
-			Text = Text_DefaultValue = "null";
-			Theme = Theme_DefaultValue = new NavigationButtonOptionsTheme();
-			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = NavigationButtonOptionsVerticalAlign.Top;
-			Width = Width_DefaultValue = 28;
-			Y = Y_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -156,22 +140,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
-			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
-			if (SymbolStroke != SymbolStroke_DefaultValue) h.Add("symbolStroke",SymbolStroke);
-			if (SymbolStrokeWidth != SymbolStrokeWidth_DefaultValue) h.Add("symbolStrokeWidth",SymbolStrokeWidth);
-			if (SymbolX != SymbolX_DefaultValue) h.Add("symbolX",SymbolX);
-			if (SymbolY != SymbolY_DefaultValue) h.Add("symbolY",SymbolY);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Theme.IsDirty(highcharts)) h.Add("theme",Theme.ToHashtable(highcharts));
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != NavigationButtonOptionsAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (ButtonSpacing != null) h.Add("buttonSpacing",ButtonSpacing);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Height != null) h.Add("height",Height);
+			if (SymbolFill != null) h.Add("symbolFill",SymbolFill);
+			if (SymbolSize != null) h.Add("symbolSize",SymbolSize);
+			if (SymbolStroke != null) h.Add("symbolStroke",SymbolStroke);
+			if (SymbolStrokeWidth != null) h.Add("symbolStrokeWidth",SymbolStrokeWidth);
+			if (SymbolX != null) h.Add("symbolX",SymbolX);
+			if (SymbolY != null) h.Add("symbolY",SymbolY);
+			if (Text != null) h.Add("text",Text);
+			if (Theme != null) h.Add("theme",Theme.ToHashtable(highcharts));
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != NavigationButtonOptionsVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (Width != null) h.Add("width",Width);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

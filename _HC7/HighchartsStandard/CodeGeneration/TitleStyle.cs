@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TitleStyle()
 		{
-			Color = Color_DefaultValue = "#333333";
-			FontWeight = FontWeight_DefaultValue = "bold";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (Color != null) h.Add("color",Color);
+			if (FontWeight != null) h.Add("fontWeight",FontWeight);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

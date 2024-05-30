@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsBulletSonificationTracksType
     {
-        Instrument, 
+        Null, 
+		Instrument, 
 		Speech
     }
 }

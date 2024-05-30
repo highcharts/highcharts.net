@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ArearangeSeriesSonificationDefaultSpeechOptionsActiveWhen()
 		{
-			CrossingDown = CrossingDown_DefaultValue = null;
-			CrossingUp = CrossingUp_DefaultValue = null;
-			Max = Max_DefaultValue = null;
-			Min = Min_DefaultValue = null;
-			Prop = Prop_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (CrossingDown != CrossingDown_DefaultValue) h.Add("crossingDown",CrossingDown);
-			if (CrossingUp != CrossingUp_DefaultValue) h.Add("crossingUp",CrossingUp);
-			if (Max != Max_DefaultValue) h.Add("max",Max);
-			if (Min != Min_DefaultValue) h.Add("min",Min);
-			if (Prop != Prop_DefaultValue) h.Add("prop",Prop);
+			if (CrossingDown != null) h.Add("crossingDown",CrossingDown);
+			if (CrossingUp != null) h.Add("crossingUp",CrossingUp);
+			if (Max != null) h.Add("max",Max);
+			if (Min != null) h.Add("min",Min);
+			if (Prop != null) h.Add("prop",Prop);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

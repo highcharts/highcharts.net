@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsColumnpyramidSonificationDefaultInstrumentOptionsType
     {
-        Instrument, 
+        Null, 
+		Instrument, 
 		Speech
     }
 }

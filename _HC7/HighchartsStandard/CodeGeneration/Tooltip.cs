@@ -16,45 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Tooltip()
 		{
-			Animation = Animation_DefaultValue = new Animation();
-			BackgroundColor = BackgroundColor_DefaultValue = "#ffffff";
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderRadius = BorderRadius_DefaultValue = 3;
-			BorderWidth = BorderWidth_DefaultValue = null;
-			ClassName = ClassName_DefaultValue = "";
-			ClusterFormat = ClusterFormat_DefaultValue = "Clustered points: {point.clusterPointsAmount}";
-			Crosshairs = Crosshairs_DefaultValue = new List<Crosshair>();
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			Distance = Distance_DefaultValue = 16;
-			Enabled = Enabled_DefaultValue = true;
-			FollowPointer = FollowPointer_DefaultValue = false;
-			FollowTouchMove = FollowTouchMove_DefaultValue = true;
-			FooterFormat = FooterFormat_DefaultValue = "";
-			Format = Format_DefaultValue = "undefined";
-			Formatter = Formatter_DefaultValue = "";
-			HeaderFormat = HeaderFormat_DefaultValue = "";
-			HeaderShape = HeaderShape_DefaultValue = TooltipHeaderShape.Callout;
-			HideDelay = HideDelay_DefaultValue = 500;
-			NullFormat = NullFormat_DefaultValue = "";
-			NullFormatter = NullFormatter_DefaultValue = "";
-			Outside = Outside_DefaultValue = null;
-			Padding = Padding_DefaultValue = 8;
-			PointFormat = PointFormat_DefaultValue = "";
-			PointFormatter = PointFormatter_DefaultValue = "";
-			Positioner = Positioner_DefaultValue = "";
-			Shadow = Shadow_DefaultValue = new Shadow();
-			ShadowBool = ShadowBool_DefaultValue = true;
-			Shape = Shape_DefaultValue = "callout";
-			Shared = Shared_DefaultValue = false;
-			Snap = Snap_DefaultValue = null;
-			Split = Split_DefaultValue = false;
-			StickOnContact = StickOnContact_DefaultValue = false;
-			Style = Style_DefaultValue = new Hashtable();
-			UseHTML = UseHTML_DefaultValue = false;
-			ValueDecimals = ValueDecimals_DefaultValue = null;
-			ValuePrefix = ValuePrefix_DefaultValue = "";
-			ValueSuffix = ValueSuffix_DefaultValue = "";
-			XDateFormat = XDateFormat_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -340,45 +301,45 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (ClusterFormat != ClusterFormat_DefaultValue) h.Add("clusterFormat",ClusterFormat);
-			if (Crosshairs != Crosshairs_DefaultValue) h.Add("crosshairs",Crosshairs);
-			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
-			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
-			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (HeaderShape != HeaderShape_DefaultValue) h.Add("headerShape", highcharts.FirstCharacterToLower(HeaderShape.ToString()));
-			if (HideDelay != HideDelay_DefaultValue) h.Add("hideDelay",HideDelay);
-			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
-			if (Outside != Outside_DefaultValue) h.Add("outside",Outside);
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); highcharts.AddFunction("pointFormatter", PointFormatter); }  
-			if (Positioner != Positioner_DefaultValue) { h.Add("positioner",Positioner); highcharts.AddFunction("positioner", Positioner); }  
-			if (Shadow.IsDirty(highcharts)) h.Add("shadow",Shadow.ToHashtable(highcharts));
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Shared != Shared_DefaultValue) h.Add("shared",Shared);
-			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
-			if (Split != Split_DefaultValue) h.Add("split",Split);
-			if (StickOnContact != StickOnContact_DefaultValue) h.Add("stickOnContact",StickOnContact);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
-			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
-			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);
-			if (XDateFormat != XDateFormat_DefaultValue) h.Add("xDateFormat",XDateFormat);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (ClusterFormat != null) h.Add("clusterFormat",ClusterFormat);
+			if (Crosshairs != null) h.Add("crosshairs",Crosshairs);
+			if (DateTimeLabelFormats != null) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
+			if (Distance != null) h.Add("distance",Distance);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (FollowPointer != null) h.Add("followPointer",FollowPointer);
+			if (FollowTouchMove != null) h.Add("followTouchMove",FollowTouchMove);
+			if (FooterFormat != null) h.Add("footerFormat",FooterFormat);
+			if (Format != null) h.Add("format",Format);
+			if (Formatter != null) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
+			if (HeaderFormat != null) h.Add("headerFormat",HeaderFormat);
+			if (HeaderShape != TooltipHeaderShape.Null) h.Add("headerShape", highcharts.FirstCharacterToLower(HeaderShape.ToString()));
+			if (HideDelay != null) h.Add("hideDelay",HideDelay);
+			if (NullFormat != null) h.Add("nullFormat",NullFormat);
+			if (NullFormatter != null) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
+			if (Outside != null) h.Add("outside",Outside);
+			if (Padding != null) h.Add("padding",Padding);
+			if (PointFormat != null) h.Add("pointFormat",PointFormat);
+			if (PointFormatter != null) { h.Add("pointFormatter",PointFormatter); highcharts.AddFunction("pointFormatter", PointFormatter); }  
+			if (Positioner != null) { h.Add("positioner",Positioner); highcharts.AddFunction("positioner", Positioner); }  
+			if (Shadow != null) h.Add("shadow",Shadow.ToHashtable(highcharts));
+			if (ShadowBool != null) h.Add("shadow",ShadowBool);
+			if (Shape != null) h.Add("shape",Shape);
+			if (Shared != null) h.Add("shared",Shared);
+			if (Snap != null) h.Add("snap",Snap);
+			if (Split != null) h.Add("split",Split);
+			if (StickOnContact != null) h.Add("stickOnContact",StickOnContact);
+			if (Style != null) h.Add("style",Style);
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (ValueDecimals != null) h.Add("valueDecimals",ValueDecimals);
+			if (ValuePrefix != null) h.Add("valuePrefix",ValuePrefix);
+			if (ValueSuffix != null) h.Add("valueSuffix",ValueSuffix);
+			if (XDateFormat != null) h.Add("xDateFormat",XDateFormat);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

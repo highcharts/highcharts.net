@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsColumnrangeBorderRadius()
 		{
-			Where = Where_DefaultValue = "all";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Where != Where_DefaultValue) h.Add("where",Where);
+			if (Where != null) h.Add("where",Where);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

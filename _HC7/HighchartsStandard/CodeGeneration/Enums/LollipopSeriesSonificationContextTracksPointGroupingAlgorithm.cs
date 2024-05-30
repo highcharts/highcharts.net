@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum LollipopSeriesSonificationContextTracksPointGroupingAlgorithm
     {
-        Minimax, 
+        Null, 
+		Minimax, 
 		First, 
 		Last, 
 		Middle, 

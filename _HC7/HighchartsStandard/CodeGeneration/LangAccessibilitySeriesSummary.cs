@@ -16,30 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilitySeriesSummary()
 		{
-			Bar = Bar_DefaultValue = "{series.name}, bar series {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}bar{else}bars{/eq}.";
-			BarCombination = BarCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}. Bar series with {series.points.length} {#eq series.points.length 1}bar{else}bars{/eq}.";
-			Boxplot = Boxplot_DefaultValue = "{series.name}, boxplot {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}box{else}boxes{/eq}.";
-			BoxplotCombination = BoxplotCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}. Boxplot with {series.points.length} {#eq series.points.length 1}box{else}boxes{/eq}.";
-			Bubble = Bubble_DefaultValue = "{series.name}, bubble series {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}bubble{else}bubbles{/eq}.";
-			BubbleCombination = BubbleCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}. Bubble series with {series.points.length} {#eq series.points.length 1}bubble{else}bubbles{/eq}.";
-			Column = Column_DefaultValue = "{series.name}, bar series {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}bar{else}bars{/eq}.";
-			ColumnCombination = ColumnCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}. Bar series with {series.points.length} {#eq series.points.length 1}bar{else}bars{/eq}.";
-			Default = Default_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length} with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.";
-			DefaultCombination = DefaultCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length} with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.";
-			Line = Line_DefaultValue = "{series.name}, line {seriesNumber} of {chart.series.length} with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.";
-			LineCombination = LineCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}. Line with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.";
-			Map = Map_DefaultValue = "{series.name}, map {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}area{else}areas{/eq}.";
-			Mapbubble = Mapbubble_DefaultValue = "{series.name}, bubble series {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}bubble{else}bubbles{/eq}.";
-			MapbubbleCombination = MapbubbleCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}. Bubble series with {series.points.length} {#eq series.points.length 1}bubble{else}bubbles{/eq}.";
-			MapCombination = MapCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}. Map with {series.points.length} {#eq series.points.length 1}area{else}areas{/eq}.";
-			Mapline = Mapline_DefaultValue = "{series.name}, line {seriesNumber} of {chart.series.length} with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.";
-			MaplineCombination = MaplineCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}. Line with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.";
-			Pie = Pie_DefaultValue = "{series.name}, pie {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}slice{else}slices{/eq}.";
-			PieCombination = PieCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}. Pie with {series.points.length} {#eq series.points.length 1}slice{else}slices{/eq}.";
-			Scatter = Scatter_DefaultValue = "{series.name}, scatter plot {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}point{else}points{/eq}.";
-			ScatterCombination = ScatterCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}, scatter plot with {series.points.length} {#eq series.points.length 1}point{else}points{/eq}.";
-			Spline = Spline_DefaultValue = "{series.name}, line {seriesNumber} of {chart.series.length} with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.";
-			SplineCombination = SplineCombination_DefaultValue = "{series.name}, series {seriesNumber} of {chart.series.length}. Line with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -220,30 +196,30 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Bar != Bar_DefaultValue) h.Add("bar",Bar);
-			if (BarCombination != BarCombination_DefaultValue) h.Add("barCombination",BarCombination);
-			if (Boxplot != Boxplot_DefaultValue) h.Add("boxplot",Boxplot);
-			if (BoxplotCombination != BoxplotCombination_DefaultValue) h.Add("boxplotCombination",BoxplotCombination);
-			if (Bubble != Bubble_DefaultValue) h.Add("bubble",Bubble);
-			if (BubbleCombination != BubbleCombination_DefaultValue) h.Add("bubbleCombination",BubbleCombination);
-			if (Column != Column_DefaultValue) h.Add("column",Column);
-			if (ColumnCombination != ColumnCombination_DefaultValue) h.Add("columnCombination",ColumnCombination);
-			if (Default != Default_DefaultValue) h.Add("default",Default);
-			if (DefaultCombination != DefaultCombination_DefaultValue) h.Add("defaultCombination",DefaultCombination);
-			if (Line != Line_DefaultValue) h.Add("line",Line);
-			if (LineCombination != LineCombination_DefaultValue) h.Add("lineCombination",LineCombination);
-			if (Map != Map_DefaultValue) h.Add("map",Map);
-			if (Mapbubble != Mapbubble_DefaultValue) h.Add("mapbubble",Mapbubble);
-			if (MapbubbleCombination != MapbubbleCombination_DefaultValue) h.Add("mapbubbleCombination",MapbubbleCombination);
-			if (MapCombination != MapCombination_DefaultValue) h.Add("mapCombination",MapCombination);
-			if (Mapline != Mapline_DefaultValue) h.Add("mapline",Mapline);
-			if (MaplineCombination != MaplineCombination_DefaultValue) h.Add("maplineCombination",MaplineCombination);
-			if (Pie != Pie_DefaultValue) h.Add("pie",Pie);
-			if (PieCombination != PieCombination_DefaultValue) h.Add("pieCombination",PieCombination);
-			if (Scatter != Scatter_DefaultValue) h.Add("scatter",Scatter);
-			if (ScatterCombination != ScatterCombination_DefaultValue) h.Add("scatterCombination",ScatterCombination);
-			if (Spline != Spline_DefaultValue) h.Add("spline",Spline);
-			if (SplineCombination != SplineCombination_DefaultValue) h.Add("splineCombination",SplineCombination);
+			if (Bar != null) h.Add("bar",Bar);
+			if (BarCombination != null) h.Add("barCombination",BarCombination);
+			if (Boxplot != null) h.Add("boxplot",Boxplot);
+			if (BoxplotCombination != null) h.Add("boxplotCombination",BoxplotCombination);
+			if (Bubble != null) h.Add("bubble",Bubble);
+			if (BubbleCombination != null) h.Add("bubbleCombination",BubbleCombination);
+			if (Column != null) h.Add("column",Column);
+			if (ColumnCombination != null) h.Add("columnCombination",ColumnCombination);
+			if (Default != null) h.Add("default",Default);
+			if (DefaultCombination != null) h.Add("defaultCombination",DefaultCombination);
+			if (Line != null) h.Add("line",Line);
+			if (LineCombination != null) h.Add("lineCombination",LineCombination);
+			if (Map != null) h.Add("map",Map);
+			if (Mapbubble != null) h.Add("mapbubble",Mapbubble);
+			if (MapbubbleCombination != null) h.Add("mapbubbleCombination",MapbubbleCombination);
+			if (MapCombination != null) h.Add("mapCombination",MapCombination);
+			if (Mapline != null) h.Add("mapline",Mapline);
+			if (MaplineCombination != null) h.Add("maplineCombination",MaplineCombination);
+			if (Pie != null) h.Add("pie",Pie);
+			if (PieCombination != null) h.Add("pieCombination",PieCombination);
+			if (Scatter != null) h.Add("scatter",Scatter);
+			if (ScatterCombination != null) h.Add("scatterCombination",ScatterCombination);
+			if (Spline != null) h.Add("spline",Spline);
+			if (SplineCombination != null) h.Add("splineCombination",SplineCombination);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

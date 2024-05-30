@@ -16,20 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartEvents()
 		{
-			AddSeries = AddSeries_DefaultValue = "";
-			AfterPrint = AfterPrint_DefaultValue = "";
-			BeforePrint = BeforePrint_DefaultValue = "";
-			Click = Click_DefaultValue = "";
-			Drilldown = Drilldown_DefaultValue = "";
-			Drillup = Drillup_DefaultValue = "";
-			Drillupall = Drillupall_DefaultValue = "";
-			ExportData = ExportData_DefaultValue = "";
-			FullscreenClose = FullscreenClose_DefaultValue = "";
-			FullscreenOpen = FullscreenOpen_DefaultValue = "";
-			Load = Load_DefaultValue = "";
-			Redraw = Redraw_DefaultValue = "";
-			Render = Render_DefaultValue = "";
-			Selection = Selection_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -140,20 +126,20 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AddSeries != AddSeries_DefaultValue) { h.Add("addSeries",AddSeries); highcharts.AddFunction("addSeries", AddSeries); }  
-			if (AfterPrint != AfterPrint_DefaultValue) { h.Add("afterPrint",AfterPrint); highcharts.AddFunction("afterPrint", AfterPrint); }  
-			if (BeforePrint != BeforePrint_DefaultValue) { h.Add("beforePrint",BeforePrint); highcharts.AddFunction("beforePrint", BeforePrint); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
-			if (Drilldown != Drilldown_DefaultValue) { h.Add("drilldown",Drilldown); highcharts.AddFunction("drilldown", Drilldown); }  
-			if (Drillup != Drillup_DefaultValue) { h.Add("drillup",Drillup); highcharts.AddFunction("drillup", Drillup); }  
-			if (Drillupall != Drillupall_DefaultValue) { h.Add("drillupall",Drillupall); highcharts.AddFunction("drillupall", Drillupall); }  
-			if (ExportData != ExportData_DefaultValue) { h.Add("exportData",ExportData); highcharts.AddFunction("exportData", ExportData); }  
-			if (FullscreenClose != FullscreenClose_DefaultValue) { h.Add("fullscreenClose",FullscreenClose); highcharts.AddFunction("fullscreenClose", FullscreenClose); }  
-			if (FullscreenOpen != FullscreenOpen_DefaultValue) { h.Add("fullscreenOpen",FullscreenOpen); highcharts.AddFunction("fullscreenOpen", FullscreenOpen); }  
-			if (Load != Load_DefaultValue) { h.Add("load",Load); highcharts.AddFunction("load", Load); }  
-			if (Redraw != Redraw_DefaultValue) { h.Add("redraw",Redraw); highcharts.AddFunction("redraw", Redraw); }  
-			if (Render != Render_DefaultValue) { h.Add("render",Render); highcharts.AddFunction("render", Render); }  
-			if (Selection != Selection_DefaultValue) { h.Add("selection",Selection); highcharts.AddFunction("selection", Selection); }  
+			if (AddSeries != null) { h.Add("addSeries",AddSeries); highcharts.AddFunction("addSeries", AddSeries); }  
+			if (AfterPrint != null) { h.Add("afterPrint",AfterPrint); highcharts.AddFunction("afterPrint", AfterPrint); }  
+			if (BeforePrint != null) { h.Add("beforePrint",BeforePrint); highcharts.AddFunction("beforePrint", BeforePrint); }  
+			if (Click != null) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
+			if (Drilldown != null) { h.Add("drilldown",Drilldown); highcharts.AddFunction("drilldown", Drilldown); }  
+			if (Drillup != null) { h.Add("drillup",Drillup); highcharts.AddFunction("drillup", Drillup); }  
+			if (Drillupall != null) { h.Add("drillupall",Drillupall); highcharts.AddFunction("drillupall", Drillupall); }  
+			if (ExportData != null) { h.Add("exportData",ExportData); highcharts.AddFunction("exportData", ExportData); }  
+			if (FullscreenClose != null) { h.Add("fullscreenClose",FullscreenClose); highcharts.AddFunction("fullscreenClose", FullscreenClose); }  
+			if (FullscreenOpen != null) { h.Add("fullscreenOpen",FullscreenOpen); highcharts.AddFunction("fullscreenOpen", FullscreenOpen); }  
+			if (Load != null) { h.Add("load",Load); highcharts.AddFunction("load", Load); }  
+			if (Redraw != null) { h.Add("redraw",Redraw); highcharts.AddFunction("redraw", Redraw); }  
+			if (Render != null) { h.Add("render",Render); highcharts.AddFunction("render", Render); }  
+			if (Selection != null) { h.Add("selection",Selection); highcharts.AddFunction("selection", Selection); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTreemapSonification()
 		{
-			ContextTracks = ContextTracks_DefaultValue = new PlotOptionsTreemapSonificationContextTracks();
-			DefaultInstrumentOptions = DefaultInstrumentOptions_DefaultValue = new PlotOptionsTreemapSonificationDefaultInstrumentOptions();
-			DefaultSpeechOptions = DefaultSpeechOptions_DefaultValue = new PlotOptionsTreemapSonificationDefaultSpeechOptions();
-			Enabled = Enabled_DefaultValue = true;
-			PointGrouping = PointGrouping_DefaultValue = new PlotOptionsTreemapSonificationPointGrouping();
-			Tracks = Tracks_DefaultValue = new PlotOptionsTreemapSonificationTracks();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ContextTracks.IsDirty(highcharts)) h.Add("contextTracks",ContextTracks.ToHashtable(highcharts));
-			if (DefaultInstrumentOptions.IsDirty(highcharts)) h.Add("defaultInstrumentOptions",DefaultInstrumentOptions.ToHashtable(highcharts));
-			if (DefaultSpeechOptions.IsDirty(highcharts)) h.Add("defaultSpeechOptions",DefaultSpeechOptions.ToHashtable(highcharts));
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (PointGrouping.IsDirty(highcharts)) h.Add("pointGrouping",PointGrouping.ToHashtable(highcharts));
-			if (Tracks.IsDirty(highcharts)) h.Add("tracks",Tracks.ToHashtable(highcharts));
+			if (ContextTracks != null) h.Add("contextTracks",ContextTracks.ToHashtable(highcharts));
+			if (DefaultInstrumentOptions != null) h.Add("defaultInstrumentOptions",DefaultInstrumentOptions.ToHashtable(highcharts));
+			if (DefaultSpeechOptions != null) h.Add("defaultSpeechOptions",DefaultSpeechOptions.ToHashtable(highcharts));
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (PointGrouping != null) h.Add("pointGrouping",PointGrouping.ToHashtable(highcharts));
+			if (Tracks != null) h.Add("tracks",Tracks.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

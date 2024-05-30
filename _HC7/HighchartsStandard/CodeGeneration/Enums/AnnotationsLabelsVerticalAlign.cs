@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum AnnotationsLabelsVerticalAlign
     {
-        Top, 
+        Null, 
+		Top, 
 		Middle, 
 		Bottom
     }

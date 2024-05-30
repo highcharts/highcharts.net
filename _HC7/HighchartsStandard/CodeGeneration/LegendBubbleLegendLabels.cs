@@ -16,14 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LegendBubbleLegendLabels()
 		{
-			Align = Align_DefaultValue = LegendBubbleLegendLabelsAlign.Right;
-			AllowOverlap = AllowOverlap_DefaultValue = false;
-			ClassName = ClassName_DefaultValue = "undefined";
-			Format = Format_DefaultValue = "";
-			Formatter = Formatter_DefaultValue = "";
-			Style = Style_DefaultValue = new Hashtable();
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -92,14 +84,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != LegendBubbleLegendLabelsAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (AllowOverlap != null) h.Add("allowOverlap",AllowOverlap);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Format != null) h.Add("format",Format);
+			if (Formatter != null) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
+			if (Style != null) h.Add("style",Style);
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

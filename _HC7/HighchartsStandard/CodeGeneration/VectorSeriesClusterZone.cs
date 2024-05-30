@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public VectorSeriesClusterZone()
 		{
-			ClassName = ClassName_DefaultValue = "";
-			From = From_DefaultValue = null;
-			Marker = Marker_DefaultValue = new VectorSeriesClusterZonesMarker();
-			To = To_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (From != From_DefaultValue) h.Add("from",From);
-			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
-			if (To != To_DefaultValue) h.Add("to",To);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (From != null) h.Add("from",From);
+			if (Marker != null) h.Add("marker",Marker.ToHashtable(highcharts));
+			if (To != null) h.Add("to",To);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

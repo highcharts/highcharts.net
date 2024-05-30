@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsSunburstDataLabelsVerticalAlign
     {
-        Top, 
+        Null, 
+		Top, 
 		Middle, 
 		Bottom
     }

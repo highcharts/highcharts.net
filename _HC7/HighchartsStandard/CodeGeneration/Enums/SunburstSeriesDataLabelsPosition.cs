@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum SunburstSeriesDataLabelsPosition
     {
-        Center, 
+        Null, 
+		Center, 
 		Left, 
 		Right
     }

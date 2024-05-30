@@ -16,40 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SunburstSeriesDataLabels()
 		{
-			Align = Align_DefaultValue = SunburstSeriesDataLabelsAlign.Center;
-			AllowOverlap = AllowOverlap_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
-			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderRadius = BorderRadius_DefaultValue = 0;
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
-			Crop = Crop_DefaultValue = true;
-			Defer = Defer_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
-			Filter = Filter_DefaultValue = new SunburstSeriesDataLabelsFilter();
-			Format = Format_DefaultValue = "point.value";
-			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = null;
-			NullFormat = NullFormat_DefaultValue = "";
-			NullFormatBool = NullFormatBool_DefaultValue = null;
-			NullFormatter = NullFormatter_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = SunburstSeriesDataLabelsOverflow.Justify;
-			Padding = Padding_DefaultValue = 5;
-			Position = Position_DefaultValue = SunburstSeriesDataLabelsPosition.Center;
-			Rotation = Rotation_DefaultValue = 0;
-			Shadow = Shadow_DefaultValue = new Shadow();
-			ShadowBool = ShadowBool_DefaultValue = false;
-			Shape = Shape_DefaultValue = "square";
-			Style = Style_DefaultValue = new Hashtable();
-			TextPath = TextPath_DefaultValue = new SunburstSeriesDataLabelsTextPath();
-			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = SunburstSeriesDataLabelsVerticalAlign.Bottom;
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
-			ZIndex = ZIndex_DefaultValue = 6;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -300,40 +266,40 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Filter.IsDirty(highcharts)) h.Add("filter",Filter.ToHashtable(highcharts));
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
-			if (NullFormatBool != NullFormatBool_DefaultValue) h.Add("nullFormat",NullFormatBool);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Position != Position_DefaultValue) h.Add("position", highcharts.FirstCharacterToLower(Position.ToString()));
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Shadow.IsDirty(highcharts)) h.Add("shadow",Shadow.ToHashtable(highcharts));
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (TextPath.IsDirty(highcharts)) h.Add("textPath",TextPath.ToHashtable(highcharts));
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (Align != SunburstSeriesDataLabelsAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (AllowOverlap != null) h.Add("allowOverlap",AllowOverlap);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (Crop != null) h.Add("crop",Crop);
+			if (Defer != null) h.Add("defer",Defer);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Filter != null) h.Add("filter",Filter.ToHashtable(highcharts));
+			if (Format != null) h.Add("format",Format);
+			if (Formatter != null) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
+			if (Inside != null) h.Add("inside",Inside);
+			if (NullFormat != null) h.Add("nullFormat",NullFormat);
+			if (NullFormatBool != null) h.Add("nullFormat",NullFormatBool);
+			if (NullFormatter != null) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
+			if (Overflow != SunburstSeriesDataLabelsOverflow.Null) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
+			if (Padding != null) h.Add("padding",Padding);
+			if (Position != SunburstSeriesDataLabelsPosition.Null) h.Add("position", highcharts.FirstCharacterToLower(Position.ToString()));
+			if (Rotation != null) h.Add("rotation",Rotation);
+			if (Shadow != null) h.Add("shadow",Shadow.ToHashtable(highcharts));
+			if (ShadowBool != null) h.Add("shadow",ShadowBool);
+			if (Shape != null) h.Add("shape",Shape);
+			if (Style != null) h.Add("style",Style);
+			if (TextPath != null) h.Add("textPath",TextPath.ToHashtable(highcharts));
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != SunburstSeriesDataLabelsVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

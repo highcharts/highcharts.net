@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsPackedbubbleLayoutAlgorithmInitialPositions
     {
-        Circle, 
+        Null, 
+		Circle, 
 		Random, 
 		Function
     }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsPieDataLabelsPosition
     {
-        Center, 
+        Null, 
+		Center, 
 		Left, 
 		Right
     }

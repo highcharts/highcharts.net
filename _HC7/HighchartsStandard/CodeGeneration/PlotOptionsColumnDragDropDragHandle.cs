@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsColumnDragDropDragHandle()
 		{
-			Cursor = Cursor_DefaultValue = "";
-			PathFormatter = PathFormatter_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (PathFormatter != PathFormatter_DefaultValue) { h.Add("pathFormatter",PathFormatter); highcharts.AddFunction("pathFormatter", PathFormatter); }  
+			if (Cursor != null) h.Add("cursor",Cursor);
+			if (PathFormatter != null) { h.Add("pathFormatter",PathFormatter); highcharts.AddFunction("pathFormatter", PathFormatter); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum LineSeriesSonificationContextTracksValueMapFunction
     {
-        Linear, 
+        Null, 
+		Linear, 
 		Logarithmic
     }
 }

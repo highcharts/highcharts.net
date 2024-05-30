@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ResponsiveRulesCondition()
 		{
-			Callback = Callback_DefaultValue = "";
-			MaxHeight = MaxHeight_DefaultValue = null;
-			MaxWidth = MaxWidth_DefaultValue = null;
-			MinHeight = MinHeight_DefaultValue = 0;
-			MinWidth = MinWidth_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Callback != Callback_DefaultValue) { h.Add("callback",Callback); highcharts.AddFunction("callback", Callback); }  
-			if (MaxHeight != MaxHeight_DefaultValue) h.Add("maxHeight",MaxHeight);
-			if (MaxWidth != MaxWidth_DefaultValue) h.Add("maxWidth",MaxWidth);
-			if (MinHeight != MinHeight_DefaultValue) h.Add("minHeight",MinHeight);
-			if (MinWidth != MinWidth_DefaultValue) h.Add("minWidth",MinWidth);
+			if (Callback != null) { h.Add("callback",Callback); highcharts.AddFunction("callback", Callback); }  
+			if (MaxHeight != null) h.Add("maxHeight",MaxHeight);
+			if (MaxWidth != null) h.Add("maxWidth",MaxWidth);
+			if (MinHeight != null) h.Add("minHeight",MinHeight);
+			if (MinWidth != null) h.Add("minWidth",MinWidth);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

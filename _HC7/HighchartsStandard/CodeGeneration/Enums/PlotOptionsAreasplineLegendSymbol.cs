@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsAreasplineLegendSymbol
     {
-        AreaMarker, 
+        Null, 
+		AreaMarker, 
 		LineMarker, 
 		Rectangle
     }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartZoomingKey
     {
-        Undefined, 
+        Null, 
+		Undefined, 
 		Alt, 
 		Ctrl, 
 		Meta, 

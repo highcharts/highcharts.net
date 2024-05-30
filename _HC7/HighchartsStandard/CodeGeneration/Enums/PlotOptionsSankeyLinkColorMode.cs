@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsSankeyLinkColorMode
     {
-        From, 
+        Null, 
+		From, 
 		Gradient, 
 		To
     }

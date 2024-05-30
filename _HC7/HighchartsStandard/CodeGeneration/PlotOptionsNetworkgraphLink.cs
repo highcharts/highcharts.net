@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsNetworkgraphLink()
 		{
-			Color = Color_DefaultValue = "rgba(100, 100, 100, 0.5)";
-			DashStyle = DashStyle_DefaultValue = PlotOptionsNetworkgraphLinkDashStyle.Null;
-			Opacity = Opacity_DefaultValue = 1;
-			Width = Width_DefaultValue = 1;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (Color != null) h.Add("color",Color);
+			if (DashStyle != PlotOptionsNetworkgraphLinkDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (Opacity != null) h.Add("opacity",Opacity);
+			if (Width != null) h.Add("width",Width);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ResponsiveRules()
 		{
-			ChartOptions = ChartOptions_DefaultValue = null;
-			Condition = Condition_DefaultValue = new ResponsiveRulesCondition();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
-			if (Condition.IsDirty(highcharts)) h.Add("condition",Condition.ToHashtable(highcharts));
+			if (ChartOptions != null) h.Add("chartOptions",ChartOptions);
+			if (Condition != null) h.Add("condition",Condition.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilityKeyboardNavigationFocusBorderStyle()
 		{
-			BorderRadius = BorderRadius_DefaultValue = 3;
-			Color = Color_DefaultValue = "#334eff";
-			LineWidth = LineWidth_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (Color != null) h.Add("color",Color);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

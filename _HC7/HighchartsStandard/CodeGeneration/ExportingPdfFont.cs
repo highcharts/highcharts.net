@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ExportingPdfFont()
 		{
-			Bold = Bold_DefaultValue = "undefined";
-			Bolditalic = Bolditalic_DefaultValue = "undefined";
-			Italic = Italic_DefaultValue = "undefined";
-			Normal = Normal_DefaultValue = "undefined";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Bold != Bold_DefaultValue) h.Add("bold",Bold);
-			if (Bolditalic != Bolditalic_DefaultValue) h.Add("bolditalic",Bolditalic);
-			if (Italic != Italic_DefaultValue) h.Add("italic",Italic);
-			if (Normal != Normal_DefaultValue) h.Add("normal",Normal);
+			if (Bold != null) h.Add("bold",Bold);
+			if (Bolditalic != null) h.Add("bolditalic",Bolditalic);
+			if (Italic != null) h.Add("italic",Italic);
+			if (Normal != null) h.Add("normal",Normal);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsFunnel3dOnPoint()
 		{
-			ConnectorOptions = ConnectorOptions_DefaultValue = new PlotOptionsFunnel3dOnPointConnectorOptions();
-			Id = Id_DefaultValue = "";
-			Position = Position_DefaultValue = new PlotOptionsFunnel3dOnPointPosition();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ConnectorOptions.IsDirty(highcharts)) h.Add("connectorOptions",ConnectorOptions.ToHashtable(highcharts));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Position.IsDirty(highcharts)) h.Add("position",Position.ToHashtable(highcharts));
+			if (ConnectorOptions != null) h.Add("connectorOptions",ConnectorOptions.ToHashtable(highcharts));
+			if (Id != null) h.Add("id",Id);
+			if (Position != null) h.Add("position",Position.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum HeatmapSeriesLegendSymbol
     {
-        AreaMarker, 
+        Null, 
+		AreaMarker, 
 		LineMarker, 
 		Rectangle
     }

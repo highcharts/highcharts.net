@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ZAxisTitleAlign
     {
-        Low, 
+        Null, 
+		Low, 
 		Middle, 
 		High
     }

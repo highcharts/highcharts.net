@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public YAxisCrosshair()
 		{
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "#cccccc";
-			DashStyle = DashStyle_DefaultValue = YAxisCrosshairDashStyle.Null;
-			Snap = Snap_DefaultValue = true;
-			Width = Width_DefaultValue = 1;
-			ZIndex = ZIndex_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (Snap != Snap_DefaultValue) h.Add("snap",Snap);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (DashStyle != YAxisCrosshairDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (Snap != null) h.Add("snap",Snap);
+			if (Width != null) h.Add("width",Width);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LegendTitle()
 		{
-			Style = Style_DefaultValue = new Hashtable();
-			Text = Text_DefaultValue = "null";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
+			if (Style != null) h.Add("style",Style);
+			if (Text != null) h.Add("text",Text);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

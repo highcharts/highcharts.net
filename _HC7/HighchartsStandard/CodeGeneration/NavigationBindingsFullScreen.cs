@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationBindingsFullScreen()
 		{
-			NoDataState = NoDataState_DefaultValue = "normal";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (NoDataState != NoDataState_DefaultValue) h.Add("noDataState",NoDataState);
+			if (NoDataState != null) h.Add("noDataState",NoDataState);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

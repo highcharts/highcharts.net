@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ScatterSeriesMarkerStatesHover()
 		{
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "";
-			LineWidth = LineWidth_DefaultValue = null;
-			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
-			Radius = Radius_DefaultValue = null;
-			RadiusPlus = RadiusPlus_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (RadiusPlus != RadiusPlus_DefaultValue) h.Add("radiusPlus",RadiusPlus);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (FillColor != null) h.Add("fillColor",FillColor);
+			if (LineColor != null) h.Add("lineColor",LineColor);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (LineWidthPlus != null) h.Add("lineWidthPlus",LineWidthPlus);
+			if (Radius != null) h.Add("radius",Radius);
+			if (RadiusPlus != null) h.Add("radiusPlus",RadiusPlus);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

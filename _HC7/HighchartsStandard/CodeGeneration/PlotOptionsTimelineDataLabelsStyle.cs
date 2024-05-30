@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTimelineDataLabelsStyle()
 		{
-			FontSize = FontSize_DefaultValue = "0.8em";
-			FontWeight = FontWeight_DefaultValue = "normal";
-			TextOutline = TextOutline_DefaultValue = "none";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
-			if (TextOutline != TextOutline_DefaultValue) h.Add("textOutline",TextOutline);
+			if (FontSize != null) h.Add("fontSize",FontSize);
+			if (FontWeight != null) h.Add("fontWeight",FontWeight);
+			if (TextOutline != null) h.Add("textOutline",TextOutline);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

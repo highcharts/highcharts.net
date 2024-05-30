@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityScreenReaderSection()
 		{
-			AfterRegionLabel = AfterRegionLabel_DefaultValue = "";
-			Annotations = Annotations_DefaultValue = new List<Annotations>();
-			BeforeRegionLabel = BeforeRegionLabel_DefaultValue = "";
-			EndOfChartMarker = EndOfChartMarker_DefaultValue = "End of interactive chart.";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AfterRegionLabel != AfterRegionLabel_DefaultValue) h.Add("afterRegionLabel",AfterRegionLabel);
-			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(highcharts,Annotations));
-			if (BeforeRegionLabel != BeforeRegionLabel_DefaultValue) h.Add("beforeRegionLabel",BeforeRegionLabel);
-			if (EndOfChartMarker != EndOfChartMarker_DefaultValue) h.Add("endOfChartMarker",EndOfChartMarker);
+			if (AfterRegionLabel != null) h.Add("afterRegionLabel",AfterRegionLabel);
+			if (Annotations != null) h.Add("annotations", HashifyList(highcharts,Annotations));
+			if (BeforeRegionLabel != null) h.Add("beforeRegionLabel",BeforeRegionLabel);
+			if (EndOfChartMarker != null) h.Add("endOfChartMarker",EndOfChartMarker);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

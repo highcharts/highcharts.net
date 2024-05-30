@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsTreegraphLegendSymbol
     {
-        AreaMarker, 
+        Null, 
+		AreaMarker, 
 		LineMarker, 
 		Rectangle
     }

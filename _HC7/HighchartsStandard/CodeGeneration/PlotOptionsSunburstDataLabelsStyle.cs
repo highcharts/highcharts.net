@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsSunburstDataLabelsStyle()
 		{
-			TextOverflow = TextOverflow_DefaultValue = "ellipsis";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (TextOverflow != TextOverflow_DefaultValue) h.Add("textOverflow",TextOverflow);
+			if (TextOverflow != null) h.Add("textOverflow",TextOverflow);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

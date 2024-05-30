@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ScatterSeriesDataLabelsFilter()
 		{
-			Operator = Operator_DefaultValue = "";
-			Property = Property_DefaultValue = "";
-			Value = Value_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Operator != Operator_DefaultValue) h.Add("operator",Operator);
-			if (Property != Property_DefaultValue) h.Add("property",Property);
-			if (Value != Value_DefaultValue) h.Add("value",Value);
+			if (Operator != null) h.Add("operator",Operator);
+			if (Property != null) h.Add("property",Property);
+			if (Value != null) h.Add("value",Value);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsBubbleMarkerStatesHover()
 		{
-			RadiusPlus = RadiusPlus_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (RadiusPlus != RadiusPlus_DefaultValue) h.Add("radiusPlus",RadiusPlus);
+			if (RadiusPlus != null) h.Add("radiusPlus",RadiusPlus);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

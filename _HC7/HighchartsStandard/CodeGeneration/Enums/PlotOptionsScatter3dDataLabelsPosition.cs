@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsScatter3dDataLabelsPosition
     {
-        Center, 
+        Null, 
+		Center, 
 		Left, 
 		Right
     }

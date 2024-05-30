@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PictorialSeriesDataLabelsPosition
     {
-        Center, 
+        Null, 
+		Center, 
 		Left, 
 		Right
     }

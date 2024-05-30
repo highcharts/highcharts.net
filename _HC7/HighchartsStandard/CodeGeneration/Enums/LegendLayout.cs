@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum LegendLayout
     {
-        Horizontal, 
+        Null, 
+		Horizontal, 
 		Vertical, 
 		Proximate
     }

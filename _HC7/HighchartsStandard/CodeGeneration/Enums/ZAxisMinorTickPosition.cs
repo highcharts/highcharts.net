@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ZAxisMinorTickPosition
     {
-        Inside, 
+        Null, 
+		Inside, 
 		Outside
     }
 }

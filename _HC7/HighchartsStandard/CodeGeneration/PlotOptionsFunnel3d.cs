@@ -16,91 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsFunnel3d()
 		{
-			Accessibility = Accessibility_DefaultValue = new PlotOptionsFunnel3dAccessibility();
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = true;
-			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderRadius = BorderRadius_DefaultValue = null;
-			BorderRadiusString = BorderRadiusString_DefaultValue = "null";
-			BorderRadiusNumber = BorderRadiusNumber_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = null;
-			CenterInCategory = CenterInCategory_DefaultValue = false;
-			ClassName = ClassName_DefaultValue = "";
-			Clip = Clip_DefaultValue = true;
-			Color = Color_DefaultValue = "";
-			ColorByPoint = ColorByPoint_DefaultValue = true;
-			ColorIndex = ColorIndex_DefaultValue = null;
-			ColorKey = ColorKey_DefaultValue = "y";
-			Colors = Colors_DefaultValue = new List<string>();
-			Crisp = Crisp_DefaultValue = true;
-			CropThreshold = CropThreshold_DefaultValue = 300;
-			Cursor = Cursor_DefaultValue = PlotOptionsFunnel3dCursor.Null;
-			Custom = Custom_DefaultValue = new Hashtable();
-			DashStyle = DashStyle_DefaultValue = PlotOptionsFunnel3dDashStyle.Null;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsFunnel3dDataLabels();
-			Depth = Depth_DefaultValue = 25;
-			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new PlotOptionsFunnel3dDragDrop();
-			EdgeColor = EdgeColor_DefaultValue = "";
-			EdgeWidth = EdgeWidth_DefaultValue = 0;
-			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
-			Events = Events_DefaultValue = new PlotOptionsFunnel3dEvents();
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsFunnel3dFindNearestPointBy.X;
-			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
-			GradientForSides = GradientForSides_DefaultValue = true;
-			Grouping = Grouping_DefaultValue = true;
-			GroupPadding = GroupPadding_DefaultValue = null;
-			GroupZPadding = GroupZPadding_DefaultValue = 1;
-			Height = Height_DefaultValue = "100%";
-			HeightNumber = HeightNumber_DefaultValue = null;
-			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
-			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
-			Keys = Keys_DefaultValue = new List<string>();
-			Label = Label_DefaultValue = new PlotOptionsFunnel3dLabel();
-			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsFunnel3dLegendSymbol.Rectangle;
-			LinkedTo = LinkedTo_DefaultValue = "";
-			MaxPointWidth = MaxPointWidth_DefaultValue = null;
-			MinPointLength = MinPointLength_DefaultValue = 0;
-			NeckHeight = NeckHeight_DefaultValue = "25%";
-			NeckHeightNumber = NeckHeightNumber_DefaultValue = null;
-			NeckWidth = NeckWidth_DefaultValue = "30%";
-			NeckWidthNumber = NeckWidthNumber_DefaultValue = null;
-			NegativeColor = NegativeColor_DefaultValue = "";
-			OnPoint = OnPoint_DefaultValue = new PlotOptionsFunnel3dOnPoint();
-			Opacity = Opacity_DefaultValue = 1;
-			Point = Point_DefaultValue = new PlotOptionsFunnel3dPoint();
-			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
-			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
-			PointInterval = PointInterval_DefaultValue = 1;
-			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsFunnel3dPointIntervalUnit.Null;
-			PointPadding = PointPadding_DefaultValue = null;
-			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
-			PointRange = PointRange_DefaultValue = null;
-			PointStart = PointStart_DefaultValue = 0;
-			PointWidth = PointWidth_DefaultValue = null;
-			RelativeXValue = RelativeXValue_DefaultValue = false;
-			Reversed = Reversed_DefaultValue = false;
-			Selected = Selected_DefaultValue = false;
-			Shadow = Shadow_DefaultValue = new Shadow();
-			ShadowBool = ShadowBool_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
-			ShowInLegend = ShowInLegend_DefaultValue = false;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			SoftThreshold = SoftThreshold_DefaultValue = true;
-			Sonification = Sonification_DefaultValue = new PlotOptionsFunnel3dSonification();
-			Stacking = Stacking_DefaultValue = PlotOptionsFunnel3dStacking.Null;
-			States = States_DefaultValue = new PlotOptionsFunnel3dStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
-			Threshold = Threshold_DefaultValue = 0;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsFunnel3dTooltip();
-			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Visible = Visible_DefaultValue = true;
-			Width = Width_DefaultValue = "90%";
-			WidthNumber = WidthNumber_DefaultValue = null;
-			ZoneAxis = ZoneAxis_DefaultValue = "y";
-			Zones = Zones_DefaultValue = new List<PlotOptionsFunnel3dZone>();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -529,8 +444,15 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// Possible values: `"on"`, `"between"`, `number`.In a column chart, when pointPlacement is `"on"`, the point will notcreate any padding of the X axis. In a polar column chart this meansthat the first column points directly north. If the pointPlacement is`"between"`, the columns will be laid out between ticks. This isuseful for example for visualising an amount between two points intime or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this iscomputed, but for line-type series it needs to be set.For the `xrange` series type and gantt charts, if the Y axis is acategory axis, the `pointPlacement` applies to the Y axis rather thanthe (typically datetime) X axis.Defaults to `undefined` in cartesian charts, `"between"` in polarcharts.
 		/// </summary>
-		public PointPlacement PointPlacement { get; set; }
-		private PointPlacement PointPlacement_DefaultValue { get; set; }
+		public PlotOptionsFunnel3dPointPlacement PointPlacement { get; set; }
+		private PlotOptionsFunnel3dPointPlacement PointPlacement_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Possible values: `"on"`, `"between"`, `number`.In a column chart, when pointPlacement is `"on"`, the point will notcreate any padding of the X axis. In a polar column chart this meansthat the first column points directly north. If the pointPlacement is`"between"`, the columns will be laid out between ticks. This isuseful for example for visualising an amount between two points intime or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this iscomputed, but for line-type series it needs to be set.For the `xrange` series type and gantt charts, if the Y axis is acategory axis, the `pointPlacement` applies to the Y axis rather thanthe (typically datetime) X axis.Defaults to `undefined` in cartesian charts, `"between"` in polarcharts.
+		/// </summary>
+		public double? PointPlacementNumber { get; set; }
+		private double? PointPlacementNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -708,95 +630,92 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderRadiusString != BorderRadiusString_DefaultValue) h.Add("borderRadius",BorderRadiusString);
-			if (BorderRadiusNumber != BorderRadiusNumber_DefaultValue) h.Add("borderRadius",BorderRadiusNumber);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
-			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
-			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
-			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
-			if (EdgeColor != EdgeColor_DefaultValue) h.Add("edgeColor",EdgeColor);
-			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
-			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
-			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
-			if (GradientForSides != GradientForSides_DefaultValue) h.Add("gradientForSides",GradientForSides);
-			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);
-			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
-			if (GroupZPadding != GroupZPadding_DefaultValue) h.Add("groupZPadding",GroupZPadding);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (HeightNumber != HeightNumber_DefaultValue) h.Add("height",HeightNumber);
-			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
-			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
-			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
-			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
-			if (MaxPointWidth != MaxPointWidth_DefaultValue) h.Add("maxPointWidth",MaxPointWidth);
-			if (MinPointLength != MinPointLength_DefaultValue) h.Add("minPointLength",MinPointLength);
-			if (NeckHeight != NeckHeight_DefaultValue) h.Add("neckHeight",NeckHeight);
-			if (NeckHeightNumber != NeckHeightNumber_DefaultValue) h.Add("neckHeight",NeckHeightNumber);
-			if (NeckWidth != NeckWidth_DefaultValue) h.Add("neckWidth",NeckWidth);
-			if (NeckWidthNumber != NeckWidthNumber_DefaultValue) h.Add("neckWidth",NeckWidthNumber);
-			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
-			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
-			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
-			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
-			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
-			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
-			if (PointPlacement.IsDirty(highcharts))
-				if (PointPlacement.Value.HasValue)
-					h.Add("pointPlacement", PointPlacement.Value);
-				else
-					h.Add("pointPlacement", PointPlacement.ToJSON(highcharts));
-			if (PointRange != PointRange_DefaultValue) h.Add("pointRange",PointRange);
-			if (PointStart != PointStart_DefaultValue) h.Add("pointStart",PointStart);
-			if (PointWidth != PointWidth_DefaultValue) h.Add("pointWidth",PointWidth);
-			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
-			if (Reversed != Reversed_DefaultValue) h.Add("reversed",Reversed);
-			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow.IsDirty(highcharts)) h.Add("shadow",Shadow.ToHashtable(highcharts));
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (SoftThreshold != SoftThreshold_DefaultValue) h.Add("softThreshold",SoftThreshold);
-			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
-			if (Stacking != Stacking_DefaultValue) h.Add("stacking", highcharts.FirstCharacterToLower(Stacking.ToString()));
-			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Threshold != Threshold_DefaultValue) h.Add("threshold",Threshold);
-			if (Tooltip.IsDirty(highcharts)) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
-			if (ZoneAxis != ZoneAxis_DefaultValue) h.Add("zoneAxis",ZoneAxis);
-			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(highcharts,Zones));
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (AllowPointSelect != null) h.Add("allowPointSelect",AllowPointSelect);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (AnimationLimit != null) h.Add("animationLimit",AnimationLimit);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (BorderRadiusString != null) h.Add("borderRadius",BorderRadiusString);
+			if (BorderRadiusNumber != null) h.Add("borderRadius",BorderRadiusNumber);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (CenterInCategory != null) h.Add("centerInCategory",CenterInCategory);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Clip != null) h.Add("clip",Clip);
+			if (Color != null) h.Add("color",Color);
+			if (ColorByPoint != null) h.Add("colorByPoint",ColorByPoint);
+			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
+			if (ColorKey != null) h.Add("colorKey",ColorKey);
+			if (Colors != null) h.Add("colors",Colors);
+			if (Crisp != null) h.Add("crisp",Crisp);
+			if (CropThreshold != null) h.Add("cropThreshold",CropThreshold);
+			if (Cursor != PlotOptionsFunnel3dCursor.Null) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != null) h.Add("custom",Custom);
+			if (DashStyle != PlotOptionsFunnel3dDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
+			if (Depth != null) h.Add("depth",Depth);
+			if (Description != null) h.Add("description",Description);
+			if (DragDrop != null) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
+			if (EdgeColor != null) h.Add("edgeColor",EdgeColor);
+			if (EdgeWidth != null) h.Add("edgeWidth",EdgeWidth);
+			if (EnableMouseTracking != null) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (FindNearestPointBy != PlotOptionsFunnel3dFindNearestPointBy.Null) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
+			if (GetExtremesFromAll != null) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (GradientForSides != null) h.Add("gradientForSides",GradientForSides);
+			if (Grouping != null) h.Add("grouping",Grouping);
+			if (GroupPadding != null) h.Add("groupPadding",GroupPadding);
+			if (GroupZPadding != null) h.Add("groupZPadding",GroupZPadding);
+			if (Height != null) h.Add("height",Height);
+			if (HeightNumber != null) h.Add("height",HeightNumber);
+			if (InactiveOtherPoints != null) h.Add("inactiveOtherPoints",InactiveOtherPoints);
+			if (IncludeInDataExport != null) h.Add("includeInDataExport",IncludeInDataExport);
+			if (Keys != null) h.Add("keys",Keys);
+			if (Label != null) h.Add("label",Label.ToHashtable(highcharts));
+			if (LegendSymbol != PlotOptionsFunnel3dLegendSymbol.Null) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
+			if (LinkedTo != null) h.Add("linkedTo",LinkedTo);
+			if (MaxPointWidth != null) h.Add("maxPointWidth",MaxPointWidth);
+			if (MinPointLength != null) h.Add("minPointLength",MinPointLength);
+			if (NeckHeight != null) h.Add("neckHeight",NeckHeight);
+			if (NeckHeightNumber != null) h.Add("neckHeight",NeckHeightNumber);
+			if (NeckWidth != null) h.Add("neckWidth",NeckWidth);
+			if (NeckWidthNumber != null) h.Add("neckWidth",NeckWidthNumber);
+			if (NegativeColor != null) h.Add("negativeColor",NegativeColor);
+			if (OnPoint != null) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
+			if (Opacity != null) h.Add("opacity",Opacity);
+			if (Point != null) h.Add("point",Point.ToHashtable(highcharts));
+			if (PointDescriptionFormat != null) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
+			if (PointDescriptionFormatter != null) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (PointInterval != null) h.Add("pointInterval",PointInterval);
+			if (PointIntervalUnit != PlotOptionsFunnel3dPointIntervalUnit.Null) h.Add("pointIntervalUnit", highcharts.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointPadding != null) h.Add("pointPadding",PointPadding);
+			if (PointPlacement != PlotOptionsFunnel3dPointPlacement.Null) h.Add("pointPlacement", highcharts.FirstCharacterToLower(PointPlacement.ToString()));
+			if (PointPlacementNumber != null) h.Add("pointPlacement",PointPlacementNumber);
+			if (PointRange != null) h.Add("pointRange",PointRange);
+			if (PointStart != null) h.Add("pointStart",PointStart);
+			if (PointWidth != null) h.Add("pointWidth",PointWidth);
+			if (RelativeXValue != null) h.Add("relativeXValue",RelativeXValue);
+			if (Reversed != null) h.Add("reversed",Reversed);
+			if (Selected != null) h.Add("selected",Selected);
+			if (Shadow != null) h.Add("shadow",Shadow.ToHashtable(highcharts));
+			if (ShadowBool != null) h.Add("shadow",ShadowBool);
+			if (ShowCheckbox != null) h.Add("showCheckbox",ShowCheckbox);
+			if (ShowInLegend != null) h.Add("showInLegend",ShowInLegend);
+			if (SkipKeyboardNavigation != null) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (SoftThreshold != null) h.Add("softThreshold",SoftThreshold);
+			if (Sonification != null) h.Add("sonification",Sonification.ToHashtable(highcharts));
+			if (Stacking != PlotOptionsFunnel3dStacking.Null) h.Add("stacking", highcharts.FirstCharacterToLower(Stacking.ToString()));
+			if (States != null) h.Add("states",States.ToHashtable(highcharts));
+			if (StickyTracking != null) h.Add("stickyTracking",StickyTracking);
+			if (Threshold != null) h.Add("threshold",Threshold);
+			if (Tooltip != null) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
+			if (TurboThreshold != null) h.Add("turboThreshold",TurboThreshold);
+			if (Visible != null) h.Add("visible",Visible);
+			if (Width != null) h.Add("width",Width);
+			if (WidthNumber != null) h.Add("width",WidthNumber);
+			if (ZoneAxis != null) h.Add("zoneAxis",ZoneAxis);
+			if (Zones != null) h.Add("zones", HashifyList(highcharts,Zones));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

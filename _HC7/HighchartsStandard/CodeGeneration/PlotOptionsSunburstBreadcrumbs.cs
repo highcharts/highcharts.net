@@ -16,20 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsSunburstBreadcrumbs()
 		{
-			ButtonSpacing = ButtonSpacing_DefaultValue = 5;
-			ButtonTheme = ButtonTheme_DefaultValue = new PlotOptionsSunburstBreadcrumbsButtonTheme();
-			Events = Events_DefaultValue = new PlotOptionsSunburstBreadcrumbsEvents();
-			Floating = Floating_DefaultValue = false;
-			Format = Format_DefaultValue = "undefined";
-			Formatter = Formatter_DefaultValue = "";
-			Position = Position_DefaultValue = new PlotOptionsSunburstBreadcrumbsPosition();
-			RelativeTo = RelativeTo_DefaultValue = "plotBox";
-			Rtl = Rtl_DefaultValue = false;
-			Separator = Separator_DefaultValue = new PlotOptionsSunburstBreadcrumbsSeparator();
-			ShowFullPath = ShowFullPath_DefaultValue = true;
-			Style = Style_DefaultValue = new Hashtable();
-			UseHTML = UseHTML_DefaultValue = false;
-			ZIndex = ZIndex_DefaultValue = 7;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -140,20 +126,20 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
-			if (ButtonTheme.IsDirty(highcharts)) h.Add("buttonTheme",ButtonTheme.ToHashtable(highcharts));
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (Position.IsDirty(highcharts)) h.Add("position",Position.ToHashtable(highcharts));
-			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
-			if (Rtl != Rtl_DefaultValue) h.Add("rtl",Rtl);
-			if (Separator.IsDirty(highcharts)) h.Add("separator",Separator.ToHashtable(highcharts));
-			if (ShowFullPath != ShowFullPath_DefaultValue) h.Add("showFullPath",ShowFullPath);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (ButtonSpacing != null) h.Add("buttonSpacing",ButtonSpacing);
+			if (ButtonTheme != null) h.Add("buttonTheme",ButtonTheme.ToHashtable(highcharts));
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (Floating != null) h.Add("floating",Floating);
+			if (Format != null) h.Add("format",Format);
+			if (Formatter != null) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
+			if (Position != null) h.Add("position",Position.ToHashtable(highcharts));
+			if (RelativeTo != null) h.Add("relativeTo",RelativeTo);
+			if (Rtl != null) h.Add("rtl",Rtl);
+			if (Separator != null) h.Add("separator",Separator.ToHashtable(highcharts));
+			if (ShowFullPath != null) h.Add("showFullPath",ShowFullPath);
+			if (Style != null) h.Add("style",Style);
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

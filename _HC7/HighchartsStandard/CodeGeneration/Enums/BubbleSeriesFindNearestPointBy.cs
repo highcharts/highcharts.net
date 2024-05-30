@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum BubbleSeriesFindNearestPointBy
     {
-        X, 
+        Null, 
+		X, 
 		Xy
     }
 }

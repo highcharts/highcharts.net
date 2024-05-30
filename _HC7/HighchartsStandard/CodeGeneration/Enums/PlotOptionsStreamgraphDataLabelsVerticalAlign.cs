@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsStreamgraphDataLabelsVerticalAlign
     {
-        Top, 
+        Null, 
+		Top, 
 		Middle, 
 		Bottom
     }

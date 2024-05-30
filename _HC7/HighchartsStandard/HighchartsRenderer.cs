@@ -102,7 +102,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrWhiteSpace(_chart.ID))
-                _chart.Chart.RenderTo = _chart.ID;
+                _chart.Chart = new Chart { RenderTo = _chart.ID };
 
             if (addContainer)
                 sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.Chart.RenderTo, GetChartHeight(), GetChartWidth());
@@ -166,7 +166,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
             if (_chart.Series != null)
                 series = SeriesToHashtables(_chart.Series);
-            if (_chart.Drilldown.Series != null)
+            if (_chart.Drilldown != null && _chart.Drilldown.Series != null)
                 drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
 
             if (series.Count > 0)

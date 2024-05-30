@@ -16,17 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ZAxisPlotLines()
 		{
-			AcrossPanes = AcrossPanes_DefaultValue = true;
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "#999999";
-			DashStyle = DashStyle_DefaultValue = ZAxisPlotLinesDashStyle.Null;
-			Events = Events_DefaultValue = null;
-			Id = Id_DefaultValue = "";
-			Label = Label_DefaultValue = new ZAxisPlotLinesLabel();
-			Labels = Labels_DefaultValue = new ZAxisPlotLinesLabels();
-			Value = Value_DefaultValue = null;
-			Width = Width_DefaultValue = 2;
-			ZIndex = ZIndex_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -116,17 +105,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AcrossPanes != AcrossPanes_DefaultValue) h.Add("acrossPanes",AcrossPanes);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (Events != Events_DefaultValue) h.Add("events",Events);
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
-			if (Labels.IsDirty(highcharts)) h.Add("labels",Labels.ToHashtable(highcharts));
-			if (Value != Value_DefaultValue) h.Add("value",Value);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (AcrossPanes != null) h.Add("acrossPanes",AcrossPanes);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (DashStyle != ZAxisPlotLinesDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (Events != null) h.Add("events",Events);
+			if (Id != null) h.Add("id",Id);
+			if (Label != null) h.Add("label",Label.ToHashtable(highcharts));
+			if (Labels != null) h.Add("labels",Labels.ToHashtable(highcharts));
+			if (Value != null) h.Add("value",Value);
+			if (Width != null) h.Add("width",Width);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

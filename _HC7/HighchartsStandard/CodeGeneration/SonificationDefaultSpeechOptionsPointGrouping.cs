@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SonificationDefaultSpeechOptionsPointGrouping()
 		{
-			Algorithm = Algorithm_DefaultValue = "last";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Algorithm != Algorithm_DefaultValue) h.Add("algorithm",Algorithm);
+			if (Algorithm != null) h.Add("algorithm",Algorithm);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

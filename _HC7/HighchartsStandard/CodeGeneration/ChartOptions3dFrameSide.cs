@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartOptions3dFrameSide()
 		{
-			Color = Color_DefaultValue = "transparent";
-			Size = Size_DefaultValue = 1;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (Color != null) h.Add("color",Color);
+			if (Size != null) h.Add("size",Size);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

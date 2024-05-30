@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum BulletSeriesLegendSymbol
     {
-        AreaMarker, 
+        Null, 
+		AreaMarker, 
 		LineMarker, 
 		Rectangle
     }

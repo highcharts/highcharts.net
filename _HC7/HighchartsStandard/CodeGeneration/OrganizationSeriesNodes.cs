@@ -16,24 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public OrganizationSeriesNodes()
 		{
-			Color = Color_DefaultValue = "";
-			ColorIndex = ColorIndex_DefaultValue = null;
-			Column = Column_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = new OrganizationSeriesNodesDataLabels();
-			Description = Description_DefaultValue = "";
-			Height = Height_DefaultValue = null;
-			Id = Id_DefaultValue = "";
-			Image = Image_DefaultValue = "";
-			Layout = Layout_DefaultValue = "normal";
-			Level = Level_DefaultValue = null;
-			Name = Name_DefaultValue = "";
-			Offset = Offset_DefaultValue = "0";
-			OffsetNumber = OffsetNumber_DefaultValue = null;
-			OffsetHorizontal = OffsetHorizontal_DefaultValue = "";
-			OffsetHorizontalNumber = OffsetHorizontalNumber_DefaultValue = null;
-			OffsetVertical = OffsetVertical_DefaultValue = "";
-			OffsetVerticalNumber = OffsetVerticalNumber_DefaultValue = null;
-			Title = Title_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -172,24 +154,24 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Column != Column_DefaultValue) h.Add("column",Column);
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Image != Image_DefaultValue) h.Add("image",Image);
-			if (Layout != Layout_DefaultValue) h.Add("layout",Layout);
-			if (Level != Level_DefaultValue) h.Add("level",Level);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (OffsetNumber != OffsetNumber_DefaultValue) h.Add("offset",OffsetNumber);
-			if (OffsetHorizontal != OffsetHorizontal_DefaultValue) h.Add("offsetHorizontal",OffsetHorizontal);
-			if (OffsetHorizontalNumber != OffsetHorizontalNumber_DefaultValue) h.Add("offsetHorizontal",OffsetHorizontalNumber);
-			if (OffsetVertical != OffsetVertical_DefaultValue) h.Add("offsetVertical",OffsetVertical);
-			if (OffsetVerticalNumber != OffsetVerticalNumber_DefaultValue) h.Add("offsetVertical",OffsetVerticalNumber);
-			if (Title != Title_DefaultValue) h.Add("title",Title);
+			if (Color != null) h.Add("color",Color);
+			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
+			if (Column != null) h.Add("column",Column);
+			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
+			if (Description != null) h.Add("description",Description);
+			if (Height != null) h.Add("height",Height);
+			if (Id != null) h.Add("id",Id);
+			if (Image != null) h.Add("image",Image);
+			if (Layout != null) h.Add("layout",Layout);
+			if (Level != null) h.Add("level",Level);
+			if (Name != null) h.Add("name",Name);
+			if (Offset != null) h.Add("offset",Offset);
+			if (OffsetNumber != null) h.Add("offset",OffsetNumber);
+			if (OffsetHorizontal != null) h.Add("offsetHorizontal",OffsetHorizontal);
+			if (OffsetHorizontalNumber != null) h.Add("offsetHorizontal",OffsetHorizontalNumber);
+			if (OffsetVertical != null) h.Add("offsetVertical",OffsetVertical);
+			if (OffsetVerticalNumber != null) h.Add("offsetVertical",OffsetVerticalNumber);
+			if (Title != null) h.Add("title",Title);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

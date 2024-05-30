@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public DrilldownDrillUpButton()
 		{
-			Position = Position_DefaultValue = new DrilldownDrillUpButtonPosition();
-			RelativeTo = RelativeTo_DefaultValue = "plotBox";
-			Theme = Theme_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Position.IsDirty(highcharts)) h.Add("position",Position.ToHashtable(highcharts));
-			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
-			if (Theme != Theme_DefaultValue) h.Add("theme",Theme);
+			if (Position != null) h.Add("position",Position.ToHashtable(highcharts));
+			if (RelativeTo != null) h.Add("relativeTo",RelativeTo);
+			if (Theme != null) h.Add("theme",Theme);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

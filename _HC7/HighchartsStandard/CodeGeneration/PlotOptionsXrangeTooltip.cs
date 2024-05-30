@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsXrangeTooltip()
 		{
-			Distance = Distance_DefaultValue = 6;
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 0.8em'>{point.x} - {point.x2}</span><br/>";
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.yCategory}</b><br/>";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (Distance != null) h.Add("distance",Distance);
+			if (HeaderFormat != null) h.Add("headerFormat",HeaderFormat);
+			if (PointFormat != null) h.Add("pointFormat",PointFormat);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

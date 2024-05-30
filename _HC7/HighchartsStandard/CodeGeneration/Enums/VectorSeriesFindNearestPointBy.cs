@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum VectorSeriesFindNearestPointBy
     {
-        X, 
+        Null, 
+		X, 
 		Xy
     }
 }

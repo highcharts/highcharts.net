@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public WindbarbSeriesStatesNormal()
 		{
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

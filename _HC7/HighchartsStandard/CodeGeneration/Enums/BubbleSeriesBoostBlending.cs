@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum BubbleSeriesBoostBlending
     {
-        Undefined, 
+        Null, 
+		Undefined, 
 		Add, 
 		Multiply, 
 		Darken

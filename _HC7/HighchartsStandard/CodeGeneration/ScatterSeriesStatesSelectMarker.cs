@@ -16,14 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ScatterSeriesStatesSelectMarker()
 		{
-			Enabled = Enabled_DefaultValue = null;
-			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
-			FillColor = FillColor_DefaultValue = null;
-			Height = Height_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "#ffffff";
-			LineWidth = LineWidth_DefaultValue = 0;
-			Radius = Radius_DefaultValue = 4;
-			Width = Width_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -92,14 +84,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (EnabledThreshold != null) h.Add("enabledThreshold",EnabledThreshold);
+			if (FillColor != null) h.Add("fillColor",FillColor);
+			if (Height != null) h.Add("height",Height);
+			if (LineColor != null) h.Add("lineColor",LineColor);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (Radius != null) h.Add("radius",Radius);
+			if (Width != null) h.Add("width",Width);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,26 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public YAxisStackLabels()
 		{
-			Align = Align_DefaultValue = YAxisStackLabelsAlign.Null;
-			AllowOverlap = AllowOverlap_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
-			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderRadius = BorderRadius_DefaultValue = 0;
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			Crop = Crop_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
-			Format = Format_DefaultValue = "{total}";
-			Formatter = Formatter_DefaultValue = "";
-			Overflow = Overflow_DefaultValue = YAxisStackLabelsOverflow.Justify;
-			Rotation = Rotation_DefaultValue = 0;
-			Style = Style_DefaultValue = new Hashtable();
-			TextAlign = TextAlign_DefaultValue = YAxisStackLabelsTextAlign.Null;
-			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = YAxisStackLabelsVerticalAlign.Null;
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -188,26 +168,26 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", highcharts.FirstCharacterToLower(TextAlign.ToString()));
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != YAxisStackLabelsAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (AllowOverlap != null) h.Add("allowOverlap",AllowOverlap);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (Crop != null) h.Add("crop",Crop);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Format != null) h.Add("format",Format);
+			if (Formatter != null) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
+			if (Overflow != YAxisStackLabelsOverflow.Null) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
+			if (Rotation != null) h.Add("rotation",Rotation);
+			if (Style != null) h.Add("style",Style);
+			if (TextAlign != YAxisStackLabelsTextAlign.Null) h.Add("textAlign", highcharts.FirstCharacterToLower(TextAlign.ToString()));
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != YAxisStackLabelsVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

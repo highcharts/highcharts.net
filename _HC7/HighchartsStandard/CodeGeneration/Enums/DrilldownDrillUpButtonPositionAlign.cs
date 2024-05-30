@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum DrilldownDrillUpButtonPositionAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

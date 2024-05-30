@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartResetZoomButtonTheme()
 		{
-			ZIndex = ZIndex_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public FunnelSeriesPoint()
 		{
-			Events = Events_DefaultValue = new FunnelSeriesPointEvents();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

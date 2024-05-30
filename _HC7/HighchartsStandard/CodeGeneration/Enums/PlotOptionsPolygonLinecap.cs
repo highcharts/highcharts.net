@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsPolygonLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

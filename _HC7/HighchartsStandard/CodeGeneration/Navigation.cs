@@ -16,16 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Navigation()
 		{
-			AnnotationsOptions = AnnotationsOptions_DefaultValue = new NavigationAnnotationsOptions();
-			Bindings = Bindings_DefaultValue = new NavigationBindings();
-			BindingsClassName = BindingsClassName_DefaultValue = "highcharts-bindings-container";
-			Breadcrumbs = Breadcrumbs_DefaultValue = new NavigationBreadcrumbs();
-			ButtonOptions = ButtonOptions_DefaultValue = new NavigationButtonOptions();
-			Events = Events_DefaultValue = new NavigationEvents();
-			IconsURL = IconsURL_DefaultValue = "";
-			MenuItemHoverStyle = MenuItemHoverStyle_DefaultValue = new Hashtable();
-			MenuItemStyle = MenuItemStyle_DefaultValue = new Hashtable();
-			MenuStyle = MenuStyle_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -108,16 +98,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AnnotationsOptions.IsDirty(highcharts)) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable(highcharts));
-			if (Bindings.IsDirty(highcharts)) h.Add("bindings",Bindings.ToHashtable(highcharts));
-			if (BindingsClassName != BindingsClassName_DefaultValue) h.Add("bindingsClassName",BindingsClassName);
-			if (Breadcrumbs.IsDirty(highcharts)) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(highcharts));
-			if (ButtonOptions.IsDirty(highcharts)) h.Add("buttonOptions",ButtonOptions.ToHashtable(highcharts));
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (IconsURL != IconsURL_DefaultValue) h.Add("iconsURL",IconsURL);
-			if (MenuItemHoverStyle != MenuItemHoverStyle_DefaultValue) h.Add("menuItemHoverStyle",MenuItemHoverStyle);
-			if (MenuItemStyle != MenuItemStyle_DefaultValue) h.Add("menuItemStyle",MenuItemStyle);
-			if (MenuStyle != MenuStyle_DefaultValue) h.Add("menuStyle",MenuStyle);
+			if (AnnotationsOptions != null) h.Add("annotationsOptions",AnnotationsOptions.ToHashtable(highcharts));
+			if (Bindings != null) h.Add("bindings",Bindings.ToHashtable(highcharts));
+			if (BindingsClassName != null) h.Add("bindingsClassName",BindingsClassName);
+			if (Breadcrumbs != null) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(highcharts));
+			if (ButtonOptions != null) h.Add("buttonOptions",ButtonOptions.ToHashtable(highcharts));
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (IconsURL != null) h.Add("iconsURL",IconsURL);
+			if (MenuItemHoverStyle != null) h.Add("menuItemHoverStyle",MenuItemHoverStyle);
+			if (MenuItemStyle != null) h.Add("menuItemStyle",MenuItemStyle);
+			if (MenuStyle != null) h.Add("menuStyle",MenuStyle);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,20 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsParetoSonificationDefaultSpeechOptionsMapping()
 		{
-			Frequency = Frequency_DefaultValue = new PlotOptionsParetoSonificationDefaultSpeechOptionsMappingFrequency();
-			GapBetweenNotes = GapBetweenNotes_DefaultValue = new PlotOptionsParetoSonificationDefaultSpeechOptionsMappingGapBetweenNotes();
-			Highpass = Highpass_DefaultValue = new PlotOptionsParetoSonificationDefaultSpeechOptionsMappingHighpass();
-			Lowpass = Lowpass_DefaultValue = new PlotOptionsParetoSonificationDefaultSpeechOptionsMappingLowpass();
-			NoteDuration = NoteDuration_DefaultValue = new PlotOptionsParetoSonificationDefaultSpeechOptionsMappingNoteDuration();
-			Pan = Pan_DefaultValue = new PlotOptionsParetoSonificationDefaultSpeechOptionsMappingPan();
-			Pitch = Pitch_DefaultValue = new PlotOptionsParetoSonificationDefaultSpeechOptionsMappingPitch();
-			PitchString = PitchString_DefaultValue = "null";
-			PitchNumber = PitchNumber_DefaultValue = null;
-			PlayDelay = PlayDelay_DefaultValue = new PlotOptionsParetoSonificationDefaultSpeechOptionsMappingPlayDelay();
-			Time = Time_DefaultValue = "'x'";
-			TimeNumber = TimeNumber_DefaultValue = null;
-			Tremolo = Tremolo_DefaultValue = new PlotOptionsParetoSonificationDefaultSpeechOptionsMappingTremolo();
-			Volume = Volume_DefaultValue = new PlotOptionsParetoSonificationDefaultSpeechOptionsMappingVolume();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -140,20 +126,20 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Frequency.IsDirty(highcharts)) h.Add("frequency",Frequency.ToHashtable(highcharts));
-			if (GapBetweenNotes.IsDirty(highcharts)) h.Add("gapBetweenNotes",GapBetweenNotes.ToHashtable(highcharts));
-			if (Highpass.IsDirty(highcharts)) h.Add("highpass",Highpass.ToHashtable(highcharts));
-			if (Lowpass.IsDirty(highcharts)) h.Add("lowpass",Lowpass.ToHashtable(highcharts));
-			if (NoteDuration.IsDirty(highcharts)) h.Add("noteDuration",NoteDuration.ToHashtable(highcharts));
-			if (Pan.IsDirty(highcharts)) h.Add("pan",Pan.ToHashtable(highcharts));
-			if (Pitch.IsDirty(highcharts)) h.Add("pitch",Pitch.ToHashtable(highcharts));
-			if (PitchString != PitchString_DefaultValue) h.Add("pitch",PitchString);
-			if (PitchNumber != PitchNumber_DefaultValue) h.Add("pitch",PitchNumber);
-			if (PlayDelay.IsDirty(highcharts)) h.Add("playDelay",PlayDelay.ToHashtable(highcharts));
-			if (Time != Time_DefaultValue) h.Add("time",Time);
-			if (TimeNumber != TimeNumber_DefaultValue) h.Add("time",TimeNumber);
-			if (Tremolo.IsDirty(highcharts)) h.Add("tremolo",Tremolo.ToHashtable(highcharts));
-			if (Volume.IsDirty(highcharts)) h.Add("volume",Volume.ToHashtable(highcharts));
+			if (Frequency != null) h.Add("frequency",Frequency.ToHashtable(highcharts));
+			if (GapBetweenNotes != null) h.Add("gapBetweenNotes",GapBetweenNotes.ToHashtable(highcharts));
+			if (Highpass != null) h.Add("highpass",Highpass.ToHashtable(highcharts));
+			if (Lowpass != null) h.Add("lowpass",Lowpass.ToHashtable(highcharts));
+			if (NoteDuration != null) h.Add("noteDuration",NoteDuration.ToHashtable(highcharts));
+			if (Pan != null) h.Add("pan",Pan.ToHashtable(highcharts));
+			if (Pitch != null) h.Add("pitch",Pitch.ToHashtable(highcharts));
+			if (PitchString != null) h.Add("pitch",PitchString);
+			if (PitchNumber != null) h.Add("pitch",PitchNumber);
+			if (PlayDelay != null) h.Add("playDelay",PlayDelay.ToHashtable(highcharts));
+			if (Time != null) h.Add("time",Time);
+			if (TimeNumber != null) h.Add("time",TimeNumber);
+			if (Tremolo != null) h.Add("tremolo",Tremolo.ToHashtable(highcharts));
+			if (Volume != null) h.Add("volume",Volume.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

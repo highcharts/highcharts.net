@@ -16,57 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsWordcloud()
 		{
-			Accessibility = Accessibility_DefaultValue = new PlotOptionsWordcloudAccessibility();
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = true;
-			AnimationLimit = AnimationLimit_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "#ffffff";
-			BorderRadius = BorderRadius_DefaultValue = null;
-			BorderRadiusString = BorderRadiusString_DefaultValue = "null";
-			BorderRadiusNumber = BorderRadiusNumber_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			CenterInCategory = CenterInCategory_DefaultValue = false;
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
-			ColorByPoint = ColorByPoint_DefaultValue = true;
-			ColorIndex = ColorIndex_DefaultValue = null;
-			ColorKey = ColorKey_DefaultValue = "y";
-			Colors = Colors_DefaultValue = new List<string>();
-			Cursor = Cursor_DefaultValue = PlotOptionsWordcloudCursor.Null;
-			Custom = Custom_DefaultValue = new Hashtable();
-			DashStyle = DashStyle_DefaultValue = PlotOptionsWordcloudDashStyle.Null;
-			Description = Description_DefaultValue = "";
-			EdgeWidth = EdgeWidth_DefaultValue = 1;
-			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
-			Events = Events_DefaultValue = new PlotOptionsWordcloudEvents();
-			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
-			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
-			Keys = Keys_DefaultValue = new List<string>();
-			Label = Label_DefaultValue = new PlotOptionsWordcloudLabel();
-			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsWordcloudLegendSymbol.Rectangle;
-			LinkedTo = LinkedTo_DefaultValue = "";
-			MaxFontSize = MaxFontSize_DefaultValue = 25;
-			MinFontSize = MinFontSize_DefaultValue = 1;
-			OnPoint = OnPoint_DefaultValue = new PlotOptionsWordcloudOnPoint();
-			Opacity = Opacity_DefaultValue = 1;
-			PlacementStrategy = PlacementStrategy_DefaultValue = PlotOptionsWordcloudPlacementStrategy.Center;
-			Point = Point_DefaultValue = new PlotOptionsWordcloudPoint();
-			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
-			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
-			RelativeXValue = RelativeXValue_DefaultValue = false;
-			Rotation = Rotation_DefaultValue = new PlotOptionsWordcloudRotation();
-			Selected = Selected_DefaultValue = false;
-			ShowInLegend = ShowInLegend_DefaultValue = false;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Sonification = Sonification_DefaultValue = new PlotOptionsWordcloudSonification();
-			Spiral = Spiral_DefaultValue = PlotOptionsWordcloudSpiral.Rectangular;
-			States = States_DefaultValue = new PlotOptionsWordcloudStates();
-			StickyTracking = StickyTracking_DefaultValue = true;
-			Style = Style_DefaultValue = new Hashtable();
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsWordcloudTooltip();
-			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			Visible = Visible_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -436,57 +385,57 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (AnimationLimit != AnimationLimit_DefaultValue) h.Add("animationLimit",AnimationLimit);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderRadiusString != BorderRadiusString_DefaultValue) h.Add("borderRadius",BorderRadiusString);
-			if (BorderRadiusNumber != BorderRadiusNumber_DefaultValue) h.Add("borderRadius",BorderRadiusNumber);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (CenterInCategory != CenterInCategory_DefaultValue) h.Add("centerInCategory",CenterInCategory);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (ColorKey != ColorKey_DefaultValue) h.Add("colorKey",ColorKey);
-			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
-			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (EdgeWidth != EdgeWidth_DefaultValue) h.Add("edgeWidth",EdgeWidth);
-			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
-			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
-			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
-			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
-			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
-			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
-			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (PlacementStrategy != PlacementStrategy_DefaultValue) h.Add("placementStrategy", highcharts.FirstCharacterToLower(PlacementStrategy.ToString()));
-			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
-			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
-			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
-			if (Rotation.IsDirty(highcharts)) h.Add("rotation",Rotation.ToHashtable(highcharts));
-			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
-			if (Spiral != Spiral_DefaultValue) h.Add("spiral", highcharts.FirstCharacterToLower(Spiral.ToString()));
-			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Tooltip.IsDirty(highcharts)) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (AllowPointSelect != null) h.Add("allowPointSelect",AllowPointSelect);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (AnimationLimit != null) h.Add("animationLimit",AnimationLimit);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (BorderRadiusString != null) h.Add("borderRadius",BorderRadiusString);
+			if (BorderRadiusNumber != null) h.Add("borderRadius",BorderRadiusNumber);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (CenterInCategory != null) h.Add("centerInCategory",CenterInCategory);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (ColorByPoint != null) h.Add("colorByPoint",ColorByPoint);
+			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
+			if (ColorKey != null) h.Add("colorKey",ColorKey);
+			if (Colors != null) h.Add("colors",Colors);
+			if (Cursor != PlotOptionsWordcloudCursor.Null) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != null) h.Add("custom",Custom);
+			if (DashStyle != PlotOptionsWordcloudDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (Description != null) h.Add("description",Description);
+			if (EdgeWidth != null) h.Add("edgeWidth",EdgeWidth);
+			if (EnableMouseTracking != null) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (InactiveOtherPoints != null) h.Add("inactiveOtherPoints",InactiveOtherPoints);
+			if (IncludeInDataExport != null) h.Add("includeInDataExport",IncludeInDataExport);
+			if (Keys != null) h.Add("keys",Keys);
+			if (Label != null) h.Add("label",Label.ToHashtable(highcharts));
+			if (LegendSymbol != PlotOptionsWordcloudLegendSymbol.Null) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
+			if (LinkedTo != null) h.Add("linkedTo",LinkedTo);
+			if (MaxFontSize != null) h.Add("maxFontSize",MaxFontSize);
+			if (MinFontSize != null) h.Add("minFontSize",MinFontSize);
+			if (OnPoint != null) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
+			if (Opacity != null) h.Add("opacity",Opacity);
+			if (PlacementStrategy != PlotOptionsWordcloudPlacementStrategy.Null) h.Add("placementStrategy", highcharts.FirstCharacterToLower(PlacementStrategy.ToString()));
+			if (Point != null) h.Add("point",Point.ToHashtable(highcharts));
+			if (PointDescriptionFormat != null) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
+			if (PointDescriptionFormatter != null) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (RelativeXValue != null) h.Add("relativeXValue",RelativeXValue);
+			if (Rotation != null) h.Add("rotation",Rotation.ToHashtable(highcharts));
+			if (Selected != null) h.Add("selected",Selected);
+			if (ShowInLegend != null) h.Add("showInLegend",ShowInLegend);
+			if (SkipKeyboardNavigation != null) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (Sonification != null) h.Add("sonification",Sonification.ToHashtable(highcharts));
+			if (Spiral != PlotOptionsWordcloudSpiral.Null) h.Add("spiral", highcharts.FirstCharacterToLower(Spiral.ToString()));
+			if (States != null) h.Add("states",States.ToHashtable(highcharts));
+			if (StickyTracking != null) h.Add("stickyTracking",StickyTracking);
+			if (Style != null) h.Add("style",Style);
+			if (Tooltip != null) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
+			if (TurboThreshold != null) h.Add("turboThreshold",TurboThreshold);
+			if (Visible != null) h.Add("visible",Visible);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

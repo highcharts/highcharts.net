@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum DumbbellSeriesLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsSankeyNodeAlignment
     {
-        Top, 
+        Null, 
+		Top, 
 		Center, 
 		Bottom
     }

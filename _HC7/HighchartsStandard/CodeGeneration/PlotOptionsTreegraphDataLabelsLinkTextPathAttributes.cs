@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTreegraphDataLabelsLinkTextPathAttributes()
 		{
-			StartOffset = StartOffset_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (StartOffset != StartOffset_DefaultValue) h.Add("startOffset",StartOffset);
+			if (StartOffset != null) h.Add("startOffset",StartOffset);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,16 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public BulletSeriesPointEvents()
 		{
-			Click = Click_DefaultValue = "";
-			Drag = Drag_DefaultValue = "";
-			DragStart = DragStart_DefaultValue = "";
-			Drop = Drop_DefaultValue = "";
-			MouseOut = MouseOut_DefaultValue = "";
-			MouseOver = MouseOver_DefaultValue = "";
-			Remove = Remove_DefaultValue = "";
-			Select = Select_DefaultValue = "";
-			Unselect = Unselect_DefaultValue = "";
-			Update = Update_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -108,16 +98,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Click != Click_DefaultValue) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
-			if (Drag != Drag_DefaultValue) { h.Add("drag",Drag); highcharts.AddFunction("drag", Drag); }  
-			if (DragStart != DragStart_DefaultValue) { h.Add("dragStart",DragStart); highcharts.AddFunction("dragStart", DragStart); }  
-			if (Drop != Drop_DefaultValue) { h.Add("drop",Drop); highcharts.AddFunction("drop", Drop); }  
-			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); highcharts.AddFunction("mouseOut", MouseOut); }  
-			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); highcharts.AddFunction("mouseOver", MouseOver); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); highcharts.AddFunction("remove", Remove); }  
-			if (Select != Select_DefaultValue) { h.Add("select",Select); highcharts.AddFunction("select", Select); }  
-			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); highcharts.AddFunction("unselect", Unselect); }  
-			if (Update != Update_DefaultValue) { h.Add("update",Update); highcharts.AddFunction("update", Update); }  
+			if (Click != null) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
+			if (Drag != null) { h.Add("drag",Drag); highcharts.AddFunction("drag", Drag); }  
+			if (DragStart != null) { h.Add("dragStart",DragStart); highcharts.AddFunction("dragStart", DragStart); }  
+			if (Drop != null) { h.Add("drop",Drop); highcharts.AddFunction("drop", Drop); }  
+			if (MouseOut != null) { h.Add("mouseOut",MouseOut); highcharts.AddFunction("mouseOut", MouseOut); }  
+			if (MouseOver != null) { h.Add("mouseOver",MouseOver); highcharts.AddFunction("mouseOver", MouseOver); }  
+			if (Remove != null) { h.Add("remove",Remove); highcharts.AddFunction("remove", Remove); }  
+			if (Select != null) { h.Add("select",Select); highcharts.AddFunction("select", Select); }  
+			if (Unselect != null) { h.Add("unselect",Unselect); highcharts.AddFunction("unselect", Unselect); }  
+			if (Update != null) { h.Add("update",Update); highcharts.AddFunction("update", Update); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsVectorRotationOrigin
     {
-        Start, 
+        Null, 
+		Start, 
 		Center, 
 		End
     }

@@ -16,17 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ArcdiagramSeriesNodes()
 		{
-			Color = Color_DefaultValue = "";
-			ColorIndex = ColorIndex_DefaultValue = null;
-			Height = Height_DefaultValue = null;
-			Id = Id_DefaultValue = "";
-			Name = Name_DefaultValue = "";
-			Offset = Offset_DefaultValue = "0";
-			OffsetNumber = OffsetNumber_DefaultValue = null;
-			OffsetHorizontal = OffsetHorizontal_DefaultValue = "";
-			OffsetHorizontalNumber = OffsetHorizontalNumber_DefaultValue = null;
-			OffsetVertical = OffsetVertical_DefaultValue = "";
-			OffsetVerticalNumber = OffsetVerticalNumber_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,6 +33,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public double? ColorIndex { get; set; }
 		private double? ColorIndex_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Individual data label for each node. The options are the same as the ones for[series.arcdiagram.dataLabels](#series.arcdiagram.dataLabels).
+		/// </summary>
+		public Object DataLabels { get; set; }
+		private Object DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -116,17 +112,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (OffsetNumber != OffsetNumber_DefaultValue) h.Add("offset",OffsetNumber);
-			if (OffsetHorizontal != OffsetHorizontal_DefaultValue) h.Add("offsetHorizontal",OffsetHorizontal);
-			if (OffsetHorizontalNumber != OffsetHorizontalNumber_DefaultValue) h.Add("offsetHorizontal",OffsetHorizontalNumber);
-			if (OffsetVertical != OffsetVertical_DefaultValue) h.Add("offsetVertical",OffsetVertical);
-			if (OffsetVerticalNumber != OffsetVerticalNumber_DefaultValue) h.Add("offsetVertical",OffsetVerticalNumber);
+			if (Color != null) h.Add("color",Color);
+			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
+			if (DataLabels != null) h.Add("dataLabels",DataLabels);
+			if (Height != null) h.Add("height",Height);
+			if (Id != null) h.Add("id",Id);
+			if (Name != null) h.Add("name",Name);
+			if (Offset != null) h.Add("offset",Offset);
+			if (OffsetNumber != null) h.Add("offset",OffsetNumber);
+			if (OffsetHorizontal != null) h.Add("offsetHorizontal",OffsetHorizontal);
+			if (OffsetHorizontalNumber != null) h.Add("offsetHorizontal",OffsetHorizontalNumber);
+			if (OffsetVertical != null) h.Add("offsetVertical",OffsetVertical);
+			if (OffsetVerticalNumber != null) h.Add("offsetVertical",OffsetVerticalNumber);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

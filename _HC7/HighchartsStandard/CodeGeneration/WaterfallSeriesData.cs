@@ -16,24 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public WaterfallSeriesData()
 		{
-			Accessibility = Accessibility_DefaultValue = new WaterfallSeriesDataAccessibility();
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
-			ColorIndex = ColorIndex_DefaultValue = null;
-			Custom = Custom_DefaultValue = new Hashtable();
-			DataLabels = DataLabels_DefaultValue = new WaterfallSeriesDataLabels();
-			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new WaterfallSeriesDataDragDrop();
-			Drilldown = Drilldown_DefaultValue = "";
-			Events = Events_DefaultValue = new WaterfallSeriesDataEvents();
-			Id = Id_DefaultValue = "";
-			IsIntermediateSum = IsIntermediateSum_DefaultValue = false;
-			IsSum = IsSum_DefaultValue = false;
-			Labelrank = Labelrank_DefaultValue = null;
-			Name = Name_DefaultValue = "";
-			Selected = Selected_DefaultValue = false;
-			X = X_DefaultValue = double.MinValue;
-			Y = Y_DefaultValue = double.MinValue;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -172,24 +154,24 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (IsIntermediateSum != IsIntermediateSum_DefaultValue) h.Add("isIntermediateSum",IsIntermediateSum);
-			if (IsSum != IsSum_DefaultValue) h.Add("isSum",IsSum);
-			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
+			if (Custom != null) h.Add("custom",Custom);
+			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
+			if (Description != null) h.Add("description",Description);
+			if (DragDrop != null) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
+			if (Drilldown != null) h.Add("drilldown",Drilldown);
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (Id != null) h.Add("id",Id);
+			if (IsIntermediateSum != null) h.Add("isIntermediateSum",IsIntermediateSum);
+			if (IsSum != null) h.Add("isSum",IsSum);
+			if (Labelrank != null) h.Add("labelrank",Labelrank);
+			if (Name != null) h.Add("name",Name);
+			if (Selected != null) h.Add("selected",Selected);
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

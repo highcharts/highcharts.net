@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPieStatesHover()
 		{
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
-			Brightness = Brightness_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
-			Halo = Halo_DefaultValue = new PlotOptionsPieStatesHoverHalo();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo.IsDirty(highcharts)) h.Add("halo",Halo.ToHashtable(highcharts));
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (Brightness != null) h.Add("brightness",Brightness);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Halo != null) h.Add("halo",Halo.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

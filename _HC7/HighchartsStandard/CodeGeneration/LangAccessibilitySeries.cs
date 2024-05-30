@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilitySeries()
 		{
-			Description = Description_DefaultValue = "{description}";
-			NullPointValue = NullPointValue_DefaultValue = "No value";
-			PointAnnotationsDescription = PointAnnotationsDescription_DefaultValue = "{#each annotations}Annotation: {this}{/each}";
-			Summary = Summary_DefaultValue = new LangAccessibilitySeriesSummary();
-			XAxisDescription = XAxisDescription_DefaultValue = "X axis, {name}";
-			YAxisDescription = YAxisDescription_DefaultValue = "Y axis, {name}";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (NullPointValue != NullPointValue_DefaultValue) h.Add("nullPointValue",NullPointValue);
-			if (PointAnnotationsDescription != PointAnnotationsDescription_DefaultValue) h.Add("pointAnnotationsDescription",PointAnnotationsDescription);
-			if (Summary.IsDirty(highcharts)) h.Add("summary",Summary.ToHashtable(highcharts));
-			if (XAxisDescription != XAxisDescription_DefaultValue) h.Add("xAxisDescription",XAxisDescription);
-			if (YAxisDescription != YAxisDescription_DefaultValue) h.Add("yAxisDescription",YAxisDescription);
+			if (Description != null) h.Add("description",Description);
+			if (NullPointValue != null) h.Add("nullPointValue",NullPointValue);
+			if (PointAnnotationsDescription != null) h.Add("pointAnnotationsDescription",PointAnnotationsDescription);
+			if (Summary != null) h.Add("summary",Summary.ToHashtable(highcharts));
+			if (XAxisDescription != null) h.Add("xAxisDescription",XAxisDescription);
+			if (YAxisDescription != null) h.Add("yAxisDescription",YAxisDescription);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

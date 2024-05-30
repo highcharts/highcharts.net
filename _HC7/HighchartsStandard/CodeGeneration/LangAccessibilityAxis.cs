@@ -16,16 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityAxis()
 		{
-			RangeCategories = RangeCategories_DefaultValue = "Data range: {numCategories} categories.";
-			RangeFromTo = RangeFromTo_DefaultValue = "Data ranges from {rangeFrom} to {rangeTo}.";
-			TimeRangeDays = TimeRangeDays_DefaultValue = "Data range: {range} days.";
-			TimeRangeHours = TimeRangeHours_DefaultValue = "Data range: {range} hours.";
-			TimeRangeMinutes = TimeRangeMinutes_DefaultValue = "Data range: {range} minutes.";
-			TimeRangeSeconds = TimeRangeSeconds_DefaultValue = "Data range: {range} seconds.";
-			XAxisDescriptionPlural = XAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} X axes displaying {#each names}{#unless @first},{/unless}{#if @last} and{/if} {this}{/each}.";
-			XAxisDescriptionSingular = XAxisDescriptionSingular_DefaultValue = "The chart has 1 X axis displaying {names[0]}. {ranges[0]}";
-			YAxisDescriptionPlural = YAxisDescriptionPlural_DefaultValue = "The chart has {numAxes} Y axes displaying {#each names}{#unless @first},{/unless}{#if @last} and{/if} {this}{/each}.";
-			YAxisDescriptionSingular = YAxisDescriptionSingular_DefaultValue = "The chart has 1 Y axis displaying {names[0]}. {ranges[0]}";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -108,16 +98,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (RangeCategories != RangeCategories_DefaultValue) h.Add("rangeCategories",RangeCategories);
-			if (RangeFromTo != RangeFromTo_DefaultValue) h.Add("rangeFromTo",RangeFromTo);
-			if (TimeRangeDays != TimeRangeDays_DefaultValue) h.Add("timeRangeDays",TimeRangeDays);
-			if (TimeRangeHours != TimeRangeHours_DefaultValue) h.Add("timeRangeHours",TimeRangeHours);
-			if (TimeRangeMinutes != TimeRangeMinutes_DefaultValue) h.Add("timeRangeMinutes",TimeRangeMinutes);
-			if (TimeRangeSeconds != TimeRangeSeconds_DefaultValue) h.Add("timeRangeSeconds",TimeRangeSeconds);
-			if (XAxisDescriptionPlural != XAxisDescriptionPlural_DefaultValue) h.Add("xAxisDescriptionPlural",XAxisDescriptionPlural);
-			if (XAxisDescriptionSingular != XAxisDescriptionSingular_DefaultValue) h.Add("xAxisDescriptionSingular",XAxisDescriptionSingular);
-			if (YAxisDescriptionPlural != YAxisDescriptionPlural_DefaultValue) h.Add("yAxisDescriptionPlural",YAxisDescriptionPlural);
-			if (YAxisDescriptionSingular != YAxisDescriptionSingular_DefaultValue) h.Add("yAxisDescriptionSingular",YAxisDescriptionSingular);
+			if (RangeCategories != null) h.Add("rangeCategories",RangeCategories);
+			if (RangeFromTo != null) h.Add("rangeFromTo",RangeFromTo);
+			if (TimeRangeDays != null) h.Add("timeRangeDays",TimeRangeDays);
+			if (TimeRangeHours != null) h.Add("timeRangeHours",TimeRangeHours);
+			if (TimeRangeMinutes != null) h.Add("timeRangeMinutes",TimeRangeMinutes);
+			if (TimeRangeSeconds != null) h.Add("timeRangeSeconds",TimeRangeSeconds);
+			if (XAxisDescriptionPlural != null) h.Add("xAxisDescriptionPlural",XAxisDescriptionPlural);
+			if (XAxisDescriptionSingular != null) h.Add("xAxisDescriptionSingular",XAxisDescriptionSingular);
+			if (YAxisDescriptionPlural != null) h.Add("yAxisDescriptionPlural",YAxisDescriptionPlural);
+			if (YAxisDescriptionSingular != null) h.Add("yAxisDescriptionSingular",YAxisDescriptionSingular);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTimelineAccessibilityKeyboardNavigation()
 		{
-			Enabled = Enabled_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Enabled != null) h.Add("enabled",Enabled);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityExporting()
 		{
-			ChartMenuLabel = ChartMenuLabel_DefaultValue = "Chart menu";
-			MenuButtonLabel = MenuButtonLabel_DefaultValue = "View chart menu, {chartTitle}";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ChartMenuLabel != ChartMenuLabel_DefaultValue) h.Add("chartMenuLabel",ChartMenuLabel);
-			if (MenuButtonLabel != MenuButtonLabel_DefaultValue) h.Add("menuButtonLabel",MenuButtonLabel);
+			if (ChartMenuLabel != null) h.Add("chartMenuLabel",ChartMenuLabel);
+			if (MenuButtonLabel != null) h.Add("menuButtonLabel",MenuButtonLabel);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

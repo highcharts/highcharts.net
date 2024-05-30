@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityAnnounceNewData()
 		{
-			NewDataAnnounce = NewDataAnnounce_DefaultValue = "Updated data for chart {chartTitle}";
-			NewPointAnnounceMultiple = NewPointAnnounceMultiple_DefaultValue = "New data point in chart {chartTitle}: {pointDesc}";
-			NewPointAnnounceSingle = NewPointAnnounceSingle_DefaultValue = "New data point: {pointDesc}";
-			NewSeriesAnnounceMultiple = NewSeriesAnnounceMultiple_DefaultValue = "New data series in chart {chartTitle}: {seriesDesc}";
-			NewSeriesAnnounceSingle = NewSeriesAnnounceSingle_DefaultValue = "New data series: {seriesDesc}";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (NewDataAnnounce != NewDataAnnounce_DefaultValue) h.Add("newDataAnnounce",NewDataAnnounce);
-			if (NewPointAnnounceMultiple != NewPointAnnounceMultiple_DefaultValue) h.Add("newPointAnnounceMultiple",NewPointAnnounceMultiple);
-			if (NewPointAnnounceSingle != NewPointAnnounceSingle_DefaultValue) h.Add("newPointAnnounceSingle",NewPointAnnounceSingle);
-			if (NewSeriesAnnounceMultiple != NewSeriesAnnounceMultiple_DefaultValue) h.Add("newSeriesAnnounceMultiple",NewSeriesAnnounceMultiple);
-			if (NewSeriesAnnounceSingle != NewSeriesAnnounceSingle_DefaultValue) h.Add("newSeriesAnnounceSingle",NewSeriesAnnounceSingle);
+			if (NewDataAnnounce != null) h.Add("newDataAnnounce",NewDataAnnounce);
+			if (NewPointAnnounceMultiple != null) h.Add("newPointAnnounceMultiple",NewPointAnnounceMultiple);
+			if (NewPointAnnounceSingle != null) h.Add("newPointAnnounceSingle",NewPointAnnounceSingle);
+			if (NewSeriesAnnounceMultiple != null) h.Add("newSeriesAnnounceMultiple",NewSeriesAnnounceMultiple);
+			if (NewSeriesAnnounceSingle != null) h.Add("newSeriesAnnounceSingle",NewSeriesAnnounceSingle);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

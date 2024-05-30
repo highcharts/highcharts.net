@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsDependencywheelLevelsStatesInactive()
 		{
-			LinkOpacity = LinkOpacity_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
+			if (LinkOpacity != null) h.Add("linkOpacity",LinkOpacity);
+			if (Opacity != null) h.Add("opacity",Opacity);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

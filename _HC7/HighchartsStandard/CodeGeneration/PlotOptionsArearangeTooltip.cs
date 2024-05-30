@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsArearangeTooltip()
 		{
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{series.color}'>●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (PointFormat != null) h.Add("pointFormat",PointFormat);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

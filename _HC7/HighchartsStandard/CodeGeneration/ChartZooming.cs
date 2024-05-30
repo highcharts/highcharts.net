@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartZooming()
 		{
-			Key = Key_DefaultValue = ChartZoomingKey.Undefined;
-			MouseWheel = MouseWheel_DefaultValue = null;
-			PinchType = PinchType_DefaultValue = ChartZoomingPinchType.Undefined;
-			ResetButton = ResetButton_DefaultValue = new ChartZoomingResetButton();
-			SingleTouch = SingleTouch_DefaultValue = false;
-			Type = Type_DefaultValue = ChartZoomingType.Undefined;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Key != Key_DefaultValue) h.Add("key", highcharts.FirstCharacterToLower(Key.ToString()));
-			if (MouseWheel != MouseWheel_DefaultValue) h.Add("mouseWheel",MouseWheel);
-			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", highcharts.FirstCharacterToLower(PinchType.ToString()));
-			if (ResetButton.IsDirty(highcharts)) h.Add("resetButton",ResetButton.ToHashtable(highcharts));
-			if (SingleTouch != SingleTouch_DefaultValue) h.Add("singleTouch",SingleTouch);
-			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
+			if (Key != ChartZoomingKey.Null) h.Add("key", highcharts.FirstCharacterToLower(Key.ToString()));
+			if (MouseWheel != null) h.Add("mouseWheel",MouseWheel);
+			if (PinchType != ChartZoomingPinchType.Null) h.Add("pinchType", highcharts.FirstCharacterToLower(PinchType.ToString()));
+			if (ResetButton != null) h.Add("resetButton",ResetButton.ToHashtable(highcharts));
+			if (SingleTouch != null) h.Add("singleTouch",SingleTouch);
+			if (Type != ChartZoomingType.Null) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

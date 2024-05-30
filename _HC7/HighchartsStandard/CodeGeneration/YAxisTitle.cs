@@ -16,20 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public YAxisTitle()
 		{
-			Align = Align_DefaultValue = YAxisTitleAlign.Middle;
-			Enabled = Enabled_DefaultValue = null;
-			Margin = Margin_DefaultValue = null;
-			Offset = Offset_DefaultValue = null;
-			Position3d = Position3d_DefaultValue = YAxisTitlePosition3d.Offset;
-			ReserveSpace = ReserveSpace_DefaultValue = true;
-			Rotation = Rotation_DefaultValue = null;
-			Skew3d = Skew3d_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
-			Text = Text_DefaultValue = "Values";
-			TextAlign = TextAlign_DefaultValue = YAxisTitleTextAlign.Null;
-			UseHTML = UseHTML_DefaultValue = false;
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -140,20 +126,20 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (Position3d != Position3d_DefaultValue) h.Add("position3d", highcharts.FirstCharacterToLower(Position3d.ToString()));
-			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Skew3d != Skew3d_DefaultValue) h.Add("skew3d",Skew3d);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", highcharts.FirstCharacterToLower(TextAlign.ToString()));
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != YAxisTitleAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Margin != null) h.Add("margin",Margin);
+			if (Offset != null) h.Add("offset",Offset);
+			if (Position3d != YAxisTitlePosition3d.Null) h.Add("position3d", highcharts.FirstCharacterToLower(Position3d.ToString()));
+			if (ReserveSpace != null) h.Add("reserveSpace",ReserveSpace);
+			if (Rotation != null) h.Add("rotation",Rotation);
+			if (Skew3d != null) h.Add("skew3d",Skew3d);
+			if (Style != null) h.Add("style",Style);
+			if (Text != null) h.Add("text",Text);
+			if (TextAlign != YAxisTitleTextAlign.Null) h.Add("textAlign", highcharts.FirstCharacterToLower(TextAlign.ToString()));
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

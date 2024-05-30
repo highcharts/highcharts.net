@@ -16,14 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsSankeyLevels()
 		{
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderWidth = BorderWidth_DefaultValue = null;
-			Color = Color_DefaultValue = "";
-			ColorByPoint = ColorByPoint_DefaultValue = true;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsSankeyDataLabels();
-			Level = Level_DefaultValue = null;
-			LinkOpacity = LinkOpacity_DefaultValue = null;
-			States = States_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -92,14 +84,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (Level != Level_DefaultValue) h.Add("level",Level);
-			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
-			if (States != States_DefaultValue) h.Add("states",States);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (Color != null) h.Add("color",Color);
+			if (ColorByPoint != null) h.Add("colorByPoint",ColorByPoint);
+			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
+			if (Level != null) h.Add("level",Level);
+			if (LinkOpacity != null) h.Add("linkOpacity",LinkOpacity);
+			if (States != null) h.Add("states",States);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

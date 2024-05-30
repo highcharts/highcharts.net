@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LegendNavigation()
 		{
-			ActiveColor = ActiveColor_DefaultValue = "#0022ff";
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = true;
-			ArrowSize = ArrowSize_DefaultValue = 12;
-			Enabled = Enabled_DefaultValue = true;
-			InactiveColor = InactiveColor_DefaultValue = "#cccccc";
-			Style = Style_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -84,13 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ActiveColor != ActiveColor_DefaultValue) h.Add("activeColor",ActiveColor);
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (ArrowSize != ArrowSize_DefaultValue) h.Add("arrowSize",ArrowSize);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (InactiveColor != InactiveColor_DefaultValue) h.Add("inactiveColor",InactiveColor);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (ActiveColor != null) h.Add("activeColor",ActiveColor);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (ArrowSize != null) h.Add("arrowSize",ArrowSize);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (InactiveColor != null) h.Add("inactiveColor",InactiveColor);
+			if (Style != null) h.Add("style",Style);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

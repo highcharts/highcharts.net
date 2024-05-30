@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public GaugeSeriesDataAccessibility()
 		{
-			Description = Description_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Description != null) h.Add("description",Description);
+			if (Enabled != null) h.Add("enabled",Enabled);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

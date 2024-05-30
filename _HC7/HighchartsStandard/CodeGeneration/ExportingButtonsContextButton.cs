@@ -16,30 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ExportingButtonsContextButton()
 		{
-			_titleKey = _titleKey_DefaultValue = "";
-			Align = Align_DefaultValue = ExportingButtonsContextButtonAlign.Right;
-			ButtonSpacing = ButtonSpacing_DefaultValue = 3;
-			ClassName = ClassName_DefaultValue = "highcharts-contextbutton";
-			Enabled = Enabled_DefaultValue = true;
-			Height = Height_DefaultValue = 28;
-			MenuClassName = MenuClassName_DefaultValue = "highcharts-contextmenu";
-			MenuItems = MenuItems_DefaultValue = new List<MenuItem>();
-			Onclick = Onclick_DefaultValue = "";
-			Symbol = Symbol_DefaultValue = "menu";
-			SymbolFill = SymbolFill_DefaultValue = "#666666";
-			SymbolSize = SymbolSize_DefaultValue = 14;
-			SymbolStroke = SymbolStroke_DefaultValue = "#666666";
-			SymbolStrokeWidth = SymbolStrokeWidth_DefaultValue = 3;
-			SymbolX = SymbolX_DefaultValue = null;
-			SymbolY = SymbolY_DefaultValue = null;
-			Text = Text_DefaultValue = "null";
-			Theme = Theme_DefaultValue = new ExportingButtonsContextButtonTheme();
-			TitleKey = TitleKey_DefaultValue = "contextButtonTitle";
-			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = ExportingButtonsContextButtonVerticalAlign.Top;
-			Width = Width_DefaultValue = 28;
-			X = X_DefaultValue = -10;
-			Y = Y_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -220,30 +196,30 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (_titleKey != _titleKey_DefaultValue) h.Add("_titleKey",_titleKey);
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (ButtonSpacing != ButtonSpacing_DefaultValue) h.Add("buttonSpacing",ButtonSpacing);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (MenuClassName != MenuClassName_DefaultValue) h.Add("menuClassName",MenuClassName);
-			if (MenuItems != MenuItems_DefaultValue) h.Add("menuItems", HashifyList(highcharts,MenuItems));
-			if (Onclick != Onclick_DefaultValue) { h.Add("onclick",Onclick); highcharts.AddFunction("onclick", Onclick); }  
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
-			if (SymbolFill != SymbolFill_DefaultValue) h.Add("symbolFill",SymbolFill);
-			if (SymbolSize != SymbolSize_DefaultValue) h.Add("symbolSize",SymbolSize);
-			if (SymbolStroke != SymbolStroke_DefaultValue) h.Add("symbolStroke",SymbolStroke);
-			if (SymbolStrokeWidth != SymbolStrokeWidth_DefaultValue) h.Add("symbolStrokeWidth",SymbolStrokeWidth);
-			if (SymbolX != SymbolX_DefaultValue) h.Add("symbolX",SymbolX);
-			if (SymbolY != SymbolY_DefaultValue) h.Add("symbolY",SymbolY);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (Theme.IsDirty(highcharts)) h.Add("theme",Theme.ToHashtable(highcharts));
-			if (TitleKey != TitleKey_DefaultValue) h.Add("titleKey",TitleKey);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (_titleKey != null) h.Add("_titleKey",_titleKey);
+			if (Align != ExportingButtonsContextButtonAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (ButtonSpacing != null) h.Add("buttonSpacing",ButtonSpacing);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Height != null) h.Add("height",Height);
+			if (MenuClassName != null) h.Add("menuClassName",MenuClassName);
+			if (MenuItems != null) h.Add("menuItems", HashifyList(highcharts,MenuItems));
+			if (Onclick != null) { h.Add("onclick",Onclick); highcharts.AddFunction("onclick", Onclick); }  
+			if (Symbol != null) h.Add("symbol",Symbol);
+			if (SymbolFill != null) h.Add("symbolFill",SymbolFill);
+			if (SymbolSize != null) h.Add("symbolSize",SymbolSize);
+			if (SymbolStroke != null) h.Add("symbolStroke",SymbolStroke);
+			if (SymbolStrokeWidth != null) h.Add("symbolStrokeWidth",SymbolStrokeWidth);
+			if (SymbolX != null) h.Add("symbolX",SymbolX);
+			if (SymbolY != null) h.Add("symbolY",SymbolY);
+			if (Text != null) h.Add("text",Text);
+			if (Theme != null) h.Add("theme",Theme.ToHashtable(highcharts));
+			if (TitleKey != null) h.Add("titleKey",TitleKey);
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != ExportingButtonsContextButtonVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (Width != null) h.Add("width",Width);
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

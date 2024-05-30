@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsSunburstDataLabelsRotationMode
     {
-        Auto, 
+        Null, 
+		Auto, 
 		Perpendicular, 
 		Parallel, 
 		Circular

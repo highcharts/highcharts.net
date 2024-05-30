@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Credits()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			Href = Href_DefaultValue = "https://www.highcharts.com?credits";
-			Position = Position_DefaultValue = new CreditsPosition();
-			Style = Style_DefaultValue = new Hashtable();
-			Text = Text_DefaultValue = "Highcharts.com";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Href != Href_DefaultValue) h.Add("href",Href);
-			if (Position.IsDirty(highcharts)) h.Add("position",Position.ToHashtable(highcharts));
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Href != null) h.Add("href",Href);
+			if (Position != null) h.Add("position",Position.ToHashtable(highcharts));
+			if (Style != null) h.Add("style",Style);
+			if (Text != null) h.Add("text",Text);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public BulletSeriesDataTargetOptions()
 		{
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderRadius = BorderRadius_DefaultValue = 0;
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			Color = Color_DefaultValue = "";
-			Height = Height_DefaultValue = 3;
-			Width = Width_DefaultValue = "140%";
-			WidthNumber = WidthNumber_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -84,13 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (WidthNumber != WidthNumber_DefaultValue) h.Add("width",WidthNumber);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (Color != null) h.Add("color",Color);
+			if (Height != null) h.Add("height",Height);
+			if (Width != null) h.Add("width",Width);
+			if (WidthNumber != null) h.Add("width",WidthNumber);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

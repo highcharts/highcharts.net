@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public OrganizationSeriesLink()
 		{
-			Color = Color_DefaultValue = "#666666";
-			LineWidth = LineWidth_DefaultValue = 1;
-			Offset = Offset_DefaultValue = null;
-			Radius = Radius_DefaultValue = 10;
-			Type = Type_DefaultValue = OrganizationSeriesLinkType.Default;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
+			if (Color != null) h.Add("color",Color);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (Offset != null) h.Add("offset",Offset);
+			if (Radius != null) h.Add("radius",Radius);
+			if (Type != OrganizationSeriesLinkType.Null) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilityScreenReaderSection()
 		{
-			AfterChartFormat = AfterChartFormat_DefaultValue = "{endOfChartMarker}";
-			AfterChartFormatter = AfterChartFormatter_DefaultValue = "";
-			AxisRangeDateFormat = AxisRangeDateFormat_DefaultValue = "%Y-%m-%d %H:%M:%S";
-			BeforeChartFormat = BeforeChartFormat_DefaultValue = "<{headingTagName}>{chartTitle}</{headingTagName}><div>{typeDescription}</div><div>{chartSubtitle}</div><div>{chartLongdesc}</div><div>{playAsSoundButton}</div><div>{viewTableButton}</div><div>{xAxisDescription}</div><div>{yAxisDescription}</div><div>{annotationsTitle}{annotationsList}</div>";
-			BeforeChartFormatter = BeforeChartFormatter_DefaultValue = "";
-			OnPlayAsSoundClick = OnPlayAsSoundClick_DefaultValue = "";
-			OnViewDataTableClick = OnViewDataTableClick_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -84,13 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AfterChartFormat != AfterChartFormat_DefaultValue) h.Add("afterChartFormat",AfterChartFormat);
-			if (AfterChartFormatter != AfterChartFormatter_DefaultValue) { h.Add("afterChartFormatter",AfterChartFormatter); highcharts.AddFunction("afterChartFormatter", AfterChartFormatter); }  
-			if (AxisRangeDateFormat != AxisRangeDateFormat_DefaultValue) h.Add("axisRangeDateFormat",AxisRangeDateFormat);
-			if (BeforeChartFormat != BeforeChartFormat_DefaultValue) h.Add("beforeChartFormat",BeforeChartFormat);
-			if (BeforeChartFormatter != BeforeChartFormatter_DefaultValue) { h.Add("beforeChartFormatter",BeforeChartFormatter); highcharts.AddFunction("beforeChartFormatter", BeforeChartFormatter); }  
-			if (OnPlayAsSoundClick != OnPlayAsSoundClick_DefaultValue) { h.Add("onPlayAsSoundClick",OnPlayAsSoundClick); highcharts.AddFunction("onPlayAsSoundClick", OnPlayAsSoundClick); }  
-			if (OnViewDataTableClick != OnViewDataTableClick_DefaultValue) { h.Add("onViewDataTableClick",OnViewDataTableClick); highcharts.AddFunction("onViewDataTableClick", OnViewDataTableClick); }  
+			if (AfterChartFormat != null) h.Add("afterChartFormat",AfterChartFormat);
+			if (AfterChartFormatter != null) { h.Add("afterChartFormatter",AfterChartFormatter); highcharts.AddFunction("afterChartFormatter", AfterChartFormatter); }  
+			if (AxisRangeDateFormat != null) h.Add("axisRangeDateFormat",AxisRangeDateFormat);
+			if (BeforeChartFormat != null) h.Add("beforeChartFormat",BeforeChartFormat);
+			if (BeforeChartFormatter != null) { h.Add("beforeChartFormatter",BeforeChartFormatter); highcharts.AddFunction("beforeChartFormatter", BeforeChartFormatter); }  
+			if (OnPlayAsSoundClick != null) { h.Add("onPlayAsSoundClick",OnPlayAsSoundClick); highcharts.AddFunction("onPlayAsSoundClick", OnPlayAsSoundClick); }  
+			if (OnViewDataTableClick != null) { h.Add("onViewDataTableClick",OnViewDataTableClick); highcharts.AddFunction("onViewDataTableClick", OnViewDataTableClick); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

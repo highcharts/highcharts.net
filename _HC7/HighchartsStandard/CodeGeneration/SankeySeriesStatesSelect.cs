@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SankeySeriesStatesSelect()
 		{
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
-			Halo = Halo_DefaultValue = new SankeySeriesStatesSelectHalo();
-			LineWidth = LineWidth_DefaultValue = null;
-			LineWidthPlus = LineWidthPlus_DefaultValue = 1;
-			Marker = Marker_DefaultValue = new SankeySeriesStatesSelectMarker();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -84,13 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Halo.IsDirty(highcharts)) h.Add("halo",Halo.ToHashtable(highcharts));
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
-			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Halo != null) h.Add("halo",Halo.ToHashtable(highcharts));
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (LineWidthPlus != null) h.Add("lineWidthPlus",LineWidthPlus);
+			if (Marker != null) h.Add("marker",Marker.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

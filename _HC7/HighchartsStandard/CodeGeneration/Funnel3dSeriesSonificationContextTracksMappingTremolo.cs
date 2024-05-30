@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Funnel3dSeriesSonificationContextTracksMappingTremolo()
 		{
-			Depth = Depth_DefaultValue = new Funnel3dSeriesSonificationContextTracksMappingTremoloDepth();
-			Speed = Speed_DefaultValue = new Funnel3dSeriesSonificationContextTracksMappingTremoloSpeed();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Depth.IsDirty(highcharts)) h.Add("depth",Depth.ToHashtable(highcharts));
-			if (Speed.IsDirty(highcharts)) h.Add("speed",Speed.ToHashtable(highcharts));
+			if (Depth != null) h.Add("depth",Depth.ToHashtable(highcharts));
+			if (Speed != null) h.Add("speed",Speed.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

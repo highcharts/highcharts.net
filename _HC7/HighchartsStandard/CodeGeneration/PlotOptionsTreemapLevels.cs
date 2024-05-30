@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTreemapLevels()
 		{
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderDashStyle = BorderDashStyle_DefaultValue = new Hashtable();
-			BorderWidth = BorderWidth_DefaultValue = null;
-			Color = Color_DefaultValue = "";
-			ColorVariation = ColorVariation_DefaultValue = new PlotOptionsTreemapLevelsColorVariation();
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsTreemapDataLabels();
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = PlotOptionsTreemapLevelsLayoutAlgorithm.SliceAndDice;
-			LayoutStartingDirection = LayoutStartingDirection_DefaultValue = PlotOptionsTreemapLevelsLayoutStartingDirection.Vertical;
-			Level = Level_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderDashStyle != BorderDashStyle_DefaultValue) h.Add("borderDashStyle",BorderDashStyle);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorVariation.IsDirty(highcharts)) h.Add("colorVariation",ColorVariation.ToHashtable(highcharts));
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (LayoutAlgorithm != LayoutAlgorithm_DefaultValue) h.Add("layoutAlgorithm", highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
-			if (LayoutStartingDirection != LayoutStartingDirection_DefaultValue) h.Add("layoutStartingDirection", highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
-			if (Level != Level_DefaultValue) h.Add("level",Level);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderDashStyle != null) h.Add("borderDashStyle",BorderDashStyle);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (Color != null) h.Add("color",Color);
+			if (ColorVariation != null) h.Add("colorVariation",ColorVariation.ToHashtable(highcharts));
+			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
+			if (LayoutAlgorithm != PlotOptionsTreemapLevelsLayoutAlgorithm.Null) h.Add("layoutAlgorithm", highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
+			if (LayoutStartingDirection != PlotOptionsTreemapLevelsLayoutStartingDirection.Null) h.Add("layoutStartingDirection", highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
+			if (Level != null) h.Add("level",Level);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

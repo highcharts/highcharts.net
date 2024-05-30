@@ -16,24 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LegendBubbleLegend()
 		{
-			BorderColor = BorderColor_DefaultValue = "undefined";
-			BorderWidth = BorderWidth_DefaultValue = 2;
-			ClassName = ClassName_DefaultValue = "undefined";
-			Color = Color_DefaultValue = "undefined";
-			ConnectorClassName = ConnectorClassName_DefaultValue = "undefined";
-			ConnectorColor = ConnectorColor_DefaultValue = "undefined";
-			ConnectorDistance = ConnectorDistance_DefaultValue = 60;
-			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
-			Enabled = Enabled_DefaultValue = false;
-			Labels = Labels_DefaultValue = new LegendBubbleLegendLabels();
-			LegendIndex = LegendIndex_DefaultValue = 0;
-			MaxSize = MaxSize_DefaultValue = 60;
-			MinSize = MinSize_DefaultValue = 10;
-			Ranges = Ranges_DefaultValue = new LegendBubbleLegendRanges();
-			SizeBy = SizeBy_DefaultValue = "area";
-			SizeByAbsoluteValue = SizeByAbsoluteValue_DefaultValue = false;
-			ZIndex = ZIndex_DefaultValue = 1;
-			ZThreshold = ZThreshold_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -172,24 +154,24 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ConnectorClassName != ConnectorClassName_DefaultValue) h.Add("connectorClassName",ConnectorClassName);
-			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
-			if (ConnectorDistance != ConnectorDistance_DefaultValue) h.Add("connectorDistance",ConnectorDistance);
-			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Labels.IsDirty(highcharts)) h.Add("labels",Labels.ToHashtable(highcharts));
-			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
-			if (MaxSize != MaxSize_DefaultValue) h.Add("maxSize",MaxSize);
-			if (MinSize != MinSize_DefaultValue) h.Add("minSize",MinSize);
-			if (Ranges.IsDirty(highcharts)) h.Add("ranges",Ranges.ToHashtable(highcharts));
-			if (SizeBy != SizeBy_DefaultValue) h.Add("sizeBy",SizeBy);
-			if (SizeByAbsoluteValue != SizeByAbsoluteValue_DefaultValue) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (ZThreshold != ZThreshold_DefaultValue) h.Add("zThreshold",ZThreshold);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (ConnectorClassName != null) h.Add("connectorClassName",ConnectorClassName);
+			if (ConnectorColor != null) h.Add("connectorColor",ConnectorColor);
+			if (ConnectorDistance != null) h.Add("connectorDistance",ConnectorDistance);
+			if (ConnectorWidth != null) h.Add("connectorWidth",ConnectorWidth);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Labels != null) h.Add("labels",Labels.ToHashtable(highcharts));
+			if (LegendIndex != null) h.Add("legendIndex",LegendIndex);
+			if (MaxSize != null) h.Add("maxSize",MaxSize);
+			if (MinSize != null) h.Add("minSize",MinSize);
+			if (Ranges != null) h.Add("ranges",Ranges.ToHashtable(highcharts));
+			if (SizeBy != null) h.Add("sizeBy",SizeBy);
+			if (SizeByAbsoluteValue != null) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
+			if (ZThreshold != null) h.Add("zThreshold",ZThreshold);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

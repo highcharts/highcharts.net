@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Drilldown()
 		{
-			ActiveAxisLabelStyle = ActiveAxisLabelStyle_DefaultValue = new Hashtable();
-			ActiveDataLabelStyle = ActiveDataLabelStyle_DefaultValue = new Hashtable();
-			AllowPointDrilldown = AllowPointDrilldown_DefaultValue = true;
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
-			Breadcrumbs = Breadcrumbs_DefaultValue = new DrilldownBreadcrumbs();
-			DrillUpButton = DrillUpButton_DefaultValue = new DrilldownDrillUpButton();
-			MapZooming = MapZooming_DefaultValue = true;
-			Series = Series_DefaultValue = new List<Series>();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ActiveAxisLabelStyle != ActiveAxisLabelStyle_DefaultValue) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle);
-			if (ActiveDataLabelStyle != ActiveDataLabelStyle_DefaultValue) h.Add("activeDataLabelStyle",ActiveDataLabelStyle);
-			if (AllowPointDrilldown != AllowPointDrilldown_DefaultValue) h.Add("allowPointDrilldown",AllowPointDrilldown);
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (Breadcrumbs.IsDirty(highcharts)) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(highcharts));
-			if (DrillUpButton.IsDirty(highcharts)) h.Add("drillUpButton",DrillUpButton.ToHashtable(highcharts));
-			if (MapZooming != MapZooming_DefaultValue) h.Add("mapZooming",MapZooming);
-			if (Series != Series_DefaultValue) h.Add("series",Series);
+			if (ActiveAxisLabelStyle != null) h.Add("activeAxisLabelStyle",ActiveAxisLabelStyle);
+			if (ActiveDataLabelStyle != null) h.Add("activeDataLabelStyle",ActiveDataLabelStyle);
+			if (AllowPointDrilldown != null) h.Add("allowPointDrilldown",AllowPointDrilldown);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (Breadcrumbs != null) h.Add("breadcrumbs",Breadcrumbs.ToHashtable(highcharts));
+			if (DrillUpButton != null) h.Add("drillUpButton",DrillUpButton.ToHashtable(highcharts));
+			if (MapZooming != null) h.Add("mapZooming",MapZooming);
+			if (Series != null) h.Add("series",Series);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

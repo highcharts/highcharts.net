@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public WordcloudSeriesSonificationPointGrouping()
 		{
-			Algorithm = Algorithm_DefaultValue = WordcloudSeriesSonificationPointGroupingAlgorithm.Minimax;
-			Enabled = Enabled_DefaultValue = true;
-			GroupTimespan = GroupTimespan_DefaultValue = 15;
-			Prop = Prop_DefaultValue = "y";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Algorithm != Algorithm_DefaultValue) h.Add("algorithm", highcharts.FirstCharacterToLower(Algorithm.ToString()));
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (GroupTimespan != GroupTimespan_DefaultValue) h.Add("groupTimespan",GroupTimespan);
-			if (Prop != Prop_DefaultValue) h.Add("prop",Prop);
+			if (Algorithm != WordcloudSeriesSonificationPointGroupingAlgorithm.Null) h.Add("algorithm", highcharts.FirstCharacterToLower(Algorithm.ToString()));
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (GroupTimespan != null) h.Add("groupTimespan",GroupTimespan);
+			if (Prop != null) h.Add("prop",Prop);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

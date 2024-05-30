@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsTreegraphLinkType
     {
-        Default, 
+        Null, 
+		Default, 
 		Curved, 
 		Straight
     }

@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ZAxisAccessibility()
 		{
-			Description = Description_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = null;
-			RangeDescription = RangeDescription_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (RangeDescription != RangeDescription_DefaultValue) h.Add("rangeDescription",RangeDescription);
+			if (Description != null) h.Add("description",Description);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (RangeDescription != null) h.Add("rangeDescription",RangeDescription);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

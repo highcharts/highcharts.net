@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public BubbleSeriesDataMarker()
 		{
-			Enabled = Enabled_DefaultValue = null;
-			FillColor = FillColor_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "#ffffff";
-			LineWidth = LineWidth_DefaultValue = 0;
-			States = States_DefaultValue = new BubbleSeriesDataMarkerStates();
-			Symbol = Symbol_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (FillColor != null) h.Add("fillColor",FillColor);
+			if (LineColor != null) h.Add("lineColor",LineColor);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (States != null) h.Add("states",States.ToHashtable(highcharts));
+			if (Symbol != null) h.Add("symbol",Symbol);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

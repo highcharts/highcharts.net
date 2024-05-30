@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum NetworkgraphSeriesFindNearestPointBy
     {
-        X, 
+        Null, 
+		X, 
 		Xy
     }
 }

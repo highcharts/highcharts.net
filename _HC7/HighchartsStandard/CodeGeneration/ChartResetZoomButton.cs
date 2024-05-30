@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartResetZoomButton()
 		{
-			Position = Position_DefaultValue = new ChartResetZoomButtonPosition();
-			RelativeTo = RelativeTo_DefaultValue = "";
-			Theme = Theme_DefaultValue = new ChartResetZoomButtonTheme();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Position.IsDirty(highcharts)) h.Add("position",Position.ToHashtable(highcharts));
-			if (RelativeTo != RelativeTo_DefaultValue) h.Add("relativeTo",RelativeTo);
-			if (Theme.IsDirty(highcharts)) h.Add("theme",Theme.ToHashtable(highcharts));
+			if (Position != null) h.Add("position",Position.ToHashtable(highcharts));
+			if (RelativeTo != null) h.Add("relativeTo",RelativeTo);
+			if (Theme != null) h.Add("theme",Theme.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

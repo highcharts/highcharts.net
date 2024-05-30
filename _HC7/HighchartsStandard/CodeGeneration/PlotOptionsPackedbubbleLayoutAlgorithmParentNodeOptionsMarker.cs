@@ -16,16 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPackedbubbleLayoutAlgorithmParentNodeOptionsMarker()
 		{
-			Enabled = Enabled_DefaultValue = null;
-			EnabledThreshold = EnabledThreshold_DefaultValue = 2;
-			FillColor = FillColor_DefaultValue = null;
-			FillOpacity = FillOpacity_DefaultValue = 1;
-			Height = Height_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "";
-			LineWidth = LineWidth_DefaultValue = null;
-			Radius = Radius_DefaultValue = 4;
-			Symbol = Symbol_DefaultValue = "circle";
-			Width = Width_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -108,16 +98,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (EnabledThreshold != EnabledThreshold_DefaultValue) h.Add("enabledThreshold",EnabledThreshold);
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (FillOpacity != FillOpacity_DefaultValue) h.Add("fillOpacity",FillOpacity);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (EnabledThreshold != null) h.Add("enabledThreshold",EnabledThreshold);
+			if (FillColor != null) h.Add("fillColor",FillColor);
+			if (FillOpacity != null) h.Add("fillOpacity",FillOpacity);
+			if (Height != null) h.Add("height",Height);
+			if (LineColor != null) h.Add("lineColor",LineColor);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (Radius != null) h.Add("radius",Radius);
+			if (Symbol != null) h.Add("symbol",Symbol);
+			if (Width != null) h.Add("width",Width);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

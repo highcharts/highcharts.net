@@ -16,28 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibility()
 		{
-			AnnounceNewData = AnnounceNewData_DefaultValue = new LangAccessibilityAnnounceNewData();
-			Axis = Axis_DefaultValue = new LangAccessibilityAxis();
-			ChartContainerLabel = ChartContainerLabel_DefaultValue = "{title}. Highcharts interactive chart.";
-			ChartTypes = ChartTypes_DefaultValue = new LangAccessibilityChartTypes();
-			Credits = Credits_DefaultValue = "Chart credits: {creditsStr}";
-			DefaultChartTitle = DefaultChartTitle_DefaultValue = "Chart";
-			DrillUpButton = DrillUpButton_DefaultValue = "{buttonText}";
-			Exporting = Exporting_DefaultValue = new LangAccessibilityExporting();
-			GraphicContainerLabel = GraphicContainerLabel_DefaultValue = "";
-			Legend = Legend_DefaultValue = new LangAccessibilityLegend();
-			Navigator = Navigator_DefaultValue = new LangAccessibilityNavigator();
-			RangeSelector = RangeSelector_DefaultValue = new LangAccessibilityRangeSelector();
-			ResetZoomButton = ResetZoomButton_DefaultValue = "";
-			ScreenReaderSection = ScreenReaderSection_DefaultValue = new LangAccessibilityScreenReaderSection();
-			Series = Series_DefaultValue = new LangAccessibilitySeries();
-			SeriesTypeDescriptions = SeriesTypeDescriptions_DefaultValue = new LangAccessibilitySeriesTypeDescriptions();
-			Sonification = Sonification_DefaultValue = new LangAccessibilitySonification();
-			SvgContainerLabel = SvgContainerLabel_DefaultValue = "Interactive chart";
-			SvgContainerTitle = SvgContainerTitle_DefaultValue = "";
-			Table = Table_DefaultValue = new LangAccessibilityTable();
-			ThousandsSep = ThousandsSep_DefaultValue = ",";
-			Zoom = Zoom_DefaultValue = new LangAccessibilityZoom();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -204,28 +182,28 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AnnounceNewData.IsDirty(highcharts)) h.Add("announceNewData",AnnounceNewData.ToHashtable(highcharts));
-			if (Axis.IsDirty(highcharts)) h.Add("axis",Axis.ToHashtable(highcharts));
-			if (ChartContainerLabel != ChartContainerLabel_DefaultValue) h.Add("chartContainerLabel",ChartContainerLabel);
-			if (ChartTypes.IsDirty(highcharts)) h.Add("chartTypes",ChartTypes.ToHashtable(highcharts));
-			if (Credits != Credits_DefaultValue) h.Add("credits",Credits);
-			if (DefaultChartTitle != DefaultChartTitle_DefaultValue) h.Add("defaultChartTitle",DefaultChartTitle);
-			if (DrillUpButton != DrillUpButton_DefaultValue) h.Add("drillUpButton",DrillUpButton);
-			if (Exporting.IsDirty(highcharts)) h.Add("exporting",Exporting.ToHashtable(highcharts));
-			if (GraphicContainerLabel != GraphicContainerLabel_DefaultValue) h.Add("graphicContainerLabel",GraphicContainerLabel);
-			if (Legend.IsDirty(highcharts)) h.Add("legend",Legend.ToHashtable(highcharts));
-			if (Navigator.IsDirty(highcharts)) h.Add("navigator",Navigator.ToHashtable(highcharts));
-			if (RangeSelector.IsDirty(highcharts)) h.Add("rangeSelector",RangeSelector.ToHashtable(highcharts));
-			if (ResetZoomButton != ResetZoomButton_DefaultValue) h.Add("resetZoomButton",ResetZoomButton);
-			if (ScreenReaderSection.IsDirty(highcharts)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highcharts));
-			if (Series.IsDirty(highcharts)) h.Add("series",Series.ToHashtable(highcharts));
-			if (SeriesTypeDescriptions.IsDirty(highcharts)) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable(highcharts));
-			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
-			if (SvgContainerLabel != SvgContainerLabel_DefaultValue) h.Add("svgContainerLabel",SvgContainerLabel);
-			if (SvgContainerTitle != SvgContainerTitle_DefaultValue) h.Add("svgContainerTitle",SvgContainerTitle);
-			if (Table.IsDirty(highcharts)) h.Add("table",Table.ToHashtable(highcharts));
-			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
-			if (Zoom.IsDirty(highcharts)) h.Add("zoom",Zoom.ToHashtable(highcharts));
+			if (AnnounceNewData != null) h.Add("announceNewData",AnnounceNewData.ToHashtable(highcharts));
+			if (Axis != null) h.Add("axis",Axis.ToHashtable(highcharts));
+			if (ChartContainerLabel != null) h.Add("chartContainerLabel",ChartContainerLabel);
+			if (ChartTypes != null) h.Add("chartTypes",ChartTypes.ToHashtable(highcharts));
+			if (Credits != null) h.Add("credits",Credits);
+			if (DefaultChartTitle != null) h.Add("defaultChartTitle",DefaultChartTitle);
+			if (DrillUpButton != null) h.Add("drillUpButton",DrillUpButton);
+			if (Exporting != null) h.Add("exporting",Exporting.ToHashtable(highcharts));
+			if (GraphicContainerLabel != null) h.Add("graphicContainerLabel",GraphicContainerLabel);
+			if (Legend != null) h.Add("legend",Legend.ToHashtable(highcharts));
+			if (Navigator != null) h.Add("navigator",Navigator.ToHashtable(highcharts));
+			if (RangeSelector != null) h.Add("rangeSelector",RangeSelector.ToHashtable(highcharts));
+			if (ResetZoomButton != null) h.Add("resetZoomButton",ResetZoomButton);
+			if (ScreenReaderSection != null) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highcharts));
+			if (Series != null) h.Add("series",Series.ToHashtable(highcharts));
+			if (SeriesTypeDescriptions != null) h.Add("seriesTypeDescriptions",SeriesTypeDescriptions.ToHashtable(highcharts));
+			if (Sonification != null) h.Add("sonification",Sonification.ToHashtable(highcharts));
+			if (SvgContainerLabel != null) h.Add("svgContainerLabel",SvgContainerLabel);
+			if (SvgContainerTitle != null) h.Add("svgContainerTitle",SvgContainerTitle);
+			if (Table != null) h.Add("table",Table.ToHashtable(highcharts));
+			if (ThousandsSep != null) h.Add("thousandsSep",ThousandsSep);
+			if (Zoom != null) h.Add("zoom",Zoom.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

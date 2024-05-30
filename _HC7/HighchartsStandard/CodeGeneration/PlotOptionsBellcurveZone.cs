@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsBellcurveZone()
 		{
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
-			DashStyle = DashStyle_DefaultValue = PlotOptionsBellcurveZonesDashStyle.Null;
-			FillColor = FillColor_DefaultValue = null;
-			Value = Value_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (Value != Value_DefaultValue) h.Add("value",Value);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (DashStyle != PlotOptionsBellcurveZonesDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (FillColor != null) h.Add("fillColor",FillColor);
+			if (Value != null) h.Add("value",Value);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

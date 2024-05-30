@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum HistogramSeriesBinsNumber
     {
-        SquareRoot, 
+        Null, 
+		SquareRoot, 
 		Sturges, 
 		Rice, 
 		Number, 

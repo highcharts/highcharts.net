@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Caption()
 		{
-			Align = Align_DefaultValue = CaptionAlign.Left;
-			Floating = Floating_DefaultValue = false;
-			Margin = Margin_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
-			Text = Text_DefaultValue = "";
-			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = CaptionVerticalAlign.Bottom;
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Floating != Floating_DefaultValue) h.Add("floating",Floating);
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != CaptionAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Floating != null) h.Add("floating",Floating);
+			if (Margin != null) h.Add("margin",Margin);
+			if (Style != null) h.Add("style",Style);
+			if (Text != null) h.Add("text",Text);
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != CaptionVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

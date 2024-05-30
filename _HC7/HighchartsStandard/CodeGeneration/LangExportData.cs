@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangExportData()
 		{
-			AnnotationHeader = AnnotationHeader_DefaultValue = "Annotations";
-			CategoryDatetimeHeader = CategoryDatetimeHeader_DefaultValue = "DateTime";
-			CategoryHeader = CategoryHeader_DefaultValue = "Category";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AnnotationHeader != AnnotationHeader_DefaultValue) h.Add("annotationHeader",AnnotationHeader);
-			if (CategoryDatetimeHeader != CategoryDatetimeHeader_DefaultValue) h.Add("categoryDatetimeHeader",CategoryDatetimeHeader);
-			if (CategoryHeader != CategoryHeader_DefaultValue) h.Add("categoryHeader",CategoryHeader);
+			if (AnnotationHeader != null) h.Add("annotationHeader",AnnotationHeader);
+			if (CategoryDatetimeHeader != null) h.Add("categoryDatetimeHeader",CategoryDatetimeHeader);
+			if (CategoryHeader != null) h.Add("categoryHeader",CategoryHeader);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

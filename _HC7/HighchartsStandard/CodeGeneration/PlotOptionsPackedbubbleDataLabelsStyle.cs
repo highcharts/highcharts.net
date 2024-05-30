@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPackedbubbleDataLabelsStyle()
 		{
-			Transition = Transition_DefaultValue = "opacity 2000ms";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Transition != Transition_DefaultValue) h.Add("transition",Transition);
+			if (Transition != null) h.Add("transition",Transition);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

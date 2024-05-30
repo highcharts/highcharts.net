@@ -16,22 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public YAxisDateTimeLabelFormats()
 		{
-			Day = Day_DefaultValue = new YAxisDateTimeLabelFormatsDay();
-			DayString = DayString_DefaultValue = "null";
-			Hour = Hour_DefaultValue = new YAxisDateTimeLabelFormatsHour();
-			HourString = HourString_DefaultValue = "null";
-			Millisecond = Millisecond_DefaultValue = new YAxisDateTimeLabelFormatsMillisecond();
-			MillisecondString = MillisecondString_DefaultValue = "null";
-			Minute = Minute_DefaultValue = new YAxisDateTimeLabelFormatsMinute();
-			MinuteString = MinuteString_DefaultValue = "null";
-			Month = Month_DefaultValue = new YAxisDateTimeLabelFormatsMonth();
-			MonthString = MonthString_DefaultValue = "null";
-			Second = Second_DefaultValue = new YAxisDateTimeLabelFormatsSecond();
-			SecondString = SecondString_DefaultValue = "null";
-			Week = Week_DefaultValue = new YAxisDateTimeLabelFormatsWeek();
-			WeekString = WeekString_DefaultValue = "null";
-			Year = Year_DefaultValue = new YAxisDateTimeLabelFormatsYear();
-			YearString = YearString_DefaultValue = "null";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -156,22 +140,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Day.IsDirty(highcharts)) h.Add("day",Day.ToHashtable(highcharts));
-			if (DayString != DayString_DefaultValue) h.Add("day",DayString);
-			if (Hour.IsDirty(highcharts)) h.Add("hour",Hour.ToHashtable(highcharts));
-			if (HourString != HourString_DefaultValue) h.Add("hour",HourString);
-			if (Millisecond.IsDirty(highcharts)) h.Add("millisecond",Millisecond.ToHashtable(highcharts));
-			if (MillisecondString != MillisecondString_DefaultValue) h.Add("millisecond",MillisecondString);
-			if (Minute.IsDirty(highcharts)) h.Add("minute",Minute.ToHashtable(highcharts));
-			if (MinuteString != MinuteString_DefaultValue) h.Add("minute",MinuteString);
-			if (Month.IsDirty(highcharts)) h.Add("month",Month.ToHashtable(highcharts));
-			if (MonthString != MonthString_DefaultValue) h.Add("month",MonthString);
-			if (Second.IsDirty(highcharts)) h.Add("second",Second.ToHashtable(highcharts));
-			if (SecondString != SecondString_DefaultValue) h.Add("second",SecondString);
-			if (Week.IsDirty(highcharts)) h.Add("week",Week.ToHashtable(highcharts));
-			if (WeekString != WeekString_DefaultValue) h.Add("week",WeekString);
-			if (Year.IsDirty(highcharts)) h.Add("year",Year.ToHashtable(highcharts));
-			if (YearString != YearString_DefaultValue) h.Add("year",YearString);
+			if (Day != null) h.Add("day",Day.ToHashtable(highcharts));
+			if (DayString != null) h.Add("day",DayString);
+			if (Hour != null) h.Add("hour",Hour.ToHashtable(highcharts));
+			if (HourString != null) h.Add("hour",HourString);
+			if (Millisecond != null) h.Add("millisecond",Millisecond.ToHashtable(highcharts));
+			if (MillisecondString != null) h.Add("millisecond",MillisecondString);
+			if (Minute != null) h.Add("minute",Minute.ToHashtable(highcharts));
+			if (MinuteString != null) h.Add("minute",MinuteString);
+			if (Month != null) h.Add("month",Month.ToHashtable(highcharts));
+			if (MonthString != null) h.Add("month",MonthString);
+			if (Second != null) h.Add("second",Second.ToHashtable(highcharts));
+			if (SecondString != null) h.Add("second",SecondString);
+			if (Week != null) h.Add("week",Week.ToHashtable(highcharts));
+			if (WeekString != null) h.Add("week",WeekString);
+			if (Year != null) h.Add("year",Year.ToHashtable(highcharts));
+			if (YearString != null) h.Add("year",YearString);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

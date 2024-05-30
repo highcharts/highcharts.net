@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartPanningType
     {
-        X, 
+        Null, 
+		X, 
 		Y, 
 		Xy
     }

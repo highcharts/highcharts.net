@@ -16,40 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Lang()
 		{
-			Accessibility = Accessibility_DefaultValue = new LangAccessibility();
-			ContextButtonTitle = ContextButtonTitle_DefaultValue = "Chart context menu";
-			DecimalPoint = DecimalPoint_DefaultValue = ".";
-			DownloadCSV = DownloadCSV_DefaultValue = "Download CSV";
-			DownloadJPEG = DownloadJPEG_DefaultValue = "Download JPEG image";
-			DownloadMIDI = DownloadMIDI_DefaultValue = "Download MIDI";
-			DownloadPDF = DownloadPDF_DefaultValue = "Download PDF document";
-			DownloadPNG = DownloadPNG_DefaultValue = "Download PNG image";
-			DownloadSVG = DownloadSVG_DefaultValue = "Download SVG vector image";
-			DownloadXLS = DownloadXLS_DefaultValue = "Download XLS";
-			DrillUpText = DrillUpText_DefaultValue = "";
-			ExitFullscreen = ExitFullscreen_DefaultValue = "Exit from full screen";
-			ExportData = ExportData_DefaultValue = new LangExportData();
-			ExportInProgress = ExportInProgress_DefaultValue = "Exporting...";
-			HideData = HideData_DefaultValue = "Hide data table";
-			InvalidDate = InvalidDate_DefaultValue = "";
-			Loading = Loading_DefaultValue = "Loading...";
-			MainBreadcrumb = MainBreadcrumb_DefaultValue = "Main";
-			Months = Months_DefaultValue = new List<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-			Navigation = Navigation_DefaultValue = new LangNavigation();
-			NoData = NoData_DefaultValue = "No data to display";
-			NumericSymbolMagnitude = NumericSymbolMagnitude_DefaultValue = 1000;
-			NumericSymbols = NumericSymbols_DefaultValue = new List<string> {"k", "M", "G", "T", "P", "E"};
-			PlayAsSound = PlayAsSound_DefaultValue = "Play as sound";
-			PrintChart = PrintChart_DefaultValue = "Print chart";
-			ResetZoom = ResetZoom_DefaultValue = "Reset zoom";
-			ResetZoomTitle = ResetZoomTitle_DefaultValue = "Reset zoom level 1:1";
-			ShortMonths = ShortMonths_DefaultValue = new List<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",  "Aug", "Sep", "Oct", "Nov", "Dec"};
-			ShortWeekdays = ShortWeekdays_DefaultValue = new List<string>();
-			ThousandsSep = ThousandsSep_DefaultValue = " u0020";
-			ViewData = ViewData_DefaultValue = "View data table";
-			ViewFullscreen = ViewFullscreen_DefaultValue = "View in full screen";
-			Weekdays = Weekdays_DefaultValue = new List<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
-         "Friday", "Saturday"};
 			
 			CustomFields = new Hashtable();
 		}	
@@ -293,39 +259,39 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (ContextButtonTitle != ContextButtonTitle_DefaultValue) h.Add("contextButtonTitle",ContextButtonTitle);
-			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
-			if (DownloadCSV != DownloadCSV_DefaultValue) h.Add("downloadCSV",DownloadCSV);
-			if (DownloadJPEG != DownloadJPEG_DefaultValue) h.Add("downloadJPEG",DownloadJPEG);
-			if (DownloadMIDI != DownloadMIDI_DefaultValue) h.Add("downloadMIDI",DownloadMIDI);
-			if (DownloadPDF != DownloadPDF_DefaultValue) h.Add("downloadPDF",DownloadPDF);
-			if (DownloadPNG != DownloadPNG_DefaultValue) h.Add("downloadPNG",DownloadPNG);
-			if (DownloadSVG != DownloadSVG_DefaultValue) h.Add("downloadSVG",DownloadSVG);
-			if (DownloadXLS != DownloadXLS_DefaultValue) h.Add("downloadXLS",DownloadXLS);
-			if (DrillUpText != DrillUpText_DefaultValue) h.Add("drillUpText",DrillUpText);
-			if (ExitFullscreen != ExitFullscreen_DefaultValue) h.Add("exitFullscreen",ExitFullscreen);
-			if (ExportData.IsDirty(highcharts)) h.Add("exportData",ExportData.ToHashtable(highcharts));
-			if (ExportInProgress != ExportInProgress_DefaultValue) h.Add("exportInProgress",ExportInProgress);
-			if (HideData != HideData_DefaultValue) h.Add("hideData",HideData);
-			if (InvalidDate != InvalidDate_DefaultValue) h.Add("invalidDate",InvalidDate);
-			if (Loading != Loading_DefaultValue) h.Add("loading",Loading);
-			if (MainBreadcrumb != MainBreadcrumb_DefaultValue) h.Add("mainBreadcrumb",MainBreadcrumb);
-			if (Months != Months_DefaultValue) h.Add("months",Months);
-			if (Navigation.IsDirty(highcharts)) h.Add("navigation",Navigation.ToHashtable(highcharts));
-			if (NoData != NoData_DefaultValue) h.Add("noData",NoData);
-			if (NumericSymbolMagnitude != NumericSymbolMagnitude_DefaultValue) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
-			if (NumericSymbols != NumericSymbols_DefaultValue) h.Add("numericSymbols",NumericSymbols);
-			if (PlayAsSound != PlayAsSound_DefaultValue) h.Add("playAsSound",PlayAsSound);
-			if (PrintChart != PrintChart_DefaultValue) h.Add("printChart",PrintChart);
-			if (ResetZoom != ResetZoom_DefaultValue) h.Add("resetZoom",ResetZoom);
-			if (ResetZoomTitle != ResetZoomTitle_DefaultValue) h.Add("resetZoomTitle",ResetZoomTitle);
-			if (ShortMonths != ShortMonths_DefaultValue) h.Add("shortMonths",ShortMonths);
-			if (ShortWeekdays != ShortWeekdays_DefaultValue) h.Add("shortWeekdays",ShortWeekdays);
-			if (ThousandsSep != ThousandsSep_DefaultValue) h.Add("thousandsSep",ThousandsSep);
-			if (ViewData != ViewData_DefaultValue) h.Add("viewData",ViewData);
-			if (ViewFullscreen != ViewFullscreen_DefaultValue) h.Add("viewFullscreen",ViewFullscreen);
-			if (Weekdays != Weekdays_DefaultValue) h.Add("weekdays",Weekdays);
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (ContextButtonTitle != null) h.Add("contextButtonTitle",ContextButtonTitle);
+			if (DecimalPoint != null) h.Add("decimalPoint",DecimalPoint);
+			if (DownloadCSV != null) h.Add("downloadCSV",DownloadCSV);
+			if (DownloadJPEG != null) h.Add("downloadJPEG",DownloadJPEG);
+			if (DownloadMIDI != null) h.Add("downloadMIDI",DownloadMIDI);
+			if (DownloadPDF != null) h.Add("downloadPDF",DownloadPDF);
+			if (DownloadPNG != null) h.Add("downloadPNG",DownloadPNG);
+			if (DownloadSVG != null) h.Add("downloadSVG",DownloadSVG);
+			if (DownloadXLS != null) h.Add("downloadXLS",DownloadXLS);
+			if (DrillUpText != null) h.Add("drillUpText",DrillUpText);
+			if (ExitFullscreen != null) h.Add("exitFullscreen",ExitFullscreen);
+			if (ExportData != null) h.Add("exportData",ExportData.ToHashtable(highcharts));
+			if (ExportInProgress != null) h.Add("exportInProgress",ExportInProgress);
+			if (HideData != null) h.Add("hideData",HideData);
+			if (InvalidDate != null) h.Add("invalidDate",InvalidDate);
+			if (Loading != null) h.Add("loading",Loading);
+			if (MainBreadcrumb != null) h.Add("mainBreadcrumb",MainBreadcrumb);
+			if (Months != null) h.Add("months",Months);
+			if (Navigation != null) h.Add("navigation",Navigation.ToHashtable(highcharts));
+			if (NoData != null) h.Add("noData",NoData);
+			if (NumericSymbolMagnitude != null) h.Add("numericSymbolMagnitude",NumericSymbolMagnitude);
+			if (NumericSymbols != null) h.Add("numericSymbols",NumericSymbols);
+			if (PlayAsSound != null) h.Add("playAsSound",PlayAsSound);
+			if (PrintChart != null) h.Add("printChart",PrintChart);
+			if (ResetZoom != null) h.Add("resetZoom",ResetZoom);
+			if (ResetZoomTitle != null) h.Add("resetZoomTitle",ResetZoomTitle);
+			if (ShortMonths != null) h.Add("shortMonths",ShortMonths);
+			if (ShortWeekdays != null) h.Add("shortWeekdays",ShortWeekdays);
+			if (ThousandsSep != null) h.Add("thousandsSep",ThousandsSep);
+			if (ViewData != null) h.Add("viewData",ViewData);
+			if (ViewFullscreen != null) h.Add("viewFullscreen",ViewFullscreen);
+			if (Weekdays != null) h.Add("weekdays",Weekdays);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

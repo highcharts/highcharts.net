@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Scatter3dSeriesJitter()
 		{
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

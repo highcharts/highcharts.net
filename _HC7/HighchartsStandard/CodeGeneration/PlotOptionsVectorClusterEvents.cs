@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVectorClusterEvents()
 		{
-			DrillToCluster = DrillToCluster_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (DrillToCluster != DrillToCluster_DefaultValue) { h.Add("drillToCluster",DrillToCluster); highcharts.AddFunction("drillToCluster", DrillToCluster); }  
+			if (DrillToCluster != null) { h.Add("drillToCluster",DrillToCluster); highcharts.AddFunction("drillToCluster", DrillToCluster); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

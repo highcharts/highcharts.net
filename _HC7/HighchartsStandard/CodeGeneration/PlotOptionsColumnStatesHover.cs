@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsColumnStatesHover()
 		{
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
-			BorderColor = BorderColor_DefaultValue = "";
-			Brightness = Brightness_DefaultValue = null;
-			Color = Color_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (Brightness != null) h.Add("brightness",Brightness);
+			if (Color != null) h.Add("color",Color);
+			if (Enabled != null) h.Add("enabled",Enabled);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

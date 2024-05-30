@@ -16,24 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TreegraphSeriesData()
 		{
-			Accessibility = Accessibility_DefaultValue = new TreegraphSeriesDataAccessibility();
-			ClassName = ClassName_DefaultValue = "";
-			CollapseButton = CollapseButton_DefaultValue = "";
-			Collapsed = Collapsed_DefaultValue = null;
-			Color = Color_DefaultValue = "";
-			ColorIndex = ColorIndex_DefaultValue = null;
-			ColorValue = ColorValue_DefaultValue = null;
-			Custom = Custom_DefaultValue = new Hashtable();
-			Description = Description_DefaultValue = "";
-			DragDrop = DragDrop_DefaultValue = new TreegraphSeriesDataDragDrop();
-			Drilldown = Drilldown_DefaultValue = "";
-			Events = Events_DefaultValue = new TreegraphSeriesDataEvents();
-			Id = Id_DefaultValue = "";
-			Labelrank = Labelrank_DefaultValue = null;
-			Marker = Marker_DefaultValue = new TreegraphSeriesDataMarker();
-			Name = Name_DefaultValue = "";
-			Parent = Parent_DefaultValue = "";
-			Selected = Selected_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -93,6 +75,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Custom { get; set; }
 		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public Object DataLabels { get; set; }
+		private Object DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -172,24 +161,25 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (CollapseButton != CollapseButton_DefaultValue) h.Add("collapseButton",CollapseButton);
-			if (Collapsed != Collapsed_DefaultValue) h.Add("collapsed",Collapsed);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (ColorValue != ColorValue_DefaultValue) h.Add("colorValue",ColorValue);
-			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
-			if (Drilldown != Drilldown_DefaultValue) h.Add("drilldown",Drilldown);
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Parent != Parent_DefaultValue) h.Add("parent",Parent);
-			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (ClassName != null) h.Add("className",ClassName);
+			if (CollapseButton != null) h.Add("collapseButton",CollapseButton);
+			if (Collapsed != null) h.Add("collapsed",Collapsed);
+			if (Color != null) h.Add("color",Color);
+			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
+			if (ColorValue != null) h.Add("colorValue",ColorValue);
+			if (Custom != null) h.Add("custom",Custom);
+			if (DataLabels != null) h.Add("dataLabels",DataLabels);
+			if (Description != null) h.Add("description",Description);
+			if (DragDrop != null) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
+			if (Drilldown != null) h.Add("drilldown",Drilldown);
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (Id != null) h.Add("id",Id);
+			if (Labelrank != null) h.Add("labelrank",Labelrank);
+			if (Marker != null) h.Add("marker",Marker.ToHashtable(highcharts));
+			if (Name != null) h.Add("name",Name);
+			if (Parent != null) h.Add("parent",Parent);
+			if (Selected != null) h.Add("selected",Selected);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

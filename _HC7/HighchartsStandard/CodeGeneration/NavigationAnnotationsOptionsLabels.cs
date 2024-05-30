@@ -16,32 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationAnnotationsOptionsLabels()
 		{
-			Accessibility = Accessibility_DefaultValue = new NavigationAnnotationsOptionsLabelsAccessibility();
-			Align = Align_DefaultValue = NavigationAnnotationsOptionsLabelsAlign.Center;
-			AllowOverlap = AllowOverlap_DefaultValue = false;
-			BackgroundColor = BackgroundColor_DefaultValue = "rgba(0, 0, 0, 0.75)";
-			BorderColor = BorderColor_DefaultValue = "#000000";
-			BorderRadius = BorderRadius_DefaultValue = 3;
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			ClassName = ClassName_DefaultValue = "highcharts-no-tooltip";
-			Crop = Crop_DefaultValue = false;
-			Distance = Distance_DefaultValue = null;
-			Format = Format_DefaultValue = "";
-			Formatter = Formatter_DefaultValue = "";
-			IncludeInDataExport = IncludeInDataExport_DefaultValue = true;
-			Overflow = Overflow_DefaultValue = NavigationAnnotationsOptionsLabelsOverflow.Justify;
-			Padding = Padding_DefaultValue = 5;
-			Point = Point_DefaultValue = null;
-			PointString = PointString_DefaultValue = "null";
-			Shadow = Shadow_DefaultValue = new Shadow();
-			ShadowBool = ShadowBool_DefaultValue = false;
-			Shape = Shape_DefaultValue = "callout";
-			Style = Style_DefaultValue = new Hashtable();
-			Text = Text_DefaultValue = "";
-			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = NavigationAnnotationsOptionsLabelsVerticalAlign.Bottom;
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = -16;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -236,32 +210,32 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Point != Point_DefaultValue) h.Add("point",Point);
-			if (PointString != PointString_DefaultValue) h.Add("point",PointString);
-			if (Shadow.IsDirty(highcharts)) h.Add("shadow",Shadow.ToHashtable(highcharts));
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (Align != NavigationAnnotationsOptionsLabelsAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (AllowOverlap != null) h.Add("allowOverlap",AllowOverlap);
+			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Crop != null) h.Add("crop",Crop);
+			if (Distance != null) h.Add("distance",Distance);
+			if (Format != null) h.Add("format",Format);
+			if (Formatter != null) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
+			if (IncludeInDataExport != null) h.Add("includeInDataExport",IncludeInDataExport);
+			if (Overflow != NavigationAnnotationsOptionsLabelsOverflow.Null) h.Add("overflow", highcharts.FirstCharacterToLower(Overflow.ToString()));
+			if (Padding != null) h.Add("padding",Padding);
+			if (Point != null) h.Add("point",Point);
+			if (PointString != null) h.Add("point",PointString);
+			if (Shadow != null) h.Add("shadow",Shadow.ToHashtable(highcharts));
+			if (ShadowBool != null) h.Add("shadow",ShadowBool);
+			if (Shape != null) h.Add("shape",Shape);
+			if (Style != null) h.Add("style",Style);
+			if (Text != null) h.Add("text",Text);
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != NavigationAnnotationsOptionsLabelsVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

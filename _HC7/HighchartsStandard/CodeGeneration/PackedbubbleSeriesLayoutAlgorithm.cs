@@ -16,22 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PackedbubbleSeriesLayoutAlgorithm()
 		{
-			BubblePadding = BubblePadding_DefaultValue = 5;
-			DragBetweenSeries = DragBetweenSeries_DefaultValue = false;
-			EnableSimulation = EnableSimulation_DefaultValue = true;
-			Friction = Friction_DefaultValue = null;
-			GravitationalConstant = GravitationalConstant_DefaultValue = null;
-			InitialPositionRadius = InitialPositionRadius_DefaultValue = null;
-			InitialPositions = InitialPositions_DefaultValue = null;
-			Integration = Integration_DefaultValue = PackedbubbleSeriesLayoutAlgorithmIntegration.Euler;
-			LinkLength = LinkLength_DefaultValue = null;
-			MaxIterations = MaxIterations_DefaultValue = 1000;
-			MaxSpeed = MaxSpeed_DefaultValue = 5;
-			ParentNodeLimit = ParentNodeLimit_DefaultValue = false;
-			ParentNodeOptions = ParentNodeOptions_DefaultValue = new PackedbubbleSeriesLayoutAlgorithmParentNodeOptions();
-			SeriesInteraction = SeriesInteraction_DefaultValue = true;
-			SplitSeries = SplitSeries_DefaultValue = false;
-			Type = Type_DefaultValue = "reingold-fruchterman";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -156,22 +140,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BubblePadding != BubblePadding_DefaultValue) h.Add("bubblePadding",BubblePadding);
-			if (DragBetweenSeries != DragBetweenSeries_DefaultValue) h.Add("dragBetweenSeries",DragBetweenSeries);
-			if (EnableSimulation != EnableSimulation_DefaultValue) h.Add("enableSimulation",EnableSimulation);
-			if (Friction != Friction_DefaultValue) h.Add("friction",Friction);
-			if (GravitationalConstant != GravitationalConstant_DefaultValue) h.Add("gravitationalConstant",GravitationalConstant);
-			if (InitialPositionRadius != InitialPositionRadius_DefaultValue) h.Add("initialPositionRadius",InitialPositionRadius);
-			if (InitialPositions != InitialPositions_DefaultValue) h.Add("initialPositions",InitialPositions);
-			if (Integration != Integration_DefaultValue) h.Add("integration", highcharts.FirstCharacterToLower(Integration.ToString()));
-			if (LinkLength != LinkLength_DefaultValue) h.Add("linkLength",LinkLength);
-			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
-			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
-			if (ParentNodeLimit != ParentNodeLimit_DefaultValue) h.Add("parentNodeLimit",ParentNodeLimit);
-			if (ParentNodeOptions.IsDirty(highcharts)) h.Add("parentNodeOptions",ParentNodeOptions.ToHashtable(highcharts));
-			if (SeriesInteraction != SeriesInteraction_DefaultValue) h.Add("seriesInteraction",SeriesInteraction);
-			if (SplitSeries != SplitSeries_DefaultValue) h.Add("splitSeries",SplitSeries);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (BubblePadding != null) h.Add("bubblePadding",BubblePadding);
+			if (DragBetweenSeries != null) h.Add("dragBetweenSeries",DragBetweenSeries);
+			if (EnableSimulation != null) h.Add("enableSimulation",EnableSimulation);
+			if (Friction != null) h.Add("friction",Friction);
+			if (GravitationalConstant != null) h.Add("gravitationalConstant",GravitationalConstant);
+			if (InitialPositionRadius != null) h.Add("initialPositionRadius",InitialPositionRadius);
+			if (InitialPositions != null) h.Add("initialPositions",InitialPositions);
+			if (Integration != PackedbubbleSeriesLayoutAlgorithmIntegration.Null) h.Add("integration", highcharts.FirstCharacterToLower(Integration.ToString()));
+			if (LinkLength != null) h.Add("linkLength",LinkLength);
+			if (MaxIterations != null) h.Add("maxIterations",MaxIterations);
+			if (MaxSpeed != null) h.Add("maxSpeed",MaxSpeed);
+			if (ParentNodeLimit != null) h.Add("parentNodeLimit",ParentNodeLimit);
+			if (ParentNodeOptions != null) h.Add("parentNodeOptions",ParentNodeOptions.ToHashtable(highcharts));
+			if (SeriesInteraction != null) h.Add("seriesInteraction",SeriesInteraction);
+			if (SplitSeries != null) h.Add("splitSeries",SplitSeries);
+			if (Type != null) h.Add("type",Type);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

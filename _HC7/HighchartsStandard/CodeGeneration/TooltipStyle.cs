@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TooltipStyle()
 		{
-			Color = Color_DefaultValue = "#333333";
-			Cursor = Cursor_DefaultValue = "default";
-			FontSize = FontSize_DefaultValue = "0.8em";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
+			if (Color != null) h.Add("color",Color);
+			if (Cursor != null) h.Add("cursor",Cursor);
+			if (FontSize != null) h.Add("fontSize",FontSize);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

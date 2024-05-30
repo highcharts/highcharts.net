@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTreemapStatesHover()
 		{
-			BorderColor = BorderColor_DefaultValue = "#999999";
-			Brightness = Brightness_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = null;
-			Shadow = Shadow_DefaultValue = new Shadow();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Brightness != Brightness_DefaultValue) h.Add("brightness",Brightness);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Shadow != Shadow_DefaultValue) h.Add("shadow",Shadow);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (Brightness != null) h.Add("brightness",Brightness);
+			if (Opacity != null) h.Add("opacity",Opacity);
+			if (Shadow != null) h.Add("shadow",Shadow);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

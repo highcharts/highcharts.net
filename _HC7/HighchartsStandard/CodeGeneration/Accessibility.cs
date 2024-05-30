@@ -16,19 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Accessibility()
 		{
-			AnnounceNewData = AnnounceNewData_DefaultValue = new AccessibilityAnnounceNewData();
-			CustomComponents = CustomComponents_DefaultValue = new object();
-			Description = Description_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = true;
-			HighContrastMode = HighContrastMode_DefaultValue = "auto";
-			HighContrastTheme = HighContrastTheme_DefaultValue = new Object();
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = new AccessibilityKeyboardNavigation();
-			LandmarkVerbosity = LandmarkVerbosity_DefaultValue = AccessibilityLandmarkVerbosity.All;
-			LinkedDescription = LinkedDescription_DefaultValue = "*[data-highcharts-chart='{index}'] + .highcharts-description";
-			Point = Point_DefaultValue = new AccessibilityPoint();
-			ScreenReaderSection = ScreenReaderSection_DefaultValue = new AccessibilityScreenReaderSection();
-			Series = Series_DefaultValue = new List<Series>();
-			TypeDescription = TypeDescription_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -132,19 +119,19 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AnnounceNewData.IsDirty(highcharts)) h.Add("announceNewData",AnnounceNewData.ToHashtable(highcharts));
-			if (CustomComponents != CustomComponents_DefaultValue) h.Add("customComponents",CustomComponents);
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (HighContrastMode != HighContrastMode_DefaultValue) h.Add("highContrastMode",HighContrastMode);
-			if (HighContrastTheme != HighContrastTheme_DefaultValue) h.Add("highContrastTheme",HighContrastTheme);
-			if (KeyboardNavigation.IsDirty(highcharts)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(highcharts));
-			if (LandmarkVerbosity != LandmarkVerbosity_DefaultValue) h.Add("landmarkVerbosity", highcharts.FirstCharacterToLower(LandmarkVerbosity.ToString()));
-			if (LinkedDescription != LinkedDescription_DefaultValue) h.Add("linkedDescription",LinkedDescription);
-			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
-			if (ScreenReaderSection.IsDirty(highcharts)) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highcharts));
-			if (Series != Series_DefaultValue) h.Add("series",Series);
-			if (TypeDescription != TypeDescription_DefaultValue) h.Add("typeDescription",TypeDescription);
+			if (AnnounceNewData != null) h.Add("announceNewData",AnnounceNewData.ToHashtable(highcharts));
+			if (CustomComponents != null) h.Add("customComponents",CustomComponents);
+			if (Description != null) h.Add("description",Description);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (HighContrastMode != null) h.Add("highContrastMode",HighContrastMode);
+			if (HighContrastTheme != null) h.Add("highContrastTheme",HighContrastTheme);
+			if (KeyboardNavigation != null) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(highcharts));
+			if (LandmarkVerbosity != AccessibilityLandmarkVerbosity.Null) h.Add("landmarkVerbosity", highcharts.FirstCharacterToLower(LandmarkVerbosity.ToString()));
+			if (LinkedDescription != null) h.Add("linkedDescription",LinkedDescription);
+			if (Point != null) h.Add("point",Point.ToHashtable(highcharts));
+			if (ScreenReaderSection != null) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highcharts));
+			if (Series != null) h.Add("series",Series);
+			if (TypeDescription != null) h.Add("typeDescription",TypeDescription);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

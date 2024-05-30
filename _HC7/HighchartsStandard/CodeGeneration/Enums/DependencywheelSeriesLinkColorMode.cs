@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum DependencywheelSeriesLinkColorMode
     {
-        From, 
+        Null, 
+		From, 
 		Gradient, 
 		To
     }

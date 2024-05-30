@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SankeySeriesNodesDataLabels()
 		{
-			BackgroundColor = BackgroundColor_DefaultValue = "none";
-			Crop = Crop_DefaultValue = false;
-			Enabled = Enabled_DefaultValue = true;
-			Format = Format_DefaultValue = new SankeySeriesNodesDataLabelsFormat();
-			FormatString = FormatString_DefaultValue = "null";
-			Formatter = Formatter_DefaultValue = "";
-			Inside = Inside_DefaultValue = true;
-			NodeFormat = NodeFormat_DefaultValue = "undefined";
-			NodeFormatter = NodeFormatter_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Format.IsDirty(highcharts)) h.Add("format",Format.ToHashtable(highcharts));
-			if (FormatString != FormatString_DefaultValue) h.Add("format",FormatString);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (Inside != Inside_DefaultValue) h.Add("inside",Inside);
-			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
-			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); highcharts.AddFunction("nodeFormatter", NodeFormatter); }  
+			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
+			if (Crop != null) h.Add("crop",Crop);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Format != null) h.Add("format",Format.ToHashtable(highcharts));
+			if (FormatString != null) h.Add("format",FormatString);
+			if (Formatter != null) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
+			if (Inside != null) h.Add("inside",Inside);
+			if (NodeFormat != null) h.Add("nodeFormat",NodeFormat);
+			if (NodeFormatter != null) { h.Add("nodeFormatter",NodeFormatter); highcharts.AddFunction("nodeFormatter", NodeFormatter); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

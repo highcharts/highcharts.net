@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Defs()
 		{
-			Arrow = Arrow_DefaultValue = new DefsArrow();
-			ReverseArrow = ReverseArrow_DefaultValue = new DefsReverse_arrow();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Arrow.IsDirty(highcharts)) h.Add("arrow",Arrow.ToHashtable(highcharts));
-			if (ReverseArrow.IsDirty(highcharts)) h.Add("reverseArrow",ReverseArrow.ToHashtable(highcharts));
+			if (Arrow != null) h.Add("arrow",Arrow.ToHashtable(highcharts));
+			if (ReverseArrow != null) h.Add("reverseArrow",ReverseArrow.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

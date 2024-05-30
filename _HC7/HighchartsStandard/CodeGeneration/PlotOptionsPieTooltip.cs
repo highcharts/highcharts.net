@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPieTooltip()
 		{
-			FollowPointer = FollowPointer_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
+			if (FollowPointer != null) h.Add("followPointer",FollowPointer);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

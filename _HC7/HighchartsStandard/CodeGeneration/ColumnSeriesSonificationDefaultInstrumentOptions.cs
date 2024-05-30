@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ColumnSeriesSonificationDefaultInstrumentOptions()
 		{
-			ActiveWhen = ActiveWhen_DefaultValue = new ColumnSeriesSonificationDefaultInstrumentOptionsActiveWhen();
-			Instrument = Instrument_DefaultValue = null;
-			InstrumentString = InstrumentString_DefaultValue = "null";
-			Mapping = Mapping_DefaultValue = new ColumnSeriesSonificationDefaultInstrumentOptionsMapping();
-			MidiName = MidiName_DefaultValue = "";
-			PointGrouping = PointGrouping_DefaultValue = new ColumnSeriesSonificationDefaultInstrumentOptionsPointGrouping();
-			RoundToMusicalNotes = RoundToMusicalNotes_DefaultValue = true;
-			ShowPlayMarker = ShowPlayMarker_DefaultValue = true;
-			Type = Type_DefaultValue = ColumnSeriesSonificationDefaultInstrumentOptionsType.Instrument;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ActiveWhen.IsDirty(highcharts)) h.Add("activeWhen",ActiveWhen.ToHashtable(highcharts));
-			if (Instrument != Instrument_DefaultValue) h.Add("instrument",Instrument);
-			if (InstrumentString != InstrumentString_DefaultValue) h.Add("instrument",InstrumentString);
-			if (Mapping.IsDirty(highcharts)) h.Add("mapping",Mapping.ToHashtable(highcharts));
-			if (MidiName != MidiName_DefaultValue) h.Add("midiName",MidiName);
-			if (PointGrouping.IsDirty(highcharts)) h.Add("pointGrouping",PointGrouping.ToHashtable(highcharts));
-			if (RoundToMusicalNotes != RoundToMusicalNotes_DefaultValue) h.Add("roundToMusicalNotes",RoundToMusicalNotes);
-			if (ShowPlayMarker != ShowPlayMarker_DefaultValue) h.Add("showPlayMarker",ShowPlayMarker);
-			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
+			if (ActiveWhen != null) h.Add("activeWhen",ActiveWhen.ToHashtable(highcharts));
+			if (Instrument != null) h.Add("instrument",Instrument);
+			if (InstrumentString != null) h.Add("instrument",InstrumentString);
+			if (Mapping != null) h.Add("mapping",Mapping.ToHashtable(highcharts));
+			if (MidiName != null) h.Add("midiName",MidiName);
+			if (PointGrouping != null) h.Add("pointGrouping",PointGrouping.ToHashtable(highcharts));
+			if (RoundToMusicalNotes != null) h.Add("roundToMusicalNotes",RoundToMusicalNotes);
+			if (ShowPlayMarker != null) h.Add("showPlayMarker",ShowPlayMarker);
+			if (Type != ColumnSeriesSonificationDefaultInstrumentOptionsType.Null) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

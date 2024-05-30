@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartOptions3dFrame()
 		{
-			Back = Back_DefaultValue = new ChartOptions3dFrameBack();
-			Bottom = Bottom_DefaultValue = new ChartOptions3dFrameBottom();
-			Front = Front_DefaultValue = new ChartOptions3dFrameFront();
-			Left = Left_DefaultValue = new ChartOptions3dFrameLeft();
-			Right = Right_DefaultValue = new ChartOptions3dFrameRight();
-			Side = Side_DefaultValue = new ChartOptions3dFrameSide();
-			Size = Size_DefaultValue = 1;
-			Top = Top_DefaultValue = new ChartOptions3dFrameTop();
-			Visible = Visible_DefaultValue = "default";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Back.IsDirty(highcharts)) h.Add("back",Back.ToHashtable(highcharts));
-			if (Bottom.IsDirty(highcharts)) h.Add("bottom",Bottom.ToHashtable(highcharts));
-			if (Front.IsDirty(highcharts)) h.Add("front",Front.ToHashtable(highcharts));
-			if (Left.IsDirty(highcharts)) h.Add("left",Left.ToHashtable(highcharts));
-			if (Right.IsDirty(highcharts)) h.Add("right",Right.ToHashtable(highcharts));
-			if (Side.IsDirty(highcharts)) h.Add("side",Side.ToHashtable(highcharts));
-			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (Top.IsDirty(highcharts)) h.Add("top",Top.ToHashtable(highcharts));
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
+			if (Back != null) h.Add("back",Back.ToHashtable(highcharts));
+			if (Bottom != null) h.Add("bottom",Bottom.ToHashtable(highcharts));
+			if (Front != null) h.Add("front",Front.ToHashtable(highcharts));
+			if (Left != null) h.Add("left",Left.ToHashtable(highcharts));
+			if (Right != null) h.Add("right",Right.ToHashtable(highcharts));
+			if (Side != null) h.Add("side",Side.ToHashtable(highcharts));
+			if (Size != null) h.Add("size",Size);
+			if (Top != null) h.Add("top",Top.ToHashtable(highcharts));
+			if (Visible != null) h.Add("visible",Visible);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

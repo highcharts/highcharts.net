@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsGaugePivot()
 		{
-			BackgroundColor = BackgroundColor_DefaultValue = "#000000";
-			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			Radius = Radius_DefaultValue = 5;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (Radius != null) h.Add("radius",Radius);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

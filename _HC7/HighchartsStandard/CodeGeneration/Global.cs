@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Global()
 		{
-			CanvasToolsURL = CanvasToolsURL_DefaultValue = "";
-			Date = Date_DefaultValue = null;
-			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
-			Timezone = Timezone_DefaultValue = "";
-			TimezoneOffset = TimezoneOffset_DefaultValue = null;
-			UseUTC = UseUTC_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (CanvasToolsURL != CanvasToolsURL_DefaultValue) h.Add("canvasToolsURL",CanvasToolsURL);
-			if (Date != Date_DefaultValue) h.Add("date",Date);
-			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) h.Add("getTimezoneOffset",GetTimezoneOffset);
-			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
-			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
-			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
+			if (CanvasToolsURL != null) h.Add("canvasToolsURL",CanvasToolsURL);
+			if (Date != null) h.Add("date",Date);
+			if (GetTimezoneOffset != null) h.Add("getTimezoneOffset",GetTimezoneOffset);
+			if (Timezone != null) h.Add("timezone",Timezone);
+			if (TimezoneOffset != null) h.Add("timezoneOffset",TimezoneOffset);
+			if (UseUTC != null) h.Add("useUTC",UseUTC);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

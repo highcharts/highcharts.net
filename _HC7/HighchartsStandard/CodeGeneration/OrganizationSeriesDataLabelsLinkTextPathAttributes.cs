@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public OrganizationSeriesDataLabelsLinkTextPathAttributes()
 		{
-			StartOffset = StartOffset_DefaultValue = null;
-			TextAnchor = TextAnchor_DefaultValue = "end";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (StartOffset != StartOffset_DefaultValue) h.Add("startOffset",StartOffset);
-			if (TextAnchor != TextAnchor_DefaultValue) h.Add("textAnchor",TextAnchor);
+			if (StartOffset != null) h.Add("startOffset",StartOffset);
+			if (TextAnchor != null) h.Add("textAnchor",TextAnchor);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

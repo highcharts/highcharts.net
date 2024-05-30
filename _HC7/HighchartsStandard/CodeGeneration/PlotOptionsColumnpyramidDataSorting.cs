@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsColumnpyramidDataSorting()
 		{
-			Enabled = Enabled_DefaultValue = null;
-			MatchByName = MatchByName_DefaultValue = null;
-			SortKey = SortKey_DefaultValue = "y";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (MatchByName != MatchByName_DefaultValue) h.Add("matchByName",MatchByName);
-			if (SortKey != SortKey_DefaultValue) h.Add("sortKey",SortKey);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (MatchByName != null) h.Add("matchByName",MatchByName);
+			if (SortKey != null) h.Add("sortKey",SortKey);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

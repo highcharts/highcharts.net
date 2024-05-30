@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsXrangeDataLabelsStyle()
 		{
-			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (WhiteSpace != WhiteSpace_DefaultValue) h.Add("whiteSpace",WhiteSpace);
+			if (WhiteSpace != null) h.Add("whiteSpace",WhiteSpace);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

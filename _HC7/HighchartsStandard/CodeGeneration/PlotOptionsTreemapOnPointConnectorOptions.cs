@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTreemapOnPointConnectorOptions()
 		{
-			Dashstyle = Dashstyle_DefaultValue = new Hashtable();
-			Stroke = Stroke_DefaultValue = "";
-			Width = Width_DefaultValue = 1;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Dashstyle != Dashstyle_DefaultValue) h.Add("dashstyle",Dashstyle);
-			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (Dashstyle != null) h.Add("dashstyle",Dashstyle);
+			if (Stroke != null) h.Add("stroke",Stroke);
+			if (Width != null) h.Add("width",Width);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

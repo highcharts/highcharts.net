@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Boost()
 		{
-			AllowForce = AllowForce_DefaultValue = true;
-			Debug = Debug_DefaultValue = new BoostDebug();
-			Enabled = Enabled_DefaultValue = true;
-			PixelRatio = PixelRatio_DefaultValue = 1;
-			SeriesThreshold = SeriesThreshold_DefaultValue = 50;
-			UseGPUTranslations = UseGPUTranslations_DefaultValue = false;
-			UsePreallocated = UsePreallocated_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -84,13 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AllowForce != AllowForce_DefaultValue) h.Add("allowForce",AllowForce);
-			if (Debug.IsDirty(highcharts)) h.Add("debug",Debug.ToHashtable(highcharts));
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (PixelRatio != PixelRatio_DefaultValue) h.Add("pixelRatio",PixelRatio);
-			if (SeriesThreshold != SeriesThreshold_DefaultValue) h.Add("seriesThreshold",SeriesThreshold);
-			if (UseGPUTranslations != UseGPUTranslations_DefaultValue) h.Add("useGPUTranslations",UseGPUTranslations);
-			if (UsePreallocated != UsePreallocated_DefaultValue) h.Add("usePreallocated",UsePreallocated);
+			if (AllowForce != null) h.Add("allowForce",AllowForce);
+			if (Debug != null) h.Add("debug",Debug.ToHashtable(highcharts));
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (PixelRatio != null) h.Add("pixelRatio",PixelRatio);
+			if (SeriesThreshold != null) h.Add("seriesThreshold",SeriesThreshold);
+			if (UseGPUTranslations != null) h.Add("useGPUTranslations",UseGPUTranslations);
+			if (UsePreallocated != null) h.Add("usePreallocated",UsePreallocated);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

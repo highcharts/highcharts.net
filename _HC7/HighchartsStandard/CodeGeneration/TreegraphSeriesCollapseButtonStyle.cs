@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TreegraphSeriesCollapseButtonStyle()
 		{
-			Cursor = Cursor_DefaultValue = "pointer";
-			FontSize = FontSize_DefaultValue = "1em";
-			FontWeight = FontWeight_DefaultValue = "bold";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (Cursor != null) h.Add("cursor",Cursor);
+			if (FontSize != null) h.Add("fontSize",FontSize);
+			if (FontWeight != null) h.Add("fontWeight",FontWeight);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

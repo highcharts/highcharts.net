@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public XAxisPlotLinesEvents()
 		{
-			Click = Click_DefaultValue = "";
-			Mousemove = Mousemove_DefaultValue = "";
-			Mouseout = Mouseout_DefaultValue = "";
-			Mouseover = Mouseover_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Click != Click_DefaultValue) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
-			if (Mousemove != Mousemove_DefaultValue) { h.Add("mousemove",Mousemove); highcharts.AddFunction("mousemove", Mousemove); }  
-			if (Mouseout != Mouseout_DefaultValue) { h.Add("mouseout",Mouseout); highcharts.AddFunction("mouseout", Mouseout); }  
-			if (Mouseover != Mouseover_DefaultValue) { h.Add("mouseover",Mouseover); highcharts.AddFunction("mouseover", Mouseover); }  
+			if (Click != null) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
+			if (Mousemove != null) { h.Add("mousemove",Mousemove); highcharts.AddFunction("mousemove", Mousemove); }  
+			if (Mouseout != null) { h.Add("mouseout",Mouseout); highcharts.AddFunction("mouseout", Mouseout); }  
+			if (Mouseover != null) { h.Add("mouseover",Mouseover); highcharts.AddFunction("mouseover", Mouseover); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

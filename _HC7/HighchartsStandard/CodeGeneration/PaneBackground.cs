@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PaneBackground()
 		{
-			BackgroundColor = BackgroundColor_DefaultValue = new object();
-			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			BorderWidth = BorderWidth_DefaultValue = 1;
-			ClassName = ClassName_DefaultValue = "";
-			InnerRadius = InnerRadius_DefaultValue = "0";
-			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
-			OuterRadius = OuterRadius_DefaultValue = "105%";
-			OuterRadiusNumber = OuterRadiusNumber_DefaultValue = null;
-			Shape = Shape_DefaultValue = "circle";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
-			if (InnerRadiusNumber != InnerRadiusNumber_DefaultValue) h.Add("innerRadius",InnerRadiusNumber);
-			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
-			if (OuterRadiusNumber != OuterRadiusNumber_DefaultValue) h.Add("outerRadius",OuterRadiusNumber);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
+			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (InnerRadius != null) h.Add("innerRadius",InnerRadius);
+			if (InnerRadiusNumber != null) h.Add("innerRadius",InnerRadiusNumber);
+			if (OuterRadius != null) h.Add("outerRadius",OuterRadius);
+			if (OuterRadiusNumber != null) h.Add("outerRadius",OuterRadiusNumber);
+			if (Shape != null) h.Add("shape",Shape);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,17 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsSeriesLabel()
 		{
-			BoxesToAvoid = BoxesToAvoid_DefaultValue = new List<object>();
-			ConnectorAllowed = ConnectorAllowed_DefaultValue = false;
-			ConnectorNeighbourDistance = ConnectorNeighbourDistance_DefaultValue = 24;
-			Enabled = Enabled_DefaultValue = true;
-			Format = Format_DefaultValue = "undefined";
-			Formatter = Formatter_DefaultValue = "";
-			MaxFontSize = MaxFontSize_DefaultValue = null;
-			MinFontSize = MinFontSize_DefaultValue = null;
-			OnArea = OnArea_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
-			UseHTML = UseHTML_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -116,17 +105,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BoxesToAvoid != BoxesToAvoid_DefaultValue) h.Add("boxesToAvoid",BoxesToAvoid);
-			if (ConnectorAllowed != ConnectorAllowed_DefaultValue) h.Add("connectorAllowed",ConnectorAllowed);
-			if (ConnectorNeighbourDistance != ConnectorNeighbourDistance_DefaultValue) h.Add("connectorNeighbourDistance",ConnectorNeighbourDistance);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (MaxFontSize != MaxFontSize_DefaultValue) h.Add("maxFontSize",MaxFontSize);
-			if (MinFontSize != MinFontSize_DefaultValue) h.Add("minFontSize",MinFontSize);
-			if (OnArea != OnArea_DefaultValue) h.Add("onArea",OnArea);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (BoxesToAvoid != null) h.Add("boxesToAvoid",BoxesToAvoid);
+			if (ConnectorAllowed != null) h.Add("connectorAllowed",ConnectorAllowed);
+			if (ConnectorNeighbourDistance != null) h.Add("connectorNeighbourDistance",ConnectorNeighbourDistance);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Format != null) h.Add("format",Format);
+			if (Formatter != null) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
+			if (MaxFontSize != null) h.Add("maxFontSize",MaxFontSize);
+			if (MinFontSize != null) h.Add("minFontSize",MinFontSize);
+			if (OnArea != null) h.Add("onArea",OnArea);
+			if (Style != null) h.Add("style",Style);
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

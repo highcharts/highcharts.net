@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTilemapStatesHoverHalo()
 		{
-			Attributes = Attributes_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
-			Opacity = Opacity_DefaultValue = null;
-			Size = Size_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (Attributes != null) h.Add("attributes",Attributes);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Opacity != null) h.Add("opacity",Opacity);
+			if (Size != null) h.Add("size",Size);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,28 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityChartTypes()
 		{
-			BarMultiple = BarMultiple_DefaultValue = "Bar chart with {numSeries} data series.";
-			BarSingle = BarSingle_DefaultValue = "Bar chart with {numPoints} {#eq numPoints 1}bar{else}bars{/eq}.";
-			BoxplotMultiple = BoxplotMultiple_DefaultValue = "Boxplot with {numSeries} data series.";
-			BoxplotSingle = BoxplotSingle_DefaultValue = "Boxplot with {numPoints} {#eq numPoints 1}box{else}boxes{/eq}.";
-			BubbleMultiple = BubbleMultiple_DefaultValue = "Bubble chart with {numSeries} data series.";
-			BubbleSingle = BubbleSingle_DefaultValue = "Bubble chart with {numPoints} {#eq numPoints 1}bubbles{else}bubble{/eq}.";
-			ColumnMultiple = ColumnMultiple_DefaultValue = "Bar chart with {numSeries} data series.";
-			ColumnSingle = ColumnSingle_DefaultValue = "Bar chart with {numPoints} {#eq numPoints 1}bar{else}bars{/eq}.";
-			CombinationChart = CombinationChart_DefaultValue = "Combination chart with {numSeries} data series.";
-			DefaultMultiple = DefaultMultiple_DefaultValue = "Chart with {numSeries} data series.";
-			DefaultSingle = DefaultSingle_DefaultValue = "Chart with {numPoints} data {#eq numPoints 1}point{else}points{/eq}.";
-			EmptyChart = EmptyChart_DefaultValue = "Empty chart";
-			LineMultiple = LineMultiple_DefaultValue = "Line chart with {numSeries} lines.";
-			LineSingle = LineSingle_DefaultValue = "Line chart with {numPoints} data {#eq numPoints 1}point{else}points{/eq}.";
-			MapTypeDescription = MapTypeDescription_DefaultValue = "Map of {mapTitle} with {numSeries} data series.";
-			PieMultiple = PieMultiple_DefaultValue = "Pie chart with {numSeries} pies.";
-			PieSingle = PieSingle_DefaultValue = "Pie chart with {numPoints} {#eq numPoints 1}slice{else}slices{/eq}.";
-			ScatterMultiple = ScatterMultiple_DefaultValue = "Scatter chart with {numSeries} data series.";
-			ScatterSingle = ScatterSingle_DefaultValue = "Scatter chart with {numPoints} {#eq numPoints 1}point{else}points{/eq}.";
-			SplineMultiple = SplineMultiple_DefaultValue = "Line chart with {numSeries} lines.";
-			SplineSingle = SplineSingle_DefaultValue = "Line chart with {numPoints} data {#eq numPoints 1}point{else}points{/eq}.";
-			UnknownMap = UnknownMap_DefaultValue = "Map of unspecified region with {numSeries} data series.";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -204,28 +182,28 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BarMultiple != BarMultiple_DefaultValue) h.Add("barMultiple",BarMultiple);
-			if (BarSingle != BarSingle_DefaultValue) h.Add("barSingle",BarSingle);
-			if (BoxplotMultiple != BoxplotMultiple_DefaultValue) h.Add("boxplotMultiple",BoxplotMultiple);
-			if (BoxplotSingle != BoxplotSingle_DefaultValue) h.Add("boxplotSingle",BoxplotSingle);
-			if (BubbleMultiple != BubbleMultiple_DefaultValue) h.Add("bubbleMultiple",BubbleMultiple);
-			if (BubbleSingle != BubbleSingle_DefaultValue) h.Add("bubbleSingle",BubbleSingle);
-			if (ColumnMultiple != ColumnMultiple_DefaultValue) h.Add("columnMultiple",ColumnMultiple);
-			if (ColumnSingle != ColumnSingle_DefaultValue) h.Add("columnSingle",ColumnSingle);
-			if (CombinationChart != CombinationChart_DefaultValue) h.Add("combinationChart",CombinationChart);
-			if (DefaultMultiple != DefaultMultiple_DefaultValue) h.Add("defaultMultiple",DefaultMultiple);
-			if (DefaultSingle != DefaultSingle_DefaultValue) h.Add("defaultSingle",DefaultSingle);
-			if (EmptyChart != EmptyChart_DefaultValue) h.Add("emptyChart",EmptyChart);
-			if (LineMultiple != LineMultiple_DefaultValue) h.Add("lineMultiple",LineMultiple);
-			if (LineSingle != LineSingle_DefaultValue) h.Add("lineSingle",LineSingle);
-			if (MapTypeDescription != MapTypeDescription_DefaultValue) h.Add("mapTypeDescription",MapTypeDescription);
-			if (PieMultiple != PieMultiple_DefaultValue) h.Add("pieMultiple",PieMultiple);
-			if (PieSingle != PieSingle_DefaultValue) h.Add("pieSingle",PieSingle);
-			if (ScatterMultiple != ScatterMultiple_DefaultValue) h.Add("scatterMultiple",ScatterMultiple);
-			if (ScatterSingle != ScatterSingle_DefaultValue) h.Add("scatterSingle",ScatterSingle);
-			if (SplineMultiple != SplineMultiple_DefaultValue) h.Add("splineMultiple",SplineMultiple);
-			if (SplineSingle != SplineSingle_DefaultValue) h.Add("splineSingle",SplineSingle);
-			if (UnknownMap != UnknownMap_DefaultValue) h.Add("unknownMap",UnknownMap);
+			if (BarMultiple != null) h.Add("barMultiple",BarMultiple);
+			if (BarSingle != null) h.Add("barSingle",BarSingle);
+			if (BoxplotMultiple != null) h.Add("boxplotMultiple",BoxplotMultiple);
+			if (BoxplotSingle != null) h.Add("boxplotSingle",BoxplotSingle);
+			if (BubbleMultiple != null) h.Add("bubbleMultiple",BubbleMultiple);
+			if (BubbleSingle != null) h.Add("bubbleSingle",BubbleSingle);
+			if (ColumnMultiple != null) h.Add("columnMultiple",ColumnMultiple);
+			if (ColumnSingle != null) h.Add("columnSingle",ColumnSingle);
+			if (CombinationChart != null) h.Add("combinationChart",CombinationChart);
+			if (DefaultMultiple != null) h.Add("defaultMultiple",DefaultMultiple);
+			if (DefaultSingle != null) h.Add("defaultSingle",DefaultSingle);
+			if (EmptyChart != null) h.Add("emptyChart",EmptyChart);
+			if (LineMultiple != null) h.Add("lineMultiple",LineMultiple);
+			if (LineSingle != null) h.Add("lineSingle",LineSingle);
+			if (MapTypeDescription != null) h.Add("mapTypeDescription",MapTypeDescription);
+			if (PieMultiple != null) h.Add("pieMultiple",PieMultiple);
+			if (PieSingle != null) h.Add("pieSingle",PieSingle);
+			if (ScatterMultiple != null) h.Add("scatterMultiple",ScatterMultiple);
+			if (ScatterSingle != null) h.Add("scatterSingle",ScatterSingle);
+			if (SplineMultiple != null) h.Add("splineMultiple",SplineMultiple);
+			if (SplineSingle != null) h.Add("splineSingle",SplineSingle);
+			if (UnknownMap != null) h.Add("unknownMap",UnknownMap);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

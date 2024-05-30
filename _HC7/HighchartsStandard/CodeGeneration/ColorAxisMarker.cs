@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ColorAxisMarker()
 		{
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
-			Color = Color_DefaultValue = "#999999";
-			Width = Width_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (Color != null) h.Add("color",Color);
+			if (Width != null) h.Add("width",Width);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

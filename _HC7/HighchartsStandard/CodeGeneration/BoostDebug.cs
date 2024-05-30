@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public BoostDebug()
 		{
-			ShowSkipSummary = ShowSkipSummary_DefaultValue = false;
-			TimeBufferCopy = TimeBufferCopy_DefaultValue = false;
-			TimeKDTree = TimeKDTree_DefaultValue = false;
-			TimeRendering = TimeRendering_DefaultValue = false;
-			TimeSeriesProcessing = TimeSeriesProcessing_DefaultValue = false;
-			TimeSetup = TimeSetup_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ShowSkipSummary != ShowSkipSummary_DefaultValue) h.Add("showSkipSummary",ShowSkipSummary);
-			if (TimeBufferCopy != TimeBufferCopy_DefaultValue) h.Add("timeBufferCopy",TimeBufferCopy);
-			if (TimeKDTree != TimeKDTree_DefaultValue) h.Add("timeKDTree",TimeKDTree);
-			if (TimeRendering != TimeRendering_DefaultValue) h.Add("timeRendering",TimeRendering);
-			if (TimeSeriesProcessing != TimeSeriesProcessing_DefaultValue) h.Add("timeSeriesProcessing",TimeSeriesProcessing);
-			if (TimeSetup != TimeSetup_DefaultValue) h.Add("timeSetup",TimeSetup);
+			if (ShowSkipSummary != null) h.Add("showSkipSummary",ShowSkipSummary);
+			if (TimeBufferCopy != null) h.Add("timeBufferCopy",TimeBufferCopy);
+			if (TimeKDTree != null) h.Add("timeKDTree",TimeKDTree);
+			if (TimeRendering != null) h.Add("timeRendering",TimeRendering);
+			if (TimeSeriesProcessing != null) h.Add("timeSeriesProcessing",TimeSeriesProcessing);
+			if (TimeSetup != null) h.Add("timeSetup",TimeSetup);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

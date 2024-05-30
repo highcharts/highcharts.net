@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsScatterClusterLayoutAlgorithm()
 		{
-			Distance = Distance_DefaultValue = "40";
-			DistanceNumber = DistanceNumber_DefaultValue = null;
-			GridSize = GridSize_DefaultValue = "50";
-			GridSizeNumber = GridSizeNumber_DefaultValue = null;
-			Iterations = Iterations_DefaultValue = null;
-			KmeansThreshold = KmeansThreshold_DefaultValue = 100;
-			Type = Type_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -84,13 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (DistanceNumber != DistanceNumber_DefaultValue) h.Add("distance",DistanceNumber);
-			if (GridSize != GridSize_DefaultValue) h.Add("gridSize",GridSize);
-			if (GridSizeNumber != GridSizeNumber_DefaultValue) h.Add("gridSize",GridSizeNumber);
-			if (Iterations != Iterations_DefaultValue) h.Add("iterations",Iterations);
-			if (KmeansThreshold != KmeansThreshold_DefaultValue) h.Add("kmeansThreshold",KmeansThreshold);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Distance != null) h.Add("distance",Distance);
+			if (DistanceNumber != null) h.Add("distance",DistanceNumber);
+			if (GridSize != null) h.Add("gridSize",GridSize);
+			if (GridSizeNumber != null) h.Add("gridSize",GridSizeNumber);
+			if (Iterations != null) h.Add("iterations",Iterations);
+			if (KmeansThreshold != null) h.Add("kmeansThreshold",KmeansThreshold);
+			if (Type != null) h.Add("type",Type);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

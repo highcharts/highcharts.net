@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilityKeyboardNavigationSeriesNavigation()
 		{
-			Mode = Mode_DefaultValue = AccessibilityKeyboardNavigationSeriesNavigationMode.Normal;
-			PointNavigationEnabledThreshold = PointNavigationEnabledThreshold_DefaultValue = null;
-			PointNavigationEnabledThresholdBool = PointNavigationEnabledThresholdBool_DefaultValue = false;
-			RememberPointFocus = RememberPointFocus_DefaultValue = false;
-			SkipNullPoints = SkipNullPoints_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Mode != Mode_DefaultValue) h.Add("mode", highcharts.FirstCharacterToLower(Mode.ToString()));
-			if (PointNavigationEnabledThreshold != PointNavigationEnabledThreshold_DefaultValue) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThreshold);
-			if (PointNavigationEnabledThresholdBool != PointNavigationEnabledThresholdBool_DefaultValue) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThresholdBool);
-			if (RememberPointFocus != RememberPointFocus_DefaultValue) h.Add("rememberPointFocus",RememberPointFocus);
-			if (SkipNullPoints != SkipNullPoints_DefaultValue) h.Add("skipNullPoints",SkipNullPoints);
+			if (Mode != AccessibilityKeyboardNavigationSeriesNavigationMode.Null) h.Add("mode", highcharts.FirstCharacterToLower(Mode.ToString()));
+			if (PointNavigationEnabledThreshold != null) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThreshold);
+			if (PointNavigationEnabledThresholdBool != null) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThresholdBool);
+			if (RememberPointFocus != null) h.Add("rememberPointFocus",RememberPointFocus);
+			if (SkipNullPoints != null) h.Add("skipNullPoints",SkipNullPoints);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

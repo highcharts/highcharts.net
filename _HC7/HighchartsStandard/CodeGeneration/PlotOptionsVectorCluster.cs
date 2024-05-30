@@ -16,18 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVectorCluster()
 		{
-			AllowOverlap = AllowOverlap_DefaultValue = true;
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsVectorClusterDataLabels();
-			DrillToCluster = DrillToCluster_DefaultValue = true;
-			Enabled = Enabled_DefaultValue = false;
-			Events = Events_DefaultValue = new PlotOptionsVectorClusterEvents();
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = new PlotOptionsVectorClusterLayoutAlgorithm();
-			Marker = Marker_DefaultValue = new PlotOptionsVectorClusterMarker();
-			MinimumClusterSize = MinimumClusterSize_DefaultValue = 2;
-			States = States_DefaultValue = new PlotOptionsVectorClusterStates();
-			Zones = Zones_DefaultValue = new List<PlotOptionsVectorClusterZone>();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -124,18 +112,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (DrillToCluster != DrillToCluster_DefaultValue) h.Add("drillToCluster",DrillToCluster);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (LayoutAlgorithm.IsDirty(highcharts)) h.Add("layoutAlgorithm",LayoutAlgorithm.ToHashtable(highcharts));
-			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
-			if (MinimumClusterSize != MinimumClusterSize_DefaultValue) h.Add("minimumClusterSize",MinimumClusterSize);
-			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
-			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(highcharts,Zones));
+			if (AllowOverlap != null) h.Add("allowOverlap",AllowOverlap);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
+			if (DrillToCluster != null) h.Add("drillToCluster",DrillToCluster);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (LayoutAlgorithm != null) h.Add("layoutAlgorithm",LayoutAlgorithm.ToHashtable(highcharts));
+			if (Marker != null) h.Add("marker",Marker.ToHashtable(highcharts));
+			if (MinimumClusterSize != null) h.Add("minimumClusterSize",MinimumClusterSize);
+			if (States != null) h.Add("states",States.ToHashtable(highcharts));
+			if (Zones != null) h.Add("zones", HashifyList(highcharts,Zones));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

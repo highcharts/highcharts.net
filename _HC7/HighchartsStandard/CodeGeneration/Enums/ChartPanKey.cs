@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartPanKey
     {
-        Alt, 
+        Null, 
+		Alt, 
 		Ctrl, 
 		Meta, 
 		Shift

@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityScreenReaderSectionAnnotations()
 		{
-			DescriptionMultiplePoints = DescriptionMultiplePoints_DefaultValue = "{annotationText}. Related to {annotationPoint}{#each additionalAnnotationPoints}, also related to {this}{/each}";
-			DescriptionNoPoints = DescriptionNoPoints_DefaultValue = "{annotationText}";
-			DescriptionSinglePoint = DescriptionSinglePoint_DefaultValue = "{annotationText}. Related to {annotationPoint}";
-			Heading = Heading_DefaultValue = "Chart annotations summary";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (DescriptionMultiplePoints != DescriptionMultiplePoints_DefaultValue) h.Add("descriptionMultiplePoints",DescriptionMultiplePoints);
-			if (DescriptionNoPoints != DescriptionNoPoints_DefaultValue) h.Add("descriptionNoPoints",DescriptionNoPoints);
-			if (DescriptionSinglePoint != DescriptionSinglePoint_DefaultValue) h.Add("descriptionSinglePoint",DescriptionSinglePoint);
-			if (Heading != Heading_DefaultValue) h.Add("heading",Heading);
+			if (DescriptionMultiplePoints != null) h.Add("descriptionMultiplePoints",DescriptionMultiplePoints);
+			if (DescriptionNoPoints != null) h.Add("descriptionNoPoints",DescriptionNoPoints);
+			if (DescriptionSinglePoint != null) h.Add("descriptionSinglePoint",DescriptionSinglePoint);
+			if (Heading != null) h.Add("heading",Heading);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

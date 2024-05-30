@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public XAxisPlotBandsLabel()
 		{
-			Align = Align_DefaultValue = XAxisPlotBandsLabelAlign.Center;
-			Rotation = Rotation_DefaultValue = 0;
-			Style = Style_DefaultValue = new Hashtable();
-			Text = Text_DefaultValue = "";
-			TextAlign = TextAlign_DefaultValue = XAxisPlotBandsLabelTextAlign.Null;
-			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = XAxisPlotBandsLabelVerticalAlign.Top;
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", highcharts.FirstCharacterToLower(TextAlign.ToString()));
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != XAxisPlotBandsLabelAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Rotation != null) h.Add("rotation",Rotation);
+			if (Style != null) h.Add("style",Style);
+			if (Text != null) h.Add("text",Text);
+			if (TextAlign != XAxisPlotBandsLabelTextAlign.Null) h.Add("textAlign", highcharts.FirstCharacterToLower(TextAlign.ToString()));
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != XAxisPlotBandsLabelVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

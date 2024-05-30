@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationAnnotationsOptionsControlPointOptionsStyle()
 		{
-			Cursor = Cursor_DefaultValue = "pointer";
-			Fill = Fill_DefaultValue = "#ffffff";
-			Stroke = Stroke_DefaultValue = "#000000";
-			StrokeWidth = StrokeWidth_DefaultValue = 2;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor",Cursor);
-			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
-			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
-			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
+			if (Cursor != null) h.Add("cursor",Cursor);
+			if (Fill != null) h.Add("fill",Fill);
+			if (Stroke != null) h.Add("stroke",Stroke);
+			if (StrokeWidth != null) h.Add("strokeWidth",StrokeWidth);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

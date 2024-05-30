@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityNavigator()
 		{
-			ChangeAnnouncement = ChangeAnnouncement_DefaultValue = "{axisRangeDescription}";
-			GroupLabel = GroupLabel_DefaultValue = "Axis zoom";
-			HandleLabel = HandleLabel_DefaultValue = "{#eq handleIx 0}Start, percent{else}End, percent{/eq}";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ChangeAnnouncement != ChangeAnnouncement_DefaultValue) h.Add("changeAnnouncement",ChangeAnnouncement);
-			if (GroupLabel != GroupLabel_DefaultValue) h.Add("groupLabel",GroupLabel);
-			if (HandleLabel != HandleLabel_DefaultValue) h.Add("handleLabel",HandleLabel);
+			if (ChangeAnnouncement != null) h.Add("changeAnnouncement",ChangeAnnouncement);
+			if (GroupLabel != null) h.Add("groupLabel",GroupLabel);
+			if (HandleLabel != null) h.Add("handleLabel",HandleLabel);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

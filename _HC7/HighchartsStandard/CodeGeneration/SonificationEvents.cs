@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SonificationEvents()
 		{
-			AfterUpdate = AfterUpdate_DefaultValue = "";
-			BeforePlay = BeforePlay_DefaultValue = "";
-			BeforeUpdate = BeforeUpdate_DefaultValue = "";
-			OnBoundaryHit = OnBoundaryHit_DefaultValue = "";
-			OnEnd = OnEnd_DefaultValue = "";
-			OnPlay = OnPlay_DefaultValue = "";
-			OnSeriesEnd = OnSeriesEnd_DefaultValue = "";
-			OnSeriesStart = OnSeriesStart_DefaultValue = "";
-			OnStop = OnStop_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); highcharts.AddFunction("afterUpdate", AfterUpdate); }  
-			if (BeforePlay != BeforePlay_DefaultValue) { h.Add("beforePlay",BeforePlay); highcharts.AddFunction("beforePlay", BeforePlay); }  
-			if (BeforeUpdate != BeforeUpdate_DefaultValue) { h.Add("beforeUpdate",BeforeUpdate); highcharts.AddFunction("beforeUpdate", BeforeUpdate); }  
-			if (OnBoundaryHit != OnBoundaryHit_DefaultValue) { h.Add("onBoundaryHit",OnBoundaryHit); highcharts.AddFunction("onBoundaryHit", OnBoundaryHit); }  
-			if (OnEnd != OnEnd_DefaultValue) { h.Add("onEnd",OnEnd); highcharts.AddFunction("onEnd", OnEnd); }  
-			if (OnPlay != OnPlay_DefaultValue) { h.Add("onPlay",OnPlay); highcharts.AddFunction("onPlay", OnPlay); }  
-			if (OnSeriesEnd != OnSeriesEnd_DefaultValue) { h.Add("onSeriesEnd",OnSeriesEnd); highcharts.AddFunction("onSeriesEnd", OnSeriesEnd); }  
-			if (OnSeriesStart != OnSeriesStart_DefaultValue) { h.Add("onSeriesStart",OnSeriesStart); highcharts.AddFunction("onSeriesStart", OnSeriesStart); }  
-			if (OnStop != OnStop_DefaultValue) { h.Add("onStop",OnStop); highcharts.AddFunction("onStop", OnStop); }  
+			if (AfterUpdate != null) { h.Add("afterUpdate",AfterUpdate); highcharts.AddFunction("afterUpdate", AfterUpdate); }  
+			if (BeforePlay != null) { h.Add("beforePlay",BeforePlay); highcharts.AddFunction("beforePlay", BeforePlay); }  
+			if (BeforeUpdate != null) { h.Add("beforeUpdate",BeforeUpdate); highcharts.AddFunction("beforeUpdate", BeforeUpdate); }  
+			if (OnBoundaryHit != null) { h.Add("onBoundaryHit",OnBoundaryHit); highcharts.AddFunction("onBoundaryHit", OnBoundaryHit); }  
+			if (OnEnd != null) { h.Add("onEnd",OnEnd); highcharts.AddFunction("onEnd", OnEnd); }  
+			if (OnPlay != null) { h.Add("onPlay",OnPlay); highcharts.AddFunction("onPlay", OnPlay); }  
+			if (OnSeriesEnd != null) { h.Add("onSeriesEnd",OnSeriesEnd); highcharts.AddFunction("onSeriesEnd", OnSeriesEnd); }  
+			if (OnSeriesStart != null) { h.Add("onSeriesStart",OnSeriesStart); highcharts.AddFunction("onSeriesStart", OnSeriesStart); }  
+			if (OnStop != null) { h.Add("onStop",OnStop); highcharts.AddFunction("onStop", OnStop); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

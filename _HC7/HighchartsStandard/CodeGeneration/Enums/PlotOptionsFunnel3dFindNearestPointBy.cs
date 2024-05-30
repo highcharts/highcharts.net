@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsFunnel3dFindNearestPointBy
     {
-        X, 
+        Null, 
+		X, 
 		Xy
     }
 }

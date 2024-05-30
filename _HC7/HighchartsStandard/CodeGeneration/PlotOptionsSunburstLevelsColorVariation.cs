@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsSunburstLevelsColorVariation()
 		{
-			Key = Key_DefaultValue = "";
-			To = To_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Key != Key_DefaultValue) h.Add("key",Key);
-			if (To != To_DefaultValue) h.Add("to",To);
+			if (Key != null) h.Add("key",Key);
+			if (To != null) h.Add("to",To);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

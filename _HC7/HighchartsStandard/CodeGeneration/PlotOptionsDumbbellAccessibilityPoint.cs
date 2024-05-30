@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsDumbbellAccessibilityPoint()
 		{
-			DateFormat = DateFormat_DefaultValue = "";
-			DateFormatter = DateFormatter_DefaultValue = "";
-			DescribeNull = DescribeNull_DefaultValue = true;
-			DescriptionFormat = DescriptionFormat_DefaultValue = "";
-			DescriptionFormatter = DescriptionFormatter_DefaultValue = "";
-			ValueDecimals = ValueDecimals_DefaultValue = null;
-			ValueDescriptionFormat = ValueDescriptionFormat_DefaultValue = "{xDescription}{separator}{value}.";
-			ValuePrefix = ValuePrefix_DefaultValue = "";
-			ValueSuffix = ValueSuffix_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
-			if (DateFormatter != DateFormatter_DefaultValue) { h.Add("dateFormatter",DateFormatter); highcharts.AddFunction("dateFormatter", DateFormatter); }  
-			if (DescribeNull != DescribeNull_DefaultValue) h.Add("describeNull",DescribeNull);
-			if (DescriptionFormat != DescriptionFormat_DefaultValue) h.Add("descriptionFormat",DescriptionFormat);
-			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); highcharts.AddFunction("descriptionFormatter", DescriptionFormatter); }  
-			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
-			if (ValueDescriptionFormat != ValueDescriptionFormat_DefaultValue) h.Add("valueDescriptionFormat",ValueDescriptionFormat);
-			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
-			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);
+			if (DateFormat != null) h.Add("dateFormat",DateFormat);
+			if (DateFormatter != null) { h.Add("dateFormatter",DateFormatter); highcharts.AddFunction("dateFormatter", DateFormatter); }  
+			if (DescribeNull != null) h.Add("describeNull",DescribeNull);
+			if (DescriptionFormat != null) h.Add("descriptionFormat",DescriptionFormat);
+			if (DescriptionFormatter != null) { h.Add("descriptionFormatter",DescriptionFormatter); highcharts.AddFunction("descriptionFormatter", DescriptionFormatter); }  
+			if (ValueDecimals != null) h.Add("valueDecimals",ValueDecimals);
+			if (ValueDescriptionFormat != null) h.Add("valueDescriptionFormat",ValueDescriptionFormat);
+			if (ValuePrefix != null) h.Add("valuePrefix",ValuePrefix);
+			if (ValueSuffix != null) h.Add("valueSuffix",ValueSuffix);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

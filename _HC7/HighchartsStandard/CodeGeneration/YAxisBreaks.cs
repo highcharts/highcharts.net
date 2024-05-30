@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public YAxisBreaks()
 		{
-			BreakSize = BreakSize_DefaultValue = 0;
-			From = From_DefaultValue = null;
-			Repeat = Repeat_DefaultValue = 0;
-			To = To_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BreakSize != BreakSize_DefaultValue) h.Add("breakSize",BreakSize);
-			if (From != From_DefaultValue) h.Add("from",From);
-			if (Repeat != Repeat_DefaultValue) h.Add("repeat",Repeat);
-			if (To != To_DefaultValue) h.Add("to",To);
+			if (BreakSize != null) h.Add("breakSize",BreakSize);
+			if (From != null) h.Add("from",From);
+			if (Repeat != null) h.Add("repeat",Repeat);
+			if (To != null) h.Add("to",To);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

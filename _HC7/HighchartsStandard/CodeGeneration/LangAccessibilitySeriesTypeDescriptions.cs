@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilitySeriesTypeDescriptions()
 		{
-			Arearange = Arearange_DefaultValue = "Arearange charts are line charts displaying a range between a lower and higher value for each point.";
-			Areasplinerange = Areasplinerange_DefaultValue = "These charts are line charts displaying a range between a lower and higher value for each point.";
-			Boxplot = Boxplot_DefaultValue = "Box plot charts are typically used to display groups of statistical data. Each data point in the chart can have up to 5 values: minimum, lower quartile, median, upper quartile, and maximum.";
-			Bubble = Bubble_DefaultValue = "Bubble charts are scatter charts where each data point also has a size value.";
-			Columnrange = Columnrange_DefaultValue = "Columnrange charts are column charts displaying a range between a lower and higher value for each point.";
-			Errorbar = Errorbar_DefaultValue = "Errorbar series are used to display the variability of the data.";
-			Funnel = Funnel_DefaultValue = "Funnel charts are used to display reduction of data in stages.";
-			Pyramid = Pyramid_DefaultValue = "Pyramid charts consist of a single pyramid with item heights corresponding to each point value.";
-			Waterfall = Waterfall_DefaultValue = "A waterfall chart is a column chart where each column contributes towards a total end value.";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Arearange != Arearange_DefaultValue) h.Add("arearange",Arearange);
-			if (Areasplinerange != Areasplinerange_DefaultValue) h.Add("areasplinerange",Areasplinerange);
-			if (Boxplot != Boxplot_DefaultValue) h.Add("boxplot",Boxplot);
-			if (Bubble != Bubble_DefaultValue) h.Add("bubble",Bubble);
-			if (Columnrange != Columnrange_DefaultValue) h.Add("columnrange",Columnrange);
-			if (Errorbar != Errorbar_DefaultValue) h.Add("errorbar",Errorbar);
-			if (Funnel != Funnel_DefaultValue) h.Add("funnel",Funnel);
-			if (Pyramid != Pyramid_DefaultValue) h.Add("pyramid",Pyramid);
-			if (Waterfall != Waterfall_DefaultValue) h.Add("waterfall",Waterfall);
+			if (Arearange != null) h.Add("arearange",Arearange);
+			if (Areasplinerange != null) h.Add("areasplinerange",Areasplinerange);
+			if (Boxplot != null) h.Add("boxplot",Boxplot);
+			if (Bubble != null) h.Add("bubble",Bubble);
+			if (Columnrange != null) h.Add("columnrange",Columnrange);
+			if (Errorbar != null) h.Add("errorbar",Errorbar);
+			if (Funnel != null) h.Add("funnel",Funnel);
+			if (Pyramid != null) h.Add("pyramid",Pyramid);
+			if (Waterfall != null) h.Add("waterfall",Waterfall);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

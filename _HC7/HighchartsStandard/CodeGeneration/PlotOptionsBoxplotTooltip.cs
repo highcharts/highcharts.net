@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsBoxplotTooltip()
 		{
-			Distance = Distance_DefaultValue = 6;
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> <b>{series.name}</b><br/>Maximum: {point.high}<br/>Upper quartile: {point.q3}<br/>Median: {point.median}<br/>Lower quartile: {point.q1}<br/>Minimum: {point.low}<br/>";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (Distance != null) h.Add("distance",Distance);
+			if (PointFormat != null) h.Add("pointFormat",PointFormat);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

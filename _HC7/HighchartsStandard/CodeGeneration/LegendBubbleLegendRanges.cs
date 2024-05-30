@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LegendBubbleLegendRanges()
 		{
-			BorderColor = BorderColor_DefaultValue = "undefined";
-			Color = Color_DefaultValue = "undefined";
-			ConnectorColor = ConnectorColor_DefaultValue = "undefined";
-			Value = Value_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
-			if (Value != Value_DefaultValue) h.Add("value",Value);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (Color != null) h.Add("color",Color);
+			if (ConnectorColor != null) h.Add("connectorColor",ConnectorColor);
+			if (Value != null) h.Add("value",Value);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

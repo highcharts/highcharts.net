@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilityAnnounceNewData()
 		{
-			AnnouncementFormatter = AnnouncementFormatter_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = false;
-			InterruptUser = InterruptUser_DefaultValue = false;
-			MinAnnounceInterval = MinAnnounceInterval_DefaultValue = 5000;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AnnouncementFormatter != AnnouncementFormatter_DefaultValue) { h.Add("announcementFormatter",AnnouncementFormatter); highcharts.AddFunction("announcementFormatter", AnnouncementFormatter); }  
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (InterruptUser != InterruptUser_DefaultValue) h.Add("interruptUser",InterruptUser);
-			if (MinAnnounceInterval != MinAnnounceInterval_DefaultValue) h.Add("minAnnounceInterval",MinAnnounceInterval);
+			if (AnnouncementFormatter != null) { h.Add("announcementFormatter",AnnouncementFormatter); highcharts.AddFunction("announcementFormatter", AnnouncementFormatter); }  
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (InterruptUser != null) h.Add("interruptUser",InterruptUser);
+			if (MinAnnounceInterval != null) h.Add("minAnnounceInterval",MinAnnounceInterval);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

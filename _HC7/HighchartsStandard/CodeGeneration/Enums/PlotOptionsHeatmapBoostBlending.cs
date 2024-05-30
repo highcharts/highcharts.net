@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsHeatmapBoostBlending
     {
-        Undefined, 
+        Null, 
+		Undefined, 
 		Add, 
 		Multiply, 
 		Darken

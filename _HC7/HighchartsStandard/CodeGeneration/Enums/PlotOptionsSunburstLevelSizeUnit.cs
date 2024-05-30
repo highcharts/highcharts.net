@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsSunburstLevelSizeUnit
     {
-        Percentage, 
+        Null, 
+		Percentage, 
 		Pixels, 
 		Weight
     }

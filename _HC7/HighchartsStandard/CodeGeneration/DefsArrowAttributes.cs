@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public DefsArrowAttributes()
 		{
-			Id = Id_DefaultValue = "arrow";
-			MarkerHeight = MarkerHeight_DefaultValue = 10;
-			MarkerWidth = MarkerWidth_DefaultValue = 10;
-			RefX = RefX_DefaultValue = 9;
-			RefY = RefY_DefaultValue = 5;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (MarkerHeight != MarkerHeight_DefaultValue) h.Add("markerHeight",MarkerHeight);
-			if (MarkerWidth != MarkerWidth_DefaultValue) h.Add("markerWidth",MarkerWidth);
-			if (RefX != RefX_DefaultValue) h.Add("refX",RefX);
-			if (RefY != RefY_DefaultValue) h.Add("refY",RefY);
+			if (Id != null) h.Add("id",Id);
+			if (MarkerHeight != null) h.Add("markerHeight",MarkerHeight);
+			if (MarkerWidth != null) h.Add("markerWidth",MarkerWidth);
+			if (RefX != null) h.Add("refX",RefX);
+			if (RefY != null) h.Add("refY",RefY);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

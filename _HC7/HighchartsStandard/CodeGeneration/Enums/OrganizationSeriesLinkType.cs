@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum OrganizationSeriesLinkType
     {
-        Default, 
+        Null, 
+		Default, 
 		Curved, 
 		Straight
     }

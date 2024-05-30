@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsSunburstBreadcrumbsButtonTheme()
 		{
-			Style = Style_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Style != null) h.Add("style",Style);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

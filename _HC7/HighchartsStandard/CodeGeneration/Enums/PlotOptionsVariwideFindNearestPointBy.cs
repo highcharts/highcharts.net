@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsVariwideFindNearestPointBy
     {
-        X, 
+        Null, 
+		X, 
 		Xy
     }
 }

@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsOrganizationTooltip()
 		{
-			Distance = Distance_DefaultValue = 6;
-			FollowPointer = FollowPointer_DefaultValue = true;
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='font-size: 0.8em'>{series.name}</span><br/>";
-			NodeFormat = NodeFormat_DefaultValue = "{point.name}<br>{point.title}<br>{point.description}";
-			NodeFormatter = NodeFormatter_DefaultValue = "";
-			PointFormat = PointFormat_DefaultValue = "{point.fromNode.name} → {point.toNode.name}: <b>{point.weight}</b><br/>";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
-			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (NodeFormat != NodeFormat_DefaultValue) h.Add("nodeFormat",NodeFormat);
-			if (NodeFormatter != NodeFormatter_DefaultValue) { h.Add("nodeFormatter",NodeFormatter); highcharts.AddFunction("nodeFormatter", NodeFormatter); }  
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
+			if (Distance != null) h.Add("distance",Distance);
+			if (FollowPointer != null) h.Add("followPointer",FollowPointer);
+			if (HeaderFormat != null) h.Add("headerFormat",HeaderFormat);
+			if (NodeFormat != null) h.Add("nodeFormat",NodeFormat);
+			if (NodeFormatter != null) { h.Add("nodeFormatter",NodeFormatter); highcharts.AddFunction("nodeFormatter", NodeFormatter); }  
+			if (PointFormat != null) h.Add("pointFormat",PointFormat);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

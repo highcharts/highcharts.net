@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SunburstSeriesLevelSize()
 		{
-			Unit = Unit_DefaultValue = SunburstSeriesLevelSizeUnit.Weight;
-			Value = Value_DefaultValue = 1;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Unit != Unit_DefaultValue) h.Add("unit", highcharts.FirstCharacterToLower(Unit.ToString()));
-			if (Value != Value_DefaultValue) h.Add("value",Value);
+			if (Unit != SunburstSeriesLevelSizeUnit.Null) h.Add("unit", highcharts.FirstCharacterToLower(Unit.ToString()));
+			if (Value != null) h.Add("value",Value);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

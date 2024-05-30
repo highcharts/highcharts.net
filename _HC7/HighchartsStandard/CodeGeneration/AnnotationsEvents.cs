@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AnnotationsEvents()
 		{
-			Add = Add_DefaultValue = "";
-			AfterUpdate = AfterUpdate_DefaultValue = "";
-			Click = Click_DefaultValue = "";
-			Drag = Drag_DefaultValue = "";
-			Remove = Remove_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Add != Add_DefaultValue) { h.Add("add",Add); highcharts.AddFunction("add", Add); }  
-			if (AfterUpdate != AfterUpdate_DefaultValue) { h.Add("afterUpdate",AfterUpdate); highcharts.AddFunction("afterUpdate", AfterUpdate); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
-			if (Drag != Drag_DefaultValue) { h.Add("drag",Drag); highcharts.AddFunction("drag", Drag); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); highcharts.AddFunction("remove", Remove); }  
+			if (Add != null) { h.Add("add",Add); highcharts.AddFunction("add", Add); }  
+			if (AfterUpdate != null) { h.Add("afterUpdate",AfterUpdate); highcharts.AddFunction("afterUpdate", AfterUpdate); }  
+			if (Click != null) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
+			if (Drag != null) { h.Add("drag",Drag); highcharts.AddFunction("drag", Drag); }  
+			if (Remove != null) { h.Add("remove",Remove); highcharts.AddFunction("remove", Remove); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

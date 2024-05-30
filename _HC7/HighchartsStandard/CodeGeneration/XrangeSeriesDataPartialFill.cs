@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public XrangeSeriesDataPartialFill()
 		{
-			Amount = Amount_DefaultValue = null;
-			Fill = Fill_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Amount != Amount_DefaultValue) h.Add("amount",Amount);
-			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
+			if (Amount != null) h.Add("amount",Amount);
+			if (Fill != null) h.Add("fill",Fill);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

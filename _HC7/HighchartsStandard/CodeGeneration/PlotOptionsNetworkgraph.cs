@@ -16,51 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsNetworkgraph()
 		{
-			Accessibility = Accessibility_DefaultValue = new PlotOptionsNetworkgraphAccessibility();
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
-			ClassName = ClassName_DefaultValue = "";
-			Clip = Clip_DefaultValue = true;
-			Color = Color_DefaultValue = "";
-			ColorIndex = ColorIndex_DefaultValue = null;
-			Crisp = Crisp_DefaultValue = true;
-			Cursor = Cursor_DefaultValue = PlotOptionsNetworkgraphCursor.Null;
-			Custom = Custom_DefaultValue = new Hashtable();
-			DashStyle = DashStyle_DefaultValue = PlotOptionsNetworkgraphDashStyle.Null;
-			DataLabels = DataLabels_DefaultValue = new PlotOptionsNetworkgraphDataLabels();
-			Description = Description_DefaultValue = "";
-			Draggable = Draggable_DefaultValue = true;
-			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
-			Events = Events_DefaultValue = new PlotOptionsNetworkgraphEvents();
-			FindNearestPointBy = FindNearestPointBy_DefaultValue = PlotOptionsNetworkgraphFindNearestPointBy.X;
-			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = new PlotOptionsNetworkgraphInactiveOtherPoints();
-			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
-			Keys = Keys_DefaultValue = new List<string>();
-			LayoutAlgorithm = LayoutAlgorithm_DefaultValue = new PlotOptionsNetworkgraphLayoutAlgorithm();
-			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsNetworkgraphLegendSymbol.Rectangle;
-			LineWidth = LineWidth_DefaultValue = 2;
-			Link = Link_DefaultValue = new PlotOptionsNetworkgraphLink();
-			LinkedTo = LinkedTo_DefaultValue = "";
-			Marker = Marker_DefaultValue = new PlotOptionsNetworkgraphMarker();
-			OnPoint = OnPoint_DefaultValue = new PlotOptionsNetworkgraphOnPoint();
-			Opacity = Opacity_DefaultValue = 1;
-			Point = Point_DefaultValue = new PlotOptionsNetworkgraphPoint();
-			PointDescriptionFormat = PointDescriptionFormat_DefaultValue = "";
-			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
-			RelativeXValue = RelativeXValue_DefaultValue = false;
-			Selected = Selected_DefaultValue = false;
-			Shadow = Shadow_DefaultValue = new Shadow();
-			ShadowBool = ShadowBool_DefaultValue = false;
-			ShowCheckbox = ShowCheckbox_DefaultValue = false;
-			ShowInLegend = ShowInLegend_DefaultValue = false;
-			SkipKeyboardNavigation = SkipKeyboardNavigation_DefaultValue = null;
-			Sonification = Sonification_DefaultValue = new PlotOptionsNetworkgraphSonification();
-			States = States_DefaultValue = new PlotOptionsNetworkgraphStates();
-			StickyTracking = StickyTracking_DefaultValue = false;
-			Tooltip = Tooltip_DefaultValue = new PlotOptionsNetworkgraphTooltip();
-			TurboThreshold = TurboThreshold_DefaultValue = 1000;
-			UseOhlcData = UseOhlcData_DefaultValue = null;
-			Visible = Visible_DefaultValue = true;
-			Zones = Zones_DefaultValue = new List<PlotOptionsNetworkgraphZone>();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -388,51 +343,51 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Clip != Clip_DefaultValue) h.Add("clip",Clip);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
-			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
-			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
-			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
-			if (InactiveOtherPoints.IsDirty(highcharts)) h.Add("inactiveOtherPoints",InactiveOtherPoints.ToHashtable(highcharts));
-			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
-			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
-			if (LayoutAlgorithm.IsDirty(highcharts)) h.Add("layoutAlgorithm",LayoutAlgorithm.ToHashtable(highcharts));
-			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Link.IsDirty(highcharts)) h.Add("link",Link.ToHashtable(highcharts));
-			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
-			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
-			if (OnPoint.IsDirty(highcharts)) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
-			if (PointDescriptionFormat != PointDescriptionFormat_DefaultValue) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
-			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
-			if (RelativeXValue != RelativeXValue_DefaultValue) h.Add("relativeXValue",RelativeXValue);
-			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (Shadow.IsDirty(highcharts)) h.Add("shadow",Shadow.ToHashtable(highcharts));
-			if (ShadowBool != ShadowBool_DefaultValue) h.Add("shadow",ShadowBool);
-			if (ShowCheckbox != ShowCheckbox_DefaultValue) h.Add("showCheckbox",ShowCheckbox);
-			if (ShowInLegend != ShowInLegend_DefaultValue) h.Add("showInLegend",ShowInLegend);
-			if (SkipKeyboardNavigation != SkipKeyboardNavigation_DefaultValue) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
-			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
-			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
-			if (StickyTracking != StickyTracking_DefaultValue) h.Add("stickyTracking",StickyTracking);
-			if (Tooltip.IsDirty(highcharts)) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
-			if (TurboThreshold != TurboThreshold_DefaultValue) h.Add("turboThreshold",TurboThreshold);
-			if (UseOhlcData != UseOhlcData_DefaultValue) h.Add("useOhlcData",UseOhlcData);
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (Zones != Zones_DefaultValue) h.Add("zones", HashifyList(highcharts,Zones));
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (AllowPointSelect != null) h.Add("allowPointSelect",AllowPointSelect);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Clip != null) h.Add("clip",Clip);
+			if (Color != null) h.Add("color",Color);
+			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
+			if (Crisp != null) h.Add("crisp",Crisp);
+			if (Cursor != PlotOptionsNetworkgraphCursor.Null) h.Add("cursor", highcharts.FirstCharacterToLower(Cursor.ToString()));
+			if (Custom != null) h.Add("custom",Custom);
+			if (DashStyle != PlotOptionsNetworkgraphDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
+			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
+			if (Description != null) h.Add("description",Description);
+			if (Draggable != null) h.Add("draggable",Draggable);
+			if (EnableMouseTracking != null) h.Add("enableMouseTracking",EnableMouseTracking);
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (FindNearestPointBy != PlotOptionsNetworkgraphFindNearestPointBy.Null) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));
+			if (InactiveOtherPoints != null) h.Add("inactiveOtherPoints",InactiveOtherPoints.ToHashtable(highcharts));
+			if (IncludeInDataExport != null) h.Add("includeInDataExport",IncludeInDataExport);
+			if (Keys != null) h.Add("keys",Keys);
+			if (LayoutAlgorithm != null) h.Add("layoutAlgorithm",LayoutAlgorithm.ToHashtable(highcharts));
+			if (LegendSymbol != PlotOptionsNetworkgraphLegendSymbol.Null) h.Add("legendSymbol", highcharts.FirstCharacterToLower(LegendSymbol.ToString()));
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (Link != null) h.Add("link",Link.ToHashtable(highcharts));
+			if (LinkedTo != null) h.Add("linkedTo",LinkedTo);
+			if (Marker != null) h.Add("marker",Marker.ToHashtable(highcharts));
+			if (OnPoint != null) h.Add("onPoint",OnPoint.ToHashtable(highcharts));
+			if (Opacity != null) h.Add("opacity",Opacity);
+			if (Point != null) h.Add("point",Point.ToHashtable(highcharts));
+			if (PointDescriptionFormat != null) { h.Add("pointDescriptionFormat",PointDescriptionFormat); highcharts.AddFunction("pointDescriptionFormat", PointDescriptionFormat); }  
+			if (PointDescriptionFormatter != null) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highcharts.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
+			if (RelativeXValue != null) h.Add("relativeXValue",RelativeXValue);
+			if (Selected != null) h.Add("selected",Selected);
+			if (Shadow != null) h.Add("shadow",Shadow.ToHashtable(highcharts));
+			if (ShadowBool != null) h.Add("shadow",ShadowBool);
+			if (ShowCheckbox != null) h.Add("showCheckbox",ShowCheckbox);
+			if (ShowInLegend != null) h.Add("showInLegend",ShowInLegend);
+			if (SkipKeyboardNavigation != null) h.Add("skipKeyboardNavigation",SkipKeyboardNavigation);
+			if (Sonification != null) h.Add("sonification",Sonification.ToHashtable(highcharts));
+			if (States != null) h.Add("states",States.ToHashtable(highcharts));
+			if (StickyTracking != null) h.Add("stickyTracking",StickyTracking);
+			if (Tooltip != null) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
+			if (TurboThreshold != null) h.Add("turboThreshold",TurboThreshold);
+			if (UseOhlcData != null) h.Add("useOhlcData",UseOhlcData);
+			if (Visible != null) h.Add("visible",Visible);
+			if (Zones != null) h.Add("zones", HashifyList(highcharts,Zones));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

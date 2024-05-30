@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsLollipopDataLabelsAlign
     {
-        Undefined, 
+        Null, 
+		Undefined, 
 		Left, 
 		Center, 
 		Right

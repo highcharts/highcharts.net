@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Loading()
 		{
-			HideDuration = HideDuration_DefaultValue = 100;
-			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
-			ShowDuration = ShowDuration_DefaultValue = 100;
-			Style = Style_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (HideDuration != HideDuration_DefaultValue) h.Add("hideDuration",HideDuration);
-			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
-			if (ShowDuration != ShowDuration_DefaultValue) h.Add("showDuration",ShowDuration);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (HideDuration != null) h.Add("hideDuration",HideDuration);
+			if (LabelStyle != null) h.Add("labelStyle",LabelStyle);
+			if (ShowDuration != null) h.Add("showDuration",ShowDuration);
+			if (Style != null) h.Add("style",Style);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum Scatter3dSeriesLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

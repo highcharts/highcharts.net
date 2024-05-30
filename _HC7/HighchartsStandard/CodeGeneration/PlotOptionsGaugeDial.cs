@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsGaugeDial()
 		{
-			BackgroundColor = BackgroundColor_DefaultValue = "#000000";
-			BaseLength = BaseLength_DefaultValue = "70%";
-			BaseWidth = BaseWidth_DefaultValue = 3;
-			BorderColor = BorderColor_DefaultValue = "#cccccc";
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			Path = Path_DefaultValue = "";
-			Radius = Radius_DefaultValue = "80%";
-			RearLength = RearLength_DefaultValue = "10%";
-			TopWidth = TopWidth_DefaultValue = 1;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BaseLength != BaseLength_DefaultValue) h.Add("baseLength",BaseLength);
-			if (BaseWidth != BaseWidth_DefaultValue) h.Add("baseWidth",BaseWidth);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Path != Path_DefaultValue) h.Add("path",Path);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
-			if (RearLength != RearLength_DefaultValue) h.Add("rearLength",RearLength);
-			if (TopWidth != TopWidth_DefaultValue) h.Add("topWidth",TopWidth);
+			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
+			if (BaseLength != null) h.Add("baseLength",BaseLength);
+			if (BaseWidth != null) h.Add("baseWidth",BaseWidth);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (Path != null) h.Add("path",Path);
+			if (Radius != null) h.Add("radius",Radius);
+			if (RearLength != null) h.Add("rearLength",RearLength);
+			if (TopWidth != null) h.Add("topWidth",TopWidth);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

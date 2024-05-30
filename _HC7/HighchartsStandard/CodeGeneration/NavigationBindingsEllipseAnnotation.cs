@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationBindingsEllipseAnnotation()
 		{
-			ClassName = ClassName_DefaultValue = "highcharts-ellipse-annotation";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
+			if (ClassName != null) h.Add("className",ClassName);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

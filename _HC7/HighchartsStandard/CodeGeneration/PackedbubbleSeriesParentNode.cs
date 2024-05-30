@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PackedbubbleSeriesParentNode()
 		{
-			AllowPointSelect = AllowPointSelect_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AllowPointSelect != AllowPointSelect_DefaultValue) h.Add("allowPointSelect",AllowPointSelect);
+			if (AllowPointSelect != null) h.Add("allowPointSelect",AllowPointSelect);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

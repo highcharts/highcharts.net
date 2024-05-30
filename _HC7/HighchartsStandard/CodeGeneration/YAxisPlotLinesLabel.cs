@@ -16,16 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public YAxisPlotLinesLabel()
 		{
-			Align = Align_DefaultValue = YAxisPlotLinesLabelAlign.Left;
-			Formatter = Formatter_DefaultValue = "";
-			Rotation = Rotation_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
-			Text = Text_DefaultValue = "";
-			TextAlign = TextAlign_DefaultValue = YAxisPlotLinesLabelTextAlign.Null;
-			UseHTML = UseHTML_DefaultValue = false;
-			VerticalAlign = VerticalAlign_DefaultValue = YAxisPlotLinesLabelVerticalAlign.Top;
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -108,16 +98,16 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", highcharts.FirstCharacterToLower(TextAlign.ToString()));
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != YAxisPlotLinesLabelAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (Formatter != null) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
+			if (Rotation != null) h.Add("rotation",Rotation);
+			if (Style != null) h.Add("style",Style);
+			if (Text != null) h.Add("text",Text);
+			if (TextAlign != YAxisPlotLinesLabelTextAlign.Null) h.Add("textAlign", highcharts.FirstCharacterToLower(TextAlign.ToString()));
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (VerticalAlign != YAxisPlotLinesLabelVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

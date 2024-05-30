@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilitySeries()
 		{
-			DescribeSingleSeries = DescribeSingleSeries_DefaultValue = false;
-			DescriptionFormat = DescriptionFormat_DefaultValue = "{seriesDescription}{authorDescription}{axisDescription}";
-			DescriptionFormatter = DescriptionFormatter_DefaultValue = "";
-			PointDescriptionEnabledThreshold = PointDescriptionEnabledThreshold_DefaultValue = 200;
-			PointDescriptionEnabledThresholdBool = PointDescriptionEnabledThresholdBool_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (DescribeSingleSeries != DescribeSingleSeries_DefaultValue) h.Add("describeSingleSeries",DescribeSingleSeries);
-			if (DescriptionFormat != DescriptionFormat_DefaultValue) h.Add("descriptionFormat",DescriptionFormat);
-			if (DescriptionFormatter != DescriptionFormatter_DefaultValue) { h.Add("descriptionFormatter",DescriptionFormatter); highcharts.AddFunction("descriptionFormatter", DescriptionFormatter); }  
-			if (PointDescriptionEnabledThreshold != PointDescriptionEnabledThreshold_DefaultValue) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThreshold);
-			if (PointDescriptionEnabledThresholdBool != PointDescriptionEnabledThresholdBool_DefaultValue) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThresholdBool);
+			if (DescribeSingleSeries != null) h.Add("describeSingleSeries",DescribeSingleSeries);
+			if (DescriptionFormat != null) h.Add("descriptionFormat",DescriptionFormat);
+			if (DescriptionFormatter != null) { h.Add("descriptionFormatter",DescriptionFormatter); highcharts.AddFunction("descriptionFormatter", DescriptionFormatter); }  
+			if (PointDescriptionEnabledThreshold != null) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThreshold);
+			if (PointDescriptionEnabledThresholdBool != null) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThresholdBool);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

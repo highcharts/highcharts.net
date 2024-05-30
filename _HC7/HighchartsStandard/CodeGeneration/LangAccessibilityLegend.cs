@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityLegend()
 		{
-			LegendItem = LegendItem_DefaultValue = "Show {itemName}";
-			LegendLabel = LegendLabel_DefaultValue = "Chart legend: {legendTitle}";
-			LegendLabelNoTitle = LegendLabelNoTitle_DefaultValue = "Toggle series visibility, {chartTitle}";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (LegendItem != LegendItem_DefaultValue) h.Add("legendItem",LegendItem);
-			if (LegendLabel != LegendLabel_DefaultValue) h.Add("legendLabel",LegendLabel);
-			if (LegendLabelNoTitle != LegendLabelNoTitle_DefaultValue) h.Add("legendLabelNoTitle",LegendLabelNoTitle);
+			if (LegendItem != null) h.Add("legendItem",LegendItem);
+			if (LegendLabel != null) h.Add("legendLabel",LegendLabel);
+			if (LegendLabelNoTitle != null) h.Add("legendLabelNoTitle",LegendLabelNoTitle);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

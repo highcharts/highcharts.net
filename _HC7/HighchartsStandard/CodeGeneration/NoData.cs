@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NoData()
 		{
-			Attr = Attr_DefaultValue = new Hashtable();
-			Position = Position_DefaultValue = new NoDataPosition();
-			Style = Style_DefaultValue = new Hashtable();
-			UseHTML = UseHTML_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Attr != Attr_DefaultValue) h.Add("attr",Attr);
-			if (Position.IsDirty(highcharts)) h.Add("position",Position.ToHashtable(highcharts));
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
+			if (Attr != null) h.Add("attr",Attr);
+			if (Position != null) h.Add("position",Position.ToHashtable(highcharts));
+			if (Style != null) h.Add("style",Style);
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

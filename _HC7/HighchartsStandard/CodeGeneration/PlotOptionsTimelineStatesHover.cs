@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTimelineStatesHover()
 		{
-			LineWidthPlus = LineWidthPlus_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
+			if (LineWidthPlus != null) h.Add("lineWidthPlus",LineWidthPlus);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

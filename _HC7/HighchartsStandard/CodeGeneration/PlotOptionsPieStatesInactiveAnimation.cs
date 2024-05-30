@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPieStatesInactiveAnimation()
 		{
-			Duration = Duration_DefaultValue = 150;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
+			if (Duration != null) h.Add("duration",Duration);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

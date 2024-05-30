@@ -16,17 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Series()
 		{
-			Id = Id_DefaultValue = string.Empty;
-			Index = Index_DefaultValue = null;
-			LegendIndex = LegendIndex_DefaultValue = null;
-			Name = Name_DefaultValue = null;
-			Stack = Stack_DefaultValue = "";
-			StackNumber = StackNumber_DefaultValue = null;
-			XAxis = XAxis_DefaultValue = "";
-			XAxisNumber = XAxisNumber_DefaultValue = null;
-			YAxis = YAxis_DefaultValue = "";
-			YAxisNumber = YAxisNumber_DefaultValue = null;
-			ZIndex = ZIndex_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -116,18 +105,18 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Stack != Stack_DefaultValue) h.Add("stack",Stack);
-			if (StackNumber != StackNumber_DefaultValue) h.Add("stack",StackNumber);
+			if (Id != null) h.Add("id",Id);
+			if (Index != null) h.Add("index",Index);
+			if (LegendIndex != null) h.Add("legendIndex",LegendIndex);
+			if (Name != null) h.Add("name",Name);
+			if (Stack != null) h.Add("stack",Stack);
+			if (StackNumber != null) h.Add("stack",StackNumber);
 			h.Add("type","");
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (XAxisNumber != XAxisNumber_DefaultValue) h.Add("xAxis",XAxisNumber);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (YAxisNumber != YAxisNumber_DefaultValue) h.Add("yAxis",YAxisNumber);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (XAxis != null) h.Add("xAxis",XAxis);
+			if (XAxisNumber != null) h.Add("xAxis",XAxisNumber);
+			if (YAxis != null) h.Add("yAxis",YAxis);
+			if (YAxisNumber != null) h.Add("yAxis",YAxisNumber);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

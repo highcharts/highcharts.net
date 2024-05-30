@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public WordcloudSeriesRotation()
 		{
-			From = From_DefaultValue = 0;
-			Orientations = Orientations_DefaultValue = 2;
-			To = To_DefaultValue = 90;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (From != From_DefaultValue) h.Add("from",From);
-			if (Orientations != Orientations_DefaultValue) h.Add("orientations",Orientations);
-			if (To != To_DefaultValue) h.Add("to",To);
+			if (From != null) h.Add("from",From);
+			if (Orientations != null) h.Add("orientations",Orientations);
+			if (To != null) h.Add("to",To);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

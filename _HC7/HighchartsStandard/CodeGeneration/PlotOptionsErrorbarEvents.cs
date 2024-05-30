@@ -16,14 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsErrorbarEvents()
 		{
-			AfterAnimate = AfterAnimate_DefaultValue = "";
-			CheckboxClick = CheckboxClick_DefaultValue = "";
-			Click = Click_DefaultValue = "";
-			Hide = Hide_DefaultValue = "";
-			LegendItemClick = LegendItemClick_DefaultValue = "";
-			MouseOut = MouseOut_DefaultValue = "";
-			MouseOver = MouseOver_DefaultValue = "";
-			Show = Show_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -92,14 +84,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AfterAnimate != AfterAnimate_DefaultValue) { h.Add("afterAnimate",AfterAnimate); highcharts.AddFunction("afterAnimate", AfterAnimate); }  
-			if (CheckboxClick != CheckboxClick_DefaultValue) { h.Add("checkboxClick",CheckboxClick); highcharts.AddFunction("checkboxClick", CheckboxClick); }  
-			if (Click != Click_DefaultValue) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
-			if (Hide != Hide_DefaultValue) { h.Add("hide",Hide); highcharts.AddFunction("hide", Hide); }  
-			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); highcharts.AddFunction("legendItemClick", LegendItemClick); }  
-			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); highcharts.AddFunction("mouseOut", MouseOut); }  
-			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); highcharts.AddFunction("mouseOver", MouseOver); }  
-			if (Show != Show_DefaultValue) { h.Add("show",Show); highcharts.AddFunction("show", Show); }  
+			if (AfterAnimate != null) { h.Add("afterAnimate",AfterAnimate); highcharts.AddFunction("afterAnimate", AfterAnimate); }  
+			if (CheckboxClick != null) { h.Add("checkboxClick",CheckboxClick); highcharts.AddFunction("checkboxClick", CheckboxClick); }  
+			if (Click != null) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
+			if (Hide != null) { h.Add("hide",Hide); highcharts.AddFunction("hide", Hide); }  
+			if (LegendItemClick != null) { h.Add("legendItemClick",LegendItemClick); highcharts.AddFunction("legendItemClick", LegendItemClick); }  
+			if (MouseOut != null) { h.Add("mouseOut",MouseOut); highcharts.AddFunction("mouseOut", MouseOut); }  
+			if (MouseOver != null) { h.Add("mouseOver",MouseOver); highcharts.AddFunction("mouseOver", MouseOver); }  
+			if (Show != null) { h.Add("show",Show); highcharts.AddFunction("show", Show); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

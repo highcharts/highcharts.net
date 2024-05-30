@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ColorAxisMinorTickPosition
     {
-        Inside, 
+        Null, 
+		Inside, 
 		Outside
     }
 }

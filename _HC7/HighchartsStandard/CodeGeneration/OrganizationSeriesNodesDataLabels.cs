@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public OrganizationSeriesNodesDataLabels()
 		{
-			LinkFormat = LinkFormat_DefaultValue = "";
-			LinkFormatter = LinkFormatter_DefaultValue = "";
-			LinkTextPath = LinkTextPath_DefaultValue = new OrganizationSeriesNodesDataLabelsLinkTextPath();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (LinkFormat != LinkFormat_DefaultValue) h.Add("linkFormat",LinkFormat);
-			if (LinkFormatter != LinkFormatter_DefaultValue) { h.Add("linkFormatter",LinkFormatter); highcharts.AddFunction("linkFormatter", LinkFormatter); }  
-			if (LinkTextPath.IsDirty(highcharts)) h.Add("linkTextPath",LinkTextPath.ToHashtable(highcharts));
+			if (LinkFormat != null) h.Add("linkFormat",LinkFormat);
+			if (LinkFormatter != null) { h.Add("linkFormatter",LinkFormatter); highcharts.AddFunction("linkFormatter", LinkFormatter); }  
+			if (LinkTextPath != null) h.Add("linkTextPath",LinkTextPath.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

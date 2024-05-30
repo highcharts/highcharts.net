@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVennStatesSelect()
 		{
-			Animation = Animation_DefaultValue = new Animation();
-			BorderColor = BorderColor_DefaultValue = "#000000";
-			Color = Color_DefaultValue = "#cccccc";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (Color != null) h.Add("color",Color);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

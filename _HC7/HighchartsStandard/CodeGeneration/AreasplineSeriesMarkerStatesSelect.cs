@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AreasplineSeriesMarkerStatesSelect()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			FillColor = FillColor_DefaultValue = null;
-			LineColor = LineColor_DefaultValue = "#000000";
-			LineWidth = LineWidth_DefaultValue = 2;
-			Radius = Radius_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (FillColor != FillColor_DefaultValue) h.Add("fillColor",FillColor);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (Radius != Radius_DefaultValue) h.Add("radius",Radius);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (FillColor != null) h.Add("fillColor",FillColor);
+			if (LineColor != null) h.Add("lineColor",LineColor);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (Radius != null) h.Add("radius",Radius);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

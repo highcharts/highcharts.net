@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsArearangeLabelStyle()
 		{
-			FontSize = FontSize_DefaultValue = "0.8em";
-			FontWeight = FontWeight_DefaultValue = "bold";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
+			if (FontSize != null) h.Add("fontSize",FontSize);
+			if (FontWeight != null) h.Add("fontWeight",FontWeight);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

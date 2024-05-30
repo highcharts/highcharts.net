@@ -16,20 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Sonification()
 		{
-			AfterSeriesWait = AfterSeriesWait_DefaultValue = 700;
-			DefaultInstrumentOptions = DefaultInstrumentOptions_DefaultValue = new SonificationDefaultInstrumentOptions();
-			DefaultSpeechOptions = DefaultSpeechOptions_DefaultValue = new SonificationDefaultSpeechOptions();
-			Duration = Duration_DefaultValue = 6000;
-			Enabled = Enabled_DefaultValue = true;
-			Events = Events_DefaultValue = new SonificationEvents();
-			GlobalContextTracks = GlobalContextTracks_DefaultValue = new SonificationGlobalContextTracks();
-			GlobalTracks = GlobalTracks_DefaultValue = new SonificationGlobalTracks();
-			MasterVolume = MasterVolume_DefaultValue = null;
-			Order = Order_DefaultValue = SonificationOrder.Sequential;
-			PointGrouping = PointGrouping_DefaultValue = new SonificationPointGrouping();
-			ShowCrosshair = ShowCrosshair_DefaultValue = true;
-			ShowTooltip = ShowTooltip_DefaultValue = true;
-			UpdateInterval = UpdateInterval_DefaultValue = 200;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -140,20 +126,20 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AfterSeriesWait != AfterSeriesWait_DefaultValue) h.Add("afterSeriesWait",AfterSeriesWait);
-			if (DefaultInstrumentOptions.IsDirty(highcharts)) h.Add("defaultInstrumentOptions",DefaultInstrumentOptions.ToHashtable(highcharts));
-			if (DefaultSpeechOptions.IsDirty(highcharts)) h.Add("defaultSpeechOptions",DefaultSpeechOptions.ToHashtable(highcharts));
-			if (Duration != Duration_DefaultValue) h.Add("duration",Duration);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (GlobalContextTracks.IsDirty(highcharts)) h.Add("globalContextTracks",GlobalContextTracks.ToHashtable(highcharts));
-			if (GlobalTracks.IsDirty(highcharts)) h.Add("globalTracks",GlobalTracks.ToHashtable(highcharts));
-			if (MasterVolume != MasterVolume_DefaultValue) h.Add("masterVolume",MasterVolume);
-			if (Order != Order_DefaultValue) h.Add("order", highcharts.FirstCharacterToLower(Order.ToString()));
-			if (PointGrouping.IsDirty(highcharts)) h.Add("pointGrouping",PointGrouping.ToHashtable(highcharts));
-			if (ShowCrosshair != ShowCrosshair_DefaultValue) h.Add("showCrosshair",ShowCrosshair);
-			if (ShowTooltip != ShowTooltip_DefaultValue) h.Add("showTooltip",ShowTooltip);
-			if (UpdateInterval != UpdateInterval_DefaultValue) h.Add("updateInterval",UpdateInterval);
+			if (AfterSeriesWait != null) h.Add("afterSeriesWait",AfterSeriesWait);
+			if (DefaultInstrumentOptions != null) h.Add("defaultInstrumentOptions",DefaultInstrumentOptions.ToHashtable(highcharts));
+			if (DefaultSpeechOptions != null) h.Add("defaultSpeechOptions",DefaultSpeechOptions.ToHashtable(highcharts));
+			if (Duration != null) h.Add("duration",Duration);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (GlobalContextTracks != null) h.Add("globalContextTracks",GlobalContextTracks.ToHashtable(highcharts));
+			if (GlobalTracks != null) h.Add("globalTracks",GlobalTracks.ToHashtable(highcharts));
+			if (MasterVolume != null) h.Add("masterVolume",MasterVolume);
+			if (Order != SonificationOrder.Null) h.Add("order", highcharts.FirstCharacterToLower(Order.ToString()));
+			if (PointGrouping != null) h.Add("pointGrouping",PointGrouping.ToHashtable(highcharts));
+			if (ShowCrosshair != null) h.Add("showCrosshair",ShowCrosshair);
+			if (ShowTooltip != null) h.Add("showTooltip",ShowTooltip);
+			if (UpdateInterval != null) h.Add("updateInterval",UpdateInterval);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

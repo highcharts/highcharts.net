@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartZoomingType
     {
-        Undefined, 
+        Null, 
+		Undefined, 
 		X, 
 		Y, 
 		Xy

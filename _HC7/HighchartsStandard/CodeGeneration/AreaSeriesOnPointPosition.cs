@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AreaSeriesOnPointPosition()
 		{
-			OffsetX = OffsetX_DefaultValue = null;
-			OffsetY = OffsetY_DefaultValue = null;
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (OffsetX != OffsetX_DefaultValue) h.Add("offsetX",OffsetX);
-			if (OffsetY != OffsetY_DefaultValue) h.Add("offsetY",OffsetY);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (OffsetX != null) h.Add("offsetX",OffsetX);
+			if (OffsetY != null) h.Add("offsetY",OffsetY);
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

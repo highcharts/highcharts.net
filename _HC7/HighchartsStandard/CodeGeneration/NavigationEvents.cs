@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationEvents()
 		{
-			ClosePopup = ClosePopup_DefaultValue = "";
-			DeselectButton = DeselectButton_DefaultValue = "";
-			SelectButton = SelectButton_DefaultValue = "";
-			ShowPopup = ShowPopup_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ClosePopup != ClosePopup_DefaultValue) { h.Add("closePopup",ClosePopup); highcharts.AddFunction("closePopup", ClosePopup); }  
-			if (DeselectButton != DeselectButton_DefaultValue) { h.Add("deselectButton",DeselectButton); highcharts.AddFunction("deselectButton", DeselectButton); }  
-			if (SelectButton != SelectButton_DefaultValue) { h.Add("selectButton",SelectButton); highcharts.AddFunction("selectButton", SelectButton); }  
-			if (ShowPopup != ShowPopup_DefaultValue) { h.Add("showPopup",ShowPopup); highcharts.AddFunction("showPopup", ShowPopup); }  
+			if (ClosePopup != null) { h.Add("closePopup",ClosePopup); highcharts.AddFunction("closePopup", ClosePopup); }  
+			if (DeselectButton != null) { h.Add("deselectButton",DeselectButton); highcharts.AddFunction("deselectButton", DeselectButton); }  
+			if (SelectButton != null) { h.Add("selectButton",SelectButton); highcharts.AddFunction("selectButton", SelectButton); }  
+			if (ShowPopup != null) { h.Add("showPopup",ShowPopup); highcharts.AddFunction("showPopup", ShowPopup); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,23 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public YAxisPlotBands()
 		{
-			AcrossPanes = AcrossPanes_DefaultValue = true;
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "#e6e9ff";
-			Events = Events_DefaultValue = null;
-			From = From_DefaultValue = null;
-			Id = Id_DefaultValue = "";
-			InnerRadius = InnerRadius_DefaultValue = "";
-			InnerRadiusNumber = InnerRadiusNumber_DefaultValue = null;
-			Label = Label_DefaultValue = new YAxisPlotBandsLabel();
-			OuterRadius = OuterRadius_DefaultValue = "100%";
-			OuterRadiusNumber = OuterRadiusNumber_DefaultValue = null;
-			Thickness = Thickness_DefaultValue = "10";
-			ThicknessNumber = ThicknessNumber_DefaultValue = null;
-			To = To_DefaultValue = null;
-			ZIndex = ZIndex_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -164,23 +147,23 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AcrossPanes != AcrossPanes_DefaultValue) h.Add("acrossPanes",AcrossPanes);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Events != Events_DefaultValue) h.Add("events",Events);
-			if (From != From_DefaultValue) h.Add("from",From);
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);
-			if (InnerRadiusNumber != InnerRadiusNumber_DefaultValue) h.Add("innerRadius",InnerRadiusNumber);
-			if (Label.IsDirty(highcharts)) h.Add("label",Label.ToHashtable(highcharts));
-			if (OuterRadius != OuterRadius_DefaultValue) h.Add("outerRadius",OuterRadius);
-			if (OuterRadiusNumber != OuterRadiusNumber_DefaultValue) h.Add("outerRadius",OuterRadiusNumber);
-			if (Thickness != Thickness_DefaultValue) h.Add("thickness",Thickness);
-			if (ThicknessNumber != ThicknessNumber_DefaultValue) h.Add("thickness",ThicknessNumber);
-			if (To != To_DefaultValue) h.Add("to",To);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (AcrossPanes != null) h.Add("acrossPanes",AcrossPanes);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (Events != null) h.Add("events",Events);
+			if (From != null) h.Add("from",From);
+			if (Id != null) h.Add("id",Id);
+			if (InnerRadius != null) h.Add("innerRadius",InnerRadius);
+			if (InnerRadiusNumber != null) h.Add("innerRadius",InnerRadiusNumber);
+			if (Label != null) h.Add("label",Label.ToHashtable(highcharts));
+			if (OuterRadius != null) h.Add("outerRadius",OuterRadius);
+			if (OuterRadiusNumber != null) h.Add("outerRadius",OuterRadiusNumber);
+			if (Thickness != null) h.Add("thickness",Thickness);
+			if (ThicknessNumber != null) h.Add("thickness",ThicknessNumber);
+			if (To != null) h.Add("to",To);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

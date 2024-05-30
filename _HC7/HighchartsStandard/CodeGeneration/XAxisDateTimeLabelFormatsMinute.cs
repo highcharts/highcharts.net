@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public XAxisDateTimeLabelFormatsMinute()
 		{
-			List = List_DefaultValue = new List<string>();
-			Main = Main_DefaultValue = "%H:%M";
-			Range = Range_DefaultValue = false;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (List != List_DefaultValue) h.Add("list",List);
-			if (Main != Main_DefaultValue) h.Add("main",Main);
-			if (Range != Range_DefaultValue) h.Add("range",Range);
+			if (List != null) h.Add("list",List);
+			if (Main != null) h.Add("main",Main);
+			if (Range != null) h.Add("range",Range);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

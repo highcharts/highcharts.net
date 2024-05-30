@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsIntegration
     {
-        Euler, 
+        Null, 
+		Euler, 
 		Verlet
     }
 }

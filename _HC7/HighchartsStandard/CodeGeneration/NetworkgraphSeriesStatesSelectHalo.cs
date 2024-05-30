@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NetworkgraphSeriesStatesSelectHalo()
 		{
-			Attributes = Attributes_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = null;
-			Size = Size_DefaultValue = 10;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (Attributes != null) h.Add("attributes",Attributes);
+			if (Opacity != null) h.Add("opacity",Opacity);
+			if (Size != null) h.Add("size",Size);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,17 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PackedbubbleSeriesLayoutAlgorithmParentNodeOptions()
 		{
-			Friction = Friction_DefaultValue = null;
-			GravitationalConstant = GravitationalConstant_DefaultValue = null;
-			InitialPositionRadius = InitialPositionRadius_DefaultValue = null;
-			InitialPositions = InitialPositions_DefaultValue = null;
-			Integration = Integration_DefaultValue = PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsIntegration.Euler;
-			LinkLength = LinkLength_DefaultValue = null;
-			Marker = Marker_DefaultValue = new PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsMarker();
-			MaxIterations = MaxIterations_DefaultValue = 400;
-			MaxSpeed = MaxSpeed_DefaultValue = 50;
-			SeriesInteraction = SeriesInteraction_DefaultValue = true;
-			Type = Type_DefaultValue = "reingold-fruchterman";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -116,17 +105,17 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Friction != Friction_DefaultValue) h.Add("friction",Friction);
-			if (GravitationalConstant != GravitationalConstant_DefaultValue) h.Add("gravitationalConstant",GravitationalConstant);
-			if (InitialPositionRadius != InitialPositionRadius_DefaultValue) h.Add("initialPositionRadius",InitialPositionRadius);
-			if (InitialPositions != InitialPositions_DefaultValue) h.Add("initialPositions",InitialPositions);
-			if (Integration != Integration_DefaultValue) h.Add("integration", highcharts.FirstCharacterToLower(Integration.ToString()));
-			if (LinkLength != LinkLength_DefaultValue) h.Add("linkLength",LinkLength);
-			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
-			if (MaxIterations != MaxIterations_DefaultValue) h.Add("maxIterations",MaxIterations);
-			if (MaxSpeed != MaxSpeed_DefaultValue) h.Add("maxSpeed",MaxSpeed);
-			if (SeriesInteraction != SeriesInteraction_DefaultValue) h.Add("seriesInteraction",SeriesInteraction);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
+			if (Friction != null) h.Add("friction",Friction);
+			if (GravitationalConstant != null) h.Add("gravitationalConstant",GravitationalConstant);
+			if (InitialPositionRadius != null) h.Add("initialPositionRadius",InitialPositionRadius);
+			if (InitialPositions != null) h.Add("initialPositions",InitialPositions);
+			if (Integration != PackedbubbleSeriesLayoutAlgorithmParentNodeOptionsIntegration.Null) h.Add("integration", highcharts.FirstCharacterToLower(Integration.ToString()));
+			if (LinkLength != null) h.Add("linkLength",LinkLength);
+			if (Marker != null) h.Add("marker",Marker.ToHashtable(highcharts));
+			if (MaxIterations != null) h.Add("maxIterations",MaxIterations);
+			if (MaxSpeed != null) h.Add("maxSpeed",MaxSpeed);
+			if (SeriesInteraction != null) h.Add("seriesInteraction",SeriesInteraction);
+			if (Type != null) h.Add("type",Type);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

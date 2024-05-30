@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilitySonification()
 		{
-			PlayAsSoundButtonText = PlayAsSoundButtonText_DefaultValue = "Play as sound, {chartTitle}";
-			PlayAsSoundClickAnnouncement = PlayAsSoundClickAnnouncement_DefaultValue = "Play";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (PlayAsSoundButtonText != PlayAsSoundButtonText_DefaultValue) h.Add("playAsSoundButtonText",PlayAsSoundButtonText);
-			if (PlayAsSoundClickAnnouncement != PlayAsSoundClickAnnouncement_DefaultValue) h.Add("playAsSoundClickAnnouncement",PlayAsSoundClickAnnouncement);
+			if (PlayAsSoundButtonText != null) h.Add("playAsSoundButtonText",PlayAsSoundButtonText);
+			if (PlayAsSoundClickAnnouncement != null) h.Add("playAsSoundClickAnnouncement",PlayAsSoundClickAnnouncement);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

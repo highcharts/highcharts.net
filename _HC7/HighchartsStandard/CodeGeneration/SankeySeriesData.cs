@@ -16,21 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SankeySeriesData()
 		{
-			Accessibility = Accessibility_DefaultValue = new SankeySeriesDataAccessibility();
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "";
-			ColorIndex = ColorIndex_DefaultValue = null;
-			Custom = Custom_DefaultValue = new Hashtable();
-			Description = Description_DefaultValue = "";
-			Events = Events_DefaultValue = new SankeySeriesDataEvents();
-			From = From_DefaultValue = "";
-			Id = Id_DefaultValue = "";
-			Labelrank = Labelrank_DefaultValue = null;
-			Name = Name_DefaultValue = "";
-			Outgoing = Outgoing_DefaultValue = false;
-			Selected = Selected_DefaultValue = false;
-			To = To_DefaultValue = "";
-			Weight = Weight_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -69,6 +54,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public Hashtable Custom { get; set; }
 		private Hashtable Custom_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public Object DataLabels { get; set; }
+		private Object DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -148,21 +140,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (From != From_DefaultValue) h.Add("from",From);
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Labelrank != Labelrank_DefaultValue) h.Add("labelrank",Labelrank);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (Outgoing != Outgoing_DefaultValue) h.Add("outgoing",Outgoing);
-			if (Selected != Selected_DefaultValue) h.Add("selected",Selected);
-			if (To != To_DefaultValue) h.Add("to",To);
-			if (Weight != Weight_DefaultValue) h.Add("weight",Weight);
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
+			if (Custom != null) h.Add("custom",Custom);
+			if (DataLabels != null) h.Add("dataLabels",DataLabels);
+			if (Description != null) h.Add("description",Description);
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (From != null) h.Add("from",From);
+			if (Id != null) h.Add("id",Id);
+			if (Labelrank != null) h.Add("labelrank",Labelrank);
+			if (Name != null) h.Add("name",Name);
+			if (Outgoing != null) h.Add("outgoing",Outgoing);
+			if (Selected != null) h.Add("selected",Selected);
+			if (To != null) h.Add("to",To);
+			if (Weight != null) h.Add("weight",Weight);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsSunburstTraverseUpButtonPositionAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

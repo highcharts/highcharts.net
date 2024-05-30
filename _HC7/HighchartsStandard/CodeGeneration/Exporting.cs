@@ -16,34 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Exporting()
 		{
-			Accessibility = Accessibility_DefaultValue = new ExportingAccessibility();
-			AllowHTML = AllowHTML_DefaultValue = false;
-			AllowTableSorting = AllowTableSorting_DefaultValue = true;
-			Buttons = Buttons_DefaultValue = new ExportingButtons();
-			ChartOptions = ChartOptions_DefaultValue = null;
-			Csv = Csv_DefaultValue = new ExportingCsv();
-			Enabled = Enabled_DefaultValue = true;
-			Error = Error_DefaultValue = "";
-			FallbackToExportServer = FallbackToExportServer_DefaultValue = true;
-			FetchOptions = FetchOptions_DefaultValue = "";
-			Filename = Filename_DefaultValue = "chart";
-			FormAttributes = FormAttributes_DefaultValue = null;
-			LibURL = LibURL_DefaultValue = "";
-			MenuItemDefinitions = MenuItemDefinitions_DefaultValue = null;
-			PdfFont = PdfFont_DefaultValue = new ExportingPdfFont();
-			PrintMaxWidth = PrintMaxWidth_DefaultValue = 780;
-			Scale = Scale_DefaultValue = 2;
-			ShowExportInProgress = ShowExportInProgress_DefaultValue = true;
-			ShowTable = ShowTable_DefaultValue = false;
-			SourceHeight = SourceHeight_DefaultValue = null;
-			SourceWidth = SourceWidth_DefaultValue = null;
-			TableCaption = TableCaption_DefaultValue = "";
-			TableCaptionBool = TableCaptionBool_DefaultValue = null;
-			Type = Type_DefaultValue = "image/png";
-			Url = Url_DefaultValue = "https://export.highcharts.com/";
-			UseMultiLevelHeaders = UseMultiLevelHeaders_DefaultValue = true;
-			UseRowspanHeaders = UseRowspanHeaders_DefaultValue = true;
-			Width = Width_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -252,34 +224,34 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (AllowHTML != AllowHTML_DefaultValue) h.Add("allowHTML",AllowHTML);
-			if (AllowTableSorting != AllowTableSorting_DefaultValue) h.Add("allowTableSorting",AllowTableSorting);
-			if (Buttons.IsDirty(highcharts)) h.Add("buttons",Buttons.ToHashtable(highcharts));
-			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
-			if (Csv.IsDirty(highcharts)) h.Add("csv",Csv.ToHashtable(highcharts));
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Error != Error_DefaultValue) { h.Add("error",Error); highcharts.AddFunction("error", Error); }  
-			if (FallbackToExportServer != FallbackToExportServer_DefaultValue) h.Add("fallbackToExportServer",FallbackToExportServer);
-			if (FetchOptions != FetchOptions_DefaultValue) h.Add("fetchOptions",FetchOptions);
-			if (Filename != Filename_DefaultValue) h.Add("filename",Filename);
-			if (FormAttributes != FormAttributes_DefaultValue) h.Add("formAttributes",FormAttributes);
-			if (LibURL != LibURL_DefaultValue) h.Add("libURL",LibURL);
-			if (MenuItemDefinitions != MenuItemDefinitions_DefaultValue) h.Add("menuItemDefinitions",MenuItemDefinitions);
-			if (PdfFont.IsDirty(highcharts)) h.Add("pdfFont",PdfFont.ToHashtable(highcharts));
-			if (PrintMaxWidth != PrintMaxWidth_DefaultValue) h.Add("printMaxWidth",PrintMaxWidth);
-			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
-			if (ShowExportInProgress != ShowExportInProgress_DefaultValue) h.Add("showExportInProgress",ShowExportInProgress);
-			if (ShowTable != ShowTable_DefaultValue) h.Add("showTable",ShowTable);
-			if (SourceHeight != SourceHeight_DefaultValue) h.Add("sourceHeight",SourceHeight);
-			if (SourceWidth != SourceWidth_DefaultValue) h.Add("sourceWidth",SourceWidth);
-			if (TableCaption != TableCaption_DefaultValue) h.Add("tableCaption",TableCaption);
-			if (TableCaptionBool != TableCaptionBool_DefaultValue) h.Add("tableCaption",TableCaptionBool);
-			if (Type != Type_DefaultValue) h.Add("type",Type);
-			if (Url != Url_DefaultValue) h.Add("url",Url);
-			if (UseMultiLevelHeaders != UseMultiLevelHeaders_DefaultValue) h.Add("useMultiLevelHeaders",UseMultiLevelHeaders);
-			if (UseRowspanHeaders != UseRowspanHeaders_DefaultValue) h.Add("useRowspanHeaders",UseRowspanHeaders);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (AllowHTML != null) h.Add("allowHTML",AllowHTML);
+			if (AllowTableSorting != null) h.Add("allowTableSorting",AllowTableSorting);
+			if (Buttons != null) h.Add("buttons",Buttons.ToHashtable(highcharts));
+			if (ChartOptions != null) h.Add("chartOptions",ChartOptions);
+			if (Csv != null) h.Add("csv",Csv.ToHashtable(highcharts));
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Error != null) { h.Add("error",Error); highcharts.AddFunction("error", Error); }  
+			if (FallbackToExportServer != null) h.Add("fallbackToExportServer",FallbackToExportServer);
+			if (FetchOptions != null) h.Add("fetchOptions",FetchOptions);
+			if (Filename != null) h.Add("filename",Filename);
+			if (FormAttributes != null) h.Add("formAttributes",FormAttributes);
+			if (LibURL != null) h.Add("libURL",LibURL);
+			if (MenuItemDefinitions != null) h.Add("menuItemDefinitions",MenuItemDefinitions);
+			if (PdfFont != null) h.Add("pdfFont",PdfFont.ToHashtable(highcharts));
+			if (PrintMaxWidth != null) h.Add("printMaxWidth",PrintMaxWidth);
+			if (Scale != null) h.Add("scale",Scale);
+			if (ShowExportInProgress != null) h.Add("showExportInProgress",ShowExportInProgress);
+			if (ShowTable != null) h.Add("showTable",ShowTable);
+			if (SourceHeight != null) h.Add("sourceHeight",SourceHeight);
+			if (SourceWidth != null) h.Add("sourceWidth",SourceWidth);
+			if (TableCaption != null) h.Add("tableCaption",TableCaption);
+			if (TableCaptionBool != null) h.Add("tableCaption",TableCaptionBool);
+			if (Type != null) h.Add("type",Type);
+			if (Url != null) h.Add("url",Url);
+			if (UseMultiLevelHeaders != null) h.Add("useMultiLevelHeaders",UseMultiLevelHeaders);
+			if (UseRowspanHeaders != null) h.Add("useRowspanHeaders",UseRowspanHeaders);
+			if (Width != null) h.Add("width",Width);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

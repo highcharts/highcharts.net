@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public HeatmapSeriesMarkerStatesHover()
 		{
-			Height = Height_DefaultValue = null;
-			HeightPlus = HeightPlus_DefaultValue = null;
-			LineWidthPlus = LineWidthPlus_DefaultValue = 0;
-			Width = Width_DefaultValue = null;
-			WidthPlus = WidthPlus_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (HeightPlus != HeightPlus_DefaultValue) h.Add("heightPlus",HeightPlus);
-			if (LineWidthPlus != LineWidthPlus_DefaultValue) h.Add("lineWidthPlus",LineWidthPlus);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (WidthPlus != WidthPlus_DefaultValue) h.Add("widthPlus",WidthPlus);
+			if (Height != null) h.Add("height",Height);
+			if (HeightPlus != null) h.Add("heightPlus",HeightPlus);
+			if (LineWidthPlus != null) h.Add("lineWidthPlus",LineWidthPlus);
+			if (Width != null) h.Add("width",Width);
+			if (WidthPlus != null) h.Add("widthPlus",WidthPlus);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

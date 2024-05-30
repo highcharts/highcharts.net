@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public DumbbellSeriesAccessibility()
 		{
-			Description = Description_DefaultValue = "";
-			DescriptionFormat = DescriptionFormat_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = null;
-			ExposeAsGroupOnly = ExposeAsGroupOnly_DefaultValue = null;
-			KeyboardNavigation = KeyboardNavigation_DefaultValue = new DumbbellSeriesAccessibilityKeyboardNavigation();
-			Point = Point_DefaultValue = new DumbbellSeriesAccessibilityPoint();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -76,12 +70,12 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (DescriptionFormat != DescriptionFormat_DefaultValue) h.Add("descriptionFormat",DescriptionFormat);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (ExposeAsGroupOnly != ExposeAsGroupOnly_DefaultValue) h.Add("exposeAsGroupOnly",ExposeAsGroupOnly);
-			if (KeyboardNavigation.IsDirty(highcharts)) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(highcharts));
-			if (Point.IsDirty(highcharts)) h.Add("point",Point.ToHashtable(highcharts));
+			if (Description != null) h.Add("description",Description);
+			if (DescriptionFormat != null) h.Add("descriptionFormat",DescriptionFormat);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (ExposeAsGroupOnly != null) h.Add("exposeAsGroupOnly",ExposeAsGroupOnly);
+			if (KeyboardNavigation != null) h.Add("keyboardNavigation",KeyboardNavigation.ToHashtable(highcharts));
+			if (Point != null) h.Add("point",Point.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

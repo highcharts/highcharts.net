@@ -16,14 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartOptions3d()
 		{
-			Alpha = Alpha_DefaultValue = 0;
-			AxisLabelPosition = AxisLabelPosition_DefaultValue = null;
-			Beta = Beta_DefaultValue = 0;
-			Depth = Depth_DefaultValue = 100;
-			Enabled = Enabled_DefaultValue = false;
-			FitToPlot = FitToPlot_DefaultValue = true;
-			Frame = Frame_DefaultValue = new ChartOptions3dFrame();
-			ViewDistance = ViewDistance_DefaultValue = 25;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -92,14 +84,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Alpha != Alpha_DefaultValue) h.Add("alpha",Alpha);
-			if (AxisLabelPosition != AxisLabelPosition_DefaultValue) h.Add("axisLabelPosition",AxisLabelPosition);
-			if (Beta != Beta_DefaultValue) h.Add("beta",Beta);
-			if (Depth != Depth_DefaultValue) h.Add("depth",Depth);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (FitToPlot != FitToPlot_DefaultValue) h.Add("fitToPlot",FitToPlot);
-			if (Frame.IsDirty(highcharts)) h.Add("frame",Frame.ToHashtable(highcharts));
-			if (ViewDistance != ViewDistance_DefaultValue) h.Add("viewDistance",ViewDistance);
+			if (Alpha != null) h.Add("alpha",Alpha);
+			if (AxisLabelPosition != null) h.Add("axisLabelPosition",AxisLabelPosition);
+			if (Beta != null) h.Add("beta",Beta);
+			if (Depth != null) h.Add("depth",Depth);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (FitToPlot != null) h.Add("fitToPlot",FitToPlot);
+			if (Frame != null) h.Add("frame",Frame.ToHashtable(highcharts));
+			if (ViewDistance != null) h.Add("viewDistance",ViewDistance);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

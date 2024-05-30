@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ArcdiagramSeriesLinkColorMode
     {
-        From, 
+        Null, 
+		From, 
 		Gradient, 
 		To
     }

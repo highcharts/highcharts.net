@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartScrollablePlotArea()
 		{
-			MinHeight = MinHeight_DefaultValue = null;
-			MinWidth = MinWidth_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = null;
-			ScrollPositionX = ScrollPositionX_DefaultValue = null;
-			ScrollPositionY = ScrollPositionY_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (MinHeight != MinHeight_DefaultValue) h.Add("minHeight",MinHeight);
-			if (MinWidth != MinWidth_DefaultValue) h.Add("minWidth",MinWidth);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (ScrollPositionX != ScrollPositionX_DefaultValue) h.Add("scrollPositionX",ScrollPositionX);
-			if (ScrollPositionY != ScrollPositionY_DefaultValue) h.Add("scrollPositionY",ScrollPositionY);
+			if (MinHeight != null) h.Add("minHeight",MinHeight);
+			if (MinWidth != null) h.Add("minWidth",MinWidth);
+			if (Opacity != null) h.Add("opacity",Opacity);
+			if (ScrollPositionX != null) h.Add("scrollPositionX",ScrollPositionX);
+			if (ScrollPositionY != null) h.Add("scrollPositionY",ScrollPositionY);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

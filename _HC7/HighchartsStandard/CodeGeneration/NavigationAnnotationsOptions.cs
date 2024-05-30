@@ -16,20 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationAnnotationsOptions()
 		{
-			Animation = Animation_DefaultValue = new Animation();
-			AnimationBool = AnimationBool_DefaultValue = null;
-			ControlPointOptions = ControlPointOptions_DefaultValue = new NavigationAnnotationsOptionsControlPointOptions();
-			Crop = Crop_DefaultValue = true;
-			Draggable = Draggable_DefaultValue = "xy";
-			Events = Events_DefaultValue = new NavigationAnnotationsOptionsEvents();
-			Id = Id_DefaultValue = "";
-			IdNumber = IdNumber_DefaultValue = null;
-			LabelOptions = LabelOptions_DefaultValue = new NavigationAnnotationsOptionsLabelOptions();
-			Labels = Labels_DefaultValue = new NavigationAnnotationsOptionsLabels();
-			ShapeOptions = ShapeOptions_DefaultValue = new NavigationAnnotationsOptionsShapeOptions();
-			Shapes = Shapes_DefaultValue = new NavigationAnnotationsOptionsShapes();
-			Visible = Visible_DefaultValue = true;
-			ZIndex = ZIndex_DefaultValue = 6;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -140,20 +126,20 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (ControlPointOptions.IsDirty(highcharts)) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(highcharts));
-			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
-			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (IdNumber != IdNumber_DefaultValue) h.Add("id",IdNumber);
-			if (LabelOptions.IsDirty(highcharts)) h.Add("labelOptions",LabelOptions.ToHashtable(highcharts));
-			if (Labels.IsDirty(highcharts)) h.Add("labels",Labels.ToHashtable(highcharts));
-			if (ShapeOptions.IsDirty(highcharts)) h.Add("shapeOptions",ShapeOptions.ToHashtable(highcharts));
-			if (Shapes.IsDirty(highcharts)) h.Add("shapes",Shapes.ToHashtable(highcharts));
-			if (Visible != Visible_DefaultValue) h.Add("visible",Visible);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (ControlPointOptions != null) h.Add("controlPointOptions",ControlPointOptions.ToHashtable(highcharts));
+			if (Crop != null) h.Add("crop",Crop);
+			if (Draggable != null) h.Add("draggable",Draggable);
+			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
+			if (Id != null) h.Add("id",Id);
+			if (IdNumber != null) h.Add("id",IdNumber);
+			if (LabelOptions != null) h.Add("labelOptions",LabelOptions.ToHashtable(highcharts));
+			if (Labels != null) h.Add("labels",Labels.ToHashtable(highcharts));
+			if (ShapeOptions != null) h.Add("shapeOptions",ShapeOptions.ToHashtable(highcharts));
+			if (Shapes != null) h.Add("shapes",Shapes.ToHashtable(highcharts));
+			if (Visible != null) h.Add("visible",Visible);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

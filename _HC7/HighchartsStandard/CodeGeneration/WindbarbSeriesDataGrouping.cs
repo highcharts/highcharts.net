@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public WindbarbSeriesDataGrouping()
 		{
-			Approximation = Approximation_DefaultValue = "windbarb";
-			Enabled = Enabled_DefaultValue = true;
-			GroupPixelWidth = GroupPixelWidth_DefaultValue = 30;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Approximation != Approximation_DefaultValue) h.Add("approximation",Approximation);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (GroupPixelWidth != GroupPixelWidth_DefaultValue) h.Add("groupPixelWidth",GroupPixelWidth);
+			if (Approximation != null) h.Add("approximation",Approximation);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (GroupPixelWidth != null) h.Add("groupPixelWidth",GroupPixelWidth);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

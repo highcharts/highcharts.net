@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NetworkgraphSeriesNodesMarker()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			States = States_DefaultValue = new NetworkgraphSeriesNodesMarkerStates();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (States != null) h.Add("states",States.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

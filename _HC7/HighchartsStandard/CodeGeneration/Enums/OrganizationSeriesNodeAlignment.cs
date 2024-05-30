@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum OrganizationSeriesNodeAlignment
     {
-        Top, 
+        Null, 
+		Top, 
 		Center, 
 		Bottom
     }

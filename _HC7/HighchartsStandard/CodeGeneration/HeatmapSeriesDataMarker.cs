@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public HeatmapSeriesDataMarker()
 		{
-			States = States_DefaultValue = new HeatmapSeriesDataMarkerStates();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (States.IsDirty(highcharts)) h.Add("states",States.ToHashtable(highcharts));
+			if (States != null) h.Add("states",States.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

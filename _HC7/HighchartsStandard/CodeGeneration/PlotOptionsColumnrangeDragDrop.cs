@@ -16,21 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsColumnrangeDragDrop()
 		{
-			DraggableHigh = DraggableHigh_DefaultValue = true;
-			DraggableLow = DraggableLow_DefaultValue = true;
-			DraggableX = DraggableX_DefaultValue = null;
-			DraggableY = DraggableY_DefaultValue = null;
-			DragHandle = DragHandle_DefaultValue = new PlotOptionsColumnrangeDragDropDragHandle();
-			DragMaxX = DragMaxX_DefaultValue = null;
-			DragMaxY = DragMaxY_DefaultValue = null;
-			DragMinX = DragMinX_DefaultValue = null;
-			DragMinY = DragMinY_DefaultValue = null;
-			DragPrecisionX = DragPrecisionX_DefaultValue = 0;
-			DragPrecisionY = DragPrecisionY_DefaultValue = 0;
-			DragSensitivity = DragSensitivity_DefaultValue = 2;
-			GroupBy = GroupBy_DefaultValue = "";
-			GuideBox = GuideBox_DefaultValue = new PlotOptionsColumnrangeDragDropGuideBox();
-			LiveRedraw = LiveRedraw_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -148,21 +133,21 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (DraggableHigh != DraggableHigh_DefaultValue) h.Add("draggableHigh",DraggableHigh);
-			if (DraggableLow != DraggableLow_DefaultValue) h.Add("draggableLow",DraggableLow);
-			if (DraggableX != DraggableX_DefaultValue) h.Add("draggableX",DraggableX);
-			if (DraggableY != DraggableY_DefaultValue) h.Add("draggableY",DraggableY);
-			if (DragHandle.IsDirty(highcharts)) h.Add("dragHandle",DragHandle.ToHashtable(highcharts));
-			if (DragMaxX != DragMaxX_DefaultValue) h.Add("dragMaxX",DragMaxX);
-			if (DragMaxY != DragMaxY_DefaultValue) h.Add("dragMaxY",DragMaxY);
-			if (DragMinX != DragMinX_DefaultValue) h.Add("dragMinX",DragMinX);
-			if (DragMinY != DragMinY_DefaultValue) h.Add("dragMinY",DragMinY);
-			if (DragPrecisionX != DragPrecisionX_DefaultValue) h.Add("dragPrecisionX",DragPrecisionX);
-			if (DragPrecisionY != DragPrecisionY_DefaultValue) h.Add("dragPrecisionY",DragPrecisionY);
-			if (DragSensitivity != DragSensitivity_DefaultValue) h.Add("dragSensitivity",DragSensitivity);
-			if (GroupBy != GroupBy_DefaultValue) h.Add("groupBy",GroupBy);
-			if (GuideBox.IsDirty(highcharts)) h.Add("guideBox",GuideBox.ToHashtable(highcharts));
-			if (LiveRedraw != LiveRedraw_DefaultValue) h.Add("liveRedraw",LiveRedraw);
+			if (DraggableHigh != null) h.Add("draggableHigh",DraggableHigh);
+			if (DraggableLow != null) h.Add("draggableLow",DraggableLow);
+			if (DraggableX != null) h.Add("draggableX",DraggableX);
+			if (DraggableY != null) h.Add("draggableY",DraggableY);
+			if (DragHandle != null) h.Add("dragHandle",DragHandle.ToHashtable(highcharts));
+			if (DragMaxX != null) h.Add("dragMaxX",DragMaxX);
+			if (DragMaxY != null) h.Add("dragMaxY",DragMaxY);
+			if (DragMinX != null) h.Add("dragMinX",DragMinX);
+			if (DragMinY != null) h.Add("dragMinY",DragMinY);
+			if (DragPrecisionX != null) h.Add("dragPrecisionX",DragPrecisionX);
+			if (DragPrecisionY != null) h.Add("dragPrecisionY",DragPrecisionY);
+			if (DragSensitivity != null) h.Add("dragSensitivity",DragSensitivity);
+			if (GroupBy != null) h.Add("groupBy",GroupBy);
+			if (GuideBox != null) h.Add("guideBox",GuideBox.ToHashtable(highcharts));
+			if (LiveRedraw != null) h.Add("liveRedraw",LiveRedraw);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

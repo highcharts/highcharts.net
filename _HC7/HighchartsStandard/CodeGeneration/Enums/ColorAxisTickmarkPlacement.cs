@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ColorAxisTickmarkPlacement
     {
-        On, 
+        Null, 
+		On, 
 		Between
     }
 }

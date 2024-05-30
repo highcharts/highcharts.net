@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsBubbleStatesHoverHalo()
 		{
-			Size = Size_DefaultValue = 5;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Size != Size_DefaultValue) h.Add("size",Size);
+			if (Size != null) h.Add("size",Size);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

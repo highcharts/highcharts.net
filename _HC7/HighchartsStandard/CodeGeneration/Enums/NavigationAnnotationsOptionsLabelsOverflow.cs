@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum NavigationAnnotationsOptionsLabelsOverflow
     {
-        Allow, 
+        Null, 
+		Allow, 
 		Justify
     }
 }

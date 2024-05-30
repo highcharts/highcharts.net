@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public OrganizationSeriesLevelsStates()
 		{
-			Hover = Hover_DefaultValue = new OrganizationSeriesLevelsStatesHover();
-			Inactive = Inactive_DefaultValue = new OrganizationSeriesLevelsStatesInactive();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -44,8 +42,8 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Hover.IsDirty(highcharts)) h.Add("hover",Hover.ToHashtable(highcharts));
-			if (Inactive.IsDirty(highcharts)) h.Add("inactive",Inactive.ToHashtable(highcharts));
+			if (Hover != null) h.Add("hover",Hover.ToHashtable(highcharts));
+			if (Inactive != null) h.Add("inactive",Inactive.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

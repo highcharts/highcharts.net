@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartParallelAxesStackShadow()
 		{
-			BorderColor = BorderColor_DefaultValue = "transparent";
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			Color = Color_DefaultValue = "#dedede";
-			Enabled = Enabled_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (Color != null) h.Add("color",Color);
+			if (Enabled != null) h.Add("enabled",Enabled);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTimelineMarkerStates()
 		{
-			Hover = Hover_DefaultValue = new PlotOptionsTimelineMarkerStatesHover();
-			Normal = Normal_DefaultValue = new PlotOptionsTimelineMarkerStatesNormal();
-			Select = Select_DefaultValue = new PlotOptionsTimelineMarkerStatesSelect();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -52,9 +49,9 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Hover.IsDirty(highcharts)) h.Add("hover",Hover.ToHashtable(highcharts));
-			if (Normal.IsDirty(highcharts)) h.Add("normal",Normal.ToHashtable(highcharts));
-			if (Select.IsDirty(highcharts)) h.Add("select",Select.ToHashtable(highcharts));
+			if (Hover != null) h.Add("hover",Hover.ToHashtable(highcharts));
+			if (Normal != null) h.Add("normal",Normal.ToHashtable(highcharts));
+			if (Select != null) h.Add("select",Select.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

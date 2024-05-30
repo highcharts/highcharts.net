@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ArcdiagramSeriesSonificationDefaultSpeechOptions()
 		{
-			ActiveWhen = ActiveWhen_DefaultValue = new ArcdiagramSeriesSonificationDefaultSpeechOptionsActiveWhen();
-			Language = Language_DefaultValue = "en-US";
-			Mapping = Mapping_DefaultValue = new ArcdiagramSeriesSonificationDefaultSpeechOptionsMapping();
-			PointGrouping = PointGrouping_DefaultValue = new ArcdiagramSeriesSonificationDefaultSpeechOptionsPointGrouping();
-			PreferredVoice = PreferredVoice_DefaultValue = "";
-			ShowPlayMarker = ShowPlayMarker_DefaultValue = true;
-			Type = Type_DefaultValue = ArcdiagramSeriesSonificationDefaultSpeechOptionsType.Instrument;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -84,13 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ActiveWhen.IsDirty(highcharts)) h.Add("activeWhen",ActiveWhen.ToHashtable(highcharts));
-			if (Language != Language_DefaultValue) h.Add("language",Language);
-			if (Mapping.IsDirty(highcharts)) h.Add("mapping",Mapping.ToHashtable(highcharts));
-			if (PointGrouping.IsDirty(highcharts)) h.Add("pointGrouping",PointGrouping.ToHashtable(highcharts));
-			if (PreferredVoice != PreferredVoice_DefaultValue) h.Add("preferredVoice",PreferredVoice);
-			if (ShowPlayMarker != ShowPlayMarker_DefaultValue) h.Add("showPlayMarker",ShowPlayMarker);
-			if (Type != Type_DefaultValue) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
+			if (ActiveWhen != null) h.Add("activeWhen",ActiveWhen.ToHashtable(highcharts));
+			if (Language != null) h.Add("language",Language);
+			if (Mapping != null) h.Add("mapping",Mapping.ToHashtable(highcharts));
+			if (PointGrouping != null) h.Add("pointGrouping",PointGrouping.ToHashtable(highcharts));
+			if (PreferredVoice != null) h.Add("preferredVoice",PreferredVoice);
+			if (ShowPlayMarker != null) h.Add("showPlayMarker",ShowPlayMarker);
+			if (Type != ArcdiagramSeriesSonificationDefaultSpeechOptionsType.Null) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

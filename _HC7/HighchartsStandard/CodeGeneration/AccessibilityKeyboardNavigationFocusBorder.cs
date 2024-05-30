@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilityKeyboardNavigationFocusBorder()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			HideBrowserFocusOutline = HideBrowserFocusOutline_DefaultValue = true;
-			Margin = Margin_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (HideBrowserFocusOutline != HideBrowserFocusOutline_DefaultValue) h.Add("hideBrowserFocusOutline",HideBrowserFocusOutline);
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (HideBrowserFocusOutline != null) h.Add("hideBrowserFocusOutline",HideBrowserFocusOutline);
+			if (Margin != null) h.Add("margin",Margin);
+			if (Style != null) h.Add("style",Style);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsArcdiagramStates()
 		{
-			Hover = Hover_DefaultValue = new PlotOptionsArcdiagramStatesHover();
-			Inactive = Inactive_DefaultValue = new PlotOptionsArcdiagramStatesInactive();
-			Normal = Normal_DefaultValue = new PlotOptionsArcdiagramStatesNormal();
-			Select = Select_DefaultValue = new PlotOptionsArcdiagramStatesSelect();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Hover.IsDirty(highcharts)) h.Add("hover",Hover.ToHashtable(highcharts));
-			if (Inactive.IsDirty(highcharts)) h.Add("inactive",Inactive.ToHashtable(highcharts));
-			if (Normal.IsDirty(highcharts)) h.Add("normal",Normal.ToHashtable(highcharts));
-			if (Select.IsDirty(highcharts)) h.Add("select",Select.ToHashtable(highcharts));
+			if (Hover != null) h.Add("hover",Hover.ToHashtable(highcharts));
+			if (Inactive != null) h.Add("inactive",Inactive.ToHashtable(highcharts));
+			if (Normal != null) h.Add("normal",Normal.ToHashtable(highcharts));
+			if (Select != null) h.Add("select",Select.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum PlotOptionsTreegraphTraverseUpButtonPositionAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

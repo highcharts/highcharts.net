@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangNavigation()
 		{
-			Popup = Popup_DefaultValue = new LangNavigationPopup();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Popup.IsDirty(highcharts)) h.Add("popup",Popup.ToHashtable(highcharts));
+			if (Popup != null) h.Add("popup",Popup.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

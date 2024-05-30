@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ColumnrangeSeriesDragDropDragHandle()
 		{
-			ClassName = ClassName_DefaultValue = "highcharts-drag-handle";
-			Color = Color_DefaultValue = "#fff";
-			LineColor = LineColor_DefaultValue = "rgba(0, 0, 0, 0.6)";
-			LineWidth = LineWidth_DefaultValue = 1;
-			ZIndex = ZIndex_DefaultValue = 901;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (LineColor != null) h.Add("lineColor",LineColor);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

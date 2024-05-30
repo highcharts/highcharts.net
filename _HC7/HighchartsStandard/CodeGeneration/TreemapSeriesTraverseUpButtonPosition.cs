@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TreemapSeriesTraverseUpButtonPosition()
 		{
-			Align = Align_DefaultValue = TreemapSeriesTraverseUpButtonPositionAlign.Right;
-			VerticalAlign = VerticalAlign_DefaultValue = TreemapSeriesTraverseUpButtonPositionVerticalAlign.Top;
-			X = X_DefaultValue = -10;
-			Y = Y_DefaultValue = 10;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Align != TreemapSeriesTraverseUpButtonPositionAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (VerticalAlign != TreemapSeriesTraverseUpButtonPositionVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

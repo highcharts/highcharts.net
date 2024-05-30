@@ -16,22 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public FunnelSeriesTooltip()
 		{
-			ClusterFormat = ClusterFormat_DefaultValue = "Clustered points: {point.clusterPointsAmount}";
-			DateTimeLabelFormats = DateTimeLabelFormats_DefaultValue = new Hashtable();
-			Distance = Distance_DefaultValue = 16;
-			FollowPointer = FollowPointer_DefaultValue = false;
-			FollowTouchMove = FollowTouchMove_DefaultValue = true;
-			FooterFormat = FooterFormat_DefaultValue = "";
-			Format = Format_DefaultValue = "undefined";
-			HeaderFormat = HeaderFormat_DefaultValue = "";
-			NullFormat = NullFormat_DefaultValue = "";
-			NullFormatter = NullFormatter_DefaultValue = "";
-			PointFormat = PointFormat_DefaultValue = "";
-			PointFormatter = PointFormatter_DefaultValue = "";
-			ValueDecimals = ValueDecimals_DefaultValue = null;
-			ValuePrefix = ValuePrefix_DefaultValue = "";
-			ValueSuffix = ValueSuffix_DefaultValue = "";
-			XDateFormat = XDateFormat_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -156,22 +140,22 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (ClusterFormat != ClusterFormat_DefaultValue) h.Add("clusterFormat",ClusterFormat);
-			if (DateTimeLabelFormats != DateTimeLabelFormats_DefaultValue) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (FollowPointer != FollowPointer_DefaultValue) h.Add("followPointer",FollowPointer);
-			if (FollowTouchMove != FollowTouchMove_DefaultValue) h.Add("followTouchMove",FollowTouchMove);
-			if (FooterFormat != FooterFormat_DefaultValue) h.Add("footerFormat",FooterFormat);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (NullFormat != NullFormat_DefaultValue) h.Add("nullFormat",NullFormat);
-			if (NullFormatter != NullFormatter_DefaultValue) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (PointFormatter != PointFormatter_DefaultValue) { h.Add("pointFormatter",PointFormatter); highcharts.AddFunction("pointFormatter", PointFormatter); }  
-			if (ValueDecimals != ValueDecimals_DefaultValue) h.Add("valueDecimals",ValueDecimals);
-			if (ValuePrefix != ValuePrefix_DefaultValue) h.Add("valuePrefix",ValuePrefix);
-			if (ValueSuffix != ValueSuffix_DefaultValue) h.Add("valueSuffix",ValueSuffix);
-			if (XDateFormat != XDateFormat_DefaultValue) h.Add("xDateFormat",XDateFormat);
+			if (ClusterFormat != null) h.Add("clusterFormat",ClusterFormat);
+			if (DateTimeLabelFormats != null) h.Add("dateTimeLabelFormats",DateTimeLabelFormats);
+			if (Distance != null) h.Add("distance",Distance);
+			if (FollowPointer != null) h.Add("followPointer",FollowPointer);
+			if (FollowTouchMove != null) h.Add("followTouchMove",FollowTouchMove);
+			if (FooterFormat != null) h.Add("footerFormat",FooterFormat);
+			if (Format != null) h.Add("format",Format);
+			if (HeaderFormat != null) h.Add("headerFormat",HeaderFormat);
+			if (NullFormat != null) h.Add("nullFormat",NullFormat);
+			if (NullFormatter != null) { h.Add("nullFormatter",NullFormatter); highcharts.AddFunction("nullFormatter", NullFormatter); }  
+			if (PointFormat != null) h.Add("pointFormat",PointFormat);
+			if (PointFormatter != null) { h.Add("pointFormatter",PointFormatter); highcharts.AddFunction("pointFormatter", PointFormatter); }  
+			if (ValueDecimals != null) h.Add("valueDecimals",ValueDecimals);
+			if (ValuePrefix != null) h.Add("valuePrefix",ValuePrefix);
+			if (ValueSuffix != null) h.Add("valueSuffix",ValueSuffix);
+			if (XDateFormat != null) h.Add("xDateFormat",XDateFormat);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

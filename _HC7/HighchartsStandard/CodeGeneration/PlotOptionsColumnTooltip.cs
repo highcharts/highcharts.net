@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsColumnTooltip()
 		{
-			Distance = Distance_DefaultValue = 6;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
+			if (Distance != null) h.Add("distance",Distance);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

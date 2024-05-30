@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationBreadcrumbsButtonThemeStyle()
 		{
-			Color = Color_DefaultValue = "#334eff";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
+			if (Color != null) h.Add("color",Color);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

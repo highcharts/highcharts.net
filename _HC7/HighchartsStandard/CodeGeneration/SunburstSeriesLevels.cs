@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SunburstSeriesLevels()
 		{
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderDashStyle = BorderDashStyle_DefaultValue = new Hashtable();
-			BorderWidth = BorderWidth_DefaultValue = null;
-			Color = Color_DefaultValue = "";
-			ColorByPoint = ColorByPoint_DefaultValue = null;
-			ColorVariation = ColorVariation_DefaultValue = new SunburstSeriesLevelsColorVariation();
-			DataLabels = DataLabels_DefaultValue = new SunburstSeriesDataLabels();
-			Level = Level_DefaultValue = null;
-			LevelSize = LevelSize_DefaultValue = new SunburstSeriesLevelsLevelSize();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderDashStyle != BorderDashStyle_DefaultValue) h.Add("borderDashStyle",BorderDashStyle);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorByPoint != ColorByPoint_DefaultValue) h.Add("colorByPoint",ColorByPoint);
-			if (ColorVariation.IsDirty(highcharts)) h.Add("colorVariation",ColorVariation.ToHashtable(highcharts));
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (Level != Level_DefaultValue) h.Add("level",Level);
-			if (LevelSize.IsDirty(highcharts)) h.Add("levelSize",LevelSize.ToHashtable(highcharts));
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderDashStyle != null) h.Add("borderDashStyle",BorderDashStyle);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (Color != null) h.Add("color",Color);
+			if (ColorByPoint != null) h.Add("colorByPoint",ColorByPoint);
+			if (ColorVariation != null) h.Add("colorVariation",ColorVariation.ToHashtable(highcharts));
+			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
+			if (Level != null) h.Add("level",Level);
+			if (LevelSize != null) h.Add("levelSize",LevelSize.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

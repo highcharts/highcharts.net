@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ColorAxisEvents()
 		{
-			AfterBreaks = AfterBreaks_DefaultValue = "";
-			AfterSetExtremes = AfterSetExtremes_DefaultValue = "";
-			LegendItemClick = LegendItemClick_DefaultValue = "";
-			PointBreak = PointBreak_DefaultValue = "";
-			PointBreakOut = PointBreakOut_DefaultValue = "";
-			PointInBreak = PointInBreak_DefaultValue = "";
-			SetExtremes = SetExtremes_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -84,13 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (AfterBreaks != AfterBreaks_DefaultValue) { h.Add("afterBreaks",AfterBreaks); highcharts.AddFunction("afterBreaks", AfterBreaks); }  
-			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); highcharts.AddFunction("afterSetExtremes", AfterSetExtremes); }  
-			if (LegendItemClick != LegendItemClick_DefaultValue) { h.Add("legendItemClick",LegendItemClick); highcharts.AddFunction("legendItemClick", LegendItemClick); }  
-			if (PointBreak != PointBreak_DefaultValue) { h.Add("pointBreak",PointBreak); highcharts.AddFunction("pointBreak", PointBreak); }  
-			if (PointBreakOut != PointBreakOut_DefaultValue) { h.Add("pointBreakOut",PointBreakOut); highcharts.AddFunction("pointBreakOut", PointBreakOut); }  
-			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); highcharts.AddFunction("pointInBreak", PointInBreak); }  
-			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); highcharts.AddFunction("setExtremes", SetExtremes); }  
+			if (AfterBreaks != null) { h.Add("afterBreaks",AfterBreaks); highcharts.AddFunction("afterBreaks", AfterBreaks); }  
+			if (AfterSetExtremes != null) { h.Add("afterSetExtremes",AfterSetExtremes); highcharts.AddFunction("afterSetExtremes", AfterSetExtremes); }  
+			if (LegendItemClick != null) { h.Add("legendItemClick",LegendItemClick); highcharts.AddFunction("legendItemClick", LegendItemClick); }  
+			if (PointBreak != null) { h.Add("pointBreak",PointBreak); highcharts.AddFunction("pointBreak", PointBreak); }  
+			if (PointBreakOut != null) { h.Add("pointBreakOut",PointBreakOut); highcharts.AddFunction("pointBreakOut", PointBreakOut); }  
+			if (PointInBreak != null) { h.Add("pointInBreak",PointInBreak); highcharts.AddFunction("pointInBreak", PointInBreak); }  
+			if (SetExtremes != null) { h.Add("setExtremes",SetExtremes); highcharts.AddFunction("setExtremes", SetExtremes); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

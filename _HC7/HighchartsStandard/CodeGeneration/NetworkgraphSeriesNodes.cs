@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NetworkgraphSeriesNodes()
 		{
-			Color = Color_DefaultValue = "";
-			ColorIndex = ColorIndex_DefaultValue = null;
-			DataLabels = DataLabels_DefaultValue = new NetworkgraphSeriesNodesDataLabels();
-			Id = Id_DefaultValue = "";
-			Marker = Marker_DefaultValue = new NetworkgraphSeriesNodesMarker();
-			Mass = Mass_DefaultValue = null;
-			Name = Name_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -84,13 +77,13 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ColorIndex != ColorIndex_DefaultValue) h.Add("colorIndex",ColorIndex);
-			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Marker.IsDirty(highcharts)) h.Add("marker",Marker.ToHashtable(highcharts));
-			if (Mass != Mass_DefaultValue) h.Add("mass",Mass);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
+			if (Color != null) h.Add("color",Color);
+			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
+			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
+			if (Id != null) h.Add("id",Id);
+			if (Marker != null) h.Add("marker",Marker.ToHashtable(highcharts));
+			if (Mass != null) h.Add("mass",Mass);
+			if (Name != null) h.Add("name",Name);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

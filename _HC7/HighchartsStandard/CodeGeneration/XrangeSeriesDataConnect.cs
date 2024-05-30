@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public XrangeSeriesDataConnect()
 		{
-			To = To_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (To != To_DefaultValue) h.Add("to",To);
+			if (To != null) h.Add("to",To);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

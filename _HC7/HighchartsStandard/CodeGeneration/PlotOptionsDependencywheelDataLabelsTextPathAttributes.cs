@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsDependencywheelDataLabelsTextPathAttributes()
 		{
-			Dy = Dy_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Dy != Dy_DefaultValue) h.Add("dy",Dy);
+			if (Dy != null) h.Add("dy",Dy);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

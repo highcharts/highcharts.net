@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Time()
 		{
-			Date = Date_DefaultValue = new DateTime();
-			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
-			Timezone = Timezone_DefaultValue = "undefined";
-			TimezoneOffset = TimezoneOffset_DefaultValue = 0;
-			UseUTC = UseUTC_DefaultValue = true;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Date != Date_DefaultValue) h.Add("date",Date);
-			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) { h.Add("getTimezoneOffset",GetTimezoneOffset); highcharts.AddFunction("getTimezoneOffset", GetTimezoneOffset); }  
-			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);
-			if (TimezoneOffset != TimezoneOffset_DefaultValue) h.Add("timezoneOffset",TimezoneOffset);
-			if (UseUTC != UseUTC_DefaultValue) h.Add("useUTC",UseUTC);
+			if (Date != null) h.Add("date",Date);
+			if (GetTimezoneOffset != null) { h.Add("getTimezoneOffset",GetTimezoneOffset); highcharts.AddFunction("getTimezoneOffset", GetTimezoneOffset); }  
+			if (Timezone != null) h.Add("timezone",Timezone);
+			if (TimezoneOffset != null) h.Add("timezoneOffset",TimezoneOffset);
+			if (UseUTC != null) h.Add("useUTC",UseUTC);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

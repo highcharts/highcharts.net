@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum AccessibilityLandmarkVerbosity
     {
-        All, 
+        Null, 
+		All, 
 		One, 
 		Disabled
     }

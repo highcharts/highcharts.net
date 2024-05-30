@@ -16,7 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Responsive()
 		{
-			Rules = Rules_DefaultValue = new List<ResponsiveRules>();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -36,7 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Rules != Rules_DefaultValue) h.Add("rules", HashifyList(highcharts,Rules));
+			if (Rules != null) h.Add("rules", HashifyList(highcharts,Rules));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

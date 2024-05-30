@@ -16,36 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Highcharts()
 		{
-			Accessibility = Accessibility_DefaultValue = new Accessibility();
-			Annotations = Annotations_DefaultValue = new List<Annotations>();
-			Boost = Boost_DefaultValue = new Boost();
-			Caption = Caption_DefaultValue = new Caption();
-			Chart = Chart_DefaultValue = new Chart();
-			ColorAxis = ColorAxis_DefaultValue = new ColorAxis();
-			Colors = Colors_DefaultValue = new List<string>();
-			Credits = Credits_DefaultValue = new Credits();
-			Data = Data_DefaultValue = new Data();
-			Defs = Defs_DefaultValue = null;
-			Drilldown = Drilldown_DefaultValue = new Drilldown();
-			Exporting = Exporting_DefaultValue = new Exporting();
-			Global = Global_DefaultValue = new Global();
-			Lang = Lang_DefaultValue = new Lang();
-			Legend = Legend_DefaultValue = new Legend();
-			Loading = Loading_DefaultValue = new Loading();
-			Navigation = Navigation_DefaultValue = new Navigation();
-			NoData = NoData_DefaultValue = new NoData();
-			Pane = Pane_DefaultValue = new Pane();
-			PlotOptions = PlotOptions_DefaultValue = new PlotOptions();
-			Responsive = Responsive_DefaultValue = new Responsive();
-			Series = Series_DefaultValue = new List<Series>();
-			Sonification = Sonification_DefaultValue = new Sonification();
-			Subtitle = Subtitle_DefaultValue = new Subtitle();
-			Time = Time_DefaultValue = new Time();
-			Title = Title_DefaultValue = new Title();
-			Tooltip = Tooltip_DefaultValue = new Tooltip();
-			XAxis = XAxis_DefaultValue = new List<XAxis>();
-			YAxis = YAxis_DefaultValue = new List<YAxis>();
-			ZAxis = ZAxis_DefaultValue = new ZAxis();
 			
 			CustomFields = new Hashtable();
 		}	
@@ -268,36 +238,36 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Accessibility.IsDirty(highcharts)) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
-			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(highcharts,Annotations));
-			if (Boost.IsDirty(highcharts)) h.Add("boost",Boost.ToHashtable(highcharts));
-			if (Caption.IsDirty(highcharts)) h.Add("caption",Caption.ToHashtable(highcharts));
-			if (Chart.IsDirty(highcharts)) h.Add("chart",Chart.ToHashtable(highcharts));
-			if (ColorAxis.IsDirty(highcharts)) h.Add("colorAxis",ColorAxis.ToHashtable(highcharts));
-			if (Colors != Colors_DefaultValue) h.Add("colors",Colors);
-			if (Credits.IsDirty(highcharts)) h.Add("credits",Credits.ToHashtable(highcharts));
-			if (Data.IsDirty(highcharts)) h.Add("data",Data.ToHashtable(highcharts));
-			if (Defs != Defs_DefaultValue) h.Add("defs",Defs);
-			if (Drilldown.IsDirty(highcharts)) h.Add("drilldown",Drilldown.ToHashtable(highcharts));
-			if (Exporting.IsDirty(highcharts)) h.Add("exporting",Exporting.ToHashtable(highcharts));
-			if (Global.IsDirty(highcharts)) h.Add("global",Global.ToHashtable(highcharts));
-			if (Lang.IsDirty(highcharts)) h.Add("lang",Lang.ToHashtable(highcharts));
-			if (Legend.IsDirty(highcharts)) h.Add("legend",Legend.ToHashtable(highcharts));
-			if (Loading.IsDirty(highcharts)) h.Add("loading",Loading.ToHashtable(highcharts));
-			if (Navigation.IsDirty(highcharts)) h.Add("navigation",Navigation.ToHashtable(highcharts));
-			if (NoData.IsDirty(highcharts)) h.Add("noData",NoData.ToHashtable(highcharts));
-			if (Pane.IsDirty(highcharts)) h.Add("pane",Pane.ToHashtable(highcharts));
-			if (PlotOptions.IsDirty(highcharts)) h.Add("plotOptions",PlotOptions.ToHashtable(highcharts));
-			if (Responsive.IsDirty(highcharts)) h.Add("responsive",Responsive.ToHashtable(highcharts));
-			if (Series != Series_DefaultValue) h.Add("series", HashifyList(highcharts,Series));
-			if (Sonification.IsDirty(highcharts)) h.Add("sonification",Sonification.ToHashtable(highcharts));
-			if (Subtitle.IsDirty(highcharts)) h.Add("subtitle",Subtitle.ToHashtable(highcharts));
-			if (Time.IsDirty(highcharts)) h.Add("time",Time.ToHashtable(highcharts));
-			if (Title.IsDirty(highcharts)) h.Add("title",Title.ToHashtable(highcharts));
-			if (Tooltip.IsDirty(highcharts)) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis", HashifyList(highcharts,XAxis));
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis", HashifyList(highcharts,YAxis));
-			if (ZAxis.IsDirty(highcharts)) h.Add("zAxis",ZAxis.ToHashtable(highcharts));
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
+			if (Annotations != null) h.Add("annotations", HashifyList(highcharts,Annotations));
+			if (Boost != null) h.Add("boost",Boost.ToHashtable(highcharts));
+			if (Caption != null) h.Add("caption",Caption.ToHashtable(highcharts));
+			if (Chart != null) h.Add("chart",Chart.ToHashtable(highcharts));
+			if (ColorAxis != null) h.Add("colorAxis",ColorAxis.ToHashtable(highcharts));
+			if (Colors != null) h.Add("colors",Colors);
+			if (Credits != null) h.Add("credits",Credits.ToHashtable(highcharts));
+			if (Data != null) h.Add("data",Data.ToHashtable(highcharts));
+			if (Defs != null) h.Add("defs",Defs);
+			if (Drilldown != null) h.Add("drilldown",Drilldown.ToHashtable(highcharts));
+			if (Exporting != null) h.Add("exporting",Exporting.ToHashtable(highcharts));
+			if (Global != null) h.Add("global",Global.ToHashtable(highcharts));
+			if (Lang != null) h.Add("lang",Lang.ToHashtable(highcharts));
+			if (Legend != null) h.Add("legend",Legend.ToHashtable(highcharts));
+			if (Loading != null) h.Add("loading",Loading.ToHashtable(highcharts));
+			if (Navigation != null) h.Add("navigation",Navigation.ToHashtable(highcharts));
+			if (NoData != null) h.Add("noData",NoData.ToHashtable(highcharts));
+			if (Pane != null) h.Add("pane",Pane.ToHashtable(highcharts));
+			if (PlotOptions != null) h.Add("plotOptions",PlotOptions.ToHashtable(highcharts));
+			if (Responsive != null) h.Add("responsive",Responsive.ToHashtable(highcharts));
+			if (Series != null) h.Add("series", HashifyList(highcharts,Series));
+			if (Sonification != null) h.Add("sonification",Sonification.ToHashtable(highcharts));
+			if (Subtitle != null) h.Add("subtitle",Subtitle.ToHashtable(highcharts));
+			if (Time != null) h.Add("time",Time.ToHashtable(highcharts));
+			if (Title != null) h.Add("title",Title.ToHashtable(highcharts));
+			if (Tooltip != null) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
+			if (XAxis != null) h.Add("xAxis", HashifyList(highcharts,XAxis));
+			if (YAxis != null) h.Add("yAxis", HashifyList(highcharts,YAxis));
+			if (ZAxis != null) h.Add("zAxis",ZAxis.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

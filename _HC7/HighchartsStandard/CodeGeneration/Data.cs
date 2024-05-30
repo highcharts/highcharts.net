@@ -16,35 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Data()
 		{
-			BeforeParse = BeforeParse_DefaultValue = "";
-			Columns = Columns_DefaultValue = new List<List<string>>();
-			ColumnsURL = ColumnsURL_DefaultValue = "";
-			ColumnTypes = ColumnTypes_DefaultValue = DataColumnTypes.Null;
-			Complete = Complete_DefaultValue = "";
-			Csv = Csv_DefaultValue = "";
-			CsvURL = CsvURL_DefaultValue = "";
-			DataRefreshRate = DataRefreshRate_DefaultValue = 1;
-			DateFormat = DateFormat_DefaultValue = "";
-			DecimalPoint = DecimalPoint_DefaultValue = ".";
-			EnablePolling = EnablePolling_DefaultValue = false;
-			EndColumn = EndColumn_DefaultValue = null;
-			EndRow = EndRow_DefaultValue = null;
-			FirstRowAsNames = FirstRowAsNames_DefaultValue = true;
-			GoogleAPIKey = GoogleAPIKey_DefaultValue = "";
-			GoogleSpreadsheetKey = GoogleSpreadsheetKey_DefaultValue = "";
-			GoogleSpreadsheetRange = GoogleSpreadsheetRange_DefaultValue = "";
-			GoogleSpreadsheetWorksheet = GoogleSpreadsheetWorksheet_DefaultValue = "";
-			ItemDelimiter = ItemDelimiter_DefaultValue = "";
-			LineDelimiter = LineDelimiter_DefaultValue = " n";
-			Parsed = Parsed_DefaultValue = "";
-			ParseDate = ParseDate_DefaultValue = "";
-			Rows = Rows_DefaultValue = new List<List<string>>();
-			RowsURL = RowsURL_DefaultValue = "";
-			SeriesMapping = SeriesMapping_DefaultValue = new List<List<double?>>();
-			StartColumn = StartColumn_DefaultValue = 0;
-			StartRow = StartRow_DefaultValue = 0;
-			SwitchRowsAndColumns = SwitchRowsAndColumns_DefaultValue = false;
-			Table = Table_DefaultValue = "";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -260,35 +231,35 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (BeforeParse != BeforeParse_DefaultValue) { h.Add("beforeParse",BeforeParse); highcharts.AddFunction("beforeParse", BeforeParse); }  
-			if (Columns != Columns_DefaultValue) h.Add("columns",Columns);
-			if (ColumnsURL != ColumnsURL_DefaultValue) h.Add("columnsURL",ColumnsURL);
-			if (ColumnTypes != ColumnTypes_DefaultValue) h.Add("columnTypes",ColumnTypes);
-			if (Complete != Complete_DefaultValue) { h.Add("complete",Complete); highcharts.AddFunction("complete", Complete); }  
-			if (Csv != Csv_DefaultValue) h.Add("csv",Csv);
-			if (CsvURL != CsvURL_DefaultValue) h.Add("csvURL",CsvURL);
-			if (DataRefreshRate != DataRefreshRate_DefaultValue) h.Add("dataRefreshRate",DataRefreshRate);
-			if (DateFormat != DateFormat_DefaultValue) h.Add("dateFormat",DateFormat);
-			if (DecimalPoint != DecimalPoint_DefaultValue) h.Add("decimalPoint",DecimalPoint);
-			if (EnablePolling != EnablePolling_DefaultValue) h.Add("enablePolling",EnablePolling);
-			if (EndColumn != EndColumn_DefaultValue) h.Add("endColumn",EndColumn);
-			if (EndRow != EndRow_DefaultValue) h.Add("endRow",EndRow);
-			if (FirstRowAsNames != FirstRowAsNames_DefaultValue) h.Add("firstRowAsNames",FirstRowAsNames);
-			if (GoogleAPIKey != GoogleAPIKey_DefaultValue) h.Add("googleAPIKey",GoogleAPIKey);
-			if (GoogleSpreadsheetKey != GoogleSpreadsheetKey_DefaultValue) h.Add("googleSpreadsheetKey",GoogleSpreadsheetKey);
-			if (GoogleSpreadsheetRange != GoogleSpreadsheetRange_DefaultValue) h.Add("googleSpreadsheetRange",GoogleSpreadsheetRange);
-			if (GoogleSpreadsheetWorksheet != GoogleSpreadsheetWorksheet_DefaultValue) h.Add("googleSpreadsheetWorksheet",GoogleSpreadsheetWorksheet);
-			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
-			if (LineDelimiter != LineDelimiter_DefaultValue) h.Add("lineDelimiter",LineDelimiter);
-			if (Parsed != Parsed_DefaultValue) { h.Add("parsed",Parsed); highcharts.AddFunction("parsed", Parsed); }  
-			if (ParseDate != ParseDate_DefaultValue) { h.Add("parseDate",ParseDate); highcharts.AddFunction("parseDate", ParseDate); }  
-			if (Rows != Rows_DefaultValue) h.Add("rows",Rows);
-			if (RowsURL != RowsURL_DefaultValue) h.Add("rowsURL",RowsURL);
-			if (SeriesMapping != SeriesMapping_DefaultValue) h.Add("seriesMapping",SeriesMapping);
-			if (StartColumn != StartColumn_DefaultValue) h.Add("startColumn",StartColumn);
-			if (StartRow != StartRow_DefaultValue) h.Add("startRow",StartRow);
-			if (SwitchRowsAndColumns != SwitchRowsAndColumns_DefaultValue) h.Add("switchRowsAndColumns",SwitchRowsAndColumns);
-			if (Table != Table_DefaultValue) h.Add("table",Table);
+			if (BeforeParse != null) { h.Add("beforeParse",BeforeParse); highcharts.AddFunction("beforeParse", BeforeParse); }  
+			if (Columns != null) h.Add("columns",Columns);
+			if (ColumnsURL != null) h.Add("columnsURL",ColumnsURL);
+			if (ColumnTypes != null) h.Add("columnTypes",ColumnTypes);
+			if (Complete != null) { h.Add("complete",Complete); highcharts.AddFunction("complete", Complete); }  
+			if (Csv != null) h.Add("csv",Csv);
+			if (CsvURL != null) h.Add("csvURL",CsvURL);
+			if (DataRefreshRate != null) h.Add("dataRefreshRate",DataRefreshRate);
+			if (DateFormat != null) h.Add("dateFormat",DateFormat);
+			if (DecimalPoint != null) h.Add("decimalPoint",DecimalPoint);
+			if (EnablePolling != null) h.Add("enablePolling",EnablePolling);
+			if (EndColumn != null) h.Add("endColumn",EndColumn);
+			if (EndRow != null) h.Add("endRow",EndRow);
+			if (FirstRowAsNames != null) h.Add("firstRowAsNames",FirstRowAsNames);
+			if (GoogleAPIKey != null) h.Add("googleAPIKey",GoogleAPIKey);
+			if (GoogleSpreadsheetKey != null) h.Add("googleSpreadsheetKey",GoogleSpreadsheetKey);
+			if (GoogleSpreadsheetRange != null) h.Add("googleSpreadsheetRange",GoogleSpreadsheetRange);
+			if (GoogleSpreadsheetWorksheet != null) h.Add("googleSpreadsheetWorksheet",GoogleSpreadsheetWorksheet);
+			if (ItemDelimiter != null) h.Add("itemDelimiter",ItemDelimiter);
+			if (LineDelimiter != null) h.Add("lineDelimiter",LineDelimiter);
+			if (Parsed != null) { h.Add("parsed",Parsed); highcharts.AddFunction("parsed", Parsed); }  
+			if (ParseDate != null) { h.Add("parseDate",ParseDate); highcharts.AddFunction("parseDate", ParseDate); }  
+			if (Rows != null) h.Add("rows",Rows);
+			if (RowsURL != null) h.Add("rowsURL",RowsURL);
+			if (SeriesMapping != null) h.Add("seriesMapping",SeriesMapping);
+			if (StartColumn != null) h.Add("startColumn",StartColumn);
+			if (StartRow != null) h.Add("startRow",StartRow);
+			if (SwitchRowsAndColumns != null) h.Add("switchRowsAndColumns",SwitchRowsAndColumns);
+			if (Table != null) h.Add("table",Table);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

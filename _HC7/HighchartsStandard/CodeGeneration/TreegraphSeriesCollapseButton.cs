@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TreegraphSeriesCollapseButton()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			Height = Height_DefaultValue = 18;
-			LineWidth = LineWidth_DefaultValue = 1;
-			OnlyOnHover = OnlyOnHover_DefaultValue = true;
-			Shape = Shape_DefaultValue = "circle";
-			Style = Style_DefaultValue = new Hashtable();
-			Width = Width_DefaultValue = 18;
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -100,15 +91,15 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (OnlyOnHover != OnlyOnHover_DefaultValue) h.Add("onlyOnHover",OnlyOnHover);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Height != null) h.Add("height",Height);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (OnlyOnHover != null) h.Add("onlyOnHover",OnlyOnHover);
+			if (Shape != null) h.Add("shape",Shape);
+			if (Style != null) h.Add("style",Style);
+			if (Width != null) h.Add("width",Width);
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

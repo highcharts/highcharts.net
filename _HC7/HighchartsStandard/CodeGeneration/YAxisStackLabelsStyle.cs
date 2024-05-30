@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public YAxisStackLabelsStyle()
 		{
-			Color = Color_DefaultValue = "#000000";
-			FontSize = FontSize_DefaultValue = "0.7em";
-			FontWeight = FontWeight_DefaultValue = "bold";
-			TextOutline = TextOutline_DefaultValue = "1px contrast";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (FontSize != FontSize_DefaultValue) h.Add("fontSize",FontSize);
-			if (FontWeight != FontWeight_DefaultValue) h.Add("fontWeight",FontWeight);
-			if (TextOutline != TextOutline_DefaultValue) h.Add("textOutline",TextOutline);
+			if (Color != null) h.Add("color",Color);
+			if (FontSize != null) h.Add("fontSize",FontSize);
+			if (FontWeight != null) h.Add("fontWeight",FontWeight);
+			if (TextOutline != null) h.Add("textOutline",TextOutline);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

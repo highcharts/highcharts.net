@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ColorAxisDataClasses()
 		{
-			Color = Color_DefaultValue = "";
-			From = From_DefaultValue = null;
-			Name = Name_DefaultValue = "";
-			To = To_DefaultValue = null;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -60,10 +56,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (From != From_DefaultValue) h.Add("from",From);
-			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (To != To_DefaultValue) h.Add("to",To);
+			if (Color != null) h.Add("color",Color);
+			if (From != null) h.Add("from",From);
+			if (Name != null) h.Add("name",Name);
+			if (To != null) h.Add("to",To);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

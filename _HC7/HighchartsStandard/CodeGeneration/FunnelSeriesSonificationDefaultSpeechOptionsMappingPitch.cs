@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public FunnelSeriesSonificationDefaultSpeechOptionsMappingPitch()
 		{
-			MapTo = MapTo_DefaultValue = "y";
-			Max = Max_DefaultValue = "c6";
-			Min = Min_DefaultValue = "c2";
-			Scale = Scale_DefaultValue = new List<double>();
-			Within = Within_DefaultValue = "yAxis";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -68,11 +63,11 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (MapTo != MapTo_DefaultValue) h.Add("mapTo",MapTo);
-			if (Max != Max_DefaultValue) h.Add("max",Max);
-			if (Min != Min_DefaultValue) h.Add("min",Min);
-			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
-			if (Within != Within_DefaultValue) h.Add("within",Within);
+			if (MapTo != null) h.Add("mapTo",MapTo);
+			if (Max != null) h.Add("max",Max);
+			if (Min != null) h.Add("min",Min);
+			if (Scale != null) h.Add("scale",Scale);
+			if (Within != null) h.Add("within",Within);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

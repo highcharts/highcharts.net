@@ -16,14 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Pane()
 		{
-			Background = Background_DefaultValue = new List<PaneBackground>();
-			Center = Center_DefaultValue = new string[] { "50%", "50%" };
-			EndAngle = EndAngle_DefaultValue = null;
-			InnerSize = InnerSize_DefaultValue = "0%";
-			InnerSizeNumber = InnerSizeNumber_DefaultValue = null;
-			Size = Size_DefaultValue = "85%";
-			SizeNumber = SizeNumber_DefaultValue = null;
-			StartAngle = StartAngle_DefaultValue = 0;
 			
 			CustomFields = new Hashtable();
 		}	
@@ -92,14 +84,14 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
-			if (Background != Background_DefaultValue) h.Add("background", HashifyList(highcharts,Background));
-			if (Center != Center_DefaultValue) h.Add("center",Center);
-			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
-			if (InnerSize != InnerSize_DefaultValue) h.Add("innerSize",InnerSize);
-			if (InnerSizeNumber != InnerSizeNumber_DefaultValue) h.Add("innerSize",InnerSizeNumber);
-			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (SizeNumber != SizeNumber_DefaultValue) h.Add("size",SizeNumber);
-			if (StartAngle != StartAngle_DefaultValue) h.Add("startAngle",StartAngle);
+			if (Background != null) h.Add("background", HashifyList(highcharts,Background));
+			if (Center != null) h.Add("center",Center);
+			if (EndAngle != null) h.Add("endAngle",EndAngle);
+			if (InnerSize != null) h.Add("innerSize",InnerSize);
+			if (InnerSizeNumber != null) h.Add("innerSize",InnerSizeNumber);
+			if (Size != null) h.Add("size",Size);
+			if (SizeNumber != null) h.Add("size",SizeNumber);
+			if (StartAngle != null) h.Add("startAngle",StartAngle);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
