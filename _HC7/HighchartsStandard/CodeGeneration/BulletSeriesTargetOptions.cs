@@ -25,58 +25,48 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The border color of the rectangle representing the target. Whennot set, the point's border color is used.In styled mode, use class `highcharts-bullet-target` instead.
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border radius of the rectangle representing the target.
 		/// </summary>
 		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border width of the rectangle representing the target.In styled mode, use class `highcharts-bullet-target` instead.
 		/// </summary>
 		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the rectangle representing the target. When not set,point's color (if set in point's options -[`color`](#series.bullet.data.color)) or zone of the target value(if [`zones`](#plotOptions.bullet.zones) or[`negativeColor`](#plotOptions.bullet.negativeColor) are set)or the same color as the point has is used.In styled mode, use class `highcharts-bullet-target` instead.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The height of the rectangle representing the target.
 		/// </summary>
 		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width of the rectangle representing the target. Could be setas a pixel value or as a percentage of a column width.
 		/// </summary>
 		public string Width { get; set; }
-		private string Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width of the rectangle representing the target. Could be setas a pixel value or as a percentage of a column width.
 		/// </summary>
 		public double? WidthNumber { get; set; }
-		private double? WidthNumber_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (BorderColor != null) h.Add("borderColor",BorderColor);
 			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
 			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
@@ -94,21 +84,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

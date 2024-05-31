@@ -43,10 +43,10 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
             Hashtable options = new Hashtable();
 
-            if (global != null && global.IsDirty(_chart))
+            if (global != null)
                 options.Add("global", global.ToHashtable(_chart));
 
-            if (lang != null && lang.IsDirty(_chart))
+            if (lang != null)
                 options.Add("lang", lang.ToHashtable(_chart));
 
             sb.Append(JsonConvert.SerializeObject(options));

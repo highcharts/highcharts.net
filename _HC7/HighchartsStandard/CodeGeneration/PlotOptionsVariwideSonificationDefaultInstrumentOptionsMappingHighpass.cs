@@ -25,23 +25,18 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Map to filter frequency in Hertz from 1 to 20,000Hz.
 		/// </summary>
 		public PlotOptionsVariwideSonificationDefaultInstrumentOptionsMappingHighpassFrequency Frequency { get; set; }
-		private PlotOptionsVariwideSonificationDefaultInstrumentOptionsMappingHighpassFrequency Frequency_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Map to filter resonance in dB. Can be negative to cause adip, or positive to cause a bump.
 		/// </summary>
 		public PlotOptionsVariwideSonificationDefaultInstrumentOptionsMappingHighpassResonance Resonance { get; set; }
-		private PlotOptionsVariwideSonificationDefaultInstrumentOptionsMappingHighpassResonance Resonance_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Frequency != null) h.Add("frequency",Frequency.ToHashtable(highcharts));
 			if (Resonance != null) h.Add("resonance",Resonance.ToHashtable(highcharts));
 			if (CustomFields.Count > 0)
@@ -54,21 +49,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

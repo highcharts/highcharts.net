@@ -25,30 +25,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The hover state for a single point marker.
 		/// </summary>
 		public PlotOptionsAreaMarkerStatesHover Hover { get; set; }
-		private PlotOptionsAreaMarkerStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
 		public PlotOptionsAreaMarkerStatesNormal Normal { get; set; }
-		private PlotOptionsAreaMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
 		public PlotOptionsAreaMarkerStatesSelect Select { get; set; }
-		private PlotOptionsAreaMarkerStatesSelect Select_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Hover != null) h.Add("hover",Hover.ToHashtable(highcharts));
 			if (Normal != null) h.Add("normal",Normal.ToHashtable(highcharts));
 			if (Select != null) h.Add("select",Select.ToHashtable(highcharts));
@@ -62,21 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

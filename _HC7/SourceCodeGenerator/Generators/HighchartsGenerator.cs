@@ -345,6 +345,7 @@ namespace SourceCodeGenerator.Generators
 
             if ((apiItem.FullName.Contains("series") && apiItem.FullName.Contains("type")) || apiItem.FullName == "chart.type" || (apiItem.FullName.StartsWith("series<") && apiItem.FullName.EndsWith(">.type")))
             {
+                apiItem.Values.Add("null");
                 apiItem.Values.Add("abands");
                 apiItem.Values.Add("ad");
                 apiItem.Values.Add("ao");
@@ -549,6 +550,8 @@ namespace SourceCodeGenerator.Generators
             }
 
             result = result.Replace('-', '_');
+            result = result.Replace("DataDataLabels", "DataLabels");
+            result = result.Replace("LevelsDataLabels", "DataLabels");
 
             return result.ToString();
         }

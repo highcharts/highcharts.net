@@ -25,44 +25,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? MarkerHeight { get; set; }
-		private double? MarkerHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? MarkerWidth { get; set; }
-		private double? MarkerWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? RefX { get; set; }
-		private double? RefX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? RefY { get; set; }
-		private double? RefY_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Id != null) h.Add("id",Id);
 			if (MarkerHeight != null) h.Add("markerHeight",MarkerHeight);
 			if (MarkerWidth != null) h.Add("markerWidth",MarkerWidth);
@@ -78,21 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

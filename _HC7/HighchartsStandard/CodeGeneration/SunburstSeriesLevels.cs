@@ -25,72 +25,60 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Can set a `borderColor` on all points which lies on the same level.
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set a `borderDashStyle` on all points which lies on the samelevel.
 		/// </summary>
 		public Hashtable BorderDashStyle { get; set; }
-		private Hashtable BorderDashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set a `borderWidth` on all points which lies on the same level.
 		/// </summary>
 		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set a `color` on all points which lies on the same level.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Determines whether the chart should receive one color per point basedon this level.
 		/// </summary>
 		public bool? ColorByPoint { get; set; }
-		private bool? ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set a `colorVariation` on all points which lies on the samelevel.
 		/// </summary>
 		public SunburstSeriesLevelsColorVariation ColorVariation { get; set; }
-		private SunburstSeriesLevelsColorVariation ColorVariation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set `dataLabels` on all points which lies on the same level.
 		/// </summary>
 		public SunburstSeriesDataLabels DataLabels { get; set; }
-		private SunburstSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Decides which level takes effect from the options set in the levelsobject.
 		/// </summary>
 		public double? Level { get; set; }
-		private double? Level_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set a `levelSize` on all points which lies on the same level.
 		/// </summary>
 		public SunburstSeriesLevelsLevelSize LevelSize { get; set; }
-		private SunburstSeriesLevelsLevelSize LevelSize_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (BorderColor != null) h.Add("borderColor",BorderColor);
 			if (BorderDashStyle != null) h.Add("borderDashStyle",BorderDashStyle);
 			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
@@ -110,21 +98,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

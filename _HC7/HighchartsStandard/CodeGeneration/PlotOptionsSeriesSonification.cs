@@ -25,51 +25,42 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Context tracks for this series. Context tracks are tracks that are nottied to data points.Given as an array of instrument tracks, speech tracks, or a mix of both.
 		/// </summary>
 		public PlotOptionsSeriesSonificationContextTracks ContextTracks { get; set; }
-		private PlotOptionsSeriesSonificationContextTracks ContextTracks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Default options for all this series' instrument tracks.
 		/// </summary>
 		public PlotOptionsSeriesSonificationDefaultInstrumentOptions DefaultInstrumentOptions { get; set; }
-		private PlotOptionsSeriesSonificationDefaultInstrumentOptions DefaultInstrumentOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Default options for all this series' speech tracks.
 		/// </summary>
 		public PlotOptionsSeriesSonificationDefaultSpeechOptions DefaultSpeechOptions { get; set; }
-		private PlotOptionsSeriesSonificationDefaultSpeechOptions DefaultSpeechOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether or not sonification is enabled for this series.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Sonification point grouping options for this series.
 		/// </summary>
 		public PlotOptionsSeriesSonificationPointGrouping PointGrouping { get; set; }
-		private PlotOptionsSeriesSonificationPointGrouping PointGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Tracks for this series.Given as an array of instrument tracks, speech tracks, or a mix of both.
 		/// </summary>
 		public PlotOptionsSeriesSonificationTracks Tracks { get; set; }
-		private PlotOptionsSeriesSonificationTracks Tracks_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (ContextTracks != null) h.Add("contextTracks",ContextTracks.ToHashtable(highcharts));
 			if (DefaultInstrumentOptions != null) h.Add("defaultInstrumentOptions",DefaultInstrumentOptions.ToHashtable(highcharts));
 			if (DefaultSpeechOptions != null) h.Add("defaultSpeechOptions",DefaultSpeechOptions.ToHashtable(highcharts));
@@ -86,21 +77,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

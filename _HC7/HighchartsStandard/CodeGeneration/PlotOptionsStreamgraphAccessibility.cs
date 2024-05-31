@@ -25,51 +25,42 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Provide a description of the series, announced to screen readers.
 		/// </summary>
 		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Format to use for describing the data series group to assistivetechnology - including screen readers.
 		/// </summary>
 		public string DescriptionFormat { get; set; }
-		private string DescriptionFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable/disable accessibility functionality for a specific series.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Expose only the series element to screen readers, not its points.
 		/// </summary>
 		public bool? ExposeAsGroupOnly { get; set; }
-		private bool? ExposeAsGroupOnly_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Keyboard navigation for a series
 		/// </summary>
 		public PlotOptionsStreamgraphAccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
-		private PlotOptionsStreamgraphAccessibilityKeyboardNavigation KeyboardNavigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Point accessibility options for a series.
 		/// </summary>
 		public PlotOptionsStreamgraphAccessibilityPoint Point { get; set; }
-		private PlotOptionsStreamgraphAccessibilityPoint Point_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Description != null) h.Add("description",Description);
 			if (DescriptionFormat != null) h.Add("descriptionFormat",DescriptionFormat);
 			if (Enabled != null) h.Add("enabled",Enabled);
@@ -86,21 +77,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

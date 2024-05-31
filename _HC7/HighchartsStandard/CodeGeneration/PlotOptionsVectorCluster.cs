@@ -25,93 +25,78 @@ namespace Highsoft.Web.Mvc.Charts
 		/// When set to `false` prevent cluster overlapping - this optionworks only when `layoutAlgorithm.type = "grid"`.
 		/// </summary>
 		public bool? AllowOverlap { get; set; }
-		private bool? AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the cluster marker animation.
 		/// </summary>
 		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the cluster marker animation.
 		/// </summary>
 		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the cluster data labels.
 		/// </summary>
 		public PlotOptionsVectorClusterDataLabels DataLabels { get; set; }
-		private PlotOptionsVectorClusterDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Zoom the plot area to the cluster points range when a cluster is clicked.
 		/// </summary>
 		public bool? DrillToCluster { get; set; }
-		private bool? DrillToCluster_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to enable the marker-clusters module.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsVectorClusterEvents Events { get; set; }
-		private PlotOptionsVectorClusterEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for layout algorithm. Inside thereare options to change the type of the algorithm, gridSize,distance or iterations.
 		/// </summary>
 		public PlotOptionsVectorClusterLayoutAlgorithm LayoutAlgorithm { get; set; }
-		private PlotOptionsVectorClusterLayoutAlgorithm LayoutAlgorithm_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the cluster marker.
 		/// </summary>
 		public PlotOptionsVectorClusterMarker Marker { get; set; }
-		private PlotOptionsVectorClusterMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The minimum amount of points to be combined into a cluster.This value has to be greater or equal to 2.
 		/// </summary>
 		public double? MinimumClusterSize { get; set; }
-		private double? MinimumClusterSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsVectorClusterStates States { get; set; }
-		private PlotOptionsVectorClusterStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within marker clusters.In styled mode, the color zones are styled with the`.highcharts-cluster-zone-{n}` class, or customclassed from the `className`option.
 		/// </summary>
 		public List<PlotOptionsVectorClusterZone> Zones { get; set; }
-		private List<PlotOptionsVectorClusterZone> Zones_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (AllowOverlap != null) h.Add("allowOverlap",AllowOverlap);
 			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != null) h.Add("animation",AnimationBool);
@@ -134,21 +119,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

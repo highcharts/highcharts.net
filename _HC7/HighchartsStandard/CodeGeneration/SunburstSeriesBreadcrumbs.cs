@@ -25,107 +25,90 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The default padding for each button and separator in each direction.
 		/// </summary>
 		public double? ButtonSpacing { get; set; }
-		private double? ButtonSpacing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A collection of attributes for the buttons. The object takes SVGattributes like `fill`, `stroke`, `stroke-width`, as well as `style`,a collection of CSS properties for the text.The object can also be extended with states, so you can setpresentational options for `hover`, `select` or `disabled` buttonstates.
 		/// </summary>
 		public SunburstSeriesBreadcrumbsButtonTheme ButtonTheme { get; set; }
-		private SunburstSeriesBreadcrumbsButtonTheme ButtonTheme_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public SunburstSeriesBreadcrumbsEvents Events { get; set; }
-		private SunburstSeriesBreadcrumbsEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When the breadcrumbs are floating, the plot area will not move tomake space for it. By default, the chart will not make space for thebuttons. This property won't work when positioned in the middle.
 		/// </summary>
 		public bool? Floating { get; set; }
-		private bool? Floating_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A format string for the breadcrumbs button. Variables are enclosed bycurly brackets. Available values are passed in the declared pointoptions.
 		/// </summary>
 		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Callback function to format the breadcrumb text from scratch.
 		/// </summary>
 		public string Formatter { get; set; }
-		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Positioning for the button row. The breadcrumbs buttons will bealigned properly for the default chart layout (title,  subtitle,legend, range selector) for the custom chart layout set the positionproperties.
 		/// </summary>
 		public SunburstSeriesBreadcrumbsPosition Position { get; set; }
-		private SunburstSeriesBreadcrumbsPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// What box to align the button to. Can be either `plotBox` or`spacingBox`.
 		/// </summary>
 		public string RelativeTo { get; set; }
-		private string RelativeTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to reverse the order of buttons. This is common in Arabicand Hebrew.
 		/// </summary>
 		public bool? Rtl { get; set; }
-		private bool? Rtl_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options object for Breadcrumbs separator.
 		/// </summary>
 		public SunburstSeriesBreadcrumbsSeparator Separator { get; set; }
-		private SunburstSeriesBreadcrumbsSeparator Separator_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Show full path or only a single button.
 		/// </summary>
 		public bool? ShowFullPath { get; set; }
-		private bool? ShowFullPath_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for all breadcrumbs.In styled mode, the breadcrumbs buttons are styled by the`.highcharts-breadcrumbs-buttons .highcharts-button` rule with itsdifferent states.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to use HTML to render the breadcrumbs items texts.
 		/// </summary>
 		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The z index of the breadcrumbs group.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (ButtonSpacing != null) h.Add("buttonSpacing",ButtonSpacing);
 			if (ButtonTheme != null) h.Add("buttonTheme",ButtonTheme.ToHashtable(highcharts));
 			if (Events != null) h.Add("events",Events.ToHashtable(highcharts));
@@ -150,21 +133,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

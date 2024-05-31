@@ -25,16 +25,12 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Fires when the cluster point is clicked and `drillToCluster` is enabled.One parameter, `event`, is passed to the function. The default actionis to zoom to the cluster points range. This can be preventedby calling `event.preventDefault()`.
 		/// </summary>
 		public string DrillToCluster { get; set; }
-		private string DrillToCluster_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (DrillToCluster != null) { h.Add("drillToCluster",DrillToCluster); highcharts.AddFunction("drillToCluster", DrillToCluster); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
@@ -46,21 +42,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

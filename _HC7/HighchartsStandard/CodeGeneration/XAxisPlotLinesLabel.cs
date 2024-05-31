@@ -25,79 +25,66 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Horizontal alignment of the label. Can be one of "left", "center" or"right".
 		/// </summary>
 		public XAxisPlotLinesLabelAlign Align { get; set; }
-		private XAxisPlotLinesLabelAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Callback JavaScript function to format the label. Useful properties likethe value of plot line or the range of plot band (`from` & `to`properties) can be found in `this.options` object.
 		/// </summary>
 		public string Formatter { get; set; }
-		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Rotation of the text label in degrees. Defaults to 0 for horizontal plotlines and 90 for vertical lines.
 		/// </summary>
 		public double? Rotation { get; set; }
-		private double? Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the text label.In styled mode, the labels are styled by the`.highcharts-plot-line-label` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The text itself. A subset of HTML is supported.
 		/// </summary>
 		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The text alignment for the label. While `align` determines where thetexts anchor point is placed within the plot band, `textAlign` determineshow the text is aligned against its anchor point. Possible values are"left", "center" and "right". Defaults to the same as the `align` option.
 		/// </summary>
 		public XAxisPlotLinesLabelTextAlign TextAlign { get; set; }
-		private XAxisPlotLinesLabelTextAlign TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Vertical alignment of the label relative to the plot line. Can beone of "top", "middle" or "bottom".
 		/// </summary>
 		public XAxisPlotLinesLabelVerticalAlign VerticalAlign { get; set; }
-		private XAxisPlotLinesLabelVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Horizontal position relative the alignment. Default varies byorientation.
 		/// </summary>
 		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Vertical position of the text baseline relative to the alignment. Defaultvaries by orientation.
 		/// </summary>
 		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Align != XAxisPlotLinesLabelAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
 			if (Formatter != null) { h.Add("formatter",Formatter); highcharts.AddFunction("formatter", Formatter); }  
 			if (Rotation != null) h.Add("rotation",Rotation);
@@ -118,21 +105,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

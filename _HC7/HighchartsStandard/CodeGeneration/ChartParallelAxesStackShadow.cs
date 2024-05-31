@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The color of the `stackShadow` border.
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width of the `stackShadow` border.
 		/// </summary>
 		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the `stackShadow`.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable `stackShadow`.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (BorderColor != null) h.Add("borderColor",BorderColor);
 			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
 			if (Color != null) h.Add("color",Color);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

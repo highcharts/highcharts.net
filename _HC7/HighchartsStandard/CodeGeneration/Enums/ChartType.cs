@@ -7,8 +7,8 @@ namespace Highsoft.Web.Mvc.Charts
 {
     public enum ChartType
     {
-		Null,
-        Abands, 
+        Null, 
+		Abands, 
 		Ad, 
 		Ao, 
 		Apo, 

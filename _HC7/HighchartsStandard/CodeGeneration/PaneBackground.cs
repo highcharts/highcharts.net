@@ -25,72 +25,60 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The background color or gradient for the pane.
 		/// </summary>
 		public Object BackgroundColor { get; set; }
-		private Object BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pane background border color.
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel border width of the pane background.
 		/// </summary>
 		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The class name for this background.
 		/// </summary>
 		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The inner radius of the pane background. Can be either numeric(pixels) or a percentage string.
 		/// </summary>
 		public string InnerRadius { get; set; }
-		private string InnerRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The inner radius of the pane background. Can be either numeric(pixels) or a percentage string.
 		/// </summary>
 		public double? InnerRadiusNumber { get; set; }
-		private double? InnerRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The outer radius of the circular pane background. Can be eithernumeric (pixels) or a percentage string.
 		/// </summary>
 		public string OuterRadius { get; set; }
-		private string OuterRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The outer radius of the circular pane background. Can be eithernumeric (pixels) or a percentage string.
 		/// </summary>
 		public double? OuterRadiusNumber { get; set; }
-		private double? OuterRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The shape of the pane background. When `solid`, the backgroundis circular. When `arc`, the background extends only from the minto the max of the value axis.
 		/// </summary>
 		public string Shape { get; set; }
-		private string Shape_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != null) h.Add("borderColor",BorderColor);
 			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
@@ -110,21 +98,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

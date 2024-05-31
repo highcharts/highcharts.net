@@ -25,23 +25,18 @@ namespace Highsoft.Web.Mvc.Charts
 		/// CSS styles for the breadcrumbs separator.In styled mode, the breadcrumbs separators are styled by the`.highcharts-separator` rule with its different states.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Style != null) h.Add("style",Style);
 			if (Text != null) h.Add("text",Text);
 			if (CustomFields.Count > 0)
@@ -54,21 +49,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

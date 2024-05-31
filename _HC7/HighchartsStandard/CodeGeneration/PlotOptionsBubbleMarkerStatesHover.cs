@@ -25,16 +25,12 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public double? RadiusPlus { get; set; }
-		private double? RadiusPlus_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (RadiusPlus != null) h.Add("radiusPlus",RadiusPlus);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
@@ -46,21 +42,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

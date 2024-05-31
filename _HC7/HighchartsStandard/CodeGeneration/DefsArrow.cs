@@ -25,30 +25,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public Object Attributes { get; set; }
-		private Object Attributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public List<object> Children { get; set; }
-		private List<object> Children_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string TagName { get; set; }
-		private string TagName_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Attributes != null) h.Add("attributes",Attributes);
 			if (Children != null) h.Add("children",Children);
 			if (TagName != null) h.Add("tagName",TagName);
@@ -62,21 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

@@ -25,695 +25,594 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public string AddButton { get; set; }
-		private string AddButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Algorithm { get; set; }
-		private string Algorithm_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ArrowInfinityLine { get; set; }
-		private string ArrowInfinityLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ArrowRay { get; set; }
-		private string ArrowRay_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ArrowSegment { get; set; }
-		private string ArrowSegment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Average { get; set; }
-		private string Average_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Background { get; set; }
-		private string Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BackgroundColors { get; set; }
-		private string BackgroundColors_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BorderWidth { get; set; }
-		private string BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BottomBand { get; set; }
-		private string BottomBand_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Circle { get; set; }
-		private string Circle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ClearFilter { get; set; }
-		private string ClearFilter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Connector { get; set; }
-		private string Connector_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Crooked3 { get; set; }
-		private string Crooked3_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Crooked5 { get; set; }
-		private string Crooked5_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string CrosshairX { get; set; }
-		private string CrosshairX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string CrosshairY { get; set; }
-		private string CrosshairY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Decimals { get; set; }
-		private string Decimals_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Deviation { get; set; }
-		private string Deviation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string EditButton { get; set; }
-		private string EditButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Elliott3 { get; set; }
-		private string Elliott3_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Elliott5 { get; set; }
-		private string Elliott5_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Ellipse { get; set; }
-		private string Ellipse_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Factor { get; set; }
-		private string Factor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string FastAvgPeriod { get; set; }
-		private string FastAvgPeriod_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Fibonacci { get; set; }
-		private string Fibonacci_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string FibonacciTimeZones { get; set; }
-		private string FibonacciTimeZones_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Fill { get; set; }
-		private string Fill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Flags { get; set; }
-		private string Flags_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string FontSize { get; set; }
-		private string FontSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Height { get; set; }
-		private string Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string HighIndex { get; set; }
-		private string HighIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string HorizontalLine { get; set; }
-		private string HorizontalLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Increment { get; set; }
-		private string Increment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Index { get; set; }
-		private string Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Configure the aliases for indicator names.
 		/// </summary>
 		public LangNavigationPopupIndicatorAliases IndicatorAliases { get; set; }
-		private LangNavigationPopupIndicatorAliases IndicatorAliases_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string InfinityLine { get; set; }
-		private string InfinityLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string InitialAccelerationFactor { get; set; }
-		private string InitialAccelerationFactor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string InnerBackground { get; set; }
-		private string InnerBackground_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Label { get; set; }
-		private string Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string LabelOptions { get; set; }
-		private string LabelOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Labels { get; set; }
-		private string Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Line { get; set; }
-		private string Line_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Lines { get; set; }
-		private string Lines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string LongPeriod { get; set; }
-		private string LongPeriod_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string LowIndex { get; set; }
-		private string LowIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MaxAccelerationFactor { get; set; }
-		private string MaxAccelerationFactor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Measure { get; set; }
-		private string Measure_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MeasureX { get; set; }
-		private string MeasureX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MeasureXY { get; set; }
-		private string MeasureXY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MeasureY { get; set; }
-		private string MeasureY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Multiplier { get; set; }
-		private string Multiplier_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MultiplierATR { get; set; }
-		private string MultiplierATR_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string NoFilterMatch { get; set; }
-		private string NoFilterMatch_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string OuterBackground { get; set; }
-		private string OuterBackground_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Padding { get; set; }
-		private string Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ParallelChannel { get; set; }
-		private string ParallelChannel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Period { get; set; }
-		private string Period_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string PeriodATR { get; set; }
-		private string PeriodATR_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Periods { get; set; }
-		private string Periods_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string PeriodSenkouSpanB { get; set; }
-		private string PeriodSenkouSpanB_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string PeriodTenkan { get; set; }
-		private string PeriodTenkan_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Pitchfork { get; set; }
-		private string Pitchfork_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Ranges { get; set; }
-		private string Ranges_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Ray { get; set; }
-		private string Ray_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Rectangle { get; set; }
-		private string Rectangle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string RemoveButton { get; set; }
-		private string RemoveButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string SaveButton { get; set; }
-		private string SaveButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string SearchIndicators { get; set; }
-		private string SearchIndicators_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Segment { get; set; }
-		private string Segment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public List<Series> Series { get; set; }
-		private List<Series> Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ShapeOptions { get; set; }
-		private string ShapeOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Shapes { get; set; }
-		private string Shapes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ShortPeriod { get; set; }
-		private string ShortPeriod_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string SignalPeriod { get; set; }
-		private string SignalPeriod_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string SimpleShapes { get; set; }
-		private string SimpleShapes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string SlowAvgPeriod { get; set; }
-		private string SlowAvgPeriod_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string StandardDeviation { get; set; }
-		private string StandardDeviation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Stroke { get; set; }
-		private string Stroke_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string StrokeWidth { get; set; }
-		private string StrokeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string TimeCycles { get; set; }
-		private string TimeCycles_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Title { get; set; }
-		private string Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string TopBand { get; set; }
-		private string TopBand_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Tunnel { get; set; }
-		private string Tunnel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string TypeOptions { get; set; }
-		private string TypeOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string VerticalArrow { get; set; }
-		private string VerticalArrow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string VerticalCounter { get; set; }
-		private string VerticalCounter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string VerticalLabel { get; set; }
-		private string VerticalLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string VerticalLine { get; set; }
-		private string VerticalLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Volume { get; set; }
-		private string Volume_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? XAxisUnit { get; set; }
-		private double? XAxisUnit_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (AddButton != null) h.Add("addButton",AddButton);
 			if (Algorithm != null) h.Add("algorithm",Algorithm);
 			if (ArrowInfinityLine != null) h.Add("arrowInfinityLine",ArrowInfinityLine);
@@ -822,21 +721,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

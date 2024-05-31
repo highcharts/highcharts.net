@@ -25,30 +25,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The format string specifying what to show for *links* in theorganization chart.Best to use with [`linkTextPath`](#series.organization.dataLabels.linkTextPath) enabled.
 		/// </summary>
 		public string LinkFormat { get; set; }
-		private string LinkFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Callback to format data labels for _links_ in theorganization chart. The `linkFormat` option takesprecedence over the `linkFormatter`.
 		/// </summary>
 		public string LinkFormatter { get; set; }
-		private string LinkFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for a _link_ label text which should follow linkconnection.
 		/// </summary>
 		public OrganizationSeriesNodesDataLabelsLinkTextPath LinkTextPath { get; set; }
-		private OrganizationSeriesNodesDataLabelsLinkTextPath LinkTextPath_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (LinkFormat != null) h.Add("linkFormat",LinkFormat);
 			if (LinkFormatter != null) { h.Add("linkFormatter",LinkFormatter); highcharts.AddFunction("linkFormatter", LinkFormatter); }  
 			if (LinkTextPath != null) h.Add("linkTextPath",LinkTextPath.ToHashtable(highcharts));
@@ -62,21 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

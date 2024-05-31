@@ -25,16 +25,12 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Fires when the legend item belonging to the pie point (slice) isclicked. The `this` keyword refers to the point itself. Oneparameter, `event`, is passed to the function, containing commonevent information. The default action is to toggle the visibility ofthe point. This can be prevented by calling `event.preventDefault()`.
 		/// </summary>
 		public string LegendItemClick { get; set; }
-		private string LegendItemClick_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (LegendItemClick != null) { h.Add("legendItemClick",LegendItemClick); highcharts.AddFunction("legendItemClick", LegendItemClick); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
@@ -46,21 +42,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

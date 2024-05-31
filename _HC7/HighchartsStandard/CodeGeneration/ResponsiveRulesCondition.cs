@@ -25,44 +25,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// A callback function to gain complete control on when the responsiverule applies. Return `true` if it applies. This opens for checkingagainst other metrics than the chart size, for example the documentsize or other elements.
 		/// </summary>
 		public string Callback { get; set; }
-		private string Callback_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The responsive rule applies if the chart height is less than this.
 		/// </summary>
 		public double? MaxHeight { get; set; }
-		private double? MaxHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The responsive rule applies if the chart width is less than this.
 		/// </summary>
 		public double? MaxWidth { get; set; }
-		private double? MaxWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The responsive rule applies if the chart height is greater than this.
 		/// </summary>
 		public double? MinHeight { get; set; }
-		private double? MinHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The responsive rule applies if the chart width is greater than this.
 		/// </summary>
 		public double? MinWidth { get; set; }
-		private double? MinWidth_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Callback != null) { h.Add("callback",Callback); highcharts.AddFunction("callback", Callback); }  
 			if (MaxHeight != null) h.Add("maxHeight",MaxHeight);
 			if (MaxWidth != null) h.Add("maxWidth",MaxWidth);
@@ -78,21 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

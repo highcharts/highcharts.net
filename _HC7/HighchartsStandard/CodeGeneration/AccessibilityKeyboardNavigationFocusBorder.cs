@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Enable/disable focus border for chart.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Hide the browser's default focus indicator.
 		/// </summary>
 		public bool? HideBrowserFocusOutline { get; set; }
-		private bool? HideBrowserFocusOutline_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Focus border margin around the elements.
 		/// </summary>
 		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Style options for the focus border drawn around elementswhile navigating through them. Note that some browsers inaddition draw their own borders for focused elements. Theseautomatic borders cannot be styled by Highcharts.In styled mode, the border is given the`.highcharts-focus-border` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Enabled != null) h.Add("enabled",Enabled);
 			if (HideBrowserFocusOutline != null) h.Add("hideBrowserFocusOutline",HideBrowserFocusOutline);
 			if (Margin != null) h.Add("margin",Margin);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

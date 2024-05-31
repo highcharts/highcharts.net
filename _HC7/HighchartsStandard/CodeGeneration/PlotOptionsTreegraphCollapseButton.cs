@@ -25,72 +25,60 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Whether the button should be visible.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Height of the button.
 		/// </summary>
 		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The line width of the button in pixels
 		/// </summary>
 		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether the button should be visible only when the node ishovered. When set to true, the button is hidden for nodes,which are not collapsed, and shown for the collapsed ones.
 		/// </summary>
 		public bool? OnlyOnHover { get; set; }
-		private bool? OnlyOnHover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The symbol of the collapse button.
 		/// </summary>
 		public string Shape { get; set; }
-		private string Shape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the collapse button.In styled mode, the collapse button style is given in the`.highcharts-collapse-button` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Width of the button.
 		/// </summary>
 		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Offset of the button in the x direction.
 		/// </summary>
 		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Offset of the button in the y direction.
 		/// </summary>
 		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Enabled != null) h.Add("enabled",Enabled);
 			if (Height != null) h.Add("height",Height);
 			if (LineWidth != null) h.Add("lineWidth",LineWidth);
@@ -110,21 +98,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

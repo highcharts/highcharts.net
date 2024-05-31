@@ -25,23 +25,18 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The way to mark the separator for annotationscombined in one export-data table cell.
 		/// </summary>
 		public string ItemDelimiter { get; set; }
-		private string ItemDelimiter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When several labels are assigned to a specific point,they will be displayed in one field in the table.
 		/// </summary>
 		public bool? Join { get; set; }
-		private bool? Join_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (ItemDelimiter != null) h.Add("itemDelimiter",ItemDelimiter);
 			if (Join != null) h.Add("join",Join);
 			if (CustomFields.Count > 0)
@@ -54,21 +49,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

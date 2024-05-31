@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public string ClickButtonAnnouncement { get; set; }
-		private string ClickButtonAnnouncement_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string DropdownLabel { get; set; }
-		private string DropdownLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MaxInputLabel { get; set; }
-		private string MaxInputLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MinInputLabel { get; set; }
-		private string MinInputLabel_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (ClickButtonAnnouncement != null) h.Add("clickButtonAnnouncement",ClickButtonAnnouncement);
 			if (DropdownLabel != null) h.Add("dropdownLabel",DropdownLabel);
 			if (MaxInputLabel != null) h.Add("maxInputLabel",MaxInputLabel);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

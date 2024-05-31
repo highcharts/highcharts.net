@@ -25,16 +25,12 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Fires when clicking on the breadcrumbs button. Two arguments arepassed to the function. First breadcrumb button as an SVG element.Second is the breadcrumbs class, containing reference to the chart,series etc.```jsclick: function(button, breadcrumbs) {  console.log(button);}```Return false to stop default buttons click action.
 		/// </summary>
 		public string Click { get; set; }
-		private string Click_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Click != null) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
@@ -46,21 +42,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

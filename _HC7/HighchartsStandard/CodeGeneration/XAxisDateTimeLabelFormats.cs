@@ -25,121 +25,102 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public XAxisDateTimeLabelFormatsDay Day { get; set; }
-		private XAxisDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string DayString { get; set; }
-		private string DayString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public XAxisDateTimeLabelFormatsHour Hour { get; set; }
-		private XAxisDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string HourString { get; set; }
-		private string HourString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public XAxisDateTimeLabelFormatsMillisecond Millisecond { get; set; }
-		private XAxisDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MillisecondString { get; set; }
-		private string MillisecondString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public XAxisDateTimeLabelFormatsMinute Minute { get; set; }
-		private XAxisDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MinuteString { get; set; }
-		private string MinuteString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public XAxisDateTimeLabelFormatsMonth Month { get; set; }
-		private XAxisDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MonthString { get; set; }
-		private string MonthString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public XAxisDateTimeLabelFormatsSecond Second { get; set; }
-		private XAxisDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string SecondString { get; set; }
-		private string SecondString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public XAxisDateTimeLabelFormatsWeek Week { get; set; }
-		private XAxisDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string WeekString { get; set; }
-		private string WeekString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public XAxisDateTimeLabelFormatsYear Year { get; set; }
-		private XAxisDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string YearString { get; set; }
-		private string YearString_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Day != null) h.Add("day",Day.ToHashtable(highcharts));
 			if (DayString != null) h.Add("day",DayString);
 			if (Hour != null) h.Add("hour",Hour.ToHashtable(highcharts));
@@ -166,21 +147,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

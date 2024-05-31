@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// A `closePopup` event. Fired when Popup should be hidden, for examplewhen clicking on an annotation again.
 		/// </summary>
 		public string ClosePopup { get; set; }
-		private string ClosePopup_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Event fired when button state should change, for example afteradding an annotation.
 		/// </summary>
 		public string DeselectButton { get; set; }
-		private string DeselectButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Event fired on a button click.
 		/// </summary>
 		public string SelectButton { get; set; }
-		private string SelectButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A `showPopup` event. Fired when selecting for example an annotation.
 		/// </summary>
 		public string ShowPopup { get; set; }
-		private string ShowPopup_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (ClosePopup != null) { h.Add("closePopup",ClosePopup); highcharts.AddFunction("closePopup", ClosePopup); }  
 			if (DeselectButton != null) { h.Add("deselectButton",DeselectButton); highcharts.AddFunction("deselectButton", DeselectButton); }  
 			if (SelectButton != null) { h.Add("selectButton",SelectButton); highcharts.AddFunction("selectButton", SelectButton); }  
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

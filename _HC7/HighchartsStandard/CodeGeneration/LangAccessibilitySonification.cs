@@ -25,23 +25,18 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public string PlayAsSoundButtonText { get; set; }
-		private string PlayAsSoundButtonText_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string PlayAsSoundClickAnnouncement { get; set; }
-		private string PlayAsSoundClickAnnouncement_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (PlayAsSoundButtonText != null) h.Add("playAsSoundButtonText",PlayAsSoundButtonText);
 			if (PlayAsSoundClickAnnouncement != null) h.Add("playAsSoundClickAnnouncement",PlayAsSoundClickAnnouncement);
 			if (CustomFields.Count > 0)
@@ -54,21 +49,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

@@ -25,30 +25,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Animation when not hovering over the node.
 		/// </summary>
 		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Animation when not hovering over the node.
 		/// </summary>
 		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Opacity of inactive markers.
 		/// </summary>
 		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != null) h.Add("animation",AnimationBool);
 			if (Opacity != null) h.Add("opacity",Opacity);
@@ -62,21 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

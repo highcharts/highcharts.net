@@ -25,30 +25,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public string MapZoomIn { get; set; }
-		private string MapZoomIn_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MapZoomOut { get; set; }
-		private string MapZoomOut_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ResetZoomButton { get; set; }
-		private string ResetZoomButton_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (MapZoomIn != null) h.Add("mapZoomIn",MapZoomIn);
 			if (MapZoomOut != null) h.Add("mapZoomOut",MapZoomOut);
 			if (ResetZoomButton != null) h.Add("resetZoomButton",ResetZoomButton);
@@ -62,21 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

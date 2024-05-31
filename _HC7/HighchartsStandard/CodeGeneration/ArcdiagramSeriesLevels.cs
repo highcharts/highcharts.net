@@ -25,65 +25,54 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Can set `borderColor` on all nodes which lay on the same level.
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set `borderWidth` on all nodes which lay on the same level.
 		/// </summary>
 		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set `color` on all nodes which lay on the same level.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set `colorByPoint` on all nodes which lay on the same level.
 		/// </summary>
 		public bool? ColorByPoint { get; set; }
-		private bool? ColorByPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set `dataLabels` on all points which lay on the same level.
 		/// </summary>
 		public ArcdiagramSeriesDataLabels DataLabels { get; set; }
-		private ArcdiagramSeriesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Decides which level takes effect from the options set in the levelsobject.
 		/// </summary>
 		public double? Level { get; set; }
-		private double? Level_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set `linkOpacity` on all points which lay on the same level.
 		/// </summary>
 		public double? LinkOpacity { get; set; }
-		private double? LinkOpacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Can set `states` on all nodes and points which lay on the same level.
 		/// </summary>
 		public ArcdiagramSeriesLevelsStates States { get; set; }
-		private ArcdiagramSeriesLevelsStates States_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (BorderColor != null) h.Add("borderColor",BorderColor);
 			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
 			if (Color != null) h.Add("color",Color);
@@ -102,21 +91,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

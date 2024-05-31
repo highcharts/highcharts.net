@@ -25,135 +25,114 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The color of the auto generated node.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color index of the auto generated node, especially for use in styledmode.
 		/// </summary>
 		public double? ColorIndex { get; set; }
-		private double? ColorIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An optional column index of where to place the node. The default behaviour isto place it next to the preceding node. Note that this option name iscounter intuitive in inverted charts, like for example an organization chartrendered top down. In this case the "columns" are horizontal.
 		/// </summary>
 		public double? Column { get; set; }
-		private double? Column_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Individual data label for each node. The options are the same asthe ones for [series.organization.dataLabels](#series.organization.dataLabels).
 		/// </summary>
 		public OrganizationSeriesNodesDataLabels DataLabels { get; set; }
-		private OrganizationSeriesNodesDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The job description for the node card, will be inserted by the default`dataLabel.nodeFormatter`.
 		/// </summary>
 		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The height of the node.
 		/// </summary>
 		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The id of the auto-generated node, referring to the `from` or `to` setting ofthe link.
 		/// </summary>
 		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An image for the node card, will be inserted by the default`dataLabel.nodeFormatter`.
 		/// </summary>
 		public string Image { get; set; }
-		private string Image_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Layout for the node's children. If `hanging`, this node's children will hangbelow their parent, allowing a tighter packing of nodes in the diagram.Note: Since @next version, the `hanging` layout is set by default forchildren of a parent using `hanging` layout.
 		/// </summary>
 		public string Layout { get; set; }
-		private string Layout_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An optional level index of where to place the node. The default behaviour isto place it next to the preceding node. Alias of `nodes.column`, but ininverted sankeys and org charts, the levels are laid out as rows.
 		/// </summary>
 		public double? Level { get; set; }
-		private double? Level_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The name to display for the node in data labels and tooltips. Use this whenthe name is different from the `id`. Where the id must be unique for eachnode, this is not necessary for the name.
 		/// </summary>
 		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// This option is deprecated, use[offsetHorizontal](#series.sankey.nodes.offsetHorizontal) and[offsetVertical](#series.sankey.nodes.offsetVertical) instead.In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percentage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
 		/// </summary>
 		public string Offset { get; set; }
-		private string Offset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// This option is deprecated, use[offsetHorizontal](#series.sankey.nodes.offsetHorizontal) and[offsetVertical](#series.sankey.nodes.offsetVertical) instead.In a horizontal layout, the vertical offset of a node in terms of weight.Positive values shift the node downwards, negative shift it upwards. In avertical layout, like organization chart, the offset is horizontal.If a percentage string is given, the node is offset by the percentage of thenode size plus `nodePadding`.
 		/// </summary>
 		public double? OffsetNumber { get; set; }
-		private double? OffsetNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percentage string is given, the node is offset by the percentage of thenode size.
 		/// </summary>
 		public string OffsetHorizontal { get; set; }
-		private string OffsetHorizontal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The horizontal offset of a node. Positive values shift the node right,negative shift it left.If a percentage string is given, the node is offset by the percentage of thenode size.
 		/// </summary>
 		public double? OffsetHorizontalNumber { get; set; }
-		private double? OffsetHorizontalNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percentage string is given, the node is offset by the percentage of thenode size.
 		/// </summary>
 		public string OffsetVertical { get; set; }
-		private string OffsetVertical_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percentage string is given, the node is offset by the percentage of thenode size.
 		/// </summary>
 		public double? OffsetVerticalNumber { get; set; }
-		private double? OffsetVerticalNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The job title for the node card, will be inserted by the default`dataLabel.nodeFormatter`.
 		/// </summary>
 		public string Title { get; set; }
-		private string Title_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Color != null) h.Add("color",Color);
 			if (ColorIndex != null) h.Add("colorIndex",ColorIndex);
 			if (Column != null) h.Add("column",Column);
@@ -182,21 +161,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

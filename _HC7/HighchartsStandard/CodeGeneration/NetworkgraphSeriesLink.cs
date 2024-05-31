@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Color of the link between two nodes.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A name for the dash style to use for links.
 		/// </summary>
 		public NetworkgraphSeriesLinkDashStyle DashStyle { get; set; }
-		private NetworkgraphSeriesLinkDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Opacity of the link between two nodes.
 		/// </summary>
 		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Width (px) of the link between two nodes.
 		/// </summary>
 		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Color != null) h.Add("color",Color);
 			if (DashStyle != NetworkgraphSeriesLinkDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Opacity != null) h.Add("opacity",Opacity);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public string Cursor { get; set; }
-		private string Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Fill { get; set; }
-		private string Fill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Stroke { get; set; }
-		private string Stroke_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? StrokeWidth { get; set; }
-		private double? StrokeWidth_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Cursor != null) h.Add("cursor",Cursor);
 			if (Fill != null) h.Add("fill",Fill);
 			if (Stroke != null) h.Add("stroke",Stroke);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

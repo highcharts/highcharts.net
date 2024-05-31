@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The color of each data class. If not set, the color is pulledfrom the global or chart-specific [colors](#colors) array. Instyled mode, this option is ignored. Instead, use colors definedin CSS.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The start of the value range that the data class represents,relating to the point value.The range of each `dataClass` is closed in both ends, but can beoverridden by the next `dataClass`.
 		/// </summary>
 		public double? From { get; set; }
-		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The name of the data class as it appears in the legend.If no name is given, it is automatically created based on the`from` and `to` values. For full programmatic control,[legend.labelFormatter](#legend.labelFormatter) can be used.In the formatter, `this.from` and `this.to` can be accessed.
 		/// </summary>
 		public string Name { get; set; }
-		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The end of the value range that the data class represents,relating to the point value.The range of each `dataClass` is closed in both ends, but can beoverridden by the next `dataClass`.
 		/// </summary>
 		public double? To { get; set; }
-		private double? To_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Color != null) h.Add("color",Color);
 			if (From != null) h.Add("from",From);
 			if (Name != null) h.Add("name",Name);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

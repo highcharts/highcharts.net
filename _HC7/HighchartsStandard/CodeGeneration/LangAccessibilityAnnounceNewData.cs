@@ -25,44 +25,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public string NewDataAnnounce { get; set; }
-		private string NewDataAnnounce_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string NewPointAnnounceMultiple { get; set; }
-		private string NewPointAnnounceMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string NewPointAnnounceSingle { get; set; }
-		private string NewPointAnnounceSingle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string NewSeriesAnnounceMultiple { get; set; }
-		private string NewSeriesAnnounceMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string NewSeriesAnnounceSingle { get; set; }
-		private string NewSeriesAnnounceSingle_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (NewDataAnnounce != null) h.Add("newDataAnnounce",NewDataAnnounce);
 			if (NewPointAnnounceMultiple != null) h.Add("newPointAnnounceMultiple",NewPointAnnounceMultiple);
 			if (NewPointAnnounceSingle != null) h.Add("newPointAnnounceSingle",NewPointAnnounceSingle);
@@ -78,21 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

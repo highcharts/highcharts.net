@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// An object of additional SVG attributes for the no-data label.
 		/// </summary>
 		public Hashtable Attr { get; set; }
-		private Hashtable Attr_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The position of the no-data label, relative to the plot area.
 		/// </summary>
 		public NoDataPosition Position { get; set; }
-		private NoDataPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the no-data label.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to insert the label as HTML, or as pseudo-HTML rendered withSVG.
 		/// </summary>
 		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Attr != null) h.Add("attr",Attr);
 			if (Position != null) h.Add("position",Position.ToHashtable(highcharts));
 			if (Style != null) h.Add("style",Style);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

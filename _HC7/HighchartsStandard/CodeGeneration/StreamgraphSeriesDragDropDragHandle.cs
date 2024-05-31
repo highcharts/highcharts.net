@@ -25,44 +25,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The class name of the drag handles. Defaults to `highcharts-drag-handle`.
 		/// </summary>
 		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The fill color of the drag handles.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The line color of the drag handles.
 		/// </summary>
 		public string LineColor { get; set; }
-		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The line width for the drag handles.
 		/// </summary>
 		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The z index for the drag handles.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (ClassName != null) h.Add("className",ClassName);
 			if (Color != null) h.Add("color",Color);
 			if (LineColor != null) h.Add("lineColor",LineColor);
@@ -78,21 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

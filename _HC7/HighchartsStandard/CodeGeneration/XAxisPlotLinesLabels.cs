@@ -25,16 +25,12 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Whether to hide labels that are outside the plot area.
 		/// </summary>
 		public bool? Clip { get; set; }
-		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Clip != null) h.Add("clip",Clip);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
@@ -46,21 +42,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

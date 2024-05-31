@@ -25,23 +25,18 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The amount of the X-range point to be filled. Values can be 0-1 and areconverted to percentages in the default data label formatter.
 		/// </summary>
 		public double? Amount { get; set; }
-		private double? Amount_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The fill color to be used for partial fills. Defaults to a darker shadeof the point color.
 		/// </summary>
 		public string Fill { get; set; }
-		private string Fill_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Amount != null) h.Add("amount",Amount);
 			if (Fill != null) h.Add("fill",Fill);
 			if (CustomFields.Count > 0)
@@ -54,21 +49,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

@@ -25,30 +25,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public bool? FollowPointer { get; set; }
-		private bool? FollowPointer_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string PointFormat { get; set; }
-		private string PointFormat_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Distance != null) h.Add("distance",Distance);
 			if (FollowPointer != null) h.Add("followPointer",FollowPointer);
 			if (PointFormat != null) h.Add("pointFormat",PointFormat);
@@ -62,21 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

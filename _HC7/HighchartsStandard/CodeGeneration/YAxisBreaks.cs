@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// A number indicating how much space should be left between the startand the end of the break. The break size is given in axis units,so for instance on a `datetime` axis, a break size of 3600000 wouldindicate the equivalent of an hour.
 		/// </summary>
 		public double? BreakSize { get; set; }
-		private double? BreakSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The point where the break starts.
 		/// </summary>
 		public double? From { get; set; }
-		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Defines an interval after which the break appears again. By defaultthe breaks do not repeat.
 		/// </summary>
 		public double? Repeat { get; set; }
-		private double? Repeat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The point where the break ends.
 		/// </summary>
 		public double? To { get; set; }
-		private double? To_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (BreakSize != null) h.Add("breakSize",BreakSize);
 			if (From != null) h.Add("from",From);
 			if (Repeat != null) h.Add("repeat",Repeat);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

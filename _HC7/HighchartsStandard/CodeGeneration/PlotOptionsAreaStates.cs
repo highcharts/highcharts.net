@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Options for the hovered series. These settings override thenormal state options when a series is moused over or touched.
 		/// </summary>
 		public PlotOptionsAreaStatesHover Hover { get; set; }
-		private PlotOptionsAreaStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The opposite state of a hover for series.
 		/// </summary>
 		public PlotOptionsAreaStatesInactive Inactive { get; set; }
-		private PlotOptionsAreaStatesInactive Inactive_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
 		/// </summary>
 		public PlotOptionsAreaStatesNormal Normal { get; set; }
-		private PlotOptionsAreaStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Specific options for point in selected states, after beingselected by[allowPointSelect](#plotOptions.series.allowPointSelect)or programmatically.
 		/// </summary>
 		public PlotOptionsAreaStatesSelect Select { get; set; }
-		private PlotOptionsAreaStatesSelect Select_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Hover != null) h.Add("hover",Hover.ToHashtable(highcharts));
 			if (Inactive != null) h.Add("inactive",Inactive.ToHashtable(highcharts));
 			if (Normal != null) h.Add("normal",Normal.ToHashtable(highcharts));
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

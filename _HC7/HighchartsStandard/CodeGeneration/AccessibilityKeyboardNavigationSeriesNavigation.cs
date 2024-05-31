@@ -25,44 +25,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Set the keyboard navigation mode for the chart. Can be"normal" or "serialize". In normal mode, left/right arrowkeys move between points in a series, while up/down arrowkeys move between series. Up/down navigation actsintelligently to figure out which series makes sense to moveto from any given point.In "serialize" mode, points are instead navigated as a singlelist. Left/right behaves as in "normal" mode. Up/down arrowkeys will behave like left/right. This can be useful forunifying navigation behavior with/without screen readersenabled.
 		/// </summary>
 		public AccessibilityKeyboardNavigationSeriesNavigationMode Mode { get; set; }
-		private AccessibilityKeyboardNavigationSeriesNavigationMode Mode_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When a series contains more points than this, we no longerallow keyboard navigation for it.Set to `false` to disable.
 		/// </summary>
 		public double? PointNavigationEnabledThreshold { get; set; }
-		private double? PointNavigationEnabledThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When a series contains more points than this, we no longerallow keyboard navigation for it.Set to `false` to disable.
 		/// </summary>
 		public bool? PointNavigationEnabledThresholdBool { get; set; }
-		private bool? PointNavigationEnabledThresholdBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Remember which point was focused even after navigating awayfrom the series, so that when navigating back to the seriesyou start at the last focused point.
 		/// </summary>
 		public bool? RememberPointFocus { get; set; }
-		private bool? RememberPointFocus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Skip null points when navigating through points with thekeyboard.
 		/// </summary>
 		public bool? SkipNullPoints { get; set; }
-		private bool? SkipNullPoints_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Mode != AccessibilityKeyboardNavigationSeriesNavigationMode.Null) h.Add("mode", highcharts.FirstCharacterToLower(Mode.ToString()));
 			if (PointNavigationEnabledThreshold != null) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThreshold);
 			if (PointNavigationEnabledThresholdBool != null) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThresholdBool);
@@ -78,21 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

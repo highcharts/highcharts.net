@@ -25,30 +25,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The annotation column title.
 		/// </summary>
 		public string AnnotationHeader { get; set; }
-		private string AnnotationHeader_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The category column title when axis type set to "datetime".
 		/// </summary>
 		public string CategoryDatetimeHeader { get; set; }
-		private string CategoryDatetimeHeader_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The category column title.
 		/// </summary>
 		public string CategoryHeader { get; set; }
-		private string CategoryHeader_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (AnnotationHeader != null) h.Add("annotationHeader",AnnotationHeader);
 			if (CategoryDatetimeHeader != null) h.Add("categoryDatetimeHeader",CategoryDatetimeHeader);
 			if (CategoryHeader != null) h.Add("categoryHeader",CategoryHeader);
@@ -62,21 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

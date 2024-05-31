@@ -25,163 +25,138 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public string BarMultiple { get; set; }
-		private string BarMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BarSingle { get; set; }
-		private string BarSingle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BoxplotMultiple { get; set; }
-		private string BoxplotMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BoxplotSingle { get; set; }
-		private string BoxplotSingle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BubbleMultiple { get; set; }
-		private string BubbleMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BubbleSingle { get; set; }
-		private string BubbleSingle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ColumnMultiple { get; set; }
-		private string ColumnMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ColumnSingle { get; set; }
-		private string ColumnSingle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string CombinationChart { get; set; }
-		private string CombinationChart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string DefaultMultiple { get; set; }
-		private string DefaultMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string DefaultSingle { get; set; }
-		private string DefaultSingle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string EmptyChart { get; set; }
-		private string EmptyChart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string LineMultiple { get; set; }
-		private string LineMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string LineSingle { get; set; }
-		private string LineSingle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MapTypeDescription { get; set; }
-		private string MapTypeDescription_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string PieMultiple { get; set; }
-		private string PieMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string PieSingle { get; set; }
-		private string PieSingle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ScatterMultiple { get; set; }
-		private string ScatterMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ScatterSingle { get; set; }
-		private string ScatterSingle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string SplineMultiple { get; set; }
-		private string SplineMultiple_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string SplineSingle { get; set; }
-		private string SplineSingle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string UnknownMap { get; set; }
-		private string UnknownMap_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (BarMultiple != null) h.Add("barMultiple",BarMultiple);
 			if (BarSingle != null) h.Add("barSingle",BarSingle);
 			if (BoxplotMultiple != null) h.Add("boxplotMultiple",BoxplotMultiple);
@@ -214,21 +189,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

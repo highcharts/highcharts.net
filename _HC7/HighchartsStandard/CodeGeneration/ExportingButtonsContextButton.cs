@@ -25,177 +25,150 @@ namespace Highsoft.Web.Mvc.Charts
 		/// This option is deprecated, use[titleKey](#exporting.buttons.contextButton.titleKey) instead.
 		/// </summary>
 		public string _titleKey { get; set; }
-		private string _titleKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Alignment for the buttons.
 		/// </summary>
 		public ExportingButtonsContextButtonAlign Align { get; set; }
-		private ExportingButtonsContextButtonAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel spacing between buttons.
 		/// </summary>
 		public double? ButtonSpacing { get; set; }
-		private double? ButtonSpacing_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The class name of the context button.
 		/// </summary>
 		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to enable buttons.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Pixel height of the buttons.
 		/// </summary>
 		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The class name of the menu appearing from the button.
 		/// </summary>
 		public string MenuClassName { get; set; }
-		private string MenuClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A collection of strings pointing to config options for the menuitems. The config options are defined in the`menuItemDefinitions` option.By default, there is the "View in full screen" and "Print" menuitems, plus one menu item for each of the available export types.
 		/// </summary>
 		public List<MenuItem> MenuItems { get; set; }
-		private List<MenuItem> MenuItems_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A click handler callback to use on the button directly instead ofthe popup menu.
 		/// </summary>
 		public string Onclick { get; set; }
-		private string Onclick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The symbol for the button. Points to a definition function inthe `Highcharts.Renderer.symbols` collection. The default`menu` function is part of the exporting module. Possiblevalues are "circle", "square", "diamond", "triangle","triangle-down", "menu", "menuball" or custom shape.
 		/// </summary>
 		public string Symbol { get; set; }
-		private string Symbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// See [navigation.buttonOptions.symbolFill](#navigation.buttonOptions.symbolFill).
 		/// </summary>
 		public string SymbolFill { get; set; }
-		private string SymbolFill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel size of the symbol on the button.
 		/// </summary>
 		public double? SymbolSize { get; set; }
-		private double? SymbolSize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the symbol's stroke or line.
 		/// </summary>
 		public string SymbolStroke { get; set; }
-		private string SymbolStroke_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel stroke width of the symbol on the button.
 		/// </summary>
 		public double? SymbolStrokeWidth { get; set; }
-		private double? SymbolStrokeWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The x position of the center of the symbol inside the button.
 		/// </summary>
 		public double? SymbolX { get; set; }
-		private double? SymbolX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The y position of the center of the symbol inside the button.
 		/// </summary>
 		public double? SymbolY { get; set; }
-		private double? SymbolY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A text string to add to the individual button.
 		/// </summary>
 		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A configuration object for the button theme. The object acceptsSVG properties like `stroke-width`, `stroke` and `fill`.Tri-state button styles are supported by the `states.hover` and`states.select` objects.
 		/// </summary>
 		public ExportingButtonsContextButtonTheme Theme { get; set; }
-		private ExportingButtonsContextButtonTheme Theme_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The key to a [lang](#lang) option setting that is used for thebutton's title tooltip. When the key is `contextButtonTitle`, itrefers to [lang.contextButtonTitle](#lang.contextButtonTitle)that defaults to "Chart context menu".
 		/// </summary>
 		public string TitleKey { get; set; }
-		private string TitleKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to use HTML for rendering the button. HTML allows for thingslike inline CSS or image-based icons.
 		/// </summary>
 		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical alignment of the buttons. Can be one of `"top"`,`"middle"` or `"bottom"`.
 		/// </summary>
 		public ExportingButtonsContextButtonVerticalAlign VerticalAlign { get; set; }
-		private ExportingButtonsContextButtonVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel width of the button.
 		/// </summary>
 		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The horizontal position of the button relative to the `align`option.
 		/// </summary>
 		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical offset of the button's position relative to its`verticalAlign`.
 		/// </summary>
 		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (_titleKey != null) h.Add("_titleKey",_titleKey);
 			if (Align != ExportingButtonsContextButtonAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
 			if (ButtonSpacing != null) h.Add("buttonSpacing",ButtonSpacing);
@@ -230,21 +203,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

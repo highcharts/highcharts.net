@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Horizontal alignment.
 		/// </summary>
 		public DrilldownDrillUpButtonPositionAlign Align { get; set; }
-		private DrilldownDrillUpButtonPositionAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Vertical alignment of the button.
 		/// </summary>
 		public DrilldownDrillUpButtonPositionVerticalAlign VerticalAlign { get; set; }
-		private DrilldownDrillUpButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The X offset of the button.
 		/// </summary>
 		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The Y offset of the button.
 		/// </summary>
 		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Align != DrilldownDrillUpButtonPositionAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
 			if (VerticalAlign != DrilldownDrillUpButtonPositionVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (X != null) h.Add("x",X);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

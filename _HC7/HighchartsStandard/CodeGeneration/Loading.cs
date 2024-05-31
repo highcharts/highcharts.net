@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The duration in milliseconds of the fade out effect.
 		/// </summary>
 		public double? HideDuration { get; set; }
-		private double? HideDuration_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the loading label `span`.
 		/// </summary>
 		public Hashtable LabelStyle { get; set; }
-		private Hashtable LabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The duration in milliseconds of the fade in effect.
 		/// </summary>
 		public double? ShowDuration { get; set; }
-		private double? ShowDuration_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the loading screen that covers the plot area.In styled mode, the loading label is styled with the`.highcharts-loading` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (HideDuration != null) h.Add("hideDuration",HideDuration);
 			if (LabelStyle != null) h.Add("labelStyle",LabelStyle);
 			if (ShowDuration != null) h.Add("showDuration",ShowDuration);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

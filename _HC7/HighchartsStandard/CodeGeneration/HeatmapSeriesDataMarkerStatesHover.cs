@@ -25,44 +25,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Set the marker's fixed height on hover state.
 		/// </summary>
 		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of pixels to increase the height of thehovered point.
 		/// </summary>
 		public double? HeightPlus { get; set; }
-		private double? HeightPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Set the marker's fixed width on hover state.
 		/// </summary>
 		public double? LineWidthPlus { get; set; }
-		private double? LineWidthPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Set the marker's fixed width on hover state.
 		/// </summary>
 		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of pixels to increase the width of thehovered point.
 		/// </summary>
 		public double? WidthPlus { get; set; }
-		private double? WidthPlus_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Height != null) h.Add("height",Height);
 			if (HeightPlus != null) h.Add("heightPlus",HeightPlus);
 			if (LineWidthPlus != null) h.Add("lineWidthPlus",LineWidthPlus);
@@ -78,21 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

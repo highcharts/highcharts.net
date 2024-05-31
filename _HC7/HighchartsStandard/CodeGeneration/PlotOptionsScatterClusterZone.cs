@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Styled mode only. A custom class name for the zone.
 		/// </summary>
 		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The value where the zone starts.
 		/// </summary>
 		public double? From { get; set; }
-		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Settings for the cluster marker belonging to the zone.
 		/// </summary>
 		public PlotOptionsScatterClusterZonesMarker Marker { get; set; }
-		private PlotOptionsScatterClusterZonesMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The value where the zone ends.
 		/// </summary>
 		public double? To { get; set; }
-		private double? To_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (ClassName != null) h.Add("className",ClassName);
 			if (From != null) h.Add("from",From);
 			if (Marker != null) h.Add("marker",Marker.ToHashtable(highcharts));
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

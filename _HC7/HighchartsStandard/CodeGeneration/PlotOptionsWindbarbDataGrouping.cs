@@ -25,30 +25,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Approximation function for the data grouping. The defaultreturns an average of wind speed and a vector average directionweighted by wind speed.
 		/// </summary>
 		public string Approximation { get; set; }
-		private string Approximation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to enable data grouping.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The approximate data group width.
 		/// </summary>
 		public double? GroupPixelWidth { get; set; }
-		private double? GroupPixelWidth_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Approximation != null) h.Add("approximation",Approximation);
 			if (Enabled != null) h.Add("enabled",Enabled);
 			if (GroupPixelWidth != null) h.Add("groupPixelWidth",GroupPixelWidth);
@@ -62,21 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

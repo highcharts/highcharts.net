@@ -25,394 +25,336 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Accessibility options for a series.
 		/// </summary>
 		public PlotOptionsHeatmapAccessibility Accessibility { get; set; }
-		private PlotOptionsHeatmapAccessibility Accessibility_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Allow this series' points to be selected by clicking on the graphic(columns, point markers, pie slices, map areas etc).The selected points can be handled by point select and unselectevents, or collectively by the [getSelectedPoints](/class-reference/Highcharts.Chart#getSelectedPoints) function.And alternative way of selecting points is through dragging.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
-		private bool? AllowPointSelect_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Animation is disabled by default on the heatmap series.
 		/// </summary>
 		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable the initial animation when a series is displayed.The animation can also be set as a configuration object. Pleasenote that this option only applies to the initial animation of theseries itself. For other animations, see [chart.animation](#chart.animation) and the animation parameter under the API methods.The following properties are supported:- `defer`: The animation delay time in milliseconds.- `duration`: The duration of the animation in milliseconds. (Defaults to  `1000`)- `easing`: Can be a string reference to an easing function set on  the `Math` object or a function. See the _Custom easing function_  demo below. (Defaults to `easeInOutSine`)Due to poor performance, animation is disabled in old IE browsersfor several chart types.
 		/// </summary>
 		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Sets the color blending in the boost module.
 		/// </summary>
 		public PlotOptionsHeatmapBoostBlending BoostBlending { get; set; }
-		private PlotOptionsHeatmapBoostBlending BoostBlending_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Set the point threshold for when a series should enter boost mode.Setting it to e.g. 2000 will cause the series to enter boost mode when thereare 2000 or more points in the series.To disable boosting on the series, set the `boostThreshold` to 0. Setting itto 1 will force boosting.Note that the [cropThreshold](plotOptions.series.cropThreshold) also affectsthis setting. When zooming in on a series that has fewer points than the`cropThreshold`, all points are rendered although outside the visible plotarea, and the `boostThreshold` won't take effect.
 		/// </summary>
 		public double? BoostThreshold { get; set; }
-		private double? BoostThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border radius for each heatmap item. The border's color andwidth can be set in marker options.
 		/// </summary>
 		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border width for each heatmap item.
 		/// </summary>
 		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An additional class name to apply to the series' graphical elements.This option does not replace default class names of the graphicalelement. Changes to the series' color will also be reflected in achart's legend and tooltip.
 		/// </summary>
 		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public bool? Clip { get; set; }
-		private bool? Clip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The main color of the series. In heat maps this color is rarely used,as we mostly use the color to denote the value of each point. Unlessoptions are set in the [colorAxis](#colorAxis), the default valueis pulled from the [options.colors](#colors) array.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
 		/// </summary>
 		public string ColorAxis { get; set; }
-		private string ColorAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
 		/// </summary>
 		public double? ColorAxisNumber { get; set; }
-		private double? ColorAxisNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When using dual or multiple color axes, this number defines whichcolorAxis the particular series is connected to. It refers toeither the{@link #colorAxis.id|axis id}or the index of the axis in the colorAxis array, with 0 being thefirst. Set this option to false to prevent a series from connectingto the default color axis.Since v7.2.0 the option can also be an axis id or an axis indexinstead of a boolean flag.
 		/// </summary>
 		public bool? ColorAxisBool { get; set; }
-		private bool? ColorAxisBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Styled mode only. A specific color index to use for the series, so itsgraphic representations are given the class name `highcharts-color-{n}`.Since v11, CSS variables on the form `--highcharts-color-{n}` makechanging the color scheme very convenient.
 		/// </summary>
 		public double? ColorIndex { get; set; }
-		private double? ColorIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string ColorKey { get; set; }
-		private string ColorKey_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The column size - how many X axis units each column in the heatmapshould span.
 		/// </summary>
 		public double? Colsize { get; set; }
-		private double? Colsize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
 		/// </summary>
 		public bool? Crisp { get; set; }
-		private bool? Crisp_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// You can set the cursor to "pointer" if you have click events attachedto the series, to signal to the user that the points and lines canbe clicked.In styled mode, the series cursor can be set with the same classesas listed under [series.color](#plotOptions.series.color).
 		/// </summary>
 		public PlotOptionsHeatmapCursor Cursor { get; set; }
-		private PlotOptionsHeatmapCursor Cursor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A reserved subspace to store options and values for customizedfunctionality. Here you can add additional data for your own eventcallbacks and formatter callbacks.
 		/// </summary>
 		public Hashtable Custom { get; set; }
-		private Hashtable Custom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsHeatmapDataLabels DataLabels { get; set; }
-		private PlotOptionsHeatmapDataLabels DataLabels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the series data sorting.
 		/// </summary>
 		public PlotOptionsHeatmapDataSorting DataSorting { get; set; }
-		private PlotOptionsHeatmapDataSorting DataSorting_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A description of the series to add to the screen reader informationabout the series.
 		/// </summary>
 		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
-		private bool? EnableMouseTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// General event handlers for the series items. These event hooks canalso be attached to the series at run time using the`Highcharts.addEvent` function.
 		/// </summary>
 		public PlotOptionsHeatmapEvents Events { get; set; }
-		private PlotOptionsHeatmapEvents Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
 		/// </summary>
 		public bool? InactiveOtherPoints { get; set; }
-		private bool? InactiveOtherPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When set to `false` will prevent the series data from being included inany form of data export.Since version 6.0.0 until 7.1.0 the option was existing undocumentedas `includeInCSVExport`.
 		/// </summary>
 		public bool? IncludeInDataExport { get; set; }
-		private bool? IncludeInDataExport_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Make the heatmap render its data points as an interpolated image.
 		/// </summary>
 		public bool? Interpolation { get; set; }
-		private bool? Interpolation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array specifying which option maps to which key in the data pointarray. This makes it convenient to work with unstructured data arraysfrom different sources.
 		/// </summary>
 		public List<string> Keys { get; set; }
-		private List<string> Keys_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Series labels are placed as close to the series as possible in anatural way, seeking to avoid other series. The goal of thisfeature is to make the chart more easily readable, like if ahuman designer placed the labels in the optimal position.The series labels currently work with series types having a`graph` or an `area`.
 		/// </summary>
 		public PlotOptionsHeatmapLabel Label { get; set; }
-		private PlotOptionsHeatmapLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string LegendSymbol { get; set; }
-		private string LegendSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The [id](#series.id) of another series to link to. Additionally,the value can be ":previous" to link to the previous series. Whentwo series are linked, only the first one appears in the legend.Toggling the visibility of this also toggles the linked series.If master series uses data sorting and linked series does not haveits own sorting definition, the linked series will be sorted in thesame order as the master one.
 		/// </summary>
 		public string LinkedTo { get; set; }
-		private string LinkedTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsHeatmapMarker Marker { get; set; }
-		private PlotOptionsHeatmapMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color for the parts of the graph or points that are below the[threshold](#plotOptions.series.threshold). Note that `zones` takesprecedence over the negative color. Using `negativeColor` isequivalent to applying a zone with value of 0.
 		/// </summary>
 		public string NegativeColor { get; set; }
-		private string NegativeColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color applied to null points. In styled mode, a general CSS classis applied instead.
 		/// </summary>
 		public string NullColor { get; set; }
-		private string NullColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the _Series on point_ feature. Only `pie` and `sunburst` seriesare supported at this moment.
 		/// </summary>
 		public PlotOptionsHeatmapOnPoint OnPoint { get; set; }
-		private PlotOptionsHeatmapOnPoint OnPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Opacity of a series parts: line, fill (e.g. area) and dataLabels.
 		/// </summary>
 		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Properties for each single point.
 		/// </summary>
 		public PlotOptionsHeatmapPoint Point { get; set; }
-		private PlotOptionsHeatmapPoint Point_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Same as[accessibility.point.descriptionFormat](#accessibility.point.descriptionFormat),but for an individual series. Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormat { get; set; }
-		private string PointDescriptionFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Same as[accessibility.series.descriptionFormatter](#accessibility.series.descriptionFormatter),but for an individual series. Overrides the chart wide configuration.
 		/// </summary>
 		public string PointDescriptionFormatter { get; set; }
-		private string PointDescriptionFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Padding between the points in the heatmap.
 		/// </summary>
 		public double? PointPadding { get; set; }
-		private double? PointPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When true, X values in the data set are relative to the current`pointStart`, `pointInterval` and `pointIntervalUnit` settings. Thisallows compression of the data for datasets with irregular X values.The real X values are computed on the formula `f(x) = ax + b`, where`a` is the `pointInterval` (optionally with a time unit given by`pointIntervalUnit`), and `b` is the `pointStart`.
 		/// </summary>
 		public bool? RelativeXValue { get; set; }
-		private bool? RelativeXValue_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The row size - how many Y axis units each heatmap row should span.
 		/// </summary>
 		public double? Rowsize { get; set; }
-		private double? Rowsize_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to select the series initially. If `showCheckbox` is true,the checkbox next to the series name in the legend will be checkedfor a selected series.
 		/// </summary>
 		public bool? Selected { get; set; }
-		private bool? Selected_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// If true, a checkbox is displayed next to the legend item to allowselecting the series. The state of the checkbox is determined bythe `selected` option.
 		/// </summary>
 		public bool? ShowCheckbox { get; set; }
-		private bool? ShowCheckbox_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to display this particular series or series type in thelegend. Standalone series are shown in legend by default, and linkedseries are not. Since v7.2.0 it is possible to show series that usecolorAxis by setting this option to `true`.
 		/// </summary>
 		public bool? ShowInLegend { get; set; }
-		private bool? ShowInLegend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// If set to `true`, the accessibility module will skip past the pointsin this series for keyboard navigation.
 		/// </summary>
 		public bool? SkipKeyboardNavigation { get; set; }
-		private bool? SkipKeyboardNavigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Sonification/audio chart options for a series.
 		/// </summary>
 		public PlotOptionsHeatmapSonification Sonification { get; set; }
-		private PlotOptionsHeatmapSonification Sonification_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsHeatmapStates States { get; set; }
-		private PlotOptionsHeatmapStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Sticky tracking of mouse events. When true, the `mouseOut` event on aseries isn't triggered until the mouse moves over another series, orout of the plot area. When false, the `mouseOut` event on a series istriggered when the mouse leaves the area around the series' graph ormarkers. This also implies the tooltip when not shared. When`stickyTracking` is false and `tooltip.shared` is false, the tooltipwill be hidden when moving the mouse between series. Defaults to truefor line and area type series, but to false for columns, pies etc.**Note:** The boost module will force this option because oftechnical limitations.
 		/// </summary>
 		public bool? StickyTracking { get; set; }
-		private bool? StickyTracking_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public PlotOptionsHeatmapTooltip Tooltip { get; set; }
-		private PlotOptionsHeatmapTooltip Tooltip_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When a series contains a data array that is longer than this, onlyone dimensional arrays of numbers, or two dimensional arrays withx and y values are allowed. Also, only the first point is tested,and the rest are assumed to be the same format. This saves expensivedata checking and indexing in long series. Set it to `0` disable.Note:In boost mode turbo threshold is forced. Only array of numbers ortwo dimensional arrays are allowed.
 		/// </summary>
 		public double? TurboThreshold { get; set; }
-		private double? TurboThreshold_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
-		private bool? Visible_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Defines the Axis on which the zones are applied.
 		/// </summary>
 		public string ZoneAxis { get; set; }
-		private string ZoneAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An array defining zones within a series. Zones can be applied to theX axis, Y axis or Z axis for bubbles, according to the `zoneAxis`option. The zone definitions have to be in ascending order regardingto the value.In styled mode, the color zones are styled with the`.highcharts-zone-{n}` class, or custom classed from the `className`option([view live demo](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/css/color-zones/)).
 		/// </summary>
 		public List<PlotOptionsHeatmapZone> Zones { get; set; }
-		private List<PlotOptionsHeatmapZone> Zones_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
 			if (AllowPointSelect != null) h.Add("allowPointSelect",AllowPointSelect);
 			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
@@ -478,21 +420,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

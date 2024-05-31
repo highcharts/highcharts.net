@@ -25,30 +25,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The position of the button.Note: Adjusting position values might cause overlap with chartelements. Ensure coordinates do not obstruct other components ordata visibility.
 		/// </summary>
 		public ChartZoomingResetButtonPosition Position { get; set; }
-		private ChartZoomingResetButtonPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// What frame the button placement should be related to. Can beeither `plotBox` or `spacingBox`.
 		/// </summary>
 		public string RelativeTo { get; set; }
-		private string RelativeTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, theborder radius. The theme also supports `style`, a collection ofCSS properties for the text. Equivalent attributes for the hoverstate are given in `theme.states.hover`.
 		/// </summary>
 		public ChartZoomingResetButtonTheme Theme { get; set; }
-		private ChartZoomingResetButtonTheme Theme_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Position != null) h.Add("position",Position.ToHashtable(highcharts));
 			if (RelativeTo != null) h.Add("relativeTo",RelativeTo);
 			if (Theme != null) h.Add("theme",Theme.ToHashtable(highcharts));
@@ -62,21 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

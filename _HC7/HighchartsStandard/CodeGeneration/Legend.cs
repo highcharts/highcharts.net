@@ -25,324 +25,276 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Accessibility options for the legend. Requires the Accessibilitymodule.
 		/// </summary>
 		public LegendAccessibility Accessibility { get; set; }
-		private LegendAccessibility Accessibility_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The horizontal alignment of the legend box within the chart area.Valid values are `left`, `center` and `right`.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.
 		/// </summary>
 		public LegendAlign Align { get; set; }
-		private LegendAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// If the [layout](legend.layout) is `horizontal` and the legend itemsspan over two lines or more, whether to align the items into verticalcolumns. Setting this to `false` makes room for more items, but willlook more messy.
 		/// </summary>
 		public bool? AlignColumns { get; set; }
-		private bool? AlignColumns_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The background color of the legend.
 		/// </summary>
 		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the drawn border around the legend.
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border corner radius of the legend.
 		/// </summary>
 		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width of the drawn border around the legend.
 		/// </summary>
 		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The bubble legend is an additional element in legend whichpresents the scale of the bubble series. Individual bubble rangescan be defined by user or calculated from series. In the case ofautomatically calculated ranges, a 1px margin of error ispermitted.
 		/// </summary>
 		public LegendBubbleLegend BubbleLegend { get; set; }
-		private LegendBubbleLegend BubbleLegend_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A CSS class name to apply to the legend group.
 		/// </summary>
 		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable the legend. There is also a series-specific option,[showInLegend](#plotOptions.series.showInLegend), that can hide theseries from the legend. In some series types this is `false` bydefault, so it must set to `true` in order to show the legend for theseries.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When the legend is floating, the plot area ignores it and is allowedto be placed below it.
 		/// </summary>
 		public bool? Floating { get; set; }
-		private bool? Floating_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Default styling for the checkbox next to a legend item when`showCheckbox` is true.
 		/// </summary>
 		public Hashtable ItemCheckboxStyle { get; set; }
-		private Hashtable ItemCheckboxStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// In a legend with horizontal layout, the itemDistance defines thepixel distance between each item.
 		/// </summary>
 		public double? ItemDistance { get; set; }
-		private double? ItemDistance_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for each legend item when the corresponding series orpoint is hidden. Only a subset of CSS is supported, notably thoseoptions related to text. Properties are inherited from `style`unless overridden here.
 		/// </summary>
 		public Hashtable ItemHiddenStyle { get; set; }
-		private Hashtable ItemHiddenStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for each legend item in hover mode. Only a subset ofCSS is supported, notably those options related to text. Propertiesare inherited from `style` unless overridden here.
 		/// </summary>
 		public Hashtable ItemHoverStyle { get; set; }
-		private Hashtable ItemHoverStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel bottom margin for each legend item.
 		/// </summary>
 		public double? ItemMarginBottom { get; set; }
-		private double? ItemMarginBottom_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel top margin for each legend item.
 		/// </summary>
 		public double? ItemMarginTop { get; set; }
-		private double? ItemMarginTop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for each legend item. Only a subset of CSS is supported,notably those options related to text. The default `textOverflow`property makes long texts truncate. Set it to `undefined` to wraptext instead. A `width` property can be added to control the textwidth.
 		/// </summary>
 		public Hashtable ItemStyle { get; set; }
-		private Hashtable ItemStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width for each legend item. By default the items are laid outsuccessively. In a [horizontal layout](legend.layout), if the itemsare laid out across two rows or more, they will be vertically aligneddepending on the [legend.alignColumns](legend.alignColumns) option.
 		/// </summary>
 		public double? ItemWidth { get; set; }
-		private double? ItemWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for each legend label. Available variables relates to properties onthe series, or the point in case of pies.
 		/// </summary>
 		public string LabelFormat { get; set; }
-		private string LabelFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Callback function to format each of the series' labels. The `this`keyword refers to the series object, or the point object in case ofpie charts. By default the series or point name is printed.
 		/// </summary>
 		public bool? LabelFormatter { get; set; }
-		private bool? LabelFormatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The layout of the legend items. Can be one of `horizontal` or`vertical` or `proximate`. When `proximate`, the legend items will beplaced as close as possible to the graphs they're representing,except in inverted charts or when the legend position doesn't allowit.
 		/// </summary>
 		public LegendLayout Layout { get; set; }
-		private LegendLayout Layout_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Line height for the legend items. Deprecated as of 2.1\. Instead,the line height for each item can be set using`itemStyle.lineHeight`, and the padding between items using`itemMarginTop` and `itemMarginBottom`.
 		/// </summary>
 		public double? LineHeight { get; set; }
-		private double? LineHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// If the plot area sized is calculated automatically and the legend isnot floating, the legend margin is the space between the legend andthe axis labels or plot area.
 		/// </summary>
 		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Maximum pixel height for the legend. When the maximum height isextended, navigation will show.
 		/// </summary>
 		public double? MaxHeight { get; set; }
-		private double? MaxHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the paging or navigation appearing when the legend isoverflown. Navigation works well on screen, but not in staticexported images. One way of working around that is to[increase the chart height inexport](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/legend/navigation-enabled-false/).
 		/// </summary>
 		public LegendNavigation Navigation { get; set; }
-		private LegendNavigation Navigation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The inner padding of the legend box.
 		/// </summary>
 		public double? Padding { get; set; }
-		private double? Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to reverse the order of the legend items compared to theorder of the series or points as defined in the configuration object.
 		/// </summary>
 		public bool? Reversed { get; set; }
-		private bool? Reversed_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to show the symbol on the right side of the text rather thanthe left side. This is common in Arabic and Hebrew.
 		/// </summary>
 		public bool? Rtl { get; set; }
-		private bool? Rtl_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to apply a drop shadow to the legend. A `backgroundColor`also needs to be applied for this to take effect. The shadow can bean object configuration containing `color`, `offsetX`, `offsetY`,`opacity` and `width`.
 		/// </summary>
 		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When this is true, the legend symbol width will be the same asthe symbol height, which in turn defaults to the font size of thelegend items.
 		/// </summary>
 		public bool? SquareSymbol { get; set; }
-		private bool? SquareSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the legend area. In the 1.x versions the positionof the legend area was determined by CSS. In 2.x, the position isdetermined by properties like `align`, `verticalAlign`, `x` and `y`,but the styles are still parsed for backwards compatibility.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel height of the symbol for series types that use a rectanglein the legend. Defaults to the font size of legend items.Note: This option is a default source of color axis height, if the[colorAxis.height](https://api.highcharts.com/highcharts/colorAxis.height)option is not set.
 		/// </summary>
 		public double? SymbolHeight { get; set; }
-		private double? SymbolHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel padding between the legend item symbol and the legenditem text.
 		/// </summary>
 		public double? SymbolPadding { get; set; }
-		private double? SymbolPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border radius of the symbol for series types that use a rectanglein the legend. Defaults to half the `symbolHeight`, effectivelycreating a circle.For color axis scales, it defaults to 3.
 		/// </summary>
 		public double? SymbolRadius { get; set; }
-		private double? SymbolRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel width of the legend item symbol. When the `squareSymbol`option is set, this defaults to the `symbolHeight`, otherwise 16.Note: This option is a default source of color axis width, if the[colorAxis.width](https://api.highcharts.com/highcharts/colorAxis.width)option is not set.
 		/// </summary>
 		public double? SymbolWidth { get; set; }
-		private double? SymbolWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A title to be added on top of the legend.
 		/// </summary>
 		public LegendTitle Title { get; set; }
-		private LegendTitle Title_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the legend item texts.Prior to 4.1.7, when using HTML, [legend.navigation](#legend.navigation) was disabled.
 		/// </summary>
 		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// For a color axis with data classes, how many decimals to render inthe legend. The default preserves the decimals of the range numbers.
 		/// </summary>
 		public double? ValueDecimals { get; set; }
-		private double? ValueDecimals_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// For a color axis with data classes, a suffix for the range numbers inthe legend.
 		/// </summary>
 		public string ValueSuffix { get; set; }
-		private string ValueSuffix_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical alignment of the legend box. Can be one of `top`,`middle` or `bottom`. Vertical position can be further determinedby the `y` option.In the case that the legend is aligned in a corner position, the`layout` option will determine whether to place it above/belowor on the side of the plot area.When the [layout](#legend.layout) option is `proximate`, the`verticalAlign` option doesn't apply.
 		/// </summary>
 		public LegendVerticalAlign VerticalAlign { get; set; }
-		private LegendVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width for legends below or above thechart, half the chart width for legends to the left and right.
 		/// </summary>
 		public string Width { get; set; }
-		private string Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width of the legend box. If a number is set, it translates topixels. Since v7.0.2 it allows setting a percent string of the fullchart width, for example `40%`.Defaults to the full chart width for legends below or above thechart, half the chart width for legends to the left and right.
 		/// </summary>
 		public double? WidthNumber { get; set; }
-		private double? WidthNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The x offset of the legend relative to its horizontal alignment`align` within chart.spacingLeft and chart.spacingRight. Negativex moves it to the left, positive x moves it to the right.
 		/// </summary>
 		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical offset of the legend relative to it's vertical alignment`verticalAlign` within chart.spacingTop and chart.spacingBottom. Negative y moves it up, positive y moves it down.
 		/// </summary>
 		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highcharts));
 			if (Align != LegendAlign.Null) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
 			if (AlignColumns != null) h.Add("alignColumns",AlignColumns);
@@ -398,21 +350,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

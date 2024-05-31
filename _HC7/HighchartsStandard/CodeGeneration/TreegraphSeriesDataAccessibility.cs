@@ -25,23 +25,18 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Provide a description of the data point, announced to screen readers.
 		/// </summary>
 		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Set to false to disable accessibility functionality for a specific point.The point will not be included in keyboard navigation, and will not beexposed to assistive technology.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (Description != null) h.Add("description",Description);
 			if (Enabled != null) h.Add("enabled",Enabled);
 			if (CustomFields.Count > 0)
@@ -54,21 +49,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

@@ -25,72 +25,60 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Called after updating the sonification.A context object is passed to the function, with properties `chart`and `timeline`.
 		/// </summary>
 		public string AfterUpdate { get; set; }
-		private string AfterUpdate_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Called immediately when a play is requested.A context object is passed to the function, with properties `chart`and `timeline`.
 		/// </summary>
 		public string BeforePlay { get; set; }
-		private string BeforePlay_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Called before updating the sonification.A context object is passed to the function, with properties `chart`and `timeline`.
 		/// </summary>
 		public string BeforeUpdate { get; set; }
-		private string BeforeUpdate_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Called when attempting to play an adjacent point or series, andthere is none.By default a percussive sound is played.A context object is passed to the function, with properties `chart`,`timeline`, and `attemptedNext`. `attemptedNext` is a booleanproperty that is `true` if the boundary hit was from trying to playthe next series/point, and `false` if it was from trying to play theprevious.
 		/// </summary>
 		public string OnBoundaryHit { get; set; }
-		private string OnBoundaryHit_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Called when play is completed.A context object is passed to the function, with properties `chart`,`timeline` and `pointsPlayed`. `pointsPlayed` is an array of `Point`objects, referencing data points that were related to the audioevents played.
 		/// </summary>
 		public string OnEnd { get; set; }
-		private string OnEnd_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Called on play.A context object is passed to the function, with properties `chart`and `timeline`.
 		/// </summary>
 		public string OnPlay { get; set; }
-		private string OnPlay_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Called when finished playing a series.A context object is passed to the function, with properties `series`and `timeline`.
 		/// </summary>
 		public string OnSeriesEnd { get; set; }
-		private string OnSeriesEnd_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Called on the beginning of playing a series.A context object is passed to the function, with properties `series`and `timeline`.
 		/// </summary>
 		public string OnSeriesStart { get; set; }
-		private string OnSeriesStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Called on pause, cancel, or if play is completed.A context object is passed to the function, with properties `chart`,`timeline` and `pointsPlayed`. `pointsPlayed` is an array of `Point`objects, referencing data points that were related to the audioevents played.
 		/// </summary>
 		public string OnStop { get; set; }
-		private string OnStop_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (AfterUpdate != null) { h.Add("afterUpdate",AfterUpdate); highcharts.AddFunction("afterUpdate", AfterUpdate); }  
 			if (BeforePlay != null) { h.Add("beforePlay",BeforePlay); highcharts.AddFunction("beforePlay", BeforePlay); }  
 			if (BeforeUpdate != null) { h.Add("beforeUpdate",BeforeUpdate); highcharts.AddFunction("beforeUpdate", BeforeUpdate); }  
@@ -110,21 +98,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

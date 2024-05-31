@@ -25,30 +25,24 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The smallest degree of rotation for a word.
 		/// </summary>
 		public double? From { get; set; }
-		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of possible orientations for a word, within the rangeof `rotation.from` and `rotation.to`. Must be a number largerthan 0.
 		/// </summary>
 		public double? Orientations { get; set; }
-		private double? Orientations_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The largest degree of rotation for a word.
 		/// </summary>
 		public double? To { get; set; }
-		private double? To_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (From != null) h.Add("from",From);
 			if (Orientations != null) h.Add("orientations",Orientations);
 			if (To != null) h.Add("to",To);
@@ -62,21 +56,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

@@ -25,44 +25,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public string MapTo { get; set; }
-		private string MapTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Max { get; set; }
-		private string Max_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Min { get; set; }
-		private string Min_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Map pitches to a musical scale. The scale is defined as anarray of semitone offsets from the root note.
 		/// </summary>
 		public List<double> Scale { get; set; }
-		private List<double> Scale_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Within { get; set; }
-		private string Within_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (MapTo != null) h.Add("mapTo",MapTo);
 			if (Max != null) h.Add("max",Max);
 			if (Min != null) h.Add("min",Min);
@@ -78,21 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

@@ -25,44 +25,36 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Styled mode only. A custom class name for the zone.
 		/// </summary>
 		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Defines the color of the series.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A name for the dash style to use for the graph.
 		/// </summary>
 		public HistogramSeriesZonesDashStyle DashStyle { get; set; }
-		private HistogramSeriesZonesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Defines the fill color for the series (in area type series)
 		/// </summary>
 		public Object FillColor { get; set; }
-		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The value up to where the zone extends, if undefined the zonesstretches to the last value in the series.
 		/// </summary>
 		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (ClassName != null) h.Add("className",ClassName);
 			if (Color != null) h.Add("color",Color);
 			if (DashStyle != HistogramSeriesZonesDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
@@ -78,21 +70,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

@@ -26,22 +26,5 @@ namespace {HighTemplate.Namespace}
 
 			return h;
 		}
-
-		internal override string ToJSON()
-		{            
-			Hashtable h = ToHashtable();
-
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(ToHashtable());
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty()
-		{
-			return ToHashtable().Count > 0;
-		}
 	}
 }

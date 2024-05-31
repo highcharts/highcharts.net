@@ -25,65 +25,54 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The fill color of the point marker. When `undefined`, the series'or point's color is used.
 		/// </summary>
 		public Object FillColor { get; set; }
-		private Object FillColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Image markers only. Set the image width explicitly. When usingthis option, a `width` must also be set.
 		/// </summary>
 		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the point marker's outline. When `undefined`, theseries' or point's color is used.
 		/// </summary>
 		public string LineColor { get; set; }
-		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width of the point marker's outline.
 		/// </summary>
 		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The radius of the point marker.
 		/// </summary>
 		public double? Radius { get; set; }
-		private double? Radius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// States for a single point marker.
 		/// </summary>
 		public TreegraphSeriesLevelsMarkerStates States { get; set; }
-		private TreegraphSeriesLevelsMarkerStates States_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A predefined shape or symbol for the marker. When undefined, thesymbol is pulled from options.symbols. Other possible values are`'circle'`, `'square'`,`'diamond'`, `'triangle'` and`'triangle-down'`.Additionally, the URL to a graphic can be given on this form:`'url(graphic.png)'`. Note that for the image to be applied toexported charts, its URL needs to be accessible by the exportserver.Custom callbacks for symbol path generation can also be added to`Highcharts.SVGRenderer.prototype.symbols`. The callback is thenused by its method name, as shown in the demo.
 		/// </summary>
 		public string Symbol { get; set; }
-		private string Symbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Image markers only. Set the image width explicitly. When usingthis option, a `height` must also be set.
 		/// </summary>
 		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (FillColor != null) h.Add("fillColor",FillColor);
 			if (Height != null) h.Add("height",Height);
 			if (LineColor != null) h.Add("lineColor",LineColor);
@@ -102,21 +91,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }

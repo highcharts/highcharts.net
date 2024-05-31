@@ -25,37 +25,30 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The border color for the hovered state.
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Brightness for the hovered point. Defaults to 0 if theheatmap series is loaded first, otherwise 0.1.
 		/// </summary>
 		public double? Brightness { get; set; }
-		private double? Brightness_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The opacity of a point in treemap. When a point has children,the visibility of the children is determined by the opacity.
 		/// </summary>
 		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The shadow option for hovered state.
 		/// </summary>
 		public Shadow Shadow { get; set; }
-		private Shadow Shadow_DefaultValue { get; set; }
 		 
 
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (h.Count > 0)
-				return h;
-
 			if (BorderColor != null) h.Add("borderColor",BorderColor);
 			if (Brightness != null) h.Add("brightness",Brightness);
 			if (Opacity != null) h.Add("opacity",Opacity);
@@ -70,21 +63,6 @@ namespace Highsoft.Web.Mvc.Charts
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highcharts highcharts)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highcharts highcharts)
-		{
-			return ToHashtable(highcharts).Count > 0;
 		}
 	}
 }
