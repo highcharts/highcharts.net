@@ -24,7 +24,7 @@ namespace MVC_UnitTests.Wrappers.Higcharts
         public void Test_IfPointPlacementIsString_Correct()
         {
             _chart.Series = new List<Series>();
-            _chart.Series.Add(new LineSeries { PointPlacement = new PointPlacement { PointPlacementEnum = PointPlacementEnum.Between } });
+            _chart.Series.Add(new LineSeries { PointPlacement = LineSeriesPointPlacement.Between });
             var json = _renderer.RenderHtml();
 
             Assert.IsTrue(json.Contains("\"pointPlacement\":\"between\""));
@@ -34,7 +34,7 @@ namespace MVC_UnitTests.Wrappers.Higcharts
         public void Test_IfPointPlacementIsNumber_Correct()
         {
             _chart.Series = new List<Series>();
-            _chart.Series.Add(new LineSeries { PointPlacement = new PointPlacement { Value = 0.5 } });
+            _chart.Series.Add(new LineSeries { PointPlacementNumber = 0.5 });
             var json = _renderer.RenderHtml();
 
             Assert.IsTrue(json.Contains("\"pointPlacement\":0.5"));

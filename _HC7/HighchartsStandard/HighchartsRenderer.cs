@@ -161,23 +161,23 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
         {            
             Hashtable options = _chart.ToHashtable(_chart);
 
-            List<Hashtable> series = new List<Hashtable>();
-            List<Hashtable> drilldownSeries = new List<Hashtable>();
+            //List<Hashtable> series = new List<Hashtable>();
+            //List<Hashtable> drilldownSeries = new List<Hashtable>();
 
-            if (_chart.Series != null)
-                series = SeriesToHashtables(_chart.Series);
-            if (_chart.Drilldown != null && _chart.Drilldown.Series != null)
-                drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
+            //if (_chart.Series != null)
+            //    series = SeriesToHashtables(_chart.Series);
+            //if (_chart.Drilldown != null && _chart.Drilldown.Series != null)
+            //    drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
 
-            if (series.Count > 0)
-            {
-                options["series"] = series;
-            }
-            if (drilldownSeries.Count > 0)
-            {
-                Hashtable drilldown = options["drilldown"] as Hashtable;
-                drilldown["series"] = drilldownSeries;
-            }
+            //if (series.Count > 0)
+            //{
+            //    options["series"] = series;
+            //}
+            //if (drilldownSeries.Count > 0)
+            //{
+            //    Hashtable drilldown = options["drilldown"] as Hashtable;
+            //    drilldown["series"] = drilldownSeries;
+            //}
 
             string json = JsonConvert.SerializeObject(options);
             var functions = _chart.functions;
