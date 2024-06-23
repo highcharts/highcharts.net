@@ -38,6 +38,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cumulative = Cumulative_DefaultValue = false;
+			CumulativeStart = CumulativeStart_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = LineSeriesCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = LineSeriesDashStyle.Null;
@@ -47,6 +48,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			DataSorting = DataSorting_DefaultValue = new LineSeriesDataSorting();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new LineSeriesDragDrop();
+			Dumbell = Dumbell_DefaultValue = new LineSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new LineSeriesEvents();
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = LineSeriesFindNearestPointBy.X;
@@ -232,7 +234,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defines if comparison should start from the first point within the visiblerange or should start from the first point **before** the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
+		/// Defines if comparison should start from the first point within the visiblerange or should start from the last point **before** the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
 		/// </summary>
 		public bool? CompareStart { get; set; }
 		private bool? CompareStart_DefaultValue { get; set; }
@@ -264,6 +266,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Cumulative { get; set; }
 		private bool? Cumulative_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines if cumulation should start from the first point within the visiblerange or should start from the last point **before** the range.In other words, this flag determines if first point within the visible rangewill start at 0 (`cumulativeStart=true`) or should have been already calculatedaccording to the previous point (`cumulativeStart=false`).
+		/// </summary>
+		public bool? CumulativeStart { get; set; }
+		private bool? CumulativeStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -327,6 +336,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public LineSeriesDragDrop DragDrop { get; set; }
 		private LineSeriesDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public LineSeriesDumbell Dumbell { get; set; }
+		private LineSeriesDumbell Dumbell_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -778,6 +794,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
+			if (CumulativeStart != CumulativeStart_DefaultValue) h.Add("cumulativeStart",CumulativeStart);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
@@ -787,6 +804,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DataSorting.IsDirty(highstock)) h.Add("dataSorting",DataSorting.ToHashtable(highstock));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty(highstock)) h.Add("dragDrop",DragDrop.ToHashtable(highstock));
+			if (Dumbell.IsDirty(highstock)) h.Add("dumbell",Dumbell.ToHashtable(highstock));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));

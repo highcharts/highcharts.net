@@ -19,6 +19,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Fill = Fill_DefaultValue = "#ffffff";
 			Padding = Padding_DefaultValue = 5;
 			Stroke = Stroke_DefaultValue = "none";
+			StrokeLinecap = StrokeLinecap_DefaultValue = "round";
 			
 			CustomFields = new Hashtable();
 		}	
@@ -45,6 +46,13 @@ namespace Highsoft.Web.Mvc.Charts
 		private string Stroke_DefaultValue { get; set; }
 		 
 
+		/// <summary>
+		/// Default stroke linecap for the buttons.
+		/// </summary>
+		public string StrokeLinecap { get; set; }
+		private string StrokeLinecap_DefaultValue { get; set; }
+		 
+
 		public Hashtable CustomFields { get; set; } 
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
@@ -55,6 +63,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
 			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
 			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
+			if (StrokeLinecap != StrokeLinecap_DefaultValue) h.Add("strokeLinecap",StrokeLinecap);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{

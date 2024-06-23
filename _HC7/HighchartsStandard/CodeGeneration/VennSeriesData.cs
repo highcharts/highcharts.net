@@ -28,7 +28,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Events = Events_DefaultValue = new VennSeriesDataEvents();
 			Id = Id_DefaultValue = "";
 			Labelrank = Labelrank_DefaultValue = null;
-			Name = Name_DefaultValue = null;
+			Name = Name_DefaultValue = "";
 			Selected = Selected_DefaultValue = false;
 			Sets = Sets_DefaultValue = new List<string>();
 			Value = Value_DefaultValue = null;
@@ -124,8 +124,8 @@ namespace Highsoft.Web.Mvc.Charts
 		/// <summary>
 		/// The name of the point. Used in data labels and tooltip. If name is notdefined then it will default to the joined values in[sets](#series.venn.sets).
 		/// </summary>
-		public double? Name { get; set; }
-		private double? Name_DefaultValue { get; set; }
+		public string Name { get; set; }
+		private string Name_DefaultValue { get; set; }
 		 
 
 		/// <summary>

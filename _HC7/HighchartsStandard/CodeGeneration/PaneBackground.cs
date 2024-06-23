@@ -18,6 +18,8 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			BackgroundColor = BackgroundColor_DefaultValue = new object();
 			BorderColor = BorderColor_DefaultValue = "#cccccc";
+			BorderRadius = BorderRadius_DefaultValue = "0";
+			BorderRadiusNumber = BorderRadiusNumber_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = 1;
 			ClassName = ClassName_DefaultValue = "";
 			InnerRadius = InnerRadius_DefaultValue = "0";
@@ -42,6 +44,20 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border radius of the pane background when the shape is `arc`. Can bea number (pixels) or a percentage string.
+		/// </summary>
+		public string BorderRadius { get; set; }
+		private string BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The border radius of the pane background when the shape is `arc`. Can bea number (pixels) or a percentage string.
+		/// </summary>
+		public double? BorderRadiusNumber { get; set; }
+		private double? BorderRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -102,6 +118,8 @@ namespace Highsoft.Web.Mvc.Charts
 
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderRadiusNumber != BorderRadiusNumber_DefaultValue) h.Add("borderRadius",BorderRadiusNumber);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (InnerRadius != InnerRadius_DefaultValue) h.Add("innerRadius",InnerRadius);

@@ -40,6 +40,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new HeatmapSeriesDataLabels();
 			DataSorting = DataSorting_DefaultValue = new HeatmapSeriesDataSorting();
 			Description = Description_DefaultValue = "";
+			Dumbell = Dumbell_DefaultValue = new HeatmapSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new HeatmapSeriesEvents();
 			Id = Id_DefaultValue = "";
@@ -252,6 +253,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public HeatmapSeriesDumbell Dumbell { get; set; }
+		private HeatmapSeriesDumbell Dumbell_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -572,6 +580,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (DataSorting.IsDirty(highcharts)) h.Add("dataSorting",DataSorting.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);

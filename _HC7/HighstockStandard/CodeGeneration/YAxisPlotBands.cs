@@ -18,6 +18,8 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			AcrossPanes = AcrossPanes_DefaultValue = true;
 			BorderColor = BorderColor_DefaultValue = "";
+			BorderRadius = BorderRadius_DefaultValue = "";
+			BorderRadiusNumber = BorderRadiusNumber_DefaultValue = null;
 			BorderWidth = BorderWidth_DefaultValue = 0;
 			ClassName = ClassName_DefaultValue = "";
 			Color = Color_DefaultValue = "#e6e9ff";
@@ -44,6 +46,20 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Border radius for the plot band. Applies only to gauges. Can be a pixelvalue or a percentage, for example `50%`.
+		/// </summary>
+		public string BorderRadius { get; set; }
+		private string BorderRadius_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Border radius for the plot band. Applies only to gauges. Can be a pixelvalue or a percentage, for example `50%`.
+		/// </summary>
+		public double? BorderRadiusNumber { get; set; }
+		private double? BorderRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -118,6 +134,8 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (AcrossPanes != AcrossPanes_DefaultValue) h.Add("acrossPanes",AcrossPanes);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
+			if (BorderRadiusNumber != BorderRadiusNumber_DefaultValue) h.Add("borderRadius",BorderRadiusNumber);
 			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
 			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
 			if (Color != Color_DefaultValue) h.Add("color",Color);

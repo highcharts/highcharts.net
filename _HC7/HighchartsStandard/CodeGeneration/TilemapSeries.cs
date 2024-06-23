@@ -37,6 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Data = Data_DefaultValue = new List<TilemapSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new TilemapSeriesDataLabels();
 			Description = Description_DefaultValue = "";
+			Dumbell = Dumbell_DefaultValue = new TilemapSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new TilemapSeriesEvents();
 			Id = Id_DefaultValue = "";
@@ -228,6 +229,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TilemapSeriesDumbell Dumbell { get; set; }
+		private TilemapSeriesDumbell Dumbell_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -545,6 +553,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Data.Any()) h.Add("data",HashifyList(highcharts,Data));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);

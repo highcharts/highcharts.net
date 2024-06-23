@@ -31,6 +31,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new GaugeSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			Dial = Dial_DefaultValue = new GaugeSeriesDial();
+			Dumbell = Dumbell_DefaultValue = new GaugeSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new GaugeSeriesEvents();
 			Id = Id_DefaultValue = "";
@@ -179,6 +180,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public GaugeSeriesDial Dial { get; set; }
 		private GaugeSeriesDial Dial_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public GaugeSeriesDumbell Dumbell { get; set; }
+		private GaugeSeriesDumbell Dumbell_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -483,6 +491,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Dial.IsDirty(highcharts)) h.Add("dial",Dial.ToHashtable(highcharts));
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);

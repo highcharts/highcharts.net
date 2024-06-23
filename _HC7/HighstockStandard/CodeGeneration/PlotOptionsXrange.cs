@@ -41,6 +41,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareBase = CompareBase_DefaultValue = PlotOptionsXrangeCompareBase.Min;
 			CompareStart = CompareStart_DefaultValue = false;
 			Cumulative = Cumulative_DefaultValue = false;
+			CumulativeStart = CumulativeStart_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsXrangeCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = PlotOptionsXrangeDashStyle.Null;
@@ -255,7 +256,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defines if comparison should start from the first point within the visiblerange or should start from the first point **before** the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
+		/// Defines if comparison should start from the first point within the visiblerange or should start from the last point **before** the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
 		/// </summary>
 		public bool? CompareStart { get; set; }
 		private bool? CompareStart_DefaultValue { get; set; }
@@ -266,6 +267,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Cumulative { get; set; }
 		private bool? Cumulative_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines if cumulation should start from the first point within the visiblerange or should start from the last point **before** the range.In other words, this flag determines if first point within the visible rangewill start at 0 (`cumulativeStart=true`) or should have been already calculatedaccording to the previous point (`cumulativeStart=false`).
+		/// </summary>
+		public bool? CumulativeStart { get; set; }
+		private bool? CumulativeStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -629,6 +637,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareBase != CompareBase_DefaultValue) h.Add("compareBase", highstock.FirstCharacterToLower(CompareBase.ToString()));
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
+			if (CumulativeStart != CumulativeStart_DefaultValue) h.Add("cumulativeStart",CumulativeStart);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));

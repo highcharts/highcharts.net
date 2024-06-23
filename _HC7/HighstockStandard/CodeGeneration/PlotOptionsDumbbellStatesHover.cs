@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
+			ConnectorWidthPlus = ConnectorWidthPlus_DefaultValue = 1;
 			Enabled = Enabled_DefaultValue = true;
 			Halo = Halo_DefaultValue = new PlotOptionsDumbbellStatesHoverHalo();
 			LineWidth = LineWidth_DefaultValue = null;
@@ -40,6 +41,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? AnimationBool { get; set; }
 		private bool? AnimationBool_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// The additional connector line width for a hovered point.
+		/// </summary>
+		public double? ConnectorWidthPlus { get; set; }
+		private double? ConnectorWidthPlus_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -86,6 +94,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
+			if (ConnectorWidthPlus != ConnectorWidthPlus_DefaultValue) h.Add("connectorWidthPlus",ConnectorWidthPlus);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Halo.IsDirty(highstock)) h.Add("halo",Halo.ToHashtable(highstock));
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

@@ -36,6 +36,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new TimelineSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new TimelineSeriesDragDrop();
+			Dumbell = Dumbell_DefaultValue = new TimelineSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new TimelineSeriesEvents();
 			Id = Id_DefaultValue = "";
@@ -218,6 +219,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public TimelineSeriesDragDrop DragDrop { get; set; }
 		private TimelineSeriesDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public TimelineSeriesDumbell Dumbell { get; set; }
+		private TimelineSeriesDumbell Dumbell_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -520,6 +528,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);

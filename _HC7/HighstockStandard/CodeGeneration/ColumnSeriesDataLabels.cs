@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		public ColumnSeriesDataLabels()
 		{
 			Align = Align_DefaultValue = ColumnSeriesDataLabelsAlign.Center;
+			AlignTo = AlignTo_DefaultValue = "";
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
 			AnimationBool = AnimationBool_DefaultValue = null;
@@ -60,6 +61,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public ColumnSeriesDataLabelsAlign Align { get; set; }
 		private ColumnSeriesDataLabelsAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Alignment method for data labels. If set to `plotEdges`, the labelsare aligned within the plot area in the direction of the y-axis. Soin a regular column chart, the labels are aligned verticallyaccording to the `verticalAlign` setting. In a bar chart, which isinverted, the labels are aligned horizontally according to the`align` setting. Applies to cartesian series only.
+		/// </summary>
+		public string AlignTo { get; set; }
+		private string AlignTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -301,6 +309,7 @@ namespace Highsoft.Web.Mvc.Stocks
 				return h;
 
 			if (Align != Align_DefaultValue) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
+			if (AlignTo != AlignTo_DefaultValue) h.Add("alignTo",AlignTo);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);

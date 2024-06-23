@@ -46,6 +46,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataSorting = DataSorting_DefaultValue = new VariwideSeriesDataSorting();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new VariwideSeriesDragDrop();
+			Dumbell = Dumbell_DefaultValue = new VariwideSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new VariwideSeriesEvents();
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = VariwideSeriesFindNearestPointBy.X;
@@ -315,6 +316,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public VariwideSeriesDragDrop DragDrop { get; set; }
 		private VariwideSeriesDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public VariwideSeriesDumbell Dumbell { get; set; }
+		private VariwideSeriesDumbell Dumbell_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -746,6 +754,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataSorting.IsDirty(highcharts)) h.Add("dataSorting",DataSorting.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));

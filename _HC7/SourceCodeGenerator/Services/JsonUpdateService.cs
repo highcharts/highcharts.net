@@ -356,6 +356,8 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("operator", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.networkgraph.layoutAlgorithm.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
             ItemsToUpdate.Add("plotOptions.packedbubble.layoutAlgorithm.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
+
+            ItemsToUpdate.Add("plotOptions.dumbbell.states.hover", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.hover" } });
         }
 
         public void Delete(ApiItem item)

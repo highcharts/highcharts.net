@@ -56,14 +56,14 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// xAxis description for series if there are multiple xAxes inthe chart.
+		/// X-axis description for series if there are multiple xAxes inthe chart.
 		/// </summary>
 		public string XAxisDescription { get; set; }
 		private string XAxisDescription_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// yAxis description for series if there are multiple yAxes inthe chart.
+		/// Y-axis description for series if there are multiple yAxes inthe chart.
 		/// </summary>
 		public string YAxisDescription { get; set; }
 		private string YAxisDescription_DefaultValue { get; set; }

@@ -16,15 +16,24 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsAtrSonificationContextTracksMappingPitch()
 		{
+			MapFunction = MapFunction_DefaultValue = PlotOptionsAtrSonificationContextTracksMappingPitchMapFunction.Linear;
 			MapTo = MapTo_DefaultValue = "y";
 			Max = Max_DefaultValue = "c6";
 			Min = Min_DefaultValue = "c2";
 			Scale = Scale_DefaultValue = new List<double>();
+			Value = Value_DefaultValue = null;
 			Within = Within_DefaultValue = "yAxis";
 			
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// How to perform the mapping.
+		/// </summary>
+		public PlotOptionsAtrSonificationContextTracksMappingPitchMapFunction MapFunction { get; set; }
+		private PlotOptionsAtrSonificationContextTracksMappingPitchMapFunction MapFunction_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// 
@@ -55,6 +64,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// A fixed value to use for the prop when mapping.For example, if mapping to `y`, setting value to `4` willmap as if all points had a y value of 4.
+		/// </summary>
+		public double? Value { get; set; }
+		private double? Value_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public string Within { get; set; }
@@ -68,10 +84,12 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (MapFunction != MapFunction_DefaultValue) h.Add("mapFunction", highstock.FirstCharacterToLower(MapFunction.ToString()));
 			if (MapTo != MapTo_DefaultValue) h.Add("mapTo",MapTo);
 			if (Max != Max_DefaultValue) h.Add("max",Max);
 			if (Min != Min_DefaultValue) h.Add("min",Min);
 			if (Scale != Scale_DefaultValue) h.Add("scale",Scale);
+			if (Value != Value_DefaultValue) h.Add("value",Value);
 			if (Within != Within_DefaultValue) h.Add("within",Within);
 			if (CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)

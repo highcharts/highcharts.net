@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Global()
 		{
+			ButtonTheme = ButtonTheme_DefaultValue = new GlobalButtonTheme();
 			CanvasToolsURL = CanvasToolsURL_DefaultValue = "";
 			Date = Date_DefaultValue = null;
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
@@ -26,6 +27,13 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// General theme for buttons. This applies to the zoom button, exportingcontext menu, map navigation, range selector buttons and custombuttons generated using the `SVGRenderer.button` function. However,each of these may be overridden with more specific options.
+		/// </summary>
+		public GlobalButtonTheme ButtonTheme { get; set; }
+		private GlobalButtonTheme ButtonTheme_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// _Canvg rendering for Android 2.x is removed as of Highcharts 5.0\.Use the [libURL](#exporting.libURL) option to configure exporting._The URL to the additional file to lazy load for Android 2.x devices.These devices don't support SVG, so we download a helper file thatcontains [canvg](https://github.com/canvg/canvg), its dependencyrbcolor, and our own CanVG Renderer class. To avoid hotlinking toour site, you can install canvas-tools.js on your own server andchange this option accordingly.
@@ -76,6 +84,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
+			if (ButtonTheme.IsDirty(highcharts)) h.Add("buttonTheme",ButtonTheme.ToHashtable(highcharts));
 			if (CanvasToolsURL != CanvasToolsURL_DefaultValue) h.Add("canvasToolsURL",CanvasToolsURL);
 			if (Date != Date_DefaultValue) h.Add("date",Date);
 			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) h.Add("getTimezoneOffset",GetTimezoneOffset);

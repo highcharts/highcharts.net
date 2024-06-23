@@ -34,7 +34,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			GridLineDashStyle = GridLineDashStyle_DefaultValue = new Hashtable();
 			GridLineWidth = GridLineWidth_DefaultValue = 0;
 			GridZIndex = GridZIndex_DefaultValue = 1;
-			Id = Id_DefaultValue = "";
+			Id = Id_DefaultValue = "navigator-y-axis";
 			Labels = Labels_DefaultValue = new NavigatorYAxisLabels();
 			Left = Left_DefaultValue = "";
 			LeftNumber = LeftNumber_DefaultValue = null;
@@ -216,7 +216,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An id for the axis. This can be used after render time to geta pointer to the axis object through `chart.get()`.
+		/// 
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }

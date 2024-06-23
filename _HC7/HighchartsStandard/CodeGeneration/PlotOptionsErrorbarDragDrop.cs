@@ -16,6 +16,10 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsErrorbarDragDrop()
 		{
+			DraggableHigh = DraggableHigh_DefaultValue = true;
+			DraggableLow = DraggableLow_DefaultValue = true;
+			DraggableQ1 = DraggableQ1_DefaultValue = true;
+			DraggableQ3 = DraggableQ3_DefaultValue = true;
 			DraggableX = DraggableX_DefaultValue = null;
 			DraggableY = DraggableY_DefaultValue = null;
 			DragHandle = DragHandle_DefaultValue = new PlotOptionsErrorbarDragDropDragHandle();
@@ -33,6 +37,34 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// Allow high value to be dragged individually.
+		/// </summary>
+		public bool? DraggableHigh { get; set; }
+		private bool? DraggableHigh_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Allow low value to be dragged individually.
+		/// </summary>
+		public bool? DraggableLow { get; set; }
+		private bool? DraggableLow_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Allow Q1 value to be dragged individually.
+		/// </summary>
+		public bool? DraggableQ1 { get; set; }
+		private bool? DraggableQ1_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Allow Q3 value to be dragged individually.
+		/// </summary>
+		public bool? DraggableQ3 { get; set; }
+		private bool? DraggableQ3_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// Enable dragging in the X dimension.
@@ -132,6 +164,10 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
+			if (DraggableHigh != DraggableHigh_DefaultValue) h.Add("draggableHigh",DraggableHigh);
+			if (DraggableLow != DraggableLow_DefaultValue) h.Add("draggableLow",DraggableLow);
+			if (DraggableQ1 != DraggableQ1_DefaultValue) h.Add("draggableQ1",DraggableQ1);
+			if (DraggableQ3 != DraggableQ3_DefaultValue) h.Add("draggableQ3",DraggableQ3);
 			if (DraggableX != DraggableX_DefaultValue) h.Add("draggableX",DraggableX);
 			if (DraggableY != DraggableY_DefaultValue) h.Add("draggableY",DraggableY);
 			if (DragHandle.IsDirty(highcharts)) h.Add("dragHandle",DragHandle.ToHashtable(highcharts));

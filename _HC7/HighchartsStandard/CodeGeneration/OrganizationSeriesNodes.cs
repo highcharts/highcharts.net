@@ -96,7 +96,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Layout for the node's children. If `hanging`, this node's children will hangbelow their parent, allowing a tighter packing of nodes in the diagram.Note: Since @next version, the `hanging` layout is set by default forchildren of a parent using `hanging` layout.
+		/// Layout for the node's children. If `hanging`, this node's children will hangbelow their parent, allowing a tighter packing of nodes in the diagram.Note: Since version 10.0.0, the `hanging` layout is set by default forchildren of a parent using `hanging` layout.
 		/// </summary>
 		public string Layout { get; set; }
 		private string Layout_DefaultValue { get; set; }

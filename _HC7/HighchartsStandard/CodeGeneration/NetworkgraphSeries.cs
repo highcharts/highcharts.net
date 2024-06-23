@@ -30,6 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new NetworkgraphSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			Draggable = Draggable_DefaultValue = true;
+			Dumbell = Dumbell_DefaultValue = new NetworkgraphSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new NetworkgraphSeriesEvents();
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = NetworkgraphSeriesFindNearestPointBy.X;
@@ -169,6 +170,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public bool? Draggable { get; set; }
 		private bool? Draggable_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public NetworkgraphSeriesDumbell Dumbell { get; set; }
+		private NetworkgraphSeriesDumbell Dumbell_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -458,6 +466,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (Draggable != Draggable_DefaultValue) h.Add("draggable",Draggable);
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highcharts.FirstCharacterToLower(FindNearestPointBy.ToString()));

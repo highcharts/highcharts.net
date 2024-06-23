@@ -26,7 +26,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			PitchString = PitchString_DefaultValue = "null";
 			PitchNumber = PitchNumber_DefaultValue = null;
 			PlayDelay = PlayDelay_DefaultValue = new PlotOptionsScatterSonificationDefaultInstrumentOptionsMappingPlayDelay();
-			Time = Time_DefaultValue = "'x'";
+			Time = Time_DefaultValue = new PlotOptionsScatterSonificationDefaultInstrumentOptionsMappingTime();
+			TimeString = TimeString_DefaultValue = "null";
 			TimeNumber = TimeNumber_DefaultValue = null;
 			Tremolo = Tremolo_DefaultValue = new PlotOptionsScatterSonificationDefaultInstrumentOptionsMappingTremolo();
 			Volume = Volume_DefaultValue = new PlotOptionsScatterSonificationDefaultInstrumentOptionsMappingVolume();
@@ -108,8 +109,15 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Time mapping determines what time each point plays. It isdefined as an offset in milliseconds, where 0 means itplays immediately when the chart is sonified.By default time is mapped to `x`, meaning points with thelowest `x` value plays first, and points with the highest`x` value plays last.Can be set to a fixed value, a prop to map to, a function,or a mapping object.
 		/// </summary>
-		public string Time { get; set; }
-		private string Time_DefaultValue { get; set; }
+		public PlotOptionsScatterSonificationDefaultInstrumentOptionsMappingTime Time { get; set; }
+		private PlotOptionsScatterSonificationDefaultInstrumentOptionsMappingTime Time_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Time mapping determines what time each point plays. It isdefined as an offset in milliseconds, where 0 means itplays immediately when the chart is sonified.By default time is mapped to `x`, meaning points with thelowest `x` value plays first, and points with the highest`x` value plays last.Can be set to a fixed value, a prop to map to, a function,or a mapping object.
+		/// </summary>
+		public string TimeString { get; set; }
+		private string TimeString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -150,7 +158,8 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PitchString != PitchString_DefaultValue) h.Add("pitch",PitchString);
 			if (PitchNumber != PitchNumber_DefaultValue) h.Add("pitch",PitchNumber);
 			if (PlayDelay.IsDirty(highstock)) h.Add("playDelay",PlayDelay.ToHashtable(highstock));
-			if (Time != Time_DefaultValue) h.Add("time",Time);
+			if (Time.IsDirty(highstock)) h.Add("time",Time.ToHashtable(highstock));
+			if (TimeString != TimeString_DefaultValue) h.Add("time",TimeString);
 			if (TimeNumber != TimeNumber_DefaultValue) h.Add("time",TimeNumber);
 			if (Tremolo.IsDirty(highstock)) h.Add("tremolo",Tremolo.ToHashtable(highstock));
 			if (Volume.IsDirty(highstock)) h.Add("volume",Volume.ToHashtable(highstock));

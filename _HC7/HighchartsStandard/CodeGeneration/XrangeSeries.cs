@@ -44,6 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			DataLabels = DataLabels_DefaultValue = new XrangeSeriesDataLabels();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new XrangeSeriesDragDrop();
+			Dumbell = Dumbell_DefaultValue = new XrangeSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new XrangeSeriesEvents();
 			Grouping = Grouping_DefaultValue = true;
@@ -290,6 +291,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public XrangeSeriesDragDrop DragDrop { get; set; }
 		private XrangeSeriesDragDrop DragDrop_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public XrangeSeriesDumbell Dumbell { get; set; }
+		private XrangeSeriesDumbell Dumbell_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -656,6 +664,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty(highcharts)) h.Add("dragDrop",DragDrop.ToHashtable(highcharts));
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (Grouping != Grouping_DefaultValue) h.Add("grouping",Grouping);

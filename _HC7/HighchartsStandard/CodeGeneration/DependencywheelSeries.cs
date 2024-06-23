@@ -37,6 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Data = Data_DefaultValue = new List<DependencywheelSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new DependencywheelSeriesDataLabels();
 			Description = Description_DefaultValue = "";
+			Dumbell = Dumbell_DefaultValue = new DependencywheelSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new DependencywheelSeriesEvents();
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
@@ -54,9 +55,6 @@ namespace Highsoft.Web.Mvc.Charts
 			LinkOpacity = LinkOpacity_DefaultValue = null;
 			MinLinkWidth = MinLinkWidth_DefaultValue = 0;
 			Name = Name_DefaultValue = "";
-			NodeAlignment = NodeAlignment_DefaultValue = DependencywheelSeriesNodeAlignment.Top;
-			NodeDistance = NodeDistance_DefaultValue = "30";
-			NodeDistanceNumber = NodeDistanceNumber_DefaultValue = null;
 			NodePadding = NodePadding_DefaultValue = 10;
 			Nodes = Nodes_DefaultValue = new DependencywheelSeriesNodes();
 			NodeWidth = NodeWidth_DefaultValue = "20";
@@ -240,6 +238,13 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public DependencywheelSeriesDumbell Dumbell { get; set; }
+		private DependencywheelSeriesDumbell Dumbell_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
@@ -356,27 +361,6 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public override string Name { get; set; }
 		protected override string Name_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// Determines which side of the chart the nodes are to be aligned to. Whenthe chart is inverted, `top` aligns to the left and `bottom` to theright.
-		/// </summary>
-		public DependencywheelSeriesNodeAlignment NodeAlignment { get; set; }
-		private DependencywheelSeriesNodeAlignment NodeAlignment_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The distance between nodes in a sankey diagram in the longitudinaldirection. The longitudinal direction means the direction that the chartflows - in a horizontal chart the distance is horizontal, in an invertedchart (vertical), the distance is vertical.If a number is given, it denotes pixels. If a percentage string is given,the distance is a percentage of the rendered node width. A `nodeDistance`of `100%` will render equal widths for the nodes and the gaps betweenthem.This option applies only when the `nodeWidth` option is `auto`, makingthe node width respond to the number of columns.
-		/// </summary>
-		public string NodeDistance { get; set; }
-		private string NodeDistance_DefaultValue { get; set; }
-		 
-
-		/// <summary>
-		/// The distance between nodes in a sankey diagram in the longitudinaldirection. The longitudinal direction means the direction that the chartflows - in a horizontal chart the distance is horizontal, in an invertedchart (vertical), the distance is vertical.If a number is given, it denotes pixels. If a percentage string is given,the distance is a percentage of the rendered node width. A `nodeDistance`of `100%` will render equal widths for the nodes and the gaps betweenthem.This option applies only when the `nodeWidth` option is `auto`, makingthe node width respond to the number of columns.
-		/// </summary>
-		public double? NodeDistanceNumber { get; set; }
-		private double? NodeDistanceNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -617,6 +601,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Data.Any()) h.Add("data",HashifyList(highcharts,Data));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
@@ -634,9 +619,6 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkOpacity != LinkOpacity_DefaultValue) h.Add("linkOpacity",LinkOpacity);
 			if (MinLinkWidth != MinLinkWidth_DefaultValue) h.Add("minLinkWidth",MinLinkWidth);
 			if (Name != Name_DefaultValue) h.Add("name",Name);
-			if (NodeAlignment != NodeAlignment_DefaultValue) h.Add("nodeAlignment", highcharts.FirstCharacterToLower(NodeAlignment.ToString()));
-			if (NodeDistance != NodeDistance_DefaultValue) h.Add("nodeDistance",NodeDistance);
-			if (NodeDistanceNumber != NodeDistanceNumber_DefaultValue) h.Add("nodeDistance",NodeDistanceNumber);
 			if (NodePadding != NodePadding_DefaultValue) h.Add("nodePadding",NodePadding);
 			if (Nodes.IsDirty(highcharts)) h.Add("nodes",Nodes.ToHashtable(highcharts));
 			if (NodeWidth != NodeWidth_DefaultValue) h.Add("nodeWidth",NodeWidth);

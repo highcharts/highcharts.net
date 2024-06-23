@@ -18,6 +18,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		{
 			BackgroundColor = BackgroundColor_DefaultValue = "#f2f2f2";
 			BorderColor = BorderColor_DefaultValue = "#999999";
+			BorderRadius = BorderRadius_DefaultValue = 0;
 			Enabled = Enabled_DefaultValue = true;
 			Height = Height_DefaultValue = 15;
 			LineWidth = LineWidth_DefaultValue = 1;
@@ -40,6 +41,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string BorderColor { get; set; }
 		private string BorderColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Border radius of the handles.
+		/// </summary>
+		public double? BorderRadius { get; set; }
+		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -86,6 +94,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
 			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
+			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
 			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
 			if (Height != Height_DefaultValue) h.Add("height",Height);
 			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);

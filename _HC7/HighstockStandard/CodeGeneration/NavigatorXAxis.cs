@@ -36,7 +36,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			GridZIndex = GridZIndex_DefaultValue = 1;
 			Height = Height_DefaultValue = "";
 			HeightNumber = HeightNumber_DefaultValue = null;
-			Id = Id_DefaultValue = "";
+			Id = Id_DefaultValue = "navigator-x-axis";
 			Labels = Labels_DefaultValue = new NavigatorXAxisLabels();
 			Left = Left_DefaultValue = "";
 			LeftNumber = LeftNumber_DefaultValue = null;
@@ -237,7 +237,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// An id for the axis. This can be used after render time to geta pointer to the axis object through `chart.get()`.
+		/// 
 		/// </summary>
 		public string Id { get; set; }
 		private string Id_DefaultValue { get; set; }

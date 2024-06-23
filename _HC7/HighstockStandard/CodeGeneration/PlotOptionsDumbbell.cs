@@ -34,9 +34,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareStart = CompareStart_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			ConnectorColor = ConnectorColor_DefaultValue = "";
-			Crisp = Crisp_DefaultValue = true;
+			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
+			Crisp = Crisp_DefaultValue = false;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cumulative = Cumulative_DefaultValue = false;
+			CumulativeStart = CumulativeStart_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = PlotOptionsDumbbellCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = PlotOptionsDumbbellDashStyle.Null;
@@ -51,16 +53,18 @@ namespace Highsoft.Web.Mvc.Stocks
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = PlotOptionsDumbbellGapUnit.Relative;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			GroupPadding = GroupPadding_DefaultValue = null;
 			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
 			Keys = Keys_DefaultValue = new List<string>();
 			Label = Label_DefaultValue = new PlotOptionsDumbbellLabel();
 			LastPrice = LastPrice_DefaultValue = new PlotOptionsDumbbellLastPrice();
 			LastVisiblePrice = LastVisiblePrice_DefaultValue = new PlotOptionsDumbbellLastVisiblePrice();
-			LegendSymbol = LegendSymbol_DefaultValue = PlotOptionsDumbbellLegendSymbol.Rectangle;
+			LegendSymbol = LegendSymbol_DefaultValue = "rectangle";
 			Linecap = Linecap_DefaultValue = PlotOptionsDumbbellLinecap.Round;
 			LineColor = LineColor_DefaultValue = "";
 			LinkedTo = LinkedTo_DefaultValue = "";
+			LowColor = LowColor_DefaultValue = "#333333";
 			LowMarker = LowMarker_DefaultValue = new PlotOptionsDumbbellLowMarker();
 			Marker = Marker_DefaultValue = new PlotOptionsDumbbellMarker();
 			NegativeColor = NegativeColor_DefaultValue = "";
@@ -72,8 +76,9 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = PlotOptionsDumbbellPointIntervalUnit.Null;
+			PointPadding = PointPadding_DefaultValue = null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
-			PointRange = PointRange_DefaultValue = 0;
+			PointRange = PointRange_DefaultValue = 1;
 			PointStart = PointStart_DefaultValue = 0;
 			RelativeXValue = RelativeXValue_DefaultValue = false;
 			Selected = Selected_DefaultValue = false;
@@ -204,7 +209,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defines if comparison should start from the first point within the visiblerange or should start from the first point **before** the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
+		/// Defines if comparison should start from the first point within the visiblerange or should start from the last point **before** the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
 		/// </summary>
 		public bool? CompareStart { get; set; }
 		private bool? CompareStart_DefaultValue { get; set; }
@@ -225,7 +230,14 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// When true, each point or column edge is rounded to its nearest pixelin order to render sharp on screen. In some cases, when there are alot of densely packed columns, this leads to visible differencein column widths or distance between columns. In these cases,setting `crisp` to `false` may look better, even though each columnis rendered blurry.
+		/// Pixel width of the line that connects the dumbbell point'svalues.
+		/// </summary>
+		public double? ConnectorWidth { get; set; }
+		private double? ConnectorWidth_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
 		/// </summary>
 		public bool? Crisp { get; set; }
 		private bool? Crisp_DefaultValue { get; set; }
@@ -243,6 +255,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Cumulative { get; set; }
 		private bool? Cumulative_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines if cumulation should start from the first point within the visiblerange or should start from the last point **before** the range.In other words, this flag determines if first point within the visible rangewill start at 0 (`cumulativeStart=true`) or should have been already calculatedaccording to the previous point (`cumulativeStart=false`).
+		/// </summary>
+		public bool? CumulativeStart { get; set; }
+		private bool? CumulativeStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -344,6 +363,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public double? GroupPadding { get; set; }
+		private double? GroupPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Highlight only the hovered point and fade the remaining points.Scatter-type series require enabling the 'inactive' marker state andadjusting opacity. Note that this approach could affect performancewith large datasets.
 		/// </summary>
 		public bool? InactiveOtherPoints { get; set; }
@@ -386,10 +412,10 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// What type of legend symbol to render for this series. Can be one of`areaMarker`, `lineMarker` or `rectangle`.
+		/// 
 		/// </summary>
-		public PlotOptionsDumbbellLegendSymbol LegendSymbol { get; set; }
-		private PlotOptionsDumbbellLegendSymbol LegendSymbol_DefaultValue { get; set; }
+		public string LegendSymbol { get; set; }
+		private string LegendSymbol_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -414,6 +440,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Color of the start markers in a dumbbell graph. This option takespriority over the series color. To avoid this, set `lowColor` to`undefined`.
+		/// </summary>
+		public string LowColor { get; set; }
+		private string LowColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options for the lower markers of the dumbbell-like series. When `lowMarker`is not defined, options inherit form the marker.
 		/// </summary>
 		public PlotOptionsDumbbellLowMarker LowMarker { get; set; }
@@ -435,7 +468,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A separate color for the negative part of the area.In styled mode, a negative color is set with the`.highcharts-negative` class name.
+		/// A separate color for the negative part of the area. Note that `zones`takes precedence over the negative fill color.In styled mode, a negative color is set with the`.highcharts-negative` class name.
 		/// </summary>
 		public string NegativeFillColor { get; set; }
 		private string NegativeFillColor_DefaultValue { get; set; }
@@ -491,6 +524,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public double? PointPadding { get; set; }
+		private double? PointPadding_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Possible values: `"on"`, `"between"`, `number`.In a column chart, when pointPlacement is `"on"`, the point will notcreate any padding of the X axis. In a polar column chart this meansthat the first column points directly north. If the pointPlacement is`"between"`, the columns will be laid out between ticks. This isuseful for example for visualising an amount between two points intime or in a certain sector of a polar chart.Since Highcharts 3.0.2, the point placement can also be numeric,where 0 is on the axis value, -0.5 is between this value and theprevious, and 0.5 is between this value and the next. Unlike thetextual options, numeric point placement options won't affect axispadding.Note that pointPlacement needs a [pointRange](#plotOptions.series.pointRange) to work. For column series this iscomputed, but for line-type series it needs to be set.For the `xrange` series type and gantt charts, if the Y axis is acategory axis, the `pointPlacement` applies to the Y axis rather thanthe (typically datetime) X axis.Defaults to `undefined` in cartesian charts, `"between"` in polarcharts.
 		/// </summary>
 		public PointPlacement PointPlacement { get; set; }
@@ -498,7 +538,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// The width of each point on the x axis. For example in a column chartwith one value each day, the pointRange would be 1 day (= 24 * 3600* 1000 milliseconds). This is normally computed automatically, butthis option can be used to override the automatic value.
+		/// 
 		/// </summary>
 		public double? PointRange { get; set; }
 		private double? PointRange_DefaultValue { get; set; }
@@ -662,9 +702,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
+			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
+			if (CumulativeStart != CumulativeStart_DefaultValue) h.Add("cumulativeStart",CumulativeStart);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
@@ -679,16 +721,18 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
 			if (Keys != Keys_DefaultValue) h.Add("keys",Keys);
 			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
 			if (LastPrice.IsDirty(highstock)) h.Add("lastPrice",LastPrice.ToHashtable(highstock));
 			if (LastVisiblePrice.IsDirty(highstock)) h.Add("lastVisiblePrice",LastVisiblePrice.ToHashtable(highstock));
-			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol", highstock.FirstCharacterToLower(LegendSymbol.ToString()));
+			if (LegendSymbol != LegendSymbol_DefaultValue) h.Add("legendSymbol",LegendSymbol);
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (LowColor != LowColor_DefaultValue) h.Add("lowColor",LowColor);
 			if (LowMarker.IsDirty(highstock)) h.Add("lowMarker",LowMarker.ToHashtable(highstock));
 			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
 			if (NegativeColor != NegativeColor_DefaultValue) h.Add("negativeColor",NegativeColor);
@@ -700,6 +744,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (PointPlacement.IsDirty(highstock))
 				if (PointPlacement.Value.HasValue)
 					h.Add("pointPlacement", PointPlacement.Value);

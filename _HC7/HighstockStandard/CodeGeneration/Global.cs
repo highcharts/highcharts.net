@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public Global()
 		{
+			ButtonTheme = ButtonTheme_DefaultValue = new GlobalButtonTheme();
 			Date = Date_DefaultValue = null;
 			GetTimezoneOffset = GetTimezoneOffset_DefaultValue = "";
 			Timezone = Timezone_DefaultValue = "";
@@ -25,6 +26,13 @@ namespace Highsoft.Web.Mvc.Stocks
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// General theme for buttons. This applies to the zoom button, exportingcontext menu, map navigation, range selector buttons and custombuttons generated using the `SVGRenderer.button` function. However,each of these may be overridden with more specific options.
+		/// </summary>
+		public GlobalButtonTheme ButtonTheme { get; set; }
+		private GlobalButtonTheme ButtonTheme_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// This option is deprecated since v6.0.5. Instead, use[time.Date](#time.Date) that supports individual time settingsper chart.
@@ -68,6 +76,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (h.Count > 0)
 				return h;
 
+			if (ButtonTheme.IsDirty(highstock)) h.Add("buttonTheme",ButtonTheme.ToHashtable(highstock));
 			if (Date != Date_DefaultValue) h.Add("date",Date);
 			if (GetTimezoneOffset != GetTimezoneOffset_DefaultValue) h.Add("getTimezoneOffset",GetTimezoneOffset);
 			if (Timezone != Timezone_DefaultValue) h.Add("timezone",Timezone);

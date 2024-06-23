@@ -130,7 +130,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// 
+		/// Global options that don't apply to each chart. These options, likethe `lang` options, must be set using the `Highcharts.setOptions`method.```jsHighcharts.setOptions({    global: {        buttonTheme: {            fill: '#d0d0d0'        }    }});```
 		/// </summary>
 		public Global Global { get; set; }
 		private Global Global_DefaultValue { get; set; }

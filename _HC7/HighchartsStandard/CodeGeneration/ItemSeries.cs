@@ -39,6 +39,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Data = Data_DefaultValue = new List<ItemSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new ItemSeriesDataLabels();
 			Description = Description_DefaultValue = "";
+			Dumbell = Dumbell_DefaultValue = new ItemSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			EndAngle = EndAngle_DefaultValue = null;
 			Events = Events_DefaultValue = new ItemSeriesEvents();
@@ -245,6 +246,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ItemSeriesDumbell Dumbell { get; set; }
+		private ItemSeriesDumbell Dumbell_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -571,6 +579,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Data.Any()) h.Add("data",HashifyList(highcharts,Data));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (EndAngle != EndAngle_DefaultValue) h.Add("endAngle",EndAngle);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));

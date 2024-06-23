@@ -34,21 +34,21 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A callback to return the time zone offset for a given datetime. Ittakes the timestamp in terms of milliseconds since January 1 1970,and returns the timezone offset in minutes. This provides a hookfor drawing time based charts in specific time zones using theirlocal DST crossover dates, with the help of external libraries.
+		/// A callback to return the time zone offset for a given datetime. Ittakes the timestamp in terms of milliseconds since January 1 1970,and returns the timezone offset in minutes. This provides a hookfor drawing time based charts in specific time zones using theirlocal DST crossover dates, with the help of external libraries.This option is deprecated as of v11.4.1 and will be removed in afuture release. Use the [time.timezone](#time.timezone) optioninstead.
 		/// </summary>
 		public string GetTimezoneOffset { get; set; }
 		private string GetTimezoneOffset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// A named time zone. Supported time zone names rely on the browserimplementations, as described in the [mdndocs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#timezone).If the given time zone is not recognized by the browser, Highchartsprovides a warning and falls back to returning a 0 offset,corresponding to the UCT time zone.Until v11.2.0, this option depended on moment.js.
+		/// A named time zone. Supported time zone names rely on the browserimplementations, as described in the [mdndocs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#timezone).If the given time zone is not recognized by the browser, Highchartsprovides a warning and falls back to returning a 0 offset,corresponding to the UTC time zone.Until v11.2.0, this option depended on moment.js.
 		/// </summary>
 		public string Timezone { get; set; }
 		private string Timezone_DefaultValue { get; set; }
 		 
 
 		/// <summary>
-		/// The timezone offset in minutes. Positive values are west, negativevalues are east of UTC, as in the ECMAScript[getTimezoneOffset](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset)method. Use this to display UTC based data in a predefined time zone.
+		/// The timezone offset in minutes. Positive values are west, negativevalues are east of UTC, as in the ECMAScript[getTimezoneOffset](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset)method. Use this to display UTC based data in a predefined time zone.This option is deprecated as of v11.4.1 and will be removed in afuture release. Use the [time.timezone](#time.timezone) optioninstead.
 		/// </summary>
 		public double? TimezoneOffset { get; set; }
 		private double? TimezoneOffset_DefaultValue { get; set; }

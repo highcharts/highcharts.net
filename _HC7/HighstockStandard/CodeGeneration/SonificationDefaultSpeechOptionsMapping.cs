@@ -29,6 +29,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Rate = Rate_DefaultValue = new SonificationDefaultSpeechOptionsMappingRate();
 			Text = Text_DefaultValue = "";
 			Time = Time_DefaultValue = new SonificationDefaultSpeechOptionsMappingTime();
+			TimeString = TimeString_DefaultValue = "null";
 			TimeNumber = TimeNumber_DefaultValue = null;
 			Tremolo = Tremolo_DefaultValue = new SonificationDefaultSpeechOptionsMappingTremolo();
 			Volume = Volume_DefaultValue = new SonificationDefaultSpeechOptionsMappingVolume();
@@ -131,6 +132,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// Time mapping determines what time each point plays. It isdefined as an offset in milliseconds, where 0 means itplays immediately when the chart is sonified.By default time is mapped to `x`, meaning points with thelowest `x` value plays first, and points with the highest`x` value plays last.Can be set to a fixed value, a prop to map to, a function,or a mapping object.
 		/// </summary>
+		public string TimeString { get; set; }
+		private string TimeString_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Time mapping determines what time each point plays. It isdefined as an offset in milliseconds, where 0 means itplays immediately when the chart is sonified.By default time is mapped to `x`, meaning points with thelowest `x` value plays first, and points with the highest`x` value plays last.Can be set to a fixed value, a prop to map to, a function,or a mapping object.
+		/// </summary>
 		public double? TimeNumber { get; set; }
 		private double? TimeNumber_DefaultValue { get; set; }
 		 
@@ -169,6 +177,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Rate.IsDirty(highstock)) h.Add("rate",Rate.ToHashtable(highstock));
 			if (Text != Text_DefaultValue) h.Add("text",Text);
 			if (Time.IsDirty(highstock)) h.Add("time",Time.ToHashtable(highstock));
+			if (TimeString != TimeString_DefaultValue) h.Add("time",TimeString);
 			if (TimeNumber != TimeNumber_DefaultValue) h.Add("time",TimeNumber);
 			if (Tremolo.IsDirty(highstock)) h.Add("tremolo",Tremolo.ToHashtable(highstock));
 			if (Volume.IsDirty(highstock)) h.Add("volume",Volume.ToHashtable(highstock));

@@ -16,6 +16,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Series()
 		{
+			Dumbell = Dumbell_DefaultValue = new DumbellSeries();
 			Id = Id_DefaultValue = string.Empty;
 			Index = Index_DefaultValue = null;
 			LegendIndex = LegendIndex_DefaultValue = null;
@@ -31,6 +32,13 @@ namespace Highsoft.Web.Mvc.Charts
 			CustomFields = new Hashtable();
 		}	
 		
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public virtual DumbellSeries Dumbell { get; set; }
+		protected virtual DumbellSeries Dumbell_DefaultValue { get; set; }
+		 
 
 		/// <summary>
 		/// An id for the series. This can be used after render time to get a pointerto the series object through `chart.get()`.
@@ -116,6 +124,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (h.Count > 0)
 				return h;
 
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (Index != Index_DefaultValue) h.Add("index",Index);
 			if (LegendIndex != LegendIndex_DefaultValue) h.Add("legendIndex",LegendIndex);

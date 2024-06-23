@@ -73,7 +73,7 @@ namespace Highsoft.Web.Mvc.Charts
 		 
 
 		/// <summary>
-		/// Alignment method for data labels. Possible values are:- `plotEdges`: Each label touches the nearest vertical edge of  the plot area.- `connectors`: Connectors have the same x position and the  widest label of each half (left & right) touches the nearest  vertical edge of the plot area.
+		/// Alignment method for data labels. If set to `plotEdges`, the labelsare aligned within the plot area in the direction of the y-axis. Soin a regular column chart, the labels are aligned verticallyaccording to the `verticalAlign` setting. In a bar chart, which isinverted, the labels are aligned horizontally according to the`align` setting. Applies to cartesian series only.
 		/// </summary>
 		public string AlignTo { get; set; }
 		private string AlignTo_DefaultValue { get; set; }

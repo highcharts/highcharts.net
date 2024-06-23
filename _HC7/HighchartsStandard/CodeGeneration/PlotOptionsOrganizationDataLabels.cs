@@ -17,6 +17,7 @@ namespace Highsoft.Web.Mvc.Charts
 		public PlotOptionsOrganizationDataLabels()
 		{
 			Align = Align_DefaultValue = PlotOptionsOrganizationDataLabelsAlign.Center;
+			AlignTo = AlignTo_DefaultValue = "";
 			AllowOverlap = AllowOverlap_DefaultValue = false;
 			Animation = Animation_DefaultValue = new Animation();
 			AnimationBool = AnimationBool_DefaultValue = null;
@@ -63,6 +64,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public PlotOptionsOrganizationDataLabelsAlign Align { get; set; }
 		private PlotOptionsOrganizationDataLabelsAlign Align_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Alignment method for data labels. If set to `plotEdges`, the labelsare aligned within the plot area in the direction of the y-axis. Soin a regular column chart, the labels are aligned verticallyaccording to the `verticalAlign` setting. In a bar chart, which isinverted, the labels are aligned horizontally according to the`align` setting. Applies to cartesian series only.
+		/// </summary>
+		public string AlignTo { get; set; }
+		private string AlignTo_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -325,6 +333,7 @@ namespace Highsoft.Web.Mvc.Charts
 				return h;
 
 			if (Align != Align_DefaultValue) h.Add("align", highcharts.FirstCharacterToLower(Align.ToString()));
+			if (AlignTo != AlignTo_DefaultValue) h.Add("alignTo",AlignTo);
 			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
 			if (Animation.IsDirty(highcharts)) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);

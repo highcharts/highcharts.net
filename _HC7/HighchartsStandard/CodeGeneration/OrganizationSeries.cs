@@ -35,6 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 			Data = Data_DefaultValue = new List<OrganizationSeriesData>();
 			DataLabels = DataLabels_DefaultValue = new OrganizationSeriesDataLabels();
 			Description = Description_DefaultValue = "";
+			Dumbell = Dumbell_DefaultValue = new OrganizationSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new OrganizationSeriesEvents();
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
@@ -226,6 +227,13 @@ namespace Highsoft.Web.Mvc.Charts
 		/// </summary>
 		public string Description { get; set; }
 		private string Description_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public OrganizationSeriesDumbell Dumbell { get; set; }
+		private OrganizationSeriesDumbell Dumbell_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -639,6 +647,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Data.Any()) h.Add("data",HashifyList(highcharts,Data));
 			if (DataLabels.IsDirty(highcharts)) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
+			if (Dumbell.IsDirty(highcharts)) h.Add("dumbell",Dumbell.ToHashtable(highcharts));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highcharts)) h.Add("events",Events.ToHashtable(highcharts));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);

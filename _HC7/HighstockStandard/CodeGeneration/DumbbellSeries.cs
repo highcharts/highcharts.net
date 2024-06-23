@@ -34,9 +34,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			CompareStart = CompareStart_DefaultValue = false;
 			ConnectNulls = ConnectNulls_DefaultValue = false;
 			ConnectorColor = ConnectorColor_DefaultValue = "";
+			ConnectorWidth = ConnectorWidth_DefaultValue = 1;
 			Crisp = Crisp_DefaultValue = true;
 			CropThreshold = CropThreshold_DefaultValue = 300;
 			Cumulative = Cumulative_DefaultValue = false;
+			CumulativeStart = CumulativeStart_DefaultValue = false;
 			Cursor = Cursor_DefaultValue = DumbbellSeriesCursor.Null;
 			Custom = Custom_DefaultValue = new Hashtable();
 			DashStyle = DashStyle_DefaultValue = DumbbellSeriesDashStyle.Null;
@@ -46,12 +48,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			DataSorting = DataSorting_DefaultValue = new DumbbellSeriesDataSorting();
 			Description = Description_DefaultValue = "";
 			DragDrop = DragDrop_DefaultValue = new DumbbellSeriesDragDrop();
+			Dumbell = Dumbell_DefaultValue = new DumbbellSeriesDumbell();
 			EnableMouseTracking = EnableMouseTracking_DefaultValue = true;
 			Events = Events_DefaultValue = new DumbbellSeriesEvents();
 			FindNearestPointBy = FindNearestPointBy_DefaultValue = DumbbellSeriesFindNearestPointBy.X;
 			GapSize = GapSize_DefaultValue = 0;
 			GapUnit = GapUnit_DefaultValue = DumbbellSeriesGapUnit.Relative;
 			GetExtremesFromAll = GetExtremesFromAll_DefaultValue = false;
+			GroupPadding = GroupPadding_DefaultValue = null;
 			Id = Id_DefaultValue = "";
 			InactiveOtherPoints = InactiveOtherPoints_DefaultValue = false;
 			IncludeInDataExport = IncludeInDataExport_DefaultValue = null;
@@ -65,6 +69,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			Linecap = Linecap_DefaultValue = DumbbellSeriesLinecap.Round;
 			LineColor = LineColor_DefaultValue = "";
 			LinkedTo = LinkedTo_DefaultValue = "";
+			LowColor = LowColor_DefaultValue = "#333333";
 			LowMarker = LowMarker_DefaultValue = new DumbbellSeriesLowMarker();
 			Marker = Marker_DefaultValue = new DumbbellSeriesMarker();
 			Name = Name_DefaultValue = "";
@@ -77,6 +82,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			PointDescriptionFormatter = PointDescriptionFormatter_DefaultValue = "";
 			PointInterval = PointInterval_DefaultValue = 1;
 			PointIntervalUnit = PointIntervalUnit_DefaultValue = DumbbellSeriesPointIntervalUnit.Null;
+			PointPadding = PointPadding_DefaultValue = null;
 			PointPlacement = PointPlacement_DefaultValue = new PointPlacement();
 			PointRange = PointRange_DefaultValue = 0;
 			PointStart = PointStart_DefaultValue = 0;
@@ -216,7 +222,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// Defines if comparison should start from the first point within the visiblerange or should start from the first point **before** the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
+		/// Defines if comparison should start from the first point within the visiblerange or should start from the last point **before** the range.In other words, this flag determines if first point within the visible rangewill have 0% (`compareStart=true`) or should have been already calculatedaccording to the previous point (`compareStart=false`).
 		/// </summary>
 		public bool? CompareStart { get; set; }
 		private bool? CompareStart_DefaultValue { get; set; }
@@ -234,6 +240,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public string ConnectorColor { get; set; }
 		private string ConnectorColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Pixel width of the line that connects the dumbbell point'svalues.
+		/// </summary>
+		public double? ConnectorWidth { get; set; }
+		private double? ConnectorWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -255,6 +268,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? Cumulative { get; set; }
 		private bool? Cumulative_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// Defines if cumulation should start from the first point within the visiblerange or should start from the last point **before** the range.In other words, this flag determines if first point within the visible rangewill start at 0 (`cumulativeStart=true`) or should have been already calculatedaccording to the previous point (`cumulativeStart=false`).
+		/// </summary>
+		public bool? CumulativeStart { get; set; }
+		private bool? CumulativeStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -321,6 +341,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// 
+		/// </summary>
+		public DumbbellSeriesDumbell Dumbell { get; set; }
+		private DumbbellSeriesDumbell Dumbell_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Enable or disable the mouse tracking for a specific series. Thisincludes point tooltips and click events on graphs and points. Forlarge datasets it improves performance.
 		/// </summary>
 		public bool? EnableMouseTracking { get; set; }
@@ -360,6 +387,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public bool? GetExtremesFromAll { get; set; }
 		private bool? GetExtremesFromAll_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? GroupPadding { get; set; }
+		private double? GroupPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -454,6 +488,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
+		/// Color of the start markers in a dumbbell graph. This option takespriority over the series color. To avoid this, set `lowColor` to`undefined`.
+		/// </summary>
+		public string LowColor { get; set; }
+		private string LowColor_DefaultValue { get; set; }
+		 
+
+		/// <summary>
 		/// Options for the lower markers of the arearange-like series. When `lowMarker`is not defined, options inherit form the marker.
 		/// </summary>
 		public DumbbellSeriesLowMarker LowMarker { get; set; }
@@ -482,7 +523,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A separate color for the negative part of the area.In styled mode, a negative color is set with the`.highcharts-negative` class name.
+		/// A separate color for the negative part of the area. Note that `zones`takes precedence over the negative fill color.In styled mode, a negative color is set with the`.highcharts-negative` class name.
 		/// </summary>
 		public string NegativeFillColor { get; set; }
 		private string NegativeFillColor_DefaultValue { get; set; }
@@ -535,6 +576,13 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// </summary>
 		public DumbbellSeriesPointIntervalUnit PointIntervalUnit { get; set; }
 		private DumbbellSeriesPointIntervalUnit PointIntervalUnit_DefaultValue { get; set; }
+		 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public double? PointPadding { get; set; }
+		private double? PointPadding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
@@ -758,9 +806,11 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (CompareStart != CompareStart_DefaultValue) h.Add("compareStart",CompareStart);
 			if (ConnectNulls != ConnectNulls_DefaultValue) h.Add("connectNulls",ConnectNulls);
 			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
+			if (ConnectorWidth != ConnectorWidth_DefaultValue) h.Add("connectorWidth",ConnectorWidth);
 			if (Crisp != Crisp_DefaultValue) h.Add("crisp",Crisp);
 			if (CropThreshold != CropThreshold_DefaultValue) h.Add("cropThreshold",CropThreshold);
 			if (Cumulative != Cumulative_DefaultValue) h.Add("cumulative",Cumulative);
+			if (CumulativeStart != CumulativeStart_DefaultValue) h.Add("cumulativeStart",CumulativeStart);
 			if (Cursor != Cursor_DefaultValue) h.Add("cursor", highstock.FirstCharacterToLower(Cursor.ToString()));
 			if (Custom != Custom_DefaultValue) h.Add("custom",Custom);
 			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
@@ -770,12 +820,14 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (DataSorting.IsDirty(highstock)) h.Add("dataSorting",DataSorting.ToHashtable(highstock));
 			if (Description != Description_DefaultValue) h.Add("description",Description);
 			if (DragDrop.IsDirty(highstock)) h.Add("dragDrop",DragDrop.ToHashtable(highstock));
+			if (Dumbell.IsDirty(highstock)) h.Add("dumbell",Dumbell.ToHashtable(highstock));
 			if (EnableMouseTracking != EnableMouseTracking_DefaultValue) h.Add("enableMouseTracking",EnableMouseTracking);
 			if (Events.IsDirty(highstock)) h.Add("events",Events.ToHashtable(highstock));
 			if (FindNearestPointBy != FindNearestPointBy_DefaultValue) h.Add("findNearestPointBy", highstock.FirstCharacterToLower(FindNearestPointBy.ToString()));
 			if (GapSize != GapSize_DefaultValue) h.Add("gapSize",GapSize);
 			if (GapUnit != GapUnit_DefaultValue) h.Add("gapUnit", highstock.FirstCharacterToLower(GapUnit.ToString()));
 			if (GetExtremesFromAll != GetExtremesFromAll_DefaultValue) h.Add("getExtremesFromAll",GetExtremesFromAll);
+			if (GroupPadding != GroupPadding_DefaultValue) h.Add("groupPadding",GroupPadding);
 			if (Id != Id_DefaultValue) h.Add("id",Id);
 			if (InactiveOtherPoints != InactiveOtherPoints_DefaultValue) h.Add("inactiveOtherPoints",InactiveOtherPoints);
 			if (IncludeInDataExport != IncludeInDataExport_DefaultValue) h.Add("includeInDataExport",IncludeInDataExport);
@@ -789,6 +841,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Linecap != Linecap_DefaultValue) h.Add("linecap", highstock.FirstCharacterToLower(Linecap.ToString()));
 			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
 			if (LinkedTo != LinkedTo_DefaultValue) h.Add("linkedTo",LinkedTo);
+			if (LowColor != LowColor_DefaultValue) h.Add("lowColor",LowColor);
 			if (LowMarker.IsDirty(highstock)) h.Add("lowMarker",LowMarker.ToHashtable(highstock));
 			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
 			if (Name != Name_DefaultValue) h.Add("name",Name);
@@ -801,6 +854,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (PointDescriptionFormatter != PointDescriptionFormatter_DefaultValue) { h.Add("pointDescriptionFormatter",PointDescriptionFormatter); highstock.AddFunction("pointDescriptionFormatter", PointDescriptionFormatter); }  
 			if (PointInterval != PointInterval_DefaultValue) h.Add("pointInterval",PointInterval);
 			if (PointIntervalUnit != PointIntervalUnit_DefaultValue) h.Add("pointIntervalUnit", highstock.FirstCharacterToLower(PointIntervalUnit.ToString()));
+			if (PointPadding != PointPadding_DefaultValue) h.Add("pointPadding",PointPadding);
 			if (PointPlacement.IsDirty(highstock))
 				if (PointPlacement.Value.HasValue)
 					h.Add("pointPlacement", PointPlacement.Value);

@@ -77,7 +77,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		 
 
 		/// <summary>
-		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the whole tooltip. When format strings are a requirement, it isusually more convenient to use `headerFormat`, `pointFormat` and`footerFormat`, but the `format` option allows combining them intoone setting.The context of the format string is the same as that of the`formatter` callback.
+		/// A [format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for the whole shared tooltip. When format strings are a requirement,it is usually more convenient to use `headerFormat`, `pointFormat`and `footerFormat`, but the `format` option allows combining theminto one setting.The context of the format string is the same as that of the`tooltip.formatter` callback.
 		/// </summary>
 		public string Format { get; set; }
 		private string Format_DefaultValue { get; set; }
