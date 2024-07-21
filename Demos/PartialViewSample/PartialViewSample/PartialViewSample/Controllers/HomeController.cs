@@ -30,6 +30,8 @@ namespace PartialViewSample.Controllers
             ViewData["berlin"] = berlinData;
             ViewData["london"] = londonData;
 
+            
+
             return View();
         }
 
@@ -53,6 +55,10 @@ namespace PartialViewSample.Controllers
             ViewData["ny2"] = nyData;
             ViewData["berlin2"] = berlinData;
             ViewData["london2"] = londonData;
+
+            List<ColumnSeriesData> tokyoDataC = new List<ColumnSeriesData>();
+            tokyoValues.ForEach(p => tokyoDataC.Add(new ColumnSeriesData { Y = p }));
+            ViewData["tokyoC"] = tokyoData;
 
             return PartialView();
         }

@@ -1,4 +1,5 @@
 ﻿@using Highsoft.Web.Mvc.Charts
+@using Highsoft.Web.Mvc.Charts.Rendering;
 
 @{Highcharts chart1 = new Highcharts
     {
@@ -29,7 +30,7 @@ new YAxis
         Text = "Temperature (°C)"
     },
     PlotLines = new List<YAxisPlotLines>
-    {
+{
             new YAxisPlotLines
         {
             Value = 0,
@@ -74,6 +75,87 @@ new LineSeries
 }
 }
     };
+
+    var chartOptions = new Highcharts
+    {
+        Chart = new Highsoft.Web.Mvc.Charts.Chart
+        {
+        },
+        Title = new Title
+        {
+            Text = "Pin Temps"
+        },
+        Subtitle = new Subtitle
+        {
+            Text = ""
+        },
+        Credits = new Credits
+        {
+            Enabled = false
+        },
+        XAxis = new List<XAxis>
+{
+new XAxis
+{
+AllowDecimals=false,
+TickInterval=1,
+Title = new XAxisTitle
+{
+Text = "Pin Number"
+},
+}
+},
+        YAxis = new List<YAxis>
+{
+new YAxis
+{
+
+Min = 0,
+Title = new YAxisTitle
+{
+Text = "Temperature (°F)"
+}
+}
+},
+        Tooltip = new Highsoft.Web.Mvc.Charts.Tooltip
+        {
+            HeaderFormat = "<span style='font-size:12px'>Pin:{point.key}</span><table style='font-size:12px'>",
+            PointFormat = "<tr><td style='color:{series.color};padding:0'></td><td style='padding:0'><b>{point.y:.1f}&nbsp;°F</b></td></tr>",
+            FooterFormat = "</table>",
+            Shared = true,
+            UseHTML = true
+        },
+        PlotOptions = new PlotOptions
+        {
+            Column = new PlotOptionsColumn
+            {
+                PointPadding = 0.2,
+                BorderWidth = 0,
+                DataLabels = new PlotOptionsColumnDataLabels
+                {
+                    Enabled = false,
+                    Crop = false
+                }
+            }
+        },
+        Series = new List<Series>
+{
+new ColumnSeries
+{
+Name = "Pin Number",
+Data = ViewData["tokyoC"] as List<ColumnSeriesData>,
+ShowInLegend = false
+
+}
+}
+    };
+
+
+    chart1.ID = "chart1";
+    HighchartsRenderer renderer = new HighchartsRenderer(chartOptions);
+
 }
 
-@Html.Highsoft().GetHighcharts(chart1, "chart1")
+@Html.Raw(renderer.RenderHtml())
+
+
