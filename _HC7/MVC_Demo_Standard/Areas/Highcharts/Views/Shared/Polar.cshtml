@@ -74,10 +74,7 @@
                 new ColumnSeries
                 {
                     Name = "Column",
-                    PointPlacement = new PointPlacement
-                    {
-                        PointPlacementEnum = PointPlacementEnum.Between
-                    },
+                    PointPlacement = ColumnSeriesPointPlacement.Between,
                     Data = new List<ColumnSeriesData> {
                         new ColumnSeriesData { Y = 8 },
                         new ColumnSeriesData { Y = 7 },

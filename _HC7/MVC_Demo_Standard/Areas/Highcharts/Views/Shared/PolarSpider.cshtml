@@ -63,10 +63,7 @@
                 new LineSeries
                 {
                     Name = "Allocated Budget",
-                    PointPlacement = new PointPlacement
-                    {
-                        PointPlacementEnum = PointPlacementEnum.On
-                    },
+                    PointPlacement = LineSeriesPointPlacement.On,
                     Data = new List<LineSeriesData> {
                         new LineSeriesData { Y = 43000 },
                         new LineSeriesData { Y = 19000 },
@@ -79,10 +76,7 @@
                 new LineSeries
                 {
                     Name = "Actual Spending",
-                    PointPlacement = new PointPlacement
-                    {
-                        PointPlacementEnum = PointPlacementEnum.On
-                    },
+                    PointPlacement = LineSeriesPointPlacement.On,
                     Data = new List<LineSeriesData> {
                         new LineSeriesData { Y = 50000 },
                         new LineSeriesData { Y = 39000 },

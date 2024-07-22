@@ -31,7 +31,10 @@
               {
                   AllowPointSelect = true,
                   Cursor = PlotOptionsPieCursor.Pointer,
-                  DataLabels = new Hashtable { { "enabled", false } },
+                  DataLabels = new PlotOptionsPieDataLabels
+                  {
+                      Enabled = false
+                  },
                   ShowInLegend = true
               }
           },
@@ -54,7 +57,7 @@
                     Title = new YAxisTitle
                     {
                         Text = "Population (millions)",
-                        Align = YAxisTitleAlign.Center
+                        Align = YAxisTitleAlign.Middle
                     }
                 }
                               },

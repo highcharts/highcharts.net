@@ -32,10 +32,20 @@
           {
               Pie = new PlotOptionsPie
               {
-                  DataLabels = new Hashtable { { "enabled", true }, { "distance", -50 }, { "color", "#FFFFFF" },
-                    { "shadow", new Hashtable { {"enabled", true }, { "width", 10 }, { "color", "#000000" }, { "offsetX", 0 }, { "OffsetY", 0 } } }
-
-                              },
+                  DataLabels = new PlotOptionsPieDataLabels 
+                  { 
+                    Enabled = true,
+                    DistanceNumber = -50,
+                    Color = "#FFFFFF",
+                    Shadow = new Shadow 
+                    { 
+                        Enabled = true,
+                        Width = 10,
+                        Color = "#000000",
+                        OffsetX = 0,
+                        OffsetY = 0
+                    }
+                  },
                   StartAngle = -90,
                   EndAngle = 90,
                   Center = new string[] { "50%", "75%" }
