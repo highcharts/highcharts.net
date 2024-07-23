@@ -79,9 +79,6 @@
     <Content Include="CodeAddOns\MenuItem.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="CodeAddOns\PointPlacement.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="CodeAddOns\Shadow.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

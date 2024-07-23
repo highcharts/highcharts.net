@@ -36,7 +36,11 @@
                       AllowPointSelect = true,
                       Cursor = PlotOptionsPieCursor.Pointer,
                       Depth = 35,
-                      DataLabels = new Hashtable { { "enabled", true }, { "format", "<b>{point.name}</b>" } }
+                      DataLabels = new PlotOptionsPieDataLabels
+                      {
+                          Enabled = true,
+                          Format = "<b>{point.name}</b>"
+                      }
                   }
               },
               Series = new List<Series>

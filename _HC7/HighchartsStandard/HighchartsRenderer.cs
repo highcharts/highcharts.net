@@ -43,10 +43,10 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
             Hashtable options = new Hashtable();
 
-            if (global != null && global.IsDirty(_chart))
+            if (global != null)
                 options.Add("global", global.ToHashtable(_chart));
 
-            if (lang != null && lang.IsDirty(_chart))
+            if (lang != null)
                 options.Add("lang", lang.ToHashtable(_chart));
 
             sb.Append(JsonConvert.SerializeObject(options));
@@ -102,7 +102,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrWhiteSpace(_chart.ID))
-                _chart.Chart.RenderTo = _chart.ID;
+                _chart.Chart = new Chart { RenderTo = _chart.ID };
 
             if (addContainer)
                 sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.Chart.RenderTo, GetChartHeight(), GetChartWidth());
@@ -161,23 +161,23 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
         {            
             Hashtable options = _chart.ToHashtable(_chart);
 
-            List<Hashtable> series = new List<Hashtable>();
-            List<Hashtable> drilldownSeries = new List<Hashtable>();
+            //List<Hashtable> series = new List<Hashtable>();
+            //List<Hashtable> drilldownSeries = new List<Hashtable>();
 
-            if (_chart.Series != null)
-                series = SeriesToHashtables(_chart.Series);
-            if (_chart.Drilldown.Series != null)
-                drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
+            //if (_chart.Series != null)
+            //    series = SeriesToHashtables(_chart.Series);
+            //if (_chart.Drilldown != null && _chart.Drilldown.Series != null)
+            //    drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
 
-            if (series.Count > 0)
-            {
-                options["series"] = series;
-            }
-            if (drilldownSeries.Count > 0)
-            {
-                Hashtable drilldown = options["drilldown"] as Hashtable;
-                drilldown["series"] = drilldownSeries;
-            }
+            //if (series.Count > 0)
+            //{
+            //    options["series"] = series;
+            //}
+            //if (drilldownSeries.Count > 0)
+            //{
+            //    Hashtable drilldown = options["drilldown"] as Hashtable;
+            //    drilldown["series"] = drilldownSeries;
+            //}
 
             string json = JsonConvert.SerializeObject(options);
             var functions = _chart.functions;

@@ -73,11 +73,11 @@ namespace SourceCodeGenerator.Generators
 
             for (int i = 0; i < items.Count; i++)
             {
-                if (items[i].FullName.Contains("pointPlacement"))
-                {
-                    apiClones.Add(items[i]);
-                    continue;
-                }
+                //if (items[i].FullName.Contains("pointPlacement"))
+                //{
+                //    apiClones.Add(items[i]);
+                //    continue;
+                //}
 
                 var clones = MultiplicationService.MultiplyObject(items[i]);
 
@@ -289,7 +289,7 @@ namespace SourceCodeGenerator.Generators
 
                 //ignored for multitypes
                 var multipliedClones = MultiplicationService.MultiplyObject(clone);
-                if (multipliedClones.Any() && !clone.FullName.Contains("pointPlacement"))
+                if (multipliedClones.Any())// && !clone.FullName.Contains("pointPlacement"))
                     clones.AddRange(multipliedClones);
                 else
                     clones.Add(clone);

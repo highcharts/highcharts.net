@@ -47,20 +47,5 @@ namespace Highsoft.Web.Mvc.Charts
 
             return h;
         }
-
-        internal override string ToJSON(Highcharts highcharts)
-        {
-            if (h.Count > 0)
-                return JsonConvert.SerializeObject(h);
-            else
-                return String.Empty;
-        }
-
-        // checks if the state of the object is different from the default
-        // and therefore needs to be serialized
-        internal override bool IsDirty(Highcharts highcharts)
-        {
-            return ToHashtable(highcharts).Count > 0;
-        }
 	}
 }

@@ -50,11 +50,11 @@ namespace SourceCodeGenerator.Generators
                 // All events (javascript functions) should default to empty string
                 if (apiItem.ReturnType != null && (apiItem.ReturnType.ToLower() == "function" || apiItem.ReturnType.ToLower() == "string|function"))
                     apiItem.Defaults = "";
-                if (apiItem.Title == "pointPlacement")
-                {
-                    apiItem.IsParent = true;
-                    apiItem.Values = new List<string>();
-                }
+                //if (apiItem.Title == "pointPlacement")
+                //{
+                //    apiItem.IsParent = true;
+                //    apiItem.Values = new List<string>();
+                //}
                 if (apiItem.Title == "symbol")
                 {
                     apiItem.IsParent = false;
@@ -222,7 +222,7 @@ namespace SourceCodeGenerator.Generators
                         continue;
 
                     formattedProperty = FormatProperty(propertyTemplate, child);
-                    formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
+                    //formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
                     formattedComparer = FormatPropertyComparer(propertyName, child);
                 }
                 else
@@ -339,10 +339,13 @@ namespace SourceCodeGenerator.Generators
                     apiItem.Defaults = apiItem.Values[0];
                 else if (!defaultMatched)
                     apiItem.Values.Insert(0, defaults);
+
+                apiItem.Values.Insert(0, "null");
             }
 
             if ((apiItem.FullName.Contains("series") && apiItem.FullName.Contains("type")) || apiItem.FullName == "chart.type" || (apiItem.FullName.StartsWith("series<") && apiItem.FullName.EndsWith(">.type")))
             {
+                apiItem.Values.Add("null");
                 apiItem.Values.Add("abands");
                 apiItem.Values.Add("ad");
                 apiItem.Values.Add("ao");
@@ -547,6 +550,8 @@ namespace SourceCodeGenerator.Generators
             }
 
             result = result.Replace('-', '_');
+            result = result.Replace("DataDataLabels", "DataLabels");
+            result = result.Replace("LevelsDataLabels", "DataLabels");
 
             return result.ToString();
         }
@@ -669,18 +674,18 @@ namespace SourceCodeGenerator.Generators
 
         protected override string FormatPropertyComparer(string propertyName, ApiItem child)
         {
-            string simplePropertyFormat = "if ({0} != {1}) h.Add(\"{2}\",{0});\n\t\t\t";
-            string listPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", HashifyList(" + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
-            string enumPropertyFormat = "if ({0} != {1}) h.Add(\"{2}\", {3}.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
-            string functionPropertyFormat = "if ({0} != {2}) {{ h.Add(\"{1}\",{0}); {4}.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
-            string complexPropertyFormat = "if ({0}.IsDirty(" + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToHashtable(" + MAIN_FIELD_NAME + "));\n\t\t\t";
-            string customPropertyFormat = "if ({0}.IsDirty(" + MAIN_FIELD_NAME + ")) h.Add(\"{1}\",{0}.ToJSON(" + MAIN_FIELD_NAME + "));\n\t\t\t";
+            string simplePropertyFormat = "if ({0} != null) h.Add(\"{2}\",{0});\n\t\t\t";
+            string listPropertyFormat = "if ({0} != null) h.Add(\"{2}\", HashifyList(" + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
+            string enumPropertyFormat = "if ({0} != {1}.Null) h.Add(\"{2}\", {3}.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
+            string functionPropertyFormat = "if ({0} != null) {{ h.Add(\"{1}\",{0}); {4}.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
+            string complexPropertyFormat = "if ({0} != null) h.Add(\"{1}\",{0}.ToHashtable(" + MAIN_FIELD_NAME + "));\n\t\t\t";
+            string customPropertyFormat = "if ({0} != null) h.Add(\"{1}\",{0}.ToJSON(" + MAIN_FIELD_NAME + "));\n\t\t\t";
 
             // fully qualified names that are collections
             if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
             {
                 if (child.FullName == "Data")
-                    return "if (Data.Any()) h.Add(\"data\",HashifyList(" + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
+                    return "if (Data != null) h.Add(\"data\",HashifyList(" + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
 
                 if ((child.Title.ToLower() == "xaxis" || child.Title.ToLower() == "yaxis") && child.ParentFullName != "Highcharts")
                     return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
@@ -696,10 +701,10 @@ namespace SourceCodeGenerator.Generators
                     return String.Format(complexPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
 
                 if (propertyName == "Data")
-                    return "if (Data.Any()) h.Add(\"data\",HashifyList(" + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
+                    return "if (Data != null) h.Add(\"data\",HashifyList(" + MAIN_FIELD_NAME + ",Data));\n\t\t\t";
 
                 if (propertyName == "Stops")
-                    return "if (Stops.Any()) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
+                    return "if (Stops != null) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
 
                 return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
             }
@@ -724,15 +729,15 @@ namespace SourceCodeGenerator.Generators
                 if (child.Title.ToLower() == "series" && child.ParentFullName == "Highcharts")
                     return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
-                if (propertyName.ToLower().Contains("pointplacement"))
-                    return "if (PointPlacement.IsDirty(highcharts))\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON(highcharts));\n\t\t\t";
+                //if (propertyName.ToLower().Contains("pointplacement"))
+                //    return "if (PointPlacement.IsDirty(highcharts))\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON(highcharts));\n\t\t\t";
 
                 return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
             }
 
             // Enum
             if (child.ReturnType.Equals(TypeService.EnumType) || ((child.ReturnType == "string" || child.ReturnType == "String" || child.ReturnType == TypeService.CSSType) && child.Values != null && child.Values.Count > 0))
-                return String.Format(enumPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix), MAIN_FIELD_NAME);
+                return String.Format(enumPropertyFormat, propertyName, GetClassNameFromItem(child), GetJSName(propertyName, child.Suffix), MAIN_FIELD_NAME);
             // Complex object with nested objects / properties
             if (child.IsParent)
             {
@@ -812,7 +817,7 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("shadow", "Shadow");
             _propertyTypeMappings.Add("plotShadow", "Shadow");
             _propertyTypeMappings.Add("animation", "Animation");
-            _propertyTypeMappings.Add("pointPlacement", "PointPlacement");
+            //_propertyTypeMappings.Add("pointPlacement", "PointPlacement");
             _propertyTypeMappings.Add("center", "string[]");
             _propertyTypeMappings.Add("margin", "string[]");
             //_propertyTypeMappings.Add("position", "Hashtable");
@@ -913,7 +918,7 @@ namespace SourceCodeGenerator.Generators
             _propertyInitMappings.Add("shadow", "new Shadow()");
             _propertyInitMappings.Add("plotShadow", "new Shadow()");
             _propertyInitMappings.Add("animation", "new Animation()");
-            _propertyInitMappings.Add("pointPlacement", "new PointPlacement()");
+            //_propertyInitMappings.Add("pointPlacement", "new PointPlacement()");
             _propertyInitMappings.Add("crosshairs", "new List<Crosshair>()");
             _propertyInitMappings.Add("menuItems", "new List<MenuItem>()");
             ////_propertyInitMappings.Add("Symbol", "new Symbol()");

@@ -52,7 +52,10 @@
               {
                   AllowPointSelect = true,
                   Cursor = PlotOptionsPieCursor.Pointer,
-                  DataLabels = new Hashtable { { "name", "Browser Share" }, { "format", "<b>{point.name}</b>: {point.percentage:.1f} %" } }
+                  DataLabels = new PlotOptionsPieDataLabels
+                  {
+                      Format = "<b>{point.name}</b>: {point.percentage:.1f} %"
+                  }
               }
           },
           Series = new List<Series>

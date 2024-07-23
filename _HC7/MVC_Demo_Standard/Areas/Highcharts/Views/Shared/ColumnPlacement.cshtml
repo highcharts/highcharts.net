@@ -72,10 +72,7 @@
                     Color = "rgba(165,170,217,1)",
                     PointPadding = 0.3,
 
-                    PointPlacement = new PointPlacement
-                    {
-                        Value = -0.2
-                    },
+                    PointPlacementNumber = -0.2,
                     Data = @ViewData["employeeData"] as List<ColumnSeriesData>
                 },
                 new ColumnSeries
@@ -84,10 +81,7 @@
                     Color = "rgba(126,86,134,.9)",
                     PointPadding = 0.4,
 
-                    PointPlacement = new PointPlacement
-                    {
-                        Value = -0.2
-                    },
+                    PointPlacementNumber = -0.2,
                     Data = @ViewData["employeeOptimizedData"] as List<ColumnSeriesData>
                 },
                 new ColumnSeries
@@ -97,10 +91,7 @@
                     PointPadding = 0.3,
                     YAxis = "Profit",
 
-                    PointPlacement = new PointPlacement
-                    {
-                        Value = 0.2
-                    },
+                    PointPlacementNumber = -0.2,
                     Data = @ViewData["profitData"] as List<ColumnSeriesData>
                 },
                 new ColumnSeries
@@ -110,10 +101,7 @@
                     PointPadding = 0.4,
                     YAxis = "Profit",
 
-                    PointPlacement = new PointPlacement
-                    {
-                        Value = 0.2
-                    },
+                    PointPlacementNumber = -0.2,
                     Data = @ViewData["profitOptimizedData"] as List<ColumnSeriesData>
                  }
             }

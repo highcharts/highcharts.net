@@ -358,6 +358,7 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("plotOptions.packedbubble.layoutAlgorithm.type", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "String" } });
 
             ItemsToUpdate.Add("plotOptions.dumbbell.states.hover", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.hover" } });
+            ItemsToUpdate.Add("pointPlacement", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "on" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "between" } });
         }
 
         public void Delete(ApiItem item)

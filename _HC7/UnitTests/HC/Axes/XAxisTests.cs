@@ -48,6 +48,7 @@ namespace HC.Axes
             var chart = new Highcharts();
             var renderer = new HighchartsRenderer(chart);
 
+            //chart.Chart = new Chart();
             chart.XAxis = new List<XAxis> { new XAxis { Title = new XAxisTitle() { Align = titleAlign } } };
 
             Assert.Contains($"\"title\":{{\"align\":\"{chart.FirstCharacterToLower(titleAlign.ToString())}\"}}", renderer.RenderHtml());
