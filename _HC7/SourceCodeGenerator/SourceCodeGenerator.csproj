@@ -131,10 +131,10 @@
     <Content Include="CodeTemplates\SeriesInheritedProperty.tpl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="JsonFiles\highcharts_old.json">
+    <None Include="JsonFiles\highcharts.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JsonFiles\highcharts.json">
+    <None Include="JsonFiles\highcharts_old.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Logs\hc_result_values.log">
