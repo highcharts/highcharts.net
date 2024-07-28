@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum HlcSeriesSonificationDefaultInstrumentOptionsMappingLowpassResonanceWithin
     {
-        Chart, 
+        Null, 
+		Chart, 
 		Series, 
 		XAxis, 
 		YAxis

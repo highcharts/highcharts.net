@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum WmaSeriesSonificationContextTracksMappingFrequencyWithin
     {
-        Chart, 
+        Null, 
+		Chart, 
 		Series, 
 		XAxis, 
 		YAxis

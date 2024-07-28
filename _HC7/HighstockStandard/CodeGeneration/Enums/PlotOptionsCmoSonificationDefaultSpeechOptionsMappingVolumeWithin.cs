@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsCmoSonificationDefaultSpeechOptionsMappingVolumeWithin
     {
-        Chart, 
+        Null, 
+		Chart, 
 		Series, 
 		XAxis, 
 		YAxis

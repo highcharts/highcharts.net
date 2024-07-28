@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsObvSonificationDefaultInstrumentOptionsMappingFrequencyWithin
     {
-        Chart, 
+        Null, 
+		Chart, 
 		Series, 
 		XAxis, 
 		YAxis

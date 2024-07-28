@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsLineSonificationDefaultSpeechOptionsMappingTremoloSpeedWithin
     {
-        Chart, 
+        Null, 
+		Chart, 
 		Series, 
 		XAxis, 
 		YAxis

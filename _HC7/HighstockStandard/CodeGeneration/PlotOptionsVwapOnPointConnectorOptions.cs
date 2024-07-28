@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsVwapOnPointConnectorOptions()
 		{
-			Dashstyle = Dashstyle_DefaultValue = new Hashtable();
-			Stroke = Stroke_DefaultValue = "";
-			Width = Width_DefaultValue = 1;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// A name for the dash style to use for the connector.
 		/// </summary>
 		public Hashtable Dashstyle { get; set; }
-		private Hashtable Dashstyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Color of the connector line. By default it's the series' color.
 		/// </summary>
 		public string Stroke { get; set; }
-		private string Stroke_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Pixel width of the connector line.
 		/// </summary>
 		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Dashstyle != Dashstyle_DefaultValue) h.Add("dashstyle",Dashstyle);
-			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (CustomFields.Count > 0)
+			if (Dashstyle != null) h.Add("dashstyle",Dashstyle);
+			if (Stroke != null) h.Add("stroke",Stroke);
+			if (Width != null) h.Add("width",Width);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

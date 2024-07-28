@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsOhlcCompareBase
     {
-        Min = 0, 
+        Null, 
+		Min = 0, 
 		Max = 100
     }
 }

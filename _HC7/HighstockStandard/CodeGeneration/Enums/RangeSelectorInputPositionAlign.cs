@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum RangeSelectorInputPositionAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

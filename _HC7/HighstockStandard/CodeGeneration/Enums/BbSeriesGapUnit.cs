@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum BbSeriesGapUnit
     {
-        Relative, 
+        Null, 
+		Relative, 
 		Value
     }
 }

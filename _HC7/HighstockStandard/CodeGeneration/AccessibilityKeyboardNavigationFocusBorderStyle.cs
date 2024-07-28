@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AccessibilityKeyboardNavigationFocusBorderStyle()
 		{
-			BorderRadius = BorderRadius_DefaultValue = 3;
-			Color = Color_DefaultValue = "#334eff";
-			LineWidth = LineWidth_DefaultValue = 2;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (CustomFields.Count > 0)
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (Color != null) h.Add("color",Color);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

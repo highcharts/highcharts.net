@@ -16,19 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigatorYAxisPlotLines()
 		{
-			AcrossPanes = AcrossPanes_DefaultValue = true;
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "#999999";
-			DashStyle = DashStyle_DefaultValue = NavigatorYAxisPlotLinesDashStyle.Null;
-			Events = Events_DefaultValue = null;
-			Id = Id_DefaultValue = "";
-			Label = Label_DefaultValue = new NavigatorYAxisPlotLinesLabel();
-			Labels = Labels_DefaultValue = new NavigatorYAxisPlotLinesLabels();
-			Value = Value_DefaultValue = null;
-			Width = Width_DefaultValue = 2;
-			ZIndex = ZIndex_DefaultValue = null;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -36,98 +23,82 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Flag to decide if plotLine should be rendered across all panes.
 		/// </summary>
 		public bool? AcrossPanes { get; set; }
-		private bool? AcrossPanes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A custom class name, in addition to the default `highcharts-plot-line`,to apply to each individual line.
 		/// </summary>
 		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the line.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The dashing or dot style for the plot line. For possible values see[this overview](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public NavigatorYAxisPlotLinesDashStyle DashStyle { get; set; }
-		private NavigatorYAxisPlotLinesDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An object defining mouse events for the plot line. Supportedproperties are `click`, `mouseover`, `mouseout`, `mousemove`.
 		/// </summary>
 		public Object Events { get; set; }
-		private Object Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An id used for identifying the plot line in Axis.removePlotLine.
 		/// </summary>
 		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Text labels for the plot bands
 		/// </summary>
 		public NavigatorYAxisPlotLinesLabel Label { get; set; }
-		private NavigatorYAxisPlotLinesLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public NavigatorYAxisPlotLinesLabels Labels { get; set; }
-		private NavigatorYAxisPlotLinesLabels Labels_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The position of the line in axis units.
 		/// </summary>
 		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width or thickness of the plot line.
 		/// </summary>
 		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The z index of the plot line within the chart.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (AcrossPanes != AcrossPanes_DefaultValue) h.Add("acrossPanes",AcrossPanes);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
-			if (Events != Events_DefaultValue) h.Add("events",Events);
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
-			if (Labels.IsDirty(highstock)) h.Add("labels",Labels.ToHashtable(highstock));
-			if (Value != Value_DefaultValue) h.Add("value",Value);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (CustomFields.Count > 0)
+			if (AcrossPanes != null) h.Add("acrossPanes",AcrossPanes);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (DashStyle != NavigatorYAxisPlotLinesDashStyle.Null) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
+			if (Events != null) h.Add("events",Events);
+			if (Id != null) h.Add("id",Id);
+			if (Label != null) h.Add("label",Label.ToHashtable(highstock));
+			if (Labels != null) h.Add("labels",Labels.ToHashtable(highstock));
+			if (Value != null) h.Add("value",Value);
+			if (Width != null) h.Add("width",Width);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -137,21 +108,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum XAxisTitleAlign
     {
-        Low, 
+        Null, 
+		Low, 
 		Middle, 
 		High
     }

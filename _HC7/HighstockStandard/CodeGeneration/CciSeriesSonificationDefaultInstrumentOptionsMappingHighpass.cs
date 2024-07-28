@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public CciSeriesSonificationDefaultInstrumentOptionsMappingHighpass()
 		{
-			Frequency = Frequency_DefaultValue = new CciSeriesSonificationDefaultInstrumentOptionsMappingHighpassFrequency();
-			Resonance = Resonance_DefaultValue = new CciSeriesSonificationDefaultInstrumentOptionsMappingHighpassResonance();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -27,26 +23,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Map to filter frequency in Hertz from 1 to 20,000Hz.
 		/// </summary>
 		public CciSeriesSonificationDefaultInstrumentOptionsMappingHighpassFrequency Frequency { get; set; }
-		private CciSeriesSonificationDefaultInstrumentOptionsMappingHighpassFrequency Frequency_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Map to filter resonance in dB. Can be negative to cause adip, or positive to cause a bump.
 		/// </summary>
 		public CciSeriesSonificationDefaultInstrumentOptionsMappingHighpassResonance Resonance { get; set; }
-		private CciSeriesSonificationDefaultInstrumentOptionsMappingHighpassResonance Resonance_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Frequency.IsDirty(highstock)) h.Add("frequency",Frequency.ToHashtable(highstock));
-			if (Resonance.IsDirty(highstock)) h.Add("resonance",Resonance.ToHashtable(highstock));
-			if (CustomFields.Count > 0)
+			if (Frequency != null) h.Add("frequency",Frequency.ToHashtable(highstock));
+			if (Resonance != null) h.Add("resonance",Resonance.ToHashtable(highstock));
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -56,21 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

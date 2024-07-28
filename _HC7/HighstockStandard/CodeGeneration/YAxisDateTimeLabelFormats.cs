@@ -16,24 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public YAxisDateTimeLabelFormats()
 		{
-			Day = Day_DefaultValue = new YAxisDateTimeLabelFormatsDay();
-			DayString = DayString_DefaultValue = "null";
-			Hour = Hour_DefaultValue = new YAxisDateTimeLabelFormatsHour();
-			HourString = HourString_DefaultValue = "null";
-			Millisecond = Millisecond_DefaultValue = new YAxisDateTimeLabelFormatsMillisecond();
-			MillisecondString = MillisecondString_DefaultValue = "null";
-			Minute = Minute_DefaultValue = new YAxisDateTimeLabelFormatsMinute();
-			MinuteString = MinuteString_DefaultValue = "null";
-			Month = Month_DefaultValue = new YAxisDateTimeLabelFormatsMonth();
-			MonthString = MonthString_DefaultValue = "null";
-			Second = Second_DefaultValue = new YAxisDateTimeLabelFormatsSecond();
-			SecondString = SecondString_DefaultValue = "null";
-			Week = Week_DefaultValue = new YAxisDateTimeLabelFormatsWeek();
-			WeekString = WeekString_DefaultValue = "null";
-			Year = Year_DefaultValue = new YAxisDateTimeLabelFormatsYear();
-			YearString = YearString_DefaultValue = "null";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -41,138 +23,117 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public YAxisDateTimeLabelFormatsDay Day { get; set; }
-		private YAxisDateTimeLabelFormatsDay Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string DayString { get; set; }
-		private string DayString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public YAxisDateTimeLabelFormatsHour Hour { get; set; }
-		private YAxisDateTimeLabelFormatsHour Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string HourString { get; set; }
-		private string HourString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public YAxisDateTimeLabelFormatsMillisecond Millisecond { get; set; }
-		private YAxisDateTimeLabelFormatsMillisecond Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MillisecondString { get; set; }
-		private string MillisecondString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public YAxisDateTimeLabelFormatsMinute Minute { get; set; }
-		private YAxisDateTimeLabelFormatsMinute Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MinuteString { get; set; }
-		private string MinuteString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public YAxisDateTimeLabelFormatsMonth Month { get; set; }
-		private YAxisDateTimeLabelFormatsMonth Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string MonthString { get; set; }
-		private string MonthString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public YAxisDateTimeLabelFormatsSecond Second { get; set; }
-		private YAxisDateTimeLabelFormatsSecond Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string SecondString { get; set; }
-		private string SecondString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public YAxisDateTimeLabelFormatsWeek Week { get; set; }
-		private YAxisDateTimeLabelFormatsWeek Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string WeekString { get; set; }
-		private string WeekString_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public YAxisDateTimeLabelFormatsYear Year { get; set; }
-		private YAxisDateTimeLabelFormatsYear Year_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string YearString { get; set; }
-		private string YearString_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Day.IsDirty(highstock)) h.Add("day",Day.ToHashtable(highstock));
-			if (DayString != DayString_DefaultValue) h.Add("day",DayString);
-			if (Hour.IsDirty(highstock)) h.Add("hour",Hour.ToHashtable(highstock));
-			if (HourString != HourString_DefaultValue) h.Add("hour",HourString);
-			if (Millisecond.IsDirty(highstock)) h.Add("millisecond",Millisecond.ToHashtable(highstock));
-			if (MillisecondString != MillisecondString_DefaultValue) h.Add("millisecond",MillisecondString);
-			if (Minute.IsDirty(highstock)) h.Add("minute",Minute.ToHashtable(highstock));
-			if (MinuteString != MinuteString_DefaultValue) h.Add("minute",MinuteString);
-			if (Month.IsDirty(highstock)) h.Add("month",Month.ToHashtable(highstock));
-			if (MonthString != MonthString_DefaultValue) h.Add("month",MonthString);
-			if (Second.IsDirty(highstock)) h.Add("second",Second.ToHashtable(highstock));
-			if (SecondString != SecondString_DefaultValue) h.Add("second",SecondString);
-			if (Week.IsDirty(highstock)) h.Add("week",Week.ToHashtable(highstock));
-			if (WeekString != WeekString_DefaultValue) h.Add("week",WeekString);
-			if (Year.IsDirty(highstock)) h.Add("year",Year.ToHashtable(highstock));
-			if (YearString != YearString_DefaultValue) h.Add("year",YearString);
-			if (CustomFields.Count > 0)
+			if (Day != null) h.Add("day",Day.ToHashtable(highstock));
+			if (DayString != null) h.Add("day",DayString);
+			if (Hour != null) h.Add("hour",Hour.ToHashtable(highstock));
+			if (HourString != null) h.Add("hour",HourString);
+			if (Millisecond != null) h.Add("millisecond",Millisecond.ToHashtable(highstock));
+			if (MillisecondString != null) h.Add("millisecond",MillisecondString);
+			if (Minute != null) h.Add("minute",Minute.ToHashtable(highstock));
+			if (MinuteString != null) h.Add("minute",MinuteString);
+			if (Month != null) h.Add("month",Month.ToHashtable(highstock));
+			if (MonthString != null) h.Add("month",MonthString);
+			if (Second != null) h.Add("second",Second.ToHashtable(highstock));
+			if (SecondString != null) h.Add("second",SecondString);
+			if (Week != null) h.Add("week",Week.ToHashtable(highstock));
+			if (WeekString != null) h.Add("week",WeekString);
+			if (Year != null) h.Add("year",Year.ToHashtable(highstock));
+			if (YearString != null) h.Add("year",YearString);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -182,21 +143,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

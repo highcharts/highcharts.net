@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum ChartPanningType
     {
-        X, 
+        Null, 
+		X, 
 		Y, 
 		Xy
     }

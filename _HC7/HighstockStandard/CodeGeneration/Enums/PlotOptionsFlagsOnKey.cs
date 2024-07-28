@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsFlagsOnKey
     {
-        Y, 
+        Null, 
+		Y, 
 		Open, 
 		High, 
 		Low, 

@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsHeikinashiOnPointPosition()
 		{
-			OffsetX = OffsetX_DefaultValue = null;
-			OffsetY = OffsetY_DefaultValue = null;
-			X = X_DefaultValue = null;
-			Y = Y_DefaultValue = null;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Series center offset from the original x position. If defined, the connectorline is drawn connecting original position with new position.
 		/// </summary>
 		public double? OffsetX { get; set; }
-		private double? OffsetX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Series center offset from the original y position. If defined, the connectorline is drawn from original position to a new position.
 		/// </summary>
 		public double? OffsetY { get; set; }
-		private double? OffsetY_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// X position of the series center. By default, the series is displayed on thepoint that it is connected to.
 		/// </summary>
 		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Y position of the series center. By default, the series is displayed on thepoint that it is connected to.
 		/// </summary>
 		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (OffsetX != OffsetX_DefaultValue) h.Add("offsetX",OffsetX);
-			if (OffsetY != OffsetY_DefaultValue) h.Add("offsetY",OffsetY);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (CustomFields.Count > 0)
+			if (OffsetX != null) h.Add("offsetX",OffsetX);
+			if (OffsetY != null) h.Add("offsetY",OffsetY);
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

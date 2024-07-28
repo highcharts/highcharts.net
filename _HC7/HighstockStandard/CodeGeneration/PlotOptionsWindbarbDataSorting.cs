@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsWindbarbDataSorting()
 		{
-			Enabled = Enabled_DefaultValue = null;
-			MatchByName = MatchByName_DefaultValue = null;
-			SortKey = SortKey_DefaultValue = "y";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Enable or disable data sorting for the series. Use [xAxis.reversed](#xAxis.reversed) to change the sorting order.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to allow matching points by name in an update. If this optionis disabled, points will be matched by order.
 		/// </summary>
 		public bool? MatchByName { get; set; }
-		private bool? MatchByName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Determines what data value should be used to sort by.
 		/// </summary>
 		public string SortKey { get; set; }
-		private string SortKey_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (MatchByName != MatchByName_DefaultValue) h.Add("matchByName",MatchByName);
-			if (SortKey != SortKey_DefaultValue) h.Add("sortKey",SortKey);
-			if (CustomFields.Count > 0)
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (MatchByName != null) h.Add("matchByName",MatchByName);
+			if (SortKey != null) h.Add("sortKey",SortKey);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

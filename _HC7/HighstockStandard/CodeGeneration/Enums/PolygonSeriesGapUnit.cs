@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PolygonSeriesGapUnit
     {
-        Relative, 
+        Null, 
+		Relative, 
 		Value
     }
 }

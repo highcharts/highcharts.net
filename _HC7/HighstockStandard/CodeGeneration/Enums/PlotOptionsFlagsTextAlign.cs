@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsFlagsTextAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

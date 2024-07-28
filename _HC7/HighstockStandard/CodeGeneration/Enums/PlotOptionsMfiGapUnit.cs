@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsMfiGapUnit
     {
-        Relative, 
+        Null, 
+		Relative, 
 		Value
     }
 }

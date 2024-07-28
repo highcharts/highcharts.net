@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum CandleStickSeriesPointValKey
     {
-        High, 
+        Null, 
+		High, 
 		Low, 
 		Close
     }

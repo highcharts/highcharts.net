@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsZigzagParams()
 		{
-			Deviation = Deviation_DefaultValue = 1;
-			HighIndex = HighIndex_DefaultValue = 1;
-			Index = Index_DefaultValue = "undefined";
-			LowIndex = LowIndex_DefaultValue = 2;
-			Period = Period_DefaultValue = "undefined";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -30,50 +23,40 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The threshold for the value change.For example deviation=1 means the indicator will ignore all pricemovements less than 1%.
 		/// </summary>
 		public double? Deviation { get; set; }
-		private double? Deviation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The point index which indicator calculations will base - highvalue.For example using OHLC data, index=1 means the indicator will becalculated using High values.
 		/// </summary>
 		public double? HighIndex { get; set; }
-		private double? HighIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Index { get; set; }
-		private string Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The point index which indicator calculations will base - lowvalue.For example using OHLC data, index=2 means the indicator will becalculated using Low values.
 		/// </summary>
 		public double? LowIndex { get; set; }
-		private double? LowIndex_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Period { get; set; }
-		private string Period_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Deviation != Deviation_DefaultValue) h.Add("deviation",Deviation);
-			if (HighIndex != HighIndex_DefaultValue) h.Add("highIndex",HighIndex);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (LowIndex != LowIndex_DefaultValue) h.Add("lowIndex",LowIndex);
-			if (Period != Period_DefaultValue) h.Add("period",Period);
-			if (CustomFields.Count > 0)
+			if (Deviation != null) h.Add("deviation",Deviation);
+			if (HighIndex != null) h.Add("highIndex",HighIndex);
+			if (Index != null) h.Add("index",Index);
+			if (LowIndex != null) h.Add("lowIndex",LowIndex);
+			if (Period != null) h.Add("period",Period);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -83,21 +66,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum DpoSeriesLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

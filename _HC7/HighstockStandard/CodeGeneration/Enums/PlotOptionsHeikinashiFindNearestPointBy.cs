@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsHeikinashiFindNearestPointBy
     {
-        X, 
+        Null, 
+		X, 
 		Xy
     }
 }

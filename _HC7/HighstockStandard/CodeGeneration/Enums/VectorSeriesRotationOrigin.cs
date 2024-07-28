@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum VectorSeriesRotationOrigin
     {
-        Start, 
+        Null, 
+		Start, 
 		Center, 
 		End
     }

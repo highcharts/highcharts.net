@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum LegendLayout
     {
-        Horizontal, 
+        Null, 
+		Horizontal, 
 		Vertical, 
 		Proximate
     }

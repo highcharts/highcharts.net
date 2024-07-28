@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LegendBubbleLegendRanges()
 		{
-			BorderColor = BorderColor_DefaultValue = "undefined";
-			Color = Color_DefaultValue = "undefined";
-			ConnectorColor = ConnectorColor_DefaultValue = "undefined";
-			Value = Value_DefaultValue = null;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The color of the border for individual range.
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the bubble for individual range.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the connector for individual range.
 		/// </summary>
 		public string ConnectorColor { get; set; }
-		private string ConnectorColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Range size value, similar to bubble Z data.
 		/// </summary>
 		public double? Value { get; set; }
-		private double? Value_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (ConnectorColor != ConnectorColor_DefaultValue) h.Add("connectorColor",ConnectorColor);
-			if (Value != Value_DefaultValue) h.Add("value",Value);
-			if (CustomFields.Count > 0)
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (Color != null) h.Add("color",Color);
+			if (ConnectorColor != null) h.Add("connectorColor",ConnectorColor);
+			if (Value != null) h.Add("value",Value);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

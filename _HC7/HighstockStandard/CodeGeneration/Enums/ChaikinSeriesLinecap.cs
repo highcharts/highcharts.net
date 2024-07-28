@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum ChaikinSeriesLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

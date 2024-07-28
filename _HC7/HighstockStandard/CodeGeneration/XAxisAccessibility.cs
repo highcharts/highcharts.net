@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public XAxisAccessibility()
 		{
-			Description = Description_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = null;
-			RangeDescription = RangeDescription_DefaultValue = "";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Description for an axis to expose to screen reader users.
 		/// </summary>
 		public string Description { get; set; }
-		private string Description_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable axis accessibility features, including axis information in thescreen reader information region. If this is disabled on the xAxis, thex values are not exposed to screen readers for the individual data pointsby default.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Range description for an axis. Overrides the default range description.Set to empty to disable range description for this axis.
 		/// </summary>
 		public string RangeDescription { get; set; }
-		private string RangeDescription_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Description != Description_DefaultValue) h.Add("description",Description);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (RangeDescription != RangeDescription_DefaultValue) h.Add("rangeDescription",RangeDescription);
-			if (CustomFields.Count > 0)
+			if (Description != null) h.Add("description",Description);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (RangeDescription != null) h.Add("rangeDescription",RangeDescription);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

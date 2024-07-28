@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsHeikinashiPointValKey
     {
-        High, 
+        Null, 
+		High, 
 		Low, 
 		Close
     }

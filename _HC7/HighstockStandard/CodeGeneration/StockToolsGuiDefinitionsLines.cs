@@ -16,17 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public StockToolsGuiDefinitionsLines()
 		{
-			ArrowInfinityLine = ArrowInfinityLine_DefaultValue = new StockToolsGuiDefinitionsLinesArrowInfinityLine();
-			ArrowRay = ArrowRay_DefaultValue = new StockToolsGuiDefinitionsLinesArrowRay();
-			ArrowSegment = ArrowSegment_DefaultValue = new StockToolsGuiDefinitionsLinesArrowSegment();
-			HorizontalLine = HorizontalLine_DefaultValue = new StockToolsGuiDefinitionsLinesHorizontalLine();
-			Items = Items_DefaultValue = new List<string>();
-			Line = Line_DefaultValue = new StockToolsGuiDefinitionsLinesLine();
-			Ray = Ray_DefaultValue = new StockToolsGuiDefinitionsLinesRay();
-			Segment = Segment_DefaultValue = new StockToolsGuiDefinitionsLinesSegment();
-			VerticalLine = VerticalLine_DefaultValue = new StockToolsGuiDefinitionsLinesVerticalLine();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -34,82 +23,68 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsLinesArrowInfinityLine ArrowInfinityLine { get; set; }
-		private StockToolsGuiDefinitionsLinesArrowInfinityLine ArrowInfinityLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsLinesArrowRay ArrowRay { get; set; }
-		private StockToolsGuiDefinitionsLinesArrowRay ArrowRay_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsLinesArrowSegment ArrowSegment { get; set; }
-		private StockToolsGuiDefinitionsLinesArrowSegment ArrowSegment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsLinesHorizontalLine HorizontalLine { get; set; }
-		private StockToolsGuiDefinitionsLinesHorizontalLine HorizontalLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A collection of strings pointing to config options forthe items.
 		/// </summary>
 		public List<string> Items { get; set; }
-		private List<string> Items_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsLinesLine Line { get; set; }
-		private StockToolsGuiDefinitionsLinesLine Line_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsLinesRay Ray { get; set; }
-		private StockToolsGuiDefinitionsLinesRay Ray_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsLinesSegment Segment { get; set; }
-		private StockToolsGuiDefinitionsLinesSegment Segment_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsLinesVerticalLine VerticalLine { get; set; }
-		private StockToolsGuiDefinitionsLinesVerticalLine VerticalLine_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (ArrowInfinityLine.IsDirty(highstock)) h.Add("arrowInfinityLine",ArrowInfinityLine.ToHashtable(highstock));
-			if (ArrowRay.IsDirty(highstock)) h.Add("arrowRay",ArrowRay.ToHashtable(highstock));
-			if (ArrowSegment.IsDirty(highstock)) h.Add("arrowSegment",ArrowSegment.ToHashtable(highstock));
-			if (HorizontalLine.IsDirty(highstock)) h.Add("horizontalLine",HorizontalLine.ToHashtable(highstock));
-			if (Items != Items_DefaultValue) h.Add("items",Items);
-			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
-			if (Ray.IsDirty(highstock)) h.Add("ray",Ray.ToHashtable(highstock));
-			if (Segment.IsDirty(highstock)) h.Add("segment",Segment.ToHashtable(highstock));
-			if (VerticalLine.IsDirty(highstock)) h.Add("verticalLine",VerticalLine.ToHashtable(highstock));
-			if (CustomFields.Count > 0)
+			if (ArrowInfinityLine != null) h.Add("arrowInfinityLine",ArrowInfinityLine.ToHashtable(highstock));
+			if (ArrowRay != null) h.Add("arrowRay",ArrowRay.ToHashtable(highstock));
+			if (ArrowSegment != null) h.Add("arrowSegment",ArrowSegment.ToHashtable(highstock));
+			if (HorizontalLine != null) h.Add("horizontalLine",HorizontalLine.ToHashtable(highstock));
+			if (Items != null) h.Add("items",Items);
+			if (Line != null) h.Add("line",Line.ToHashtable(highstock));
+			if (Ray != null) h.Add("ray",Ray.ToHashtable(highstock));
+			if (Segment != null) h.Add("segment",Segment.ToHashtable(highstock));
+			if (VerticalLine != null) h.Add("verticalLine",VerticalLine.ToHashtable(highstock));
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -119,21 +94,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

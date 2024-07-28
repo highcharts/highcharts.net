@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsPriceenvelopesBottomLineStyles()
 		{
-			LineColor = LineColor_DefaultValue = "undefined";
-			LineWidth = LineWidth_DefaultValue = 1;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -27,26 +23,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Color of the line. If not set, it's inherited from[plotOptions.priceenvelopes.color](#plotOptions.priceenvelopes.color).
 		/// </summary>
 		public string LineColor { get; set; }
-		private string LineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Pixel width of the line.
 		/// </summary>
 		public double? LineWidth { get; set; }
-		private double? LineWidth_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (LineColor != LineColor_DefaultValue) h.Add("lineColor",LineColor);
-			if (LineWidth != LineWidth_DefaultValue) h.Add("lineWidth",LineWidth);
-			if (CustomFields.Count > 0)
+			if (LineColor != null) h.Add("lineColor",LineColor);
+			if (LineWidth != null) h.Add("lineWidth",LineWidth);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -56,21 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

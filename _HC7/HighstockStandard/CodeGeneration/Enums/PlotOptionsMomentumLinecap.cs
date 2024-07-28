@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsMomentumLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

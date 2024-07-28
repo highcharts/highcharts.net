@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public CandleStickSeriesDataLabelsAnimation()
 		{
-			Defer = Defer_DefaultValue = null;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,18 +23,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The animation delay time in milliseconds. Set to `0` to render thedata labels immediately. As `undefined` inherits defer time from the[series.animation.defer](#plotOptions.series.animation.defer).
 		/// </summary>
 		public double? Defer { get; set; }
-		private double? Defer_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Defer != Defer_DefaultValue) h.Add("defer",Defer);
-			if (CustomFields.Count > 0)
+			if (Defer != null) h.Add("defer",Defer);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -47,21 +38,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

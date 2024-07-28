@@ -16,9 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsXrangeDataLabelsStyle()
 		{
-			WhiteSpace = WhiteSpace_DefaultValue = "nowrap";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -26,18 +23,12 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public string WhiteSpace { get; set; }
-		private string WhiteSpace_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (WhiteSpace != WhiteSpace_DefaultValue) h.Add("whiteSpace",WhiteSpace);
-			if (CustomFields.Count > 0)
+			if (WhiteSpace != null) h.Add("whiteSpace",WhiteSpace);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -47,21 +38,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

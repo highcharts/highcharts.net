@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsNatrGapUnit
     {
-        Relative, 
+        Null, 
+		Relative, 
 		Value
     }
 }

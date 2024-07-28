@@ -12,9 +12,9 @@ namespace Highsoft.Web.Mvc.Stocks
 {
 	public abstract class BaseObject
 	{
+        public Hashtable CustomFields { get; set; }
+
         abstract internal Hashtable ToHashtable(Highstock highcharts);
-        abstract internal string ToJSON(Highstock highcharts);
-        abstract internal bool IsDirty(Highstock highcharts);
 
         internal List<Hashtable> HashifyList(Highstock highcharts, IEnumerable list)
         {

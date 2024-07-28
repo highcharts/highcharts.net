@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsKlingerStatesHoverHalo()
 		{
-			Attributes = Attributes_DefaultValue = null;
-			Opacity = Opacity_DefaultValue = null;
-			Size = Size_DefaultValue = 10;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// A collection of SVG attributes to override the appearanceof the halo, for example `fill`, `stroke` and`stroke-width`.
 		/// </summary>
 		public Object Attributes { get; set; }
-		private Object Attributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Opacity for the halo unless a specific fill is overriddenusing the `attributes` setting. Note that Highcharts isonly able to apply opacity to colors of hex or rgb(a)formats.
 		/// </summary>
 		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel size of the halo. For point markers this is theradius of the halo. For pie slices it is the width of thehalo outside the slice. For bubbles it defaults to 5 andis the width of the halo outside the bubble.
 		/// </summary>
 		public double? Size { get; set; }
-		private double? Size_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (Size != Size_DefaultValue) h.Add("size",Size);
-			if (CustomFields.Count > 0)
+			if (Attributes != null) h.Add("attributes",Attributes);
+			if (Opacity != null) h.Add("opacity",Opacity);
+			if (Size != null) h.Add("size",Size);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

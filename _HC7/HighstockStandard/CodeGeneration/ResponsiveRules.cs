@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ResponsiveRules()
 		{
-			ChartOptions = ChartOptions_DefaultValue = null;
-			Condition = Condition_DefaultValue = new ResponsiveRulesCondition();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -27,26 +23,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// A full set of chart options to apply as overrides to the generalchart options. The chart options are applied when the given ruleis active.A special case is configuration objects that take arrays, for example[xAxis](#xAxis), [yAxis](#yAxis) or [series](#series). For thesecollections, an `id` option is used to map the new option set toan existing object. If an existing object of the same id is not found,the item of the same index updated. So for example, setting `chartOptions`with two series items without an `id`, will cause the existing chart'stwo series to be updated with respective options.
 		/// </summary>
 		public Object ChartOptions { get; set; }
-		private Object ChartOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Under which conditions the rule applies.
 		/// </summary>
 		public ResponsiveRulesCondition Condition { get; set; }
-		private ResponsiveRulesCondition Condition_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (ChartOptions != ChartOptions_DefaultValue) h.Add("chartOptions",ChartOptions);
-			if (Condition.IsDirty(highstock)) h.Add("condition",Condition.ToHashtable(highstock));
-			if (CustomFields.Count > 0)
+			if (ChartOptions != null) h.Add("chartOptions",ChartOptions);
+			if (Condition != null) h.Add("condition",Condition.ToHashtable(highstock));
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -56,21 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

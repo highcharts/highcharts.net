@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsLollipopDataLabelsVerticalAlign
     {
-        Undefined, 
+        Null, 
+		Undefined, 
 		Top, 
 		Middle, 
 		Bottom

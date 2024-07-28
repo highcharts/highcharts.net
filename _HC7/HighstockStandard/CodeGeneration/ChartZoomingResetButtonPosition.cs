@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ChartZoomingResetButtonPosition()
 		{
-			Align = Align_DefaultValue = ChartZoomingResetButtonPositionAlign.Right;
-			VerticalAlign = VerticalAlign_DefaultValue = ChartZoomingResetButtonPositionVerticalAlign.Top;
-			X = X_DefaultValue = -10;
-			Y = Y_DefaultValue = 10;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The horizontal alignment of the button.
 		/// </summary>
 		public ChartZoomingResetButtonPositionAlign Align { get; set; }
-		private ChartZoomingResetButtonPositionAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical alignment of the button.
 		/// </summary>
 		public ChartZoomingResetButtonPositionVerticalAlign VerticalAlign { get; set; }
-		private ChartZoomingResetButtonPositionVerticalAlign VerticalAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The horizontal offset of the button.
 		/// </summary>
 		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The vertical offset of the button.
 		/// </summary>
 		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Align != Align_DefaultValue) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
-			if (VerticalAlign != VerticalAlign_DefaultValue) h.Add("verticalAlign", highstock.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (CustomFields.Count > 0)
+			if (Align != ChartZoomingResetButtonPositionAlign.Null) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
+			if (VerticalAlign != ChartZoomingResetButtonPositionVerticalAlign.Null) h.Add("verticalAlign", highstock.FirstCharacterToLower(VerticalAlign.ToString()));
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

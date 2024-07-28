@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum NavigationAnnotationsOptionsLabelOptionsAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

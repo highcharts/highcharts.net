@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public StockToolsGuiDefinitionsTypeChange()
 		{
-			Items = Items_DefaultValue = new List<string>();
-			TypeCandlestick = TypeCandlestick_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeCandlestick();
-			TypeHeikinAshi = TypeHeikinAshi_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeHeikinAshi();
-			TypeHLC = TypeHLC_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeHLC();
-			TypeHollowCandlestick = TypeHollowCandlestick_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeHollowCandlestick();
-			TypeLine = TypeLine_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeLine();
-			TypeOHLC = TypeOHLC_DefaultValue = new StockToolsGuiDefinitionsTypeChangeTypeOHLC();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -32,66 +23,54 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// A collection of strings pointing to config options forthe items.
 		/// </summary>
 		public List<string> Items { get; set; }
-		private List<string> Items_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsTypeChangeTypeCandlestick TypeCandlestick { get; set; }
-		private StockToolsGuiDefinitionsTypeChangeTypeCandlestick TypeCandlestick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsTypeChangeTypeHeikinAshi TypeHeikinAshi { get; set; }
-		private StockToolsGuiDefinitionsTypeChangeTypeHeikinAshi TypeHeikinAshi_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsTypeChangeTypeHLC TypeHLC { get; set; }
-		private StockToolsGuiDefinitionsTypeChangeTypeHLC TypeHLC_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsTypeChangeTypeHollowCandlestick TypeHollowCandlestick { get; set; }
-		private StockToolsGuiDefinitionsTypeChangeTypeHollowCandlestick TypeHollowCandlestick_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsTypeChangeTypeLine TypeLine { get; set; }
-		private StockToolsGuiDefinitionsTypeChangeTypeLine TypeLine_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public StockToolsGuiDefinitionsTypeChangeTypeOHLC TypeOHLC { get; set; }
-		private StockToolsGuiDefinitionsTypeChangeTypeOHLC TypeOHLC_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Items != Items_DefaultValue) h.Add("items",Items);
-			if (TypeCandlestick.IsDirty(highstock)) h.Add("typeCandlestick",TypeCandlestick.ToHashtable(highstock));
-			if (TypeHeikinAshi.IsDirty(highstock)) h.Add("typeHeikinAshi",TypeHeikinAshi.ToHashtable(highstock));
-			if (TypeHLC.IsDirty(highstock)) h.Add("typeHLC",TypeHLC.ToHashtable(highstock));
-			if (TypeHollowCandlestick.IsDirty(highstock)) h.Add("typeHollowCandlestick",TypeHollowCandlestick.ToHashtable(highstock));
-			if (TypeLine.IsDirty(highstock)) h.Add("typeLine",TypeLine.ToHashtable(highstock));
-			if (TypeOHLC.IsDirty(highstock)) h.Add("typeOHLC",TypeOHLC.ToHashtable(highstock));
-			if (CustomFields.Count > 0)
+			if (Items != null) h.Add("items",Items);
+			if (TypeCandlestick != null) h.Add("typeCandlestick",TypeCandlestick.ToHashtable(highstock));
+			if (TypeHeikinAshi != null) h.Add("typeHeikinAshi",TypeHeikinAshi.ToHashtable(highstock));
+			if (TypeHLC != null) h.Add("typeHLC",TypeHLC.ToHashtable(highstock));
+			if (TypeHollowCandlestick != null) h.Add("typeHollowCandlestick",TypeHollowCandlestick.ToHashtable(highstock));
+			if (TypeLine != null) h.Add("typeLine",TypeLine.ToHashtable(highstock));
+			if (TypeOHLC != null) h.Add("typeOHLC",TypeOHLC.ToHashtable(highstock));
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -101,21 +80,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

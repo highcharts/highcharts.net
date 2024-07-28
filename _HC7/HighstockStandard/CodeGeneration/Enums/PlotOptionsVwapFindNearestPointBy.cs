@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsVwapFindNearestPointBy
     {
-        X, 
+        Null, 
+		X, 
 		Xy
     }
 }

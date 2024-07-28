@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public DefsReverse_arrowAttributes()
 		{
-			Id = Id_DefaultValue = "reverse-arrow";
-			MarkerHeight = MarkerHeight_DefaultValue = 10;
-			MarkerWidth = MarkerWidth_DefaultValue = 10;
-			RefX = RefX_DefaultValue = 1;
-			RefY = RefY_DefaultValue = 5;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -30,50 +23,40 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? MarkerHeight { get; set; }
-		private double? MarkerHeight_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? MarkerWidth { get; set; }
-		private double? MarkerWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? RefX { get; set; }
-		private double? RefX_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? RefY { get; set; }
-		private double? RefY_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (MarkerHeight != MarkerHeight_DefaultValue) h.Add("markerHeight",MarkerHeight);
-			if (MarkerWidth != MarkerWidth_DefaultValue) h.Add("markerWidth",MarkerWidth);
-			if (RefX != RefX_DefaultValue) h.Add("refX",RefX);
-			if (RefY != RefY_DefaultValue) h.Add("refY",RefY);
-			if (CustomFields.Count > 0)
+			if (Id != null) h.Add("id",Id);
+			if (MarkerHeight != null) h.Add("markerHeight",MarkerHeight);
+			if (MarkerWidth != null) h.Add("markerWidth",MarkerWidth);
+			if (RefX != null) h.Add("refX",RefX);
+			if (RefY != null) h.Add("refY",RefY);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -83,21 +66,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

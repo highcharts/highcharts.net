@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsVectorClusterZones()
 		{
-			ClassName = ClassName_DefaultValue = "";
-			From = From_DefaultValue = null;
-			Marker = Marker_DefaultValue = new PlotOptionsVectorClusterZonesMarker();
-			To = To_DefaultValue = null;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Styled mode only. A custom class name for the zone.
 		/// </summary>
 		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The value where the zone starts.
 		/// </summary>
 		public double? From { get; set; }
-		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Settings for the cluster marker belonging to the zone.
 		/// </summary>
 		public PlotOptionsVectorClusterZonesMarker Marker { get; set; }
-		private PlotOptionsVectorClusterZonesMarker Marker_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The value where the zone ends.
 		/// </summary>
 		public double? To { get; set; }
-		private double? To_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (From != From_DefaultValue) h.Add("from",From);
-			if (Marker.IsDirty(highstock)) h.Add("marker",Marker.ToHashtable(highstock));
-			if (To != To_DefaultValue) h.Add("to",To);
-			if (CustomFields.Count > 0)
+			if (ClassName != null) h.Add("className",ClassName);
+			if (From != null) h.Add("from",From);
+			if (Marker != null) h.Add("marker",Marker.ToHashtable(highstock));
+			if (To != null) h.Add("to",To);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

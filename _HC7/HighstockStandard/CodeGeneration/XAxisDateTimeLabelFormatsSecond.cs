@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public XAxisDateTimeLabelFormatsSecond()
 		{
-			List = List_DefaultValue = new List<string>();
-			Main = Main_DefaultValue = "%H:%M:%S";
-			Range = Range_DefaultValue = false;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public List<string> List { get; set; }
-		private List<string> List_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Main { get; set; }
-		private string Main_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public bool? Range { get; set; }
-		private bool? Range_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (List != List_DefaultValue) h.Add("list",List);
-			if (Main != Main_DefaultValue) h.Add("main",Main);
-			if (Range != Range_DefaultValue) h.Add("range",Range);
-			if (CustomFields.Count > 0)
+			if (List != null) h.Add("list",List);
+			if (Main != null) h.Add("main",Main);
+			if (Range != null) h.Add("range",Range);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

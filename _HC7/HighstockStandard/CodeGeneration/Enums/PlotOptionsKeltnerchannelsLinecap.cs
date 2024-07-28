@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsKeltnerchannelsLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

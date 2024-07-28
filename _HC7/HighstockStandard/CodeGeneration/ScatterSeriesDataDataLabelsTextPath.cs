@@ -1,0 +1,50 @@
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Collections;
+using System;
+using System.Collections.Specialized;
+using System.Web;
+using System.IO;
+
+namespace Highsoft.Web.Mvc.Stocks
+{
+	public partial class ScatterSeriesDataDataLabelsTextPath  : BaseObject
+	{
+		Hashtable h = new Hashtable();
+
+		public ScatterSeriesDataDataLabelsTextPath()
+		{
+		}	
+		
+
+		/// <summary>
+		/// Presentation attributes for the text path.
+		/// </summary>
+		public Object Attributes { get; set; }
+		 
+
+		/// <summary>
+		/// Enable or disable `textPath` option for link's or marker's datalabels.
+		/// </summary>
+		public bool? Enabled { get; set; }
+		  
+
+		internal override Hashtable ToHashtable(Highstock highstock)
+		{
+			if (Attributes != null) h.Add("attributes",Attributes);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (CustomFields != null && CustomFields.Count > 0)
+				foreach (var key in CustomFields.Keys)
+				{
+					if (h.ContainsKey(key))
+						continue;
+
+					h.Add(key, CustomFields[key]);
+				}
+
+			return h;
+		}
+	}
+}

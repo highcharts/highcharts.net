@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsPriceenvelopesParams()
 		{
-			BottomBand = BottomBand_DefaultValue = null;
-			Index = Index_DefaultValue = 3;
-			Period = Period_DefaultValue = 20;
-			TopBand = TopBand_DefaultValue = null;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Percentage below the moving average that should be displayed.0.1 means 90%. Relative to the calculated value.
 		/// </summary>
 		public double? BottomBand { get; set; }
-		private double? BottomBand_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
 		/// </summary>
 		public double? Index { get; set; }
-		private double? Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? Period { get; set; }
-		private double? Period_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Percentage above the moving average that should be displayed.0.1 means 110%. Relative to the calculated value.
 		/// </summary>
 		public double? TopBand { get; set; }
-		private double? TopBand_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (BottomBand != BottomBand_DefaultValue) h.Add("bottomBand",BottomBand);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (Period != Period_DefaultValue) h.Add("period",Period);
-			if (TopBand != TopBand_DefaultValue) h.Add("topBand",TopBand);
-			if (CustomFields.Count > 0)
+			if (BottomBand != null) h.Add("bottomBand",BottomBand);
+			if (Index != null) h.Add("index",Index);
+			if (Period != null) h.Add("period",Period);
+			if (TopBand != null) h.Add("topBand",TopBand);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

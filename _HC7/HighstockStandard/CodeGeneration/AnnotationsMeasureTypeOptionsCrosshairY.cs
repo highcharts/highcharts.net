@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsMeasureTypeOptionsCrosshairY()
 		{
-			DashStyle = DashStyle_DefaultValue = AnnotationsMeasureTypeOptionsCrosshairYDashStyle.Null;
-			Enabled = Enabled_DefaultValue = true;
-			MarkerEnd = MarkerEnd_DefaultValue = AnnotationsMeasureTypeOptionsCrosshairYMarkerEnd.Arrow;
-			ZIndex = ZIndex_DefaultValue = 6;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The dash or dot style of the crosshair's line. For possiblevalues, see[this demonstration](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle-all/).
 		/// </summary>
 		public AnnotationsMeasureTypeOptionsCrosshairYDashStyle DashStyle { get; set; }
-		private AnnotationsMeasureTypeOptionsCrosshairYDashStyle DashStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable the vertical crosshair.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The marker-end defines the arrowhead that will be drawnat the final vertex of the given crosshair's path.
 		/// </summary>
 		public AnnotationsMeasureTypeOptionsCrosshairYMarkerEnd MarkerEnd { get; set; }
-		private AnnotationsMeasureTypeOptionsCrosshairYMarkerEnd MarkerEnd_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The Z index of the crosshair in annotation.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (DashStyle != DashStyle_DefaultValue) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (MarkerEnd != MarkerEnd_DefaultValue) h.Add("markerEnd", highstock.FirstCharacterToLower(MarkerEnd.ToString()));
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (CustomFields.Count > 0)
+			if (DashStyle != AnnotationsMeasureTypeOptionsCrosshairYDashStyle.Null) h.Add("dashStyle", highstock.FirstCharacterToLower(DashStyle.ToString()));
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (MarkerEnd != AnnotationsMeasureTypeOptionsCrosshairYMarkerEnd.Null) h.Add("markerEnd", highstock.FirstCharacterToLower(MarkerEnd.ToString()));
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

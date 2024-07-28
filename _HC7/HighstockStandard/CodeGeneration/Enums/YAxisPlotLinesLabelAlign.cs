@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum YAxisPlotLinesLabelAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

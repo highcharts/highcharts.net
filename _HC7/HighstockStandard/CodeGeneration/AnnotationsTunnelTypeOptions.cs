@@ -16,15 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsTunnelTypeOptions()
 		{
-			Background = Background_DefaultValue = new AnnotationsTunnelTypeOptionsBackground();
-			Height = Height_DefaultValue = -2;
-			HeightControlPoint = HeightControlPoint_DefaultValue = new AnnotationsTunnelTypeOptionsHeightControlPoint();
-			Line = Line_DefaultValue = new AnnotationsTunnelTypeOptionsLine();
-			Points = Points_DefaultValue = new List<AnnotationsTunnelTypeOptionsPoints>();
-			XAxis = XAxis_DefaultValue = "";
-			YAxis = YAxis_DefaultValue = "";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -32,66 +23,54 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Background options.
 		/// </summary>
 		public AnnotationsTunnelTypeOptionsBackground Background { get; set; }
-		private AnnotationsTunnelTypeOptionsBackground Background_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The height of the annotation in terms of yAxis.
 		/// </summary>
 		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the control point which controlsthe annotation's height.
 		/// </summary>
 		public AnnotationsTunnelTypeOptionsHeightControlPoint HeightControlPoint { get; set; }
-		private AnnotationsTunnelTypeOptionsHeightControlPoint HeightControlPoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public AnnotationsTunnelTypeOptionsLine Line { get; set; }
-		private AnnotationsTunnelTypeOptionsLine Line_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public List<AnnotationsTunnelTypeOptionsPoints> Points { get; set; }
-		private List<AnnotationsTunnelTypeOptionsPoints> Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
 		/// </summary>
 		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
 		/// </summary>
 		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Background.IsDirty(highstock)) h.Add("background",Background.ToHashtable(highstock));
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (HeightControlPoint.IsDirty(highstock)) h.Add("heightControlPoint",HeightControlPoint.ToHashtable(highstock));
-			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
-			if (Points != Points_DefaultValue) h.Add("points", HashifyList(highstock,Points));
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (CustomFields.Count > 0)
+			if (Background != null) h.Add("background",Background.ToHashtable(highstock));
+			if (Height != null) h.Add("height",Height);
+			if (HeightControlPoint != null) h.Add("heightControlPoint",HeightControlPoint.ToHashtable(highstock));
+			if (Line != null) h.Add("line",Line.ToHashtable(highstock));
+			if (Points != null) h.Add("points", HashifyList(highstock,Points));
+			if (XAxis != null) h.Add("xAxis",XAxis);
+			if (YAxis != null) h.Add("yAxis",YAxis);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -101,21 +80,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ColumnrangeSeriesStatesInactive()
 		{
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
-			Opacity = Opacity_DefaultValue = null;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Animation when not hovering over the marker.
 		/// </summary>
 		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Animation when not hovering over the marker.
 		/// </summary>
 		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable the inactive state for a series
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Opacity of series elements (dataLabels, line, area).
 		/// </summary>
 		public double? Opacity { get; set; }
-		private double? Opacity_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Opacity != Opacity_DefaultValue) h.Add("opacity",Opacity);
-			if (CustomFields.Count > 0)
+			if (Animation != null) h.Add("animation",Animation);
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Opacity != null) h.Add("opacity",Opacity);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

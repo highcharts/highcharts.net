@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsColumnpyramidCompare
     {
-        Percent, 
+        Null, 
+		Percent, 
 		Value
     }
 }

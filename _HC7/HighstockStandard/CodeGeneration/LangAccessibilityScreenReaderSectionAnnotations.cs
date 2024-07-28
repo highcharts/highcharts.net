@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LangAccessibilityScreenReaderSectionAnnotations()
 		{
-			DescriptionMultiplePoints = DescriptionMultiplePoints_DefaultValue = "{annotationText}. Related to {annotationPoint}{#each additionalAnnotationPoints}, also related to {this}{/each}";
-			DescriptionNoPoints = DescriptionNoPoints_DefaultValue = "{annotationText}";
-			DescriptionSinglePoint = DescriptionSinglePoint_DefaultValue = "{annotationText}. Related to {annotationPoint}";
-			Heading = Heading_DefaultValue = "Chart annotations summary";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public string DescriptionMultiplePoints { get; set; }
-		private string DescriptionMultiplePoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string DescriptionNoPoints { get; set; }
-		private string DescriptionNoPoints_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string DescriptionSinglePoint { get; set; }
-		private string DescriptionSinglePoint_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Heading { get; set; }
-		private string Heading_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (DescriptionMultiplePoints != DescriptionMultiplePoints_DefaultValue) h.Add("descriptionMultiplePoints",DescriptionMultiplePoints);
-			if (DescriptionNoPoints != DescriptionNoPoints_DefaultValue) h.Add("descriptionNoPoints",DescriptionNoPoints);
-			if (DescriptionSinglePoint != DescriptionSinglePoint_DefaultValue) h.Add("descriptionSinglePoint",DescriptionSinglePoint);
-			if (Heading != Heading_DefaultValue) h.Add("heading",Heading);
-			if (CustomFields.Count > 0)
+			if (DescriptionMultiplePoints != null) h.Add("descriptionMultiplePoints",DescriptionMultiplePoints);
+			if (DescriptionNoPoints != null) h.Add("descriptionNoPoints",DescriptionNoPoints);
+			if (DescriptionSinglePoint != null) h.Add("descriptionSinglePoint",DescriptionSinglePoint);
+			if (Heading != null) h.Add("heading",Heading);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

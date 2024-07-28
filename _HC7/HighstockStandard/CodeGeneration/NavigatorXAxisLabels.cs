@@ -16,25 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigatorXAxisLabels()
 		{
-			Align = Align_DefaultValue = NavigatorXAxisLabelsAlign.Left;
-			AllowOverlap = AllowOverlap_DefaultValue = false;
-			AutoRotation = AutoRotation_DefaultValue = new List<double> {-45};
-			Enabled = Enabled_DefaultValue = true;
-			Format = Format_DefaultValue = "";
-			Formatter = Formatter_DefaultValue = "";
-			MaxStaggerLines = MaxStaggerLines_DefaultValue = 5;
-			Overflow = Overflow_DefaultValue = NavigatorXAxisLabelsOverflow.Justify;
-			ReserveSpace = ReserveSpace_DefaultValue = null;
-			Rotation = Rotation_DefaultValue = 0;
-			StaggerLines = StaggerLines_DefaultValue = 0;
-			Step = Step_DefaultValue = 0;
-			Style = Style_DefaultValue = new Hashtable();
-			UseHTML = UseHTML_DefaultValue = false;
-			X = X_DefaultValue = 3;
-			Y = Y_DefaultValue = -4;
-			ZIndex = ZIndex_DefaultValue = 7;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,146 +23,124 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public NavigatorXAxisLabelsAlign Align { get; set; }
-		private NavigatorXAxisLabelsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to allow the axis labels to overlap. When false,overlapping labels are hidden.
 		/// </summary>
 		public bool? AllowOverlap { get; set; }
-		private bool? AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// For horizontal axes, the allowed degrees of label rotationto prevent overlapping labels. If there is enough space,labels are not rotated. As the chart gets narrower, itwill start rotating the labels -45 degrees, then removeevery second label and try again with rotations 0 and -45 etc.Set it to `undefined` to disable rotation, which willcause the labels to word-wrap if possible. Defaults to `[-45]``on bottom and top axes, `undefined` on left and right axes.
 		/// </summary>
 		public List<double> AutoRotation { get; set; }
-		private List<double> AutoRotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable the axis labels.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A format string for the axis label. The context is available asformat string variables. For example, you can use `{text}` toinsert the default formatted text. The recommended way of addingunits for the label is using `text`, for example `{text} km`.To add custom numeric or datetime formatting, use `{value}` withformatting, for example `{value:.1f}` or `{value:%Y-%m-%d}`.See[format string](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting)for more examples of formatting.The default value is not specified due to the dynamicnature of the default implementation.
 		/// </summary>
 		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Callback JavaScript function to format the label. The valueis given by `this.value`. Additional properties for `this` are`axis`, `chart`, `isFirst`, `isLast` and `text` which holds thevalue of the default formatter.Defaults to a built in function returning a formatted stringdepending on whether the axis is `category`, `datetime`,`numeric` or other.
 		/// </summary>
 		public string Formatter { get; set; }
-		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Horizontal axis only. When `staggerLines` is not set,`maxStaggerLines` defines how many lines the axis is allowed toadd to automatically avoid overlapping X labels. Set to `1` todisable overlap detection.
 		/// </summary>
 		public double? MaxStaggerLines { get; set; }
-		private double? MaxStaggerLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// How to handle overflowing labels on horizontal axis. If set to`"allow"`, it will not be aligned at all. By default it`"justify"` labels inside the chart area. If there is room tomove it, it will be aligned to the edge, else it will be removed.
 		/// </summary>
 		public NavigatorXAxisLabelsOverflow Overflow { get; set; }
-		private NavigatorXAxisLabelsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to reserve space for the labels. By default, space isreserved for the labels in these cases:* On all horizontal axes.* On vertical axes if `label.align` is `right` on a left-sideaxis or `left` on a right-side axis.* On vertical axes if `label.align` is `center`.This can be turned off when for example the labels are renderedinside the plot area instead of outside.
 		/// </summary>
 		public bool? ReserveSpace { get; set; }
-		private bool? ReserveSpace_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Rotation of the labels in degrees. When `undefined`, the`autoRotation` option takes precedence.
 		/// </summary>
 		public double? Rotation { get; set; }
-		private double? Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Horizontal axes only. The number of lines to spread the labelsover to make room or tighter labels. 0 disables staggering.
 		/// </summary>
 		public double? StaggerLines { get; set; }
-		private double? StaggerLines_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// To show only every _n_'th label on the axis, set the step to _n_.Setting the step to 2 shows every other label.By default, when 0, the step is calculated automatically to avoidoverlap. To prevent this, set it to 1\. This usually onlyhappens on a category axis, and is often a sign that you havechosen the wrong axis type.Read more at[Axis docs](https://www.highcharts.com/docs/chart-concepts/axes)=> What axis should I use?
 		/// </summary>
 		public double? Step { get; set; }
-		private double? Step_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the labels.
 		/// </summary>
 		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The Z index for the axis labels.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Align != Align_DefaultValue) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
-			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
-			if (AutoRotation != AutoRotation_DefaultValue) h.Add("autoRotation",AutoRotation);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highstock.AddFunction("formatter", Formatter); }  
-			if (MaxStaggerLines != MaxStaggerLines_DefaultValue) h.Add("maxStaggerLines",MaxStaggerLines);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highstock.FirstCharacterToLower(Overflow.ToString()));
-			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (StaggerLines != StaggerLines_DefaultValue) h.Add("staggerLines",StaggerLines);
-			if (Step != Step_DefaultValue) h.Add("step",Step);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (CustomFields.Count > 0)
+			if (Align != NavigatorXAxisLabelsAlign.Null) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
+			if (AllowOverlap != null) h.Add("allowOverlap",AllowOverlap);
+			if (AutoRotation != null) h.Add("autoRotation",AutoRotation);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Format != null) h.Add("format",Format);
+			if (Formatter != null) { h.Add("formatter",Formatter); highstock.AddFunction("formatter", Formatter); }  
+			if (MaxStaggerLines != null) h.Add("maxStaggerLines",MaxStaggerLines);
+			if (Overflow != NavigatorXAxisLabelsOverflow.Null) h.Add("overflow", highstock.FirstCharacterToLower(Overflow.ToString()));
+			if (ReserveSpace != null) h.Add("reserveSpace",ReserveSpace);
+			if (Rotation != null) h.Add("rotation",Rotation);
+			if (StaggerLines != null) h.Add("staggerLines",StaggerLines);
+			if (Step != null) h.Add("step",Step);
+			if (Style != null) h.Add("style",Style);
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -191,21 +150,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

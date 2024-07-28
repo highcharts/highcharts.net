@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsFibonacciTimeZonesTypeOptionsLine()
 		{
-			Fill = Fill_DefaultValue = "undefined";
-			Stroke = Stroke_DefaultValue = " rgba(0, 0, 0, 0.75) ";
-			StrokeWidth = StrokeWidth_DefaultValue = 1;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public string Fill { get; set; }
-		private string Fill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the lines.
 		/// </summary>
 		public string Stroke { get; set; }
-		private string Stroke_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width of the lines.
 		/// </summary>
 		public double? StrokeWidth { get; set; }
-		private double? StrokeWidth_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Fill != Fill_DefaultValue) h.Add("fill",Fill);
-			if (Stroke != Stroke_DefaultValue) h.Add("stroke",Stroke);
-			if (StrokeWidth != StrokeWidth_DefaultValue) h.Add("strokeWidth",StrokeWidth);
-			if (CustomFields.Count > 0)
+			if (Fill != null) h.Add("fill",Fill);
+			if (Stroke != null) h.Add("stroke",Stroke);
+			if (StrokeWidth != null) h.Add("strokeWidth",StrokeWidth);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

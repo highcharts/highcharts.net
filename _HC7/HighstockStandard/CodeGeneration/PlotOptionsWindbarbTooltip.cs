@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsWindbarbTooltip()
 		{
-			Distance = Distance_DefaultValue = 6;
-			PointFormat = PointFormat_DefaultValue = "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.value}</b> ({point.beaufort})<br/>";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -27,26 +23,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public double? Distance { get; set; }
-		private double? Distance_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The default point format for the wind barb tooltip. Note the`point.beaufort` property that refers to the Beaufort wind scale.The names can be internationalized by modifying`Highcharts.seriesTypes.windbarb.prototype.beaufortNames`.
 		/// </summary>
 		public string PointFormat { get; set; }
-		private string PointFormat_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Distance != Distance_DefaultValue) h.Add("distance",Distance);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (CustomFields.Count > 0)
+			if (Distance != null) h.Add("distance",Distance);
+			if (PointFormat != null) h.Add("pointFormat",PointFormat);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -56,21 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsVbpParams()
 		{
-			Index = Index_DefaultValue = "undefined";
-			Period = Period_DefaultValue = "undefined";
-			Ranges = Ranges_DefaultValue = 12;
-			VolumeSeriesID = VolumeSeriesID_DefaultValue = "volume";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public string Index { get; set; }
-		private string Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Period { get; set; }
-		private string Period_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The number of price zones.
 		/// </summary>
 		public double? Ranges { get; set; }
-		private double? Ranges_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The id of volume series which is mandatory. For example usingOHLC data, volumeSeriesID='volume' means the indicator will becalculated using OHLC and volume values.
 		/// </summary>
 		public string VolumeSeriesID { get; set; }
-		private string VolumeSeriesID_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (Period != Period_DefaultValue) h.Add("period",Period);
-			if (Ranges != Ranges_DefaultValue) h.Add("ranges",Ranges);
-			if (VolumeSeriesID != VolumeSeriesID_DefaultValue) h.Add("volumeSeriesID",VolumeSeriesID);
-			if (CustomFields.Count > 0)
+			if (Index != null) h.Add("index",Index);
+			if (Period != null) h.Add("period",Period);
+			if (Ranges != null) h.Add("ranges",Ranges);
+			if (VolumeSeriesID != null) h.Add("volumeSeriesID",VolumeSeriesID);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LangExportData()
 		{
-			AnnotationHeader = AnnotationHeader_DefaultValue = "Annotations";
-			CategoryDatetimeHeader = CategoryDatetimeHeader_DefaultValue = "DateTime";
-			CategoryHeader = CategoryHeader_DefaultValue = "Category";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The annotation column title.
 		/// </summary>
 		public string AnnotationHeader { get; set; }
-		private string AnnotationHeader_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The category column title when axis type set to "datetime".
 		/// </summary>
 		public string CategoryDatetimeHeader { get; set; }
-		private string CategoryDatetimeHeader_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The category column title.
 		/// </summary>
 		public string CategoryHeader { get; set; }
-		private string CategoryHeader_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (AnnotationHeader != AnnotationHeader_DefaultValue) h.Add("annotationHeader",AnnotationHeader);
-			if (CategoryDatetimeHeader != CategoryDatetimeHeader_DefaultValue) h.Add("categoryDatetimeHeader",CategoryDatetimeHeader);
-			if (CategoryHeader != CategoryHeader_DefaultValue) h.Add("categoryHeader",CategoryHeader);
-			if (CustomFields.Count > 0)
+			if (AnnotationHeader != null) h.Add("annotationHeader",AnnotationHeader);
+			if (CategoryDatetimeHeader != null) h.Add("categoryDatetimeHeader",CategoryDatetimeHeader);
+			if (CategoryHeader != null) h.Add("categoryHeader",CategoryHeader);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsStreamgraphFindNearestPointBy
     {
-        X, 
+        Null, 
+		X, 
 		Xy
     }
 }

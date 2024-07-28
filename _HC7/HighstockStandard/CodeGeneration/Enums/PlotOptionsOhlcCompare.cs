@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsOhlcCompare
     {
-        Percent, 
+        Null, 
+		Percent, 
 		Value
     }
 }

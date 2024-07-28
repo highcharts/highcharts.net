@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NoData()
 		{
-			Attr = Attr_DefaultValue = new Hashtable();
-			Position = Position_DefaultValue = new NoDataPosition();
-			Style = Style_DefaultValue = new Hashtable();
-			UseHTML = UseHTML_DefaultValue = false;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// An object of additional SVG attributes for the no-data label.
 		/// </summary>
 		public Hashtable Attr { get; set; }
-		private Hashtable Attr_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The position of the no-data label, relative to the plot area.
 		/// </summary>
 		public NoDataPosition Position { get; set; }
-		private NoDataPosition Position_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the no-data label.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to insert the label as HTML, or as pseudo-HTML rendered withSVG.
 		/// </summary>
 		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Attr != Attr_DefaultValue) h.Add("attr",Attr);
-			if (Position.IsDirty(highstock)) h.Add("position",Position.ToHashtable(highstock));
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (CustomFields.Count > 0)
+			if (Attr != null) h.Add("attr",Attr);
+			if (Position != null) h.Add("position",Position.ToHashtable(highstock));
+			if (Style != null) h.Add("style",Style);
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

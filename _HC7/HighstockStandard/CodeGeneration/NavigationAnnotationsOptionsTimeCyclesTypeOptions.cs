@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigationAnnotationsOptionsTimeCyclesTypeOptions()
 		{
-			Line = Line_DefaultValue = new NavigationAnnotationsOptionsTimeCyclesTypeOptionsLine();
-			Points = Points_DefaultValue = null;
-			XAxis = XAxis_DefaultValue = "";
-			YAxis = YAxis_DefaultValue = "";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Line options.
 		/// </summary>
 		public NavigationAnnotationsOptionsTimeCyclesTypeOptionsLine Line { get; set; }
-		private NavigationAnnotationsOptionsTimeCyclesTypeOptionsLine Line_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public Object Points { get; set; }
-		private Object Points_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// This number defines which xAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
 		/// </summary>
 		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// This number defines which yAxis the point is connected to.It refers to either the axis id or the index of the axisin the xAxis array.
 		/// </summary>
 		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Line.IsDirty(highstock)) h.Add("line",Line.ToHashtable(highstock));
-			if (Points != Points_DefaultValue) h.Add("points",Points);
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (CustomFields.Count > 0)
+			if (Line != null) h.Add("line",Line.ToHashtable(highstock));
+			if (Points != null) h.Add("points",Points);
+			if (XAxis != null) h.Add("xAxis",XAxis);
+			if (YAxis != null) h.Add("yAxis",YAxis);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

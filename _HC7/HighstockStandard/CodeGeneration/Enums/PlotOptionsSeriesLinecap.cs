@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsSeriesLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

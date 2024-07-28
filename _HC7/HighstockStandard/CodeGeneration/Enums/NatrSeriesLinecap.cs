@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum NatrSeriesLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

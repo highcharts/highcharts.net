@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsDisparityindexLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

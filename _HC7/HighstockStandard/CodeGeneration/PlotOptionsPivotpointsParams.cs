@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsPivotpointsParams()
 		{
-			Algorithm = Algorithm_DefaultValue = "standard";
-			Index = Index_DefaultValue = "undefined";
-			Period = Period_DefaultValue = 28;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Algorithm used to calculate resistance and support lines basedon pivot points. Implemented algorithms: `'standard'`,`'fibonacci'` and `'camarilla'`
 		/// </summary>
 		public string Algorithm { get; set; }
-		private string Algorithm_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Index { get; set; }
-		private string Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? Period { get; set; }
-		private double? Period_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Algorithm != Algorithm_DefaultValue) h.Add("algorithm",Algorithm);
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (Period != Period_DefaultValue) h.Add("period",Period);
-			if (CustomFields.Count > 0)
+			if (Algorithm != null) h.Add("algorithm",Algorithm);
+			if (Index != null) h.Add("index",Index);
+			if (Period != null) h.Add("period",Period);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

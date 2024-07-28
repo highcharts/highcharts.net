@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public RocSeriesLastPrice()
 		{
-			Color = Color_DefaultValue = "";
-			Enabled = Enabled_DefaultValue = false;
-			Label = Label_DefaultValue = new RocSeriesLastPriceLabel();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The color of the line of last price.By default, the line has the same color as the series.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable the indicator.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public RocSeriesLastPriceLabel Label { get; set; }
-		private RocSeriesLastPriceLabel Label_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
-			if (CustomFields.Count > 0)
+			if (Color != null) h.Add("color",Color);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Label != null) h.Add("label",Label.ToHashtable(highstock));
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

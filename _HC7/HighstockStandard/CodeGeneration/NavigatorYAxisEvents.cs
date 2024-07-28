@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigatorYAxisEvents()
 		{
-			AfterSetExtremes = AfterSetExtremes_DefaultValue = "";
-			PointBreakOut = PointBreakOut_DefaultValue = "";
-			PointInBreak = PointInBreak_DefaultValue = "";
-			SetExtremes = SetExtremes_DefaultValue = "";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// As opposed to the `setExtremes` event, this event fires after thefinal min and max values are computed and corrected for `minRange`.Fires when the minimum and maximum is set for the axis, either bycalling the `.setExtremes()` method or by selecting an area in thechart. One parameter, `event`, is passed to the function, containingcommon event information.The new user set minimum and maximum values can be found by`event.min` and `event.max`. These reflect the axis minimum andmaximum in axis values. The actual data extremes are found in`event.dataMin` and `event.dataMax`.
 		/// </summary>
 		public string AfterSetExtremes { get; set; }
-		private string AfterSetExtremes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An event fired when a point is outside a break after zoom.
 		/// </summary>
 		public string PointBreakOut { get; set; }
-		private string PointBreakOut_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An event fired when a point falls inside a break from this axis.
 		/// </summary>
 		public string PointInBreak { get; set; }
-		private string PointInBreak_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Fires when the minimum and maximum is set for the axis, either bycalling the `.setExtremes()` method or by selecting an area in thechart. One parameter, `event`, is passed to the function,containing common event information.The new user set minimum and maximum values can be found by`event.min` and `event.max`. These reflect the axis minimum andmaximum in data values. When an axis is zoomed all the way out fromthe "Reset zoom" button, `event.min` and `event.max` are null, andthe new extremes are set based on `this.dataMin` and `this.dataMax`.
 		/// </summary>
 		public string SetExtremes { get; set; }
-		private string SetExtremes_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (AfterSetExtremes != AfterSetExtremes_DefaultValue) { h.Add("afterSetExtremes",AfterSetExtremes); highstock.AddFunction("afterSetExtremes", AfterSetExtremes); }  
-			if (PointBreakOut != PointBreakOut_DefaultValue) { h.Add("pointBreakOut",PointBreakOut); highstock.AddFunction("pointBreakOut", PointBreakOut); }  
-			if (PointInBreak != PointInBreak_DefaultValue) { h.Add("pointInBreak",PointInBreak); highstock.AddFunction("pointInBreak", PointInBreak); }  
-			if (SetExtremes != SetExtremes_DefaultValue) { h.Add("setExtremes",SetExtremes); highstock.AddFunction("setExtremes", SetExtremes); }  
-			if (CustomFields.Count > 0)
+			if (AfterSetExtremes != null) { h.Add("afterSetExtremes",AfterSetExtremes); highstock.AddFunction("afterSetExtremes", AfterSetExtremes); }  
+			if (PointBreakOut != null) { h.Add("pointBreakOut",PointBreakOut); highstock.AddFunction("pointBreakOut", PointBreakOut); }  
+			if (PointInBreak != null) { h.Add("pointInBreak",PointInBreak); highstock.AddFunction("pointInBreak", PointInBreak); }  
+			if (SetExtremes != null) { h.Add("setExtremes",SetExtremes); highstock.AddFunction("setExtremes", SetExtremes); }  
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

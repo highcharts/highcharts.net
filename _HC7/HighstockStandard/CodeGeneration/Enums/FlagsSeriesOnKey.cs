@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum FlagsSeriesOnKey
     {
-        Y, 
+        Null, 
+		Y, 
 		Open, 
 		High, 
 		Low, 

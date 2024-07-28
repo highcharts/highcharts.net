@@ -16,11 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ArearangeSeriesMarkerStates()
 		{
-			Hover = Hover_DefaultValue = new ArearangeSeriesMarkerStatesHover();
-			Normal = Normal_DefaultValue = new ArearangeSeriesMarkerStatesNormal();
-			Select = Select_DefaultValue = new ArearangeSeriesMarkerStatesSelect();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -28,34 +23,26 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The hover state for a single point marker.
 		/// </summary>
 		public ArearangeSeriesMarkerStatesHover Hover { get; set; }
-		private ArearangeSeriesMarkerStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a single point marker. Currently onlyused for setting animation when returning to normal statefrom hover.
 		/// </summary>
 		public ArearangeSeriesMarkerStatesNormal Normal { get; set; }
-		private ArearangeSeriesMarkerStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
 		public ArearangeSeriesMarkerStatesSelect Select { get; set; }
-		private ArearangeSeriesMarkerStatesSelect Select_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Hover.IsDirty(highstock)) h.Add("hover",Hover.ToHashtable(highstock));
-			if (Normal.IsDirty(highstock)) h.Add("normal",Normal.ToHashtable(highstock));
-			if (Select.IsDirty(highstock)) h.Add("select",Select.ToHashtable(highstock));
-			if (CustomFields.Count > 0)
+			if (Hover != null) h.Add("hover",Hover.ToHashtable(highstock));
+			if (Normal != null) h.Add("normal",Normal.ToHashtable(highstock));
+			if (Select != null) h.Add("select",Select.ToHashtable(highstock));
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -65,21 +52,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

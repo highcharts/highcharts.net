@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsBubbleTooltip()
 		{
-			HeaderFormat = HeaderFormat_DefaultValue = "<span style='color:{point.color}'>●</span> <span style='font-size: 0.8em'> {series.name}</span><br/>";
-			PointFormat = PointFormat_DefaultValue = "({point.x}, {point.y}), Size: {point.z}";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -27,26 +23,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public string HeaderFormat { get; set; }
-		private string HeaderFormat_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string PointFormat { get; set; }
-		private string PointFormat_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (HeaderFormat != HeaderFormat_DefaultValue) h.Add("headerFormat",HeaderFormat);
-			if (PointFormat != PointFormat_DefaultValue) h.Add("pointFormat",PointFormat);
-			if (CustomFields.Count > 0)
+			if (HeaderFormat != null) h.Add("headerFormat",HeaderFormat);
+			if (PointFormat != null) h.Add("pointFormat",PointFormat);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -56,21 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -16,16 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AnnotationsElliottWaveLabelOptions()
 		{
-			Align = Align_DefaultValue = AnnotationsElliottWaveLabelOptionsAlign.Center;
-			AllowOverlap = AllowOverlap_DefaultValue = true;
-			BackgroundColor = BackgroundColor_DefaultValue = "none";
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			Crop = Crop_DefaultValue = true;
-			Overflow = Overflow_DefaultValue = AnnotationsElliottWaveLabelOptionsOverflow.None;
-			Type = Type_DefaultValue = "rect";
-			Y = Y_DefaultValue = -5;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -33,74 +23,61 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public AnnotationsElliottWaveLabelOptionsAlign Align { get; set; }
-		private AnnotationsElliottWaveLabelOptionsAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public bool? AllowOverlap { get; set; }
-		private bool? AllowOverlap_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public bool? Crop { get; set; }
-		private bool? Crop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public AnnotationsElliottWaveLabelOptionsOverflow Overflow { get; set; }
-		private AnnotationsElliottWaveLabelOptionsOverflow Overflow_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Type { get; set; }
-		private string Type_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Align != Align_DefaultValue) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
-			if (AllowOverlap != AllowOverlap_DefaultValue) h.Add("allowOverlap",AllowOverlap);
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Crop != Crop_DefaultValue) h.Add("crop",Crop);
-			if (Overflow != Overflow_DefaultValue) h.Add("overflow", highstock.FirstCharacterToLower(Overflow.ToString()));
-			if (Type != Type_DefaultValue) h.Add("type",Type);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (CustomFields.Count > 0)
+			if (Align != AnnotationsElliottWaveLabelOptionsAlign.Null) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
+			if (AllowOverlap != null) h.Add("allowOverlap",AllowOverlap);
+			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (Crop != null) h.Add("crop",Crop);
+			if (Overflow != AnnotationsElliottWaveLabelOptionsOverflow.Null) h.Add("overflow", highstock.FirstCharacterToLower(Overflow.ToString()));
+			if (Type != null) h.Add("type",Type);
+			if (Y != null) h.Add("y",Y);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -110,21 +87,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

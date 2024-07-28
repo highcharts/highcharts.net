@@ -37,11 +37,6 @@ namespace Highsoft.Web.Mvc.Stocks
             return h;
         }
 
-        internal override string ToJSON(Highstock highcharts)
-        {
-            return JsonConvert.SerializeObject(ToHashtable(highcharts));
-        }
-
         public List<object> ToList()
         {
             if (!string.IsNullOrWhiteSpace(Color))
@@ -49,12 +44,5 @@ namespace Highsoft.Web.Mvc.Stocks
 
             return new List<object>();
         }
-
-        // checks if the state of the object is different from the default
-        // and therefore needs to be serialized
-        internal override bool IsDirty(Highstock highcharts)
-        {
-            return ToHashtable(highcharts).Count > 0;
-        }   
 	}
 }

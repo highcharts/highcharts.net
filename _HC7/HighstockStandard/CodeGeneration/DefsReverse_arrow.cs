@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public DefsReverse_arrow()
 		{
-			Attributes = Attributes_DefaultValue = null;
-			TagName = TagName_DefaultValue = "marker";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -27,26 +23,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public Object Attributes { get; set; }
-		private Object Attributes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string TagName { get; set; }
-		private string TagName_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Attributes != Attributes_DefaultValue) h.Add("attributes",Attributes);
-			if (TagName != TagName_DefaultValue) h.Add("tagName",TagName);
-			if (CustomFields.Count > 0)
+			if (Attributes != null) h.Add("attributes",Attributes);
+			if (TagName != null) h.Add("tagName",TagName);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -56,21 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

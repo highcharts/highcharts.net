@@ -16,14 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ChartZooming()
 		{
-			Key = Key_DefaultValue = ChartZoomingKey.Alt;
-			MouseWheel = MouseWheel_DefaultValue = null;
-			PinchType = PinchType_DefaultValue = ChartZoomingPinchType.X;
-			ResetButton = ResetButton_DefaultValue = new ChartZoomingResetButton();
-			SingleTouch = SingleTouch_DefaultValue = false;
-			Type = Type_DefaultValue = ChartZoomingType.X;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -31,58 +23,47 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Set a key to hold when dragging to zoom the chart. This is useful toavoid zooming while moving points. Should be set different than[chart.panKey](#chart.panKey).
 		/// </summary>
 		public ChartZoomingKey Key { get; set; }
-		private ChartZoomingKey Key_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The mouse wheel zoom is a feature included in Highcharts Stock, but is alsoavailable for Highcharts Core as a module. Zooming with the mouse wheel isenabled by default in Highcharts Stock. In Highcharts Core it is enabled if[chart.zooming.type](chart.zooming.type) is set. It can be disabled bysetting this option to `false`.
 		/// </summary>
 		public bool? MouseWheel { get; set; }
-		private bool? MouseWheel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Equivalent to [type](#chart.zooming.type), but for multitouchgestures only. By default, the `pinchType` is the same as the`type` setting. However, pinching can be enabled separately insome cases, for example in stock charts where a mouse drag pans thechart, while pinching is enabled. When [tooltip.followTouchMove](#tooltip.followTouchMove) is true, pinchType only applies totwo-finger touches.
 		/// </summary>
 		public ChartZoomingPinchType PinchType { get; set; }
-		private ChartZoomingPinchType PinchType_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The button that appears after a selection zoom, allowing the userto reset zoom.
 		/// </summary>
 		public ChartZoomingResetButton ResetButton { get; set; }
-		private ChartZoomingResetButton ResetButton_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enables zooming by a single touch, in combination with[chart.zooming.type](#chart.zooming.type). When enabled, two-fingerpinch will still work as set up by [chart.zooming.pinchType](#chart.zooming.pinchType). However, `singleTouch` will interferewith touch-dragging the chart to read the tooltip. And especiallywhen vertical zooming is enabled, it will make it hard to scrollvertically on the page.
 		/// </summary>
 		public bool? SingleTouch { get; set; }
-		private bool? SingleTouch_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Decides in what dimensions the user can zoom by dragging the mouse.Can be one of `x`, `y` or `xy`.
 		/// </summary>
 		public ChartZoomingType Type { get; set; }
-		private ChartZoomingType Type_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Key != Key_DefaultValue) h.Add("key", highstock.FirstCharacterToLower(Key.ToString()));
-			if (MouseWheel != MouseWheel_DefaultValue) h.Add("mouseWheel",MouseWheel);
-			if (PinchType != PinchType_DefaultValue) h.Add("pinchType", highstock.FirstCharacterToLower(PinchType.ToString()));
-			if (ResetButton.IsDirty(highstock)) h.Add("resetButton",ResetButton.ToHashtable(highstock));
-			if (SingleTouch != SingleTouch_DefaultValue) h.Add("singleTouch",SingleTouch);
-			if (Type != Type_DefaultValue) h.Add("type", highstock.FirstCharacterToLower(Type.ToString()));
-			if (CustomFields.Count > 0)
+			if (Key != ChartZoomingKey.Null) h.Add("key", highstock.FirstCharacterToLower(Key.ToString()));
+			if (MouseWheel != null) h.Add("mouseWheel",MouseWheel);
+			if (PinchType != ChartZoomingPinchType.Null) h.Add("pinchType", highstock.FirstCharacterToLower(PinchType.ToString()));
+			if (ResetButton != null) h.Add("resetButton",ResetButton.ToHashtable(highstock));
+			if (SingleTouch != null) h.Add("singleTouch",SingleTouch);
+			if (Type != ChartZoomingType.Null) h.Add("type", highstock.FirstCharacterToLower(Type.ToString()));
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -92,21 +73,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

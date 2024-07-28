@@ -16,16 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public WmaSeriesTooltipDateTimeLabelFormats()
 		{
-			Day = Day_DefaultValue = "%A, %e %b %Y";
-			Hour = Hour_DefaultValue = "%A, %e %b, %H:%M";
-			Millisecond = Millisecond_DefaultValue = "%A, %e %b, %H:%M:%S.%L";
-			Minute = Minute_DefaultValue = "%A, %e %b, %H:%M";
-			Month = Month_DefaultValue = "%B %Y";
-			Second = Second_DefaultValue = "%A, %e %b, %H:%M:%S";
-			Week = Week_DefaultValue = "Week from %A, %e %b %Y";
-			Year = Year_DefaultValue = "%Y";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -33,74 +23,61 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public string Day { get; set; }
-		private string Day_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Hour { get; set; }
-		private string Hour_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Millisecond { get; set; }
-		private string Millisecond_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Minute { get; set; }
-		private string Minute_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Month { get; set; }
-		private string Month_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Second { get; set; }
-		private string Second_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Week { get; set; }
-		private string Week_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Year { get; set; }
-		private string Year_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Day != Day_DefaultValue) h.Add("day",Day);
-			if (Hour != Hour_DefaultValue) h.Add("hour",Hour);
-			if (Millisecond != Millisecond_DefaultValue) h.Add("millisecond",Millisecond);
-			if (Minute != Minute_DefaultValue) h.Add("minute",Minute);
-			if (Month != Month_DefaultValue) h.Add("month",Month);
-			if (Second != Second_DefaultValue) h.Add("second",Second);
-			if (Week != Week_DefaultValue) h.Add("week",Week);
-			if (Year != Year_DefaultValue) h.Add("year",Year);
-			if (CustomFields.Count > 0)
+			if (Day != null) h.Add("day",Day);
+			if (Hour != null) h.Add("hour",Hour);
+			if (Millisecond != null) h.Add("millisecond",Millisecond);
+			if (Minute != null) h.Add("minute",Minute);
+			if (Month != null) h.Add("month",Month);
+			if (Second != null) h.Add("second",Second);
+			if (Week != null) h.Add("week",Week);
+			if (Year != null) h.Add("year",Year);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -110,21 +87,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

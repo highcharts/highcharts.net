@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum ExportingButtonsContextButtonAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

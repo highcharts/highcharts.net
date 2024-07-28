@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ColorAxisMarker()
 		{
-			Animation = Animation_DefaultValue = new Animation() { Enabled = true };
-			AnimationBool = AnimationBool_DefaultValue = null;
-			Color = Color_DefaultValue = "#999999";
-			Width = Width_DefaultValue = null;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Animation for the marker as it moves between values. Set to`false` to disable animation. Defaults to `{ duration: 50 }`.
 		/// </summary>
 		public Animation Animation { get; set; }
-		private Animation Animation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Animation for the marker as it moves between values. Set to`false` to disable animation. Defaults to `{ duration: 50 }`.
 		/// </summary>
 		public bool? AnimationBool { get; set; }
-		private bool? AnimationBool_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the marker.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? Width { get; set; }
-		private double? Width_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Animation.IsDirty(highstock)) h.Add("animation",Animation.ToJSON(highstock));
-			if (AnimationBool != AnimationBool_DefaultValue) h.Add("animation",AnimationBool);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Width != Width_DefaultValue) h.Add("width",Width);
-			if (CustomFields.Count > 0)
+			if (Animation != null) h.Add("animation",Animation);
+			if (AnimationBool != null) h.Add("animation",AnimationBool);
+			if (Color != null) h.Add("color",Color);
+			if (Width != null) h.Add("width",Width);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -16,21 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigatorXAxisPlotBands()
 		{
-			AcrossPanes = AcrossPanes_DefaultValue = true;
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderRadius = BorderRadius_DefaultValue = "";
-			BorderRadiusNumber = BorderRadiusNumber_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			ClassName = ClassName_DefaultValue = "";
-			Color = Color_DefaultValue = "#e6e9ff";
-			Events = Events_DefaultValue = null;
-			From = From_DefaultValue = null;
-			Id = Id_DefaultValue = "";
-			Label = Label_DefaultValue = new NavigatorXAxisPlotBandsLabel();
-			To = To_DefaultValue = null;
-			ZIndex = ZIndex_DefaultValue = null;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -38,114 +23,96 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Flag to decide if plotBand should be rendered across all panes.
 		/// </summary>
 		public bool? AcrossPanes { get; set; }
-		private bool? AcrossPanes_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Border color for the plot band. Also requires `borderWidth` to be set.
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Border radius for the plot band. Applies only to gauges. Can be a pixelvalue or a percentage, for example `50%`.
 		/// </summary>
 		public string BorderRadius { get; set; }
-		private string BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Border radius for the plot band. Applies only to gauges. Can be a pixelvalue or a percentage, for example `50%`.
 		/// </summary>
 		public double? BorderRadiusNumber { get; set; }
-		private double? BorderRadiusNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Border width for the plot band. Also requires `borderColor` to be set.
 		/// </summary>
 		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A custom class name, in addition to the default `highcharts-plot-band`,to apply to each individual band.
 		/// </summary>
 		public string ClassName { get; set; }
-		private string ClassName_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the plot band.
 		/// </summary>
 		public string Color { get; set; }
-		private string Color_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An object defining mouse events for the plot band. Supported propertiesare `click`, `mouseover`, `mouseout`, `mousemove`.
 		/// </summary>
 		public Object Events { get; set; }
-		private Object Events_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The start position of the plot band in axis units.
 		/// </summary>
 		public double? From { get; set; }
-		private double? From_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An id used for identifying the plot band in Axis.removePlotBand.
 		/// </summary>
 		public string Id { get; set; }
-		private string Id_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Text labels for the plot bands
 		/// </summary>
 		public NavigatorXAxisPlotBandsLabel Label { get; set; }
-		private NavigatorXAxisPlotBandsLabel Label_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The end position of the plot band in axis units.
 		/// </summary>
 		public double? To { get; set; }
-		private double? To_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The z index of the plot band within the chart, relative to otherelements. Using the same z index as another element may giveunpredictable results, as the last rendered element will be on top.Values from 0 to 20 make sense.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		private double? ZIndex_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (AcrossPanes != AcrossPanes_DefaultValue) h.Add("acrossPanes",AcrossPanes);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderRadiusNumber != BorderRadiusNumber_DefaultValue) h.Add("borderRadius",BorderRadiusNumber);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (ClassName != ClassName_DefaultValue) h.Add("className",ClassName);
-			if (Color != Color_DefaultValue) h.Add("color",Color);
-			if (Events != Events_DefaultValue) h.Add("events",Events);
-			if (From != From_DefaultValue) h.Add("from",From);
-			if (Id != Id_DefaultValue) h.Add("id",Id);
-			if (Label.IsDirty(highstock)) h.Add("label",Label.ToHashtable(highstock));
-			if (To != To_DefaultValue) h.Add("to",To);
-			if (ZIndex != ZIndex_DefaultValue) h.Add("zIndex",ZIndex);
-			if (CustomFields.Count > 0)
+			if (AcrossPanes != null) h.Add("acrossPanes",AcrossPanes);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (BorderRadiusNumber != null) h.Add("borderRadius",BorderRadiusNumber);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (ClassName != null) h.Add("className",ClassName);
+			if (Color != null) h.Add("color",Color);
+			if (Events != null) h.Add("events",Events);
+			if (From != null) h.Add("from",From);
+			if (Id != null) h.Add("id",Id);
+			if (Label != null) h.Add("label",Label.ToHashtable(highstock));
+			if (To != null) h.Add("to",To);
+			if (ZIndex != null) h.Add("zIndex",ZIndex);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -155,21 +122,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

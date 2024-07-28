@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public Loading()
 		{
-			HideDuration = HideDuration_DefaultValue = 100;
-			LabelStyle = LabelStyle_DefaultValue = new Hashtable();
-			ShowDuration = ShowDuration_DefaultValue = 100;
-			Style = Style_DefaultValue = new Hashtable();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The duration in milliseconds of the fade out effect.
 		/// </summary>
 		public double? HideDuration { get; set; }
-		private double? HideDuration_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the loading label `span`.
 		/// </summary>
 		public Hashtable LabelStyle { get; set; }
-		private Hashtable LabelStyle_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The duration in milliseconds of the fade in effect.
 		/// </summary>
 		public double? ShowDuration { get; set; }
-		private double? ShowDuration_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the loading screen that covers the plot area.In styled mode, the loading label is styled with the`.highcharts-loading` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (HideDuration != HideDuration_DefaultValue) h.Add("hideDuration",HideDuration);
-			if (LabelStyle != LabelStyle_DefaultValue) h.Add("labelStyle",LabelStyle);
-			if (ShowDuration != ShowDuration_DefaultValue) h.Add("showDuration",ShowDuration);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (CustomFields.Count > 0)
+			if (HideDuration != null) h.Add("hideDuration",HideDuration);
+			if (LabelStyle != null) h.Add("labelStyle",LabelStyle);
+			if (ShowDuration != null) h.Add("showDuration",ShowDuration);
+			if (Style != null) h.Add("style",Style);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

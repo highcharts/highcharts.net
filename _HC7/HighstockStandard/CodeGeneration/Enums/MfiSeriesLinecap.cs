@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum MfiSeriesLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

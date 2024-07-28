@@ -16,18 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AoSeriesPointEvents()
 		{
-			Click = Click_DefaultValue = "";
-			Drag = Drag_DefaultValue = "";
-			DragStart = DragStart_DefaultValue = "";
-			Drop = Drop_DefaultValue = "";
-			MouseOut = MouseOut_DefaultValue = "";
-			MouseOver = MouseOver_DefaultValue = "";
-			Remove = Remove_DefaultValue = "";
-			Select = Select_DefaultValue = "";
-			Unselect = Unselect_DefaultValue = "";
-			Update = Update_DefaultValue = "";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -35,90 +23,75 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Fires when a point is clicked. One parameter, `event`, is passedto the function, containing common event information.If the `series.allowPointSelect` option is true, the defaultaction for the point's click event is to toggle the point'sselect state. Returning `false` cancels this action.
 		/// </summary>
 		public string Click { get; set; }
-		private string Click_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Callback that fires while dragging a point. The mouse event is passed inas parameter. The original data can be accessed from `e.origin`, and thenew point values can be accessed from `e.newPoints`. If there is only asingle point being updated, it can be accessed from `e.newPoint` forsimplicity, and its ID can be accessed from `e.newPointId`. The `this`context is the point being dragged. To stop the default drag action,return false. See [drag and drop options](plotOptions.series.dragDrop).
 		/// </summary>
 		public string Drag { get; set; }
-		private string Drag_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Callback that fires when starting to drag a point. The mouse event objectis passed in as an argument. If a drag handle is used, `e.updateProp` isset to the data property being dragged. The `this` context is the point.See [drag and drop options](plotOptions.series.dragDrop).
 		/// </summary>
 		public string DragStart { get; set; }
-		private string DragStart_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Callback that fires when the point is dropped. The parameters passed arethe same as for [drag](#plotOptions.series.point.events.drag). To stopthe default drop action, return false. See[drag and drop options](plotOptions.series.dragDrop).
 		/// </summary>
 		public string Drop { get; set; }
-		private string Drop_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Fires when the mouse leaves the area close to the point. Oneparameter, `event`, is passed to the function, containing commonevent information.
 		/// </summary>
 		public string MouseOut { get; set; }
-		private string MouseOut_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Fires when the mouse enters the area close to the point. Oneparameter, `event`, is passed to the function, containing commonevent information.Returning `false` cancels the default behavior, which is to show atooltip for the point.
 		/// </summary>
 		public string MouseOver { get; set; }
-		private string MouseOver_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Fires when the point is removed using the `.remove()` method. Oneparameter, `event`, is passed to the function. Returning `false`cancels the operation.
 		/// </summary>
 		public string Remove { get; set; }
-		private string Remove_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Fires when the point is selected either programmatically orfollowing a click on the point. One parameter, `event`, is passedto the function. Returning `false` cancels the operation.
 		/// </summary>
 		public string Select { get; set; }
-		private string Select_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Fires when the point is unselected either programmatically orfollowing a click on the point. One parameter, `event`, is passedto the function. Returning `false` cancels the operation.
 		/// </summary>
 		public string Unselect { get; set; }
-		private string Unselect_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Fires when the point is updated programmatically through the`.update()` method. One parameter, `event`, is passed to thefunction. The new point options can be accessed through`event.options`. Returning `false` cancels the operation.
 		/// </summary>
 		public string Update { get; set; }
-		private string Update_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Click != Click_DefaultValue) { h.Add("click",Click); highstock.AddFunction("click", Click); }  
-			if (Drag != Drag_DefaultValue) { h.Add("drag",Drag); highstock.AddFunction("drag", Drag); }  
-			if (DragStart != DragStart_DefaultValue) { h.Add("dragStart",DragStart); highstock.AddFunction("dragStart", DragStart); }  
-			if (Drop != Drop_DefaultValue) { h.Add("drop",Drop); highstock.AddFunction("drop", Drop); }  
-			if (MouseOut != MouseOut_DefaultValue) { h.Add("mouseOut",MouseOut); highstock.AddFunction("mouseOut", MouseOut); }  
-			if (MouseOver != MouseOver_DefaultValue) { h.Add("mouseOver",MouseOver); highstock.AddFunction("mouseOver", MouseOver); }  
-			if (Remove != Remove_DefaultValue) { h.Add("remove",Remove); highstock.AddFunction("remove", Remove); }  
-			if (Select != Select_DefaultValue) { h.Add("select",Select); highstock.AddFunction("select", Select); }  
-			if (Unselect != Unselect_DefaultValue) { h.Add("unselect",Unselect); highstock.AddFunction("unselect", Unselect); }  
-			if (Update != Update_DefaultValue) { h.Add("update",Update); highstock.AddFunction("update", Update); }  
-			if (CustomFields.Count > 0)
+			if (Click != null) { h.Add("click",Click); highstock.AddFunction("click", Click); }  
+			if (Drag != null) { h.Add("drag",Drag); highstock.AddFunction("drag", Drag); }  
+			if (DragStart != null) { h.Add("dragStart",DragStart); highstock.AddFunction("dragStart", DragStart); }  
+			if (Drop != null) { h.Add("drop",Drop); highstock.AddFunction("drop", Drop); }  
+			if (MouseOut != null) { h.Add("mouseOut",MouseOut); highstock.AddFunction("mouseOut", MouseOut); }  
+			if (MouseOver != null) { h.Add("mouseOver",MouseOver); highstock.AddFunction("mouseOver", MouseOver); }  
+			if (Remove != null) { h.Add("remove",Remove); highstock.AddFunction("remove", Remove); }  
+			if (Select != null) { h.Add("select",Select); highstock.AddFunction("select", Select); }  
+			if (Unselect != null) { h.Add("unselect",Unselect); highstock.AddFunction("unselect", Unselect); }  
+			if (Update != null) { h.Add("update",Update); highstock.AddFunction("update", Update); }  
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -128,21 +101,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsCmfLinecap
     {
-        Round, 
+        Null, 
+		Round, 
 		Square
     }
 }

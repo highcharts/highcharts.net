@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum AccessibilityLandmarkVerbosity
     {
-        All, 
+        Null, 
+		All, 
 		One, 
 		Disabled
     }

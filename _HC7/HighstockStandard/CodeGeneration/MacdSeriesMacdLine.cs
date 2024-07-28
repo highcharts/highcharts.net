@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public MacdSeriesMacdLine()
 		{
-			Styles = Styles_DefaultValue = new MacdSeriesMacdLineStyles();
-			Zones = Zones_DefaultValue = new MacdSeriesMacdLineZones();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -27,26 +23,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public MacdSeriesMacdLineStyles Styles { get; set; }
-		private MacdSeriesMacdLineStyles Styles_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public MacdSeriesMacdLineZones Zones { get; set; }
-		private MacdSeriesMacdLineZones Zones_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Styles.IsDirty(highstock)) h.Add("styles",Styles.ToHashtable(highstock));
-			if (Zones.IsDirty(highstock)) h.Add("zones",Zones.ToHashtable(highstock));
-			if (CustomFields.Count > 0)
+			if (Styles != null) h.Add("styles",Styles.ToHashtable(highstock));
+			if (Zones != null) h.Add("zones",Zones.ToHashtable(highstock));
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -56,21 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

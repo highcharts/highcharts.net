@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public VwapSeriesStates()
 		{
-			Hover = Hover_DefaultValue = new VwapSeriesStatesHover();
-			Inactive = Inactive_DefaultValue = new VwapSeriesStatesInactive();
-			Normal = Normal_DefaultValue = new VwapSeriesStatesNormal();
-			Select = Select_DefaultValue = new VwapSeriesStatesSelect();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Options for the hovered series. These settings override thenormal state options when a series is moused over or touched.
 		/// </summary>
 		public VwapSeriesStatesHover Hover { get; set; }
-		private VwapSeriesStatesHover Hover_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The opposite state of a hover for series.
 		/// </summary>
 		public VwapSeriesStatesInactive Inactive { get; set; }
-		private VwapSeriesStatesInactive Inactive_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The normal state of a series, or for point items in column, pieand similar series. Currently only used for setting animationwhen returning to normal state from hover.
 		/// </summary>
 		public VwapSeriesStatesNormal Normal { get; set; }
-		private VwapSeriesStatesNormal Normal_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Specific options for point in selected states, after beingselected by[allowPointSelect](#plotOptions.series.allowPointSelect)or programmatically.
 		/// </summary>
 		public VwapSeriesStatesSelect Select { get; set; }
-		private VwapSeriesStatesSelect Select_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Hover.IsDirty(highstock)) h.Add("hover",Hover.ToHashtable(highstock));
-			if (Inactive.IsDirty(highstock)) h.Add("inactive",Inactive.ToHashtable(highstock));
-			if (Normal.IsDirty(highstock)) h.Add("normal",Normal.ToHashtable(highstock));
-			if (Select.IsDirty(highstock)) h.Add("select",Select.ToHashtable(highstock));
-			if (CustomFields.Count > 0)
+			if (Hover != null) h.Add("hover",Hover.ToHashtable(highstock));
+			if (Inactive != null) h.Add("inactive",Inactive.ToHashtable(highstock));
+			if (Normal != null) h.Add("normal",Normal.ToHashtable(highstock));
+			if (Select != null) h.Add("select",Select.ToHashtable(highstock));
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

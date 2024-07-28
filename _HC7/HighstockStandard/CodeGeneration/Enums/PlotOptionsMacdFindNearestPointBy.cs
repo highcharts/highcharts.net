@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum PlotOptionsMacdFindNearestPointBy
     {
-        X, 
+        Null, 
+		X, 
 		Xy
     }
 }

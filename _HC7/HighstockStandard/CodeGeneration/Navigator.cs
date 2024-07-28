@@ -16,25 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public Navigator()
 		{
-			Accessibility = Accessibility_DefaultValue = new NavigatorAccessibility();
-			AdaptToUpdatedData = AdaptToUpdatedData_DefaultValue = true;
-			BaseSeries = BaseSeries_DefaultValue = "0";
-			BaseSeriesNumber = BaseSeriesNumber_DefaultValue = null;
-			Enabled = Enabled_DefaultValue = true;
-			Handles = Handles_DefaultValue = new NavigatorHandles();
-			Height = Height_DefaultValue = 40;
-			Margin = Margin_DefaultValue = null;
-			MaskFill = MaskFill_DefaultValue = "rgba(102,133,194,0.3)";
-			MaskInside = MaskInside_DefaultValue = true;
-			Opposite = Opposite_DefaultValue = false;
-			OutlineColor = OutlineColor_DefaultValue = "#cccccc";
-			OutlineWidth = OutlineWidth_DefaultValue = 1;
-			Series = Series_DefaultValue = new Series();
-			StickToMax = StickToMax_DefaultValue = null;
-			XAxis = XAxis_DefaultValue = "";
-			YAxis = YAxis_DefaultValue = "";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -42,146 +23,124 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Accessibility options for the navigator. Requires theAccessibility module.
 		/// </summary>
 		public NavigatorAccessibility Accessibility { get; set; }
-		private NavigatorAccessibility Accessibility_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether the navigator and scrollbar should adapt to updated datain the base X axis. When loading data async, as in the demo below,this should be `false`. Otherwise new data will trigger navigatorredraw, which will cause unwanted looping. In the demo below, thedata in the navigator is set only once. On navigating, only the mainchart content is updated.
 		/// </summary>
 		public bool? AdaptToUpdatedData { get; set; }
-		private bool? AdaptToUpdatedData_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An integer identifying the index to use for the base series, or astring representing the id of the series.**Note**: As of Highcharts 5.0, this is now a deprecated option.Prefer [series.showInNavigator](#plotOptions.series.showInNavigator).
 		/// </summary>
 		public string BaseSeries { get; set; }
-		private string BaseSeries_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// An integer identifying the index to use for the base series, or astring representing the id of the series.**Note**: As of Highcharts 5.0, this is now a deprecated option.Prefer [series.showInNavigator](#plotOptions.series.showInNavigator).
 		/// </summary>
 		public double? BaseSeriesNumber { get; set; }
-		private double? BaseSeriesNumber_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable the navigator.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the handles for dragging the zoomed area.
 		/// </summary>
 		public NavigatorHandles Handles { get; set; }
-		private NavigatorHandles Handles_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The height of the navigator.
 		/// </summary>
 		public double? Height { get; set; }
-		private double? Height_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The distance from the nearest element, the X axis or X axis labels.
 		/// </summary>
 		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the mask covering the areas of the navigator seriesthat are currently not visible in the main series. The defaultcolor is bluish with an opacity of 0.3 to see the series below.
 		/// </summary>
 		public string MaskFill { get; set; }
-		private string MaskFill_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether the mask should be inside the range marking the zoomedrange, or outside. In Highcharts Stock 1.x it was always `false`.
 		/// </summary>
 		public bool? MaskInside { get; set; }
-		private bool? MaskInside_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When the chart is inverted, whether to draw the navigator on theopposite side.
 		/// </summary>
 		public bool? Opposite { get; set; }
-		private bool? Opposite_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The color of the line marking the currently zoomed area in thenavigator.
 		/// </summary>
 		public string OutlineColor { get; set; }
-		private string OutlineColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The width of the line marking the currently zoomed area in thenavigator.
 		/// </summary>
 		public double? OutlineWidth { get; set; }
-		private double? OutlineWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the navigator series. Available options are the sameas any series, documented at [plotOptions](#plotOptions.series)and [series](#series).Unless data is explicitly defined on navigator.series, the datais borrowed from the first series in the chart.Default series options for the navigator series are:```jsseries: {    type: 'areaspline',    fillOpacity: 0.05,    dataGrouping: {        smoothed: true    },    lineWidth: 1,    marker: {        enabled: false    }}```
 		/// </summary>
 		public Series Series { get; set; }
-		private Series Series_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Enable or disable navigator sticking to right, while adding newpoints. If `undefined`, the navigator sticks to the axis maximum onlyif it was already at the maximum prior to adding points.
 		/// </summary>
 		public bool? StickToMax { get; set; }
-		private bool? StickToMax_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the navigator X axis. Default series options for thenavigator xAxis are:```jsxAxis: {    tickWidth: 0,    lineWidth: 0,    gridLineWidth: 1,    tickPixelInterval: 200,    labels: {           align: 'left',        style: {            color: '#888'        },        x: 3,        y: -4    }}```
 		/// </summary>
 		public string XAxis { get; set; }
-		private string XAxis_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Options for the navigator Y axis. Default series options for thenavigator yAxis are:```jsyAxis: {    gridLineWidth: 0,    startOnTick: false,    endOnTick: false,    minPadding: 0.1,    maxPadding: 0.1,    labels: {        enabled: false    },    title: {        text: null    },    tickWidth: 0}```
 		/// </summary>
 		public string YAxis { get; set; }
-		private string YAxis_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Accessibility.IsDirty(highstock)) h.Add("accessibility",Accessibility.ToHashtable(highstock));
-			if (AdaptToUpdatedData != AdaptToUpdatedData_DefaultValue) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
-			if (BaseSeries != BaseSeries_DefaultValue) h.Add("baseSeries",BaseSeries);
-			if (BaseSeriesNumber != BaseSeriesNumber_DefaultValue) h.Add("baseSeries",BaseSeriesNumber);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Handles.IsDirty(highstock)) h.Add("handles",Handles.ToHashtable(highstock));
-			if (Height != Height_DefaultValue) h.Add("height",Height);
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (MaskFill != MaskFill_DefaultValue) h.Add("maskFill",MaskFill);
-			if (MaskInside != MaskInside_DefaultValue) h.Add("maskInside",MaskInside);
-			if (Opposite != Opposite_DefaultValue) h.Add("opposite",Opposite);
-			if (OutlineColor != OutlineColor_DefaultValue) h.Add("outlineColor",OutlineColor);
-			if (OutlineWidth != OutlineWidth_DefaultValue) h.Add("outlineWidth",OutlineWidth);
-			if (Series.IsDirty(highstock)) h.Add("series",Series.ToHashtable(highstock));
-			if (StickToMax != StickToMax_DefaultValue) h.Add("stickToMax",StickToMax);
-			if (XAxis != XAxis_DefaultValue) h.Add("xAxis",XAxis);
-			if (YAxis != YAxis_DefaultValue) h.Add("yAxis",YAxis);
-			if (CustomFields.Count > 0)
+			if (Accessibility != null) h.Add("accessibility",Accessibility.ToHashtable(highstock));
+			if (AdaptToUpdatedData != null) h.Add("adaptToUpdatedData",AdaptToUpdatedData);
+			if (BaseSeries != null) h.Add("baseSeries",BaseSeries);
+			if (BaseSeriesNumber != null) h.Add("baseSeries",BaseSeriesNumber);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Handles != null) h.Add("handles",Handles.ToHashtable(highstock));
+			if (Height != null) h.Add("height",Height);
+			if (Margin != null) h.Add("margin",Margin);
+			if (MaskFill != null) h.Add("maskFill",MaskFill);
+			if (MaskInside != null) h.Add("maskInside",MaskInside);
+			if (Opposite != null) h.Add("opposite",Opposite);
+			if (OutlineColor != null) h.Add("outlineColor",OutlineColor);
+			if (OutlineWidth != null) h.Add("outlineWidth",OutlineWidth);
+			if (Series != null) h.Add("series",Series.ToHashtable(highstock));
+			if (StickToMax != null) h.Add("stickToMax",StickToMax);
+			if (XAxis != null) h.Add("xAxis",XAxis);
+			if (YAxis != null) h.Add("yAxis",YAxis);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -191,21 +150,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

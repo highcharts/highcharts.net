@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum OhlcSeriesPointValKey
     {
-        High, 
+        Null, 
+		High, 
 		Low, 
 		Close
     }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum CaptionAlign
     {
-        Left, 
+        Null, 
+		Left, 
 		Center, 
 		Right
     }

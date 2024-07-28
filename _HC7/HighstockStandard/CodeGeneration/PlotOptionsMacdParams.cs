@@ -16,13 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsMacdParams()
 		{
-			Index = Index_DefaultValue = 3;
-			LongPeriod = LongPeriod_DefaultValue = 26;
-			Period = Period_DefaultValue = 26;
-			ShortPeriod = ShortPeriod_DefaultValue = 12;
-			SignalPeriod = SignalPeriod_DefaultValue = 9;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -30,50 +23,40 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The point index which indicator calculations will base. Forexample using OHLC data, index=2 means the indicator will becalculated using Low values.
 		/// </summary>
 		public double? Index { get; set; }
-		private double? Index_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The long period for indicator calculations.
 		/// </summary>
 		public double? LongPeriod { get; set; }
-		private double? LongPeriod_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public double? Period { get; set; }
-		private double? Period_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The short period for indicator calculations.
 		/// </summary>
 		public double? ShortPeriod { get; set; }
-		private double? ShortPeriod_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The base period for signal calculations.
 		/// </summary>
 		public double? SignalPeriod { get; set; }
-		private double? SignalPeriod_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Index != Index_DefaultValue) h.Add("index",Index);
-			if (LongPeriod != LongPeriod_DefaultValue) h.Add("longPeriod",LongPeriod);
-			if (Period != Period_DefaultValue) h.Add("period",Period);
-			if (ShortPeriod != ShortPeriod_DefaultValue) h.Add("shortPeriod",ShortPeriod);
-			if (SignalPeriod != SignalPeriod_DefaultValue) h.Add("signalPeriod",SignalPeriod);
-			if (CustomFields.Count > 0)
+			if (Index != null) h.Add("index",Index);
+			if (LongPeriod != null) h.Add("longPeriod",LongPeriod);
+			if (Period != null) h.Add("period",Period);
+			if (ShortPeriod != null) h.Add("shortPeriod",ShortPeriod);
+			if (SignalPeriod != null) h.Add("signalPeriod",SignalPeriod);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -83,21 +66,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

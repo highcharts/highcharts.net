@@ -16,19 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public MacdSeriesLastPriceLabel()
 		{
-			Align = Align_DefaultValue = MacdSeriesLastPriceLabelAlign.Null;
-			BackgroundColor = BackgroundColor_DefaultValue = "";
-			BorderColor = BorderColor_DefaultValue = "";
-			BorderRadius = BorderRadius_DefaultValue = null;
-			BorderWidth = BorderWidth_DefaultValue = 0;
-			Enabled = Enabled_DefaultValue = null;
-			Format = Format_DefaultValue = "";
-			Formatter = Formatter_DefaultValue = "";
-			Padding = Padding_DefaultValue = 8;
-			Shape = Shape_DefaultValue = "";
-			Style = Style_DefaultValue = new Hashtable();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -36,98 +23,82 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public MacdSeriesLastPriceLabelAlign Align { get; set; }
-		private MacdSeriesLastPriceLabelAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BackgroundColor { get; set; }
-		private string BackgroundColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border color of `lastPrice` label.
 		/// </summary>
 		public string BorderColor { get; set; }
-		private string BorderColor_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border radius of `lastPrice` label.
 		/// </summary>
 		public double? BorderRadius { get; set; }
-		private double? BorderRadius_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The border width for the `lastPrice` label.
 		/// </summary>
 		public double? BorderWidth { get; set; }
-		private double? BorderWidth_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Flag to enable `lastPrice` label.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A format string for the `lastPrice` label. Defaults to `{value}` fornumeric axes and `{value:%b %d, %Y}` for datetime axes.
 		/// </summary>
 		public string Format { get; set; }
-		private string Format_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Formatter { get; set; }
-		private string Formatter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Padding inside the `lastPrice` label.
 		/// </summary>
 		public double? Padding { get; set; }
-		private double? Padding_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string Shape { get; set; }
-		private string Shape_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Text styles for the `lastPrice` label.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Align != Align_DefaultValue) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
-			if (BackgroundColor != BackgroundColor_DefaultValue) h.Add("backgroundColor",BackgroundColor);
-			if (BorderColor != BorderColor_DefaultValue) h.Add("borderColor",BorderColor);
-			if (BorderRadius != BorderRadius_DefaultValue) h.Add("borderRadius",BorderRadius);
-			if (BorderWidth != BorderWidth_DefaultValue) h.Add("borderWidth",BorderWidth);
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (Format != Format_DefaultValue) h.Add("format",Format);
-			if (Formatter != Formatter_DefaultValue) { h.Add("formatter",Formatter); highstock.AddFunction("formatter", Formatter); }  
-			if (Padding != Padding_DefaultValue) h.Add("padding",Padding);
-			if (Shape != Shape_DefaultValue) h.Add("shape",Shape);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (CustomFields.Count > 0)
+			if (Align != MacdSeriesLastPriceLabelAlign.Null) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
+			if (BackgroundColor != null) h.Add("backgroundColor",BackgroundColor);
+			if (BorderColor != null) h.Add("borderColor",BorderColor);
+			if (BorderRadius != null) h.Add("borderRadius",BorderRadius);
+			if (BorderWidth != null) h.Add("borderWidth",BorderWidth);
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (Format != null) h.Add("format",Format);
+			if (Formatter != null) { h.Add("formatter",Formatter); highstock.AddFunction("formatter", Formatter); }  
+			if (Padding != null) h.Add("padding",Padding);
+			if (Shape != null) h.Add("shape",Shape);
+			if (Style != null) h.Add("style",Style);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -137,21 +108,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

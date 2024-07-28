@@ -16,14 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public PlotOptionsSupertrendSonification()
 		{
-			ContextTracks = ContextTracks_DefaultValue = new PlotOptionsSupertrendSonificationContextTracks();
-			DefaultInstrumentOptions = DefaultInstrumentOptions_DefaultValue = new PlotOptionsSupertrendSonificationDefaultInstrumentOptions();
-			DefaultSpeechOptions = DefaultSpeechOptions_DefaultValue = new PlotOptionsSupertrendSonificationDefaultSpeechOptions();
-			Enabled = Enabled_DefaultValue = true;
-			PointGrouping = PointGrouping_DefaultValue = new PlotOptionsSupertrendSonificationPointGrouping();
-			Tracks = Tracks_DefaultValue = new PlotOptionsSupertrendSonificationTracks();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -31,58 +23,47 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Context tracks for this series. Context tracks are tracks that are nottied to data points.Given as an array of instrument tracks, speech tracks, or a mix of both.
 		/// </summary>
 		public PlotOptionsSupertrendSonificationContextTracks ContextTracks { get; set; }
-		private PlotOptionsSupertrendSonificationContextTracks ContextTracks_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Default options for all this series' instrument tracks.
 		/// </summary>
 		public PlotOptionsSupertrendSonificationDefaultInstrumentOptions DefaultInstrumentOptions { get; set; }
-		private PlotOptionsSupertrendSonificationDefaultInstrumentOptions DefaultInstrumentOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Default options for all this series' speech tracks.
 		/// </summary>
 		public PlotOptionsSupertrendSonificationDefaultSpeechOptions DefaultSpeechOptions { get; set; }
-		private PlotOptionsSupertrendSonificationDefaultSpeechOptions DefaultSpeechOptions_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether or not sonification is enabled for this series.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Sonification point grouping options for this series.
 		/// </summary>
 		public PlotOptionsSupertrendSonificationPointGrouping PointGrouping { get; set; }
-		private PlotOptionsSupertrendSonificationPointGrouping PointGrouping_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Tracks for this series.Given as an array of instrument tracks, speech tracks, or a mix of both.
 		/// </summary>
 		public PlotOptionsSupertrendSonificationTracks Tracks { get; set; }
-		private PlotOptionsSupertrendSonificationTracks Tracks_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (ContextTracks.IsDirty(highstock)) h.Add("contextTracks",ContextTracks.ToHashtable(highstock));
-			if (DefaultInstrumentOptions.IsDirty(highstock)) h.Add("defaultInstrumentOptions",DefaultInstrumentOptions.ToHashtable(highstock));
-			if (DefaultSpeechOptions.IsDirty(highstock)) h.Add("defaultSpeechOptions",DefaultSpeechOptions.ToHashtable(highstock));
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (PointGrouping.IsDirty(highstock)) h.Add("pointGrouping",PointGrouping.ToHashtable(highstock));
-			if (Tracks.IsDirty(highstock)) h.Add("tracks",Tracks.ToHashtable(highstock));
-			if (CustomFields.Count > 0)
+			if (ContextTracks != null) h.Add("contextTracks",ContextTracks.ToHashtable(highstock));
+			if (DefaultInstrumentOptions != null) h.Add("defaultInstrumentOptions",DefaultInstrumentOptions.ToHashtable(highstock));
+			if (DefaultSpeechOptions != null) h.Add("defaultSpeechOptions",DefaultSpeechOptions.ToHashtable(highstock));
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (PointGrouping != null) h.Add("pointGrouping",PointGrouping.ToHashtable(highstock));
+			if (Tracks != null) h.Add("tracks",Tracks.ToHashtable(highstock));
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -92,21 +73,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

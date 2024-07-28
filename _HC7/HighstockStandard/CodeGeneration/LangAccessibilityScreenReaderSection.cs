@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public LangAccessibilityScreenReaderSection()
 		{
-			AfterRegionLabel = AfterRegionLabel_DefaultValue = "";
-			Annotations = Annotations_DefaultValue = new List<Annotations>();
-			BeforeRegionLabel = BeforeRegionLabel_DefaultValue = "";
-			EndOfChartMarker = EndOfChartMarker_DefaultValue = "End of interactive chart.";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public string AfterRegionLabel { get; set; }
-		private string AfterRegionLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Language options for annotation descriptions.
 		/// </summary>
 		public List<Annotations> Annotations { get; set; }
-		private List<Annotations> Annotations_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public string BeforeRegionLabel { get; set; }
-		private string BeforeRegionLabel_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Label for the end of the chart. Announced by screen readers.
 		/// </summary>
 		public string EndOfChartMarker { get; set; }
-		private string EndOfChartMarker_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (AfterRegionLabel != AfterRegionLabel_DefaultValue) h.Add("afterRegionLabel",AfterRegionLabel);
-			if (Annotations != Annotations_DefaultValue) h.Add("annotations", HashifyList(highstock,Annotations));
-			if (BeforeRegionLabel != BeforeRegionLabel_DefaultValue) h.Add("beforeRegionLabel",BeforeRegionLabel);
-			if (EndOfChartMarker != EndOfChartMarker_DefaultValue) h.Add("endOfChartMarker",EndOfChartMarker);
-			if (CustomFields.Count > 0)
+			if (AfterRegionLabel != null) h.Add("afterRegionLabel",AfterRegionLabel);
+			if (Annotations != null) h.Add("annotations", HashifyList(highstock,Annotations));
+			if (BeforeRegionLabel != null) h.Add("beforeRegionLabel",BeforeRegionLabel);
+			if (EndOfChartMarker != null) h.Add("endOfChartMarker",EndOfChartMarker);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -44,21 +44,5 @@ namespace Highsoft.Web.Mvc.Stocks
 
             return h;
         }
-
-        internal override string ToJSON(Highstock highcharts)
-        {
-            Hashtable h = ToHashtable(highcharts);
-            if (h.Count > 0)
-                return JsonConvert.SerializeObject(h);
-            else
-                return Enabled.ToString().ToLower();
-        }
-
-        // checks if the state of the object is different from the default
-        // and therefore needs to be serialized
-        internal override bool IsDirty(Highstock highcharts)
-        {
-            return (Enabled != true || ToHashtable(highcharts).Count > 0);
-        }
 	}
 }

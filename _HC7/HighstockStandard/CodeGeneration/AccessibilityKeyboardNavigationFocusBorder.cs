@@ -16,12 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public AccessibilityKeyboardNavigationFocusBorder()
 		{
-			Enabled = Enabled_DefaultValue = true;
-			HideBrowserFocusOutline = HideBrowserFocusOutline_DefaultValue = true;
-			Margin = Margin_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -29,42 +23,33 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Enable/disable focus border for chart.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		private bool? Enabled_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Hide the browser's default focus indicator.
 		/// </summary>
 		public bool? HideBrowserFocusOutline { get; set; }
-		private bool? HideBrowserFocusOutline_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Focus border margin around the elements.
 		/// </summary>
 		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Style options for the focus border drawn around elementswhile navigating through them. Note that some browsers inaddition draw their own borders for focused elements. Theseautomatic borders cannot be styled by Highcharts.In styled mode, the border is given the`.highcharts-focus-border` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Enabled != Enabled_DefaultValue) h.Add("enabled",Enabled);
-			if (HideBrowserFocusOutline != HideBrowserFocusOutline_DefaultValue) h.Add("hideBrowserFocusOutline",HideBrowserFocusOutline);
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (CustomFields.Count > 0)
+			if (Enabled != null) h.Add("enabled",Enabled);
+			if (HideBrowserFocusOutline != null) h.Add("hideBrowserFocusOutline",HideBrowserFocusOutline);
+			if (Margin != null) h.Add("margin",Margin);
+			if (Style != null) h.Add("style",Style);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -74,21 +59,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

@@ -7,7 +7,8 @@ namespace Highsoft.Web.Mvc.Stocks
 {
     public enum HeikinashiSeriesPointValKey
     {
-        High, 
+        Null, 
+		High, 
 		Low, 
 		Close
     }

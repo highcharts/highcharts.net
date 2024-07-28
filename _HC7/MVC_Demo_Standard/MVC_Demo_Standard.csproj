@@ -54,9 +54,6 @@
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Highstock, Version=11.4.1.0, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
-      <HintPath>..\packages\Highsoft.Highstock.11.4.1\lib\netstandard2.0\Highstock.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
@@ -1442,6 +1439,10 @@
     <ProjectReference Include="..\HighchartsStandard\HighchartsStandard.csproj">
       <Project>{d5c8fc1f-55bc-43e4-b488-ebf73736b6b9}</Project>
       <Name>HighchartsStandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HighstockStandard\HighstockStandard.csproj">
+      <Project>{fdd00731-a836-4d1a-a823-6a5dbba298ec}</Project>
+      <Name>HighstockStandard</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

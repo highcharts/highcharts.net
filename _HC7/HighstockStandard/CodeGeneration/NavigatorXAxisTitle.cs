@@ -16,19 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public NavigatorXAxisTitle()
 		{
-			Align = Align_DefaultValue = NavigatorXAxisTitleAlign.Middle;
-			Margin = Margin_DefaultValue = null;
-			Offset = Offset_DefaultValue = null;
-			ReserveSpace = ReserveSpace_DefaultValue = true;
-			Rotation = Rotation_DefaultValue = null;
-			Style = Style_DefaultValue = new Hashtable();
-			Text = Text_DefaultValue = "null";
-			TextAlign = TextAlign_DefaultValue = NavigatorXAxisTitleTextAlign.Null;
-			UseHTML = UseHTML_DefaultValue = false;
-			X = X_DefaultValue = 0;
-			Y = Y_DefaultValue = 0;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -36,98 +23,82 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// Alignment of the title relative to the axis values. Possiblevalues are "low", "middle" or "high".
 		/// </summary>
 		public NavigatorXAxisTitleAlign Align { get; set; }
-		private NavigatorXAxisTitleAlign Align_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The pixel distance between the axis labels or line and the title.Defaults to 0 for horizontal axes, 10 for vertical
 		/// </summary>
 		public double? Margin { get; set; }
-		private double? Margin_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The distance of the axis title from the axis line. By default,this distance is computed from the offset width of the labels,the labels' distance from the axis and the title's margin.However when the offset option is set, it overrides all this.
 		/// </summary>
 		public double? Offset { get; set; }
-		private double? Offset_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to reserve space for the title when laying out the axis.
 		/// </summary>
 		public bool? ReserveSpace { get; set; }
-		private bool? ReserveSpace_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The rotation of the text in degrees. 0 is horizontal, 270 isvertical reading from bottom to top. Defaults to 0 for horizontalaxes, 270 for left-side axes and 90 for right-side axes.
 		/// </summary>
 		public double? Rotation { get; set; }
-		private double? Rotation_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// CSS styles for the title. If the title text is longer than theaxis length, it will wrap to multiple lines by default. This canbe customized by setting `textOverflow: 'ellipsis'`, bysetting a specific `width` or by setting `whiteSpace: 'nowrap'`.In styled mode, the stroke width is given in the`.highcharts-axis-title` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		private Hashtable Style_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// The actual text of the axis title. It can contain basic HTML tagslike `b`, `i` and `span` with style.
 		/// </summary>
 		public string Text { get; set; }
-		private string Text_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Alignment of the text, can be `"left"`, `"right"` or `"center"`.Default alignment depends on the[title.align](xAxis.title.align):Horizontal axes:- for `align` = `"low"`, `textAlign` is set to `left`- for `align` = `"middle"`, `textAlign` is set to `center`- for `align` = `"high"`, `textAlign` is set to `right`Vertical axes:- for `align` = `"low"` and `opposite` = `true`, `textAlign` is  set to `right`- for `align` = `"low"` and `opposite` = `false`, `textAlign` is  set to `left`- for `align` = `"middle"`, `textAlign` is set to `center`- for `align` = `"high"` and `opposite` = `true` `textAlign` is  set to `left`- for `align` = `"high"` and `opposite` = `false` `textAlign` is  set to `right`
 		/// </summary>
 		public NavigatorXAxisTitleTextAlign TextAlign { get; set; }
-		private NavigatorXAxisTitleTextAlign TextAlign_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Whether to [use HTML](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#html)to render the axis title.
 		/// </summary>
 		public bool? UseHTML { get; set; }
-		private bool? UseHTML_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Horizontal pixel offset of the title position.
 		/// </summary>
 		public double? X { get; set; }
-		private double? X_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// Vertical pixel offset of the title position.
 		/// </summary>
 		public double? Y { get; set; }
-		private double? Y_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (Align != Align_DefaultValue) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
-			if (Margin != Margin_DefaultValue) h.Add("margin",Margin);
-			if (Offset != Offset_DefaultValue) h.Add("offset",Offset);
-			if (ReserveSpace != ReserveSpace_DefaultValue) h.Add("reserveSpace",ReserveSpace);
-			if (Rotation != Rotation_DefaultValue) h.Add("rotation",Rotation);
-			if (Style != Style_DefaultValue) h.Add("style",Style);
-			if (Text != Text_DefaultValue) h.Add("text",Text);
-			if (TextAlign != TextAlign_DefaultValue) h.Add("textAlign", highstock.FirstCharacterToLower(TextAlign.ToString()));
-			if (UseHTML != UseHTML_DefaultValue) h.Add("useHTML",UseHTML);
-			if (X != X_DefaultValue) h.Add("x",X);
-			if (Y != Y_DefaultValue) h.Add("y",Y);
-			if (CustomFields.Count > 0)
+			if (Align != NavigatorXAxisTitleAlign.Null) h.Add("align", highstock.FirstCharacterToLower(Align.ToString()));
+			if (Margin != null) h.Add("margin",Margin);
+			if (Offset != null) h.Add("offset",Offset);
+			if (ReserveSpace != null) h.Add("reserveSpace",ReserveSpace);
+			if (Rotation != null) h.Add("rotation",Rotation);
+			if (Style != null) h.Add("style",Style);
+			if (Text != null) h.Add("text",Text);
+			if (TextAlign != NavigatorXAxisTitleTextAlign.Null) h.Add("textAlign", highstock.FirstCharacterToLower(TextAlign.ToString()));
+			if (UseHTML != null) h.Add("useHTML",UseHTML);
+			if (X != null) h.Add("x",X);
+			if (Y != null) h.Add("y",Y);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -137,21 +108,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

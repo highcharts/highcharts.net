@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public StockToolsGuiDefinitionsSeparator()
 		{
-			ElementType = ElementType_DefaultValue = "span";
-			Symbol = Symbol_DefaultValue = "separator.svg";
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -27,26 +23,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// 
 		/// </summary>
 		public string ElementType { get; set; }
-		private string ElementType_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// A predefined background symbol for the button.
 		/// </summary>
 		public string Symbol { get; set; }
-		private string Symbol_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (ElementType != ElementType_DefaultValue) h.Add("elementType",ElementType);
-			if (Symbol != Symbol_DefaultValue) h.Add("symbol",Symbol);
-			if (CustomFields.Count > 0)
+			if (ElementType != null) h.Add("elementType",ElementType);
+			if (Symbol != null) h.Add("symbol",Symbol);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -56,21 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }

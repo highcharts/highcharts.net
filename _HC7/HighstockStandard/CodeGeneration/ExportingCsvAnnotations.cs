@@ -16,10 +16,6 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		public ExportingCsvAnnotations()
 		{
-			ItemDelimiter = ItemDelimiter_DefaultValue = "; ";
-			Join = Join_DefaultValue = false;
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -27,26 +23,19 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// The way to mark the separator for annotationscombined in one export-data table cell.
 		/// </summary>
 		public string ItemDelimiter { get; set; }
-		private string ItemDelimiter_DefaultValue { get; set; }
 		 
 
 		/// <summary>
 		/// When several labels are assigned to a specific point,they will be displayed in one field in the table.
 		/// </summary>
 		public bool? Join { get; set; }
-		private bool? Join_DefaultValue { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (h.Count > 0)
-				return h;
-
-			if (ItemDelimiter != ItemDelimiter_DefaultValue) h.Add("itemDelimiter",ItemDelimiter);
-			if (Join != Join_DefaultValue) h.Add("join",Join);
-			if (CustomFields.Count > 0)
+			if (ItemDelimiter != null) h.Add("itemDelimiter",ItemDelimiter);
+			if (Join != null) h.Add("join",Join);
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
@@ -56,21 +45,6 @@ namespace Highsoft.Web.Mvc.Stocks
 				}
 
 			return h;
-		}
-
-		internal override string ToJSON(Highstock highstock)
-		{            
-			if (h.Count > 0)
-				return JsonConvert.SerializeObject(h);
-			else 
-				return "";
-		}       
-
-		// checks if the state of the object is different from the default
-		// and therefore needs to be serialized
-		internal override bool IsDirty(Highstock highstock)
-		{
-			return ToHashtable(highstock).Count > 0;
 		}
 	}
 }
