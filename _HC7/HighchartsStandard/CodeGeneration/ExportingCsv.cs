@@ -53,9 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The line delimiter in the exported data, defaults to a newline.
 		/// </summary>
 		public string LineDelimiter { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Options for a _link_ label text which should follow linkconnection.
 		/// </summary>
 		public OrganizationSeriesNodesDataLabelsLinkTextPath LinkTextPath { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Can set a `levelSize` on all points which lies on the same level.
 		/// </summary>
 		public PlotOptionsSunburstLevelsLevelSize LevelSize { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

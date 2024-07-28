@@ -83,9 +83,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The shape of the pane background. When `solid`, the backgroundis circular. When `arc`, the background extends only from the minto the max of the value axis.
 		/// </summary>
 		public string Shape { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

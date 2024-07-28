@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Whether to display the frame. Possible values are `true`,`false`, `"auto"` to display only the frames behind thedata, and `"default"` to display faces behind the databased on the axis layout, ignoring the point of view.
 		/// </summary>
 		public bool? Visible { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

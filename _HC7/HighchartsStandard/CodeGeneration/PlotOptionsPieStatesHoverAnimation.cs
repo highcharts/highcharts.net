@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The duration of the hover animation in milliseconds. Bydefault the hover state animates quickly in, and slowlyback to normal.
 		/// </summary>
 		public double? Duration { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

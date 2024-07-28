@@ -125,9 +125,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The size value for each bubble. The bubbles' diameters are computedbased on the `z`, and controlled by series options like `minSize`,`maxSize`, `sizeBy`, `zMin` and `zMax`.
 		/// </summary>
 		public double? Z { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

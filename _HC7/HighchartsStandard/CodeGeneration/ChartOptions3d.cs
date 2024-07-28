@@ -65,9 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Defines the distance the viewer is standing in front of thechart, this setting is important to calculate the perspectiveeffect in column and scatter charts. It is not used for 3Dpie charts.
 		/// </summary>
 		public double? ViewDistance { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

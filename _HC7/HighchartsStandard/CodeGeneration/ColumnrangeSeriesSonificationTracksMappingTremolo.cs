@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Map to tremolo speed, from 0 to 1.This determines the speed of the tremolo effect, how fastthe volume changes.
 		/// </summary>
 		public ColumnrangeSeriesSonificationTracksMappingTremoloSpeed Speed { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

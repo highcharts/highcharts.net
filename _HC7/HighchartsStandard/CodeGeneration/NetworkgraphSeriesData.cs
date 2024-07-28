@@ -101,9 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The node that the link runs to.
 		/// </summary>
 		public string To { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

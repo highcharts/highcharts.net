@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The ID of the point to connect to.
 		/// </summary>
 		public string To { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

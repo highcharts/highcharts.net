@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public bool? Range { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

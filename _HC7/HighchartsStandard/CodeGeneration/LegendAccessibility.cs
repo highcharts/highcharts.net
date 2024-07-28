@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Options for keyboard navigation for the legend.
 		/// </summary>
 		public LegendAccessibilityKeyboardNavigation KeyboardNavigation { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Decides which level takes effect from the options set in the levelsobject.
 		/// </summary>
 		public double? Level { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

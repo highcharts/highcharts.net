@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// A text or HTML string for the title.
 		/// </summary>
 		public string Text { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The opposite state of a hover for a single point node.Applied to all not connected nodes to the hovered one.
 		/// </summary>
 		public NetworkgraphSeriesNodesMarkerStatesInactive Inactive { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

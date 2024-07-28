@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The value used for calculating the width of the ring. Its' affectis determined by `levelSize.unit`.
 		/// </summary>
 		public double? Value { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

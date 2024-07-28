@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Vertical offset of the button.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

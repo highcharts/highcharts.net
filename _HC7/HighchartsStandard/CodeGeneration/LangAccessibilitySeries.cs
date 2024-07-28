@@ -53,9 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Y-axis description for series if there are multiple yAxes inthe chart.
 		/// </summary>
 		public string YAxisDescription { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

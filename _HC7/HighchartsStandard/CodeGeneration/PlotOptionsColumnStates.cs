@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Options for the selected point. These settings override thenormal state options when a point is selected.
 		/// </summary>
 		public PlotOptionsColumnStatesSelect Select { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

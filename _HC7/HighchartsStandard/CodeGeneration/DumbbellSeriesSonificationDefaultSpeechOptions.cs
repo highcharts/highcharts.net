@@ -59,9 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Type of track. Always `"instrument"` for instrument tracks, and`"speech"` for speech tracks.
 		/// </summary>
 		public DumbbellSeriesSonificationDefaultSpeechOptionsType Type { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

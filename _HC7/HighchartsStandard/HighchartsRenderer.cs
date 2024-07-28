@@ -69,7 +69,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrWhiteSpace(_chart.ID))
-                _chart.Chart.RenderTo = _chart.ID;
+                _chart.Chart = new Chart { RenderTo = _chart.ID };
 
             sb.Append("<script type='text/javascript'>");
             sb.Append($"var ChartOptions = {GetStartupOptions()};");
@@ -84,7 +84,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrWhiteSpace(_chart.ID))
-                _chart.Chart.RenderTo = _chart.ID;
+                _chart.Chart = new Chart { RenderTo = _chart.ID };
            
             sb.Append("<script type='text/javascript'>");
 

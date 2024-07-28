@@ -341,9 +341,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The X-range series displays ranges on the X axis, typically timeintervals with a start and end date.In TypeScript the [type](series.xrange.type) option must always be set.Configuration options for the series are given in three levels:1. Options for all series in a chart are defined in the   [plotOptions.series](plotOptions.series) object.2. Options for all `xrange` series are defined in   [plotOptions.xrange](plotOptions.xrange).3. Options for one single series are given in   [the series instance array](series.xrange).```Highcharts.chart('container', {    plotOptions: {        series: {            // general options for all series        },        xrange: {            // shared options for all xrange series        }    },    series: [{        // specific options for this series instance        type: 'xrange'    }]});```            
 		/// </summary>
 		public PlotOptionsXrange Xrange { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

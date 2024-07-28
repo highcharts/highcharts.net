@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public NetworkgraphSeriesNodesMarkerStates States { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

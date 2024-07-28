@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Function to define the SVG path to use for the drag handles. Takesthe point as argument. Should return an SVG path in array format. TheSVG path is automatically positioned on the point.
 		/// </summary>
 		public string PathFormatter { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

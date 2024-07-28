@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Vertical position of the text baseline relative to the alignment. Defaultvaries by orientation.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

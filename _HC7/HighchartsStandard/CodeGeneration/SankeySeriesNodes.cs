@@ -101,9 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The vertical offset of a node. Positive values shift the node down,negative shift it up.If a percentage string is given, the node is offset by the percentage of thenode size.
 		/// </summary>
 		public double? OffsetVerticalNumber { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

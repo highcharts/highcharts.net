@@ -107,9 +107,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The x value of the point. For datetime axes, the X value is the timestampin milliseconds since 1970.
 		/// </summary>
 		public double? X { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

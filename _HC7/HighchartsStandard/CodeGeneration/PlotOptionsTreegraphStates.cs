@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Specific options for point in selected states, after beingselected by[allowPointSelect](#plotOptions.series.allowPointSelect)or programmatically.
 		/// </summary>
 		public PlotOptionsTreegraphStatesSelect Select { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

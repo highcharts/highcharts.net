@@ -257,9 +257,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The z index of the data labels. Use a `zIndex` of 6 to display it abovethe series, or use a `zIndex` of 2 to display it behind the series.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

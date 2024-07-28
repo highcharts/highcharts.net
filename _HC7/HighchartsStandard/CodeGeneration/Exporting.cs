@@ -185,9 +185,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The pixel width of charts exported to PNG or JPG. As of Highcharts3.0, the default pixel width is a function of the [chart.width](#chart.width) or [exporting.sourceWidth](#exporting.sourceWidth) and the[exporting.scale](#exporting.scale).
 		/// </summary>
 		public double? Width { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

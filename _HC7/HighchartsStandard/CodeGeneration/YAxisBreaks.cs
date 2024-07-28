@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The point where the break ends.
 		/// </summary>
 		public double? To { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

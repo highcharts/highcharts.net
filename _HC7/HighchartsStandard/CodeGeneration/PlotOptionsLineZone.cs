@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The value up to where the zone extends, if undefined the zonesstretches to the last value in the series.
 		/// </summary>
 		public double? Value { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

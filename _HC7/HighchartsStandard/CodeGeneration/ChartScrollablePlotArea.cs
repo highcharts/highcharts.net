@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The initial scrolling position of the scrollable plot area. Ranges from 0 to1, where 0 aligns the plot area to the top and 1 aligns it to the bottom.
 		/// </summary>
 		public double? ScrollPositionY { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

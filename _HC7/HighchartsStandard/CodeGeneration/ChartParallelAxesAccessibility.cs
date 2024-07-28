@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Range description for an axis. Overrides the default range description.Set to empty to disable range description for this axis.
 		/// </summary>
 		public string RangeDescription { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -143,9 +143,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The Y value of the range point.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

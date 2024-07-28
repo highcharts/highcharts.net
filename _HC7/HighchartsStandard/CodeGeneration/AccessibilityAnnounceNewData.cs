@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Minimum interval between announcements in milliseconds. Ifnew data arrives before this amount of time has passed, it isqueued for announcement. If another new data event happenswhile an announcement is queued, the queued announcement isdropped, and the latest announcement is queued instead. Setto 0 to allow all announcements, but be warned that frequentannouncements are disturbing to users.
 		/// </summary>
 		public double? MinAnnounceInterval { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

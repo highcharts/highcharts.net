@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Enable accessibility support for the export menu.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

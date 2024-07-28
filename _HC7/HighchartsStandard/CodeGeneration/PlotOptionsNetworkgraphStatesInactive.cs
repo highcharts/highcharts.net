@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Opacity of inactive links.
 		/// </summary>
 		public double? LinkOpacity { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

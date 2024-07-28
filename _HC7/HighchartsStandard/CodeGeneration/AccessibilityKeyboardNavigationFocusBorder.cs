@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Style options for the focus border drawn around elementswhile navigating through them. Note that some browsers inaddition draw their own borders for focused elements. Theseautomatic borders cannot be styled by Highcharts.In styled mode, the border is given the`.highcharts-focus-border` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

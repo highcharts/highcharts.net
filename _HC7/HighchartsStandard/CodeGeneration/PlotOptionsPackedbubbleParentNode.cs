@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Allow this series' parent nodes to be selectedby clicking on the graph.
 		/// </summary>
 		public bool? AllowPointSelect { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

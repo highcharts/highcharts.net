@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Label for the navigator handles.Receives `handleIx` and `chart` as context.`handleIx` refers to the index of the navigator handle.
 		/// </summary>
 		public string HandleLabel { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

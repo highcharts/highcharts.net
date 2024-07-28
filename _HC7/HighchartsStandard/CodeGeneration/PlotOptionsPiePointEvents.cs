@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Fires when the legend item belonging to the pie point (slice) isclicked. The `this` keyword refers to the point itself. Oneparameter, `event`, is passed to the function, containing commonevent information. The default action is to toggle the visibility ofthe point. This can be prevented by calling `event.preventDefault()`. **Note:** This option is deprecated in favor of[legend.events.itemClick](#legend.events.itemClick).
 		/// </summary>
 		public string LegendItemClick { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

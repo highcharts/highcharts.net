@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Options for a selected funnel item.
 		/// </summary>
 		public PlotOptionsFunnelStatesSelect Select { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

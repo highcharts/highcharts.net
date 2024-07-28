@@ -107,9 +107,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The volume of notes, from 0 to 1.
 		/// </summary>
 		public PlotOptionsWordcloudSonificationDefaultInstrumentOptionsMappingVolume Volume { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

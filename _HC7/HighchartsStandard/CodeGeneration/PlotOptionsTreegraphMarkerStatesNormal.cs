@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Animation when returning to normal state after hovering.
 		/// </summary>
 		public bool? AnimationBool { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

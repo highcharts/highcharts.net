@@ -101,9 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Type of the algorithm used when positioning nodes.
 		/// </summary>
 		public string Type { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

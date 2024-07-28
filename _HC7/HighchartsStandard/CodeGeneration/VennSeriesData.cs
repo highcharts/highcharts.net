@@ -113,9 +113,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The value of the point, resulting in a relative area of the circle, or areaof overlap between two sets in the venn or euler diagram.
 		/// </summary>
 		public double? Value { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

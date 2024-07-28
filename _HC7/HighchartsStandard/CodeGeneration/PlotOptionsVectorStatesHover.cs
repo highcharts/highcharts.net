@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Additonal line width for the vector errors when they arehovered.
 		/// </summary>
 		public double? LineWidthPlus { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

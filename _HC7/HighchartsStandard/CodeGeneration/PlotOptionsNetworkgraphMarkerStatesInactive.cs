@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Opacity of inactive markers.
 		/// </summary>
 		public double? Opacity { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

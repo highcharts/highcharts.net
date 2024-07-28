@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// CSS styles for the loading screen that covers the plot area.In styled mode, the loading label is styled with the`.highcharts-loading` class.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

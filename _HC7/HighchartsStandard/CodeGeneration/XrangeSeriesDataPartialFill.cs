@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The fill color to be used for partial fills. Defaults to a darker shadeof the point color.
 		/// </summary>
 		public string Fill { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

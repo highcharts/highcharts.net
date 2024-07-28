@@ -53,9 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Tracks for this series.Given as an array of instrument tracks, speech tracks, or a mix of both.
 		/// </summary>
 		public PlotOptionsTimelineSonificationTracks Tracks { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

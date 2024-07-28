@@ -305,9 +305,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Higher zIndex than column series to draw line above shapes.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

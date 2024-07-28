@@ -95,9 +95,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// A text description of the chart type.If the Accessibility module is loaded, this will be included in thedescription of the chart in the screen reader information region.Highcharts will by default attempt to guess the chart type, but formore complex charts it is recommended to specify this property forclarity.
 		/// </summary>
 		public string TypeDescription { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

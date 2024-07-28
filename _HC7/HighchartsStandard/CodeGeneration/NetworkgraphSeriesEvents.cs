@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Fires when the series is shown after chart generation time, eitherby clicking the legend item or by calling `.show()`.
 		/// </summary>
 		public string Show { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

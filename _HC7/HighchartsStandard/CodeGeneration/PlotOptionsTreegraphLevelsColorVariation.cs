@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The ending value of a color variation. The last sibling will receivethis value.
 		/// </summary>
 		public double? To { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

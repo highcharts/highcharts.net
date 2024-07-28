@@ -287,9 +287,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// When this option is `true`, the dial will wrap around the axes.For instance, in a full-range gauge going from 0 to 360, a valueof 400 will point to 40\. When `wrap` is `false`, the dial stopsat 360.
 		/// </summary>
 		public bool? Wrap { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

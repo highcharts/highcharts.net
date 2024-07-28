@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// A `showPopup` event. Fired when selecting for example an annotation.
 		/// </summary>
 		public string ShowPopup { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

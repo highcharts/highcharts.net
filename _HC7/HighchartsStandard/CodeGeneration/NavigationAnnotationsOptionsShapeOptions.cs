@@ -95,9 +95,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The yAxis index to which the points should be attached.Used for the ellipse.
 		/// </summary>
 		public string YAxis { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

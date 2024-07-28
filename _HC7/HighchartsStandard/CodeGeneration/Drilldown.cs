@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// An array of series configurations for the drill down. Each seriesconfiguration uses the same syntax as the [series](#series) option set.These drilldown series are hidden by default. The drilldown series islinked to the parent series' point by its `id`.
 		/// </summary>
 		public List<Series> Series { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Accessible label for the legend, for charts where there is nolegend title defined.
 		/// </summary>
 		public string LegendLabelNoTitle { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

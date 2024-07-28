@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The y position of the caption relative to the alignment within`chart.spacingTop` and `chart.spacingBottom`.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

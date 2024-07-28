@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Whether to hide labels that are outside the plot area.
 		/// </summary>
 		public bool? Clip { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

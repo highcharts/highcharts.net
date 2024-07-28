@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The position of the button.
 		/// </summary>
 		public PlotOptionsTreemapTraverseUpButtonPosition Position { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

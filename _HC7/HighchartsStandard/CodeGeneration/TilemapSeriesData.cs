@@ -125,9 +125,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The y coordinate of the point.Note that for some [tileShapes](#plotOptions.tilemap.tileShape) the gridcoordinates are offset.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

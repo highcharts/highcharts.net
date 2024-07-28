@@ -215,9 +215,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// An array containing the weekday names.
 		/// </summary>
 		public List<string> Weekdays { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

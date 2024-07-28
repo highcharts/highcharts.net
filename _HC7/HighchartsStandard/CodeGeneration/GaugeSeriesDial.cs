@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The width of the top of the dial, closest to the perimeter.The pivot narrows in from the base to the top.
 		/// </summary>
 		public double? TopWidth { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

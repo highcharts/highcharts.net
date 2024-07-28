@@ -119,9 +119,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Update points as they are dragged. If false, a guide box is drawn toillustrate the new point size.
 		/// </summary>
 		public bool? LiveRedraw { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -101,9 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The z index of the breadcrumbs group.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

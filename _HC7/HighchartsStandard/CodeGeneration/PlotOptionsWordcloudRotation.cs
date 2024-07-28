@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The largest degree of rotation for a word.
 		/// </summary>
 		public double? To { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

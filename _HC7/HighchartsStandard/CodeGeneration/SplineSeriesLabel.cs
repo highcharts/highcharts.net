@@ -83,9 +83,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Whether to use HTML to render the series label.
 		/// </summary>
 		public bool? UseHTML { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

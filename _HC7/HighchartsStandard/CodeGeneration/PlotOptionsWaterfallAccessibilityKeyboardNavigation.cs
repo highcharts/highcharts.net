@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Enable/disable keyboard navigation support for a specific series.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

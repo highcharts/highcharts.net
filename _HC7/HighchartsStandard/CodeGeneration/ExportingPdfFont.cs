@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The TTF font file for normal `font-style`. If font variations like`bold` or `italic` are not defined, the `normal` font will be usedfor those too.
 		/// </summary>
 		public string Normal { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

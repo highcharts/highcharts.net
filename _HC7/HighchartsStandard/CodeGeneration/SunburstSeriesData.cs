@@ -131,9 +131,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The value of the point, resulting in a relative area of the pointin the sunburst.
 		/// </summary>
 		public double? Value { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -113,9 +113,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The vertical offset of the button's position relative to its`verticalAlign`.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

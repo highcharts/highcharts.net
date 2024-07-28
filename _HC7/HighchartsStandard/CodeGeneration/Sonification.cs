@@ -101,9 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// How long to wait between each recomputation of the sonification, ifthe chart updates rapidly. This avoids slowing down processes likepanning. Given in milliseconds.
 		/// </summary>
 		public double? UpdateInterval { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

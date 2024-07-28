@@ -65,9 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The y position offset of the label relative to theconnector.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

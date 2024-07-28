@@ -467,9 +467,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The minimum possible z value for the point's radius calculation. Ifthe point's Z value is smaller than zMin, the slice will be drawnaccording to the zMin value.
 		/// </summary>
 		public double? ZMin { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

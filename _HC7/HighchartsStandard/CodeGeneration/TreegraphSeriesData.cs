@@ -131,9 +131,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Whether the data point is selected initially.
 		/// </summary>
 		public bool? Selected { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

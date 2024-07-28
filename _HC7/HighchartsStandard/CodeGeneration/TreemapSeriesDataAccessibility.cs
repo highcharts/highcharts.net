@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Set to false to disable accessibility functionality for a specific point.The point will not be included in keyboard navigation, and will not beexposed to assistive technology.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

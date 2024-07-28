@@ -53,9 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Time the WebGL setup.This outputs the time spent on setting up the WebGL context,creating shaders, and textures.
 		/// </summary>
 		public bool? TimeSetup { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

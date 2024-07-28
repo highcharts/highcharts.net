@@ -53,9 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Point accessibility options for a series.
 		/// </summary>
 		public GaugeSeriesAccessibilityPoint Point { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

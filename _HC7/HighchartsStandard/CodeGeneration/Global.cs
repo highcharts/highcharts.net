@@ -59,9 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// This option is deprecated since v6.0.5. Instead, use[time.useUTC](#time.useUTC) that supports individual time settingsper chart.
 		/// </summary>
 		public bool? UseUTC { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

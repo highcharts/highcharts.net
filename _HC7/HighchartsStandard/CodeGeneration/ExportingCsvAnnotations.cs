@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// When several labels are assigned to a specific point,they will be displayed in one field in the table.
 		/// </summary>
 		public bool? Join { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

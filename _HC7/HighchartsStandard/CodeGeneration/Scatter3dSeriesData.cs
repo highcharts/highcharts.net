@@ -125,9 +125,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The z value for each data point.
 		/// </summary>
 		public double? Z { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

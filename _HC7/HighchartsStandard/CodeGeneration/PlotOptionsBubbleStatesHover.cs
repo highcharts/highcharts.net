@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// 
 		/// </summary>
 		public PlotOptionsBubbleStatesHoverHalo Halo { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

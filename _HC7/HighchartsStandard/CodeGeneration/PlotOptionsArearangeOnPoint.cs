@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Options allowing to set a position and an offset of the series in the_Series on point_ feature.
 		/// </summary>
 		public PlotOptionsArearangeOnPointPosition Position { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

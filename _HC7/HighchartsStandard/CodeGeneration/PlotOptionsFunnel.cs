@@ -419,9 +419,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The width of the funnel compared to the width of the plot area,or the pixel width if it is a number.
 		/// </summary>
 		public double? WidthNumber { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

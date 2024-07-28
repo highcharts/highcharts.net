@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Default stroke linecap for the buttons.
 		/// </summary>
 		public string StrokeLinecap { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

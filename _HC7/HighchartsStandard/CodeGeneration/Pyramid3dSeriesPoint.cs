@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Events for each single point.
 		/// </summary>
 		public Pyramid3dSeriesPointEvents Events { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

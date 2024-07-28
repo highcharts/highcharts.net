@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The text for the credits label.
 		/// </summary>
 		public string Text { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

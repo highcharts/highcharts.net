@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// A specific color for the selected point.
 		/// </summary>
 		public string Color { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

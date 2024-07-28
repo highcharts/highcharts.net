@@ -191,9 +191,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// An HTML table or the id of such to be parsed as input data. Relatedoptions are `startRow`, `endRow`, `startColumn` and `endColumn` todelimit what part of the table is used.
 		/// </summary>
 		public string Table { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

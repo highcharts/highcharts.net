@@ -65,9 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Can set `states` on all nodes and points which lay on the same level.
 		/// </summary>
 		public ArcdiagramSeriesLevelsStates States { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

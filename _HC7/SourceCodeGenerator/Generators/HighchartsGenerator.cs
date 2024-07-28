@@ -46,11 +46,6 @@ namespace SourceCodeGenerator.Generators
                 // All events (javascript functions) should default to empty string
                 if (apiItem.ReturnType != null && (apiItem.ReturnType.ToLower() == "function" || apiItem.ReturnType.ToLower() == "string|function"))
                     apiItem.Defaults = "";
-                //if (apiItem.Title == "pointPlacement")
-                //{
-                //    apiItem.IsParent = true;
-                //    apiItem.Values = new List<string>();
-                //}
                 if (apiItem.Title == "symbol")
                 {
                     apiItem.IsParent = false;
@@ -175,7 +170,6 @@ namespace SourceCodeGenerator.Generators
                         continue;
 
                     formattedProperty = FormatProperty(propertyTemplate, child);
-                    //formattedDefaultProperty = FormatDefaultProperty(propertyName, child);
                     formattedComparer = FormatPropertyComparer(propertyName, child);
                 }
                 else
@@ -188,11 +182,9 @@ namespace SourceCodeGenerator.Generators
                 hashtableComparers += formattedComparer;
             }
 
-            string className = GetClassNameFromItem(item);
-
-            properties += CustomFieldsService.GetProperty();
             hashtableComparers += CustomFieldsService.GetCopyLogic();
 
+            string className = GetClassNameFromItem(item);
             string extendsClass = "";
 
             if (className.EndsWith("Series") && item.Parent?.FullName == "series")
@@ -642,9 +634,6 @@ namespace SourceCodeGenerator.Generators
                 if (child.Title.ToLower() == "series" && child.ParentFullName == "Highcharts")
                     return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
-                //if (propertyName.ToLower().Contains("pointplacement"))
-                //    return "if (PointPlacement.IsDirty(highcharts))\n\t\t\t\tif (PointPlacement.Value.HasValue)\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.Value);\n\t\t\t\telse\n\t\t\t\t\th.Add(\"pointPlacement\", PointPlacement.ToJSON(highcharts));\n\t\t\t";
-
                 return String.Format(simplePropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
             }
 
@@ -730,7 +719,6 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("shadow", "Shadow");
             _propertyTypeMappings.Add("plotShadow", "Shadow");
             _propertyTypeMappings.Add("animation", "Animation");
-            //_propertyTypeMappings.Add("pointPlacement", "PointPlacement");
             _propertyTypeMappings.Add("center", "string[]");
             _propertyTypeMappings.Add("margin", "string[]");
             //_propertyTypeMappings.Add("position", "Hashtable");

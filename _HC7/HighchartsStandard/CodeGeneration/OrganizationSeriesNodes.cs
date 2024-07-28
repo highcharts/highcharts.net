@@ -125,9 +125,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The job title for the node card, will be inserted by the default`dataLabel.nodeFormatter`.
 		/// </summary>
 		public string Title { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

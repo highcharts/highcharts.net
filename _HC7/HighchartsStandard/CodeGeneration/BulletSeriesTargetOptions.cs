@@ -59,9 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The width of the rectangle representing the target. Could be setas a pixel value or as a percentage of a column width.
 		/// </summary>
 		public double? WidthNumber { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

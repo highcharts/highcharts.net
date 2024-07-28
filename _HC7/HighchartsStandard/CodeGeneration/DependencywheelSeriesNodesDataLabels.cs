@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Callback to format data labels for _nodes_ in the sankey diagram.The `nodeFormat` option takes precedence over the`nodeFormatter`.
 		/// </summary>
 		public string NodeFormatter { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Y position of the series center. By default, the series is displayed on thepoint that it is connected to.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

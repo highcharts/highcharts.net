@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The z index for the drag handles.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

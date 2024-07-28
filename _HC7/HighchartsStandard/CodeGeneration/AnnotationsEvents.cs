@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Event callback when annotation is removed from the chart.
 		/// </summary>
 		public string Remove { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

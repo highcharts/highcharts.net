@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The shadow option for hovered state.
 		/// </summary>
 		public Shadow Shadow { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

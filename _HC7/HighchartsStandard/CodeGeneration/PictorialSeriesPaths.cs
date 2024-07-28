@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The max option determines height of the image. It is the ratio of`yAxis.max` to the `paths.max`.
 		/// </summary>
 		public double? Max { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

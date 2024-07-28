@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The point property to compare, for example `y` or `x`.
 		/// </summary>
 		public string Prop { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

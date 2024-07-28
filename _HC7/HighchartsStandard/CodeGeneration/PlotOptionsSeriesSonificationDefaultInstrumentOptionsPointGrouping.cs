@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The data property for each point to compare when deciding whichpoints to keep in the group.By default it is "y", which means that if the `"minmax"`algorithm is used, the two points the group with the lowest andhighest `y` value will be kept, and the others not played.
 		/// </summary>
 		public string Prop { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

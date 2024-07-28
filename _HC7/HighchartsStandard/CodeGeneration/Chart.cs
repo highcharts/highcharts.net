@@ -365,9 +365,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Decides in what dimensions the user can zoom by dragging the mouse.Can be one of `x`, `y` or `xy`.
 		/// </summary>
 		public ChartZoomType ZoomType { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

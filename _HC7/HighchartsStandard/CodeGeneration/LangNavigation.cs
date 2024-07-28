@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Translations for all field names used in popup.
 		/// </summary>
 		public LangNavigationPopup Popup { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

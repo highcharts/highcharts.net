@@ -65,9 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The start angle of the polar X axis or gauge axis, given in degreeswhere 0 is north. Defaults to 0.
 		/// </summary>
 		public double? StartAngle { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

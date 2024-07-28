@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Range size value, similar to bubble Z data.
 		/// </summary>
 		public double? Value { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The number of pixels to increase the radius of thehovered point.
 		/// </summary>
 		public double? RadiusPlus { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

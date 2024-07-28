@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The approximate data group width.
 		/// </summary>
 		public double? GroupPixelWidth { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

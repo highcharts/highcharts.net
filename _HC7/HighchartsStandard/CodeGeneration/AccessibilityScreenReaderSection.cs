@@ -59,9 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Function to run upon clicking the "View as Data Table" link inthe screen reader region.By default Highcharts will insert and set focus to a data tablerepresentation of the chart.
 		/// </summary>
 		public string OnViewDataTableClick { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

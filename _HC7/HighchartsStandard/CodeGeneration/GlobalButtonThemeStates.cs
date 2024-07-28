@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Select state overrides for the buttons are applied inaddition to the normal state options
 		/// </summary>
 		public GlobalButtonThemeStatesSelect Select { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

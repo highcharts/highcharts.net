@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Skip null points when navigating through points with thekeyboard.
 		/// </summary>
 		public bool? SkipNullPoints { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

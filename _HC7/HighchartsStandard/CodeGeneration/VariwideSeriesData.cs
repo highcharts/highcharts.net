@@ -119,9 +119,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The relative width for each column. On a category axis, the widths aredistributed so they sum up to the X axis length. On linear and datetime axes,the columns will be laid out from the X value and Z units along the axis.
 		/// </summary>
 		public double? Z { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

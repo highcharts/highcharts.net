@@ -119,9 +119,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The y value of the point.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

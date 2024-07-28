@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The radius of the point marker. In hover state, itdefaults to the normal state's radius + 2.
 		/// </summary>
 		public double? Radius { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

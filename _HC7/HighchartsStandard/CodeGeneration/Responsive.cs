@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// A set of rules for responsive settings. The rules are executed fromthe top down.
 		/// </summary>
 		public List<ResponsiveRules> Rules { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

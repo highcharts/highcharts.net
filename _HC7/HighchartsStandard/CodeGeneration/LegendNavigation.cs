@@ -59,9 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Text styles for the legend page navigation.
 		/// </summary>
 		public Hashtable Style { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

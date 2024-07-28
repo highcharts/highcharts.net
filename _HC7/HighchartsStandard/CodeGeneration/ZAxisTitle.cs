@@ -101,9 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Vertical pixel offset of the title position.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

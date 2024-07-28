@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The fill color of the cluster marker in hover state. When`undefined`, the series' or point's fillColor for normalstate is used.
 		/// </summary>
 		public Object FillColor { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The category column title.
 		/// </summary>
 		public string CategoryHeader { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

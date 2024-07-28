@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Text path shift along its y-axis.
 		/// </summary>
 		public Object Dy { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

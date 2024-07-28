@@ -59,9 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// CSS styling for the buttons' text
 		/// </summary>
 		public Hashtable Style { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

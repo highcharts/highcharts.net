@@ -149,9 +149,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Chart and map zoom accessibility language options.
 		/// </summary>
 		public LangAccessibilityZoom Zoom { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

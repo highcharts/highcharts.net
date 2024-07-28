@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The appearance of the point marker when selected. In order toallow a point to be selected, set the`series.allowPointSelect` option to true.
 		/// </summary>
 		public ScatterSeriesDataMarkerStatesSelect Select { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

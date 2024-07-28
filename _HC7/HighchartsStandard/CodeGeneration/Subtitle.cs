@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The y position of the subtitle relative to the alignment within`chart.spacingTop` and `chart.spacingBottom`. By default the subtitleis laid out below the title unless the title is floating.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

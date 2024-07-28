@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The pixel size of the halo. For point markers this is theradius of the halo. For pie slices it is the width of thehalo outside the slice. For bubbles it defaults to 5 andis the width of the halo outside the bubble.
 		/// </summary>
 		public double? Size { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

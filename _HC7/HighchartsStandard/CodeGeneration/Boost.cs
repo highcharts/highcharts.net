@@ -59,9 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Enable or disable pre-allocation of vertex buffers.Enabling this will make it so that the binary data arrays required forstoring the series data will be allocated prior to transforming the datato a WebGL-compatible format.This saves a copy operation on the order of O(n) and so is significantly moreperformant. However, this is currently an experimental option, and may causevisual artifacts with some datasets.As such, care should be taken when using this setting to make sure thatit doesn't cause any rendering glitches with the given use-case.
 		/// </summary>
 		public bool? UsePreallocated { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

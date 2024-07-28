@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Enable or disable `textPath` option for link's or marker's datalabels.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

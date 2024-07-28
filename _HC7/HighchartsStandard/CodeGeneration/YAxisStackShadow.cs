@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Enable or disable `stackShadow`.
 		/// </summary>
 		public bool? Enabled { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

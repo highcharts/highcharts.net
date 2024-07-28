@@ -53,9 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// What data values to map the parameter within.Mapping within `"series"` will make the lowest value pointin the series map to the min audio parameter value, and thehighest value will map to the max audio parameter.Mapping within `"chart"` will make the lowest value point inthe whole chart map to the min audio parameter value, andthe highest value in the whole chart will map to the maxaudio parameter.You can also map within the X or Y axis of each series.
 		/// </summary>
 		public PlotOptionsArearangeSonificationDefaultSpeechOptionsMappingGapBetweenNotesWithin Within { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

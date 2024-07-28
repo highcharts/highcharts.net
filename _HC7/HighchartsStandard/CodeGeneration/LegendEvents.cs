@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Fires when the legend item belonging to the series is clicked. Oneparameter, `event`, is passed to the function. The default actionis to toggle the visibility of the series, point or data class. Thiscan be prevented by returning `false` or calling`event.preventDefault()`.
 		/// </summary>
 		public string ItemClick { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

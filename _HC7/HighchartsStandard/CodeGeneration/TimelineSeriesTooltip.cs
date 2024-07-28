@@ -113,9 +113,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The format for the date in the tooltip header if the X axis is adatetime axis. The default is a best guess based on the smallestdistance between points in the chart.
 		/// </summary>
 		public string XDateFormat { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

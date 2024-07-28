@@ -455,9 +455,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Define the visual z index of the series.
 		/// </summary>
 		public override double? ZIndex { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The responsive rule applies if the chart width is greater than this.
 		/// </summary>
 		public double? MinWidth { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -83,9 +83,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The z index of the plot line within the chart.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

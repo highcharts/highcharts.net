@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// When a series contains more points than this, we no longer exposeinformation about individual points to screen readers.Set to `false` to disable.
 		/// </summary>
 		public bool? PointDescriptionEnabledThresholdBool { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

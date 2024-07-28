@@ -12,6 +12,7 @@ namespace Highsoft.Web.Mvc.Charts
 {
 	public abstract class BaseObject
 	{
+        public Hashtable CustomFields { get; set; }
         abstract internal Hashtable ToHashtable(Highcharts highcharts);
 
         internal List<Hashtable> HashifyList(Highcharts highcharts, IEnumerable list)

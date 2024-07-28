@@ -119,9 +119,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Volume of the speech announcement.
 		/// </summary>
 		public SonificationDefaultSpeechOptionsMappingVolume Volume { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

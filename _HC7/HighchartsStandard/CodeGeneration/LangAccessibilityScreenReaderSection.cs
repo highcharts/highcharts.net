@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Label for the end of the chart. Announced by screen readers.
 		/// </summary>
 		public string EndOfChartMarker { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

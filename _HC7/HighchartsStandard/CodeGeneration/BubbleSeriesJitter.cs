@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The maximal Y offset for the random jitter effect.
 		/// </summary>
 		public double? Y { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

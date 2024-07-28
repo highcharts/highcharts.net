@@ -449,9 +449,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Whether to zoom axis. If `chart.zoomType` is set, the option allowsto disable zooming on an individual axis.
 		/// </summary>
 		public bool? ZoomEnabled { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

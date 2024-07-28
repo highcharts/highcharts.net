@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Pixel width of the connector line.
 		/// </summary>
 		public double? Width { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

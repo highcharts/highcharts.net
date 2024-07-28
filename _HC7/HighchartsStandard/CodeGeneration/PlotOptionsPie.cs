@@ -389,9 +389,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Set the initial visibility of the series.
 		/// </summary>
 		public bool? Visible { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

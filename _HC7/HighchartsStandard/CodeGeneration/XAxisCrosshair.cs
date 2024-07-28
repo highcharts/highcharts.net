@@ -53,9 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The Z index of the crosshair. Higher Z indices allow drawing thecrosshair on top of the series or behind the grid lines.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

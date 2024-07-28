@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Suffix to add to the values in the point descriptions. Uses[tooltip.valueSuffix](#tooltip.valueSuffix) if not defined.
 		/// </summary>
 		public string ValueSuffix { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

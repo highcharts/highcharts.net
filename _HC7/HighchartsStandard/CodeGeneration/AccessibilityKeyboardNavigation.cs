@@ -47,9 +47,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Whether or not to wrap around when reaching the end of arrow-keynavigation for an element in the chart.
 		/// </summary>
 		public bool? WrapAround { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

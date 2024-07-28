@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Style options for the guide box default state.
 		/// </summary>
 		public LineSeriesDragDropGuideBoxDefault Default { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

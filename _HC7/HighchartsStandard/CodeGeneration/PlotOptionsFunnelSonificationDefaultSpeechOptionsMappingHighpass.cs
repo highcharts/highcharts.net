@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Map to filter resonance in dB. Can be negative to cause adip, or positive to cause a bump.
 		/// </summary>
 		public PlotOptionsFunnelSonificationDefaultSpeechOptionsMappingHighpassResonance Resonance { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

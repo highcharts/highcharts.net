@@ -197,9 +197,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The Z axis or depth axis for 3D plots.See the [Axis class](/class-reference/Highcharts.Axis) for programmaticaccess to the axis.
 		/// </summary>
 		public ZAxis ZAxis { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

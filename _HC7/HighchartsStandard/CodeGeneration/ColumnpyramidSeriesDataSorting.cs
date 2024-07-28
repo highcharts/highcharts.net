@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Determines what data value should be used to sort by.
 		/// </summary>
 		public string SortKey { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

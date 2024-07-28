@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Description of an annotation label for screen readers and other assistivetechnology.
 		/// </summary>
 		public string Description { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

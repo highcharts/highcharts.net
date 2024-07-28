@@ -23,9 +23,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The animation delay time in milliseconds.Set to `0` renders annotation immediately.As `undefined` inherits defer time from the [series.animation.defer](#plotOptions.series.animation.defer).
 		/// </summary>
 		public double? Defer { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

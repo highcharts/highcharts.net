@@ -149,9 +149,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The Z index for the axis labels.
 		/// </summary>
 		public double? ZIndex { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -41,9 +41,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Whether to insert the label as HTML, or as pseudo-HTML rendered withSVG.
 		/// </summary>
 		public bool? UseHTML { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

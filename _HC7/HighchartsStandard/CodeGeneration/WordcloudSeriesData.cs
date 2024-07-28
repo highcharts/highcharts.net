@@ -101,9 +101,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The weighting of a word. The weight decides the relative size of a wordcompared to the rest of the collection.
 		/// </summary>
 		public double? Weight { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

@@ -95,9 +95,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// The point property to play context for when using `valueInterval`.
 		/// </summary>
 		public string ValueProp { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

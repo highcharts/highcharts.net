@@ -71,9 +71,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Called on pause, cancel, or if play is completed.A context object is passed to the function, with properties `chart`,`timeline` and `pointsPlayed`. `pointsPlayed` is an array of `Point`objects, referencing data points that were related to the audioevents played.
 		/// </summary>
 		public string OnStop { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

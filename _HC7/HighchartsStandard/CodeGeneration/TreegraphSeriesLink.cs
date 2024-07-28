@@ -53,9 +53,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Type of the link shape.
 		/// </summary>
 		public TreegraphSeriesLinkType Type { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

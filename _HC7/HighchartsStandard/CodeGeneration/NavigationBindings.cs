@@ -281,9 +281,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Enables zooming in yAxis on a chart. Includes `start` event whichchanges [chart.zoomType](#chart.zoomType).
 		/// </summary>
 		public Object ZoomY { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

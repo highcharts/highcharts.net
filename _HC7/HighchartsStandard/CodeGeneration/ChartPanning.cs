@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Decides in what dimensions the user can pan the chart. Can beone of `x`, `y`, or `xy`.When this option is set to `y` or `xy`, [yAxis.startOnTick](#yAxis.startOnTick)and [yAxis.endOnTick](#yAxis.endOnTick) are overwritten to `false`.
 		/// </summary>
 		public ChartPanningType Type { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

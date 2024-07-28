@@ -125,9 +125,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Ranges with lower value than zThreshold are skipped.
 		/// </summary>
 		public double? ZThreshold { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

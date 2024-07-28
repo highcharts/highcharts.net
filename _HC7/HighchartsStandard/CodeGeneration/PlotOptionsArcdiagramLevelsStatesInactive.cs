@@ -29,9 +29,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Opacity of the nodes in the sankey diagram in inactive mode.
 		/// </summary>
 		public double? Opacity { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

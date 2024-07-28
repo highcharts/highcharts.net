@@ -35,9 +35,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// A collection of attributes for the button. The object takes SVGattributes like `fill`, `stroke`, `stroke-width` or `r`, the borderradius. The theme also supports `style`, a collection of CSSproperties for the text. Equivalent attributes for the hover stateare given in `theme.states.hover`.In styled mode, drill-up button styles can be applied with the`.highcharts-drillup-button` class.
 		/// </summary>
 		public Object Theme { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

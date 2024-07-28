@@ -59,9 +59,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// In Highcharts 1.0, the appearance of all markers belongingto the hovered series. For settings on the hover state of theindividual point, see[marker.states.hover](#plotOptions.series.marker.states.hover).
 		/// </summary>
 		public PlotOptionsPieStatesSelectMarker Marker { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{

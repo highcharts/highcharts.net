@@ -83,9 +83,7 @@ namespace Highsoft.Web.Mvc.Charts
 		/// Set marker options for nodes at the level.
 		/// </summary>
 		public TreegraphSeriesLevelsMarker Marker { get; set; }
-		 
-
-		public Hashtable CustomFields { get; set; } 
+		  
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
