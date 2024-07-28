@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ColorAxisMarker()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AnimationBool != null) h.Add("animation",AnimationBool);
 			if (Color != null) h.Add("color",Color);
 			if (Width != null) h.Add("width",Width);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

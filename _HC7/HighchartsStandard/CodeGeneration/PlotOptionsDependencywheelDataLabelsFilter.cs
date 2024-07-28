@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsDependencywheelDataLabelsFilter()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Operator != null) h.Add("operator",Operator);
 			if (Property != null) h.Add("property",Property);
 			if (Value != null) h.Add("value",Value);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public GlobalButtonThemeStyle()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Cursor != null) h.Add("cursor",Cursor);
 			if (FontSize != null) h.Add("fontSize",FontSize);
 			if (FontWeight != null) h.Add("fontWeight",FontWeight);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

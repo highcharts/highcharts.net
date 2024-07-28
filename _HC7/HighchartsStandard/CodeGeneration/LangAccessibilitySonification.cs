@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilitySonification()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			if (PlayAsSoundButtonText != null) h.Add("playAsSoundButtonText",PlayAsSoundButtonText);
 			if (PlayAsSoundClickAnnouncement != null) h.Add("playAsSoundClickAnnouncement",PlayAsSoundClickAnnouncement);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

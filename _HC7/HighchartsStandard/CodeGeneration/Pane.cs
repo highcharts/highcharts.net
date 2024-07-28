@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Pane()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -81,7 +79,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Size != null) h.Add("size",Size);
 			if (SizeNumber != null) h.Add("size",SizeNumber);
 			if (StartAngle != null) h.Add("startAngle",StartAngle);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

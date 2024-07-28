@@ -20,7 +20,7 @@ namespace SourceCodeGenerator.Services
 
         public static string GetCopyLogic()
         {
-            return "if (CustomFields.Count > 0)\n\t\t\t\tforeach (var key in CustomFields.Keys)\n\t\t\t\t{\n\t\t\t\t\tif (h.ContainsKey(key))\n\t\t\t\t\t\tcontinue;\n\n\t\t\t\t\th.Add(key, CustomFields[key]);\n\t\t\t\t}";
+            return "if (CustomFields != null && CustomFields.Count > 0)\n\t\t\t\tforeach (var key in CustomFields.Keys)\n\t\t\t\t{\n\t\t\t\t\tif (h.ContainsKey(key))\n\t\t\t\t\t\tcontinue;\n\n\t\t\t\t\th.Add(key, CustomFields[key]);\n\t\t\t\t}";
         }
     }
 }

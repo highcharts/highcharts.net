@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ZAxisPlotBandsEvents()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Mousemove != null) { h.Add("mousemove",Mousemove); highcharts.AddFunction("mousemove", Mousemove); }  
 			if (Mouseout != null) { h.Add("mouseout",Mouseout); highcharts.AddFunction("mouseout", Mouseout); }  
 			if (Mouseover != null) { h.Add("mouseover",Mouseover); highcharts.AddFunction("mouseover", Mouseover); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

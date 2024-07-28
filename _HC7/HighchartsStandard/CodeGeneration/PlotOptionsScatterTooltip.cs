@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsScatterTooltip()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			if (HeaderFormat != null) h.Add("headerFormat",HeaderFormat);
 			if (PointFormat != null) h.Add("pointFormat",PointFormat);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

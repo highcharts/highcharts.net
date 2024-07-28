@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsScatterCluster()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -109,7 +107,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MinimumClusterSize != null) h.Add("minimumClusterSize",MinimumClusterSize);
 			if (States != null) h.Add("states",States.ToHashtable(highcharts));
 			if (Zones != null) h.Add("zones", HashifyList(highcharts,Zones));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

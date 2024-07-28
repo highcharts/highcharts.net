@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsNetworkgraphLink()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DashStyle != PlotOptionsNetworkgraphLinkDashStyle.Null) h.Add("dashStyle", highcharts.FirstCharacterToLower(DashStyle.ToString()));
 			if (Opacity != null) h.Add("opacity",Opacity);
 			if (Width != null) h.Add("width",Width);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

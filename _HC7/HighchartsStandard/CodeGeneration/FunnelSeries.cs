@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public FunnelSeries()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -537,7 +535,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Width != null) h.Add("width",Width);
 			if (WidthNumber != null) h.Add("width",WidthNumber);
 			if (ZIndex != null) h.Add("zIndex",ZIndex);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ScatterSeriesStatesHover()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -74,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineWidth != null) h.Add("lineWidth",LineWidth);
 			if (LineWidthPlus != null) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Marker != null) h.Add("marker",Marker.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

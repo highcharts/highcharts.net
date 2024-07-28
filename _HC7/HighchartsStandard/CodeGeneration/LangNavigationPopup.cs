@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangNavigationPopup()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -711,7 +709,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalLine != null) h.Add("verticalLine",VerticalLine);
 			if (Volume != null) h.Add("volume",Volume);
 			if (XAxisUnit != null) h.Add("xAxisUnit",XAxisUnit);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

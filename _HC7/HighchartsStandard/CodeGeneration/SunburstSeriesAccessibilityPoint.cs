@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SunburstSeriesAccessibilityPoint()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ValueDescriptionFormat != null) h.Add("valueDescriptionFormat",ValueDescriptionFormat);
 			if (ValuePrefix != null) h.Add("valuePrefix",ValuePrefix);
 			if (ValueSuffix != null) h.Add("valueSuffix",ValueSuffix);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsColumnDragDropDragHandle()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			if (Cursor != null) h.Add("cursor",Cursor);
 			if (PathFormatter != null) { h.Add("pathFormatter",PathFormatter); highcharts.AddFunction("pathFormatter", PathFormatter); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

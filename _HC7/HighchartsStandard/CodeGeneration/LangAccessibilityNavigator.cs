@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityNavigator()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ChangeAnnouncement != null) h.Add("changeAnnouncement",ChangeAnnouncement);
 			if (GroupLabel != null) h.Add("groupLabel",GroupLabel);
 			if (HandleLabel != null) h.Add("handleLabel",HandleLabel);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

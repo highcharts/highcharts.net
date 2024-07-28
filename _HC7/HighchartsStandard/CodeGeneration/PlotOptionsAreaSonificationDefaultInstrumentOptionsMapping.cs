@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsAreaSonificationDefaultInstrumentOptionsMapping()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -130,7 +128,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TimeNumber != null) h.Add("time",TimeNumber);
 			if (Tremolo != null) h.Add("tremolo",Tremolo.ToHashtable(highcharts));
 			if (Volume != null) h.Add("volume",Volume.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

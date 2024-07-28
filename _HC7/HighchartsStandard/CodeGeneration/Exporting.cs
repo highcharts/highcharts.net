@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Exporting()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -221,7 +219,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (UseMultiLevelHeaders != null) h.Add("useMultiLevelHeaders",UseMultiLevelHeaders);
 			if (UseRowspanHeaders != null) h.Add("useRowspanHeaders",UseRowspanHeaders);
 			if (Width != null) h.Add("width",Width);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

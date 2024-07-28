@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public WordcloudSeriesRotation()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (From != null) h.Add("from",From);
 			if (Orientations != null) h.Add("orientations",Orientations);
 			if (To != null) h.Add("to",To);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

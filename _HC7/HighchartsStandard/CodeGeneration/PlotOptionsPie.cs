@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPie()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -459,7 +457,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip != null) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
 			if (UseOhlcData != null) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != null) h.Add("visible",Visible);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

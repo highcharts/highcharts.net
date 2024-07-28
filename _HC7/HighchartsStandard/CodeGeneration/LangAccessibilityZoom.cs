@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityZoom()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MapZoomIn != null) h.Add("mapZoomIn",MapZoomIn);
 			if (MapZoomOut != null) h.Add("mapZoomOut",MapZoomOut);
 			if (ResetZoomButton != null) h.Add("resetZoomButton",ResetZoomButton);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

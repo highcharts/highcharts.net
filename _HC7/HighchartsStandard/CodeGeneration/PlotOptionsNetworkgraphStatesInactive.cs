@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsNetworkgraphStatesInactive()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Animation != null) h.Add("animation",Animation.ToHashtable(highcharts));
 			if (AnimationBool != null) h.Add("animation",AnimationBool);
 			if (LinkOpacity != null) h.Add("linkOpacity",LinkOpacity);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

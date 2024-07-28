@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsBoxplotOnPoint()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ConnectorOptions != null) h.Add("connectorOptions",ConnectorOptions.ToHashtable(highcharts));
 			if (Id != null) h.Add("id",Id);
 			if (Position != null) h.Add("position",Position.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

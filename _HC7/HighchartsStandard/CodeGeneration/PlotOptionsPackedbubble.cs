@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPackedbubble()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -494,7 +492,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ZoneAxis != null) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != null) h.Add("zones", HashifyList(highcharts,Zones));
 			if (ZThreshold != null) h.Add("zThreshold",ZThreshold);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

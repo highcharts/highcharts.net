@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public VectorSeriesClusterZonesMarker()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -81,7 +79,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Radius != null) h.Add("radius",Radius);
 			if (Symbol != null) h.Add("symbol",Symbol);
 			if (Width != null) h.Add("width",Width);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

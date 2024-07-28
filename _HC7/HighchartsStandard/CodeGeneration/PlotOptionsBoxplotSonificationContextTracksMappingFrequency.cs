@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsBoxplotSonificationContextTracksMappingFrequency()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -67,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Min != null) h.Add("min",Min);
 			if (Value != null) h.Add("value",Value);
 			if (Within != PlotOptionsBoxplotSonificationContextTracksMappingFrequencyWithin.Null) h.Add("within", highcharts.FirstCharacterToLower(Within.ToString()));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

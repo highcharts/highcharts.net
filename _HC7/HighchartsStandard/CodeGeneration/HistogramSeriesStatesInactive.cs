@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public HistogramSeriesStatesInactive()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AnimationBool != null) h.Add("animation",AnimationBool);
 			if (Enabled != null) h.Add("enabled",Enabled);
 			if (Opacity != null) h.Add("opacity",Opacity);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

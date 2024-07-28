@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangExportData()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (AnnotationHeader != null) h.Add("annotationHeader",AnnotationHeader);
 			if (CategoryDatetimeHeader != null) h.Add("categoryDatetimeHeader",CategoryDatetimeHeader);
 			if (CategoryHeader != null) h.Add("categoryHeader",CategoryHeader);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

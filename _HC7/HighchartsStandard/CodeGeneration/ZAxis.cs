@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ZAxis()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -515,7 +513,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != null) h.Add("visible",Visible);
 			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (ZoomEnabled != null) h.Add("zoomEnabled",ZoomEnabled);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

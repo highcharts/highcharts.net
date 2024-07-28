@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Credits()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -60,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Position != null) h.Add("position",Position.ToHashtable(highcharts));
 			if (Style != null) h.Add("style",Style);
 			if (Text != null) h.Add("text",Text);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

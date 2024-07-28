@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsColumnpyramid()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -494,7 +492,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Tooltip != null) h.Add("tooltip",Tooltip.ToHashtable(highcharts));
 			if (TurboThreshold != null) h.Add("turboThreshold",TurboThreshold);
 			if (Visible != null) h.Add("visible",Visible);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

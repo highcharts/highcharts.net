@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilityKeyboardNavigationSeriesNavigation()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -60,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointNavigationEnabledThresholdBool != null) h.Add("pointNavigationEnabledThreshold",PointNavigationEnabledThresholdBool);
 			if (RememberPointFocus != null) h.Add("rememberPointFocus",RememberPointFocus);
 			if (SkipNullPoints != null) h.Add("skipNullPoints",SkipNullPoints);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

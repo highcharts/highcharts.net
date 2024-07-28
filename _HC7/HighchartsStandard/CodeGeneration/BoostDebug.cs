@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public BoostDebug()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -67,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (TimeRendering != null) h.Add("timeRendering",TimeRendering);
 			if (TimeSeriesProcessing != null) h.Add("timeSeriesProcessing",TimeSeriesProcessing);
 			if (TimeSetup != null) h.Add("timeSetup",TimeSetup);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

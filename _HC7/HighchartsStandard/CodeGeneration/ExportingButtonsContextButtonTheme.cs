@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ExportingButtonsContextButtonTheme()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Padding != null) h.Add("padding",Padding);
 			if (Stroke != null) h.Add("stroke",Stroke);
 			if (StrokeLinecap != null) h.Add("strokeLinecap",StrokeLinecap);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

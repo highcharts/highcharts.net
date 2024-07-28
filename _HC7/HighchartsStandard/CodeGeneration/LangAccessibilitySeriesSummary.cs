@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilitySeriesSummary()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -193,7 +191,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ScatterCombination != null) h.Add("scatterCombination",ScatterCombination);
 			if (Spline != null) h.Add("spline",Spline);
 			if (SplineCombination != null) h.Add("splineCombination",SplineCombination);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

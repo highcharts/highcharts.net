@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PaneBackground()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -102,7 +100,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (OuterRadius != null) h.Add("outerRadius",OuterRadius);
 			if (OuterRadiusNumber != null) h.Add("outerRadius",OuterRadiusNumber);
 			if (Shape != null) h.Add("shape",Shape);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

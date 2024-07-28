@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TreegraphSeriesLink()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -67,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineWidth != null) h.Add("lineWidth",LineWidth);
 			if (Radius != null) h.Add("radius",Radius);
 			if (Type != TreegraphSeriesLinkType.Null) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityAnnounceNewData()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -60,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (NewPointAnnounceSingle != null) h.Add("newPointAnnounceSingle",NewPointAnnounceSingle);
 			if (NewSeriesAnnounceMultiple != null) h.Add("newSeriesAnnounceMultiple",NewSeriesAnnounceMultiple);
 			if (NewSeriesAnnounceSingle != null) h.Add("newSeriesAnnounceSingle",NewSeriesAnnounceSingle);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

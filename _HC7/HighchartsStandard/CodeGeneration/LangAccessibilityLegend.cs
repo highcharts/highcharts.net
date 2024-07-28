@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityLegend()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LegendItem != null) h.Add("legendItem",LegendItem);
 			if (LegendLabel != null) h.Add("legendLabel",LegendLabel);
 			if (LegendLabelNoTitle != null) h.Add("legendLabelNoTitle",LegendLabelNoTitle);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

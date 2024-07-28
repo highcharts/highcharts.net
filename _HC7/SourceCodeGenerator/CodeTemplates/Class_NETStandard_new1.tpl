@@ -16,7 +16,6 @@ namespace {HighTemplate.Namespace}
 
 		public {HighTemplate.ClassName}()
 		{
-			{HighTemplate.ConstrutorInitializers}
 		}	
 		{HighTemplate.Properties} 
 

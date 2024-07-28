@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsTreegraphLevels()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LayoutAlgorithm != PlotOptionsTreegraphLevelsLayoutAlgorithm.Null) h.Add("layoutAlgorithm", highcharts.FirstCharacterToLower(LayoutAlgorithm.ToString()));
 			if (LayoutStartingDirection != PlotOptionsTreegraphLevelsLayoutStartingDirection.Null) h.Add("layoutStartingDirection", highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (Level != null) h.Add("level",Level);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

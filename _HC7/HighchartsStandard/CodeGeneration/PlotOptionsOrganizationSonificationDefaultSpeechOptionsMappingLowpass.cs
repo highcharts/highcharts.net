@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsOrganizationSonificationDefaultSpeechOptionsMappingLowpass()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			if (Frequency != null) h.Add("frequency",Frequency.ToHashtable(highcharts));
 			if (Resonance != null) h.Add("resonance",Resonance.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

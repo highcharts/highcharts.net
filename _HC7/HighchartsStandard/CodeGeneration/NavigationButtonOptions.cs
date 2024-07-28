@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationButtonOptions()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -137,7 +135,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (VerticalAlign != NavigationButtonOptionsVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
 			if (Width != null) h.Add("width",Width);
 			if (Y != null) h.Add("y",Y);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

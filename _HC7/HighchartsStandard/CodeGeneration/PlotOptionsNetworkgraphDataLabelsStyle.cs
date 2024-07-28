@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsNetworkgraphDataLabelsStyle()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -32,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
 			if (Transition != null) h.Add("transition",Transition);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

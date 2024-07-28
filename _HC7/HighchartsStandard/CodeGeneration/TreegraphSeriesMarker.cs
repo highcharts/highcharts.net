@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TreegraphSeriesMarker()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (States != null) h.Add("states",States.ToHashtable(highcharts));
 			if (Symbol != null) h.Add("symbol",Symbol);
 			if (Width != null) h.Add("width",Width);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

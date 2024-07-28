@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Navigation()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -95,7 +93,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MenuItemHoverStyle != null) h.Add("menuItemHoverStyle",MenuItemHoverStyle);
 			if (MenuItemStyle != null) h.Add("menuItemStyle",MenuItemStyle);
 			if (MenuStyle != null) h.Add("menuStyle",MenuStyle);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPyramidSonificationDefaultInstrumentOptions()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (RoundToMusicalNotes != null) h.Add("roundToMusicalNotes",RoundToMusicalNotes);
 			if (ShowPlayMarker != null) h.Add("showPlayMarker",ShowPlayMarker);
 			if (Type != PlotOptionsPyramidSonificationDefaultInstrumentOptionsType.Null) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

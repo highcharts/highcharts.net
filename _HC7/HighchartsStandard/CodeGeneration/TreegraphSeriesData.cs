@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TreegraphSeriesData()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -158,7 +156,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Name != null) h.Add("name",Name);
 			if (Parent != null) h.Add("parent",Parent);
 			if (Selected != null) h.Add("selected",Selected);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

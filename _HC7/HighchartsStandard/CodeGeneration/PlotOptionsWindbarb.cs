@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsWindbarb()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -585,7 +583,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (YOffset != null) h.Add("yOffset",YOffset);
 			if (ZoneAxis != null) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != null) h.Add("zones", HashifyList(highcharts,Zones));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

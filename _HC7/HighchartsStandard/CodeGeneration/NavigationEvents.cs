@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationEvents()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DeselectButton != null) { h.Add("deselectButton",DeselectButton); highcharts.AddFunction("deselectButton", DeselectButton); }  
 			if (SelectButton != null) { h.Add("selectButton",SelectButton); highcharts.AddFunction("selectButton", SelectButton); }  
 			if (ShowPopup != null) { h.Add("showPopup",ShowPopup); highcharts.AddFunction("showPopup", ShowPopup); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

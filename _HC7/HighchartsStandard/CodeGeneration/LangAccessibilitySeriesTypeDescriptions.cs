@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilitySeriesTypeDescriptions()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Funnel != null) h.Add("funnel",Funnel);
 			if (Pyramid != null) h.Add("pyramid",Pyramid);
 			if (Waterfall != null) h.Add("waterfall",Waterfall);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

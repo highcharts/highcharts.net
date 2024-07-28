@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TreegraphSeriesLevels()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -102,7 +100,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LayoutStartingDirection != TreegraphSeriesLevelsLayoutStartingDirection.Null) h.Add("layoutStartingDirection", highcharts.FirstCharacterToLower(LayoutStartingDirection.ToString()));
 			if (Level != null) h.Add("level",Level);
 			if (Marker != null) h.Add("marker",Marker.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

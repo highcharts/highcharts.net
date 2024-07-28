@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public OrganizationSeriesLink()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -60,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Offset != null) h.Add("offset",Offset);
 			if (Radius != null) h.Add("radius",Radius);
 			if (Type != OrganizationSeriesLinkType.Null) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

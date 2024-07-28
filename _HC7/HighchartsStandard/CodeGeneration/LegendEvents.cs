@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LegendEvents()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -32,7 +30,7 @@ namespace Highsoft.Web.Mvc.Charts
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
 			if (ItemClick != null) { h.Add("itemClick",ItemClick); highcharts.AddFunction("itemClick", ItemClick); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

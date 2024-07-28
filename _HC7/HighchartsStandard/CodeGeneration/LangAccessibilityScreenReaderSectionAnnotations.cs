@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityScreenReaderSectionAnnotations()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DescriptionNoPoints != null) h.Add("descriptionNoPoints",DescriptionNoPoints);
 			if (DescriptionSinglePoint != null) h.Add("descriptionSinglePoint",DescriptionSinglePoint);
 			if (Heading != null) h.Add("heading",Heading);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

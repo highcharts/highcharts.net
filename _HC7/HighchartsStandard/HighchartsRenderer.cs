@@ -127,27 +127,7 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
 
         public string GetJsonOptionsForBlazor()
         {
-            Hashtable options = _chart.ToHashtable(_chart);
-
-            List<Hashtable> series = new List<Hashtable>();
-            List<Hashtable> drilldownSeries = new List<Hashtable>();
-
-            if (_chart.Series != null)
-                series = SeriesToHashtables(_chart.Series);
-            if (_chart.Drilldown.Series != null)
-                drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
-
-            if (series.Count > 0)
-            {
-                options["series"] = series;
-            }
-            if (drilldownSeries.Count > 0)
-            {
-                Hashtable drilldown = options["drilldown"] as Hashtable;
-                drilldown["series"] = drilldownSeries;
-            }
-
-            return JsonConvert.SerializeObject(options);
+            return JsonConvert.SerializeObject(_chart.ToHashtable(_chart));
         }
 
         private string GetStartupOptions()
@@ -160,25 +140,6 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
         private void RenderChartSettings(StringBuilder s)
         {            
             Hashtable options = _chart.ToHashtable(_chart);
-
-            //List<Hashtable> series = new List<Hashtable>();
-            //List<Hashtable> drilldownSeries = new List<Hashtable>();
-
-            //if (_chart.Series != null)
-            //    series = SeriesToHashtables(_chart.Series);
-            //if (_chart.Drilldown != null && _chart.Drilldown.Series != null)
-            //    drilldownSeries = SeriesToHashtables(_chart.Drilldown.Series);
-
-            //if (series.Count > 0)
-            //{
-            //    options["series"] = series;
-            //}
-            //if (drilldownSeries.Count > 0)
-            //{
-            //    Hashtable drilldown = options["drilldown"] as Hashtable;
-            //    drilldown["series"] = drilldownSeries;
-            //}
-
             string json = JsonConvert.SerializeObject(options);
             var functions = _chart.functions;
             List<string> keysToRemove = new List<string>();

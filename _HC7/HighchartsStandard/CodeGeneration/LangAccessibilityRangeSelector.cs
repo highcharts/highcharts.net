@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityRangeSelector()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DropdownLabel != null) h.Add("dropdownLabel",DropdownLabel);
 			if (MaxInputLabel != null) h.Add("maxInputLabel",MaxInputLabel);
 			if (MinInputLabel != null) h.Add("minInputLabel",MinInputLabel);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

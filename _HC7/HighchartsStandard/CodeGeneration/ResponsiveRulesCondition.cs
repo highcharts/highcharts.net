@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ResponsiveRulesCondition()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -60,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxWidth != null) h.Add("maxWidth",MaxWidth);
 			if (MinHeight != null) h.Add("minHeight",MinHeight);
 			if (MinWidth != null) h.Add("minWidth",MinWidth);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

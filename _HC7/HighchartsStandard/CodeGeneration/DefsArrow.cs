@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public DefsArrow()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Attributes != null) h.Add("attributes",Attributes);
 			if (Children != null) h.Add("children",Children);
 			if (TagName != null) h.Add("tagName",TagName);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

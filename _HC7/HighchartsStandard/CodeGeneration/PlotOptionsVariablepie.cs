@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVariablepie()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -508,7 +506,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Visible != null) h.Add("visible",Visible);
 			if (ZMax != null) h.Add("zMax",ZMax);
 			if (ZMin != null) h.Add("zMin",ZMin);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

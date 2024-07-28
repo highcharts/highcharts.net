@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AnnotationsControlPointOptionsStyle()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Fill != null) h.Add("fill",Fill);
 			if (Stroke != null) h.Add("stroke",Stroke);
 			if (StrokeWidth != null) h.Add("strokeWidth",StrokeWidth);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ItemSeriesMarkerStatesHover()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LineWidthPlus != null) h.Add("lineWidthPlus",LineWidthPlus);
 			if (Radius != null) h.Add("radius",Radius);
 			if (RadiusPlus != null) h.Add("radiusPlus",RadiusPlus);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NetworkgraphSeriesEvents()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MouseOut != null) { h.Add("mouseOut",MouseOut); highcharts.AddFunction("mouseOut", MouseOut); }  
 			if (MouseOver != null) { h.Add("mouseOver",MouseOver); highcharts.AddFunction("mouseOver", MouseOver); }  
 			if (Show != null) { h.Add("show",Show); highcharts.AddFunction("show", Show); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

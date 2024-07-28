@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public OrganizationSeriesNodesDataLabels()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LinkFormat != null) h.Add("linkFormat",LinkFormat);
 			if (LinkFormatter != null) { h.Add("linkFormatter",LinkFormatter); highcharts.AddFunction("linkFormatter", LinkFormatter); }  
 			if (LinkTextPath != null) h.Add("linkTextPath",LinkTextPath.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

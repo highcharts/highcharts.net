@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SunburstSeriesLevels()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DataLabels != null) h.Add("dataLabels",DataLabels.ToHashtable(highcharts));
 			if (Level != null) h.Add("level",Level);
 			if (LevelSize != null) h.Add("levelSize",LevelSize.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

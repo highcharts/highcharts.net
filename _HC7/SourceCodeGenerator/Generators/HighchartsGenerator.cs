@@ -30,10 +30,6 @@ namespace SourceCodeGenerator.Generators
             ComparisonService.SetValuesFromFile(@"Logs\hc_updated.log");
             ComparisonService.Compare(_apiItems, _previousVersionApiItems);
             ComparisonService.SaveChanges(@"Logs\hc_result_values.log", @"Logs\hc_old_values.log", @"Logs\hc_not_in_updated.log", FileService);
-            //Console.WriteLine("--------------------------------------------------------");
-            //Console.WriteLine("old to new");
-            //CompareItems(_previousVersionApiItems, _apiItems);
-
 
             ProcessApiItems(_apiItems);
             _apiItems = MultiplyObjects(_apiItems);
@@ -102,8 +98,6 @@ namespace SourceCodeGenerator.Generators
                 // add Defaults to enum if they are not available in the Values list.
                 AddDefaultsToEnum(apiItem);
 
-                UpdateDefaultsForHighcharts(apiItem);
-
                 if (apiItem.Children.Any())
                     ProcessApiItems(apiItem.Children);
 
@@ -112,52 +106,12 @@ namespace SourceCodeGenerator.Generators
             }
         }
 
-        //update defaults because of differences between HS i HC
-        protected override void UpdateDefaultsForHighcharts(ApiItem apiItem)
-        {
-            if (apiItem.FullName == "subtitle.text")
-                return;
-
-            if (apiItem.FullName == "chart.panning")
-                apiItem.Defaults = "false";
-
-            if (apiItem.FullName.EndsWith("title.text"))
-            {
-                if (apiItem.FullName.StartsWith("legend") || apiItem.FullName.StartsWith("xAxis") || apiItem.FullName.StartsWith("zAxis"))
-                {
-                    apiItem.Defaults = "null";
-                    return;
-                }
-
-                if (apiItem.FullName.StartsWith("yAxis"))
-                {
-                    apiItem.Defaults = "Values";
-                    return;
-                }
-
-                apiItem.Defaults = "Chart title";
-            }
-
-            if (apiItem.FullName.StartsWith("yAxis.opposite"))
-                apiItem.Defaults = "false";
-
-            if (apiItem.FullName.StartsWith("xAxis.minPadding"))
-                apiItem.Defaults = "0.01";
-
-            if (apiItem.FullName.StartsWith("xAxis.maxPadding"))
-                apiItem.Defaults = "0.01";
-        }
-
-
-        
-
         protected override void GenerateClass(ApiItem item, List<ApiItem> children)
         {
             string codeTemplate = FileService.GetClassTemplate(Product.Highcharts);
             string propertyTemplate = item.FullName.ToLower().Equals("series") ? FileService.GetSeriesPropertyTemplate() : FileService.GetPropertyTemplate();
 
             string properties = "";
-            string defaultValues = "";
             string hashtableComparers = "";
 
             if (item.FullName.ToLower().EndsWith("zones"))
@@ -214,7 +168,6 @@ namespace SourceCodeGenerator.Generators
 
 
                 string formattedProperty = string.Empty;
-                string formattedDefaultProperty = string.Empty;
                 string formattedComparer = string.Empty;
                 if (!((child.FullName.ToLower().StartsWith("series") && child.FullName.ToLower().EndsWith("type") && child.FullName.Split('.').Length == 3) || child.FullName.ToLower().Equals("series.type")))
                 {
@@ -231,18 +184,13 @@ namespace SourceCodeGenerator.Generators
                 if (propertyName.ToLower().EndsWith("datalabels") && (child.ParentFullName.ToLower().EndsWith("data") || child.ParentFullName.ToLower().EndsWith("levels")))
                     child.IsParent = false;
 
-                if (formattedDefaultProperty.ToLower().Contains("datalabels") && formattedDefaultProperty.Contains("null"))
-                    continue;
-
                 properties += formattedProperty;
-                defaultValues += formattedDefaultProperty;
                 hashtableComparers += formattedComparer;
             }
 
             string className = GetClassNameFromItem(item);
 
             properties += CustomFieldsService.GetProperty();
-            defaultValues += CustomFieldsService.GetInit();
             hashtableComparers += CustomFieldsService.GetCopyLogic();
 
             string extendsClass = "";
@@ -254,7 +202,6 @@ namespace SourceCodeGenerator.Generators
 
             codeTemplate = codeTemplate
                             .Replace("{HighTemplate.Namespace}", "Highsoft.Web.Mvc." + ROOT_NAMESPACE)
-                            .Replace("{HighTemplate.ConstrutorInitializers}", defaultValues)
                             .Replace("{HighTemplate.Properties}", properties)
                             .Replace("{HighTemplate.HashtableInit}", hashtableComparers)
                             .Replace("{HighTemplate.ExtendsClass}", extendsClass)
@@ -495,28 +442,6 @@ namespace SourceCodeGenerator.Generators
             }
         }
 
-        protected override string GetDefaultValueForEnum(ApiItem item)
-        {
-            string defaultValue = item.Defaults.Replace("\'","");
-            if (String.IsNullOrEmpty(defaultValue))
-            {
-                defaultValue = item.Values[0];
-            }
-            if (_enumMappings[defaultValue] != null)
-                defaultValue = _enumMappings[defaultValue] as string;
-
-            if (defaultValue.Contains('-'))
-            {
-                var tab = defaultValue.Split('-');
-                defaultValue = "";
-
-                foreach (var t in tab)
-                    defaultValue += FirstCharToUpper(t);
-            }
-
-            return String.Format("{0}.{1}", GetClassNameFromItem(item), FirstCharToUpper(defaultValue));
-        }
-
         protected override string GetClassNameFromItem(ApiItem item)
         {
             string[] parts = item.FullName.Split('.');
@@ -667,11 +592,6 @@ namespace SourceCodeGenerator.Generators
             return returnType;
         }
 
-        protected override string FormatDefaultProperty(string propertyName, ApiItem child)
-        {
-            return String.Format("{0} = {1} = {2};\n\t\t\t", propertyName, propertyName + "_DefaultValue", MapDefaultValue(child));
-        }
-
         protected override string FormatPropertyComparer(string propertyName, ApiItem child)
         {
             string simplePropertyFormat = "if ({0} != null) h.Add(\"{2}\",{0});\n\t\t\t";
@@ -679,7 +599,6 @@ namespace SourceCodeGenerator.Generators
             string enumPropertyFormat = "if ({0} != {1}.Null) h.Add(\"{2}\", {3}.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
             string functionPropertyFormat = "if ({0} != null) {{ h.Add(\"{1}\",{0}); {4}.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
             string complexPropertyFormat = "if ({0} != null) h.Add(\"{1}\",{0}.ToHashtable(" + MAIN_FIELD_NAME + "));\n\t\t\t";
-            string customPropertyFormat = "if ({0} != null) h.Add(\"{1}\",{0}.ToJSON(" + MAIN_FIELD_NAME + "));\n\t\t\t";
 
             // fully qualified names that are collections
             if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
@@ -707,12 +626,6 @@ namespace SourceCodeGenerator.Generators
                     return "if (Stops != null) h.Add(\"stops\", GetLists(Stops));\n\t\t\t";
 
                 return String.Format(listPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
-            }
-
-            // property that needs custom serialization (Animation, Shadow, etc)
-            if (_customProperties.Contains(propertyName))
-            {
-                return String.Format(customPropertyFormat, propertyName, GetJSName(propertyName, child.Suffix));
             }
 
             if (_propertyTypeMappings.Contains(child.Title) || _propertyTypeMappings.Contains(child.FullName))
@@ -913,181 +826,6 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("series.organization.nodes", "List<OrganizationSeriesNodes>");
 
         }
-        protected override void InitPropertyInitMappings()
-        {
-            _propertyInitMappings.Add("shadow", "new Shadow()");
-            _propertyInitMappings.Add("plotShadow", "new Shadow()");
-            _propertyInitMappings.Add("animation", "new Animation()");
-            //_propertyInitMappings.Add("pointPlacement", "new PointPlacement()");
-            _propertyInitMappings.Add("crosshairs", "new List<Crosshair>()");
-            _propertyInitMappings.Add("menuItems", "new List<MenuItem>()");
-            ////_propertyInitMappings.Add("Symbol", "new Symbol()");
-            _propertyInitMappings.Add("colors", "new List<string>()");
-            _propertyInitMappings.Add("center", "new string[] { \"50%\", \"50%\" }");
-            _propertyInitMappings.Add("margin", "new string[] {}");
-            //_propertyInitMappings.Add("position", "new Hashtable()");
-            _propertyInitMappings.Add("dateTimeLabelFormats", "new Hashtable()");
-            _propertyInitMappings.Add("inputPosition", "new Hashtable()");
-            ////_propertyInitMappings.Add("style", "new Hashtable()");
-            _propertyInitMappings.Add("inputStyle", "new Hashtable()");
-            _propertyInitMappings.Add("labelStyle", "new Hashtable()");
-            _propertyInitMappings.Add("columns", "new List<List<string>>()");
-            _propertyInitMappings.Add("rows", "new List<List<string>>()");
-            _propertyInitMappings.Add("seriesMapping", "new List<object>()");
-            _propertyInitMappings.Add("keys", "new List<string>()");
-            _propertyInitMappings.Add("lang.accessibility.series", "new LangAccessibilitySeries()");
-            _propertyInitMappings.Add("series", "new List<Series>()");
-            _propertyInitMappings.Add("xAxis", "new List<XAxis>()");
-            _propertyInitMappings.Add("yAxis", "new List<YAxis>()");
-            _propertyInitMappings.Add("yAxis.plotLines", "new List<YAxisPlotLines>()");
-            _propertyInitMappings.Add("yAxis.plotBands", "new List<YAxisPlotBands>()");
-            _propertyInitMappings.Add("yAxis.plotBands.label.style", "new Hashtable()");
-            _propertyInitMappings.Add("xAxis.plotLines", "new List<XAxisPlotLines>()");
-            _propertyInitMappings.Add("xAxis.plotBands", "new List<XAxisPlotBands>()");
-            _propertyInitMappings.Add("xAxis.plotBands.label.style", "new Hashtable()");
-            _propertyInitMappings.Add("zAxis.plotLines", "new List<ZAxisPlotLines>()");
-            _propertyInitMappings.Add("zAxis.plotBands", "new List<ZAxisPlotBands>()");
-            _propertyInitMappings.Add("zAxis.plotBands.label.style", "new Hashtable()");
-            _propertyInitMappings.Add("xAxis.breaks", "new List<XAxisBreaks>()");
-            _propertyInitMappings.Add("yAxis.breaks", "new List<YAxisBreaks>()");
-            _propertyInitMappings.Add("series<treemap>.levels", "new List<TreemapSeriesLevels>()");
-            _propertyInitMappings.Add("pane.background", "new List<PaneBackground>()");
-            _propertyInitMappings.Add("plotOptions.series", "new PlotOptionsSeries()");
-            _propertyInitMappings.Add("annotations", "new List<Annotations>()");
-            _propertyInitMappings.Add("annotations.labels", "new List<AnnotationsLabels>()");
-            _propertyInitMappings.Add("annotations.shapes", "new List<AnnotationsShapes>()");
-            _propertyInitMappings.Add("colorAxis.dataClasses", "new List<ColorAxisDataClasses>()");
-            _propertyInitMappings.Add("annotations.shapes.points", "new List<AnnotationsShapesPoint>()");
-            _propertyInitMappings.Add("attributes", "null");
-            _propertyInitMappings.Add("defs.markers", "null");
-            _propertyInitMappings.Add("drilldown.drillUpButton.theme", "null");
-            _propertyInitMappings.Add("exporting.menuItemDefinitions", "null");
-            _propertyInitMappings.Add("exporting.chartOptions", "null");
-            _propertyInitMappings.Add("exporting.formAttributes", "null");
-            _propertyInitMappings.Add("responsive.rules.chartOptions", "null");
-            _propertyInitMappings.Add("xAxis.plotBands.events", "null");
-            _propertyInitMappings.Add("xAxis.plotLines.events", "null");
-            _propertyInitMappings.Add("yAxis.plotBands.events", "null");
-            _propertyInitMappings.Add("yAxis.plotLines.events", "null");
-            _propertyInitMappings.Add("zAxis.plotBands.events", "null");
-            _propertyInitMappings.Add("zAxis.plotLines.events", "null");
-            _propertyInitMappings.Add("xAxis.plotLines.label.style", "new Hashtable()");
-            _propertyInitMappings.Add("yAxis.plotLines.label.style", "new Hashtable()");
-            _propertyInitMappings.Add("zAxis.plotLines.label.style", "new Hashtable()");
-            //_propertyInitMappings.Add("labels.items.style", "new Hashtable()");
-            _propertyInitMappings.Add("xAxis.tickPositions", "new List<double>()");
-            _propertyInitMappings.Add("yAxis.tickPositions", "new List<double>()");
-            _propertyInitMappings.Add("zAxis.tickPositions", "new List<double>()");
-            _propertyInitMappings.Add("chart.parallelAxes.tickPositions", "new List<double>()");
-            _propertyInitMappings.Add("colorAxis.tickPositions", "new List<double>()");
-            _propertyInitMappings.Add("global.Date", "null");
-            _propertyInitMappings.Add("boxesToAvoid", "new List<object>()");
-            _propertyInitMappings.Add("labels.items", "new List<LabelsItems>()");
-            //_propertyInitMappings.Add("chart.parallelAxes.labels.style", "new Hashtable()"); object
-            //_propertyInitMappings.Add("annotations.labelOptions.style", "new Hashtable()"); object
-            //_propertyInitMappings.Add("annotations.labels.style", "new Hashtable()"); object
-            //_propertyInitMappings.Add("colorAxis.labels.style", "new Hashtable()"); o
-            //_propertyInitMappings.Add("xAxis.labels.style", "new Hashtable()"); o
-            //_propertyInitMappings.Add("yAxis.labels.style", "new Hashtable()");o
-            //_propertyInitMappings.Add("zAxis.labels.style", "new Hashtable()");o
-            //_propertyInitMappings.Add("yAxis.stackLabels.style", "new Hashtable()");o
-            _propertyInitMappings.Add("legend.style", "new Hashtable()");
-            _propertyInitMappings.Add("legend.navigation.style", "new Hashtable()");
-            _propertyInitMappings.Add("noData.attr", "new Hashtable()");
-            _propertyInitMappings.Add("title.style", "new Hashtable()");
-            _propertyInitMappings.Add("labels.items.style", "new Hashtable()");
-            _propertyInitMappings.Add("plotOptions.sunburst.levels", "new List<PlotOptionsSunburstLevels>()");
-            _propertyInitMappings.Add("plotOptions.treemap.levels", "new List<PlotOptionsTreemapLevels>()");
-            _propertyInitMappings.Add("lang.shortWeekdays", "new List<string>()");
-            //_propertyInitMappings.Add("pane.background.backgroundColor", "\"\"");
-            _propertyInitMappings.Add("responsive.rules", "new List<ResponsiveRules>()");
-            _propertyInitMappings.Add("series.treemap.levels", "new List<TreemapSeriesLevels>()");
-            _propertyInitMappings.Add("series.sunburst.levels", "new List<SunburstSeriesLevels>()");
-            _propertyInitMappings.Add("series.sankey.nodes", "new List<SankeySeriesNodes>()");
-            _propertyInitMappings.Add("time.Date", "new DateTime()");
-            _propertyInitMappings.Add("defs", "null");
-            _propertyInitMappings.Add("autoRotation", "new List<double> {-45}");
-            _propertyInitMappings.Add("spacing", "new List<double>()");
-            _propertyInitMappings.Add("categories", "new List<string>()");
-            _propertyInitMappings.Add("data.columns", "new List<List<string>>()");
-            _propertyInitMappings.Add("chart.options3d.axisLabelPosition", "null");
-            _propertyInitMappings.Add("initialPositions", "null");
-            _propertyInitMappings.Add("initialPositionsRadius", "null");
-            _propertyInitMappings.Add("data.seriesMapping", "new List<List<double?>>()");
-            _propertyInitMappings.Add("tickWidth", "null");
-            _propertyInitMappings.Add("sets", "new List<string>()");
-            _propertyInitMappings.Add("style", "new Hashtable()");
-            _propertyInitMappings.Add("series.columnpyramid.states", "new Hashtable()");
-            _propertyInitMappings.Add("series.dependencywheel.levels.states", "new Hashtable()");
-            _propertyInitMappings.Add("series.organization.levels.states", "new Hashtable()");
-            _propertyInitMappings.Add("series.sankey.levels.states", "new Hashtable()");
-            _propertyInitMappings.Add("plotOptions.dependencywheel.levels.states", "new Hashtable()");
-            _propertyInitMappings.Add("plotOptions.organization.levels.states", "new Hashtable()");
-            _propertyInitMappings.Add("plotOptions.sankey.levels.states", "new Hashtable()");
-
-            _propertyInitMappings.Add("legend.bubbleLegend.ranges.value", "null");
-            _propertyInitMappings.Add("plotOptions.sunburst.levels.dataLabels", "new Hashtable()");
-            _propertyInitMappings.Add("series.pyramid3d.data", "new List<Hashtable()>");
-            _propertyInitMappings.Add("plotOptions.item.rows", "null");
-            _propertyInitMappings.Add("series.item.rows", "null");
-            _propertyInitMappings.Add("initialPositionRadius", "null");
-            _propertyInitMappings.Add("accessibility.customComponents", "new object()");
-            _propertyInitMappings.Add("pane.background.backgroundColor", "new object()");
-            _propertyInitMappings.Add("defs.arrow.children", "new List<object>()");
-            _propertyInitMappings.Add("accessibility.keyboardNavigation.order", "new List<string>()");
-            _propertyInitMappings.Add("zoomEnabled", "null");
-            _propertyInitMappings.Add("accessibility.highContrastTheme", "new Object()");
-
-            _propertyInitMappings.Add("navigation.bindings.arrowInfinityLine", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.arrowRay", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.arrowSegment", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.circleAnnotation", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.crooked3", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.crooked5", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.currentPriceIndicator", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.elliott3", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.elliott5", "new Object()");
-            //_propertyInitMappings.Add("navigation.bindings.fibonacci", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.flagCirclepin", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.flagDiamondpin", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.flagSimplepin", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.flagSquarepin", "new Object()");
-            //_propertyInitMappings.Add("navigation.bindings.fullScreen", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.horizontalLine", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.indicators", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.infinityLine", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.labelAnnotation", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.measureX", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.measureXY", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.measureY", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.parallelChannel", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.pitchfork", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.ray", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.rectangleAnnotation", "new Object()");
-            //_propertyInitMappings.Add("navigation.bindings.saveChart", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.segment", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.seriesTypeCandlestick", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.seriesTypeLine", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.seriesTypeOhlc", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.toggleAnnotations", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.verticalArrow", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.verticalCounter", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.verticalLabel", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.verticalLine", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.zoomX", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.zoomXY", "new Object()");
-            _propertyInitMappings.Add("navigation.bindings.zoomY", "new Object()");
-
-            _propertyInitMappings.Add("drilldown.activeDataLabelStyle", "new Hashtable()");
-            _propertyInitMappings.Add("series.id", "string.Empty");
-            _propertyInitMappings.Add("series.funnel3d.dataLabels.verticalAlign", "Funnel3dSeriesDataLabelsVerticalAlign.Middle");
-            _propertyInitMappings.Add("series.pyramid3d.dataLabels.verticalAlign", "Pyramid3dSeriesDataLabelsVerticalAlign.Middle");
-            _propertyInitMappings.Add("plotOptions.lollipop.tooltip.pointFormat", "\"<span style='color:{series.color}'>●</span> {series.name}: <b>{point.low}</b> - <b>{point.high}</b><br/>\"");
-            _propertyInitMappings.Add("plotOptions.vector.tooltip.pointFormat", "\"x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>\"");
-
-            _propertyInitMappings.Add("series.organization.nodes", "new List<OrganizationSeriesNodes>()");
-            _propertyInitMappings.Add("data.columnTypes", "DataColumnTypes.Null");
-        }
 
         protected override void InitLists()
         {
@@ -1170,182 +908,6 @@ namespace SourceCodeGenerator.Generators
             _excludedProperties.Add("series<polygon>.tooltip");
             _excludedProperties.Add("series<scatter>.tooltip");
 
-        }
-        protected override void InitCustomProperties()
-        {
-            //_customProperties.Add("Animation");
-            //_customProperties.Add("PlotShadow");
-            //_customProperties.Add("PointPlacement");
-            //_customProperties.Add("Symbol");
-        }
-        
-
-        protected override string MapDefaultValue(ApiItem item)
-        {
-            string defaults;
-
-            if (string.IsNullOrWhiteSpace(item.Defaults))
-                defaults = item.Defaults;
-            else
-                defaults = item.Defaults.Replace('\\', ' ').Replace('\'', ' ');
-
-            var nameAndSuffix = FirstCharToLower(GetPropertyName(item));
-
-            if (item.Defaults == "\n")
-                return "null";
-
-            if (nameAndSuffix == "data" && item.ParentFullName != null)
-            {
-                if (item.ParentFullName.ToLower() == "highcharts")
-                    return "new Data()";
-
-                return "new List<" + GetClassNameFromItem(item) + ">()";
-            }
-
-            if (nameAndSuffix == "fillcolor")
-                return "null";
-
-            //if (item.Title.ToLower() == "background" && item.ParentFullName.ToLower() == "pane")
-            //    return "new List<Background>()";
-
-            if (nameAndSuffix == "enabled" && item.ParentFullName.ToLower() == "series<treemap>.datalabels")
-                return "null";
-
-            if (nameAndSuffix == "fillColor")
-                return "null";
-
-            if (nameAndSuffix == "height" && item.ParentFullName.ToLower() == "chart")
-                return "null";
-
-            if (nameAndSuffix == "margin" && item.ParentFullName.ToLower() != "chart")
-                return "null";
-
-            if (nameAndSuffix == "margin" && item.ParentFullName.ToLower() == "chart")
-                return "new double[]{}";
-
-            if (nameAndSuffix == "stops")
-                return "new List<Stop>()";
-
-            //if (item.Title.ToLower().Contains("datalabels") && item.ParentFullName.ToLower().EndsWith("data"))
-            //    item.IsParent = true;
-            if ((nameAndSuffix == "xAxis" || nameAndSuffix == "yAxis") && item.ParentFullName != RootClass)
-                return "\"\"";
-
-            if (
-                //(nameAndSuffix.ToLower().EndsWith("style") && item.Children.Any()) ||
-                (item.FullName.EndsWith("states.hover") || item.FullName.EndsWith("states.inactive") || item.FullName.EndsWith("states.normal") || item.FullName.EndsWith("states.select")))
-                return "new " + GetClassNameFromItem(item) + "()";
-
-
-            if (_propertyInitMappings[item.FullName] != null)
-            {
-                return _propertyInitMappings[item.FullName].ToString();
-            }
-            else if (_propertyInitMappings[nameAndSuffix] != null)
-            {
-                return _propertyInitMappings[nameAndSuffix].ToString();
-            }
-
-            if (item.ReturnType.Equals(TypeService.EnumType) || ((item.ReturnType == "string" || item.ReturnType == "String" || item.ReturnType.Equals(TypeService.CSSType)) && item.Values != null && item.Values.Any()))
-            {
-                return GetDefaultValueForEnum(item);
-            }
-
-            if (item.FullName.EndsWith("data.x") || item.FullName.EndsWith("data.y"))
-            {
-                return "double.MinValue";
-            }
-            if (item.ReturnType.ToLower() == "function" || item.ReturnType.ToLower() == "string|function")
-                return "\"\"";
-
-            //if ((item.Title.ToLower() == "xaxis" || item.Title.ToLower() == "yaxis") && item.ParentFullName != null)
-            //    defaults = "";
-
-            if (item.ReturnType == "Array.<*>" && item.Title == "zones")
-                return string.Format("new List<{0}>()", GetClassNameFromItem(item).Replace("Zones", "Zone"));
-
-            if (item.FullName.ToLower().Contains("data.datalabels"))
-                item.FullName = item.FullName.Replace("data.", "");
-
-            if (item.FullName.ToLower().Contains("levels.datalabels"))
-                item.FullName = item.FullName.Replace("levels.", "");
-
-            if (item.Children.Any() || item.Extends.Any())
-                return String.Format("new {0}()", GetClassNameFromItem(item));
-
-            if (item.ReturnType.Contains(TypeService.CSSType))
-                item.Defaults = "css";
-
-            if (!String.IsNullOrEmpty(item.Defaults))
-            {
-                if (item.ReturnType == "String" ||
-                    item.ReturnType == "Color" ||
-                    item.ReturnType == "String|Number" ||
-                    item.ReturnType == "Number|String")
-                {
-                    return '"' + defaults.Replace("\"", "'") + '"';
-                }
-                if (item.ReturnType.StartsWith("Array.<String>") || item.ReturnType.StartsWith("Array.<string>")) // thereis Array<String>; ending with ; in Highstock
-                {
-                    if (item.ParentFullName == "lang")
-                        return "new List<string> " + item.Defaults
-                                            .Replace("'", "\"")
-                                            .Replace("[", "{")
-                                            .Replace("]", "}");
-
-                    return "new List<string>()";
-                }
-                if (item.ReturnType == "Array.<Number>")
-                {
-                    return "new List<double> " + item.Defaults
-                                        .Replace("[", "{")
-                                        .Replace("]", "}");
-                }
-
-                if ((_propertyTypeMappings[nameAndSuffix] != null &&
-                    _propertyTypeMappings[nameAndSuffix].ToString() == "Hashtable") ||
-                    (_typeMappings[(item.ReturnType)] != null &&
-                    _typeMappings[(item.ReturnType)].ToString() == "Hashtable")
-                    || item.ReturnType.Contains(TypeService.CSSType))
-                {
-                    string result = "new Hashtable()";// + "{" + item.Defaults
-                                                      //.Replace(",", "},{")
-                                                      //.Replace(";", "},{")
-                                                      //.Replace(":", ",") + "}";
-                    if (nameAndSuffix == "position")
-                        result = result.Replace("0", "\"0\"");
-
-
-
-                    return result;
-                }
-                if (defaults == "undefined")
-                {
-                    return "null";
-                }
-            }
-            else
-            {
-                if (item.ReturnType == "Number" || item.ReturnType == "Boolean")
-                    return "null";
-            }
-
-            if (defaults == "")
-                return "\"\"";
-
-            if (defaults == null)
-                return "null";
-
-            if (item.ReturnType == "Number")
-            {
-                int conversionResult;
-                bool success = int.TryParse(defaults, out conversionResult);
-
-                if (!success)
-                    return "null";
-            }
-
-            return defaults.Replace('\\', ' ');
         }
     }
 }

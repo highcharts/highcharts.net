@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartOptions3dFrameSide()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			if (Color != null) h.Add("color",Color);
 			if (Size != null) h.Add("size",Size);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

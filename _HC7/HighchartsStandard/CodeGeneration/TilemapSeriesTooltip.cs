@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public TilemapSeriesTooltip()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -137,7 +135,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ValuePrefix != null) h.Add("valuePrefix",ValuePrefix);
 			if (ValueSuffix != null) h.Add("valueSuffix",ValueSuffix);
 			if (XDateFormat != null) h.Add("xDateFormat",XDateFormat);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ZAxisPlotBands()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -116,7 +114,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Label != null) h.Add("label",Label.ToHashtable(highcharts));
 			if (To != null) h.Add("to",To);
 			if (ZIndex != null) h.Add("zIndex",ZIndex);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

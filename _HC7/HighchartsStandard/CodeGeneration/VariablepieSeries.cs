@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public VariablepieSeries()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -551,7 +549,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (ZMax != null) h.Add("zMax",ZMax);
 			if (ZMin != null) h.Add("zMin",ZMin);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

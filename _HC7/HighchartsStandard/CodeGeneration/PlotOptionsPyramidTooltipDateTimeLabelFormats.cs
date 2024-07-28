@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPyramidTooltipDateTimeLabelFormats()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -81,7 +79,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Second != null) h.Add("second",Second);
 			if (Week != null) h.Add("week",Week);
 			if (Year != null) h.Add("year",Year);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

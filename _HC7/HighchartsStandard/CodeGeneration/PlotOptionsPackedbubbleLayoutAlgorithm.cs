@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPackedbubbleLayoutAlgorithm()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -137,7 +135,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SeriesInteraction != null) h.Add("seriesInteraction",SeriesInteraction);
 			if (SplitSeries != null) h.Add("splitSeries",SplitSeries);
 			if (Type != null) h.Add("type",Type);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

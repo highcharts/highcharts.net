@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Accessibility()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -116,7 +114,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ScreenReaderSection != null) h.Add("screenReaderSection",ScreenReaderSection.ToHashtable(highcharts));
 			if (Series != null) h.Add("series",Series);
 			if (TypeDescription != null) h.Add("typeDescription",TypeDescription);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

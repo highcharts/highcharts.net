@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPolygonTooltip()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FollowPointer != null) h.Add("followPointer",FollowPointer);
 			if (HeaderFormat != null) h.Add("headerFormat",HeaderFormat);
 			if (PointFormat != null) h.Add("pointFormat",PointFormat);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

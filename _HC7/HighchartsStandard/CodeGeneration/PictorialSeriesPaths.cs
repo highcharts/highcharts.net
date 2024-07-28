@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PictorialSeriesPaths()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			if (Definition != null) h.Add("definition",Definition);
 			if (Max != null) h.Add("max",Max);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

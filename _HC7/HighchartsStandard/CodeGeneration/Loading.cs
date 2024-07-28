@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Loading()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (LabelStyle != null) h.Add("labelStyle",LabelStyle);
 			if (ShowDuration != null) h.Add("showDuration",ShowDuration);
 			if (Style != null) h.Add("style",Style);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public XAxisBreaks()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (From != null) h.Add("from",From);
 			if (Repeat != null) h.Add("repeat",Repeat);
 			if (To != null) h.Add("to",To);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

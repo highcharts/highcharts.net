@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public XAxis()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -613,7 +611,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (WidthNumber != null) h.Add("width",WidthNumber);
 			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (ZoomEnabled != null) h.Add("zoomEnabled",ZoomEnabled);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

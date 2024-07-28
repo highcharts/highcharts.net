@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SankeySeriesNodesDataLabels()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Inside != null) h.Add("inside",Inside);
 			if (NodeFormat != null) h.Add("nodeFormat",NodeFormat);
 			if (NodeFormatter != null) { h.Add("nodeFormatter",NodeFormatter); highcharts.AddFunction("nodeFormatter", NodeFormatter); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

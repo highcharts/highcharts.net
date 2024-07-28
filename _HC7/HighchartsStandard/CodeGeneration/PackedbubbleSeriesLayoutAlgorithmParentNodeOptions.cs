@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PackedbubbleSeriesLayoutAlgorithmParentNodeOptions()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -102,7 +100,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (MaxSpeed != null) h.Add("maxSpeed",MaxSpeed);
 			if (SeriesInteraction != null) h.Add("seriesInteraction",SeriesInteraction);
 			if (Type != null) h.Add("type",Type);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

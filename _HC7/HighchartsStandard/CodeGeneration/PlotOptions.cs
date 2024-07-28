@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptions()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -403,7 +401,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Windbarb != null) h.Add("windbarb",Windbarb.ToHashtable(highcharts));
 			if (Wordcloud != null) h.Add("wordcloud",Wordcloud.ToHashtable(highcharts));
 			if (Xrange != null) h.Add("xrange",Xrange.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

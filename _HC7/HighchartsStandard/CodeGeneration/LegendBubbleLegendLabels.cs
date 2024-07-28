@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LegendBubbleLegendLabels()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -81,7 +79,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Style != null) h.Add("style",Style);
 			if (X != null) h.Add("x",X);
 			if (Y != null) h.Add("y",Y);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

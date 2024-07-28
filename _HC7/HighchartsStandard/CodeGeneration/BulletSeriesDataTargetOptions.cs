@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public BulletSeriesDataTargetOptions()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -74,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Height != null) h.Add("height",Height);
 			if (Width != null) h.Add("width",Width);
 			if (WidthNumber != null) h.Add("width",WidthNumber);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LollipopSeriesDataLabelsTextPath()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			if (Attributes != null) h.Add("attributes",Attributes);
 			if (Enabled != null) h.Add("enabled",Enabled);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

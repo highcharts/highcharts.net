@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibility()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -179,7 +177,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Table != null) h.Add("table",Table.ToHashtable(highcharts));
 			if (ThousandsSep != null) h.Add("thousandsSep",ThousandsSep);
 			if (Zoom != null) h.Add("zoom",Zoom.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

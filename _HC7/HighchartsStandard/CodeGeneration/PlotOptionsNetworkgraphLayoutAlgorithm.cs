@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsNetworkgraphLayoutAlgorithm()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -123,7 +121,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (RepulsiveForce != null) { h.Add("repulsiveForce",RepulsiveForce); highcharts.AddFunction("repulsiveForce", RepulsiveForce); }  
 			if (Theta != null) h.Add("theta",Theta);
 			if (Type != null) h.Add("type",Type);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilityKeyboardNavigationFocusBorder()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (HideBrowserFocusOutline != null) h.Add("hideBrowserFocusOutline",HideBrowserFocusOutline);
 			if (Margin != null) h.Add("margin",Margin);
 			if (Style != null) h.Add("style",Style);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

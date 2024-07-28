@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public DrilldownActiveDataLabelStyle()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Cursor != null) h.Add("cursor",Cursor);
 			if (FontWeight != null) h.Add("fontWeight",FontWeight);
 			if (TextDecoration != null) h.Add("textDecoration",TextDecoration);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

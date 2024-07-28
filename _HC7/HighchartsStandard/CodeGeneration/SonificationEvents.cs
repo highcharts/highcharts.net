@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public SonificationEvents()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (OnSeriesEnd != null) { h.Add("onSeriesEnd",OnSeriesEnd); highcharts.AddFunction("onSeriesEnd", OnSeriesEnd); }  
 			if (OnSeriesStart != null) { h.Add("onSeriesStart",OnSeriesStart); highcharts.AddFunction("onSeriesStart", OnSeriesStart); }  
 			if (OnStop != null) { h.Add("onStop",OnStop); highcharts.AddFunction("onStop", OnStop); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

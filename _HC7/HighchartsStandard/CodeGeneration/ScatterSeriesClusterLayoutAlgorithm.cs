@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ScatterSeriesClusterLayoutAlgorithm()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -74,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Iterations != null) h.Add("iterations",Iterations);
 			if (KmeansThreshold != null) h.Add("kmeansThreshold",KmeansThreshold);
 			if (Type != null) h.Add("type",Type);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

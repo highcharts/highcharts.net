@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ExportingCsv()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -67,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DecimalPoint != null) h.Add("decimalPoint",DecimalPoint);
 			if (ItemDelimiter != null) h.Add("itemDelimiter",ItemDelimiter);
 			if (LineDelimiter != null) h.Add("lineDelimiter",LineDelimiter);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

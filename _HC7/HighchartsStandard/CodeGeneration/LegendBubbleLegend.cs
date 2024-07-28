@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LegendBubbleLegend()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -151,7 +149,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SizeByAbsoluteValue != null) h.Add("sizeByAbsoluteValue",SizeByAbsoluteValue);
 			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (ZThreshold != null) h.Add("zThreshold",ZThreshold);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

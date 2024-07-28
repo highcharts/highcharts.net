@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsNetworkgraph()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -340,7 +338,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (UseOhlcData != null) h.Add("useOhlcData",UseOhlcData);
 			if (Visible != null) h.Add("visible",Visible);
 			if (Zones != null) h.Add("zones", HashifyList(highcharts,Zones));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

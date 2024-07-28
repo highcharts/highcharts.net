@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVennClusterDataLabels()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -67,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Inside != null) h.Add("inside",Inside);
 			if (Style != null) h.Add("style",Style);
 			if (VerticalAlign != PlotOptionsVennClusterDataLabelsVerticalAlign.Null) h.Add("verticalAlign", highcharts.FirstCharacterToLower(VerticalAlign.ToString()));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

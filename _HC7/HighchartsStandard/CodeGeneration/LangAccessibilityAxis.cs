@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public LangAccessibilityAxis()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -95,7 +93,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (XAxisDescriptionSingular != null) h.Add("xAxisDescriptionSingular",XAxisDescriptionSingular);
 			if (YAxisDescriptionPlural != null) h.Add("yAxisDescriptionPlural",YAxisDescriptionPlural);
 			if (YAxisDescriptionSingular != null) h.Add("yAxisDescriptionSingular",YAxisDescriptionSingular);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

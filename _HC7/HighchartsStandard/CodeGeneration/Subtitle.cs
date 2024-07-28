@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Subtitle()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (WidthAdjust != null) h.Add("widthAdjust",WidthAdjust);
 			if (X != null) h.Add("x",X);
 			if (Y != null) h.Add("y",Y);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

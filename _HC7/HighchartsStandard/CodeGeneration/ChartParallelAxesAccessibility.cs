@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartParallelAxesAccessibility()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Description != null) h.Add("description",Description);
 			if (Enabled != null) h.Add("enabled",Enabled);
 			if (RangeDescription != null) h.Add("rangeDescription",RangeDescription);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

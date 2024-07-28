@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartZooming()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -67,7 +65,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ResetButton != null) h.Add("resetButton",ResetButton.ToHashtable(highcharts));
 			if (SingleTouch != null) h.Add("singleTouch",SingleTouch);
 			if (Type != ChartZoomingType.Null) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

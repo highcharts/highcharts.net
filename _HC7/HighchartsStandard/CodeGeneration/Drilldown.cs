@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Drilldown()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -88,7 +86,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DrillUpButton != null) h.Add("drillUpButton",DrillUpButton.ToHashtable(highcharts));
 			if (MapZooming != null) h.Add("mapZooming",MapZooming);
 			if (Series != null) h.Add("series",Series);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

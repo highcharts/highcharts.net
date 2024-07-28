@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PolygonSeries()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -523,7 +521,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ZIndex != null) h.Add("zIndex",ZIndex);
 			if (ZoneAxis != null) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != null) h.Add("zones", HashifyList(highcharts,Zones));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

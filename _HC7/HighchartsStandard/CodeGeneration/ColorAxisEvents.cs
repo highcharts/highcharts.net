@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ColorAxisEvents()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -74,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PointBreakOut != null) { h.Add("pointBreakOut",PointBreakOut); highcharts.AddFunction("pointBreakOut", PointBreakOut); }  
 			if (PointInBreak != null) { h.Add("pointInBreak",PointInBreak); highcharts.AddFunction("pointInBreak", PointInBreak); }  
 			if (SetExtremes != null) { h.Add("setExtremes",SetExtremes); highcharts.AddFunction("setExtremes", SetExtremes); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

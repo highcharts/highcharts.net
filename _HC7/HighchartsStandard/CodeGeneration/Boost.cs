@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Boost()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -74,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (SeriesThreshold != null) h.Add("seriesThreshold",SeriesThreshold);
 			if (UseGPUTranslations != null) h.Add("useGPUTranslations",UseGPUTranslations);
 			if (UsePreallocated != null) h.Add("usePreallocated",UsePreallocated);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

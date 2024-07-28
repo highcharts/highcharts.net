@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public NavigationBindings()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -333,7 +331,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ZoomX != null) h.Add("zoomX",ZoomX);
 			if (ZoomXY != null) h.Add("zoomXY",ZoomXY);
 			if (ZoomY != null) h.Add("zoomY",ZoomY);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

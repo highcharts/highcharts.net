@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public VennSeriesStates()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -53,7 +51,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Inactive != null) h.Add("inactive",Inactive.ToHashtable(highcharts));
 			if (Normal != null) h.Add("normal",Normal.ToHashtable(highcharts));
 			if (Select != null) h.Add("select",Select.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

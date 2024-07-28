@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilitySeries()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -60,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (DescriptionFormatter != null) { h.Add("descriptionFormatter",DescriptionFormatter); highcharts.AddFunction("descriptionFormatter", DescriptionFormatter); }  
 			if (PointDescriptionEnabledThreshold != null) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThreshold);
 			if (PointDescriptionEnabledThresholdBool != null) h.Add("pointDescriptionEnabledThreshold",PointDescriptionEnabledThresholdBool);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

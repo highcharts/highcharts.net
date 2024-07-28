@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Highcharts()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -235,7 +233,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (XAxis != null) h.Add("xAxis", HashifyList(highcharts,XAxis));
 			if (YAxis != null) h.Add("yAxis", HashifyList(highcharts,YAxis));
 			if (ZAxis != null) h.Add("zAxis",ZAxis.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

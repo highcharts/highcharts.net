@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Sonification()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -123,7 +121,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ShowCrosshair != null) h.Add("showCrosshair",ShowCrosshair);
 			if (ShowTooltip != null) h.Add("showTooltip",ShowTooltip);
 			if (UpdateInterval != null) h.Add("updateInterval",UpdateInterval);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

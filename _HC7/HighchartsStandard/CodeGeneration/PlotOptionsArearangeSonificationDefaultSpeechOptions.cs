@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsArearangeSonificationDefaultSpeechOptions()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -74,7 +72,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (PreferredVoice != null) h.Add("preferredVoice",PreferredVoice);
 			if (ShowPlayMarker != null) h.Add("showPlayMarker",ShowPlayMarker);
 			if (Type != PlotOptionsArearangeSonificationDefaultSpeechOptionsType.Null) h.Add("type", highcharts.FirstCharacterToLower(Type.ToString()));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

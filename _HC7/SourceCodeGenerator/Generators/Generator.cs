@@ -21,12 +21,10 @@ namespace SourceCodeGenerator.Generators
         protected StreamWriter _log; // general debug related txt log file
         protected Hashtable _typeMappings; // maps HighChart types to C# types, where possible
         protected Hashtable _propertyTypeMappings; // maps properties that need special type not reflected in the JSON
-        protected Hashtable _propertyInitMappings; // maps properties that needs special initialization logic
         protected Hashtable _enumMappings; // maps enums values that do not complile (e.g. special characters like "-" or "/" to other types
         protected Hashtable _seriesMappings; // maps series names to series classes
         protected List<string> _lists; // a list of all List<T> properties - needs this to "Hashify" them, otherwise they will be serialized with capital letters
         protected List<string> _excludedProperties; // properties that do not need to be ported to the server-side wrapper
-        protected List<string> _customProperties; // properties that need custom JSON mappings (Animation, Shadow, etc). Defined in the CodeAddOns folder.
 
         protected bool IsNETStandard;
 
@@ -42,11 +40,9 @@ namespace SourceCodeGenerator.Generators
             _previousVersionApiItems = new List<ApiItem>();
             _typeMappings = new Hashtable();
             _propertyTypeMappings = new Hashtable();
-            _propertyInitMappings = new Hashtable();
             _seriesMappings = new Hashtable();
             _enumMappings = new Hashtable();
             _excludedProperties = new List<string>();
-            _customProperties = new List<string>();
             _lists = new List<string>();
 
             JsonParser = jsonParser;
@@ -57,10 +53,8 @@ namespace SourceCodeGenerator.Generators
 
             InitTypeMappings();
             InitPropertyTypeMappings();
-            InitPropertyInitMappings();
             InitExcludedProperties();
             InitEnumMappings();
-            InitCustomProperties();
             InitSeriesMappings();
             InitLists();
         }
@@ -97,7 +91,6 @@ namespace SourceCodeGenerator.Generators
 
             return apiClones;
         }
-        protected abstract void UpdateDefaultsForHighcharts(ApiItem apiItem);
         protected List<ApiItem> GetChildrenFromBaseClasses(ApiItem item)
         {
             if (item == null)
@@ -214,12 +207,10 @@ namespace SourceCodeGenerator.Generators
         protected abstract void GenerateClass(ApiItem item, List<ApiItem> children);
         protected abstract void GenerateEnum(ApiItem apiItem);
         protected abstract void AddDefaultsToEnum(ApiItem apiItem);
-        protected abstract string GetDefaultValueForEnum(ApiItem item);
         protected abstract string GetClassNameFromItem(ApiItem item);
         protected abstract string GetPropertyName(ApiItem item);
         protected abstract string FormatProperty(string propertyTemplate, ApiItem child);
         protected abstract string GetPropertyReturnType(ApiItem child, string propertyName);
-        protected abstract string FormatDefaultProperty(string propertyName, ApiItem child);
         protected abstract string FormatPropertyComparer(string propertyName, ApiItem child);
         protected void GenerateClassesForLevel(IList<ApiItem> items, int level = 0)
         {
@@ -300,11 +291,9 @@ namespace SourceCodeGenerator.Generators
         protected abstract void InitEnumMappings();
         protected abstract void InitTypeMappings();
         protected abstract void InitPropertyTypeMappings();
-        protected abstract void InitPropertyInitMappings();
         protected abstract void InitLists();
         protected abstract void InitSeriesMappings();
         protected abstract void InitExcludedProperties();
-        protected abstract void InitCustomProperties();
         protected string FirstCharToUpper(string input)
         {
             if (String.IsNullOrEmpty(input))
@@ -326,6 +315,5 @@ namespace SourceCodeGenerator.Generators
 
             return FirstCharToLower(name.Replace(suffix, ""));
         }
-        protected abstract string MapDefaultValue(ApiItem item);
     }
 }

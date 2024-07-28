@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsVariwidePointEvents()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -95,7 +93,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Select != null) { h.Add("select",Select); highcharts.AddFunction("select", Select); }  
 			if (Unselect != null) { h.Add("unselect",Unselect); highcharts.AddFunction("unselect", Unselect); }  
 			if (Update != null) { h.Add("update",Update); highcharts.AddFunction("update", Update); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Lang()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -256,7 +254,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ViewData != null) h.Add("viewData",ViewData);
 			if (ViewFullscreen != null) h.Add("viewFullscreen",ViewFullscreen);
 			if (Weekdays != null) h.Add("weekdays",Weekdays);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

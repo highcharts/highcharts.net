@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public OrganizationSeriesLevelsStates()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			if (Hover != null) h.Add("hover",Hover.ToHashtable(highcharts));
 			if (Inactive != null) h.Add("inactive",Inactive.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

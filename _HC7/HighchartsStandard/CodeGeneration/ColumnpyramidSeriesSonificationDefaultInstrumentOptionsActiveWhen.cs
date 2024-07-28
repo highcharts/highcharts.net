@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ColumnpyramidSeriesSonificationDefaultInstrumentOptionsActiveWhen()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -60,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Max != null) h.Add("max",Max);
 			if (Min != null) h.Add("min",Min);
 			if (Prop != null) h.Add("prop",Prop);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

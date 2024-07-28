@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ZAxisDateTimeLabelFormats()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -137,7 +135,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (WeekString != null) h.Add("week",WeekString);
 			if (Year != null) h.Add("year",Year.ToHashtable(highcharts));
 			if (YearString != null) h.Add("year",YearString);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

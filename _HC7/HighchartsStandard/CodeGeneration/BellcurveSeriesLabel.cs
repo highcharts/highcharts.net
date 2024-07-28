@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public BellcurveSeriesLabel()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -102,7 +100,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (OnArea != null) h.Add("onArea",OnArea);
 			if (Style != null) h.Add("style",Style);
 			if (UseHTML != null) h.Add("useHTML",UseHTML);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

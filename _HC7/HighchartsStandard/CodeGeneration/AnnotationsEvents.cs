@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AnnotationsEvents()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -60,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Click != null) { h.Add("click",Click); highcharts.AddFunction("click", Click); }  
 			if (Drag != null) { h.Add("drag",Drag); highcharts.AddFunction("drag", Drag); }  
 			if (Remove != null) { h.Add("remove",Remove); highcharts.AddFunction("remove", Remove); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

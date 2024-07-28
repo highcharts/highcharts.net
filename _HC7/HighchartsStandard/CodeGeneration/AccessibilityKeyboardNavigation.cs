@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public AccessibilityKeyboardNavigation()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -60,7 +58,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Order != null) h.Add("order",Order);
 			if (SeriesNavigation != null) h.Add("seriesNavigation",SeriesNavigation.ToHashtable(highcharts));
 			if (WrapAround != null) h.Add("wrapAround",WrapAround);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public Chart()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -431,7 +429,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Zooming != null) h.Add("zooming",Zooming.ToHashtable(highcharts));
 			if (ZoomKey != ChartZoomKey.Null) h.Add("zoomKey", highcharts.FirstCharacterToLower(ZoomKey.ToString()));
 			if (ZoomType != ChartZoomType.Null) h.Add("zoomType", highcharts.FirstCharacterToLower(ZoomType.ToString()));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

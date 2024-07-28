@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartOptions3d()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -81,7 +79,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (FitToPlot != null) h.Add("fitToPlot",FitToPlot);
 			if (Frame != null) h.Add("frame",Frame.ToHashtable(highcharts));
 			if (ViewDistance != null) h.Add("viewDistance",ViewDistance);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

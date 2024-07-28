@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public GlobalButtonThemeStates()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -46,7 +44,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Disabled != null) h.Add("disabled",Disabled.ToHashtable(highcharts));
 			if (Hover != null) h.Add("hover",Hover.ToHashtable(highcharts));
 			if (Select != null) h.Add("select",Select.ToHashtable(highcharts));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

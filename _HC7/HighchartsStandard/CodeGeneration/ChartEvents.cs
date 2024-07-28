@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public ChartEvents()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -123,7 +121,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (Redraw != null) { h.Add("redraw",Redraw); highcharts.AddFunction("redraw", Redraw); }  
 			if (Render != null) { h.Add("render",Render); highcharts.AddFunction("render", Render); }  
 			if (Selection != null) { h.Add("selection",Selection); highcharts.AddFunction("selection", Selection); }  
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

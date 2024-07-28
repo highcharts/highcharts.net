@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsHistogramSonificationContextTracks()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -116,7 +114,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (ValueInterval != null) h.Add("valueInterval",ValueInterval);
 			if (ValueMapFunction != PlotOptionsHistogramSonificationContextTracksValueMapFunction.Null) h.Add("valueMapFunction", highcharts.FirstCharacterToLower(ValueMapFunction.ToString()));
 			if (ValueProp != null) h.Add("valueProp",ValueProp);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

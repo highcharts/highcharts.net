@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public OrganizationSeriesDataLabelsLinkTextPathAttributes()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -39,7 +37,7 @@ namespace Highsoft.Web.Mvc.Charts
 		{
 			if (StartOffset != null) h.Add("startOffset",StartOffset);
 			if (TextAnchor != null) h.Add("textAnchor",TextAnchor);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

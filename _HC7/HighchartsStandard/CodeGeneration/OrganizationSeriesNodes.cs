@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public OrganizationSeriesNodes()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -151,7 +149,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (OffsetVertical != null) h.Add("offsetVertical",OffsetVertical);
 			if (OffsetVerticalNumber != null) h.Add("offsetVertical",OffsetVerticalNumber);
 			if (Title != null) h.Add("title",Title);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

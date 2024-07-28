@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PlotOptionsPyramid3d()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -613,7 +611,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (WidthNumber != null) h.Add("width",WidthNumber);
 			if (ZoneAxis != null) h.Add("zoneAxis",ZoneAxis);
 			if (Zones != null) h.Add("zones", HashifyList(highcharts,Zones));
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

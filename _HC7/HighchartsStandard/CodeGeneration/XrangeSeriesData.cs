@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public XrangeSeriesData()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -172,7 +170,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (X != null) h.Add("x",X);
 			if (X2 != null) h.Add("x2",X2);
 			if (Y != null) h.Add("y",Y);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))

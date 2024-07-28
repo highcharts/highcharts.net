@@ -16,8 +16,6 @@ namespace Highsoft.Web.Mvc.Charts
 
 		public PictorialSeries()
 		{
-			
-			CustomFields = new Hashtable();
 		}	
 		
 
@@ -516,7 +514,7 @@ namespace Highsoft.Web.Mvc.Charts
 			if (YAxis != null) h.Add("yAxis",YAxis);
 			if (YAxisNumber != null) h.Add("yAxis",YAxisNumber);
 			if (ZIndex != null) h.Add("zIndex",ZIndex);
-			if (CustomFields.Count > 0)
+			if (CustomFields != null && CustomFields.Count > 0)
 				foreach (var key in CustomFields.Keys)
 				{
 					if (h.ContainsKey(key))
