@@ -763,7 +763,7 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("attributes", "Object");
             _propertyTypeMappings.Add("defs.markers", "Object");
             _propertyTypeMappings.Add("drilldown.drillUpButton.theme", "Object");
-            _propertyTypeMappings.Add("exporting.menuItemDefinitions", "Object");
+            _propertyTypeMappings.Add("exporting.menuItemDefinitions", "List<MenuItemDefinitions>");
             _propertyTypeMappings.Add("exporting.chartOptions", "Object");
             _propertyTypeMappings.Add("exporting.formAttributes", "Object");
             _propertyTypeMappings.Add("responsive.rules.chartOptions", "Object");
@@ -849,6 +849,7 @@ namespace SourceCodeGenerator.Generators
             _lists.Add("series.sankey.nodes");
             _lists.Add("exporting.buttons.contextButton.menuItems");
             _lists.Add("series.organization.nodes");
+            _lists.Add("menuItemDefinitions");
         }
         protected override void InitSeriesMappings()
         {
