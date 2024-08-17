@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>11.4.6.3</AssemblyVersion>
-    <FileVersion>11.4.6.3</FileVersion>
+    <AssemblyVersion>11.4.6.4</AssemblyVersion>
+    <FileVersion>11.4.6.4</FileVersion>
     <Company>Highsoft</Company>
     <Product>Highcharts .NET</Product>
-    <Version>11.4.6.3</Version>
+    <Version>11.4.6.4</Version>
     <Authors>Highsoft</Authors>
     <Copyright>Copyright ©  2024</Copyright>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
@@ -18,6 +18,9 @@
     <RootNamespace>Highcharts</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+    #11.4.6.4
+    Fix ExportingMenuItemDefinitions    
+
     #11.4.6.3
     Fix GetJavascript and GetJavascriptFunction.
 

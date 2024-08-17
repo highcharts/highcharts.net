@@ -834,7 +834,7 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("attributes", "Object");
             _propertyTypeMappings.Add("defs.markers", "Object");
             _propertyTypeMappings.Add("drilldown.drillUpButton.theme", "Object");
-            _propertyTypeMappings.Add("exporting.menuItemDefinitions", "List<MenuItemDefinitions>");
+            _propertyTypeMappings.Add("exporting.menuItemDefinitions", "List<ExportingMenuItemDefinitions>");
             _propertyTypeMappings.Add("exporting.chartOptions", "Object");
             _propertyTypeMappings.Add("exporting.formAttributes", "Object");
             _propertyTypeMappings.Add("responsive.rules.chartOptions", "Object");

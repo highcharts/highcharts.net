@@ -25,7 +25,8 @@ namespace SourceCodeGenerator.Services
         private static ISet<string> UniqueStringTypes = new HashSet<string>(UniqueStringTypesNames);
 
         private static IEnumerable<string> UniqueObjectTypeNames = new List<string> { "Highcharts.PlotNetworkDataLabelsOptionsObject", "Highcharts.DataLabelsOptionsObject", "Highcharts.NavigationBindingsOptionsObject", "Highcharts.SVGAttributes", "Highcharts.SeriesSankeyDataLabelsOptionsObject"
-        , "Highcharts.SeriesArcDiagramDataLabelsOptionsObject", "Highcharts.SeriesTreegraphDataLabelsOptionsObject", "Highcharts.SeriesPackedBubbleDataLabelsOptionsObject", "Highcharts.SeriesNetworkgraphDataLabelsOptionsObject", "Highcharts.SeriesOrganizationDataLabelsOptionsObject", "Highcharts.SeriesSunburstDataLabelsOptionsObject"};
+        , "Highcharts.SeriesArcDiagramDataLabelsOptionsObject", "Highcharts.SeriesTreegraphDataLabelsOptionsObject", "Highcharts.SeriesPackedBubbleDataLabelsOptionsObject", "Highcharts.SeriesNetworkgraphDataLabelsOptionsObject", "Highcharts.SeriesOrganizationDataLabelsOptionsObject", "Highcharts.SeriesSunburstDataLabelsOptionsObject",
+        "Highcharts.ExportingMenuObject"};
         private static ISet<string> UniqueObjectTypes = new HashSet<string>(UniqueObjectTypeNames);
 
         private static IEnumerable<string> UniqueEnumTypeNames = new List<string> { "Highcharts.DataLabelsOverflowValue", "Highcharts.AlignValue", "Highcharts.AxisTitleAlignValue" };

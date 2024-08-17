@@ -115,16 +115,16 @@ namespace SourceCodeGenerator.Parser
                 }
 
                 JToken jDefaultByProduct = doclet.SelectToken("defaultByProduct", false);
-                if(jDefaultByProduct != null)
+                if (jDefaultByProduct != null)
                 {
                     var defaultValue = jDefaultByProduct.SelectToken(Product, false);
 
-                    if(defaultValue != null)
+                    if (defaultValue != null)
                         apiItem.Defaults = defaultValue.Value<string>();
                 }
 
                 var jTags = doclet.SelectToken("tags", false);
-                if(jTags != null)
+                if (jTags != null)
                 {
                     var elements = jTags.Children<JToken>();
 
@@ -132,7 +132,7 @@ namespace SourceCodeGenerator.Parser
                     {
                         var jTagOriginalTitle = elements.FirstOrDefault(p => p.SelectToken("originalTitle", false).Value<string>().Equals("validvalue"));
 
-                        if(jTagOriginalTitle != null)
+                        if (jTagOriginalTitle != null)
                         {
                             var jTagOriginalTitleValue = jTagOriginalTitle.SelectToken("value");
                             if (jTagOriginalTitleValue != null)
@@ -198,19 +198,17 @@ namespace SourceCodeGenerator.Parser
                 parent.Children.Add(apiItem);
 
             JToken children = item.SelectToken("children", false);
-            if (children == null)
-                return;
+            if (children != null)
+                foreach (var child in children)
+                {
+                    var childName = ((JProperty)child).Name;
 
-            foreach (var child in children)
-            {
-                var childName = ((JProperty)child).Name;
+                    //Remove garbage without the name of the element
+                    if (string.IsNullOrWhiteSpace(childName))
+                        continue;
 
-                //Remove garbage without the name of the element
-                if (string.IsNullOrWhiteSpace(childName))
-                    continue;
-
-                CreateApiItem(childName, child.First, true, apiItem);
-            }
+                    CreateApiItem(childName, child.First, true, apiItem);
+                }
         }
 
         public List<string> GetValues(string values)

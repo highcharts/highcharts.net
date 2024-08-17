@@ -100,7 +100,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// An object consisting of definitions for the menu items in the contextmenu. Each key value pair has a `key` that is referenced in the[menuItems](#exporting.buttons.contextButton.menuItems) setting,and a `value`, which is an object with the following properties:- **onclick:** The click handler for the menu item- **text:** The text for the menu item- **textKey:** If internationalization is required, the key to a language  stringCustom text for the "exitFullScreen" can be set only in lang options(it is not a separate button).
 		/// </summary>
-		public Object MenuItemDefinitions { get; set; }
+		public List<ExportingMenuItemDefinitions> MenuItemDefinitions { get; set; }
 		 
 
 		/// <summary>
@@ -202,7 +202,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Filename != null) h.Add("filename",Filename);
 			if (FormAttributes != null) h.Add("formAttributes",FormAttributes);
 			if (LibURL != null) h.Add("libURL",LibURL);
-			if (MenuItemDefinitions != null) h.Add("menuItemDefinitions",MenuItemDefinitions);
+			if (MenuItemDefinitions != null) h.Add("menuItemDefinitions", HashifyList(highstock,MenuItemDefinitions));
 			if (PdfFont != null) h.Add("pdfFont",PdfFont.ToHashtable(highstock));
 			if (PrintMaxWidth != null) h.Add("printMaxWidth",PrintMaxWidth);
 			if (Scale != null) h.Add("scale",Scale);
