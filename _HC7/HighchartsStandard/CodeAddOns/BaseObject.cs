@@ -15,6 +15,18 @@ namespace Highsoft.Web.Mvc.Charts
         public Hashtable CustomFields { get; set; }
         abstract internal Hashtable ToHashtable(Highcharts highcharts);
 
+        internal Dictionary<string, Hashtable> HashifyDictionary(Highcharts highcharts, Dictionary<string, ExportingMenuItemDefinitions> dictionary)
+        {
+           var result = new Dictionary<string, Hashtable>();
+
+            foreach (var key in dictionary.Keys)
+            {
+                result.Add(key, dictionary[key].ToHashtable(highcharts));
+            }
+
+            return result;
+        }
+
         internal List<Hashtable> HashifyList(Highcharts highcharts, IEnumerable list)
         {
             List<Hashtable> result = new List<Hashtable>();
