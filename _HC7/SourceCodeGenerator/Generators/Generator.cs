@@ -25,6 +25,7 @@ namespace SourceCodeGenerator.Generators
         protected Hashtable _seriesMappings; // maps series names to series classes
         protected List<string> _lists; // a list of all List<T> properties - needs this to "Hashify" them, otherwise they will be serialized with capital letters
         protected List<string> _excludedProperties; // properties that do not need to be ported to the server-side wrapper
+        protected List<string> _dictionaries;
 
         protected bool IsNETStandard;
 
@@ -44,6 +45,7 @@ namespace SourceCodeGenerator.Generators
             _enumMappings = new Hashtable();
             _excludedProperties = new List<string>();
             _lists = new List<string>();
+            _dictionaries = new List<string>();
 
             JsonParser = jsonParser;
             PreviousVersionJsonParser = previousVersionJsonParser;
@@ -57,6 +59,7 @@ namespace SourceCodeGenerator.Generators
             InitEnumMappings();
             InitSeriesMappings();
             InitLists();
+            InitDictionaries();
         }
 
         public abstract void GenerateCode(bool isNETStandard);
@@ -292,6 +295,7 @@ namespace SourceCodeGenerator.Generators
         protected abstract void InitTypeMappings();
         protected abstract void InitPropertyTypeMappings();
         protected abstract void InitLists();
+        protected abstract void InitDictionaries();
         protected abstract void InitSeriesMappings();
         protected abstract void InitExcludedProperties();
         protected string FirstCharToUpper(string input)

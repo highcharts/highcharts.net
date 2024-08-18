@@ -588,9 +588,13 @@ namespace SourceCodeGenerator.Generators
         {
             string simplePropertyFormat = "if ({0} != null) h.Add(\"{2}\",{0});\n\t\t\t";
             string listPropertyFormat = "if ({0} != null) h.Add(\"{2}\", HashifyList(" + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
+            string dictionaryPropertyFormat = "if ({0} != null) h.Add(\"{2}\", HashifyDictionary(" + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
             string enumPropertyFormat = "if ({0} != {1}.Null) h.Add(\"{2}\", {3}.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
             string functionPropertyFormat = "if ({0} != null) {{ h.Add(\"{1}\",{0}); {4}.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
             string complexPropertyFormat = "if ({0} != null) h.Add(\"{1}\",{0}.ToHashtable(" + MAIN_FIELD_NAME + "));\n\t\t\t";
+
+            if(_dictionaries.Contains(child.FullName))
+                return String.Format(dictionaryPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             // fully qualified names that are collections
             if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
@@ -763,7 +767,7 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("attributes", "Object");
             _propertyTypeMappings.Add("defs.markers", "Object");
             _propertyTypeMappings.Add("drilldown.drillUpButton.theme", "Object");
-            _propertyTypeMappings.Add("exporting.menuItemDefinitions", "List<ExportingMenuItemDefinitions>");
+            _propertyTypeMappings.Add("exporting.menuItemDefinitions", "Dictionary<string,ExportingMenuItemDefinitions>");
             _propertyTypeMappings.Add("exporting.chartOptions", "Object");
             _propertyTypeMappings.Add("exporting.formAttributes", "Object");
             _propertyTypeMappings.Add("responsive.rules.chartOptions", "Object");
@@ -849,8 +853,13 @@ namespace SourceCodeGenerator.Generators
             _lists.Add("series.sankey.nodes");
             _lists.Add("exporting.buttons.contextButton.menuItems");
             _lists.Add("series.organization.nodes");
-            _lists.Add("exporting.menuItemDefinitions");
         }
+
+        protected override void InitDictionaries()
+        {
+            _dictionaries.Add("exporting.menuItemDefinitions");
+        }
+
         protected override void InitSeriesMappings()
         {
             _seriesMappings.Add("series<ad>", "AdSeries");

@@ -664,9 +664,13 @@ namespace SourceCodeGenerator.Generators
         {
             string simplePropertyFormat = "if ({0} != null) h.Add(\"{2}\",{0});\n\t\t\t";
             string listPropertyFormat = "if ({0} != null) h.Add(\"{2}\", HashifyList(" + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
+            string dictionaryPropertyFormat = "if ({0} != null) h.Add(\"{2}\", HashifyDictionary(" + MAIN_FIELD_NAME + ",{0}));\n\t\t\t";
             string enumPropertyFormat = "if ({0} != {1}.Null) h.Add(\"{2}\", {3}.FirstCharacterToLower({0}.ToString()));\n\t\t\t";
             string functionPropertyFormat = "if ({0} != null) {{ h.Add(\"{1}\",{0}); {4}.AddFunction(\"{3}\", {0}); }}  \n\t\t\t";
             string complexPropertyFormat = "if ({0} != null) h.Add(\"{1}\",{0}.ToHashtable(" + MAIN_FIELD_NAME + "));\n\t\t\t";
+
+            if (_dictionaries.Contains(child.FullName))
+                return String.Format(dictionaryPropertyFormat, propertyName, propertyName + "_DefaultValue", GetJSName(propertyName, child.Suffix));
 
             // fully qualified names that are collections
             if (_lists.Contains(child.Title) || _lists.Contains(child.FullName))
@@ -966,8 +970,13 @@ namespace SourceCodeGenerator.Generators
             _lists.Add("annotations.pitchfork.typeOptions.points");
             _lists.Add("annotations.tunnel.typeOptions.points");
             _lists.Add("annotations.verticalLine.typeOptions.points");
-            _lists.Add("menuItemDefinitions");
         }
+
+        protected override void InitDictionaries()
+        {
+            _dictionaries.Add("exporting.menuItemDefinitions");
+        }
+
         protected override void InitSeriesMappings()
         {
             _seriesMappings.Add("series.candlestick", "CandleStickSeries");
