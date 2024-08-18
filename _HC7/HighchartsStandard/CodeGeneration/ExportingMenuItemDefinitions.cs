@@ -45,7 +45,7 @@ namespace Highsoft.Web.Mvc.Charts
 
 		internal override Hashtable ToHashtable(Highcharts highcharts)
 		{
-			if (OnClick != null) { h.Add("onClick",OnClick); highcharts.AddFunction("onClick", OnClick); }  
+			if (OnClick != null) { h.Add("onclick",OnClick); highcharts.AddFunction("onclick", OnClick); }  
 			if (Separator != null) h.Add("separator",Separator);
 			if (Text != null) h.Add("text",Text);
 			if (TextKey != null) h.Add("textKey",TextKey);

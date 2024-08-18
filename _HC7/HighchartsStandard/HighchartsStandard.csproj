@@ -19,7 +19,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
     #11.4.6.4
-    Fix ExportingMenuItemDefinitions    
+    Fix ExportingMenuItemDefinitions, ExportingButtonsContextButton.MenuItems
 
     #11.4.6.3
     Fix GetJavascript and GetJavascriptFunction.
@@ -100,9 +100,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="CodeAddOns\MenuItem.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Update="HighchartsRenderer.cs" />
     <Compile Update="HtmlHelperExtensions.cs" />
   </ItemGroup>

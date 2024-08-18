@@ -12,7 +12,7 @@
     <PackageId>Highsoft.Highstock</PackageId>
     <PackageReleaseNotes>Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
      #11.4.6.4
-     Fix ExportingMenuItemDefinitions    
+     Fix ExportingMenuItemDefinitions, ExportingButtonsContextButton.MenuItems
 
      #11.4.6.3
      Every used object must be initialized.
@@ -110,9 +110,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="CodeAddOns\Crosshair.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="CodeAddOns\MenuItem.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="CodeAddOns\Shadow.cs">

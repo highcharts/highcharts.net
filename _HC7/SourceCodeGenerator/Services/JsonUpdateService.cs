@@ -359,7 +359,7 @@ namespace SourceCodeGenerator.Services
 
             ItemsToUpdate.Add("plotOptions.dumbbell.states.hover", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Extends, Value = "plotOptions.series.states.hover" } });
             ItemsToUpdate.Add("pointPlacement", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.Values, Value = "on" }, new UpdateInfo { Name = ApiPropertyName.Values, Value = "between" } });
-            ChildrenToAdd.Add("exporting.menuItemDefinitions", new List<ApiItem>() { new ApiItem { Title = "onClick", FullName = "exporting.menuItemDefinitions.onclick", ReturnType = "function" , IsParent = true }, new ApiItem { Title = "separator", FullName = "exporting.menuItemDefinitions.separator", ReturnType = "Boolean", IsParent = true }, new ApiItem { Title = "text", FullName = "exporting.menuItemDefinitions.text", ReturnType = "string", IsParent = true },  new ApiItem { Title = "textKey", FullName = "exporting.menuItemDefinitions.textKey", ReturnType = "string", IsParent = true } });
+            ChildrenToAdd.Add("exporting.menuItemDefinitions", new List<ApiItem>() { new ApiItem { Title = "onclick", FullName = "exporting.menuItemDefinitions.onclick", ReturnType = "function" , IsParent = true }, new ApiItem { Title = "separator", FullName = "exporting.menuItemDefinitions.separator", ReturnType = "Boolean", IsParent = true }, new ApiItem { Title = "text", FullName = "exporting.menuItemDefinitions.text", ReturnType = "string", IsParent = true },  new ApiItem { Title = "textKey", FullName = "exporting.menuItemDefinitions.textKey", ReturnType = "string", IsParent = true } });
         }
 
         public void Delete(ApiItem item)

@@ -64,7 +64,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// A collection of strings pointing to config options for the menuitems. The config options are defined in the`menuItemDefinitions` option.By default, there is the "View in full screen" and "Print" menuitems, plus one menu item for each of the available export types.
 		/// </summary>
-		public List<MenuItem> MenuItems { get; set; }
+		public List<string> MenuItems { get; set; }
 		 
 
 		/// <summary>
@@ -172,7 +172,7 @@ namespace Highsoft.Web.Mvc.Stocks
 			if (Enabled != null) h.Add("enabled",Enabled);
 			if (Height != null) h.Add("height",Height);
 			if (MenuClassName != null) h.Add("menuClassName",MenuClassName);
-			if (MenuItems != null) h.Add("menuItems", HashifyList(highstock,MenuItems));
+			if (MenuItems != null) h.Add("menuItems",MenuItems);
 			if (Onclick != null) { h.Add("onclick",Onclick); highstock.AddFunction("onclick", Onclick); }  
 			if (Symbol != null) h.Add("symbol",Symbol);
 			if (SymbolFill != null) h.Add("symbolFill",SymbolFill);

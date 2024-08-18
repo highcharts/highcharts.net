@@ -22,7 +22,7 @@ namespace Highsoft.Web.Mvc.Stocks
 		/// <summary>
 		/// 
 		/// </summary>
-		public string OnClick { get; set; }
+		public string Onclick { get; set; }
 		 
 
 		/// <summary>
@@ -45,7 +45,7 @@ namespace Highsoft.Web.Mvc.Stocks
 
 		internal override Hashtable ToHashtable(Highstock highstock)
 		{
-			if (OnClick != null) { h.Add("onClick",OnClick); highstock.AddFunction("onClick", OnClick); }  
+			if (Onclick != null) { h.Add("onclick",Onclick); highstock.AddFunction("onclick", Onclick); }  
 			if (Separator != null) h.Add("separator",Separator);
 			if (Text != null) h.Add("text",Text);
 			if (TextKey != null) h.Add("textKey",TextKey);

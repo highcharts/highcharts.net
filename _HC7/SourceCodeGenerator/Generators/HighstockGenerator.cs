@@ -809,7 +809,7 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("stack", "string");
             _propertyTypeMappings.Add("symbol", "string");
             _propertyTypeMappings.Add("trackBorderColor", "string");
-            _propertyTypeMappings.Add("menuItems", "List<MenuItem>");
+            _propertyTypeMappings.Add("menuItems", "List<string>");
             _propertyTypeMappings.Add("crosshairs", "List<Crosshair>");
             _propertyTypeMappings.Add("stops", "List<Stop>");
             _propertyTypeMappings.Add("renderTo", "string");
@@ -838,7 +838,7 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("attributes", "Object");
             _propertyTypeMappings.Add("defs.markers", "Object");
             _propertyTypeMappings.Add("drilldown.drillUpButton.theme", "Object");
-            _propertyTypeMappings.Add("exporting.menuItemDefinitions", "List<ExportingMenuItemDefinitions>");
+            _propertyTypeMappings.Add("exporting.menuItemDefinitions", "Dictionary<string,ExportingMenuItemDefinitions>");
             _propertyTypeMappings.Add("exporting.chartOptions", "Object");
             _propertyTypeMappings.Add("exporting.formAttributes", "Object");
             _propertyTypeMappings.Add("responsive.rules.chartOptions", "Object");
@@ -927,7 +927,7 @@ namespace SourceCodeGenerator.Generators
         protected override void InitLists()
         {
             _lists.Add("pane.background");
-            _lists.Add("MenuItem");
+            //_lists.Add("MenuItem");
             _lists.Add("Data");
             _lists.Add("Stops");
             _lists.Add("xAxis");
@@ -961,7 +961,7 @@ namespace SourceCodeGenerator.Generators
             _lists.Add("navigator.yAxis.plotBands");
             _lists.Add("navigator.yAxis.plotLines");
             _lists.Add("drilldown.series");
-            _lists.Add("exporting.buttons.contextButton.menuItems");
+            //_lists.Add("exporting.buttons.contextButton.menuItems");
             _lists.Add("annotations.crookedLine.typeOptions.points");
             _lists.Add("annotations.elliottWave.typeOptions.points");
             _lists.Add("annotations.fibonacci.typeOptions.points");

@@ -76,9 +76,6 @@
     <Content Include="CodeAddOns\IObjectList.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="CodeAddOns\MenuItem.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="CodeAddOns\Shadow.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

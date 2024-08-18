@@ -736,7 +736,7 @@ namespace SourceCodeGenerator.Generators
             _propertyTypeMappings.Add("symbol", "string");
             _propertyTypeMappings.Add("trackBorderColor", "string");
             ////_propertyTypeMappings.Add("background", "List<Background>");
-            _propertyTypeMappings.Add("menuItems", "List<MenuItem>");
+            _propertyTypeMappings.Add("menuItems", "List<string>");
             _propertyTypeMappings.Add("crosshairs", "List<Crosshair>");
             _propertyTypeMappings.Add("stops", "List<Stop>");
             //_propertyTypeMappings.Add("renderTo", "string");
@@ -822,7 +822,7 @@ namespace SourceCodeGenerator.Generators
         protected override void InitLists()
         {
             _lists.Add("pane.background");
-            _lists.Add("MenuItem");
+            //_lists.Add("MenuItem");
             //_lists.Add("Crosshair");
             _lists.Add("Data");
             _lists.Add("Stops");
@@ -851,7 +851,7 @@ namespace SourceCodeGenerator.Generators
             _lists.Add("series.treemap.levels");
             _lists.Add("series.sunburst.levels");
             _lists.Add("series.sankey.nodes");
-            _lists.Add("exporting.buttons.contextButton.menuItems");
+            //_lists.Add("exporting.buttons.contextButton.menuItems");
             _lists.Add("series.organization.nodes");
         }
 

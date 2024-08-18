@@ -16,6 +16,18 @@ namespace Highsoft.Web.Mvc.Stocks
 
         abstract internal Hashtable ToHashtable(Highstock highcharts);
 
+        internal Dictionary<string, Hashtable> HashifyDictionary(Highstock highcharts, Dictionary<string, ExportingMenuItemDefinitions> dictionary)
+        {
+            var result = new Dictionary<string, Hashtable>();
+
+            foreach (var key in dictionary.Keys)
+            {
+                result.Add(key, dictionary[key].ToHashtable(highcharts));
+            }
+
+            return result;
+        }
+
         internal List<Hashtable> HashifyList(Highstock highcharts, IEnumerable list)
         {
             List<Hashtable> result = new List<Hashtable>();
