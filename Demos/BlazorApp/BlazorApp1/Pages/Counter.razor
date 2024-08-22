@@ -1,0 +1,108 @@
+﻿@inject IJSRuntime JSRuntime
+@page "/counter"
+
+
+<h1>Counter</h1>
+<div id="chart"></div>
+
+<button class="btn btn-primary" id="buttonX" @onclick="ButtonX_onclick">Click me</button>
+
+
+@code
+{
+    private MarkupString result;
+
+    public async Task ButtonX_onclick()
+    {
+        List<double?> johnValues = new List<double?> { 5, 3, 4, 7, 2 };
+        List<double?> janeValues = new List<double?> { 2, -2, -3, 2, 1 };
+        List<double?> joeValues = new List<double?> { 3, 4, 4, -2, 5 };
+
+        List<AreaSeriesData> johnData = new List<AreaSeriesData>();
+        List<AreaSeriesData> janeData = new List<AreaSeriesData>();
+        List<AreaSeriesData> joeData = new List<AreaSeriesData>();
+
+        johnValues.ForEach(p => johnData.Add(new AreaSeriesData { Y = p }));
+        janeValues.ForEach(p => janeData.Add(new AreaSeriesData { Y = p }));
+        joeValues.ForEach(p => joeData.Add(new AreaSeriesData { Y = p }));
+
+        var chartOptions = new Highcharts
+            {
+                Exporting = new Exporting
+                {
+                    Buttons = new ExportingButtons
+                    {
+                        ContextButton = new ExportingButtonsContextButton
+                        {
+                            MenuItems = new List<string>
+            {
+                "AdditionalFeature",
+                "viewFullscreen" ,
+                "printChart" ,
+                "separator" ,
+                "downloadPNG" ,
+                "downloadJPEG" ,
+                "downloadPDF" ,
+                "downloadSVG"
+            }
+                        }
+
+                    },
+
+                    MenuItemDefinitions = new Dictionary<string, ExportingMenuItemDefinitions>
+        {
+            { "AdditionalFeature", new ExportingMenuItemDefinitions
+            {
+                Text = "Something extra",
+                OnClick = "return AdditinalFeatureOnClick.call(this, arguments);"
+            }
+            }
+
+        }
+                },
+                Title = new Title
+                {
+                    Text = "Area chart with negative values"
+                },
+                XAxis = new List<XAxis>
+{
+                new XAxis
+                {
+                    Categories =  new List<string> { "Apples", "Oranges", "Pears", "Grapes", "Bananas" },
+                    Labels = new XAxisLabels{
+                        Formatter = "return FormatterFunction.call(this, arguments);"
+                    }
+                }
+            },
+                Credits = new Credits
+                {
+                    Enabled = false
+                },
+                Series = new List<Series>
+{
+                new AreaSeries
+                {
+                    Name = "John",
+                    Data = johnData as List<AreaSeriesData>
+    },
+    new AreaSeries
+    {
+    Name = "Jane",
+    Data = janeData as List<AreaSeriesData>
+        },
+        new AreaSeries
+        {
+        Name = "Joe",
+        Data = joeData as List<AreaSeriesData>
+            }
+            }
+            };
+
+        chartOptions.ID = "chart";
+        var renderer = new HighchartsRenderer(chartOptions);
+
+        await JSRuntime.InvokeVoidAsync("FunctionX", (object)renderer.GetJsonOptionsForBlazor());
+    }
+}
+
+
