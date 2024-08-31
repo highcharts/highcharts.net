@@ -30,7 +30,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var series = new CmfSeries();
-            chart.Series.Add(series);
+            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             var result = renderer.RenderHtml();
 
@@ -52,7 +52,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var series = new CmfSeries();
-            chart.Series.Add(series);
+            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
 
             ((CmfSeries)chart.Series[0]).Accessibility.Description = description;

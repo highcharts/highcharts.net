@@ -27,10 +27,10 @@ namespace HC.Series
         [Fact]
         public void Test_IfSeriesRendersType_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var series = new VennSeries();
-            chart.Series.Add(series);
+            chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             var result = renderer.RenderHtml();
 
@@ -49,10 +49,10 @@ namespace HC.Series
         [InlineData("Description")]
         public void Test_IfAccessibilityDescriptionRenders_Correct(string description)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart); 
             var series = new VennSeries(); 
-            chart.Series.Add(series);
+            chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             
 
             ((VennSeries)chart.Series[0]).Accessibility.Description = description;
@@ -68,9 +68,9 @@ namespace HC.Series
         [InlineData(true)]
         public void Test_IfAccessibilityEnabledRenders_Correct(bool enabled)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series); 
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series); 
 
             ((VennSeries)chart.Series[0]).Accessibility.Enabled = enabled;
 
@@ -83,9 +83,9 @@ namespace HC.Series
         [InlineData(true)]
         public void Test_IfAccessibilityExposeAsGroupOnlyRenders_Correct(bool exposeAsGroupOnly)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Accessibility.ExposeAsGroupOnly = exposeAsGroupOnly;
 
@@ -99,9 +99,9 @@ namespace HC.Series
         [InlineData(true)]
         public void Test_IfAccessibilityKeyboardNavigationEnabledRenders_Correct(bool enabled)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Accessibility.KeyboardNavigation.Enabled = enabled;
 
@@ -116,9 +116,9 @@ namespace HC.Series
         [InlineData("%Y-%m-%d %H:%M:%S")]
         public void Test_IfAccessibilityPointDateFormatRenders_Correct(string format)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Accessibility.Point.DateFormat = format;
 
@@ -129,9 +129,9 @@ namespace HC.Series
         [InlineData("DateFormatterFunction")]
         public void Test_IfAccessibilityPointDateFormatterRenders_Correct(string function)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Accessibility.Point.DateFormatter = function;
 
@@ -142,9 +142,9 @@ namespace HC.Series
         [InlineData(false)]
         public void Test_IfAccessibilityPointDescribeNullSetOnFalseRenders_Correct(bool describeNull)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
 
 
@@ -157,9 +157,9 @@ namespace HC.Series
         [InlineData(true)]
         public void Test_IfAccessibilityPointDescribeNullSetOnTrueRenders_Correct(bool describeNull)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Accessibility.Point.DescribeNull = describeNull;
 
@@ -170,9 +170,9 @@ namespace HC.Series
         [InlineData("FormatterFunction")]
         public void Test_IfAccessibilityPointDescriptionFormatterRenders_Correct(string function)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Accessibility.Point.DescriptionFormatter = function;
 
@@ -183,9 +183,9 @@ namespace HC.Series
         [InlineData(3)]
         public void Test_IfAccessibilityPointValueDecimalsRenders_Correct(int decimals)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Accessibility.Point.ValueDecimals = decimals;
 
@@ -196,9 +196,9 @@ namespace HC.Series
         [InlineData("{Description}{separator}{value}")]
         public void Test_IfAccessibilityPointValueDescriptionFormatRenders_Correct(string format)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Accessibility.Point.ValueDescriptionFormat = format;
 
@@ -209,9 +209,9 @@ namespace HC.Series
         [InlineData("SomePrefix")]
         public void Test_IfAccessibilityPointValuePrefixRenders_Correct(string prefix)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Accessibility.Point.ValuePrefix = prefix;
 
@@ -222,9 +222,9 @@ namespace HC.Series
         [InlineData("SomeSuffix")]
         public void Test_IfAccessibilityPointValueSufixRenders_Correct(string suffix)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Accessibility.Point.ValueSuffix = suffix;
 
@@ -237,8 +237,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfAllowPointSelectRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var enabled = true;
 
             ((VennSeries)chart.Series[0]).AllowPointSelect = enabled;
@@ -249,8 +249,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfAllowPointSelectDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).AllowPointSelect = false;
 
@@ -262,9 +262,9 @@ namespace HC.Series
         [Fact]
         public void Test_IfAnimationEnabledRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
 
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var enabled = false;
 
             ((VennSeries)chart.Series[0]).AnimationBool = enabled;
@@ -275,9 +275,9 @@ namespace HC.Series
         [Fact]
         public void Test_IfAnimationEnabledDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
 
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var enabled = true;
 
             ((VennSeries)chart.Series[0]).AnimationBool = enabled;
@@ -289,9 +289,9 @@ namespace HC.Series
         [InlineData(1000)]
         public void Test_IfAnimationDurationRenders_Correct(int duration)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Animation.Duration = duration;
 
@@ -302,9 +302,9 @@ namespace HC.Series
         [InlineData(1000)]
         public void Test_IfAnimationDeferRenders_Correct(int defer)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Animation.Defer = defer;
 
@@ -315,9 +315,9 @@ namespace HC.Series
         [InlineData("easingFunctionName")]
         public void Test_IfAnimationEasingRenders_Correct(string easing)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Animation.Easing = easing;
 
@@ -330,10 +330,10 @@ namespace HC.Series
         [InlineData(250)]
         public void Test_IfAnimationLimitRenders_Correct(int limit)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart); 
             var series = new VennSeries(); 
-            chart.Series.Add(series);
+            chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).AnimationLimit = limit;
 
@@ -347,8 +347,8 @@ namespace HC.Series
         [InlineData("ClassName")]
         public void Test_IfClassNameRenders_Correct(string className)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).ClassName = className;
 
@@ -358,8 +358,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfClipRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = false;
 
             ((VennSeries)chart.Series[0]).Clip = value;
@@ -370,8 +370,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfClipDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = true;
 
             ((VennSeries)chart.Series[0]).Clip = value;
@@ -383,8 +383,8 @@ namespace HC.Series
         [InlineData("#ffffff")]
         public void Test_IfColorRenders_Correct(string color)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Color = color;
 
@@ -397,8 +397,8 @@ namespace HC.Series
         [InlineData("axisId")]
         public void Test_IfColorAxisRendersString_Correct(string id)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).ColorAxis = id;
 
@@ -410,8 +410,8 @@ namespace HC.Series
         [InlineData(1)]
         public void Test_IfColorAxisRendersNumber_Correct(int index)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).ColorAxisNumber = index;
 
@@ -423,8 +423,8 @@ namespace HC.Series
         [InlineData(false)]
         public void Test_IfColorAxisRendersBool_Correct(bool value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             ((VennSeries)chart.Series[0]).ColorAxisBool = value;
 
             Assert.Contains($"\"colorAxis\":{value.ToString().ToLower()}", renderer.RenderHtml());
@@ -434,8 +434,8 @@ namespace HC.Series
         [InlineData(1)]
         public void Test_IfColorIndexRenders_Correct(int value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).ColorIndex = value;
 
@@ -446,8 +446,8 @@ namespace HC.Series
         [InlineData("colorValue")]
         public void Test_IfColorKeyRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).ColorKey = value;
 
@@ -457,8 +457,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfCrispRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = false;
 
             ((VennSeries)chart.Series[0]).Crisp = value;
@@ -469,8 +469,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfCrispDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = true;
 
             ((VennSeries)chart.Series[0]).Crisp = value;
@@ -485,8 +485,8 @@ namespace HC.Series
         [InlineData(VennSeriesCursor.None)]
         public void Test_IfCursorRenders_Correct(VennSeriesCursor cursor)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Cursor = cursor;
 
@@ -497,8 +497,8 @@ namespace HC.Series
         [InlineData("dataKey1", "dataValue1")]
         public void Test_IfCustomRenders_Correct(string key1, string value1)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var extraData = new Hashtable() { { key1, value1 } };
 
             ((VennSeries)chart.Series[0]).Custom = extraData;
@@ -519,8 +519,8 @@ namespace HC.Series
         [InlineData(VennSeriesDashStyle.ShortDot)]
         public void Test_IfDashStyleRenders_Correct(VennSeriesDashStyle style)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var result = style.ToString();
             var replacement = result[0].ToString().ToLower();
             result = result.Remove(0, 1);
@@ -541,8 +541,8 @@ namespace HC.Series
         [InlineData(VennSeriesDataLabelsAlign.Right)]
         public void Test_IfDataLabelsAlignRenders_Correct(VennSeriesDataLabelsAlign align)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Align = align;
 
@@ -552,8 +552,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsAlignDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = VennSeriesDataLabelsAlign.Center;
 
             ((VennSeries)chart.Series[0]).DataLabels.Align = defaultValue;
@@ -564,8 +564,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsAllowOverlapRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = true;
 
             ((VennSeries)chart.Series[0]).DataLabels.AllowOverlap = value;
@@ -576,8 +576,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsAllowOverlapDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = false;
 
             ((VennSeries)chart.Series[0]).DataLabels.AllowOverlap = defaultValue;
@@ -592,8 +592,8 @@ namespace HC.Series
         [InlineData(500)]
         public void Test_IfDataLabelsAnimationDeferRenders_Correct(int value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Animation.Defer = value;
 
@@ -603,8 +603,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsAnimationDeferDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = -1;
 
             ((VennSeries)chart.Series[0]).DataLabels.Animation.Defer = defaultValue;
@@ -619,8 +619,8 @@ namespace HC.Series
         [InlineData("#ff00aa")]
         public void Test_IfDataLabelsBackgroundColorRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.BackgroundColor = value;
 
@@ -630,8 +630,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsBackgroundColorDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).DataLabels.BackgroundColor = defaultValue;
@@ -644,8 +644,8 @@ namespace HC.Series
         [InlineData("#ff00aa")]
         public void Test_IfDataLabelsBorderColorRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.BorderColor = value;
 
@@ -655,8 +655,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsBorderColorDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).DataLabels.BorderColor = defaultValue;
@@ -669,8 +669,8 @@ namespace HC.Series
         [InlineData(10)]
         public void Test_IfDataLabelsBorderRadiusRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.BorderRadius = value;
 
@@ -680,8 +680,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsBorderRadiusDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 0;
 
             ((VennSeries)chart.Series[0]).DataLabels.BorderRadius = defaultValue;
@@ -694,8 +694,8 @@ namespace HC.Series
         [InlineData(10)]
         public void Test_IfDataLabelsBorderWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.BorderWidth = value;
 
@@ -705,8 +705,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsBorderWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 0;
 
             ((VennSeries)chart.Series[0]).DataLabels.BorderWidth = defaultValue;
@@ -719,8 +719,8 @@ namespace HC.Series
         [InlineData("classB")]
         public void Test_IfDataLabelsClassNameRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.ClassName = value;
 
@@ -730,8 +730,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsClassNameDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).DataLabels.ClassName = defaultValue;
@@ -744,8 +744,8 @@ namespace HC.Series
         [InlineData("#ff00aa")]
         public void Test_IfDataLabelsColorRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Color = value;
 
@@ -755,8 +755,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsColorDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).DataLabels.Color = defaultValue;
@@ -767,8 +767,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsCropRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = false;
 
             ((VennSeries)chart.Series[0]).DataLabels.Crop = value;
@@ -779,8 +779,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsCropDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = true;
 
             ((VennSeries)chart.Series[0]).DataLabels.Crop = defaultValue;
@@ -791,8 +791,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsDeferBoolRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = false;
 
             ((VennSeries)chart.Series[0]).DataLabels.Defer = value;
@@ -803,8 +803,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsDeferBoolDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = true;
 
             ((VennSeries)chart.Series[0]).DataLabels.Defer = defaultValue;
@@ -815,8 +815,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsDeferRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = false;
 
             ((VennSeries)chart.Series[0]).DataLabels.Defer = value;
@@ -827,8 +827,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsEnabledBoolRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = true;
 
             ((VennSeries)chart.Series[0]).DataLabels.Enabled = value;
@@ -839,8 +839,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsEnabledBoolDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = false;
 
             ((VennSeries)chart.Series[0]).DataLabels.Enabled = defaultValue;
@@ -859,8 +859,8 @@ namespace HC.Series
         [InlineData("===")]
         public void Test_IfDataLabelsFilterOperatorRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Filter.Operator = value;
 
@@ -870,8 +870,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsFilterOperatorDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).DataLabels.Filter.Operator = defaultValue;
@@ -884,8 +884,8 @@ namespace HC.Series
         [InlineData("y")]
         public void Test_IfDataLabelsFilterPropertyRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Filter.Property = value;
 
@@ -895,8 +895,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsFilterPropertyDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).DataLabels.Filter.Property = defaultValue;
@@ -909,8 +909,8 @@ namespace HC.Series
         [InlineData(10)]
         public void Test_IfDataLabelsFilterValueRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Filter.Value = value;
 
@@ -920,8 +920,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsFilterValueDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).DataLabels.Filter.Value = defaultValue;
@@ -936,8 +936,8 @@ namespace HC.Series
         [InlineData("<{x},{y}>")]
         public void Test_IfDataLabelsFormatRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Format = value;
 
@@ -947,8 +947,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsFormatDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = "point.value";
 
             ((VennSeries)chart.Series[0]).DataLabels.Format = defaultValue;
@@ -960,8 +960,8 @@ namespace HC.Series
         [InlineData("SomeFunction()")]
         public void Test_IfDataLabelsFormatterRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Formatter = value;
 
@@ -971,8 +971,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsFormatterDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).DataLabels.Formatter = defaultValue;
@@ -985,8 +985,8 @@ namespace HC.Series
         [InlineData(false)]
         public void Test_IfDataLabelsInsideRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Inside = value;
 
@@ -996,8 +996,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsInsideDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).DataLabels.Inside = defaultValue;
@@ -1010,8 +1010,8 @@ namespace HC.Series
         [InlineData(false)]
         public void Test_IfDataLabelsNullFormatBoolRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.NullFormatBool = value;
 
@@ -1021,8 +1021,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsNullFormatBoolDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).DataLabels.NullFormatBool = defaultValue;
@@ -1035,8 +1035,8 @@ namespace HC.Series
         [InlineData("<{x},{y}>")]
         public void Test_IfDataLabelsNullFormatRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.NullFormat = value;
 
@@ -1046,8 +1046,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsNullFormatDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).DataLabels.NullFormat = defaultValue;
@@ -1059,8 +1059,8 @@ namespace HC.Series
         [InlineData("SomeFunction()")]
         public void Test_IfDataLabelsNullFormatterRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.NullFormatter = value;
 
@@ -1070,8 +1070,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsNullFormatterDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).DataLabels.NullFormatter = defaultValue;
@@ -1083,8 +1083,8 @@ namespace HC.Series
         [InlineData(VennSeriesDataLabelsOverflow.Allow)]
         public void Test_IfDataLabelsOverflowRenders_Correct(VennSeriesDataLabelsOverflow align)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Overflow = align;
 
@@ -1094,8 +1094,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsOverflowDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = VennSeriesDataLabelsOverflow.Justify;
 
             ((VennSeries)chart.Series[0]).DataLabels.Overflow = defaultValue;
@@ -1108,8 +1108,8 @@ namespace HC.Series
         [InlineData(50)]
         public void Test_IfDataLabelsPaddingRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Padding = value;
 
@@ -1119,8 +1119,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsPaddingDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 5;
 
             ((VennSeries)chart.Series[0]).DataLabels.Padding = defaultValue;
@@ -1133,8 +1133,8 @@ namespace HC.Series
         [InlineData(VennSeriesDataLabelsPosition.Right)]
         public void Test_IfDataLabelsPositionRenders_Correct(VennSeriesDataLabelsPosition align)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Position = align;
 
@@ -1144,8 +1144,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsPositionDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = VennSeriesDataLabelsPosition.Center;
 
             ((VennSeries)chart.Series[0]).DataLabels.Position = defaultValue;
@@ -1158,8 +1158,8 @@ namespace HC.Series
         [InlineData(180)]
         public void Test_IfDataLabelsRotationRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Rotation = value;
 
@@ -1169,8 +1169,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsRotationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 0;
 
             ((VennSeries)chart.Series[0]).DataLabels.Rotation = defaultValue;
@@ -1181,8 +1181,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsShadowBoolRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool value = true;
 
             ((VennSeries)chart.Series[0]).DataLabels.ShadowBool = value;
@@ -1195,8 +1195,8 @@ namespace HC.Series
         [InlineData("#ffccaa", 40, 30, 20, 10)]
         public void Test_IfDataLabelsShadowRenders_Correct(string color, int offsetX, int offsetY, double opacity, int width)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Shadow = new Shadow()
             {
@@ -1219,8 +1219,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsShadowBoolDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = false;
 
             ((VennSeries)chart.Series[0]).DataLabels.ShadowBool = defaultValue;
@@ -1236,8 +1236,8 @@ namespace HC.Series
         [InlineData("triangle-down")]
         public void Test_IfDataLabelsShapeRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Shape = value;
 
@@ -1247,8 +1247,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsShapeDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = "square";
 
             ((VennSeries)chart.Series[0]).DataLabels.Shape = defaultValue;
@@ -1276,8 +1276,8 @@ namespace HC.Series
         [InlineData("whiteSpace", "break-spaces")]
         public void Test_IfDataLabelsStyleStringRenders_Correct(string param1, string param1_value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "dataLabels", "style" };
             var style = new Hashtable();
             style.Add(param1, param1_value);
@@ -1295,8 +1295,8 @@ namespace HC.Series
         [InlineData("width", 50)]
         public void Test_IfDataLabelsStyleNumberRenders_Correct(string param1, double param1_value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "dataLabels", "style" };
             var style = new Hashtable();
             style.Add(param1, param1_value);
@@ -1314,8 +1314,8 @@ namespace HC.Series
         [InlineData(true)]
         public void Test_IfDataLabelsTextPathEnabledRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "dataLabels", "textPath" };
 
             ((VennSeries)chart.Series[0]).DataLabels.TextPath.Enabled = value;
@@ -1326,8 +1326,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsTextPathEnabledDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool? defaultValue = false;
 
             ((VennSeries)chart.Series[0]).DataLabels.TextPath.Enabled = defaultValue;
@@ -1340,8 +1340,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsUseHTMLRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = true;
 
             ((VennSeries)chart.Series[0]).DataLabels.UseHTML = value;
@@ -1352,8 +1352,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsUseHTMLDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = false;
 
             ((VennSeries)chart.Series[0]).DataLabels.UseHTML = defaultValue;
@@ -1366,8 +1366,8 @@ namespace HC.Series
         [InlineData(VennSeriesDataLabelsVerticalAlign.Top)]
         public void Test_IfDataLabelsVerticalAlignRenders_Correct(VennSeriesDataLabelsVerticalAlign align)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.VerticalAlign = align;
 
@@ -1377,8 +1377,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsVerticalAlignDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = VennSeriesDataLabelsVerticalAlign.Bottom;
 
             ((VennSeries)chart.Series[0]).DataLabels.VerticalAlign = defaultValue;
@@ -1391,8 +1391,8 @@ namespace HC.Series
         [InlineData(50)]
         public void Test_IfDataLabelsXRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.X = value;
 
@@ -1402,8 +1402,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsXDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 0;
 
             ((VennSeries)chart.Series[0]).DataLabels.X = defaultValue;
@@ -1416,8 +1416,8 @@ namespace HC.Series
         [InlineData(50)]
         public void Test_IfDataLabelsYRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.Y = value;
 
@@ -1427,8 +1427,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsYDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 0;
 
             ((VennSeries)chart.Series[0]).DataLabels.Y = defaultValue;
@@ -1441,8 +1441,8 @@ namespace HC.Series
         [InlineData(50)]
         public void Test_IfDataLabelsZRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).DataLabels.ZIndex = value;
 
@@ -1452,8 +1452,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfDataLabelsZDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 6;
 
             ((VennSeries)chart.Series[0]).DataLabels.ZIndex = defaultValue;
@@ -1467,8 +1467,8 @@ namespace HC.Series
         [InlineData("SomePlotOptionsDescription")]
         public void Test_IfDescriptionRenders_Correct(string description)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Description = description;
 
@@ -1478,8 +1478,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfEnableMouseTrackingRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = false;
 
             ((VennSeries)chart.Series[0]).EnableMouseTracking = value;
@@ -1490,8 +1490,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfEnableMouseTrackingDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = true;
 
             ((VennSeries)chart.Series[0]).EnableMouseTracking = value;
@@ -1505,8 +1505,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfEventsAfterAnimateRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "events" };
 
             ((VennSeries)chart.Series[0]).Events.AfterAnimate = value;
@@ -1517,8 +1517,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfEventsAfterAnimateDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Events.AfterAnimate = defaultValue;
@@ -1530,8 +1530,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfEventsCheckboxClickRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "events" };
 
             ((VennSeries)chart.Series[0]).Events.CheckboxClick = value;
@@ -1542,8 +1542,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfEventsCheckboxClickDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Events.CheckboxClick = defaultValue;
@@ -1555,8 +1555,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfEventsClickRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "events" };
 
             ((VennSeries)chart.Series[0]).Events.Click = value;
@@ -1567,8 +1567,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfEventsclickDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Events.Click = defaultValue;
@@ -1580,8 +1580,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfEventsHideRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "events" };
 
             ((VennSeries)chart.Series[0]).Events.Hide = value;
@@ -1592,8 +1592,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfEventsHideDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Events.Hide = defaultValue;
@@ -1605,8 +1605,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfEventsLegendItemClickRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "events" };
 
             ((VennSeries)chart.Series[0]).Events.LegendItemClick = value;
@@ -1617,8 +1617,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfEventsLegendItemClickDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Events.LegendItemClick = defaultValue;
@@ -1630,8 +1630,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfEventsMouseOutRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "events" };
 
             ((VennSeries)chart.Series[0]).Events.MouseOut = value;
@@ -1642,8 +1642,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfEventsMouseOutDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Events.MouseOut = defaultValue;
@@ -1655,8 +1655,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfEventsMouseOverRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "events" };
 
             ((VennSeries)chart.Series[0]).Events.MouseOver = value;
@@ -1667,8 +1667,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfEventsMouseOverDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Events.MouseOver = defaultValue;
@@ -1680,8 +1680,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfEventsShowRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "events" };
 
             ((VennSeries)chart.Series[0]).Events.Show = value;
@@ -1692,8 +1692,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfEventsShowDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Events.Show = defaultValue;
@@ -1708,8 +1708,8 @@ namespace HC.Series
         [InlineData(false)]
         public void Test_IfIncludeInDataExportFromAllRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).IncludeInDataExport = value;
 
@@ -1719,8 +1719,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfIncludeInDataExportFromAllDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool? value = null;
 
             ((VennSeries)chart.Series[0]).IncludeInDataExport = value;
@@ -1732,8 +1732,8 @@ namespace HC.Series
         [InlineData("name", "y", "dataLabels.style.visibility", "true")]
         public void Test_IfKeysRenders_Correct(string arg1, string arg2, string arg3, string arg4)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var value = new List<string> { arg1, arg2, arg3, arg4 };
 
             ((VennSeries)chart.Series[0]).Keys = value;
@@ -1745,8 +1745,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfKeysDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var value = new List<string>();
 
         //    ((VennSeries)chart.Series[0]).Keys = value;
@@ -1761,8 +1761,8 @@ namespace HC.Series
         ////missing VennSeriesLinecap.Butt ?
         //public void Test_IfLinecapRenders_Correct(VennSeriesLinecap value)
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
         //    ((VennSeries)chart.Series[0]).Linecap = value;
 
@@ -1772,8 +1772,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfLinecapDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = VennSeriesLinecap.Round;
 
         //    ((VennSeries)chart.Series[0]).Linecap = defaultValue;
@@ -1789,8 +1789,8 @@ namespace HC.Series
         //[InlineData("dot")]
         //public void Test_IfOnPointConnectorOptionsDashStyleRenders_Correct(string value)
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var pathToProperty = new List<string>() { "onPoint", "connectorOptions" };
 
         //    ((VennSeries)chart.Series[0]).OnPoint.ConnectorOptions.Dashstyle = value;
@@ -1801,8 +1801,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfOnPointConnectorOptionsDashStyleDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
 
         //    ((VennSeries)chart.Series[0]).DataLabels.Color = defaultValue;
@@ -1814,8 +1814,8 @@ namespace HC.Series
         [InlineData("red")]
         public void Test_IfOnPointConnectorOptionsStrokeRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "onPoint", "connectorOptions" };
 
             ((VennSeries)chart.Series[0]).OnPoint.ConnectorOptions.Stroke = value;
@@ -1826,8 +1826,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfOnPointConnectorOptionsStrokeDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).OnPoint.ConnectorOptions.Stroke = defaultValue;
@@ -1839,8 +1839,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfOnPointConnectorOptionsWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "onPoint", "connectorOptions" };
 
             ((VennSeries)chart.Series[0]).OnPoint.ConnectorOptions.Width = value;
@@ -1851,8 +1851,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfOnPointConnectorOptionsWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 1;
 
             ((VennSeries)chart.Series[0]).OnPoint.ConnectorOptions.Width = defaultValue;
@@ -1864,8 +1864,8 @@ namespace HC.Series
         [InlineData("pointId")]
         public void Test_IfOnPointIdRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "onPoint" };
 
             ((VennSeries)chart.Series[0]).OnPoint.Id = value;
@@ -1876,8 +1876,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfOnPointIdDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).OnPoint.Id = defaultValue;
@@ -1889,8 +1889,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfOnPointPositionOffsetXRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "onPoint", "position" };
 
             ((VennSeries)chart.Series[0]).OnPoint.Position.OffsetX = value;
@@ -1901,8 +1901,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfOnPointOffsetXDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).OnPoint.Position.OffsetX = defaultValue;
@@ -1914,8 +1914,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfOnPointPositionOffsetYRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "onPoint", "position" };
 
             ((VennSeries)chart.Series[0]).OnPoint.Position.OffsetY = value;
@@ -1926,8 +1926,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfOnPointOffsetYDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).OnPoint.Position.OffsetY = defaultValue;
@@ -1939,8 +1939,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfOnPointPositionXRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "onPoint", "position" };
 
             ((VennSeries)chart.Series[0]).OnPoint.Position.X = value;
@@ -1951,8 +1951,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfOnPointXDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).OnPoint.Position.X = defaultValue;
@@ -1964,8 +1964,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfOnPointPositionYRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "onPoint", "position" };
 
             ((VennSeries)chart.Series[0]).OnPoint.Position.Y = value;
@@ -1976,8 +1976,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfOnPointYDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).OnPoint.Position.Y = defaultValue;
@@ -1994,8 +1994,8 @@ namespace HC.Series
         [InlineData(100)]
         public void Test_IfOpacityRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Opacity = value;
 
@@ -2005,8 +2005,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfOpacityDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 1;
 
             ((VennSeries)chart.Series[0]).Opacity = defaultValue;
@@ -2020,8 +2020,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointEventsClickRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "point", "events" };
 
             ((VennSeries)chart.Series[0]).Point.Events.Click = value;
@@ -2032,8 +2032,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointEventsClickDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Point.Events.Click = defaultValue;
@@ -2045,8 +2045,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointEventsDragRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "point", "events" };
 
             ((VennSeries)chart.Series[0]).Point.Events.Drag = value;
@@ -2057,8 +2057,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointEventsDragDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Point.Events.Drag = defaultValue;
@@ -2070,8 +2070,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointEventsDragStartRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "point", "events" };
 
             ((VennSeries)chart.Series[0]).Point.Events.DragStart = value;
@@ -2082,8 +2082,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointEventsDragStartDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Point.Events.DragStart = defaultValue;
@@ -2095,8 +2095,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointEventsDropRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "point", "events" };
 
             ((VennSeries)chart.Series[0]).Point.Events.Drop = value;
@@ -2107,8 +2107,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointEventsDropDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Point.Events.Drop = defaultValue;
@@ -2120,8 +2120,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointEventsMouseOutRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "point", "events" };
 
             ((VennSeries)chart.Series[0]).Point.Events.MouseOut = value;
@@ -2132,8 +2132,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointEventsMouseOutDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Point.Events.MouseOut = defaultValue;
@@ -2145,8 +2145,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointEventsMouseOverRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "point", "events" };
 
             ((VennSeries)chart.Series[0]).Point.Events.MouseOver = value;
@@ -2157,8 +2157,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointEventsMouseOverDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Point.Events.MouseOver = defaultValue;
@@ -2170,8 +2170,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointEventsRemoveRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "point", "events" };
 
             ((VennSeries)chart.Series[0]).Point.Events.Remove = value;
@@ -2182,8 +2182,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointEventsRemoveDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Point.Events.Remove = defaultValue;
@@ -2195,8 +2195,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointEventsSelectRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "point", "events" };
 
             ((VennSeries)chart.Series[0]).Point.Events.Select = value;
@@ -2207,8 +2207,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointEventsSelectDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Point.Events.Select = defaultValue;
@@ -2220,8 +2220,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointEventsUnselectRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "point", "events" };
 
             ((VennSeries)chart.Series[0]).Point.Events.Unselect = value;
@@ -2232,8 +2232,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointEventsUnselectDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Point.Events.Unselect = defaultValue;
@@ -2245,8 +2245,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointEventsUpdateRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "point", "events" };
 
             ((VennSeries)chart.Series[0]).Point.Events.Update = value;
@@ -2257,8 +2257,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointEventsUpdateDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Point.Events.Update = defaultValue;
@@ -2272,8 +2272,8 @@ namespace HC.Series
         [InlineData("SomeFunction")]
         public void Test_IfPointDescriptionFormatterRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).PointDescriptionFormatter = value;
 
@@ -2283,8 +2283,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfPointDescriptionFormatterDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).PointDescriptionFormatter = defaultValue;
@@ -2295,8 +2295,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfRelativeXValueRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool value = true;
 
             ((VennSeries)chart.Series[0]).RelativeXValue = value;
@@ -2307,8 +2307,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfRelativeXValueDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = false;
 
             ((VennSeries)chart.Series[0]).RelativeXValue = defaultValue;
@@ -2319,8 +2319,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfSelectedRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool value = true;
 
             ((VennSeries)chart.Series[0]).Selected = value;
@@ -2331,8 +2331,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfSelectedDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = false;
 
             ((VennSeries)chart.Series[0]).Selected = defaultValue;
@@ -2343,8 +2343,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfShowCheckboxRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool value = true;
 
             ((VennSeries)chart.Series[0]).ShowCheckbox = value;
@@ -2355,8 +2355,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfShowCheckboxDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = false;
 
             ((VennSeries)chart.Series[0]).ShowCheckbox = defaultValue;
@@ -2369,8 +2369,8 @@ namespace HC.Series
         [InlineData(false)]
         public void Test_IfShowInLegendRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).ShowInLegend = value;
 
@@ -2380,8 +2380,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfShowInLegendDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).ShowInLegend = null;
 
@@ -2393,8 +2393,8 @@ namespace HC.Series
         [InlineData(false)]
         public void Test_IfSkipKeyboardNavigationRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).SkipKeyboardNavigation = value;
 
@@ -2404,8 +2404,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfSkipKeyboardNavigationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).SkipKeyboardNavigation = null;
 
@@ -2421,8 +2421,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfStatesHoverAnimationDurationRenders_Correct(int value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "hover", "animation" };
 
             ((VennSeries)chart.Series[0]).States.Hover.Animation.Duration = value;
@@ -2433,8 +2433,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesHoverAnimationDurationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = -1;
 
             ((VennSeries)chart.Series[0]).States.Hover.Animation.Duration = defaultValue;
@@ -2446,8 +2446,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesHoverEnabledRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "hover" };
             var value = false;
 
@@ -2461,8 +2461,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesHoverEnabledDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = true;
 
         //    ((VennSeries)chart.Series[0]).States.Hover.Enabled = defaultValue;
@@ -2477,8 +2477,8 @@ namespace HC.Series
         //[InlineData(5)]
         //public void Test_IfStatesHoverHaloAttributesRenders_Correct(int value)
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var pathToProperty = new List<string>() { "states", "hover", "halo" };
 
         //    ((VennSeries)chart.Series[0]).States.Hover.Halo.Attributes = value;
@@ -2489,8 +2489,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesHoverHaloAttributesDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = new Hashtable();
 
         //    ((VennSeries)chart.Series[0]).States.Hover.Animation.Duration = defaultValue;
@@ -2503,8 +2503,8 @@ namespace HC.Series
         [InlineData(0.5)]
         public void Test_IfStatesHoverHaloOpacityRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "hover", "halo" };
 
             ((VennSeries)chart.Series[0]).States.Hover.Halo.Opacity = value;
@@ -2517,8 +2517,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesHoverHaloOpacityDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = 0.25;
 
         //    ((VennSeries)chart.Series[0]).States.Hover.Halo.Opacity = defaultValue;
@@ -2533,8 +2533,8 @@ namespace HC.Series
         //[InlineData(0.5)]
         //public void Test_IfStatesHoverHaloSizeRenders_Correct(double value)
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var pathToProperty = new List<string>() { "states", "hover", "halo" };
 
         //    ((VennSeries)chart.Series[0]).States.Hover.Halo.Size = value;
@@ -2547,8 +2547,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesHoverHaloOpacityDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = 0.25;
 
         //    ((VennSeries)chart.Series[0]).States.Hover.Halo.Opacity = defaultValue;
@@ -2562,8 +2562,8 @@ namespace HC.Series
         [InlineData(2)]
         public void Test_IfStatesHoverLineWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "hover" };
 
             ((VennSeries)chart.Series[0]).States.Hover.LineWidth = value;
@@ -2574,8 +2574,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesHoverLineWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).States.Hover.LineWidth = defaultValue;
@@ -2587,8 +2587,8 @@ namespace HC.Series
         [InlineData(2)]
         public void Test_IfStatesHoverLineWidthPlusRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "hover" };
 
             ((VennSeries)chart.Series[0]).States.Hover.LineWidthPlus = value;
@@ -2601,8 +2601,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesHoverLineWidthPlusDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    double? defaultValue = 1;
 
         //    ((VennSeries)chart.Series[0]).States.Hover.LineWidthPlus = defaultValue;
@@ -2617,8 +2617,8 @@ namespace HC.Series
         [InlineData(false)]
         public void Test_IfStatesHoverMarkerEnabledRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.Enabled = value;
@@ -2629,8 +2629,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesHoverMarkerEnabledDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.Enabled = defaultValue;
@@ -2643,8 +2643,8 @@ namespace HC.Series
         [InlineData(10)]
         public void Test_IfStatesHoverMarkerEnabledThresholdRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.EnabledThreshold = value;
@@ -2655,8 +2655,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesHoverMarkerEnabledThresholdDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double defaultValue = 2;
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.EnabledThreshold = defaultValue;
@@ -2668,8 +2668,8 @@ namespace HC.Series
         [InlineData("red")]
         public void Test_IfStatesHoverMarkerFillColorRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.FillColor = value;
@@ -2684,8 +2684,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesHoverMarkerFillColorDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
 
         //    ((VennSeries)chart.Series[0]).States.Hover.Marker.FillColor = defaultValue;
@@ -2698,8 +2698,8 @@ namespace HC.Series
         [InlineData(10)]
         public void Test_IfStatesHoverMarkerHeightRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.Height = value;
@@ -2710,8 +2710,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesHoverMarkerHeightDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.Height = defaultValue;
@@ -2723,8 +2723,8 @@ namespace HC.Series
         [InlineData("#0044ff")]
         public void Test_IfStatesHoverMarkerLineColorRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.LineColor = value;
@@ -2736,8 +2736,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesHoverMarkerLineColorDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = "#ffffff";
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.LineColor = defaultValue;
@@ -2749,8 +2749,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfStatesHoverMarkerLineWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.LineWidth = value;
@@ -2762,8 +2762,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesHoverMarkerLineWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 0;
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.LineWidth = defaultValue;
@@ -2775,8 +2775,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfStatesHoverMarkerRadiusRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.Radius = value;
@@ -2788,8 +2788,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesHoverMarkerRadiusDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 4;
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.Radius = defaultValue;
@@ -2804,8 +2804,8 @@ namespace HC.Series
         [InlineData(1000)]
         public void Test_IfStatesHoverMarkerWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "hover", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.Width = value;
@@ -2816,8 +2816,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesHoverMarkerWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).States.Hover.Marker.Width = defaultValue;
@@ -2836,8 +2836,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfStatesInactiveAnimationDurationRenders_Correct(int value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "inactive", "animation" };
 
             ((VennSeries)chart.Series[0]).States.Inactive.Animation.Duration = value;
@@ -2848,8 +2848,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesInactiveAnimationDurationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = -1;
 
             ((VennSeries)chart.Series[0]).States.Inactive.Animation.Duration = defaultValue;
@@ -2861,8 +2861,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesInactiveEnabledRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "inactive" };
             var value = false;
 
@@ -2876,8 +2876,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesInactiveEnabledDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = true;
 
         //    ((VennSeries)chart.Series[0]).States.Inactive.Enabled = defaultValue;
@@ -2889,8 +2889,8 @@ namespace HC.Series
         [InlineData(0.5)]
         public void Test_IfStatesInactiveOpacityRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "inactive" };
 
             ((VennSeries)chart.Series[0]).States.Inactive.Opacity = value;
@@ -2902,8 +2902,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesInactiveOpacityDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = 0.2;
 
         //    ((VennSeries)chart.Series[0]).States.Inactive.Opacity = defaultValue;
@@ -2919,8 +2919,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfStatesNormalAnimationDurationRenders_Correct(int value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "normal", "animation" };
 
             ((VennSeries)chart.Series[0]).States.Normal.Animation.Duration = value;
@@ -2931,8 +2931,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesNormalAnimationDurationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = -1;
 
             ((VennSeries)chart.Series[0]).States.Normal.Animation.Duration = defaultValue;
@@ -2951,8 +2951,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfStatesSelectAnimationDurationRenders_Correct(int value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "select", "animation" };
 
             ((VennSeries)chart.Series[0]).States.Select.Animation.Duration = value;
@@ -2963,8 +2963,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesSelectAnimationDurationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = -1;
 
             ((VennSeries)chart.Series[0]).States.Select.Animation.Duration = defaultValue;
@@ -2976,8 +2976,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesSelectEnabledRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "select" };
             var value = false;
 
@@ -2991,8 +2991,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesSelectEnabledDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = true;
 
         //    ((VennSeries)chart.Series[0]).States.Select.Enabled = defaultValue;
@@ -3007,8 +3007,8 @@ namespace HC.Series
         //[InlineData(5)]
         //public void Test_IfStatesSelectHaloAttributesRenders_Correct(int value)
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var pathToProperty = new List<string>() { "states", "select", "halo" };
 
         //    ((VennSeries)chart.Series[0]).States.Select.Halo.Attributes = value;
@@ -3019,8 +3019,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesSelectHaloAttributesDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = new Hashtable();
 
         //    ((VennSeries)chart.Series[0]).States.Select.Animation.Duration = defaultValue;
@@ -3033,8 +3033,8 @@ namespace HC.Series
         [InlineData(0.5)]
         public void Test_IfStatesSelectHaloOpacityRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "select", "halo" };
 
             ((VennSeries)chart.Series[0]).States.Select.Halo.Opacity = value;
@@ -3047,8 +3047,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesSelectHaloOpacityDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = 0.25;
 
         //    ((VennSeries)chart.Series[0]).States.Select.Halo.Opacity = defaultValue;
@@ -3063,8 +3063,8 @@ namespace HC.Series
         //[InlineData(0.5)]
         //public void Test_IfStatesSelectHaloSizeRenders_Correct(double value)
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var pathToProperty = new List<string>() { "states", "select", "halo" };
 
         //    ((VennSeries)chart.Series[0]).States.Select.Halo.Size = value;
@@ -3077,8 +3077,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesSelectHaloOpacityDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = 0.25;
 
         //    ((VennSeries)chart.Series[0]).States.Select.Halo.Opacity = defaultValue;
@@ -3092,8 +3092,8 @@ namespace HC.Series
         [InlineData(2)]
         public void Test_IfStatesSelectLineWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "select" };
 
             ((VennSeries)chart.Series[0]).States.Select.LineWidth = value;
@@ -3104,8 +3104,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesSelectLineWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).States.Select.LineWidth = defaultValue;
@@ -3117,8 +3117,8 @@ namespace HC.Series
         [InlineData(2)]
         public void Test_IfStatesSelectLineWidthPlusRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "states", "select" };
 
             ((VennSeries)chart.Series[0]).States.Select.LineWidthPlus = value;
@@ -3131,8 +3131,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesSelectLineWidthPlusDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    double? defaultValue = 1;
 
         //    ((VennSeries)chart.Series[0]).States.Select.LineWidthPlus = defaultValue;
@@ -3147,8 +3147,8 @@ namespace HC.Series
         [InlineData(false)]
         public void Test_IfStatesSelectMarkerEnabledRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.Enabled = value;
@@ -3159,8 +3159,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesSelectMarkerEnabledDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.Enabled = defaultValue;
@@ -3173,8 +3173,8 @@ namespace HC.Series
         [InlineData(10)]
         public void Test_IfStatesSelectMarkerEnabledThresholdRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.EnabledThreshold = value;
@@ -3185,8 +3185,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesSelectMarkerEnabledThresholdDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double defaultValue = 2;
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.EnabledThreshold = defaultValue;
@@ -3198,8 +3198,8 @@ namespace HC.Series
         [InlineData("red")]
         public void Test_IfStatesSelectMarkerFillColorRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.FillColor = value;
@@ -3214,8 +3214,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfStatesSelectMarkerFillColorDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = string.Empty;
 
         //    ((VennSeries)chart.Series[0]).States.Select.Marker.FillColor = defaultValue;
@@ -3228,8 +3228,8 @@ namespace HC.Series
         [InlineData(10)]
         public void Test_IfStatesSelectMarkerHeightRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.Height = value;
@@ -3240,8 +3240,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesSelectMarkerHeightDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.Height = defaultValue;
@@ -3253,8 +3253,8 @@ namespace HC.Series
         [InlineData("#0044ff")]
         public void Test_IfStatesSelectMarkerLineColorRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.LineColor = value;
@@ -3266,8 +3266,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesSelectMarkerLineColorDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = "#ffffff";
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.LineColor = defaultValue;
@@ -3279,8 +3279,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfStatesSelectMarkerLineWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.LineWidth = value;
@@ -3292,8 +3292,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesSelectMarkerLineWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 0;
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.LineWidth = defaultValue;
@@ -3305,8 +3305,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfStatesSelectMarkerRadiusRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.Radius = value;
@@ -3318,8 +3318,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesSelectMarkerRadiusDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 4;
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.Radius = defaultValue;
@@ -3334,8 +3334,8 @@ namespace HC.Series
         [InlineData(1000)]
         public void Test_IfStatesSelectMarkerWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string> { "states", "select", "marker" };
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.Width = value;
@@ -3346,8 +3346,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStatesSelectMarkerWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).States.Select.Marker.Width = defaultValue;
@@ -3368,8 +3368,8 @@ namespace HC.Series
         [InlineData(VennSeriesStep.Right)]
         public void Test_IfStepRenders_Correct(VennSeriesStep value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).Step = value;
 
@@ -3379,8 +3379,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStepDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = VennSeriesStep.Null;
 
             ((VennSeries)chart.Series[0]).Step = defaultValue;
@@ -3391,8 +3391,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStickyTrackingRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool value = false;
 
             ((VennSeries)chart.Series[0]).StickyTracking = value;
@@ -3403,8 +3403,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfStickyTrackingDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = true;
 
             ((VennSeries)chart.Series[0]).StickyTracking = defaultValue;
@@ -3418,8 +3418,8 @@ namespace HC.Series
         [InlineData("Clustered points2: {point.clusterPointsAmount}")]
         public void Test_IfTooltipClusterFormatRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.ClusterFormat = value;
@@ -3430,8 +3430,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipClusterFormatDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = "Clustered points: {point.clusterPointsAmount}";
 
             ((VennSeries)chart.Series[0]).Tooltip.ClusterFormat = defaultValue;
@@ -3450,8 +3450,8 @@ namespace HC.Series
         [InlineData("year", "%Y")]
         public void Test_IfTooltipDateTimeLabelFormatsRenders_Correct(string param, string paramValue)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
             var value = new Hashtable();
             value.Add(param, paramValue);
@@ -3465,8 +3465,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfTooltipDateTimeLabelFormatsDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = new Hashtable();
 
         //    ((VennSeries)chart.Series[0]).Tooltip.DateTimeLabelFormats = defaultValue;
@@ -3478,8 +3478,8 @@ namespace HC.Series
         [InlineData(10)]
         public void Test_IfTooltipDistanceRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.Distance = value;
@@ -3490,8 +3490,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipDistanceDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 16;
 
             ((VennSeries)chart.Series[0]).Tooltip.Distance = defaultValue;
@@ -3502,8 +3502,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipFollowPointerRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
             var value = true;
 
@@ -3516,8 +3516,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfTooltipFollowPointerDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = false;
 
         //    ((VennSeries)chart.Series[0]).Tooltip.FollowPointer = defaultValue;
@@ -3528,8 +3528,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipFollowTouchMoveRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
             var value = false;
 
@@ -3542,8 +3542,8 @@ namespace HC.Series
         //[Fact]
         //public void Test_IfTooltipFollowTouchMoveDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
-        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
+        //    var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
         //    var defaultValue = true;
 
         //    ((VennSeries)chart.Series[0]).Tooltip.FollowTouchMove = defaultValue;
@@ -3555,8 +3555,8 @@ namespace HC.Series
         [InlineData("</table>")]
         public void Test_IfTooltipFooterFormatRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.FooterFormat = value;
@@ -3567,8 +3567,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipFooterFormatDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Tooltip.FooterFormat = defaultValue;
@@ -3580,8 +3580,8 @@ namespace HC.Series
         [InlineData("<table><tr><th colspan='2'>{point.key}</th></tr>")]
         public void Test_IfTooltipHeaderFormatRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.HeaderFormat = value;
@@ -3592,8 +3592,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipHeaderFormatDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Tooltip.HeaderFormat = defaultValue;
@@ -3605,8 +3605,8 @@ namespace HC.Series
         [InlineData("{series.name}: <b>{point.y}</b><br/>")]
         public void Test_IfTooltipNullFormatRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.NullFormat = value;
@@ -3617,8 +3617,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipNullFormatDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Tooltip.NullFormat = defaultValue;
@@ -3630,8 +3630,8 @@ namespace HC.Series
         [InlineData("SomeFunction()")]
         public void Test_IfTooltipNullFormatterRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.NullFormatter = value;
@@ -3642,8 +3642,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipNullFormatterDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Tooltip.NullFormatter = defaultValue;
@@ -3655,8 +3655,8 @@ namespace HC.Series
         [InlineData("{series.name}: <b>{point.y}</b><br/>")]
         public void Test_IfTooltipPointFormatRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.PointFormat = value;
@@ -3667,8 +3667,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipPointFormatDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Tooltip.PointFormat = defaultValue;
@@ -3680,8 +3680,8 @@ namespace HC.Series
         [InlineData("SomeFunction()")]
         public void Test_IfTooltipPointFormatterRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.PointFormatter = value;
@@ -3692,8 +3692,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipPointFormatterDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Tooltip.PointFormatter = defaultValue;
@@ -3705,8 +3705,8 @@ namespace HC.Series
         [InlineData(5)]
         public void Test_IfTooltipValueDecimalsRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.ValueDecimals = value;
@@ -3717,8 +3717,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipValueDecimalsDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             double? defaultValue = null;
 
             ((VennSeries)chart.Series[0]).Tooltip.ValueDecimals = defaultValue;
@@ -3730,8 +3730,8 @@ namespace HC.Series
         [InlineData("$")]
         public void Test_IfTooltipValuePrefixRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.ValuePrefix = value;
@@ -3742,8 +3742,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipValuePrefixDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Tooltip.ValuePrefix = defaultValue;
@@ -3755,8 +3755,8 @@ namespace HC.Series
         [InlineData(" USD")]
         public void Test_IfTooltipValueSuffixRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.ValueSuffix = value;
@@ -3767,8 +3767,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipValueSuffixDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Tooltip.ValueSuffix = defaultValue;
@@ -3780,8 +3780,8 @@ namespace HC.Series
         [InlineData("%Y-%m-%d")]
         public void Test_IfTooltipXDateFormatRenders_Correct(string value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var pathToProperty = new List<string>() { "tooltip" };
 
             ((VennSeries)chart.Series[0]).Tooltip.XDateFormat = value;
@@ -3792,8 +3792,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTooltipXDateFormatDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = string.Empty;
 
             ((VennSeries)chart.Series[0]).Tooltip.XDateFormat = defaultValue;
@@ -3807,8 +3807,8 @@ namespace HC.Series
         [InlineData(100)]
         public void Test_IfTurboThresholdTrackingRenders_Correct(double value)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             ((VennSeries)chart.Series[0]).TurboThreshold = value;
 
@@ -3818,8 +3818,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfTurboThresholdDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = 1000;
 
             ((VennSeries)chart.Series[0]).TurboThreshold = defaultValue;
@@ -3830,8 +3830,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfVisibleRenders_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             bool value = false;
 
             ((VennSeries)chart.Series[0]).Visible = value;
@@ -3842,8 +3842,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfVisibleDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = new VennSeries(); chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             var defaultValue = true;
 
             ((VennSeries)chart.Series[0]).Visible = defaultValue;

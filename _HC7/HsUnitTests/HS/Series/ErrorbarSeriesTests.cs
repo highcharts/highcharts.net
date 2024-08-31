@@ -34,7 +34,7 @@
 //            var chart = new Highstock();
 //            var renderer = new HighstockRenderer(chart);
 //            var series = new ErrorbarSeries();
-//            chart.Series.Add(series);
+//            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
 //            var result = renderer.RenderHtml();
 
@@ -56,7 +56,7 @@
 //            var chart = new Highstock();
 //            var renderer = new HighstockRenderer(chart);
 //            var series = new ErrorbarSeries();
-//            chart.Series.Add(series);
+//            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
 
 //            ((ErrorbarSeries)chart.Series[0]).Accessibility.Description = description;
@@ -328,7 +328,7 @@
 //            var chart = new Highstock();
 //            var renderer = new HighstockRenderer(chart);
 //            var series = new ErrorbarSeries();
-//            chart.Series.Add(series);
+//            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
 //            ((ErrorbarSeries)chart.Series[0]).AnimationLimit = limit;
 

@@ -26,7 +26,7 @@ namespace HC.Axes
         [InlineData(5, 2, 30, 5)]
         public void Test_IfXAxisBreaksRenders_Correct(double breakSize, double from, double to, double repeat)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
 
             chart.XAxis = new List<XAxis> { new XAxis { Breaks = new List<XAxisBreaks> { new XAxisBreaks() { BreakSize = breakSize, From = from, To = to, Repeat = repeat } } } };
@@ -45,7 +45,7 @@ namespace HC.Axes
         [InlineData(XAxisTitleAlign.High)]
         public void Test_IfXAxisTitleAlignRenders_Correct(XAxisTitleAlign titleAlign)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
 
             //chart.Chart = new Chart();
@@ -57,7 +57,7 @@ namespace HC.Axes
         [Fact]
         public void Test_IfXAxisTitleAlignDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = XAxisTitleAlign.Middle;
 

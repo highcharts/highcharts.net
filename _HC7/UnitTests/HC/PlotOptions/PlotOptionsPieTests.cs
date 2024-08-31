@@ -30,7 +30,7 @@ namespace HC.PlotOptions
         [InlineData("Description")]
         public void Test_IfAccessibilityDescriptionRenders_Correct(string description)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Pie.Accessibility.Description = description;
@@ -43,7 +43,7 @@ namespace HC.PlotOptions
         [InlineData(true)]
         public void Test_IfAccessibilityEnabledRenders_Correct(bool enabled)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -58,7 +58,7 @@ namespace HC.PlotOptions
         [InlineData(true)]
         public void Test_IfAccessibilityExposeAsGroupOnlyRenders_Correct(bool exposeAsGroupOnly)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -74,7 +74,7 @@ namespace HC.PlotOptions
         [InlineData(true)]
         public void Test_IfAccessibilityKeyboardNavigationEnabledRenders_Correct(bool enabled)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -91,7 +91,7 @@ namespace HC.PlotOptions
         [InlineData("%Y-%m-%d %H:%M:%S")]
         public void Test_IfAccessibilityPointDateFormatRenders_Correct(string format)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -104,7 +104,7 @@ namespace HC.PlotOptions
         [InlineData("DateFormatterFunction")]
         public void Test_IfAccessibilityPointDateFormatterRenders_Correct(string function)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -117,7 +117,7 @@ namespace HC.PlotOptions
         [InlineData(false)]
         public void Test_IfAccessibilityPointDescribeNullSetOnFalseRenders_Correct(bool describeNull)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -132,7 +132,7 @@ namespace HC.PlotOptions
         [InlineData(true)]
         public void Test_IfAccessibilityPointDescribeNullSetOnTrueRenders_Correct(bool describeNull)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -145,7 +145,7 @@ namespace HC.PlotOptions
         [InlineData("FormatterFunction")]
         public void Test_IfAccessibilityPointDescriptionFormatterRenders_Correct(string function)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -158,7 +158,7 @@ namespace HC.PlotOptions
         [InlineData(3)]
         public void Test_IfAccessibilityPointValueDecimalsRenders_Correct(int decimals)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -171,7 +171,7 @@ namespace HC.PlotOptions
         [InlineData("{Description}{separator}{value}")]
         public void Test_IfAccessibilityPointValueDescriptionFormatRenders_Correct(string format)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -184,7 +184,7 @@ namespace HC.PlotOptions
         [InlineData("SomePrefix")]
         public void Test_IfAccessibilityPointValuePrefixRenders_Correct(string prefix)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -197,7 +197,7 @@ namespace HC.PlotOptions
         [InlineData("SomeSuffix")]
         public void Test_IfAccessibilityPointValueSufixRenders_Correct(string suffix)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -212,7 +212,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfAllowPointSelectRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
             var enabled = true;
@@ -225,7 +225,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfAllowPointSelectDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -239,7 +239,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfAnimationEnabledRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
             var value = false;
@@ -252,7 +252,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfAnimationEnabledDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
             var value = true;
@@ -266,7 +266,7 @@ namespace HC.PlotOptions
         [InlineData(1000)]
         public void Test_IfAnimationDurationRenders_Correct(int duration)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -279,7 +279,7 @@ namespace HC.PlotOptions
         [InlineData(1000)]
         public void Test_IfAnimationDeferRenders_Correct(int defer)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -292,7 +292,7 @@ namespace HC.PlotOptions
         [InlineData("easingFunctionName")]
         public void Test_IfAnimationEasingRenders_Correct(string easing)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -307,7 +307,7 @@ namespace HC.PlotOptions
         [InlineData("ClassName")]
         public void Test_IfClassNameRenders_Correct(string className)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -319,7 +319,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfClipRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
             var value = true;
@@ -332,7 +332,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfClipDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
             var value = false;
@@ -346,7 +346,7 @@ namespace HC.PlotOptions
         [InlineData("#ffffff")]
         public void Test_IfColorRenders_Correct(string color)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -361,7 +361,7 @@ namespace HC.PlotOptions
         [InlineData("axisId")]
         public void Test_IfColorAxisRendersString_Correct(string id)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -375,7 +375,7 @@ namespace HC.PlotOptions
         [InlineData(1)]
         public void Test_IfColorAxisRendersNumber_Correct(int index)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -389,7 +389,7 @@ namespace HC.PlotOptions
         [InlineData(false)]
         public void Test_IfColorAxisRendersBool_Correct(bool value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
             chart.PlotOptions.Pie.ColorAxisBool = value;
@@ -401,7 +401,7 @@ namespace HC.PlotOptions
         [InlineData(1)]
         public void Test_IfColorIndexRenders_Correct(int value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -414,7 +414,7 @@ namespace HC.PlotOptions
         [InlineData("colorValue")]
         public void Test_IfColorKeyRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -426,7 +426,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfCrispRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
             var value = false;
@@ -439,7 +439,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfCrispDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
             var value = true;
@@ -456,7 +456,7 @@ namespace HC.PlotOptions
         [InlineData(PlotOptionsPieCursor.None)]
         public void Test_IfCursorRenders_Correct(PlotOptionsPieCursor cursor)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
 
@@ -469,7 +469,7 @@ namespace HC.PlotOptions
         [InlineData("dataKey1", "dataValue1")]
         public void Test_IfCustomRenders_Correct(string key1, string value1)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             chart.Chart.Type = _fixture.ChartType;
             var renderer = new HighchartsRenderer(chart);
             var extraData = new Hashtable() { { key1, value1 } };
@@ -496,7 +496,7 @@ namespace HC.PlotOptions
         [InlineData("SomePlotOptionsDescription")]
         public void Test_IfDescriptionRenders_Correct(string description)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Pie.Description = description;
@@ -507,7 +507,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfEnableMouseTrackingRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var value = false;
 
@@ -519,7 +519,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfEnableMouseTrackingDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
@@ -534,7 +534,7 @@ namespace HC.PlotOptions
         [InlineData("SomeFunction")]
         public void Test_IfEventsAfterAnimateRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "events" };
 
@@ -546,7 +546,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfEventsAfterAnimateDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -559,7 +559,7 @@ namespace HC.PlotOptions
         [InlineData("SomeFunction")]
         public void Test_IfEventsCheckboxClickRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "events" };
 
@@ -571,7 +571,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfEventsCheckboxClickDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -584,7 +584,7 @@ namespace HC.PlotOptions
         [InlineData("SomeFunction")]
         public void Test_IfEventsClickRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "events" };
 
@@ -596,7 +596,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfEventsclickDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -609,7 +609,7 @@ namespace HC.PlotOptions
         [InlineData("SomeFunction")]
         public void Test_IfEventsHideRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "events" };
 
@@ -621,7 +621,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfEventsHideDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -634,7 +634,7 @@ namespace HC.PlotOptions
         [InlineData("SomeFunction")]
         public void Test_IfEventsLegendItemClickRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "events" };
 
@@ -646,7 +646,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfEventsLegendItemClickDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -659,7 +659,7 @@ namespace HC.PlotOptions
         [InlineData("SomeFunction")]
         public void Test_IfEventsMouseOutRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "events" };
 
@@ -671,7 +671,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfEventsMouseOutDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -684,7 +684,7 @@ namespace HC.PlotOptions
         [InlineData("SomeFunction")]
         public void Test_IfEventsMouseOverRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "events" };
 
@@ -696,7 +696,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfEventsMouseOverDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -709,7 +709,7 @@ namespace HC.PlotOptions
         [InlineData("SomeFunction")]
         public void Test_IfEventsShowRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "events" };
 
@@ -721,7 +721,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfEventsShowDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -737,7 +737,7 @@ namespace HC.PlotOptions
         [InlineData(false)]
         public void Test_IfIncludeInDataExportFromAllRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Pie.IncludeInDataExport = value;
@@ -748,7 +748,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfIncludeInDataExportFromAllDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             bool? value = null;
 
@@ -761,7 +761,7 @@ namespace HC.PlotOptions
         [InlineData("name", "y", "dataLabels.style.visibility", "true")]
         public void Test_IfKeysRenders_Correct(string arg1, string arg2, string arg3, string arg4)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var value = new List<string> { arg1, arg2, arg3, arg4 };
 
@@ -773,7 +773,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfKeysDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var value = new List<string>();
 
@@ -789,7 +789,7 @@ namespace HC.PlotOptions
         //[InlineData("IdAnotherSeries")]
         //public void Test_IfLinkedToRenders_Correct(string value)
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
 
         //    chart.PlotOptions.Pie.LinkedTo = value;
@@ -800,7 +800,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfLinkedToDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    string defaultValue = String.Empty;
 
@@ -816,7 +816,7 @@ namespace HC.PlotOptions
         //[InlineData("dot")]
         //public void Test_IfOnPointConnectorOptionsDashStyleRenders_Correct(string value)
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var pathToProperty = new List<string>() { "plotOptions", "pie", "onPoint", "connectorOptions" };
 
@@ -828,7 +828,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfOnPointConnectorOptionsDashStyleDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = string.Empty;
 
@@ -841,7 +841,7 @@ namespace HC.PlotOptions
         [InlineData("red")]
         public void Test_IfOnPointConnectorOptionsStrokeRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "onPoint", "connectorOptions" };
 
@@ -853,7 +853,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfOnPointConnectorOptionsStrokeDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -866,7 +866,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfOnPointConnectorOptionsWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "onPoint", "connectorOptions" };
 
@@ -878,7 +878,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfOnPointConnectorOptionsWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 1;
 
@@ -891,7 +891,7 @@ namespace HC.PlotOptions
         [InlineData("pointId")]
         public void Test_IfOnPointIdRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "onPoint" };
 
@@ -903,7 +903,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfOnPointIdDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -916,7 +916,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfOnPointPositionOffsetXRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "onPoint", "position" };
 
@@ -928,7 +928,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfOnPointOffsetXDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
@@ -941,7 +941,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfOnPointPositionOffsetYRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "onPoint", "position" };
 
@@ -953,7 +953,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfOnPointOffsetYDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
@@ -966,7 +966,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfOnPointPositionXRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "onPoint", "position" };
 
@@ -978,7 +978,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfOnPointXDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
@@ -991,7 +991,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfOnPointPositionYRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "onPoint", "position" };
 
@@ -1003,7 +1003,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfOnPointYDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
@@ -1021,7 +1021,7 @@ namespace HC.PlotOptions
         [InlineData(100)]
         public void Test_IfOpacityRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Pie.Opacity = value;
@@ -1032,7 +1032,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfOpacityDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 1;
 
@@ -1045,7 +1045,7 @@ namespace HC.PlotOptions
         [InlineData("SomeFunction")]
         public void Test_IfPointDescriptionFormatterRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Pie.PointDescriptionFormatter = value;
@@ -1056,7 +1056,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfPointDescriptionFormatterDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = string.Empty;
 
@@ -1068,7 +1068,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfRelativeXValueRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             bool value = true;
 
@@ -1080,7 +1080,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfRelativeXValueDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
@@ -1092,7 +1092,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfSelectedRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             bool value = true;
 
@@ -1104,7 +1104,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfSelectedDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
@@ -1116,7 +1116,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfShadowBoolRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             bool value = true;
 
@@ -1130,7 +1130,7 @@ namespace HC.PlotOptions
         [InlineData("#ffccaa", 40, 30, 20, 10)]
         public void Test_IfShadowRenders_Correct(string color, int offsetX, int offsetY, double opacity, int width)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Pie.Shadow = new Shadow()
@@ -1154,7 +1154,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfShadowBoolDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
@@ -1166,7 +1166,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfShowCheckboxRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             bool value = true;
 
@@ -1178,7 +1178,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfShowCheckboxDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
@@ -1190,7 +1190,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfShowInLegendRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var value = true;
 
@@ -1202,7 +1202,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfShowInLegendDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
@@ -1216,7 +1216,7 @@ namespace HC.PlotOptions
         [InlineData(false)]
         public void Test_IfSkipKeyboardNavigationRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Pie.SkipKeyboardNavigation = value;
@@ -1227,7 +1227,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfSkipKeyboardNavigationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
 
             chart.PlotOptions.Pie.SkipKeyboardNavigation = null;
@@ -1244,7 +1244,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfStatesHoverAnimationDurationRenders_Correct(int value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "hover", "animation" };
 
@@ -1256,7 +1256,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesHoverAnimationDurationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = -1;
 
@@ -1269,7 +1269,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesHoverEnabledRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "hover" };
             var value = false;
@@ -1284,7 +1284,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesHoverEnabledDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = true;
 
@@ -1300,7 +1300,7 @@ namespace HC.PlotOptions
         //[InlineData(5)]
         //public void Test_IfStatesHoverHaloAttributesRenders_Correct(int value)
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "hover", "halo" };
 
@@ -1312,7 +1312,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesHoverHaloAttributesDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = new Hashtable();
 
@@ -1326,7 +1326,7 @@ namespace HC.PlotOptions
         [InlineData(0.5)]
         public void Test_IfStatesHoverHaloOpacityRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "hover", "halo" };
 
@@ -1340,7 +1340,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesHoverHaloOpacityDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = 0.25;
 
@@ -1356,7 +1356,7 @@ namespace HC.PlotOptions
         //[InlineData(0.5)]
         //public void Test_IfStatesHoverHaloSizeRenders_Correct(double value)
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "hover", "halo" };
 
@@ -1370,7 +1370,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesHoverHaloOpacityDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = 0.25;
 
@@ -1384,7 +1384,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesHoverLineWidthPlusDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    double? defaultValue = 1;
 
@@ -1402,7 +1402,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfStatesInactiveAnimationDurationRenders_Correct(int value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "inactive", "animation" };
 
@@ -1414,7 +1414,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesInactiveAnimationDurationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = -1;
 
@@ -1427,7 +1427,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesInactiveEnabledRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "inactive" };
             var value = false;
@@ -1442,7 +1442,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesInactiveEnabledDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = true;
 
@@ -1455,7 +1455,7 @@ namespace HC.PlotOptions
         [InlineData(0.5)]
         public void Test_IfStatesInactiveOpacityRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "inactive" };
 
@@ -1468,7 +1468,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesInactiveOpacityDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = 0.2;
 
@@ -1485,7 +1485,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfStatesNormalAnimationDurationRenders_Correct(int value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "normal", "animation" };
 
@@ -1497,7 +1497,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesNormalAnimationDurationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = -1;
 
@@ -1517,7 +1517,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfStatesSelectAnimationDurationRenders_Correct(int value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "select", "animation" };
 
@@ -1529,7 +1529,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesSelectAnimationDurationDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = -1;
 
@@ -1542,7 +1542,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesSelectEnabledRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "select" };
             var value = false;
@@ -1557,7 +1557,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesSelectEnabledDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = true;
 
@@ -1573,7 +1573,7 @@ namespace HC.PlotOptions
         //[InlineData(5)]
         //public void Test_IfStatesSelectHaloAttributesRenders_Correct(int value)
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "select", "halo" };
 
@@ -1585,7 +1585,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesSelectHaloAttributesDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = new Hashtable();
 
@@ -1599,7 +1599,7 @@ namespace HC.PlotOptions
         [InlineData(0.5)]
         public void Test_IfStatesSelectHaloOpacityRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "select", "halo" };
 
@@ -1613,7 +1613,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesSelectHaloOpacityDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = 0.25;
 
@@ -1629,7 +1629,7 @@ namespace HC.PlotOptions
         //[InlineData(0.5)]
         //public void Test_IfStatesSelectHaloSizeRenders_Correct(double value)
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "select", "halo" };
 
@@ -1643,7 +1643,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesSelectHaloOpacityDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = 0.25;
 
@@ -1658,7 +1658,7 @@ namespace HC.PlotOptions
         [InlineData(2)]
         public void Test_IfStatesSelectLineWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "select" };
 
@@ -1670,7 +1670,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesSelectLineWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
@@ -1683,7 +1683,7 @@ namespace HC.PlotOptions
         [InlineData(2)]
         public void Test_IfStatesSelectLineWidthPlusRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "states", "select" };
 
@@ -1697,7 +1697,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesSelectLineWidthPlusDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    double? defaultValue = 1;
 
@@ -1713,7 +1713,7 @@ namespace HC.PlotOptions
         [InlineData(false)]
         public void Test_IfStatesSelectMarkerEnabledRenders_Correct(bool value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "states", "select", "marker" };
 
@@ -1725,7 +1725,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesSelectMarkerEnabledDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             bool? defaultValue = null;
 
@@ -1739,7 +1739,7 @@ namespace HC.PlotOptions
         [InlineData(10)]
         public void Test_IfStatesSelectMarkerEnabledThresholdRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "states", "select", "marker" };
 
@@ -1752,7 +1752,7 @@ namespace HC.PlotOptions
         [InlineData("red")]
         public void Test_IfStatesSelectMarkerFillColorRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "states", "select", "marker" };
 
@@ -1768,7 +1768,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfStatesSelectMarkerFillColorDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = string.Empty;
 
@@ -1782,7 +1782,7 @@ namespace HC.PlotOptions
         [InlineData(10)]
         public void Test_IfStatesSelectMarkerHeightRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "states", "select", "marker" };
 
@@ -1794,7 +1794,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesSelectMarkerHeightDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
@@ -1807,7 +1807,7 @@ namespace HC.PlotOptions
         [InlineData("#0044ff")]
         public void Test_IfStatesSelectMarkerLineColorRenders_Correct(string value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "states", "select", "marker" };
 
@@ -1820,7 +1820,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesSelectMarkerLineColorDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = "#ffffff";
 
@@ -1833,7 +1833,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfStatesSelectMarkerLineWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "states", "select", "marker" };
 
@@ -1846,7 +1846,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesSelectMarkerLineWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 0;
 
@@ -1859,7 +1859,7 @@ namespace HC.PlotOptions
         [InlineData(5)]
         public void Test_IfStatesSelectMarkerRadiusRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "states", "select", "marker" };
 
@@ -1872,7 +1872,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesSelectMarkerRadiusDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = 4;
 
@@ -1888,7 +1888,7 @@ namespace HC.PlotOptions
         [InlineData(1000)]
         public void Test_IfStatesSelectMarkerWidthRenders_Correct(double value)
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string> { "plotOptions", "pie", "states", "select", "marker" };
 
@@ -1900,7 +1900,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStatesSelectMarkerWidthDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             double? defaultValue = null;
 
@@ -1918,7 +1918,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStickyTrackingRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             bool value = true;
 
@@ -1930,7 +1930,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfStickyTrackingDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = false;
 
@@ -1942,7 +1942,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfTooltipFollowPointerRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var pathToProperty = new List<string>() { "plotOptions", "pie", "tooltip" };
             var value = false;
@@ -1956,7 +1956,7 @@ namespace HC.PlotOptions
         //[Fact]
         //public void Test_IfTooltipFollowPointerDoesntRenderForDefault_Correct()
         //{
-        //    var chart = new Highcharts();
+        //    var chart = new Highcharts(); chart.Chart = new Chart();
         //    var renderer = new HighchartsRenderer(chart);
         //    var defaultValue = false;
 
@@ -1967,7 +1967,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfVisibleRenders_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             bool value = false;
 
@@ -1979,7 +1979,7 @@ namespace HC.PlotOptions
         [Fact]
         public void Test_IfVisibleDoesntRenderForDefault_Correct()
         {
-            var chart = new Highcharts();
+            var chart = new Highcharts(); chart.Chart = new Chart();
             var renderer = new HighchartsRenderer(chart);
             var defaultValue = true;
 

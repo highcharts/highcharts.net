@@ -29,8 +29,8 @@ namespace HC.Series
         [InlineData("SeriesId")]
         public void Test_IfIdRenders_Correct(string id)
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = _fixture.Series; chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = _fixture.Series; chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
 
             chart.Series[0].Id = id;
 
@@ -40,8 +40,8 @@ namespace HC.Series
         [Fact]
         public void Test_IfIdDoesntRendersForDefault_Correct()
         {
-            var chart = new Highcharts();
-            var renderer = new HighchartsRenderer(chart); var series = _fixture.Series; chart.Series.Add(series);
+            var chart = new Highcharts(); chart.Chart = new Chart();
+            var renderer = new HighchartsRenderer(chart); var series = _fixture.Series; chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
             string defaultValue = string.Empty;
 
             chart.Series[0].Id = defaultValue;
