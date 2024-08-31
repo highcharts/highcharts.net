@@ -53,7 +53,6 @@ legend.bubbleLegend.labels.align.Types:string
 legend.bubbleLegend.labels.formatter.Types:Highcharts.FormatterCallbackFunction.<Highcharts.LegendBubbleLegendFormatterContextObject>
 legend.bubbleLegend.ranges.value.ReturnType:
 legend.bubbleLegend.sizeBy.Types:string
-legend.labelFormatter.ReturnType:
 legend.verticalAlign.Types:string
 legend.width.Types:number
 navigation.buttonOptions.symbolFill.Types:Highcharts.ColorString

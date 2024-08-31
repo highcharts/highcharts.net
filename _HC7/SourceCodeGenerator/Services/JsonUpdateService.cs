@@ -274,7 +274,7 @@ namespace SourceCodeGenerator.Services
             ItemsToUpdate.Add("exporting.accessibility.enabled", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
             ItemsToUpdate.Add("legend.accessibility.enabled", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
             ItemsToUpdate.Add("legend.accessibility.keyboardNavigation.enabled", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
-            ItemsToUpdate.Add("legend.labelFormatter", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
+            //ItemsToUpdate.Add("legend.labelFormatter", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Boolean" } });
             ItemsToUpdate.Add("annotations.fibonacci.typeOptions.lineColors", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "Array.<string>" } });
 
             ItemsToUpdate.Add("annotations.crookedLine.controlPointOptions.events.drag", new List<UpdateInfo> { new UpdateInfo { Name = ApiPropertyName.ReturnType, Value = "function" } });
