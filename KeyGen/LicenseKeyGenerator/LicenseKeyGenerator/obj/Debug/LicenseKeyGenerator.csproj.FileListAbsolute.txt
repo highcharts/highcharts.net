@@ -1,7 +1,0 @@
-C:\Users\PC\Documents\highcharts.net\KeyGen\LicenseKeyGenerator\LicenseKeyGenerator\bin\Debug\LicenseKeyGenerator.exe.config
-C:\Users\PC\Documents\highcharts.net\KeyGen\LicenseKeyGenerator\LicenseKeyGenerator\bin\Debug\LicenseKeyGenerator.exe
-C:\Users\PC\Documents\highcharts.net\KeyGen\LicenseKeyGenerator\LicenseKeyGenerator\bin\Debug\LicenseKeyGenerator.pdb
-C:\Users\PC\Documents\highcharts.net\KeyGen\LicenseKeyGenerator\LicenseKeyGenerator\obj\Debug\LicenseKeyGenerator.csprojResolveAssemblyReference.cache
-C:\Users\PC\Documents\highcharts.net\KeyGen\LicenseKeyGenerator\LicenseKeyGenerator\obj\Debug\LicenseKeyGenerator.exe
-C:\Users\PC\Documents\highcharts.net\KeyGen\LicenseKeyGenerator\LicenseKeyGenerator\obj\Debug\LicenseKeyGenerator.pdb
-C:\Repositories\highcharts.net\KeyGen\LicenseKeyGenerator\LicenseKeyGenerator\bin\Debug\LicenseKeyGenerator.exe.config
