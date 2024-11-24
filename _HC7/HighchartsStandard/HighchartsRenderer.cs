@@ -69,7 +69,10 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrWhiteSpace(_chart.ID))
-                _chart.Chart = new Chart { RenderTo = _chart.ID };
+                if (_chart.Chart != null)
+                    _chart.Chart.RenderTo = _chart.ID;
+                else
+                    _chart.Chart = new Chart { RenderTo = _chart.ID };
 
             sb.Append("<script type='text/javascript'>");
             sb.Append($"var ChartOptions = {GetStartupOptions()};");
@@ -84,7 +87,10 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrWhiteSpace(_chart.ID))
-                _chart.Chart = new Chart { RenderTo = _chart.ID };
+                if (_chart.Chart != null)
+                    _chart.Chart.RenderTo = _chart.ID;
+                else
+                    _chart.Chart = new Chart { RenderTo = _chart.ID };
            
             sb.Append("<script type='text/javascript'>");
 
@@ -102,7 +108,10 @@ namespace Highsoft.Web.Mvc.Charts.Rendering
             StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrWhiteSpace(_chart.ID))
-                _chart.Chart = new Chart { RenderTo = _chart.ID };
+                if (_chart.Chart != null)
+                    _chart.Chart.RenderTo = _chart.ID;
+                else
+                    _chart.Chart = new Chart { RenderTo = _chart.ID };
 
             if (addContainer)
                 sb.AppendFormat("<div id='{0}' style='height:{1};min-width:{2};clear:both;margin: 0 auto;'></div>", _chart.Chart.RenderTo, GetChartHeight(), GetChartWidth());
