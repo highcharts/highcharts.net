@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests_MVC", "MVC_UnitTests\UnitTests_MVC.csproj", "{96093B49-7299-431A-A1AE-B1BDCB46B351}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceCodeGenerator", "SourceCodeGenerator\SourceCodeGenerator.csproj", "{9CE7B1B8-5411-4301-AE57-937F3FB8E7EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Demo_Standard", "MVC_Demo_Standard\MVC_Demo_Standard.csproj", "{CF9708E9-2657-45C6-8C9E-71C69734AEF5}"
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{96093B49-7299-431A-A1AE-B1BDCB46B351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96093B49-7299-431A-A1AE-B1BDCB46B351}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96093B49-7299-431A-A1AE-B1BDCB46B351}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96093B49-7299-431A-A1AE-B1BDCB46B351}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9CE7B1B8-5411-4301-AE57-937F3FB8E7EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9CE7B1B8-5411-4301-AE57-937F3FB8E7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CE7B1B8-5411-4301-AE57-937F3FB8E7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
