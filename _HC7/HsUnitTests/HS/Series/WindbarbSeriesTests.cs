@@ -30,7 +30,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var series = new WindbarbSeries();
-            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
+            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Stocks.Series>(); chart.Series.Add(series);
 
             var result = renderer.RenderHtml();
 
@@ -52,7 +52,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var series = new WindbarbSeries();
-            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
+            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Stocks.Series>(); chart.Series.Add(series);
 
 
             ((WindbarbSeries)chart.Series[0]).Accessibility.Description = description;
@@ -336,7 +336,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var series = new WindbarbSeries();
-            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
+            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Stocks.Series>(); chart.Series.Add(series);
 
             ((WindbarbSeries)chart.Series[0]).AnimationLimit = limit;
 
@@ -2759,45 +2759,6 @@ namespace HS.Series
             ((WindbarbSeries)chart.Series[0]).PointIntervalUnit = defaultValue;
 
             Assert.DoesNotContain($"pointIntervalUnit", renderer.RenderHtml());
-        }
-
-        [Theory]
-        [InlineData(PointPlacementEnum.Between)]
-        [InlineData(PointPlacementEnum.On)]
-        public void Test_IfPointPlacementEnumRenders_Correct(PointPlacementEnum value)
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
-
-            ((WindbarbSeries)chart.Series[0]).PointPlacement = new PointPlacement() { PointPlacementEnum = value };
-
-            Assert.Contains($"\"pointPlacement\":\"{chart.FirstCharacterToLower(value.ToString())}\"", renderer.RenderHtml());
-        }
-
-        [Theory]
-        [InlineData(0)]
-        [InlineData(-0.5)]
-        [InlineData(0.5)]
-        public void Test_IfPointPlacementNumberRenders_Correct(double value)
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
-
-            ((WindbarbSeries)chart.Series[0]).PointPlacement = new PointPlacement() { Value = value };
-
-            Assert.Contains($"\"pointPlacement\":{string.Format(new CultureInfo("en-us"), "{0:N1}", value)}", renderer.RenderHtml());
-        }
-
-        [Fact]
-        public void Test_IfPointPlacementDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highstock();
-            var renderer = new HighstockRenderer(chart); var series = new WindbarbSeries(); chart.Series.Add(series);
-            var defaultValue = PointPlacementEnum.Null;
-
-            ((WindbarbSeries)chart.Series[0]).PointPlacement = new PointPlacement() { PointPlacementEnum = defaultValue };
-
-            Assert.DoesNotContain($"pointPlacement", renderer.RenderHtml());
         }
 
         [Theory]

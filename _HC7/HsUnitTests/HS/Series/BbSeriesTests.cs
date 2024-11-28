@@ -30,7 +30,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var series = new BbSeries();
-            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
+            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Stocks.Series>(); chart.Series.Add(series);
 
             var result = renderer.RenderHtml();
 
@@ -52,7 +52,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var series = new BbSeries();
-            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
+            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Stocks.Series>(); chart.Series.Add(series);
 
 
             ((BbSeries)chart.Series[0]).Accessibility.Description = description;
@@ -336,7 +336,7 @@ namespace HS.Series
             var chart = new Highstock();
             var renderer = new HighstockRenderer(chart);
             var series = new BbSeries();
-            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
+            chart.Chart = new Chart();  chart.Series = new List<Highsoft.Web.Mvc.Stocks.Series>(); chart.Series.Add(series);
 
             ((BbSeries)chart.Series[0]).AnimationLimit = limit;
 
