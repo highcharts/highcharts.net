@@ -30,12 +30,12 @@ To use wrappers user needs to add information about location of highcharts.js an
 ```
 <script src="https://code.highcharts.com/highcharts.js"></script>
 ```
-, define aliases to namespaces like here: 
+define aliases to namespaces like here: 
 ```
 using Highsoft.Web.Mvc.Charts
 using Highsoft.Web.Mvc.Charts.Rendering;
 ```
-, define options by defining properties in Highcharts/Highstock object and at the end call a proper method from HighchartsRenderer/HighstockRenderer (depends on technology) - which generates and executes JS script on the client side.
+define options by defining properties in Highcharts/Highstock object and at the end call a proper method from HighchartsRenderer/HighstockRenderer (depends on technology) - which generates and executes JS script on the client side.
 JS script contains only properties which were defined earlier in Highcharts/Highstock object.
 
 ## Instructions for building, testing, etc.

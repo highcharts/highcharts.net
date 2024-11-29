@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Highstock</AssemblyName>
-    <Version>11.4.6.4</Version>
+    <Version>11.4.6.5</Version>
     <PackageProjectUrl>dotnet.highcharts.com</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>highcharts.snk</AssemblyOriginatorKeyFile>
@@ -11,6 +11,9 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageId>Highsoft.Highstock</PackageId>
     <PackageReleaseNotes>Updates in JS libraries affect the Highcharts.NET and Highstock.NET. Review first: https://www.highcharts.com/documentation/changelog
+     #11.4.6.5
+     Fix Chart
+
      #11.4.6.4
      Fix ExportingMenuItemDefinitions, ExportingButtonsContextButton.MenuItems
 
@@ -79,8 +82,8 @@
     <PackageIconUrl>http://dotnet.highcharts.com/Content/images/logo_png.png</PackageIconUrl>
     <PackageTags>chart charts charting graph graphs plot plots diagram diagrams highcharts highstock visualisation visualization data-visualisation data-visualization diagram line-chart 3d-chart finance web-forms mvc</PackageTags>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <AssemblyVersion>11.4.6.4</AssemblyVersion>
-    <FileVersion>11.4.6.4</FileVersion>
+    <AssemblyVersion>11.4.6.5</AssemblyVersion>
+    <FileVersion>11.4.6.5</FileVersion>
     <PackageLicenseUrl></PackageLicenseUrl>
   </PropertyGroup>
 
