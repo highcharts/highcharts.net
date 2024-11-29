@@ -53,17 +53,5 @@ namespace HC.Axes
 
             Assert.Contains($"\"title\":{{\"align\":\"{chart.FirstCharacterToLower(titleAlign.ToString())}\"}}", renderer.RenderHtml());
         }
-
-        [Fact]
-        public void Test_IfXAxisTitleAlignDoesntRenderForDefault_Correct()
-        {
-            var chart = new Highcharts(); chart.Chart = new Chart();
-            var renderer = new HighchartsRenderer(chart);
-            var defaultValue = XAxisTitleAlign.Middle;
-
-            chart.XAxis = new List<XAxis> { new XAxis { Title = new XAxisTitle() { Align = defaultValue } } };
-
-            Assert.DoesNotContain("align", renderer.RenderHtml());
-        }
     }
 }

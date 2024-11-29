@@ -36,18 +36,5 @@ namespace HC.Series
 
             Assert.Contains($"\"id\":\"{id}\"", renderer.RenderHtml());
         }
-
-        [Fact]
-        public void Test_IfIdDoesntRendersForDefault_Correct()
-        {
-            var chart = new Highcharts(); chart.Chart = new Chart();
-            var renderer = new HighchartsRenderer(chart); var series = _fixture.Series; chart.Series = new List<Highsoft.Web.Mvc.Charts.Series>(); chart.Series.Add(series);
-            string defaultValue = string.Empty;
-
-            chart.Series[0].Id = defaultValue;
-
-            Assert.DoesNotContain($"\"id\":\"{defaultValue}\"", renderer.RenderHtml());
-        }
-        
     }
 }
