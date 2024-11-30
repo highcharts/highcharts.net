@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_play_delay =
+[
+    [ "PlotOptionsGaugeSonificationDefaultInstrumentOptionsMappingPlayDelay", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_play_delay.html#a6c17c01273afc93dd7c758cab727b232", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_play_delay.html#acff26b09076f0eb49cd28dd151ffc9d8", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_play_delay.html#ac96d54444144b9b13719df86154677bd", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_play_delay.html#ac5839b91f608114c74bd33c969e9accb", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_play_delay.html#a9baf4bfd323ee219191d07bbc583ebe6", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_play_delay.html#af432e65b18312fe67c296cddcec92eb4", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_play_delay.html#a101aadec4e8a3c070461d76420a3ded7", null ]
+];

@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_sonification_default_speech_options_mapping_lowpass_frequency =
+[
+    [ "NetworkgraphSeriesSonificationDefaultSpeechOptionsMappingLowpassFrequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a8f97e84f6f5bd3c46c559c71cc170053", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a75c22767eedfb7aba53072e957eb4c23", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_sonification_default_speech_options_mapping_lowpass_frequency.html#af4f64a9075ff4f8ba377ee51b68288c7", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_sonification_default_speech_options_mapping_lowpass_frequency.html#ab42802fc014e0190c642d5cf30fddcd9", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a9caf50da810015981f5c7d66acccd635", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a4ddb0d64496ee19473c6f00058cb9a5b", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a374fc6be4a6da66c94238829ec8d8bee", null ]
+];

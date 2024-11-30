@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_tracks_mapping_tremolo =
+[
+    [ "PlotOptionsBellcurveSonificationTracksMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_tracks_mapping_tremolo.html#aba9dda0b8052949e17e4df54f8d8bcb1", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_tracks_mapping_tremolo.html#aa0f441e77a6a87d3fe2d188df0e64ab4", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_tracks_mapping_tremolo.html#ad41ff29ee9b3c0ffabc025bc28799866", null ]
+];

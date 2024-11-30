@@ -1,0 +1,9 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_speech_options_active_when =
+[
+    [ "PlotOptionsPriceenvelopesSonificationDefaultSpeechOptionsActiveWhen", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_speech_options_active_when.html#ab8ee64973a4f7c2253ee65168cfa0b2e", null ],
+    [ "CrossingDown", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_speech_options_active_when.html#a8734cbdd620dc33cf1c4f692e4826428", null ],
+    [ "CrossingUp", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_speech_options_active_when.html#ac2f12f9c360c467317cbc6fc55b3d467", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_speech_options_active_when.html#a08da2580b43c5782d6a1dee64253ff0a", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_speech_options_active_when.html#a91d47feb41f2377be3c79448683d6a02", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_speech_options_active_when.html#a6798006ba2632504bab397909dda8393", null ]
+];

@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_sonification_default_instrument_options_mapping_frequency =
+[
+    [ "HeatmapSeriesSonificationDefaultInstrumentOptionsMappingFrequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_sonification_default_instrument_options_mapping_frequency.html#a0745e1a070a01343787034324f09b952", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_sonification_default_instrument_options_mapping_frequency.html#a5fa87a511320eeea7eb8bcc0edc275cb", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_sonification_default_instrument_options_mapping_frequency.html#aa716450bf0819abb829d0ed0936e1c45", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_sonification_default_instrument_options_mapping_frequency.html#ac55ddc2e2101da7e99773310b5c0d5ba", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_sonification_default_instrument_options_mapping_frequency.html#a1e549a08df05906526b16500e4591213", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_sonification_default_instrument_options_mapping_frequency.html#a389f2c28ac1f0988b880318901cd7264", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_heatmap_series_sonification_default_instrument_options_mapping_frequency.html#aa0e620318fe7cc9c37ee989d7191e17c", null ]
+];

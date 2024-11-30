@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_labels_accessibility =
+[
+    [ "NavigationAnnotationsOptionsLabelsAccessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_labels_accessibility.html#a9f1be0ab9555a7a7d2f5469d5bce56bf", null ],
+    [ "Description", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_labels_accessibility.html#a729d77e1aa4f5b16b06b8a548d49ec9f", null ]
+];

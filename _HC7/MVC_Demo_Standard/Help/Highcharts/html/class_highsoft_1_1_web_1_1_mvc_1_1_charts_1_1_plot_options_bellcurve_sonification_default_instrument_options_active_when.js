@@ -1,0 +1,9 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_instrument_options_active_when =
+[
+    [ "PlotOptionsBellcurveSonificationDefaultInstrumentOptionsActiveWhen", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_instrument_options_active_when.html#abec547b123107ca0cef13da3ce821b14", null ],
+    [ "CrossingDown", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_instrument_options_active_when.html#a9609094395ad9819bb35259068576a97", null ],
+    [ "CrossingUp", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_instrument_options_active_when.html#af449f375a3bd1ef5e435cc657f917a1a", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_instrument_options_active_when.html#a2b1c7667e708887bd6fb6fb50ef47d38", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_instrument_options_active_when.html#a168adab4fd4cefead72fff4bd177b88f", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_instrument_options_active_when.html#ab46ed2d5a65534cf5ac9cbea3126fdcc", null ]
+];

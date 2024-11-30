@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_instrument_options_mapping_lowpass =
+[
+    [ "PolygonSeriesSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_instrument_options_mapping_lowpass.html#a0102f810f2245a14ff8ad66a03632311", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_instrument_options_mapping_lowpass.html#a85cc18a2945f48ae3f67f93f82176799", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_instrument_options_mapping_lowpass.html#a14b747a49947194040b8913b481fe2d0", null ]
+];

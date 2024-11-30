@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_columnpyramid_states_inactive_animation =
+[
+    [ "PlotOptionsColumnpyramidStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_columnpyramid_states_inactive_animation.html#ad207216f57cb747c29055be3229b573c", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_columnpyramid_states_inactive_animation.html#a8afd9754d6cf722a508a30c25c8b1622", null ]
+];

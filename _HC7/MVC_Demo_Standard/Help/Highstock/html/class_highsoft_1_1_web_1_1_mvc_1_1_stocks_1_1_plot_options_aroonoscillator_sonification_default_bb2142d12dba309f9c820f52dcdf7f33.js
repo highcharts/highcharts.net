@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_aroonoscillator_sonification_default_bb2142d12dba309f9c820f52dcdf7f33 =
+[
+    [ "PlotOptionsAroonoscillatorSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_aroonoscillator_sonification_default_bb2142d12dba309f9c820f52dcdf7f33.html#a8daf2bffed24f6691b462406b371f79a", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_aroonoscillator_sonification_default_bb2142d12dba309f9c820f52dcdf7f33.html#ab61f03fed5b538a7993638d2399ffb9b", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_aroonoscillator_sonification_default_bb2142d12dba309f9c820f52dcdf7f33.html#abbb98873f55c5cadb28e5d1900e4650c", null ]
+];

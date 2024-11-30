@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label_accessibility =
+[
+    [ "AnnotationsElliottWaveTypeOptionsPointsLabelAccessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label_accessibility.html#ada9e9b7f904b9fccae171e5f40dfb9ea", null ],
+    [ "Description", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label_accessibility.html#ade522450a6413f3bbeb0329435101aa9", null ]
+];

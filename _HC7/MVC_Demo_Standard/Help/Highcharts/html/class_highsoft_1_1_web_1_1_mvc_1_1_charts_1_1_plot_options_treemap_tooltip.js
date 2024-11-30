@@ -1,32 +1,6 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip =
 [
     [ "PlotOptionsTreemapTooltip", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#ac5c4d09166b97d3cb6505bd42a978529", null ],
-    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a97216bd3d64822036611832176298409", null ],
-    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a9779fb84dfbcc61f37525abc5f5a5171", null ],
-    [ "FollowPointer", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a6f5d68232275a6f7ead58ef7241b938d", null ],
-    [ "FollowPointer_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a9fe94c9d72d5ff0dfbec98e78ec8ebf8", null ],
-    [ "FollowTouchMove", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#ac0b04a49169c41532575149cdf6de482", null ],
-    [ "FollowTouchMove_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a42af311fd043fc404efeb5a2b18696ab", null ],
-    [ "FooterFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#aae6c8de7d07e56a3b0c948974b971862", null ],
-    [ "FooterFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a7031ebf504ac55e0207304bebb464be7", null ],
     [ "HeaderFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a23b297276c0bbc90ede993451eca13c7", null ],
-    [ "HeaderFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#adc0925eee7aefeeb329f7157d2b4e54b", null ],
-    [ "HideDelay", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a8c04fac9962732e05221ffa542c59c80", null ],
-    [ "HideDelay_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a2940ebb20cef7e09a4c3523f6baa5487", null ],
-    [ "Padding", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a5ba2ed0a867fe93e17329d4ebf159af2", null ],
-    [ "Padding_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a8b777ca167381b1729ed3c67d162df6e", null ],
-    [ "PointFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a753fba11b5ee3300729ee50eedb50f65", null ],
-    [ "PointFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#afc2a6b812f7dcafeae8329ed813d95e1", null ],
-    [ "PointFormatter", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a5c71496efc9bbb8ec96512e9be1f330c", null ],
-    [ "PointFormatter_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#af38b2c83ff24cdb382ef05908083db85", null ],
-    [ "Split", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#ac8f30cd6644fb6d5be9efc4afeaeb257", null ],
-    [ "Split_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a6132f2fa1bf0b0603b770ba6ca1e388a", null ],
-    [ "ValueDecimals", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a44795b22a305a60f82015f6fa57c7892", null ],
-    [ "ValueDecimals_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a2c227684b21f4c9c5c922f658faf934d", null ],
-    [ "ValuePrefix", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#ae4874fd387c9f55429075adb4f18b10e", null ],
-    [ "ValuePrefix_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a92f3850b2770734f11ca1d3de4aa8e4e", null ],
-    [ "ValueSuffix", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a3e4035c9931de4de662e462a3ba90a74", null ],
-    [ "ValueSuffix_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a1792d01818a2e316594617fea7a93c1f", null ],
-    [ "XDateFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a040211f725e511f4f6db0e02c076f4b2", null ],
-    [ "XDateFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a24c1d834f5f836bb5cb40f34492ebe6f", null ]
+    [ "PointFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treemap_tooltip.html#a753fba11b5ee3300729ee50eedb50f65", null ]
 ];

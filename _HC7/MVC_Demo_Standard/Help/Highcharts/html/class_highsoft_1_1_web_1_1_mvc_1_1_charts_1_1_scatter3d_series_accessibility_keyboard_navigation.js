@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_accessibility_keyboard_navigation =
+[
+    [ "Scatter3dSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_accessibility_keyboard_navigation.html#a0b74c3f0255ba5d9a351e5046d10f8e1", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_accessibility_keyboard_navigation.html#a6d839c6ed9269fc06709d787accc8d75", null ]
+];

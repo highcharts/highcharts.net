@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_default_speech_options_mapping_gap_between_notes =
+[
+    [ "TreegraphSeriesSonificationDefaultSpeechOptionsMappingGapBetweenNotes", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_default_speech_options_mapping_gap_between_notes.html#a9fa0338bfbc39fcaa2d049542e28d084", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_default_speech_options_mapping_gap_between_notes.html#a46ae170d9448b974ecc662a601ea656d", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_default_speech_options_mapping_gap_between_notes.html#a977f20855b1c32d65f013e4ffcd28cc5", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_default_speech_options_mapping_gap_between_notes.html#ac847ea581b8545de1b34deec7a1ac507", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_default_speech_options_mapping_gap_between_notes.html#abea6487d1de592c5549d43162cb8ff24", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_default_speech_options_mapping_gap_between_notes.html#aa01df18119ad5d5620270fe7b1bcf592", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_default_speech_options_mapping_gap_between_notes.html#a8222eed3e7c60a295600a450c8cb5564", null ]
+];

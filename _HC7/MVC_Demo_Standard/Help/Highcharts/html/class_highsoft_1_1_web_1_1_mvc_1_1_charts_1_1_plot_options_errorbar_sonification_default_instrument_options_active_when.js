@@ -1,0 +1,9 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_default_instrument_options_active_when =
+[
+    [ "PlotOptionsErrorbarSonificationDefaultInstrumentOptionsActiveWhen", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_default_instrument_options_active_when.html#a257bb04ef4463fb60a7a7daca9476d19", null ],
+    [ "CrossingDown", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_default_instrument_options_active_when.html#a5fc5edcbb0d8d5418fe27f1b0231520d", null ],
+    [ "CrossingUp", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_default_instrument_options_active_when.html#af4fad69ef7fbf5ef5a3282fbdeb2a37c", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_default_instrument_options_active_when.html#a9319125c0776ad544ecfd82ea040365b", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_default_instrument_options_active_when.html#adc7226d1910f7ad9782e5756cc09f08f", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_default_instrument_options_active_when.html#ac29f6e3d6ab091d5e5d9b02f1b0b2a15", null ]
+];

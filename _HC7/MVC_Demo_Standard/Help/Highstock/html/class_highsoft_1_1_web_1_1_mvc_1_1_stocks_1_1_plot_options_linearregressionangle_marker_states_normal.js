@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_marker_states_normal =
+[
+    [ "PlotOptionsLinearregressionangleMarkerStatesNormal", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_marker_states_normal.html#a8cf8cc8da69bf59d946b23831d7fa2c6", null ],
+    [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_marker_states_normal.html#ad8a244897400049622d233e4515fa2d5", null ],
+    [ "AnimationBool", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_marker_states_normal.html#abca17b0e2a686d60cf19d635179de3eb", null ]
+];

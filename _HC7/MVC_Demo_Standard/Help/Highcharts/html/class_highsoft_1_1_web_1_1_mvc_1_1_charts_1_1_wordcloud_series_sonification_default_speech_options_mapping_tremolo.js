@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_speech_options_mapping_tremolo =
+[
+    [ "WordcloudSeriesSonificationDefaultSpeechOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_speech_options_mapping_tremolo.html#a9d77b73b70cd4e94e7f4a8842bf29e2c", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_speech_options_mapping_tremolo.html#a2d9a8e079ca564bb4962b212f3aac650", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_speech_options_mapping_tremolo.html#a549aaefb23f071a914514994a6c979aa", null ]
+];

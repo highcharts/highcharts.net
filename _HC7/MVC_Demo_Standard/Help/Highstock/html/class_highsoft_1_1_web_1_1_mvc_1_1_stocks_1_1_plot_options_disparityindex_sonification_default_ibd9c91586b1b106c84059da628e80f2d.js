@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_ibd9c91586b1b106c84059da628e80f2d =
+[
+    [ "PlotOptionsDisparityindexSonificationDefaultInstrumentOptionsMappingVolume", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_ibd9c91586b1b106c84059da628e80f2d.html#a86bc9c029619b1845e56122695cd5f02", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_ibd9c91586b1b106c84059da628e80f2d.html#a23d378256c303c5fb1f2a3dc4321c899", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_ibd9c91586b1b106c84059da628e80f2d.html#aeca592033cd1e04e70b4774258107692", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_ibd9c91586b1b106c84059da628e80f2d.html#af1184c8f7205c1b1a1167da54996960f", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_ibd9c91586b1b106c84059da628e80f2d.html#a78587fcbb71e8fe0c61512577043c664", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_ibd9c91586b1b106c84059da628e80f2d.html#a0f749114da0c38cdd58ada1572f49874", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_ibd9c91586b1b106c84059da628e80f2d.html#a11fe849579903dbe6684eeed720ad67b", null ]
+];

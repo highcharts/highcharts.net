@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_crooked_lines_elliott3 =
+[
+    [ "StockToolsGuiDefinitionsCrookedLinesElliott3", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_crooked_lines_elliott3.html#a24605fc11dae799f2588d89c727fe52a", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_crooked_lines_elliott3.html#a9fea0bde8238fff07075e04864a68935", null ]
+];

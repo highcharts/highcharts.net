@@ -1,0 +1,9 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_sonification_default_instrument_options_active_when =
+[
+    [ "OrganizationSeriesSonificationDefaultInstrumentOptionsActiveWhen", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_sonification_default_instrument_options_active_when.html#a01ba4c27e123ad2f937ca82ed84919dc", null ],
+    [ "CrossingDown", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_sonification_default_instrument_options_active_when.html#a3edf6f970cffc124ef5d3c21a385d7d4", null ],
+    [ "CrossingUp", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_sonification_default_instrument_options_active_when.html#a104c907703eef121cd390fec2cd16092", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_sonification_default_instrument_options_active_when.html#a4bc308f8b561009dae4804376e54b27e", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_sonification_default_instrument_options_active_when.html#a6f4c6e9505452a66a4ed6aebec06a6fd", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_sonification_default_instrument_options_active_when.html#ad3cb49ffda48f9d6d8ff0e2b33b3425a", null ]
+];

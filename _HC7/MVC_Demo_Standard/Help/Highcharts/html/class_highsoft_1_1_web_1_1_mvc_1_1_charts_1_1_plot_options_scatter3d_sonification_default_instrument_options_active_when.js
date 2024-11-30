@@ -1,0 +1,9 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_default_instrument_options_active_when =
+[
+    [ "PlotOptionsScatter3dSonificationDefaultInstrumentOptionsActiveWhen", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_default_instrument_options_active_when.html#a9ccefc2bc0f48ad656d2bd0e4c61ab15", null ],
+    [ "CrossingDown", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_default_instrument_options_active_when.html#ab5c09eeea340ead0b098d0c62d30aac6", null ],
+    [ "CrossingUp", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_default_instrument_options_active_when.html#ac96e7fae4901a57456b9c4859fd224a5", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_default_instrument_options_active_when.html#a2dba128f9f0e55cbf406b81ee324e70d", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_default_instrument_options_active_when.html#a0a59a9babec3dccf78ead7d5a07b186b", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_default_instrument_options_active_when.html#ad49b077bdefe8c3ad3035aa91d68a1b2", null ]
+];

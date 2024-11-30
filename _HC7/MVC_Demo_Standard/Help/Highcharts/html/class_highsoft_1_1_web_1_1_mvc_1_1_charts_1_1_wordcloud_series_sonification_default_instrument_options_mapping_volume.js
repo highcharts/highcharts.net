@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_instrument_options_mapping_volume =
+[
+    [ "WordcloudSeriesSonificationDefaultInstrumentOptionsMappingVolume", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_instrument_options_mapping_volume.html#a0988f14dff928d83981d44141281d1a8", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_instrument_options_mapping_volume.html#a276fefdffe8a52907e7dad3048a22b9f", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_instrument_options_mapping_volume.html#ad9f2a131b52ae7bc414a76fd96fa8341", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_instrument_options_mapping_volume.html#a20b4afa8629564c83fafe0edb6f0b4ee", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_instrument_options_mapping_volume.html#a5dfb19b5a6b0dc8694eded36c5493bb1", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_instrument_options_mapping_volume.html#aab8a917b3f76b6ef00928b2a64c39395", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_default_instrument_options_mapping_volume.html#ae7ec5c0ded1f9bd99f8cc1c652cb7881", null ]
+];

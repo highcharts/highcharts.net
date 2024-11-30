@@ -1,0 +1,28 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary =
+[
+    [ "LangAccessibilitySeriesSummary", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#aea66c5f47c82d7a85a3c8e4faed4e165", null ],
+    [ "Bar", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#a6e11ce29951cab06449c2d57cf2903c3", null ],
+    [ "BarCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#a6b23a865c9d3657ab73bc953e34af6e6", null ],
+    [ "Boxplot", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#aecd4869cee605ed8c07ac6ed27f4b601", null ],
+    [ "BoxplotCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#ab29df80fc980a53aebafb46c55bb0501", null ],
+    [ "Bubble", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#a298bf541f13bd630d0a2e129ca3deb61", null ],
+    [ "BubbleCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#af9cdc3681205442e5bc3215df0cb6ebe", null ],
+    [ "Column", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#a76055b49ce9705896c0a38fa5e3821ef", null ],
+    [ "ColumnCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#a6041b4ef47247229573d843ff54fa0d3", null ],
+    [ "Default", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#acafa788b4a3145493a715df7b1c01c1b", null ],
+    [ "DefaultCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#a032863e66553858610f84b6a91f854d4", null ],
+    [ "Line", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#a772fb8ecd6116b36361b286b738a9a67", null ],
+    [ "LineCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#adbb2be805a394374c5f089a24d968c56", null ],
+    [ "Map", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#aaedf1bdb62e205cf168203edbb989b96", null ],
+    [ "Mapbubble", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#ae96b78c1c41942aa8fc769ba495e06a0", null ],
+    [ "MapbubbleCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#a8dfd734d32b8325b930f776fd34e06c3", null ],
+    [ "MapCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#af137d92a5053a26c0df388d3c8d507f2", null ],
+    [ "Mapline", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#aebbf50ea286dfa446fcefe8da16ac952", null ],
+    [ "MaplineCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#a03ab4184a06a3384d10b66905a4b2dbf", null ],
+    [ "Pie", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#ad9114d78daeec2eaefc98b1daa712027", null ],
+    [ "PieCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#ae626d7a142b9e6af4a727df52755b8ea", null ],
+    [ "Scatter", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#aa3186e586e817017050037e0f940b67f", null ],
+    [ "ScatterCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#aa13fc615d5d76202900cd78b0ac9a351", null ],
+    [ "Spline", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#aa06fd6a08be120111be9d93701deabc9", null ],
+    [ "SplineCombination", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility_series_summary.html#a2b33939fa79ebe6494179e2ea215f4e3", null ]
+];

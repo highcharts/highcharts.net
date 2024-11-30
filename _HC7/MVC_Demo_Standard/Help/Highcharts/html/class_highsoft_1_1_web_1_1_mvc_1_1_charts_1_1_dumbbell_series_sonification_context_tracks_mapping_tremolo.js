@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_context_tracks_mapping_tremolo =
+[
+    [ "DumbbellSeriesSonificationContextTracksMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_context_tracks_mapping_tremolo.html#a3a34b5905fa880e118eabcb62cc0f579", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_context_tracks_mapping_tremolo.html#a209b5ffda0943a2e0550c6aa6064e3b9", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_context_tracks_mapping_tremolo.html#ab7069340004069feea0858e8c4589e44", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_states_select_animation =
+[
+    [ "PlotOptionsNetworkgraphStatesSelectAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_states_select_animation.html#adef2f0f6245927841cfabc941ae503ac", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_states_select_animation.html#a2f6a60c42affea2f7e139b04fbf5413d", null ]
+];

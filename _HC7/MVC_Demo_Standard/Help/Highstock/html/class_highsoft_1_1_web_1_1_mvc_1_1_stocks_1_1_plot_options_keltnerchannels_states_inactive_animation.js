@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_states_inactive_animation =
+[
+    [ "PlotOptionsKeltnerchannelsStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_states_inactive_animation.html#a6d34835bc550e3b04a9055e9cd708c08", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_states_inactive_animation.html#ab5d9d33a4c0086a1fa8fe92cf89c2eb4", null ]
+];

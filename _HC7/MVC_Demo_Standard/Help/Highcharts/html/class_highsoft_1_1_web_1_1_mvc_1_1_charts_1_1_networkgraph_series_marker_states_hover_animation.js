@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_marker_states_hover_animation =
+[
+    [ "NetworkgraphSeriesMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_marker_states_hover_animation.html#a74847f5d24e65cc3598c611471dad53b", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_marker_states_hover_animation.html#a3d277ad8d7a3193a575548d1950413ba", null ]
+];

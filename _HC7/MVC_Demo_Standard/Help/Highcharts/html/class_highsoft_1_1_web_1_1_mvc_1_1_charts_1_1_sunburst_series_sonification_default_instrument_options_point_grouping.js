@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sunburst_series_sonification_default_instrument_options_point_grouping =
+[
+    [ "SunburstSeriesSonificationDefaultInstrumentOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sunburst_series_sonification_default_instrument_options_point_grouping.html#afccc45c69b591955dea9025daa1676bf", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sunburst_series_sonification_default_instrument_options_point_grouping.html#a09cf1e6449ec92ae19c4cf16d4f2d64f", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sunburst_series_sonification_default_instrument_options_point_grouping.html#add70ab10a82f17938976d0e2de37d3ed", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sunburst_series_sonification_default_instrument_options_point_grouping.html#aa5ca0d2e44dd3f2ed4e61b335bec6dda", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sunburst_series_sonification_default_instrument_options_point_grouping.html#a25ebd344c572d5c884ee846fab311abd", null ]
+];

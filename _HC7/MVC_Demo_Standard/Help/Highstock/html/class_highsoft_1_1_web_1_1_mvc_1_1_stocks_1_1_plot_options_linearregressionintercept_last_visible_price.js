@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_last_visible_price =
+[
+    [ "PlotOptionsLinearregressioninterceptLastVisiblePrice", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_last_visible_price.html#a09fbcf4e5e09df1522592aaba4bfb83c", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_last_visible_price.html#aef1f372f925cdf169a5edabc2b834c01", null ],
+    [ "Label", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_last_visible_price.html#a69fcde1eee2742068827086f3e1afd21", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass =
+[
+    [ "GaugeSeriesSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass.html#a52a823d71dca25e7e47f33a11ac177be", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass.html#aa02d5e66c0ff568056c078fcdc358d33", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass.html#ac5245e2b06ff9572812cfa1ea3df942a", null ]
+];

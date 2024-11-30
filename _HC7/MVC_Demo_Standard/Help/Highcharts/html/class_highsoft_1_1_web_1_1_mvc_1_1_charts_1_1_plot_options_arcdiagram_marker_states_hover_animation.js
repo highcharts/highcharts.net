@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_marker_states_hover_animation =
+[
+    [ "PlotOptionsArcdiagramMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_marker_states_hover_animation.html#a0d54799acac91e4a6e7fb269a193af32", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_marker_states_hover_animation.html#a10c2b505a426bded603dd0127c7774cc", null ]
+];

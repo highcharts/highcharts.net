@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_accessibility_keyboard_navigation =
+[
+    [ "PlotOptionsPivotpointsAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_accessibility_keyboard_navigation.html#aafe613d31b0db399179b419ba253b2e5", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_accessibility_keyboard_navigation.html#ab8126473bcc9b52122f49e98d0c951f2", null ]
+];

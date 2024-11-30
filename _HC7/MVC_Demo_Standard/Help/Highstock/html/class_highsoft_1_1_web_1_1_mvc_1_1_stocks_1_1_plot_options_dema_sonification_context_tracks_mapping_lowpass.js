@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dema_sonification_context_tracks_mapping_lowpass =
+[
+    [ "PlotOptionsDemaSonificationContextTracksMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dema_sonification_context_tracks_mapping_lowpass.html#a230f186e65040b8f201433003a004571", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dema_sonification_context_tracks_mapping_lowpass.html#afca2e59240fb0e7291b63a43e46505b4", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dema_sonification_context_tracks_mapping_lowpass.html#a3d5c673243ef4b56b5331259c1833390", null ]
+];

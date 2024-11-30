@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_type_change_type_candlestick =
+[
+    [ "StockToolsGuiDefinitionsTypeChangeTypeCandlestick", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_type_change_type_candlestick.html#a358598e149057acaf1ccbae7b4b3fd7f", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_type_change_type_candlestick.html#a27806db5721e121a19f8e012c8fb4112", null ]
+];

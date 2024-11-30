@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_sonification_default_speech_options_mapping_highpass =
+[
+    [ "Scatter3dSeriesSonificationDefaultSpeechOptionsMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_sonification_default_speech_options_mapping_highpass.html#aaad6cf747006fdce9748bdc2041115f7", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_sonification_default_speech_options_mapping_highpass.html#a1c24c9af016247430e49eededcfe13f6", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_scatter3d_series_sonification_default_speech_options_mapping_highpass.html#a0728dc43353826e5c962c9ab903d7864", null ]
+];

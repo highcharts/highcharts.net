@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_vwap_series_sonification_default_speech_options_mapping_lowpass_resonance =
+[
+    [ "VwapSeriesSonificationDefaultSpeechOptionsMappingLowpassResonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_vwap_series_sonification_default_speech_options_mapping_lowpass_resonance.html#a4ba8a482a74cb0736c16324d7dc9eea1", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_vwap_series_sonification_default_speech_options_mapping_lowpass_resonance.html#a7ec6c1afb4d8d4cd510e52a9126688f9", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_vwap_series_sonification_default_speech_options_mapping_lowpass_resonance.html#ab26c6b911bc3eebdeeeb3d60212a0949", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_vwap_series_sonification_default_speech_options_mapping_lowpass_resonance.html#acc6ef725c9d43d85319b93e185ea3e4d", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_vwap_series_sonification_default_speech_options_mapping_lowpass_resonance.html#acebd94eb974205c50fb810e85a905325", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_vwap_series_sonification_default_speech_options_mapping_lowpass_resonance.html#af88cd06a520b1b23d6719bd3cb9c5878", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_vwap_series_sonification_default_speech_options_mapping_lowpass_resonance.html#aac16729636529383b07a0042f1f8c2a6", null ]
+];

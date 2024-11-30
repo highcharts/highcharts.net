@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sankey_data_labels_format =
+[
+    [ "PlotOptionsSankeyDataLabelsFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sankey_data_labels_format.html#ac8ee9cc699cf51e536117c5fbadd2c3f", null ]
+];

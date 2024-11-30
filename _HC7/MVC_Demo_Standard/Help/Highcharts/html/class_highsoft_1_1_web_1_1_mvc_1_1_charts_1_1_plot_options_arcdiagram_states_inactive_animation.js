@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_states_inactive_animation =
+[
+    [ "PlotOptionsArcdiagramStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_states_inactive_animation.html#abdc07acfa9725923f0634a05c6223e0d", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_states_inactive_animation.html#a5e3147fcd9c4efa996477d444c0fc6de", null ]
+];

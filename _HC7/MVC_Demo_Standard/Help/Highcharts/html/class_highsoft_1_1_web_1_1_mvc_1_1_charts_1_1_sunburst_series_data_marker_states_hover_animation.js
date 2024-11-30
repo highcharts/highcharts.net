@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sunburst_series_data_marker_states_hover_animation =
+[
+    [ "SunburstSeriesDataMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sunburst_series_data_marker_states_hover_animation.html#af52357ca7e4945873415fbebd69a0998", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sunburst_series_data_marker_states_hover_animation.html#ad8b518c33e04d78cf90d22268322272d", null ]
+];

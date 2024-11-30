@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_default_speech_options_mapping_frequency =
+[
+    [ "PlotOptionsAreasplineSonificationDefaultSpeechOptionsMappingFrequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_default_speech_options_mapping_frequency.html#a122ae73e8db9badcfcbb966bd2748cd9", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_default_speech_options_mapping_frequency.html#a6a8599ca8e450735d0165e96539be3fb", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_default_speech_options_mapping_frequency.html#abf4acd922170782024d627595d45adb8", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_default_speech_options_mapping_frequency.html#ad9dbe7e75ac6a3ab2a39ba11b2260df4", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_default_speech_options_mapping_frequency.html#ad34c53fe0cdc50d3c3458f167d3b43ba", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_default_speech_options_mapping_frequency.html#a91314d3a6d387b26fcda1bd2288e937d", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_default_speech_options_mapping_frequency.html#a2f4a7895e29036c0e4d258598e8b3fc9", null ]
+];

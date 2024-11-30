@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_data_labels_animation =
+[
+    [ "PlotOptionsDependencywheelDataLabelsAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_data_labels_animation.html#af632a1778d06718ac5ec60092aa72356", null ],
+    [ "Defer", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_data_labels_animation.html#a895896227e60c28018a322c0c6949dc5", null ]
+];

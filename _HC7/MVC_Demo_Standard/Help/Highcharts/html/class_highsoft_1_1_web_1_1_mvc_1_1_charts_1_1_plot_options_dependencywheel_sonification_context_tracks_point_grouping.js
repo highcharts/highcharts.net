@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_context_tracks_point_grouping =
+[
+    [ "PlotOptionsDependencywheelSonificationContextTracksPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_context_tracks_point_grouping.html#a7a35234c53ae9a8aed2e0d26fa3cc4e8", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_context_tracks_point_grouping.html#a84136e38864d9856167b006f9b0e2aa2", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_context_tracks_point_grouping.html#a6e2cf2116f6d6f94d28e946eaadcbe81", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_context_tracks_point_grouping.html#ae1a8be6abb28de043a31bf013057962c", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_context_tracks_point_grouping.html#a6cd52641ed3502c72187219c769f6f49", null ]
+];

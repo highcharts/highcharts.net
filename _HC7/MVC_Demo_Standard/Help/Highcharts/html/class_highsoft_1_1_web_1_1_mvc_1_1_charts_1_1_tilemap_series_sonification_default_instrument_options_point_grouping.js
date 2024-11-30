@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_tilemap_series_sonification_default_instrument_options_point_grouping =
+[
+    [ "TilemapSeriesSonificationDefaultInstrumentOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_tilemap_series_sonification_default_instrument_options_point_grouping.html#ac8e61987227b73bcae8e282703c4b9f1", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_tilemap_series_sonification_default_instrument_options_point_grouping.html#a1a1cc1e8e0fe7444cc09fe708f3760db", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_tilemap_series_sonification_default_instrument_options_point_grouping.html#aebb0a0b2cc61e1a99d2fff2ccd72734a", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_tilemap_series_sonification_default_instrument_options_point_grouping.html#a99afb585ea973ff67b2253813ac32e1a", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_tilemap_series_sonification_default_instrument_options_point_grouping.html#afe2f1d1edc39c03be26bc8db5dd045ef", null ]
+];

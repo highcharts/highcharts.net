@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_xrange_sonification_context_tracks_mapping_tremolo =
+[
+    [ "PlotOptionsXrangeSonificationContextTracksMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_xrange_sonification_context_tracks_mapping_tremolo.html#ac1d9aa2ae9a20aa31ce1c533f7cb8c2c", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_xrange_sonification_context_tracks_mapping_tremolo.html#ac421b7ce1a6b4b50a58f9d8a73e129c9", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_xrange_sonification_context_tracks_mapping_tremolo.html#a6b9b680a4034581b3ea66c11db6c9fc6", null ]
+];

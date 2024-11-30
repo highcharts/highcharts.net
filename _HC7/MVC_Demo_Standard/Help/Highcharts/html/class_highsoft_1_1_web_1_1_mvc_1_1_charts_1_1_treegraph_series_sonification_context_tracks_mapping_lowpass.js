@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_context_tracks_mapping_lowpass =
+[
+    [ "TreegraphSeriesSonificationContextTracksMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_context_tracks_mapping_lowpass.html#a6077a3e89aa3b9c391b97c6e195fc0c1", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_context_tracks_mapping_lowpass.html#aff200c7513cbc0bcb3b73ba774992b60", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_sonification_context_tracks_mapping_lowpass.html#af13e7792016b56473bb2c4c5ee60aba6", null ]
+];

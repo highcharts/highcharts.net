@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_chaikin_marker_states_hover_animation =
+[
+    [ "PlotOptionsChaikinMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_chaikin_marker_states_hover_animation.html#a9becc8ee2fa26bddeac746a89242aa2e", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_chaikin_marker_states_hover_animation.html#a7752c0b9f9ba2942a82bd103dfed0838", null ]
+];

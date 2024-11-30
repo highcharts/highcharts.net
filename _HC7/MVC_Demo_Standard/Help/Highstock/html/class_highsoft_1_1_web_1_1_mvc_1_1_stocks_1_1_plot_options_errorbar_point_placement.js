@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_errorbar_point_placement =
-[
-    [ "PlotOptionsErrorbarPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_errorbar_point_placement.html#a90d31eceba68d739f43383bffe520f4a", null ]
-];

@@ -1,0 +1,28 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label =
+[
+    [ "AnnotationsElliottWaveTypeOptionsPointsLabel", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a9ef182e4e7bf24d94a2763c40573b46d", null ],
+    [ "Accessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a13b44d7e123a7877dddcb09d03518d5f", null ],
+    [ "Align", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a8c6735715d61e36dc80dee9dc8fd0288", null ],
+    [ "AllowOverlap", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a7e173e8b0aa8a2d41d909c230753616a", null ],
+    [ "BackgroundColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a69693754fdbb9776f1bfcde476aa3201", null ],
+    [ "BorderColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a9488096125b945079b5856c0c2ec88cf", null ],
+    [ "BorderRadius", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a08e7bbc51cdf91dd8265f860242eb7a6", null ],
+    [ "BorderWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a746d7b6103730595531af529ddff63fe", null ],
+    [ "ClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#ae90316e43b54c4f6a814ab59d8cad30d", null ],
+    [ "Crop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#ace876455f5766215f8389717fe5409ae", null ],
+    [ "Distance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a0ba486c817f73fe0ef970a41c3273ac7", null ],
+    [ "Format", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#ace76907cc2582b26eb1cc9a9cc91e58d", null ],
+    [ "Formatter", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a4c5f67fd61263f7f494075535f02bcdf", null ],
+    [ "IncludeInDataExport", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#ae2762049a409c3dcb2f5d8112305b572", null ],
+    [ "Overflow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a0bab59fd58886a532bdffad469f37cd0", null ],
+    [ "Padding", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#aefaa5e137a6c9cc8e30d8707d6e72216", null ],
+    [ "Shadow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#ab5c02f928c819c501b323d371b755517", null ],
+    [ "ShadowBool", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a0e1392704eb8852c7eebf81462a8d432", null ],
+    [ "Shape", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#ae37e5885f76149771fa53967741de7d4", null ],
+    [ "Style", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a76b4ec6e87c1f68f80baf90dc2a87c61", null ],
+    [ "Text", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a4401bcc19c6b7f8b0e0bd1abe2231e91", null ],
+    [ "UseHTML", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#abd2d746c15e69a15e28a208611790c6d", null ],
+    [ "VerticalAlign", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a2eb68723486bca6ce7a930b3fb051eb2", null ],
+    [ "X", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#ad13f10a8b924c44dde298c4b9e5743c6", null ],
+    [ "Y", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_elliott_wave_type_options_points_label.html#a8d2eb4759f052b6f456b33f18bf5fe80", null ]
+];

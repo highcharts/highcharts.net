@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_states_select_animation =
+[
+    [ "PlotOptionsDependencywheelStatesSelectAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_states_select_animation.html#ac7dff8ab341295bb155d78a7c1f02dc4", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_states_select_animation.html#ab9624d1ac7fdd1c6f4d150ce84a32144", null ]
+];

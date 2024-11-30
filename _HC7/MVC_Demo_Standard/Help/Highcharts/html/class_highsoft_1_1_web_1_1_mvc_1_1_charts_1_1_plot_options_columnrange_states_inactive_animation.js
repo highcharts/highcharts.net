@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnrange_states_inactive_animation =
+[
+    [ "PlotOptionsColumnrangeStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnrange_states_inactive_animation.html#a3e84927bf1315fa2ec7b395350e1923b", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnrange_states_inactive_animation.html#a8acd9572547a57009e7533fb1404372e", null ]
+];

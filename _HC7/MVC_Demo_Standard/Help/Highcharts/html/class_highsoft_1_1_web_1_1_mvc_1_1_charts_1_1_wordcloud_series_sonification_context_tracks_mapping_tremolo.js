@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_context_tracks_mapping_tremolo =
+[
+    [ "WordcloudSeriesSonificationContextTracksMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_context_tracks_mapping_tremolo.html#a62324e816d3a7cd07fd142b11ce6154e", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_context_tracks_mapping_tremolo.html#a815804c672a64c6d5b09fb6ebb9f958b", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_context_tracks_mapping_tremolo.html#adabbb404c35bfeccc2c6e6689167a788", null ]
+];

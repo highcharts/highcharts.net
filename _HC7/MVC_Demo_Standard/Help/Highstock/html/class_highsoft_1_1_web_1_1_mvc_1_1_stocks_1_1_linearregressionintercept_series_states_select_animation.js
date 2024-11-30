@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_states_select_animation =
+[
+    [ "LinearregressioninterceptSeriesStatesSelectAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_states_select_animation.html#a9ee68002508062d161eea81c954c2ab2", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_states_select_animation.html#a63530396e9b768d697624dc181ed3999", null ]
+];

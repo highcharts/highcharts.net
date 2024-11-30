@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_accessibility_keyboard_navigation =
+[
+    [ "PlotOptionsWaterfallAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_accessibility_keyboard_navigation.html#a2ed82b74e7c8db13845e7cadec381bda", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_accessibility_keyboard_navigation.html#a2a706f908821b3283cc146a80edb2c01", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_accessibility_keyboard_navigation =
+[
+    [ "CandleStickSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_accessibility_keyboard_navigation.html#a20f9dc4b2f4cead0104a49a95f96ebe2", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_candle_stick_series_accessibility_keyboard_navigation.html#aacbfa549755f1724a362cb4e0d931583", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_sonification_default_speech_options_mapping_tremolo =
+[
+    [ "PlotOptionsScatterSonificationDefaultSpeechOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_sonification_default_speech_options_mapping_tremolo.html#a85c5bd80614c338ab5f1e72ffb63d415", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_sonification_default_speech_options_mapping_tremolo.html#a7898141c2f56f8120505928a338b8928", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_scatter_sonification_default_speech_options_mapping_tremolo.html#a943b1e216d30a7fc0afac759e5c82062", null ]
+];

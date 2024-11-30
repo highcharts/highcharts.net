@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_sonification_default_speech_options_point_grouping =
+[
+    [ "SonificationDefaultSpeechOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_sonification_default_speech_options_point_grouping.html#acc7a9cbd995c26eba8d1ef6a6685c925", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_sonification_default_speech_options_point_grouping.html#a8205d847078516b7cecfcc0de9ba836f", null ]
+];

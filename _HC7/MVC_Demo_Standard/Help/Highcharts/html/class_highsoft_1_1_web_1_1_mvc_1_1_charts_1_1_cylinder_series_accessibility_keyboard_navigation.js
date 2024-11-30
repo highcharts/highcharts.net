@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cylinder_series_accessibility_keyboard_navigation =
+[
+    [ "CylinderSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cylinder_series_accessibility_keyboard_navigation.html#afe35ab244f6d4b2096f4983d1caf7e6f", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cylinder_series_accessibility_keyboard_navigation.html#a911b5941c01b46752fb50065cf918e56", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_sonification_default_instrument_options_mapping_tremolo =
+[
+    [ "LollipopSeriesSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_sonification_default_instrument_options_mapping_tremolo.html#a39317dc704687b5a719670b5b14e237e", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_sonification_default_instrument_options_mapping_tremolo.html#a365ddec4e3bdf4354c881f897faa25c9", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_sonification_default_instrument_options_mapping_tremolo.html#af0cbfb16296841e391f9fcf4a5246935", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_speech_options_mapping_highpass =
+[
+    [ "PlotOptionsPyramid3dSonificationDefaultSpeechOptionsMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_speech_options_mapping_highpass.html#a062164a8451fdf4123c5cb0b932848e8", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_speech_options_mapping_highpass.html#af746732f1a23aa6bf15115f7dd432f9e", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_speech_options_mapping_highpass.html#a39f6c08bcd1f52f63feebf298e200d1a", null ]
+];

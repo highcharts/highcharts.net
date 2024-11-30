@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dumbbell_sonification_context_tracks_mapping_tremolo_depth =
+[
+    [ "PlotOptionsDumbbellSonificationContextTracksMappingTremoloDepth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dumbbell_sonification_context_tracks_mapping_tremolo_depth.html#ac51d78c6db74fc07097d77f69887368b", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dumbbell_sonification_context_tracks_mapping_tremolo_depth.html#a49e517e9894109e451fa10371d40d392", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dumbbell_sonification_context_tracks_mapping_tremolo_depth.html#a9e112de83bc61ede56addcc13c62fce8", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dumbbell_sonification_context_tracks_mapping_tremolo_depth.html#a1b1248a230962958dc705739cebcd127", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dumbbell_sonification_context_tracks_mapping_tremolo_depth.html#ab8c4375822a303f55e84304d28485d29", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dumbbell_sonification_context_tracks_mapping_tremolo_depth.html#a83c4498346b2a59d56ecb9abcd0d27cb", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_dumbbell_sonification_context_tracks_mapping_tremolo_depth.html#a2551ad8c9660bf18447a7a6180fd57f5", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_accessibility_keyboard_navigation =
+[
+    [ "BellcurveSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_accessibility_keyboard_navigation.html#a5749095e07510095373fdfa90815d61c", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_accessibility_keyboard_navigation.html#a557b756db4a6f61e97d34f43f8a2bd58", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_dumbbell_series_sonification_default_speech_options_mapping_tremolo =
+[
+    [ "DumbbellSeriesSonificationDefaultSpeechOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_dumbbell_series_sonification_default_speech_options_mapping_tremolo.html#a9d7a5b9b454d8586b9183d6fea243697", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_dumbbell_series_sonification_default_speech_options_mapping_tremolo.html#a9c78f8bedd090b07e26b221da3f37b3e", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_dumbbell_series_sonification_default_speech_options_mapping_tremolo.html#a1b497f880bb4910e26de26e71e133fe1", null ]
+];

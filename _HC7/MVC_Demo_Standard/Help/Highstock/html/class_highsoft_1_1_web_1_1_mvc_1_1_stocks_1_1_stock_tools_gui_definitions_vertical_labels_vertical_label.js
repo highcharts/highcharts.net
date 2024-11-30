@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_vertical_labels_vertical_label =
+[
+    [ "StockToolsGuiDefinitionsVerticalLabelsVerticalLabel", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_vertical_labels_vertical_label.html#ab20c2527d29881d162b649d3c7b8d8c9", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_vertical_labels_vertical_label.html#a9ab70a52d0afc3b2fd258ed0a2ced2e5", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_levels_marker_states_hover_animation =
+[
+    [ "TreegraphSeriesLevelsMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_levels_marker_states_hover_animation.html#aedf10548ac3c7c8f69f1815752472165", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_treegraph_series_levels_marker_states_hover_animation.html#afce310ea1b5f61e929cbd917ff17ce04", null ]
+];

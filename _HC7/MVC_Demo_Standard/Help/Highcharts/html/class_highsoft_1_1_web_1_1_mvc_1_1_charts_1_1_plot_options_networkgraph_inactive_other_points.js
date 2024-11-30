@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_inactive_other_points =
+[
+    [ "PlotOptionsNetworkgraphInactiveOtherPoints", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_inactive_other_points.html#abcdb8ebc13cdaf6ce449e28663bc0708", null ]
+];

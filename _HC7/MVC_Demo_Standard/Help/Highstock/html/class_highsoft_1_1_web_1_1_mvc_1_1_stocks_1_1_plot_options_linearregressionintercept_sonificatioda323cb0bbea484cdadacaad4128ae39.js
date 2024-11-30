@@ -1,0 +1,19 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39 =
+[
+    [ "PlotOptionsLinearregressioninterceptSonificationDefaultSpeechOptionsMapping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#ae695906c646fd034765974325082dc22", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#a5fc3f34399f1d7d72c045e6d61085d28", null ],
+    [ "GapBetweenNotes", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#a75a0e5d2910cb323d14a047be668132c", null ],
+    [ "Highpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#afff34687bb9a31c467df286e648f69e7", null ],
+    [ "Lowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#a321172265d16edd8b30493f2071a6db7", null ],
+    [ "NoteDuration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#ad50baf15eb976ad318eece49cf6e3d65", null ],
+    [ "Pan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#af0d5ee44ec1233edeeeb7f3b683d6c48", null ],
+    [ "Pitch", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#a78726eaccd541c90e513a57073c05feb", null ],
+    [ "PitchNumber", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#adf5cb4e4f52a7528edb4e9f1d2a35207", null ],
+    [ "PitchString", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#a9a81c07f7aa0479f69a98352b42c738e", null ],
+    [ "PlayDelay", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#a37a086dcebab978716f9290bdcf82227", null ],
+    [ "Time", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#adbcda662fd7486ddd0da199e66314563", null ],
+    [ "TimeNumber", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#ae4750e627675b8048fe43c8a207bf94c", null ],
+    [ "TimeString", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#a46221d11ee3c1177cc0dba00610b97dd", null ],
+    [ "Tremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#a7257ed4914f7b98cd0a275e47d15807c", null ],
+    [ "Volume", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatioda323cb0bbea484cdadacaad4128ae39.html#a0ea8f099c593f5567264624b4ab43b45", null ]
+];

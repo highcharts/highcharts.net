@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_tracks_mapping_tremolo =
+[
+    [ "PlotOptionsArearangeSonificationTracksMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_tracks_mapping_tremolo.html#a31d2d5d9e4ac4f98bee572d4a9f7245d", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_tracks_mapping_tremolo.html#ac8a042d96b27cc8a46c7756c19700121", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_tracks_mapping_tremolo.html#a353a767737d8c4c9b61b8e79aaf85168", null ]
+];

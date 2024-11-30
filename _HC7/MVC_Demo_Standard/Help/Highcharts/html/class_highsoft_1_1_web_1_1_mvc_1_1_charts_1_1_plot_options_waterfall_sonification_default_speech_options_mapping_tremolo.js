@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_speech_options_mapping_tremolo =
+[
+    [ "PlotOptionsWaterfallSonificationDefaultSpeechOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_speech_options_mapping_tremolo.html#a43bd44c677c1bdce800845ca648fa275", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_speech_options_mapping_tremolo.html#a98206adc10f2bdb2123b47949367f9ca", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_speech_options_mapping_tremolo.html#a7331a38f7ae967ebd195e4e0100023ab", null ]
+];

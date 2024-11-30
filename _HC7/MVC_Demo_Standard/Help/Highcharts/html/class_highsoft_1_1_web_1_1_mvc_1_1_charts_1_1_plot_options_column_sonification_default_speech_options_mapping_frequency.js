@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_column_sonification_default_speech_options_mapping_frequency =
+[
+    [ "PlotOptionsColumnSonificationDefaultSpeechOptionsMappingFrequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_column_sonification_default_speech_options_mapping_frequency.html#a16d6b3ba04f7322c7c5da9813a7efb76", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_column_sonification_default_speech_options_mapping_frequency.html#a7eba3c6396ed7c3ce9b5f1115bcd7c94", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_column_sonification_default_speech_options_mapping_frequency.html#a56285e011ec0ea56efedbdeda501d405", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_column_sonification_default_speech_options_mapping_frequency.html#a64bb07323f7c3b5f40d0fa182d4c33df", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_column_sonification_default_speech_options_mapping_frequency.html#a80853cae855383ebfac72dbb2aa44553", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_column_sonification_default_speech_options_mapping_frequency.html#a4c7240b8badc0aafaa932f2e28a2c116", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_column_sonification_default_speech_options_mapping_frequency.html#a9c7123185e7fecc97599b7ce9cb5ba34", null ]
+];

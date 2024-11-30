@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bullet_series_sonification_default_instrument_options_mapping_tremolo =
+[
+    [ "BulletSeriesSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bullet_series_sonification_default_instrument_options_mapping_tremolo.html#a0a98e6f1cbf26c4c0437035f152977ca", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bullet_series_sonification_default_instrument_options_mapping_tremolo.html#a8be4303ac599adeb8fc0f15b52ae24b1", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bullet_series_sonification_default_instrument_options_mapping_tremolo.html#a31322be511772db4cd6a584ee4b8387c", null ]
+];

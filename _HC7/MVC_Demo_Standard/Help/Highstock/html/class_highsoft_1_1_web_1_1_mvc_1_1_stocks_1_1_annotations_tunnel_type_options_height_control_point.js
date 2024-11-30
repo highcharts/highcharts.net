@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_type_options_height_control_point =
+[
+    [ "AnnotationsTunnelTypeOptionsHeightControlPoint", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_type_options_height_control_point.html#a4e80515342f94f0db7ec9f2115120757", null ],
+    [ "Events", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_type_options_height_control_point.html#ab3f99ff87bf40a9157e80a23207b9879", null ]
+];

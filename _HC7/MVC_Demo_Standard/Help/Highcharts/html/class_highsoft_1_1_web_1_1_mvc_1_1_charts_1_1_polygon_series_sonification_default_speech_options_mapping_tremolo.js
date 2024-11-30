@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo =
+[
+    [ "PolygonSeriesSonificationDefaultSpeechOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo.html#af580fd64ce7188f101dd869faa63581a", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo.html#a1958dae5b3a858e620d0f42ed8102f2e", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo.html#aca922b0d13eb0a3ef62a88e919946531", null ]
+];

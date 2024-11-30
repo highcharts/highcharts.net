@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_aroonoscillator_data_labels_animation =
+[
+    [ "PlotOptionsAroonoscillatorDataLabelsAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_aroonoscillator_data_labels_animation.html#a329c35cf17252cf2fb8d3d099e5952c5", null ],
+    [ "Defer", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_aroonoscillator_data_labels_animation.html#af24db218abd2eb75ee4eee10ff45640d", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_tracks_mapping_lowpass =
+[
+    [ "PlotOptionsErrorbarSonificationTracksMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_tracks_mapping_lowpass.html#a522c91f0847ad7e46d645e61c747866d", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_tracks_mapping_lowpass.html#a4d8b67a98f5e23e8c847c0ad5bce8262", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_errorbar_sonification_tracks_mapping_lowpass.html#a56626128070739b1bba2cb29ec8555fa", null ]
+];

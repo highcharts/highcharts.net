@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_speech_options_mapping_lowpass =
+[
+    [ "WindbarbSeriesSonificationDefaultSpeechOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_speech_options_mapping_lowpass.html#ac397a74dfda3ad5146ddf2b27421f023", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_speech_options_mapping_lowpass.html#a01d4e2125fa6ca185e4a359b1271f8e5", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_speech_options_mapping_lowpass.html#a7bdb623b354854d36f4f1ab9a7306de7", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_highpass =
+[
+    [ "PolygonSeriesSonificationDefaultSpeechOptionsMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_highpass.html#ae130cf435ed7cc77fe6c284deff757ac", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_highpass.html#ac1c6c6ac04dbcaa2aad8aef8cba954cd", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_highpass.html#a2adf7129939cc6154eaa70b2686f4df6", null ]
+];

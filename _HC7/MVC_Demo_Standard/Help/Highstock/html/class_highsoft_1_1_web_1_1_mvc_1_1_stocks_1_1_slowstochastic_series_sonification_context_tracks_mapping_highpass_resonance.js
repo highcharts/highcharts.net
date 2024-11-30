@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_context_tracks_mapping_highpass_resonance =
+[
+    [ "SlowstochasticSeriesSonificationContextTracksMappingHighpassResonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_context_tracks_mapping_highpass_resonance.html#a4e7c45e1a091877fa8818960c85ef035", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_context_tracks_mapping_highpass_resonance.html#a15b9accc46abed2ed4f28e6d0b900998", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_context_tracks_mapping_highpass_resonance.html#a3c9252207de62524588d5cfc14fe2a53", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_context_tracks_mapping_highpass_resonance.html#a60ea76e4b6057badfeb3a350060a4c4c", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_context_tracks_mapping_highpass_resonance.html#a77d9c4e9a4d75d881ad71cf969fced26", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_context_tracks_mapping_highpass_resonance.html#a44314988fac878ebc6868d655385f950", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_context_tracks_mapping_highpass_resonance.html#a967a638c32a0984969cd8f6d78ec5632", null ]
+];

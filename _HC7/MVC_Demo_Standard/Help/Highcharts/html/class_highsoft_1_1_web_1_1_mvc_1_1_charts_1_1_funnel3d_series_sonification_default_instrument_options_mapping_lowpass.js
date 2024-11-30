@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_funnel3d_series_sonification_default_instrument_options_mapping_lowpass =
+[
+    [ "Funnel3dSeriesSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_funnel3d_series_sonification_default_instrument_options_mapping_lowpass.html#af9845d7c514ae0e7d05efbce0c509e45", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_funnel3d_series_sonification_default_instrument_options_mapping_lowpass.html#a8bf7361b28121ed2e03a3609edaeeb07", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_funnel3d_series_sonification_default_instrument_options_mapping_lowpass.html#aff8983efc84c2b3b9b8a68a41840909c", null ]
+];

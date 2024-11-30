@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_aroonoscillator_series_marker_states_hover_animation =
+[
+    [ "AroonoscillatorSeriesMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_aroonoscillator_series_marker_states_hover_animation.html#a047250d52023072f98fa7a08e2332cf0", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_aroonoscillator_series_marker_states_hover_animation.html#a74d8f1eb7839ce221d3df5b74df27af9", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_psar_sonification_default_instrument_options_mapping_tremolo =
+[
+    [ "PlotOptionsPsarSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_psar_sonification_default_instrument_options_mapping_tremolo.html#a453c53d274c986b5f8ad039bd6a18abd", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_psar_sonification_default_instrument_options_mapping_tremolo.html#a7e29c9d3f48baf7764628579e5894233", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_psar_sonification_default_instrument_options_mapping_tremolo.html#aafb4fb5a7fe97075cd6a263eb974949a", null ]
+];

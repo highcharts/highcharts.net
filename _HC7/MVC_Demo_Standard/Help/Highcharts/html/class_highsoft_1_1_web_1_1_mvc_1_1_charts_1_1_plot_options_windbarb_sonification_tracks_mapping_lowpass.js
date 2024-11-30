@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_windbarb_sonification_tracks_mapping_lowpass =
+[
+    [ "PlotOptionsWindbarbSonificationTracksMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_windbarb_sonification_tracks_mapping_lowpass.html#a32e85e2dd0d48ed785dd346d432fbc75", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_windbarb_sonification_tracks_mapping_lowpass.html#a08ede6d1c1441f24615223726b7322a2", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_windbarb_sonification_tracks_mapping_lowpass.html#aeea9187bccc184ff3c127d2297df8e94", null ]
+];

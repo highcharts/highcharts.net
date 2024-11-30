@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_bb_series_ikh_states_select_marker_states_hover_animation =
-[
-    [ "BbSeriesIkhStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_bb_series_ikh_states_select_marker_states_hover_animation.html#a719a41ceee8e2752fbdd16b973bab34c", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_bb_series_ikh_states_select_marker_states_hover_animation.html#af21a8c5cad6383dfcf2f2a46ae72d894", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_bb_series_ikh_states_select_marker_states_hover_animation.html#a42c4322e6d20d4411fc37c5d72c14a85", null ]
-];

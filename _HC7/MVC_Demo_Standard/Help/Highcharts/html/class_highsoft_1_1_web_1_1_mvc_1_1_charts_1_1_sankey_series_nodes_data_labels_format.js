@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_nodes_data_labels_format =
+[
+    [ "SankeySeriesNodesDataLabelsFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_nodes_data_labels_format.html#ac196878908830fa01312447e72b64ead", null ]
+];

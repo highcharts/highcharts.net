@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_i99611b89ad3cbcefb93852c533a839a9 =
+[
+    [ "PlotOptionsDisparityindexSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_i99611b89ad3cbcefb93852c533a839a9.html#a0b746c14db30eb340513f6c1a34c161b", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_i99611b89ad3cbcefb93852c533a839a9.html#a7d3340999f350b1f55a8107e55c4d7e8", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_sonification_default_i99611b89ad3cbcefb93852c533a839a9.html#a82a1ee806d88e06bf884170237863c92", null ]
+];

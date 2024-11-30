@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_986bbf43b875f194d4188f021853e024 =
+[
+    [ "LinearregressionangleSeriesSonificationDefaultInstrumentOptionsMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_986bbf43b875f194d4188f021853e024.html#a66e87e9eb3f8bfd2c25cec3c18546d1b", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_986bbf43b875f194d4188f021853e024.html#af9f30a5a4b008667c0f1d3dd66c763ee", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_986bbf43b875f194d4188f021853e024.html#ab0e0fc06b9c87b66e8054cb8a5b8e8bc", null ]
+];

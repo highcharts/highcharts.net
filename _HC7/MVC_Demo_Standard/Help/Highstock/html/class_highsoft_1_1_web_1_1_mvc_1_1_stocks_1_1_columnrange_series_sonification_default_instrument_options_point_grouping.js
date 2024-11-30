@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_sonification_default_instrument_options_point_grouping =
+[
+    [ "ColumnrangeSeriesSonificationDefaultInstrumentOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_sonification_default_instrument_options_point_grouping.html#a549ccaab75ff102a19f674051fc18d40", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_sonification_default_instrument_options_point_grouping.html#a9d8412d38673818eca632484d27d5db2", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_sonification_default_instrument_options_point_grouping.html#aac5792ddefc9e6f02db528bea19fa2f5", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_sonification_default_instrument_options_point_grouping.html#a00bbf8ae7636598a747d374959930909", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnrange_series_sonification_default_instrument_options_point_grouping.html#ae1ca56a1c4f2efc4645309423cf7b209", null ]
+];

@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_tracks_point_grouping =
+[
+    [ "PlotOptionsLinearregressioninterceptSonificationTracksPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_tracks_point_grouping.html#aa38e34b10d28190a7d3ee0006c6e8ca9", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_tracks_point_grouping.html#a65bbb6f492f694feb5285d8f126f0dd3", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_tracks_point_grouping.html#a4d1c991e41342226cfcb484aa8bdbf42", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_tracks_point_grouping.html#a983d4c09eab161e312a4faceb575f846", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_tracks_point_grouping.html#a7a973ebf67777fa642fc3d95da13ddf5", null ]
+];

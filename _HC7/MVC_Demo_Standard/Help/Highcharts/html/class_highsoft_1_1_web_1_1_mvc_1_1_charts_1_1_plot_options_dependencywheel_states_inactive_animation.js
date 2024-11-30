@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_states_inactive_animation =
+[
+    [ "PlotOptionsDependencywheelStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_states_inactive_animation.html#abcca4b71759b369aca24cc729560689c", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_states_inactive_animation.html#a760b4b8fb21c065cf5fb9afcc6787453", null ]
+];

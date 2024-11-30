@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnpyramid_series_sonification_context_tracks_mapping_lowpass =
+[
+    [ "ColumnpyramidSeriesSonificationContextTracksMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnpyramid_series_sonification_context_tracks_mapping_lowpass.html#afd4538a13bf67033729f48db679c2e30", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnpyramid_series_sonification_context_tracks_mapping_lowpass.html#aba56e7d0a099967ea753ca5d8cc24c5f", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_columnpyramid_series_sonification_context_tracks_mapping_lowpass.html#a522c195b6e642ef06fae6bcb294af016", null ]
+];

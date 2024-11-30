@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cylinder_series_sonification_default_instrument_options_mapping_lowpass =
+[
+    [ "CylinderSeriesSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cylinder_series_sonification_default_instrument_options_mapping_lowpass.html#a4550870ad4b9bb5dc2b257d2285618b9", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cylinder_series_sonification_default_instrument_options_mapping_lowpass.html#a5241a7d339f70a2e9051328a3a2beb4d", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_cylinder_series_sonification_default_instrument_options_mapping_lowpass.html#aa8e685bb09548a8a9558b0b9b4e4f2c8", null ]
+];

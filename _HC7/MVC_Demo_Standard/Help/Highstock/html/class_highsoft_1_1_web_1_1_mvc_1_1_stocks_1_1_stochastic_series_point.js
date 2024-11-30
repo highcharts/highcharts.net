@@ -1,6 +1,5 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stochastic_series_point =
 [
     [ "StochasticSeriesPoint", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stochastic_series_point.html#ac953f32ada3a3f345f252ce57f105671", null ],
-    [ "Events", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stochastic_series_point.html#aff75e8395ca4b63007286bf91c00f35d", null ],
-    [ "Events_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stochastic_series_point.html#af94c7656d87d261c296b5cfd516cfcfb", null ]
+    [ "Events", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stochastic_series_point.html#aff75e8395ca4b63007286bf91c00f35d", null ]
 ];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregression_series_sonification_context_tracks_mapping_highpass =
+[
+    [ "LinearregressionSeriesSonificationContextTracksMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregression_series_sonification_context_tracks_mapping_highpass.html#adcc450302853683ee596452ec9df8e7f", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregression_series_sonification_context_tracks_mapping_highpass.html#a7dafb9e83e5ac405d1a8efc8a0786079", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregression_series_sonification_context_tracks_mapping_highpass.html#aa683f5b99a402ae597dbdb3febdd9dd8", null ]
+];

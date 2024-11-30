@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_simple_shapes_rectangle =
+[
+    [ "StockToolsGuiDefinitionsSimpleShapesRectangle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_simple_shapes_rectangle.html#a0fdc2ed71769aca457bd69e4914d7cea", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_simple_shapes_rectangle.html#a971c8ba6d57250a8294ce6149249f8ec", null ]
+];

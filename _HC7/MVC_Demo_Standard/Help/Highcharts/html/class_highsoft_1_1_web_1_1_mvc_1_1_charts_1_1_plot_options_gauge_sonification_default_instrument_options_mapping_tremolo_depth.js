@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_tremolo_depth =
+[
+    [ "PlotOptionsGaugeSonificationDefaultInstrumentOptionsMappingTremoloDepth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_tremolo_depth.html#a955319cb5ea2f70df4406716cc0d1a08", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_tremolo_depth.html#a6724d1b8c11bc5cc51a04c57b35a278d", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_tremolo_depth.html#aaf39502bdfe8829a668ab71fef3b8376", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_tremolo_depth.html#a8e9298a0ae46ebc159c9647609361642", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_tremolo_depth.html#aba8d4c24d5cc4f9798451e0024a3bb48", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_tremolo_depth.html#a1c06f4074b2265d1223b72858f4c18e3", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_tremolo_depth.html#aae86c864a347f052be0cdbc969108b2f", null ]
+];

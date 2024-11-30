@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_7a114776e2c5352e882d075ea807c5a8 =
+[
+    [ "LinearregressionangleSeriesSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_7a114776e2c5352e882d075ea807c5a8.html#a94dee7631c1f6fdd91f73b26b2d20e95", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_7a114776e2c5352e882d075ea807c5a8.html#af38538e7aa407a952da5779fafd7a7f4", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_7a114776e2c5352e882d075ea807c5a8.html#aeee143644522146eab1bf93b0a43a045", null ]
+];

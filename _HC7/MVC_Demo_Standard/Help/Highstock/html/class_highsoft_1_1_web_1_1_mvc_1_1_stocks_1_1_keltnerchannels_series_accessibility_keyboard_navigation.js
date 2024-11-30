@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_keltnerchannels_series_accessibility_keyboard_navigation =
+[
+    [ "KeltnerchannelsSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_keltnerchannels_series_accessibility_keyboard_navigation.html#a97e5cd724ef048c738e91a7e1f418347", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_keltnerchannels_series_accessibility_keyboard_navigation.html#a287ce0260900605c664cad17e00bd380", null ]
+];

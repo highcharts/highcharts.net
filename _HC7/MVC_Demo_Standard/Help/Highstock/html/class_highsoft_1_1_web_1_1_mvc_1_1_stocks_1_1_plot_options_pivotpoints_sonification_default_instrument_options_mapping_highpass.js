@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_highpass =
+[
+    [ "PlotOptionsPivotpointsSonificationDefaultInstrumentOptionsMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_highpass.html#ac389d49e8dae07816e638b4f84a1dbea", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_highpass.html#a6b6e2d8e5eb097027f400e63fca9c9d0", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_highpass.html#ad2adccb604c70d37ab3adf2a6e3810a6", null ]
+];

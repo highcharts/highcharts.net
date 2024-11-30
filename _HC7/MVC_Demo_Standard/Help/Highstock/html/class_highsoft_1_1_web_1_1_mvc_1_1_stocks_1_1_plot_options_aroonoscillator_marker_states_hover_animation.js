@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_aroonoscillator_marker_states_hover_animation =
+[
+    [ "PlotOptionsAroonoscillatorMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_aroonoscillator_marker_states_hover_animation.html#aa8900a988e5ec3b8e2954a53fb3be9a4", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_aroonoscillator_marker_states_hover_animation.html#aab1330461063d0b761ed4e2a597b5201", null ]
+];

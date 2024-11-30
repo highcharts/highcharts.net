@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_slowstochastic_marker_states_hover_animation =
+[
+    [ "PlotOptionsSlowstochasticMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_slowstochastic_marker_states_hover_animation.html#ac173bc9620081f1087fcf86a6e0e2fa8", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_slowstochastic_marker_states_hover_animation.html#a1a38c04b6e6d30a9b3c0a36d39ff9306", null ]
+];

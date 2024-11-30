@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_states_hover_animation =
+[
+    [ "PlotOptionsKeltnerchannelsStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_states_hover_animation.html#af986659b2b84c05e3cf4a4fff4617bad", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_states_hover_animation.html#ab15e6d84f99d3e9f199eb1f7f6c13d00", null ]
+];

@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_instrument_options_mapping_highpass_resonance =
+[
+    [ "PolygonSeriesSonificationDefaultInstrumentOptionsMappingHighpassResonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_instrument_options_mapping_highpass_resonance.html#a5b543c0a9f101d5699a928ac339aecba", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_instrument_options_mapping_highpass_resonance.html#af073f3335f3fbcfb73268c2649c884cd", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_instrument_options_mapping_highpass_resonance.html#a058fb1bd3dec7c168a28c2c02c790849", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_instrument_options_mapping_highpass_resonance.html#a88b067a21ea83db9e652046fcddba828", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_instrument_options_mapping_highpass_resonance.html#a0ba2b032ad58107b106b8a7234b1bb74", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_instrument_options_mapping_highpass_resonance.html#a3e09c023ae9f16fab7fdaa1be34057c7", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_instrument_options_mapping_highpass_resonance.html#a287293b84defa9b817f25c6253084739", null ]
+];

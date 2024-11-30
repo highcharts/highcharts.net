@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_states_inactive_animation =
+[
+    [ "PlotOptionsDisparityindexStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_states_inactive_animation.html#a588e6623f402b6694d6a0942327f889f", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_states_inactive_animation.html#a5012aa9b316a626d08f224f2ab476735", null ]
+];

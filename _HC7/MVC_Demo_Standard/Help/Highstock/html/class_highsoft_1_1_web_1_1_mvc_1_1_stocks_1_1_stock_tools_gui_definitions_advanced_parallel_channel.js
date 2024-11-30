@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_advanced_parallel_channel =
+[
+    [ "StockToolsGuiDefinitionsAdvancedParallelChannel", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_advanced_parallel_channel.html#a126e411200f6e6048c50449dae426b67", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_advanced_parallel_channel.html#ad71d7c8debcfd20d0a7887b5d8afa887", null ]
+];

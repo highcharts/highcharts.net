@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_waterfall_series_accessibility_keyboard_navigation =
+[
+    [ "WaterfallSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_waterfall_series_accessibility_keyboard_navigation.html#af33c7e5826760e247ef827da5192f47f", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_waterfall_series_accessibility_keyboard_navigation.html#a1ee9d692be6fd0a759eb06327d35543b", null ]
+];

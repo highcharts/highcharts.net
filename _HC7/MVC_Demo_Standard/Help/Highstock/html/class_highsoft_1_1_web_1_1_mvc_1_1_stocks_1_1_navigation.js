@@ -1,12 +1,13 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation =
 [
     [ "Navigation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a64f58fa089767b7c40bd2c533aa123d0", null ],
+    [ "AnnotationsOptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a1f8ec6cb5fccb97a1bdf31925a0bed73", null ],
+    [ "Bindings", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a09e79d99063a93b29601f9a21594ce36", null ],
+    [ "BindingsClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a813cb33b95d39968f2fa8c1f7735b0bf", null ],
     [ "ButtonOptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a7b428a7a0fab6fc92d23024bf2cf9e0b", null ],
-    [ "ButtonOptions_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a65fb1b004ed2a1d3dcb4ff14145e574f", null ],
-    [ "MenuItemHoverStyle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a5116183b77fe6624029a5f55a4e5cf43", null ],
-    [ "MenuItemHoverStyle_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a54fc0b25c1026e89c5af0fc4e820fd4f", null ],
-    [ "MenuItemStyle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a25581f13470a4ae58b86549d8fb85c05", null ],
-    [ "MenuItemStyle_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a29ad2b4ca00a851db8d504d19224b6c7", null ],
-    [ "MenuStyle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a29320f69fe162eb4d0df059703793cf8", null ],
-    [ "MenuStyle_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#adcb282166a368d7d2f091eb35b81414d", null ]
+    [ "Events", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a03336a93f0560bc4116749c1e2019add", null ],
+    [ "IconsURL", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a7e43937dbb40d15b92bf3e6db7075b51", null ],
+    [ "MenuItemHoverStyle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#a252e1f99b034d8835c70564d72db834d", null ],
+    [ "MenuItemStyle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#adaa2e914b3c9364395fbb2b56f55c928", null ],
+    [ "MenuStyle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation.html#af92549da15a3aebaaa91ae4f6d6d223d", null ]
 ];

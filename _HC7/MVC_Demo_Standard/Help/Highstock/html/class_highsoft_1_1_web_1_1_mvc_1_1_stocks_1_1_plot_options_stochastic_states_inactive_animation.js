@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_states_inactive_animation =
+[
+    [ "PlotOptionsStochasticStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_states_inactive_animation.html#aae82d3134ce54d6351ffcd43f8a46b67", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_states_inactive_animation.html#ad2ab380bec13bab9f1cab9e86ac72a11", null ]
+];

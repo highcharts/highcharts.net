@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_def64fd23debef14772e448bcac4d31fec =
+[
+    [ "PlotOptionsLinearregressionslopeSonificationDefaultInstrumentOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_def64fd23debef14772e448bcac4d31fec.html#aab69f7a7398174d8e4b6b2dcd7614f38", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_def64fd23debef14772e448bcac4d31fec.html#a9d8bf763fe2a32666fde0dc8af6e72d0", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_def64fd23debef14772e448bcac4d31fec.html#ad4b7b4bc0d80667425349e8d30a1443d", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_def64fd23debef14772e448bcac4d31fec.html#a66cb40f1d30149e9f9a5fba5ea90291f", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_def64fd23debef14772e448bcac4d31fec.html#a1071a7a876a107aae7c238740f4f21fc", null ]
+];

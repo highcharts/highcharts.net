@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_states_inactive_animation =
+[
+    [ "PlotOptionsPivotpointsStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_states_inactive_animation.html#abcbf93af9328646740b1bac7c4de4ef2", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_states_inactive_animation.html#a66d000d7382d1e7968d96552c293184b", null ]
+];

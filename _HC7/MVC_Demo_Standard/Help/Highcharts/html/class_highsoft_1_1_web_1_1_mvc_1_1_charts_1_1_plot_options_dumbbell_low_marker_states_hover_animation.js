@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dumbbell_low_marker_states_hover_animation =
+[
+    [ "PlotOptionsDumbbellLowMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dumbbell_low_marker_states_hover_animation.html#a6a7a555e9adbf7c797746843f5bcc2db", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dumbbell_low_marker_states_hover_animation.html#a4cc1a2ec3d42b8262ccb7b4cab0659cf", null ]
+];

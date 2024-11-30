@@ -1,0 +1,7 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_on_point_connector_options =
+[
+    [ "PlotOptionsLinearregressioninterceptOnPointConnectorOptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_on_point_connector_options.html#a0e1526894f81e4cfc9b5afc511ca6f8c", null ],
+    [ "Dashstyle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_on_point_connector_options.html#ace4285ab7a092c898209066dc342d1b4", null ],
+    [ "Stroke", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_on_point_connector_options.html#a3de5a6b637d3dbce566df4df2d028f95", null ],
+    [ "Width", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_on_point_connector_options.html#a055a16855c48f63913d6859913eb1ea0", null ]
+];

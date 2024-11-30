@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_timeline_marker_states_hover_animation =
+[
+    [ "PlotOptionsTimelineMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_timeline_marker_states_hover_animation.html#a74ace9f348ccd9605d3ab24322460424", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_timeline_marker_states_hover_animation.html#af8fe453d9c9ab23390dc8b4e71d6a5be", null ]
+];

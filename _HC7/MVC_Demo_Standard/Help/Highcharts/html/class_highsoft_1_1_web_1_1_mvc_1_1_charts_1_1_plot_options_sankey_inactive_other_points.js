@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sankey_inactive_other_points =
+[
+    [ "PlotOptionsSankeyInactiveOtherPoints", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sankey_inactive_other_points.html#a78ec6adacdd2c2193247b26f1fdf6e5b", null ]
+];

@@ -1,0 +1,26 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility =
+[
+    [ "LangAccessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a4b3536b52f7c8282e6e290f2b8f6c151", null ],
+    [ "AnnounceNewData", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a6702e10cf3986e3a837fd9fa306b7e58", null ],
+    [ "Axis", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a61dd79a9f31459c31d4ace72ce6e15df", null ],
+    [ "ChartContainerLabel", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a8cb2e9945bcd9d9b33281ee5c97360dc", null ],
+    [ "ChartTypes", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#afcce8fba1992f2f97b8862c2d70c595e", null ],
+    [ "Credits", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#ae186db79f237ee4c43f7a61480db9909", null ],
+    [ "DefaultChartTitle", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#abd8eaaa73010a30e08a4206b80ac0cde", null ],
+    [ "DrillUpButton", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#ae9e0cc323ec2992aa74fe23596e9e5d3", null ],
+    [ "Exporting", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a36e0b19488059a2ac1a6e94fa3c4127a", null ],
+    [ "GraphicContainerLabel", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#ac05fbec53c7fb268be2e7778dfab05ed", null ],
+    [ "Legend", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#adb053c83e293e776af7674f575f6e298", null ],
+    [ "Navigator", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a498ff779a1da421c13644dd3dd4364f6", null ],
+    [ "RangeSelector", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a4c5375e26e832b2d668bfa8c3f43c9b2", null ],
+    [ "ResetZoomButton", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a1f42fa8f603310667af319398f614e96", null ],
+    [ "ScreenReaderSection", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a250485a5f9349351eaad4c5d4c86fc41", null ],
+    [ "Series", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a43fadf863adb39b91b95df1861fe5fb9", null ],
+    [ "SeriesTypeDescriptions", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a0239558e03c60b6a9aedbb1621c1a5d1", null ],
+    [ "Sonification", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a122fffd3fca483925054865532f19175", null ],
+    [ "SvgContainerLabel", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#adc0169243473cb0b3ecb9713858974ef", null ],
+    [ "SvgContainerTitle", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a75d69fb3845b5cedf1e9ea6c89707206", null ],
+    [ "Table", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a1c97cb629403414340711320987148b3", null ],
+    [ "ThousandsSep", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a8f9dce63be08efca842d2f4bb3f7ee2c", null ],
+    [ "Zoom", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_lang_accessibility.html#a59830154d7d9b83fb43ed56e49b579a1", null ]
+];

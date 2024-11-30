@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_area_sonification_default_instrument_options_point_grouping =
+[
+    [ "PlotOptionsAreaSonificationDefaultInstrumentOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_area_sonification_default_instrument_options_point_grouping.html#abe498a7058f194be8a0a41e53e5fff06", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_area_sonification_default_instrument_options_point_grouping.html#a4bf505557245eaa2c53d313ecb2e5523", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_area_sonification_default_instrument_options_point_grouping.html#a0f2fcc3c430489bdca5037c647da413d", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_area_sonification_default_instrument_options_point_grouping.html#a8fa090493e3734ec812097f6e3ba74f8", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_area_sonification_default_instrument_options_point_grouping.html#a449f03d8384f7585f23da8d298e7c3b2", null ]
+];

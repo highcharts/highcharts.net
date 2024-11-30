@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_sonification_default_speech_options_mapping_lowpass =
+[
+    [ "LollipopSeriesSonificationDefaultSpeechOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_sonification_default_speech_options_mapping_lowpass.html#a9ef71a75b20a4bbb3a08ba2586b05b41", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_sonification_default_speech_options_mapping_lowpass.html#a175ea007dcfe8d37afca1519f61803b6", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_sonification_default_speech_options_mapping_lowpass.html#a1b2c61307e9c022a78ab6b7339a9afde", null ]
+];

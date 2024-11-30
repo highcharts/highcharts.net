@@ -1,0 +1,28 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels =
+[
+    [ "AnnotationsFibonacciTypeOptionsLabels", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#adb0b375c1590e14745aee07d915202e7", null ],
+    [ "Accessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#abbbb6348171746412bfa62fa096b3e99", null ],
+    [ "Align", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a9e511f9d598c2e9f25fbebd51c14497d", null ],
+    [ "AllowOverlap", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a44174b99f6072743eca1cbc1497f9ca8", null ],
+    [ "BackgroundColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a274b2c7a94f0b335c304ff0f2ded586d", null ],
+    [ "BorderColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#aff4d7fc551e11ca9a8e4ea0037984bca", null ],
+    [ "BorderRadius", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a1a37f33c90b056fcdc5452fa81ec39a5", null ],
+    [ "BorderWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a731446fa32d8330894f21ed82f87e061", null ],
+    [ "ClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#ab4de1283f60ea9d6187018b5d2c1d323", null ],
+    [ "Crop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a47caf267f9aaae2f625433a63a692753", null ],
+    [ "Distance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a709dedb7340d87e694bdc685fab6cb4f", null ],
+    [ "Format", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a0782199cd12da689489a6a4f525ea5a3", null ],
+    [ "Formatter", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#aff04619b0ff0e54eb98785454fadebab", null ],
+    [ "IncludeInDataExport", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a0ead808902508a6b7bd7a03ef3519e7a", null ],
+    [ "Overflow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a87b710f9dc06866a6cbc4a519bffb052", null ],
+    [ "Padding", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a737e75283df015a00d371aa69908d7b1", null ],
+    [ "Shadow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#ae29c12d6c0c8080d6ad28c2db532948a", null ],
+    [ "ShadowBool", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#aacb661ca1b12ef93c0b4fff4832cfde8", null ],
+    [ "Shape", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a2efd4c77a5d3c612678ddea5f8836ef1", null ],
+    [ "Style", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#afe244597723fe5a5b31d39924d2d2b16", null ],
+    [ "Text", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a171ca8d164cc7e8a77e85d19254902ee", null ],
+    [ "UseHTML", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#acce93d565100d97925b4cd288d549493", null ],
+    [ "VerticalAlign", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a1e123a4a2da104edf7d25c037b08cc49", null ],
+    [ "X", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a9a7fdcaff0a34a640f4c733a138745aa", null ],
+    [ "Y", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels.html#a7580849d8bf266ecd24759f1c1e12ce8", null ]
+];

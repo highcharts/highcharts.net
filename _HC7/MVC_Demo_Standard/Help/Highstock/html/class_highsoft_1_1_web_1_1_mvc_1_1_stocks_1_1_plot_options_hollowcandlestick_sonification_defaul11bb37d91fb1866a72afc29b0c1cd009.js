@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_defaul11bb37d91fb1866a72afc29b0c1cd009 =
+[
+    [ "PlotOptionsHollowcandlestickSonificationDefaultSpeechOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_defaul11bb37d91fb1866a72afc29b0c1cd009.html#ae37b8425ff5d98d42de8310e3d5baa63", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_defaul11bb37d91fb1866a72afc29b0c1cd009.html#ac41ae4c66e426b024573b6f5a485ead1", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_defaul11bb37d91fb1866a72afc29b0c1cd009.html#ad577a3ebbacd5f1cf339bb10fb0ad12b", null ]
+];

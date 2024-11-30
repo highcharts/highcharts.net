@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_packedbubble_marker_states_hover_animation =
+[
+    [ "PlotOptionsPackedbubbleMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_packedbubble_marker_states_hover_animation.html#a16981bb1aba75065f508b3c0f21a4460", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_packedbubble_marker_states_hover_animation.html#af808f2998b5458bb0c1524b70b687fb8", null ]
+];

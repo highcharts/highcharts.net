@@ -1,0 +1,11 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_pitch =
+[
+    [ "PlotOptionsPivotpointsSonificationDefaultInstrumentOptionsMappingPitch", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_pitch.html#a449d652189b5835ca1e1afe75e92055e", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_pitch.html#a0375ae9b9e86fe125385356615ea43d1", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_pitch.html#a0d0a0e77ffc224a85f56dcafcb11e809", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_pitch.html#ad45e486cd1c4f97934f3af5e4881025d", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_pitch.html#a45922c23f347598ec2be7bc51010e765", null ],
+    [ "Scale", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_pitch.html#acc4f02cdea3e47a5f23f126f82ace1f6", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_pitch.html#aaacb31499424d895b73e094b63acbb64", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_pivotpoints_sonification_default_instrument_options_mapping_pitch.html#a3760572eade58e3b8aed9ec21b06ebf7", null ]
+];

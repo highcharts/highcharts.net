@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_sonification_context_tracks_mapping_tremolo_depth =
+[
+    [ "PlotOptionsArcdiagramSonificationContextTracksMappingTremoloDepth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_sonification_context_tracks_mapping_tremolo_depth.html#a3c1b30bc2fdf74fa8f48302ff9db099f", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_sonification_context_tracks_mapping_tremolo_depth.html#afc2dbcb5b2120b12ebd9ab8843e1f29c", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_sonification_context_tracks_mapping_tremolo_depth.html#ac773d32371a12d9a3d4e06502424d4ba", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_sonification_context_tracks_mapping_tremolo_depth.html#a7be525f72617442d4d316e094b25cd78", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_sonification_context_tracks_mapping_tremolo_depth.html#af8b0cbcb04a5942a5141942b05e87389", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_sonification_context_tracks_mapping_tremolo_depth.html#a0e804c6c54edf3abce3c286a0e02c986", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arcdiagram_sonification_context_tracks_mapping_tremolo_depth.html#a667fa82084a1890b409271013d3b909d", null ]
+];

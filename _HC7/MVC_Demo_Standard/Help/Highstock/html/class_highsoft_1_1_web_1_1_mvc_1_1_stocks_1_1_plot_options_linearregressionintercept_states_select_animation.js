@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_states_select_animation =
+[
+    [ "PlotOptionsLinearregressioninterceptStatesSelectAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_states_select_animation.html#a2a6d9498848c16700f6913ece4848b64", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_states_select_animation.html#ac5c2b04e1674197d3186cf8259d3bf34", null ]
+];

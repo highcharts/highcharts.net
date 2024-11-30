@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_areasplinerange_series_low_marker_states_hover_animation =
+[
+    [ "AreasplinerangeSeriesLowMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_areasplinerange_series_low_marker_states_hover_animation.html#a0e3b11bfcc541d3f5f25d8a83cccbb94", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_areasplinerange_series_low_marker_states_hover_animation.html#ad5733771e2fbd51ac459dbb61f4fe710", null ]
+];

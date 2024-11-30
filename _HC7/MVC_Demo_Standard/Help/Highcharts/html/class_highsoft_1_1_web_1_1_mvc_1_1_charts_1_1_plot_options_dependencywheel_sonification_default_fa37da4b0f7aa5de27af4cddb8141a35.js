@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_fa37da4b0f7aa5de27af4cddb8141a35 =
+[
+    [ "PlotOptionsDependencywheelSonificationDefaultInstrumentOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_fa37da4b0f7aa5de27af4cddb8141a35.html#abe062f8f613f6ea62411f88ffd77dade", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_fa37da4b0f7aa5de27af4cddb8141a35.html#a4fc5163ed8dd8d61247c61b0d2b648d9", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_fa37da4b0f7aa5de27af4cddb8141a35.html#a8e164fe060b105ffbd32d0577629c90d", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_fa37da4b0f7aa5de27af4cddb8141a35.html#a2fa222474fb11925b417ca9e360406cc", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_fa37da4b0f7aa5de27af4cddb8141a35.html#ade7ccc468daaa791e3190fdc24908a7e", null ]
+];

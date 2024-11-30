@@ -1,0 +1,9 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_instrument_options_active_when =
+[
+    [ "PlotOptionsWaterfallSonificationDefaultInstrumentOptionsActiveWhen", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_instrument_options_active_when.html#a736011ae8fd82b81e0cd7d8c942ffbea", null ],
+    [ "CrossingDown", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_instrument_options_active_when.html#aaad8724c78447c6f8d951cb70ca44299", null ],
+    [ "CrossingUp", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_instrument_options_active_when.html#a79832df455768e0701de91b26c597d61", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_instrument_options_active_when.html#aafb63a6ec2d1dc04937233fb400599e3", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_instrument_options_active_when.html#ad49bb1d00ede55360ca1a3250e2ff237", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_sonification_default_instrument_options_active_when.html#a3211225c22279997176a3b0e8f8b2f6d", null ]
+];

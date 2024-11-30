@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_nodes_data_labels_link_text_path =
+[
+    [ "OrganizationSeriesNodesDataLabelsLinkTextPath", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_nodes_data_labels_link_text_path.html#ad2db8b4d31ab308abd216703aa3df0ea", null ],
+    [ "Attributes", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_nodes_data_labels_link_text_path.html#a72455532cbed5e0e7397077b0785d3d5", null ]
+];

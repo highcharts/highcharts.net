@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel3d_sonification_default_instrument_options_point_grouping =
+[
+    [ "PlotOptionsFunnel3dSonificationDefaultInstrumentOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel3d_sonification_default_instrument_options_point_grouping.html#a74bba9ec8d73d44e5d8cc51895791938", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel3d_sonification_default_instrument_options_point_grouping.html#af60f2e0071a27530068f8a21233eae5b", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel3d_sonification_default_instrument_options_point_grouping.html#a46996b307908e4d07dec34dce173d2c0", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel3d_sonification_default_instrument_options_point_grouping.html#a356c5031b645b1192fe8aafbdf7ba252", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_funnel3d_sonification_default_instrument_options_point_grouping.html#ae3ea88c4446e59c6d9ccea3959336d82", null ]
+];

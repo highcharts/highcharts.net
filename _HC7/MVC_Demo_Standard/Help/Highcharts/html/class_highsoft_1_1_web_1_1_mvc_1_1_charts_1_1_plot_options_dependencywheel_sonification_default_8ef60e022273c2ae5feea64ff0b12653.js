@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_8ef60e022273c2ae5feea64ff0b12653 =
+[
+    [ "PlotOptionsDependencywheelSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_8ef60e022273c2ae5feea64ff0b12653.html#a89c76cbaaa60b449dcb90c6d3e1b3c29", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_8ef60e022273c2ae5feea64ff0b12653.html#a1ab8cc5f6459d37c161816dfd6f2524e", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_8ef60e022273c2ae5feea64ff0b12653.html#a3d672b95f64f5600ae83c7ed07045737", null ]
+];

@@ -1,0 +1,19 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping =
+[
+    [ "PlotOptionsHollowcandlestickSonificationDefaultInstrumentOptionsMapping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#aea34d42e2fb057b1c73fcee2060a7f22", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#ac6ce553043091cf756183d7dc714d0df", null ],
+    [ "GapBetweenNotes", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a0fa2ff29355e25306b1982b2400a0d88", null ],
+    [ "Highpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a9f1c974929496bf77e5c4c96fdb21605", null ],
+    [ "Lowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a566efb3fe63ac62ccd7a6570db89a0e5", null ],
+    [ "NoteDuration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a55179ee2d4ef3eef872cd1a0ab258039", null ],
+    [ "Pan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a2d1d48436beba404df29e60d0e6f4922", null ],
+    [ "Pitch", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#adc14dcbb1500f3ef07d51a38d9d862e5", null ],
+    [ "PitchNumber", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a8660f109686fd5209ed6bf6addcba4ce", null ],
+    [ "PitchString", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#ae38da8ea8ea770a3448279c8465565a1", null ],
+    [ "PlayDelay", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a8af62ef1d3fd78fec64dd6eb47b9752d", null ],
+    [ "Time", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a82c22b3b7c0dc5f3d11c72fce3dd444e", null ],
+    [ "TimeNumber", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a00abda06ad6a87bf02886d6e6b097751", null ],
+    [ "TimeString", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#abf64c884407e9d482c93a40f7d8c26af", null ],
+    [ "Tremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a5bce6db6b724a0016b2b6b50704b8ef7", null ],
+    [ "Volume", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_sonification_default_instrument_options_mapping.html#a2a86fe04230b0a98a947a73f73f11cce", null ]
+];

@@ -1,0 +1,9 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_context_tracks_active_when =
+[
+    [ "PlotOptionsLinearregressioninterceptSonificationContextTracksActiveWhen", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_context_tracks_active_when.html#aaef03296b738532356b76c572aa63bff", null ],
+    [ "CrossingDown", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_context_tracks_active_when.html#a1638172abc0108682a2f213898929588", null ],
+    [ "CrossingUp", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_context_tracks_active_when.html#a520e82b25ad70c3df64eec4cbf370c13", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_context_tracks_active_when.html#add7abfacb46c4b0dad9fa7a80435b31f", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_context_tracks_active_when.html#a3dad6e4156b39eafad75b851d525f01e", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonification_context_tracks_active_when.html#a5ba12d26181e79fa5abdd8cb345bcf2a", null ]
+];

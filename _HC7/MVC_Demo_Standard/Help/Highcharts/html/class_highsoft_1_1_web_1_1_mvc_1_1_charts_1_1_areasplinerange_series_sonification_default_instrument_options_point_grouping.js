@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_sonification_default_instrument_options_point_grouping =
+[
+    [ "AreasplinerangeSeriesSonificationDefaultInstrumentOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_sonification_default_instrument_options_point_grouping.html#aea668053d97cb2d71944483829d6f9b4", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_sonification_default_instrument_options_point_grouping.html#a178d3393e1967e654c6c5f7eaf88dda9", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_sonification_default_instrument_options_point_grouping.html#ac60c91349710c323df824de36ec1eebb", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_sonification_default_instrument_options_point_grouping.html#a1b89986880faeda699c317559b29ee47", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_sonification_default_instrument_options_point_grouping.html#a99a58d2a61d5d31be5e72273444d3339", null ]
+];

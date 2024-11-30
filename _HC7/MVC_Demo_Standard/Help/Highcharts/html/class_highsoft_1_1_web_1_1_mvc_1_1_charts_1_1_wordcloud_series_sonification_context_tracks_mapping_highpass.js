@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_context_tracks_mapping_highpass =
+[
+    [ "WordcloudSeriesSonificationContextTracksMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_context_tracks_mapping_highpass.html#a02912e34a6239ca0cbcf980b744f5f1f", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_context_tracks_mapping_highpass.html#a71d6554f8e2fe62684d606ee3ba70fdf", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_sonification_context_tracks_mapping_highpass.html#a7ddb9251c34c86ff5ccde87ae3847cc1", null ]
+];

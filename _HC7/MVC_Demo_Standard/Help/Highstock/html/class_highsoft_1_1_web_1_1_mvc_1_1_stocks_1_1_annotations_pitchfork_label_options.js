@@ -1,0 +1,28 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options =
+[
+    [ "AnnotationsPitchforkLabelOptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a322578a100d768156377f6cd8e1adde1", null ],
+    [ "Accessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a832140cd4fbec97fba96599bcdfe9e33", null ],
+    [ "Align", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a5c70267bd072bd0b208a6e5d95ec5182", null ],
+    [ "AllowOverlap", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a9c0bf0a6744457a509b3799bd91eb5c0", null ],
+    [ "BackgroundColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#aece6d5c5a21decb6e3c7c5d3f36ee628", null ],
+    [ "BorderColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a2b67986d9d1d1f883e8319bc0eeea7db", null ],
+    [ "BorderRadius", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#abf68923c9ac97c3f6cf39a7d230fc3da", null ],
+    [ "BorderWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a37a35b9cb89f3116ac68eee17e4f4b9f", null ],
+    [ "ClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a7f2b0c72af4a6e791a72c9dac0ee8f77", null ],
+    [ "Crop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#ae518ceaa7cfb4c4b11265a97891a00df", null ],
+    [ "Distance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a37a9228a4b20687c6d6f4ced94d0d9df", null ],
+    [ "Format", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a5d6ce4b0d9d833656dc793c19fab91ea", null ],
+    [ "Formatter", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a29defb70af125435b6d48bcd492979a7", null ],
+    [ "IncludeInDataExport", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#ab4f57ee22441af9b0e966fc91c59c657", null ],
+    [ "Overflow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a08baf929bd27fc007fe4a73bf2577729", null ],
+    [ "Padding", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a0b1693ff2517c2df7dfa3cd5ffa18269", null ],
+    [ "Shadow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a91fd539b10b70bdaf0c1157fe2a4be55", null ],
+    [ "ShadowBool", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a571769cc8d55d92b62bf2513ac59a6c2", null ],
+    [ "Shape", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a48882e7586b46d619f33d5b2a8744d6c", null ],
+    [ "Style", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#aec161f883521ed53303688d5a996eb0c", null ],
+    [ "Text", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a83cf3a2418202e5041657b7932c11981", null ],
+    [ "UseHTML", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a3912c107a94f3bd914f4e6d52eb0f90c", null ],
+    [ "VerticalAlign", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a26173f4da0540e6b39c8e2562c06377d", null ],
+    [ "X", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a4d3d2269da68833fb3c96052fa1ad99d", null ],
+    [ "Y", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options.html#a8ac78038825d04c5ff1bf9ddabdf9fa8", null ]
+];

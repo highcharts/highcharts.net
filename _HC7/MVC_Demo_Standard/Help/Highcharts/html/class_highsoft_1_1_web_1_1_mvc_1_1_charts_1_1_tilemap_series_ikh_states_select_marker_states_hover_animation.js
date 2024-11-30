@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_tilemap_series_ikh_states_select_marker_states_hover_animation =
-[
-    [ "TilemapSeriesIkhStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_tilemap_series_ikh_states_select_marker_states_hover_animation.html#a0874cef48c80ba48adf180db2a780342", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_tilemap_series_ikh_states_select_marker_states_hover_animation.html#a9792d48880939fb1da1d40ea6c9c08c6", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_tilemap_series_ikh_states_select_marker_states_hover_animation.html#a04aba92fc1661918da2b905bb750046b", null ]
-];

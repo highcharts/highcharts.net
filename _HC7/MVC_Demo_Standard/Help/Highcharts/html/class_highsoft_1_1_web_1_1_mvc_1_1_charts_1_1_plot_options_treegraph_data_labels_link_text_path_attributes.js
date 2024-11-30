@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treegraph_data_labels_link_text_path_attributes =
+[
+    [ "PlotOptionsTreegraphDataLabelsLinkTextPathAttributes", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treegraph_data_labels_link_text_path_attributes.html#abf1e2a50ec28ab6f1cd04984cb178db5", null ],
+    [ "StartOffset", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_treegraph_data_labels_link_text_path_attributes.html#ac0734a7c57e734b62bb187975a395c44", null ]
+];

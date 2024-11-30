@@ -1,16 +1,14 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping =
 [
     [ "PlotOptionsSeriesDataGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a51989ac0f1b856e790e0162e1d3f82e3", null ],
-    [ "Approximation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#ad4e7b5872ef1df499837a501e06f2056", null ],
-    [ "Approximation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a49848fc73169deb62576aba407f53e1c", null ],
-    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a9254e9034f8c916fad278fff54212703", null ],
-    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#acdc7ab8c040d741f1c1840801b48b8b5", null ],
+    [ "Anchor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a5047dd58c6bd1cb1983c87639ba16f4d", null ],
+    [ "Approximation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a4b18cb1173f7e66fd2c1ca3b89e587f3", null ],
+    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#aeade0cf6ecdb4811db5ab5ddb48d8ff8", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a904e5c4ad9a785e755fd84f3ee264c7b", null ],
-    [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a39c1852c71157adf601f825ad7ff87cb", null ],
+    [ "FirstAnchor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#af61bc75eb00b0bfcf14a364c0b202fcb", null ],
     [ "Forced", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a9d59f6e50fc5ab73a25b5163fc3ecbd2", null ],
-    [ "Forced_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#ac1f348eff2d04b2865d49fd2a164dfbd", null ],
+    [ "GroupAll", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a559e91f688020f8a7b031302c20d7cac", null ],
     [ "GroupPixelWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#ad5aa67c1a85fd69ad23013979a68cd79", null ],
-    [ "GroupPixelWidth_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a0025a7acbe8a039886ee1c7e3558df96", null ],
-    [ "Smoothed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#acada58e56724db8eb1a2f626bb53b7f3", null ],
-    [ "Smoothed_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a5b690471e43bd431fe740dd6ece573de", null ]
+    [ "LastAnchor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#a37de3a03c94c7a4f7a49c7b529e9b476", null ],
+    [ "Smoothed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_series_data_grouping.html#acada58e56724db8eb1a2f626bb53b7f3", null ]
 ];

@@ -1,0 +1,28 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options =
+[
+    [ "NavigationAnnotationsOptionsLabelOptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#af6a818547f40103dcbab704f4df4b51a", null ],
+    [ "Accessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a2763eb13e5454964ace89a7b00ca5245", null ],
+    [ "Align", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a467a856caba6ede6a64bf4cbb6afb0e0", null ],
+    [ "AllowOverlap", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#aa6b5d193c06e9cd831b8afb77f4a752b", null ],
+    [ "BackgroundColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#aaa19ec65dab286287d9011213ea1fd26", null ],
+    [ "BorderColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a451ed7014b2242f729716d46ee389d20", null ],
+    [ "BorderRadius", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a5bc94097d362a542a53e13f9dbd4ab3a", null ],
+    [ "BorderWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#aa685ec7ebe83fb899dd59100d47f7fa8", null ],
+    [ "ClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a78749244caf69fb4af95d1d6ee3540ca", null ],
+    [ "Crop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#aadb2da68e2c00c21e0706c082e356f26", null ],
+    [ "Distance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a6b1e5d780cadfeae305e88940588ef15", null ],
+    [ "Format", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a11df09b4c4c395142c8c9234a2ad5d2f", null ],
+    [ "Formatter", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a20d0eab1e437a294d5488fce16c6b46b", null ],
+    [ "IncludeInDataExport", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a062b1f606525f629f96e64e7d0ba0256", null ],
+    [ "Overflow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a1d07ef425c44dbee6e7f3166068c9e91", null ],
+    [ "Padding", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#aef3bb5c664e536f7692b194d6319c367", null ],
+    [ "Shadow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a4b20c1a8ce83d8f2b9af72b1f84e7aa4", null ],
+    [ "ShadowBool", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#abec71d9b59a19ba489aa9ef152791497", null ],
+    [ "Shape", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a483f5c42bbd52d5a20cf8e7f4ea3c420", null ],
+    [ "Style", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a33b04bd730cd844aea25eb759656d868", null ],
+    [ "Text", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#ae585dcd1d31d82a03b27ec3bd1d9ad93", null ],
+    [ "UseHTML", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a595e03ff0c4493244dd2cdf4e172e30c", null ],
+    [ "VerticalAlign", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#ac990ab3ff2029545cd281a44bee1dd01", null ],
+    [ "X", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a20d05bfc9d5cb8e2dcc0e4d931ee88fd", null ],
+    [ "Y", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_label_options.html#a3c175ae8aa1b01b64e018097d3a3c618", null ]
+];

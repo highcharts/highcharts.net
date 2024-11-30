@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_navigation_annotations_options_shapes_point =
+[
+    [ "NavigationAnnotationsOptionsShapesPoint", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_navigation_annotations_options_shapes_point.html#a8a2786315a89ef4e85fb5cc47434a5ae", null ]
+];

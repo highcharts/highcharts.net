@@ -1,0 +1,19 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping =
+[
+    [ "PlotOptionsLinearregressionslopeSonificationDefaultSpeechOptionsMapping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#a9df8f24c79cd85e8e107215e9fdd75d8", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#aa511e27e43c7faa6f6d4946ddae51fda", null ],
+    [ "GapBetweenNotes", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#a6b497c589f576ec0ba62da75a37e23da", null ],
+    [ "Highpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#ab3595b4ba65511c4963bd55dd21569dd", null ],
+    [ "Lowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#a11caff51d0b8e5d0d48825ad03c0aacb", null ],
+    [ "NoteDuration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#ab715eb40d56ab2092f781439560b6d83", null ],
+    [ "Pan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#a989647f63e1763c94290dd108e7062b9", null ],
+    [ "Pitch", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#ac185cce611bd093cf0242d50d0acd3d6", null ],
+    [ "PitchNumber", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#a5c6242ff778d6900e2fb076a5e3698be", null ],
+    [ "PitchString", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#a3a89f92a706ea2729cb08aaacd31f871", null ],
+    [ "PlayDelay", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#a6c332fe7f9f83ea1bd278a1e0adc78af", null ],
+    [ "Time", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#a76a1a003e914a02e8fb45abbe709294e", null ],
+    [ "TimeNumber", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#aecd12360537614e980fe3deebf920d7c", null ],
+    [ "TimeString", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#ab6cb9c7f6830bd0bbbd793f26548c24b", null ],
+    [ "Tremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#a5fa4f5278e78472293b8152976c96824", null ],
+    [ "Volume", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_default_speech_options_mapping.html#ae66459d48553a4e019123224447573f0", null ]
+];

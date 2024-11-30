@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_context_tracks_mapping_tremolo_speed =
+[
+    [ "PlotOptionsScatter3dSonificationContextTracksMappingTremoloSpeed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_context_tracks_mapping_tremolo_speed.html#a0554da28aa695d75201c28f9753be2dc", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_context_tracks_mapping_tremolo_speed.html#ad4eb1923ea8da63a0af0352d11665db1", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_context_tracks_mapping_tremolo_speed.html#aa47ab856aa2e44cdee2a8b5a1c3967f0", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_context_tracks_mapping_tremolo_speed.html#afa54a3f64f64289090ed91a9b137b56d", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_context_tracks_mapping_tremolo_speed.html#a4b422e919d46aa6424f89f80207e35ad", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_context_tracks_mapping_tremolo_speed.html#af9fd15a3d9a96e81b6ac06f0e8ca70db", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_sonification_context_tracks_mapping_tremolo_speed.html#a8d1749165367a99a98f6f15f5ccff817", null ]
+];

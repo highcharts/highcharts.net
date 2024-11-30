@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_speech_options_mapping_lowpass_frequency =
+[
+    [ "GaugeSeriesSonificationDefaultSpeechOptionsMappingLowpassFrequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a9cbf7d7df36dc43e0f937d6e960c90ea", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a26e5035565a9622dd9b4be019bc289c1", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a19d0ef9e2f813e599ede8c9e87d6568f", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a8fa8b44f4e84accdd66b075b001265f0", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a54a2b67fb2722a9e72bd81460866fd7d", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a879b930399146302e1113375d8b49342", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_speech_options_mapping_lowpass_frequency.html#a4eb1bd4f5ed60d484f0a03cab6f5b8aa", null ]
+];

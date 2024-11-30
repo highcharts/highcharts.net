@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_states_inactive_animation =
+[
+    [ "PlotOptionsHollowcandlestickStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_states_inactive_animation.html#ad4e703dc0d59efb504d102cd05ec3975", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_states_inactive_animation.html#af137ab46719da5adc75fc38a1b7df015", null ]
+];

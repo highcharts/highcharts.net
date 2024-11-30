@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_instrument_options_mapping_lowpass_frequency =
+[
+    [ "WindbarbSeriesSonificationDefaultInstrumentOptionsMappingLowpassFrequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_instrument_options_mapping_lowpass_frequency.html#afc9bb4ee3a7fde23c35b3080c5cb6f4e", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_instrument_options_mapping_lowpass_frequency.html#a014a5bdc02f9f152aef0d2adb4bdb65b", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_instrument_options_mapping_lowpass_frequency.html#a8e380d6107cde6bd513d48df3b5751c8", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_instrument_options_mapping_lowpass_frequency.html#af65bae45b573a22c50dadea90eab0373", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_instrument_options_mapping_lowpass_frequency.html#a7c20c3b44c24f21d7c29d494d0f71355", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_instrument_options_mapping_lowpass_frequency.html#aa3350b99ad445887496dfad11b130f04", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_windbarb_series_sonification_default_instrument_options_mapping_lowpass_frequency.html#a01bf141ae0e1271dadb58bb52c06deee", null ]
+];

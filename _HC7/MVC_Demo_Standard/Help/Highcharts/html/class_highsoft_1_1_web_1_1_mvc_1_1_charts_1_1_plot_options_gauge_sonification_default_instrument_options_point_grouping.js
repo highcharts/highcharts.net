@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_point_grouping =
+[
+    [ "PlotOptionsGaugeSonificationDefaultInstrumentOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_point_grouping.html#afbe78012fb8ff50f17aa9369d77a5a3a", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_point_grouping.html#a22c48412b13e676c0cdc2b10593647ca", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_point_grouping.html#ab25750062dfc811bacde88e55f7869a7", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_point_grouping.html#a01261852c9828e4ca9702cea5d57d681", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_point_grouping.html#a94b18a0c594763bd4f2ec6d6d11ca6cb", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_data_labels_animation =
+[
+    [ "PlotOptionsHollowcandlestickDataLabelsAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_data_labels_animation.html#a11537b24d03458510032b2432ce0bb45", null ],
+    [ "Defer", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_data_labels_animation.html#aad8241e8826f15290d92c3dd6f4d5596", null ]
+];

@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_context_tracks_mapping_highpass_resonance =
+[
+    [ "TrendlineSeriesSonificationContextTracksMappingHighpassResonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_context_tracks_mapping_highpass_resonance.html#aa9a90241f546eb90a7d6c46782fc77cd", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_context_tracks_mapping_highpass_resonance.html#af2056136f036179091201250c76efd4e", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_context_tracks_mapping_highpass_resonance.html#a78456717a84265d44fd23e9874ee943b", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_context_tracks_mapping_highpass_resonance.html#a865ae9076415a4ba38793ad8e29b6866", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_context_tracks_mapping_highpass_resonance.html#a9272b59bcff2136471bc99b427618f7e", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_context_tracks_mapping_highpass_resonance.html#a32f3ec434de7e3aac29100580582ea40", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_context_tracks_mapping_highpass_resonance.html#a2343e029d11156011c54658e9f7f07dd", null ]
+];

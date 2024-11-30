@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_205c731b9a076935d28702aead2a0a9e =
+[
+    [ "PlotOptionsDependencywheelSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_205c731b9a076935d28702aead2a0a9e.html#ad8f01902774eaacfb972ce3bf8ea1480", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_205c731b9a076935d28702aead2a0a9e.html#aaed0c614bc70cd577e868d7591a0e1be", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_sonification_default_205c731b9a076935d28702aead2a0a9e.html#adcaa51c742944715a2379c3492b9da2c", null ]
+];

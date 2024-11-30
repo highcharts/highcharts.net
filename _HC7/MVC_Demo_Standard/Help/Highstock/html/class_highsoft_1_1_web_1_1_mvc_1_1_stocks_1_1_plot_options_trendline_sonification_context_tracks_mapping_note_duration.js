@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_mapping_note_duration =
+[
+    [ "PlotOptionsTrendlineSonificationContextTracksMappingNoteDuration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_mapping_note_duration.html#a46149cc07079f38ba3c75683541eecdc", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_mapping_note_duration.html#a545d53a8654a27e865aa099fd81fdacb", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_mapping_note_duration.html#a8ef365726b5a5191ca2dd4d32d46d5f3", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_mapping_note_duration.html#ab8ed9218ace88845c651f0e90d05110b", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_mapping_note_duration.html#ad216e49c7610d5ed4454a728389b230a", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_mapping_note_duration.html#a7172b6bf4103663e8120067688f738bf", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_mapping_note_duration.html#a779fbfbad518a230a4a4e4f3e5f1f70e", null ]
+];

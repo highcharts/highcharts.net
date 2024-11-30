@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_crooked_lines_crooked3 =
+[
+    [ "StockToolsGuiDefinitionsCrookedLinesCrooked3", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_crooked_lines_crooked3.html#ac661b3b884ae877644b499643365f39c", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_crooked_lines_crooked3.html#adb5f74457e514c9b0a98b2cea13f79f7", null ]
+];

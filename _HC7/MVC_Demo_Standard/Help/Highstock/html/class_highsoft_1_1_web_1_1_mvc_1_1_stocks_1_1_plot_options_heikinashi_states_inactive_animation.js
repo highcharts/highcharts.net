@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_heikinashi_states_inactive_animation =
+[
+    [ "PlotOptionsHeikinashiStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_heikinashi_states_inactive_animation.html#aa426318d48bb96e8e04252cd160eda07", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_heikinashi_states_inactive_animation.html#a865132725fcad980d5fe7c61bc12efe3", null ]
+];

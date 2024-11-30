@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_accessibility_keyboard_navigation =
+[
+    [ "PlotOptionsBellcurveAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_accessibility_keyboard_navigation.html#a7d662bf28f3fd4d4b5ae38ada80fe0d3", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_accessibility_keyboard_navigation.html#a40d00285f3965d466d43ae301ff00a2d", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_context_tracks_mapping_highpass =
+[
+    [ "PolygonSeriesSonificationContextTracksMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_context_tracks_mapping_highpass.html#aba1ed27efce2383ccf1c4f3234fbfde3", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_context_tracks_mapping_highpass.html#a5d291c0f473124c8b0c481cac9a4ac9b", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_context_tracks_mapping_highpass.html#a3d413042cdf223b5012d5d040a4f8765", null ]
+];

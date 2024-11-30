@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatiodf1c674bac2e401ea3b236e48f51f3d7 =
+[
+    [ "PlotOptionsLinearregressioninterceptSonificationDefaultSpeechOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatiodf1c674bac2e401ea3b236e48f51f3d7.html#a24e43aed221f3b0f9ac81de37e5be3ea", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatiodf1c674bac2e401ea3b236e48f51f3d7.html#a5f04f8e5182a16fcef2ded73b60db79a", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatiodf1c674bac2e401ea3b236e48f51f3d7.html#af0c396749e8809fdbc415a71c60c2182", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatiodf1c674bac2e401ea3b236e48f51f3d7.html#a963eba4258ff31597760fc561b22d56a", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionintercept_sonificatiodf1c674bac2e401ea3b236e48f51f3d7.html#a2dbe85904e3d6aec2dee430b71fcb9ca", null ]
+];

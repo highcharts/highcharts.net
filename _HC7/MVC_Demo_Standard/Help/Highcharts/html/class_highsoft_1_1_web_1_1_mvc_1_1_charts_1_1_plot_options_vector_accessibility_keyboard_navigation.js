@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_vector_accessibility_keyboard_navigation =
+[
+    [ "PlotOptionsVectorAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_vector_accessibility_keyboard_navigation.html#a689da5a3b2ed635d715be8e6518c44b1", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_vector_accessibility_keyboard_navigation.html#abbcb15dd556b1b8fd3824af572e0c883", null ]
+];

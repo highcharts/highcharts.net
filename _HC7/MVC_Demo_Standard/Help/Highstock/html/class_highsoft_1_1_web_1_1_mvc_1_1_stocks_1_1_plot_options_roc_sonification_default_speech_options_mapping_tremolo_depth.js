@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_roc_sonification_default_speech_options_mapping_tremolo_depth =
+[
+    [ "PlotOptionsRocSonificationDefaultSpeechOptionsMappingTremoloDepth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_roc_sonification_default_speech_options_mapping_tremolo_depth.html#acf6668c6f02156b6dc8f1d5d7de2f9d8", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_roc_sonification_default_speech_options_mapping_tremolo_depth.html#a38ab3db037d0c34d8749d8eab6d3142b", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_roc_sonification_default_speech_options_mapping_tremolo_depth.html#a2757f2c88527630b88c252e6ca3e91c5", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_roc_sonification_default_speech_options_mapping_tremolo_depth.html#ab8aa3b34bf8ac127556104d86e79328a", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_roc_sonification_default_speech_options_mapping_tremolo_depth.html#a05ea2694d113f476ce08dc23604e38ee", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_roc_sonification_default_speech_options_mapping_tremolo_depth.html#aec03456607a19dd8d86a62e5a8580c5d", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_roc_sonification_default_speech_options_mapping_tremolo_depth.html#afcc2a411a9d61a1a5f122f917523117d", null ]
+];

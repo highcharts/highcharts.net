@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_wordcloud_series_ikh_states_hover_marker_states_hover_animation =
-[
-    [ "WordcloudSeriesIkhStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_wordcloud_series_ikh_states_hover_marker_states_hover_animation.html#a5a7cc9019d58ff68b818b309108c2deb", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_wordcloud_series_ikh_states_hover_marker_states_hover_animation.html#a9499af1a60421e3485c6d79e7b6125ed", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_wordcloud_series_ikh_states_hover_marker_states_hover_animation.html#a359375b0fde4760c5d969822af3fa010", null ]
-];

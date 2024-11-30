@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_context_tracks_mapping_tremolo =
+[
+    [ "PlotOptionsLinearregressionslopeSonificationContextTracksMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_context_tracks_mapping_tremolo.html#a3b0262cd618232b5bd0a9de6c743d95e", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_context_tracks_mapping_tremolo.html#af2eaf3549eca715467225421269812f7", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionslope_sonification_context_tracks_mapping_tremolo.html#a76851bce9bd21b25081a352b3ac677bf", null ]
+];

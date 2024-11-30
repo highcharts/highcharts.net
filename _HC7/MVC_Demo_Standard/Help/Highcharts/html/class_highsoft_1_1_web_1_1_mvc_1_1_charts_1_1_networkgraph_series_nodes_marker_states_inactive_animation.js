@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_nodes_marker_states_inactive_animation =
+[
+    [ "NetworkgraphSeriesNodesMarkerStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_nodes_marker_states_inactive_animation.html#aa2fea799feb426ec8513495d5b2adc88", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_networkgraph_series_nodes_marker_states_inactive_animation.html#a5bbe44c498e0959b6da7cf8908c387aa", null ]
+];

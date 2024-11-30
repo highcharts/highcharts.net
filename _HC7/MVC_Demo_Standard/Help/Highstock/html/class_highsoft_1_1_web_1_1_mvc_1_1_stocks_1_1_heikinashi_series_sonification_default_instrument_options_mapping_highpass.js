@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heikinashi_series_sonification_default_instrument_options_mapping_highpass =
+[
+    [ "HeikinashiSeriesSonificationDefaultInstrumentOptionsMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heikinashi_series_sonification_default_instrument_options_mapping_highpass.html#a76cc9f21d82dbd375cdc8c3caf44eded", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heikinashi_series_sonification_default_instrument_options_mapping_highpass.html#a77301e93e307455a9c246cc4a9d538a6", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heikinashi_series_sonification_default_instrument_options_mapping_highpass.html#af438d0a9032de1d5aa92a30fcc7d3c97", null ]
+];

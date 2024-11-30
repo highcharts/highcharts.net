@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_variablepie_states_inactive_animation =
+[
+    [ "PlotOptionsVariablepieStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_variablepie_states_inactive_animation.html#af94aa5747eb2c97fba2c0fef5d4d92cc", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_variablepie_states_inactive_animation.html#aa5b2d854b29c4d43cecf73bfb14cb00a", null ]
+];

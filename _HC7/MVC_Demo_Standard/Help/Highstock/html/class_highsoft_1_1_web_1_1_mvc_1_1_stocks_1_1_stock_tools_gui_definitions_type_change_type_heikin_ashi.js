@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_type_change_type_heikin_ashi =
+[
+    [ "StockToolsGuiDefinitionsTypeChangeTypeHeikinAshi", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_type_change_type_heikin_ashi.html#a0f0ec8f9980715711b8b2714e8cee22b", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_type_change_type_heikin_ashi.html#af828fe2fc0fdd25daddad4fa6083956e", null ]
+];

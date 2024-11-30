@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_chaikin_accessibility_keyboard_navigation =
+[
+    [ "PlotOptionsChaikinAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_chaikin_accessibility_keyboard_navigation.html#a83043af76b124d219121d438470777a3", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_chaikin_accessibility_keyboard_navigation.html#a1468e5d60cd9dfdb4d15df6e90249c00", null ]
+];

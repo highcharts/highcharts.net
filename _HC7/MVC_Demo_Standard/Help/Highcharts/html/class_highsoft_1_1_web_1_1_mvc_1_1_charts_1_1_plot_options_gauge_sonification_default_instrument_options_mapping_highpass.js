@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_highpass =
+[
+    [ "PlotOptionsGaugeSonificationDefaultInstrumentOptionsMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_highpass.html#a94b0ce33081dfbbd001a42eea927d6e4", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_highpass.html#a26a31ba052b9062ae999f31a5cb65f5d", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_sonification_default_instrument_options_mapping_highpass.html#a93ef6c7b0956b8fd78e3cbb906df0f8c", null ]
+];

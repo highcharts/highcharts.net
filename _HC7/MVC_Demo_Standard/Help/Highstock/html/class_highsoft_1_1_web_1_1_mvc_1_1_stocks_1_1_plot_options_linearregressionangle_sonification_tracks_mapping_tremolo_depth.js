@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_tremolo_depth =
+[
+    [ "PlotOptionsLinearregressionangleSonificationTracksMappingTremoloDepth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_tremolo_depth.html#a678122696b775c77e4ea9b5c74d5149b", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_tremolo_depth.html#ab266543dffedcf575e5326e3208a0794", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_tremolo_depth.html#a11ae64a0cd42b6d9638610c6b12e617d", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_tremolo_depth.html#a80969389c26a1015efcc6adcd978d077", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_tremolo_depth.html#a57af68f25039d286cdc799e034c80a69", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_tremolo_depth.html#ac131e6845e2122f02e773e720c8263bf", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_tremolo_depth.html#a5c839755b7e25be3ed93734157f6f359", null ]
+];

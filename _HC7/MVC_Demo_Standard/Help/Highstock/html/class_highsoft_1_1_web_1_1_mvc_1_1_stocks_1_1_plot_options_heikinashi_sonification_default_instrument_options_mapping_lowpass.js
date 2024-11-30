@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_heikinashi_sonification_default_instrument_options_mapping_lowpass =
+[
+    [ "PlotOptionsHeikinashiSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_heikinashi_sonification_default_instrument_options_mapping_lowpass.html#a7157538bbb2315cfa62c8c1bb5cadcaa", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_heikinashi_sonification_default_instrument_options_mapping_lowpass.html#a1532b764e2520a50448db8bf2380abde", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_heikinashi_sonification_default_instrument_options_mapping_lowpass.html#a6b24759f4cf70276ee004a547d1c5831", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_dumbbell_series_accessibility_keyboard_navigation =
+[
+    [ "DumbbellSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_dumbbell_series_accessibility_keyboard_navigation.html#ab43e67e8e3a84ee973c163b1d3daa08c", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_dumbbell_series_accessibility_keyboard_navigation.html#ad02c394ce7f419b13d7b0fa30dfe7f6b", null ]
+];

@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_9376fcd5937b8de45ca49fa8bc995eaf =
+[
+    [ "LinearregressionangleSeriesSonificationDefaultSpeechOptionsMappingHighpassFrequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_9376fcd5937b8de45ca49fa8bc995eaf.html#aa21c3c506ed8a25f16d3c91c1467fca3", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_9376fcd5937b8de45ca49fa8bc995eaf.html#a71cb65e62f0a97e056a9fd62a234761f", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_9376fcd5937b8de45ca49fa8bc995eaf.html#aa452c08f62ca5b682ff0d04b69b6fd83", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_9376fcd5937b8de45ca49fa8bc995eaf.html#a80dcf42681392c252724e460770e89d7", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_9376fcd5937b8de45ca49fa8bc995eaf.html#a1fbb88950551263e71a8e648fe81e2c0", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_9376fcd5937b8de45ca49fa8bc995eaf.html#aad0fb081f3f4977361451124734a5582", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionangle_series_sonification_default_9376fcd5937b8de45ca49fa8bc995eaf.html#a6f30c9fd2388dc8fb2cefc5448f5bff4", null ]
+];

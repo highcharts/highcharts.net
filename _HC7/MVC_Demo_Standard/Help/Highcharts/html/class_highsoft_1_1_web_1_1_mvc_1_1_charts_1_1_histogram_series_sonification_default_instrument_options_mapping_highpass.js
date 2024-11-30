@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_histogram_series_sonification_default_instrument_options_mapping_highpass =
+[
+    [ "HistogramSeriesSonificationDefaultInstrumentOptionsMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_histogram_series_sonification_default_instrument_options_mapping_highpass.html#abbcddc5f59339304cda34d26294ce259", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_histogram_series_sonification_default_instrument_options_mapping_highpass.html#a4c1c2d4c6fefbd7712ceb5fa13ec852b", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_histogram_series_sonification_default_instrument_options_mapping_highpass.html#a97bba02bb128c2aacb039107534fdb3f", null ]
+];

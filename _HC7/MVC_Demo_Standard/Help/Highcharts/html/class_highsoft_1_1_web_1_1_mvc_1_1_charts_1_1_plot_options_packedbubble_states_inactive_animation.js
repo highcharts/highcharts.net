@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_packedbubble_states_inactive_animation =
+[
+    [ "PlotOptionsPackedbubbleStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_packedbubble_states_inactive_animation.html#a97d52d51830eec40f4a1df55cb2dcc64", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_packedbubble_states_inactive_animation.html#a1f5c6733f92bb871b494a40aaaa94fc8", null ]
+];

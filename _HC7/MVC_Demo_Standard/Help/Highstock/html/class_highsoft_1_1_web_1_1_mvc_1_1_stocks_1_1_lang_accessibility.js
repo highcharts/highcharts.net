@@ -1,0 +1,26 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility =
+[
+    [ "LangAccessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a886f187770f5a150c169186096a82e1c", null ],
+    [ "AnnounceNewData", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a357df34bfd824aa26cc33f855a81ea78", null ],
+    [ "Axis", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#ae3dc8269c9b1a23f92828baf133cffdf", null ],
+    [ "ChartContainerLabel", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a7965621f7c9448d837e69cdbd5d6ff5e", null ],
+    [ "ChartTypes", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a2544340e79674f90bf4a4c7bee273009", null ],
+    [ "Credits", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a6b67c740a43c51c9d70c7b8391747ab5", null ],
+    [ "DefaultChartTitle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a8656e21c0b9bef2e741019dccc2af73c", null ],
+    [ "DrillUpButton", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#ace8a0261712d39822023d02457c21ac7", null ],
+    [ "Exporting", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a58f955077327923d9c8c6b8183cd9794", null ],
+    [ "GraphicContainerLabel", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#acd9724c7a8e5f2e84a6dfc117695c6c6", null ],
+    [ "Legend", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a7f0593ef538d68d63e51a03c40f467e0", null ],
+    [ "Navigator", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#ad8093c42243cf631dd707d0f167d843f", null ],
+    [ "RangeSelector", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#aae1db85ad4296ad6ec60531c055b60f9", null ],
+    [ "ResetZoomButton", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a9849134195d48f356a4cd7088d49d444", null ],
+    [ "ScreenReaderSection", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#ada7ba36d8f81a980667217c0fb140b34", null ],
+    [ "Series", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a71c78d6604bb1daeac1fbbd69d568034", null ],
+    [ "SeriesTypeDescriptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#ac7107631108f6cdda6bd9ad344e07d7e", null ],
+    [ "Sonification", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#adc368ac14b4288c66192185efa13aa53", null ],
+    [ "SvgContainerLabel", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a3eab605259c98fdb05f19abe4ef8a2ec", null ],
+    [ "SvgContainerTitle", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#abe993fa209492ae5658f15a508832017", null ],
+    [ "Table", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a5558ba7f98abbcd697cc3771fe4cdb5c", null ],
+    [ "ThousandsSep", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a042b151819747796f7ad3fc92f9d5827", null ],
+    [ "Zoom", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lang_accessibility.html#a47f96b355ba4fdb497c5d408bcb9c0e5", null ]
+];

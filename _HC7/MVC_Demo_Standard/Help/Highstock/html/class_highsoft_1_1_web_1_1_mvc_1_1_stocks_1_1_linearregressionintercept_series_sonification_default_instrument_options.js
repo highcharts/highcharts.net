@@ -1,0 +1,13 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options =
+[
+    [ "LinearregressioninterceptSeriesSonificationDefaultInstrumentOptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options.html#a7b33200e8ec3202f1b97d7cb6c8c5f10", null ],
+    [ "ActiveWhen", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options.html#a6eaf3df2c216654805a2b5c6374e8ed4", null ],
+    [ "Instrument", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options.html#a4f6ccab75ab95d84ef91172d94e2bad1", null ],
+    [ "InstrumentString", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options.html#a0ef1c6271cd3029a64fce28e8372412c", null ],
+    [ "Mapping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options.html#a1bff540b8962f3e75224bb3eb73e128b", null ],
+    [ "MidiName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options.html#abb8c554851e5ddad9ee0044f9ff41e3f", null ],
+    [ "PointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options.html#a861ef9b2e291fe846215229505196b5a", null ],
+    [ "RoundToMusicalNotes", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options.html#a07aa27b76612d49a2391178a66d1b7c6", null ],
+    [ "ShowPlayMarker", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options.html#a503687ab90c87c02828f0bb35355dcfe", null ],
+    [ "Type", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_sonification_default_instrument_options.html#a3e470461fd03732fe7d2e1138059b12a", null ]
+];

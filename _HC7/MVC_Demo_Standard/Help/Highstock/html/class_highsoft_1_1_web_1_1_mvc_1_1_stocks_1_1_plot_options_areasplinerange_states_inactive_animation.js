@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_states_inactive_animation =
+[
+    [ "PlotOptionsAreasplinerangeStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_states_inactive_animation.html#ab715639acede043ca6fb862c4f62fb1d", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_states_inactive_animation.html#a9745fda4523bd6b5970af7af04724258", null ]
+];

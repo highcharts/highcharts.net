@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_organization_states_select_animation =
+[
+    [ "PlotOptionsOrganizationStatesSelectAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_organization_states_select_animation.html#a58cf996d03cf70ee52252f2b24fccd5d", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_organization_states_select_animation.html#a19e7afca4d24ac522f1cfe274a1edfaf", null ]
+];

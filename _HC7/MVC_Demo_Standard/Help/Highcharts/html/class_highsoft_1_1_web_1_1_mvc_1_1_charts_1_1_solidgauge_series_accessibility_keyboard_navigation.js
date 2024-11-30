@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_solidgauge_series_accessibility_keyboard_navigation =
+[
+    [ "SolidgaugeSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_solidgauge_series_accessibility_keyboard_navigation.html#a336f7d6332c8f75b23445508f1846a6c", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_solidgauge_series_accessibility_keyboard_navigation.html#a1b56753f5a6d2047f8027dde4be0b798", null ]
+];

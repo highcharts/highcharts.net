@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_accessibility_keyboard_navigation =
+[
+    [ "PlotOptionsGaugeAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_accessibility_keyboard_navigation.html#aaa1a30540c468cd62a260ff7971655b4", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_gauge_accessibility_keyboard_navigation.html#ae4cacd6c4933f22f726d2fcde4a0ab28", null ]
+];

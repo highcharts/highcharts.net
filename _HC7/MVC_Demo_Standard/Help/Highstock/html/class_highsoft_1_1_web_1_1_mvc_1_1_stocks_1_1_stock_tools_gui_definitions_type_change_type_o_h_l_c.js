@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_type_change_type_o_h_l_c =
+[
+    [ "StockToolsGuiDefinitionsTypeChangeTypeOHLC", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_type_change_type_o_h_l_c.html#a3fd4fc90e707a413de93b7c4200d8817", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_type_change_type_o_h_l_c.html#a5836b5fa06300b840ff384d1107c9b1f", null ]
+];

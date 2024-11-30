@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_states_select_marker_states_hover_animation =
-[
-    [ "PlotOptionsWaterfallStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_states_select_marker_states_hover_animation.html#a89d1b5fad88c9a2b395059ef2d93fe4a", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_states_select_marker_states_hover_animation.html#a39eb69c02dce272c0e0f15ca140115b5", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_waterfall_states_select_marker_states_hover_animation.html#a745856bec69bb2a68b03b35e405b9ed4", null ]
-];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_states_inactive_animation =
+[
+    [ "PlotOptionsStreamgraphStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_states_inactive_animation.html#a8d6054c6e4db38750702cc79e6898739", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_states_inactive_animation.html#a13dc194f3c93c0bfed425c701cafc475", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_advanced_fibonacci_time_zones =
+[
+    [ "StockToolsGuiDefinitionsAdvancedFibonacciTimeZones", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_advanced_fibonacci_time_zones.html#a468eb564314f97fe83555ef393107323", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_advanced_fibonacci_time_zones.html#a51822556bc3983c2e7f9c97a89e28788", null ]
+];

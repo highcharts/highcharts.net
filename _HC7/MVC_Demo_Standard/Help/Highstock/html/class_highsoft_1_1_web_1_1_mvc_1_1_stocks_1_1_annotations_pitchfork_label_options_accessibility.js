@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options_accessibility =
+[
+    [ "AnnotationsPitchforkLabelOptionsAccessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options_accessibility.html#a70ded0f8b4c76f834a238cb44fc23237", null ],
+    [ "Description", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_pitchfork_label_options_accessibility.html#a337d77e009ace13b6c3af7afe6811db6", null ]
+];

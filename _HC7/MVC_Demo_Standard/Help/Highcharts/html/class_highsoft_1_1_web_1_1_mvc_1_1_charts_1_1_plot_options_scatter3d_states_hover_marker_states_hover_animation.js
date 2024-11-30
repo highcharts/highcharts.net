@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_states_hover_marker_states_hover_animation =
-[
-    [ "PlotOptionsScatter3dStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_states_hover_marker_states_hover_animation.html#aeb5da10e9b4266f6d00bd1547b1f450f", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_states_hover_marker_states_hover_animation.html#a6886a185f3f43173c8534b1188b1a2fe", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_scatter3d_states_hover_marker_states_hover_animation.html#a7725fb1b3bb3aa11370ea2561966d67e", null ]
-];

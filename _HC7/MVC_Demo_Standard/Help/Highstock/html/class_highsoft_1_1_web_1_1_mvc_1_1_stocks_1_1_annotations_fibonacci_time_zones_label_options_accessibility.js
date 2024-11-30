@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_time_zones_label_options_accessibility =
+[
+    [ "AnnotationsFibonacciTimeZonesLabelOptionsAccessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_time_zones_label_options_accessibility.html#a41a29d29a8ab89ae64e5d177a56be4fb", null ],
+    [ "Description", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_time_zones_label_options_accessibility.html#af33dde6739c9ac7bdf9c9e0cbc772bb6", null ]
+];

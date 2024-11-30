@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_pc_series_sonification_default_instrument_options_mapping_lowpass =
+[
+    [ "PcSeriesSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_pc_series_sonification_default_instrument_options_mapping_lowpass.html#ae2dc6a8d471510a913f8252ef23369a2", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_pc_series_sonification_default_instrument_options_mapping_lowpass.html#a469da692b65770e9a220d4d28610895c", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_pc_series_sonification_default_instrument_options_mapping_lowpass.html#a6795143400c41b284a3073c21ae6a3c7", null ]
+];

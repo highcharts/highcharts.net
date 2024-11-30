@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_packedbubble_data_labels_parent_node_text_path =
+[
+    [ "PlotOptionsPackedbubbleDataLabelsParentNodeTextPath", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_packedbubble_data_labels_parent_node_text_path.html#a00ae06b8b9c3ed17395c4c54c4dcc2d6", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_packedbubble_data_labels_parent_node_text_path.html#a8be5eada70da626f19ecf2ef2312fe0e", null ]
+];

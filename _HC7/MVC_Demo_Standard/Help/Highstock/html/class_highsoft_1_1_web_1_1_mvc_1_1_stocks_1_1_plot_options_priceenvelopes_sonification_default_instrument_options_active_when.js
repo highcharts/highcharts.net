@@ -1,0 +1,9 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_instrument_options_active_when =
+[
+    [ "PlotOptionsPriceenvelopesSonificationDefaultInstrumentOptionsActiveWhen", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_instrument_options_active_when.html#a1197bba6137c5e33a176fd44bc043b6e", null ],
+    [ "CrossingDown", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_instrument_options_active_when.html#a3b9c6b66afaa9b32c8cea7c42dbdad1b", null ],
+    [ "CrossingUp", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_instrument_options_active_when.html#a6504f60c130b811e4b4bc602c692e700", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_instrument_options_active_when.html#ae20bc3be780b943dcb6317c670178d23", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_instrument_options_active_when.html#a51b1abf3f93e9b1dba59649fde95671b", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_instrument_options_active_when.html#ad50a6efc6e11c5b365bae8c7ddd09ee2", null ]
+];

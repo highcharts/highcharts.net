@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_frequency =
+[
+    [ "PlotOptionsPyramid3dSonificationDefaultInstrumentOptionsMappingFrequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_frequency.html#a0bddbc15508c3562ea17dab595999ed2", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_frequency.html#ad69e85027c13d75562bdbdb18b87ddcf", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_frequency.html#a82b02cdf94abe5e7ce4f17348fcd4f41", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_frequency.html#a5658a1a49c6a0fe3682e6857b5d5e185", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_frequency.html#abaa01a103b27b85ec4aa4c3b90504c8a", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_frequency.html#adb2f8f048de5e999c9f22c540eee1938", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_frequency.html#ab779f2a8b79266e2ab51fa43f1aeff6f", null ]
+];

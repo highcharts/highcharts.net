@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_lollipop_low_marker_states_hover_animation =
+[
+    [ "PlotOptionsLollipopLowMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_lollipop_low_marker_states_hover_animation.html#afd1444ba505297fa65b689957b2c6d0b", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_lollipop_low_marker_states_hover_animation.html#a3ca4f34669825dfec8792dfdf84168aa", null ]
+];

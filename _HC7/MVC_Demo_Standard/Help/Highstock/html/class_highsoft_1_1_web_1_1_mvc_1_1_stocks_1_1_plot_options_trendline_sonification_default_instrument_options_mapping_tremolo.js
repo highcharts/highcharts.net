@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_default_instrument_options_mapping_tremolo =
+[
+    [ "PlotOptionsTrendlineSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_default_instrument_options_mapping_tremolo.html#af4da611a797f2ab059d6abc53fe26451", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_default_instrument_options_mapping_tremolo.html#ae45ca5cd63a4c148fe6b0e575d2c9d4d", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_default_instrument_options_mapping_tremolo.html#af7311b058d97ad956bdd5c6324e606ac", null ]
+];

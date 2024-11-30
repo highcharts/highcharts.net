@@ -1,32 +1,5 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip =
 [
     [ "PlotOptionsArearangeTooltip", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a91dd42f030083c4c147a189fd9b69147", null ],
-    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#abc705bf535b354885a84c80e0f5a21f8", null ],
-    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#ace0b0dd0133a717f65c305119a7d78d6", null ],
-    [ "FollowPointer", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a87822e0de4a829a7a5c0eb148b6bfa12", null ],
-    [ "FollowPointer_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a14a0a00da02217193e368e3f1561656b", null ],
-    [ "FollowTouchMove", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#ac6c6b2a1de35c49a5e5d1e99fe53fcec", null ],
-    [ "FollowTouchMove_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a6ae1fe033c23a2cfc48367916cda91eb", null ],
-    [ "FooterFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#acdb38b1c055d625927c30afd6559135e", null ],
-    [ "FooterFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a9a5003f7b9369dc2e7063dd72bae2de2", null ],
-    [ "HeaderFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a0853ee60def942c2792e8e43a9772d66", null ],
-    [ "HeaderFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#aff3815ff5bac771e645f69d6500670a3", null ],
-    [ "HideDelay", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#af4be03519589fdda203d4280c05381ab", null ],
-    [ "HideDelay_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a3efb201cdd9551d903e8a366821f95a4", null ],
-    [ "Padding", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a5f1f2508b8c91d929e954eb705292bcf", null ],
-    [ "Padding_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a975500d1b8449149681704f21a155b03", null ],
-    [ "PointFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#aa2bf1edefee519fe708a0fc976a965f9", null ],
-    [ "PointFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#aee51ac1295183d3d8d0f6fd33fb74e72", null ],
-    [ "PointFormatter", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#ac354726251c845c60c7a9fe173d05f07", null ],
-    [ "PointFormatter_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#ae3c5b94bba2678734a7a091eebae3b8f", null ],
-    [ "Split", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a5c6aacc47324f2078ad2a06de87f5ab5", null ],
-    [ "Split_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a9057a06c8cadd0cbfb6368685d0946b7", null ],
-    [ "ValueDecimals", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#ad99e846548510d53d3dddd4a3fab995e", null ],
-    [ "ValueDecimals_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#abe4e65542e9b29a29637e31ca207e37e", null ],
-    [ "ValuePrefix", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#ac4f8fb5f3954edd22931b572d306aaae", null ],
-    [ "ValuePrefix_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a021c220b0557fb9050dcd03aa25bd366", null ],
-    [ "ValueSuffix", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#ae90d495dd5d0102cd405d0b0966ef12a", null ],
-    [ "ValueSuffix_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a6fa640bcdf8c79ae9443d24ce4ddfc3e", null ],
-    [ "XDateFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#ad9843566af3d87b07d1785f3ed6597c9", null ],
-    [ "XDateFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#a6501f04b8b1677d983b1852572195581", null ]
+    [ "PointFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_tooltip.html#aa2bf1edefee519fe708a0fc976a965f9", null ]
 ];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionslope_series_sonification_default_5f8b82742f7cb45c4cec2d1f72145664 =
+[
+    [ "LinearregressionslopeSeriesSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionslope_series_sonification_default_5f8b82742f7cb45c4cec2d1f72145664.html#affa9862ac1e828460b67b026cab7c9a9", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionslope_series_sonification_default_5f8b82742f7cb45c4cec2d1f72145664.html#a95e52d94726fc5b3acee374abb724e7d", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionslope_series_sonification_default_5f8b82742f7cb45c4cec2d1f72145664.html#ac10d4b64e62a8df46fb4311eb84a93ba", null ]
+];

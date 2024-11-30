@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_speech_options_mapping_lowpass =
+[
+    [ "PlotOptionsBellcurveSonificationDefaultSpeechOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_speech_options_mapping_lowpass.html#a2d5e9ebf61cb4df5249c44e78348f71c", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_speech_options_mapping_lowpass.html#a95327f2c3cc52f45fba5d40297dfa89d", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_default_speech_options_mapping_lowpass.html#a97dadd2a888383ddf865b2dbf12a7a38", null ]
+];

@@ -1,0 +1,7 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_fibonacci_time_zones_type_options_line =
+[
+    [ "NavigationAnnotationsOptionsFibonacciTimeZonesTypeOptionsLine", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_fibonacci_time_zones_type_options_line.html#ade84a76c9e0c5f4496b511f6cca41fe2", null ],
+    [ "Fill", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_fibonacci_time_zones_type_options_line.html#a539c2c274dbc3c2c914d641ca4d8b2cc", null ],
+    [ "Stroke", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_fibonacci_time_zones_type_options_line.html#a9a92a29c15de028727e896aa7a7e8325", null ],
+    [ "StrokeWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_fibonacci_time_zones_type_options_line.html#a7eb5d1ee6c321b3a01a45f8a4a0033d9", null ]
+];

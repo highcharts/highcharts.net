@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_states_inactive_animation =
+[
+    [ "PlotOptionsLinearregressionangleStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_states_inactive_animation.html#a30881ad4d84ab6026bcf6be36b16f445", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_states_inactive_animation.html#aad301739facbd34465c42c22f0cc0144", null ]
+];

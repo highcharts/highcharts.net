@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_current_price_indicator =
+[
+    [ "StockToolsGuiDefinitionsCurrentPriceIndicator", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_current_price_indicator.html#a41a10940881a437bcba912f70cc7fc67", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_current_price_indicator.html#a9630f2936e36873c5b2a69cedbdc7bcb", null ]
+];

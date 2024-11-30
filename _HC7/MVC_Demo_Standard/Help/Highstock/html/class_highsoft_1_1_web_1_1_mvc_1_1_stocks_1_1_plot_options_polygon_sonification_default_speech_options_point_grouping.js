@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_polygon_sonification_default_speech_options_point_grouping =
+[
+    [ "PlotOptionsPolygonSonificationDefaultSpeechOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_polygon_sonification_default_speech_options_point_grouping.html#a82fcdcad9109df50f957fe882d858198", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_polygon_sonification_default_speech_options_point_grouping.html#a1fcd79d9155ea529d8ccea11c17fb15d", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_polygon_sonification_default_speech_options_point_grouping.html#a26ce176fe10da859c7cebea45cdbf346", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_polygon_sonification_default_speech_options_point_grouping.html#a75cd82d37eeb7f8c7539bedab9c837eb", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_polygon_sonification_default_speech_options_point_grouping.html#a79ccc01d5234d81810ba1c81b86e497e", null ]
+];

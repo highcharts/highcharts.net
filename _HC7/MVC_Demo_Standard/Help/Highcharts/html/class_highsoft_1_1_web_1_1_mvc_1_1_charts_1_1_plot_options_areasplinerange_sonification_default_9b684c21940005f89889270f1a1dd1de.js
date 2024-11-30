@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_sonification_default_9b684c21940005f89889270f1a1dd1de =
+[
+    [ "PlotOptionsAreasplinerangeSonificationDefaultInstrumentOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_sonification_default_9b684c21940005f89889270f1a1dd1de.html#a66019a14d0075f1f4bd8057b1fee9536", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_sonification_default_9b684c21940005f89889270f1a1dd1de.html#a9ab35fab1ac72b862f2c7b3e6acaa69d", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_sonification_default_9b684c21940005f89889270f1a1dd1de.html#a7404ea65a013bb9045ea6884f2e64119", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_sonification_default_9b684c21940005f89889270f1a1dd1de.html#a50201bf8aff257727f159215d714ea78", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_sonification_default_9b684c21940005f89889270f1a1dd1de.html#a48401e475545ac6bc079ad6d8c7d6c3d", null ]
+];

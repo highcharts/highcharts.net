@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_pivotpoints_series_accessibility_keyboard_navigation =
+[
+    [ "PivotpointsSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_pivotpoints_series_accessibility_keyboard_navigation.html#a8b0610d0cb00883901d84ea91a884a61", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_pivotpoints_series_accessibility_keyboard_navigation.html#a586abf0c9493beb28bef4eca6711ef21", null ]
+];

@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_sonification_global_tracks_mapping_text =
+[
+    [ "SonificationGlobalTracksMappingText", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_sonification_global_tracks_mapping_text.html#af2023f4fb0e1190edf091465c9af1bd2", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_iee1121dce8c71df810b97bbcecef2cd3 =
+[
+    [ "PlotOptionsPriceenvelopesSonificationDefaultInstrumentOptionsMappingHighpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_iee1121dce8c71df810b97bbcecef2cd3.html#a8bfd37e4c316aaf1aa0c78baaa100e39", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_iee1121dce8c71df810b97bbcecef2cd3.html#afe72e8b7e86d144a1bb1603895feedf0", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_sonification_default_iee1121dce8c71df810b97bbcecef2cd3.html#a05b56e0151315c334744ca46d84a434a", null ]
+];

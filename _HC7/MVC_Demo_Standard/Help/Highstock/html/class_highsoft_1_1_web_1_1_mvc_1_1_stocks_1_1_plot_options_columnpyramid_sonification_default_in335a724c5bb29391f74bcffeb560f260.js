@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_columnpyramid_sonification_default_in335a724c5bb29391f74bcffeb560f260 =
+[
+    [ "PlotOptionsColumnpyramidSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_columnpyramid_sonification_default_in335a724c5bb29391f74bcffeb560f260.html#a73eb0a0360bf6a0ce6ef91ff4bbced13", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_columnpyramid_sonification_default_in335a724c5bb29391f74bcffeb560f260.html#a1ad093db5c7e4f6af5015593c0989997", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_columnpyramid_sonification_default_in335a724c5bb29391f74bcffeb560f260.html#a31b99801b774f4840bd9feacc8af244a", null ]
+];

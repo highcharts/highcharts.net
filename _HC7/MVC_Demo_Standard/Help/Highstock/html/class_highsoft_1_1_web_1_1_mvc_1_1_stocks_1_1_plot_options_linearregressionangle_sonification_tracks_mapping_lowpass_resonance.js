@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_lowpass_resonance =
+[
+    [ "PlotOptionsLinearregressionangleSonificationTracksMappingLowpassResonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_lowpass_resonance.html#a2953f842655b5e6a753f785249120ddf", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_lowpass_resonance.html#a8e9792534c36a6b4daf131c511261174", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_lowpass_resonance.html#acaed38518d78795bb1890c2edf575134", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_lowpass_resonance.html#a4b0112be312239c65a0f6ebd8ce63a77", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_lowpass_resonance.html#aae72bab591c76f45c030ae32edc1deaa", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_lowpass_resonance.html#ae3fc50d4411ce4423ec8497a57bbc59b", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_tracks_mapping_lowpass_resonance.html#a008c966d65b388bf3a2b10488e4de4e0", null ]
+];

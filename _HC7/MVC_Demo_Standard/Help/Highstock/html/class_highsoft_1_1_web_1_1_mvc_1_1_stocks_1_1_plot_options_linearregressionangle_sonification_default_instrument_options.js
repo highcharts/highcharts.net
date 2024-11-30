@@ -1,0 +1,13 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options =
+[
+    [ "PlotOptionsLinearregressionangleSonificationDefaultInstrumentOptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options.html#ad713757691f49953893a773be63e8f4b", null ],
+    [ "ActiveWhen", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options.html#a03863eb2918cef8c297bf252bf96e3a0", null ],
+    [ "Instrument", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options.html#a6ff31b13aa8abded898db79fddfd3b21", null ],
+    [ "InstrumentString", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options.html#a5a93e5979d52a3d20b3e2fd31bf5a8be", null ],
+    [ "Mapping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options.html#a3350f5338cb848a229bb9669afd7d1ec", null ],
+    [ "MidiName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options.html#aa25224287e29a7a57886765036205ca6", null ],
+    [ "PointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options.html#a3a4a451f1052f848d96592e8c9919348", null ],
+    [ "RoundToMusicalNotes", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options.html#a3b03eb42111268fe1da849cdb3f8a504", null ],
+    [ "ShowPlayMarker", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options.html#a2893846ae77de43a535cfface5a8cab9", null ],
+    [ "Type", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregressionangle_sonification_default_instrument_options.html#a8d237cf5e6f15eac3a7e91890cac82e0", null ]
+];

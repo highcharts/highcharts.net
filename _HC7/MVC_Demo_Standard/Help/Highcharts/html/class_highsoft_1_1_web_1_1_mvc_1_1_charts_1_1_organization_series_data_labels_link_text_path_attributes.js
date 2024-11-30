@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_data_labels_link_text_path_attributes =
+[
+    [ "OrganizationSeriesDataLabelsLinkTextPathAttributes", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_data_labels_link_text_path_attributes.html#a35bcce9334ea456ffe43f39605b4493d", null ],
+    [ "StartOffset", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_data_labels_link_text_path_attributes.html#a8651af49a1bbe4bdc3b6d8a05914bde5", null ],
+    [ "TextAnchor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_organization_series_data_labels_link_text_path_attributes.html#a59402b75e1f3d40c7d10557908f4f3ac", null ]
+];

@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_sonification_context_tracks_mapping_gap_between_notes =
+[
+    [ "PlotOptionsPolygonSonificationContextTracksMappingGapBetweenNotes", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_sonification_context_tracks_mapping_gap_between_notes.html#aae36fd43ba6f14790f2207d3750704c3", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_sonification_context_tracks_mapping_gap_between_notes.html#adb2cf9962db68084cf2ce2598bfa05ef", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_sonification_context_tracks_mapping_gap_between_notes.html#a1b9e506c27277456f3946a86c42e8ecc", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_sonification_context_tracks_mapping_gap_between_notes.html#ab69660fef1408b35fd0bfea5c3381578", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_sonification_context_tracks_mapping_gap_between_notes.html#a541d5aa5953732f7368efdabcf148ea6", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_sonification_context_tracks_mapping_gap_between_notes.html#aa9bc58e496becff6ebec59a3410c2479", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_sonification_context_tracks_mapping_gap_between_notes.html#a813ed83bc8ed50a92ff1d12ac306d959", null ]
+];

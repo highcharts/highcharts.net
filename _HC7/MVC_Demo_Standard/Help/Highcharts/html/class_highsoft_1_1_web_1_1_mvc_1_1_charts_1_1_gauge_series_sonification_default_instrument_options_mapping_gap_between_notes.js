@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_gap_between_notes =
+[
+    [ "GaugeSeriesSonificationDefaultInstrumentOptionsMappingGapBetweenNotes", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_gap_between_notes.html#ab9e52ac93dcb7df92353b3bfdcb15f16", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_gap_between_notes.html#a3ab5efc617029add7af5bcf0da0f310c", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_gap_between_notes.html#acc2187f8371e005b6895b6913d9ed4a7", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_gap_between_notes.html#ac1ee22016be1082a8d9288e561aa5a13", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_gap_between_notes.html#a9e5c90951d619dcc88b41b8f5a45d149", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_gap_between_notes.html#a2d088bf58d8a78a6e26752d89184d872", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_gap_between_notes.html#a0baa53deea90fdbb1d963f5c77037f4c", null ]
+];

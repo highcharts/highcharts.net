@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_errorbar_series_accessibility_keyboard_navigation =
+[
+    [ "ErrorbarSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_errorbar_series_accessibility_keyboard_navigation.html#a0a84ad5b2d8a1681ad2d9b1b9369fc32", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_errorbar_series_accessibility_keyboard_navigation.html#a499c9874e9c3a9dd42eb850efbd8b2ba", null ]
+];

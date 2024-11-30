@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_sonification_default_instrument_options_mapping_lowpass =
+[
+    [ "BellcurveSeriesSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_sonification_default_instrument_options_mapping_lowpass.html#a1317da52d7c63897d097c4be0fcdd461", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_sonification_default_instrument_options_mapping_lowpass.html#abdd9bb7bbede02624821ebe82916a051", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_bellcurve_series_sonification_default_instrument_options_mapping_lowpass.html#ae01a2cc37a8dad069b221e30673d2011", null ]
+];

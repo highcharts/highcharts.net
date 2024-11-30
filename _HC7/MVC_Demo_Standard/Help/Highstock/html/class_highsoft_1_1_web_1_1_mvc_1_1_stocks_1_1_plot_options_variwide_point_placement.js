@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_variwide_point_placement =
-[
-    [ "PlotOptionsVariwidePointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_variwide_point_placement.html#a208eb3a9ea3993785358e50a39ae8dc3", null ]
-];

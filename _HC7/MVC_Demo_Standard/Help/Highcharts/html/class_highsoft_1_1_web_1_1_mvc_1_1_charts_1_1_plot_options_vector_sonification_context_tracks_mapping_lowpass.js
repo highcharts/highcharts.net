@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_vector_sonification_context_tracks_mapping_lowpass =
+[
+    [ "PlotOptionsVectorSonificationContextTracksMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_vector_sonification_context_tracks_mapping_lowpass.html#a2829d2d5fdfeb04cc92bfd5e03022ae8", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_vector_sonification_context_tracks_mapping_lowpass.html#a7d95d24f913bcc1fae97cba95acf65e5", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_vector_sonification_context_tracks_mapping_lowpass.html#a7f4353a6eb3aa69ecb7b6c9b554956c4", null ]
+];

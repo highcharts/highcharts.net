@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregression_series_marker_states_hover_animation =
+[
+    [ "LinearregressionSeriesMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregression_series_marker_states_hover_animation.html#a172fb2174bfe07bf7aa08eb464c7f1d1", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregression_series_marker_states_hover_animation.html#a10055a800b7849955848f3a808631f55", null ]
+];

@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sankey_sonification_default_instrument_options_mapping_lowpass =
+[
+    [ "PlotOptionsSankeySonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sankey_sonification_default_instrument_options_mapping_lowpass.html#a1d03996d4243576a327047e45b80c228", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sankey_sonification_default_instrument_options_mapping_lowpass.html#abac1fda83954cfc0c1bef19f24046932", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_sankey_sonification_default_instrument_options_mapping_lowpass.html#a16d66860330970a317475b114cea9e87", null ]
+];

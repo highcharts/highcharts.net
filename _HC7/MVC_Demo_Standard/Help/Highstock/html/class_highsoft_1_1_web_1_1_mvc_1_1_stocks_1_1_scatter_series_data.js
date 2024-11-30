@@ -1,26 +1,21 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data =
 [
     [ "ScatterSeriesData", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a974fd7fc94947c76cd4d1ddb6c243fda", null ],
+    [ "Accessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#ade3ff050045da0294ae88421c1cc2edc", null ],
+    [ "ClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#af04ef788aaebc4f821f37e60e53007df", null ],
     [ "Color", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a024a80f042b01347ee158c77c2b897bf", null ],
-    [ "Color_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a5ea96b9018dbf9b7f4330f2e67b49938", null ],
+    [ "ColorIndex", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a617e6a20ff00030203ae8020963e2a79", null ],
+    [ "Custom", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a172d3e453faaf89faac57b37a0b66c31", null ],
     [ "DataLabels", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#ab6395f788ce552bb1bcef250e8904121", null ],
-    [ "DataLabels_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a259e7292fcc0da3596a11cd586651a45", null ],
     [ "Description", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a018ed751f5a92820880fb0b1ee0f818f", null ],
-    [ "Description_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a184389557351bc7e2e8fa75faf9c5489", null ],
+    [ "DragDrop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a59f17e099d9624b4d0725cb1102276bb", null ],
+    [ "Drilldown", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#ad5f20c4ca5ae3cf1fe9d3561728d3d45", null ],
     [ "Events", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#adf7de764191dc3c187dbb1df1ea21d06", null ],
-    [ "Events_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#ab3ef59771f5f5de9cf223b99d6763d08", null ],
     [ "Id", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a230477266c7399b06833f698f328fff1", null ],
-    [ "Id_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#aaf393b875ab1a5e9b03b245a4319bad9", null ],
     [ "Labelrank", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a930a7b347e6a00fe2192e0e51cd2be6c", null ],
-    [ "Labelrank_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a5556a4ada54ea0095ac23d21f97bf50f", null ],
     [ "Marker", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#aaa749c752291b022e4192229d1a506e0", null ],
-    [ "Marker_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#ab286475de6c119a67a9fa7e5fd87ee1d", null ],
     [ "Name", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a273fb9bcab32f42731315cd48925ddfd", null ],
-    [ "Name_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#aea7907a1f2e090fc3ed330262a91ff41", null ],
     [ "Selected", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a68028f839140d95b75a02d3a789c202b", null ],
-    [ "Selected_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a02547d49b776298891e7abab3ca4693a", null ],
     [ "X", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a33c44cfb75ca5250e3dcdfde74a2037f", null ],
-    [ "X_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#a7bce8510aa2b3e37f63004c4ec1d83e7", null ],
-    [ "Y", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#aa34e6ccc709bee7154782eb5fb52b6dc", null ],
-    [ "Y_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#aad155d3ef6fe88e911982282d01b88bd", null ]
+    [ "Y", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_scatter_series_data.html#aa34e6ccc709bee7154782eb5fb52b6dc", null ]
 ];

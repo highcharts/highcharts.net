@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_default_speeche846a3839077e2b37dbfd724d9ca8607 =
+[
+    [ "PlotOptionsArearangeSonificationDefaultSpeechOptionsMappingHighpassFrequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_default_speeche846a3839077e2b37dbfd724d9ca8607.html#af054dee66fbee631bb7d3b201fd0861d", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_default_speeche846a3839077e2b37dbfd724d9ca8607.html#a533bbd41a72ddc52f7ed3c79cc72762b", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_default_speeche846a3839077e2b37dbfd724d9ca8607.html#ab268bdf1976cfe2133286b08dafa8a2e", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_default_speeche846a3839077e2b37dbfd724d9ca8607.html#a5f4fb278578b4542626b3df216d3b841", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_default_speeche846a3839077e2b37dbfd724d9ca8607.html#a6e52d108d90daa391dcf3cf93a6ac2f1", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_default_speeche846a3839077e2b37dbfd724d9ca8607.html#ac43a29629cb4150ce645f0b0403a2811", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_arearange_sonification_default_speeche846a3839077e2b37dbfd724d9ca8607.html#ad3644f46280ad4b87cc7aa5f6a8c814f", null ]
+];

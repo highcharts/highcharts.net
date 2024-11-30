@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_point_grouping =
+[
+    [ "PlotOptionsTrendlineSonificationContextTracksPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_point_grouping.html#aecd4bcd388f9187b5feb9354c4a99d64", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_point_grouping.html#ac56c7b740469b34f30e08e5681ade735", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_point_grouping.html#ac2adf260c39e13bcd180956eafcdf5da", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_point_grouping.html#a2a10caf59bd03189a1a0b7f3162e5b39", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_sonification_context_tracks_point_grouping.html#a6326902a6a73526ae093a6c764bfaf2a", null ]
+];

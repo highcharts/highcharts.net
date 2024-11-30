@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_states_hover_animation =
+[
+    [ "PlotOptionsDependencywheelStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_states_hover_animation.html#a5cc6a8f725fb6106f4f9d02dbe9875a3", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_states_hover_animation.html#adf70375d324e27912bb9c13db770e867", null ]
+];

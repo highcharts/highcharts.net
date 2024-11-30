@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_default_instrument_options_mapping_tremolo_depth =
+[
+    [ "DumbbellSeriesSonificationDefaultInstrumentOptionsMappingTremoloDepth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_default_instrument_options_mapping_tremolo_depth.html#a2be1f981305701a09a0043aa3d066a20", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_default_instrument_options_mapping_tremolo_depth.html#a98c0f99a0c5fd5be67bab5b87f978903", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_default_instrument_options_mapping_tremolo_depth.html#a218b7b8338ec8c6b133a70ef9e7b3c92", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_default_instrument_options_mapping_tremolo_depth.html#af2ba2c4c60b166a773d20f2fe9cc21ad", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_default_instrument_options_mapping_tremolo_depth.html#a33b4851255b669f9155dc15fabdad803", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_default_instrument_options_mapping_tremolo_depth.html#a0e308430255d386373fa9d5a6277365a", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dumbbell_series_sonification_default_instrument_options_mapping_tremolo_depth.html#a1e67693a740b1cee186ed77b48ba162c", null ]
+];

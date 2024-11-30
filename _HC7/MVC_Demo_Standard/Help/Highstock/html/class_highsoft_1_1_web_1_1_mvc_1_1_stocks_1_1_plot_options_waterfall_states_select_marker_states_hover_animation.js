@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_waterfall_states_select_marker_states_hover_animation =
-[
-    [ "PlotOptionsWaterfallStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_waterfall_states_select_marker_states_hover_animation.html#ad6dccb95f7b67368b761feefa5eab437", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_waterfall_states_select_marker_states_hover_animation.html#a345e6d10cb57f7d70135f7ccf1a133cc", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_waterfall_states_select_marker_states_hover_animation.html#a0a45f338b9b88b1b6b31da5fbd8de497", null ]
-];

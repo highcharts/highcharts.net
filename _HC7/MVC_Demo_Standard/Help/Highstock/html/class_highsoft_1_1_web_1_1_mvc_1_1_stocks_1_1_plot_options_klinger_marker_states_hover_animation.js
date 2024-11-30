@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_klinger_marker_states_hover_animation =
+[
+    [ "PlotOptionsKlingerMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_klinger_marker_states_hover_animation.html#a4ce66630dbc2e2c578e661bdca82ca9e", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_klinger_marker_states_hover_animation.html#a32cfad2bf150e521ff6400cb9f44501b", null ]
+];

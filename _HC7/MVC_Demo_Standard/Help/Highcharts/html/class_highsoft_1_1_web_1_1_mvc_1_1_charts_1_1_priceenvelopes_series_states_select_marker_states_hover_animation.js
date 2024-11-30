@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_priceenvelopes_series_states_select_marker_states_hover_animation =
-[
-    [ "PriceenvelopesSeriesStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_priceenvelopes_series_states_select_marker_states_hover_animation.html#a45ae429d8d0addccf548ffffeda55b9a", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_priceenvelopes_series_states_select_marker_states_hover_animation.html#a1d4d2ec430ae8b0d1e5ecf1ff8685fc6", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_priceenvelopes_series_states_select_marker_states_hover_animation.html#a5d15997b755f6f3d5c948bbc60165f11", null ]
-];

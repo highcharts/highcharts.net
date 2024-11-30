@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_supertrend_marker_states_hover_animation =
+[
+    [ "PlotOptionsSupertrendMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_supertrend_marker_states_hover_animation.html#a4140a67a2a3fa10d7cfb0a6ac45c15ad", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_supertrend_marker_states_hover_animation.html#adbc69cb1a80dc77227e0424140b52ed9", null ]
+];

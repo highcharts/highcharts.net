@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels_accessibility =
+[
+    [ "AnnotationsFibonacciTypeOptionsLabelsAccessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels_accessibility.html#affa9718eb236ea56533987feae4a7c3f", null ],
+    [ "Description", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_fibonacci_type_options_labels_accessibility.html#ab0185ac79eee65eaca8f0a640d1bbb97", null ]
+];

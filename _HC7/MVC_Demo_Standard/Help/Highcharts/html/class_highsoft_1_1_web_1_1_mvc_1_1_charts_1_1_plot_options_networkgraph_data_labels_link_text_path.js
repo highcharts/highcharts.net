@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_data_labels_link_text_path =
+[
+    [ "PlotOptionsNetworkgraphDataLabelsLinkTextPath", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_data_labels_link_text_path.html#a689336a724d00f31d495f0b93799c952", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_data_labels_link_text_path.html#ab26562b2d4422ef03df19be11a4266fe", null ]
+];

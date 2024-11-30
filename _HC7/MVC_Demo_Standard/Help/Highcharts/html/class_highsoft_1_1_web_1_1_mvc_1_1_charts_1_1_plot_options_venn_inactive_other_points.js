@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_venn_inactive_other_points =
+[
+    [ "PlotOptionsVennInactiveOtherPoints", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_venn_inactive_other_points.html#abc5b98a0709b562b0def431f624f421f", null ]
+];

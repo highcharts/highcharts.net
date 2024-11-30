@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_states_hover_animation =
+[
+    [ "PlotOptionsAreasplinerangeStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_states_hover_animation.html#ac9cd56dec5861610fc43327873475191", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_states_hover_animation.html#ad841869652f6afec965a7bd600810020", null ]
+];

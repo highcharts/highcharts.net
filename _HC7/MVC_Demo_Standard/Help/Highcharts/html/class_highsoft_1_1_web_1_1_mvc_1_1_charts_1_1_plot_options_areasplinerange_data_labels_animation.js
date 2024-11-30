@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_data_labels_animation =
+[
+    [ "PlotOptionsAreasplinerangeDataLabelsAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_data_labels_animation.html#a14350d6e81137c195b7d8a96d0ba5c8d", null ],
+    [ "Defer", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areasplinerange_data_labels_animation.html#a913bc2a881c458399a984a836f1d159c", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_data_labels_animation =
+[
+    [ "LinearregressioninterceptSeriesDataLabelsAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_data_labels_animation.html#ab5e14dbbb816e54def728e14f3640f20", null ],
+    [ "Defer", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregressionintercept_series_data_labels_animation.html#a34dbd8b509b3e110956816747cf3e961", null ]
+];

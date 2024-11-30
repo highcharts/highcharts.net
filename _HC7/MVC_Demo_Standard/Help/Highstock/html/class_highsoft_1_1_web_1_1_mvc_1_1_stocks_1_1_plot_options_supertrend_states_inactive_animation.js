@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_supertrend_states_inactive_animation =
+[
+    [ "PlotOptionsSupertrendStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_supertrend_states_inactive_animation.html#a21622eeada0ee18f6b7407d699aea454", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_supertrend_states_inactive_animation.html#aff11aa137d33e197d46cd87af19203aa", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_lollipop_marker_states_hover_animation =
+[
+    [ "PlotOptionsLollipopMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_lollipop_marker_states_hover_animation.html#ae7bc0fdb7461e5727fbe05ab57f6dc67", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_lollipop_marker_states_hover_animation.html#ab3d200c2ace33c0b43d0ad1ca5de1065", null ]
+];

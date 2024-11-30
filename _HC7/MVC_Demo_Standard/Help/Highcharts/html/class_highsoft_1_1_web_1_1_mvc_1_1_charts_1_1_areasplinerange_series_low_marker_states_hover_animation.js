@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_low_marker_states_hover_animation =
+[
+    [ "AreasplinerangeSeriesLowMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_low_marker_states_hover_animation.html#a3712e4ca4594442b6097c0a830697191", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_areasplinerange_series_low_marker_states_hover_animation.html#a9216863aee08dc8cda03a7976e0172e2", null ]
+];

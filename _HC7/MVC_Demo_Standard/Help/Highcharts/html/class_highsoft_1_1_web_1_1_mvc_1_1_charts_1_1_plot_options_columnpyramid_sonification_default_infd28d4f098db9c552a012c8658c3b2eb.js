@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_sonification_default_infd28d4f098db9c552a012c8658c3b2eb =
+[
+    [ "PlotOptionsColumnpyramidSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_sonification_default_infd28d4f098db9c552a012c8658c3b2eb.html#a497429246ce29df2b9761b1d2de392ee", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_sonification_default_infd28d4f098db9c552a012c8658c3b2eb.html#a96b6fc8eaf30220f62e9b83b642950c7", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_sonification_default_infd28d4f098db9c552a012c8658c3b2eb.html#ab31eb574e30cfdf9707bc427effb7807", null ]
+];

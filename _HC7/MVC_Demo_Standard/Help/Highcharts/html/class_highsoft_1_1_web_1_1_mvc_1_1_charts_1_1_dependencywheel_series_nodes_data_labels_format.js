@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dependencywheel_series_nodes_data_labels_format =
+[
+    [ "DependencywheelSeriesNodesDataLabelsFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dependencywheel_series_nodes_data_labels_format.html#ad5099ea30cdfa37e225e47e73e46aa96", null ]
+];

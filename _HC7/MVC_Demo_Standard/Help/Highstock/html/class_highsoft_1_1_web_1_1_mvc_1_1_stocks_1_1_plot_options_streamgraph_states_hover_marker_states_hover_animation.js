@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_streamgraph_states_hover_marker_states_hover_animation =
-[
-    [ "PlotOptionsStreamgraphStatesHoverMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_streamgraph_states_hover_marker_states_hover_animation.html#abb8131ec6cc52d91209716b3f4c3dc75", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_streamgraph_states_hover_marker_states_hover_animation.html#a746b27711f725abb7868a69b652a78b3", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_streamgraph_states_hover_marker_states_hover_animation.html#a6f497b864c1f8660996fafdc40e0369c", null ]
-];

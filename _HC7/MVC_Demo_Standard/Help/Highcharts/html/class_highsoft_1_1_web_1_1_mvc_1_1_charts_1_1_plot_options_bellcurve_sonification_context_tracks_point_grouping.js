@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_point_grouping =
+[
+    [ "PlotOptionsBellcurveSonificationContextTracksPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_point_grouping.html#a71b532cb3768b7c943da6d248cb6f416", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_point_grouping.html#a3d5d6a100c12387f629965d7b7eeea40", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_point_grouping.html#a53de92b71ab89684b5f25ea5050775df", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_point_grouping.html#aa7f4b3b2bff3231d9e413251fd8f127b", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_point_grouping.html#a402a7db8257ef5645bc87e631ae9b2df", null ]
+];

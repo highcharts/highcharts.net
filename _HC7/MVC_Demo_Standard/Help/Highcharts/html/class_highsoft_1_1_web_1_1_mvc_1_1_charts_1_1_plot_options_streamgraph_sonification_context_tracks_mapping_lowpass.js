@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_sonification_context_tracks_mapping_lowpass =
+[
+    [ "PlotOptionsStreamgraphSonificationContextTracksMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_sonification_context_tracks_mapping_lowpass.html#a0dc947883cd7b6acbf009c7707a3affe", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_sonification_context_tracks_mapping_lowpass.html#aa5e21542e02ee59db7aac0556cf3636e", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_sonification_context_tracks_mapping_lowpass.html#a26c6beb8d96deb7b29780e765474acf5", null ]
+];

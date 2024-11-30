@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_sonification_default_instr9df2ff5ba01062be1a01ff80386eb963 =
+[
+    [ "PlotOptionsSolidgaugeSonificationDefaultInstrumentOptionsMappingLowpassFrequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_sonification_default_instr9df2ff5ba01062be1a01ff80386eb963.html#a7e83c2b292413c73ff16dc0430fdf30b", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_sonification_default_instr9df2ff5ba01062be1a01ff80386eb963.html#a5e01cfa3500b9a21f7020e198f067e8e", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_sonification_default_instr9df2ff5ba01062be1a01ff80386eb963.html#a71887b17a966546669d326641fb718b3", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_sonification_default_instr9df2ff5ba01062be1a01ff80386eb963.html#ab2259013c3af35acbc3e95258879a3aa", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_sonification_default_instr9df2ff5ba01062be1a01ff80386eb963.html#a819740d626856272a6a186dac9f1fc5d", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_sonification_default_instr9df2ff5ba01062be1a01ff80386eb963.html#afe8b4f0afb89178b95d2071d34f1a068", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_solidgauge_sonification_default_instr9df2ff5ba01062be1a01ff80386eb963.html#a510b5ccfe708913275d5af3585a6e992", null ]
+];

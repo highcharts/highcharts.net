@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_drag_drop_guide_box =
+[
+    [ "PlotOptionsHollowcandlestickDragDropGuideBox", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_drag_drop_guide_box.html#a09fde40868e2ed3e6b0a0e4a07fb60d9", null ],
+    [ "Default", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_hollowcandlestick_drag_drop_guide_box.html#a33157d3db0aac5354bba3fa98dd96150", null ]
+];

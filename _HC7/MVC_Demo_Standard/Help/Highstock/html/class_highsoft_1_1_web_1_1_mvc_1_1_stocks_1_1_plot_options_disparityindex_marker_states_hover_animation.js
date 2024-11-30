@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_marker_states_hover_animation =
+[
+    [ "PlotOptionsDisparityindexMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_marker_states_hover_animation.html#ade2bd06bbf49193dac1497f3ea6ecb80", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_disparityindex_marker_states_hover_animation.html#ac4d64e80ce43f0f27c0939bd60fc2ccc", null ]
+];

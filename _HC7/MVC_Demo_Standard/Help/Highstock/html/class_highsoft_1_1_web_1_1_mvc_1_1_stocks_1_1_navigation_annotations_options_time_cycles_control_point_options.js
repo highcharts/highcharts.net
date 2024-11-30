@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_time_cycles_control_point_options =
+[
+    [ "NavigationAnnotationsOptionsTimeCyclesControlPointOptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_time_cycles_control_point_options.html#a2a24934ffeba4e4acefb56d13a15f170", null ],
+    [ "Events", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_navigation_annotations_options_time_cycles_control_point_options.html#a20f2d06c9edc38f30399809af00c733d", null ]
+];

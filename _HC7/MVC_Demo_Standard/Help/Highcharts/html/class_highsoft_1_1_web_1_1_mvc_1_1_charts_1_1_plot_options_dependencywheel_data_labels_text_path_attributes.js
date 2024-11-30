@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_data_labels_text_path_attributes =
+[
+    [ "PlotOptionsDependencywheelDataLabelsTextPathAttributes", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_data_labels_text_path_attributes.html#a6d0ec086c0ccb66b47bcf83c53626087", null ],
+    [ "Dy", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_dependencywheel_data_labels_text_path_attributes.html#a38acf6015d19a512e6b0124138b7ee98", null ]
+];

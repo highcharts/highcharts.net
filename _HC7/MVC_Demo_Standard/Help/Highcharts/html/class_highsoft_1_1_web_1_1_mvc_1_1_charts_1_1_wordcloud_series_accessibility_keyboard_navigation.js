@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_accessibility_keyboard_navigation =
+[
+    [ "WordcloudSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_accessibility_keyboard_navigation.html#a007b20d4c8995611977597cb0b95fc38", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_wordcloud_series_accessibility_keyboard_navigation.html#a1020be4e7488939b999d8c0109669dd3", null ]
+];

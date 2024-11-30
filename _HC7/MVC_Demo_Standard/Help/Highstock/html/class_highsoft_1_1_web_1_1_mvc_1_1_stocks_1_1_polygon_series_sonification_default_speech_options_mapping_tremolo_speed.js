@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_speed =
+[
+    [ "PolygonSeriesSonificationDefaultSpeechOptionsMappingTremoloSpeed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_speed.html#a0518e1053debfb50417cc8fdd4ced46d", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_speed.html#afde2526af049da54f601fd6e57e93b53", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_speed.html#a17732b52626ce29cad29baf4b8075234", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_speed.html#a132f17097ce17c9e4af9878d445e7ead", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_speed.html#a4bc76a4a16361e40f89d0d2641fa1f31", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_speed.html#a2dc004e8fc9b429e5b1bf695c6c14d15", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_speed.html#a19943d5e3e0e14ed9b1e55171ca4cd83", null ]
+];

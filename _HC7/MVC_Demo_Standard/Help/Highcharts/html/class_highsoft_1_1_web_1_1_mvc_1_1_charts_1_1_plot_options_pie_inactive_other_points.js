@@ -1,0 +1,4 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_inactive_other_points =
+[
+    [ "PlotOptionsPieInactiveOtherPoints", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_inactive_other_points.html#aef5401e38c58f74a9c6153d0fb57accb", null ]
+];

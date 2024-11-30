@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_priceenvelopes_series_sonification_default_instrum0ad9292f25b028641535f935782f14fa =
+[
+    [ "PriceenvelopesSeriesSonificationDefaultInstrumentOptionsMappingTremoloDepth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_priceenvelopes_series_sonification_default_instrum0ad9292f25b028641535f935782f14fa.html#a8a037dd1b9aba65e04d9dfd5c3245867", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_priceenvelopes_series_sonification_default_instrum0ad9292f25b028641535f935782f14fa.html#ae0bac6f3987a2fe9eef3922d04748423", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_priceenvelopes_series_sonification_default_instrum0ad9292f25b028641535f935782f14fa.html#a6fbe4f92a77b367b47cb318973cb30fd", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_priceenvelopes_series_sonification_default_instrum0ad9292f25b028641535f935782f14fa.html#ae134ab3a2a8952ab102a1302acf454c2", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_priceenvelopes_series_sonification_default_instrum0ad9292f25b028641535f935782f14fa.html#adc8b3c4e1f66860e45e1d16115bccd8f", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_priceenvelopes_series_sonification_default_instrum0ad9292f25b028641535f935782f14fa.html#a6b64f58d28d747fce55949226ae4d6fc", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_priceenvelopes_series_sonification_default_instrum0ad9292f25b028641535f935782f14fa.html#a822b162e60cfc4fde090ff291e0d0851", null ]
+];

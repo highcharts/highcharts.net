@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_cylinder_sonification_tracks_mapping_lowpass =
+[
+    [ "PlotOptionsCylinderSonificationTracksMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_cylinder_sonification_tracks_mapping_lowpass.html#a3524031ec49b61cd1bd79966e7ea08a3", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_cylinder_sonification_tracks_mapping_lowpass.html#a5e7c305b2b2e039f6ba60dced5c93d31", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_cylinder_sonification_tracks_mapping_lowpass.html#a0a5ccc170b6343654edc89565c4ee545", null ]
+];

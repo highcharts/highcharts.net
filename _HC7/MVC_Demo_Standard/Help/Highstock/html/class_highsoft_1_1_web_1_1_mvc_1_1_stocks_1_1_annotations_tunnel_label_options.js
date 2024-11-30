@@ -1,0 +1,28 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options =
+[
+    [ "AnnotationsTunnelLabelOptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a4a8a253f786c5f2b9ba6939f1e86847a", null ],
+    [ "Accessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a7fc6819b119db718d052224e3aa5230f", null ],
+    [ "Align", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a0b5b0c1459d474bbfcb450fbf126df85", null ],
+    [ "AllowOverlap", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a7930a1c47c4e7ccc5d9c5b7e087ed3f4", null ],
+    [ "BackgroundColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#ae37f58d2ab4801b6997b4bdc1a78253a", null ],
+    [ "BorderColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#af6c49a86a0b5ad490ef721ff3d0dd60f", null ],
+    [ "BorderRadius", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a2ac7f230afc62d2ebc358586a773df18", null ],
+    [ "BorderWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a407300a88ac7a159ca670e225b511d6d", null ],
+    [ "ClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a303b5f593e5a4abd03888a66aa8e4a80", null ],
+    [ "Crop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a613177784305cdd7effdec05280d460c", null ],
+    [ "Distance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a87a3b846487557fa8d47aa609c242dd0", null ],
+    [ "Format", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a15ce4ab31c02265b7e9b32c388375137", null ],
+    [ "Formatter", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a73c360aa17252b7776085dcd6c7c0976", null ],
+    [ "IncludeInDataExport", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#abe79c8001f04cefc26ea82a120531947", null ],
+    [ "Overflow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a261ba768dc7a13c056dd23b30fd31e16", null ],
+    [ "Padding", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#ad4d678679722fd4ffcea993a566a502e", null ],
+    [ "Shadow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a31c21c8fc53c34a6ddaf8c3e08679bf9", null ],
+    [ "ShadowBool", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a46814bad831e64780ca37aaf9f84fd0b", null ],
+    [ "Shape", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a7b5037e89da2449dd4af2aef3ce98752", null ],
+    [ "Style", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a5ec63a79f383a31fef9ceb50154a904b", null ],
+    [ "Text", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a45afe74e051afcb45e2f214abed10c36", null ],
+    [ "UseHTML", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#aa2e2503fa6aa907ed20fcf071dcb3014", null ],
+    [ "VerticalAlign", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a7c0c38b5733178f1a50c759f0d44e789", null ],
+    [ "X", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#af0bc422b79cb66a16cd30caed28dec96", null ],
+    [ "Y", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_tunnel_label_options.html#a6cb1a3d563f3fb65f67ef07d1b2add08", null ]
+];

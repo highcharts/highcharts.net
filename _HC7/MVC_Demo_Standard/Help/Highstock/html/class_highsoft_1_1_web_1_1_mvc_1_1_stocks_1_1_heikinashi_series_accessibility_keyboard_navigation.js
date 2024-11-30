@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heikinashi_series_accessibility_keyboard_navigation =
+[
+    [ "HeikinashiSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heikinashi_series_accessibility_keyboard_navigation.html#a029531f3cf6ccc338dbd9f9b85233ecf", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_heikinashi_series_accessibility_keyboard_navigation.html#a70cdc9863629f2aeb2abfe2d82ee3acc", null ]
+];

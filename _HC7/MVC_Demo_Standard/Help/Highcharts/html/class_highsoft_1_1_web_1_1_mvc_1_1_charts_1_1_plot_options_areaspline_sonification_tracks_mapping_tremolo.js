@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_tracks_mapping_tremolo =
+[
+    [ "PlotOptionsAreasplineSonificationTracksMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_tracks_mapping_tremolo.html#a8eb1263ec7704d0a19460f511cc618d0", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_tracks_mapping_tremolo.html#a07ae8f50cbe8342198dc7ae7a7edfd03", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_areaspline_sonification_tracks_mapping_tremolo.html#a69c5aded2182750e340c58ad8c47246a", null ]
+];

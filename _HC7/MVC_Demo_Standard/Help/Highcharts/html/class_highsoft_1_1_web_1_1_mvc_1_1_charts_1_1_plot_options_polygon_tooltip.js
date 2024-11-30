@@ -1,32 +1,7 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip =
 [
     [ "PlotOptionsPolygonTooltip", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a0514e195a35a40c332657b0748827bd3", null ],
-    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a7d7da3eb0416029b11eb082f74e74f0d", null ],
-    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a52cbcc53e80dba8c0de78a63eaa7d5f1", null ],
     [ "FollowPointer", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#add06d4310c1a6ce9d8e3e9dd3c5e8801", null ],
-    [ "FollowPointer_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a7c04c7b566403a7685b1a132f404a59d", null ],
-    [ "FollowTouchMove", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a25aa362d786199b0a473183cb704689a", null ],
-    [ "FollowTouchMove_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#abac307bdcad855d23ce93a5f290161c4", null ],
-    [ "FooterFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#abbf1d07f3c5ecad5e5da0d00c4b97b5b", null ],
-    [ "FooterFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#ae72601822d6e29c0b0c1083cac97c74d", null ],
     [ "HeaderFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#ac44c005c3b022174dae03fef79f264ba", null ],
-    [ "HeaderFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a08177753d4d290f72ffe7c18508db94e", null ],
-    [ "HideDelay", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#ab59dec616b34c0ae99333c00fed58828", null ],
-    [ "HideDelay_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a28f71a8df01499cd6e14c4027232b316", null ],
-    [ "Padding", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#af8960e4cd86b0544677f4d5ec68b8f77", null ],
-    [ "Padding_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#aa8e3da278b32b8fa2ce86c6ee83c4b3e", null ],
-    [ "PointFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a39ebe651f1afdc7fd0a8d9f56f544e1f", null ],
-    [ "PointFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a80c4daa1f5022d54d1d088894cf1c547", null ],
-    [ "PointFormatter", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#afccbc56e3f1c99990a1e21643b996361", null ],
-    [ "PointFormatter_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a2a43c97480b4144de301cc782e3b0751", null ],
-    [ "Split", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a5b00537e6da6e40b2f9abd74ab2f813d", null ],
-    [ "Split_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a6ddb2840a8a3a4a3982f637b8bc8a4d6", null ],
-    [ "ValueDecimals", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#ace9f272a5b48bf601e992847f656e6cf", null ],
-    [ "ValueDecimals_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#ae61753607c0c976ba99c246b606ddcd5", null ],
-    [ "ValuePrefix", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#ab4c66db7755b9bf869a0cc370db24bf4", null ],
-    [ "ValuePrefix_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a7f37e2b763d926afc863556627ea773c", null ],
-    [ "ValueSuffix", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a5be70b03a55afc8503705c1329b93845", null ],
-    [ "ValueSuffix_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#abdecad160a897fd1dac3e0199c141f00", null ],
-    [ "XDateFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a352ff6d3e3b30a27b0c9a65acb434179", null ],
-    [ "XDateFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#aa0391024960a442622915a0ae3b9d567", null ]
+    [ "PointFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_polygon_tooltip.html#a39ebe651f1afdc7fd0a8d9f56f544e1f", null ]
 ];

@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_depth =
+[
+    [ "PolygonSeriesSonificationDefaultSpeechOptionsMappingTremoloDepth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_depth.html#a854fc9997ddcf6411202d59d4d0e6813", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_depth.html#aa7c1d0d291fb625b3b2a9cc04eb3d84c", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_depth.html#aeab6e3e8d8f995e2bd6045a9b365411a", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_depth.html#a349423811b4f6f2543be699db93e822e", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_depth.html#a4b8831860b7bdebfd751331c137f50df", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_depth.html#a4c918df3b25b88335f2a7728fc8b69ac", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_default_speech_options_mapping_tremolo_depth.html#aec8aef4601ea50e5ad7cf50b96a01851", null ]
+];

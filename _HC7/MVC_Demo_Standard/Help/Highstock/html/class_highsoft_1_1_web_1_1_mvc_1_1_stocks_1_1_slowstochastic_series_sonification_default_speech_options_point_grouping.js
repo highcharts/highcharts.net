@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_default_speech_options_point_grouping =
+[
+    [ "SlowstochasticSeriesSonificationDefaultSpeechOptionsPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_default_speech_options_point_grouping.html#abcc9dba42ee92e2c8c9c3e9973b7b0b9", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_default_speech_options_point_grouping.html#a5210d4cef6ace5fa681d7143de019164", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_default_speech_options_point_grouping.html#a3ea4dec70e3782ad92f4140af7480583", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_default_speech_options_point_grouping.html#a24ceaf7a7c3d16ab9e30a048c9176fa4", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_sonification_default_speech_options_point_grouping.html#ae4441ce4aa5adbc5bb4262d502fc0ede", null ]
+];

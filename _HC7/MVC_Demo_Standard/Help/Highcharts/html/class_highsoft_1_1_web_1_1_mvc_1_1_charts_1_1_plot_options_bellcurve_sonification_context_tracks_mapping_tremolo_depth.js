@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_mapping_tremolo_depth =
+[
+    [ "PlotOptionsBellcurveSonificationContextTracksMappingTremoloDepth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_mapping_tremolo_depth.html#a9e0a18686216b25481484d1dcefa7c6f", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_mapping_tremolo_depth.html#abc2678b8fe39700e1b0127149746beba", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_mapping_tremolo_depth.html#aa3040b7efafe308c63f5abbaee7fdcd4", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_mapping_tremolo_depth.html#aeb87a5fdfda588d34dd23c3dac795e8b", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_mapping_tremolo_depth.html#a3d0a90c408f3bc9875f546909e9f5969", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_mapping_tremolo_depth.html#a6b29a70b5ddcf1a58e144f53ca9fca5c", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_bellcurve_sonification_context_tracks_mapping_tremolo_depth.html#a0bbee512d38ca32330eddeddea898c17", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_data_labels_animation =
+[
+    [ "PlotOptionsKeltnerchannelsDataLabelsAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_data_labels_animation.html#aed2754b4f638bf4854cfce68ed0b20ff", null ],
+    [ "Defer", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_data_labels_animation.html#ad5721aab4ab98b7e9cd2784964441448", null ]
+];

@@ -1,0 +1,8 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_sonification_context_tracks_point_grouping =
+[
+    [ "PlotOptionsNetworkgraphSonificationContextTracksPointGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_sonification_context_tracks_point_grouping.html#ab2b589c71ce0715a9b72ffafb8d3d08c", null ],
+    [ "Algorithm", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_sonification_context_tracks_point_grouping.html#a9c4cddca8418a7c798a24efbb68f144b", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_sonification_context_tracks_point_grouping.html#a949c3aa9439fdc31ac3f375a1ddc04b2", null ],
+    [ "GroupTimespan", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_sonification_context_tracks_point_grouping.html#a602989da6d4c625810639a8af2f072c8", null ],
+    [ "Prop", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_networkgraph_sonification_context_tracks_point_grouping.html#a04cbf5306b1544fe2282e7da9bbc4efa", null ]
+];

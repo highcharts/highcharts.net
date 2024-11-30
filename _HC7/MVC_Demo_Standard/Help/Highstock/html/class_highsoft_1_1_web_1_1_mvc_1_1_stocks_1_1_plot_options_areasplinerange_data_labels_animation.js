@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_data_labels_animation =
+[
+    [ "PlotOptionsAreasplinerangeDataLabelsAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_data_labels_animation.html#a3cb7bc78e443dcb33a682b2a0bc8352a", null ],
+    [ "Defer", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_data_labels_animation.html#a917ac8aa055c4a60842bdb9e7de391aa", null ]
+];

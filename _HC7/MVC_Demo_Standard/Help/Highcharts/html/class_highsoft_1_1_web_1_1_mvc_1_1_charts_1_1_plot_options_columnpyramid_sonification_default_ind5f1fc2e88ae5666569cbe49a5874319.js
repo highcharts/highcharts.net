@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_sonification_default_ind5f1fc2e88ae5666569cbe49a5874319 =
+[
+    [ "PlotOptionsColumnpyramidSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_sonification_default_ind5f1fc2e88ae5666569cbe49a5874319.html#af2d6807e1fd999211a10a296980b734b", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_sonification_default_ind5f1fc2e88ae5666569cbe49a5874319.html#a09786bb4dd9b7f05dac85473869dae58", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_sonification_default_ind5f1fc2e88ae5666569cbe49a5874319.html#aec14c83d8fb4836ccd757bd912a9fb5c", null ]
+];

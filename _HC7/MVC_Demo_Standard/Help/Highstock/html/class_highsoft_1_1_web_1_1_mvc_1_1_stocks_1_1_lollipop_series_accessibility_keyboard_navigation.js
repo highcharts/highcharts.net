@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_accessibility_keyboard_navigation =
+[
+    [ "LollipopSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_accessibility_keyboard_navigation.html#ad20e13203771c830922b1418c8d661c8", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_lollipop_series_accessibility_keyboard_navigation.html#ad1d39ea297dca9519b04611f941c83b1", null ]
+];

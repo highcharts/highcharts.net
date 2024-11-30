@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_states_hover_animation =
+[
+    [ "PlotOptionsColumnpyramidStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_states_hover_animation.html#a93dda8e436473f16aff1cfea19c0410b", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_states_hover_animation.html#a717678948cc34247d77539bdbe09fba6", null ]
+];

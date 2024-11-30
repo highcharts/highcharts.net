@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_states_inactive_animation =
+[
+    [ "PlotOptionsColumnpyramidStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_states_inactive_animation.html#a58ad411f253966f302a7640a4375cd61", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_columnpyramid_states_inactive_animation.html#a1ba97b5bce98a5c1fdfac3e30869474d", null ]
+];

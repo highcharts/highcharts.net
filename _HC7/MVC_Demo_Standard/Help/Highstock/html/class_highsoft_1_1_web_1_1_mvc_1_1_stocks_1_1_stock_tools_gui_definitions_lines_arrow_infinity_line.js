@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_lines_arrow_infinity_line =
+[
+    [ "StockToolsGuiDefinitionsLinesArrowInfinityLine", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_lines_arrow_infinity_line.html#af33976c4db11a1029dcecc55c1a5e658", null ],
+    [ "Symbol", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_stock_tools_gui_definitions_lines_arrow_infinity_line.html#a9e2d55c0043f9aaf70dbdac2a706d041", null ]
+];

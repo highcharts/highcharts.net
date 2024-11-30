@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_default_speech_options_mapping_tremolo_speed =
+[
+    [ "TrendlineSeriesSonificationDefaultSpeechOptionsMappingTremoloSpeed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_default_speech_options_mapping_tremolo_speed.html#a5f0a4493ac5ab160efe16cc3481e1750", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_default_speech_options_mapping_tremolo_speed.html#a80af80dcb7cd4d6d5ade0d83917f8563", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_default_speech_options_mapping_tremolo_speed.html#a3c9ce86a3977a987a1a9473516bf2797", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_default_speech_options_mapping_tremolo_speed.html#af956c6eb24f9f009a82e7a793298793d", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_default_speech_options_mapping_tremolo_speed.html#a8a04b42c9496c35cadd12b996c9e24a3", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_default_speech_options_mapping_tremolo_speed.html#a428158cdca62b367a9e6491103a5a211", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_trendline_series_sonification_default_speech_options_mapping_tremolo_speed.html#a898c5ec8345390fc3a1577afd6617141", null ]
+];

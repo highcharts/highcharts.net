@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_sonification_default_b9978ec65612a34dfa0179d339939d9f =
+[
+    [ "PlotOptionsKeltnerchannelsSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_sonification_default_b9978ec65612a34dfa0179d339939d9f.html#a3f705d619082ccb4614dc885c1b70ab3", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_sonification_default_b9978ec65612a34dfa0179d339939d9f.html#aca40a959e2a85461858e502d9cee89d6", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_keltnerchannels_sonification_default_b9978ec65612a34dfa0179d339939d9f.html#a92c561b846ad79179316659b281e4efe", null ]
+];

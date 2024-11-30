@@ -1,0 +1,19 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping =
+[
+    [ "PlotOptionsLinearregressionSonificationDefaultInstrumentOptionsMapping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a41af26c8d4404c8803372f4272cb8943", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#aed6b9e8da72788d2ee1a18ef4803731a", null ],
+    [ "GapBetweenNotes", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a11c8aee12a7cd66948de88e8e056a12c", null ],
+    [ "Highpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a80f57750372552242ea21bcba0cb989f", null ],
+    [ "Lowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a5f3e493bc10ee9998f51a75fdd9b53aa", null ],
+    [ "NoteDuration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#aa6ac68d55de1ed313288afcea5dcc26f", null ],
+    [ "Pan", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a0eadf738f9c74792d39cf3aecc221068", null ],
+    [ "Pitch", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a51675607402ef4b555ea5b916fcb3d32", null ],
+    [ "PitchNumber", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a5189a748c5ca15a694a8dded6c28dc50", null ],
+    [ "PitchString", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a559f8fd400a253930147a46465467bef", null ],
+    [ "PlayDelay", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a0ef5fd78613a0a95d96d6dd6725cdc59", null ],
+    [ "Time", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#ad8dcd510f836c7035608c93a7a2c3b92", null ],
+    [ "TimeNumber", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#afb6c5dc748d3d7508cf9212b7e394ae1", null ],
+    [ "TimeString", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a73c278acc3c4f95111632e67cc3d6c28", null ],
+    [ "Tremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a5678602be84e1d1d446adbcba1d77c8a", null ],
+    [ "Volume", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_linearregression_sonification_default_instrument_options_mapping.html#a1038ce89647cbe9b07ddbbb2d8b553d9", null ]
+];

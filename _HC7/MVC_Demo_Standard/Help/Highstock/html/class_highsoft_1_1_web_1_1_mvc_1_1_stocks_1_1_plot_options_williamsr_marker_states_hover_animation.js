@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_williamsr_marker_states_hover_animation =
+[
+    [ "PlotOptionsWilliamsrMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_williamsr_marker_states_hover_animation.html#aafe97b41f71953aa7d0fec9f43a0592c", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_williamsr_marker_states_hover_animation.html#a5aa6888509d098ac80e9338a8e058a65", null ]
+];

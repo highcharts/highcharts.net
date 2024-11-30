@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_accessibility_keyboard_navigation =
+[
+    [ "PlotOptionsPieAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_accessibility_keyboard_navigation.html#ac2a06f3687c013ae567fc270eaa1aa35", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pie_accessibility_keyboard_navigation.html#abeb31bc952d805113a2da42a147fbbb7", null ]
+];

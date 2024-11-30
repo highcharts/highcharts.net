@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_crooked_line_label_options_accessibility =
+[
+    [ "AnnotationsCrookedLineLabelOptionsAccessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_crooked_line_label_options_accessibility.html#a2ba4975301442a0e226fe08a520bd393", null ],
+    [ "Description", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_crooked_line_label_options_accessibility.html#a0671546164f27c07889289e20b4c49b6", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_states_inactive_animation =
+[
+    [ "PlotOptionsPriceenvelopesStatesInactiveAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_states_inactive_animation.html#a8d1247683006030f754eeddac4101a88", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_priceenvelopes_states_inactive_animation.html#af0365200a2125314df616b3f19cdf03b", null ]
+];

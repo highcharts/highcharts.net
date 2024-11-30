@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_lowpass =
+[
+    [ "PlotOptionsPyramid3dSonificationDefaultInstrumentOptionsMappingLowpass", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_lowpass.html#a7117074bb4cfd0d1911c77e46fbd98c6", null ],
+    [ "Frequency", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_lowpass.html#a42e605b0993aaa6f87daec96d18b0fb9", null ],
+    [ "Resonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_pyramid3d_sonification_default_instrument_options_mapping_lowpass.html#acbb6747649dbe042e78c6ca6e7e8f56a", null ]
+];

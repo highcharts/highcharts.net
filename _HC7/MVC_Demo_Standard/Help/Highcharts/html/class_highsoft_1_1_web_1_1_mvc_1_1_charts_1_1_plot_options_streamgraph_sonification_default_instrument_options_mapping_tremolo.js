@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_sonification_default_instrument_options_mapping_tremolo =
+[
+    [ "PlotOptionsStreamgraphSonificationDefaultInstrumentOptionsMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_sonification_default_instrument_options_mapping_tremolo.html#a2a4a1525732983adc4b35af5a753303e", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_sonification_default_instrument_options_mapping_tremolo.html#ae4f5dcf2327c5c263874060b1dd38eac", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_streamgraph_sonification_default_instrument_options_mapping_tremolo.html#a591560f2e026ab3ffd433bc1274c991a", null ]
+];

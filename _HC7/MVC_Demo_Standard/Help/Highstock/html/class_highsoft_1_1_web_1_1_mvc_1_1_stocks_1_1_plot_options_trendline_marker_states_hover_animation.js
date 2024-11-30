@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_marker_states_hover_animation =
+[
+    [ "PlotOptionsTrendlineMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_marker_states_hover_animation.html#a9a398ab8e6249f07bea4f7bee9abd342", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_trendline_marker_states_hover_animation.html#af791bd964aeca520436e33d21904c857", null ]
+];

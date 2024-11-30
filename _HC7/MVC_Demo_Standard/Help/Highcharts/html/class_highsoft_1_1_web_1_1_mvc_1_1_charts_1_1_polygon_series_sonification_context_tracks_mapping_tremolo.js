@@ -1,0 +1,6 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_context_tracks_mapping_tremolo =
+[
+    [ "PolygonSeriesSonificationContextTracksMappingTremolo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_context_tracks_mapping_tremolo.html#ae23cd475b4a6fcd134597ab6a4f00ea4", null ],
+    [ "Depth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_context_tracks_mapping_tremolo.html#a809d9e8c098c5ea4d3b6045f1033835e", null ],
+    [ "Speed", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_polygon_series_sonification_context_tracks_mapping_tremolo.html#acbc37557d87771654a9bd3b47ba79d70", null ]
+];

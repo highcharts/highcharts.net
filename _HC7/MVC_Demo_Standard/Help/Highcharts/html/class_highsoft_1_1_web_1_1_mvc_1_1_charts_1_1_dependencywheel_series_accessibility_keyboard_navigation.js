@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dependencywheel_series_accessibility_keyboard_navigation =
+[
+    [ "DependencywheelSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dependencywheel_series_accessibility_keyboard_navigation.html#a2e75676f42ec1f86d47a746a0b4bec5c", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_dependencywheel_series_accessibility_keyboard_navigation.html#a64bcf40e38a213675f963341c31d170e", null ]
+];

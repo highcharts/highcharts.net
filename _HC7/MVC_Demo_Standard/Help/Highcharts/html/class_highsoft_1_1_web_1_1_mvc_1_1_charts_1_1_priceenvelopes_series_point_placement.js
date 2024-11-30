@@ -1,4 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_priceenvelopes_series_point_placement =
-[
-    [ "PriceenvelopesSeriesPointPlacement", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_priceenvelopes_series_point_placement.html#ae17db105e93b83a7960222dd4ddc8702", null ]
-];

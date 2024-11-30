@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_organization_data_labels_link_text_path =
+[
+    [ "PlotOptionsOrganizationDataLabelsLinkTextPath", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_organization_data_labels_link_text_path.html#aa120aca87b5fb38adde84d2649546df6", null ],
+    [ "Attributes", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_organization_data_labels_link_text_path.html#a05ecaa440ae11001fc2a6e8aa1ad87ad", null ]
+];

@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_marker_states_hover_animation =
+[
+    [ "SlowstochasticSeriesMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_marker_states_hover_animation.html#a8ca25eb852980ae3a64b30640cee7a0e", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_slowstochastic_series_marker_states_hover_animation.html#ad29b56394528f395cbfa73ce70108b83", null ]
+];

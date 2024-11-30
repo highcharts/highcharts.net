@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_low_marker_states_hover_animation =
+[
+    [ "PlotOptionsAreasplinerangeLowMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_low_marker_states_hover_animation.html#a31a43a0e54f41f0cb8e4f49c58f4489c", null ],
+    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_areasplinerange_low_marker_states_hover_animation.html#a284419e26fd8c1a4e1937574f09020ce", null ]
+];

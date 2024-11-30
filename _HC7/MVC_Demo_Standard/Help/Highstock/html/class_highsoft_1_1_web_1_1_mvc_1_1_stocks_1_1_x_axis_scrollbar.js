@@ -1,0 +1,27 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar =
+[
+    [ "XAxisScrollbar", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#abfdd309c6bef2013994a1a74f3367cf9", null ],
+    [ "BarBackgroundColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#af52d2def1472204791a34c64717890ee", null ],
+    [ "BarBorderColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a82eace65083ad611ccfb3add475727d8", null ],
+    [ "BarBorderRadius", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#ac5a30275e7ceedae3bec9bcd76c75478", null ],
+    [ "BarBorderWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a44acb5deab0f3865600073f920af848b", null ],
+    [ "ButtonArrowColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a93708a3b2e834c9d45f5cb547d37b3d2", null ],
+    [ "ButtonBackgroundColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#ad4311c302efddc7585491317381c9142", null ],
+    [ "ButtonBorderColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a48e869cc4f70f062e737b6e56aef6c01", null ],
+    [ "ButtonBorderRadius", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a27cedfaa45769b197ca312049f86bf76", null ],
+    [ "ButtonBorderWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a9d278016f2ad1396aefcc91b06724c85", null ],
+    [ "ButtonsEnabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a7e9731f87329ff56c1349a112919f318", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#ad71a1f34c69c86e1e24673ea530f7719", null ],
+    [ "Height", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#aaee4e7b2d31e5d6a128af7de18c12ebf", null ],
+    [ "LiveRedraw", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#aa45de06bbcfa6cacfccf68e167aa2593", null ],
+    [ "Margin", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a93e1d2f8090bcf11613a0aea042c3d8e", null ],
+    [ "MinWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a796d9e3485be8247197f22db499e3724", null ],
+    [ "Opposite", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#ac25f79f8724fa1120b8796982fd0fa45", null ],
+    [ "RifleColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#ac819dc9eaa5557eef23e08907d3a419a", null ],
+    [ "ShowFull", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a7bfedb2068ba22e96b45b604af92d6d1", null ],
+    [ "TrackBackgroundColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#af4a052989e72ea70e7c2f59c88882cc0", null ],
+    [ "TrackBorderColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a63ae651ce55c15e77a1732283e9297a5", null ],
+    [ "TrackBorderRadius", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#aa999850061d8ce32b875616250dca639", null ],
+    [ "TrackBorderWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a01c981bb37c35565006d248c76d7d49c", null ],
+    [ "ZIndex", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_x_axis_scrollbar.html#a0bb65c38e9b76f375b99523e01ca9789", null ]
+];

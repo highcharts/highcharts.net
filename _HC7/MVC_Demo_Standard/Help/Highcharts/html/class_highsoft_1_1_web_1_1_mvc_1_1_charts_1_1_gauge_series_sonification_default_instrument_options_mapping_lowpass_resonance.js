@@ -1,0 +1,10 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass_resonance =
+[
+    [ "GaugeSeriesSonificationDefaultInstrumentOptionsMappingLowpassResonance", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass_resonance.html#a9baa8b4b95499976fe3aad56c37c9fcd", null ],
+    [ "MapFunction", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass_resonance.html#a8aee25f7fd14646a57d270c41a553983", null ],
+    [ "MapTo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass_resonance.html#a9a3f049f0f62262addbbc029ab0c43e9", null ],
+    [ "Max", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass_resonance.html#af58ba05d4ba1f6121c245147dc793eb2", null ],
+    [ "Min", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass_resonance.html#a2553a5af7d25c1be38e02f585e471a51", null ],
+    [ "Value", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass_resonance.html#aee75dd4436c27526e5591716e30d56b9", null ],
+    [ "Within", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_gauge_series_sonification_default_instrument_options_mapping_lowpass_resonance.html#adee3a60c9488a72e185e54ab3bed253c", null ]
+];

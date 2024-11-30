@@ -1,16 +1,14 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping =
 [
     [ "StreamgraphSeriesDataGrouping", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a382461989199a1fbfa7ec63f2cc90ef4", null ],
-    [ "Approximation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a7befae7d7c1d20fd9fc5aa810762d734", null ],
-    [ "Approximation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a1e3d3209098bef898f3a47e8992dca2c", null ],
-    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a94e167dea4caa1684467c519e4a6ce8b", null ],
-    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a0dab39a732f4b22f3cd6a83191b1fc11", null ],
+    [ "Anchor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#aa8cb3fa464b6784937bdec4b3f7f8950", null ],
+    [ "Approximation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#aeb0a6e5ba66b50a0a38be737be67b9e2", null ],
+    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a66394f1a58f0edd601ee55e3f54b2b37", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#aa257e04adb5bce7750c203dba1eb14a3", null ],
-    [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#abb4fba1c57ffb7a0d22cfc5dd3b88484", null ],
+    [ "FirstAnchor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a1dd82f2b37b81108009e56508944918b", null ],
     [ "Forced", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#abb1cb3ca7525a7760ffc01a1548eba01", null ],
-    [ "Forced_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#aecd79f350b85f198cf8713b50aefc243", null ],
+    [ "GroupAll", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a56741f68768991b1abfb651fa73cbf60", null ],
     [ "GroupPixelWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a7652ede47348071594507a7239b07a40", null ],
-    [ "GroupPixelWidth_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a5ceb588fb98fba98b371245a0206193d", null ],
-    [ "Smoothed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a6668de6267fae33f8265d6bfafb3d2d4", null ],
-    [ "Smoothed_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a16cfb5e4faea336a24f0fad8eb1f912a", null ]
+    [ "LastAnchor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#ad44a9192ae22949b1aa0d2807867b6b2", null ],
+    [ "Smoothed", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_streamgraph_series_data_grouping.html#a6668de6267fae33f8265d6bfafb3d2d4", null ]
 ];

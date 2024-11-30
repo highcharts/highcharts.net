@@ -1,30 +1,6 @@
 var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip =
 [
     [ "PlotOptionsStochasticTooltip", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a376c400d6ddc61b3d76e89026919b870", null ],
-    [ "ChangeDecimals", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a321a40225676968a6eb306a0e2f4f8b6", null ],
-    [ "ChangeDecimals_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a5ccc313cffc120d094a96e925edba843", null ],
-    [ "DateTimeLabelFormats", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a8b13a87442e972151b550f463ca9bcb3", null ],
-    [ "DateTimeLabelFormats_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a84f30bb72ae468d18e54cb43f7b9bf1a", null ],
-    [ "FollowPointer", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a39897bb93aac8e0e82d53cd207445168", null ],
-    [ "FollowPointer_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#af443d96767dc86039fc3b5b1845857e3", null ],
-    [ "FollowTouchMove", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#ab49cc4dac24e8ec137b27f1b4c2f7e5a", null ],
-    [ "FollowTouchMove_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a47d91c340db0558092c82664654c9ba3", null ],
-    [ "HeaderFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a3adb076664ae5fb380a5352e7a0d876d", null ],
-    [ "HeaderFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#ac0567a53483d84c6104e3e480487b958", null ],
-    [ "Padding", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a387906b247abb17f3f3b67d931d17482", null ],
-    [ "Padding_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#acf016b4d6e36c1383924e5ae435df696", null ],
     [ "PointFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a0a139dfec3ef6c853c0c3cc9ba7ad6f7", null ],
-    [ "PointFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a02bbe4839ccf0362d77314bf2c9b6cee", null ],
-    [ "PointFormatter", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#af1e70bc787ea26c78af1bd0b84f6c52a", null ],
-    [ "PointFormatter_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#ad0823bcfea5ee29db0d9d39d126d273a", null ],
-    [ "Split", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#aeefc39a75717a26d919e630afab075c5", null ],
-    [ "Split_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a10149aea723da0ca2652bae947296687", null ],
-    [ "ValueDecimals", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#ab65ca956feb566393ee18fc35e810cf6", null ],
-    [ "ValueDecimals_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a0f49cb58ee0e55ce217bf14a14b31422", null ],
-    [ "ValuePrefix", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a15c7649b88639b7c6943113a53fa579d", null ],
-    [ "ValuePrefix_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a4a226db61585f7951c452c7a00598c05", null ],
-    [ "ValueSuffix", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a4c1755602fc2148868658f2451a1d50f", null ],
-    [ "ValueSuffix_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#ae9af1eb13e5c603e2dcc4436f3ec1d3d", null ],
-    [ "XDateFormat", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a7d151eaa19f2c0dbc0052575e4e2c918", null ],
-    [ "XDateFormat_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#a4caebe440f29c62ec9acbcaec18a047f", null ]
+    [ "ValueDecimals", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_plot_options_stochastic_tooltip.html#ab65ca956feb566393ee18fc35e810cf6", null ]
 ];

@@ -1,0 +1,28 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options =
+[
+    [ "AnnotationsVerticalLineLabelOptions", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#af60dd27c94931e344bae3bb4594397cd", null ],
+    [ "Accessibility", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a30fb19b1508403e8a8067087193566e3", null ],
+    [ "Align", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#aaae03be57b91ece1199bfb2eabb31f79", null ],
+    [ "AllowOverlap", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#ac0cdb5560e7116d49a65227d73706c97", null ],
+    [ "BackgroundColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a14589eb6f36f9f08bdab23dde07dd07f", null ],
+    [ "BorderColor", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a8dcc41b090a6c5d7f886bdb21c92ee6c", null ],
+    [ "BorderRadius", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a63dba8dc1036512fde084635edda6336", null ],
+    [ "BorderWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a837c2f54dd6bf78b1d5eb832a07e2d4b", null ],
+    [ "ClassName", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a95b8ae4e4e5c39c9b24506eca7e662ff", null ],
+    [ "Crop", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a12fc2c1c092c184b3f4d84321473f31d", null ],
+    [ "Distance", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#ad1dc46eca9ab6f3d401c0c9b6925a170", null ],
+    [ "Format", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#af1da9ee6280591d645f61514d52cf914", null ],
+    [ "Formatter", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#ae91b578fbcd3b0149224f806d1697374", null ],
+    [ "IncludeInDataExport", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a109487544ef4320a61690f9305e6af5a", null ],
+    [ "Overflow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a79faddd501d7d76ccb39e0ab060eca88", null ],
+    [ "Padding", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a3a00de2fb420e297635b4a1a803c2ae3", null ],
+    [ "Shadow", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a7c79c4924192bc19b2229f0f3953933a", null ],
+    [ "ShadowBool", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a280b27a4693ea1da2f3c4d783badd72f", null ],
+    [ "Shape", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#ab2ac9fb234f663fb8fbd68598468efd6", null ],
+    [ "Style", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#aad177af3a7915711f50c6701ff85293a", null ],
+    [ "Text", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#ab0c808f6f7f29a3de358211d6fac16dc", null ],
+    [ "UseHTML", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a281530c9b0d845901615d19c81d6317c", null ],
+    [ "VerticalAlign", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a7e570623f5efc60b007b13b3e2452450", null ],
+    [ "X", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#abaf8b014298da7bb22c843ed3517a1b2", null ],
+    [ "Y", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_annotations_vertical_line_label_options.html#a95dc94d144c1953341ee291a280090a4", null ]
+];

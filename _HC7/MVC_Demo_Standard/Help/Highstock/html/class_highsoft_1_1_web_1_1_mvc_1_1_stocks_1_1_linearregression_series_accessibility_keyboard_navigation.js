@@ -1,0 +1,5 @@
+var class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregression_series_accessibility_keyboard_navigation =
+[
+    [ "LinearregressionSeriesAccessibilityKeyboardNavigation", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregression_series_accessibility_keyboard_navigation.html#a0ba4fa559f5fa97abc9a24d46b8b5298", null ],
+    [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_stocks_1_1_linearregression_series_accessibility_keyboard_navigation.html#a85552da00f4018436891d407e729821b", null ]
+];

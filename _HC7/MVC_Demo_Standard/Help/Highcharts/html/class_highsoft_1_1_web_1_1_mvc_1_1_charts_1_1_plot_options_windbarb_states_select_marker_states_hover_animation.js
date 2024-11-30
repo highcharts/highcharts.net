@@ -1,6 +1,0 @@
-var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_windbarb_states_select_marker_states_hover_animation =
-[
-    [ "PlotOptionsWindbarbStatesSelectMarkerStatesHoverAnimation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_windbarb_states_select_marker_states_hover_animation.html#a6770927b824882c4c3287432e30050fa", null ],
-    [ "Duration", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_windbarb_states_select_marker_states_hover_animation.html#ac08efc5d76ef69436f24d7b04fb71f95", null ],
-    [ "Duration_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_plot_options_windbarb_states_select_marker_states_hover_animation.html#aad1ce5356d9a8fa8f98d6e6221451a48", null ]
-];

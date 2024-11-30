@@ -2,25 +2,10 @@ var class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover =
 [
     [ "SankeySeriesStatesHover", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#ad9858cfb57d2a10a27b577e634cdcbd5", null ],
     [ "Animation", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a6280a20db5c9519e111ce980bc7300aa", null ],
-    [ "Animation_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#aafbf98d052f0340369063d0b6be7d895", null ],
-    [ "BorderColor", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#aad5a8fd25a3a8914997742bb60a7d551", null ],
-    [ "BorderColor_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a84b69235d2bd0151490ecc87d3f5bd20", null ],
-    [ "Brightness", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a61ace6dc6b20a2d09f7a335fdca2e3ba", null ],
-    [ "Brightness_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#ac92b2538b6a12049330062484c18b3ca", null ],
-    [ "Color", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a4ea5d8f5abac5b3df6e64215433ee385", null ],
-    [ "Color_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a66ae783297d5cb3a8e5ce9ce36fe100c", null ],
+    [ "AnimationBool", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a83bd5f7567ddbfcd29f6ac36ee2a37bc", null ],
     [ "Enabled", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#aac6dabd08baf6cf8692750f63646e01c", null ],
-    [ "Enabled_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#acbfef9b83a72cb1c9ec33413254e996a", null ],
     [ "Halo", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a2436c85f4db776f84c73ddd184485c54", null ],
-    [ "Halo_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a606b1f332e84244052d3f0fb7cf52291", null ],
     [ "LineWidth", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#abcff7eb315d11692067b1ab568ed4c43", null ],
-    [ "LineWidth_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a1c9745a58086852bbe6c41f69a80f9d7", null ],
     [ "LineWidthPlus", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a3f095c13b55fae65b43e01904dd93001", null ],
-    [ "LineWidthPlus_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#aede93b30efa1f961c7ca3dab87fc5103", null ],
-    [ "LinkOpacity", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a62ee8ec8cc09b1f6f461900587f9c072", null ],
-    [ "LinkOpacity_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a593c57e190d74f1733a4c66c4ffe2c4f", null ],
-    [ "Marker", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#ade9a12e90383d496c8ba945a87fc337e", null ],
-    [ "Marker_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#aa54a4cbacc65d574c700646abc90a4d3", null ],
-    [ "Shadow", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a46c3be5bcd479b1581357ebfcda6eef5", null ],
-    [ "Shadow_DefaultValue", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#a7d56381825ef5f98163124654222ede7", null ]
+    [ "Marker", "class_highsoft_1_1_web_1_1_mvc_1_1_charts_1_1_sankey_series_states_hover.html#ade9a12e90383d496c8ba945a87fc337e", null ]
 ];
