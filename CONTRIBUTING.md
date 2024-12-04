@@ -16,7 +16,7 @@ Both above projects have dependency on Newtonsoft.Json 13.0.3 and NETStandard.Li
 [https://dotnet.highcharts.com/Highcharts/Demo/Docs?section=ServerSideRequirements](https://dotnet.highcharts.com/Highcharts/Demo/Docs?section=ServerSideRequirements)
 SourceCodeGenerator project contains solution for generating source code which is later placed in HighchartsStandard\CodeGeneration and HighstockStandard\CodeGeneration folders
 MVC_Demo_Standard project contains entire website which is located on [dotnet.highcharts.com](https://dotnet.highcharts.com)
-UnitTests_HC, UnitTest_HS (xUnit) and UnitTests_MVC (nUnit) contain unit test 
+UnitTests_HC and UnitTest_HS (xUnit) contain unit test 
 
 ## Overall architecture and philosophy of the technical approach
 
@@ -66,9 +66,7 @@ JS script contains only properties which were defined earlier in Highcharts/High
 18. Run DoxyWizard, specify working directory (click Select and Select Folder). 
     Define: Project name, Project version, Source code directory - select \HighchartsStandard\CodeGeneration, Destination folder, Documented Entities Only, Optimized for C#, HTML with navigation panel, turn off LaTeX, No diagrams
 	and click Run Doxygen to generate API documentation
-19. Upload documentation on dotnet.highchart.com
-18. Go back to point 5 and repeat all steps for Highstock .NET
-19. Take generated earlier Highcharts.dll and Highstock.dll and add to zip file on dotnet.highchart.com
+19. Go back to point 5 and repeat all steps for Highstock .NET
 
 ## List project standards/conventions
 

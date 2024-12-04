@@ -96,7 +96,20 @@
     <PackageIconUrl>http://dotnet.highcharts.com/Content/images/logo_png.png</PackageIconUrl>
     <PackageTags>chart charts charting graph graphs plot plots diagram diagrams highcharts highstock visualisation visualization data-visualisation data-visualization diagram line-chart 3d-chart finance web-forms mvc</PackageTags>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <Title>Highcharts .NET</Title>
+    <PackageReadmeFile>CONTRIBUTING.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\CONTRIBUTING.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\license.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -105,13 +118,6 @@
   <ItemGroup>
     <Compile Update="HighchartsRenderer.cs" />
     <Compile Update="HtmlHelperExtensions.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="C:\Repositories\highcharts.net\License\license.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
 </Project>

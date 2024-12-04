@@ -85,6 +85,8 @@
     <AssemblyVersion>11.4.6.5</AssemblyVersion>
     <FileVersion>11.4.6.5</FileVersion>
     <PackageLicenseUrl></PackageLicenseUrl>
+    <Title>Highstock .NET</Title>
+    <PackageReadmeFile>CONTRIBUTING.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -92,12 +94,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="license.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="license.txt">
+    <None Include="..\..\CONTRIBUTING.md">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\license.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 

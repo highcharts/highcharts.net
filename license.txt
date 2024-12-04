@@ -1,3 +1,5 @@
 The Highcharts .NET integration is licensed under the open source BSD 3-Clause License, which means that you are free to use and redistribute this tool in source and binary forms, with or without modifications, as long as the following conditions are met:
+
 (1) All redistributions (and documentation and/or other materials provided, as applicable) must contain the copyright notice “Copyright 2024 Highsoft AS” and the list of conditions and the disclaimer listed here, and; (2) The names of Highsoft or Highcharts may not be used to endorse or promote any products derived from the integration without specific prior written permission.
+
 While the .NET integration itself is licensed under an open source license, it relies on the libraries of the proprietary software Highcharts, which is developed and owned by Highsoft. All usage of Highcharts is subject to Highsoft’s Standard License Agreement, and all commercial use or distribution of the integration therefore requires a Highcharts License from Highsoft. If you are unsure if your usage of the integration requires a license, or of which Highcharts License is suitable for you, please contact Highsoft.
